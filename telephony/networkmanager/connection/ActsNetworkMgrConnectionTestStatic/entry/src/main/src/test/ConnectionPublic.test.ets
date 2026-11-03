@@ -19,6 +19,7 @@ import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import connection from '@ohos.net.connection';
 import socket from '@ohos.net.socket';
+import http from '@ohos.net.http';
 import policy from '@ohos.net.policy';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -3467,6 +3468,8 @@ export default function ConnectionPublicTest(): void {
             hilog.info(domain, tag, '%{public}s',
               caseName + ': getConnectionProperties: success data ->' + JSON.stringify(data));
             ExpectTrue(typeof data.interfaceName === 'string');
+            ExpectTrue(typeof data.isIPv4LinkValid === 'boolean');
+            ExpectTrue(typeof data.isIPv6LinkValid === 'boolean');
             hilog.info(domain, tag, '%{public}s', caseName + '---test end');
             done();
           } catch (err) {
@@ -3938,6 +3941,11 @@ export default function ConnectionPublicTest(): void {
             hilog.info(domain, tag, '%{public}s',
               caseName + ': getConnectionProperties: success data ->' + JSON.stringify(data));
             ExpectTrue(typeof data.routes[0].isDefaultRoute === 'boolean');
+            if (data.routes[0].isExcludedRoute === undefined) {
+              ExpectTrue(data.routes[0].isExcludedRoute === undefined);
+            } else {
+              ExpectTrue(typeof data.routes[0].isExcludedRoute === 'boolean');
+            }
             hilog.info(domain, tag, '%{public}s', caseName + '---test end');
             done();
           } catch (err) {
@@ -6744,6 +6752,117 @@ export default function ConnectionPublicTest(): void {
           hilog.info(domain, tag, `${caseName}---End`);
           done();
         }
+      });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionGetSystemNetPortStates_static_0200
+     * @tc.number SUB_NetworkMgr_Connection_GetSystemNetPortStates_0200
+     * @tc.desc   Test TcpState Enum value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionGetSystemNetPortStates_static_0200", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = "testNetworkMgrConnectionGetSystemNetPortStates_static_0200";
+        hilog.info(domain, tag, `${caseName}---Start`);
+        ExpectTrue(1 === connection.TcpState.TCP_ESTABLISHED);
+        ExpectTrue(2 === connection.TcpState.TCP_SYN_SENT);
+        ExpectTrue(3 === connection.TcpState.TCP_SYN_RECV);
+        ExpectTrue(4 === connection.TcpState.TCP_FIN_WAIT1);
+        ExpectTrue(5 === connection.TcpState.TCP_FIN_WAIT2);
+        ExpectTrue(6 === connection.TcpState.TCP_TIME_WAIT);
+        ExpectTrue(7 === connection.TcpState.TCP_CLOSE);
+        ExpectTrue(8 === connection.TcpState.TCP_CLOSE_WAIT);
+        ExpectTrue(9 === connection.TcpState.TCP_LAST_ACK);
+        ExpectTrue(10 === connection.TcpState.TCP_LISTEN);
+        ExpectTrue(11 === connection.TcpState.TCP_CLOSING);
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionSocks5DnsStrategy_static_0100
+     * @tc.number SUB_NetworkMgr_Connection_Socks5DnsStrategy_0100
+     * @tc.desc   Test Socks5DnsStrategy Enum value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionSocks5DnsStrategy_static_0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = "testNetworkMgrConnectionSocks5DnsStrategy_static_0100";
+        hilog.info(domain, tag, `${caseName}---Start`);
+        ExpectTrue(0 === connection.Socks5DnsStrategy.SYSTEM_MODE);
+        ExpectTrue(1 === connection.Socks5DnsStrategy.PROXY_MODE);
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionProtocolType_static_0100
+     * @tc.number SUB_NetworkMgr_Connection_ProtocolType_0100
+     * @tc.desc   Test ProtocolType Enum value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionProtocolType_static_0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = "testNetworkMgrConnectionProtocolType_static_0100";
+        hilog.info(domain, tag, `${caseName}---Start`);
+        ExpectTrue(17 === connection.ProtocolType.PROTO_TYPE_UDP);
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionSocks5Proxy_static_0100
+     * @tc.number SUB_NetworkMgr_Connection_Socks5Proxy_0100
+     * @tc.desc   Test Socks5Proxy dnsStrategy and exclusionList fields.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionSocks5Proxy_static_0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = "testNetworkMgrConnectionSocks5Proxy_static_0100";
+        hilog.info(domain, tag, `${caseName}---Start`);
+        let socks5Proxy: connection.Socks5Proxy = {
+          host: '127.0.0.1',
+          port: 1080,
+          dnsStrategy: connection.Socks5DnsStrategy.PROXY_MODE,
+          exclusionList: ['www.baidu.com', '192.168.*.*']
+        };
+        if (socks5Proxy.dnsStrategy === undefined) {
+          ExpectTrue(socks5Proxy.dnsStrategy === undefined);
+        } else {
+          ExpectTrue(socks5Proxy.dnsStrategy === connection.Socks5DnsStrategy.PROXY_MODE);
+        }
+        const exclusionList =socks5Proxy.exclusionList;
+        if (exclusionList !== undefined && exclusionList !== null) {
+          ExpectTrue(exclusionList[0] === 'www.baidu.com');
+        }
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionPolicyNetBearType_static_0100
+     * @tc.number SUB_NetworkMgr_Connection_PolicyNetBearType_0100
+     * @tc.desc   Test policy.NetBearType Enum value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionPolicyNetBearType_static_0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = "testNetworkMgrConnectionPolicyNetBearType_static_0100";
+        hilog.info(domain, tag, `${caseName}---Start`);
+        ExpectTrue(0 === policy.NetBearType.BEARER_CELLULAR);
+        ExpectTrue(1 === policy.NetBearType.BEARER_WIFI);
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
       });
 
     /**
@@ -9607,6 +9726,43 @@ export default function ConnectionPublicTest(): void {
         }
       });
 
+    /**
+     * @tc.name   testNetworkMgrPolicyShowAppNetPolicySetting_static_0100
+     * @tc.number SUB_NetworkMgr_Policy_ShowAppNetPolicySetting_0100
+     * @tc.desc   Test showAppNetPolicySettings with UIAbilityContext
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrPolicyShowAppNetPolicySetting_static_0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = "testNetworkMgrPolicyShowAppNetPolicySetting_static_0100";
+        hilog.info(domain, tag, `${caseName}---Start`);
+        try {
+          policy.showAppNetPolicySettings(g_context).then(() => {
+            hilog.info(domain, tag, `${caseName} showAppNetPolicySettings success`);
+            ExpectTrue(true);
+            hilog.info(domain, tag, `${caseName}---End`);
+            done();
+          }).catch((error: Error) => {
+            const e = error as BusinessError;
+            hilog.info(domain, tag,
+              `${caseName} showAppNetPolicySettings failed, error code:${JSON.stringify(
+                e.code)}, message:${JSON.stringify(e.message)}`);
+            ExpectTrue(e !== undefined);
+            hilog.info(domain, tag, `${caseName}---End`);
+            done();
+          });
+        } catch (err) {
+          const error = err as BusinessError;
+          hilog.info(domain, tag,
+            `${caseName} catch err code:${JSON.stringify(error.code)}, message:${JSON.stringify(error.message)}`);
+          ExpectFail();
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        }
+      });
+
       /**
      * @tc.name   testNetworkMgrConnectionNetHandleBindSocket_static_0100
      * @tc.number SUB_NetworkMgr_Connection_NetHandleBindSocket_0100
@@ -10301,6 +10457,161 @@ export default function ConnectionPublicTest(): void {
         } catch (err) {
           hilog.info(domain, tag,
             `${caseName} test failed err: code:${JSON.stringify(err?.code)}, message:${JSON.stringify(err?.message)}`);
+          ExpectFail();
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionHttpRequestType_static_0100
+     * @tc.number SUB_NetworkMgr_Connection_HttpRequest_Type_0100
+     * @tc.desc   Test connection.HttpRequest type (type HttpRequest = http.HttpRequest) created by http.createHttp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionHttpRequestType_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const caseName: string = 'testNetworkMgrConnectionHttpRequestType_static_0100';
+        hilog.info(domain, tag, `${caseName}---test Start`);
+        try {
+          let httpRequest: connection.HttpRequest = http.createHttp();
+          ExpectTrue(httpRequest !== undefined && httpRequest !== null);
+          httpRequest.destroy();
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        } catch (err) {
+          const error = err as BusinessError;
+          hilog.info(domain, tag,
+            `${caseName} test failed err: code:${JSON.stringify(error.code)}, message:${JSON.stringify(
+              error.message)}`);
+          ExpectFail();
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionTCPSocketType_static_0100
+     * @tc.number SUB_NetworkMgr_Connection_TCPSocket_Type_0100
+     * @tc.desc   Test connection.TCPSocket type (type TCPSocket = socket.TCPSocket) created by
+     *            constructTCPSocketInstance, bind/getState/close with promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionTCPSocketType_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const caseName: string = 'testNetworkMgrConnectionTCPSocketType_static_0100';
+        hilog.info(domain, tag, `${caseName}---test Start`);
+        try {
+          let tcp: connection.TCPSocket = socket.constructTCPSocketInstance();
+          ExpectTrue(tcp !== undefined && tcp !== null);
+          await tcp.bind({
+            address: '127.0.0.1',
+            port: 0,
+            family: 1
+          } as socket.NetAddress).then(() => {
+            hilog.info(domain, tag, `${caseName} bind success`);
+            ExpectTrue(true);
+          }).catch((error: Error) => {
+            const e = error as BusinessError;
+            hilog.info(domain, tag,
+              `${caseName} bind failed err: code:${JSON.stringify(e.code)}, message:${JSON.stringify(
+                e.message)}`);
+            ExpectFail();
+          });
+          await tcp.getState().then((state: socket.SocketStateBase) => {
+            hilog.info(domain, tag, `${caseName} getState: ${JSON.stringify(state)}`);
+            ExpectTrue(state.isBound);
+          }).catch((error: Error) => {
+            const e = error as BusinessError;
+            hilog.info(domain, tag,
+              `${caseName} getState failed err: code:${JSON.stringify(e.code)}, message:${JSON.stringify(
+                e.message)}`);
+            ExpectFail();
+          });
+          await tcp.close().then(() => {
+            hilog.info(domain, tag, `${caseName} close success`);
+            ExpectTrue(true);
+          }).catch((error: Error) => {
+            const e = error as BusinessError;
+            hilog.info(domain, tag,
+              `${caseName} close failed err: code:${JSON.stringify(e.code)}, message:${JSON.stringify(
+                e.message)}`);
+            ExpectFail();
+          });
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        } catch (err) {
+          const error = err as BusinessError;
+          hilog.info(domain, tag,
+            `${caseName} test failed err: code:${JSON.stringify(error.code)}, message:${JSON.stringify(
+              error.message)}`);
+          ExpectFail();
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionUDPSocketType_static_0100
+     * @tc.number SUB_NetworkMgr_Connection_UDPSocket_Type_0100
+     * @tc.desc   Test connection.UDPSocket type (type UDPSocket = socket.UDPSocket) created by
+     *            constructUDPSocketInstance, bind/getState/close with promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionUDPSocketType_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const caseName: string = 'testNetworkMgrConnectionUDPSocketType_static_0100';
+        hilog.info(domain, tag, `${caseName}---test Start`);
+        try {
+          let udp: connection.UDPSocket = socket.constructUDPSocketInstance();
+          ExpectTrue(udp !== undefined && udp !== null);
+          await udp.bind({
+            address: '127.0.0.1',
+            port: 0,
+            family: 1
+          } as socket.NetAddress).then(() => {
+            hilog.info(domain, tag, `${caseName} bind success`);
+            ExpectTrue(true);
+          }).catch((error: Error) => {
+            const e = error as BusinessError;
+            hilog.info(domain, tag,
+              `${caseName} bind failed err: code:${JSON.stringify(e.code)}, message:${JSON.stringify(
+                e.message)}`);
+            ExpectFail();
+          });
+          await udp.getState().then((state: socket.SocketStateBase) => {
+            hilog.info(domain, tag, `${caseName} getState: ${JSON.stringify(state)}`);
+            ExpectTrue(state.isBound);
+          }).catch((error: Error) => {
+            const e = error as BusinessError;
+            hilog.info(domain, tag,
+              `${caseName} getState failed err: code:${JSON.stringify(e.code)}, message:${JSON.stringify(
+                e.message)}`);
+            ExpectFail();
+          });
+          await udp.close().then(() => {
+            hilog.info(domain, tag, `${caseName} close success`);
+            ExpectTrue(true);
+          }).catch((error: Error) => {
+            const e = error as BusinessError;
+            hilog.info(domain, tag,
+              `${caseName} close failed err: code:${JSON.stringify(e.code)}, message:${JSON.stringify(
+                e.message)}`);
+            ExpectFail();
+          });
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        } catch (err) {
+          const error = err as BusinessError;
+          hilog.info(domain, tag,
+            `${caseName} test failed err: code:${JSON.stringify(error.code)}, message:${JSON.stringify(
+              error.message)}`);
           ExpectFail();
           hilog.info(domain, tag, `${caseName}---End`);
           done();

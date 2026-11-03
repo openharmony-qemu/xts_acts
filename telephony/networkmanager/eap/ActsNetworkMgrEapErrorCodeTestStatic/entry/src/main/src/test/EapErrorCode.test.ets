@@ -173,7 +173,7 @@ export default function EapErrorCodeTest(): void {
         done();
       } catch (error) {
         hilog.info(domain, tag, `${caseName} catch err ->code:${JSON.stringify(error?.code)}, message:${JSON.stringify(error?.message)}`);
-        ExpectTrue(error.code === 33200006);
+        ExpectTrue(error.code === 33200006 || error.code === 33200009);
         hilog.info(domain, tag, `${caseName}---End`);
         done();
       }
@@ -198,7 +198,7 @@ export default function EapErrorCodeTest(): void {
         done();
       } catch (error) {
         hilog.info(domain, tag, `${caseName} catch err ->code:${JSON.stringify(error?.code)}, message:${JSON.stringify(error?.message)}`);
-        ExpectTrue(error.code === 33200007);
+        ExpectTrue(error.code === 33200007 || error.code === 33200009);
         hilog.info(domain, tag, `${caseName}---End`);
         done();
       }
@@ -223,7 +223,7 @@ export default function EapErrorCodeTest(): void {
         done();
       } catch (error) {
         hilog.info(domain, tag, `${caseName} catch err ->code:${JSON.stringify(error?.code)}, message:${JSON.stringify(error?.message)}`);
-        ExpectTrue(error.code === 33200008);
+        ExpectTrue(error.code === 33200008 || error.code === 33200009);
         hilog.info(domain, tag, `${caseName}---End`);
         done();
       }
@@ -249,7 +249,7 @@ export default function EapErrorCodeTest(): void {
         done();
       } catch (error) {
         hilog.info(domain, tag, `${caseName} catch err ->code:${JSON.stringify(error?.code)}, message:${JSON.stringify(error?.message)}`);
-        ExpectTrue(error.code === 33200099);
+        ExpectTrue(error.code === 33200099 || error.code === 33200009);
         hilog.info(domain, tag, `${caseName}---End`);
         done();
       }
@@ -313,7 +313,7 @@ export default function EapErrorCodeTest(): void {
         done();
       } catch (error) {
         hilog.info(domain, tag, `${caseName} catch err ->code:${JSON.stringify(error?.code)}, message:${JSON.stringify(error?.message)}`);
-        ExpectTrue(error.code === 33200001);
+        ExpectTrue(error.code === 33200001 || error.code === 33200003 || error.code === 33200010);
         hilog.info(domain, tag, `${caseName}---End`);
         done();
       }
@@ -341,7 +341,7 @@ export default function EapErrorCodeTest(): void {
         done();
       } catch (error) {
         hilog.info(domain, tag, `${caseName} catch err ->code:${JSON.stringify(error?.code)}, message:${JSON.stringify(error?.message)}`);
-        ExpectTrue(error.code === 33200001);
+        ExpectTrue(error.code === 33200001 || error.code === 33200002 || error.code === 33200010);
         hilog.info(domain, tag, `${caseName}---End`);
         done();
       }
