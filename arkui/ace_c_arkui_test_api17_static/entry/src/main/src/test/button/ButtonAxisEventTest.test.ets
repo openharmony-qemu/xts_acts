@@ -18,6 +18,7 @@ import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "@o
 import Utils from '../common/Utils';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 
 
 let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
