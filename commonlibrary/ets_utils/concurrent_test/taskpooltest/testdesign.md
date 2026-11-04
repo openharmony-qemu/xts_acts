@@ -1,0 +1,423 @@
+- taskpool 测试设计
+	- 1. 接口测试（Functional）
+		- 1.1 Task class（since 9）
+			- 1.1.1 constructor(func, ...args) / constructor(name, func, ...args)[11+]
+				- ①入参范围覆盖
+					- func 为 @Concurrent 函数
+					- args 全序列化类型（number/string/boolean/TypedArray/ArrayBuffer/SharedArrayBuffer/Sendable 对象/SendableFunction/SendableClass/嵌套/容器）
+					- name 普通字符串/特殊字符
+				- ②边界值测试
+					- 无 args、单 args、多 args
+					- 空函数、长时函数、大 ArrayBuffer
+				- ③异常与非法输入
+					- 非 @Concurrent func → 10200014
+					- 缺参（undefined as T 绕过）
+				- ④返回值与类型验证
+					- instanceof taskpool.Task
+					- function/arguments/name 属性可读
+				- ⑤组合场景
+					- 构造后 execute
+					- 构造后 setTransferList/setCloneList
+					- 构造后 addDependency
+				- ⑥重复调用幂等性
+					- 同一 func 多次构造独立 Task
+					- name 重复构造
+				- ⑦并发跨线程
+					- 多 TaskPool 线程并发构造
+					- 跨线程引用 Task 实例
+			- 1.1.2 static isCanceled()[10+]
+				- ①入参范围覆盖（静态无参）
+				- ②边界值测试
+					- 未 cancel → false
+					- cancel 前/后两次检查（2s sleep 前后）
+				- ③异常与非法输入（无显式异常契约）
+				- ④返回值与类型验证
+					- boolean
+					- cancel 后 true、未 cancel false
+				- ⑤组合场景
+					- cancel → isCanceled → 提前 return
+					- execute + setTimeout cancel → isCanceled 响应
+				- ⑥重复调用幂等性（连续多次一致）
+				- ⑦并发跨线程
+					- 多任务并发 cancel + isCanceled 响应
+			- 1.1.3 static sendData(...args)[11+]
+				- ①入参范围覆盖（number/Sendable 实例/多参/无参）
+				- ②边界值测试
+					- 空参、单参
+					- 异步函数内 await sendData
+				- ③异常与非法输入
+					- 10200006 序列化异常
+					- 10200022 非 TaskPool 线程
+					- 10200023 非并发函数
+					- 10200024 未注册回调
+				- ④返回值与类型验证（void、宿主 onReceiveData 回调收到）
+				- ⑤组合场景
+					- sendData + onReceiveData 配对
+					- executePeriodically + sendData 上报
+				- ⑥重复调用幂等性（多次 sendData 多次回调）
+				- ⑦并发跨线程
+					- TaskPool 线程向宿主发消息
+					- Sendable 引用传递
+			- 1.1.4 setTransferList(transfer?)[10+]
+				- ①入参范围覆盖（ArrayBuffer[]/空数组/null/undefined）
+				- ②边界值测试
+					- 空 ArrayBuffer 不转移
+					- 单/多 buffer 转移后 byteLength=0
+				- ③异常与非法输入
+					- 与 setCloneList 同 buffer → 10200029
+				- ④返回值与类型验证（void、转移后原 ArrayBuffer 失效）
+				- ⑤组合场景
+					- setTransferList → execute → buffer 失效
+					- 与 setCloneList 互斥
+				- ⑥重复调用幂等性（重复设置覆盖）
+				- ⑦并发跨线程（跨线程转移 buffer 控制权）
+			- 1.1.5 setCloneList(cloneList)[11+]
+				- ①入参范围覆盖（Object[] Sendable 实例/ArrayBuffer[]/null/undefined）
+				- ②边界值测试（空数组、单/多 Sendable 实例拷贝）
+				- ③异常与非法输入
+					- 与 setTransferList 同 buffer → 10200029
+					- 非 @Sendable 对象抛异常（文档称）
+				- ④返回值与类型验证（void、拷贝后修改不影响原对象）
+				- ⑤组合场景
+					- setCloneList → execute → 拷贝隔离
+					- @Sendable 类方法/属性/继承访问
+				- ⑥重复调用幂等性（重复设置覆盖）
+				- ⑦并发跨线程
+					- 跨线程拷贝 Sendable 实例
+					- BaseClass/DeriveClass 方法调用
+			- 1.1.6 onReceiveData(callback?)[11+]
+				- ①入参范围覆盖（Function 回调/null/undefined 取消注册/无参）
+				- ②边界值测试
+					- 多次注册仅最后一次生效
+					- 无回调注册时 sendData → 10200024
+				- ③异常与非法输入（无显式 @throws）
+				- ④返回值与类型验证（void、回调收到 sendData 数据）
+				- ⑤组合场景
+					- onReceiveData + sendData 配对
+					- executePeriodically + onReceiveData 周期上报
+				- ⑥重复调用幂等性
+					- 重复注册覆盖
+					- onReceiveData() 取消注册
+				- ⑦并发跨线程（宿主注册 → 工作线程 sendData → 宿主回调）
+			- 1.1.7 addDependency(...tasks)[11+] / removeDependency(...tasks)[11+]
+				- ①入参范围覆盖（Task[]/单/多依赖/空数组）
+				- ②边界值测试
+					- 链式依赖 task1 → task2 → task3
+					- 无依赖
+				- ③异常与非法输入
+					- 10200026 循环依赖
+					- 10200027 依赖不存在
+					- 10200052 周期任务不能有依赖[12+]
+					- 10200056 已被 AsyncRunner 执行[18+]
+				- ④返回值与类型验证（void、依赖任务先执行）
+				- ⑤组合场景
+					- add → execute 依赖序
+					- remove 后独立执行
+					- 依赖任务不可重复执行
+				- ⑥重复调用幂等性（重复 add 同依赖）
+				- ⑦并发跨线程（依赖链跨线程执行）
+			- 1.1.8 onEnqueued[12+] / onStartExecution[12+] / onExecutionFailed[12+] / onExecutionSucceeded[12+]
+				- ①入参范围覆盖（CallbackFunction / CallbackFunctionWithError 回调）
+				- ②边界值测试
+					- 注册后 execute 触发
+					- 未注册不触发
+				- ③异常与非法输入
+					- execute 后注册 → 10200034
+				- ④返回值与类型验证（void、入队/开始/失败/成功回调触发序）
+				- ⑤组合场景
+					- 四监听器组合 + 嵌套任务
+					- 六执行器（Task/TaskGroup/SequenceRunner/AsyncRunner/LongTask/GenericsTask）× 四监听器
+				- ⑥重复调用幂等性（重复注册覆盖）
+				- ⑦并发跨线程（多任务并发触发监听）
+			- 1.1.9 isDone()[12+]
+				- ①入参范围覆盖（无参）
+				- ②边界值测试
+					- 未执行 → false
+					- 执行中 → false
+					- 执行完 → true
+					- cancel 后
+				- ③异常与非法输入（无显式 @throws）
+				- ④返回值与类型验证（boolean）
+				- ⑤组合场景
+					- execute 前/中/后 isDone
+					- cancel + isDone 守卫
+				- ⑥重复调用幂等性（多次调用一致）
+				- ⑦并发跨线程（多任务并发 isDone）
+			- 1.1.10 属性 function / arguments? / name[11+] / taskId[18+] / totalDuration[11+] / ioDuration[11+] / cpuDuration[11+]
+				- ①入参范围覆盖（属性读取）
+				- ②边界值测试
+					- 默认值（arguments=undefined、taskId=0、duration=0）
+				- ③异常与非法输入（无显式 @throws）
+				- ④返回值与类型验证
+					- function=Function
+					- arguments=Object[]|undefined
+					- name=string
+					- taskId=number
+					- duration=number(ms)
+				- ⑤组合场景
+					- 构造后读 name/taskId
+					- execute 后读 totalDuration/ioDuration/cpuDuration
+				- ⑥重复调用幂等性（多次读一致）
+				- ⑦并发跨线程（跨线程读 taskId 驱动 cancel(taskId)/getTask）
+		- 1.2 TaskGroup（since 10）
+			- 1.2.1 constructor() / constructor(name)[11+]
+				- ①入参范围覆盖（默认/命名/子类 super）
+				- ②边界值测试（空 group、name 特殊字符）
+				- ③异常与非法输入（401 非法 name 类型）
+				- ④返回值与类型验证（instanceof taskpool.TaskGroup、name 可读）
+				- ⑤组合场景（同名 group 独立实例）
+				- ⑥重复调用幂等性
+				- ⑦并发跨线程
+			- 1.2.2 addTask(func, ...args)[10+] / addTask(task: Task)[10+]
+				- ①入参范围覆盖（func @Concurrent + 全类型 args / Task 实例）
+				- ②边界值测试（空 args、单/多任务、长时任务不能加入）
+				- ③异常与非法输入
+					- 10200014 非 concurrent
+					- 10200051 周期任务
+					- 10200057 两 API
+					- add-after-execute → 401（实测）
+				- ④返回值与类型验证（void、结果数组顺序与 addTask 顺序一致）
+				- ⑤组合场景（addTask 后 execute(group)、多任务结果数组）
+				- ⑥重复调用幂等性（重复 add 同 task）
+				- ⑦并发跨线程（跨线程 group 执行）
+			- 1.2.3 name[11+] 属性
+		- 1.3 SequenceRunner（since 11）
+			- 1.3.1 constructor(priority?)[11+] / constructor(name, priority?)[12+]
+				- ①入参范围覆盖（priority HIGH/MEDIUM/LOW/IDLE）
+				- ②边界值测试（默认 MEDIUM、同名全局单例）
+				- ③异常与非法输入（401 非法 priority、同名单例不可改并发度）
+				- ④返回值与类型验证（instanceof taskpool.SequenceRunner）
+				- ⑤组合场景
+				- ⑥重复调用幂等性
+				- ⑦并发跨线程
+			- 1.3.2 execute(task: Task): Promise<Object>
+				- ①入参范围覆盖（全序列化类型任务）
+				- ②边界值测试（空任务、长时任务、单/多串行）
+				- ③异常与非法输入
+					- 10200003 Worker init[11-17]
+					- 10200006 序列化
+					- 10200025 依赖任务
+					- 10200051 周期
+					- 10200057 两 API
+				- ④返回值与类型验证（Promise<Object>、串行序、前失败不影响后续）
+				- ⑤组合场景
+					- 串行 + 嵌套任务
+					- asyncLock/promise/setTimeout then、cancel
+				- ⑥重复调用幂等性（重复 execute 同 task）
+				- ⑦并发跨线程（多 SequenceRunner 并发、与 TaskGroup/AsyncRunner 互斥）
+		- 1.4 AsyncRunner（since 18）
+			- 1.4.1 constructor(runningCapacity, waitingCapacity?)[18+] / constructor(name, runningCapacity, waitingCapacity?)[18+]
+				- ①入参范围覆盖（runningCapacity 正整数、waitingCapacity >= 0）
+				- ②边界值测试
+					- runningCapacity 非整数向下取整
+					- waitingCapacity 默认 0 无限、> 0 丢弃策略
+				- ③异常与非法输入
+					- 401 负数报错
+					- 非整数取整
+					- 同名全局单例不可改并发度/waitingCapacity
+				- ④返回值与类型验证（instanceof taskpool.AsyncRunner）
+				- ⑤组合场景
+				- ⑥重复调用幂等性
+				- ⑦并发跨线程
+			- 1.4.2 execute(task, priority?): Promise<Object>
+				- ①入参范围覆盖（全序列化类型任务 + priority）
+				- ②边界值测试（并发度边界、等待列表满丢弃队头）
+				- ③异常与非法输入
+					- 10200006 序列化
+					- 10200025 依赖
+					- 10200051 周期
+					- 10200054 丢弃
+					- 10200057 两 API
+				- ④返回值与类型验证（Promise<Object>、并发执行）
+				- ⑤组合场景（不能执行 group/seq/Other async/周期/延时/依赖/已执行任务）
+				- ⑥重复调用幂等性（重复 execute）
+				- ⑦并发跨线程（多 AsyncRunner 并发、GC、UI、cancel）
+		- 1.5 LongTask extends Task（since 12）
+			- ①入参范围覆盖（constructor(func, ...args) 继承 Task 签名）
+			- ②边界值测试（长时运行不超时、单次执行、不可入 TaskGroup）
+			- ③异常与非法输入（错误码继承 Task 构造 10200014）
+			- ④返回值与类型验证（instanceof taskpool.LongTask、Task 引用可指向 LongTask 多态）
+			- ⑤组合场景（execute → terminateTask 生命周期、线程空闲回收）
+			- ⑥重复调用幂等性（terminate 后线程回收）
+			- ⑦并发跨线程（长时任务线程持续存在）
+		- 1.6 GenericsTask<A,R> extends Task（since 13）
+			- 1.6.1 constructor(func: (...args:A)=>R|Promise<R>, ...args: A)
+			- 1.6.2 constructor(name, func, ...args: A)[13+]
+				- ①入参范围覆盖（泛型类型参数 <[number],string> / <[number,number],number> / <[[number,string]],string>）
+				- ②边界值测试（编译期类型校验、与 execute 类型匹配）
+				- ③异常与非法输入（10200014 非 concurrent）
+				- ④返回值与类型验证（instanceof、name 属性、execute 返回 Promise<R>）
+				- ⑤组合场景（与 execute/executeDelayed/executePeriodically/AsyncRunner/SequenceRunner 联动）
+				- ⑥重复调用幂等性（类型安全执行）
+				- ⑦并发跨线程
+		- 1.7 execute(...) 7 重载
+			- 1.7.1 execute(func, ...args): Promise<Object>[9+]
+			- 1.7.2 execute<A,R>(func, ...args): Promise<R>[13+]
+			- 1.7.3 execute(task, priority?): Promise<Object>
+			- 1.7.4 execute<A,R>(GenericsTask, priority?): Promise<R>[13+]
+			- 1.7.5 execute(group, priority?): Promise<Object[]>[10+]
+			- 1.7.6 execute(task, configs): Promise<Object>[24+]
+			- 1.7.7 execute<A,R>(GenericsTask, configs): Promise<R>[24+]
+			- 1.7.8 execute(group, configs): Promise<Object[]>[24+]
+				- ①入参范围覆盖（func/task/group/GenericsTask + priority/configs 全组合）
+				- ②边界值测试（priority 默认 MEDIUM、configs.timeout 边界、空对象默认值）
+				- ③异常与非法输入（10200003/06/14/15/16/18/25/51/54/55/57/58/59/70/401 全码）
+				- ④返回值与类型验证（Promise<Object/R>/Object[]>、结果数组序、超时）
+				- ⑤组合场景（execute + cancel、execute + 监听器、group + Configs）
+				- ⑥重复调用幂等性（非长时任务可多次 execute、group 不可重执行）
+				- ⑦并发跨线程（多任务并发 execute、AsyncRunner/SequenceRunner 并发）
+		- 1.8 executeDelayed(delayTime, task/GenericsTask, priority?)[11+]
+			- ①入参范围覆盖（delayTime >= 0、Task/GenericsTask、priority）
+			- ②边界值测试（delayTime=0、delayTime 大值、长时任务单次）
+			- ③异常与非法输入
+				- 10200028 delayTime < 0
+				- 10200006/14[12+]
+				- 10200051 周期
+				- 10200057 两 API[18+]
+			- ④返回值与类型验证（Promise<Object/R>、延时后执行）
+			- ⑤组合场景（executeDelayed + cancel、+ 四监听器、+ name/isCanceled）
+			- ⑥重复调用幂等性（非长时任务可多次 executeDelayed）
+			- ⑦并发跨线程（多延时任务并发）
+		- 1.9 executePeriodically(period, task/GenericsTask, priority?)[12+]
+			- ①入参范围覆盖（period >= 0、Task/GenericsTask、priority）
+			- ②边界值测试（period=0、period 大值、周期执行次数）
+			- ③异常与非法输入
+				- 10200006/14 序列化/非 concurrent
+				- 10200028 period < 0
+				- 10200050 已执行不能周期
+				- 10200057 两 API[18+]
+			- ④返回值与类型验证（void、周期触发、cancel 取消周期）
+			- ⑤组合场景（+ onReceiveData + sendData 周期上报、+ isCanceled 响应）
+			- ⑥重复调用幂等性（同一周期任务不能多次调用）
+			- ⑦并发跨线程（周期任务不能有依赖、不能入 group/seq/async）
+		- 1.10 cancel(task / group / taskId) 3 重载
+			- 1.10.1 cancel(task: Task)[9+]
+			- 1.10.2 cancel(group: TaskGroup)[10+]
+			- 1.10.3 cancel(taskId: number)[18+]
+				- ①入参范围覆盖（Task/TaskGroup/taskId）
+				- ②边界值测试（执行中/等待队列、未全完成 → undefined、跨线程异步）
+				- ③异常与非法输入
+					- 10200015 不存在
+					- 10200016 执行中[9-17]
+					- 10200018 group 不存在
+					- 10200055 asyncRunner canceled[18+]
+				- ④返回值与类型验证（catch + TaskResult 取结果/异常）
+				- ⑤组合场景（cancel + isCanceled 响应）
+				- ⑥重复调用幂等性
+				- ⑦并发跨线程（跨线程 cancel(taskId) 异步生效）
+		- 1.11 getTaskPoolInfo()[10+] / TaskInfo / ThreadInfo / TaskPoolInfo
+			- ①入参范围覆盖（无参）
+			- ②边界值测试（execute 前/后/多任务时信息变化）
+			- ③异常与非法输入（无显式 @throws）
+			- ④返回值与类型验证（TaskPoolInfo{threadInfos[],taskInfos[]} 全属性断言）
+			- ⑤组合场景（execute → getTaskPoolInfo → tid/taskIds/priority/state、cancel → CANCELED）
+			- ⑥重复调用幂等性（多次调用信息更新）
+			- ⑦并发跨线程（多线程并发时信息一致性）
+		- 1.12 terminateTask(longTask)[12+]
+			- ①入参范围覆盖（LongTask 实例）
+			- ②边界值测试（长时任务完成后 terminate）
+			- ③异常与非法输入（无显式 @throws）
+			- ④返回值与类型验证（void、线程空闲回收）
+			- ⑤组合场景（execute → then → terminateTask 生命周期）
+			- ⑥重复调用幂等性（terminate 后线程回收）
+			- ⑦并发跨线程（长时任务线程持续存在）
+		- 1.13 isConcurrent(func)[12+]
+			- ①入参范围覆盖（@Concurrent 函数、普通函数）
+			- ②边界值测试
+			- ③异常与非法输入（无显式 @throws）
+			- ④返回值与类型验证（boolean、@Concurrent → true、普通 → false）
+			- ⑤组合场景（与 execute/addTask 前置校验联动）
+			- ⑥重复调用幂等性（多次调用一致）
+			- ⑦并发跨线程
+		- 1.14 getTask(taskId, taskName?)[22+]
+			- ①入参范围覆盖（taskId(number)、taskName(string|可选)）
+			- ②边界值测试
+				- taskId=0/-1/1.1（非整数）
+				- 不存在 → undefined
+				- 跨线程 → undefined
+				- name 不匹配 → undefined
+			- ③异常与非法输入（401 taskId 非法类型 null/undefined）
+			- ④返回值与类型验证（Task|undefined、name 匹配返回实例）
+			- ⑤组合场景（getTask → execute 复用 Task、getTask(taskId, task.name) 验证）
+			- ⑥重复调用幂等性（多次 getTask 一致）
+			- ⑦并发跨线程（跨线程 getTask → undefined）
+		- 1.15 Priority enum（HIGH=0/MEDIUM=1/LOW=2/IDLE=3[12+]）
+			- ①入参范围覆盖（HIGH/MEDIUM/LOW/IDLE）
+			- ②边界值测试（默认 MEDIUM、IDLE[12+]）
+			- ③异常与非法输入（无异常）
+			- ④返回值与类型验证（值 0/1/2/3）
+			- ⑤组合场景（全执行器 priority）
+			- ⑥重复调用幂等性（多任务不同优先级执行序）
+			- ⑦并发跨线程（QoS 线程优先级跟随）
+		- 1.16 State enum（WAITING=1/RUNNING=2/CANCELED=3）
+			- ①入参范围覆盖（三值）
+			- ②边界值测试（WAITING → RUNNING → CANCELED 转换）
+			- ③异常与非法输入（无异常）
+			- ④返回值与类型验证（值 1/2/3、valueOf()）
+			- ⑤组合场景（execute → RUNNING、cancel → CANCELED、完成 → WAITING）
+			- ⑥重复调用幂等性（状态机）
+			- ⑦并发跨线程（多任务状态）
+		- 1.17 TaskResult[20+]
+			- ①入参范围覆盖（result?/error?）
+			- ②边界值测试（cancel 后 catch 取结果）
+			- ③异常与非法输入
+			- ④返回值与类型验证（BusinessError<TaskResult> 泛型 catch）
+			- ⑤组合场景（cancel + TaskResult 取 result/error）
+			- ⑥重复调用幂等性
+			- ⑦并发跨线程
+		- 1.18 Configs[24+]
+			- ①入参范围覆盖（priority?/timeout?）
+			- ②边界值测试
+				- timeout 边界
+				- 空对象默认值
+				- timeout < 1 默认 0
+				- timeout > 2^31-1 → 0
+			- ③异常与非法输入（401 configs undefined/非法）
+			- ④返回值与类型验证
+			- ⑤组合场景（execute(task/generics/group, configs) 全联动）
+			- ⑥重复调用幂等性
+			- ⑦并发跨线程
+		- 1.19 CallbackFunction[12+] / CallbackFunctionWithError[12+]
+			- ①入参范围覆盖（() => void / (e: Error) => void）
+			- ②边界值测试
+			- ③异常与非法输入
+			- ④返回值与类型验证
+			- ⑤组合场景（四监听器全触发序）
+			- ⑥重复调用幂等性
+			- ⑦并发跨线程
+	- 2. 稳定性（Stability）
+		- 多 TaskPool 线程动态 import 稳定性
+		- 10 线程共享 group（promise/await 组合）
+		- 多任务 GC/UI 稳定性
+		- 长时任务线程持续稳定性
+		- 循环创建销毁 Task/TaskGroup 稳定性
+		- 大并发（极端 1000+ Task）压力稳定性（缺口）
+	- 3. 性能（Performance）
+		- 多任务 execute 吞吐
+		- 全类型矩阵 × 10 次执行吞吐
+		- 串行/异步队列时延
+		- 延时精度量化
+		- 单接口基线性能基准（N 次 execute 平均时延）（缺口）
+		- 延时精度量化断言（缺口）
+	- 4. 并发安全（Concurrency Safety）
+		- 多 TaskPool 线程并发
+		- AsyncRunner 并发度/丢弃策略
+		- SequenceRunner 串行序保证
+		- Sendable 跨线程引用传递
+		- 监听器嵌套任务并发
+		- 多写者写写数据一致性逐键值断言（缺口）
+		- 跨线程 cancel(taskId)/getTask 异步生效
+	- 5. 兼容性与继承（Compatibility & Inheritance）
+		- TaskGroup 子类化（instanceof/构造/addTask 继承）
+		- LongTask/GenericsTask 继承 Task 多态
+		- @Concurrent 跨文件/.ts/.js
+		- @Sendable 类继承约束
+		- 构造重载兼容（constructor × 2）
+	- 6. 资料与文档符合性（Doc Conformance）
+		- @Concurrent 装饰约束
+		- @Sendable 搭配 setCloneList
+		- 序列化支持类型
+		- 全错误码表符合性（10200003/06/14/15/16/18/22/23/24/25/26/27/28/29/34/50/51/52/54/55/56/57/58/59/70）
+		- 401 在多成员未声明但实测抛 401（文档缺口）
+		- add-after-execute 实测 401 vs 文档声明 10200014（文档缺口）
+		- TaskStateMachineTest 用自定义 mock 枚举非 taskpool.State（需对齐）

@@ -1,0 +1,254 @@
+- concurrent 模块特性 测试设计
+	- 1. 接口测试（Functional）
+		- 1.1 @Concurrent 装饰器与模块化
+			- ①入参范围覆盖
+				- @Concurrent function 在 TS 项目模块（async 返回 / Promise 返回 / TypedArray 参数与返回）
+				- @Concurrent function 在 JS 项目模块（async / Promise / TypedArray）
+				- 模块化 import/export @Concurrent 函数 + TaskPool execute
+				- @Concurrent + @Sendable 装饰器叠加
+				- @Sendable class 约束（extends Sendable / 全成员类型 / const enum 成员）
+				- ArkTSUtils.isSendable(true/false) + instanceof lang.ISendable
+				- @Concurrent 基础用法 + 参数/返回序列化（number/string/collections.Array/Map）
+			- ②边界值测试
+				- 空参 / 多参 @Concurrent function
+				- 嵌套 Sendable 对象
+				- 跨线程大对象 >100KB（SendableGuide）
+			- ③异常与非法输入
+				- @Concurrent 闭包变量拒绝（函数内部调用当前文件Other函数）[缺口]
+				- @Concurrent 仅 .ets 限制 [缺口]
+				- 10200014 非@Concurrent 函数传入 execute/Task/addTask 拒绝 [缺口]
+				- @Concurrent 装饰非 function（class/arrow 表达式）拒绝 [缺口]
+				- SendableConstraints 非-Sendable extends（部分覆盖）
+			- ④返回值与类型验证
+				- Task 返回 number / string / collections.Map / collections.Array
+				- isSendable(instance)===true / 普通对象===false
+				- instanceof ISendable
+			- ⑤组合场景
+				- @Concurrent + TS/JS 项目模块 import/export 全链路
+				- @Concurrent + Promise/async 返回
+				- @Concurrent + AsyncLock 保护
+				- @Sendable + @Concurrent 装饰器叠加
+				- @Sendable class extends Sendable class
+			- ⑥重复调用/幂等性
+				- 多次 execute 同一 @Concurrent 函数结果一致
+				- 多次 import 同一模块行为一致
+			- ⑦并发跨线程
+				- @Concurrent function 在 TaskPool worker 执行
+				- @Sendable class 跨 TaskPool 传递
+				- const enum 成员跨线程可见
+		- 1.2 TaskPool 并发任务特性
+			- ①入参范围覆盖
+				- Task 构造（func+args / name+func+args）
+				- execute(func,args) / execute(task,priority) / execute(group) / execute(task,configs)
+				- executeDelayed(delayTime,task,priority)
+				- executePeriodically(period,task,priority)
+				- AsyncRunner（runningCapacity / waitingCapacity / 命名单例）
+				- SequenceRunner（命名单例 / 串行序）
+				- TaskGroup.addTask（func+args / Task）
+				- Priority HIGH/MEDIUM/LOW/IDLE 全空间
+				- taskType 任务分类（CPU 密集 / IO 密集 / 混合 / 边界）
+			- ②边界值测试
+				- delayTime=0 / 正数
+				- period=0
+				- runningCapacity 边界 / waitingCapacity=0 无限排队
+				- 10 顺序任务线程复用
+				- heavy 任务不阻塞主线程
+			- ③异常与非法输入
+				- cancel 不存在任务抛错（message 断言）
+				- 已取消任务再执行抛错
+				- Worker 无效路径抛错
+				- 10200028 负延迟/周期 [缺口]
+				- 10200050 已执行不可周期 / 10200051 周期重复 [缺口]
+				- 10200055 asyncRunner 已取消 [缺口]
+				- 10200058 task 超时 / 10200070 TaskGroup 超时（Configs timeout）[缺口]
+			- ④返回值与类型验证
+				- Promise<Object> / Promise<Object[]> / Promise<R>
+				- Task.taskId / totalDuration / ioDuration / cpuDuration
+				- Task.isDone() / State(WAITING/RUNNING/CANCELED)
+				- 任务返回 string/number/Array
+			- ⑤组合场景
+				- TaskGroup 批量执行返回结果数组
+				- SequenceRunner 串行序执行
+				- AsyncRunner 并发控制（running=2 执行 5 任务）
+				- Worker + TaskPool 协作
+				- cancel by taskId / executeDelayed + cancel
+			- ⑥重复调用/幂等性
+				- AsyncRunner 命名构造单例同实例
+				- SequenceRunner 命名单例
+				- TaskGroup 复执行
+			- ⑦并发跨线程
+				- AsyncRunner runningCapacity=2 并发 5 任务
+				- TaskPool 线程复用（10 顺序任务）
+				- 并行计算正确性（顺序 vs 并行对比）
+				- CPU 密集任务并行
+		- 1.3 跨线程序列化与对象传递
+			- ①入参范围覆盖
+				- 容器序列化（ArrayList / HashMap / HashSet / TreeSet / LinkedList）
+				- 普通对象（number/string/boolean/Date/RegExp/Error/Map/Set/Array）
+				- ArrayBuffer（transfer / clone / slice）
+				- SharedArrayBuffer + TypedArray（Uint8Array/Int32Array/Int8Array）+ Atomics
+				- Sendable 对象引用传递
+				- ASON.stringify / ASON.parse
+				- collections.Map/Set/Array 跨线程
+			- ②边界值测试
+				- 空 buffer / 空容器
+				- ArrayBuffer.slice 切片
+				- >100KB Sendable 大数据
+				- 16MB 序列化边界（16MB-1/16MB/16MB+1）[缺口]
+			- ③异常与非法输入
+				- 10200006 序列化异常（仅 1 处提及）[薄]
+				- setCloneList + 10200029 transfer+clone 冲突 [缺口]
+				- 非序列化类型（@State/@Prop/@Link）拒绝 [缺口]
+				- >16MB 跨线程报错 [缺口]
+			- ④返回值与类型验证
+				- 跨线程数据完整性（求和 / 长度 / 索引读写）
+				- ArrayBuffer.byteLength（transfer 后归 0）
+				- Atomics.store/load/add/sub
+				- Sendable 引用相等（跨线程同一对象）
+			- ⑤组合场景
+				- setTransferList([]) 拷贝 vs 默认 transfer
+				- ArrayBuffer.slice + TaskGroup 批处理
+				- ASON stringify/parse round-trip
+				- Sendable 引用传递 vs 拷贝
+				- ApplicationContext 共享 transfer
+			- ⑥重复调用/幂等性
+				- 多轮顺序跨线程操作
+				- 多线程同一 Sendable 顺序操作
+			- ⑦并发跨线程
+				- SharedArrayBuffer + Atomics 原子操作
+				- Sendable 跨任务顺序传递
+				- 多线程共享 Sendable
+				- 结构化克隆算法
+		- 1.4 错误信息与错误码
+			- ①入参范围覆盖
+				- 主线程 setTimeout 抛错
+				- 主线程 Promise / then / catch / finally 抛错
+				- 主线程 asyncLock 抛错
+				- frozen Sendable 修改抛错
+			- ②边界值测试
+				- 长错误任务（longErrorTask）
+				- 带数据长任务（longTaskWithData）
+				- 快速顺序错误
+			- ③异常与非法输入
+				- 10200014 非@Concurrent 函数 [缺口]
+				- 10200006 序列化异常 [缺口]
+				- 10200015/10200016/10200055 cancel 错误码 [缺口]
+				- 10200028/10200050/10200051 周期任务错误码 [缺口]
+				- 10200029 transfer+clone 冲突 [缺口]
+				- 10200058/10200070 超时 [缺口]
+				- 10200022/10200023/10200024 sendData/onReceive 错误码 [缺口]
+				- 10200025/10200026/10200027 依赖错误码 [缺口]
+				- throw → execute.catch reject（覆盖，message 断言）
+				- frozen Sendable 修改抛异常（覆盖）
+			- ④返回值与类型验证
+				- errorManager.GlobalError.message / name / stack
+				- errorCaught assertEqual(err) message 断言
+				- [缺口] .code === 102xxxxx 错误码取证
+			- ⑤组合场景
+				- throw → reject 错误传播
+				- errorManager.on/off globalErrorOccurred + globalUnhandledRejectionDetected
+				- TaskPool 任务错误传播到主线程
+				- freeze + transfer + 修改抛异常
+			- ⑥重复调用/幂等性
+				- 多次 freeze 行为一致
+				- 多次错误捕获一致
+			- ⑦并发跨线程
+				- TaskPool 任务内 throw → 主线程 reject
+				- frozen Sendable 在 task 内修改抛异常
+		- 1.5 端到端业务场景
+			- ①入参范围覆盖
+				- AsyncLock 互斥 / ConditionVariable 同步 / SendableLruCache LRU 驱逐
+				- collections.Array 全操作（create/from/push/pop/splice）
+				- Worker 通信 / 调用 / Sendable
+				- RDB 批量数据操作（getRdbStore/executeSql/batchInsert/query）
+				- 全局配置（登录登出 + AsyncLock）
+				- Sendable 模块单例 / 冻结 / 指南
+				- TaskPool 水流分页 + sendData 进度
+				- 定时器 FAQ（setTimeout/setInterval/clear）
+			- ②边界值测试
+				- 空数据查询返回空 Array
+				- >100KB 大数据传输
+				- LRU 容量驱逐边界
+				- 长运行任务 + onexit
+			- ③异常与非法输入
+				- Worker 无效路径抛错（message 断言）
+				- frozen 修改抛异常（回填域4）
+				- ConditionVariable unexpected throw assert
+				- [缺口] 场景内错误码取证
+			- ④返回值与类型验证
+				- query ResultSet / RdbStore
+				- cache get/keys/remove/clear
+				- ping-pong 消息往返
+				- compute 计算结果
+				- callGlobalCallObjectMethod 返回值
+			- ⑤组合场景
+				- RDB + TaskPool + delegator（@kit.ArkData + @kit.ArkTS + @kit.TestKit 三 Kit 聚合）
+				- AsyncLock + GlobalConfig 读写
+				- Worker + TaskPool async 协作
+				- MakeObserved + Sendable + UIState 可观察
+				- 共享模块单例多线程访问
+			- ⑥重复调用/幂等性
+				- 共享模块单例
+				- 多注册可调用对象独立调用
+				- LRU 容量边界稳定
+			- ⑦并发跨线程
+				- 多线程共享模块（via TaskPool）
+				- Worker + TaskPool async 结果回传
+				- 场景内跨线程 Sendable 传递
+	- 2. 稳定性（Stability）
+		- 2.1 模块加载稳定性
+			- TS/JS 项目模块多次 import @Concurrent 函数稳定
+			- 共享模块（use shared）单例生命周期
+		- 2.2 线程生命周期
+			- TaskPool 线程复用（10 顺序任务）
+			- Worker 创建/terminate/onexit
+			- LongTask + terminateTask 线程回收
+		- 2.3 容器序列化稳定性
+			- 5 容器完整链路重复执行
+	- 3. 性能（Performance）
+		- 3.1 并发性能
+			- AsyncRunner runningCapacity 并发控制
+			- TaskPool 并行计算（顺序 vs 并行对比）
+			- heavy 任务不阻塞主线程
+		- 3.2 任务分类性能
+			- taskType CPU/IO/混合任务识别与边界
+		- 3.3 传输性能 [缺口]
+			- 16MB 序列化边界性能取证 [缺口]
+			- Sendable 引用传递 vs 结构化克隆传输对比基准 [缺口]
+	- 4. 并发安全（Concurrency Safety）
+		- 4.1 共享对象读写
+			- SharedArrayBuffer + Atomics 原子操作
+			- 多线程同一 Sendable 顺序操作
+		- 4.2 锁/CV 同步
+			- AsyncLock 互斥保护（EXCLUSIVE/SHARED）
+			- ConditionVariable wait/notifyOne/notifyAll/waitFor
+		- 4.3 并发任务控制
+			- AsyncRunner 并发控制 + 丢弃策略
+			- SequenceRunner 串行序
+			- cancel 进行中任务
+		- 4.4 错误码并发取证 [缺口]
+			- 25+ 声明错误码近乎零覆盖 [缺口]
+			- 10200014/06/15/29/58 code 取证 [缺口]
+	- 5. 兼容性与继承（Compatibility & Inheritance）
+		- 5.1 装饰器兼容性
+			- @Concurrent + @Sendable 叠加
+			- @Concurrent 在 TS/JS 项目模块兼容
+		- 5.2 Sendable 继承兼容性
+			- @Sendable class extends Sendable class
+			- SendableConstraints 非-Sendable extends（部分）
+		- 5.3 约束兼容性 [缺口]
+			- @Concurrent 闭包/.ets-only 约束拒绝 [缺口]
+			- 普通 class 继承 Sendable 拒绝 [缺口]
+	- 6. 资料与文档符合性（Doc Conformance）
+		- 6.1 @Concurrent 装饰器符合性
+			- @Concurrent 基础用法 + 参数/返回序列化（TaskpoolIntroduction）
+			- isConcurrent API 符合性 [缺口]
+		- 6.2 序列化符合性
+			- 5 容器 + 普通对象 + ArrayBuffer/SAB 序列化
+			- 16MB 边界符合性 [缺口]
+		- 6.3 错误码符合性 [缺口]
+			- 25+ 声明错误码取证 [缺口]
+			- errorManager 全局错误捕获符合性
+		- 6.4 端到端业务符合性
+			- @kit.ArkData + @kit.ArkTS + @kit.TestKit 三 Kit 聚合
+			- RDB + Worker + TaskPool 业务全链路
