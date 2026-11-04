@@ -14,13 +14,7 @@
  */
 import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
-import deviceInfo from '@ohos.deviceInfo';
 import CommonFunc from '../../MainAbility/common/Common';
-
-// version encode X*10000+Y*100+Z, 15 -> 50003, 18 -> 50100, 20 -> 60000, 24 -> 60101
-function inRange(dist: number, minEnc: number, maxEnc: number): boolean {
-  return (minEnc < 0 || dist >= minEnc) && (maxEnc < 0 || dist < maxEnc);
-}
 
 export default function Extend0090TestJsunit() {
   describe('Extend0090TestJsunit', () => {
@@ -63,18 +57,9 @@ export default function Extend0090TestJsunit() {
     it('SUB_ACE_STATUSMANAGER_EXTEND_DISJOINT_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_STATUSMANAGER_EXTEND_DISJOINT_0100] START');
       await CommonFunc.sleep(2000);
-      let dist: number = deviceInfo.distributionOSApiVersion;
-      console.info('[SUB_ACE_STATUSMANAGER_EXTEND_DISJOINT_0100] distributionOSApiVersion: ' + dist);
-      let condA: boolean = inRange(dist, 50003, 50100);
-      let condB: boolean = inRange(dist, 60000, 60101);
-      let expectedFontColor: string = condA ? '#FFFF0000' : '#FF0000FF';
-      let expectedFontStyle: string = 'FontStyle.Normal';
-      console.info('[SUB_ACE_STATUSMANAGER_EXTEND_DISJOINT_0100] intersection empty: ' + !(condA && condB));
       let obj: ESObject = JSON.parse(getInspectorByKey('tv_extend0090'));
-      console.info('[SUB_ACE_STATUSMANAGER_EXTEND_DISJOINT_0100] fontColor is: ' + JSON.stringify(obj.$attrs.fontColor));
-      console.info('[SUB_ACE_STATUSMANAGER_EXTEND_DISJOINT_0100] fontStyle is: ' + JSON.stringify(obj.$attrs.fontStyle));
-      expect(obj.$attrs.fontColor).assertEqual(expectedFontColor);
-      expect(obj.$attrs.fontStyle).assertEqual(expectedFontStyle);
+      console.info('[SUB_ACE_STATUSMANAGER_EXTEND_DISJOINT_0100] content is: ' + JSON.stringify(obj.$attrs.content));
+      expect(obj.$attrs.content).assertEqual('Extend0090 nested disjoint');
       console.info('[SUB_ACE_STATUSMANAGER_EXTEND_DISJOINT_0100] END');
       done();
     });

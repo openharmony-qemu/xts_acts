@@ -24,7 +24,7 @@ function customExtend(colorValue: Color) {
 struct Extend0020 {
   build() {
     Column({ space: 20 }) {
-      Text('hello')
+      Text('Extend0020 min 5.0.0 max 6.0.0')
         .id('tv_extend0020')
         .height('5%')
         .fontColor(Color.Blue)

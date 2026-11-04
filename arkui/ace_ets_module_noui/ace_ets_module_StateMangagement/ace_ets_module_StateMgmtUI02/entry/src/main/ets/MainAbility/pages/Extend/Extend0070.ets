@@ -25,7 +25,7 @@ function extendKeyMix(colorValue: Color) {
 struct Extend0070 {
   build() {
     Column({ space: 20 }) {
-      Text('hello')
+      Text('Extend0070 key 12 24')
         .id('tv_extend0070')
         .height('5%')
         .fontColor(Color.Blue)

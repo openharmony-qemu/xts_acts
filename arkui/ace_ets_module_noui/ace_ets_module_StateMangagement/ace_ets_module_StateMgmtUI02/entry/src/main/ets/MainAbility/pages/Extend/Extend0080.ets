@@ -31,7 +31,7 @@ function extendA8(colorValue: Color) {
 struct Extend0080 {
   build() {
     Column({ space: 20 }) {
-      Text('hello')
+      Text('Extend0080 nested overlap')
         .id('tv_extend0080')
         .height('5%')
         .fontColor(Color.Blue)

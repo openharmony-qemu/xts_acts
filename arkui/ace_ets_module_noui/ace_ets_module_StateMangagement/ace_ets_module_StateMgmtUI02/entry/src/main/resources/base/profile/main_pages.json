@@ -1,15 +1,6 @@
 {
   "src": [
     "MainAbility/pages/index/index",
-    "MainAbility/pages/styles/Styles0020",
-    "MainAbility/pages/styles/Styles0030",
-    "MainAbility/pages/styles/Styles0040",
-    "MainAbility/pages/styles/Styles0050",
-    "MainAbility/pages/styles/Styles0060",
-    "MainAbility/pages/styles/Styles0070",
-    "MainAbility/pages/styles/Styles0080",
-    "MainAbility/pages/styles/Styles0090",
-    "MainAbility/pages/styles/Styles0100",
     "MainAbility/pages/Extend/Extend0020",
     "MainAbility/pages/Extend/Extend0030",
     "MainAbility/pages/Extend/Extend0040",

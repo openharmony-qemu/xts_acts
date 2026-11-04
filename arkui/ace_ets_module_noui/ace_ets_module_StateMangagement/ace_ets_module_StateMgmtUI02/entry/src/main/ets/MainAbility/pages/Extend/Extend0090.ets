@@ -32,7 +32,7 @@ function extendA9(colorValue: Color) {
 struct Extend0090 {
   build() {
     Column({ space: 20 }) {
-      Text('hello')
+      Text('Extend0090 nested disjoint')
         .id('tv_extend0090')
         .height('5%')
         .fontColor(Color.Blue)

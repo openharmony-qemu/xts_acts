@@ -24,7 +24,7 @@ function extendOsString(colorValue: Color) {
 struct Extend0060 {
   build() {
     Column({ space: 20 }) {
-      Text('hello')
+      Text('Extend0060 os 5.0.0 6.1.1')
         .id('tv_extend0060')
         .height('5%')
         .fontColor(Color.Blue)

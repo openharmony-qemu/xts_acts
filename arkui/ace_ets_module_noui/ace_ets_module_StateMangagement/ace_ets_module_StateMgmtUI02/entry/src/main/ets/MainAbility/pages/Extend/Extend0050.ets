@@ -25,12 +25,12 @@ function extendMulti(colorValue: Color) {
 struct Extend0050 {
   build() {
     Column({ space: 20 }) {
-      Text('hello')
+      Text('Extend0050 first call site')
         .id('tv_extend0050_first')
         .height('5%')
         .fontColor(Color.Blue)
         .extendMulti(Color.Red)
-      Text('world')
+      Text('Extend0050 second call site')
         .id('tv_extend0050_second')
         .height('5%')
         .fontColor(Color.Gray)

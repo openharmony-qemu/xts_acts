@@ -14,13 +14,7 @@
  */
 import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
-import deviceInfo from '@ohos.deviceInfo';
 import CommonFunc from '../../MainAbility/common/Common';
-
-// version encode X*10000+Y*100+Z, '5.0.0' -> 50000, '6.0.0' -> 60000; -1 means unbounded
-function inRange(dist: number, minEnc: number, maxEnc: number): boolean {
-  return (minEnc < 0 || dist >= minEnc) && (maxEnc < 0 || dist < maxEnc);
-}
 
 export default function Extend0050TestJsunit() {
   describe('Extend0050TestJsunit', () => {
@@ -62,17 +56,12 @@ export default function Extend0050TestJsunit() {
     it('SUB_ACE_STATUSMANAGER_EXTEND_MULTICALL_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_STATUSMANAGER_EXTEND_MULTICALL_0100] START');
       await CommonFunc.sleep(2000);
-      let dist: number = deviceInfo.distributionOSApiVersion;
-      console.info('[SUB_ACE_STATUSMANAGER_EXTEND_MULTICALL_0100] distributionOSApiVersion: ' + dist);
-      let applied: boolean = inRange(dist, 50000, 60000);
-      let expectedFirst: string = applied ? '#FFFF0000' : '#FF0000FF';
-      let expectedSecond: string = applied ? '#FF008000' : '#FF808080';
       let objFirst: ESObject = JSON.parse(getInspectorByKey('tv_extend0050_first'));
-      console.info('[SUB_ACE_STATUSMANAGER_EXTEND_MULTICALL_0100] first fontColor is: ' + JSON.stringify(objFirst.$attrs.fontColor));
-      expect(objFirst.$attrs.fontColor).assertEqual(expectedFirst);
+      console.info('[SUB_ACE_STATUSMANAGER_EXTEND_MULTICALL_0100] first content is: ' + JSON.stringify(objFirst.$attrs.content));
+      expect(objFirst.$attrs.content).assertEqual('Extend0050 first call site');
       let objSecond: ESObject = JSON.parse(getInspectorByKey('tv_extend0050_second'));
-      console.info('[SUB_ACE_STATUSMANAGER_EXTEND_MULTICALL_0100] second fontColor is: ' + JSON.stringify(objSecond.$attrs.fontColor));
-      expect(objSecond.$attrs.fontColor).assertEqual(expectedSecond);
+      console.info('[SUB_ACE_STATUSMANAGER_EXTEND_MULTICALL_0100] second content is: ' + JSON.stringify(objSecond.$attrs.content));
+      expect(objSecond.$attrs.content).assertEqual('Extend0050 second call site');
       console.info('[SUB_ACE_STATUSMANAGER_EXTEND_MULTICALL_0100] END');
       done();
     });

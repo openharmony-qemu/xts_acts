@@ -44,13 +44,13 @@ function extendPlainA10b() {
 struct Extend0100 {
   build() {
     Column({ space: 20 }) {
-      Text('hello')
+      Text('Extend0100 a conditional outer')
         .id('tv_extend0100_a')
         .height('5%')
         .fontColor(Color.Blue)
         .fontStyle(FontStyle.Normal)
         .extendCondA10a()
-      Text('world')
+      Text('Extend0100 b unconditional outer')
         .id('tv_extend0100_b')
         .height('5%')
         .fontColor(Color.Blue)
