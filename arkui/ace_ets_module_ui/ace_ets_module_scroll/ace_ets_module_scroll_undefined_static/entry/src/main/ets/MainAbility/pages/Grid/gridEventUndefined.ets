@@ -72,12 +72,12 @@ struct GridEventUndefined {
           ForEach(this.data, (day: string) => {
             GridItem() {
               Text(day).fontSize(16)
-            }.width(40).height(40).borderWidth(2).borderColor(Color.Red)
+            }.width(40).height('20%').borderWidth(2).borderColor(Color.Red)
           }, (item: string) => item)
         }
         .id('Grid')
         .columnsTemplate('1fr 1fr')
-        .height(200)
+        .height('60%')
         .columnsGap(10)
         .rowsGap(10)
         .onScrollFrameBegin(this.onScrollFrameBeginValue ? undefined : (offset: number, state: ScrollState) => {
@@ -137,6 +137,7 @@ struct GridEventUndefined {
               this.message = 'Hello World';
             })
         }
+        .height('5%')
 
         Row() {
           Button('' + this.onScrollFrameBeginValue)
@@ -155,6 +156,7 @@ struct GridEventUndefined {
               this.onReachStartValue = !this.onReachStartValue
             })
         }
+        .height('5%')
 
         Row() {
           Button('' + this.onReachEndValue)
@@ -173,6 +175,7 @@ struct GridEventUndefined {
               this.onScrollStopValue = !this.onScrollStopValue
             })
         }
+        .height('5%')
 
         Row() {
           Button('' + this.onScrollBarUpdateValue)
@@ -186,6 +189,7 @@ struct GridEventUndefined {
               this.onScrollIndexValue = !this.onScrollIndexValue
             })
         }
+        .height('5%')
 
       }
     }.width('100%').margin({ top: 5 } as Margin)

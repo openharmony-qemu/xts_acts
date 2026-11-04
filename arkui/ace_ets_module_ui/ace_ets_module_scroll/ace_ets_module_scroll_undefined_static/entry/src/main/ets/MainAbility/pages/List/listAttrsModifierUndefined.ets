@@ -145,7 +145,7 @@ struct ListEventPage {
   build() {
     Scroll() {
       Column() {
-        Text(this.myModifier.message)
+        Text(this.myModifier.message).fontSize(9)
           .id('List_text')
         List({ scroller: this.scroller }) {
           ForEach(this.arr, (item: number) => {
@@ -153,7 +153,7 @@ struct ListEventPage {
               Text('Item ' + item)
                 .id('stackFromEnd_' + item)
                 .width('50%')
-                .height(20)
+                .height('35%')
                 .fontSize(12)
                 .textAlign(TextAlign.Center)
             }
@@ -164,7 +164,7 @@ struct ListEventPage {
         .border({ width: 3, color: Color.Red })
         .attributeModifier(this.myModifier)
         .width('80%')
-        .height('20%')
+        .height('25%')
         .id('MyListAttrsModifier')
 
         Blank().height(2)
@@ -181,7 +181,7 @@ struct ListEventPage {
                 .onClick((e: ClickEvent) => {
                   this.scroller.fling(-4000);
                 })
-            }.height('5%')
+            }.height('7%')
             Row() {
               Button('toBottom')
                 .id('List_toBottom')
@@ -200,49 +200,49 @@ struct ListEventPage {
                 .onClick((e: ClickEvent) => {
                   this.myModifier.message = 'Hello World';
                 })
-            }.height('5%')
+            }.height('7%')
             Row() {
               Button('isAlignListItem: ' + this.myModifier.isAlignListItem)
-                .id('List_alignListItem')
+                .id('List_alignListItem').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.myModifier.isAlignListItem = !this.myModifier.isAlignListItem
                 })
               Button('isChainAnimation: ' + this.myModifier.isChainAnimation)
-                .id('List_chainAnimation')
+                .id('List_chainAnimation').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.myModifier.isChainAnimation = !this.myModifier.isChainAnimation
                 })
-            }.height('5%')
+            }.height('7%')
             Row() {
               Button('isContentStartOffset: ' + this.myModifier.isContentStartOffset)
-                .id('List_contentStartOffset')
+                .id('List_contentStartOffset').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.myModifier.isContentStartOffset = !this.myModifier.isContentStartOffset
                 })
               Button('isContentEndOffset: ' + this.myModifier.isContentEndOffset)
-                .id('List_contentEndOffset')
+                .id('List_contentEndOffset').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.myModifier.isContentEndOffset = !this.myModifier.isContentEndOffset
                 })
-            }.height('5%')
+            }.height('7%')
             Button('isDivider: ' + this.myModifier.isDivider)
               .id('List_divider')
               .onClick((e: ClickEvent) => {
                 this.myModifier.isDivider = !this.myModifier.isDivider
               })
-              .height('5%')
+              .height('7%')
             Row() {
               Button('isEdgeEffect: ' + this.myModifier.isEdgeEffect)
-                .id('List_edgeEffect')
+                .id('List_edgeEffect').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.myModifier.isEdgeEffect = !this.myModifier.isEdgeEffect
                 })
               Button('isEdgeEffectOptions: ' + this.myModifier.isEdgeEffectOptions)
-                .id('List_edgeEffectOptions')
+                .id('List_edgeEffectOptions').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.myModifier.isEdgeEffectOptions = !this.myModifier.isEdgeEffectOptions
                 })
-            }.height('5%')
+            }.height('7%')
             Row() {
               Button('isValue: ' + this.myModifier.isValue)
                 .id('List_lanesValue')
@@ -254,92 +254,92 @@ struct ListEventPage {
                 .onClick((e: ClickEvent) => {
                   this.myModifier.isGutter = !this.myModifier.isGutter
                 })
-            }.height('5%')
+            }.height('7%')
             Row() {
               Button('isListDirection: ' + this.myModifier.isListDirection)
-                .id('List_listDirection')
+                .id('List_listDirection').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.myModifier.isListDirection = !this.myModifier.isListDirection
                 })
               Button('isMultiSelectable: ' + this.myModifier.isMultiSelectable)
-                .id('List_multiSelectable')
+                .id('List_multiSelectable').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.myModifier.isMultiSelectable = !this.myModifier.isMultiSelectable
                 })
-            }.height('5%')
+            }.height('7%')
             Row() {
               Button('isOnDidScroll: ' + this.myModifier.isOnDidScroll)
-                .id('List_onDidScroll')
+                .id('List_onDidScroll').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.myModifier.isOnDidScroll = !this.myModifier.isOnDidScroll
                 })
               Button('isOnWillScroll: ' + this.myModifier.isOnWillScroll)
-                .id('List_onWillScroll')
+                .id('List_onWillScroll').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.myModifier.isOnWillScroll = !this.myModifier.isOnWillScroll
                 })
-            }.height('5%')
+            }.height('7%')
 
             Row() {
               Button('isOnReachEnd: ' + this.myModifier.isOnReachEnd)
-                .id('List_onReachEnd')
+                .id('List_onReachEnd').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.myModifier.isOnReachEnd = !this.myModifier.isOnReachEnd
                 })
               Button('isOnReachStart: ' + this.myModifier.isOnReachStart)
-                .id('List_onReachStart')
+                .id('List_onReachStart').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.myModifier.isOnReachStart = !this.myModifier.isOnReachStart
                 })
-            }.height('5%')
+            }.height('7%')
             Row() {
               Button('isOnScrollFrameBegin: ' + this.myModifier.isOnScrollFrameBegin)
-                .id('List_onScrollFrameBegin')
+                .id('List_onScrollFrameBegin').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.myModifier.isOnScrollFrameBegin = !this.myModifier.isOnScrollFrameBegin
                 })
               Button('isOnScrollIndex: ' + this.myModifier.isOnScrollIndex)
-                .id('List_onScrollIndex')
+                .id('List_onScrollIndex').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.myModifier.isOnScrollIndex = !this.myModifier.isOnScrollIndex
                 })
-            }.height('5%')
+            }.height('7%')
             Row() {
               Button('isOnScrollStart: ' + this.myModifier.isOnScrollStart)
-                .id('List_onScrollStart')
+                .id('List_onScrollStart').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.myModifier.isOnScrollStart = !this.myModifier.isOnScrollStart
                 })
               Button('isOnScrollStop: ' + this.myModifier.isOnScrollStop)
-                .id('List_onScrollStop')
+                .id('List_onScrollStop').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.myModifier.isOnScrollStop = !this.myModifier.isOnScrollStop
                 })
-            }.height('5%')
+            }.height('7%')
             Row() {
               Button('isOnScrollVisibleContentChange: ' + this.myModifier.isOnScrollVisibleContentChange)
-                .id('List_onScrollVisibleContentChange')
+                .id('List_onScrollVisibleContentChange').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.myModifier.isOnScrollVisibleContentChange = !this.myModifier.isOnScrollVisibleContentChange
                 })
               Button('isScrollBar: ' + this.myModifier.isScrollBar)
-                .id('List_scrollBar')
+                .id('List_scrollBar').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.myModifier.isScrollBar = !this.myModifier.isScrollBar
                 })
-            }.height('5%')
+            }.height('7%')
             Row() {
               Button('isStackFromEnd: ' + this.myModifier.isStackFromEnd)
-                .id('List_stackFromEnd')
+                .id('List_stackFromEnd').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.myModifier.isStackFromEnd = !this.myModifier.isStackFromEnd
                 })
               Button('isSticky: ' + this.myModifier.isSticky)
-                .id('List_sticky')
+                .id('List_sticky').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.myModifier.isSticky = !this.myModifier.isSticky
                 })
-            }.height('5%')
+            }.height('7%')
           }
         }
         .id('listAttrsModifierUndefined_btn')

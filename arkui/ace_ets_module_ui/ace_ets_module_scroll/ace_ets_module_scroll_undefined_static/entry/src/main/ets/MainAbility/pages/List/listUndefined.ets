@@ -83,7 +83,7 @@ struct ListEventPage {
   build() {
     Scroll() {
       Column() {
-        Text(this.message)
+        Text(this.message).fontSize(9)
           .id('List_text')
         List({ scroller: this.scroller }) {
             ForEach(this.arr, (item: number) => {
@@ -91,7 +91,7 @@ struct ListEventPage {
                 Text('Item ' + item)
                   .id('stackFromEnd_' + item)
                   .width('50%')
-                  .height(20)
+                  .height('35%')
                   .fontSize(12)
                   .textAlign(TextAlign.Center)
               }
@@ -156,7 +156,7 @@ struct ListEventPage {
         .stackFromEnd(this.isStackFromEnd ? true : undefined)
         .sticky(this.isSticky ? StickyStyle.Header : undefined)
         .width('80%')
-        .height('20%')
+        .height('25%')
         .id('MyList')
 
         Blank().height(2)
@@ -173,7 +173,7 @@ struct ListEventPage {
                 .onClick((e: ClickEvent) => {
                   this.scroller.fling(-4000);
                 })
-            }.height('5%')
+            }.height('7%')
             Row() {
               Button('toBottom')
                 .id('List_toBottom')
@@ -192,54 +192,54 @@ struct ListEventPage {
                 .onClick((e: ClickEvent) => {
                   this.message = 'Hello World';
                 })
-            }.height('5%')
+            }.height('7%')
             Row() {
               Button('isAlignListItem: ' + this.isAlignListItem)
-                .id('List_alignListItem')
+                .id('List_alignListItem').width('30%')
                 .onClick((e: ClickEvent) => {
                   this.isAlignListItem = !this.isAlignListItem
                 })
               Button('isChainAnimation: ' + this.isChainAnimation)
-                .id('List_chainAnimation')
+                .id('List_chainAnimation').width('30%')
                 .onClick((e: ClickEvent) => {
                   this.isChainAnimation = !this.isChainAnimation
                 })
               Button('isChildrenMainSize: ' + this.isChildrenMainSize)
-                .id('List_childrenMainSize')
+                .id('List_childrenMainSize').width('30%')
                 .onClick((e: ClickEvent) => {
                   this.isChildrenMainSize = !this.isChildrenMainSize
                 })
-            }.height('5%')
+            }.height('7%')
             Row() {
               Button('isContentStartOffset: ' + this.isContentStartOffset)
-                .id('List_contentStartOffset')
+                .id('List_contentStartOffset').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.isContentStartOffset = !this.isContentStartOffset
                 })
               Button('isContentEndOffset: ' + this.isContentEndOffset)
-                .id('List_contentEndOffset')
+                .id('List_contentEndOffset').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.isContentEndOffset = !this.isContentEndOffset
                 })
-            }.height('5%')
+            }.height('7%')
             Button('isDivider: ' + this.isDivider)
               .id('List_divider')
               .onClick((e: ClickEvent) => {
                 this.isDivider = !this.isDivider
               })
-              .height('5%')
+              .height('7%')
             Row() {
               Button('isEdgeEffect: ' + this.isEdgeEffect)
-                .id('List_edgeEffect')
+                .id('List_edgeEffect').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.isEdgeEffect = !this.isEdgeEffect
                 })
               Button('isEdgeEffectOptions: ' + this.isEdgeEffectOptions)
-                .id('List_edgeEffectOptions')
+                .id('List_edgeEffectOptions').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.isEdgeEffectOptions = !this.isEdgeEffectOptions
                 })
-            }.height('5%')
+            }.height('7%')
             Row() {
               Button('isValue: ' + this.isValue)
                 .id('List_lanesValue')
@@ -251,92 +251,92 @@ struct ListEventPage {
                 .onClick((e: ClickEvent) => {
                   this.isGutter = !this.isGutter
                 })
-            }.height('5%')
+            }.height('7%')
             Row() {
               Button('isListDirection: ' + this.isListDirection)
-                .id('List_listDirection')
+                .id('List_listDirection').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.isListDirection = !this.isListDirection
                 })
               Button('isMultiSelectable: ' + this.isMultiSelectable)
-                .id('List_multiSelectable')
+                .id('List_multiSelectable').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.isMultiSelectable = !this.isMultiSelectable
                 })
-            }.height('5%')
+            }.height('7%')
             Row() {
               Button('isOnDidScroll: ' + this.isOnDidScroll)
-                .id('List_onDidScroll')
+                .id('List_onDidScroll').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.isOnDidScroll = !this.isOnDidScroll
                 })
               Button('isOnWillScroll: ' + this.isOnWillScroll)
-                .id('List_onWillScroll')
+                .id('List_onWillScroll').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.isOnWillScroll = !this.isOnWillScroll
                 })
-            }.height('5%')
+            }.height('7%')
 
             Row() {
               Button('isOnReachEnd: ' + this.isOnReachEnd)
-                .id('List_onReachEnd')
+                .id('List_onReachEnd').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.isOnReachEnd = !this.isOnReachEnd
                 })
               Button('isOnReachStart: ' + this.isOnReachStart)
-                .id('List_onReachStart')
+                .id('List_onReachStart').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.isOnReachStart = !this.isOnReachStart
                 })
-            }.height('5%')
+            }.height('7%')
             Row() {
               Button('isOnScrollFrameBegin: ' + this.isOnScrollFrameBegin)
-                .id('List_onScrollFrameBegin')
+                .id('List_onScrollFrameBegin').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.isOnScrollFrameBegin = !this.isOnScrollFrameBegin
                 })
               Button('isOnScrollIndex: ' + this.isOnScrollIndex)
-                .id('List_onScrollIndex')
+                .id('List_onScrollIndex').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.isOnScrollIndex = !this.isOnScrollIndex
                 })
-            }.height('5%')
+            }.height('7%')
             Row() {
               Button('isOnScrollStart: ' + this.isOnScrollStart)
-                .id('List_onScrollStart')
+                .id('List_onScrollStart').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.isOnScrollStart = !this.isOnScrollStart
                 })
               Button('isOnScrollStop: ' + this.isOnScrollStop)
-                .id('List_onScrollStop')
+                .id('List_onScrollStop').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.isOnScrollStop = !this.isOnScrollStop
                 })
-            }.height('5%')
+            }.height('7%')
             Row() {
               Button('isOnScrollVisibleContentChange: ' + this.isOnScrollVisibleContentChange)
-                .id('List_onScrollVisibleContentChange')
+                .id('List_onScrollVisibleContentChange').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.isOnScrollVisibleContentChange = !this.isOnScrollVisibleContentChange
                 })
               Button('isScrollBar: ' + this.isScrollBar)
-                .id('List_scrollBar')
+                .id('List_scrollBar').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.isScrollBar = !this.isScrollBar
                 })
-            }.height('5%')
+            }.height('7%')
             Row() {
               Button('isStackFromEnd: ' + this.isStackFromEnd)
-                .id('List_stackFromEnd')
+                .id('List_stackFromEnd').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.isStackFromEnd = !this.isStackFromEnd
                 })
               Button('isSticky: ' + this.isSticky)
-                .id('List_sticky')
+                .id('List_sticky').width('50%')
                 .onClick((e: ClickEvent) => {
                   this.isSticky = !this.isSticky
                 })
-            }.height('5%')
+            }.height('7%')
           }
         }
         .id('listUndefined_btn')

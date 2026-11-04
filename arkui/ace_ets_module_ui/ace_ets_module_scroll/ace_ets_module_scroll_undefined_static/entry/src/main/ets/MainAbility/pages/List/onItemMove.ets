@@ -77,7 +77,7 @@ struct Index {
         console.log('xxx onItemMove')
         return true
       } : undefined)
-
+      
       Button('Change').onClick(() => {
         this.isChange = !this.isChange;
       })

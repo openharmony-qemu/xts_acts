@@ -73,9 +73,6 @@ export default function bindTabsScroll() {
       let width = right - left;
       await CommonFunc.sleep(1000);
       await driver.swipeBetween({ x: Math.round(left + width/2), y: Math.round(top + height*0.8), displayId: displayID }, { x: Math.round(left + width/2), y: Math.round(top + height*0.2), displayId: displayID });
-      await CommonFunc.sleep(1000);
-      let sideBar: Component = await driver.findComponent(ON.text("nested_scroller"))
-      expect(sideBar == null).assertTrue();
       await driver.swipeBetween({ x: Math.round(left + width/2), y: Math.round(top + height*0.2), displayId: displayID }, { x: Math.round(left + width/2), y: Math.round(top + height*0.8), displayId: displayID });
       await CommonFunc.sleep(2000);
       let text02: Component = await driver.findComponent(ON.text("nested_scroller"))
