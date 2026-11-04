@@ -1841,5 +1841,1832 @@ export default function ScopeHelperIntersectTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SCOPEHELPER_INTERSECT_1100
+     * @tc.name testScopeIsectStr001
+     * @tc.desc Verify ScopeHelper intersect with string bounds and values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testScopeIsectStr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart01Test56StrTemp>(
+          new ScopeHelperIntersectPart01Test56StrTemp('apple'),
+          new ScopeHelperIntersectPart01Test56StrTemp('orange'),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperIntersectPart01Test56StrTemp>(
+          new ScopeHelperIntersectPart01Test56StrTemp('banana'),
+          new ScopeHelperIntersectPart01Test56StrTemp('pear'),
+        );
+        let result = scope.intersect(arg);
+        let actual: string = result.toString();
+        let expected: string = '[banana, orange]';
+        expect(actual).assertEqual(expected);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SCOPEHELPER_INTERSECT_1200
+     * @tc.name testScopeIsectFloatDouble001
+     * @tc.desc Verify ScopeHelper intersect with float and double bounds
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testScopeIsectFloatDouble001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart01Test62DblTemp>(
+          new ScopeHelperIntersectPart01Test62DblTemp(1.5),
+          new ScopeHelperIntersectPart01Test62DblTemp(3.25),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperIntersectPart01Test62DblTemp>(
+          new ScopeHelperIntersectPart01Test62DblTemp(2.25),
+          new ScopeHelperIntersectPart01Test62DblTemp(4.75),
+        );
+        let result = scope.intersect(arg);
+        let actual: string = result.toString();
+        let expected: string = '[2.25, 3.25]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart01Test62DblTemp>(
+          new ScopeHelperIntersectPart01Test62DblTemp(0.5),
+          new ScopeHelperIntersectPart01Test62DblTemp(4.5),
+        );
+        let result = scope.intersect(
+          new ScopeHelperIntersectPart01Test62DblTemp(2.5),
+          new ScopeHelperIntersectPart01Test62DblTemp(5.5),
+        );
+        let actual: string = result.toString();
+        let expected: string = '[2.5, 4.5]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart01Test62DblTemp>(
+          new ScopeHelperIntersectPart01Test62DblTemp(1.5),
+          new ScopeHelperIntersectPart01Test62DblTemp(3.5),
+        );
+        let result = scope.intersect(
+          new ScopeHelperIntersectPart01Test62DblTemp(0.5),
+          new ScopeHelperIntersectPart01Test62DblTemp(2.5),
+        );
+        let actual: string = result.toString();
+        let expected: string = '[1.5, 2.5]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart01Test62DblTemp>(
+          new ScopeHelperIntersectPart01Test62DblTemp(-3.5),
+          new ScopeHelperIntersectPart01Test62DblTemp(-1.5),
+        );
+        let result = scope.intersect(
+          new ScopeHelperIntersectPart01Test62DblTemp(-2.5),
+          new ScopeHelperIntersectPart01Test62DblTemp(2.5),
+        );
+        let actual: string = result.toString();
+        let expected: string = '[-2.5, -1.5]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperClampPart03TestMissingDoubleWrap>(
+          new ScopeHelperClampPart03TestMissingDoubleWrap(1.5),
+          new ScopeHelperClampPart03TestMissingDoubleWrap(9.5),
+        );
+        let actual = range.intersect(
+          new util.ScopeHelper<ScopeHelperClampPart03TestMissingDoubleWrap>(
+            new ScopeHelperClampPart03TestMissingDoubleWrap(2.5),
+            new ScopeHelperClampPart03TestMissingDoubleWrap(8.5),
+          ),
+        );
+        let actualA = range.intersect(
+          new ScopeHelperClampPart03TestMissingDoubleWrap(2.5),
+          new ScopeHelperClampPart03TestMissingDoubleWrap(8.5),
+        );
+        let actualB: string = actual.toString();
+        let expected = actualA.toString();
+        expect(actualB).assertEqual("[2.5, 8.5]");
+        expect(actualB).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperClampPart03TestMissingDoubleWrap>(
+          new ScopeHelperClampPart03TestMissingDoubleWrap(1.5),
+          new ScopeHelperClampPart03TestMissingDoubleWrap(9.5),
+        );
+        let actual = range.intersect(
+          new util.ScopeHelper<ScopeHelperClampPart03TestMissingDoubleWrap>(
+            new ScopeHelperClampPart03TestMissingDoubleWrap(2.5),
+            new ScopeHelperClampPart03TestMissingDoubleWrap(8.5),
+          ),
+        );
+        let actualA = range.intersect(
+          new ScopeHelperClampPart03TestMissingDoubleWrap(2.5),
+          new ScopeHelperClampPart03TestMissingDoubleWrap(8.5),
+        );
+        let actualB = actual.getUpper().getVal();
+        let expected = actualA.getUpper().getVal();
+        expect(actualB).assertEqual(8.5);
+        expect(actualB).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperClampPart03TestMissingDoubleWrap>(
+          new ScopeHelperClampPart03TestMissingDoubleWrap(-9.5),
+          new ScopeHelperClampPart03TestMissingDoubleWrap(-1.5),
+        );
+        let actual = range.intersect(
+          new util.ScopeHelper<ScopeHelperClampPart03TestMissingDoubleWrap>(
+            new ScopeHelperClampPart03TestMissingDoubleWrap(-8.5),
+            new ScopeHelperClampPart03TestMissingDoubleWrap(-2.5),
+          ),
+        );
+        let actualA = range.intersect(
+          new ScopeHelperClampPart03TestMissingDoubleWrap(-8.5),
+          new ScopeHelperClampPart03TestMissingDoubleWrap(-2.5),
+        );
+        let actualB: string = actual.toString();
+        let expected = actualA.toString();
+        expect(actualB).assertEqual("[-8.5, -2.5]");
+        expect(actualB).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperClampPart03TestMissingDoubleWrap>(
+          new ScopeHelperClampPart03TestMissingDoubleWrap(1.0),
+          new ScopeHelperClampPart03TestMissingDoubleWrap(2.0),
+        );
+        let count = 0;
+        try {
+          range.intersect(
+            new util.ScopeHelper<ScopeHelperClampPart03TestMissingDoubleWrap>(
+              new ScopeHelperClampPart03TestMissingDoubleWrap(3.0),
+              new ScopeHelperClampPart03TestMissingDoubleWrap(4.0),
+            ),
+          );
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+          count++;
+        }
+        try {
+          range.intersect(
+            new ScopeHelperClampPart03TestMissingDoubleWrap(3.0),
+            new ScopeHelperClampPart03TestMissingDoubleWrap(4.0),
+          );
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+          count++;
+        }
+        expect(count).assertEqual(2);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SCOPEHELPER_INTERSECT_1300
+     * @tc.name testScopeIsectLong001
+     * @tc.desc Verify ScopeHelper intersect with long bounds and values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testScopeIsectLong001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart01Test59LongTemp>(
+          new ScopeHelperIntersectPart01Test59LongTemp(1),
+          new ScopeHelperIntersectPart01Test59LongTemp(9000000000000000),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperIntersectPart01Test59LongTemp>(
+          new ScopeHelperIntersectPart01Test59LongTemp(5000000000000000),
+          new ScopeHelperIntersectPart01Test59LongTemp(9000000000000000),
+        );
+        let result = scope.intersect(arg);
+        let actual: string = result.toString();
+        let expected: string = '[5000000000000000, 9000000000000000]';
+        expect(actual).assertEqual(expected);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SCOPEHELPER_INTERSECT_1400
+     * @tc.name testScopeIsectInt001
+     * @tc.desc Verify ScopeHelper intersect with int bounds and values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testScopeIsectInt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(-2147483648),
+          new ScopeHelperIntersectPart03TestMissingTemperature(2147483647),
+        );
+        let result = range.intersect(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        expect(result.getLower().getTemp()).assertEqual(30);
+        expect(result.getUpper().getTemp()).assertEqual(40);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(-2147483648),
+          new ScopeHelperIntersectPart03TestMissingTemperature(2147483647),
+        );
+        let result = range.intersect(
+          new ScopeHelperIntersectPart03TestMissingTemperature(-2147483647),
+          new ScopeHelperIntersectPart03TestMissingTemperature(2147483646),
+        );
+        expect(result.getLower().getTemp()).assertEqual(-2147483647);
+        expect(result.getUpper().getTemp()).assertEqual(2147483646);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(2147483646),
+          new ScopeHelperIntersectPart03TestMissingTemperature(2147483647),
+        );
+        let result = range.intersect(
+          new ScopeHelperIntersectPart03TestMissingTemperature(2147483646),
+          new ScopeHelperIntersectPart03TestMissingTemperature(2147483647),
+        );
+        expect(result.getLower().getTemp()).assertEqual(2147483646);
+        expect(result.getUpper().getTemp()).assertEqual(2147483647);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SCOPEHELPER_INTERSECT_1500
+     * @tc.name testScopeIsectCustom001
+     * @tc.desc Verify ScopeHelper intersect with custom comparable types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testScopeIsectCustom001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let scope = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let result = scope.intersect(arg);
+        let actual: string = result.toString();
+        let expected: string = '[30, 40]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(35),
+          new ScopeHelperExpandPart03TestMissingTemperature(45),
+        );
+        let result = scope.intersect(arg);
+        let second: util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature> = result.intersect(
+          new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+            new ScopeHelperExpandPart03TestMissingTemperature(38),
+            new ScopeHelperExpandPart03TestMissingTemperature(50),
+          ),
+        );
+        let actual: string = second.toString();
+        let expected: string = '[38, 40]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart01Test80PointTemp>(
+          new ScopeHelperIntersectPart01Test80PointTemp(1, 1),
+          new ScopeHelperIntersectPart01Test80PointTemp(2, 3),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperIntersectPart01Test80PointTemp>(
+          new ScopeHelperIntersectPart01Test80PointTemp(0, 3),
+          new ScopeHelperIntersectPart01Test80PointTemp(2, 2),
+        );
+        let result = scope.intersect(arg);
+        let actual: string = result.toString();
+        let expected: string = '[(0,3), (2,2)]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart02Test27TempInt>(
+          new ScopeHelperIntersectPart02Test27TempInt(30),
+          new ScopeHelperIntersectPart02Test27TempInt(40),
+        );
+        let eps = new ScopeHelperIntersectPart02Test7Endpoints();
+        let result = scope.intersect(eps.lower, eps.upper);
+        let actual: string = result.toString();
+        let expected: string = '[35, 40]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart02Test79TempPoint>(
+          new ScopeHelperIntersectPart02Test79TempPoint(1, 2),
+          new ScopeHelperIntersectPart02Test79TempPoint(3, 4),
+        );
+        let result = scope.intersect(
+          new ScopeHelperIntersectPart02Test79TempPoint(2, 3),
+          new ScopeHelperIntersectPart02Test79TempPoint(4, 5),
+        );
+        let actual: string = result.toString();
+        let expected: string = '[5, 7]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart02Test79TempPoint>(
+          new ScopeHelperIntersectPart02Test79TempPoint(1, 2),
+          new ScopeHelperIntersectPart02Test79TempPoint(3, 4),
+        );
+        let result = scope.intersect(
+          new ScopeHelperIntersectPart02Test79TempPoint(1, 2),
+          new ScopeHelperIntersectPart02Test79TempPoint(4, 5),
+        );
+        let actual: string = result.toString();
+        let expected: string = '[3, 7]';
+        expect(actual).assertEqual(expected);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SCOPEHELPER_INTERSECT_1600
+     * @tc.name testScopeIsectSpecial001
+     * @tc.desc Verify ScopeHelper intersect with special format content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testScopeIsectSpecial001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let sharedLower = new ScopeHelperExpandPart03TestMissingTemperature(30);
+        let scope = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          sharedLower,
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          sharedLower,
+          new ScopeHelperExpandPart03TestMissingTemperature(35),
+        );
+        let result = scope.intersect(arg);
+        let actual: string = result.toString();
+        let expected: string = '[30, 35]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let rangeFir = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(35),
+          new ScopeHelperIntersectPart03TestMissingTemperature(39),
+        );
+        let actual = range.intersect(rangeFir);
+        let actualA = range.intersect(rangeFir);
+        actual.getLower().setTemp(73);
+        let actualB = actualA.getLower().getTemp();
+        let expected: int = 73;
+        expect(actualB).assertEqual(expected);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SCOPEHELPER_INTERSECT_1700
+     * @tc.name testScopeIsectBoundary001
+     * @tc.desc Verify ScopeHelper intersect with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testScopeIsectBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart01Test59LongTemp>(
+          new ScopeHelperIntersectPart01Test59LongTemp(1),
+          new ScopeHelperIntersectPart01Test59LongTemp(9223372036854775807),
+        );
+        let result = scope.intersect(
+          new ScopeHelperIntersectPart01Test59LongTemp(9223372036854775806),
+          new ScopeHelperIntersectPart01Test59LongTemp(9223372036854775807),
+        );
+        let actual: string = result.toString();
+        let expected: string = '[9223372036854775806, 9223372036854775807]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart01Test59LongTemp>(
+          new ScopeHelperIntersectPart01Test59LongTemp(-9223372036854775808),
+          new ScopeHelperIntersectPart01Test59LongTemp(0),
+        );
+        let result = scope.intersect(
+          new ScopeHelperIntersectPart01Test59LongTemp(-9223372036854775808),
+          new ScopeHelperIntersectPart01Test59LongTemp(-5),
+        );
+        let actual: string = result.toString();
+        let expected: string = '[-9223372036854775808, -5]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart01Test70BigTemp>(
+          new ScopeHelperIntersectPart01Test70BigTemp(1n),
+          new ScopeHelperIntersectPart01Test70BigTemp(9223372036854775807n),
+        );
+        let result = scope.intersect(
+          new ScopeHelperIntersectPart01Test70BigTemp(9223372036854775806n),
+          new ScopeHelperIntersectPart01Test70BigTemp(9223372036854775807n),
+        );
+        let actual: string = result.toString();
+        let expected: string = '[9223372036854775806, 9223372036854775807]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingLongWrap>(
+          new ScopeHelperIntersectPart03TestMissingLongWrap(10),
+          new ScopeHelperIntersectPart03TestMissingLongWrap(20),
+        );
+        let count = 0;
+        try {
+          range.intersect(
+            new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingLongWrap>(
+              new ScopeHelperIntersectPart03TestMissingLongWrap(30),
+              new ScopeHelperIntersectPart03TestMissingLongWrap(40),
+            ),
+          );
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+          count++;
+        }
+        try {
+          range.intersect(
+            new ScopeHelperIntersectPart03TestMissingLongWrap(30),
+            new ScopeHelperIntersectPart03TestMissingLongWrap(40),
+          );
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+          count++;
+        }
+        expect(count).assertEqual(2);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SCOPEHELPER_INTERSECT_1800
+     * @tc.name testScopeIsectConsistency001
+     * @tc.desc Verify ScopeHelper intersect state consistency and independence
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testScopeIsectConsistency001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let first = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        ).intersect(
+          new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+            new ScopeHelperExpandPart03TestMissingTemperature(35),
+            new ScopeHelperExpandPart03TestMissingTemperature(45),
+          ),
+        );
+        let result = first.intersect(
+          new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+            new ScopeHelperExpandPart03TestMissingTemperature(32),
+            new ScopeHelperExpandPart03TestMissingTemperature(38),
+          ),
+        );
+        let actual: string = result.toString();
+        let expected: string = '[35, 38]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(35),
+          new ScopeHelperExpandPart03TestMissingTemperature(45),
+        );
+        let result = scope.intersect(arg);
+        let actual = result.getLower().getTemp();
+        let expected: int = 35;
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(35),
+          new ScopeHelperExpandPart03TestMissingTemperature(45),
+        );
+        let result = scope.intersect(arg);
+        let actual = result.getUpper().getTemp();
+        let expected: int = 40;
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(35),
+          new ScopeHelperExpandPart03TestMissingTemperature(45),
+        );
+        let actualA = scope.intersect(arg);
+        let actualB = arg.intersect(scope);
+        let actual: string = actualA.toString();
+        let expected = actualB.toString();
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(38),
+          new ScopeHelperExpandPart03TestMissingTemperature(39),
+        );
+        let result = scope.intersect(arg);
+        let actual = result.getLower().getTemp();
+        let expected: int = 38;
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(25),
+          new ScopeHelperExpandPart03TestMissingTemperature(35),
+        );
+        let result = scope.intersect(arg);
+        let actual = result.getUpper().getTemp();
+        let expected: int = 35;
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(35),
+          new ScopeHelperExpandPart03TestMissingTemperature(45),
+        );
+        let actualA = scope.intersect(arg);
+        let result = actualA.intersect(arg);
+        let actual: string = result.toString();
+        let expected: string = '[35, 40]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart02Test27TempInt>(
+          new ScopeHelperIntersectPart02Test27TempInt(30),
+          new ScopeHelperIntersectPart02Test27TempInt(40),
+        );
+        let result = scope
+          .intersect(new ScopeHelperIntersectPart02Test27TempInt(35), new ScopeHelperIntersectPart02Test27TempInt(45))
+          .intersect(new ScopeHelperIntersectPart02Test27TempInt(38), new ScopeHelperIntersectPart02Test27TempInt(42));
+        let actual: string = result.toString();
+        let expected: string = '[38, 40]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart02Test27TempInt>(
+          new ScopeHelperIntersectPart02Test27TempInt(30),
+          new ScopeHelperIntersectPart02Test27TempInt(40),
+        );
+        let result = scope.intersect(
+          new ScopeHelperIntersectPart02Test27TempInt(35),
+          new ScopeHelperIntersectPart02Test27TempInt(45),
+        );
+        expect(result === scope).assertFalse();
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let actual = range.intersect(
+          new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+            new ScopeHelperIntersectPart03TestMissingTemperature(35),
+            new ScopeHelperIntersectPart03TestMissingTemperature(39),
+          ),
+        );
+        let strOut = actual.toString();
+        expect(strOut).assertEqual("[35, 39]");
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SCOPEHELPER_INTERSECT_1900
+     * @tc.name testScopeIsectConsistency002
+     * @tc.desc Verify ScopeHelper intersect state consistency and independence
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testScopeIsectConsistency002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let r = range.intersect(
+          new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+            new ScopeHelperIntersectPart03TestMissingTemperature(35),
+            new ScopeHelperIntersectPart03TestMissingTemperature(39),
+          ),
+        );
+        let actualB = r.getUpper().getTemp();
+        let expected: int = 39;
+        expect(actualB).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let r = range.intersect(
+          new ScopeHelperIntersectPart03TestMissingTemperature(35),
+          new ScopeHelperIntersectPart03TestMissingTemperature(39),
+        );
+        let actualB = r.getLower().getTemp();
+        let expected: int = 35;
+        expect(actualB).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let r = range.intersect(
+          new ScopeHelperIntersectPart03TestMissingTemperature(25),
+          new ScopeHelperIntersectPart03TestMissingTemperature(45),
+        );
+        let actualB: string = r.toString();
+        let expected: string = '[30, 40]';
+        expect(actualB).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let r = range.intersect(
+          new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+            new ScopeHelperIntersectPart03TestMissingTemperature(25),
+            new ScopeHelperIntersectPart03TestMissingTemperature(45),
+          ),
+        );
+        let actualB: string = r.toString();
+        let expected: string = '[30, 40]';
+        expect(actualB).assertEqual(expected);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SCOPEHELPER_INTERSECT_2000
+     * @tc.name testScopeIsectBasic001
+     * @tc.desc Verify ScopeHelper intersect with numeric bounds
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testScopeIsectBasic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let lower = new ScopeHelperExpandPart03TestMissingTemperature(30);
+        let upper = new ScopeHelperExpandPart03TestMissingTemperature(40);
+        let scope = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(lower, upper);
+        let argLower = new ScopeHelperExpandPart03TestMissingTemperature(35);
+        let argUpper = new ScopeHelperExpandPart03TestMissingTemperature(45);
+        let arg = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(argLower, argUpper);
+        let result = scope.intersect(arg);
+        let actual: string = result.toString();
+        let expected: string = '[35, 40]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(35),
+          new ScopeHelperExpandPart03TestMissingTemperature(39),
+        );
+        let result = scope.intersect(arg);
+        let actual: string = result.toString();
+        let expected: string = '[35, 39]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(32),
+          new ScopeHelperExpandPart03TestMissingTemperature(38),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let result = scope.intersect(arg);
+        let actual: string = result.toString();
+        let expected: string = '[32, 38]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(35),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let result = scope.intersect(arg);
+        let actual: string = result.toString();
+        let expected: string = '[35, 40]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(-40),
+          new ScopeHelperExpandPart03TestMissingTemperature(-30),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(-35),
+          new ScopeHelperExpandPart03TestMissingTemperature(-25),
+        );
+        let result = scope.intersect(arg);
+        let actual: string = result.toString();
+        let expected: string = '[-35, -30]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(-10),
+          new ScopeHelperExpandPart03TestMissingTemperature(10),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(0),
+          new ScopeHelperExpandPart03TestMissingTemperature(20),
+        );
+        let result = scope.intersect(arg);
+        let actual: string = result.toString();
+        let expected: string = '[0, 10]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(35),
+          new ScopeHelperExpandPart03TestMissingTemperature(39),
+        );
+        scope.intersect(arg);
+        let actual: string = scope.toString();
+        let expected: string = '[30, 40]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(35),
+          new ScopeHelperExpandPart03TestMissingTemperature(39),
+        );
+        scope.intersect(arg);
+        let actual: string = arg.toString();
+        let expected: string = '[35, 39]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let result = scope.intersect(scope);
+        let actual: string = result.toString();
+        let expected: string = '[30, 40]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let actualA = scope.intersect(
+          new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+            new ScopeHelperExpandPart03TestMissingTemperature(35),
+            new ScopeHelperExpandPart03TestMissingTemperature(45),
+          ),
+        );
+        let actualB = scope.intersect(
+          new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+            new ScopeHelperExpandPart03TestMissingTemperature(25),
+            new ScopeHelperExpandPart03TestMissingTemperature(35),
+          ),
+        );
+        let actual: string = actualA.toString();
+        let expected: string = '[35, 40]';
+        expect(actual).assertEqual(expected);
+        let actualC: string = actualB.toString();
+        let expectedA: string = '[30, 35]';
+        expect(actualC).assertEqual(expectedA);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SCOPEHELPER_INTERSECT_2100
+     * @tc.name testScopeIsectBasic002
+     * @tc.desc Verify ScopeHelper intersect with numeric bounds
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testScopeIsectBasic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let argLower = new ScopeHelperExpandPart03TestMissingTemperature(35);
+        let scope = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          argLower,
+          new ScopeHelperExpandPart03TestMissingTemperature(39),
+        );
+        let result = scope.intersect(arg);
+        let actual = result.getLower();
+        let expected = argLower;
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart01Test66ByteTemp>(
+          new ScopeHelperIntersectPart01Test66ByteTemp(Int.toByte(1)),
+          new ScopeHelperIntersectPart01Test66ByteTemp(Int.toByte(100)),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperIntersectPart01Test66ByteTemp>(
+          new ScopeHelperIntersectPart01Test66ByteTemp(Int.toByte(10)),
+          new ScopeHelperIntersectPart01Test66ByteTemp(Int.toByte(120)),
+        );
+        let result = scope.intersect(arg);
+        let actual: string = result.toString();
+        let expected: string = '[10, 100]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart01Test68ShortTemp>(
+          new ScopeHelperIntersectPart01Test68ShortTemp(Int.toShort(1)),
+          new ScopeHelperIntersectPart01Test68ShortTemp(Int.toShort(1000)),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperIntersectPart01Test68ShortTemp>(
+          new ScopeHelperIntersectPart01Test68ShortTemp(Int.toShort(500)),
+          new ScopeHelperIntersectPart01Test68ShortTemp(Int.toShort(2000)),
+        );
+        let result = scope.intersect(arg);
+        let actual: string = result.toString();
+        let expected: string = '[500, 1000]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart01Test75RegExpTemp>(
+          new ScopeHelperIntersectPart01Test75RegExpTemp(new RegExp('a', 'g')),
+          new ScopeHelperIntersectPart01Test75RegExpTemp(new RegExp('z', 'g')),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperIntersectPart01Test75RegExpTemp>(
+          new ScopeHelperIntersectPart01Test75RegExpTemp(new RegExp('m', 'g')),
+          new ScopeHelperIntersectPart01Test75RegExpTemp(new RegExp('y', 'g')),
+        );
+        let result = scope.intersect(arg);
+        let actual: string = result.toString();
+        let expected: string = '[/m/g, /y/g]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let thisLower = new ScopeHelperIntersectPart01Test75RegExpTemp(new RegExp('a', 'g'));
+        let argLower = new ScopeHelperIntersectPart01Test75RegExpTemp(new RegExp('a', 'g'));
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart01Test75RegExpTemp>(
+          thisLower,
+          new ScopeHelperIntersectPart01Test75RegExpTemp(new RegExp('z', 'g')),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperIntersectPart01Test75RegExpTemp>(
+          argLower,
+          new ScopeHelperIntersectPart01Test75RegExpTemp(new RegExp('y', 'g')),
+        );
+        let result = scope.intersect(arg);
+        let actual: string = result.toString();
+        let expected: string = '[/a/g, /y/g]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart01Test83ArrTemp>(
+          new ScopeHelperIntersectPart01Test83ArrTemp([1, 2]),
+          new ScopeHelperIntersectPart01Test83ArrTemp([1, 2, 3, 4, 5]),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperIntersectPart01Test83ArrTemp>(
+          new ScopeHelperIntersectPart01Test83ArrTemp([7, 8, 9]),
+          new ScopeHelperIntersectPart01Test83ArrTemp([7, 8, 9, 10]),
+        );
+        let result = scope.intersect(arg);
+        let actual: string = result.toString();
+        let expected: string = '[3, 4]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let m1: Map<string, int> = new Map<string, int>();
+        m1.set('a', 1);
+        let m4: Map<string, int> = new Map<string, int>();
+        m4.set('a', 1);
+        m4.set('b', 2);
+        m4.set('c', 3);
+        m4.set('d', 4);
+        let m2: Map<string, int> = new Map<string, int>();
+        m2.set('x', 1);
+        m2.set('y', 2);
+        let m3: Map<string, int> = new Map<string, int>();
+        m3.set('x', 1);
+        m3.set('y', 2);
+        m3.set('z', 3);
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart01Test85MapTemp>(
+          new ScopeHelperIntersectPart01Test85MapTemp(m1),
+          new ScopeHelperIntersectPart01Test85MapTemp(m4),
+        );
+        let arg = new util.ScopeHelper<ScopeHelperIntersectPart01Test85MapTemp>(
+          new ScopeHelperIntersectPart01Test85MapTemp(m2),
+          new ScopeHelperIntersectPart01Test85MapTemp(m3),
+        );
+        let result = scope.intersect(arg);
+        let actual: string = result.toString();
+        let expected: string = '[2, 3]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart02Test27TempInt>(
+          new ScopeHelperIntersectPart02Test27TempInt(30),
+          new ScopeHelperIntersectPart02Test27TempInt(40),
+        );
+        let result = scope.intersect(
+          new ScopeHelperIntersectPart02Test27TempInt(36),
+          new ScopeHelperIntersectPart02Test27TempInt(48),
+        );
+        let actual: string = result.toString();
+        let expected: string = '[36, 40]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart01Test56StrTemp>(
+          new ScopeHelperIntersectPart01Test56StrTemp('a'),
+          new ScopeHelperIntersectPart01Test56StrTemp('c'),
+        );
+        let result = scope.intersect(
+          new ScopeHelperIntersectPart01Test56StrTemp('b'),
+          new ScopeHelperIntersectPart01Test56StrTemp('d'),
+        );
+        let actual: string = result.toString();
+        let expected: string = '[b, c]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart02Test27TempInt>(
+          new ScopeHelperIntersectPart02Test27TempInt(30),
+          new ScopeHelperIntersectPart02Test27TempInt(40),
+        );
+        let result = scope.intersect(
+          new ScopeHelperIntersectPart02Test27TempInt(25),
+          new ScopeHelperIntersectPart02Test27TempInt(40),
+        );
+        let actual: string = result.toString();
+        let expected: string = '[30, 40]';
+        expect(actual).assertEqual(expected);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SCOPEHELPER_INTERSECT_2200
+     * @tc.name testScopeIsectBasic003
+     * @tc.desc Verify ScopeHelper intersect with numeric bounds
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testScopeIsectBasic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart02Test27TempInt>(
+          new ScopeHelperIntersectPart02Test27TempInt(-40),
+          new ScopeHelperIntersectPart02Test27TempInt(-30),
+        );
+        let result = scope.intersect(
+          new ScopeHelperIntersectPart02Test27TempInt(-45),
+          new ScopeHelperIntersectPart02Test27TempInt(-35),
+        );
+        let actual: string = result.toString();
+        let expected: string = '[-40, -35]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart02Test27TempInt>(
+          new ScopeHelperIntersectPart02Test27TempInt(30),
+          new ScopeHelperIntersectPart02Test27TempInt(40),
+        );
+        let actualB = scope.intersect(
+          new ScopeHelperIntersectPart02Test27TempInt(35),
+          new ScopeHelperIntersectPart02Test27TempInt(39),
+        );
+        let actualA = scope.intersect(
+          new util.ScopeHelper<ScopeHelperIntersectPart02Test27TempInt>(
+            new ScopeHelperIntersectPart02Test27TempInt(35),
+            new ScopeHelperIntersectPart02Test27TempInt(39),
+          ),
+        );
+        let actual: string = actualB.toString();
+        let expected = actualA.toString();
+        expect(actual).assertEqual('[35, 39]');
+        expect(expected).assertEqual('[35, 39]');
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart02Test27TempInt>(
+          new ScopeHelperIntersectPart02Test27TempInt(30),
+          new ScopeHelperIntersectPart02Test27TempInt(40),
+        );
+        let result = scope.intersect(
+          new ScopeHelperIntersectPart02Test27TempInt(32),
+          new ScopeHelperIntersectPart02Test27TempInt(38),
+        );
+        let actual: string = result.toString();
+        let expected: string = '[32, 38]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart02Test27TempInt>(
+          new ScopeHelperIntersectPart02Test27TempInt(30),
+          new ScopeHelperIntersectPart02Test27TempInt(40),
+        );
+        let result = scope.intersect(
+          new ScopeHelperIntersectPart02Test27TempInt(35),
+          new ScopeHelperIntersectPart02Test27TempInt(39),
+        );
+        expect(result.toString()).assertEqual('[35, 39]');
+        expect(scope.toString()).assertEqual('[30, 40]');
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart02Test27TempInt>(
+          new ScopeHelperIntersectPart02Test27TempInt(30),
+          new ScopeHelperIntersectPart02Test27TempInt(40),
+        );
+        let result = scope
+          .intersect(new ScopeHelperIntersectPart02Test27TempInt(35), new ScopeHelperIntersectPart02Test27TempInt(39))
+          .intersect(new ScopeHelperIntersectPart02Test27TempInt(36), new ScopeHelperIntersectPart02Test27TempInt(37));
+        let actual: string = result.toString();
+        let expected: string = '[36, 37]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart01Test66ByteTemp>(
+          new ScopeHelperIntersectPart01Test66ByteTemp(-128),
+          new ScopeHelperIntersectPart01Test66ByteTemp(127),
+        );
+        let result = scope.intersect(
+          new ScopeHelperIntersectPart01Test66ByteTemp(0),
+          new ScopeHelperIntersectPart01Test66ByteTemp(100),
+        );
+        let actual: string = result.toString();
+        let expected: string = '[0, 100]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart01Test66ByteTemp>(
+          new ScopeHelperIntersectPart01Test66ByteTemp(-128),
+          new ScopeHelperIntersectPart01Test66ByteTemp(127),
+        );
+        let result = scope.intersect(
+          new ScopeHelperIntersectPart01Test66ByteTemp(126),
+          new ScopeHelperIntersectPart01Test66ByteTemp(127),
+        );
+        let actual: string = result.toString();
+        let expected: string = '[126, 127]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart01Test68ShortTemp>(
+          new ScopeHelperIntersectPart01Test68ShortTemp(-32768),
+          new ScopeHelperIntersectPart01Test68ShortTemp(32767),
+        );
+        let result = scope.intersect(
+          new ScopeHelperIntersectPart01Test68ShortTemp(0),
+          new ScopeHelperIntersectPart01Test68ShortTemp(1000),
+        );
+        let actual: string = result.toString();
+        let expected: string = '[0, 1000]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart01Test70BigTemp>(
+          new ScopeHelperIntersectPart01Test70BigTemp(1n),
+          new ScopeHelperIntersectPart01Test70BigTemp(5n),
+        );
+        let result = scope.intersect(
+          new ScopeHelperIntersectPart01Test70BigTemp(3n),
+          new ScopeHelperIntersectPart01Test70BigTemp(7n),
+        );
+        let actual: string = result.toString();
+        let expected: string = '[3, 5]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart02Test66TempBool>(
+          new ScopeHelperIntersectPart02Test66TempBool(false),
+          new ScopeHelperIntersectPart02Test66TempBool(true),
+        );
+        let result = scope.intersect(
+          new ScopeHelperIntersectPart02Test66TempBool(false),
+          new ScopeHelperIntersectPart02Test66TempBool(true),
+        );
+        let actual: string = result.toString();
+        let expected: string = '[false, true]';
+        expect(actual).assertEqual(expected);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SCOPEHELPER_INTERSECT_2300
+     * @tc.name testScopeIsectBasic004
+     * @tc.desc Verify ScopeHelper intersect with numeric bounds
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testScopeIsectBasic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart01Test75RegExpTemp>(
+          new ScopeHelperIntersectPart01Test75RegExpTemp(new RegExp('a', 'g')),
+          new ScopeHelperIntersectPart01Test75RegExpTemp(new RegExp('c', 'g')),
+        );
+        let result = scope.intersect(
+          new ScopeHelperIntersectPart01Test75RegExpTemp(new RegExp('b', 'g')),
+          new ScopeHelperIntersectPart01Test75RegExpTemp(new RegExp('d', 'g')),
+        );
+        let actual: string = result.toString();
+        let expected: string = '[/b/g, /c/g]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart02Test82TempRect>(
+          new ScopeHelperIntersectPart02Test82TempRect(10, 5),
+          new ScopeHelperIntersectPart02Test82TempRect(20, 9),
+        );
+        let result = scope.intersect(
+          new ScopeHelperIntersectPart02Test82TempRect(15, 1),
+          new ScopeHelperIntersectPart02Test82TempRect(25, 2),
+        );
+        let actual: string = result.toString();
+        let expected: string = '[15, 20]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart01Test83ArrTemp>(
+          new ScopeHelperIntersectPart01Test83ArrTemp([1, 2]),
+          new ScopeHelperIntersectPart01Test83ArrTemp([1, 2, 3, 4, 5]),
+        );
+        let result = scope.intersect(
+          new ScopeHelperIntersectPart01Test83ArrTemp([1, 2, 3]),
+          new ScopeHelperIntersectPart01Test83ArrTemp([1, 2, 3, 4]),
+        );
+        let actual: string = result.toString();
+        let expected: string = '[3, 4]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let m1: Map<string, int> = new Map<string, int>();
+        m1.set('k', 1);
+        let m3: Map<string, int> = new Map<string, int>();
+        m3.set('k1', 1);
+        m3.set('k2', 2);
+        m3.set('k3', 3);
+        let scope = new util.ScopeHelper<ScopeHelperIntersectPart01Test85MapTemp>(
+          new ScopeHelperIntersectPart01Test85MapTemp(m1),
+          new ScopeHelperIntersectPart01Test85MapTemp(m3),
+        );
+        let m2: Map<string, int> = new Map<string, int>();
+        m2.set('a', 1);
+        m2.set('b', 2);
+        let m4: Map<string, int> = new Map<string, int>();
+        m4.set('a', 1);
+        m4.set('b', 2);
+        m4.set('c', 3);
+        m4.set('d', 4);
+        let result = scope.intersect(
+          new ScopeHelperIntersectPart01Test85MapTemp(m2),
+          new ScopeHelperIntersectPart01Test85MapTemp(m4),
+        );
+        let actual: string = result.toString();
+        let expected: string = '[2, 3]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let actual = range.intersect(
+          new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+            new ScopeHelperIntersectPart03TestMissingTemperature(35),
+            new ScopeHelperIntersectPart03TestMissingTemperature(39),
+          ),
+        );
+        let actualA = range.intersect(
+          new ScopeHelperIntersectPart03TestMissingTemperature(35),
+          new ScopeHelperIntersectPart03TestMissingTemperature(39),
+        );
+        let actualB: string = actual.toString();
+        let expected = actualA.toString();
+        expect(actualB).assertEqual("[35, 39]");
+        expect(actualB).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let r = range.intersect(
+          new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+            new ScopeHelperIntersectPart03TestMissingTemperature(35),
+            new ScopeHelperIntersectPart03TestMissingTemperature(39),
+          ),
+        );
+        r.getLower().setTemp(11);
+        let actualB = range.getLower().getTemp();
+        let expected: int = 30;
+        expect(actualB).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let r = range.intersect(
+          new ScopeHelperIntersectPart03TestMissingTemperature(35),
+          new ScopeHelperIntersectPart03TestMissingTemperature(39),
+        );
+        r.getLower().setTemp(22);
+        let actualB = range.getLower().getTemp();
+        let expected: int = 30;
+        expect(actualB).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let r = range.intersect(range);
+        let actualB: string = r.toString();
+        let expected: string = '[30, 40]';
+        expect(actualB).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let mid = range.intersect(
+          new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+            new ScopeHelperIntersectPart03TestMissingTemperature(35),
+            new ScopeHelperIntersectPart03TestMissingTemperature(50),
+          ),
+        );
+        let r = mid.intersect(
+          new ScopeHelperIntersectPart03TestMissingTemperature(33),
+          new ScopeHelperIntersectPart03TestMissingTemperature(37),
+        );
+        let actualB: string = r.toString();
+        let expected: string = '[35, 37]';
+        expect(actualB).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let mid = range.intersect(
+          new ScopeHelperIntersectPart03TestMissingTemperature(35),
+          new ScopeHelperIntersectPart03TestMissingTemperature(50),
+        );
+        let r = mid.intersect(
+          new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+            new ScopeHelperIntersectPart03TestMissingTemperature(33),
+            new ScopeHelperIntersectPart03TestMissingTemperature(37),
+          ),
+        );
+        let actualB: string = r.toString();
+        let expected: string = '[35, 37]';
+        expect(actualB).assertEqual(expected);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SCOPEHELPER_INTERSECT_2400
+     * @tc.name testScopeIsectBasic005
+     * @tc.desc Verify ScopeHelper intersect with numeric bounds
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testScopeIsectBasic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let actual = range.intersect(
+          new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+            new ScopeHelperIntersectPart03TestMissingTemperature(35),
+            new ScopeHelperIntersectPart03TestMissingTemperature(50),
+          ),
+        );
+        let actualA = range.intersect(
+          new ScopeHelperIntersectPart03TestMissingTemperature(35),
+          new ScopeHelperIntersectPart03TestMissingTemperature(50),
+        );
+        let actualB = actual.getLower().getTemp();
+        let expected = actualA.getLower().getTemp();
+        expect(actualB).assertEqual(35);
+        expect(actualB).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let r = range.intersect(
+          new ScopeHelperIntersectPart03TestMissingTemperature(35),
+          new ScopeHelperIntersectPart03TestMissingTemperature(50),
+        );
+        let actualB = r.getLower().getTemp();
+        let expected: int = 35;
+        expect(actualB).assertEqual(expected);
+        let actualC = r.getUpper().getTemp();
+        let expectedA: int = 40;
+        expect(actualC).assertEqual(expectedA);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let count = 0;
+        try {
+          range.intersect(
+            new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+              new ScopeHelperIntersectPart03TestMissingTemperature(41),
+              new ScopeHelperIntersectPart03TestMissingTemperature(50),
+            ),
+          );
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+          count++;
+        }
+        try {
+          range.intersect(
+            new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+              new ScopeHelperIntersectPart03TestMissingTemperature(55),
+              new ScopeHelperIntersectPart03TestMissingTemperature(60),
+            ),
+          );
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+          count++;
+        }
+        expect(count).assertEqual(2);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let count = 0;
+        try {
+          range.intersect(
+            new ScopeHelperIntersectPart03TestMissingTemperature(41),
+            new ScopeHelperIntersectPart03TestMissingTemperature(50),
+          );
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+          count++;
+        }
+        try {
+          range.intersect(
+            new ScopeHelperIntersectPart03TestMissingTemperature(5),
+            new ScopeHelperIntersectPart03TestMissingTemperature(20),
+          );
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+          count++;
+        }
+        expect(count).assertEqual(2);
+        let actualB = range.getLower().getTemp();
+        let expected: int = 30;
+        expect(actualB).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let count = 0;
+        try {
+          range.intersect(
+            new ScopeHelperIntersectPart03TestMissingTemperature(41),
+            new ScopeHelperIntersectPart03TestMissingTemperature(50),
+          );
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+          count++;
+        }
+        try {
+          range.intersect(
+            new ScopeHelperIntersectPart03TestMissingTemperature(41),
+            new ScopeHelperIntersectPart03TestMissingTemperature(50),
+          );
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+          count++;
+        }
+        expect(count).assertEqual(2);
+        let actualB: string = range.toString();
+        let expected: string = '[30, 40]';
+        expect(actualB).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let r = range.intersect(
+          new ScopeHelperIntersectPart03TestMissingTemperature(35),
+          new ScopeHelperIntersectPart03TestMissingTemperature(39),
+        );
+        expect(r.getUpper().getTemp()).assertEqual(39);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let r = range.intersect(
+          new ScopeHelperIntersectPart03TestMissingTemperature(35),
+          new ScopeHelperIntersectPart03TestMissingTemperature(39),
+        );
+        let actualB: string = r.toString();
+        let expected: string = '[35, 39]';
+        expect(actualB).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let actual = range.intersect(
+          new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+            new ScopeHelperIntersectPart03TestMissingTemperature(35),
+            new ScopeHelperIntersectPart03TestMissingTemperature(50),
+          ),
+        );
+        let actualA = actual.intersect(
+          new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+            new ScopeHelperIntersectPart03TestMissingTemperature(37),
+            new ScopeHelperIntersectPart03TestMissingTemperature(60),
+          ),
+        );
+        let actualB: string = actualA.toString();
+        let expected: string = '[37, 40]';
+        expect(actualB).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let actual = range.intersect(
+          new ScopeHelperIntersectPart03TestMissingTemperature(35),
+          new ScopeHelperIntersectPart03TestMissingTemperature(50),
+        );
+        let actualA = actual.intersect(
+          new ScopeHelperIntersectPart03TestMissingTemperature(37),
+          new ScopeHelperIntersectPart03TestMissingTemperature(60),
+        );
+        let actualB: string = actualA.toString();
+        let expected: string = '[37, 40]';
+        expect(actualB).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let r = range.intersect(
+          new ScopeHelperIntersectPart03TestMissingTemperature(35),
+          new ScopeHelperIntersectPart03TestMissingTemperature(39),
+        );
+        expect(r.toString()).assertEqual("[35, 39]");
+        r.getLower().setTemp(44);
+        let actualB = r.getLower().getTemp();
+        let expected: int = 44;
+        expect(actualB).assertEqual(expected);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SCOPEHELPER_INTERSECT_2500
+     * @tc.name testScopeIsectBasic006
+     * @tc.desc Verify ScopeHelper intersect with numeric bounds
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testScopeIsectBasic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let r = range.intersect(
+          new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+            new ScopeHelperIntersectPart03TestMissingTemperature(35),
+            new ScopeHelperIntersectPart03TestMissingTemperature(50),
+          ),
+        );
+        let actualB = r.getUpper().getTemp();
+        let expected: int = 40;
+        expect(actualB).assertEqual(expected);
+
+      }
+      {
+        let lower = new ScopeHelperIntersectPart03TestMissingTemperature(35);
+        let rangeFir = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          lower,
+          new ScopeHelperIntersectPart03TestMissingTemperature(39),
+        );
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let r = range.intersect(rangeFir);
+        lower.setTemp(51);
+        let actualB = r.getLower().getTemp();
+        let expected: int = 51;
+        expect(actualB).assertEqual(expected);
+
+      }
+      {
+        let up = new ScopeHelperIntersectPart03TestMissingTemperature(40);
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          up,
+        );
+        let r = range.intersect(
+          new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+            new ScopeHelperIntersectPart03TestMissingTemperature(35),
+            new ScopeHelperIntersectPart03TestMissingTemperature(50),
+          ),
+        );
+        up.setTemp(53);
+        let actualB = r.getUpper().getTemp();
+        let expected: int = 53;
+        expect(actualB).assertEqual(expected);
+
+      }
+      {
+        let lo = new ScopeHelperIntersectPart03TestMissingTemperature(30);
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          lo,
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let r = range.intersect(
+          new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+            new ScopeHelperIntersectPart03TestMissingTemperature(25),
+            new ScopeHelperIntersectPart03TestMissingTemperature(35),
+          ),
+        );
+        lo.setTemp(54);
+        let actualB = r.getLower().getTemp();
+        let expected: int = 54;
+        expect(actualB).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let rangeFir = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(35),
+          new ScopeHelperIntersectPart03TestMissingTemperature(39),
+        );
+        let actual = range.intersect(rangeFir);
+        expect(actual.getLower().getTemp()).assertEqual(35);
+        expect(actual.getUpper().getTemp()).assertEqual(39);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let r = range.intersect(
+          new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+            new ScopeHelperIntersectPart03TestMissingTemperature(35),
+            new ScopeHelperIntersectPart03TestMissingTemperature(50),
+          ),
+        );
+        r.getLower().setTemp(74);
+        let actualB = range.getLower().getTemp();
+        let expected: int = 30;
+        expect(actualB).assertEqual(expected);
+
+      }
+      {
+        let lo = new ScopeHelperIntersectPart03TestMissingTemperature(35);
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let r = range.intersect(lo, new ScopeHelperIntersectPart03TestMissingTemperature(50));
+        lo.setTemp(75);
+        let actualB = r.getLower().getTemp();
+        let expected: int = 75;
+        expect(actualB).assertEqual(expected);
+
+      }
+      {
+        let up = new ScopeHelperIntersectPart03TestMissingTemperature(35);
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(40),
+        );
+        let r = range.intersect(new ScopeHelperIntersectPart03TestMissingTemperature(25), up);
+        up.setTemp(92);
+        let actualB = r.getUpper().getTemp();
+        let expected: int = 92;
+        expect(actualB).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+          new ScopeHelperIntersectPart03TestMissingTemperature(-30),
+          new ScopeHelperIntersectPart03TestMissingTemperature(-10),
+        );
+        let actual = range.intersect(
+          new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingTemperature>(
+            new ScopeHelperIntersectPart03TestMissingTemperature(-25),
+            new ScopeHelperIntersectPart03TestMissingTemperature(-15),
+          ),
+        );
+        let actualA = range.intersect(
+          new ScopeHelperIntersectPart03TestMissingTemperature(-25),
+          new ScopeHelperIntersectPart03TestMissingTemperature(-15),
+        );
+        let actualB: string = actual.toString();
+        let expected = actualA.toString();
+        expect(actualB).assertEqual("[-25, -15]");
+        expect(actualB).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingLongWrap>(
+          new ScopeHelperIntersectPart03TestMissingLongWrap(300),
+          new ScopeHelperIntersectPart03TestMissingLongWrap(400),
+        );
+        let actual = range.intersect(
+          new util.ScopeHelper<ScopeHelperIntersectPart03TestMissingLongWrap>(
+            new ScopeHelperIntersectPart03TestMissingLongWrap(350),
+            new ScopeHelperIntersectPart03TestMissingLongWrap(390),
+          ),
+        );
+        let actualA = range.intersect(
+          new ScopeHelperIntersectPart03TestMissingLongWrap(350),
+          new ScopeHelperIntersectPart03TestMissingLongWrap(390),
+        );
+        let actualB: string = actual.toString();
+        let expected = actualA.toString();
+        expect(actualB).assertEqual("[350, 390]");
+        expect(actualB).assertEqual(expected);
+
+      }
+    });
+
   });
 }
