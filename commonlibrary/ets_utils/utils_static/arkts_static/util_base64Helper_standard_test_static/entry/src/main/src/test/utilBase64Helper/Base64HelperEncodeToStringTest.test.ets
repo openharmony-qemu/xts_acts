@@ -1769,5 +1769,1792 @@ export default function Base64HelperEncodeToStringTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_ENCODE_TO_STRING_1600
+     * @tc.name testB64ToStrUrlSafe004
+     * @tc.desc Verify Base64Helper encodeToString and encodeToStringSync with URL-safe type variants
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64ToStrUrlSafe004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let base64Helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([0x61, 0x62]);
+        let result: string = base64Helper.encodeToStringSync(src, util.Type.BASIC_URL_SAFE);
+        expect(result).assertEqual("YWI");
+        expect(result.length).assertEqual(3);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([0x61, 0x62, 0x63, 0x64]);
+        let result: string = base64Helper.encodeToStringSync(src, util.Type.BASIC_URL_SAFE);
+        expect(result).assertEqual("YWJjZA");
+        expect(result.length).assertEqual(6);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([104, 101, 108, 108, 111]);
+        let result: string = base64Helper.encodeToStringSync(src, util.Type.BASIC_URL_SAFE);
+        expect(result).assertEqual("aGVsbG8");
+        expect(result.length).assertEqual(7);
+
+      }
+      {
+        let helper = new util.Base64Helper();
+        let src = new Uint8Array([]);
+        let result = helper.encodeToStringSync(src, util.Type.BASIC_URL_SAFE);
+        expect(result).assertEqual('');
+        expect(result.length).assertEqual(0);
+
+      }
+      {
+        let helper = new util.Base64Helper();
+        let src = new Uint8Array([0x41]);
+        let result = helper.encodeToStringSync(src, util.Type.BASIC_URL_SAFE);
+        expect(result).assertEqual("QQ");
+        expect(result.length).assertEqual(2);
+
+      }
+      {
+        let helper = new util.Base64Helper();
+        let src = new Uint8Array([0xff]);
+        let result = helper.encodeToStringSync(src, util.Type.BASIC_URL_SAFE);
+        expect(result).assertEqual("_w");
+        expect(result.length).assertEqual(2);
+
+      }
+      {
+        let helper = new util.Base64Helper();
+        let src = new Uint8Array([0xfb]);
+        let result = helper.encodeToStringSync(src, util.Type.BASIC_URL_SAFE);
+        expect(result).assertEqual("-w");
+        expect(result.length).assertEqual(2);
+
+      }
+      {
+        let helper = new util.Base64Helper();
+        let src = new Uint8Array([0x00]);
+        let result = helper.encodeToStringSync(src, util.Type.BASIC_URL_SAFE);
+        expect(result).assertEqual("AA");
+        expect(result.length).assertEqual(2);
+
+      }
+      {
+        let helper = new util.Base64Helper();
+        let src = new Uint8Array([0x41, 0x42]);
+        let result = helper.encodeToStringSync(src, util.Type.BASIC_URL_SAFE);
+        expect(result).assertEqual("QUI");
+        expect(result.length).assertEqual(3);
+
+      }
+      {
+        let helper = new util.Base64Helper();
+        let src = new Uint8Array([0xff, 0xff, 0xff]);
+        let result = helper.encodeToStringSync(src, util.Type.BASIC_URL_SAFE);
+        expect(result).assertEqual("____");
+        expect(result.length).assertEqual(4);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_ENCODE_TO_STRING_1700
+     * @tc.name testB64ToStrUrlSafe005
+     * @tc.desc Verify Base64Helper encodeToString and encodeToStringSync with URL-safe type variants
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64ToStrUrlSafe005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let helper = new util.Base64Helper();
+        let src = new Uint8Array([0xfb, 0xfb, 0xfb]);
+        let result = helper.encodeToStringSync(src, util.Type.BASIC_URL_SAFE);
+        expect(result).assertEqual("-_v7");
+        expect(result.length).assertEqual(4);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_ENCODE_TO_STRING_1800
+     * @tc.name testB64ToStrBoundary001
+     * @tc.desc Verify Base64Helper encodeToString and encodeToStringSync with boundary sizes and values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64ToStrBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      {
+        let big: Uint8Array = new Uint8Array(100);
+        for (let i = 0; i < 100; i++) {
+          big.$_set(i, 97);
+        }
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(big);
+        let crIndex: number = val.indexOf('\r');
+        let expectedCrIndex: int = -1;
+        expect(crIndex).assertEqual(expectedCrIndex);
+        expect(val.length).assertEqual(136);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array(0));
+        expect(val).assertEqual('');
+        expect(val.length).assertEqual(0);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array(0);
+        let val = await b64.encodeToString(src, util.Type.BASIC);
+        let syncVal: string = b64.encodeToStringSync(src, util.Type.BASIC);
+        expect(val).assertEqual(syncVal);
+        expect(val.length).assertEqual(0);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array(100);
+        src.fill(0x61);
+        let val = await b64.encodeToString(src);
+        expect(val.length).assertEqual(136);
+        let firstChar: number = val.charCodeAt(0);
+        let expectedFirstChar: number = 89;
+        expect(firstChar).assertEqual(expectedFirstChar);
+        let lastChar: number = val.charCodeAt(135);
+        let expectedLastChar: number = 61;
+        expect(lastChar).assertEqual(expectedLastChar);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array(0));
+        expect(r).assertEqual('');
+        expect(r.length).assertEqual(0);
+
+      }
+      {
+        let helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array(100);
+        src.fill(0x61);
+        let result: string = helper.encodeToStringSync(src);
+        expect(result.length).assertEqual(136);
+        let firstChar: number = result.charCodeAt(0);
+        let expectedFirstChar: number = 89;
+        expect(firstChar).assertEqual(expectedFirstChar);
+        let lastChar: number = result.charCodeAt(135);
+        let expectedLastChar: number = 61;
+        expect(lastChar).assertEqual(expectedLastChar);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_ENCODE_TO_STRING_1900
+     * @tc.name testB64ToStrBasic001
+     * @tc.desc Verify Base64Helper encodeToString and encodeToStringSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64ToStrBasic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([77, 97, 110]));
+        expect(val).assertEqual("TWFu");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([77, 97, 110]), util.Type.BASIC);
+        expect(val).assertEqual("TWFu");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let syncVal = b64.encodeToStringSync(new Uint8Array([115, 49, 51]));
+        let val = await b64.encodeToString(new Uint8Array([115, 49, 51]));
+        expect(val).assertEqual(syncVal);
+        expect(syncVal.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([77]), util.Type.BASIC);
+        expect(val).assertEqual("TQ==");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([255]), util.Type.BASIC);
+        expect(val).assertEqual("/w==");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([77, 97]), util.Type.BASIC);
+        expect(val).assertEqual("TWE=");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([97, 98, 99]), util.Type.BASIC);
+        expect(val).assertEqual("YWJj");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([77, 97, 110, 1]), util.Type.BASIC);
+        expect(val).assertEqual("TWFuAQ==");
+        expect(val.length).assertEqual(8);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([77, 97, 110, 77, 97]), util.Type.BASIC);
+        expect(val).assertEqual("TWFuTWE=");
+        expect(val.length).assertEqual(8);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([77, 97, 110, 77, 97, 110]), util.Type.BASIC);
+        expect(val).assertEqual("TWFuTWFu");
+        expect(val.length).assertEqual(8);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_ENCODE_TO_STRING_2000
+     * @tc.name testB64ToStrBasic002
+     * @tc.desc Verify Base64Helper encodeToString and encodeToStringSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64ToStrBasic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([77, 97, 110, 77, 97, 110, 1]), util.Type.BASIC);
+        expect(val).assertEqual("TWFuTWFuAQ==");
+        expect(val.length).assertEqual(12);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0, 0, 0, 0, 0, 0]), util.Type.BASIC);
+        expect(val).assertEqual("AAAAAAAA");
+        expect(val.length).assertEqual(8);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([9]), util.Type.BASIC);
+        expect(val).assertEqual("CQ==");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([32]), util.Type.BASIC);
+        expect(val).assertEqual("IA==");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([43]), util.Type.BASIC);
+        expect(val).assertEqual("Kw==");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([62]), util.Type.BASIC);
+        expect(val).assertEqual("Pg==");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([65]), util.Type.BASIC);
+        expect(val).assertEqual("QQ==");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([67]), util.Type.BASIC);
+        expect(val).assertEqual("Qw==");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([127]), util.Type.BASIC);
+        expect(val).assertEqual("fw==");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([251]), util.Type.BASIC);
+        expect(val).assertEqual("+w==");
+        expect(val.length).assertEqual(4);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_ENCODE_TO_STRING_2100
+     * @tc.name testB64ToStrBasic003
+     * @tc.desc Verify Base64Helper encodeToString and encodeToStringSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64ToStrBasic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0xf8, 0, 0]), util.Type.BASIC);
+        expect(val).assertEqual("+AAA");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0xfc, 0, 0]), util.Type.BASIC);
+        expect(val).assertEqual("/AAA");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0xe2, 0x98, 0x83]), util.Type.BASIC);
+        expect(val).assertEqual("4piD");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([97, 98, 0]), util.Type.BASIC);
+        expect(val).assertEqual("YWIA");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([97, 0, 99, 0]), util.Type.BASIC);
+        expect(val).assertEqual("YQBjAA==");
+        expect(val.length).assertEqual(8);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0x80, 0x81]), util.Type.BASIC);
+        expect(val).assertEqual("gIE=");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([13, 10]), util.Type.BASIC);
+        expect(val).assertEqual("DQo=");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([9, 10]), util.Type.BASIC);
+        expect(val).assertEqual("CQo=");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0, 0, 1]), util.Type.BASIC);
+        expect(val).assertEqual("AAAB");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0x41, 0x42, 0x43]), util.Type.BASIC);
+        expect(val).assertEqual("QUJD");
+        expect(val.length).assertEqual(4);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_ENCODE_TO_STRING_2200
+     * @tc.name testB64ToStrBasic004
+     * @tc.desc Verify Base64Helper encodeToString and encodeToStringSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64ToStrBasic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0x2b, 0x2f, 0x3d]), util.Type.BASIC);
+        expect(val).assertEqual("Ky89");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0xff, 0]), util.Type.BASIC);
+        expect(val).assertEqual("/wA=");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0x80, 0, 0]), util.Type.BASIC);
+        expect(val).assertEqual("gAAA");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([255, 255, 255, 255, 255, 255]), util.Type.BASIC);
+        expect(val).assertEqual("////////");
+        expect(val.length).assertEqual(8);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0xfb, 0xff, 0xff]), util.Type.BASIC);
+        expect(val).assertEqual("+///");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([104, 105, 106, 107]), util.Type.BASIC);
+        expect(val).assertEqual("aGlqaw==");
+        expect(val.length).assertEqual(8);
+
+      }
+      {
+        let big: Uint8Array = new Uint8Array(100);
+        for (let i = 0; i < 100; i++) {
+          big.$_set(i, 97);
+        }
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(big, util.Type.BASIC);
+        let outLen: int = val.length;
+        let expectedOutLen: int = 136;
+        expect(outLen).assertEqual(expectedOutLen);
+        expect(val).assertEqual("YWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYQ==");
+
+      }
+      {
+        let arr: number[] = [];
+        for (let i = 0; i < 256; i++) {
+          arr.push(i);
+        }
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array(arr), util.Type.BASIC);
+        let outLen: int = val.length;
+        let expectedOutLen: int = 344;
+        expect(outLen).assertEqual(expectedOutLen);
+        expect(val.charCodeAt(0)).assertEqual(65);
+
+      }
+      {
+        let buf: Uint8Array = new Uint8Array([0, 77, 97, 110, 0]);
+        let view = buf.subarray(1, 4);
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(view);
+        expect(val).assertEqual("TWFu");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let buf: Uint8Array = new Uint8Array([0, 77, 97, 110, 0]);
+        let view = buf.subarray(0, 5);
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(view);
+        expect(val).assertEqual("AE1hbgA=");
+        expect(val.length).assertEqual(8);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_ENCODE_TO_STRING_2300
+     * @tc.name testB64ToStrBasic005
+     * @tc.desc Verify Base64Helper encodeToString and encodeToStringSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64ToStrBasic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      {
+        let buf: Uint8Array = new Uint8Array([1, 2, 3, 251]);
+        let view = buf.subarray(3, 4);
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(view);
+        expect(val).assertEqual("+w==");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([115, 49, 51]);
+        let val = await b64.encodeToString(src);
+        let czEzIndex: number = val.indexOf("czEz");
+        let expectedCzEzIndex: int = 0;
+        expect(czEzIndex).assertEqual(expectedCzEzIndex);
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0, 0, 0]), util.Type.BASIC);
+        expect(val).assertEqual("AAAA");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0x61, 0x62, 0x00, 0x63]), util.Type.BASIC);
+        expect(val).assertEqual("YWIAYw==");
+        expect(val.length).assertEqual(8);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([240, 159, 152, 128]), util.Type.BASIC);
+        expect(val).assertEqual("8J+YgA==");
+        expect(val.length).assertEqual(8);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0xfb, 0xef]), util.Type.BASIC);
+        expect(val).assertEqual("++8=");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0xef, 0xbb, 0xbf]), util.Type.BASIC);
+        expect(val).assertEqual("77u/");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0x80]), util.Type.BASIC);
+        expect(val).assertEqual("gA==");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0x3e, 0x01, 0x02]), util.Type.BASIC);
+        expect(val).assertEqual("PgEC");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100]), util.Type.BASIC);
+        expect(val).assertEqual("aGVsbG8gd29ybGQ=");
+        expect(val.length).assertEqual(16);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_ENCODE_TO_STRING_2400
+     * @tc.name testB64ToStrBasic006
+     * @tc.desc Verify Base64Helper encodeToString and encodeToStringSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64ToStrBasic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0x61, 0x62, 0x63]), util.Type.BASIC);
+        let outLen: int = val.length;
+        let expectedOutLen: int = 4;
+        expect(outLen).assertEqual(expectedOutLen);
+        expect(val).assertEqual("YWJj");
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0x61, 0x62, 0x63, 0x64]), util.Type.BASIC);
+        let outLen: int = val.length;
+        let expectedOutLen: int = 8;
+        expect(outLen).assertEqual(expectedOutLen);
+        expect(val).assertEqual("YWJjZA==");
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0x61]), util.Type.BASIC);
+        let outLen: int = val.length;
+        let expectedOutLen: int = 4;
+        expect(outLen).assertEqual(expectedOutLen);
+        expect(val).assertEqual("YQ==");
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([77, 97, 110, 105, 115]);
+        let val = await b64.encodeToString(src, util.Type.BASIC);
+        expect(val).assertEqual("TWFuaXM=");
+        expect(val.length).assertEqual(8);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array(256);
+        for (let i: int = 0; i < 256; i++) {
+          src.$_set(i, i);
+        }
+        let val = await b64.encodeToString(src, util.Type.BASIC);
+        let syncVal: string = b64.encodeToStringSync(src, util.Type.BASIC);
+        expect(val).assertEqual(syncVal);
+        expect(val.length).assertEqual(344);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([115, 49, 51]));
+
+        let upper = val.toUpperCase();
+        expect(upper).assertEqual("CZEZ");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let ab: ArrayBuffer = new ArrayBuffer(6);
+        let fill: Uint8Array = new Uint8Array(ab);
+        fill.$_set(0, 0x00);
+        fill.$_set(1, 0x61);
+        fill.$_set(2, 0x62);
+        fill.$_set(3, 0x63);
+        fill.$_set(4, 0x00);
+        fill.$_set(5, 0x00);
+        let view: Uint8Array = new Uint8Array(ab, 1, 3);
+        let val = await b64.encodeToString(view, util.Type.BASIC);
+        expect(val).assertEqual("YWJj");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let base: Uint8Array = new Uint8Array([0x61, 0x62, 0x63, 0x64, 0x65, 0x66]);
+        let view: Uint8Array = base.subarray(1, 4);
+        let val = await b64.encodeToString(view, util.Type.BASIC);
+        expect(val).assertEqual("YmNk");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let ab: ArrayBuffer = new ArrayBuffer(5);
+        let fill: Uint8Array = new Uint8Array(ab);
+        fill.$_set(0, 104);
+        fill.$_set(1, 101);
+        fill.$_set(2, 108);
+        fill.$_set(3, 108);
+        fill.$_set(4, 111);
+        let view: Uint8Array = new Uint8Array(ab);
+        let val = await b64.encodeToString(view, util.Type.BASIC);
+        expect(val).assertEqual("aGVsbG8=");
+        expect(val.length).assertEqual(8);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let ab: ArrayBuffer = new ArrayBuffer(6);
+        let fill: Uint8Array = new Uint8Array(ab);
+        fill.$_set(0, 0x61);
+        fill.$_set(1, 0x62);
+        fill.$_set(2, 0x63);
+        fill.$_set(3, 0x64);
+        fill.$_set(4, 0x65);
+        fill.$_set(5, 0x66);
+        let viewA: Uint8Array = new Uint8Array(ab, 0, 3);
+        let viewB: Uint8Array = new Uint8Array(ab, 3, 3);
+        let valA = await b64.encodeToString(viewA, util.Type.BASIC);
+        let valB = await b64.encodeToString(viewB, util.Type.BASIC);
+        expect(valA).assertEqual("YWJj");
+        expect(valB).assertEqual("ZGVm");
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_ENCODE_TO_STRING_2500
+     * @tc.name testB64ToStrBasic007
+     * @tc.desc Verify Base64Helper encodeToString and encodeToStringSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64ToStrBasic007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      {
+        let b64 = new util.Base64Helper();
+        let ab: ArrayBuffer = new ArrayBuffer(6);
+        let fill: Uint8Array = new Uint8Array(ab);
+        fill.$_set(0, 0x61);
+        fill.$_set(1, 0x62);
+        fill.$_set(2, 0x63);
+        fill.$_set(3, 0x64);
+        fill.$_set(4, 0x65);
+        fill.$_set(5, 0x66);
+        let view: Uint8Array = new Uint8Array(ab, 1, 3);
+        let val = await b64.encodeToString(view, util.Type.BASIC);
+        expect(val).assertEqual("YmNk");
+        let secondByte: number = fill.$_get(1);
+        let expectedSecondByte: number = 0x62;
+        expect(secondByte).assertEqual(expectedSecondByte);
+        let fourthByte: number = fill.$_get(3);
+        let expectedFourthByte: number = 0x64;
+        expect(fourthByte).assertEqual(expectedFourthByte);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let base: Uint8Array = new Uint8Array([0x61, 0x62, 0x63, 0x64, 0x65, 0x66]);
+        let view: Uint8Array = base.subarray(2, 5);
+        let val = await b64.encodeToString(view, util.Type.BASIC);
+        let outLen: int = val.length;
+        let expectedOutLen: int = 4;
+        expect(outLen).assertEqual(expectedOutLen);
+        expect(val).assertEqual("Y2Rl");
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let src = new Uint8Array([65, 66, 67]);
+        let val = await b64.encodeToString(src);
+        expect(val).assertEqual("QUJD");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let src = new Uint8Array([65, 66, 67]);
+        let val = await b64.encodeToString(src, util.Type.BASIC);
+        expect(val).assertEqual("QUJD");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let base = new Uint8Array([1, 2, 3, 4, 5]);
+        let view = base.subarray(-1);
+        let val = await b64.encodeToString(view);
+        expect(val).assertEqual("BQ==");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let base = new Uint8Array([1, 2, 3, 4, 5]);
+        let view = base.subarray(-2);
+        let val = await b64.encodeToString(view);
+        expect(val).assertEqual("BAU=");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let base = new Uint8Array([1, 2, 3, 4, 5]);
+        let view = base.subarray(-5);
+        let val = await b64.encodeToString(view);
+        expect(val).assertEqual("AQIDBAU=");
+        expect(val.length).assertEqual(8);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let base = new Uint8Array([1, 2, 3, 4, 5]);
+        let view = base.subarray(1);
+        let val = await b64.encodeToString(view);
+        expect(val).assertEqual("AgMEBQ==");
+        expect(val.length).assertEqual(8);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let base = new Uint8Array([1, 2, 3, 4, 5]);
+        let view = base.subarray(2147483647);
+        let val = await b64.encodeToString(view);
+        expect(val).assertEqual('');
+        expect(val.length).assertEqual(0);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let base = new Uint8Array([1, 2, 3, 4, 5]);
+        let view = base.subarray(0, -1);
+        let val = await b64.encodeToString(view);
+        expect(val).assertEqual("AQIDBA==");
+        expect(val.length).assertEqual(8);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_ENCODE_TO_STRING_2600
+     * @tc.name testB64ToStrBasic008
+     * @tc.desc Verify Base64Helper encodeToString and encodeToStringSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64ToStrBasic008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      {
+        let b64 = new util.Base64Helper();
+        let base = new Uint8Array([1, 2, 3, 4, 5]);
+        let view = base.subarray(0, -2);
+        let val = await b64.encodeToString(view);
+        expect(val).assertEqual("AQID");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let base = new Uint8Array([1, 2, 3, 4, 5]);
+        let view = base.subarray(0, -4);
+        let val = await b64.encodeToString(view);
+        expect(val).assertEqual("AQ==");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([]), util.Type.BASIC);
+        expect(val).assertEqual('');
+        expect(val.length).assertEqual(0);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array(new ArrayBuffer(0)));
+        expect(val).assertEqual('');
+        expect(val.length).assertEqual(0);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0x00]), util.Type.BASIC);
+        expect(val).assertEqual("AA==");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0x01]), util.Type.BASIC);
+        expect(val).assertEqual("AQ==");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0x02]), util.Type.BASIC);
+        expect(val).assertEqual("Ag==");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0x3f]), util.Type.BASIC);
+        expect(val).assertEqual("Pw==");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0x01, 0x01, 0x01]), util.Type.BASIC);
+        expect(val).assertEqual("AQEB");
+        expect(val.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0xfb, 0xfb, 0xfb]), util.Type.BASIC);
+        expect(val).assertEqual("+/v7");
+        expect(val.length).assertEqual(4);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_ENCODE_TO_STRING_2700
+     * @tc.name testB64ToStrBasic009
+     * @tc.desc Verify Base64Helper encodeToString and encodeToStringSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64ToStrBasic009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      {
+        let b64 = new util.Base64Helper();
+        let s: Uint8Array = new Uint8Array(6);
+        for (let i = 0; i < 6; i++) {
+          s.$_set(i, 0x3f);
+        }
+        let val = await b64.encodeToString(s);
+        expect(val).assertEqual("Pz8/Pz8/");
+        expect(val.length).assertEqual(8);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let zeros: Uint8Array = new Uint8Array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+        let val = await b64.encodeToString(zeros, util.Type.BASIC);
+        let outLen: int = val.length;
+        let expectedOutLen: int = 16;
+        expect(outLen).assertEqual(expectedOutLen);
+        expect(val).assertEqual("AAAAAAAAAAAAAA==");
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let src = new Uint8Array(60);
+        let val = await b64.encodeToString(src, util.Type.BASIC);
+        let crlfIndex: number = val.indexOf("\r\n");
+        let expectedCrlfIndex: int = -1;
+        expect(crlfIndex).assertEqual(expectedCrlfIndex);
+        expect(val.length).assertEqual(80);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]));
+        expect(val).assertEqual("AAECAwQFBgcICQ==");
+        expect(val.length).assertEqual(16);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.encodeToString(new Uint8Array([97, 98, 0, 99]));
+        expect(val).assertEqual("YWIAYw==");
+        expect(val.length).assertEqual(8);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let src = new Uint8Array([104, 101, 108, 108, 111]);
+        let val = await b64.encodeToString(src, util.Type.BASIC);
+        let syncR = b64.encodeToStringSync(src, util.Type.BASIC);
+        expect(val).assertEqual(syncR);
+        expect(val.length).assertEqual(8);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([65, 66, 67, 68, 69, 70, 71]);
+        let implicit = await b64.encodeToString(src);
+        let explicit = await b64.encodeToString(src, util.Type.BASIC);
+        let implicitStr: string = implicit;
+        let expectedImplicitStr: string = explicit;
+        expect(implicitStr).assertEqual(expectedImplicitStr);
+        expect(implicit.length).assertEqual(12);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([65, 66, 67, 68, 69]);
+        let val = await b64.encodeToString(src);
+        let golden: string = "QUJDREU=";
+        expect(val.length).assertEqual(8);
+        for (let i = 0; i < golden.length; i++) {
+          expect(val.charCodeAt(i)).assertEqual(golden.charCodeAt(i));
+        }
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([77, 97, 110]));
+        expect(r).assertEqual("TWFu");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([115, 49, 51]), util.Type.BASIC);
+        expect(r).assertEqual("czEz");
+        expect(r.length).assertEqual(4);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_ENCODE_TO_STRING_2800
+     * @tc.name testB64ToStrBasic010
+     * @tc.desc Verify Base64Helper encodeToString and encodeToStringSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64ToStrBasic010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let big: Uint8Array = new Uint8Array(100);
+        for (let i = 0; i < 100; i++) {
+          big.$_set(i, 97);
+        }
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(big);
+        let crIndex: number = r.indexOf('\r');
+        let expectedCrIndex: int = -1;
+        expect(crIndex).assertEqual(expectedCrIndex);
+        expect(r.length).assertEqual(136);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([77]), util.Type.BASIC);
+        expect(r).assertEqual("TQ==");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([255]), util.Type.BASIC);
+        expect(r).assertEqual("/w==");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([77, 97]), util.Type.BASIC);
+        expect(r).assertEqual("TWE=");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([77, 97, 110]), util.Type.BASIC);
+        expect(r).assertEqual("TWFu");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([0, 0, 0]), util.Type.BASIC);
+        expect(r).assertEqual("AAAA");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([77, 97, 110, 1]), util.Type.BASIC);
+        expect(r).assertEqual("TWFuAQ==");
+        expect(r.length).assertEqual(8);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([77, 97, 110, 77, 97]), util.Type.BASIC);
+        expect(r).assertEqual("TWFuTWE=");
+        expect(r.length).assertEqual(8);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([77, 97, 110, 77, 97, 110]), util.Type.BASIC);
+        expect(r).assertEqual("TWFuTWFu");
+        expect(r.length).assertEqual(8);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([77, 97, 110, 77, 97, 110, 1]), util.Type.BASIC);
+        expect(r).assertEqual("TWFuTWFuAQ==");
+        expect(r.length).assertEqual(12);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_ENCODE_TO_STRING_2900
+     * @tc.name testB64ToStrBasic011
+     * @tc.desc Verify Base64Helper encodeToString and encodeToStringSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64ToStrBasic011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([0, 0, 0, 0, 0, 0]), util.Type.BASIC);
+        expect(r).assertEqual("AAAAAAAA");
+        expect(r.length).assertEqual(8);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([0]), util.Type.BASIC);
+        expect(r).assertEqual("AA==");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([1]), util.Type.BASIC);
+        expect(r).assertEqual("AQ==");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([62]), util.Type.BASIC);
+        expect(r).assertEqual("Pg==");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([63]), util.Type.BASIC);
+        expect(r).assertEqual("Pw==");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([251]), util.Type.BASIC);
+        expect(r).assertEqual("+w==");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([0xf8, 0, 0]), util.Type.BASIC);
+        expect(r).assertEqual("+AAA");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([0xfc, 0, 0]), util.Type.BASIC);
+        expect(r).assertEqual("/AAA");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([0xef, 0xbb, 0xbf]), util.Type.BASIC);
+        expect(r).assertEqual("77u/");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([0xe2, 0x98, 0x83]), util.Type.BASIC);
+        expect(r).assertEqual("4piD");
+        expect(r.length).assertEqual(4);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_ENCODE_TO_STRING_3000
+     * @tc.name testB64ToStrBasic012
+     * @tc.desc Verify Base64Helper encodeToString and encodeToStringSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64ToStrBasic012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([97, 98, 0]), util.Type.BASIC);
+        expect(r).assertEqual("YWIA");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([97, 0, 99, 0]), util.Type.BASIC);
+        expect(r).assertEqual("YQBjAA==");
+        expect(r.length).assertEqual(8);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([128]), util.Type.BASIC);
+        expect(r).assertEqual("gA==");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([0x80, 0x81]), util.Type.BASIC);
+        expect(r).assertEqual("gIE=");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([13, 10]), util.Type.BASIC);
+        expect(r).assertEqual("DQo=");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([0, 0, 1]), util.Type.BASIC);
+        expect(r).assertEqual("AAAB");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([0x41, 0x42, 0x43]), util.Type.BASIC);
+        expect(r).assertEqual("QUJD");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([127]), util.Type.BASIC);
+        expect(r).assertEqual("fw==");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([43]), util.Type.BASIC);
+        expect(r).assertEqual("Kw==");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([10]), util.Type.BASIC);
+        expect(r).assertEqual("Cg==");
+        expect(r.length).assertEqual(4);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_ENCODE_TO_STRING_3100
+     * @tc.name testB64ToStrBasic013
+     * @tc.desc Verify Base64Helper encodeToString and encodeToStringSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64ToStrBasic013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([9]), util.Type.BASIC);
+        expect(r).assertEqual("CQ==");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([32]), util.Type.BASIC);
+        expect(r).assertEqual("IA==");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([65]), util.Type.BASIC);
+        expect(r).assertEqual("QQ==");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([67]), util.Type.BASIC);
+        expect(r).assertEqual("Qw==");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([0x2b, 0x2f, 0x3d]), util.Type.BASIC);
+        expect(r).assertEqual("Ky89");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([0xff, 0]), util.Type.BASIC);
+        expect(r).assertEqual("/wA=");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([0x80, 0, 0]), util.Type.BASIC);
+        expect(r).assertEqual("gAAA");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(new Uint8Array([255, 255, 255, 255, 255, 255]), util.Type.BASIC);
+        expect(r).assertEqual("////////");
+        expect(r.length).assertEqual(8);
+
+      }
+      {
+        let big: Uint8Array = new Uint8Array(100);
+        for (let i = 0; i < 100; i++) {
+          big.$_set(i, 97);
+        }
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(big, util.Type.BASIC);
+        let outLen: int = r.length;
+        let expectedOutLen: int = 136;
+        expect(outLen).assertEqual(expectedOutLen);
+        let crIndex: number = r.indexOf('\r');
+        let expectedCrIndex: int = -1;
+        expect(crIndex).assertEqual(expectedCrIndex);
+
+      }
+      {
+        let buf: Uint8Array = new Uint8Array([0, 77, 97, 110, 0]);
+        let view = buf.subarray(1, 4);
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(view);
+        expect(r).assertEqual("TWFu");
+        expect(r.length).assertEqual(4);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_ENCODE_TO_STRING_3200
+     * @tc.name testB64ToStrBasic014
+     * @tc.desc Verify Base64Helper encodeToString and encodeToStringSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64ToStrBasic014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let buf: Uint8Array = new Uint8Array([0, 77, 97, 110, 0]);
+        let view = buf.subarray(0, 5);
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(view);
+        expect(r).assertEqual("AE1hbgA=");
+        expect(r.length).assertEqual(8);
+
+      }
+      {
+        let buf: Uint8Array = new Uint8Array([1, 2, 3, 251]);
+        let view = buf.subarray(3, 4);
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeToStringSync(view);
+        expect(r).assertEqual("+w==");
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array(0);
+        let result: string = base64Helper.encodeToStringSync(src, util.Type.BASIC);
+        expect(result).assertEqual('');
+        expect(result.length).assertEqual(0);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([0x61]);
+        let result: string = base64Helper.encodeToStringSync(src, util.Type.BASIC);
+        expect(result).assertEqual("YQ==");
+        expect(result.length).assertEqual(4);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([0x61, 0x62]);
+        let result: string = base64Helper.encodeToStringSync(src, util.Type.BASIC);
+        expect(result).assertEqual("YWI=");
+        expect(result.length).assertEqual(4);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([0x61, 0x62, 0x63]);
+        let result: string = base64Helper.encodeToStringSync(src, util.Type.BASIC);
+        expect(result).assertEqual("YWJj");
+        expect(result.length).assertEqual(4);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([0x61, 0x62, 0x63, 0x64]);
+        let result: string = base64Helper.encodeToStringSync(src, util.Type.BASIC);
+        expect(result).assertEqual("YWJjZA==");
+        expect(result.length).assertEqual(8);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([77, 97, 110]);
+        let result: string = base64Helper.encodeToStringSync(src, util.Type.BASIC);
+        expect(result).assertEqual("TWFu");
+        expect(result.length).assertEqual(4);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100]);
+        let result: string = base64Helper.encodeToStringSync(src, util.Type.BASIC);
+        expect(result).assertEqual("aGVsbG8gd29ybGQ=");
+        expect(result.length).assertEqual(16);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([0x00, 0x00, 0x00]);
+        let result: string = base64Helper.encodeToStringSync(src, util.Type.BASIC);
+        expect(result).assertEqual("AAAA");
+        expect(result.length).assertEqual(4);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_ENCODE_TO_STRING_3300
+     * @tc.name testB64ToStrBasic015
+     * @tc.desc Verify Base64Helper encodeToString and encodeToStringSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64ToStrBasic015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let base64Helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([0x80]);
+        let result: string = base64Helper.encodeToStringSync(src, util.Type.BASIC);
+        expect(result).assertEqual("gA==");
+        expect(result.length).assertEqual(4);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([0x00, 0x00]);
+        let result: string = base64Helper.encodeToStringSync(src, util.Type.BASIC);
+        expect(result).assertEqual("AAA=");
+        expect(result.length).assertEqual(4);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100]);
+        let result: string = base64Helper.encodeToStringSync(src);
+        expect(result).assertEqual("aGVsbG8gd29ybGQ=");
+        expect(result.length).assertEqual(16);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([77, 97, 110, 105, 115]);
+        let result: string = base64Helper.encodeToStringSync(src);
+        let lfIndex: number = result.indexOf('\n');
+        let expectedLfIndex: int = -1;
+        expect(lfIndex).assertEqual(expectedLfIndex);
+        expect(result.length).assertEqual(8);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([0x61, 0x62]);
+        let result: string = base64Helper.encodeToStringSync(src, util.Type.BASIC);
+        expect(result.endsWith('=')).assertTrue();
+        expect(result.length).assertEqual(4);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([0x61, 0x62, 0x63, 0x64, 0x65]);
+        let result: string = base64Helper.encodeToStringSync(src, util.Type.BASIC);
+        expect(result).assertEqual("YWJjZGU=");
+        expect(result.length).assertEqual(8);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([0xfb, 0xef, 0xbe]);
+        let r1: string = base64Helper.encodeToStringSync(src, util.Type.BASIC);
+        let r2: string = base64Helper.encodeToStringSync(src, util.Type.BASIC_URL_SAFE);
+        let r3: string = base64Helper.encodeToStringSync(src, util.Type.MIME_URL_SAFE);
+        expect(r1).assertEqual("++++");
+        expect(r2).assertEqual("----");
+        expect(r3).assertEqual("----\r\n");
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let ab: ArrayBuffer = new ArrayBuffer(6);
+        let fill: Uint8Array = new Uint8Array(ab);
+        fill.$_set(0, 0x00);
+        fill.$_set(1, 0x61);
+        fill.$_set(2, 0x62);
+        fill.$_set(3, 0x63);
+        fill.$_set(4, 0x00);
+        fill.$_set(5, 0x00);
+        let view: Uint8Array = new Uint8Array(ab, 1, 3);
+        let result: string = base64Helper.encodeToStringSync(view, util.Type.BASIC);
+        expect(result).assertEqual("YWJj");
+        expect(result.length).assertEqual(4);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let ab: ArrayBuffer = new ArrayBuffer(6);
+        let fill: Uint8Array = new Uint8Array(ab);
+        fill.$_set(0, 0x61);
+        fill.$_set(1, 0x62);
+        fill.$_set(2, 0x63);
+        fill.$_set(3, 0x64);
+        fill.$_set(4, 0x65);
+        fill.$_set(5, 0x66);
+        let view: Uint8Array = new Uint8Array(ab, 3, 3);
+        let result: string = base64Helper.encodeToStringSync(view, util.Type.BASIC);
+        expect(result).assertEqual("ZGVm");
+        expect(result.length).assertEqual(4);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let base: Uint8Array = new Uint8Array([0x61, 0x62, 0x63, 0x64, 0x65, 0x66]);
+        let view: Uint8Array = base.subarray(1, 4);
+        let result: string = base64Helper.encodeToStringSync(view, util.Type.BASIC);
+        expect(result).assertEqual("YmNk");
+        expect(result.length).assertEqual(4);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_ENCODE_TO_STRING_3400
+     * @tc.name testB64ToStrBasic016
+     * @tc.desc Verify Base64Helper encodeToString and encodeToStringSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64ToStrBasic016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let base64Helper = new util.Base64Helper();
+        let ab: ArrayBuffer = new ArrayBuffer(6);
+        let fill: Uint8Array = new Uint8Array(ab);
+        fill.$_set(0, 0x61);
+        fill.$_set(1, 0x62);
+        fill.$_set(2, 0x63);
+        fill.$_set(3, 0x64);
+        fill.$_set(4, 0x65);
+        fill.$_set(5, 0x66);
+        let viewA: Uint8Array = new Uint8Array(ab, 0, 3);
+        let viewB: Uint8Array = new Uint8Array(ab, 3, 3);
+        let rA: string = base64Helper.encodeToStringSync(viewA, util.Type.BASIC);
+        let rB: string = base64Helper.encodeToStringSync(viewB, util.Type.BASIC);
+        expect(rA).assertEqual("YWJj");
+        expect(rB).assertEqual("ZGVm");
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let ab: ArrayBuffer = new ArrayBuffer(5);
+        let fill: Uint8Array = new Uint8Array(ab);
+        fill.$_set(0, 104);
+        fill.$_set(1, 101);
+        fill.$_set(2, 108);
+        fill.$_set(3, 108);
+        fill.$_set(4, 111);
+        let view: Uint8Array = new Uint8Array(ab);
+        let result: string = base64Helper.encodeToStringSync(view, util.Type.BASIC);
+        expect(result).assertEqual("aGVsbG8=");
+        expect(result.length).assertEqual(8);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let base: Uint8Array = new Uint8Array([0x61, 0x62, 0x63, 0x64, 0x65, 0x66, 0x67, 0x68]);
+        let view: Uint8Array = base.subarray(2, 5);
+        let result: string = base64Helper.encodeToStringSync(view, util.Type.BASIC);
+        expect(result).assertEqual("Y2Rl");
+        let outLen: int = result.length;
+        let expectedOutLen: int = 4;
+        expect(outLen).assertEqual(expectedOutLen);
+
+      }
+      {
+        let helper = new util.Base64Helper();
+        let src = new Uint8Array([65, 66, 67]);
+        let result = helper.encodeToStringSync(src);
+        expect(result).assertEqual("QUJD");
+        expect(result.length).assertEqual(4);
+
+      }
+      {
+        let helper = new util.Base64Helper();
+        let src = new Uint8Array([65, 66, 67]);
+        let result = helper.encodeToStringSync(src, util.Type.BASIC);
+        expect(result).assertEqual("QUJD");
+        expect(result.length).assertEqual(4);
+
+      }
+      {
+        let helper = new util.Base64Helper();
+        let src = new Uint8Array([0x41]);
+        let result = helper.encodeToStringSync(src, util.Type.BASIC);
+        expect(result).assertEqual("QQ==");
+        expect(result.length).assertEqual(4);
+
+      }
+      {
+        let helper = new util.Base64Helper();
+        let src = new Uint8Array([0x00]);
+        let result = helper.encodeToStringSync(src, util.Type.BASIC);
+        expect(result).assertEqual("AA==");
+        expect(result.length).assertEqual(4);
+
+      }
+      {
+        let helper = new util.Base64Helper();
+        let src = new Uint8Array([0xff]);
+        let result = helper.encodeToStringSync(src, util.Type.BASIC);
+        expect(result).assertEqual("/w==");
+        expect(result.length).assertEqual(4);
+
+      }
+      {
+        let helper = new util.Base64Helper();
+        let src = new Uint8Array([0xfb]);
+        let result = helper.encodeToStringSync(src, util.Type.BASIC);
+        expect(result).assertEqual("+w==");
+        expect(result.length).assertEqual(4);
+
+      }
+      {
+        let helper = new util.Base64Helper();
+        let src = new Uint8Array([0x41, 0x42]);
+        let result = helper.encodeToStringSync(src, util.Type.BASIC);
+        expect(result).assertEqual("QUI=");
+        expect(result.length).assertEqual(4);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_ENCODE_TO_STRING_3500
+     * @tc.name testB64ToStrBasic017
+     * @tc.desc Verify Base64Helper encodeToString and encodeToStringSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64ToStrBasic017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let helper = new util.Base64Helper();
+        let src = new Uint8Array([0xfb, 0xfb, 0xfb]);
+        let result = helper.encodeToStringSync(src, util.Type.BASIC);
+        expect(result).assertEqual("+/v7");
+        expect(result.length).assertEqual(4);
+
+      }
+      {
+        let helper = new util.Base64Helper();
+        let base = new Uint8Array([65, 66, 67]);
+        let view = base.subarray(-1);
+        let result = helper.encodeToStringSync(view, util.Type.BASIC);
+        expect(result).assertEqual("Qw==");
+        expect(result.length).assertEqual(4);
+
+      }
+      {
+        let helper = new util.Base64Helper();
+        let base = new Uint8Array([65, 66, 67]);
+        let view = base.subarray(-2);
+        let result = helper.encodeToStringSync(view, util.Type.BASIC);
+        expect(result).assertEqual("QkM=");
+        expect(result.length).assertEqual(4);
+
+      }
+      {
+        let helper = new util.Base64Helper();
+        let base = new Uint8Array([65, 66, 67]);
+        let view = base.subarray(-3);
+        let result = helper.encodeToStringSync(view, util.Type.BASIC);
+        expect(result).assertEqual("QUJD");
+        expect(result.length).assertEqual(4);
+
+      }
+      {
+        let helper = new util.Base64Helper();
+        let base = new Uint8Array([65, 66, 67]);
+        let view = base.subarray(0, -1);
+        let result = helper.encodeToStringSync(view, util.Type.BASIC);
+        expect(result).assertEqual("QUI=");
+        expect(result.length).assertEqual(4);
+
+      }
+      {
+        let helper = new util.Base64Helper();
+        let base = new Uint8Array([65, 66, 67]);
+        let view = base.subarray(0, -2);
+        let result = helper.encodeToStringSync(view, util.Type.BASIC);
+        expect(result).assertEqual("QQ==");
+        expect(result.length).assertEqual(4);
+
+      }
+      {
+        let helper = new util.Base64Helper();
+        let base = new Uint8Array([65, 66, 67]);
+        let view = base.subarray(1, 2);
+        let result = helper.encodeToStringSync(view, util.Type.BASIC);
+        expect(result).assertEqual("Qg==");
+        expect(result.length).assertEqual(4);
+
+      }
+      {
+        let helper = new util.Base64Helper();
+        let src = new Uint8Array([116, 101, 115, 116]);
+        let result = helper.encodeToStringSync(src);
+        let ref: string = result;
+        let expectedRef: string = helper.encodeToStringSync(src, util.Type.BASIC);
+        expect(ref).assertEqual(expectedRef);
+        expect(result.length).assertEqual(8);
+
+      }
+      {
+        let helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([65, 66, 67, 68, 69]);
+        let result: string = helper.encodeToStringSync(src);
+        let golden: string = "QUJDREU=";
+        expect(result.length).assertEqual(8);
+        for (let i = 0; i < golden.length; i++) {
+          expect(result.charCodeAt(i)).assertEqual(golden.charCodeAt(i));
+        }
+
+      }
+    });
+
   });
 }
