@@ -17,19 +17,19 @@ import {
   BuilderParam, Column, Component, CustomBuilderT, Entry, FlexAlign,
   State, WrappedBuilder, wrapBuilder
 } from '@kit.ArkUI';
-import { staticBuilder, namespaceBuilder } from './wrapBuilderModule02';
+import { staticBuilder, namespaceBuilder2 } from './wrapBuilderModule01';
 
 const staticWrapped: WrappedBuilder<CustomBuilderT<string>> =
   wrapBuilder<CustomBuilderT<string>>(staticBuilder);
 const identifierBoundWrapped: WrappedBuilder<CustomBuilderT<string>> =
-  wrapBuilder<CustomBuilderT<string>>(namespaceBuilder);
+  wrapBuilder<CustomBuilderT<string>>(namespaceBuilder2);
 
 @Entry
 @Component
 struct WrapBuilder0040 {
   @State message: string = 'Hello World';
   @BuilderParam aa: (param: string) => void = staticBuilder;
-  @BuilderParam bb: (param: string) => void = namespaceBuilder;
+  @BuilderParam bb: (param: string) => void = namespaceBuilder2;
 
   aboutToAppear(): void {
     this.aa = staticWrapped.builder;

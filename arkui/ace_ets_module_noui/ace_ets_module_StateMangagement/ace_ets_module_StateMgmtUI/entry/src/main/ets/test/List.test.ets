@@ -41,7 +41,6 @@ import LocalBuilder0040TestJsunit from './local_builder/LocalBuilder0040TestJsun
 import WrapBuilder0010TestJsunit from './wrap_builder/WrapBuilder0010TestJsunit.test';
 import WrapBuilder0020Test from './wrap_builder/WrapBuilder0020Test.test';
 import WrapBuilder0030Test from './wrap_builder/WrapBuilder0030Test.test';
-import WrapBuilder0040Test from './wrap_builder/WrapBuilder0040Test.test';
 import EntryParamsTest from './entryTest/EntryParamsTest.test';
 import EntryParams2Test from './entryTest/EntryParams2Test.test';
 import EntryParamsUndefinedTest from './entryTest/EntryParamsUndefinedTest.test';
@@ -101,7 +100,6 @@ export default function testsuite() {
     WrapBuilder0010TestJsunit();
     WrapBuilder0020Test();
     WrapBuilder0030Test();
-    WrapBuilder0040Test();
     EntryParamsTest();
     EntryParams2Test();
     EntryParamsUndefinedTest();

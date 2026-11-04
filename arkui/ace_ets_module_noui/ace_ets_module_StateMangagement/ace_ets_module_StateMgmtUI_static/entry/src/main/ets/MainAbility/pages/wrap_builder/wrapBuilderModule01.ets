@@ -22,3 +22,17 @@ export function namespaceBuilder(value: string): void {
     .height('5%')
 }
 
+@Builder
+export function staticBuilder(value: string): void {
+  Text(value)
+    .id('wrapBuilder0040_text2')
+    .height('5%')
+}
+
+@Builder
+export function namespaceBuilder2(value: string): void {
+  Text(value)
+    .id('wrapBuilder0040_text1')
+    .height('5%')
+}
+
