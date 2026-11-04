@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Level, Size } from '../../../hypium/index';
+import { describe, it, expect, TestType, Level, Size } from '@ohos/hypium-static/src/main/indexStatic';
 import { sleep } from './utils/utils';
 
 export default function AsyncLockQueryInstanceTest(): void {
