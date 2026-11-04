@@ -163,6 +163,10 @@ async function releasePhotoSession() {
   await mPreviewOutput!.release();
   await mPhotoOutput!.release();
   await mPhotoSession!.release();
+  if (mCameraInput) {
+    console.info(`mCameraInput is not null, now close`);
+    await mCameraInput!.close();
+  }
 }
 
 let isEmptyColorSpace = (data: colorSpaceManager.ColorSpace[]) => {
@@ -232,12 +236,14 @@ export default function PhotoOutputStaticTest(): void {
     });
 
     beforeEach(() => {
-      console.info('afterEach case');
+      console.info('beforeEach case');
     });
 
     afterEach(async () => {
       console.info('afterEach case');
       await Utils.msSleep(500);
+      await releasePhotoSession;
+      getCameraInput();
     });
 
     afterAll(async () => {
@@ -1592,6 +1598,7 @@ export default function PhotoOutputStaticTest(): void {
         } else {
           try {
             createPhotoOutput();
+            mPhotoSession = mCameraManager!.createSession<camera.PhotoSession>(camera.SceneMode.NORMAL_PHOTO);
             await Utils.msSleep(1000);
             mPhotoSession!.beginConfig();
             let res = mPhotoSession!.canAddInput(mCameraInput!);
@@ -1686,6 +1693,7 @@ export default function PhotoOutputStaticTest(): void {
         } else {
           try {
             createPhotoOutput();
+            mPhotoSession = mCameraManager!.createSession<camera.PhotoSession>(camera.SceneMode.NORMAL_PHOTO);
             await Utils.msSleep(1000);
             mPhotoSession!.beginConfig();
             let res = mPhotoSession!.canAddOutput(mPhotoOutput!);
