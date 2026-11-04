@@ -1000,6 +1000,7 @@ export default function UiTest() {
      */
     it('testDisplayRotation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let disArray = await display.getAllDisplays()
+      console.log(`${TestTag}, testDisplayRotation disArray is: ${JSON.stringify(disArray)}`);
       if (disArray != null) {
         let disLength = disArray.length;
         if (disLength == 1) { // 此用例不支持在多屏上执行
@@ -1063,6 +1064,7 @@ export default function UiTest() {
      */
     it('testGetDisplayRotationWithId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let disArray = await display.getAllDisplays()
+      console.log(`${TestTag}, testGetDisplayRotationWithId disArray is: ${JSON.stringify(disArray)}`);
       if (disArray != null) {
         let disLength = disArray.length;
         if (disLength == 1) { // 此用例不支持在多屏上执行
