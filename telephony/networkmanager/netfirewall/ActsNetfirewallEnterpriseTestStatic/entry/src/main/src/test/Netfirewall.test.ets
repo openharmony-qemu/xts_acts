@@ -1126,7 +1126,7 @@ export default function netfirewallTest(): void {
         const caseName: string = 'testNetFirewallGetNetFirewallPolicy_static_0600';
         hilog.info(domain, tag, `${caseName}---Start`);
         try {
-          let invalidUserId: int = 9223372036854775807;
+          let invalidUserId: int = 2147483647;
           netFirewall.getNetFirewallPolicy(invalidUserId).then((result: netFirewall.NetFirewallPolicy) => {
             hilog.info(domain, tag, `${caseName} getNetFirewallPolicy success: ` + JSON.stringify(result));
             ExpectTrue(false);
@@ -1549,8 +1549,8 @@ export default function netfirewallTest(): void {
         const caseName: string = 'testNetFirewallRemoveNetFirewallRule_static_0400';
         hilog.info(domain, tag, `${caseName}---Start`);
         try {
-          let invalidUserId: int = 9223372036854775807;
-          let invalidRuleId: int = 9223372036854775807;
+          let invalidUserId: int = 2147483647;
+          let invalidRuleId: int = 2147483647;
           netFirewall.removeNetFirewallRule(invalidUserId, invalidRuleId).then(() => {
             hilog.info(domain, tag, `${caseName} delete firewall rule success.`);
             ExpectTrue(false);
@@ -1675,7 +1675,7 @@ export default function netfirewallTest(): void {
         const caseName: string = 'testNetFirewallGetNetFirewallRules_static_0400';
         hilog.info(domain, tag, `${caseName}---Start`);
         try {
-          let invalidUserId: int = 9223372036854775807;
+          let invalidUserId: int = 2147483647;
           netFirewall.getNetFirewallRules(invalidUserId, ruleParam).then((result: netFirewall.FirewallRulePage) => {
             hilog.info(domain, tag, `${caseName} getNetFirewallRules success: ` + JSON.stringify(result));
             ExpectTrue(false);
@@ -1800,8 +1800,8 @@ export default function netfirewallTest(): void {
         const caseName: string = 'testNetFirewallGetNetFirewallRule_static_0700';
         hilog.info(domain, tag, `${caseName}---Start`);
         try {
-          let invalidUserId: int = 9223372036854775807;
-          let invalidRuleId: int = 9223372036854775807;
+          let invalidUserId: int = 2147483647;
+          let invalidRuleId: int = 2147483647;
           netFirewall.getNetFirewallRule(invalidUserId, invalidRuleId).then((rule: netFirewall.NetFirewallRule) => {
             hilog.info(domain, tag, `${caseName} getNetFirewallRule success: ` + JSON.stringify(rule));
             ExpectTrue(false);
