@@ -36,6 +36,7 @@ group("concurrency_static") {
       "taskpool_baselib_test_static:ActsTaskpoolBaselibStaticTest",
       "taskpool_builtin_test_static:ActsTaskpoolBuiltinStaticTest",
       "taskpool_sendable_test_static:ActsTaskpoolSendableStaticTest",
+      "taskpool_test_static:ActsTaskpoolStaticTest",
       "concurrent_hashmap_test_static:ActsConcurrentHashMapStaticTest",
       "concurrent_queue_test_static:ActsConcurrentQueueStaticTest",
       "concurrent_set_test_static:ActsConcurrentSetStaticTest",
