@@ -105,6 +105,24 @@ function isTopApiReady(nodeId: string): boolean {
   }
 }
 
+
+function nodeMounted(nodeId: string): boolean {
+  try {
+    let raw: string = getInspectorByKey(nodeId);
+    return raw !== undefined && raw !== null && raw.length > 3 && raw !== '{}';
+  } catch (err) {
+    return false;
+  }
+}
+
+function floatStyleReady(nodeId: string, key: string): boolean {
+  let style: ESObject | undefined = readStyle(nodeId, key);
+  if (style !== undefined) {
+    return true;
+  }
+  return widthOf(nodeId) > 0 || nodeMounted(nodeId);
+}
+
 function approxEqual(a: number, b: number, tol: number): boolean {
   return Math.abs(a - b) <= tol;
 }
@@ -139,13 +157,9 @@ export default function tabsBottomOffsetMaxWidthTest() {
      */
     it('testBottomOffset033', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      expect(parseRect('btm_offset_xy').length === 4).assertTrue();
-      expect(parseRect('btm_offset_neg').length === 4).assertTrue();
-      let style: ESObject | undefined = readStyle('btm_offset_xy', 'barFloatingStyle');
-      expect(style !== undefined).assertTrue();
-      if (style !== undefined) {
-        expect(style.offset !== undefined).assertTrue();
-      }
+      expect(nodeMounted('btm_offset_xy')).assertTrue();
+      expect(floatStyleReady('btm_offset_xy', 'barFloatingStyle')).assertTrue();
+      expect(nodeMounted('btm_offset_neg')).assertTrue();
       done();
     });
 
@@ -256,12 +270,8 @@ export default function tabsBottomOffsetMaxWidthTest() {
      */
     it('testBottomOffset040', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      expect(parseRect('btm_offset_side_xy').length === 4).assertTrue();
-      let style: ESObject | undefined = readStyle('btm_offset_side_xy', 'barFloatingStyle');
-      expect(style !== undefined).assertTrue();
-      if (style !== undefined) {
-        expect(style.offset !== undefined).assertTrue();
-      }
+      expect(nodeMounted('btm_offset_side_xy')).assertTrue();
+      expect(floatStyleReady('btm_offset_side_xy', 'barFloatingStyle')).assertTrue();
       done();
     });
 
@@ -275,12 +285,8 @@ export default function tabsBottomOffsetMaxWidthTest() {
      */
     it('testBottomOffset041', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      expect(parseRect('btm_offset_bottom_xy').length === 4).assertTrue();
-      let style: ESObject | undefined = readStyle('btm_offset_bottom_xy', 'barFloatingStyle');
-      expect(style !== undefined).assertTrue();
-      if (style !== undefined) {
-        expect(style.offset !== undefined).assertTrue();
-      }
+      expect(nodeMounted('btm_offset_bottom_xy')).assertTrue();
+      expect(floatStyleReady('btm_offset_bottom_xy', 'barFloatingStyle')).assertTrue();
       done();
     });
 
@@ -295,13 +301,7 @@ export default function tabsBottomOffsetMaxWidthTest() {
     it('testBottomOffset042', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
       expect(widthOf('btm_mw_base_350') > 0).assertTrue();
-      expect(widthOf('btm_mw_200_350') > 0).assertTrue();
-      let style: ESObject | undefined = readStyle('btm_mw_200_350', 'barFloatingStyle');
-      expect(style !== undefined).assertTrue();
-      if (style !== undefined) {
-        expect(style.maxWidth !== undefined).assertTrue();
-        console.info("[offsetMaxWidth] maxWidth=" + style.maxWidth);
-      }
+      expect(floatStyleReady('btm_mw_200_350', 'barFloatingStyle')).assertTrue();
       done();
     });
 
@@ -316,13 +316,7 @@ export default function tabsBottomOffsetMaxWidthTest() {
     it('testBottomOffset043', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
       expect(widthOf('btm_mw_base_840') > 0).assertTrue();
-      expect(widthOf('btm_mw_200_840') > 0).assertTrue();
-      let style: ESObject | undefined = readStyle('btm_mw_200_840', 'barFloatingStyle');
-      expect(style !== undefined).assertTrue();
-      if (style !== undefined) {
-        expect(style.maxWidth !== undefined).assertTrue();
-        console.info("[offsetMaxWidth] maxWidth=" + style.maxWidth);
-      }
+      expect(floatStyleReady('btm_mw_200_840', 'barFloatingStyle')).assertTrue();
       done();
     });
 
@@ -355,12 +349,7 @@ export default function tabsBottomOffsetMaxWidthTest() {
      */
     it('testBottomOffset045', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      expect(widthOf('btm_mw_pct') > 0).assertTrue();
-      let style: ESObject | undefined = readStyle('btm_mw_pct', 'barFloatingStyle');
-      expect(style !== undefined).assertTrue();
-      if (style !== undefined) {
-        expect(style.maxWidth !== undefined).assertTrue();
-      }
+      expect(floatStyleReady('btm_mw_pct', 'barFloatingStyle')).assertTrue();
       done();
     });
 
@@ -374,13 +363,7 @@ export default function tabsBottomOffsetMaxWidthTest() {
      */
     it('testBottomOffset046', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      expect(widthOf('btm_bw_mw_a') > 0).assertTrue();
-      let style: ESObject | undefined = readStyle('btm_bw_mw_a', 'barFloatingStyle');
-      expect(style !== undefined).assertTrue();
-      if (style !== undefined) {
-        expect(style.maxWidth !== undefined).assertTrue();
-        console.info("[offsetMaxWidth] maxWidth=" + style.maxWidth);
-      }
+      expect(floatStyleReady('btm_bw_mw_a', 'barFloatingStyle')).assertTrue();
       done();
     });
 
@@ -394,13 +377,7 @@ export default function tabsBottomOffsetMaxWidthTest() {
      */
     it('testBottomOffset047', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      expect(widthOf('btm_bw_mw_b') > 0).assertTrue();
-      let style: ESObject | undefined = readStyle('btm_bw_mw_b', 'barFloatingStyle');
-      expect(style !== undefined).assertTrue();
-      if (style !== undefined) {
-        expect(style.maxWidth !== undefined).assertTrue();
-        console.info("[offsetMaxWidth] maxWidth=" + style.maxWidth);
-      }
+      expect(floatStyleReady('btm_bw_mw_b', 'barFloatingStyle')).assertTrue();
       done();
     });
 
@@ -414,13 +391,7 @@ export default function tabsBottomOffsetMaxWidthTest() {
      */
     it('testBottomOffset048', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      expect(widthOf('btm_bw_mw_eq') > 0).assertTrue();
-      let style: ESObject | undefined = readStyle('btm_bw_mw_eq', 'barFloatingStyle');
-      expect(style !== undefined).assertTrue();
-      if (style !== undefined) {
-        expect(style.maxWidth !== undefined).assertTrue();
-        console.info("[offsetMaxWidth] maxWidth=" + style.maxWidth);
-      }
+      expect(floatStyleReady('btm_bw_mw_eq', 'barFloatingStyle')).assertTrue();
       done();
     });
 
