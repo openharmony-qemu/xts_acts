@@ -11,7 +11,7 @@ import {
   TestType,
   Size,
   Level
-} from '../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 let domain: int = 0x0000;

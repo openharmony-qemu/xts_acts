@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll } from '../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from './Util.test';
 import abilityTest from './Ability.test.ets';
 import int32ArrayLastIndexOfPart01TestMindmapTestTest from './Int32Array/Int32ArrayLastIndexOfPart01Test.test.ets';
