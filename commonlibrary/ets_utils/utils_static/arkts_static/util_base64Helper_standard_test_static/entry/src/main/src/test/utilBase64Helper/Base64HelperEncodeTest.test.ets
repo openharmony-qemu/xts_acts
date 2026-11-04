@@ -1713,5 +1713,488 @@ export default function Base64HelperEncodeTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_ENCODE_1400
+     * @tc.name testB64EncodeBasic005
+     * @tc.desc Verify Base64Helper encode and encodeSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64EncodeBasic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      {
+          let all: Uint8Array = new Uint8Array(9);
+          for (let i = 0; i < 9; i++) {
+            all.$_set(i, 128);
+          }
+          let b64 = new util.Base64Helper();
+          let val = await b64.encode(all);
+          let outLen: int = val.length;
+          let expectedOutLen: int = 12;
+          expect(outLen).assertEqual(expectedOutLen);
+          let twelfthByte: number = val.$_get(11);
+          let expectedTwelfthByte: int = 65;
+          expect(twelfthByte).assertEqual(expectedTwelfthByte);
+
+      }
+      {
+          let big: Uint8Array = new Uint8Array(1000);
+          for (let i = 0; i < 1000; i++) {
+            big.$_set(i, i & 0xff);
+          }
+          let b64 = new util.Base64Helper();
+          let val = await b64.encode(big, util.Type.BASIC);
+          let outLen: int = val.length;
+          let expectedOutLen: int = 1336;
+          expect(outLen).assertEqual(expectedOutLen);
+          expect(val.$_get(0)).assertEqual(65);
+
+      }
+      {
+          let b64 = new util.Base64Helper();
+          let val = await b64.encode(new Uint8Array([0xef, 0xbb, 0xbf]));
+          let firstByte: number = val.$_get(0);
+          let expectedFirstByte: int = 55;
+          expect(firstByte).assertEqual(expectedFirstByte);
+          let fourthByte: number = val.$_get(3);
+          let expectedFourthByte: int = 47;
+          expect(fourthByte).assertEqual(expectedFourthByte);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeSync(new Uint8Array([115, 49, 51]), util.Type.BASIC);
+        let firstByte: number = r.$_get(0);
+        let expectedFirstByte: int = 99;
+        expect(firstByte).assertEqual(expectedFirstByte);
+        let secondByte: number = r.$_get(1);
+        let expectedSecondByte: int = 122;
+        expect(secondByte).assertEqual(expectedSecondByte);
+        let thirdByte: number = r.$_get(2);
+        let expectedThirdByte: int = 69;
+        expect(thirdByte).assertEqual(expectedThirdByte);
+        let fourthByte: number = r.$_get(3);
+        let expectedFourthByte: int = 122;
+        expect(fourthByte).assertEqual(expectedFourthByte);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeSync(new Uint8Array([104, 101, 108, 108, 111, 33]), util.Type.BASIC);
+        let firstByte: number = r.$_get(0);
+        let expectedFirstByte: int = 97;
+        expect(firstByte).assertEqual(expectedFirstByte);
+        let seventhByte: number = r.$_get(6);
+        let expectedSeventhByte: int = 56;
+        expect(seventhByte).assertEqual(expectedSeventhByte);
+        let eighthByte: number = r.$_get(7);
+        let expectedEighthByte: int = 104;
+        expect(eighthByte).assertEqual(expectedEighthByte);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeSync(new Uint8Array([0xe2, 0x98, 0x83]), util.Type.BASIC);
+        let firstByte: number = r.$_get(0);
+        let expectedFirstByte: int = 52;
+        expect(firstByte).assertEqual(expectedFirstByte);
+        let secondByte: number = r.$_get(1);
+        let expectedSecondByte: int = 112;
+        expect(secondByte).assertEqual(expectedSecondByte);
+        let thirdByte: number = r.$_get(2);
+        let expectedThirdByte: int = 105;
+        expect(thirdByte).assertEqual(expectedThirdByte);
+        let fourthByte: number = r.$_get(3);
+        let expectedFourthByte: int = 68;
+        expect(fourthByte).assertEqual(expectedFourthByte);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeSync(new Uint8Array([0xe0, 0x01, 0x80, 0xff]), util.Type.BASIC);
+        let firstByte: number = r.$_get(0);
+        let expectedFirstByte: int = 52;
+        expect(firstByte).assertEqual(expectedFirstByte);
+        let fifthByte: number = r.$_get(4);
+        let expectedFifthByte: int = 47;
+        expect(fifthByte).assertEqual(expectedFifthByte);
+        let eighthByte: number = r.$_get(7);
+        let expectedEighthByte: int = 61;
+        expect(eighthByte).assertEqual(expectedEighthByte);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeSync(new Uint8Array([0xef, 0xbb, 0xbf]), util.Type.BASIC);
+        let firstByte: number = r.$_get(0);
+        let expectedFirstByte: int = 55;
+        expect(firstByte).assertEqual(expectedFirstByte);
+        let secondByte: number = r.$_get(1);
+        let expectedSecondByte: int = 55;
+        expect(secondByte).assertEqual(expectedSecondByte);
+        let fourthByte: number = r.$_get(3);
+        let expectedFourthByte: int = 47;
+        expect(fourthByte).assertEqual(expectedFourthByte);
+
+      }
+      {
+        let buf: Uint8Array = new Uint8Array([0, 1, 2, 3, 4, 5]);
+        let slice1 = buf.subarray(1, 4);
+        let slice2 = buf.subarray(3, 5);
+        let b64 = new util.Base64Helper();
+        let r1 = b64.encodeSync(slice1);
+        let r2 = b64.encodeSync(slice2);
+        let firstByte: number = r1.$_get(0);
+        let expectedFirstByte: int = 65;
+        expect(firstByte).assertEqual(expectedFirstByte);
+        let fourthByte: number = r2.$_get(3);
+        let expectedFourthByte: int = 61;
+        expect(fourthByte).assertEqual(expectedFourthByte);
+
+      }
+      {
+        let buf: Uint8Array = new Uint8Array([9, 8, 2, 3, 4, 5]);
+        let view = buf.subarray(2, 6);
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeSync(view);
+        let firstByte: number = r.$_get(0);
+        let expectedFirstByte: int = 65;
+        expect(firstByte).assertEqual(expectedFirstByte);
+        let secondByte: number = r.$_get(1);
+        let expectedSecondByte: int = 103;
+        expect(secondByte).assertEqual(expectedSecondByte);
+        let thirdByte: number = r.$_get(2);
+        let expectedThirdByte: int = 77;
+        expect(thirdByte).assertEqual(expectedThirdByte);
+        let fourthByte: number = r.$_get(3);
+        let expectedFourthByte: int = 69;
+        expect(fourthByte).assertEqual(expectedFourthByte);
+        let fifthByte: number = r.$_get(4);
+        let expectedFifthByte: int = 66;
+        expect(fifthByte).assertEqual(expectedFifthByte);
+        let sixthByte: number = r.$_get(5);
+        let expectedSixthByte: int = 81;
+        expect(sixthByte).assertEqual(expectedSixthByte);
+        let seventhByte: number = r.$_get(6);
+        let expectedSeventhByte: int = 61;
+        expect(seventhByte).assertEqual(expectedSeventhByte);
+        let eighthByte: number = r.$_get(7);
+        let expectedEighthByte: int = 61;
+        expect(eighthByte).assertEqual(expectedEighthByte);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_ENCODE_1500
+     * @tc.name testB64EncodeBasic006
+     * @tc.desc Verify Base64Helper encode and encodeSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64EncodeBasic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let full: Uint8Array = new Uint8Array(256);
+        for (let i = 0; i < 256; i++) {
+          full.$_set(i, i);
+        }
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeSync(full, util.Type.BASIC);
+        let outLen: int = r.length;
+        let expectedOutLen: int = 344;
+        expect(outLen).assertEqual(expectedOutLen);
+        expect(r.$_get(0)).assertEqual(65);
+
+      }
+      {
+        let src: Uint8Array = new Uint8Array([115, 49, 51]);
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeSync(src);
+        let isSameBuffer: boolean = r.buffer === src.buffer;
+        expect(isSameBuffer).assertFalse();
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let src: Uint8Array = new Uint8Array([115, 49, 51]);
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeSync(src);
+        src.$_set(0, 0);
+        let firstByte: number = r.$_get(0);
+        let expectedFirstByte: int = 99;
+        expect(firstByte).assertEqual(expectedFirstByte);
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let enc = b64.encodeSync(new Uint8Array([115, 49, 51]));
+        let dec = b64.decodeSync(enc);
+        let firstByte: number = dec.$_get(0);
+        let expectedFirstByte: int = 115;
+        expect(firstByte).assertEqual(expectedFirstByte);
+        let secondByte: number = dec.$_get(1);
+        let expectedSecondByte: int = 49;
+        expect(secondByte).assertEqual(expectedSecondByte);
+        let thirdByte: number = dec.$_get(2);
+        let expectedThirdByte: int = 51;
+        expect(thirdByte).assertEqual(expectedThirdByte);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeSync(new Uint8Array([1, 2, 3]));
+        let byteOffset: int = r.byteOffset;
+        let expectedByteOffset: int = 0;
+        expect(byteOffset).assertEqual(expectedByteOffset);
+        expect(r.length).assertEqual(4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeSync(new Uint8Array([Number.NaN]));
+        let firstByte: number = r.$_get(0);
+        let expectedFirstByte: int = 65;
+        expect(firstByte).assertEqual(expectedFirstByte);
+        let fourthByte: number = r.$_get(3);
+        let expectedFourthByte: int = 61;
+        expect(fourthByte).assertEqual(expectedFourthByte);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeSync(new Uint8Array([Number.POSITIVE_INFINITY]));
+        let outLen: int = r.length;
+        let expectedOutLen: int = 4;
+        expect(outLen).assertEqual(expectedOutLen);
+        let secondByte: number = r.$_get(1);
+        let expectedSecondByte: int = 65;
+        expect(secondByte).assertEqual(expectedSecondByte);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeSync(new Uint8Array([-Number.POSITIVE_INFINITY]));
+        let firstByte: number = r.$_get(0);
+        let expectedFirstByte: int = 65;
+        expect(firstByte).assertEqual(expectedFirstByte);
+        let thirdByte: number = r.$_get(2);
+        let expectedThirdByte: int = 61;
+        expect(thirdByte).assertEqual(expectedThirdByte);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeSync(new Uint8Array([-2147483648]));
+        let firstByte: number = r.$_get(0);
+        let expectedFirstByte: int = 65;
+        expect(firstByte).assertEqual(expectedFirstByte);
+        let secondByte: number = r.$_get(1);
+        let expectedSecondByte: int = 65;
+        expect(secondByte).assertEqual(expectedSecondByte);
+        let fourthByte: number = r.$_get(3);
+        let expectedFourthByte: int = 61;
+        expect(fourthByte).assertEqual(expectedFourthByte);
+
+      }
+      {
+        let buf: Uint8Array = new Uint8Array([1, 2, 3]);
+        let view = buf.subarray(0, 0);
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeSync(view);
+        let outLen: int = r.length;
+        let expectedOutLen: int = 0;
+        expect(outLen).assertEqual(expectedOutLen);
+        expect(r.toString()).assertEqual("");
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_ENCODE_1600
+     * @tc.name testB64EncodeBasic007
+     * @tc.desc Verify Base64Helper encode and encodeSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64EncodeBasic007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeSync(new Uint8Array(new ArrayBuffer(0)));
+        let outLen: int = r.length;
+        let expectedOutLen: int = 0;
+        expect(outLen).assertEqual(expectedOutLen);
+        expect(r.toString()).assertEqual("");
+
+      }
+      {
+        let s: Uint8Array = new Uint8Array(6);
+        for (let i = 0; i < 6; i++) {
+          s.$_set(i, 255);
+        }
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeSync(s);
+        let outLen: int = r.length;
+        let expectedOutLen: int = 8;
+        expect(outLen).assertEqual(expectedOutLen);
+        let firstByte: number = r.$_get(0);
+        let expectedFirstByte: int = 47;
+        expect(firstByte).assertEqual(expectedFirstByte);
+        let eighthByte: number = r.$_get(7);
+        let expectedEighthByte: int = 47;
+        expect(eighthByte).assertEqual(expectedEighthByte);
+
+      }
+      {
+        let all: Uint8Array = new Uint8Array(9);
+        for (let i = 0; i < 9; i++) {
+          all.$_set(i, 128);
+        }
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeSync(all);
+        let outLen: int = r.length;
+        let expectedOutLen: int = 12;
+        expect(outLen).assertEqual(expectedOutLen);
+        let firstByte: number = r.$_get(0);
+        let expectedFirstByte: int = 103;
+        expect(firstByte).assertEqual(expectedFirstByte);
+        let twelfthByte: number = r.$_get(11);
+        let expectedTwelfthByte: int = 65;
+        expect(twelfthByte).assertEqual(expectedTwelfthByte);
+
+      }
+      {
+        let huge: Uint8Array = new Uint8Array(65535);
+        for (let i = 0; i < 65535; i++) {
+          huge.$_set(i, i & 0xff);
+        }
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeSync(huge, util.Type.BASIC);
+        let outLen: int = r.length;
+        let expectedOutLen: int = 87380;
+        expect(outLen).assertEqual(expectedOutLen);
+        expect(r.$_get(0)).assertEqual(65);
+
+      }
+      {
+        let z: Uint8Array = new Uint8Array(3072);
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeSync(z, util.Type.BASIC);
+        let outLen: int = r.length;
+        let expectedOutLen: int = 4096;
+        expect(outLen).assertEqual(expectedOutLen);
+        let byteAt4095: number = r.$_get(4095);
+        let expectedByteAt4095: int = 65;
+        expect(byteAt4095).assertEqual(expectedByteAt4095);
+
+      }
+      {
+        let f: Uint8Array = new Uint8Array(1023);
+        for (let i = 0; i < 1023; i++) {
+          f.$_set(i, 255);
+        }
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeSync(f, util.Type.BASIC);
+        let outLen: int = r.length;
+        let expectedOutLen: int = 1364;
+        expect(outLen).assertEqual(expectedOutLen);
+        let byteAt1363: number = r.$_get(1363);
+        let expectedByteAt1363: int = 47;
+        expect(byteAt1363).assertEqual(expectedByteAt1363);
+
+      }
+      {
+        let buf: Uint8Array = new Uint8Array([5, 6, 7, 8, 9]);
+        let view = buf.subarray(-3);
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeSync(view);
+        let outLen: int = r.length;
+        let expectedOutLen: int = 4;
+        expect(outLen).assertEqual(expectedOutLen);
+        let fourthByte: number = r.$_get(3);
+        let expectedFourthByte: int = 74;
+        expect(fourthByte).assertEqual(expectedFourthByte);
+
+      }
+      {
+        let buf: Uint8Array = new Uint8Array([1, 2, 3, 4, 5, 6]);
+        let view = buf.subarray(4, 10);
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeSync(view);
+        let outLen: int = r.length;
+        let expectedOutLen: int = 4;
+        expect(outLen).assertEqual(expectedOutLen);
+        let thirdByte: number = r.$_get(2);
+        let expectedThirdByte: int = 89;
+        expect(thirdByte).assertEqual(expectedThirdByte);
+
+      }
+      {
+        let buf: Uint8Array = new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+        let view = buf.subarray(-1);
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeSync(view);
+        let outLen: int = r.length;
+        let expectedOutLen: int = 4;
+        expect(outLen).assertEqual(expectedOutLen);
+        let firstByte: number = r.$_get(0);
+        let expectedFirstByte: int = 67;
+        expect(firstByte).assertEqual(expectedFirstByte);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeSync(new Uint8Array([0, 0, 0, 0]));
+        let outLen: int = r.length;
+        let expectedOutLen: int = 8;
+        expect(outLen).assertEqual(expectedOutLen);
+        let eighthByte: number = r.$_get(7);
+        let expectedEighthByte: int = 61;
+        expect(eighthByte).assertEqual(expectedEighthByte);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_ENCODE_1700
+     * @tc.name testB64EncodeBasic008
+     * @tc.desc Verify Base64Helper encode and encodeSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64EncodeBasic008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let big: Uint8Array = new Uint8Array(1000);
+        for (let i = 0; i < 1000; i++) {
+          big.$_set(i, i & 0xff);
+        }
+        let b64 = new util.Base64Helper();
+        let r = b64.encodeSync(big, util.Type.BASIC);
+        let firstByte: number = r.$_get(0);
+        let expectedFirstByte: int = 65;
+        expect(firstByte).assertEqual(expectedFirstByte);
+        expect(r.length).assertEqual(1336);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r1 = b64.encodeSync(new Uint8Array([9007199254740992]));
+        let firstByte: number = r1.$_get(0);
+        let expectedFirstByte: int = 65;
+        expect(firstByte).assertEqual(expectedFirstByte);
+        let secondByte: number = r1.$_get(1);
+        let expectedSecondByte: int = 65;
+        expect(secondByte).assertEqual(expectedSecondByte);
+        let r2 = b64.encodeSync(new Uint8Array([9007199254740993]));
+        let thirdByte: number = r2.$_get(1);
+        let expectedThirdByte: int = 65;
+        expect(thirdByte).assertEqual(expectedThirdByte);
+
+      }
+    });
+
   });
 }
