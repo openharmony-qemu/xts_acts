@@ -67,12 +67,12 @@ export default function dragPreviewOptionsJsSuit() {
     
     
 /**
-     * @tc.number   dragPreviewOptionsJsSuit_static_0100
-     * @tc.name     dragPreviewOptionsJsSuit_static_0100
-     * @tc.desc     dragPreviewOptionsJsSuit_static_0100
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DRAG_PREVIEW_OPTIONS_STATIC_0100
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_DRAG_PREVIEW_OPTIONS_STATIC_0100
+     * @tc.desc     Verify dragPreviewOptions height attribute renders correctly
      * @tc.level    Level.LEVEL0
      */
-it('dragPreviewOptionsJsSuit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_ACE_ENGINE_DRAG_PREVIEW_OPTIONS_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[dragPreviewOptionsJsSuit_0100] START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey("dragPreviewOption");

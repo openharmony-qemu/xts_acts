@@ -22,8 +22,8 @@ import onVisibleAreaNullUndefinedTest from './onVisibleAreaNullUndefined/onVisib
 import renderNodeStateTest from './renderNode/renderNodeState.test';
 import DragActionJsunit from './DragController/DragActionJsSuit.test';
 import dragEventJsunit from './DragController/DragEventJsunit.test';
-import dragPreviewJsSuit from './DragController/dragPreviewJsSuit.test';
-import dragPreviewOptionsJsSuit from './DragController/dragPreviewOptionsJsSuit.test';
+import dragPreviewJsSuit from './DragController/DragPreviewJsSuit.test';
+import dragPreviewOptionsJsSuit from './DragController/DragPreviewOptionsJsSuit.test';
 import GestureDrag from './onGestureJudgeBeginTest/GestureDrag.test';
 export default function testsuite() {
   getDisplayId();//通用属性 onDragStart 失败用例1

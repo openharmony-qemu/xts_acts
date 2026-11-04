@@ -66,12 +66,12 @@ export default function dragPreviewJsSuit() {
     
     
 /**
-     * @tc.number   dragPreviewJsSuit_static_0100
-     * @tc.name     dragPreviewJsSuit_static_0100
-     * @tc.desc     dragPreviewJsSuit_static_0100
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DRAG_PREVIEW_STATIC_0100
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_DRAG_PREVIEW_STATIC_0100
+     * @tc.desc     Verify dragPreview image width and height attributes render correctly
      * @tc.level    Level.LEVEL0
      */
-it('dragPreviewJsSuit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_ACE_ENGINE_DRAG_PREVIEW_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[dragPreviewJsSuit_0100] START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('imagepreview');
