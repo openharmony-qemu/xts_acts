@@ -1756,5 +1756,369 @@ export default function ScopeHelperExpandTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SCOPEHELPER_EXPAND_1700
+     * @tc.name testScopeExpandBasic004
+     * @tc.desc Verify ScopeHelper expand with numeric bounds
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testScopeExpandBasic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let range = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let result = range.expand(new ScopeHelperExpandPart03TestMissingTemperature(50));
+        let actual: string = result.toString();
+        let expected: string = '[30, 50]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let actual: string = range.expand(new ScopeHelperExpandPart03TestMissingTemperature(45)).toString();
+        let expected: string = '[30, 45]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(35),
+          new ScopeHelperExpandPart03TestMissingTemperature(36),
+        );
+        let actual: string = range.expand(new ScopeHelperExpandPart03TestMissingTemperature(10)).toString();
+        let expected: string = '[10, 36]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let result = range.expand(new ScopeHelperExpandPart03TestMissingTemperature(25));
+        let actual: boolean = result.contains(new ScopeHelperExpandPart03TestMissingTemperature(25));
+        expect(actual).assertTrue();
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let result = range.expand(new ScopeHelperExpandPart03TestMissingTemperature(25));
+        let actual: boolean = result.contains(new ScopeHelperExpandPart03TestMissingTemperature(30));
+        expect(actual).assertTrue();
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let result = range.expand(new ScopeHelperExpandPart03TestMissingTemperature(25));
+        let actual: boolean = result.contains(new ScopeHelperExpandPart03TestMissingTemperature(40));
+        expect(actual).assertTrue();
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let result = range.expand(new ScopeHelperExpandPart03TestMissingTemperature(50));
+        let actual: boolean = result.contains(new ScopeHelperExpandPart03TestMissingTemperature(50));
+        expect(actual).assertTrue();
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let actualA = range.expand(new ScopeHelperExpandPart03TestMissingTemperature(20));
+        let actualB = actualA.expand(new ScopeHelperExpandPart03TestMissingTemperature(60));
+        let actual: string = actualB.toString();
+        let expected: string = '[20, 60]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let actualA = range.expand(new ScopeHelperExpandPart03TestMissingTemperature(50));
+        let actualB = actualA.expand(new ScopeHelperExpandPart03TestMissingTemperature(25));
+        let actualC = actualB.expand(new ScopeHelperExpandPart03TestMissingTemperature(100));
+        let actual: string = actualC.toString();
+        let expected: string = '[25, 100]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let actualA = range.expand(new ScopeHelperExpandPart03TestMissingTemperature(20));
+        let actualB = actualA.expand(new ScopeHelperExpandPart03TestMissingTemperature(25));
+        let actual: string = actualB.toString();
+        let expected: string = '[20, 40]';
+        expect(actual).assertEqual(expected);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SCOPEHELPER_EXPAND_1800
+     * @tc.name testScopeExpandBasic005
+     * @tc.desc Verify ScopeHelper expand with numeric bounds
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testScopeExpandBasic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let range = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingBigBalance>(
+          new ScopeHelperExpandPart03TestMissingBigBalance(0n),
+          new ScopeHelperExpandPart03TestMissingBigBalance(100n),
+        );
+        let result = range.expand(new ScopeHelperExpandPart03TestMissingBigBalance(50n));
+        let actual: string = result.toString();
+        let expected: string = '[0, 100]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingWord>(
+          new ScopeHelperExpandPart03TestMissingWord('a'),
+          new ScopeHelperExpandPart03TestMissingWord('dd'),
+        );
+        let result = range.expand(new ScopeHelperExpandPart03TestMissingWord('a'));
+        let actual: string = result.toString();
+        let expected: string = '[a, dd]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingFlag>(
+          new ScopeHelperExpandPart03TestMissingFlag(false),
+          new ScopeHelperExpandPart03TestMissingFlag(true),
+        );
+        let result = range.expand(new ScopeHelperExpandPart03TestMissingFlag(true));
+        let actual: string = result.toString();
+        let expected: string = '[false, true]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingHeight>(
+          new ScopeHelperExpandPart03TestMissingHeight(10),
+          new ScopeHelperExpandPart03TestMissingHeight(20),
+        );
+        let result = range.expand(new ScopeHelperExpandPart03TestMissingHeight(5));
+        let actual: string = result.toString();
+        let expected: string = '[5, 20]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingCode>(
+          new ScopeHelperExpandPart03TestMissingCode(Int.toChar(97)),
+          new ScopeHelperExpandPart03TestMissingCode(Int.toChar(101)),
+        );
+        let result = range.expand(new ScopeHelperExpandPart03TestMissingCode(Int.toChar(98)));
+        let actual: string = result.toString();
+        let expected: string = '[a, e]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingDateWrap>(
+          new ScopeHelperExpandPart03TestMissingDateWrap(new Date(2020, 0, 1)),
+          new ScopeHelperExpandPart03TestMissingDateWrap(new Date(2020, 11, 31)),
+        );
+        let later = new ScopeHelperExpandPart03TestMissingDateWrap(new Date(2021, 5, 1));
+        let result = range.expand(later);
+        let actual: boolean = result.contains(later);
+        expect(actual).assertTrue();
+
+      }
+      {
+        let m2: Map<string, int> = new Map<string, int>();
+        m2.set('a', 1);
+        m2.set('b', 2);
+        let m4: Map<string, int> = new Map<string, int>();
+        m4.set('a', 1);
+        m4.set('b', 2);
+        m4.set('c', 3);
+        m4.set('d', 4);
+        let m9: Map<string, int> = new Map<string, int>();
+        m9.set('a', 1);
+        m9.set('b', 2);
+        m9.set('c', 3);
+        m9.set('d', 4);
+        m9.set('e', 5);
+        m9.set('f', 6);
+        m9.set('g', 7);
+        m9.set('h', 8);
+        m9.set('i', 9);
+        let range = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingMapSize>(
+          new ScopeHelperExpandPart03TestMissingMapSize(m2),
+          new ScopeHelperExpandPart03TestMissingMapSize(m4),
+        );
+        let result = range.expand(new ScopeHelperExpandPart03TestMissingMapSize(m9));
+        let actual: string = result.toString();
+        let expected: string = '[2, 9]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let result = range.expand(new ScopeHelperExpandPart03TestMissingTemperature(25));
+        let actual = result.getLower().getTemp();
+        let expected: int = 25;
+        expect(actual).assertEqual(expected);
+        let actualA = result.getUpper().getTemp();
+        let expectedA: int = 40;
+        expect(actualA).assertEqual(expectedA);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let result = range.expand(
+          new ScopeHelperExpandPart03TestMissingTemperature(35),
+          new ScopeHelperExpandPart03TestMissingTemperature(45),
+        );
+        let actual = result.getLower().getTemp();
+        let expected: int = 30;
+        expect(actual).assertEqual(expected);
+        let actualA = result.getUpper().getTemp();
+        let expectedA: int = 45;
+        expect(actualA).assertEqual(expectedA);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let result = range.expand(
+          new ScopeHelperExpandPart03TestMissingTemperature(10),
+          new ScopeHelperExpandPart03TestMissingTemperature(60),
+        );
+        let actual: string = result.toString();
+        let expected: string = '[10, 60]';
+        expect(actual).assertEqual(expected);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SCOPEHELPER_EXPAND_1900
+     * @tc.name testScopeExpandBasic006
+     * @tc.desc Verify ScopeHelper expand with numeric bounds
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testScopeExpandBasic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let range = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let rangeFir = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(32),
+          new ScopeHelperExpandPart03TestMissingTemperature(38),
+        );
+        let result = range.expand(rangeFir);
+        let actual = result.getLower().getTemp();
+        let expected: int = 30;
+        expect(actual).assertEqual(expected);
+        let actualA = result.getUpper().getTemp();
+        let expectedA: int = 40;
+        expect(actualA).assertEqual(expectedA);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let result = range.expand(
+          new ScopeHelperExpandPart03TestMissingTemperature(45),
+          new ScopeHelperExpandPart03TestMissingTemperature(60),
+        );
+        let actual: string = result.toString();
+        let expected: string = '[30, 60]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let rangeFir = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(50),
+          new ScopeHelperExpandPart03TestMissingTemperature(70),
+        );
+        let result = range.expand(rangeFir);
+        let actual: string = result.toString();
+        let expected: string = '[30, 70]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let result = range.expand(
+          new ScopeHelperExpandPart03TestMissingTemperature(35),
+          new ScopeHelperExpandPart03TestMissingTemperature(35),
+        );
+        let actual: string = result.toString();
+        let expected: string = '[30, 40]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperExpandPart04Test38GuardCompare>(
+          new ScopeHelperExpandPart04Test38GuardCompare(30),
+          new ScopeHelperExpandPart04Test38GuardCompare(40),
+        );
+        let result = range.expand(new ScopeHelperExpandPart04Test38GuardCompare(50));
+        let actual: string = result.toString();
+        let expected: string = '[30, 50]';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range = new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+          new ScopeHelperExpandPart03TestMissingTemperature(-30),
+          new ScopeHelperExpandPart03TestMissingTemperature(40),
+        );
+        let result = range.expand(new ScopeHelperExpandPart03TestMissingTemperature(10));
+        let actual: string = result.toString();
+        let expected: string = '[-30, 40]';
+        expect(actual).assertEqual(expected);
+
+      }
+    });
+
   });
 }
