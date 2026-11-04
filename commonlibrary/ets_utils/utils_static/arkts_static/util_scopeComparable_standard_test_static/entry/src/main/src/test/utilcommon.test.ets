@@ -1830,3 +1830,1422 @@ export class ScopeHelperClampPart03TestMissingThrowOnLowerTemp implements util.S
     return this._temp.toString();
   }
 }
+
+export class ScopeHelperClampPart03TestMissingThrowOnValueTemp implements util.ScopeComparable<ScopeHelperClampPart03TestMissingThrowOnValueTemp> {
+  private _temp: int = 0;
+
+  constructor(value: int) {
+    this._temp = value;
+  }
+
+  compareTo(value: ScopeHelperClampPart03TestMissingThrowOnValueTemp): boolean {
+    if (value.getTemp() === 35) {
+      throw new Error('compare value fails');
+    }
+    return this._temp >= value.getTemp();
+  }
+
+  getTemp(): int {
+    return this._temp;
+  }
+
+  toString(): string {
+    return this._temp.toString();
+  }
+}
+
+export class ScopeHelperClampPart03TestMissingThrowingTemp implements util.ScopeComparable<ScopeHelperClampPart03TestMissingThrowingTemp> {
+  private _temp: int = 0;
+
+  constructor(value: int) {
+    this._temp = value;
+  }
+
+  compareTo(value: ScopeHelperClampPart03TestMissingThrowingTemp): boolean {
+    throw new Error('compareTo throws');
+  }
+
+  getTemp(): int {
+    return this._temp;
+  }
+
+  toString(): string {
+    return this._temp.toString();
+  }
+}
+
+export class ScopeHelperConstructorPart03TestMissingBigValueT3 implements util.ScopeComparable<ScopeHelperConstructorPart03TestMissingBigValueT3> {
+  private readonly _val: long;
+
+  constructor(value: long) {
+    this._val = value;
+  }
+
+  compareTo(value: ScopeHelperConstructorPart03TestMissingBigValueT3): boolean {
+    return this._val >= value.getVal();
+  }
+
+  getVal(): long {
+    return this._val;
+  }
+
+  toString(): string {
+    return this._val.toString();
+  }
+}
+
+export class ScopeHelperConstructorPart03TestMissingBoolWrapT3 implements util.ScopeComparable<ScopeHelperConstructorPart03TestMissingBoolWrapT3> {
+  private readonly _val: boolean;
+
+  constructor(value: boolean) {
+    this._val = value;
+  }
+
+  compareTo(value: ScopeHelperConstructorPart03TestMissingBoolWrapT3): boolean {
+    return this._val === value.getVal();
+  }
+
+  getVal(): boolean {
+    return this._val;
+  }
+
+  toString(): string {
+    return this._val.toString();
+  }
+}
+
+export class ScopeHelperConstructorPart03TestMissingCarT3 {
+  model: string = 'sedan';
+}
+
+export class ScopeHelperConstructorPart03TestMissingCharWrapT3 implements util.ScopeComparable<ScopeHelperConstructorPart03TestMissingCharWrapT3> {
+  private readonly _val: char;
+
+  constructor(value: char) {
+    this._val = value;
+  }
+
+  compareTo(value: ScopeHelperConstructorPart03TestMissingCharWrapT3): boolean {
+    return this._val >= value.getVal();
+  }
+
+  getVal(): char {
+    return this._val;
+  }
+
+  toString(): string {
+    return this._val.toString();
+  }
+}
+
+export class ScopeHelperConstructorPart03TestMissingDateWrapT3 implements util.ScopeComparable<ScopeHelperConstructorPart03TestMissingDateWrapT3> {
+  private readonly _d: Date;
+
+  constructor(value: Date) {
+    this._d = value;
+  }
+
+  compareTo(value: ScopeHelperConstructorPart03TestMissingDateWrapT3): boolean {
+    return this._d.getTime() >= value.getD().getTime();
+  }
+
+  getD(): Date {
+    return this._d;
+  }
+
+  toString(): string {
+    return this._d.getTime().toString();
+  }
+}
+
+export class ScopeHelperConstructorPart03TestMissingDoubleWrapT3 implements util.ScopeComparable<ScopeHelperConstructorPart03TestMissingDoubleWrapT3> {
+  private readonly _val: double;
+
+  constructor(value: double) {
+    this._val = value;
+  }
+
+  compareTo(value: ScopeHelperConstructorPart03TestMissingDoubleWrapT3): boolean {
+    return this._val >= value.getVal();
+  }
+
+  getVal(): double {
+    return this._val;
+  }
+
+  toString(): string {
+    return this._val.toString();
+  }
+}
+
+export class ScopeHelperConstructorPart03TestMissingHolderT3 {
+  tag: int = 1;
+}
+
+export class ScopeHelperConstructorPart03TestMissingThrowingT3 implements util.ScopeComparable<ScopeHelperConstructorPart03TestMissingThrowingT3> {
+  private readonly _temp: int;
+
+  constructor(value: int) {
+    this._temp = value;
+  }
+
+  compareTo(value: ScopeHelperConstructorPart03TestMissingThrowingT3): boolean {
+    throw new Error('compareTo boom');
+  }
+
+  getTemp(): int {
+    return this._temp;
+  }
+
+  toString(): string {
+    return this._temp.toString();
+  }
+}
+
+export class ScopeHelperContainsPart03TestMissingLevelItem implements util.ScopeComparable<ScopeHelperContainsPart03TestMissingLevelItem> {
+  private _level: int;
+
+  constructor(value: int) {
+    this._level = value;
+  }
+
+  compareTo(value: ScopeHelperContainsPart03TestMissingLevelItem): boolean {
+    return this._level >= value.getLevel();
+  }
+
+  getLevel(): int {
+    return this._level;
+  }
+
+  toString(): string {
+    return this._level.toString();
+  }
+}
+
+export class ScopeHelperContainsPart03TestMissingTemperature implements util.ScopeComparable<ScopeHelperContainsPart03TestMissingTemperature> {
+  private _temp: int;
+
+  constructor(value: int) {
+    this._temp = value;
+  }
+
+  compareTo(value: ScopeHelperContainsPart03TestMissingTemperature): boolean {
+    return this._temp >= value.getTemp();
+  }
+
+  getTemp(): int {
+    return this._temp;
+  }
+
+  setTemp(value: int): void {
+    this._temp = value;
+  }
+
+  toString(): string {
+    return this._temp.toString();
+  }
+}
+
+export class ScopeHelperExpandPart01TestMissingBooleanTemp implements util.ScopeComparable<ScopeHelperExpandPart01TestMissingBooleanTemp> {
+  private _val: boolean;
+  constructor(value: boolean) {
+    this._val = value;
+  }
+  compareTo(other: ScopeHelperExpandPart01TestMissingBooleanTemp): boolean {
+    if (this._val === other.getVal()) {
+      return true;
+    }
+    if (!this._val) {
+      return false;
+    }
+    return true;
+  }
+  getVal(): boolean {
+    return this._val;
+  }
+  toString(): string {
+    return this._val.toString();
+  }
+}
+
+export class ScopeHelperExpandPart01TestMissingStringTemp implements util.ScopeComparable<ScopeHelperExpandPart01TestMissingStringTemp> {
+  private _val: string;
+  constructor(value: string) {
+    this._val = value;
+  }
+  compareTo(other: ScopeHelperExpandPart01TestMissingStringTemp): boolean {
+    return this._val >= other.getVal();
+  }
+  getVal(): string {
+    return this._val;
+  }
+  toString(): string {
+    return this._val.toString();
+  }
+}
+
+export class ScopeHelperExpandPart01TestMissingTemperature implements util.ScopeComparable<ScopeHelperExpandPart01TestMissingTemperature> {
+  private _temp: int;
+  constructor(value: int) {
+    this._temp = value;
+  }
+  compareTo(other: ScopeHelperExpandPart01TestMissingTemperature): boolean {
+    return this._temp >= other.getTemp();
+  }
+  getTemp(): int {
+    return this._temp;
+  }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
+
+export class ScopeHelperExpandPart03TestMissingAlwaysTrue implements util.ScopeComparable<ScopeHelperExpandPart03TestMissingAlwaysTrue> {
+  private readonly _n: int;
+  constructor(value: int) {
+    this._n = value;
+  }
+  compareTo(value: ScopeHelperExpandPart03TestMissingAlwaysTrue): boolean {
+    return true;
+  }
+  getN(): int {
+    return this._n;
+  }
+  toString(): string {
+    return this._n.toString();
+  }
+}
+
+export class ScopeHelperExpandPart03TestMissingBigBalance implements util.ScopeComparable<ScopeHelperExpandPart03TestMissingBigBalance> {
+  private readonly _bal: bigint;
+  constructor(value: bigint) {
+    this._bal = value;
+  }
+  compareTo(value: ScopeHelperExpandPart03TestMissingBigBalance): boolean {
+    return this._bal >= value.getBal();
+  }
+  getBal(): bigint {
+    return this._bal;
+  }
+  toString(): string {
+    return this._bal.toString();
+  }
+}
+
+export class ScopeHelperExpandPart03TestMissingCode implements util.ScopeComparable<ScopeHelperExpandPart03TestMissingCode> {
+  private readonly _c: char;
+  constructor(value: char) {
+    this._c = value;
+  }
+  compareTo(value: ScopeHelperExpandPart03TestMissingCode): boolean {
+    return this._c >= value.getC();
+  }
+  getC(): char {
+    return this._c;
+  }
+  toString(): string {
+    return this._c.toString();
+  }
+}
+
+export class ScopeHelperExpandPart03TestMissingDateWrap implements util.ScopeComparable<ScopeHelperExpandPart03TestMissingDateWrap> {
+  private readonly _date: Date;
+  constructor(value: Date) {
+    this._date = value;
+  }
+  compareTo(value: ScopeHelperExpandPart03TestMissingDateWrap): boolean {
+    return this._date.getTime() >= value.getDate().getTime();
+  }
+  getDate(): Date {
+    return this._date;
+  }
+  toString(): string {
+    return this._date.getTime().toString();
+  }
+}
+
+export class ScopeHelperExpandPart03TestMissingDirComp implements util.ScopeComparable<ScopeHelperExpandPart03TestMissingDirComp> {
+  static reversed: boolean = false;
+  private readonly _n: int;
+  constructor(value: int) {
+    this._n = value;
+  }
+  compareTo(value: ScopeHelperExpandPart03TestMissingDirComp): boolean {
+    if (ScopeHelperExpandPart03TestMissingDirComp.reversed) {
+      return this._n <= value.getN();
+    }
+    return this._n >= value.getN();
+  }
+  getN(): int {
+    return this._n;
+  }
+  toString(): string {
+    return this._n.toString();
+  }
+}
+
+export class ScopeHelperExpandPart03TestMissingFlag implements util.ScopeComparable<ScopeHelperExpandPart03TestMissingFlag> {
+  private readonly _flag: boolean;
+  constructor(value: boolean) {
+    this._flag = value;
+  }
+  compareTo(value: ScopeHelperExpandPart03TestMissingFlag): boolean {
+    if (this._flag === value.getFlag()) {
+      return true;
+    }
+    return this._flag;
+  }
+  getFlag(): boolean {
+    return this._flag;
+  }
+  toString(): string {
+    return this._flag.toString();
+  }
+}
+
+export class ScopeHelperExpandPart03TestMissingHeight implements util.ScopeComparable<ScopeHelperExpandPart03TestMissingHeight> {
+  private readonly _h: short;
+  constructor(value: short) {
+    this._h = value;
+  }
+  compareTo(value: ScopeHelperExpandPart03TestMissingHeight): boolean {
+    return this._h >= value.getH();
+  }
+  getH(): short {
+    return this._h;
+  }
+  toString(): string {
+    return this._h.toString();
+  }
+}
+
+export class ScopeHelperExpandPart03TestMissingLength implements util.ScopeComparable<ScopeHelperExpandPart03TestMissingLength> {
+  private readonly _len: long;
+  constructor(value: long) {
+    this._len = value;
+  }
+  compareTo(value: ScopeHelperExpandPart03TestMissingLength): boolean {
+    return this._len >= value.getLen();
+  }
+  getLen(): long {
+    return this._len;
+  }
+  toString(): string {
+    return this._len.toString();
+  }
+}
+
+export class ScopeHelperExpandPart03TestMissingListLen implements util.ScopeComparable<ScopeHelperExpandPart03TestMissingListLen> {
+  private readonly _arr: long[];
+  constructor(value: long[]) {
+    this._arr = value;
+  }
+  compareTo(value: ScopeHelperExpandPart03TestMissingListLen): boolean {
+    return this._arr.length >= value.getArr().length;
+  }
+  getArr(): long[] {
+    return this._arr;
+  }
+  toString(): string {
+    return this._arr.length.toString();
+  }
+}
+
+export class ScopeHelperExpandPart03TestMissingMapSize implements util.ScopeComparable<ScopeHelperExpandPart03TestMissingMapSize> {
+  private readonly _map: Map<string, int>;
+  constructor(value: Map<string, int>) {
+    this._map = value;
+  }
+  compareTo(value: ScopeHelperExpandPart03TestMissingMapSize): boolean {
+    return this._map.size >= value.getMap().size;
+  }
+  getMap(): Map<string, int> {
+    return this._map;
+  }
+  toString(): string {
+    return this._map.size.toString();
+  }
+}
+
+export class ScopeHelperExpandPart03TestMissingMeasure implements util.ScopeComparable<ScopeHelperExpandPart03TestMissingMeasure> {
+  private readonly _m: float;
+  constructor(value: float) {
+    this._m = value;
+  }
+  compareTo(value: ScopeHelperExpandPart03TestMissingMeasure): boolean {
+    return this._m >= value.getM();
+  }
+  getM(): float {
+    return this._m;
+  }
+  toString(): string {
+    return this._m.toString();
+  }
+}
+
+export class ScopeHelperExpandPart03TestMissingNeverBigger implements util.ScopeComparable<ScopeHelperExpandPart03TestMissingNeverBigger> {
+  private readonly _n: int;
+  constructor(value: int) {
+    this._n = value;
+  }
+  compareTo(value: ScopeHelperExpandPart03TestMissingNeverBigger): boolean {
+    return false;
+  }
+  getN(): int {
+    return this._n;
+  }
+  toString(): string {
+    return this._n.toString();
+  }
+}
+
+export class ScopeHelperExpandPart03TestMissingScore implements util.ScopeComparable<ScopeHelperExpandPart03TestMissingScore> {
+  private readonly _score: double;
+  constructor(value: double) {
+    this._score = value;
+  }
+  compareTo(value: ScopeHelperExpandPart03TestMissingScore): boolean {
+    return this._score >= value.getScore();
+  }
+  getScore(): double {
+    return this._score;
+  }
+  toString(): string {
+    return this._score.toString();
+  }
+}
+
+export class ScopeHelperExpandPart03TestMissingTemperature implements util.ScopeComparable<ScopeHelperExpandPart03TestMissingTemperature> {
+  private readonly _temp: int;
+  constructor(value: int) {
+    this._temp = value;
+  }
+  compareTo(value: ScopeHelperExpandPart03TestMissingTemperature): boolean {
+    return this._temp >= value.getTemp();
+  }
+  getTemp(): int {
+    return this._temp;
+  }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
+
+export class ScopeHelperExpandPart03TestMissingThrowingComp implements util.ScopeComparable<ScopeHelperExpandPart03TestMissingThrowingComp> {
+  private readonly _n: int;
+  constructor(value: int) {
+    this._n = value;
+  }
+  compareTo(value: ScopeHelperExpandPart03TestMissingThrowingComp): boolean {
+    throw new Error('compare failed');
+  }
+  getN(): int {
+    return this._n;
+  }
+  toString(): string {
+    return this._n.toString();
+  }
+}
+
+export class ScopeHelperExpandPart03TestMissingWeight implements util.ScopeComparable<ScopeHelperExpandPart03TestMissingWeight> {
+  private readonly _w: byte;
+  constructor(value: byte) {
+    this._w = value;
+  }
+  compareTo(value: ScopeHelperExpandPart03TestMissingWeight): boolean {
+    return this._w >= value.getW();
+  }
+  getW(): byte {
+    return this._w;
+  }
+  toString(): string {
+    return this._w.toString();
+  }
+}
+
+export class ScopeHelperExpandPart03TestMissingWord implements util.ScopeComparable<ScopeHelperExpandPart03TestMissingWord> {
+  private readonly _word: string;
+  constructor(value: string) {
+    this._word = value;
+  }
+  compareTo(value: ScopeHelperExpandPart03TestMissingWord): boolean {
+    return this._word.length >= value.getWord().length;
+  }
+  getWord(): string {
+    return this._word;
+  }
+  toString(): string {
+    return this._word;
+  }
+}
+
+export class ScopeHelperGetUpperPart02TestMissingArrValue implements util.ScopeComparable<ScopeHelperGetUpperPart02TestMissingArrValue> {
+  private _a: long[] = [];
+  constructor(value: long[]) {
+    this._a = value;
+  }
+  compareTo(value: ScopeHelperGetUpperPart02TestMissingArrValue): boolean {
+    return this._a.length >= value.getA().length;
+  }
+  getA(): long[] {
+    return this._a;
+  }
+  toString(): string {
+    return this._a.length.toString();
+  }
+}
+
+export class ScopeHelperGetUpperPart02TestMissingBigIntValue implements util.ScopeComparable<ScopeHelperGetUpperPart02TestMissingBigIntValue> {
+  private _n: bigint = 0n;
+  constructor(value: bigint) {
+    this._n = value;
+  }
+  compareTo(value: ScopeHelperGetUpperPart02TestMissingBigIntValue): boolean {
+    return this._n >= value.getN();
+  }
+  getN(): bigint {
+    return this._n;
+  }
+  toString(): string {
+    return this._n.toString();
+  }
+}
+
+export class ScopeHelperGetUpperPart02TestMissingBoolValue implements util.ScopeComparable<ScopeHelperGetUpperPart02TestMissingBoolValue> {
+  private _b: boolean = false;
+  constructor(value: boolean) {
+    this._b = value;
+  }
+  compareTo(value: ScopeHelperGetUpperPart02TestMissingBoolValue): boolean {
+    return this._b >= value.getB();
+  }
+  getB(): boolean {
+    return this._b;
+  }
+  toString(): string {
+    return this._b.toString();
+  }
+}
+
+export class ScopeHelperGetUpperPart02TestMissingCharValue implements util.ScopeComparable<ScopeHelperGetUpperPart02TestMissingCharValue> {
+  private _c: string = '';
+  constructor(value: string) {
+    this._c = value;
+  }
+  compareTo(value: ScopeHelperGetUpperPart02TestMissingCharValue): boolean {
+    return this._c >= value.getC();
+  }
+  getC(): string {
+    return this._c;
+  }
+  toString(): string {
+    return this._c;
+  }
+}
+
+export class ScopeHelperGetUpperPart02TestMissingDateValue implements util.ScopeComparable<ScopeHelperGetUpperPart02TestMissingDateValue> {
+  private _t: long = 0;
+  constructor(value: long) {
+    this._t = value;
+  }
+  compareTo(value: ScopeHelperGetUpperPart02TestMissingDateValue): boolean {
+    return this._t >= value.getT();
+  }
+  getT(): long {
+    return this._t;
+  }
+  getDate(): Date {
+    return Utils.dateFromTime(this._t);
+  }
+  toString(): string {
+    return this._t.toString();
+  }
+}
+
+export class ScopeHelperGetUpperPart02TestMissingDoubleValue implements util.ScopeComparable<ScopeHelperGetUpperPart02TestMissingDoubleValue> {
+  private _d: double = 0;
+  constructor(value: double) {
+    this._d = value;
+  }
+  compareTo(value: ScopeHelperGetUpperPart02TestMissingDoubleValue): boolean {
+    return this._d >= value.getD();
+  }
+  getD(): double {
+    return this._d;
+  }
+  toString(): string {
+    return this._d.toString();
+  }
+}
+
+export class ScopeHelperGetUpperPart02TestMissingErrorValue implements util.ScopeComparable<ScopeHelperGetUpperPart02TestMissingErrorValue> {
+  private _e: Error = new Error();
+  constructor(value: Error) {
+    this._e = value;
+  }
+  compareTo(value: ScopeHelperGetUpperPart02TestMissingErrorValue): boolean {
+    return this._e.message >= value.getE().message;
+  }
+  getE(): Error {
+    return this._e;
+  }
+  toString(): string {
+    return this._e.message;
+  }
+}
+
+export class ScopeHelperGetUpperPart02TestMissingFloatValue implements util.ScopeComparable<ScopeHelperGetUpperPart02TestMissingFloatValue> {
+  private _f: float = 0;
+  constructor(value: float) {
+    this._f = value;
+  }
+  compareTo(value: ScopeHelperGetUpperPart02TestMissingFloatValue): boolean {
+    return this._f >= value.getF();
+  }
+  getF(): float {
+    return this._f;
+  }
+  toString(): string {
+    return this._f.toString();
+  }
+}
+
+export class ScopeHelperGetUpperPart02TestMissingLongValue implements util.ScopeComparable<ScopeHelperGetUpperPart02TestMissingLongValue> {
+  private _l: long = 0;
+  constructor(value: long) {
+    this._l = value;
+  }
+  compareTo(value: ScopeHelperGetUpperPart02TestMissingLongValue): boolean {
+    return this._l >= value.getL();
+  }
+  getL(): long {
+    return this._l;
+  }
+  toString(): string {
+    return this._l.toString();
+  }
+}
+
+export class ScopeHelperGetUpperPart02TestMissingMapValue implements util.ScopeComparable<ScopeHelperGetUpperPart02TestMissingMapValue> {
+  private _m: Map<string, number> = new Map<string, number>();
+  constructor(value: Map<string, number>) {
+    this._m = value;
+  }
+  compareTo(value: ScopeHelperGetUpperPart02TestMissingMapValue): boolean {
+    return this._m.size >= value.getM().size;
+  }
+  getM(): Map<string, number> {
+    return this._m;
+  }
+  toString(): string {
+    return this._m.size.toString();
+  }
+}
+
+export class ScopeHelperGetUpperPart02TestMissingNumberValue implements util.ScopeComparable<ScopeHelperGetUpperPart02TestMissingNumberValue> {
+  private _nv: number = 0;
+  constructor(value: long) {
+    this._nv = value;
+  }
+  compareTo(value: ScopeHelperGetUpperPart02TestMissingNumberValue): boolean {
+    return this._nv >= value.getNv();
+  }
+  getNv(): number {
+    return this._nv;
+  }
+  toString(): string {
+    return this._nv.toString();
+  }
+}
+
+export class ScopeHelperGetUpperPart02TestMissingRegexValue implements util.ScopeComparable<ScopeHelperGetUpperPart02TestMissingRegexValue> {
+  private _r: RegExp = new RegExp('');
+  constructor(value: RegExp) {
+    this._r = value;
+  }
+  compareTo(value: ScopeHelperGetUpperPart02TestMissingRegexValue): boolean {
+    return this._r.source >= value.getR().source;
+  }
+  getR(): RegExp {
+    return this._r;
+  }
+  toString(): string {
+    return this._r.source;
+  }
+}
+
+export class ScopeHelperGetUpperPart02TestMissingStringValue implements util.ScopeComparable<ScopeHelperGetUpperPart02TestMissingStringValue> {
+  private _s: string = '';
+  constructor(value: string) {
+    this._s = value;
+  }
+  compareTo(value: ScopeHelperGetUpperPart02TestMissingStringValue): boolean {
+    return this._s >= value.getS();
+  }
+  getS(): string {
+    return this._s;
+  }
+  toString(): string {
+    return this._s;
+  }
+}
+
+export class ScopeHelperGetUpperPart02TestMissingTemperature implements util.ScopeComparable<ScopeHelperGetUpperPart02TestMissingTemperature> {
+  private _temp: int = 0;
+  constructor(value: int) {
+    this._temp = value;
+  }
+  compareTo(value: ScopeHelperGetUpperPart02TestMissingTemperature): boolean {
+    return this._temp >= value.getTemp();
+  }
+  getTemp(): int {
+    return this._temp;
+  }
+  setTemp(value: int): void {
+    this._temp = value;
+  }
+  toString(): string {
+    return this._temp.toString();
+  }
+}
+
+export class ScopeHelperIntersectPart03TestMissingLongWrap implements util.ScopeComparable<ScopeHelperIntersectPart03TestMissingLongWrap> {
+  private _val: long = 0;
+
+  constructor(value: long) {
+    this._val = value;
+  }
+
+  compareTo(value: ScopeHelperIntersectPart03TestMissingLongWrap): boolean {
+    return this._val >= value.getVal();
+  }
+
+  getVal(): long {
+    return this._val;
+  }
+
+  toString(): string {
+    return this._val.toString();
+  }
+}
+
+export class ScopeHelperIntersectPart03TestMissingStrWrap implements util.ScopeComparable<ScopeHelperIntersectPart03TestMissingStrWrap> {
+  private _val: string = '';
+
+  constructor(value: string) {
+    this._val = value;
+  }
+
+  compareTo(value: ScopeHelperIntersectPart03TestMissingStrWrap): boolean {
+    return this._val >= value.getVal();
+  }
+
+  getVal(): string {
+    return this._val;
+  }
+
+  toString(): string {
+    return this._val.toString();
+  }
+}
+
+export class ScopeHelperIntersectPart03TestMissingTemperature implements util.ScopeComparable<ScopeHelperIntersectPart03TestMissingTemperature> {
+  private _temp: int = 0;
+
+  constructor(value: int) {
+    this._temp = value;
+  }
+
+  compareTo(value: ScopeHelperIntersectPart03TestMissingTemperature): boolean {
+    return this._temp >= value.getTemp();
+  }
+
+  getTemp(): int {
+    return this._temp;
+  }
+
+  setTemp(value: int): void {
+    this._temp = value;
+  }
+
+  toString(): string {
+    return this._temp.toString();
+  }
+}
+
+export class ScopeHelperOverviewPart01TestMissingTemperature implements util.ScopeComparable<ScopeHelperOverviewPart01TestMissingTemperature> {
+  private readonly _temp: int;
+  readonly scale: string = 'C';
+
+  constructor(value: int) {
+    this._temp = value;
+  }
+
+  compareTo(value: ScopeHelperOverviewPart01TestMissingTemperature): boolean {
+    return this._temp >= value.getTemp();
+  }
+
+  getTemp(): int {
+    return this._temp;
+  }
+
+  toString(): string {
+    return this._temp.toString();
+  }
+}
+
+export class ScopeHelperOverviewPart03TestMissingAllFalseTemp implements util.ScopeComparable<ScopeHelperOverviewPart03TestMissingAllFalseTemp> {
+  private readonly _temp: int;
+
+  constructor(value: int) {
+    this._temp = value;
+  }
+
+  compareTo(value: ScopeHelperOverviewPart03TestMissingAllFalseTemp): boolean {
+    return false;
+  }
+
+  getTemp(): int {
+    return this._temp;
+  }
+
+  toString(): string {
+    return this._temp.toString();
+  }
+}
+
+export class ScopeHelperOverviewPart03TestMissingTemperature implements util.ScopeComparable<ScopeHelperOverviewPart03TestMissingTemperature> {
+  private readonly _temp: int;
+
+  constructor(value: int) {
+    this._temp = value;
+  }
+
+  compareTo(value: ScopeHelperOverviewPart03TestMissingTemperature): boolean {
+    return this._temp >= value.getTemp();
+  }
+
+  getTemp(): int {
+    return this._temp;
+  }
+
+  toString(): string {
+    return this._temp.toString();
+  }
+}
+
+export class ScopeHelperToStringPart01TestMissingHeight implements util.ScopeComparable<ScopeHelperToStringPart01TestMissingHeight> {
+  private readonly _length: double;
+
+  constructor(value: double) {
+    this._length = value;
+  }
+
+  compareTo(value: ScopeHelperToStringPart01TestMissingHeight): boolean {
+    return this._length >= value.getLength();
+  }
+
+  getLength(): double {
+    return this._length;
+  }
+
+  toString(): string {
+    return this._length.toString();
+  }
+}
+
+export class ScopeHelperToStringPart01TestMissingLabel implements util.ScopeComparable<ScopeHelperToStringPart01TestMissingLabel> {
+  private readonly _tag: string;
+
+  constructor(value: string) {
+    this._tag = value;
+  }
+
+  compareTo(value: ScopeHelperToStringPart01TestMissingLabel): boolean {
+    return this._tag.length >= value.getTag().length;
+  }
+
+  getTag(): string {
+    return this._tag;
+  }
+
+  toString(): string {
+    return this._tag;
+  }
+}
+
+export class ScopeHelperToStringPart01TestMissingMeter implements util.ScopeComparable<ScopeHelperToStringPart01TestMissingMeter> {
+  private readonly _meters: bigint;
+
+  constructor(value: bigint) {
+    this._meters = value;
+  }
+
+  compareTo(value: ScopeHelperToStringPart01TestMissingMeter): boolean {
+    return this._meters >= value.getMeters();
+  }
+
+  getMeters(): bigint {
+    return this._meters;
+  }
+
+  toString(): string {
+    return this._meters.toString() + 'm';
+  }
+}
+
+export class ScopeHelperToStringPart02TestMissingCoin implements util.ScopeComparable<ScopeHelperToStringPart02TestMissingCoin> {
+  private readonly _cents: long;
+
+  constructor(value: long) {
+    this._cents = value;
+  }
+
+  compareTo(value: ScopeHelperToStringPart02TestMissingCoin): boolean {
+    return this._cents >= value.getCents();
+  }
+
+  getCents(): long {
+    return this._cents;
+  }
+
+  toString(): string {
+    return this._cents.toString();
+  }
+}
+
+export class ScopeHelperToStringPart02TestMissingGrade implements util.ScopeComparable<ScopeHelperToStringPart02TestMissingGrade> {
+  private readonly _score: float;
+
+  constructor(value: float) {
+    this._score = value;
+  }
+
+  compareTo(value: ScopeHelperToStringPart02TestMissingGrade): boolean {
+    return this._score >= value.getScore();
+  }
+
+  getScore(): float {
+    return this._score;
+  }
+
+  toString(): string {
+    return this._score.toString() + 'f';
+  }
+}
+
+export class ScopeHelperToStringPart02TestMissingInterval implements util.ScopeComparable<ScopeHelperToStringPart02TestMissingInterval> {
+  private readonly _sec: short;
+
+  constructor(value: short) {
+    this._sec = value;
+  }
+
+  compareTo(value: ScopeHelperToStringPart02TestMissingInterval): boolean {
+    return this._sec >= value.getSec();
+  }
+
+  getSec(): short {
+    return this._sec;
+  }
+
+  toString(): string {
+    return this._sec.toString() + 's';
+  }
+}
+
+export class ScopeHelperToStringPart02TestMissingLetter implements util.ScopeComparable<ScopeHelperToStringPart02TestMissingLetter> {
+  private readonly _ch: char;
+
+  constructor(value: char) {
+    this._ch = value;
+  }
+
+  compareTo(value: ScopeHelperToStringPart02TestMissingLetter): boolean {
+    return this._ch >= value.getCh();
+  }
+
+  getCh(): char {
+    return this._ch;
+  }
+
+  toString(): string {
+    return this._ch.toString();
+  }
+}
+
+export class ScopeHelperToStringPart02TestMissingPixels implements util.ScopeComparable<ScopeHelperToStringPart02TestMissingPixels> {
+  private readonly _pix: byte;
+
+  constructor(value: byte) {
+    this._pix = value;
+  }
+
+  compareTo(value: ScopeHelperToStringPart02TestMissingPixels): boolean {
+    return this._pix >= value.getPix();
+  }
+
+  getPix(): byte {
+    return this._pix;
+  }
+
+  toString(): string {
+    return this._pix.toString() + 'px';
+  }
+}
+
+export class ScopeHelperToStringPart02TestMissingSwitch implements util.ScopeComparable<ScopeHelperToStringPart02TestMissingSwitch> {
+  private readonly _on: boolean;
+
+  constructor(value: boolean) {
+    this._on = value;
+  }
+
+  compareTo(value: ScopeHelperToStringPart02TestMissingSwitch): boolean {
+    return this._on === value.getOn();
+  }
+
+  getOn(): boolean {
+    return this._on;
+  }
+
+  toString(): string {
+    if (this._on) {
+      return 'ON';
+    }
+    return 'OFF';
+  }
+}
+
+export class ScopeHelperToStringPart02TestMissingVolume implements util.ScopeComparable<ScopeHelperToStringPart02TestMissingVolume> {
+  private readonly _val: int;
+
+  constructor(value: int) {
+    this._val = value;
+  }
+
+  compareTo(value: ScopeHelperToStringPart02TestMissingVolume): boolean {
+    return this._val >= value.getVal();
+  }
+
+  getVal(): int {
+    return this._val;
+  }
+
+  toString(): string {
+    return this._val.toString();
+  }
+}
+
+export class ScopeHelperToStringPart02TestMissingWeight implements util.ScopeComparable<ScopeHelperToStringPart02TestMissingWeight> {
+  private readonly _kg: double;
+
+  constructor(value: double) {
+    this._kg = value;
+  }
+
+  compareTo(value: ScopeHelperToStringPart02TestMissingWeight): boolean {
+    return this._kg >= value.getKg();
+  }
+
+  getKg(): double {
+    return this._kg;
+  }
+
+  toString(): string {
+    return this._kg.toString() + 'g';
+  }
+}
+
+export class ScopeHelperToStringPart02TestMissingWord implements util.ScopeComparable<ScopeHelperToStringPart02TestMissingWord> {
+  private readonly _text: string;
+
+  constructor(value: string) {
+    this._text = value;
+  }
+
+  compareTo(value: ScopeHelperToStringPart02TestMissingWord): boolean {
+    return this._text.length >= value.getText().length;
+  }
+
+  getText(): string {
+    return this._text;
+  }
+
+  toString(): string {
+    return this._text;
+  }
+}
+
+export class Temperature implements util.ScopeComparable<Temperature> {
+  private readonly value: int;
+  constructor(value: int) {
+    this.value = value;
+  }
+  compareTo(other: Temperature): boolean {
+    return this.value >= other.value;
+  }
+  getTemp(): int {
+    return this.value;
+  }
+  toString(): string {
+    return this.value.toString();
+  }
+}
+
+export class IntWrapT3 implements util.ScopeComparable<IntWrapT3> {
+  private readonly value: int;
+  constructor(value: int) {
+    this.value = value;
+  }
+  compareTo(other: IntWrapT3): boolean {
+    return this.value >= other.value;
+  }
+  getVal(): int {
+    return this.value;
+  }
+  toString(): string {
+    return this.value.toString();
+  }
+}
+
+export class Person implements util.ScopeComparable<Person> {
+  readonly name: string;
+  readonly age: int;
+  constructor(name: string, age: int) {
+    this.name = name;
+    this.age = age;
+  }
+  compareTo(other: Person): boolean {
+    return this.age >= other.age;
+  }
+  toString(): string {
+    return this.name;
+  }
+}
+
+export function probeScopeCtor03(input: Object): int {
+        try {
+          let r = new util.ScopeHelper<ScopeHelperOverviewPart03TestMissingTemperature>(
+            input as ScopeHelperOverviewPart03TestMissingTemperature,
+            new ScopeHelperOverviewPart03TestMissingTemperature(10),
+          );
+          if (r === null) {
+            return 1;
+          }
+          return 0;
+        } catch (e) {
+          return 1;
+        }
+      }
+
+export function probeScopeCtorPair03(lower: Object, upper: Object): int {
+        try {
+          let r = new util.ScopeHelper<ScopeHelperOverviewPart03TestMissingTemperature>(
+            lower as ScopeHelperOverviewPart03TestMissingTemperature,
+            upper as ScopeHelperOverviewPart03TestMissingTemperature,
+          );
+          if (r === null) {
+            return 1;
+          }
+          return 0;
+        } catch (e) {
+          return 1;
+        }
+      }
+
+export function useDecoder(dec: util.StringDecoder): string {
+        return dec.write(new Uint8Array([0x43]));
+      }
+
+export class ScopeHelperIntValue implements util.ScopeComparable<ScopeHelperIntValue> {
+  readonly value: int;
+  constructor(value: int) {
+    this.value = value;
+  }
+  compareTo(other: ScopeHelperIntValue): boolean {
+    return this.value >= other.value;
+  }
+  getValue(): int {
+    return this.value;
+  }
+  toString(): string {
+    return this.value.toString();
+  }
+}
+
+export class ScopeHelperLongValue implements util.ScopeComparable<ScopeHelperLongValue> {
+  readonly value: long;
+  constructor(value: long) {
+    this.value = value;
+  }
+  compareTo(other: ScopeHelperLongValue): boolean {
+    return this.value >= other.value;
+  }
+  getValue(): long {
+    return this.value;
+  }
+  toString(): string {
+    return this.value.toString();
+  }
+}
+
+export class ScopeHelperDoubleValue implements util.ScopeComparable<ScopeHelperDoubleValue> {
+  readonly value: double;
+  constructor(value: double) {
+    this.value = value;
+  }
+  compareTo(other: ScopeHelperDoubleValue): boolean {
+    return this.value >= other.value;
+  }
+  getValue(): double {
+    return this.value;
+  }
+  toString(): string {
+    return this.value.toString();
+  }
+}
+
+export class ScopeHelperFloatValue implements util.ScopeComparable<ScopeHelperFloatValue> {
+  readonly value: float;
+  constructor(value: float) {
+    this.value = value;
+  }
+  compareTo(other: ScopeHelperFloatValue): boolean {
+    return this.value >= other.value;
+  }
+  getValue(): float {
+    return this.value;
+  }
+  toString(): string {
+    return this.value.toString();
+  }
+}
+
+export class ScopeHelperByteValue implements util.ScopeComparable<ScopeHelperByteValue> {
+  readonly value: byte;
+  constructor(value: byte) {
+    this.value = value;
+  }
+  compareTo(other: ScopeHelperByteValue): boolean {
+    return this.value >= other.value;
+  }
+  getValue(): byte {
+    return this.value;
+  }
+  toString(): string {
+    return this.value.toString();
+  }
+}
+
+export class ScopeHelperShortValue implements util.ScopeComparable<ScopeHelperShortValue> {
+  readonly value: short;
+  constructor(value: short) {
+    this.value = value;
+  }
+  compareTo(other: ScopeHelperShortValue): boolean {
+    return this.value >= other.value;
+  }
+  getValue(): short {
+    return this.value;
+  }
+  toString(): string {
+    return this.value.toString();
+  }
+}
+
+export class ScopeHelperCharValue implements util.ScopeComparable<ScopeHelperCharValue> {
+  readonly value: char;
+  constructor(value: char) {
+    this.value = value;
+  }
+  compareTo(other: ScopeHelperCharValue): boolean {
+    return this.value >= other.value;
+  }
+  getValue(): char {
+    return this.value;
+  }
+  toString(): string {
+    return this.value.toString();
+  }
+}
+
+export class ScopeHelperStringValue implements util.ScopeComparable<ScopeHelperStringValue> {
+  readonly value: string;
+  constructor(value: string) {
+    this.value = value;
+  }
+  compareTo(other: ScopeHelperStringValue): boolean {
+    return this.value >= other.value;
+  }
+  getValue(): string {
+    return this.value;
+  }
+  toString(): string {
+    return this.value;
+  }
+}
+
+export class ScopeHelperBooleanValue implements util.ScopeComparable<ScopeHelperBooleanValue> {
+  readonly value: boolean;
+  constructor(value: boolean) {
+    this.value = value;
+  }
+  compareTo(other: ScopeHelperBooleanValue): boolean {
+    return this.value >= other.value;
+  }
+  getValue(): boolean {
+    return this.value;
+  }
+  toString(): string {
+    return this.value.toString();
+  }
+}
+
+export class ScopeHelperBigIntValue implements util.ScopeComparable<ScopeHelperBigIntValue> {
+  readonly value: bigint;
+  constructor(value: bigint) {
+    this.value = value;
+  }
+  compareTo(other: ScopeHelperBigIntValue): boolean {
+    return this.value >= other.value;
+  }
+  getValue(): bigint {
+    return this.value;
+  }
+  toString(): string {
+    return this.value.toString();
+  }
+}
+
+export class ScopeHelperDateValue implements util.ScopeComparable<ScopeHelperDateValue> {
+  readonly value: Date;
+  constructor(value: Date) {
+    this.value = value;
+  }
+  compareTo(other: ScopeHelperDateValue): boolean {
+    return this.value.getTime() >= other.value.getTime();
+  }
+  getValue(): Date {
+    return this.value;
+  }
+  toString(): string {
+    return this.value.toString();
+  }
+}
+
+export class ScopeHelperObjectValue implements util.ScopeComparable<ScopeHelperObjectValue> {
+  readonly value: Object;
+  constructor(value: Object) {
+    this.value = value;
+  }
+  compareTo(other: ScopeHelperObjectValue): boolean {
+    return false;
+  }
+  getValue(): Object {
+    return this.value;
+  }
+  toString(): string {
+    return this.value.toString();
+  }
+}
