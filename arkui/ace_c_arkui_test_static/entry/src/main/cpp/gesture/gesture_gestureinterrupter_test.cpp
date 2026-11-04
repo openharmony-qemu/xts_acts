@@ -87,11 +87,11 @@ static std::shared_ptr<ButtonComponent> CreateButtonNodeWithInterrupter(
     ArkUI_NativeGestureAPI_1* gestureAPI, const std::string& id)
 {
     auto button = std::make_shared<ButtonComponent>();
-    button->SetWidth(SIZE_150);
-    button->SetHeight(SIZE_50);
+    button->SetWidth(SIZE_100);
+    button->SetHeight(SIZE_20);
     button->SetId(id);
     button->SetBackgroundColor(COLOR_RED);
-    button->SetMargin(SIZE_10);
+    button->SetMargin(PARAM_2);
     auto tapGesture = gestureAPI->createTapGesture(PARAM_1, PARAM_1);
     gestureAPI->setGestureEventTarget(tapGesture, GESTURE_EVENT_ACTION_ACCEPT, nullptr, nullptr);
     gestureAPI->addGestureToNode(button->GetComponent(), tapGesture, NORMAL, NORMAL_GESTURE_MASK);
@@ -113,11 +113,11 @@ static std::shared_ptr<ButtonComponent> CreateButtonNodeWithInput(
     ArkUI_NativeGestureAPI_1* gestureAPI, const std::string& id)
 {
     auto button = std::make_shared<ButtonComponent>();
-    button->SetWidth(SIZE_150);
-    button->SetHeight(SIZE_50);
+    button->SetWidth(SIZE_100);
+    button->SetHeight(SIZE_20);
     button->SetId(id);
     button->SetBackgroundColor(COLOR_RED);
-    button->SetMargin(SIZE_10);
+    button->SetMargin(PARAM_2);
     auto tapGesture = gestureAPI->createTapGesture(PARAM_1, PARAM_1);
     gestureAPI->setGestureEventTarget(tapGesture, GESTURE_EVENT_ACTION_ACCEPT, nullptr, OnEventGesture);
     gestureAPI->addGestureToNode(button->GetComponent(), tapGesture, NORMAL, NORMAL_GESTURE_MASK);
