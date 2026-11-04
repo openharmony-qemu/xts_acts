@@ -112,6 +112,9 @@
       },
       {
         "name": "ohos.permission.SET_WIFI_INFO"
+      },
+      {
+        "name": "ohos.permission.ACCESS_BLUETOOTH"
       }
     ],
     "js": [
