@@ -16,6 +16,8 @@
 
 import bluetoothBleStaticTest from "./BluetoothBleStatic.test";
 import bluetoothBleCallbackTest from "./BluetoothBleCallbackStatic.test";
+import bluetoothAdvertisingTest from "./BluetoothAdvertising.test";
+import GattConnectTest from "./GattServerConnect.test";
 import btBleManagerTest from './BtBleManager.test';
 import bluetoothBleTest from './BluetoothBle.test';
 import btBleServiceTest from './BtBleService.test';
@@ -26,4 +28,6 @@ export default function testsuite(): void {
   bluetoothBleTest();
   btBleServiceTest();
   bluetoothBleCallbackTest();
+  bluetoothAdvertisingTest();
+  GattConnectTest();
 }
