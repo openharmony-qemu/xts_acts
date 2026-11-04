@@ -1,0 +1,277 @@
+- collections.TypedArray 族 测试设计
+	- 说明：基于 collections_typedarray_testpoint.md §1 共享接口设计生成；8 变体接口同构，共享接口树统一设计，另设"变体差异"分支覆盖逐变体 delta
+	- 1. 接口测试（Functional）
+		- 共享接口（8 变体同构）
+			- constructor（5 重载）
+				- 入参范围覆盖
+					- 空构造 / length(number) / Iterable / ArrayLike|ArrayBuffer / (buffer,byteOffset?,length?)
+				- 边界值测试
+					- length=0、单元素、大 length
+					- buffer 非整数倍 BYTES_PER_ELEMENT 字节
+				- 异常与非法输入
+					- 10200012 内部守卫（应用层不可达）
+					- length 负数
+				- 返回值与类型验证
+					- instanceof 对应 TypedArray
+					- byteLength/length 正确
+				- 组合场景
+					- 从另一 TypedArray 构造
+					- subarray 后再构造
+				- 重复调用/幂等性
+					- 相同 elements 多次构造一致
+				- 并发跨线程
+					- TaskPool/Worker 接收构造结果
+			- from（静态，3 重载）
+				- 入参范围覆盖
+					- ArrayLike / ArrayLike+mapFn / Iterable+mapFn
+				- 边界值测试
+					- 空源、单元素
+				- 异常与非法输入
+					- mapFn 非函数
+				- 返回值与类型验证
+					- 新 TypedArray、元素经 mapFn 映射
+				- 组合场景
+					- from+mapFn 类型转换
+				- 重复调用/幂等性
+					- 相同源多次 from 一致
+				- 并发跨线程
+					- 跨线程 from 结果
+			- of（静态）
+				- 入参范围覆盖
+					- 0/1/多参数
+				- 边界值测试
+					- 空 of、单元素
+				- 返回值与类型验证
+					- 新 TypedArray、顺序保留
+				- 组合场景
+					- of+forEach、of+at
+				- 重复调用/幂等性
+					- 相同参数多次 of 一致
+			- BYTES_PER_ELEMENT（静态只读）
+				- 入参范围覆盖
+					- 8 变体取值 1/2/4
+				- 返回值与类型验证
+					- number 常量
+				- 组合场景
+					- byteLength == length*BPE
+			- buffer / byteLength / byteOffset（只读属性）
+				- 入参范围覆盖
+					- 空构造 / length 构造 / ArrayBuffer(buffer,offset,length) 构造后取值
+				- 边界值测试
+					- offset=0、offset大于0
+				- 返回值与类型验证
+					- buffer: ArrayBuffer、byteLength/byteOffset: number
+				- 组合场景
+					- subarray 后 buffer 同源
+			- length（只读属性）
+				- 入参范围覆盖
+					- 随构造方式变化
+				- 边界值测试
+					- 空 length=0、单元素、大 length
+				- 返回值与类型验证
+					- number、subarray 子长度
+				- 组合场景
+					- fill/set/copyWithin 后 length 不变
+			- 索引读写 [index] 与 at(index)
+				- 入参范围覆盖
+					- 正索引、负索引（at）
+				- 边界值测试
+					- 首末元素、越界 at 返回 undefined
+				- 异常与非法输入
+					- detached 10200011、并发 10200201
+				- 返回值与类型验证
+					- number|undefined
+				- 组合场景
+					- 写后读、subarray 索引共享 buffer
+			- copyWithin(target, start, end)
+				- 入参范围覆盖
+					- target/start/end 正负
+				- 边界值测试
+					- 同区域、跨区域、负索引
+				- 异常与非法输入
+					- 10200011、10200201 严格断言
+				- 返回值与类型验证
+					- 返回自身 in-place
+			- fill(value, start, end)
+				- 入参范围覆盖
+					- value 正常/边界、start/end 正负
+				- 边界值测试
+					- 全填充、区间填充
+				- 异常与非法输入
+					- 10200011、10200201
+				- 返回值与类型验证
+					- 返回自身
+				- 组合场景
+					- fill 后 at/indexOf
+			- set(array, offset)
+				- 入参范围覆盖
+					- number[] 源、TypedArray 源、offset 正负
+				- 边界值测试
+					- 全 set、区间 set、offset 越界
+				- 异常与非法输入
+					- 10200011、10200201、源长度超出剩余空间
+				- 返回值与类型验证
+					- void、写后读正确
+			- subarray(begin, end)
+				- 入参范围覆盖
+					- begin/end 正负、省略
+				- 边界值测试
+					- 全量、单元素
+				- 异常与非法输入
+					- 10200011、10200201
+				- 返回值与类型验证
+					- 新 TypedArray 共享 buffer
+				- 组合场景
+					- sub 写影响原数组（buffer 共享）
+			- slice(start, end)
+				- 入参范围覆盖
+					- start/end 正负、省略
+				- 边界值测试
+					- 全量、单元素
+				- 异常与非法输入
+					- 10200011、10200201
+				- 返回值与类型验证
+					- 新 TypedArray 独立拷贝
+				- 组合场景
+					- slice 后修改不影响原数组
+			- indexOf / lastIndexOf / includes
+				- 入参范围覆盖
+					- searchElement 正常/边界、fromIndex 正负
+				- 边界值测试
+					- 空、首末、不存在 -1/false
+				- 异常与非法输入
+					- 10200011、10200201
+				- 返回值与类型验证
+					- number 哨兵 -1 / boolean
+				- 组合场景
+					- fill 后 indexOf、NaN SameValueZero
+			- find / findIndex
+				- 入参范围覆盖
+					- predicate 命中/未命中
+				- 边界值测试
+					- 空数组 undefined/-1
+				- 异常与非法输入
+					- 10200011、10200201、predicate 非函数
+				- 返回值与类型验证
+					- find number|undefined、findIndex number
+				- 组合场景
+					- find NaN via isNaN
+			- forEach(callbackFn)
+				- 入参范围覆盖
+					- 三参 value/index/array
+				- 边界值测试
+					- 空数组不执行、大规模
+				- 异常与非法输入
+					- 回调非函数、10200201、10200011
+				- 返回值与类型验证
+					- void、遍历顺序
+				- 组合场景
+					- forEach 内 set/fill/copyWithin 10200201
+			- entries / keys / values / Symbol.iterator
+				- 入参范围覆盖
+					- 迭代器协议
+				- 边界值测试
+					- 空数组 done=true
+				- 异常与非法输入
+					- 10200011、10200201
+				- 返回值与类型验证
+					- IterableIterator
+				- 组合场景
+					- for...of、Array.from、展开
+			- map / filter
+				- 入参范围覆盖
+					- callbackFn 命中/全命中/无命中
+				- 边界值测试
+					- 空数组、单元素
+				- 异常与非法输入
+					- 10200011、10200201、回调非函数
+				- 返回值与类型验证
+					- 新 TypedArray、独立性
+				- 组合场景
+					- map+filter 链
+			- reduce / reduceRight
+				- 入参范围覆盖
+					- callbackFn、initialValue 泛型
+				- 边界值测试
+					- 空数组、单元素
+				- 异常与非法输入
+					- 10200011、10200201
+				- 返回值与类型验证
+					- number
+				- 组合场景
+					- reduce+initialValue、IEEE 754 精度损失
+			- every / some
+				- 入参范围覆盖
+					- predicate 全命中/无命中
+				- 边界值测试
+					- 空数组 every=true/some=false
+				- 异常与非法输入
+					- 10200011、10200201、回调非函数
+				- 返回值与类型验证
+					- boolean
+			- reverse / sort
+				- 入参范围覆盖
+					- sort compareFn 有/无
+				- 边界值测试
+					- 空、单元素、已序/逆序
+				- 异常与非法输入
+					- 10200011、10200201
+				- 返回值与类型验证
+					- 返回自身 in-place
+				- 组合场景
+					- reverse+sort、Float32 NaN 排序序
+			- join / toString / toLocaleString
+				- 入参范围覆盖
+					- join 分隔符有/无
+				- 边界值测试
+					- 空数组空串、单元素
+				- 异常与非法输入
+					- 10200011、10200201 严格断言
+				- 返回值与类型验证
+					- string
+				- 组合场景
+					- join 后 split、toLocaleString 本地化
+		- 变体差异（逐变体 delta）
+			- Int8Array（有符号 8 位 -128..127）
+				- 负数元素、有符号溢出回绕
+			- Uint8Array（无符号 8 位 0..255）
+				- 非负元素、无符号
+			- Uint8ClampedArray（钳位 0..255）
+				- 越界元素钳位 256/300/-1 转 255/0
+				- 钳位适用 constructor/fill/set/index 赋值
+			- Int16Array（有符号 16 位 -32768..32767）
+				- 有符号溢出回绕
+			- Uint16Array（无符号 16 位 0..65535）
+				- 非负、无符号
+			- Int32Array（有符号 32 位）
+				- 边界值 -2147483648/2147483647
+				- subarray buffer 共享
+			- Uint32Array（无符号 32 位 0..4294967295）
+				- 非负、无符号大值
+			- Float32Array（IEEE 754 单精度）
+				- NaN 与正负 Infinity 存取
+				- indexOf(NaN) 返回 -1、includes(NaN/Infinity) 返回 true
+				- IEEE 754 精度损失 1e10
+				- sort 含 NaN/Infinity 排序序
+	- 2. 稳定性（Stability）
+		- 大容量构造/遍历（All 系列）
+		- 综合场景复跑（Normal 228 例）
+		- 循环创建销毁、超大规模 500000
+	- 3. 性能（Performance）
+		- 大规模 forEach 吞吐
+		- 大数量查找性能
+		- 单接口基线（set/fill/copyWithin 10000 次计时）
+	- 4. 并发安全（Concurrency Safety）
+		- TaskPool/Worker 跨线程引用传递
+		- 10200201 并发修改严格断言
+		- 10200011 detached 严格断言
+		- 多 Worker 写写逐元素数据一致性
+	- 5. 兼容性与继承（Compatibility & Inheritance）
+		- 跨线程引用传递、instanceof
+		- TypedArray 不可子类化（final）
+		- @Sendable 装饰符合性
+	- 6. 资料与文档符合性（Doc Conformance）
+		- BYTES_PER_ELEMENT 取值符合 8 变体文档
+		- 异常码 10200011/10200201 与 .md 错误码表一致
+		- 401 未声明文档缺口（8 变体 .d.ets）
+		- from/of/.md 逐条符合性
