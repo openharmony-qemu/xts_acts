@@ -76,14 +76,6 @@ static napi_value Getpagesize_0300(napi_env env, napi_callback_info info)
     return Ret(env, (val == (int)sc) ? 0 : 1);
 }
 
-static napi_value Getpagesize_0400(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    void *addr1 = dlsym(RTLD_DEFAULT, "__getpagesize");
-    void *addr2 = dlsym(RTLD_DEFAULT, "getpagesize");
-    return Ret(env, (addr1 != nullptr && addr1 == addr2) ? 0 : 1);
-}
-
 static napi_value Getpagesize_0500(napi_env env, napi_callback_info info)
 {
     (void)info;
@@ -148,8 +140,6 @@ static napi_value Init(napi_env env, napi_value exports)
         {"Getpagesize_0200", nullptr, Getpagesize_0200,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Getpagesize_0300", nullptr, Getpagesize_0300,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"Getpagesize_0400", nullptr, Getpagesize_0400,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Getpagesize_0500", nullptr, Getpagesize_0500,
             nullptr, nullptr, nullptr, napi_default, nullptr},

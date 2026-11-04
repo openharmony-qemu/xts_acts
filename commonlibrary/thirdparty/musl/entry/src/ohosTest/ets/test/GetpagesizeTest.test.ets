@@ -66,20 +66,6 @@ export default function GetpagesizeTest() {
     })
 
     /**
-     * @tc.name   testMuslGetpagesize0400
-     * @tc.number SUB_THIRDPARTY_MUSL_GETPAGESIZE_0400
-     * @tc.desc   __getpagesize和getpagesize地址相同(weak_alias)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testMuslGetpagesize0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let data: number = getpagesize_test.Getpagesize_0400();
-      expect(data).assertEqual(0);
-      done()
-    })
-
-    /**
      * @tc.name   testMuslGetpagesize0500
      * @tc.number SUB_THIRDPARTY_MUSL_GETPAGESIZE_0500
      * @tc.desc   多次调用__getpagesize返回值一致

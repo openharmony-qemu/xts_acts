@@ -410,3 +410,6 @@ target_link_libraries(isoc23_vfscanf_test PUBLIC libace_napi.z.so)
 
 add_library(isoc23_vsscanf_test SHARED isoc23_vsscanf_test.cpp)
 target_link_libraries(isoc23_vsscanf_test PUBLIC libace_napi.z.so)
+
+add_library(pthread_key_test SHARED pthread_key_test.cpp ${src_sec})
+target_link_libraries(pthread_key_test PUBLIC libace_napi.z.so)

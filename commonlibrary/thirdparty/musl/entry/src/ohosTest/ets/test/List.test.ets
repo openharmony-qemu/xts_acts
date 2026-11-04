@@ -133,6 +133,7 @@ import pthreadSetcanceltypeTest from './PthreadSetcanceltype.test';
 import pthreadYieldTest from './PthreadYield.test';
 import pthreadTsdTest from './PthreadTsd.test';
 import pthreadKeyCreateTest from './PthreadKeyCreate.test';
+import pthreadKeyTest from './PthreadKeyTest.test';
 import GroupIpcTest from './GroupIpc.test';
 import openat642Test from './Openat642Test.test';
 import closefromTest from './ClosefromTest.test';
@@ -283,6 +284,7 @@ export default function testsuite() {
   pthreadYieldTest();
   pthreadTsdTest();
   pthreadKeyCreateTest();
+  pthreadKeyTest();
   openat642Test();
   closefromTest();
   closeRangeTest();
