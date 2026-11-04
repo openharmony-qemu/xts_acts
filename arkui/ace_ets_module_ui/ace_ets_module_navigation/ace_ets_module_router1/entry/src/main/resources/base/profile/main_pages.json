@@ -184,6 +184,7 @@
         "MainAbility/pages/Router2/ohosRouterB",
         "MainAbility/pages/Router2/routerNullUndefined",
         "MainAbility/pages/Router2/RouterTargetPage",
-        "MainAbility/pages/router/RouterTest"
+        "MainAbility/pages/router/RouterTest",
+        "MainAbility/pages/transPage/TransPageEnabled"
     ]
 }
