@@ -650,11 +650,12 @@ static napi_value TestCase10AsyncCompute(napi_env env, napi_callback_info info)
     napi_create_threadsafe_function(env, callback, nullptr, asyncName, 0, 1, nullptr, nullptr, nullptr, nullptr,
                                     &g_tsfn);
 
-    std::thread([]() {
+    napi_threadsafe_function capturedTsfn = g_tsfn;
+    napi_ref_threadsafe_function(env, capturedTsfn);
+    std::thread([capturedTsfn]() {
         std::this_thread::sleep_for(std::chrono::milliseconds(ASYNC_DELAY_MS));
-        if (g_tsfn != nullptr) {
-            napi_call_threadsafe_function(g_tsfn, nullptr, napi_tsfn_blocking);
-        }
+        napi_call_threadsafe_function(capturedTsfn, nullptr, napi_tsfn_blocking);
+        napi_release_threadsafe_function(capturedTsfn, napi_tsfn_release);
     }).detach();
 
     napi_value result;

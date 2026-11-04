@@ -14,7 +14,7 @@
 static std::atomic<int32_t> g_finalizeCount{0};
 
 struct RemoveWrapData {
-    bool finalized = false;
+    std::atomic<bool> finalized{false};
 };
 
 static napi_value BoolResult(napi_env env, bool value) { return Ret(env, value ? 1 : 0); }
