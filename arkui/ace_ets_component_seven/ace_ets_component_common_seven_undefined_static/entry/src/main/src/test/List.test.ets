@@ -17,12 +17,10 @@
 import backgroundColorUndefinedTest from './QrcodeTest/backgroundColorUndefined.test'
 import colorUndefinedTest from './QrcodeTest/colorUndefined.test'
 import backgroundColorModifierUndefinedTest from './QrcodeTest/backgroundColorModifierUndefined.test'
-import colorModifierUndefinedTest from './QrcodeTest/colorModifierUndefined.test'
 
 import colorUndefinedTest_LP from './Loading_progressTest/colorUndefined.test'
 import enableLoadingUndefinedTest from './Loading_progressTest/enableLoadingUndefined.test'
 import colorModifierUndefinedTest_LP from './Loading_progressTest/colorModifierUndefined.test'
-import enableLoadingModifierUndefinedTest from './Loading_progressTest/enableLoadingModifierUndefined.test'
 
 import edgeAlignUndefinedTest from './Calender_pickerTest/edgeAlignUndefined.test'
 import textStyleUndefinedTest from './Calender_pickerTest/textStyleUndefined.test'
@@ -46,11 +44,9 @@ export default function testsuite() {
   backgroundColorUndefinedTest();
   colorUndefinedTest();
   backgroundColorModifierUndefinedTest();
-  colorModifierUndefinedTest();
   colorUndefinedTest_LP();
   enableLoadingUndefinedTest();
   colorModifierUndefinedTest_LP();
-  enableLoadingModifierUndefinedTest();
   textStyleUndefinedTest_DP();
   selectedTextStyleUndefinedTest();
   disappearTextStyleUndefinedTest();
