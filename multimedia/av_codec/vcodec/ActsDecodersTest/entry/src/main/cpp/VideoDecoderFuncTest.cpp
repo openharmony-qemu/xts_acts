@@ -49,6 +49,7 @@ static OH_AVCapability* g_capVp8 = nullptr;
 static OH_AVCapability* g_capVp9 = nullptr;
 static OH_AVCapability* g_capAv1 = nullptr;
 static OH_AVCapability* g_capCinepak = nullptr;
+static OH_AVCapability* g_capWmv1 = nullptr;
 static string g_codecNameVc1 = "";
 static string g_codecNameMjpeg = "";
 static string g_codecNameMsvideo1 = "";
@@ -56,6 +57,7 @@ static string g_codecNameVp8 = "";
 static string g_codecNameVp9 = "";
 static string g_codecNameAv1 = "";
 static string g_codecNameCinepak = "";
+static string g_codecNameWmv1 = "";
 static constexpr uint32_t FRAMESIZE60 = 60;
 static constexpr uint32_t FRAMESIZE30 = 30;
 static constexpr uint32_t FRAMESIZE98 = 98;
@@ -65,6 +67,7 @@ static constexpr uint32_t FRAMESIZE180 = 180;
 static constexpr uint32_t FRAMESIZE45 = 45;
 static constexpr uint32_t FRAMESIZE5 = 5;
 static constexpr uint32_t FRAMESIZE20 = 20;
+static constexpr uint32_t FRAMESIZE250 = 250;
 static constexpr uint32_t SURFACE_RELEASE_WAIT_US = 500000;
 
 // Profile index constants
@@ -92,6 +95,7 @@ static const char *GINP_DIR_AV1_HIGH = "/data/storage/el2/base/files/video/av1_h
 static const char *GINP_DIR_AV1_MAIN_8BIT = "/data/storage/el2/base/files/video/av1_main_L4.0_1920x1080.ivf";
 static const char *GINP_DIR_AV1_HIGH_8BIT = "/data/storage/el2/base/files/video/av1_high_L4.0_1920x1080.ivf";
 static const char *GINP_DIR_CINEPAK = "/data/storage/el2/base/files/video/cinepak_720_480_25.mkv";
+static const char *GINP_DIR_WMV1 = "/data/storage/el2/base/files/video/wmv1_320x240.avi";
 
 static void InitCapabilities()
 {
@@ -135,6 +139,12 @@ static void InitCapabilities()
         g_capCinepak = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_CINEPAK, false, SOFTWARE);
         if (g_capCinepak != nullptr) {
             g_codecNameCinepak = OH_AVCapability_GetName(g_capCinepak);
+        }
+    }
+    if (g_capWmv1 == nullptr) {
+        g_capWmv1 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_WMV1, false, SOFTWARE);
+        if (g_capWmv1 != nullptr) {
+            g_codecNameWmv1 = OH_AVCapability_GetName(g_capWmv1);
         }
     }
 }
@@ -309,6 +319,52 @@ napi_value VideoMsvideo1DecFunction0006(napi_env env, napi_callback_info info)
     }
     usleep(SURFACE_RELEASE_WAIT_US);
     if (frameCount != FRAMESIZE98) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
+}
+
+// Test WMV1 decoder function with buffer mode
+napi_value VideoWmv1DecFunction0023(napi_env env, napi_callback_info info)
+{
+    InitCapabilities();
+    if (g_capWmv1 == nullptr) { return CreateIntInt32Result(env, 0); }
+
+    auto vDecSample = make_shared<VDecAPI11Sample>();
+    vDecSample->GetFormat(GINP_DIR_WMV1);
+    if (vDecSample->gFd < 0) { return CreateIntInt32Result(env, -1); }
+
+    if (SetupDecoder(vDecSample, g_codecNameWmv1) != 0) {
+        return CreateIntInt32Result(env, -1);
+    }
+
+    vDecSample->WaitForEOS();
+
+    int result = VerifyDecodingResult(vDecSample, FRAMESIZE250);
+    return CreateIntInt32Result(env, result);
+}
+
+// Test WMV1 decoder function with surface mode
+napi_value VideoWmv1DecFunction0024(napi_env env, napi_callback_info info)
+{
+    InitCapabilities();
+    if (g_capWmv1 == nullptr) { return CreateIntInt32Result(env, 0); }
+
+    uint32_t frameCount = 0;
+    {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->GetFormat(GINP_DIR_WMV1);
+        if (vDecSample->gFd < 0) { return CreateIntInt32Result(env, -1); }
+        vDecSample->sfOutput = true;
+        vDecSample->outputYuvSurface = true;
+        vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
+        vDecSample->afterEosDestoryCodec = false;
+        if (vDecSample->RunVideoDecSurface(g_codecNameWmv1) != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        vDecSample->WaitForEOS();
+        frameCount = vDecSample->outFrameCount;
+    }
+    usleep(SURFACE_RELEASE_WAIT_US);
+    if (frameCount != FRAMESIZE250) { return CreateIntInt32Result(env, -1); }
     return CreateIntInt32Result(env, 0);
 }
 

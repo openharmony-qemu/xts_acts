@@ -53,7 +53,8 @@ export default function actsFuncTest() {
         "av1_main_L4.0_1920x1080.ivf",
         "av1_high_L3.0_854x480.ivf",
         "av1_high_L4.0_1920x1080.ivf",
-        "cinepak_720_480_25.mkv"
+        "cinepak_720_480_25.mkv",
+        "wmv1_320x240.avi"
       ];
       
       let videoDir = dir + "video";
@@ -373,6 +374,34 @@ export default function actsFuncTest() {
     it('SUB_MUlTIMEDIA_VIDEO_CINEPAKDEC_FUNCTION_02200', Level.LEVEL0, async () => {
       hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_CINEPAKDEC_FUNCTION_02200');
       let result = await testNapi.VideoCinepakDecFunction0022();
+      expect(result).assertEqual(TEST_SUCCESS);
+    });
+
+    /**
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_WMV1DEC_FUNCTION_3600
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_WMV1DEC_FUNCTION_3600
+     * @tc.desc    Test WMV1 decoder with buffer mode
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNC
+     * @tc.level   Level0
+     */
+    it('SUB_MUlTIMEDIA_VIDEO_WMV1DEC_FUNCTION_3600', Level.LEVEL0, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_WMV1DEC_FUNCTION_3600');
+      let result = await testNapi.VideoWmv1DecFunction0023();
+      expect(result).assertEqual(TEST_SUCCESS);
+    });
+
+    /**
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_WMV1DEC_FUNCTION_3700
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_WMV1DEC_FUNCTION_3700
+     * @tc.desc    Test WMV1 decoder with surf mode
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNC
+     * @tc.level   Level0
+     */
+    it('SUB_MUlTIMEDIA_VIDEO_WMV1DEC_FUNCTION_3700', Level.LEVEL0, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_WMV1DEC_FUNCTION_3700');
+      let result = await testNapi.VideoWmv1DecFunction0024();
       expect(result).assertEqual(TEST_SUCCESS);
     });
   });
