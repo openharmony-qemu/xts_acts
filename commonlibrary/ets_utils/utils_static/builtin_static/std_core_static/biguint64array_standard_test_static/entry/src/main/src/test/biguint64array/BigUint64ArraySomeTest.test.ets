@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from './../Util.test';
 
 const SIGNED_LONG_MAX_VALUE: bigint = 9223372036854775807n;

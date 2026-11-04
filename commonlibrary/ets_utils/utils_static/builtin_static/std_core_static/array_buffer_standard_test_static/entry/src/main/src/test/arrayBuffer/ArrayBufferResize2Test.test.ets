@@ -16,7 +16,7 @@
 
 import {
   beforeEach, describe, expect, it, Level, Size, TestType,
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 export default function arrayBufferResize2Test(): void {
