@@ -33,7 +33,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function onSelectionChange9() {
   describe('onSelectionChange9', () => {
     beforeAll(async (): Promise<void> => {
@@ -60,6 +60,7 @@ export default function onSelectionChange9() {
         console.log("push onSelectionChange9 page error:" + err);
       }
       console.info("onSelectionChange9 beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);

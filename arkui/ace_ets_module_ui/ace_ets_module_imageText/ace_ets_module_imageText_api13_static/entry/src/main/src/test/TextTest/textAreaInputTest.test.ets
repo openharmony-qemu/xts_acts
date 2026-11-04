@@ -29,7 +29,7 @@ import { UtilsTest } from '../Utils.test';
 import inspector from '@ohos.arkui.inspector';
 let domain: Int = 0x0000;
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 
 export default function textAreaInputTest() {
   describe('textAreaInputTest', () => {
@@ -56,6 +56,7 @@ export default function textAreaInputTest() {
       } catch (err) {
         console.log("push textAreaInputTest page error: " + err);
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     afterEach(async () => {

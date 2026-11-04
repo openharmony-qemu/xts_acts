@@ -30,7 +30,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function RichEditor4() {
   describe('RichEditor4', () => {
     beforeAll(async (): Promise<void> => {
@@ -38,7 +38,6 @@ export default function RichEditor4() {
 
       ;
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api12.static", "EntryAbility");
-      ;
     });
     beforeEach(async (): Promise<void> => {
       console.info("RichEditor4 beforeEach start");
@@ -62,6 +61,7 @@ export default function RichEditor4() {
         console.log("push RichEditor4 page error:" + err);
       }
       console.info("RichEditor4 beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     afterEach(async (): Promise<void> => {
       let driver = Driver.create();

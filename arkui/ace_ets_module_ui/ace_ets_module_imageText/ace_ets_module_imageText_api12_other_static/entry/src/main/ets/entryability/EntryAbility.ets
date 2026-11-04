@@ -38,7 +38,7 @@ export default class EntryAbility extends UIAbility {
   onWindowStageCreate(windowStage: window.WindowStage): void {
     let displayInfo: display.Display = display.getDefaultDisplaySync();
     console.info('当前屏幕ID' + displayInfo.id);
-    AppStorage.setOrCreate('displayID', displayInfo.id);
+    AppStorage.setOrCreate<number>('displayID', displayInfo.id);
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
     AppStorage.setOrCreate<window.WindowStage>('windowStage', windowStage);

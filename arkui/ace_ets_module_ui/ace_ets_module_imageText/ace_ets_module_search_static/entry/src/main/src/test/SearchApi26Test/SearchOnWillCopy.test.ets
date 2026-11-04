@@ -23,7 +23,7 @@ import { UtilsTest } from '../Util.test';
 import { Driver, ON } from '@ohos.UiTest';
 import { inputMethod } from '@kit.IMEKit';
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function SearchOnWillCopyTest() {
   describe('SearchOnWillCopyTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -51,6 +51,7 @@ export default function SearchOnWillCopyTest() {
         console.log("push SearchOnWillCopy page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     afterAll(async (): Promise<void> => {

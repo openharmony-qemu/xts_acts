@@ -32,7 +32,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function SelectionMenuOptions() {
   describe('SelectionMenuOptions', () => {
     beforeAll(async (): Promise<void> => {
@@ -60,6 +60,7 @@ export default function SelectionMenuOptions() {
         console.log("push SelectionMenuOptions page error:" + err);
       }
       console.info("SelectionMenuOptions beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     afterEach(async () => {

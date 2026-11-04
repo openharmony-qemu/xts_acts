@@ -41,7 +41,7 @@ import { inputMethod } from '@kit.IMEKit';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function searchOnWillDeleteModifier() {
   describe('searchOnWillDeleteModifier', () => {
     beforeAll(async (): Promise<void> => {
@@ -73,6 +73,7 @@ export default function searchOnWillDeleteModifier() {
         console.log("push searchOnWillDeleteModifier page error:" + err);
       }
       console.info("searchOnWillDeleteModifier beforeEach start4");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
 

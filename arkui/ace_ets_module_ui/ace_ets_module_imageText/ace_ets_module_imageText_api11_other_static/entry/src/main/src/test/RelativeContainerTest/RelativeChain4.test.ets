@@ -57,13 +57,12 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function RelativeChain4() {
   describe('RelativeChain4', () => {
     beforeAll(async () => {
       
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.other.static", "EntryAbility")
-      
     });
 
     beforeEach(async (): Promise<void> => {
@@ -85,6 +84,7 @@ export default function RelativeChain4() {
         console.log("push RelativeChain4 page error:" + err);
       }
       console.info("RelativeChain4 foreEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
 
     });
     afterEach(async () => {

@@ -35,7 +35,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 
 export default function RichEditorKeyBoard003() {
   describe('RichEditorKeyBoard003', () => {
@@ -63,6 +63,7 @@ export default function RichEditorKeyBoard003() {
         console.log("push RichEditorKeyBoard003 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     

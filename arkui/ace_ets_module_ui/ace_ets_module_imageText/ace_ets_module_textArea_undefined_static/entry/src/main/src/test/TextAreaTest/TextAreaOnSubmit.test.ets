@@ -22,7 +22,7 @@ import { BusinessError } from '@ohos.base';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, Component } from '@kit.TestKit';
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 
 export default function TextAreaOnSubmitTest() {
   describe('TextAreaOnSubmitTest', () => {
@@ -52,6 +52,7 @@ export default function TextAreaOnSubmitTest() {
         console.log("push TextAreaOnSubmitTest page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
 

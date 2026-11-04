@@ -31,7 +31,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function RichEditorOnDoubleClickTest() {
   describe('RichEditorOnDoubleClickTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -60,6 +60,7 @@ export default function RichEditorOnDoubleClickTest() {
         console.log("push RichEditorOnDoubleClickTest page error:" + err);
       }
       console.info("RichEditorOnDoubleClickTest beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     }); 
 
 

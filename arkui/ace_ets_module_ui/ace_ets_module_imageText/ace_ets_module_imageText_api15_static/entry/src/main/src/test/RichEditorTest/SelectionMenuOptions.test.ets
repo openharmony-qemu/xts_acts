@@ -30,7 +30,7 @@ let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 
 export default function SelectionMenuOptions() {
   describe('SelectionMenuOptions', () => {
@@ -38,7 +38,6 @@ export default function SelectionMenuOptions() {
       console.info("ResourceDefaultTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api15.static", "EntryAbility")
-
     });
 
     beforeEach(async (): Promise<void> => {
@@ -61,6 +60,7 @@ export default function SelectionMenuOptions() {
         console.log("push SelectionMenuOptions page error:" + err);
       }
       console.info("SelectionMenuOptions beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
 

@@ -30,7 +30,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 
 export default function richEditorApi1() {
   describe('richEditorApi1', () => {
@@ -58,6 +58,7 @@ export default function richEditorApi1() {
         console.log("push richEditorApi1 page error:" + err);
       }
       console.info("richEditorApi1 beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);

@@ -35,7 +35,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function RichEditorCustomSpan007() {
   describe('RichEditorCustomSpan007', () => {
     beforeAll(async (): Promise<void> => {
@@ -62,6 +62,7 @@ export default function RichEditorCustomSpan007() {
         console.log("push RichEditorCustomSpan007 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     

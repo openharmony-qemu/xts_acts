@@ -30,7 +30,7 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function TextInputEvent() {
   describe('TextInputEvent', () => {
     beforeAll(async (): Promise<void> => {
@@ -58,6 +58,7 @@ export default function TextInputEvent() {
         console.log("push TextInputEvent page error:" + err);
       }
       console.info("TextInputEvent beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     }); 
 
     afterEach(async () => {

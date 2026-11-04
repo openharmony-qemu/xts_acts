@@ -31,7 +31,7 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 
 export default function SearchOnEditChange() {
   describe('SearchOnEditChange', () => {
@@ -60,6 +60,7 @@ export default function SearchOnEditChange() {
       } catch (err) {
         console.log("push SearchOnEditChange page error: " + err);
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     afterEach(async () => {

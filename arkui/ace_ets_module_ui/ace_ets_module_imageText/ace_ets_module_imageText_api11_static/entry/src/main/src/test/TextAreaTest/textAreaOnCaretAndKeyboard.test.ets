@@ -32,7 +32,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 
 export default function textAreaOnCaretAndKeyboardTest() {
   describe('textAreaOnCaretAndKeyboardTest', () => {
@@ -40,7 +40,6 @@ export default function textAreaOnCaretAndKeyboardTest() {
       console.info("textAreaOnCaretAndKeyboardTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
-
     });
 
     beforeEach(async (): Promise<void> => {
@@ -63,6 +62,7 @@ export default function textAreaOnCaretAndKeyboardTest() {
         console.log("push textAreaOnCaretAndKeyboardTest page error:" + err);
       }
       console.info("textAreaOnCaretAndKeyboardTest beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
 

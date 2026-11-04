@@ -31,14 +31,13 @@ let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function HapticFeedbackModeTest() {
   describe('HapticFeedbackModeTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("HapticFeedbackModeTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api18.static", "EntryAbility")
-
     });
 
     beforeEach(async (): Promise<void> => {
@@ -60,6 +59,7 @@ export default function HapticFeedbackModeTest() {
         console.log("push ImageSpanVisibility page error:" + err);
       }
       console.info("ImageSpanVisibility beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     afterEach(async () => {

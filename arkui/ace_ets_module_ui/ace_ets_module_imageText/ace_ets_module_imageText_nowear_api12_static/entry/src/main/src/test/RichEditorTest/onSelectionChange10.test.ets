@@ -29,7 +29,7 @@ import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function onSelectionChange10() {
   describe('onSelectionChange10', () => {
     beforeAll(async (): Promise<void> => {
@@ -37,7 +37,6 @@ export default function onSelectionChange10() {
 
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api12.static", "EntryAbility")
-
     });
     beforeEach(async () => {
       console.info("onSelectionChange10 beforeEach start");
@@ -60,6 +59,7 @@ export default function onSelectionChange10() {
         console.log("push onSelectionChange10 page error:" + err);
       }
       console.info("onSelectionChange10 beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);

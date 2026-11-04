@@ -34,7 +34,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function RichEditorStabillity004() {
   describe('RichEditorStabillity004', () => {
     beforeAll(async (): Promise<void> => {
@@ -61,6 +61,7 @@ export default function RichEditorStabillity004() {
         console.log("push RichEditorStabillity004 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     

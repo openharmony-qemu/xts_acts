@@ -23,7 +23,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 import { inputMethod } from '@kit.IMEKit';
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function TextOnWillCopyTest() {
   describe('TextOnWillCopyTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -50,6 +50,7 @@ export default function TextOnWillCopyTest() {
           console.log("push TextOnWillCopy page error:" + err);
 	        expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     afterAll(async(): Promise<void> => {

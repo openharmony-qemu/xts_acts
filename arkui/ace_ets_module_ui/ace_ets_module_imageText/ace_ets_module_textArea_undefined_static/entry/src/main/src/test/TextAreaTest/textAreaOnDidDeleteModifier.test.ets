@@ -17,7 +17,7 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 
 export default function TextAreaOnDidDeleteModifier() {
   describe('TextAreaOnDidDeleteModifier', () => {
@@ -48,6 +48,7 @@ export default function TextAreaOnDidDeleteModifier() {
         console.log("push TextAreaOnDidDeleteModifier page error:" + err);
       }
       console.info("TextAreaOnDidDeleteModifier beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
 

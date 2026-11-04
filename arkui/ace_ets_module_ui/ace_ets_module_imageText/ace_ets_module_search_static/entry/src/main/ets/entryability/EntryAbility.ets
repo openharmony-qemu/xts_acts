@@ -34,7 +34,7 @@ class EntryAbility extends UIAbility {
   onWindowStageCreate(windowStage: window.WindowStage): void {
     let displayInfo: display.Display = display.getDefaultDisplaySync();
     console.info('当前屏幕ID' + displayInfo.id);
-    AppStorage.setOrCreate('displayID', displayInfo.id);
+    AppStorage.setOrCreate<number>('displayID', displayInfo.id);
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onWindowStageCreate');
     AppStorage.setOrCreate<window.WindowStage>('windowStage', windowStage);
     AppStorage.setOrCreate<common.UIAbilityContext>('stageContext', this.context);

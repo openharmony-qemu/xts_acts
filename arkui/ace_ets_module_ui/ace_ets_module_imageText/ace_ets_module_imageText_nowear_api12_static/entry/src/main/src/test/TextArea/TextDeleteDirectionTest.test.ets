@@ -32,14 +32,13 @@ import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function TextDeleteDirectionTest() {
   describe('TextDeleteDirectionTest', () :void=> {
     beforeAll(async (): Promise<void> => {
       console.info("TextDeleteDirectionTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api12.static", "EntryAbility")
-
     });
 
     beforeEach(async (): Promise<void> => {
@@ -62,6 +61,7 @@ export default function TextDeleteDirectionTest() {
         console.log("push TextDeleteDirectionTest page error:" + err);
       }
       console.info("TextDeleteDirectionTest foreEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     afterEach(async () => {
       await CommonFunc.sleep(2000);

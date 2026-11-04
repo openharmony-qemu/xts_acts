@@ -41,7 +41,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 
 export default function richEditorApi7() {
   describe('richEditorApi7', () => {
@@ -67,12 +67,12 @@ export default function richEditorApi7() {
         console.log("push richEditorApi7 page error:" + err);
       }
       console.info("richEditorApi7 beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     beforeAll(async (): Promise<void> => {
       console.info("richEditorApi7 beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
-
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);

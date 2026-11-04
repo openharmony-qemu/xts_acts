@@ -32,7 +32,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 
 export default function textArea_bottom() {
   describe('textArea_bottom', () => {
@@ -40,7 +40,6 @@ export default function textArea_bottom() {
     beforeAll(async (): Promise<void> => {
       console.info("textArea_bottom beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
-
     });
 
     beforeEach(async (): Promise<void> => {
@@ -62,6 +61,7 @@ export default function textArea_bottom() {
         console.log("push textArea_bottom page error:" + err);
       }
       console.info("textArea_bottom beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
 

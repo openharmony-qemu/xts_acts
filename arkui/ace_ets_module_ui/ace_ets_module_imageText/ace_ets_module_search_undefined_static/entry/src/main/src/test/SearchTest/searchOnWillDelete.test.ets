@@ -40,7 +40,7 @@ import { BusinessError } from '@ohos.base';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function searchOnWillDelete() {
   describe('searchOnWillDelete', () => {
     beforeAll(async (): Promise<void> => {
@@ -72,6 +72,7 @@ export default function searchOnWillDelete() {
         console.log("push searchOnWillDelete page error:" + err);
       }
       console.info("searchOnWillDelete beforeEach start4");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
 

@@ -33,7 +33,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function RichEditorPreventDefault006() {
   describe('RichEditorPreventDefault006', () => {
     beforeAll(async (): Promise<void> => {
@@ -60,6 +60,7 @@ export default function RichEditorPreventDefault006() {
         console.log("push RichEditorPreventDefault006 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     

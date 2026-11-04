@@ -30,7 +30,7 @@ import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function OnTextSelectionChangeTest() {
   describe('OnTextSelectionChangeTest', () : void=> {
     beforeAll(async (): Promise<void> => {
@@ -58,6 +58,7 @@ export default function OnTextSelectionChangeTest() {
         console.log("push OnTextSelectionChangeTest page error:" + err);
       }
       console.info("OnTextSelectionChangeTest beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);

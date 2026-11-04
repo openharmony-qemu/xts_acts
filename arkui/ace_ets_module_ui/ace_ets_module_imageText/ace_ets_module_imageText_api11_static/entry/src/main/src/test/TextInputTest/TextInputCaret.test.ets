@@ -31,7 +31,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 
 export default function textInput_caret() {
   describe('textInput_caret', () => {
@@ -40,7 +40,6 @@ export default function textInput_caret() {
       console.info("textInput_caret beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
-
     });
 
     beforeEach(async (): Promise<void> => {
@@ -65,6 +64,7 @@ export default function textInput_caret() {
         console.log("push textInput_caret page error:" + err);
       }
       console.info("textInput_caret beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
 

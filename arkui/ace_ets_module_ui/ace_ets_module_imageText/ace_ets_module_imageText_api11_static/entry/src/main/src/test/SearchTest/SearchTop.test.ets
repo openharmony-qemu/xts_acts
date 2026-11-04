@@ -43,7 +43,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 let uiContext = AppStorage.get<UIContext>("uiContext");
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 
 export default function search_top() {
   describe('search_top', () => {
@@ -52,7 +52,6 @@ export default function search_top() {
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       uiContext = AppStorage.get<UIContext>("uiContext")
-
     });
 
     beforeEach(async (): Promise<void> => {
@@ -76,6 +75,7 @@ export default function search_top() {
         console.log("push search_top page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
