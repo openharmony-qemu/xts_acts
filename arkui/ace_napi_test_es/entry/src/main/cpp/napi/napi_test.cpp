@@ -23,6 +23,7 @@
 #include <malloc.h>
 #include <cstdlib>
 #include <ctime>
+#include <atomic>
 #include <thread>
 #include <unistd.h>
 #include <uv.h>
@@ -56,7 +57,7 @@ static int g_delCount = 0;
 static int g_cleanupHookCount = 0;
 static napi_env g_sharedEnv = nullptr;
 static napi_deferred g_deferred = nullptr;
-static bool g_isTaskFinished = false;
+static std::atomic<bool> g_isTaskFinished(false);
 napi_ref g_functionRef = nullptr;
 
 struct CallbackData {
@@ -506,7 +507,7 @@ static napi_value getArrayWithLength(napi_env env, napi_callback_info info)
 
 static napi_value createExternal(napi_env env, napi_callback_info info)
 {
-    const char testStr[] = "test";
+    const char* testStr = "test";
     napi_value external = nullptr;
     napi_create_external(
         env, (void*)testStr,
@@ -525,19 +526,21 @@ static napi_value createExternal(napi_env env, napi_callback_info info)
 
 static napi_value createExternalArraybuffer(napi_env env, napi_callback_info info)
 {
-    int* testInt = (int*)malloc(sizeof(int));
+    size_t arrayBufferSize = 1024;
+    int* testInt = (int*)malloc(arrayBufferSize);
+    if (testInt == nullptr) {
+        napi_throw_error(env, nullptr, "malloc failed");
+        return nullptr;
+    }
     *testInt = TAG_NUMBER;
     napi_value external = nullptr;
-    size_t arrayBufferSize = 1024;
 
     napi_create_external_arraybuffer(
         env, (void*)testInt, arrayBufferSize,
         [](napi_env env, void* data, void* hint) {
-            int* temp = static_cast<int*>(data);
-            free(temp);
-            temp = nullptr;
+            free(data);
         },
-        (void*)testInt, &external);
+        nullptr, &external);
     
     return external;
 }
@@ -2227,7 +2230,7 @@ void FreeAddonData(napi_env env, AddonData* addonData)
         addonData->asyncWork = nullptr;
     }
     
-    if (addonData->asyncWork != nullptr) {
+    if (addonData->callback != nullptr) {
         napi_status status = napi_delete_reference(env, addonData->callback);
         if (status != napi_ok) {
             napi_throw_error(env, nullptr, "Failed to delete async callback reference");
@@ -2524,6 +2527,7 @@ static void CallJs(napi_env env, napi_value jsCb, void *context, void *data)
     NAPI_ASSERT_RETURN_VOID(env, num == TAG_NUMBER, "CallJs fail");
     
     napi_delete_reference(env, g_functionRef);
+    g_functionRef = nullptr;
 }
 
 static napi_value ThreadSafeTest(napi_env env, napi_callback_info info)
@@ -2553,6 +2557,7 @@ static napi_value ThreadSafeTest(napi_env env, napi_callback_info info)
     NAPI_CALL(env, napi_ref_threadsafe_function(env, tsfn));
     NAPI_CALL(env, napi_unref_threadsafe_function(env, tsfn));
     NAPI_CALL(env, napi_release_threadsafe_function(tsfn, napi_tsfn_release));
+    napi_release_threadsafe_function(tsfn, napi_tsfn_release);
     napi_value _value;
     NAPI_CALL(env, napi_create_int32(env, 1, &_value));
     return _value;
@@ -3702,6 +3707,7 @@ static void completeCb(napi_env env, napi_status status, void *data)
     g_isTaskFinished = true;
     AsyncContext *callbackData = reinterpret_cast<AsyncContext *>(data);
     napi_delete_async_work(env, callbackData->asyncWork);
+    delete callbackData;
 }
 
 static napi_value AsyncCallTest(napi_env env, napi_callback_info info)
@@ -3852,13 +3858,11 @@ static napi_value StopEventLoop(napi_env env, napi_callback_info info)
         NAPI_ASSERT(env, status == napi_generic_failure, "stop event loop successfully");
     } else if (value == STOP_LOOP_BEFORE_RUN) {
         pthread_t tid;
-        napi_value result = nullptr;
-        pthread_create(&tid, nullptr, CallBeforeRunningFunc, &result);
+        pthread_create(&tid, nullptr, CallBeforeRunningFunc, nullptr);
         pthread_detach(tid);
     } else if (value == STOP_LOOP_AFTER_RUN) {
         pthread_t tid;
-        napi_value result;
-        pthread_create(&tid, nullptr, CallAfterRunFunc, &result);
+        pthread_create(&tid, nullptr, CallAfterRunFunc, nullptr);
         pthread_detach(tid);
     }
 
@@ -4510,22 +4514,31 @@ static void WorkComplete(napi_env env, napi_status status, void *data)
     CallbackData *callbackData = reinterpret_cast<CallbackData *>(data);
     napi_release_threadsafe_function(callbackData->tsfn, napi_tsfn_release);
     napi_delete_async_work(env, callbackData->work);
-    callbackData->work = nullptr;
-    callbackData->tsfn = nullptr;
+    delete callbackData;
 }
 
 static napi_value ThreadSafePriority(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value jsCb = nullptr;
-    CallbackData *callbackData = nullptr;
-    napi_get_cb_info(env, info, &argc, &jsCb, nullptr, reinterpret_cast<void **>(&callbackData));
+    CallbackData *sharedData = nullptr;
+    napi_get_cb_info(env, info, &argc, &jsCb, nullptr, reinterpret_cast<void **>(&sharedData));
+    CallbackData *data = new CallbackData();
     napi_value resourceName = nullptr;
     napi_create_string_utf8(env, "Thread-safe Function Demo", NAPI_AUTO_LENGTH, &resourceName);
-    napi_create_threadsafe_function(env, jsCb, nullptr, resourceName, 0, 1, callbackData, nullptr, callbackData,
-                                    CallJsFunc, &callbackData->tsfn);
-    napi_create_async_work(env, nullptr, resourceName, ExecuteWork, WorkComplete, callbackData, &callbackData->work);
-    napi_queue_async_work(env, callbackData->work);
+    napi_status status = napi_create_threadsafe_function(env, jsCb, nullptr, resourceName, 0, 1, data, nullptr, data,
+        CallJsFunc, &data->tsfn);
+    if (status != napi_ok) {
+        delete data;
+        NAPI_ASSERT(env, false, "napi_create_threadsafe_function failed");
+    }
+    status = napi_create_async_work(env, nullptr, resourceName, ExecuteWork, WorkComplete, data, &data->work);
+    if (status != napi_ok) {
+        napi_release_threadsafe_function(data->tsfn, napi_tsfn_release);
+        delete data;
+        NAPI_ASSERT(env, false, "napi_create_async_work failed");
+    }
+    napi_queue_async_work(env, data->work);
 
     napi_value value = 0;
     NAPI_CALL(env, napi_create_int32(env, 0, &value));
