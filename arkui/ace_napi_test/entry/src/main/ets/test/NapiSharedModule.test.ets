@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium"
 import { ErrorEvent, MessageEvents, worker } from '@kit.ArkTS';
+import sharedtestvalid from 'libsharedtestvalid.so';
 
 declare function requireNapi(moduleName: string, isShared?: boolean): Object | undefined;
 
@@ -95,7 +96,7 @@ export default function napiSharedModuleTest() {
     /**
      * @tc.name   napiSharedModuleTest003
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_SHARED_MODULE_0003
-     * @tc.desc   Load shared module from Worker, verify same init count.
+     * @tc.desc   Main thread and Worker concurrently load same shared module.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -103,15 +104,23 @@ export default function napiSharedModuleTest() {
     it('napiSharedModuleTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('napiSharedModuleTest003 START');
       let wkr = new worker.ThreadWorker('entry/ets/workers/SharedModuleWorker.ets');
+      let workerDone = false;
+      let mainDone = false;
+      let finish = () => {
+        if (workerDone && mainDone) {
+          wkr.terminate();
+          console.info('napiSharedModuleTest003 END');
+          done();
+        }
+      };
       wkr.onmessage = (e: MessageEvents) => {
         try {
           let data = e.data as ValidModuleResult;
           expect(data.isSendable).assertTrue();
           expect(data.initCount).assertEqual(1);
           expect(data.addResult).assertEqual(7);
-          wkr.terminate();
-          console.info('napiSharedModuleTest003 END');
-          done();
+          workerDone = true;
+          finish();
         } catch (err) {
           wkr.terminate();
           expect().assertFail();
@@ -126,6 +135,20 @@ export default function napiSharedModuleTest() {
         done();
       };
       wkr.postMessage('loadSharedModule');
+      try {
+        let mod = requireNapi('sharedtestvalid', true);
+        expect(mod !== undefined && mod !== null).assertTrue();
+        let addResult = (mod as Object as Record<string, Function>)['add'](100, 200) as number;
+        console.info('napiSharedModuleTest003 main thread add(100,200)=' + addResult);
+        expect(addResult).assertEqual(300);
+        mainDone = true;
+        finish();
+      } catch (err) {
+        wkr.terminate();
+        expect().assertFail();
+        console.info('napiSharedModuleTest003 main thread ERROR: ' + err);
+        done();
+      }
     });
 
     /**
@@ -269,6 +292,31 @@ export default function napiSharedModuleTest() {
       for (let i = 0; i < WORKER_COUNT; i++) {
         workers[i].postMessage('loadSharedModule');
       }
+    });
+
+    /**
+     * @tc.name   napiSharedModuleTest008
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_SHARED_MODULE_0008
+     * @tc.desc   Load shared module via import statement, verify typed access.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('napiSharedModuleTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('napiSharedModuleTest008 START');
+      try {
+        let addResult = sharedtestvalid.add(100, 200);
+        console.info('napiSharedModuleTest008 add(100,200)=' + addResult);
+        expect(addResult).assertEqual(300);
+        let initCount = sharedtestvalid.getInitCount();
+        console.info('napiSharedModuleTest008 getInitCount()=' + initCount);
+        expect(initCount).assertEqual(1);
+        console.info('napiSharedModuleTest008 END');
+      } catch (err) {
+        expect().assertFail();
+        console.info('napiSharedModuleTest008 ERROR: ' + err);
+      }
+      done();
     });
   });
 }
