@@ -12,12 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-async function loadDynamicWrapped(): Promise<WrappedBuilder<[string]>> {
-  return wrapBuilder((await import('./wrapBuilderModule02')).dynamicBuilder);
+function loadDynamicWrapped(): Promise<WrappedBuilder<[string]>> {
+  return wrapBuilder((import('./wrapBuilderModule02')).dynamicBuilder);
 }
 
-async function loadIdentifierBoundWrapped(): Promise<WrappedBuilder<[string]>> {
-  const builderModule2 = await import('./wrapBuilderModule02');
+function loadIdentifierBoundWrapped(): Promise<WrappedBuilder<[string]>> {
+  const builderModule2 = import('./wrapBuilderModule02');
   return wrapBuilder(builderModule2.namespaceBuilder);
 }
 
