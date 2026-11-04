@@ -18,6 +18,7 @@ group("ActsAceEtsModuleStateMangagementTest") {
   deps = [
     "ace_ets_module_StateMgmtMix:ActsAceEtsModuleStateMgmtMixTest",
     "ace_ets_module_StateMgmtUI:ActsAceEtsModuleStateMgmtUITest",
+    "ace_ets_module_StateMgmtUI02:ActsAceEtsModuleStateMgmtUI02Test",
     "ace_ets_module_StateMgmtV2:ActsAceEtsModuleStateMgmtV2Test",
     "ace_ets_module_StateMgmtV102:ActsAceEtsModuleStateMgmtV102Test",
     "ace_ets_module_StateMgmtV103:ActsAceEtsModuleStateMgmtV103Test",
