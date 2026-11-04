@@ -1646,5 +1646,271 @@ export default function ScopeHelperContainsTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SCOPEHELPER_CONTAINS_1600
+     * @tc.name testScopeContainsBasic004
+     * @tc.desc Verify ScopeHelper contains with numeric bounds
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testScopeContainsBasic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let lower = new ScopeHelperContainsPart03TestMissingTemperature(30);
+        let upper = new ScopeHelperContainsPart03TestMissingTemperature(40);
+        let range = new util.ScopeHelper<ScopeHelperContainsPart03TestMissingTemperature>(lower, upper);
+        let disjoint = new util.ScopeHelper<ScopeHelperContainsPart03TestMissingTemperature>(
+          new ScopeHelperContainsPart03TestMissingTemperature(10),
+          new ScopeHelperContainsPart03TestMissingTemperature(20),
+        );
+        try {
+          range.intersect(disjoint);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+        }
+        let result = range.contains(new ScopeHelperContainsPart03TestMissingTemperature(35));
+        expect(result).assertTrue();
+
+      }
+      {
+        let lower = new ScopeHelperContainsPart03TestMissingTemperature(30);
+        let upper = new ScopeHelperContainsPart03TestMissingTemperature(40);
+        let range = new util.ScopeHelper<ScopeHelperContainsPart03TestMissingTemperature>(lower, upper);
+        let disjoint = new util.ScopeHelper<ScopeHelperContainsPart03TestMissingTemperature>(
+          new ScopeHelperContainsPart03TestMissingTemperature(10),
+          new ScopeHelperContainsPart03TestMissingTemperature(20),
+        );
+        try {
+          range.intersect(disjoint);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+        }
+        let result = range.contains(
+          new util.ScopeHelper<ScopeHelperContainsPart03TestMissingTemperature>(
+            new ScopeHelperContainsPart03TestMissingTemperature(33),
+            new ScopeHelperContainsPart03TestMissingTemperature(36),
+          ),
+        );
+        expect(result).assertTrue();
+
+      }
+      {
+        let lower = new ScopeHelperContainsPart03TestMissingTemperature(30);
+        let upper = new ScopeHelperContainsPart03TestMissingTemperature(40);
+        let range = new util.ScopeHelper<ScopeHelperContainsPart03TestMissingTemperature>(lower, upper);
+        let disjoint = new util.ScopeHelper<ScopeHelperContainsPart03TestMissingTemperature>(
+          new ScopeHelperContainsPart03TestMissingTemperature(10),
+          new ScopeHelperContainsPart03TestMissingTemperature(20),
+        );
+        try {
+          range.intersect(disjoint);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+        }
+        let text = range.toString();
+        expect(text).assertEqual('[30, 40]');
+
+      }
+      {
+        let lower = new ScopeHelperContainsPart03TestMissingTemperature(30);
+        let upper = new ScopeHelperContainsPart03TestMissingTemperature(40);
+        let range = new util.ScopeHelper<ScopeHelperContainsPart03TestMissingTemperature>(lower, upper);
+        let disjoint = new util.ScopeHelper<ScopeHelperContainsPart03TestMissingTemperature>(
+          new ScopeHelperContainsPart03TestMissingTemperature(10),
+          new ScopeHelperContainsPart03TestMissingTemperature(20),
+        );
+        try {
+          range.intersect(disjoint);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+        }
+        let result = range.contains(new ScopeHelperContainsPart03TestMissingTemperature(45));
+        expect(result).assertFalse();
+
+      }
+      {
+        let lower = new ScopeHelperContainsPart03TestMissingTemperature(30);
+        let upper = new ScopeHelperContainsPart03TestMissingTemperature(40);
+        let range = new util.ScopeHelper<ScopeHelperContainsPart03TestMissingTemperature>(lower, upper);
+        let disjoint = new util.ScopeHelper<ScopeHelperContainsPart03TestMissingTemperature>(
+          new ScopeHelperContainsPart03TestMissingTemperature(10),
+          new ScopeHelperContainsPart03TestMissingTemperature(20),
+        );
+        try {
+          range.intersect(disjoint);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+        }
+        let result = range.contains(
+          new util.ScopeHelper<ScopeHelperContainsPart03TestMissingTemperature>(
+            new ScopeHelperContainsPart03TestMissingTemperature(26),
+            new ScopeHelperContainsPart03TestMissingTemperature(42),
+          ),
+        );
+        expect(result).assertFalse();
+
+      }
+      {
+        let lower = new ScopeHelperContainsPart03TestMissingTemperature(30);
+        let upper = new ScopeHelperContainsPart03TestMissingTemperature(40);
+        let range = new util.ScopeHelper<ScopeHelperContainsPart03TestMissingTemperature>(lower, upper);
+        let disjoint = new util.ScopeHelper<ScopeHelperContainsPart03TestMissingTemperature>(
+          new ScopeHelperContainsPart03TestMissingTemperature(10),
+          new ScopeHelperContainsPart03TestMissingTemperature(20),
+        );
+        try {
+          range.intersect(disjoint);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+        }
+        let result = range.contains(new util.ScopeHelper<ScopeHelperContainsPart03TestMissingTemperature>(lower, upper));
+        expect(result).assertTrue();
+
+      }
+      {
+        let lower = new ScopeHelperContainsPart03TestMissingTemperature(30);
+        let upper = new ScopeHelperContainsPart03TestMissingTemperature(40);
+        let range = new util.ScopeHelper<ScopeHelperContainsPart03TestMissingTemperature>(lower, upper);
+        let disjoint = new util.ScopeHelper<ScopeHelperContainsPart03TestMissingTemperature>(
+          new ScopeHelperContainsPart03TestMissingTemperature(10),
+          new ScopeHelperContainsPart03TestMissingTemperature(20),
+        );
+        try {
+          range.intersect(disjoint);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+        }
+        let expanded = range.expand(new ScopeHelperContainsPart03TestMissingTemperature(45));
+        let result = expanded.contains(new ScopeHelperContainsPart03TestMissingTemperature(45));
+        expect(result).assertTrue();
+
+      }
+      {
+        let lower = new ScopeHelperContainsPart03TestMissingTemperature(30);
+        let upper = new ScopeHelperContainsPart03TestMissingTemperature(40);
+        let range = new util.ScopeHelper<ScopeHelperContainsPart03TestMissingTemperature>(lower, upper);
+        let before = range.toString();
+        let res = range.contains(new ScopeHelperContainsPart03TestMissingTemperature(35));
+        let after = range.toString();
+        expect(before).assertEqual('[30, 40]');
+        expect(after).assertEqual('[30, 40]');
+        expect(res).assertTrue();
+
+      }
+      {
+        let lower = new ScopeHelperContainsPart03TestMissingTemperature(30);
+        let upper = new ScopeHelperContainsPart03TestMissingTemperature(40);
+        let range = new util.ScopeHelper<ScopeHelperContainsPart03TestMissingTemperature>(lower, upper);
+        let actual = range.contains(new ScopeHelperContainsPart03TestMissingTemperature(35));
+        let actualA = range.contains(new ScopeHelperContainsPart03TestMissingTemperature(36));
+        let actualB = range.contains(new ScopeHelperContainsPart03TestMissingTemperature(37));
+        expect(actual).assertTrue();
+        expect(actualA).assertTrue();
+        expect(actualB).assertTrue();
+
+      }
+      {
+        let lower = new ScopeHelperContainsPart03TestMissingTemperature(30);
+        let upper = new ScopeHelperContainsPart03TestMissingTemperature(40);
+        let range = new util.ScopeHelper<ScopeHelperContainsPart03TestMissingTemperature>(lower, upper);
+        let actual = range.contains(
+          new util.ScopeHelper<ScopeHelperContainsPart03TestMissingTemperature>(
+            new ScopeHelperContainsPart03TestMissingTemperature(31),
+            new ScopeHelperContainsPart03TestMissingTemperature(33),
+          ),
+        );
+        let actualA = range.contains(
+          new util.ScopeHelper<ScopeHelperContainsPart03TestMissingTemperature>(
+            new ScopeHelperContainsPart03TestMissingTemperature(34),
+            new ScopeHelperContainsPart03TestMissingTemperature(36),
+          ),
+        );
+        let actualB = range.contains(
+          new util.ScopeHelper<ScopeHelperContainsPart03TestMissingTemperature>(
+            new ScopeHelperContainsPart03TestMissingTemperature(37),
+            new ScopeHelperContainsPart03TestMissingTemperature(39),
+          ),
+        );
+        expect(actual).assertTrue();
+        expect(actualA).assertTrue();
+        expect(actualB).assertTrue();
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SCOPEHELPER_CONTAINS_1700
+     * @tc.name testScopeContainsBasic005
+     * @tc.desc Verify ScopeHelper contains with numeric bounds
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testScopeContainsBasic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let levelRange = new util.ScopeHelper<ScopeHelperContainsPart03TestMissingLevelItem>(
+          new ScopeHelperContainsPart03TestMissingLevelItem(1),
+          new ScopeHelperContainsPart03TestMissingLevelItem(9),
+        );
+        let result = levelRange.contains(new ScopeHelperContainsPart03TestMissingLevelItem(5));
+        expect(result).assertTrue();
+
+      }
+      {
+        let levelRange = new util.ScopeHelper<ScopeHelperContainsPart03TestMissingLevelItem>(
+          new ScopeHelperContainsPart03TestMissingLevelItem(1),
+          new ScopeHelperContainsPart03TestMissingLevelItem(9),
+        );
+        let inner = new util.ScopeHelper<ScopeHelperContainsPart03TestMissingLevelItem>(
+          new ScopeHelperContainsPart03TestMissingLevelItem(3),
+          new ScopeHelperContainsPart03TestMissingLevelItem(7),
+        );
+        let result = levelRange.contains(inner);
+        expect(result).assertTrue();
+
+      }
+      {
+        let levelRange = new util.ScopeHelper<ScopeHelperContainsPart03TestMissingLevelItem>(
+          new ScopeHelperContainsPart03TestMissingLevelItem(1),
+          new ScopeHelperContainsPart03TestMissingLevelItem(9),
+        );
+        let result = levelRange.contains(new ScopeHelperContainsPart03TestMissingLevelItem(11));
+        expect(result).assertFalse();
+
+      }
+      {
+        let lower = new ScopeHelperContainsPart03TestMissingTemperature(30);
+        let upper = new ScopeHelperContainsPart03TestMissingTemperature(40);
+        let range = new util.ScopeHelper<ScopeHelperContainsPart03TestMissingTemperature>(lower, upper);
+        lower.setTemp(25);
+        let text = range.toString();
+        expect(text).assertEqual('[25, 40]');
+
+      }
+      {
+        let lower = new ScopeHelperContainsPart03TestMissingTemperature(30);
+        let upper = new ScopeHelperContainsPart03TestMissingTemperature(40);
+        let range = new util.ScopeHelper<ScopeHelperContainsPart03TestMissingTemperature>(lower, upper);
+        upper.setTemp(45);
+        let text = range.toString();
+        expect(text).assertEqual('[30, 45]');
+
+      }
+    });
+
   });
 }
