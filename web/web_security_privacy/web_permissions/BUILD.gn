@@ -10,21 +10,15 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-import("//foundation/multimedia/player_framework/config.gni")
-import("//test/xts/tools/build/suite.gni")
 group("webPermissions") {
   testonly = true
-    deps = []
-    if (player_framework_support_screen_capture) {
-      deps += [ "web_permissions_one_static:ActsWebPermissionsOneStaticTest" ]
-    }
   if (is_standard_system) {
-    deps += [
+    deps = [
       "web_permissions_one:ActsWebPermissionsOneTest",
       "web_permissions_three:ActsWebPermissionsThreeTest",
       "web_permissions_three_static:ActsWebPermissionsThreeStaticTest",
       "web_permissions_two:ActsWebPermissionsTwoTest",
+      "web_permissions_one_static:ActsWebPermissionsOneStaticTest",
       "web_permissions_four_static:ActsWebPermissionsFourStaticTest",
     ]
   }
