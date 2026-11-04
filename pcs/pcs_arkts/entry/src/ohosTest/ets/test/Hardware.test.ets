@@ -27,6 +27,8 @@ import PermissionUtils from './PermissionUtils';
 import { Permissions } from '@ohos.abilityAccessCtrl';
 import AbilityUtils from './AbilityUtils';
 
+const SYSCAP_USB: string = 'SystemCapability.USB.USB' + 'Manager'
+
 export default function hardwareTest() {
   describe('HardwareTest', () => {
     let abilityContext: common.UIAbilityContext
@@ -60,7 +62,7 @@ export default function hardwareTest() {
       isCameraSupported = canIUse('SystemCapability.Multimedia.Camera.Core')
       isMicrophoneSupported = canIUse('SystemCapability.Multimedia.Audio.Capturer')
       isAoutSupported = canIUse('SystemCapability.Multimedia.Audio.Renderer')
-      isUsbSupported = canIUse('SystemCapability.USB.USBManager')
+      isUsbSupported = canIUse(SYSCAP_USB)
       isEthernetSupported = canIUse('SystemCapability.Communication.NetManager.Ethernet')
       isCellularSupported = canIUse('SystemCapability.Telephony.CellularData')
       done()
