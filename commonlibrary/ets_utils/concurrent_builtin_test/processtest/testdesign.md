@@ -1,0 +1,322 @@
+- runtime-services 测试设计
+	- 说明：基于 runtime_services_testpoint.md §1 接口维度脑图生成，覆盖 36 声明成员（process 22 public + 14 systemapi @test；timer 4 全局内建）×7 测试逻辑分类（缺项类按 §1 树跳过或标 ❌）
+	- 1. 接口测试（Functional）
+		- process.uid / pid / tid（只读属性）
+			- 入参范围覆盖
+				- 主线程取值、TaskPool（printArgs1/2/3）取值、Worker（postMessage 回环）取值
+				- number 类型常量，无入参
+			- 边界值测试
+				- 间接校验 >0、与 isAppUid/getThreadPriority/kill 联动值合法
+			- 异常与非法输入
+				- ❌ 只读属性无独立异常契约
+			- 返回值与类型验证
+				- number 类型；uid>0、pid>0、tid>0
+			- 组合场景
+				- uid↔isAppUid、tid↔getThreadPriority、pid↔kill 联动
+			- 重复调用/幂等性
+				- 100 次循环取值一致
+			- 并发跨线程
+				- 主线程 vs TaskPool vs Worker 取值一致性
+		- process.ppid / euid / egid / gid / groups（systemapi 常量）
+			- 入参范围覆盖
+				- 🟡 第三方 HAP 可达性已测（ProcessSystemApiTest0006~0010：逐属性访问）
+			- 边界值测试
+				- ❌
+			- 异常与非法输入
+				- ✅ 202 systemapi 权限拒绝断言（第三方 HAP 默认得 202）
+			- 返回值与类型验证
+				- 🟡 202 或 number/number[]（成功路径断言 typeof，失败路径断言 code===202）
+			- 组合场景
+				- ❌
+			- 重复调用/幂等性
+				- ❌
+			- 并发跨线程
+				- ❌
+		- process.isIsolatedProcess() / process.is64Bit()
+			- 入参范围覆盖
+				- 无参 boolean 函数，主线程/TaskPool（printArgs4/5）/Worker（WorkThread4/5）三场景
+			- 边界值测试
+				- 无参，无直接边界
+			- 异常与非法输入
+				- ❌ 无参无 401 契约
+			- 返回值与类型验证
+				- boolean；isIsolatedProcess 断言 true（XTS 沙箱）、is64Bit 一致
+			- 组合场景
+				- 主线程值 vs TaskPool/Worker 返回值一致性
+			- 重复调用/幂等性
+				- 100 次循环结果一致
+			- 并发跨线程
+				- TaskPool + Worker 跨线程一致
+		- process.getStartRealtime() / getPastCpuTime() / uptime()
+			- 入参范围覆盖
+				- 无参 number 函数，三场景（printArgs6/7/8、WorkThread6/7/8）
+			- 边界值测试
+				- 单调性：getStartRealtime 同进程不变、getPastCpuTime/uptime 当前 ≥ 初始，越界抛错
+			- 异常与非法输入
+				- ❌ 无参无 401 契约
+			- 返回值与类型验证
+				- number；getStartRealtime 不变、getPastCpuTime/uptime 单调递增
+			- 组合场景
+				- getStartRealtime 在 0700 与 getPastCpuTime desc 复用（⚠️ desc 误标，见 §7.4 E.1）
+			- 重复调用/幂等性
+				- 100 次循环单调/一致
+			- 并发跨线程
+				- TaskPool + Worker 回环比对
+		- process.abort()
+			- 入参范围覆盖
+				- 🟡 存在性已测（ProcessSystemApiTest0011：typeof process.abort==='function'）
+			- 边界值测试
+				- ❌
+			- 异常与非法输入
+				- ❌（立即退出+core，不可在测试进程内直接验证）
+			- 返回值与类型验证
+				- 🟡 typeof==='function'（调用路径需进程外 harness）
+			- 组合场景
+				- ❌
+			- 重复调用/幂等性
+				- ❌（一次即终止）
+			- 并发跨线程
+				- ❌（建议子进程/Worker 内调用验证其终止）
+		- process.isAppUid(v)（namespace，deprecated）
+			- 入参范围覆盖
+				- v=合法 uid、null、undefined
+			- 边界值测试
+				- null/undefined 边界
+			- 异常与非法输入
+				- null/undefined → 401（⚠️ 仅注释未强断言，见 §7.4）
+			- 返回值与类型验证
+				- boolean；自身 uid→true
+			- 组合场景
+				- uid↔isAppUid 联动
+			- 重复调用/幂等性
+				- 未独立
+			- 并发跨线程
+				- TaskPool（taskpoolTestFunc1）+ Worker（Worker9 postMessage {uid,count}）
+		- process.getUidForName(v)（namespace，deprecated）
+			- 入参范围覆盖
+				- v=合法用户名、null、undefined、非字符串
+			- 边界值测试
+				- 不存在用户名→-1（doc）
+			- 异常与非法输入
+				- null/undefined/number → 401（弱断言）
+			- 返回值与类型验证
+				- number；不存在→-1
+			- 组合场景
+				- 未独立
+			- 重复调用/幂等性
+				- 未独立
+			- 并发跨线程
+				- TaskPool（taskpoolTestFunc2）+ Worker（Worker10）
+		- process.getThreadPriority(v)（namespace，deprecated）
+			- 入参范围覆盖
+				- v=合法 tid、null、undefined、非数字
+			- 边界值测试
+				- null/undefined
+			- 异常与非法输入
+				- null/undefined → 401（弱断言）
+			- 返回值与类型验证
+				- number（OS 相关）
+			- 组合场景
+				- tid↔getThreadPriority 联动
+			- 重复调用/幂等性
+				- 未独立
+			- 并发跨线程
+				- TaskPool（taskpoolTestFunc3）+ Worker（Worker11）
+		- process.getSystemConfig(name)（namespace，deprecated）
+			- 入参范围覆盖
+				- name=合法配置名、null、undefined
+			- 边界值测试
+				- 不存在配置→-1（doc）
+			- 异常与非法输入
+				- null/undefined → 401（弱断言）
+			- 返回值与类型验证
+				- number
+			- 组合场景
+				- 未独立
+			- 重复调用/幂等性
+				- 未独立
+			- 并发跨线程
+				- TaskPool（taskpoolTestFunc4）+ Worker（Worker12）
+		- process.getEnvironmentVar(name)（namespace，deprecated）
+			- 入参范围覆盖
+				- name=合法环境变量名、null、undefined
+			- 边界值测试
+				- 不存在→undefined（doc）
+			- 异常与非法输入
+				- null/undefined → 401（弱断言）
+			- 返回值与类型验证
+				- string
+			- 组合场景
+				- 未独立
+			- 重复调用/幂等性
+				- 未独立
+			- 并发跨线程
+				- TaskPool（taskpoolTestFunc5）+ Worker（Worker13）
+		- process.exit(code)（namespace，deprecated）
+			- 入参范围覆盖
+				- code=0、非 0、null、undefined
+			- 边界值测试
+				- null/undefined、非 0（doc 警告数据丢失）
+			- 异常与非法输入
+				- null/undefined → 401（弱断言）
+			- 返回值与类型验证
+				- void（永不返回）
+			- 组合场景
+				- 未独立
+			- 重复调用/幂等性
+				- ❌（一次即退出）
+			- 并发跨线程
+				- ❌（进程退出不可跨线程验证）
+		- process.kill(signal, pid)（namespace，deprecated）
+			- 入参范围覆盖
+				- signal=28（合法 1~64）、pid=process.pid、越界、字符串
+			- 边界值测试
+				- signal 边界（0/越界/字符串）
+			- 异常与非法输入
+				- 非法 signal → 401（弱断言）
+			- 返回值与类型验证
+				- boolean（成功 true）
+			- 组合场景
+				- pid↔kill 联动
+			- 重复调用/幂等性
+				- 未独立
+			- 并发跨线程
+				- ❌（仅终止本进程）
+		- ProcessManager 类（new process.ProcessManager()，7 方法）
+			- 入参范围覆盖
+				- 各方法入参同 namespace 对应项（null/undefined/合法）
+			- 边界值测试
+				- null/undefined、signal 1~64 越界
+			- 异常与非法输入
+				- null/undefined → 401（强断言 expect(error.code).assertEqual(401)，与 namespace 弱断言对照）
+			- 返回值与类型验证
+				- boolean/number/string/void
+			- 组合场景
+				- new process.ProcessManager() 实例化 + 方法链
+			- 重复调用/幂等性
+				- 未独立
+			- 并发跨线程
+				- TaskPool（taskpoolTestFunc6~10）+ Worker（Worker14~18）；exit/kill ❌（终止进程）
+		- process.on(type, listener) / off(type) / EventListener（systemapi @test）
+			- 入参范围覆盖
+				- 🟡 第三方 HAP 可达性已测（ProcessSystemApiTest0002/0003：on 注册 + off 返回 boolean）
+			- 边界值测试
+				- ❌
+			- 异常与非法输入
+				- ✅ 202 systemapi 权限拒绝断言
+			- 返回值与类型验证
+				- 🟡 off 返回 boolean 或 202（成功路径断言 typeof，失败路径断言 code）
+			- 组合场景
+				- ❌（on 注册→事件触发→off 注销全链路）
+			- 重复调用/幂等性
+				- ❌
+			- 并发跨线程
+				- ❌
+		- process.runCmd(command, options?) / ChildProcess / ConditionType（systemapi @test）
+			- 入参范围覆盖
+				- 🟡 第三方 HAP 可达性已测（ProcessSystemApiTest0001：runCmd('echo hi') 执行）
+			- 边界值测试
+				- ❌（timeout 到期触发 killSignal、maxBuffer 溢出）
+			- 异常与非法输入
+				- ✅ 202 systemapi 权限拒绝断言
+			- 返回值与类型验证
+				- 🟡 ChildProcess.pid 为 number 或 202（成功路径断言 pid typeof，失败路径断言 code）
+			- 组合场景
+				- ❌（runCmd→wait→getOutput→close/kill 全链路）
+			- 重复调用/幂等性
+				- ❌
+			- 并发跨线程
+				- ❌
+		- process.cwd() / chdir(path)（systemapi @test）
+			- 入参范围覆盖
+				- 🟡 第三方 HAP 可达性已测（ProcessSystemApiTest0004/0005：cwd 返回非空串或 202；chdir 无效路径必抛错）
+			- 边界值测试
+				- ✅ chdir('/xts_nonexistent_dir_12345') 无效路径抛错（断言 code 为 string 或 number）
+			- 异常与非法输入
+				- ✅ 202 systemapi 权限拒绝或错误码断言
+			- 返回值与类型验证
+				- 🟡 cwd 返回 string（非空）或 202；chdir 抛错断言 code
+			- 组合场景
+				- ❌
+			- 重复调用/幂等性
+				- ❌
+			- 并发跨线程
+				- ❌
+		- setTimeout(handler, delay?, ...args)
+			- 入参范围覆盖
+				- handler=Function/string/null、delay=-1/0/100/200.1/2147483647/null/undefined、args 透传
+			- 边界值测试
+				- delay <1→0、delay=null/undefined→0、delay=MAX、delay 小数
+			- 异常与非法输入
+				- handler=null/空串→无附加处理、native uv 线程异常路径（Functions_0300 抛错）
+			- 返回值与类型验证
+				- number（timer ID 从 0 递增，进程内共享）
+			- 组合场景
+				- 嵌套异步（Functions_0200）、耗时任务（0100）、native 调用（0400）
+			- 重复调用/幂等性
+				- 连续 setTimeout ID 递增
+			- 并发跨线程
+				- TimerMultiThread 间接（跨线程载体为 setInterval；setTimeout 跨线程未直接用例）
+		- setInterval(handler, delay, ...args)
+			- 入参范围覆盖
+				- handler=Function/string/空串/null、delay=0/100/2000/3000/-1/null/小数、args 透传
+			- 边界值测试
+				- delay <1→0、delay=null→0、delay=小数、长延时 2000/3000ms
+			- 异常与非法输入
+				- handler=null/空串→无附加处理；delay 省略（声明必填）未测 401
+			- 返回值与类型验证
+				- number（timer ID）
+			- 组合场景
+				- 长耗时回调占用（0600/0700/0800 回调内 2~3s 阻塞）、嵌套（Memory_0500）
+			- 重复调用/幂等性
+				- 自清除（createTimer 计数达阈值 clearInterval 自身）
+			- 并发跨线程
+				- createTimer/mainTimer 在 main/taskpool/overThread，跨线程清除→undefined
+		- clearTimeout(timeoutID?)
+			- 入参范围覆盖
+				- timeoutID=未执行/执行中/已完成/不存在/null
+			- 边界值测试
+				- 各清除时机
+			- 异常与非法输入
+				- 不存在→no-op、null→no-op（doc）
+			- 返回值与类型验证
+				- void
+			- 组合场景
+				- 清除 setInterval 产生的 ID（clearTimeoutTest0600）
+			- 重复调用/幂等性
+				- 重复清除 no-op
+			- 并发跨线程
+				- 跨线程清除→no-op（timer 须在创建线程清除）
+		- clearInterval(intervalID?)
+			- 入参范围覆盖
+				- intervalID=各时机/不存在/无参/setTimeout 产生 ID
+			- 边界值测试
+				- 各清除时机
+			- 异常与非法输入
+				- 不存在→no-op、无参→no-op（doc 参数可省，0500 覆盖）
+			- 返回值与类型验证
+				- void
+			- 组合场景
+				- 清除 setTimeout 产生的 ID（clearIntervalTest1100）
+			- 重复调用/幂等性
+				- 重复清除 no-op
+			- 并发跨线程
+				- 跨线程清除→undefined（attemptClearTimer 在 overThread 返回 undefined）
+	- 2. 稳定性（Stability）
+		- process API 100 次循环调用结果一致性（ProcessInterfacetTest 各 main 100 循环 + SupplementSecond TaskPool 100 任务 + Worker 100 次 postMessage）
+		- timer 1000 次循环创建+清除稳定性（TimerMemoryTest 多次创建销毁、嵌套 timer、长延时占用不丢失触发）
+	- 3. 性能（Performance）
+		- getPastCpuTime/uptime 单调递增性能校验（ProcessInterfacetTest1000/1300，100 循环断言 startTime>currentTime 抛错）
+		- timer 长耗时回调 2000/3000ms 占用下不丢失触发（TimerSetIntervalTest0600/0700/0800 回调内 2~3s 阻塞）
+	- 4. 并发安全（Concurrency Safety）
+		- process API 跨 TaskPool/Worker 取值一致性（SupplementTes uid/pid/tid + SupplementSecond 5 方法×{namespace,ProcessManager}×{main,taskpool,worker}）
+		- timer 跨线程创建/清除（TimerMultiThread main/subThread/overThread/subTimerClear/mainTimerClear）
+		- 跨线程清除返回 undefined/no-op（attemptClearTimer 在 overThread 验证 timer 须在创建线程清除）
+	- 5. 兼容性与继承
+		- ProcessManager 类 new 实例化（Boundary PM 段 20 + SupplementSecond PM 段 13）
+		- namespace→ProcessManager 迁移对应性（7 方法两套对应用例，@useinstead 一致）
+		- timer 无继承/类形态（全局函数，不适用）
+	- 6. 资料与文档符合性
+		- 声明 vs 测试：14 声明成员可达性已覆盖（ProcessSystemApiTest 11 例：abort/runCmd/on/off/cwd/chdir/ppid/euid/egid/gid/groups 第三方 HAP 202 或值断言）；正向行为需 systemapi 套件
+		- doc vs 测试：js-apis-process.md 仅 public 表面；ProcessInterfacetTest0700/1500 @tc.desc 与实测 API 不符（🔴 E.1）
+		- timer 无独立 .md：js-apis-arkts-lang.md 无 setTimeout/setInterval 条目（grep 确认），仅 global.d.ts 声明为契约
