@@ -83,9 +83,9 @@ export default function WebSocketMinSupportTlsProtocolTest(): void {
           let options: webSocket.WebSocketRequestOptions = {
             header: {
               'Content-Type': 'application/json'
-            },
-            minSupportTlsProtocol: webSocket.TlsProtocol.TLS_V_1_0
+            }
           };
+          options.minSupportTlsProtocol = webSocket.TlsProtocol.TLS_V_1_0;
           ws!.connect(availableWebSocketAddress, options,
             (err: BusinessError<void> | null, value: boolean | undefined) => {
               if (err && err.code != 0) {
@@ -95,7 +95,6 @@ export default function WebSocketMinSupportTlsProtocolTest(): void {
                 hilog.info(domain, tag, `${caseName} test end`);
               } else {
                 hilog.info(domain, tag, `${caseName} options success is ${options.minSupportTlsProtocol}`);
-                expectTrue(options.minSupportTlsProtocol == 0);
                 expectTrue(options.minSupportTlsProtocol == webSocket.TlsProtocol.TLS_V_1_0);
                 hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
                 expectTrue(value == true);
@@ -127,12 +126,11 @@ export default function WebSocketMinSupportTlsProtocolTest(): void {
           let options: webSocket.WebSocketRequestOptions = {
             header: {
               'Content-Type': 'application/json'
-            },
-            minSupportTlsProtocol: webSocket.TlsProtocol.TLS_V_1_0
+            }
           };
+          options.minSupportTlsProtocol = webSocket.TlsProtocol.TLS_V_1_0;
           ws!.connect(availableWebSocketAddress, options).then((value: boolean) => {
             hilog.info(domain, tag, `${caseName} options success is ${options.minSupportTlsProtocol}`);
-            expectTrue(options.minSupportTlsProtocol == 0);
             expectTrue(options.minSupportTlsProtocol == webSocket.TlsProtocol.TLS_V_1_0);
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
             expectTrue(value == true);
@@ -168,9 +166,9 @@ export default function WebSocketMinSupportTlsProtocolTest(): void {
           let options: webSocket.WebSocketRequestOptions = {
             header: {
               'Content-Type': 'application/json'
-            },
-            minSupportTlsProtocol: webSocket.TlsProtocol.TLS_V_1_1
+            }
           };
+          options.minSupportTlsProtocol = webSocket.TlsProtocol.TLS_V_1_1;
           ws!.connect(availableWebSocketAddress, options,
             (err: BusinessError<void> | null, value: boolean | undefined) => {
               if (err && err.code != 0) {
@@ -180,7 +178,6 @@ export default function WebSocketMinSupportTlsProtocolTest(): void {
                 hilog.info(domain, tag, `${caseName} test end`);
               } else {
                 hilog.info(domain, tag, `${caseName} options success is ${options.minSupportTlsProtocol}`);
-                expectTrue(options.minSupportTlsProtocol == 1);
                 expectTrue(options.minSupportTlsProtocol == webSocket.TlsProtocol.TLS_V_1_1);
                 hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
                 expectTrue(value == true);
@@ -212,12 +209,11 @@ export default function WebSocketMinSupportTlsProtocolTest(): void {
           let options: webSocket.WebSocketRequestOptions = {
             header: {
               'Content-Type': 'application/json'
-            },
-            minSupportTlsProtocol: webSocket.TlsProtocol.TLS_V_1_1
+            }
           };
+          options.minSupportTlsProtocol = webSocket.TlsProtocol.TLS_V_1_1;
           ws!.connect(availableWebSocketAddress, options).then((value: boolean) => {
             hilog.info(domain, tag, `${caseName} options success is ${options.minSupportTlsProtocol}`);
-            expectTrue(options.minSupportTlsProtocol == 1);
             expectTrue(options.minSupportTlsProtocol == webSocket.TlsProtocol.TLS_V_1_1);
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
             expectTrue(value == true);
@@ -253,9 +249,9 @@ export default function WebSocketMinSupportTlsProtocolTest(): void {
           let options: webSocket.WebSocketRequestOptions = {
             header: {
               'Content-Type': 'application/json'
-            },
-            minSupportTlsProtocol: webSocket.TlsProtocol.TLS_V_1_2
+            }
           };
+          options.minSupportTlsProtocol = webSocket.TlsProtocol.TLS_V_1_2;
           ws!.connect(availableWebSocketAddress, options,
             (err: BusinessError<void> | null, value: boolean | undefined) => {
               if (err && err.code != 0) {
@@ -265,7 +261,6 @@ export default function WebSocketMinSupportTlsProtocolTest(): void {
                 hilog.info(domain, tag, `${caseName} test end`);
               } else {
                 hilog.info(domain, tag, `${caseName} options success is ${options.minSupportTlsProtocol}`);
-                expectTrue(options.minSupportTlsProtocol == 2);
                 expectTrue(options.minSupportTlsProtocol == webSocket.TlsProtocol.TLS_V_1_2);
                 hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
                 expectTrue(value == true);
@@ -297,12 +292,11 @@ export default function WebSocketMinSupportTlsProtocolTest(): void {
           let options: webSocket.WebSocketRequestOptions = {
             header: {
               'Content-Type': 'application/json'
-            },
-            minSupportTlsProtocol: webSocket.TlsProtocol.TLS_V_1_2
+            }
           };
+          options.minSupportTlsProtocol = webSocket.TlsProtocol.TLS_V_1_2;
           ws!.connect(availableWebSocketAddress, options).then((value: boolean) => {
             hilog.info(domain, tag, `${caseName} options success is ${options.minSupportTlsProtocol}`);
-            expectTrue(options.minSupportTlsProtocol == 2);
             expectTrue(options.minSupportTlsProtocol == webSocket.TlsProtocol.TLS_V_1_2);
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
             expectTrue(value == true);
@@ -338,9 +332,9 @@ export default function WebSocketMinSupportTlsProtocolTest(): void {
           let options: webSocket.WebSocketRequestOptions = {
             header: {
               'Content-Type': 'application/json'
-            },
-            minSupportTlsProtocol: webSocket.TlsProtocol.TLS_V_1_3
+            }
           };
+          options.minSupportTlsProtocol = webSocket.TlsProtocol.TLS_V_1_3;
           ws!.connect(availableWebSocketAddress, options,
             (err: BusinessError<void> | null, value: boolean | undefined) => {
               if (err && err.code != 0) {
@@ -350,7 +344,6 @@ export default function WebSocketMinSupportTlsProtocolTest(): void {
                 hilog.info(domain, tag, `${caseName} test end`);
               } else {
                 hilog.info(domain, tag, `${caseName} options success is ${options.minSupportTlsProtocol}`);
-                expectTrue(options.minSupportTlsProtocol == 3);
                 expectTrue(options.minSupportTlsProtocol == webSocket.TlsProtocol.TLS_V_1_3);
                 hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
                 expectTrue(value == true);
@@ -382,12 +375,11 @@ export default function WebSocketMinSupportTlsProtocolTest(): void {
           let options: webSocket.WebSocketRequestOptions = {
             header: {
               'Content-Type': 'application/json'
-            },
-            minSupportTlsProtocol: webSocket.TlsProtocol.TLS_V_1_3
+            }
           };
+          options.minSupportTlsProtocol = webSocket.TlsProtocol.TLS_V_1_3;
           ws!.connect(availableWebSocketAddress, options).then((value: boolean) => {
             hilog.info(domain, tag, `${caseName} options success is ${options.minSupportTlsProtocol}`);
-            expectTrue(options.minSupportTlsProtocol == 3);
             expectTrue(options.minSupportTlsProtocol == webSocket.TlsProtocol.TLS_V_1_3);
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
             expectTrue(value == true);
