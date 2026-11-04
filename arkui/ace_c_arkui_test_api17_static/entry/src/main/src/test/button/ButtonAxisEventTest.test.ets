@@ -20,18 +20,26 @@ import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
+
+
 async function mouseScrollCommonEvent(id: string) {
   let driver = Driver.create();
   let component = await driver.findComponent(ON.id(id));
   let point = await (component?.getBounds() as Promise<Rect>);
   let centerX = Math.round((point.left + point.right).toInt() / 2);
   let centerY = Math.round((point.top + point.bottom).toInt() / 2);
-  driver.mouseScroll({x: centerX.toInt(), y: centerY.toInt()}, true, 30, 2027);
+  // driver.mouseScroll({x: centerX.toInt(), y: centerY.toInt()}, true, 30, 2027);
+  await driver.mouseScroll({x:centerX.toInt(), y:centerY.toInt(), displayId: displayID}, true, 120);
 }
+
 
 export default function buttonAxisEventTest() {
 
+
   describe('ButtonAxisEventTest', () => {
+
+
 
 
     /**
@@ -53,6 +61,7 @@ export default function buttonAxisEventTest() {
         done();
       }
     })
+
 
   })
 }
