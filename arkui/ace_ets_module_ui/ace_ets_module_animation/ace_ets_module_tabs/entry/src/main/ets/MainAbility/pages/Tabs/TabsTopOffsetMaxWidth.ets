@@ -13,16 +13,11 @@
  * limitations under the License.
  */
 
-/**
- * CI Phone lacks runtime TabBarStyle.TOP / topBarFloatingStyle (TypeError kills HAP).
- * Keep node ids; apply BOTTOM + barFloatingStyle for offset/maxWidth payloads.
- * Re-wire TOP + topBarFloatingStyle when device image ships the API.
- */
 @Entry
 @Component
 struct TabsTopOffsetMaxWidth {
   @Builder
-  tabBlock(nodeId: string, style: FloatingTabBarStyle, w: Length) {
+  tabBlock(nodeId: string, style: TopFloatingTabBarStyle, w: Length) {
     Text(nodeId).fontSize(10)
     Tabs() {
       TabContent() {
@@ -33,7 +28,8 @@ struct TabsTopOffsetMaxWidth {
       }.tabBar('Green')
     }
     .id(nodeId)
-    .barFloatingStyle(style)
+    .barStyle(TabBarStyle.TOP)
+    .topBarFloatingStyle(style)
     .barMode(BarMode.Scrollable)
     .height(100)
     .width(w)
@@ -60,8 +56,8 @@ struct TabsTopOffsetMaxWidth {
         this.tabBlock('top_offset_side_base', { barSideMargin: 24 }, '100%')
         this.tabBlock('top_offset_side_xy', { barSideMargin: 24, offset: { x: 16, y: 8 } }, '100%')
         this.tabBlock('top_offset_invalid_margin', { offset: { x: 16, y: 8 } }, '100%')
-        this.tabBlock('top_offset_topmargin_base', { barBottomMargin: 24 }, '100%')
-        this.tabBlock('top_offset_topmargin_xy', { barBottomMargin: 24, offset: { x: 16, y: 8 } }, '100%')
+        this.tabBlock('top_offset_topmargin_base', { barTopMargin: 24 }, '100%')
+        this.tabBlock('top_offset_topmargin_xy', { barTopMargin: 24, offset: { x: 16, y: 8 } }, '100%')
         this.tabBlock('top_mw_base', {}, '100%')
         this.tabBlock('top_mw_560', { maxWidth: 560 }, '100%')
         this.tabBlock('top_mw_200', { maxWidth: 200 }, '100%')

@@ -1,5 +1,4 @@
 'use static';
-/* CI Phone: TOP/topBarFloatingStyle stubbed as BOTTOM+barFloatingStyle. */
 /*
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +16,7 @@
 
 import {
   Entry, Text, Column, Component, Tabs, TabContent, Color, Scroll,
-  BarMode, BarPosition, FloatingTabBarStyle
+  BarMode, BarPosition, TabBarStyle
 } from '@ohos.arkui.component'
 
 @Entry
@@ -44,7 +43,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_offset_base')
-            .barFloatingStyle({})
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({})
       .barMode(BarMode.Scrollable)
       .height(120)
       .width('100%')
@@ -65,7 +65,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_offset_x16')
-            .barFloatingStyle({ offset: { x: 16, y: 0 } })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ offset: { x: 16, y: 0 } })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width('100%')
@@ -86,7 +87,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_offset_y16vp')
-            .barFloatingStyle({ offset: { y: '16vp' } })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ offset: { y: '16vp' } })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width('100%')
@@ -107,7 +109,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_offset_neg')
-            .barFloatingStyle({ offset: { x: -1, y: -2 } })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ offset: { x: -1, y: -2 } })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width('100%')
@@ -128,7 +131,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_offset_pct')
-            .barFloatingStyle({ offset: { x: '50%', y: '50%' } })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ offset: { x: '50%', y: '50%' } })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width('100%')
@@ -149,7 +153,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_offset_edges_left')
-            .barFloatingStyle({ offset: { left: 16 } })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ offset: { left: 16 } })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width('100%')
@@ -170,7 +175,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_offset_edges_tb')
-            .barFloatingStyle({ offset: { top: 16, bottom: 32 } })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ offset: { top: 16, bottom: 32 } })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width('100%')
@@ -191,7 +197,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_offset_edges_lr')
-            .barFloatingStyle({ offset: { left: 16, right: 32 } })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ offset: { left: 16, right: 32 } })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width('100%')
@@ -212,7 +219,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_offset_le_start')
-            .barFloatingStyle({ offset: { x: 16 } })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ offset: { x: 16 } })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width('100%')
@@ -233,7 +241,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_offset_le_start_end')
-            .barFloatingStyle({ offset: { x: 16, y: 0 } })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ offset: { x: 16, y: 0 } })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width('100%')
@@ -254,7 +263,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_offset_le_tb')
-            .barFloatingStyle({ offset: { top: 16, bottom: 32 } })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ offset: { top: 16, bottom: 32 } })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width('100%')
@@ -275,7 +285,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_offset_zero')
-            .barFloatingStyle({ offset: { x: 0, y: 0 } })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ offset: { x: 0, y: 0 } })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width('100%')
@@ -296,7 +307,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_offset_nan')
-            .barFloatingStyle({ offset: { x: 0 } })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ offset: { x: 0 } })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width('100%')
@@ -317,7 +329,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_offset_inf')
-            .barFloatingStyle({ offset: { x: Infinity } })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ offset: { x: Infinity } })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width('100%')
@@ -338,7 +351,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_offset_side_base')
-            .barFloatingStyle({ barSideMargin: 24 })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ barSideMargin: 24 })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width('100%')
@@ -359,7 +373,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_offset_side_xy')
-            .barFloatingStyle({ barSideMargin: 24, offset: { x: 16, y: 8 } })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ barSideMargin: 24, offset: { x: 16, y: 8 } })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width('100%')
@@ -380,7 +395,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_offset_invalid_margin')
-            .barFloatingStyle({ offset: { x: 16, y: 8 }, barSideMargin: 'abc' })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ offset: { x: 16, y: 8 }, barSideMargin: 'abc' })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width('100%')
@@ -401,7 +417,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_offset_topmargin_base')
-            .barFloatingStyle({ barBottomMargin: 24 })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ barTopMargin: 24 })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width('100%')
@@ -422,7 +439,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_offset_topmargin_xy')
-            .barFloatingStyle({ barBottomMargin: 24, offset: { x: 16, y: 8 } })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ barTopMargin: 24, offset: { x: 16, y: 8 } })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width('100%')
@@ -443,7 +461,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_mw_base')
-            .barFloatingStyle({})
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({})
       .barMode(BarMode.Scrollable)
       .height(120)
       .width('100%')
@@ -464,7 +483,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_mw_560')
-            .barFloatingStyle({ maxWidth: 560 })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ maxWidth: 560 })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width('100%')
@@ -485,7 +505,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_mw_200')
-            .barFloatingStyle({ maxWidth: 200 })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ maxWidth: 200 })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width('100%')
@@ -506,7 +527,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_mw_neg')
-            .barFloatingStyle({ maxWidth: -1 })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ maxWidth: -1 })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width('100%')
@@ -527,7 +549,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_mw_nan')
-            .barFloatingStyle({ maxWidth: 0 })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ maxWidth: 0 })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width('100%')
@@ -548,7 +571,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_mw_pct')
-            .barFloatingStyle({ maxWidth: '50%' })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ maxWidth: '50%' })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width('100%')
@@ -569,7 +593,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_mw_1100_800')
-            .barFloatingStyle({ maxWidth: 800, barSideMargin: 16 })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ maxWidth: 800, barSideMargin: 16 })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width(1100)
@@ -590,7 +615,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_mw_1100_1000')
-            .barFloatingStyle({ maxWidth: 1000, barSideMargin: 16 })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ maxWidth: 1000, barSideMargin: 16 })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width(1100)
@@ -611,7 +637,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_mw_800_700')
-            .barFloatingStyle({ maxWidth: 700, barSideMargin: 16 })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ maxWidth: 700, barSideMargin: 16 })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width(800)
@@ -632,7 +659,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_mw_800_800')
-            .barFloatingStyle({ maxWidth: 800, barSideMargin: 16 })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ maxWidth: 800, barSideMargin: 16 })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width(800)
@@ -653,7 +681,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_mw_300_268')
-            .barFloatingStyle({ maxWidth: 268, barSideMargin: 16 })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ maxWidth: 268, barSideMargin: 16 })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width(300)
@@ -674,7 +703,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_mw_839_24')
-            .barFloatingStyle({ maxWidth: 700, barSideMargin: 24 })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ maxWidth: 700, barSideMargin: 24 })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width(839)
@@ -695,7 +725,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_mw_840_24')
-            .barFloatingStyle({ maxWidth: 700, barSideMargin: 24 })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ maxWidth: 700, barSideMargin: 24 })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width(840)
@@ -716,8 +747,9 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_bw_mw_a')
-            .barFloatingStyle(
-              { barWidth: { smallBarWidth: 600, mediumBarWidth: 600, largeBarWidth: 600 }, maxWidth: 400 }
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle(
+              { barWidth: 600, maxWidth: 400 }
             )
       .barMode(BarMode.Scrollable)
       .height(120)
@@ -739,8 +771,9 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_bw_mw_b')
-            .barFloatingStyle(
-              { barWidth: { smallBarWidth: 300, mediumBarWidth: 300, largeBarWidth: 300 }, maxWidth: 400 }
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle(
+              { barWidth: 300, maxWidth: 400 }
             )
       .barMode(BarMode.Scrollable)
       .height(120)
@@ -762,8 +795,9 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_bw_mw_c')
-            .barFloatingStyle(
-              { barWidth: { smallBarWidth: 700, mediumBarWidth: 700, largeBarWidth: 700 }, maxWidth: 500 }
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle(
+              { barWidth: 700, maxWidth: 500 }
             )
       .barMode(BarMode.Scrollable)
       .height(120)
@@ -785,8 +819,9 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_bw_mw_d')
-            .barFloatingStyle(
-              { barWidth: { smallBarWidth: 400, mediumBarWidth: 400, largeBarWidth: 400 }, maxWidth: 500 }
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle(
+              { barWidth: 400, maxWidth: 500 }
             )
       .barMode(BarMode.Scrollable)
       .height(120)
@@ -808,8 +843,9 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_tri_a')
-            .barFloatingStyle({
-        barWidth: { smallBarWidth: 500, mediumBarWidth: 500, largeBarWidth: 500 },
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({
+        barWidth: 500,
         maxWidth: 600,
         barSideMargin: 24
       })
@@ -833,8 +869,9 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_tri_b')
-            .barFloatingStyle({
-        barWidth: { smallBarWidth: 600, mediumBarWidth: 600, largeBarWidth: 600 },
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({
+        barWidth: 600,
         maxWidth: 500,
         barSideMargin: 24
       })
@@ -858,8 +895,9 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_tri_c')
-            .barFloatingStyle({
-        barWidth: { smallBarWidth: 800, mediumBarWidth: 800, largeBarWidth: 800 },
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({
+        barWidth: 800,
         maxWidth: 900,
         barSideMargin: 24
       })
@@ -883,8 +921,9 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_tri_d')
-            .barFloatingStyle({
-        barWidth: { smallBarWidth: 220, mediumBarWidth: 220, largeBarWidth: 220 },
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({
+        barWidth: 220,
         maxWidth: 250,
         barSideMargin: 20
       })
@@ -908,8 +947,9 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_tri_e')
-            .barFloatingStyle({
-        barWidth: { smallBarWidth: 250, mediumBarWidth: 250, largeBarWidth: 250 },
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({
+        barWidth: 250,
         maxWidth: 220,
         barSideMargin: 20
       })
@@ -933,8 +973,9 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_tri_f')
-            .barFloatingStyle({
-        barWidth: { smallBarWidth: 280, mediumBarWidth: 280, largeBarWidth: 280 },
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({
+        barWidth: 280,
         maxWidth: 290,
         barSideMargin: 20
       })
@@ -958,7 +999,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_off_mw_a')
-            .barFloatingStyle({ maxWidth: 250, barSideMargin: 20, offset: { x: 0, y: 0 } })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ maxWidth: 250, barSideMargin: 20, offset: { x: 0, y: 0 } })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width(300)
@@ -979,7 +1021,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_off_mw_b')
-            .barFloatingStyle({ maxWidth: 250, barSideMargin: 20, offset: { x: 16, y: 8 } })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ maxWidth: 250, barSideMargin: 20, offset: { x: 16, y: 8 } })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width(300)
@@ -1000,7 +1043,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_off_mw_c')
-            .barFloatingStyle({ maxWidth: 200, barSideMargin: 20, offset: { x: 0, y: 0 } })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ maxWidth: 200, barSideMargin: 20, offset: { x: 0, y: 0 } })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width(300)
@@ -1021,7 +1065,8 @@ struct TabsTopOffsetMaxWidth {
         }.tabBar('Blue')
       }
       .id('top_off_mw_d')
-            .barFloatingStyle({ maxWidth: 200, barSideMargin: 20, offset: { x: -16, y: -8 } })
+            .barStyle(TabBarStyle.TOP)
+            .topBarFloatingStyle({ maxWidth: 200, barSideMargin: 20, offset: { x: -16, y: -8 } })
       .barMode(BarMode.Scrollable)
       .height(120)
       .width(300)
