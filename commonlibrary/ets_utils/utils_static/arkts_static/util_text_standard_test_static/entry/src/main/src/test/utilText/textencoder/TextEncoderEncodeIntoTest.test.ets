@@ -1788,5 +1788,276 @@ export default function TextEncoderEncodeIntoTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TEXTENCODER_ENCODE_INTO_2200
+     * @tc.name testTeIntoBasic004
+     * @tc.desc Verify TextEncoder encodeInto with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testTeIntoBasic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let te = new util.TextEncoder();
+        let result = te.encodeInto('ABC');
+        expect(result[0]).assertEqual(65);
+        expect(result[1]).assertEqual(66);
+        expect(result[2]).assertEqual(67);
+
+      }
+      {
+        let te = new util.TextEncoder();
+        let result = te.encodeInto('0123456789');
+        expect(result[0]).assertEqual(48);
+        expect(result[1]).assertEqual(49);
+        expect(result[2]).assertEqual(50);
+        expect(result[3]).assertEqual(51);
+        expect(result[4]).assertEqual(52);
+        expect(result[5]).assertEqual(53);
+        expect(result[6]).assertEqual(54);
+        expect(result[7]).assertEqual(55);
+        expect(result[8]).assertEqual(56);
+        expect(result[9]).assertEqual(57);
+
+      }
+      {
+        let te = new util.TextEncoder();
+        let result = te.encodeInto(' ');
+        expect(result[0]).assertEqual(32);
+
+      }
+      {
+        let te = new util.TextEncoder();
+        let result = te.encodeInto('\t');
+        expect(result[0]).assertEqual(9);
+
+      }
+      {
+        let te = new util.TextEncoder();
+        let result = te.encodeInto('\n');
+        expect(result[0]).assertEqual(10);
+
+      }
+      {
+        let te = new util.TextEncoder();
+        let result = te.encodeInto('\r');
+        expect(result[0]).assertEqual(13);
+
+      }
+      {
+        let te = new util.TextEncoder();
+        let result = te.encodeInto('\u0000');
+        expect(result[0]).assertEqual(0);
+
+      }
+      {
+        let te = new util.TextEncoder();
+        let result = te.encodeInto('~');
+        expect(result[0]).assertEqual(126);
+
+      }
+      {
+        let te = new util.TextEncoder();
+        let result = te.encodeInto('￿');
+        expect(result[0]).assertEqual(239);
+        expect(result[1]).assertEqual(191);
+        expect(result[2]).assertEqual(191);
+
+      }
+      {
+        let te = new util.TextEncoder();
+        let result = te.encodeInto('\uD800¥¥');
+        expect(result[0]).assertEqual(237);
+        expect(result[1]).assertEqual(160);
+        expect(result[2]).assertEqual(128);
+        expect(result[3]).assertEqual(194);
+        expect(result[4]).assertEqual(165);
+        expect(result[5]).assertEqual(194);
+        expect(result[6]).assertEqual(165);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TEXTENCODER_ENCODE_INTO_2300
+     * @tc.name testTeIntoBasic005
+     * @tc.desc Verify TextEncoder encodeInto with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testTeIntoBasic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let te = new util.TextEncoder();
+        let result = te.encodeInto('你好');
+        expect(result[0]).assertEqual(228);
+        expect(result[1]).assertEqual(189);
+        expect(result[2]).assertEqual(160);
+        expect(result[3]).assertEqual(229);
+        expect(result[4]).assertEqual(165);
+        expect(result[5]).assertEqual(189);
+
+      }
+      {
+        let te = new util.TextEncoder();
+        let result = te.encodeInto('a中b');
+        expect(result[0]).assertEqual(97);
+        expect(result[1]).assertEqual(228);
+        expect(result[2]).assertEqual(184);
+        expect(result[3]).assertEqual(173);
+        expect(result[4]).assertEqual(98);
+
+      }
+      {
+        let te = new util.TextEncoder();
+        let result = te.encodeInto('€');
+        expect(result[0]).assertEqual(226);
+        expect(result[1]).assertEqual(130);
+        expect(result[2]).assertEqual(172);
+
+      }
+      {
+        let te = new util.TextEncoder();
+        let result = te.encodeInto('é');
+        expect(result[0]).assertEqual(195);
+        expect(result[1]).assertEqual(169);
+
+      }
+      {
+        let te = new util.TextEncoder();
+        let result = te.encodeInto('hello world');
+        expect(result[0]).assertEqual(104);
+        expect(result[1]).assertEqual(101);
+        expect(result[2]).assertEqual(108);
+        expect(result[3]).assertEqual(108);
+        expect(result[4]).assertEqual(111);
+        expect(result[5]).assertEqual(32);
+        expect(result[6]).assertEqual(119);
+        expect(result[7]).assertEqual(111);
+        expect(result[8]).assertEqual(114);
+        expect(result[9]).assertEqual(108);
+        expect(result[10]).assertEqual(100);
+
+      }
+      {
+        let te = new util.TextEncoder();
+        let result = te.encodeInto(' ');
+        expect(result[0]).assertEqual(194);
+        expect(result[1]).assertEqual(160);
+
+      }
+      {
+        let te = new util.TextEncoder();
+        let result = te.encodeInto('，');
+        expect(result[0]).assertEqual(239);
+        expect(result[1]).assertEqual(188);
+        expect(result[2]).assertEqual(140);
+
+      }
+      {
+        let te = new util.TextEncoder();
+        let result = te.encodeInto('a中b');
+        expect(result.length).assertEqual(5);
+
+      }
+      {
+        let te = new util.TextEncoder();
+        try {
+          let v3e6: ESObject = ESValue.wrapNumber(2147483647);
+          te.encodeInto(v3e6 as string);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('ClassCastError');
+          expect(e.code).assertEqual(0);
+        }
+
+      }
+      {
+        let te = new util.TextEncoder();
+        try {
+          let v3e13: ESObject = ESValue.wrapBigInt(10n);
+          te.encodeInto(v3e13 as string);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('ClassCastError');
+          expect(e.code).assertEqual(0);
+        }
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TEXTENCODER_ENCODE_INTO_2400
+     * @tc.name testTeIntoBasic006
+     * @tc.desc Verify TextEncoder encodeInto with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testTeIntoBasic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let te = new util.TextEncoder();
+        let result = te.encodeInto('!');
+        let bytes: Uint8Array = result!;
+        expect(bytes.byteLength).assertEqual(1);
+        expect(bytes.$_get(0)).assertEqual(33);
+
+      }
+      {
+        let te = new util.TextEncoder();
+        let result = te.encodeInto('m');
+        let bytes: Uint8Array = result!;
+        expect(bytes.byteLength).assertEqual(1);
+        expect(bytes.$_get(0)).assertEqual(109);
+
+      }
+      {
+        let te = new util.TextEncoder();
+        let result = te.encodeInto('Z');
+        let bytes: Uint8Array = result!;
+        expect(bytes.byteLength).assertEqual(1);
+        expect(bytes.$_get(0)).assertEqual(90);
+
+      }
+      {
+        let te = new util.TextEncoder();
+        let result = te.encodeInto('ß');
+        let bytes: Uint8Array = result!;
+        expect(bytes.byteLength).assertEqual(2);
+        expect(bytes.$_get(0)).assertEqual(195);
+        expect(bytes.$_get(1)).assertEqual(159);
+
+      }
+      {
+        let te = new util.TextEncoder();
+        let result = te.encodeInto('文');
+        let bytes: Uint8Array = result!;
+        expect(bytes.byteLength).assertEqual(3);
+        expect(bytes.$_get(0)).assertEqual(230);
+        expect(bytes.$_get(1)).assertEqual(150);
+        expect(bytes.$_get(2)).assertEqual(135);
+
+      }
+      {
+        let te = new util.TextEncoder();
+        let result = te.encodeInto('bb');
+        let bytes: Uint8Array = result!;
+        expect(bytes.byteLength).assertEqual(2);
+        expect(bytes.$_get(0)).assertEqual(98);
+        expect(bytes.$_get(1)).assertEqual(98);
+
+      }
+      {
+        let te = new util.TextEncoder();
+        let result = te.encodeInto('ZZZ');
+        let bytes: Uint8Array = result!;
+        expect(bytes.byteLength).assertEqual(3);
+        expect(bytes.$_get(0)).assertEqual(90);
+        expect(bytes.$_get(1)).assertEqual(90);
+        expect(bytes.$_get(2)).assertEqual(90);
+
+      }
+    });
+
   });
 }
