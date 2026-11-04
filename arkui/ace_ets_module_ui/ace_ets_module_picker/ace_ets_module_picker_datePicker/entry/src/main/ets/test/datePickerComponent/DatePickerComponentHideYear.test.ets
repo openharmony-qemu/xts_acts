@@ -431,20 +431,32 @@ export default function DatePickerComponentHideYearTest() {
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
 
-      // 获取默认值(false)参考组件的属性
-      let strJsonCompare: string = getInspectorByKey('datePickerComponent_hideYear_ref_false');
+      // 点击按钮将isHideYear设置为null
+      let buttonNull: Component = await driver.findComponent(ON.id('button_hideYear_null'));
+      await CommonFunc.sleep(1000);
+      await buttonNull.click();
+      await CommonFunc.sleep(1000);
+
+      // 验证状态变量已更新为null
+      let strText = getInspectorByKey('text_hideYear_value');
+      let objText: ESObject = JSON.parse(strText);
+      console.info('DatePickerComponentHideYearTest_1200 text obj is: ' + JSON.stringify(objText));
+      expect(objText.$attrs.content).assertContain('hideYear: null');
+
+      // 获取未设置hideYear的默认参考组件属性（hideYear取默认值false）
+      let strJsonCompare: string = getInspectorByKey('datePickerComponent_hideYear_default');
       let objCompare: Record<string, ESObject> = JSON.parse(strJsonCompare);
-      console.info('DatePickerComponentHideYearTest_1200 reference(false) obj: ' + JSON.stringify(objCompare));
+      console.info('DatePickerComponentHideYearTest_1200 default reference obj: ' + JSON.stringify(objCompare));
 
       // 获取null参数组件的属性
-      let strJson: string = getInspectorByKey('datePickerComponent_hideYear_null');
+      let strJson: string = getInspectorByKey('datePickerComponent_hideYear');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info('DatePickerComponentHideYearTest_1200 null obj: ' + JSON.stringify(obj));
 
       // 验证null参数组件正常渲染，类型为DatePickerComponent
       expect(obj.$type).assertEqual('DatePickerComponent');
 
-      // null应恢复为默认值false，组件属性应与参考(false)组件一致
+      // null应恢复为默认值false，组件属性应与默认参考组件一致
       let compareAttrs: string = JSON.stringify(objCompare.$attrs);
       let nullAttrs: string = JSON.stringify(obj.$attrs);
       console.info('DatePickerComponentHideYearTest_1200 compare $attrs: ' + compareAttrs);
@@ -468,20 +480,32 @@ export default function DatePickerComponentHideYearTest() {
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
 
-      // 获取默认值(false)参考组件的属性
-      let strJsonCompare: string = getInspectorByKey('datePickerComponent_hideYear_ref_false');
+      // 点击按钮将isHideYear设置为undefined
+      let buttonUndefined: Component = await driver.findComponent(ON.id('button_hideYear_undefined'));
+      await CommonFunc.sleep(1000);
+      await buttonUndefined.click();
+      await CommonFunc.sleep(1000);
+
+      // 验证状态变量已更新为undefined
+      let strText = getInspectorByKey('text_hideYear_value');
+      let objText: ESObject = JSON.parse(strText);
+      console.info('DatePickerComponentHideYearTest_1300 text obj is: ' + JSON.stringify(objText));
+      expect(objText.$attrs.content).assertContain('hideYear: undefined');
+
+      // 获取未设置hideYear的默认参考组件属性（hideYear取默认值false）
+      let strJsonCompare: string = getInspectorByKey('datePickerComponent_hideYear_default');
       let objCompare: Record<string, ESObject> = JSON.parse(strJsonCompare);
-      console.info('DatePickerComponentHideYearTest_1300 reference(false) obj: ' + JSON.stringify(objCompare));
+      console.info('DatePickerComponentHideYearTest_1300 default reference obj: ' + JSON.stringify(objCompare));
 
       // 获取undefined参数组件的属性
-      let strJson: string = getInspectorByKey('datePickerComponent_hideYear_undefined');
+      let strJson: string = getInspectorByKey('datePickerComponent_hideYear');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info('DatePickerComponentHideYearTest_1300 undefined obj: ' + JSON.stringify(obj));
 
       // 验证undefined参数组件正常渲染，类型为DatePickerComponent
       expect(obj.$type).assertEqual('DatePickerComponent');
 
-      // undefined应恢复为默认值false，组件属性应与参考(false)组件一致
+      // undefined应恢复为默认值false，组件属性应与默认参考组件一致
       let compareAttrs: string = JSON.stringify(objCompare.$attrs);
       let undefinedAttrs: string = JSON.stringify(obj.$attrs);
       console.info('DatePickerComponentHideYearTest_1300 compare $attrs: ' + compareAttrs);
@@ -505,25 +529,33 @@ export default function DatePickerComponentHideYearTest() {
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
 
-      // 获取默认值(false)参考组件的属性
-      let strJsonCompare: string = getInspectorByKey('datePickerComponent_hideYear_ref_false');
-      let objCompare: Record<string, ESObject> = JSON.parse(strJsonCompare);
-      console.info('DatePickerComponentHideYearTest_1400 reference(false) obj: ' + JSON.stringify(objCompare));
-
-      // 获取未设置hideYear属性组件的属性
-      let strJson: string = getInspectorByKey('datePickerComponent_hideYear_notSet');
-      let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info('DatePickerComponentHideYearTest_1400 notSet obj: ' + JSON.stringify(obj));
+      // 获取未设置hideYear的默认参考组件属性（hideYear取默认值false）
+      let strJsonDefault: string = getInspectorByKey('datePickerComponent_hideYear_default');
+      let objDefault: Record<string, ESObject> = JSON.parse(strJsonDefault);
+      console.info('DatePickerComponentHideYearTest_1400 default obj: ' + JSON.stringify(objDefault));
 
       // 验证未设置hideYear组件正常渲染，类型为DatePickerComponent
+      expect(objDefault.$type).assertEqual('DatePickerComponent');
+
+      // 点击按钮将isHideYear设置为false，获取显式设置false的组件属性
+      let buttonFalse: Component = await driver.findComponent(ON.id('button_hideYear_false'));
+      await CommonFunc.sleep(1000);
+      await buttonFalse.click();
+      await CommonFunc.sleep(1000);
+
+      let strJson: string = getInspectorByKey('datePickerComponent_hideYear');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info('DatePickerComponentHideYearTest_1400 explicit false obj: ' + JSON.stringify(obj));
+
+      // 验证显式设置false组件正常渲染，类型为DatePickerComponent
       expect(obj.$type).assertEqual('DatePickerComponent');
 
-      // 未设置hideYear应取默认值false，组件属性应与参考(false)组件一致
-      let compareAttrs: string = JSON.stringify(objCompare.$attrs);
-      let notSetAttrs: string = JSON.stringify(obj.$attrs);
-      console.info('DatePickerComponentHideYearTest_1400 compare $attrs: ' + compareAttrs);
-      console.info('DatePickerComponentHideYearTest_1400 notSet $attrs: ' + notSetAttrs);
-      expect(notSetAttrs).assertEqual(compareAttrs);
+      // 未设置hideYear应取默认值false，组件属性应与显式设置false的组件一致
+      let defaultAttrs: string = JSON.stringify(objDefault.$attrs);
+      let falseAttrs: string = JSON.stringify(obj.$attrs);
+      console.info('DatePickerComponentHideYearTest_1400 default $attrs: ' + defaultAttrs);
+      console.info('DatePickerComponentHideYearTest_1400 false $attrs: ' + falseAttrs);
+      expect(defaultAttrs).assertEqual(falseAttrs);
 
       console.info('DatePickerComponentHideYearTest_1400 END');
       done();
@@ -542,19 +574,29 @@ export default function DatePickerComponentHideYearTest() {
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
 
-      // 获取null参数组件的属性
-      let strJsonNull: string = getInspectorByKey('datePickerComponent_hideYear_null');
+      // 点击按钮将isHideYear设置为null，获取组件属性
+      let buttonNull: Component = await driver.findComponent(ON.id('button_hideYear_null'));
+      await CommonFunc.sleep(1000);
+      await buttonNull.click();
+      await CommonFunc.sleep(1000);
+      let strJsonNull: string = getInspectorByKey('datePickerComponent_hideYear');
       let objNull: Record<string, ESObject> = JSON.parse(strJsonNull);
       console.info('DatePickerComponentHideYearTest_1500 null obj: ' + JSON.stringify(objNull));
+      expect(objNull.$type).assertEqual('DatePickerComponent');
+      let nullAttrs: string = JSON.stringify(objNull.$attrs);
 
-      // 获取undefined参数组件的属性
-      let strJsonUndefined: string = getInspectorByKey('datePickerComponent_hideYear_undefined');
+      // 点击按钮将isHideYear设置为undefined，获取组件属性
+      let buttonUndefined: Component = await driver.findComponent(ON.id('button_hideYear_undefined'));
+      await CommonFunc.sleep(1000);
+      await buttonUndefined.click();
+      await CommonFunc.sleep(1000);
+      let strJsonUndefined: string = getInspectorByKey('datePickerComponent_hideYear');
       let objUndefined: Record<string, ESObject> = JSON.parse(strJsonUndefined);
       console.info('DatePickerComponentHideYearTest_1500 undefined obj: ' + JSON.stringify(objUndefined));
+      expect(objUndefined.$type).assertEqual('DatePickerComponent');
+      let undefinedAttrs: string = JSON.stringify(objUndefined.$attrs);
 
       // null与undefined应产生相同行为（均恢复为默认值false）
-      let nullAttrs: string = JSON.stringify(objNull.$attrs);
-      let undefinedAttrs: string = JSON.stringify(objUndefined.$attrs);
       console.info('DatePickerComponentHideYearTest_1500 null $attrs: ' + nullAttrs);
       console.info('DatePickerComponentHideYearTest_1500 undefined $attrs: ' + undefinedAttrs);
       expect(nullAttrs).assertEqual(undefinedAttrs);
