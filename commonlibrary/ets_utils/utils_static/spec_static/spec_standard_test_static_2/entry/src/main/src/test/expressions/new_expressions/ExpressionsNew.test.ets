@@ -25,7 +25,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 import Utils from '../../Util.test'
 
 class C_number_constructor_param_array_default<T> extends Array<T> {

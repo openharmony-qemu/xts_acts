@@ -25,7 +25,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 import Utils from '../../Util.test'
 
 function bar(a: A_this_primary_expression_in_class): A_this_primary_expression_in_class {

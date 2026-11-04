@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 
 let a_0: boolean[] = [true, true, true, true, true, true];
 let a_1: number[] = [];
