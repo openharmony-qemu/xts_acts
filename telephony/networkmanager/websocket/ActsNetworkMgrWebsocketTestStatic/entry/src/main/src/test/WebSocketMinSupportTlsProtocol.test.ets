@@ -136,8 +136,9 @@ export default function WebSocketMinSupportTlsProtocolTest(): void {
             expectTrue(value == true);
             done();
             hilog.info(domain, tag, `${caseName} test end`);
-          }).catch((err: BusinessError) => {
-            hilog.info(domain, tag, `${caseName} test connect fail ${JSON.stringify(err)}`);
+          }).catch((err: Error) => {
+            let be = err as BusinessError;
+            hilog.info(domain, tag, `${caseName} test connect fail ${JSON.stringify(be)}`);
             expectFail(`${caseName} test connect fail`);
             done();
             hilog.info(domain, tag, `${caseName} test end`);
@@ -219,8 +220,9 @@ export default function WebSocketMinSupportTlsProtocolTest(): void {
             expectTrue(value == true);
             done();
             hilog.info(domain, tag, `${caseName} test end`);
-          }).catch((err: BusinessError) => {
-            hilog.info(domain, tag, `${caseName} test connect fail ${JSON.stringify(err)}`);
+          }).catch((err: Error) => {
+            let be = err as BusinessError;
+            hilog.info(domain, tag, `${caseName} test connect fail ${JSON.stringify(be)}`);
             expectFail(`${caseName} test connect fail`);
             done();
             hilog.info(domain, tag, `${caseName} test end`);
@@ -302,8 +304,9 @@ export default function WebSocketMinSupportTlsProtocolTest(): void {
             expectTrue(value == true);
             done();
             hilog.info(domain, tag, `${caseName} test end`);
-          }).catch((err: BusinessError) => {
-            hilog.info(domain, tag, `${caseName} test connect fail ${JSON.stringify(err)}`);
+          }).catch((err: Error) => {
+            let be = err as BusinessError;
+            hilog.info(domain, tag, `${caseName} test connect fail ${JSON.stringify(be)}`);
             expectFail(`${caseName} test connect fail`);
             done();
             hilog.info(domain, tag, `${caseName} test end`);
@@ -385,8 +388,9 @@ export default function WebSocketMinSupportTlsProtocolTest(): void {
             expectTrue(value == true);
             done();
             hilog.info(domain, tag, `${caseName} test end`);
-          }).catch((err: BusinessError) => {
-            hilog.info(domain, tag, `${caseName} test connect fail ${JSON.stringify(err)}`);
+          }).catch((err: Error) => {
+            let be = err as BusinessError;
+            hilog.info(domain, tag, `${caseName} test connect fail ${JSON.stringify(be)}`);
             expectFail(`${caseName} test connect fail`);
             done();
             hilog.info(domain, tag, `${caseName} test end`);
