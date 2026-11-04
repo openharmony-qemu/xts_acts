@@ -82,6 +82,13 @@ class EntryAbility extends UIAbility {
         })
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent ok');
       });
+      let mainWindow: window.Window = windowStage.getMainWindowSync();
+      let promise1 = mainWindow.getProperties();
+      promise1.then((data) => {
+        console.info('当前屏幕ID' + data.displayId);
+        AppStorage.setOrCreate('displayID',data.displayId);
+      }).catch((err: BusinessError) => {
+      });
     } catch (e) {
       hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent catch error：-----------' + e.message);
     }
