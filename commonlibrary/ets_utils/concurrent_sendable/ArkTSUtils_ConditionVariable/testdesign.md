@@ -1,0 +1,149 @@
+- ConditionVariable 测试设计
+	- 说明：基于 arktsutils_conditionvariable_testpoint.md §1 接口维度脑图生成，覆盖 6 接口×7 测试逻辑分类（CV 无 @throws 契约，③异常类按"未声明/待验证"标注）
+	- 1. 接口测试（Functional）
+		- constructor
+			- 入参范围覆盖
+				- 无参默认构造 new ArkTSUtils.locks.ConditionVariable()
+			- 边界值测试
+				- 首对象构造
+				- 与 request 共存
+			- 异常与非法输入
+				- 契约未声明 @throws（无 401/10200011/10200201）
+				- 无任何构造异常用例（待验证）
+			- 返回值与类型验证
+				- instanceof ArkTSUtils.locks.ConditionVariable
+			- 组合场景
+				- new→wait/notify
+				- new→TaskPool/Worker 共享
+			- 重复调用/幂等性
+				- 多次 new 应得相互独立实例（未显式断言）
+			- 并发跨线程
+				- workerCreateCV 子线程构造后回传
+		- request
+			- 入参范围覆盖
+				- 普通串 name（Test/testCondition/CASE）
+				- 空串 name（""）
+			- 边界值测试
+				- 空串 name 仍返回实例
+			- 异常与非法输入
+				- 契约未声明 @throws
+				- 非串/缺省参数未测（待验证）
+			- 返回值与类型验证
+				- instanceof ConditionVariable
+			- 组合场景
+				- request→wait/notifyAll/notifyOne
+				- request 与 new 混用对位
+			- 重复调用/幂等性
+				- 同名 request 应返回同一实例（find or create，未显式断言）
+				- 异名 request 应返回不同实例（未测）
+			- 并发跨线程
+				- workerCreateCVReq 子线程 request 后回传
+		- wait
+			- 入参范围覆盖
+				- 无参（N/A）
+			- 边界值测试
+				- wait 后无 notify 的持续挂起（未测）
+				- 无等待者时 notify 的对端
+			- 异常与非法输入
+				- 契约未声明 @throws
+				- detached bind（未测）
+				- 假唤醒 spurious wakeup（未测）
+			- 返回值与类型验证
+				- Promise<void> resolve（.then 命中）
+				- resolve 值为 undefined（未显式断言）
+			- 组合场景
+				- wait→notifyAll 唤醒
+				- wait→notifyOne 单唤醒
+				- wait+waitFor 混合
+				- notify 时序（先注册后通知）
+			- 重复调用/幂等性
+				- 递归 wait（wait().then(()=>wait().then(...))）
+				- 循环 notifyAll re-wait
+			- 并发跨线程
+				- TaskPool threadWait
+				- Worker workerWait
+				- 多等待者同 CV
+		- waitFor
+			- 入参范围覆盖
+				- 整数集 0/-1/500/1000/3000/5000/8000
+				- NaN/Infinity/小数/字符串/缺省（未测）
+			- 边界值测试
+				- timeout=0 立即 resolve
+				- timeout=-1 立即 resolve（文档注正整数，行为不符）
+				- 大值 8000
+			- 异常与非法输入
+				- 契约未声明 @throws
+				- 非法参数（NaN/Inf/小数/串/缺省）未测
+			- 返回值与类型验证
+				- 超时后 resolve
+				- 计时精度 threadExecutionTime>=3000
+			- 组合场景
+				- waitFor+notify 抢占（operationTime<waitTime 提前唤醒）
+				- 超时后 notify no-op（operationTime>waitTime）
+			- 重复调用/幂等性
+				- 连续 waitFor 同 CV（未显式断言）
+			- 并发跨线程
+				- TaskPool threadWaitFor
+				- Worker workerWaitFor
+		- notifyAll
+			- 入参范围覆盖
+				- 无参（N/A）
+			- 边界值测试
+				- 无等待者时 notifyAll 不抛错
+			- 异常与非法输入
+				- 契约未声明 @throws
+				- detached bind（未测）
+			- 返回值与类型验证
+				- void（未显式断言）
+			- 组合场景
+				- 多等待者全唤醒
+				- wait+waitFor 混合全唤醒
+			- 重复调用/幂等性
+				- 连续 2 次 notifyAll 唤醒 2 批等待者
+			- 并发跨线程
+				- TaskPool threadNotify
+				- Worker workerNotify
+				- 主线程与子线程混合 notify
+		- notifyOne
+			- 入参范围覆盖
+				- 无参（N/A）
+			- 边界值测试
+				- 无等待者时 notifyOne 不抛错
+			- 异常与非法输入
+				- 契约未声明 @throws
+				- detached bind（未测）
+			- 返回值与类型验证
+				- void（未显式断言）
+			- 组合场景
+				- 仅唤醒first等待者（r1&&!r2）
+				- FIFO 顺序（两阶段断言）
+				- 2 次 notifyOne 唤醒 2 个
+			- 重复调用/幂等性
+				- 连续 2 次 notifyOne 逐个唤醒
+			- 并发跨线程
+				- TaskPool threadNotifyOne
+				- Worker workerNotifyOne
+	- 2. 稳定性（Stability）
+		- GC 期间等待稳定性（GCFull001~004 wait 挂起时全量 GC 不崩）
+		- Worker terminate 期间等待稳定性（Terminate001/002 构造端终止后实现端仍可用）
+		- 长时序稳定性（WaitFor0500/1100 5s、NotifyOne013/026 多阶段 8s）
+	- 3. 性能（Performance）
+		- wait/notify 跨线程时序（TaskPool/ThreadWorker 001~004）
+		- waitFor 计时精度（threadExecutionTime>=3000）
+		- notify 抢占延迟（threadExecutionTime<1000）
+	- 4. 并发安全（Concurrency Safety）
+		- @Sendable 跨 TaskPool/Worker 共享（postMessageWithSharedSendable）
+		- 多等待者唤醒正确性（notifyAll 全唤醒 / notifyOne 单唤醒+FIFO）
+		- Worker terminate/GC 容错
+		- 并发 wait/notify 是否触发 10200201（CV 无此契约，待验证）
+	- 5. 兼容性与继承
+		- new 与 request 两构造路径对位覆盖
+		- @Sendable 跨线程引用传递
+		- 子类化/继承（未见 extends ConditionVariable 用例）
+		- new 与 request 混用同实例一致性（未显式断言）
+	- 6. 资料与文档符合性
+		- @Sendable 装饰验证
+		- @atomicservice / @since 18 可用性
+		- request 返回 instanceof
+		- waitFor ms 单位符合性
+		- waitFor "正整数"约束符合性（0/-1 行为不符，待 pin）
