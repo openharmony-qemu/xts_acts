@@ -80,6 +80,7 @@
     "MainAbility/pages/Search/search",
     "MainAbility/pages/Navigation/NavigatorCode",
     "MainAbility/pages/Navigation/navigationtt",
-    "MainAbility/pages/Navigation/navigation_lack"
+    "MainAbility/pages/Navigation/navigation_lack",
+    "MainAbility/pages/transPage/TransPageEnabled"
   ]
 }
