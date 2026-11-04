@@ -822,6 +822,205 @@ export default function AVScreenCaptureRecorderTest() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0300
+     * @tc.desc   AVScreenCaptureRecorder with strategy.contentAutoPauseScenes SCENE_NONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0300', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0300 start')
+
+      let mySteps = new Array(
+        // create
+        mediaTestBase.CREATE_EVENT,
+        // init
+        mediaTestBase.INIT_EVENT,
+        mediaTestBase.SETONCALLBACK_EVENT,
+        // start recorder
+        mediaTestBase.STARTRECORDER_EVENT,
+        // skip PrivacyMode
+        mediaTestBase.SKIPPRIVACYMODE_EVENT,
+        // stop recorder
+        mediaTestBase.STOPRECORDER_EVENT,
+        // end
+        mediaTestBase.END_EVENT);
+
+      mediaTestBase.outputName = mediaTestBase.resourceName();
+      mediaTestBase.outputFdObject = mediaTestBase.getFd(mediaTestBase.outputName);
+
+      let avConfig: media.AVScreenCaptureRecordConfig = {
+        fd: mediaTestBase.outputFdObject.fd,
+        frameWidth: 640,
+        frameHeight: 480,
+        videoBitrate: 10000000,
+        audioSampleRate: 48000,
+        audioChannelCount: 1,
+        audioBitrate: 96000,
+        preset: media.AVScreenCaptureRecordPreset.SCREEN_RECORD_PRESET_H264_AAC_MP4,
+        strategy: {
+          contentAutoPauseScenes: [media.AVScreenCaptureAutoPauseCaptureScene.SCENE_NONE],
+        }
+      }
+
+      await mediaTestBase.toNextStep(mediaTestBase.avScreenCaptureRecorder, avConfig, 3000, mySteps, done)
+      expect(mediaTestBase.isTestSucceeded()).assertTrue();
+      if (avConfig?.strategy) {
+        expect(avConfig.strategy.contentAutoPauseScenes !== undefined).assertTrue()
+      } else {
+        expect(false).assertTrue()
+      }
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0300 end')
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0400
+     * @tc.desc   AVScreenCaptureRecorder with strategy.enableHDR true to output HDR vivid video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0400', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0400 start')
+      let isSupportAddTrackH265: number = myScreenCaptureNdk.OHAVMuxerByAddTrackH265();
+      console.info('isSupportAddTrackH265:', isSupportAddTrackH265)
+      let isSupportH265Decoder: number = myScreenCaptureNdk.OHAvCapabilityByCategoryH265();
+      console.info('isSupportH265Decoder:', isSupportH265Decoder)
+      let isSupportH265Encoder: number = myScreenCaptureNdk.OHAvCapabilityByCategoryH265Encoder();
+      console.info('isSupportEncoder:', isSupportH265Encoder)
+      let isSupportH265 = (isSupportAddTrackH265 != 0 || isSupportH265Decoder != 0 || isSupportH265Encoder != 0)? -1 : 0;
+      if (isSupportH265 != 0) {
+        console.info('Failed to obtain the default videoProfiles object.Not support AddTrackH265');
+        expect(isSupportH265).not().assertEqual(0);
+        done();
+        return;
+      }
+
+      let mySteps = new Array(
+        // create
+        mediaTestBase.CREATE_EVENT,
+        // init
+        mediaTestBase.INIT_EVENT,
+        mediaTestBase.SETONCALLBACK_EVENT,
+        // start recorder
+        mediaTestBase.STARTRECORDER_EVENT,
+        // skip PrivacyMode
+        mediaTestBase.SKIPPRIVACYMODE_EVENT,
+        // stop recorder
+        mediaTestBase.STOPRECORDER_EVENT,
+        // end
+        mediaTestBase.END_EVENT);
+
+      mediaTestBase.outputName = mediaTestBase.resourceName();
+      mediaTestBase.outputFdObject = mediaTestBase.getFd(mediaTestBase.outputName);
+
+      let avConfig: media.AVScreenCaptureRecordConfig = {
+        fd: mediaTestBase.outputFdObject.fd,
+        frameWidth: 640,
+        frameHeight: 480,
+        videoBitrate: 10000000,
+        audioSampleRate: 48000,
+        audioChannelCount: 1,
+        audioBitrate: 96000,
+        preset: media.AVScreenCaptureRecordPreset.SCREEN_RECORD_PRESET_H265_AAC_MP4,
+        strategy: {
+          enableHDR: true,
+        }
+      }
+
+      await mediaTestBase.toNextStep(mediaTestBase.avScreenCaptureRecorder, avConfig, 3000, mySteps, done)
+      expect(mediaTestBase.isTestSucceeded()).assertTrue();
+      if (avConfig?.strategy) {
+        expect(avConfig.strategy.enableHDR).assertTrue()
+      } else {
+        expect(false).assertTrue()
+      }
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0400 end')
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0500
+     * @tc.desc   AVScreenCaptureRecorder with strategy.enableHDR false to output SDR video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0500', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0500 start')
+      let isSupportAddTrackH265: number = myScreenCaptureNdk.OHAVMuxerByAddTrackH265();
+      console.info('isSupportAddTrackH265:', isSupportAddTrackH265)
+      let isSupportH265Decoder: number = myScreenCaptureNdk.OHAvCapabilityByCategoryH265();
+      console.info('isSupportH265Decoder:', isSupportH265Decoder)
+      let isSupportH265Encoder: number = myScreenCaptureNdk.OHAvCapabilityByCategoryH265Encoder();
+      console.info('isSupportEncoder:', isSupportH265Encoder)
+      let isSupportH265 = (isSupportAddTrackH265 != 0 || isSupportH265Decoder != 0 || isSupportH265Encoder != 0)? -1 : 0;
+      if (isSupportH265 != 0) {
+        console.info('Failed to obtain the default videoProfiles object.Not support AddTrackH265');
+        expect(isSupportH265).not().assertEqual(0);
+        done();
+        return;
+      }
+
+      let mySteps = new Array(
+        // create
+        mediaTestBase.CREATE_EVENT,
+        // init
+        mediaTestBase.INIT_EVENT,
+        mediaTestBase.SETONCALLBACK_EVENT,
+        // start recorder
+        mediaTestBase.STARTRECORDER_EVENT,
+        // skip PrivacyMode
+        mediaTestBase.SKIPPRIVACYMODE_EVENT,
+        // stop recorder
+        mediaTestBase.STOPRECORDER_EVENT,
+        // end
+        mediaTestBase.END_EVENT);
+
+      mediaTestBase.outputName = mediaTestBase.resourceName();
+      mediaTestBase.outputFdObject = mediaTestBase.getFd(mediaTestBase.outputName);
+
+      let avConfig: media.AVScreenCaptureRecordConfig = {
+        fd: mediaTestBase.outputFdObject.fd,
+        frameWidth: 640,
+        frameHeight: 480,
+        videoBitrate: 10000000,
+        audioSampleRate: 48000,
+        audioChannelCount: 1,
+        audioBitrate: 96000,
+        preset: media.AVScreenCaptureRecordPreset.SCREEN_RECORD_PRESET_H265_AAC_MP4,
+        strategy: {
+          enableHDR: false,
+        }
+      }
+
+      await mediaTestBase.toNextStep(mediaTestBase.avScreenCaptureRecorder, avConfig, 3000, mySteps, done)
+      expect(mediaTestBase.isTestSucceeded()).assertTrue();
+      if (avConfig?.strategy) {
+        expect(avConfig.strategy.enableHDR).assertFalse()
+      } else {
+        expect(false).assertTrue()
+      }
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0500 end')
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURE_AUTOPAUSESCENE_ENUM_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURE_AUTOPAUSESCENE_ENUM_0100
+     * @tc.desc   AVScreenCaptureRecorder Enumeration test - AVScreenCaptureAutoPauseCaptureScene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURE_AUTOPAUSESCENE_ENUM_0100', Level.LEVEL0, async (done: Function) => {
+      expect(media.AVScreenCaptureAutoPauseCaptureScene.SCENE_NONE).assertEqual(0);
+      expect(media.AVScreenCaptureAutoPauseCaptureScene.SCENE_SCREEN_FOLD_STATE_CHANGE).assertEqual(1);
+      done();
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ERR_INPUT_INIT
      * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ERR_INPUT_INIT
      * @tc.desc   AvScreenCaptureRecorder
