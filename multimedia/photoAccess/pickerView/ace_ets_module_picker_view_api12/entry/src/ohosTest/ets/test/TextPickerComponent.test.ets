@@ -5404,17 +5404,17 @@ export default function TextPicker() {
         done();
         return;
       }
-      expect(PickerColorMode.AUTO).assertEqual(0);
-      expect(PickerColorMode.LIGHT).assertEqual(1);
-      expect(PickerColorMode.DARK).assertEqual(2);
-      const colorModes: number[] = [
-        PickerColorMode.AUTO,
-        PickerColorMode.LIGHT,
-        PickerColorMode.DARK
+      expect(photoAccessHelper.PickerColorMode.AUTO).assertEqual(0);
+      expect(photoAccessHelper.PickerColorMode.LIGHT).assertEqual(1);
+      expect(photoAccessHelper.PickerColorMode.DARK).assertEqual(2);
+      const colorModes: photoAccessHelper.PickerColorMode[] = [
+        photoAccessHelper.PickerColorMode.AUTO,
+        photoAccessHelper.PickerColorMode.LIGHT,
+        photoAccessHelper.PickerColorMode.DARK
       ];
       for (const colorMode of colorModes) {
         const pickerOptions: photoAccessHelper.PhotoSelectOptions = getSheetPickerOptions();
-        pickerOptions.pickerColorMode = colorMode as photoAccessHelper.PickerColorMode;
+        pickerOptions.pickerColorMode = colorMode;
         const photoPicker = new photoAccessHelper.PhotoViewPicker();
         let receivedError: BusinessError | undefined = undefined;
         let selectFinished: boolean = false;
