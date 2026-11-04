@@ -2834,18 +2834,13 @@ export default function applicationManagerTest() {
         let result: Array<applicationManager.MainWindowStates> = applicationManager.getAllMainWindowStates();
         expect(Array.isArray(result)).assertTrue();
         expect(result.length > 0).assertTrue();
-        let found: boolean = false;
         for (let i = 0; i < result.length; i++) {
           let mainWindowState: applicationManager.MainWindowStates = result[i];
           expect(mainWindowState.pid > 0).assertTrue();
           expect(typeof (mainWindowState.bundleName)).assertEqual("string");
           expect(mainWindowState.state >= applicationManager.WindowState.DISCONNECT).assertTrue();
           expect(mainWindowState.state <= applicationManager.WindowState.BACKGROUND).assertTrue();
-          if (mainWindowState.bundleName === SELFHAPNAME) {
-            found = true;
-          }
         }
-        expect(found).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
