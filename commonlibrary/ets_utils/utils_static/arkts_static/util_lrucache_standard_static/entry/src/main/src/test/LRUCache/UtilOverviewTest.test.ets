@@ -1814,5 +1814,305 @@ export default function UtilOverviewTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL_OVERVIEW_1900
+     * @tc.name testUtilOvUUID005
+     * @tc.desc Verify util module overview APIs UUID generation APIs
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testUtilOvUUID005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        const s: string = util.generateRandomUUID();
+        const u: Uint8Array = util.parseUUID(s);
+        let actual1: int = u.length;
+        let expected1: int = 16;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = Number(u.$_get(6)) >> 4;
+        let expected2: int = 4;
+        expect(actual2).assertEqual(expected2);
+
+      }
+      {
+        const u: string = util.generateRandomUUID();
+        const r: string = util.format("uuid=%s", u);
+        expect(r).assertEqual("uuid=" + u);
+
+      }
+      {
+        let uuid = util.generateRandomUUID();
+        let actual1: int = uuid.length;
+        let expected1: int = 36;
+        expect(actual1).assertEqual(expected1);
+        let actual2: string = String(uuid.charAt(14));
+        let expected2: string = '4';
+        expect(actual2).assertEqual(expected2);
+
+      }
+      {
+        let uuid = util.generateRandomUUID(true);
+        let actual1: int = uuid.length;
+        let expected1: int = 36;
+        expect(actual1).assertEqual(expected1);
+        let actual2: boolean = uuid.includes('-');
+        expect(actual2).assertTrue();
+
+      }
+      {
+        let uuid = util.generateRandomUUID(false);
+        let actual1: int = uuid.length;
+        let expected1: int = 36;
+        expect(actual1).assertEqual(expected1);
+        let actual2: string = String(uuid.charAt(19));
+        let variantOk: boolean = actual2 === '8' || actual2 === '9' || actual2 === 'a' || actual2 === 'b';
+        expect(variantOk).assertTrue();
+
+      }
+      {
+        let uuid = util.generateRandomUUID();
+        let dashPos: number[] = [];
+        for (let i = 0; i < uuid.length; i++) {
+          if (String(uuid.charAt(i)) === '-') {
+            dashPos.push(i);
+          }
+        }
+        let actual1: int = dashPos.length;
+        let expected1: int = 4;
+        expect(actual1).assertEqual(expected1);
+
+      }
+      {
+        let u1 = util.generateRandomUUID(false);
+        let u2 = util.generateRandomUUID(false);
+        let isSameUuid: boolean = u1 === u2;
+        expect(isSameUuid).assertFalse();
+
+      }
+      {
+        let u1 = util.generateRandomUUID(true);
+        let u2 = util.generateRandomUUID(true);
+        let isSameUuid: boolean = u1 === u2;
+        expect(isSameUuid).assertFalse();
+
+      }
+      {
+        let uuid = util.generateRandomUUID();
+        let valid: boolean = true;
+        for (let i = 0; i < uuid.length; i++) {
+          let c = String(uuid.charAt(i));
+          if (String(c) === '-') {
+            continue;
+          }
+          let code: number = String(c).charCodeAt(0);
+          if (!((code >= 48 && code <= 57) || (code >= 97 && code <= 102))) {
+            valid = false;
+          }
+        }
+        expect(valid).assertTrue();
+
+      }
+      {
+        let uuid = util.generateRandomBinaryUUID()!;
+        let actual1: int = uuid.length;
+        let expected1: int = 16;
+        expect(actual1).assertEqual(expected1);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL_OVERVIEW_2000
+     * @tc.name testUtilOvUUID006
+     * @tc.desc Verify util module overview APIs UUID generation APIs
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testUtilOvUUID006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let uuid = util.generateRandomBinaryUUID(false)!;
+        let actual1: int = (Number(uuid.$_get(8)!) >> 6).toInt();
+        let expected1: int = 2;
+        expect(actual1).assertEqual(expected1);
+
+      }
+      {
+        let u1 = util.generateRandomBinaryUUID(false)!;
+        let u2 = util.generateRandomBinaryUUID(false)!;
+        let same: boolean = true;
+        for (let i = 0; i < 16; i++) {
+          if (u1.$_get(i)! !== u2.$_get(i)!) {
+            same = false;
+          }
+        }
+        expect(same).assertFalse();
+
+      }
+      {
+        let uuid = util.parseUUID("84bdf796-66cc-4655-9b89-d6218d100f9c");
+        let actual1: int = uuid.length;
+        let expected1: int = 16;
+        expect(actual1).assertEqual(expected1);
+
+      }
+      {
+        let uuid = util.parseUUID("84bdf796-66cc-4655-9b89-d6218d100f9c");
+        let actual1: number = Number(uuid.$_get(0)!);
+        let expected1: number = 0x84;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = Number(uuid.$_get(15)!);
+        let expected2: number = 0x9c;
+        expect(actual2).assertEqual(expected2);
+
+      }
+      {
+        let uuid = util.parseUUID("00000000-0000-0000-0000-000000000000");
+        let allZero: boolean = true;
+        for (let i = 0; i < 16; i++) {
+          if (Number(uuid.$_get(i)!) !== 0) {
+            allZero = false;
+          }
+        }
+        expect(allZero).assertTrue();
+
+      }
+      {
+        let uuid = util.parseUUID("84BDF796-66CC-4655-9B89-D6218D100F9C");
+        let actual1: int = uuid.length;
+        let expected1: int = 16;
+        expect(actual1).assertEqual(expected1);
+
+      }
+      {
+        let flag: boolean = false;
+        let uuid = util.generateRandomUUID(flag);
+        let actual1: int = uuid.length;
+        let expected1: int = 36;
+        expect(actual1).assertEqual(expected1);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL_OVERVIEW_2100
+     * @tc.name testUtilOvControl001
+     * @tc.desc Verify util module overview APIs with control characters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testUtilOvControl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        try {
+          let cb = util.callbackWrapper(promiseFnStr) as (arg0: AnyType, callback: (err: Object | null, ret: AnyType) => void) => void;
+          cb.unsafeCall((err: Error | null, ret: string) => {
+            expect(err).assertNull();
+            expect(ret).assertEqual("value");
+          });
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual("ClassCastError");
+          expect(e.code).assertEqual(0);
+        }
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL_OVERVIEW_2200
+     * @tc.name testUtilOvBasic001
+     * @tc.desc Verify util module overview APIs with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testUtilOvBasic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      {
+        try {
+          let cb = util.callbackWrapper(promiseFnStr) as (arg0: AnyType, callback: (err: Object | null, ret: AnyType) => void) => void;
+          cb.unsafeCall((err: Error | null, ret: string) => {
+            if (err !== null) {
+              expect().assertFail();
+              return;
+            }
+            expect(ret).assertEqual("value");
+          });
+          cb.unsafeCall((err: Error | null, ret: string) => {
+            if (err !== null) {
+              expect().assertFail();
+              return;
+            }
+            expect(ret).assertEqual("value");
+          });
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual("ClassCastError");
+          expect(e.code).assertEqual(0);
+        }
+
+      }
+      {
+        const p: Promise<string> = promiseFnStr();
+        let v = await p;
+        expect(v).assertEqual("value");
+
+      }
+      {
+        const fn = util.promisify(errFnStr);
+        let res: Object = (await fn("Hello")) as Object;
+        let actual1: string = new String(res);
+        let expected1: string = "Hello";
+        expect(actual1).assertEqual(expected1);
+
+      }
+      {
+        const fn = util.promisify(errFnType);
+        let res: Object = (await fn(42)) as Object;
+        let actual1: string = new String(res);
+        let expected1: string = "42";
+        expect(actual1).assertEqual(expected1);
+
+      }
+      {
+        const fn = util.promisify(errFnBool);
+        let res: Object = (await fn(true)) as Object;
+        let actual1: boolean = Boolean(res);
+        expect(actual1).assertTrue();
+
+      }
+      {
+        const fn = util.promisify(errFnType);
+        try {
+          await fn("not int");
+          expect().assertFail();
+        } catch (e) {
+          let actual1: string = e.message;
+          let expected1: string = "type err";
+          expect(actual1).assertEqual(expected1);
+          expect(e.name).assertEqual("Error");
+          expect(e.code).assertEqual(0);
+        }
+
+      }
+      {
+        const fn = util.promisify(errFnNoArg);
+        let res: Object = (await fn()) as Object;
+        let actual1: string = new String(res);
+        let expected1: string = "noarg";
+        expect(actual1).assertEqual(expected1);
+
+      }
+      {
+        errFnStr("direct", (err: Error | null, ...vals: FixedArray<Any>) => {
+          expect(err).assertNull();
+          let actual1: string = new String(vals[0]);
+          let expected1: string = "direct";
+          expect(actual1).assertEqual(expected1);
+        });
+
+      }
+    });
+
   });
 }
