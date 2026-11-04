@@ -1809,5 +1809,1718 @@ export default function Base64HelperDecodeTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_DECODE_1600
+     * @tc.name testB64DecodeBoundary002
+     * @tc.desc Verify Base64Helper decode and decodeSync with boundary sizes and values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64DecodeBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.decodeSync('');
+        let actual1: int = r.length;
+        let expected1: int = 0;
+        expect(actual1).assertEqual(expected1);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r: Uint8Array = b64.decodeSync("!!");
+        expect(byteStr(r)).assertEqual("");
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r: Uint8Array = b64.decodeSync("A===");
+        expect(byteStr(r)).assertEqual("");
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r: Uint8Array = b64.decodeSync("=TWFu");
+        expect(byteStr(r)).assertEqual("");
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r: Uint8Array = b64.decodeSync("-w==", util.Type.BASIC);
+        expect(byteStr(r)).assertEqual("");
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r: Uint8Array = b64.decodeSync("_w==", util.Type.BASIC);
+        expect(byteStr(r)).assertEqual("");
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let result: Uint8Array = base64Helper.decodeSync('', util.Type.BASIC);
+        let actual1: int = result.byteLength;
+        let expected1: int = 0;
+        expect(actual1).assertEqual(expected1);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let r: Uint8Array = base64Helper.decodeSync('!', util.Type.BASIC);
+        expect(byteStr(r)).assertEqual("");
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let r: Uint8Array = base64Helper.decodeSync('\n', util.Type.BASIC);
+        expect(byteStr(r)).assertEqual("");
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let r: Uint8Array = base64Helper.decodeSync('\t', util.Type.BASIC);
+        expect(byteStr(r)).assertEqual("");
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_DECODE_1700
+     * @tc.name testB64DecodeBoundary003
+     * @tc.desc Verify Base64Helper decode and decodeSync with boundary sizes and values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64DecodeBoundary003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let base64Helper = new util.Base64Helper();
+        let src: string = '';
+        for (let i = 0; i < 10000; i++) {
+          src = src + '!';
+        }
+        let r: Uint8Array = base64Helper.decodeSync(src, util.Type.BASIC);
+        expect(byteStr(r)).assertEqual("");
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array(0);
+        let r: Uint8Array = base64Helper.decodeSync(src, util.Type.BASIC);
+        let actual1: int = r.length;
+        let expected1: int = 0;
+        expect(actual1).assertEqual(expected1);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let res: Uint8Array = base64Helper.decodeSync('!', util.Type.BASIC);
+        expect(byteStr(res)).assertEqual("");
+        let r: Uint8Array = base64Helper.decodeSync("YWI=", util.Type.BASIC);
+        let actual1: number = r.$_get(0);
+        let expected1: int = 97;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = r.$_get(1);
+        let expected2: int = 98;
+        expect(actual2).assertEqual(expected2);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let res: Uint8Array = base64Helper.decodeSync('?', util.Type.BASIC);
+        expect(byteStr(res)).assertEqual("");
+        let r: Uint8Array = base64Helper.decodeSync("YWJj", util.Type.BASIC);
+        let actual1: number = r.$_get(0);
+        let expected1: int = 97;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = r.$_get(1);
+        let expected2: int = 98;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = r.$_get(2);
+        let expected3: int = 99;
+        expect(actual3).assertEqual(expected3);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_DECODE_1800
+     * @tc.name testB64DecodeConsistency001
+     * @tc.desc Verify Base64Helper decode and decodeSync result consistency and aliasing behavior
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64DecodeConsistency001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      {
+        let base64Helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([89, 109, 108, 117]);
+        let fromString = await base64Helper.decode("Ymlu", util.Type.BASIC);
+        let fromBytes = await base64Helper.decode(src, util.Type.BASIC);
+        let actual1: number = fromString.$_get(0);
+        let expected1: int = 98;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = fromString.$_get(1);
+        let expected2: int = 105;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = fromString.$_get(2);
+        let expected3: int = 110;
+        expect(actual3).assertEqual(expected3);
+        let actual4: int = fromString.length;
+        let expected4: int = 3;
+        expect(actual4).assertEqual(expected4);
+        expect(fromBytes.$_get(0)).assertEqual(98);
+        expect(fromBytes.$_get(1)).assertEqual(105);
+        expect(fromBytes.$_get(2)).assertEqual(110);
+        expect(fromBytes.length).assertEqual(3);
+
+      }
+      {
+          let base64Helper = new util.Base64Helper();
+          let src: Uint8Array = new Uint8Array([89, 87, 73, 61]);
+          let val = await base64Helper.decode(src, util.Type.BASIC);
+          val.$_set(0, 0);
+          let actual1: number = src.$_get(0);
+          let expected1: int = 89;
+          expect(actual1).assertEqual(expected1);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([89, 87, 73, 61]);
+        let result: Uint8Array = base64Helper.decodeSync(src, util.Type.BASIC);
+        result.$_set(0, 0);
+        let actual1: number = src.$_get(0);
+        let expected1: int = 89;
+        expect(actual1).assertEqual(expected1);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_DECODE_1900
+     * @tc.name testB64DecodeBasic001
+     * @tc.desc Verify Base64Helper decode and decodeSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64DecodeBasic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      {
+        let base64Helper = new util.Base64Helper();
+        let val = await base64Helper.decode("Ymlu");
+        let actual1: int = val.length;
+        let expected1: int = 3;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(0);
+        let expected2: int = 98;
+        expect(actual2).assertEqual(expected2);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([89, 109, 108, 117]);
+        let val = await base64Helper.decode(src);
+        let actual1: int = val.length;
+        let expected1: int = 3;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(1);
+        let expected2: int = 105;
+        expect(actual2).assertEqual(expected2);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let val = await base64Helper.decode("Ymlu", util.Type.BASIC);
+        let actual1: number = val.$_get(0);
+        let expected1: int = 98;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(1);
+        let expected2: int = 105;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = val.$_get(2);
+        let expected3: int = 110;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let val = await base64Helper.decode("c2Vl");
+        let actual1: number = val.$_get(0);
+        let expected1: int = 115;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(1);
+        let expected2: int = 101;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = val.$_get(2);
+        let expected3: int = 101;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let val = await base64Helper.decode("QUJD");
+        let actual1: number = val.$_get(0);
+        let expected1: int = 65;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(1);
+        let expected2: int = 66;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = val.$_get(2);
+        let expected3: int = 67;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let val = await base64Helper.decode("aaaa");
+        let actual1: number = val.$_get(0);
+        let expected1: int = 105;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(1);
+        let expected2: int = 166;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = val.$_get(2);
+        let expected3: int = 154;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let val = await base64Helper.decode("MTIz");
+        let actual1: number = val.$_get(0);
+        let expected1: int = 49;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(1);
+        let expected2: int = 50;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = val.$_get(2);
+        let expected3: int = 51;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let val = await base64Helper.decode("QWJj");
+        let actual1: number = val.$_get(0);
+        let expected1: int = 65;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(1);
+        let expected2: int = 98;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = val.$_get(2);
+        let expected3: int = 99;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let val = await base64Helper.decode("SQ==");
+        let actual1: int = val.length;
+        let expected1: int = 1;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(0);
+        let expected2: int = 73;
+        expect(actual2).assertEqual(expected2);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let val = await base64Helper.decode("YmM=");
+        let actual1: int = val.length;
+        let expected1: int = 2;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(0);
+        let expected2: int = 98;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = val.$_get(1);
+        let expected3: int = 99;
+        expect(actual3).assertEqual(expected3);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_DECODE_2000
+     * @tc.name testB64DecodeBasic002
+     * @tc.desc Verify Base64Helper decode and decodeSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64DecodeBasic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      {
+        let base64Helper = new util.Base64Helper();
+        let val = await base64Helper.decode("MTIzNDU=");
+        let actual1: int = val.length;
+        let expected1: int = 5;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(4);
+        let expected2: int = 53;
+        expect(actual2).assertEqual(expected2);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let val = await base64Helper.decode("gAAA");
+        let actual1: number = val.$_get(0);
+        let expected1: int = 128;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(1);
+        let expected2: int = 0;
+        expect(actual2).assertEqual(expected2);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let val = await base64Helper.decode("f39/");
+        let actual1: number = val.$_get(0);
+        let expected1: int = 127;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(1);
+        let expected2: int = 127;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = val.$_get(2);
+        let expected3: int = 127;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let val = await base64Helper.decode("AQ==");
+        let actual1: int = val.length;
+        let expected1: int = 1;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(0);
+        let expected2: int = 1;
+        expect(actual2).assertEqual(expected2);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let val = await base64Helper.decode("5ZCN");
+        let actual1: int = val.length;
+        let expected1: int = 3;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(0);
+        let expected2: int = 229;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = val.$_get(1);
+        let expected3: int = 144;
+        expect(actual3).assertEqual(expected3);
+        let actual4: number = val.$_get(2);
+        let expected4: int = 141;
+        expect(actual4).assertEqual(expected4);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let val = await base64Helper.decode("w6k=");
+        let actual1: int = val.length;
+        let expected1: int = 2;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(0);
+        let expected2: int = 195;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = val.$_get(1);
+        let expected3: int = 169;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let val = await base64Helper.decode("YWIA");
+        let actual1: number = val.$_get(0);
+        let expected1: int = 97;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(1);
+        let expected2: int = 98;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = val.$_get(2);
+        let expected3: int = 0;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let val = await base64Helper.decode("AGFi");
+        let actual1: number = val.$_get(0);
+        let expected1: int = 0;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(1);
+        let expected2: int = 97;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = val.$_get(2);
+        let expected3: int = 98;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([83, 81, 61, 61]);
+        let val = await base64Helper.decode(src, util.Type.BASIC);
+        let actual1: int = val.length;
+        let expected1: int = 1;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(0);
+        let expected2: int = 73;
+        expect(actual2).assertEqual(expected2);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let val = await base64Helper.decode("AQIDBAUG");
+        let actual1: number = val.$_get(0);
+        let expected1: int = 1;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(3);
+        let expected2: int = 4;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = val.$_get(5);
+        let expected3: int = 6;
+        expect(actual3).assertEqual(expected3);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_DECODE_2100
+     * @tc.name testB64DecodeBasic003
+     * @tc.desc Verify Base64Helper decode and decodeSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64DecodeBasic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      {
+        let base64Helper = new util.Base64Helper();
+        let val = await base64Helper.decode("//D/");
+        let actual1: number = val.$_get(0);
+        let expected1: int = 255;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(1);
+        let expected2: int = 240;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = val.$_get(2);
+        let expected3: int = 255;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let val = await base64Helper.decode("AP8A");
+        let actual1: number = val.$_get(0);
+        let expected1: int = 0;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(1);
+        let expected2: int = 255;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = val.$_get(2);
+        let expected3: int = 0;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let val = await base64Helper.decode("gICA");
+        let actual1: number = val.$_get(0);
+        let expected1: int = 128;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(1);
+        let expected2: int = 128;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = val.$_get(2);
+        let expected3: int = 128;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let val = await base64Helper.decode("AQEB");
+        let actual1: number = val.$_get(0);
+        let expected1: int = 1;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(1);
+        let expected2: int = 1;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = val.$_get(2);
+        let expected3: int = 1;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let val = await base64Helper.decode("q///");
+        let actual1: number = val.$_get(0);
+        let expected1: int = 171;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(1);
+        let expected2: int = 255;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = val.$_get(2);
+        let expected3: int = 255;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let val = await base64Helper.decode("c2VlYQ==");
+        let actual1: int = val.length;
+        let expected1: int = 4;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(0);
+        let expected2: int = 115;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = val.$_get(3);
+        let expected3: int = 97;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let val = await base64Helper.decode("MTIzNDU2Nzg5MDEy");
+        let actual1: int = val.length;
+        let expected1: int = 12;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = val.$_get(0);
+        let expected2: int = 49;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = val.$_get(11);
+        let expected3: int = 50;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+          let base64Helper = new util.Base64Helper();
+          let type = new util.types();
+          let val = await base64Helper.decode('czEz');
+          let actual1: boolean = type.isUint8Array(val);
+          expect(actual1).assertTrue();
+
+      }
+      {
+          let base64Helper = new util.Base64Helper();
+          let val = await base64Helper.decode('TWFu', util.Type.BASIC);
+          let actual1: number = val.$_get(0);
+          let expected1: int = 77;
+          expect(actual1).assertEqual(expected1);
+          let actual2: number = val.$_get(1);
+          let expected2: int = 97;
+          expect(actual2).assertEqual(expected2);
+          let actual3: number = val.$_get(2);
+          let expected3: int = 110;
+          expect(actual3).assertEqual(expected3);
+
+      }
+      {
+          let base64Helper = new util.Base64Helper();
+          let val = await base64Helper.decode('QQ==', util.Type.BASIC);
+          let actual1: number = val.$_get(0);
+          let expected1: int = 65;
+          expect(actual1).assertEqual(expected1);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_DECODE_2200
+     * @tc.name testB64DecodeBasic004
+     * @tc.desc Verify Base64Helper decode and decodeSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64DecodeBasic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      {
+          let base64Helper = new util.Base64Helper();
+          let val = await base64Helper.decode('YWI=', util.Type.BASIC);
+          let actual1: number = val.$_get(0);
+          let expected1: int = 97;
+          expect(actual1).assertEqual(expected1);
+          let actual2: number = val.$_get(1);
+          let expected2: int = 98;
+          expect(actual2).assertEqual(expected2);
+
+      }
+      {
+          let base64Helper = new util.Base64Helper();
+          let val = await base64Helper.decode('5L2g5aW9', util.Type.BASIC);
+          let actual1: number = val.$_get(0);
+          let expected1: int = 228;
+          expect(actual1).assertEqual(expected1);
+          let actual2: number = val.$_get(1);
+          let expected2: int = 189;
+          expect(actual2).assertEqual(expected2);
+          let actual3: number = val.$_get(2);
+          let expected3: int = 160;
+          expect(actual3).assertEqual(expected3);
+          let actual4: number = val.$_get(3);
+          let expected4: int = 229;
+          expect(actual4).assertEqual(expected4);
+          let actual5: number = val.$_get(4);
+          let expected5: int = 165;
+          expect(actual5).assertEqual(expected5);
+          let actual6: number = val.$_get(5);
+          let expected6: int = 189;
+          expect(actual6).assertEqual(expected6);
+
+      }
+      {
+          let base64Helper = new util.Base64Helper();
+          let val = await base64Helper.decode('czEz');
+          let actual1: number = val.$_get(0);
+          let expected1: int = 115;
+          expect(actual1).assertEqual(expected1);
+          let actual2: number = val.$_get(1);
+          let expected2: int = 49;
+          expect(actual2).assertEqual(expected2);
+          let actual3: number = val.$_get(2);
+          let expected3: int = 51;
+          expect(actual3).assertEqual(expected3);
+
+      }
+      {
+          let base64Helper = new util.Base64Helper();
+          let src: Uint8Array = new Uint8Array([89, 87, 73, 61]);
+          let val = await base64Helper.decode(src, util.Type.BASIC);
+          let actual1: number = val.$_get(0);
+          let expected1: int = 97;
+          expect(actual1).assertEqual(expected1);
+          let actual2: number = val.$_get(1);
+          let expected2: int = 98;
+          expect(actual2).assertEqual(expected2);
+
+      }
+      {
+          let base64Helper = new util.Base64Helper();
+          let val = await base64Helper.decode('8J+YgA==', util.Type.BASIC);
+          let actual1: number = val.$_get(0);
+          let expected1: int = 240;
+          expect(actual1).assertEqual(expected1);
+          let actual2: number = val.$_get(1);
+          let expected2: int = 159;
+          expect(actual2).assertEqual(expected2);
+          let actual3: number = val.$_get(2);
+          let expected3: int = 152;
+          expect(actual3).assertEqual(expected3);
+          let actual4: number = val.$_get(3);
+          let expected4: int = 128;
+          expect(actual4).assertEqual(expected4);
+
+      }
+      {
+          let base64Helper = new util.Base64Helper();
+          let val = await base64Helper.decode('YWJj', util.Type.BASIC);
+          let actual1: int = val.length;
+          let expected1: int = 3;
+          expect(actual1).assertEqual(expected1);
+
+      }
+      {
+          let base64Helper = new util.Base64Helper();
+          let val = await base64Helper.decode('QQ==', util.Type.BASIC);
+          let actual1: int = val.length;
+          let expected1: int = 1;
+          expect(actual1).assertEqual(expected1);
+
+      }
+      {
+          let base64Helper = new util.Base64Helper();
+          let val = await base64Helper.decode('YWI=', util.Type.BASIC);
+          let actual1: int = val.length;
+          let expected1: int = 2;
+          expect(actual1).assertEqual(expected1);
+
+      }
+      {
+          let base64Helper = new util.Base64Helper();
+          let val = await base64Helper.decode('czEz');
+          let actual1: int = val.length;
+          let expected1: int = 3;
+          expect(actual1).assertEqual(expected1);
+
+      }
+      {
+          let base64Helper = new util.Base64Helper();
+          let val = await base64Helper.decode('8J+YgA==', util.Type.BASIC);
+          let actual1: int = val.length;
+          let expected1: int = 4;
+          expect(actual1).assertEqual(expected1);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_DECODE_2300
+     * @tc.name testB64DecodeBasic005
+     * @tc.desc Verify Base64Helper decode and decodeSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64DecodeBasic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      {
+          let base64Helper = new util.Base64Helper();
+          let big: Uint8Array = new Uint8Array(2000);
+          for (let i = 0; i < 2000; i++) {
+            big.$_set(i, i % 251);
+          }
+          let enc: string = base64Helper.encodeToStringSync(big, util.Type.BASIC);
+          let val = await base64Helper.decode(enc, util.Type.BASIC);
+          let actual1: int = val.length;
+          let expected1: int = 2000;
+          expect(actual1).assertEqual(expected1);
+
+      }
+      {
+          let base64Helper = new util.Base64Helper();
+          let val = await base64Helper.decode('YWJj', util.Type.BASIC);
+          let actual1: int = val.byteLength;
+          let expected1: int = 3;
+          expect(actual1).assertEqual(expected1);
+          let actual2: number = val.$_get(0);
+          let expected2: int = 97;
+          expect(actual2).assertEqual(expected2);
+          let actual3: number = val.$_get(1);
+          let expected3: int = 98;
+          expect(actual3).assertEqual(expected3);
+          let actual4: number = val.$_get(2);
+          let expected4: int = 99;
+          expect(actual4).assertEqual(expected4);
+
+      }
+      {
+          let base64Helper = new util.Base64Helper();
+          let all: Uint8Array = new Uint8Array(256);
+          for (let i = 0; i < 256; i++) {
+            all.$_set(i, i);
+          }
+          let enc: string = base64Helper.encodeToStringSync(all, util.Type.BASIC);
+          let val = await base64Helper.decode(enc, util.Type.BASIC);
+          let actual1: int = val.byteLength;
+          let expected1: int = 256;
+          expect(actual1).assertEqual(expected1);
+
+      }
+      {
+          let base64Helper = new util.Base64Helper();
+          let src: Uint8Array = new Uint8Array([89, 109, 70, 117]);
+          let val = await base64Helper.decode(src, util.Type.BASIC);
+          let actual1: int = val.length;
+          let expected1: int = 3;
+          expect(actual1).assertEqual(expected1);
+          let actual2: number = val.$_get(0);
+          let expected2: int = 98;
+          expect(actual2).assertEqual(expected2);
+          let actual3: number = val.$_get(1);
+          let expected3: int = 97;
+          expect(actual3).assertEqual(expected3);
+          let actual4: number = val.$_get(2);
+          let expected4: int = 110;
+          expect(actual4).assertEqual(expected4);
+
+      }
+      {
+          let base64Helper = new util.Base64Helper();
+          let val = await base64Helper.decode('YWJj', util.Type.BASIC);
+          let actual1: int = val.byteOffset;
+          let expected1: int = 0;
+          expect(actual1).assertEqual(expected1);
+
+      }
+      {
+          let base64Helper = new util.Base64Helper();
+          let val = await base64Helper.decode('czEz');
+          let actual1: int = val.byteOffset;
+          let expected1: int = 0;
+          expect(actual1).assertEqual(expected1);
+
+      }
+      {
+          let base64Helper = new util.Base64Helper();
+          let r1 = await base64Helper.decode('czEz', util.Type.BASIC);
+          let actual1: number = r1.$_get(0);
+          let expected1: int = 115;
+          expect(actual1).assertEqual(expected1);
+          let actual2: number = r1.$_get(1);
+          let expected2: int = 49;
+          expect(actual2).assertEqual(expected2);
+          let actual3: number = r1.$_get(2);
+          let expected3: int = 51;
+          expect(actual3).assertEqual(expected3);
+          let r2 = await base64Helper.decode('czEz', util.Type.BASIC);
+          let actual4: number = r2.$_get(0);
+          let expected4: int = 115;
+          expect(actual4).assertEqual(expected4);
+          let actual5: int = r2.length;
+          let expected5: int = 3;
+          expect(actual5).assertEqual(expected5);
+
+      }
+      {
+          let base64Helper = new util.Base64Helper();
+          let val = await base64Helper.decode('SGVsbG8=', util.Type.BASIC);
+          let actual1: number = val.$_get(0);
+          let expected1: int = 72;
+          expect(actual1).assertEqual(expected1);
+          let actual2: number = val.$_get(1);
+          let expected2: int = 101;
+          expect(actual2).assertEqual(expected2);
+          let actual3: int = val.length;
+          let expected3: int = 5;
+          expect(actual3).assertEqual(expected3);
+
+      }
+      {
+          let base64Helper = new util.Base64Helper();
+          let arr: Uint8Array = new Uint8Array([10, 20, 30]);
+          let enc: string = base64Helper.encodeToStringSync(arr, util.Type.BASIC);
+          let val = await base64Helper.decode(enc, util.Type.BASIC);
+          let actual1: number = val.$_get(0);
+          let expected1: int = 10;
+          expect(actual1).assertEqual(expected1);
+          let actual2: number = val.$_get(1);
+          let expected2: int = 20;
+          expect(actual2).assertEqual(expected2);
+          let actual3: number = val.$_get(2);
+          let expected3: int = 30;
+          expect(actual3).assertEqual(expected3);
+
+      }
+      {
+          let base64Helper = new util.Base64Helper();
+          let all: Uint8Array = new Uint8Array(256);
+          for (let i = 0; i < 256; i++) {
+            all.$_set(i, i);
+          }
+          let enc: string = base64Helper.encodeToStringSync(all, util.Type.BASIC);
+          let val = await base64Helper.decode(enc, util.Type.BASIC);
+          let actual1: number = val.$_get(0);
+          let expected1: int = 0;
+          expect(actual1).assertEqual(expected1);
+          let actual2: number = val.$_get(127);
+          let expected2: int = 127;
+          expect(actual2).assertEqual(expected2);
+          let actual3: number = val.$_get(255);
+          let expected3: int = 255;
+          expect(actual3).assertEqual(expected3);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_DECODE_2400
+     * @tc.name testB64DecodeBasic006
+     * @tc.desc Verify Base64Helper decode and decodeSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64DecodeBasic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      {
+          let base64Helper = new util.Base64Helper();
+          let val = await base64Helper.decode('AAAAA', util.Type.BASIC);
+          let actual1: int = val.length;
+          let expected1: int = 3;
+          expect(actual1).assertEqual(expected1);
+          let actual2: number = val.$_get(0);
+          let expected2: int = 0;
+          expect(actual2).assertEqual(expected2);
+          let actual3: number = val.$_get(1);
+          let expected3: int = 0;
+          expect(actual3).assertEqual(expected3);
+          let actual4: number = val.$_get(2);
+          let expected4: int = 0;
+          expect(actual4).assertEqual(expected4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val: Uint8Array = b64.decodeSync("QQ=", util.Type.BASIC);
+        expect(byteStr(val)).assertEqual("65");
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val: Uint8Array = b64.decodeSync("YWI=Z", util.Type.BASIC);
+        expect(byteStr(val)).assertEqual("97,98");
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val: Uint8Array = b64.decodeSync("AAAA==", util.Type.BASIC);
+        expect(byteStr(val)).assertEqual("0,0,0");
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.decode("ZQ==");
+        expect(byteStr(val)).assertEqual("101");
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.decode("AA==");
+        expect(byteStr(val)).assertEqual('0');
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.decode("YQ==");
+        expect(byteStr(val)).assertEqual("97");
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.decode("////");
+        expect(byteStr(val)).assertEqual("255,255,255");
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.decode("zzzz");
+        expect(byteStr(val)).assertEqual("207,60,243");
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let val: Uint8Array = b64.decodeSync("YWJj YWJj", util.Type.BASIC);
+        expect(byteStr(val)).assertEqual("97,98,99,97,98,99");
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_DECODE_2500
+     * @tc.name testB64DecodeBasic007
+     * @tc.desc Verify Base64Helper decode and decodeSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64DecodeBasic007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      {
+        let b64 = new util.Base64Helper();
+        let val = await b64.decode("YWI=");
+        expect(byteStr(val)).assertEqual("97,98");
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.decodeSync("5L2g");
+        let actual1: number = r.$_get(0);
+        let expected1: int = 228;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = r.$_get(1);
+        let expected2: int = 189;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = r.$_get(2);
+        let expected3: int = 160;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.decodeSync("8J+YgA==", util.Type.BASIC);
+        let actual1: number = r.$_get(0);
+        let expected1: int = 240;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = r.$_get(1);
+        let expected2: int = 159;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = r.$_get(2);
+        let expected3: int = 152;
+        expect(actual3).assertEqual(expected3);
+        let actual4: number = r.$_get(3);
+        let expected4: int = 128;
+        expect(actual4).assertEqual(expected4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.decodeSync(new Uint8Array([84, 81, 61, 61]));
+        let actual1: number = r.$_get(0);
+        let expected1: int = 77;
+        expect(actual1).assertEqual(expected1);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.decodeSync("TWFu", util.Type.BASIC);
+        let actual1: number = r.$_get(0);
+        let expected1: int = 77;
+        expect(actual1).assertEqual(expected1);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.decodeSync("TQ==");
+        let actual1: number = r.$_get(0);
+        let expected1: int = 77;
+        expect(actual1).assertEqual(expected1);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.decodeSync(new Uint8Array([84, 81, 61, 61]), util.Type.BASIC);
+        let actual1: number = r.$_get(0);
+        let expected1: int = 77;
+        expect(actual1).assertEqual(expected1);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.decodeSync("YQBi");
+        let actual1: number = r.$_get(0);
+        let expected1: int = 97;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = r.$_get(1);
+        let expected2: int = 0;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = r.$_get(2);
+        let expected3: int = 98;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.decodeSync("AAAA");
+        let actual1: number = r.$_get(0);
+        let expected1: int = 0;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = r.$_get(1);
+        let expected2: int = 0;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = r.$_get(2);
+        let expected3: int = 0;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.decodeSync("////");
+        let actual1: number = r.$_get(0);
+        let expected1: int = 255;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = r.$_get(1);
+        let expected2: int = 255;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = r.$_get(2);
+        let expected3: int = 255;
+        expect(actual3).assertEqual(expected3);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_DECODE_2600
+     * @tc.name testB64DecodeBasic008
+     * @tc.desc Verify Base64Helper decode and decodeSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64DecodeBasic008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.decodeSync("TWFuTWFu");
+        let actual1: number = r.$_get(0);
+        let expected1: int = 77;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = r.$_get(3);
+        let expected2: int = 77;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = r.$_get(5);
+        let expected3: int = 110;
+        expect(actual3).assertEqual(expected3);
+        let actual4: int = r.length;
+        let expected4: int = 6;
+        expect(actual4).assertEqual(expected4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.decodeSync("TWFuTWFuTWFu");
+        let actual1: number = r.$_get(0);
+        let expected1: int = 77;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = r.$_get(6);
+        let expected2: int = 77;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = r.$_get(8);
+        let expected3: int = 110;
+        expect(actual3).assertEqual(expected3);
+        let actual4: int = r.length;
+        let expected4: int = 9;
+        expect(actual4).assertEqual(expected4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.decodeSync("TWFuTWFuTWFuTWFu");
+        let actual1: number = r.$_get(0);
+        let expected1: int = 77;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = r.$_get(9);
+        let expected2: int = 77;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = r.$_get(11);
+        let expected3: int = 110;
+        expect(actual3).assertEqual(expected3);
+        let actual4: int = r.length;
+        let expected4: int = 12;
+        expect(actual4).assertEqual(expected4);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.decodeSync("TWFuTQ==");
+        let actual1: number = r.$_get(0);
+        let expected1: int = 77;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = r.$_get(2);
+        let expected2: int = 110;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = r.$_get(3);
+        let expected3: int = 77;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.decodeSync("TWFuTWE=");
+        let actual1: number = r.$_get(0);
+        let expected1: int = 77;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = r.$_get(3);
+        let expected2: int = 77;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = r.$_get(4);
+        let expected3: int = 97;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.decodeSync("TWFu/+8=");
+        let actual1: number = r.$_get(0);
+        let expected1: int = 77;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = r.$_get(3);
+        let expected2: int = 255;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = r.$_get(4);
+        let expected3: int = 239;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.decodeSync("aGVsbG8=");
+        let actual1: number = r.$_get(0);
+        let expected1: int = 104;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = r.$_get(1);
+        let expected2: int = 101;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = r.$_get(2);
+        let expected3: int = 108;
+        expect(actual3).assertEqual(expected3);
+        let actual4: number = r.$_get(3);
+        let expected4: int = 108;
+        expect(actual4).assertEqual(expected4);
+        let actual5: number = r.$_get(4);
+        let expected5: int = 111;
+        expect(actual5).assertEqual(expected5);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.decodeSync("YTph");
+        let actual1: number = r.$_get(0);
+        let expected1: int = 97;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = r.$_get(1);
+        let expected2: int = 58;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = r.$_get(2);
+        let expected3: int = 97;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.decodeSync(new Uint8Array([99, 122, 69, 122]));
+        let actual1: number = r.$_get(0);
+        let expected1: int = 115;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = r.$_get(1);
+        let expected2: int = 49;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = r.$_get(2);
+        let expected3: int = 51;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.decodeSync(new Uint8Array([84, 87, 70, 117, 43, 81, 61, 61]), util.Type.BASIC);
+        let actual1: number = r.$_get(0);
+        let expected1: int = 77;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = r.$_get(3);
+        let expected2: int = 249;
+        expect(actual2).assertEqual(expected2);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_DECODE_2700
+     * @tc.name testB64DecodeBasic009
+     * @tc.desc Verify Base64Helper decode and decodeSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64DecodeBasic009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let b64 = new util.Base64Helper();
+        let r: Uint8Array = b64.decodeSync("TWFu TWFu");
+        expect(byteStr(r)).assertEqual("77,97,110,77,97,110");
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r: Uint8Array = b64.decodeSync("TWFu\t");
+        expect(byteStr(r)).assertEqual("77,97,110");
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r: Uint8Array = b64.decodeSync("TWFu$");
+        expect(byteStr(r)).assertEqual("77,97,110");
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r: Uint8Array = b64.decodeSync(new Uint8Array([84, 87, 70, 117, 32, 84, 87, 70, 117]), util.Type.BASIC);
+        expect(byteStr(r)).assertEqual("77,97,110,77,97,110");
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r: Uint8Array = b64.decodeSync("TQ=");
+        expect(byteStr(r)).assertEqual("77");
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r: Uint8Array = b64.decodeSync("TWE");
+        expect(byteStr(r)).assertEqual("77,97");
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r: Uint8Array = b64.decodeSync("TWFua");
+        expect(byteStr(r)).assertEqual("77,97,110");
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.decodeSync("TWFu/+8=");
+        let actual1: number = r.$_get(3);
+        let expected1: int = 255;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = r.$_get(4);
+        let expected2: int = 239;
+        expect(actual2).assertEqual(expected2);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let a = b64.decodeSync("TWFu", util.Type.BASIC);
+        let actual1: number = a.$_get(0);
+        let expected1: int = 77;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = a.$_get(1);
+        let expected2: int = 97;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = a.$_get(2);
+        let expected3: int = 110;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let b64 = new util.Base64Helper();
+        let r = b64.decodeSync("+w==", util.Type.BASIC);
+        let actual1: number = r.$_get(0);
+        let expected1: int = 251;
+        expect(actual1).assertEqual(expected1);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_DECODE_2800
+     * @tc.name testB64DecodeBasic010
+     * @tc.desc Verify Base64Helper decode and decodeSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64DecodeBasic010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let b64 = new util.Base64Helper();
+        let r: Uint8Array = b64.decodeSync("TWFu\r\nTWFu", util.Type.BASIC);
+        expect(byteStr(r)).assertEqual("77,97,110,77,97,110");
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let type = new util.types();
+        let result: Uint8Array = base64Helper.decodeSync("czEz");
+        let actual1: boolean = type.isUint8Array(result);
+        expect(actual1).assertTrue();
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let result: Uint8Array = base64Helper.decodeSync("czEz", util.Type.BASIC);
+        let actual1: number = result.$_get(0);
+        let expected1: int = 115;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = result.$_get(1);
+        let expected2: int = 49;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = result.$_get(2);
+        let expected3: int = 51;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let result: Uint8Array = base64Helper.decodeSync("QQ==", util.Type.BASIC);
+        let actual1: number = result.$_get(0);
+        let expected1: int = 65;
+        expect(actual1).assertEqual(expected1);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let result: Uint8Array = base64Helper.decodeSync("YWI=", util.Type.BASIC);
+        let actual1: number = result.$_get(0);
+        let expected1: int = 97;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = result.$_get(1);
+        let expected2: int = 98;
+        expect(actual2).assertEqual(expected2);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let result: Uint8Array = base64Helper.decodeSync("5L2g5aW9", util.Type.BASIC);
+        let actual1: number = result.$_get(0);
+        let expected1: int = 228;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = result.$_get(1);
+        let expected2: int = 189;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = result.$_get(2);
+        let expected3: int = 160;
+        expect(actual3).assertEqual(expected3);
+        let actual4: number = result.$_get(3);
+        let expected4: int = 229;
+        expect(actual4).assertEqual(expected4);
+        let actual5: number = result.$_get(4);
+        let expected5: int = 165;
+        expect(actual5).assertEqual(expected5);
+        let actual6: number = result.$_get(5);
+        let expected6: int = 189;
+        expect(actual6).assertEqual(expected6);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let result: Uint8Array = base64Helper.decodeSync("++++", util.Type.BASIC);
+        let actual1: number = result.$_get(0);
+        let expected1: int = 251;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = result.$_get(1);
+        let expected2: int = 239;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = result.$_get(2);
+        let expected3: int = 190;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let result: Uint8Array = base64Helper.decodeSync("czEz");
+        let actual1: number = result.$_get(0);
+        let expected1: int = 115;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = result.$_get(1);
+        let expected2: int = 49;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = result.$_get(2);
+        let expected3: int = 51;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let arr: Uint8Array = new Uint8Array([10, 20, 30]);
+        let enc: string = base64Helper.encodeToStringSync(arr, util.Type.BASIC);
+        let dec: Uint8Array = base64Helper.decodeSync(enc, util.Type.BASIC);
+        let actual1: number = dec.$_get(0);
+        let expected1: int = 10;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = dec.$_get(1);
+        let expected2: int = 20;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = dec.$_get(2);
+        let expected3: int = 30;
+        expect(actual3).assertEqual(expected3);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let all: Uint8Array = new Uint8Array(256);
+        for (let i = 0; i < 256; i++) {
+          all.$_set(i, i);
+        }
+        let enc: string = base64Helper.encodeToStringSync(all, util.Type.BASIC);
+        let dec: Uint8Array = base64Helper.decodeSync(enc, util.Type.BASIC);
+        let actual1: number = dec.$_get(0);
+        let expected1: int = 0;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = dec.$_get(127);
+        let expected2: int = 127;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = dec.$_get(255);
+        let expected3: int = 255;
+        expect(actual3).assertEqual(expected3);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_DECODE_2900
+     * @tc.name testB64DecodeBasic011
+     * @tc.desc Verify Base64Helper decode and decodeSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64DecodeBasic011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let base64Helper = new util.Base64Helper();
+        let result: Uint8Array = base64Helper.decodeSync("YWJj", util.Type.BASIC);
+        let actual1: int = result.length;
+        let expected1: int = 3;
+        expect(actual1).assertEqual(expected1);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let result: Uint8Array = base64Helper.decodeSync("QQ==", util.Type.BASIC);
+        let actual1: int = result.length;
+        let expected1: int = 1;
+        expect(actual1).assertEqual(expected1);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let result: Uint8Array = base64Helper.decodeSync("YWI=", util.Type.BASIC);
+        let actual1: int = result.length;
+        let expected1: int = 2;
+        expect(actual1).assertEqual(expected1);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let all: Uint8Array = new Uint8Array(256);
+        for (let i = 0; i < 256; i++) {
+          all.$_set(i, i);
+        }
+        let enc: string = base64Helper.encodeToStringSync(all, util.Type.BASIC);
+        let dec: Uint8Array = base64Helper.decodeSync(enc, util.Type.BASIC);
+        let actual1: int = dec.length;
+        let expected1: int = 256;
+        expect(actual1).assertEqual(expected1);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let result: Uint8Array = base64Helper.decodeSync("czEz");
+        let actual1: int = result.length;
+        let expected1: int = 3;
+        expect(actual1).assertEqual(expected1);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([99, 122, 69, 122]);
+        let result: Uint8Array = base64Helper.decodeSync(src, util.Type.BASIC);
+        let actual1: int = result.length;
+        let expected1: int = 3;
+        expect(actual1).assertEqual(expected1);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let result: Uint8Array = base64Helper.decodeSync("8J+YgA==", util.Type.BASIC);
+        let actual1: int = result.length;
+        let expected1: int = 4;
+        expect(actual1).assertEqual(expected1);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let src: Uint8Array = new Uint8Array([89, 87, 73, 61, 89, 87, 73, 61, 89, 87, 73, 61]);
+        let dec: Uint8Array = base64Helper.decodeSync(src, util.Type.BASIC);
+        expect(byteStr(dec)).assertEqual("97,98");
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let result: Uint8Array = base64Helper.decodeSync("YWJj", util.Type.BASIC);
+        let actual1: int = result.byteOffset;
+        let expected1: int = 0;
+        expect(actual1).assertEqual(expected1);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let result: Uint8Array = base64Helper.decodeSync("YWJj", util.Type.BASIC);
+        let actual1: int = result.byteLength;
+        let expected1: int = 3;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = result.$_get(0);
+        let expected2: int = 97;
+        expect(actual2).assertEqual(expected2);
+        let actual3: number = result.$_get(1);
+        let expected3: int = 98;
+        expect(actual3).assertEqual(expected3);
+        let actual4: number = result.$_get(2);
+        let expected4: int = 99;
+        expect(actual4).assertEqual(expected4);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_DECODE_3000
+     * @tc.name testB64DecodeBasic012
+     * @tc.desc Verify Base64Helper decode and decodeSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64DecodeBasic012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let base64Helper = new util.Base64Helper();
+        let r1: Uint8Array = base64Helper.decodeSync("czEz", util.Type.BASIC);
+        let r2: Uint8Array = base64Helper.decodeSync("czEz", util.Type.BASIC);
+        let actual1: boolean = r1 !== r2;
+        expect(actual1).assertTrue();
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let r: Uint8Array = base64Helper.decodeSync("!WJj", util.Type.BASIC);
+        expect(byteStr(r)).assertEqual("88,152");
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let r: Uint8Array = base64Helper.decodeSync("YW!j", util.Type.BASIC);
+        expect(byteStr(r)).assertEqual("97,104");
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let r: Uint8Array = base64Helper.decodeSync("YWJj\n", util.Type.BASIC);
+        expect(byteStr(r)).assertEqual("97,98,99");
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let r: Uint8Array = base64Helper.decodeSync("YWJj ", util.Type.BASIC);
+        expect(byteStr(r)).assertEqual("97,98,99");
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let r: Uint8Array = base64Helper.decodeSync("AA=A", util.Type.BASIC);
+        expect(byteStr(r)).assertEqual('0');
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let r: Uint8Array = base64Helper.decodeSync("AA", util.Type.BASIC);
+        expect(byteStr(r)).assertEqual('0');
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let r: Uint8Array = base64Helper.decodeSync("AAAAA", util.Type.BASIC);
+        expect(byteStr(r)).assertEqual("0,0,0");
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let r: Uint8Array = base64Helper.decodeSync("YWI=\r\n", util.Type.BASIC);
+        expect(byteStr(r)).assertEqual("97,98");
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let r: Uint8Array = base64Helper.decodeSync("ZZZZ", util.Type.BASIC);
+        expect(byteStr(r)).assertEqual("101,150,89");
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE64HELPER_DECODE_3100
+     * @tc.name testB64DecodeBasic013
+     * @tc.desc Verify Base64Helper decode and decodeSync with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testB64DecodeBasic013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let base64Helper = new util.Base64Helper();
+        let r: Uint8Array = base64Helper.decodeSync("AA==", util.Type.BASIC);
+        let actual1: int = r.length;
+        let expected1: int = 1;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = r.$_get(0);
+        let expected2: int = 0;
+        expect(actual2).assertEqual(expected2);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let r: Uint8Array = base64Helper.decodeSync("ZQ==", util.Type.BASIC);
+        let actual1: int = r.length;
+        let expected1: int = 1;
+        expect(actual1).assertEqual(expected1);
+        let actual2: number = r.$_get(0);
+        let expected2: int = 101;
+        expect(actual2).assertEqual(expected2);
+
+      }
+      {
+        let base64Helper = new util.Base64Helper();
+        let r: Uint8Array = base64Helper.decodeSync("YWJjZA=", util.Type.BASIC);
+        expect(byteStr(r)).assertEqual("97,98,99,100");
+
+      }
+    });
+
   });
 }
