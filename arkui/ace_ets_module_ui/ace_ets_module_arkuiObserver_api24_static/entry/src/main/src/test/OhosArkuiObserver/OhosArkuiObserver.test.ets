@@ -99,7 +99,7 @@ async function globalOnAndInput(driver: Driver, text: string): Promise<void> {
   await textInput.inputText(text);
 
   await Utils.sleep(SLEEP);
-  await driver.triggerKey(2070);
+  await driver.triggerKey(2070, displayID);
   await Utils.sleep(SLEEP);
 }
 
@@ -113,9 +113,11 @@ async function localOnAndInput(driver: Driver, text: string): Promise<void> {
   await textInput.inputText(text);
 
   await Utils.sleep(SLEEP);
-  await driver.triggerKey(2070);
+  await driver.triggerKey(2070, displayID);
   await Utils.sleep(SLEEP);
 }
+
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 
 export default function OhosArkuiObserverTest(): void {
   describe('OhosArkuiObserver', () => {
@@ -303,7 +305,7 @@ export default function OhosArkuiObserverTest(): void {
         await textInput.inputText('textInputObserverTest_0010');
 
         await Utils.sleep(SLEEP);
-        await driver.triggerKey(2070);
+        await driver.triggerKey(2070, displayID);
         await Utils.sleep(SLEEP);
 
         const globalOutputTextInput1: Component = (await driver.findComponent(
@@ -329,7 +331,7 @@ export default function OhosArkuiObserverTest(): void {
 
         await textInput.inputText('Add');
         await Utils.sleep(SLEEP);
-        await driver.triggerKey(2070);
+        await driver.triggerKey(2070, displayID);
         await Utils.sleep(SLEEP);
 
         const globalOutputTextInput2: Component = (await driver.findComponent(
