@@ -363,57 +363,57 @@ export default function actsApiTest() {
     });
 
     /**
-     * @tc.number  SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_00100
-     * @tc.name    SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_00100
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_3200
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_3200
      * @tc.desc    Test WMV1 decoder capability API
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level1
      */
-    it('SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_00100', Level.LEVEL1, async () => {
-      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_00100');
+    it('SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_3200', Level.LEVEL1, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_3200');
       let result = await testNapi.VideoWmv1DecCapApi0001();
       expect(result).assertEqual(TEST_SUCCESS);
     });
 
     /**
-     * @tc.number  SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_00200
-     * @tc.name    SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_00200
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_3300
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_3300
      * @tc.desc    Test WMV1 decoder video width and height range
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level1
      */
-    it('SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_00200', Level.LEVEL1, async () => {
-      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_00200');
+    it('SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_3300', Level.LEVEL1, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_3300');
       let result = await testNapi.VideoWmv1DecCapApi0002();
       expect(result).assertEqual(TEST_SUCCESS);
     });
 
     /**
-     * @tc.number  SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_00300
-     * @tc.name    SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_00300
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_3400
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_3400
      * @tc.desc    Test WMV1 decoder supported pixel formats
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level1
      */
-    it('SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_00300', Level.LEVEL1, async () => {
-      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_00300');
+    it('SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_3400', Level.LEVEL1, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_3400');
       let result = await testNapi.VideoWmv1DecCapApi0003();
       expect(result).assertEqual(TEST_SUCCESS);
     });
 
     /**
-     * @tc.number  SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_00400
-     * @tc.name    SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_00400
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_3500
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_3500
      * @tc.desc    Test WMV1 decoder rejects the unsupported pixel format
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level1
      */
-    it('SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_00400', Level.LEVEL1, async () => {
-      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_00400');
+    it('SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_3500', Level.LEVEL1, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_WMV1DEC_CAP_API_3500');
       let result = await testNapi.VideoWmv1DecCapApi0004();
       expect(result).assertEqual(TEST_SUCCESS);
     });

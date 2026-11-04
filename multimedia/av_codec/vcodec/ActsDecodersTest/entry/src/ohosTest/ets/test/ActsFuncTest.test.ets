@@ -378,29 +378,29 @@ export default function actsFuncTest() {
     });
 
     /**
-     * @tc.number  SUB_MUlTIMEDIA_VIDEO_WMV1DEC_FUNCTION_02300
-     * @tc.name    SUB_MUlTIMEDIA_VIDEO_WMV1DEC_FUNCTION_02300
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_WMV1DEC_FUNCTION_3600
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_WMV1DEC_FUNCTION_3600
      * @tc.desc    Test WMV1 decoder with buffer mode
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level0
      */
-    it('SUB_MUlTIMEDIA_VIDEO_WMV1DEC_FUNCTION_02300', Level.LEVEL0, async () => {
-      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_WMV1DEC_FUNCTION_02300');
+    it('SUB_MUlTIMEDIA_VIDEO_WMV1DEC_FUNCTION_3600', Level.LEVEL0, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_WMV1DEC_FUNCTION_3600');
       let result = await testNapi.VideoWmv1DecFunction0023();
       expect(result).assertEqual(TEST_SUCCESS);
     });
 
     /**
-     * @tc.number  SUB_MUlTIMEDIA_VIDEO_WMV1DEC_FUNCTION_02400
-     * @tc.name    SUB_MUlTIMEDIA_VIDEO_WMV1DEC_FUNCTION_02400
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_WMV1DEC_FUNCTION_3700
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_WMV1DEC_FUNCTION_3700
      * @tc.desc    Test WMV1 decoder with surf mode
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
      * @tc.level   Level0
      */
-    it('SUB_MUlTIMEDIA_VIDEO_WMV1DEC_FUNCTION_02400', Level.LEVEL0, async () => {
-      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_WMV1DEC_FUNCTION_02400');
+    it('SUB_MUlTIMEDIA_VIDEO_WMV1DEC_FUNCTION_3700', Level.LEVEL0, async () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_WMV1DEC_FUNCTION_3700');
       let result = await testNapi.VideoWmv1DecFunction0024();
       expect(result).assertEqual(TEST_SUCCESS);
     });
