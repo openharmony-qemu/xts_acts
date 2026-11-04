@@ -19,6 +19,12 @@ import InputConsumerTest from "./InputConsumer.test";
 import InputConsumerComplementTest from "./InputConsumerComplement.test";
 import InputDeviceComplementTest from "./InputDeviceComplement.test";
 import InputEventClientTest from "./InputEventClient.test";
+import MultimodalKeyEventTest from "./MultimodalKeyEvent.test";
+import MultimodalMouseEventTest from "./MultimodalMouseEvent.test";
+import MultimodalTouchEventTest from "./MultimodalTouchEvent.test";
+import MultimodalGestureEventTest from "./MultimodalGestureEvent.test";
+import MultimodalMouseEventComplementTest from "./MultimodalMouseEventComplement.test";
+import MultimodalTouchEventComplementTest from "./MultimodalTouchEventComplement.test";
 export default function testsuite() {
     InputEventClientTest();
     TouchEventTest();
@@ -26,4 +32,10 @@ export default function testsuite() {
     InputConsumerTest();
     InputConsumerComplementTest();
     InputDeviceComplementTest();
+    MultimodalKeyEventTest();
+    MultimodalMouseEventTest();
+    MultimodalTouchEventTest();
+    MultimodalGestureEventTest();
+    MultimodalMouseEventComplementTest();
+    MultimodalTouchEventComplementTest();
 }
