@@ -26,6 +26,7 @@ const waitUiReadyMs: number = 1000;
 const TestTag = 'UiTest_API16';
 const DeviceErrorCode = 17000005;
 const ErrorCode = 401;
+const defaultUserId = 100;
 
 async function startAbility(bundleName: string, abilityName: string) {
   let cmd = `aa start -b ${bundleName} -a ${abilityName}`;
@@ -855,12 +856,11 @@ export default function UiTest() {
 
   describe('UiTest_API10', () => {
     let driver: Driver
-    let displayId: number = 0
-    let primaryId: number = 0
+    let user = 0;
     beforeAll(async (done: Function) => {
       driver = Driver.create()
-      displayId = display.getDefaultDisplaySync().id
-      primaryId = display.getPrimaryDisplaySync().id
+      user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      console.log(`${TestTag}, UiTest_API10 user is: ${JSON.stringify(user)}`);
       await driver.delayMs(1000)
       await getInputMethodPermission()
       done()
@@ -883,7 +883,7 @@ export default function UiTest() {
      * @tc.level  LEVEL3
      */
     it('testFling', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      if (displayId === primaryId) { // 此用例不支持车机副屏执行
+      if (user === undefined || user === defaultUserId) { // 此用例不支持车机副屏执行
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
         await driver.delayMs(waitUiReadyMs)
         let allDisplayIds = await display.getAllDisplay()
@@ -924,12 +924,10 @@ export default function UiTest() {
 
   describe('UiTest_API9', () => {
     let driver: Driver
-    let displayId: number = 0
-    let primaryId: number = 0
+    let user = 0;
     beforeAll(async (done: Function) => {
       driver = Driver.create()
-      displayId = display.getDefaultDisplaySync().id
-      primaryId = display.getPrimaryDisplaySync().id
+      user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
       await driver.delayMs(1000)
       await getInputMethodPermission()
       done()
@@ -952,7 +950,7 @@ export default function UiTest() {
      * @tc.level  LEVEL3
      */
     it('testTriggerCombineKeys', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      if (displayId === primaryId) { // 此用例不支持车机副屏执行
+      if (user === undefined || user === defaultUserId) { // 此用例不支持车机副屏执行
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
         await driver.delayMs(2000)
         let text = await driver.findComponent(ON.type('TextInput'))
@@ -1001,53 +999,57 @@ export default function UiTest() {
      * @tc.level  LEVEL3
      */
     it('testDisplayRotation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      if (displayId === primaryId) { // 此用例不支持车机副屏执行
-        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-        await driver.delayMs(waitUiReadyMs)
-        await driver.setDisplayRotationEnabled(true)
-        await driver.delayMs(waitUiReadyMs)
-        await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
-        await driver.delayMs(waitUiReadyMs)
-        let rotation = await driver.getDisplayRotation()
-        if (rotation == DisplayRotation.ROTATION_90) {
-          console.info('The device is displayed in horizontal on default')
-          await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+      let disArray = await display.getAllDisplays()
+      if (disArray != null) {
+        let disLength = disArray.length;
+        if (disLength == 1) { // 此用例不支持在多屏上执行
+          await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
           await driver.delayMs(waitUiReadyMs)
-          let rotation1 = await driver.getDisplayRotation()
-          expect(rotation1 == DisplayRotation.ROTATION_0).assertTrue();
-
-          await driver.setDisplayRotation(DisplayRotation.ROTATION_180)
+          await driver.setDisplayRotationEnabled(true)
           await driver.delayMs(waitUiReadyMs)
-          let rotation2 = await driver.getDisplayRotation()
-          expect(rotation2 == DisplayRotation.ROTATION_270).assertTrue();
-
-          await driver.setDisplayRotation(DisplayRotation.ROTATION_270)
-          await driver.delayMs(waitUiReadyMs)
-          let rotation3 = await driver.getDisplayRotation()
-          expect(rotation3 == DisplayRotation.ROTATION_180).assertTrue();
-
-          await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
-        } else if (rotation == DisplayRotation.ROTATION_0) {
-          console.info('The device is displayed in vertical on default')
-          await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
-          await driver.delayMs(waitUiReadyMs)
-          let rotation1 = await driver.getDisplayRotation()
-          expect(rotation1 == DisplayRotation.ROTATION_90).assertTrue();
-
-          await driver.setDisplayRotation(DisplayRotation.ROTATION_180)
-          await driver.delayMs(waitUiReadyMs)
-          let rotation2 = await driver.getDisplayRotation()
-          expect(rotation2 == DisplayRotation.ROTATION_180).assertTrue();
-
-          await driver.setDisplayRotation(DisplayRotation.ROTATION_270)
-          await driver.delayMs(waitUiReadyMs)
-          let rotation3 = await driver.getDisplayRotation()
-          expect(rotation3 == DisplayRotation.ROTATION_270).assertTrue();
-
           await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
           await driver.delayMs(waitUiReadyMs)
+          let rotation = await driver.getDisplayRotation()
+          if (rotation == DisplayRotation.ROTATION_90) {
+            console.info('The device is displayed in horizontal on default')
+            await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+            await driver.delayMs(waitUiReadyMs)
+            let rotation1 = await driver.getDisplayRotation()
+            expect(rotation1 == DisplayRotation.ROTATION_0).assertTrue();
+
+            await driver.setDisplayRotation(DisplayRotation.ROTATION_180)
+            await driver.delayMs(waitUiReadyMs)
+            let rotation2 = await driver.getDisplayRotation()
+            expect(rotation2 == DisplayRotation.ROTATION_270).assertTrue();
+
+            await driver.setDisplayRotation(DisplayRotation.ROTATION_270)
+            await driver.delayMs(waitUiReadyMs)
+            let rotation3 = await driver.getDisplayRotation()
+            expect(rotation3 == DisplayRotation.ROTATION_180).assertTrue();
+
+            await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+          } else if (rotation == DisplayRotation.ROTATION_0) {
+            console.info('The device is displayed in vertical on default')
+            await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+            await driver.delayMs(waitUiReadyMs)
+            let rotation1 = await driver.getDisplayRotation()
+            expect(rotation1 == DisplayRotation.ROTATION_90).assertTrue();
+
+            await driver.setDisplayRotation(DisplayRotation.ROTATION_180)
+            await driver.delayMs(waitUiReadyMs)
+            let rotation2 = await driver.getDisplayRotation()
+            expect(rotation2 == DisplayRotation.ROTATION_180).assertTrue();
+
+            await driver.setDisplayRotation(DisplayRotation.ROTATION_270)
+            await driver.delayMs(waitUiReadyMs)
+            let rotation3 = await driver.getDisplayRotation()
+            expect(rotation3 == DisplayRotation.ROTATION_270).assertTrue();
+
+            await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
+            await driver.delayMs(waitUiReadyMs)
+          }
+          await stopApplication('com.uitestScene.acts')
         }
-        await stopApplication('com.uitestScene.acts')
       }
     })
 
@@ -1060,57 +1062,61 @@ export default function UiTest() {
      * @tc.level  LEVEL3
      */
     it('testGetDisplayRotationWithId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      if (displayId === primaryId) { // 此用例不支持车机副屏执行
-        console.log(TestTag, 'testGetDisplayRotationWithId start');
-        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-        await driver.delayMs(waitUiReadyMs)
-        let disPlay = display.getDefaultDisplaySync();
-        console.log(`${TestTag}, testGetDisplayRotationWithId disPlay is: ${JSON.stringify(disPlay)}`);
-        await driver.setDisplayRotationEnabled(true)
-        await driver.delayMs(waitUiReadyMs)
-        await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
-        await driver.delayMs(waitUiReadyMs)
-        let rotation = await driver.getDisplayRotation(disPlay.id)
-        if (rotation == DisplayRotation.ROTATION_90) {
-          console.info('The device is displayed in horizontal on default')
-          await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+      let disArray = await display.getAllDisplays()
+      if (disArray != null) {
+        let disLength = disArray.length;
+        if (disLength == 1) { // 此用例不支持在多屏上执行
+          console.log(TestTag, 'testGetDisplayRotationWithId start');
+          await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
           await driver.delayMs(waitUiReadyMs)
-          let rotation1 = await driver.getDisplayRotation(disPlay.id)
-          expect(rotation1 == DisplayRotation.ROTATION_0).assertTrue();
-
-          await driver.setDisplayRotation(DisplayRotation.ROTATION_180)
+          let disPlay = display.getDefaultDisplaySync();
+          console.log(`${TestTag}, testGetDisplayRotationWithId disPlay is: ${JSON.stringify(disPlay)}`);
+          await driver.setDisplayRotationEnabled(true)
           await driver.delayMs(waitUiReadyMs)
-          let rotation2 = await driver.getDisplayRotation(disPlay.id)
-          expect(rotation2 == DisplayRotation.ROTATION_270).assertTrue();
-
-          await driver.setDisplayRotation(DisplayRotation.ROTATION_270)
-          await driver.delayMs(waitUiReadyMs)
-          let rotation3 = await driver.getDisplayRotation(disPlay.id)
-          expect(rotation3 == DisplayRotation.ROTATION_180).assertTrue();
-
-          await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
-        } else if (rotation == DisplayRotation.ROTATION_0) {
-          console.info('The device is displayed in vertical on default')
-          await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
-          await driver.delayMs(waitUiReadyMs)
-          let rotation1 = await driver.getDisplayRotation(disPlay.id)
-          expect(rotation1 == DisplayRotation.ROTATION_90).assertTrue();
-
-          await driver.setDisplayRotation(DisplayRotation.ROTATION_180)
-          await driver.delayMs(waitUiReadyMs)
-          let rotation2 = await driver.getDisplayRotation(disPlay.id)
-          expect(rotation2 == DisplayRotation.ROTATION_180).assertTrue();
-
-          await driver.setDisplayRotation(DisplayRotation.ROTATION_270)
-          await driver.delayMs(waitUiReadyMs)
-          let rotation3 = await driver.getDisplayRotation(disPlay.id)
-          expect(rotation3 == DisplayRotation.ROTATION_270).assertTrue();
-
           await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
           await driver.delayMs(waitUiReadyMs)
+          let rotation = await driver.getDisplayRotation(disPlay.id)
+          if (rotation == DisplayRotation.ROTATION_90) {
+            console.info('The device is displayed in horizontal on default')
+            await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+            await driver.delayMs(waitUiReadyMs)
+            let rotation1 = await driver.getDisplayRotation(disPlay.id)
+            expect(rotation1 == DisplayRotation.ROTATION_0).assertTrue();
+
+            await driver.setDisplayRotation(DisplayRotation.ROTATION_180)
+            await driver.delayMs(waitUiReadyMs)
+            let rotation2 = await driver.getDisplayRotation(disPlay.id)
+            expect(rotation2 == DisplayRotation.ROTATION_270).assertTrue();
+
+            await driver.setDisplayRotation(DisplayRotation.ROTATION_270)
+            await driver.delayMs(waitUiReadyMs)
+            let rotation3 = await driver.getDisplayRotation(disPlay.id)
+            expect(rotation3 == DisplayRotation.ROTATION_180).assertTrue();
+
+            await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+          } else if (rotation == DisplayRotation.ROTATION_0) {
+            console.info('The device is displayed in vertical on default')
+            await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+            await driver.delayMs(waitUiReadyMs)
+            let rotation1 = await driver.getDisplayRotation(disPlay.id)
+            expect(rotation1 == DisplayRotation.ROTATION_90).assertTrue();
+
+            await driver.setDisplayRotation(DisplayRotation.ROTATION_180)
+            await driver.delayMs(waitUiReadyMs)
+            let rotation2 = await driver.getDisplayRotation(disPlay.id)
+            expect(rotation2 == DisplayRotation.ROTATION_180).assertTrue();
+
+            await driver.setDisplayRotation(DisplayRotation.ROTATION_270)
+            await driver.delayMs(waitUiReadyMs)
+            let rotation3 = await driver.getDisplayRotation(disPlay.id)
+            expect(rotation3 == DisplayRotation.ROTATION_270).assertTrue();
+
+            await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
+            await driver.delayMs(waitUiReadyMs)
+          }
+          await stopApplication('com.uitestScene.acts')
+          console.log(TestTag, 'testGetDisplayRotationWithId over');
         }
-        await stopApplication('com.uitestScene.acts')
-        console.log(TestTag, 'testGetDisplayRotationWithId over');
       }
     })
 
@@ -1123,7 +1129,7 @@ export default function UiTest() {
      * @tc.level  LEVEL3
      */
     it('testPressHome', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      if (displayId === primaryId) { // 此用例不支持车机副屏执行
+      if (user === undefined || user === defaultUserId) { // 此用例不支持车机副屏执行
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
         await driver.delayMs(waitUiReadyMs)
         await driver.pressHome()
@@ -1143,7 +1149,7 @@ export default function UiTest() {
      * @tc.level  LEVEL3
      */
     it('testDrag', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      if (displayId === primaryId) { // 此用例不支持车机副屏执行
+      if (user === undefined || user === defaultUserId) { // 此用例不支持车机副屏执行
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
         await driver.delayMs(waitUiReadyMs)
         let button = await driver.findComponent(ON.id('jump'))
@@ -1170,7 +1176,7 @@ export default function UiTest() {
      * @tc.level  LEVEL3
      */
     it('testDragSpeed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      if (displayId === primaryId) { // 此用例不支持车机副屏执行
+      if (user === undefined || user === defaultUserId) { // 此用例不支持车机副屏执行
         try {
           await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
           await driver.delayMs(waitUiReadyMs)
@@ -1202,7 +1208,7 @@ export default function UiTest() {
      * @tc.level  LEVEL3
      */
     it('testDragSpeedNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      if (displayId === primaryId) { // 此用例不支持车机副屏执行
+      if (user === undefined || user === defaultUserId) { // 此用例不支持车机副屏执行
         try {
           await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
           await driver.delayMs(waitUiReadyMs)
@@ -1234,7 +1240,7 @@ export default function UiTest() {
      * @tc.level  LEVEL3
      */
     it('testDragSpeedUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      if (displayId === primaryId) { // 此用例不支持车机副屏执行
+      if (user === undefined || user === defaultUserId) { // 此用例不支持车机副屏执行
         try {
           await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
           await driver.delayMs(waitUiReadyMs)

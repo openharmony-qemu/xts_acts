@@ -27,6 +27,7 @@ const TestTag = 'UiTest_TAG';
 const DeviceErrorCode = 17000005;
 const ErrorCode = 401;
 const CapabilityCode = 801;
+const defaultUserId = 100;
 
 async function dismissDialog(driver: Driver) {
     await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
@@ -107,17 +108,27 @@ async function maxUiWindow(driver: Driver, window: UiWindow | null) {
 
 async function exitInputMethod() {
     let driver = Driver.create()
+    let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+    console.log(`${TestTag},user: ${JSON.stringify(user)}`);
     let disPlay = display.getDefaultDisplaySync();
     let softKeyBoard = await driver.findComponent(ON.type('Canvas'))
     console.log(`${TestTag},softKeyBoard: ${JSON.stringify(softKeyBoard)}`);
     if (softKeyBoard != null) {
-        await driver.pressBack(disPlay.id)
+        if (user === undefined || user === defaultUserId) {
+            await driver.pressBack()
+        } else {
+            await driver.pressBack(disPlay.id)
+        }
     }
     await driver.delayMs(2000)
     let keyCanvasKeyboard = await driver.findComponent(ON.id('KeyCanvasKeyboard'))
     console.log(`${TestTag},keyCanvasKeyboard: ${JSON.stringify(keyCanvasKeyboard)}`);
     if (keyCanvasKeyboard != null) {
-        await driver.pressBack(disPlay.id)
+        if (user === undefined || user === defaultUserId) {
+            await driver.pressBack()
+        } else {
+            await driver.pressBack(disPlay.id)
+        }
     }
 }
 
@@ -5371,12 +5382,11 @@ export default function UiTest() {
 
     describe('UiTest_API9', () => {
         let driver: Driver
-        let displayId: number = 0;
-        let primaryId: number = 0;
+        let user = 0;
         beforeAll(async (done: Function) => {
             driver = Driver.create()
-            displayId = display.getDefaultDisplaySync().id;
-            primaryId = display.getPrimaryDisplaySync().id;
+            user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+            console.log(`${TestTag},UiTest_API9 user: ${JSON.stringify(user)}`);
             await driver.delayMs(1000)
             await getInputMethodPermission()
             done()
@@ -5592,7 +5602,7 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testDriverClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+            if (user === undefined || user === defaultUserId) { // 此用例不支持车机副屏执行
                 await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
                 await driver.delayMs(waitUiReadyMs)
                 let Button = await driver.findComponent(ON.text('next page'))
@@ -5616,7 +5626,7 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testDriverDoubleClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+            if (user === undefined || user === defaultUserId) { // 此用例不支持车机副屏执行
                 await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
                 await driver.delayMs(waitUiReadyMs)
                 let Button = await driver.findComponent(ON.text('Click twice'))
@@ -5644,7 +5654,7 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testDriverLongClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+            if (user === undefined || user === defaultUserId) { // 此用例不支持车机副屏执行
                 await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
                 await driver.delayMs(waitUiReadyMs)
                 let Button = await driver.findComponent(ON.text('next page'))
@@ -5969,9 +5979,17 @@ export default function UiTest() {
                 let enable1 = await button1.isEnabled()
                 expect(enable1 == false).assertTrue()
                 let button3 = await driver.findComponent(ON.text('toast').enabled(null))
+                if (button3 == null) {
+                    let scroll = await driver.findComponent(ON.type('Scroll'))
+                    button3 = await scroll.scrollSearch(ON.text('toast').enabled(null))
+                }
                 let enable3 = await button3.isEnabled()
                 expect(enable3).assertTrue()
                 let button4 = await driver.findComponent(ON.text('toast').enabled(undefined))
+                if (button4 == null) {
+                    let scroll = await driver.findComponent(ON.type('Scroll'))
+                    button4 = await scroll.scrollSearch(ON.text('toast').enabled(undefined))
+                }
                 let enable4 = await button4.isEnabled()
                 expect(enable4).assertTrue()
                 await stopApplication('com.uitestScene.acts')
@@ -6060,13 +6078,59 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testPressBack', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+            if (user === undefined || user === defaultUserId) { // 此用例不支持车机副屏执行
                 await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
                 await driver.delayMs(waitUiReadyMs)
                 let button = await driver.findComponent(ON.text('next page'))
                 await button.click()
                 await driver.delayMs(waitUiReadyMs)
                 await driver.pressBack()
+                await driver.delayMs(waitUiReadyMs)
+                let button_ori = await driver.findComponent(ON.text('next page'))
+                expect(await button_ori.getText() == 'next page').assertTrue()
+                await stopApplication('com.uitestScene.acts')
+            }
+        })
+
+        /**
+         * @tc.name   testPressBackNull
+         * @tc.number SUB_testfwk_uitest_Api9_0120
+         * @tc.desc   Press the BACK key.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testPressBackNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            if (user === undefined || user === defaultUserId) { // 此用例不支持车机副屏执行
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let button = await driver.findComponent(ON.text('next page'))
+                await button.click()
+                await driver.delayMs(waitUiReadyMs)
+                await driver.pressBack(null)
+                await driver.delayMs(waitUiReadyMs)
+                let button_ori = await driver.findComponent(ON.text('next page'))
+                expect(await button_ori.getText() == 'next page').assertTrue()
+                await stopApplication('com.uitestScene.acts')
+            }
+        })
+
+        /**
+         * @tc.name   testPressBackUndefined
+         * @tc.number SUB_testfwk_uitest_Api9_0220
+         * @tc.desc   Press the BACK key.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testPressBackUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            if (user === undefined || user === defaultUserId) { // 此用例不支持车机副屏执行
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let button = await driver.findComponent(ON.text('next page'))
+                await button.click()
+                await driver.delayMs(waitUiReadyMs)
+                await driver.pressBack(undefined)
                 await driver.delayMs(waitUiReadyMs)
                 let button_ori = await driver.findComponent(ON.text('next page'))
                 expect(await button_ori.getText() == 'next page').assertTrue()
@@ -6099,7 +6163,7 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testTriggerKey', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+            if (user === undefined || user === defaultUserId) { // 此用例不支持车机副屏执行
                 await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
                 await driver.delayMs(waitUiReadyMs)
                 let button = await driver.findComponent(ON.text('next page'))
@@ -6246,7 +6310,7 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testSwipe', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+            if (user === undefined || user === defaultUserId) { // 此用例不支持车机副屏执行
                 await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
                 await driver.delayMs(waitUiReadyMs);
                 let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
@@ -6273,7 +6337,7 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testSwipeSpeed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+            if (user === undefined || user === defaultUserId) { // 此用例不支持车机副屏执行
                 try {
                     await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
                     await driver.delayMs(waitUiReadyMs);
@@ -6305,7 +6369,7 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testSwipeSpeedNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+            if (user === undefined || user === defaultUserId) { // 此用例不支持车机副屏执行
                 await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
                 await driver.delayMs(waitUiReadyMs);
                 let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
@@ -6333,7 +6397,7 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testSwipeSpeedUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+            if (user === undefined || user === defaultUserId) { // 此用例不支持车机副屏执行
                 await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
                 await driver.delayMs(waitUiReadyMs);
                 let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
@@ -6790,12 +6854,11 @@ export default function UiTest() {
 
     describe('UiTest_API8', () => {
         let driver: UiDriver
-        let displayId: number = 0;
-        let primaryId: number = 0;
+        let user = 0;
         beforeAll(async (done: Function) => {
             driver = UiDriver.create()
-            displayId = display.getDefaultDisplaySync().id;
-            primaryId = display.getPrimaryDisplaySync().id;
+            user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+            console.log(`${TestTag},UiTest_API8 user: ${JSON.stringify(user)}`);
             await driver.delayMs(1000)
             await getInputMethodPermission()
             done()
@@ -7145,7 +7208,7 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testPressBackAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+            if (user === undefined || user === defaultUserId) { // 此用例不支持车机副屏执行
                 await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
                 await driver.delayMs(waitUiReadyMs)
                 let button = await driver.findComponent(BY.text('next page'))
@@ -7186,7 +7249,7 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testTriggerKeyAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+            if (user === undefined || user === defaultUserId) { // 此用例不支持车机副屏执行
                 await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
                 await driver.delayMs(waitUiReadyMs)
                 let button = await driver.findComponent(BY.text('next page'))
@@ -7274,7 +7337,7 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testSwipeAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+            if (user === undefined || user === defaultUserId) { // 此用例不支持车机副屏执行
                 await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
                 let driver1 = Driver.create();
                 await driver.delayMs(waitUiReadyMs);
@@ -7332,7 +7395,7 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testUiDriverClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+            if (user === undefined || user === defaultUserId) { // 此用例不支持车机副屏执行
                 await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
                 const driver1 = Driver.create();
                 await driver1.delayMs(waitUiReadyMs)
@@ -7357,7 +7420,7 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testUiDriverDoubleClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+            if (user === undefined || user === defaultUserId) { // 此用例不支持车机副屏执行
                 await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
                 const driver1 = Driver.create();
                 await driver1.delayMs(waitUiReadyMs)
@@ -7386,7 +7449,7 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testUiDriverLongClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+            if (user === undefined || user === defaultUserId) { // 此用例不支持车机副屏执行
                 const driver1 = Driver.create();
                 await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
                 await driver.delayMs(waitUiReadyMs)
