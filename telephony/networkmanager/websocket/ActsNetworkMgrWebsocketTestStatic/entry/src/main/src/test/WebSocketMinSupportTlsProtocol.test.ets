@@ -40,7 +40,7 @@ function expectFail(info: string = ''): void {
 }
 
 let ws: webSocket.WebSocket | null = null;
-let availableWebSocketAddress: string;
+let availableWebSocketAddress: string = '';
 
 function sleep(time: int): Promise<string> {
   return new Promise<string>((resolve) => {
