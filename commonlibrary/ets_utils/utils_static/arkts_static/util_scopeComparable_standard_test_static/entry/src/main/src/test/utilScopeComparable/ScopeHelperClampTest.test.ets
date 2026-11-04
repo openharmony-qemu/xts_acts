@@ -1723,5 +1723,259 @@ export default function ScopeHelperClampTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SCOPEHELPER_CLAMP_1700
+     * @tc.name testScopeClampBasic003
+     * @tc.desc Verify ScopeHelper clamp with numeric bounds
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testScopeClampBasic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let range: util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature> =
+          new util.ScopeHelper<ScopeHelperExpandPart03TestMissingTemperature>(
+            new ScopeHelperExpandPart03TestMissingTemperature(30),
+            new ScopeHelperExpandPart03TestMissingTemperature(31),
+          );
+        let result: ScopeHelperExpandPart03TestMissingTemperature = range.clamp(
+          new ScopeHelperExpandPart03TestMissingTemperature(30),
+        );
+        let actual = result.getTemp();
+        let expected: int = 30;
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range: util.ScopeHelper<ScopeHelperClampPart03TestMissingShortWrap> =
+          new util.ScopeHelper<ScopeHelperClampPart03TestMissingShortWrap>(
+            new ScopeHelperClampPart03TestMissingShortWrap(10),
+            new ScopeHelperClampPart03TestMissingShortWrap(1000),
+          );
+        let result: ScopeHelperClampPart03TestMissingShortWrap = range.clamp(
+          new ScopeHelperClampPart03TestMissingShortWrap(1001),
+        );
+        let actual: string = result.toString();
+        let expected: string = '1000';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range: util.ScopeHelper<ScopeHelperClampPart03TestMissingShortWrap> =
+          new util.ScopeHelper<ScopeHelperClampPart03TestMissingShortWrap>(
+            new ScopeHelperClampPart03TestMissingShortWrap(10),
+            new ScopeHelperClampPart03TestMissingShortWrap(1000),
+          );
+        let result: ScopeHelperClampPart03TestMissingShortWrap = range.clamp(
+          new ScopeHelperClampPart03TestMissingShortWrap(500),
+        );
+        let actual: string = result.toString();
+        let expected: string = '500';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range: util.ScopeHelper<ScopeHelperClampPart03TestMissingShortWrap> =
+          new util.ScopeHelper<ScopeHelperClampPart03TestMissingShortWrap>(
+            new ScopeHelperClampPart03TestMissingShortWrap(10),
+            new ScopeHelperClampPart03TestMissingShortWrap(1000),
+          );
+        let result: ScopeHelperClampPart03TestMissingShortWrap = range.clamp(
+          new ScopeHelperClampPart03TestMissingShortWrap(10),
+        );
+        let actual: string = result.toString();
+        let expected: string = '10';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range: util.ScopeHelper<ScopeHelperClampPart03TestMissingShortWrap> =
+          new util.ScopeHelper<ScopeHelperClampPart03TestMissingShortWrap>(
+            new ScopeHelperClampPart03TestMissingShortWrap(10),
+            new ScopeHelperClampPart03TestMissingShortWrap(1000),
+          );
+        let result: ScopeHelperClampPart03TestMissingShortWrap = range.clamp(
+          new ScopeHelperClampPart03TestMissingShortWrap(-1),
+        );
+        let actual: string = result.toString();
+        let expected: string = '10';
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range: util.ScopeHelper<ScopeHelperClampPart03TestMissingTemperature> =
+          new util.ScopeHelper<ScopeHelperClampPart03TestMissingTemperature>(
+            new ScopeHelperClampPart03TestMissingTemperature(30),
+            new ScopeHelperClampPart03TestMissingTemperature(40),
+          );
+        let result: ScopeHelperClampPart03TestMissingTemperature = range.clamp(
+          new ScopeHelperClampPart03TestMissingTemperature(35),
+        );
+        let actual = result.getTemp();
+        let expected: int = 35;
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range: util.ScopeHelper<ScopeHelperClampPart03TestMissingTemperature> =
+          new util.ScopeHelper<ScopeHelperClampPart03TestMissingTemperature>(
+            new ScopeHelperClampPart03TestMissingTemperature(30),
+            new ScopeHelperClampPart03TestMissingTemperature(40),
+          );
+        let result: ScopeHelperClampPart03TestMissingTemperature = range.clamp(
+          new ScopeHelperClampPart03TestMissingTemperature(20),
+        );
+        let actual = result.getTemp();
+        let expected: int = 30;
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range: util.ScopeHelper<ScopeHelperClampPart03TestMissingTemperature> =
+          new util.ScopeHelper<ScopeHelperClampPart03TestMissingTemperature>(
+            new ScopeHelperClampPart03TestMissingTemperature(30),
+            new ScopeHelperClampPart03TestMissingTemperature(40),
+          );
+        let result: ScopeHelperClampPart03TestMissingTemperature = range.clamp(
+          new ScopeHelperClampPart03TestMissingTemperature(50),
+        );
+        let actual = result.getTemp();
+        let expected: int = 40;
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range: util.ScopeHelper<ScopeHelperClampPart03TestMissingThrowOnValueTemp> =
+          new util.ScopeHelper<ScopeHelperClampPart03TestMissingThrowOnValueTemp>(
+            new ScopeHelperClampPart03TestMissingThrowOnValueTemp(30),
+            new ScopeHelperClampPart03TestMissingThrowOnValueTemp(40),
+          );
+        let input: ScopeHelperClampPart03TestMissingThrowOnValueTemp =
+          new ScopeHelperClampPart03TestMissingThrowOnValueTemp(35);
+        let result: ScopeHelperClampPart03TestMissingThrowOnValueTemp = range.clamp(input);
+        expect(result).assertEqual(input);
+
+      }
+      {
+        let range: util.ScopeHelper<ScopeHelperClampPart03TestMissingThrowOnValueTemp> =
+          new util.ScopeHelper<ScopeHelperClampPart03TestMissingThrowOnValueTemp>(
+            new ScopeHelperClampPart03TestMissingThrowOnValueTemp(30),
+            new ScopeHelperClampPart03TestMissingThrowOnValueTemp(40),
+          );
+        let result: ScopeHelperClampPart03TestMissingThrowOnValueTemp = range.clamp(
+          new ScopeHelperClampPart03TestMissingThrowOnValueTemp(30),
+        );
+        let actual = result.getTemp();
+        let expected: int = 30;
+        expect(actual).assertEqual(expected);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SCOPEHELPER_CLAMP_1800
+     * @tc.name testScopeClampBasic004
+     * @tc.desc Verify ScopeHelper clamp with numeric bounds
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testScopeClampBasic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let upper: ScopeHelperClampPart03TestMissingLenWrap = new ScopeHelperClampPart03TestMissingLenWrap('zzz');
+        let range: util.ScopeHelper<ScopeHelperClampPart03TestMissingLenWrap> =
+          new util.ScopeHelper<ScopeHelperClampPart03TestMissingLenWrap>(
+            new ScopeHelperClampPart03TestMissingLenWrap('a'),
+            upper,
+          );
+        let result: ScopeHelperClampPart03TestMissingLenWrap = range.clamp(
+          new ScopeHelperClampPart03TestMissingLenWrap('hello'),
+        );
+        expect(result).assertEqual(upper);
+
+      }
+      {
+        let range: util.ScopeHelper<ScopeHelperClampPart03TestMissingLenWrap> =
+          new util.ScopeHelper<ScopeHelperClampPart03TestMissingLenWrap>(
+            new ScopeHelperClampPart03TestMissingLenWrap('a'),
+            new ScopeHelperClampPart03TestMissingLenWrap('hello'),
+          );
+        let value: ScopeHelperClampPart03TestMissingLenWrap = new ScopeHelperClampPart03TestMissingLenWrap('cat');
+        let result: ScopeHelperClampPart03TestMissingLenWrap = range.clamp(value);
+        expect(result).assertEqual(value);
+
+      }
+      {
+        let range: util.ScopeHelper<ScopeHelperClampPart03TestMissingShortWrap> =
+          new util.ScopeHelper<ScopeHelperClampPart03TestMissingShortWrap>(
+            new ScopeHelperClampPart03TestMissingShortWrap(5),
+            new ScopeHelperClampPart03TestMissingShortWrap(6),
+          );
+        let result: ScopeHelperClampPart03TestMissingShortWrap = range.clamp(
+          new ScopeHelperClampPart03TestMissingShortWrap(3),
+        );
+        let actual = result.getVal();
+        let expected: int = 5;
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range: util.ScopeHelper<ScopeHelperClampPart03TestMissingShortWrap> =
+          new util.ScopeHelper<ScopeHelperClampPart03TestMissingShortWrap>(
+            new ScopeHelperClampPart03TestMissingShortWrap(4),
+            new ScopeHelperClampPart03TestMissingShortWrap(5),
+          );
+        let result: ScopeHelperClampPart03TestMissingShortWrap = range.clamp(
+          new ScopeHelperClampPart03TestMissingShortWrap(7),
+        );
+        let actual = result.getVal();
+        let expected: int = 5;
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range: util.ScopeHelper<ScopeHelperClampPart03TestMissingCountTemp> =
+          new util.ScopeHelper<ScopeHelperClampPart03TestMissingCountTemp>(
+            new ScopeHelperClampPart03TestMissingCountTemp(30),
+            new ScopeHelperClampPart03TestMissingCountTemp(40),
+          );
+        let result: ScopeHelperClampPart03TestMissingCountTemp = range.clamp(
+          new ScopeHelperClampPart03TestMissingCountTemp(35),
+        );
+        let actual: int = result.getTemp();
+        let expected: int = 35;
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range: util.ScopeHelper<ScopeHelperClampPart03TestMissingCountTemp> =
+          new util.ScopeHelper<ScopeHelperClampPart03TestMissingCountTemp>(
+            new ScopeHelperClampPart03TestMissingCountTemp(30),
+            new ScopeHelperClampPart03TestMissingCountTemp(40),
+          );
+        let result: ScopeHelperClampPart03TestMissingCountTemp = range.clamp(
+          new ScopeHelperClampPart03TestMissingCountTemp(20),
+        );
+        let actual: int = result.getTemp();
+        let expected: int = 30;
+        expect(actual).assertEqual(expected);
+
+      }
+      {
+        let range: util.ScopeHelper<ScopeHelperClampPart03TestMissingCountTemp> =
+          new util.ScopeHelper<ScopeHelperClampPart03TestMissingCountTemp>(
+            new ScopeHelperClampPart03TestMissingCountTemp(30),
+            new ScopeHelperClampPart03TestMissingCountTemp(40),
+          );
+        let result: ScopeHelperClampPart03TestMissingCountTemp = range.clamp(
+          new ScopeHelperClampPart03TestMissingCountTemp(45),
+        );
+        let actual: int = result.getTemp();
+        let expected: int = 40;
+        expect(actual).assertEqual(expected);
+
+      }
+    });
+
   });
 }
