@@ -30,14 +30,14 @@ let mXComponentController: XComponentController = new XComponentController()
 @Component
 struct Index {
   @State message: string = 'Next Page'
-  @State imageLoadSuccess: string = "LoadFalse"
+  @State imageLoadSuccess: string = 'LoadFalse'
   abilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('EntryAbilityContext') as common.UIAbilityContext
   audioRenderer: audio.AudioRenderer = {} as audio.AudioRenderer
-  @State longTaskMediaStateText: string = 'Error'
+  @State audioStateText: string = 'Error'
   private scroller: Scroller = new Scroller()
 
   async onPageShow() {
-    this.longTaskMediaStateText = this.audioRenderer ? this.audioRenderer.state.toString() : 'Error'
+    this.audioStateText = this.audioRenderer ? this.audioRenderer.state.toString() : 'Error'
   }
 
   build() {
@@ -51,7 +51,7 @@ struct Index {
                 .fontSize(50)
                 .fontWeight(FontWeight.Bold)
                 .onClick(() => {
-                  router.pushUrl({ url: "pages/SecondPage" })
+                  router.pushUrl({ url: 'pages/SecondPage' })
                 })
               Text($r('app.string.Multilingual_Text'))
                 .id('multilingualText')
@@ -61,7 +61,7 @@ struct Index {
                 .id('image')
                 .height('20%')
                 .onComplete((event) => {
-                  this.imageLoadSuccess = "LoadSuccess"
+                  this.imageLoadSuccess = 'LoadSuccess'
                 })
               Text(this.imageLoadSuccess.toString())
                 .id('imageLoadSuccess')
@@ -79,7 +79,7 @@ struct Index {
                 .height('30%')
 
               Text(mXComponentController.getXComponentSurfaceId())
-                .id("surfaceId")
+                .id('surfaceId')
 
               Button('StartAudio')
                 .id('StartAudio')
@@ -87,17 +87,17 @@ struct Index {
                 .onClick(async () => {
                   this.audioRenderer = await this.getAudioRenderer()
                   let res = await this.startAudio(this.audioRenderer, this.abilityContext)
-                  this.longTaskMediaStateText = this.audioRenderer ? this.audioRenderer.state.toString() : 'Error'
+                  this.audioStateText = this.audioRenderer ? this.audioRenderer.state.toString() : 'Error'
                 })
               Button('StopAudio')
                 .id('StopAudio')
                 .fontSize(20)
                 .onClick(async () => {
                   let res = await this.stopAudio(this.audioRenderer, this.abilityContext)
-                  this.longTaskMediaStateText = this.audioRenderer ? this.audioRenderer.state.toString() : 'Error'
+                  this.audioStateText = this.audioRenderer ? this.audioRenderer.state.toString() : 'Error'
                 })
-              Text(this.longTaskMediaStateText)
-                .id('LongTaskMediaStateText')
+              Text(this.audioStateText)
+                .id('AudioStateText')
                 .fontSize(50)
                 .fontWeight(FontWeight.Bold)
             }

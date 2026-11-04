@@ -19,7 +19,7 @@ import abilityAccessCtrl, { Permissions } from '@ohos.abilityAccessCtrl';
 import { BusinessError } from '@ohos.base';
 
 export default class PermissionUtils {
-  static async getPermission(abilityContext: Context, permissions: Array<Permissions>) {
+  static async getPermission(abilityContext: Context, permissions: Permissions[]) {
     try {
       let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
       atManager.requestPermissionsFromUser(abilityContext, permissions)

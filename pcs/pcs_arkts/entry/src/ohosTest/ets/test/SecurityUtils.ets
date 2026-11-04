@@ -47,7 +47,7 @@ export default class SecurityUtils {
       iv: ivBlob,
       aad: aadBlob,
       authTag: tagBlob,
-      algName: "GcmParamsSpec"
+      algName: 'GcmParamsSpec'
     };
     return gcmParamsSpec;
   }
@@ -59,7 +59,7 @@ export default class SecurityUtils {
       data: dataIv
     }
     let ivParamsSpec: cryptoFramework.IvParamsSpec = {
-      algName: "IvParamsSpec",
+      algName: 'IvParamsSpec',
       iv: ivBlob
     };
     return ivParamsSpec;
@@ -85,7 +85,7 @@ export default class SecurityUtils {
       iv: ivBlob,
       aad: aadBlob,
       authTag: tagBlob,
-      algName: "CcmParamsSpec"
+      algName: 'CcmParamsSpec'
     };
     return ccmParamsSpec;
   }
@@ -173,8 +173,8 @@ export default class SecurityUtils {
     return res;
   }
 
-  static StringToUint8Array(str: String) {
-    let arr: number[] = new Array();
+  static StringToUint8Array(str: string) {
+    let arr: number[] = [];
     for (let i = 0, j = str.length; i < j; ++i) {
       arr.push(str.charCodeAt(i));
     }
@@ -182,7 +182,7 @@ export default class SecurityUtils {
   }
 
   static async generateKeyItem(keyAlias: string, huksKeyStorageType: huks.HuksKeyStorageType) {
-    let properties: Array<huks.HuksParam> = new Array();
+    let properties: huks.HuksParam[] = [];
     properties[0] = {
       tag: huks.HuksTag.HUKS_TAG_ALGORITHM, value: huks.HuksKeyAlg.HUKS_ALG_AES,
     }
@@ -223,7 +223,7 @@ export default class SecurityUtils {
   }
 
   static async createSession(keyAlias: string, HuksKeyDeriveKeySize: number, deriveHkdfInData: string) {
-    let initProperties: Array<huks.HuksParam> = new Array();
+    let initProperties: huks.HuksParam[] = [];
     initProperties[0] = {
       tag: huks.HuksTag.HUKS_TAG_ALGORITHM, value: huks.HuksKeyAlg.HUKS_ALG_HKDF,
     }
@@ -263,7 +263,7 @@ export default class SecurityUtils {
   }
 
   static async finishSession(keyAlias: string, handle: number) {
-    let finishProperties: Array<huks.HuksParam> = new Array();
+    let finishProperties: huks.HuksParam[] = [];
     finishProperties[0] = {
       tag: huks.HuksTag.HUKS_TAG_DERIVED_AGREED_KEY_STORAGE_FLAG,
       value: huks.HuksKeyStorageType.HUKS_STORAGE_KEY_EXPORT_ALLOWED,

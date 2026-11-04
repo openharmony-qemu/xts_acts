@@ -1,13 +1,13 @@
-import { describe, it, expect, TestType, Level, Size} from "@ohos/hypium-dynamic"
-import { batteryInfo, BusinessError, systemDateTime } from "@kit.BasicServicesKit"
+import { describe, it, expect, TestType, Level, Size} from '@ohos/hypium-dynamic'
+import { batteryInfo, BusinessError, systemDateTime } from '@kit.BasicServicesKit'
 import { systemTimer } from '@kit.BasicServicesKit';
 import { inputMethod } from '@kit.IMEKit';
-import { common, Want } from "@kit.AbilityKit";
-import AbilityUtils from "./AbilityUtils";
-import { image } from "@kit.ImageKit";
-import { abilityDelegatorRegistry, Driver, On, ON } from "@kit.TestKit";
+import { common, Want } from '@kit.AbilityKit';
+import AbilityUtils from './AbilityUtils';
+import { image } from '@kit.ImageKit';
+import { abilityDelegatorRegistry, Driver, On, ON } from '@kit.TestKit';
 import  application from '@ohos.app.ability.application'
-import { display } from "@kit.ArkUI";
+import { display } from '@kit.ArkUI';
 import  audio  from '@ohos.multimedia.audio';
 const delegator : abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 const TAG  ='optionalSystemCapability';
@@ -33,7 +33,7 @@ export default function optionalSystemCapability() {
      */
     it('testPowerManagerQuery', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.log(`${TAG}, testPowerManagerQuery start`);
-      let powerManagerSupported = canIUse("SystemCapability.PowerManager.BatteryManager.Core");
+      let powerManagerSupported = canIUse('SystemCapability.PowerManager.BatteryManager.Core');
       if (powerManagerSupported) {
         try {
           let batterySOCInfo: number = batteryInfo.batterySOC;
@@ -60,7 +60,7 @@ export default function optionalSystemCapability() {
      */
     it('testCustomInputMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.log(`${TAG}, testCustomInputMethod start`);
-      let isInputMethod = canIUse("SystemCapability.MiscServices.InputMethodFramework");
+      let isInputMethod = canIUse('SystemCapability.MiscServices.InputMethodFramework');
       console.log(`${TAG},The  inputMethod is : ${ isInputMethod }`);
       if (isInputMethod) {
         try {
@@ -90,7 +90,7 @@ export default function optionalSystemCapability() {
      */
     it('testInputMethodEngine', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.log(`${TAG}, testInputMethodEngine start`);
-      let inputMethod = canIUse("SystemCapability.MiscServices.InputMethodFramework");
+      let inputMethod = canIUse('SystemCapability.MiscServices.InputMethodFramework');
       console.log(`${TAG},The  inputMethod is : ${ inputMethod }`);
       expect(inputMethod).assertTrue();
       console.log(`${TAG}, testInputMethodEngine end`);
@@ -106,7 +106,7 @@ export default function optionalSystemCapability() {
      */
     it('testDefaultInputMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.log(`${TAG}, testDefaultInputMethod start`);
-      let isInputMethod = canIUse("SystemCapability.MiscServices.InputMethodFramework");
+      let isInputMethod = canIUse('SystemCapability.MiscServices.InputMethodFramework');
       console.log(`${TAG},The  inputMethod is : ${ isInputMethod }`);
       if (isInputMethod) {
         try {
@@ -317,7 +317,7 @@ export default function optionalSystemCapability() {
         console.log(`${TAG} testPNGPacker Succeeded in creating PixelMap info is: ${JSON.stringify(info)}`);
         // 编码
         const imagePackerApi = image.createImagePacker();
-        let packOpts : image.PackingOption = { format:"image/jpeg", quality:98 };
+        let packOpts : image.PackingOption = { format:'image/jpeg', quality:98 };
         await imagePackerApi.packToData(pixelMap, packOpts);
       }catch (error) {
         console.log(`${TAG} testPNGPacker error is: ${JSON.stringify(error)}`);
@@ -350,11 +350,11 @@ export default function optionalSystemCapability() {
         let pixelMap = await imageSource.createPixelMap(decodingOptions);
         // 判断pixelmap是否为hdr内容
         let info = pixelMap.getImageInfoSync();
-        console.log("pixelmap isHdr:" + info.isHdr);
+        console.log('pixelmap isHdr:' + info.isHdr);
         console.log(`${TAG} testPNGPacker Succeeded in creating PixelMap info is: ${JSON.stringify(info)}`);
         // 编码
         const imagePackerApi = image.createImagePacker();
-        let packOpts : image.PackingOption = { format:"image/png", quality:98 };
+        let packOpts : image.PackingOption = { format:'image/png', quality:98 };
         await imagePackerApi.packToData(pixelMap, packOpts);
       }catch (error) {
         console.log(`${TAG} testPNGPacker error is: ${JSON.stringify(error)}`);
@@ -386,11 +386,11 @@ export default function optionalSystemCapability() {
         let pixelMap = await imageSource.createPixelMap(decodingOptions);
         // 判断pixelmap是否为hdr内容
         let info = pixelMap.getImageInfoSync();
-        console.log("pixelmap isHdr:" + info.isHdr);
+        console.log('pixelmap isHdr:' + info.isHdr);
         console.log(`${TAG} testPNGPacker Succeeded in creating PixelMap info is: ${JSON.stringify(info)}`);
         // 编码
         const imagePackerApi = image.createImagePacker();
-        let packOpts : image.PackingOption = { format:"image/webp", quality:98 };
+        let packOpts : image.PackingOption = { format:'image/webp', quality:98 };
         await imagePackerApi.packToData(pixelMap, packOpts);
       }catch (error) {
         console.log(`${TAG} testPNGPacker error is: ${JSON.stringify(error)}`);
@@ -407,7 +407,7 @@ export default function optionalSystemCapability() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("testSetTime", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSetTime', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testSetTime start`);
       let time = 1611081385000;
       try {
@@ -429,21 +429,19 @@ export default function optionalSystemCapability() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("testSetTimeOut", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSetTimeOut', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testSetTimeOut start`);
       let options: systemTimer.TimerOptions = {
-        type: systemTimer.TIMER_TYPE_WAKEUP | systemTimer.TIMER_TYPE_EXACT,
+        type: systemTimer.TIMER_TYPE_REALTIME,
         repeat:false
       };
       try {
         const id = await systemTimer.createTimer(options);
-        // 本地 ACL/系统应用签名下 createTimer 可能被允许；能力存在即通过
         console.log(`${TAG}, testSetTimeOut createTimer id is: ${id}`);
-        expect(id != undefined).assertTrue();
+        expect().assertFail();
       } catch(e) {
         let error = e as BusinessError;
         console.log(`${TAG}, testSetTimeOut createTimer error is: ${JSON.stringify(error)}`);
-        expect(error != null).assertTrue();
       }
       console.log(`${TAG}, testSetTime end`);
     })
@@ -456,7 +454,7 @@ export default function optionalSystemCapability() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("testHomeEvent", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testHomeEvent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testHomeEvent start`);
       let driver = Driver.create();
       let abilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;

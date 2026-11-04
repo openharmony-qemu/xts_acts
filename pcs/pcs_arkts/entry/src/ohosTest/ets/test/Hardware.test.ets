@@ -27,9 +27,6 @@ import PermissionUtils from './PermissionUtils';
 import { Permissions } from '@ohos.abilityAccessCtrl';
 import AbilityUtils from './AbilityUtils';
 
-// multimedia audio running state value (avoid WordsTool.22 media state token)
-const AUDIO_RUNNING_STATE: number = 2
-
 export default function hardwareTest() {
   describe('HardwareTest', () => {
     let abilityContext: common.UIAbilityContext
@@ -51,21 +48,21 @@ export default function hardwareTest() {
       applicationContext = abilityContext.getApplicationContext()
       expect(await AbilityUtils.startAbility('com.acts.pcs.arktstest', 'TestAbility', abilityContext)).assertTrue()
 
-      let permissions: Array<Permissions> = ['ohos.permission.CAMERA',
+      let permissions: Permissions[] = ['ohos.permission.CAMERA',
         'ohos.permission.MICROPHONE'];
       await PermissionUtils.getPermission(abilityContext, permissions)
       await PermissionUtils.grantPermission()
       let driver = Driver.create();
       await driver.delayMs(3000)
 
-      isWlanSupported = canIUse("SystemCapability.Communication.WiFi.Core")
-      isBluetoothSupported = canIUse("SystemCapability.Communication.Bluetooth.Core")
-      isCameraSupported = canIUse("SystemCapability.Multimedia.Camera.Core")
-      isMicrophoneSupported = canIUse("SystemCapability.Multimedia.Audio.Capturer")
-      isAoutSupported = canIUse("SystemCapability.Multimedia.Audio.Renderer")
-      isUsbSupported = canIUse("SystemCapability.USB.USBManager")
-      isEthernetSupported = canIUse("SystemCapability.Communication.NetManager.Ethernet")
-      isCellularSupported = canIUse("SystemCapability.Telephony.CellularData")
+      isWlanSupported = canIUse('SystemCapability.Communication.WiFi.Core')
+      isBluetoothSupported = canIUse('SystemCapability.Communication.Bluetooth.Core')
+      isCameraSupported = canIUse('SystemCapability.Multimedia.Camera.Core')
+      isMicrophoneSupported = canIUse('SystemCapability.Multimedia.Audio.Capturer')
+      isAoutSupported = canIUse('SystemCapability.Multimedia.Audio.Renderer')
+      isUsbSupported = canIUse('SystemCapability.USB.USBManager')
+      isEthernetSupported = canIUse('SystemCapability.Communication.NetManager.Ethernet')
+      isCellularSupported = canIUse('SystemCapability.Telephony.CellularData')
       done()
     })
 
@@ -106,9 +103,9 @@ export default function hardwareTest() {
         networkSupportedCount++
       }
       if (networkSupportedCount >= 2) {
-        let netStackSupported = canIUse("SystemCapability.Communication.NetStack")
+        let netStackSupported = canIUse('SystemCapability.Communication.NetStack')
         expect(netStackSupported).assertTrue()
-        let netManagerCore = canIUse("SystemCapability.Communication.NetManager.Core")
+        let netManagerCore = canIUse('SystemCapability.Communication.NetManager.Core')
         expect(netManagerCore).assertTrue()
       }
       done()
@@ -154,8 +151,8 @@ export default function hardwareTest() {
      */
     it('testWlanSupportSTAAndAP0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isWlanSupported) {
-        let isSTASupported = canIUse("SystemCapability.Communication.WiFi.STA")
-        let isAPSupported = canIUse("SystemCapability.Communication.WiFi.AP.Core")
+        let isSTASupported = canIUse('SystemCapability.Communication.WiFi.STA')
+        let isAPSupported = canIUse('SystemCapability.Communication.WiFi.AP.Core')
         expect(isSTASupported && isAPSupported).assertTrue()
       }
       done()
@@ -171,7 +168,7 @@ export default function hardwareTest() {
      */
     it('testWlanSupportP2P0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isWlanSupported) {
-        let isP2PSupported = canIUse("SystemCapability.Communication.WiFi.P2P")
+        let isP2PSupported = canIUse('SystemCapability.Communication.WiFi.P2P')
         expect(isP2PSupported).assertTrue()
       }
       done()
@@ -194,7 +191,7 @@ export default function hardwareTest() {
         }
         let photoSession = getResult[1]
         try {
-          let supportedExposureModes = new Array<camera.ExposureMode>()
+          let supportedExposureModes = new camera.ExposureMode[]()
           if (photoSession.isExposureModeSupported(camera.ExposureMode.EXPOSURE_MODE_LOCKED)) {
             supportedExposureModes.push(camera.ExposureMode.EXPOSURE_MODE_LOCKED)
           }
@@ -235,7 +232,7 @@ export default function hardwareTest() {
         }
         let photoSession = getResult[1]
         try {
-          let supportedFocusModes = new Array<camera.FocusMode>()
+          let supportedFocusModes = new camera.FocusMode[]()
           if (photoSession.isFocusModeSupported(camera.FocusMode.FOCUS_MODE_MANUAL)) {
             supportedFocusModes.push(camera.FocusMode.FOCUS_MODE_MANUAL)
           }
@@ -327,9 +324,9 @@ export default function hardwareTest() {
           return
         }
 
-        let previewFormats = new Array<camera.CameraFormat>()
-        let videoFormats = new Array<camera.CameraFormat>()
-        let photoFormats = new Array<camera.CameraFormat>()
+        let previewFormats = new camera.CameraFormat[]()
+        let videoFormats = new camera.CameraFormat[]()
+        let photoFormats = new camera.CameraFormat[]()
         for(let cameraDevice of supportedCameras) {
           let supportedOutputCapability: camera.CameraOutputCapability
           supportedOutputCapability = cameraManager.getSupportedOutputCapability(cameraDevice, camera.SceneMode.NORMAL_VIDEO)
@@ -348,13 +345,9 @@ export default function hardwareTest() {
             photoFormats.push(photoProfileInfo.format)
           }
         }
-        // API26 板端 preview/video 格式可能非 YUV_420_SP(1003)，有任一格式即具备采集流
-        console.log(`previewFormats: ${JSON.stringify(previewFormats)}`)
-        console.log(`videoFormats: ${JSON.stringify(videoFormats)}`)
-        console.log(`photoFormats: ${JSON.stringify(photoFormats)}`)
-        expect(previewFormats.length > 0).assertTrue()
-        expect(videoFormats.length > 0).assertTrue()
-        expect(photoFormats.length >= 0).assertTrue()
+        expect(previewFormats).assertContain(camera.CameraFormat.CAMERA_FORMAT_YUV_420_SP)
+        expect(videoFormats).assertContain(camera.CameraFormat.CAMERA_FORMAT_YUV_420_SP)
+        expect(photoFormats).assertContain(camera.CameraFormat.CAMERA_FORMAT_JPEG)
       }
       done()
     })
@@ -385,7 +378,6 @@ export default function hardwareTest() {
         }
         let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(audioCapturerOptions)
         expect(audioCapturer != undefined).assertTrue()
-        await audioCapturer.start()
         let currentInputDevices = audioCapturer.getCurrentInputDevices()
         expect(currentInputDevices.length).assertLarger(0)
         let supportedDeviceList = new List<audio.DeviceType>()
@@ -399,8 +391,6 @@ export default function hardwareTest() {
           }
         }
         expect(hasMicDevice).assertTrue()
-        await audioCapturer.stop()
-        await audioCapturer.release()
       }
       done()
     })
@@ -434,7 +424,7 @@ export default function hardwareTest() {
         expect(audioCapturer != null).assertTrue()
         try {
           await audioCapturer.start()
-          expect(audioCapturer.state).assertEqual(AUDIO_RUNNING_STATE)
+          expect(audioCapturer.state).assertEqual(audio.AudioState.STATE_RUNNING)
           await audioCapturer.stop()
           await audioCapturer.release()
           console.info('Capturer run Success.')
@@ -477,7 +467,7 @@ export default function hardwareTest() {
         expect(audioRenderer != null).assertTrue()
         try {
           await audioRenderer.start()
-          expect(audioRenderer.state).assertEqual(AUDIO_RUNNING_STATE)
+          expect(audioRenderer.state).assertEqual(audio.AudioState.STATE_RUNNING)
           await audioRenderer.stop()
           await audioRenderer.release()
           console.info('Renderer run Success.')
@@ -520,7 +510,7 @@ export default function hardwareTest() {
         expect(audioRenderer != null).assertTrue()
         try {
           await audioRenderer.start()
-          expect(audioRenderer.state).assertEqual(AUDIO_RUNNING_STATE)
+          expect(audioRenderer.state).assertEqual(audio.AudioState.STATE_RUNNING)
           await audioRenderer.stop()
           await audioRenderer.release()
           console.info('Renderer run Success.')
@@ -563,7 +553,7 @@ export default function hardwareTest() {
         expect(audioRenderer != null).assertTrue()
         try {
           await audioRenderer.start()
-          expect(audioRenderer.state).assertEqual(AUDIO_RUNNING_STATE)
+          expect(audioRenderer.state).assertEqual(audio.AudioState.STATE_RUNNING)
           await audioRenderer.stop()
           await audioRenderer.release()
           console.info('Renderer run Success.')
@@ -606,7 +596,7 @@ export default function hardwareTest() {
         expect(audioRenderer != null).assertTrue()
         try {
           await audioRenderer.start()
-          expect(audioRenderer.state).assertEqual(AUDIO_RUNNING_STATE)
+          expect(audioRenderer.state).assertEqual(audio.AudioState.STATE_RUNNING)
           await audioRenderer.stop()
           await audioRenderer.release()
           console.info('Renderer run Success.');
@@ -649,7 +639,7 @@ export default function hardwareTest() {
         expect(audioRenderer != null).assertTrue()
         try {
           await audioRenderer.start()
-          expect(audioRenderer.state).assertEqual(AUDIO_RUNNING_STATE)
+          expect(audioRenderer.state).assertEqual(audio.AudioState.STATE_RUNNING)
           await audioRenderer.stop()
           await audioRenderer.release()
           console.info('Renderer run Success.');
@@ -691,7 +681,7 @@ export default function hardwareTest() {
         expect(audioRenderer != null).assertTrue()
         try {
           await audioRenderer.start()
-          expect(audioRenderer.state).assertEqual(AUDIO_RUNNING_STATE)
+          expect(audioRenderer.state).assertEqual(audio.AudioState.STATE_RUNNING)
           await audioRenderer.stop()
           await audioRenderer.release()
           console.info('Renderer run Success.');
@@ -732,7 +722,7 @@ export default function hardwareTest() {
         expect(audioCapturer != undefined).assertTrue()
         try {
           await audioCapturer.start()
-          expect(audioCapturer.state).assertEqual(AUDIO_RUNNING_STATE)
+          expect(audioCapturer.state).assertEqual(audio.AudioState.STATE_RUNNING)
           await audioCapturer.stop()
           await audioCapturer.release()
           console.info('Capturer run Success.')
@@ -773,7 +763,7 @@ export default function hardwareTest() {
         expect(audioCapturer != undefined).assertTrue()
         try {
           await audioCapturer.start()
-          expect(audioCapturer.state).assertEqual(AUDIO_RUNNING_STATE)
+          expect(audioCapturer.state).assertEqual(audio.AudioState.STATE_RUNNING)
           await audioCapturer.stop()
           await audioCapturer.release()
           console.info('Capturer run Success.')
@@ -830,22 +820,10 @@ async function getPhotoSession(abilityContext: common.UIAbilityContext, applicat
     return [false, camera.getCameraManager(applicationContext).createSession(camera.SceneMode.NORMAL_PHOTO)] as [boolean, camera.PhotoSession]
   }
   let driver = Driver.create()
-  await driver.delayMs(3000)
+  await driver.delayMs(1000)
   let scroll = await driver.findComponent(ON.id('scroll').inWindow('com.acts.pcs.arktstest'))
-  if (scroll == null) {
-    await driver.delayMs(3000)
-    scroll = await driver.findComponent(ON.id('scroll').inWindow('com.acts.pcs.arktstest'))
-  }
-  if (scroll == null) {
-    console.error('getPhotoSession: scroll not found')
-    return [false, camera.getCameraManager(applicationContext).createSession(camera.SceneMode.NORMAL_PHOTO)] as [boolean, camera.PhotoSession]
-  }
   await driver.delayMs(1000)
   let component = await scroll.scrollSearch(ON.id('surfaceId').inWindow('com.acts.pcs.arktstest'))
-  if (component == null) {
-    console.error('getPhotoSession: surfaceId not found')
-    return [false, camera.getCameraManager(applicationContext).createSession(camera.SceneMode.NORMAL_PHOTO)] as [boolean, camera.PhotoSession]
-  }
   let surfaceId: string = await component.getText()
   let cameraManager = camera.getCameraManager(applicationContext)
   let supportedCameras = cameraManager.getSupportedCameras()
