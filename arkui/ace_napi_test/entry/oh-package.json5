@@ -21,7 +21,8 @@
   "main": "",
   "version": "1.0.0",
   "devDependencies": {
-    "@types/libnapitest.so": "file:./src/main/cpp/types/libnapitest"
+    "@types/libnapitest.so": "file:./src/main/cpp/types/libnapitest",
+    "@types/libsharedtestvalid.so": "file:./src/main/cpp/types/libsharedtestvalid"
   },
   "dependencies": {}
 }
