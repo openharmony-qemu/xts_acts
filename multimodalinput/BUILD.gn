@@ -33,6 +33,7 @@ group("multimodalinput") {
       "multimodalinput_ets_hvigor/NoPermission/NoPermissionTest_static:ActsMultimodalNoPermissionStaticTest",  
       "multimodalinput_ets_hvigor/InfraredEmitter/InfraredEmitterTest_static:ActsMultimodalInfraredEmitterStaticTest",
       "multimodalinput_ndk_hvigor/InputInjectKeyEventNoPermission:ActsInputInjectNoPermissionTest",
+      "multimodalinput_ndk_hvigor/InputInjectKeyEvent:ActsInputInjectKeyEventTest",
     ]
   }
 }
