@@ -1843,5 +1843,472 @@ export default function TextDecoderDecodeToStringTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TEXTDECODER_DECODE_TO_STRING_2100
+     * @tc.name testTdDecodeSpecial001
+     * @tc.desc Verify TextDecoder decodeToString with special format content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testTdDecodeSpecial001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+
+        let decoder = util.TextDecoder.create('utf-8');
+        let ret = decoder.decodeToString(new Uint8Array([97, 98, 0, 99]));
+        expect(ret).assertEqual('ab\u0000c');
+        expect(JSON.stringify(ret)).assertEqual('"ab\\u0000c"');
+
+      }
+      {
+
+        let decoder = util.TextDecoder.create('utf-8');
+        let ab = new ArrayBuffer(6);
+        let u8 = new Uint8Array(ab);
+        u8[0] = 0x61;
+        u8[1] = 0x62;
+        u8[2] = 0x63;
+        u8[3] = 0x64;
+        u8[4] = 0x65;
+        u8[5] = 0x66;
+        let left = new Uint8Array(ab, 0, 3);
+        let right = new Uint8Array(ab, 3, 3);
+        decoder.decodeToString(left);
+        u8[2] = 0x31;
+        expect(decoder.decodeToString(left)).assertEqual('ab1');
+        expect(decoder.decodeToString(right)).assertEqual('def');
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TEXTDECODER_DECODE_TO_STRING_2200
+     * @tc.name testTdDecodeBoundary001
+     * @tc.desc Verify TextDecoder decodeToString with boundary sizes and values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testTdDecodeBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let decoder = new util.TextDecoder();
+        let out = decoder.decodeToString(new Uint8Array([]));
+        expect(out).assertEqual('');
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let out = decoder.decodeToString(new Uint8Array([]));
+        expect(out.length).assertEqual(0);
+
+      }
+      {
+
+        let decoder = util.TextDecoder.create('utf-8');
+        let ret = decoder.decodeToString(new Uint8Array([0xE6, 0x88, 0x91, 0xE3, 0x80]));
+        expect(ret).assertEqual('我�');
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TEXTDECODER_DECODE_TO_STRING_2300
+     * @tc.name testTdDecodeConsistency001
+     * @tc.desc Verify TextDecoder decodeToString state consistency and shared options
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testTdDecodeConsistency001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+
+        let decoder = util.TextDecoder.create('utf-8');
+        let input = new Uint8Array([0xE4, 0xBD, 0xA0]);
+        let ret1 = decoder.decodeToString(input);
+        let ret2 = decoder.decodeToString(input);
+        expect(ret1).assertEqual('你');
+        expect(ret2).assertEqual(ret1);
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let input = new Uint8Array([0x6E, 0x65, 0x77]);
+        let first = decoder.decodeToString(input);
+        let second = decoder.decodeToString(input);
+        expect(second).assertEqual(first);
+
+      }
+      {
+        let d1 = new util.TextDecoder();
+        let d2 = new util.TextDecoder();
+        let input = new Uint8Array([0xE4, 0xBD, 0xA0]);
+        expect(d2.decodeToString(input)).assertEqual(d1.decodeToString(input));
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let input = new Uint8Array([0x72, 0x65, 0x70]);
+        let r1 = decoder.decodeToString(input);
+        let r2 = decoder.decodeToString(input);
+        let r3 = decoder.decodeToString(input);
+        expect(r3).assertEqual(r1);
+        expect(r2).assertEqual(r1);
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let ab = new ArrayBuffer(5);
+        let u8 = new Uint8Array(ab);
+        u8[0] = 0x68;
+        u8[1] = 0x69;
+        u8[2] = 0x6A;
+        u8[3] = 0x6B;
+        u8[4] = 0x6C;
+        let fullView = new Uint8Array(ab, 0, 5);
+        expect(decoder.decodeToString(fullView)).assertEqual(decoder.decodeToString(u8));
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TEXTDECODER_DECODE_TO_STRING_2400
+     * @tc.name testTdDecodeBasic001
+     * @tc.desc Verify TextDecoder decodeToString with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testTdDecodeBasic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+
+        let decoder = util.TextDecoder.create('utf-8');
+        let raw = new Uint8Array([0x00, 0x61, 0x62, 0x63, 0x00]);
+        let view = new Uint8Array(raw.buffer, 1, 3);
+        let ret = decoder.decodeToString(view);
+        expect(ret).assertEqual('abc');
+
+      }
+      {
+
+        let decoder = util.TextDecoder.create('utf-8');
+        let input = new Uint8Array([0xE4, 0xBD, 0xA0, 0x61]);
+        decoder.decodeToString(input);
+        expect(input[0]).assertEqual(0xE4);
+        expect(input[3]).assertEqual(0x61);
+
+      }
+      {
+
+        let decoder = util.TextDecoder.create('utf-8');
+        let ret = decoder.decodeToString(new Uint8Array([0x61, 0x62, 0x63]));
+        expect(ret.length).assertEqual(3);
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let out = decoder.decodeToString(new Uint8Array([72, 105]));
+        expect(out).assertEqual('Hi');
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let out = decoder.decodeToString(new Uint8Array([0x61]));
+        expect(out.length).assertEqual(1);
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let out = decoder.decodeToString(new Uint8Array([0x09, 0x0A, 0x0D]));
+        expect(out).assertEqual('\t\n\r');
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let out = decoder.decodeToString(new Uint8Array([0x21, 0x40, 0x23]));
+        expect(out).assertEqual('!@#');
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let out = decoder.decodeToString(new Uint8Array([0x31, 0x32, 0x33]));
+        expect(out).assertEqual('123');
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let out = decoder.decodeToString(new Uint8Array([0x20, 0x20, 0x20]));
+        expect(out).assertEqual('   ');
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let input = new Uint8Array([0x61, 0x62, 0x63]);
+        decoder.decodeToString(input);
+        input[0] = 0x58;
+        let out = decoder.decodeToString(input);
+        expect(out).assertEqual('Xbc');
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TEXTDECODER_DECODE_TO_STRING_2500
+     * @tc.name testTdDecodeBasic002
+     * @tc.desc Verify TextDecoder decodeToString with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testTdDecodeBasic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let decoder = new util.TextDecoder();
+        let out = decoder.decodeToString(new Uint8Array([0x74, 0x79, 0x70, 0x65]));
+        expect(out).assertEqual('type');
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let out = decoder.decodeToString(new Uint8Array([0xE4, 0xB8, 0x96]));
+        expect(out).assertEqual('世');
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let out = decoder.decodeToString(new Uint8Array([0x61, 0x62]));
+        expect(out.charCodeAt(0)).assertEqual(97);
+        expect(out.charCodeAt(1)).assertEqual(98);
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let out = decoder.decodeToString(new Uint8Array([0x7B, 0x7D]));
+        expect(out).assertEqual('{}');
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let out = decoder.decodeToString(new Uint8Array([0x0A, 0x0D]));
+        expect(out).assertEqual('\n\r');
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let out = decoder.decodeToString(new Uint8Array([0x61, 0x20]));
+        expect(out).assertEqual('a ');
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let out = decoder.decodeToString(new Uint8Array([97, 98, 0, 99]));
+        expect(out.length).assertEqual(4);
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let input = new Uint8Array([65, 66, 67]);
+        decoder.decodeToString(input);
+        expect(input[0]).assertEqual(65);
+        expect(input[1]).assertEqual(66);
+        expect(input[2]).assertEqual(67);
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let input = new Uint8Array([77, 78, 79, 80]);
+        decoder.decodeToString(input);
+        expect(input.length).assertEqual(4);
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let input = new Uint8Array([0xFF, 0xFE, 0xFD]);
+        decoder.decodeToString(input);
+        expect(input[0]).assertEqual(255);
+        expect(input[1]).assertEqual(254);
+        expect(input[2]).assertEqual(253);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TEXTDECODER_DECODE_TO_STRING_2600
+     * @tc.name testTdDecodeBasic003
+     * @tc.desc Verify TextDecoder decodeToString with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testTdDecodeBasic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let decoder = new util.TextDecoder();
+        decoder.decodeToString(new Uint8Array([0x61]));
+        let out = decoder.decodeToString(new Uint8Array([0x62]));
+        expect(out).assertEqual('b');
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let p1 = decoder.decodeToString(new Uint8Array([0x61]));
+        let p2 = decoder.decodeToString(new Uint8Array([0x62, 0x63]));
+        let whole = decoder.decodeToString(new Uint8Array([0x61, 0x62, 0x63]));
+        expect(p1 + p2).assertEqual(whole);
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let full = new Uint8Array([0x41, 0x42, 0x43, 0x44]);
+        let view = full.subarray(1, 3);
+        let out = decoder.decodeToString(view);
+        expect(out).assertEqual('BC');
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let ab = new ArrayBuffer(6);
+        let u8 = new Uint8Array(ab);
+        u8[0] = 0x58;
+        u8[1] = 0x59;
+        u8[2] = 0x5A;
+        let offset = new Uint8Array(ab, 1, 2);
+        let out = decoder.decodeToString(offset);
+        expect(out).assertEqual('YZ');
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let ab = new ArrayBuffer(6);
+        let u8 = new Uint8Array(ab);
+        u8[0] = 0x31;
+        u8[1] = 0x32;
+        u8[2] = 0x33;
+        u8[3] = 0x34;
+        u8[4] = 0x35;
+        u8[5] = 0x36;
+        let left = new Uint8Array(ab, 0, 3);
+        let right = new Uint8Array(ab, 3, 3);
+        expect(decoder.decodeToString(left)).assertEqual('123');
+        expect(decoder.decodeToString(right)).assertEqual('456');
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let ab = new ArrayBuffer(3);
+        let u8 = new Uint8Array(ab);
+        u8[0] = 0x61;
+        u8[1] = 0x62;
+        u8[2] = 0x63;
+        decoder.decodeToString(u8);
+        u8[1] = 0x58;
+        let out = decoder.decodeToString(u8);
+        expect(out).assertEqual('aXc');
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let full = new Uint8Array([0x61, 0x62, 0x63]);
+        let emptyView = full.subarray(2, 2);
+        let out = decoder.decodeToString(emptyView);
+        expect(out).assertEqual('');
+
+      }
+      {
+        let decoder = new util.TextDecoder();
+        let out = decoder.decodeToString(new Uint8Array([0xF0, 0x9F, 0x98]));
+        expect(out).assertEqual('�');
+
+      }
+      {
+
+        let decoder = util.TextDecoder.create('utf-8');
+        let input = new Uint8Array([0x31, 0x32, 0x33, 0x34]);
+        let lenBefore = input.length;
+        let blBefore = input.byteLength;
+        decoder.decodeToString(input);
+        expect(input.length).assertEqual(lenBefore);
+        expect(input.byteLength).assertEqual(blBefore);
+
+      }
+      {
+
+        let decoder = util.TextDecoder.create('utf-8');
+        let ab = new ArrayBuffer(4);
+        let u8 = new Uint8Array(ab);
+        u8[0] = 0x61;
+        u8[1] = 0x62;
+        u8[2] = 0x63;
+        u8[3] = 0x64;
+        let view = new Uint8Array(ab, 0, 4);
+        decoder.decodeToString(view);
+        u8[0] = 0x5A;
+        let out = decoder.decodeToString(view);
+        expect(out).assertEqual('Zbcd');
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TEXTDECODER_DECODE_TO_STRING_2700
+     * @tc.name testTdDecodeBasic004
+     * @tc.desc Verify TextDecoder decodeToString with basic input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testTdDecodeBasic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+
+        let decoder = util.TextDecoder.create('utf-8');
+        let ab = new ArrayBuffer(6);
+        let u8 = new Uint8Array(ab);
+        u8[0] = 0x41;
+        u8[1] = 0x42;
+        u8[2] = 0x43;
+        u8[3] = 0x44;
+        u8[4] = 0x45;
+        u8[5] = 0x46;
+        let v1 = new Uint8Array(ab, 1, 3);
+        let v2 = new Uint8Array(ab, 4, 2);
+        expect(decoder.decodeToString(v1)).assertEqual('BCD');
+        expect(decoder.decodeToString(v2)).assertEqual('EF');
+
+      }
+      {
+
+        let decoder = util.TextDecoder.create('utf-8');
+        let ab = new ArrayBuffer(3);
+        let u8 = new Uint8Array(ab);
+        u8[0] = 0xE8;
+        u8[1] = 0xAF;
+        u8[2] = 0x95;
+        let view = new Uint8Array(ab, 0, 3);
+        let r1 = decoder.decodeToString(view);
+        let r2 = decoder.decodeToString(view);
+        expect(r1.length).assertEqual(1);
+        expect(r2.length).assertEqual(1);
+
+      }
+      {
+
+        let decoder = util.TextDecoder.create('utf-8');
+        let ret = decoder.decodeToString(new Uint8Array([0xE4, 0xBD, 0xA0, 0xF0]));
+        expect(ret).assertEqual('你�');
+
+      }
+      {
+
+        let decoder = util.TextDecoder.create('utf-8');
+        let ab = new ArrayBuffer(4);
+        let front = new Uint8Array(ab, 0, 2);
+        let back = new Uint8Array(ab, 2, 2);
+        front[0] = 0xE4;
+        front[1] = 0xBD;
+        back[0] = 0xA0;
+        back[1] = 0x61;
+        let out = decoder.decodeToString(new Uint8Array(ab, 0, 4));
+        expect(out).assertEqual('你a');
+
+      }
+    });
+
   });
 }
