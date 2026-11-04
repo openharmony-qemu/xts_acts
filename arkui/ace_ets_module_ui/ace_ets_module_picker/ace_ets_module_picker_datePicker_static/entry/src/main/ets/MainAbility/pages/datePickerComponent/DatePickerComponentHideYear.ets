@@ -25,6 +25,7 @@ import {
   Button,
   Text,
   ColumnOptions,
+  Scroll
 } from '@kit.ArkUI';
 
 import {
