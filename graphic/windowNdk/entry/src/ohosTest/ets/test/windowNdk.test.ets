@@ -691,7 +691,7 @@ export default function windowNdk() {
       expect(result).assertEqual(0);
       await sleep(1000);
       console.info(`${caseName} flag: ${flag}`);
-      if (deviceType === 'phone' || deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'tablet' || (deviceType == 'default'&& isSystemCapabilitySupport == true)){
+      if (deviceType === 'phone'|| deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'tablet' || (deviceType == 'default'&& isSystemCapabilitySupport == true)){
          WindowClass.off('avoidAreaChange')
         expect(flag).assertEqual(false)
         done()
@@ -723,7 +723,7 @@ export default function windowNdk() {
       expect(result).assertEqual(0);
       await sleep(1000);
       console.info(`${caseName} flag: ${flag}`);
-      if(deviceType === 'phone' ||deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1'|| deviceType === 'tablet'||(deviceType == 'default'&& isSystemCapabilitySupport == true)){
+      if(deviceType === 'phone' || deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1'|| deviceType === 'tablet' ||(deviceType == 'default'&& isSystemCapabilitySupport == true)){
         WindowClass.off('avoidAreaChange')
         expect(flag).assertEqual(false)
         done()
@@ -757,7 +757,7 @@ export default function windowNdk() {
       expect(result).assertEqual(0);
       await sleep(1000);
       console.info(`${caseName} flag: ${flag}`);
-      if(deviceType === 'phone' ||deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'tablet'||(deviceType == 'default'&& isSystemCapabilitySupport == true)){
+      if(deviceType === 'phone' ||deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'tablet'|| (deviceType == 'default'&& isSystemCapabilitySupport == true)){
         WindowClass.off('avoidAreaChange')
         expect(flag).assertEqual(false)
         done()
@@ -1821,7 +1821,7 @@ export default function windowNdk() {
       console.info(`${caseName}: result2: ${result2}`);
       console.info(`${caseName} flag: ${flag}`);
       await sleep(200);
-      if (canIUseRes === false ||(deviceType === 'phone' && isFreeWindowMode === false) || (deviceType === 'tablet' && isFreeWindowMode === false) || deviceType === 'tv'|| (deviceType == 'default'&& isSystemCapabilitySupport == true) || deviceType === 'car' ) {
+      if (canIUseRes === false || (deviceType === 'phone' && isFreeWindowMode === false) || (deviceType === 'tablet' && isFreeWindowMode === false) || deviceType === 'tv' || deviceType === 'car' || (deviceType == 'default'&& isSystemCapabilitySupport == true) ) {
         expect(result2).assertEqual(0);
         expect(areaChangeType).assertEqual(window.AvoidAreaType.TYPE_SYSTEM);
         expect(flag).assertEqual(true);
