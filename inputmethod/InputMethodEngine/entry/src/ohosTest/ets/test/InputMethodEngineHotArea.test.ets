@@ -19,6 +19,7 @@ import inputMethod from '@ohos.inputMethod';
 import display from '@ohos.display';
 import { Driver, ON, MatchPattern, Component, On } from '@ohos.UiTest';
 import { BusinessError } from '@ohos.base';
+import window from '@ohos.window';
 
 export default function inputMethodEngineHotArea() {
   describe('inputMethodEngineHotArea', () => {
@@ -37,8 +38,12 @@ export default function inputMethodEngineHotArea() {
       name: '',
       id: '',
       extra: extra
-    }
+    };
+    let bar: window.SpecificSystemBar = 'navigation';
+    let windowStage: window.WindowStage;
     beforeAll(async (done: Function) => {
+      windowStage = AppStorage.get('windowStage') as window.WindowStage;
+      windowStage?.getMainWindowSync().setSpecificSystemBarEnabled(bar, false);
       let inputM = inputMethod.getCurrentInputMethod();
       console.info("====>beforeAll: getCurrentInputMethod inputMethodEngineNew to: " + JSON.stringify(inputM));
       inputSever.packageName = inputM.packageName;
@@ -73,6 +78,8 @@ export default function inputMethodEngineHotArea() {
      * afterEach: Test case-level clearance conditions, which are executed after each test case is executed.
      */
     afterAll(async (done: Function) => {
+      windowStage = AppStorage.get('windowStage') as window.WindowStage;
+      windowStage?.getMainWindowSync().setSpecificSystemBarEnabled(bar, true);
       done();
     })
 
