@@ -19,6 +19,7 @@ import { common } from '@kit.AbilityKit';
 import { fileIo as fs } from '@kit.CoreFileKit';
 const TAG = 'Xts.imagePictureTest'
 const imagePackerApi = image.createImagePacker();
+let isSupportVPE: boolean;
 
 async function CreatePicture(context: Context){
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -71,7 +72,13 @@ export default function ImagePictureTest() {
   describe('ImagePictureTest', () => {
     beforeAll(async () => {
       AppStorage.setOrCreate('emptyString', '');
-      console.info(TAG, 'beforeAll case.');
+      isSupportVPE = await fs.access("/sys_prod/etc/VideoProcessingEngine/Image_SR_Model_576x576_20240402.omc").then((res: boolean) => {
+        return res;
+      }).catch((err: ESObject) => {
+        console.error(TAG, 'access VPE model failed: ' + err.message + ', code: ' + err.code);
+        return false;
+      });
+      console.info(TAG, 'beforeAll case. isSupportVPE: ' + isSupportVPE);
     });
 
     beforeEach(() => {
@@ -1251,6 +1258,72 @@ export default function ImagePictureTest() {
         console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
       }
+      done();
+    });
+    /**
+     * @tc.number    SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_0100
+     * @tc.name      SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_0100
+     * @tc.desc      getHdrComposedPixelmap isEditable
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_0100', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_0100";
+      console.info(TAG, `start：${testName}`);
+      if (!isSupportVPE) {
+        console.info(TAG, testName, 'device is not support VPE, skip');
+        done();
+        return;
+      }
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let filePath = testContext.filesDir + '/AllAuxiliaryPictures.jpg';
+      let imageSource: image.ImageSource = image.createImageSource(filePath);
+      try {
+        let picture: image.Picture = await imageSource.createPicture();
+        let hdrPixelMap: image.PixelMap = await picture.getHdrComposedPixelmap();
+        console.info(TAG, testName, 'hdrPixelMap.isEditable: ' + hdrPixelMap.isEditable);
+        expect(typeof hdrPixelMap.isEditable === 'boolean').assertTrue();
+        await hdrPixelMap.release();
+        await picture.release();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      await imageSource.release();
+      done();
+    });
+    /**
+     * @tc.number    SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_0200
+     * @tc.name      SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_0200
+     * @tc.desc      getHdrComposedPixelmap isStrideAlignment
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_0200', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_0200";
+      console.info(TAG, `start：${testName}`);
+      if (!isSupportVPE) {
+        console.info(TAG, testName, 'device is not support VPE, skip');
+        done();
+        return;
+      }
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let filePath = testContext.filesDir + '/AllAuxiliaryPictures.jpg';
+      let imageSource: image.ImageSource = image.createImageSource(filePath);
+      try {
+        let picture: image.Picture = await imageSource.createPicture();
+        let hdrPixelMap: image.PixelMap = await picture.getHdrComposedPixelmap();
+        console.info(TAG, testName, 'hdrPixelMap.isStrideAlignment: ' + hdrPixelMap.isStrideAlignment);
+        expect(typeof hdrPixelMap.isStrideAlignment === 'boolean').assertTrue();
+        await hdrPixelMap.release();
+        await picture.release();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      await imageSource.release();
       done();
     });
   })
