@@ -51,7 +51,7 @@ export default function BatteryStatisticsTest() {
               done();
             });
         } catch (e) {
-          e = e as BusinessError;
+         
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -84,7 +84,7 @@ export default function BatteryStatisticsTest() {
               }
             })
         } catch (e) {
-          e = e as BusinessError;
+         
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -107,7 +107,7 @@ export default function BatteryStatisticsTest() {
           let value: double = batteryStats.getAppPowerValue(10021);
           hilog.info(domain, tag, `${TAG} value: ${value}`);
         } catch (e) {
-          e = e as BusinessError;
+         
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -130,7 +130,7 @@ export default function BatteryStatisticsTest() {
           let percent: double = batteryStats.getAppPowerPercent(10021);
           hilog.info(domain, tag, `${TAG} percent: ${percent}`);
         } catch (e) {
-          e = e as BusinessError;
+         
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -154,7 +154,7 @@ export default function BatteryStatisticsTest() {
             batteryStats.getHardwareUnitPowerValue(batteryStats.ConsumptionType.CONSUMPTION_TYPE_USER);
           hilog.info(domain, tag, `${TAG} value: ${value}`);
         } catch (e) {
-          e = e as BusinessError;
+         
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -178,7 +178,7 @@ export default function BatteryStatisticsTest() {
             batteryStats.getHardwareUnitPowerPercent(batteryStats.ConsumptionType.CONSUMPTION_TYPE_WIFI);
           hilog.info(domain, tag, `${TAG} percent: ${percent}`);
         } catch (e) {
-          e = e as BusinessError;
+         
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
