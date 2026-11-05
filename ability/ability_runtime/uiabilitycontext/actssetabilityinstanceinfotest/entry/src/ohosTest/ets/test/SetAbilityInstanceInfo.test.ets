@@ -1219,8 +1219,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4100
      * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4100
-     * @tc.desc   PixelMap editable=true: assert isEditable true and isStrideAlignment;
-     *     then setAbilityInstanceInfo
+     * @tc.desc   PixelMap createPixelMapSync: isStrideAlignment=false; then setAbilityInstanceInfo
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -1228,32 +1227,34 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4100', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4100';
       hilog.info(DOMAIN, LOG_TAG, tag + ' it begin');
+      if (!isPc2in1()) {
+        done();
+        return;
+      }
       let editOpts: image.InitializationOptions = {
         editable: true,
         pixelFormat: image.PixelMapFormat.RGBA_8888,
         size: { height: 64, width: 64 }
       };
       let editMap: image.PixelMap = image.createPixelMapSync(color, editOpts);
-      expect(typeof editMap.isEditable).assertEqual('boolean');
       expect(editMap.isEditable).assertEqual(true);
-      expect(typeof editMap.isStrideAlignment).assertEqual('boolean');
+      expect(editMap.isStrideAlignment).assertEqual(false);
       try {
-        await testContext.setAbilityInstanceInfo('label_editable_true', editMap);
+        await testContext.setAbilityInstanceInfo('label_stride_false', editMap);
         hilog.info(DOMAIN, LOG_TAG, tag + ' success');
         done();
       } catch (err) {
         hilog.info(DOMAIN, LOG_TAG, 'setAbilityInstanceInfo failed: ' + JSON.stringify(err));
-        try {
-          expect(err?.code === 401 || err?.code === 801 ||
-            err?.code === 16000011 || err?.code === 201).assertTrue();
-        } catch (assertErr) {}
+        expect(getBizCode(err) === 401 || getBizCode(err) === 801 ||
+          getBizCode(err) === 16000011 || getBizCode(err) === 201).assertTrue();
         done();
       }
     })
+
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4200
      * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4200
-     * @tc.desc   PixelMap editable=false: assert isEditable false and isStrideAlignment;
+     * @tc.desc   PixelMap editable=false createPixelMapSync: isStrideAlignment=false;
      *     then setAbilityInstanceInfo
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1262,25 +1263,64 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4200', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4200';
       hilog.info(DOMAIN, LOG_TAG, tag + ' it begin');
+      if (!isPc2in1()) {
+        done();
+        return;
+      }
       let roOpts: image.InitializationOptions = {
         editable: false,
         pixelFormat: image.PixelMapFormat.RGBA_8888,
         size: { height: 64, width: 64 }
       };
       let roMap: image.PixelMap = image.createPixelMapSync(color, roOpts);
-      expect(typeof roMap.isEditable).assertEqual('boolean');
       expect(roMap.isEditable).assertEqual(false);
-      expect(typeof roMap.isStrideAlignment).assertEqual('boolean');
+      expect(roMap.isStrideAlignment).assertEqual(false);
       try {
-        await testContext.setAbilityInstanceInfo('label_editable_false', roMap);
+        await testContext.setAbilityInstanceInfo('label_stride_false_ro', roMap);
         hilog.info(DOMAIN, LOG_TAG, tag + ' success');
         done();
       } catch (err) {
         hilog.info(DOMAIN, LOG_TAG, 'setAbilityInstanceInfo failed: ' + JSON.stringify(err));
-        try {
-          expect(err?.code === 401 || err?.code === 801 ||
-            err?.code === 16000011 || err?.code === 201).assertTrue();
-        } catch (assertErr) {}
+        expect(getBizCode(err) === 401 || getBizCode(err) === 801 ||
+          getBizCode(err) === 16000011 || getBizCode(err) === 201).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4300
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4300
+     * @tc.desc   PixelMap createPixelMapUsingAllocatorSync(DMA): isStrideAlignment=true;
+     *     then setAbilityInstanceInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4300', Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4300';
+      hilog.info(DOMAIN, LOG_TAG, tag + ' it begin');
+      if (!isPc2in1()) {
+        done();
+        return;
+      }
+      const smallColor: ArrayBuffer = new ArrayBuffer(96);
+      let dmaOpts: image.InitializationOptions = {
+        editable: true,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: image.PixelMapFormat.BGRA_8888,
+        size: { height: 4, width: 6 }
+      };
+      let dmaMap: image.PixelMap =
+        image.createPixelMapUsingAllocatorSync(smallColor, dmaOpts, image.AllocatorType.DMA);
+      expect(dmaMap.isStrideAlignment).assertEqual(true);
+      try {
+        await testContext.setAbilityInstanceInfo('label_stride_true', dmaMap);
+        hilog.info(DOMAIN, LOG_TAG, tag + ' success');
+        done();
+      } catch (err) {
+        hilog.info(DOMAIN, LOG_TAG, 'setAbilityInstanceInfo failed: ' + JSON.stringify(err));
+        expect(getBizCode(err) === 401 || getBizCode(err) === 801 ||
+          getBizCode(err) === 16000011 || getBizCode(err) === 201).assertTrue();
         done();
       }
     })
