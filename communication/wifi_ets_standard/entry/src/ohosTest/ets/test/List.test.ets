@@ -16,6 +16,7 @@
 import wifiSta from './WifiManagerSTA.test'
 import wifiManagerTest from './WifiManagerReturnValue.test'
 import wifiManagerCoverage from './WifiManagerCoverage.test'
+import wifiManagerApi26Test from './WifiManagerApi26.test'
 import wifiManager from '@ohos.wifiManager';
 
 let iswifisupport: boolean = true;
@@ -30,5 +31,6 @@ export default function testsuite() {
     wifiSta();
     wifiManagerCoverage();
     wifiManagerTest();
+    wifiManagerApi26Test();
   }
 }
