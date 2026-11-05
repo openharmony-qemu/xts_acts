@@ -130,7 +130,7 @@ export default function NapiSendableTaskTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testNapiSendableTask0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testNapiSendableTask0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testNapiSendableTask0001';
       console.info(`${caseName} test start`);
       const MAX_RETRY: number = 3;
@@ -154,6 +154,7 @@ export default function NapiSendableTaskTest() {
           if (!success) {
             console.error(`${caseName} task${i} failed after ${MAX_RETRY} retries`);
             expect().assertFail();
+            done();
             return;
           }
         }
@@ -162,6 +163,7 @@ export default function NapiSendableTaskTest() {
         expect().assertFail();
       }
       console.info(`${caseName} test end`);
+      done();
     })
     /**
      * @tc.name   testNapiSendableTask0002

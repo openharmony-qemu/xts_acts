@@ -82,7 +82,7 @@ export default function napiSpecDiffBatch3RuntimeSendableTest() {
      * @tc.level  LEVEL3
      */
     it('testRefThreadsafeFunctionFromTaskPoolReturnsGenericFailure',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         // OH-NAPI-DIFF-045
         expect(napispecdiffbatch3ndktest.setupThreadsafeFunctionCrossThreadProbe()).assertEqual(1);
         let status: number = 0;
@@ -96,6 +96,7 @@ export default function napiSpecDiffBatch3RuntimeSendableTest() {
         } finally {
           expect(napispecdiffbatch3ndktest.cleanupThreadsafeFunctionCrossThreadProbe()).assertEqual(1);
         }
+        done();
       });
 
     /**
@@ -107,7 +108,7 @@ export default function napiSpecDiffBatch3RuntimeSendableTest() {
      * @tc.level  LEVEL3
      */
     it('testUnrefThreadsafeFunctionFromTaskPoolReturnsGenericFailure',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         // OH-NAPI-DIFF-046
         expect(napispecdiffbatch3ndktest.setupThreadsafeFunctionCrossThreadProbe()).assertEqual(1);
         let status: number = 0;
@@ -121,6 +122,7 @@ export default function napiSpecDiffBatch3RuntimeSendableTest() {
         } finally {
           expect(napispecdiffbatch3ndktest.cleanupThreadsafeFunctionCrossThreadProbe()).assertEqual(1);
         }
+        done();
       });
 
     /**
