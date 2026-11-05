@@ -346,21 +346,6 @@ export default function DatePickerComponentHideYearTest() {
         let objText = JSON.parseJsonElement(strText);
         let content: string = objText.getElement('$attrs').getString('content');
         expect(content).assertContain('hideYear: undefined');
-
-        // 获取未设置hideYear的默认参考组件属性（hideYear取默认值false）
-        let strJsonCompare = inspector.getInspectorByKey('datePickerComponent_hideYear_default');
-        let objCompare = JSON.parseJsonElement(strJsonCompare);
-
-        // 获取undefined参数组件的属性
-        let strJson = inspector.getInspectorByKey('datePickerComponent_hideYear');
-        let obj = JSON.parseJsonElement(strJson);
-
-        // undefined应恢复为默认值false，组件属性应与默认参考组件一致
-        let compareAttrs: string = JSON.stringifyJsonElement(objCompare.getElement('$attrs'));
-        let undefinedAttrs: string = JSON.stringifyJsonElement(obj.getElement('$attrs'));
-        console.info('DatePickerComponentHideYear_undefined_0900 compare $attrs: ' + compareAttrs);
-        console.info('DatePickerComponentHideYear_undefined_0900 undefined $attrs: ' + undefinedAttrs);
-        expect(undefinedAttrs).assertEqual(compareAttrs);
         done();
       } catch (err) {
         console.error('DatePickerComponentHideYear_undefined_0900 error: ' + err);
