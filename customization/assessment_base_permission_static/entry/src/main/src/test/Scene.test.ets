@@ -59,15 +59,15 @@ export default function AutomaticSceneConStaticTest(): void {
 
    
    /**
-     * @tc.number SUB_Customization_Assessment_begin_noPermission_0001
-     * @tc.name   SUB_Customization_Assessment_begin_noPermission_0001
+     * @tc.number SUB_Customization_Assessment_begin_noPermission_0100
+     * @tc.name   SUB_Customization_Assessment_begin_noPermission_0100
      * @tc.desc   begin interface throws 201 permission denied when the app does not request ohos.permission.ASSESSMENT_CONFIGURATION
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_begin_noPermission_0001', Level.LEVEL0, async (done: () => void) => {
-      const testNum = 'SUB_Customization_Assessment_begin_noPermission_0001';
+    it('SUB_Customization_Assessment_begin_noPermission_0100', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_begin_noPermission_0100';
       let context: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
       try {
         // 应用上下文
@@ -110,15 +110,15 @@ export default function AutomaticSceneConStaticTest(): void {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_end_noPermission_0001
-     * @tc.name   SUB_Customization_Assessment_end_noPermission_0001
+     * @tc.number SUB_Customization_Assessment_end_noPermission_0200
+     * @tc.name   SUB_Customization_Assessment_end_noPermission_0200
      * @tc.desc   end interface throws 201 permission denied when the app does not request ohos.permission.ASSESSMENT_CONFIGURATION
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_end_noPermission_0001', Level.LEVEL0, async (done: () => void) => {
-      const testNum = 'SUB_Customization_Assessment_end_noPermission_0001';
+    it('SUB_Customization_Assessment_end_noPermission_0200', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_end_noPermission_0200';
       try {
         // 应用上下文
         let context: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
@@ -140,15 +140,15 @@ export default function AutomaticSceneConStaticTest(): void {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_isActive_noPermission_0001
-     * @tc.name   SUB_Customization_Assessment_isActive_noPermission_0001
+     * @tc.number SUB_Customization_Assessment_isActive_noPermission_0300
+     * @tc.name   SUB_Customization_Assessment_isActive_noPermission_0300
      * @tc.desc   isActive interface throws 201 permission denied when the app does not request ohos.permission.ASSESSMENT_CONFIGURATION
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_isActive_noPermission_0001', Level.LEVEL0, async (done: () => void) => {
-      const testNum = 'SUB_Customization_Assessment_isActive_noPermission_0001';
+    it('SUB_Customization_Assessment_isActive_noPermission_0300', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_isActive_noPermission_0300';
       try {
         const active: boolean = assessment.isActive();
         expect(false).assertTrue();
@@ -167,15 +167,15 @@ export default function AutomaticSceneConStaticTest(): void {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_getConfiguration_noPermission_0001
-     * @tc.name   SUB_Customization_Assessment_getConfiguration_noPermission_0001
+     * @tc.number SUB_Customization_Assessment_getConfiguration_noPermission_0400
+     * @tc.name   SUB_Customization_Assessment_getConfiguration_noPermission_0400
      * @tc.desc   getConfiguration interface throws 201 permission denied when the app does not request ohos.permission.ASSESSMENT_CONFIGURATION
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_getConfiguration_noPermission_0001', Level.LEVEL0, async (done: () => void) => {
-      const testNum = 'SUB_Customization_Assessment_getConfiguration_noPermission_0001';
+    it('SUB_Customization_Assessment_getConfiguration_noPermission_0400', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_getConfiguration_noPermission_0400';
       let context: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
       try {
         let config: assessment.AssessmentConfig = {
