@@ -18,10 +18,12 @@ import { describe, it, expect, TestType, Size, Level, beforeAll} from "@ohos/hyp
 import call from '@ohos.telephony.call';
 import { BusinessError, AsyncCallback } from '@ohos.base';
 import sim from '@ohos.telephony.sim';
-import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
-import account from '@ohos.account.osAccount';
-import bundleManager from '@ohos.bundle.bundleManager';
+import abilityAccessCtrl, { Permissions, PermissionRequestResult } from '@ohos.abilityAccessCtrl';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import { Driver, ON, MatchPattern, Component } from '@ohos.UiTest';
 import hilog from '@ohos.hilog'
+import Utils from './Util.test';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'ObserverTestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -30,7 +32,7 @@ const ExpectFail = () => {
   try {
     expect().assertFail();
   } catch (err) {
-    hilog.info(domain, tag, '%{public}s', 'test failed');
+    hilog.info(domain, tag, `exportFail failed err: ${JSON.stringify(err)}`);
   }
 }
 
@@ -38,7 +40,7 @@ const ExpectTrue = (n: boolean) => {
   try {
     expect(n).assertTrue();
   } catch (err) {
-    hilog.info(domain, tag, '%{public}s', 'test failed');
+    hilog.info(domain, tag, `exportTrue failed err: ${JSON.stringify(err)}`);
   }
 }
 let isSimActive: boolean = sim.isSimActiveSync(0);
@@ -50,8 +52,43 @@ const landlineNumber: string = "057126885879";
 const telphoneErr: string = '+861xxxxxxxxxxx';
 const CALL_NUMBER = '10086';
 
+async function getPermissions(): Promise<void> {
+  hilog.info(domain, tag, '%{public}s', 'getPermission start');
+  let list: Array<Permissions> = ['ohos.permission.DIRECT_CALL'];
+  try {
+    let ability: UIAbility = await AbilityDelegatorRegistry.getAbilityDelegator().getCurrentTopAbility();
+    let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+    atManager.requestPermissionsFromUser(ability.context, list).then((data: PermissionRequestResult) => {
+      hilog.info(domain, tag, `getPermission result ${JSON.stringify(data)}`);
+    }).catch((error: BusinessError) => {
+      hilog.info(domain, tag, `getPermission err ->error.code: ${JSON.stringify(error.code)}, error?.message: ${JSON.stringify(error?.message)}`);
+    });
+    for (let index = 0; index < 3; index++) {
+      let driver: Driver = Driver.create();
+      await driver.delayMs(1000);
+      try {
+        let allowButton: Component = await driver.findComponent(ON.text('允许', MatchPattern.EQUALS));
+        await allowButton.click();
+        await driver.delayMs(1000);
+        hilog.info(domain, tag, `getPermission click allow button, round ${index}`);
+        break;
+      } catch (error) {
+        hilog.info(domain, tag, `getPermission find allow button round ${index} failed, error.code: ${JSON.stringify(error.code)}, error?.message: ${JSON.stringify(error?.message)}`);
+      }
+    }
+  } catch (error) {
+    hilog.info(domain, tag, `getPermission error ->error.code: ${JSON.stringify(error.code)}, error?.message: ${JSON.stringify(error?.message)}`);
+  }
+  hilog.info(domain, tag, '%{public}s', 'getPermission end');
+}
+
 export default function HasCard2PublicNeedCardTest() {
   describe('TelephonyCallHasCard2PublicNeedCardTest', (): void => {
+    beforeAll(async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'getPermission beforeAll');
+      await getPermissions();
+      done();
+    });
 
     /**
      * @tc.name   testTelephonyCallManagerHasCallSync0200
@@ -70,8 +107,8 @@ export default function HasCard2PublicNeedCardTest() {
           hilog.info(domain, tag, '%{public}s', caseName +'success, has call is'+JSON.stringify(hasCall));
           ExpectTrue(hasCall == false);
           done();
-        } catch (err) {
-          hilog.info(domain, tag, '%{public}s', caseName +'  catch fail, err->'+JSON.stringify(err));
+        } catch (error) {
+          hilog.info(domain, tag, `${caseName} catch err ->error.code: ${JSON.stringify(error.code)}, error?.message: ${JSON.stringify(error?.message)}`);
           ExpectFail();
           done();
         }
@@ -115,8 +152,8 @@ export default function HasCard2PublicNeedCardTest() {
             ExpectFail();
             done();
           }
-        } catch (err) {
-          console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
+        } catch (error) {
+          hilog.info(domain, tag, `${caseName} catch err ->error.code: ${JSON.stringify(error.code)}, error?.message: ${JSON.stringify(error?.message)}`);
           ExpectFail();
           done();
         }
@@ -126,6 +163,49 @@ export default function HasCard2PublicNeedCardTest() {
         done();
       }
       hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+    });
+
+    /**
+     * @tc.name   testTelephonyCallManagerMakeDirectCall_static_0100
+     * @tc.number SUB_Telephony_CallManager_MakeDirectCall_0100
+     * @tc.desc   Application makes calls with one tap with a valid phone number by promise with ohos.permission.DIRECT_CALL granted.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerMakeDirectCall_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyCallManagerMakeDirectCall_static_0100';
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      if (!sim.hasSimCardSync(0)) {
+        hilog.info(domain, tag, '%{public}s', caseName+ ' failed, NO SIM');
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      } else {
+        try {
+          await call.makeDirectCall(CALL_NUMBER);
+          hilog.info(domain, tag, '%{public}s', caseName+ ' makeDirectCall success');
+        } catch (error) {
+          hilog.info(domain, tag, `${caseName} makeDirectCall fail ->error.code: ${JSON.stringify(error.code)}, error?.message: ${JSON.stringify(error?.message)}`);
+          ExpectFail();
+        } finally {
+          await Utils.msSleep(5000);
+          try {
+            call.hangUpCall((error: BusinessError | null) => {
+              if (error?.code) {
+                hilog.info(domain, tag, `${caseName} hangUpCall fail ->error.code: ${JSON.stringify(error?.code)}, error?.message: ${JSON.stringify(error?.message)}`);
+              } else {
+                hilog.info(domain, tag, '%{public}s', caseName+ ' hangUpCall success');
+              }
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+              done();
+            });
+          } catch (error) {
+            hilog.info(domain, tag, `${caseName} hangUpCall throw ->error.code: ${JSON.stringify(error.code)}, error?.message: ${JSON.stringify(error?.message)}`);
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+            done();
+          }
+        }
+      }
     });
 
   });

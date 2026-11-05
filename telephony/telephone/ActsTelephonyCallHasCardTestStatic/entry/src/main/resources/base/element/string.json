@@ -1,16 +1,28 @@
 {
-  "string": [
+    "string":  [
+                   {
+                       "name":  "module_desc",
+                       "value":  "module description"
+                   },
+                   {
+                       "name":  "EntryAbility_desc",
+                       "value":  "description"
+                   },
+                   {
+                       "name":  "EntryAbility_label",
+                       "value":  "label"
+                   },
     {
-      "name": "module_desc",
-      "value": "module description"
+      "name": "direct_call_permission_reason",
+      "value": "direct call permission for test"
     },
     {
-      "name": "EntryAbility_desc",
-      "value": "description"
+      "name": "get_call_transfer_info_permission_reason",
+      "value": "get call transfer info permission for test"
     },
     {
-      "name": "EntryAbility_label",
-      "value": "label"
+      "name": "answer_call_permission_reason",
+      "value": "answer call permission for test"
     }
-  ]
+               ]
 }
