@@ -25,7 +25,8 @@ const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
  */
 workerPort.onmessage = (e: MessageEvents) => {
   console.info('NumberWorker received message:', e.data);
-  switch (e.data) {
+  try {
+    switch (e.data) {
     case 'createInt32': {
       let result = napitest.NapiCreateInt32Test();
       console.info('NumberWorker: NapiCreateInt32Test result is ' + result);
@@ -87,5 +88,9 @@ workerPort.onmessage = (e: MessageEvents) => {
       console.warn('NumberWorker: Unknown message type:', e.data);
       workerPort.postMessage(false);
       break;
+  }
+  } catch (error) {
+    console.error(`NumberWorker error: ${JSON.stringify(error)}`);
+    workerPort.postMessage(false);
   }
 };

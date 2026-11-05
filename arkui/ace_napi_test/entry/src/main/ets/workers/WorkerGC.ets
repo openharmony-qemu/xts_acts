@@ -34,9 +34,10 @@ const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
  * @param e message data
  */
 workerPort.onmessage = (e: MessageEvents) => {
-  console.info('Worker received message:', e.data);
-  const data: WorkerMessage = e.data;
-  switch (data.messageType) {
+  try {
+    console.info('Worker received message:', e.data);
+    const data: WorkerMessage = e.data;
+    switch (data.messageType) {
     case 'getLastError': {
       const receivedValue = data.value;
       console.info('Worker: received value is ' + receivedValue);
@@ -703,5 +704,9 @@ workerPort.onmessage = (e: MessageEvents) => {
     default:
       console.warn('Worker received unknown message type.');
       break;
+  }
+  } catch (error) {
+    console.error(`WorkerGC error: ${JSON.stringify(error)}`);
+    workerPort.postMessage(false);
   }
 };

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, TestType, Size, Level } from '@ohos/hypium';
+import { describe, expect, it, TestType, Size, Level, beforeEach } from '@ohos/hypium';
 import { ErrorEvent, MessageEvents, worker } from '@kit.ArkTS';
 import napitest from 'libnapitest.so';
 // import napitest from 'libentry.so';
@@ -25,12 +25,22 @@ interface WorkerMessage {
 
 async function handleWorkerMessages(myWorker: worker.ThreadWorker, caseName: string): Promise<void> {
   return new Promise<void>((resolve, reject) => {
+    let resolved = false;
+    const timer = setTimeout(() => {
+      if (!resolved) {
+        myWorker.terminate();
+        reject(new Error(`${caseName}: timeout`));
+      }
+    }, 10000);
     myWorker.onmessage = (e: MessageEvents) => {
       console.log(`${caseName} result: ` + JSON.stringify(e));
       try {
         expect(e.data).assertEqual(true);
+        resolved = true;
+        clearTimeout(timer);
         resolve();
       } catch (error) {
+        clearTimeout(timer);
         reject(error);
       } finally {
         myWorker.terminate();
@@ -38,10 +48,14 @@ async function handleWorkerMessages(myWorker: worker.ThreadWorker, caseName: str
     };
     myWorker.onexit = (code: number) => {
       console.log(`${caseName} main onexit code: ` + JSON.stringify(code));
-      resolve();
+      if (!resolved) {
+        clearTimeout(timer);
+        reject(new Error(`${caseName}: Worker exited without sending result`));
+      }
     };
     myWorker.onerror = (e: ErrorEvent) => {
       console.error(`${caseName} worker error: ` + JSON.stringify(e));
+      clearTimeout(timer);
       reject(e);
     };
   });
@@ -58,6 +72,10 @@ export const sleep = (ms: number | undefined) => {
 export default function NapiWorkerGCTest() {
 
   describe('napiWorkerGCTest', () => {
+    beforeEach(async () => {
+      await sleep(200);
+    });
+
     /**
      * @tc.name   testNapiWorkerGC0001
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_0100

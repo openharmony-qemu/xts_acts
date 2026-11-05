@@ -154,11 +154,25 @@ export default function nativeApiStringJsunit() {
         workerInstance.terminate();
       }
       workerInstance.postMessage("call napi_run_event_loop with nowait");
-      while (!isTerminate) {
-        await promiseCase()
+      try {
+        let waitCount = 0;
+        while (!isTerminate && waitCount < 50) {
+          await promiseCase()
+          waitCount++;
+        }
+        if (!isTerminate) {
+          workerInstance.terminate();
+          expect().assertFail();
+          done();
+          return;
+        }
+        expect(res).assertEqual("success")
+        done();
+      } catch (err) {
+        workerInstance.terminate();
+        expect().assertFail();
+        done();
       }
-      expect(res).assertEqual("success")
-      done();
     });
 
     /**
@@ -184,11 +198,25 @@ export default function nativeApiStringJsunit() {
         workerInstance.terminate();
       }
       workerInstance.postMessage("call napi_run_event_loop with nowait");
-      while (!isTerminate) {
-        await promiseCase()
+      try {
+        let waitCount = 0;
+        while (!isTerminate && waitCount < 50) {
+          await promiseCase()
+          waitCount++;
+        }
+        if (!isTerminate) {
+          workerInstance.terminate();
+          expect().assertFail();
+          done();
+          return;
+        }
+        expect(res).assertEqual("success")
+        done();
+      } catch (err) {
+        workerInstance.terminate();
+        expect().assertFail();
+        done();
       }
-      expect(res).assertEqual("success")
-      done();
     });
 
     /**

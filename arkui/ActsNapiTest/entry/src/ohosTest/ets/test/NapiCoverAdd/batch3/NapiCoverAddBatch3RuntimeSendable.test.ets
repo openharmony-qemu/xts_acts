@@ -44,7 +44,7 @@ export default function NapiCoverAddBatch3RuntimeSendableTest() {
      * @tc.level LEVEL3
      */
     it('testRefThreadsafeFunctionFromTaskPoolReturnsGenericFailure0005',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
         const caseName: string = 'testRefThreadsafeFunctionFromTaskPoolReturnsGenericFailure0005';
         console.info(`${caseName} START`);
         expect(napicoveraddbatch3ndktest.setupThreadsafeFunctionCrossThreadProbe()).assertEqual(1);
@@ -54,10 +54,12 @@ export default function NapiCoverAddBatch3RuntimeSendableTest() {
         } catch (e) {
           console.error('taskpool.execute error occurred');
         }
-        expect(status).assertEqual(NAPI_GENERIC_FAILURE);
-        expect(napicoveraddbatch3ndktest.cleanupThreadsafeFunctionCrossThreadProbe()).assertEqual(1);
+        try {
+          expect(status).assertEqual(NAPI_GENERIC_FAILURE);
+        } finally {
+          expect(napicoveraddbatch3ndktest.cleanupThreadsafeFunctionCrossThreadProbe()).assertEqual(1);
+        }
         console.info(`${caseName} END`);
-        done();
       });
 
     /**
@@ -69,7 +71,7 @@ export default function NapiCoverAddBatch3RuntimeSendableTest() {
      * @tc.level LEVEL3
      */
     it('testUnrefThreadsafeFunctionFromTaskPoolReturnsGenericFailure0006',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
         const caseName: string = 'testUnrefThreadsafeFunctionFromTaskPoolReturnsGenericFailure0006';
         console.info(`${caseName} START`);
         expect(napicoveraddbatch3ndktest.setupThreadsafeFunctionCrossThreadProbe()).assertEqual(1);
@@ -79,10 +81,12 @@ export default function NapiCoverAddBatch3RuntimeSendableTest() {
         } catch (e) {
           console.error('taskpool.execute error occurred');
         }
-        expect(status).assertEqual(NAPI_GENERIC_FAILURE);
-        expect(napicoveraddbatch3ndktest.cleanupThreadsafeFunctionCrossThreadProbe()).assertEqual(1);
+        try {
+          expect(status).assertEqual(NAPI_GENERIC_FAILURE);
+        } finally {
+          expect(napicoveraddbatch3ndktest.cleanupThreadsafeFunctionCrossThreadProbe()).assertEqual(1);
+        }
         console.info(`${caseName} END`);
-        done();
       });
 
     /**

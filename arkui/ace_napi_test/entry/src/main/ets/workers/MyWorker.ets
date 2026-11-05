@@ -18,7 +18,8 @@ import napitest from 'libnapitest.so';
 const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
 
 workerPort.onmessage = (e: MessageEvents) => {
-  switch (e.data) {
+  try {
+    switch (e.data) {
     case 'getLastError': {
       let getLastErrorValue = napitest.napiSerialize();
       workerPort.postMessage(getLastErrorValue);
@@ -565,5 +566,9 @@ workerPort.onmessage = (e: MessageEvents) => {
     }
     default:
       break;
+  }
+  } catch (error) {
+    console.error(`MyWorker error: ${JSON.stringify(error)}`);
+    workerPort.postMessage(false);
   }
 };
