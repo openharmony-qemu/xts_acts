@@ -6094,7 +6094,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testPressBackNull
-         * @tc.number SUB_testfwk_uitest_Api9_0120
+         * @tc.number SUB_testfwk_uitest_Api9_0600
          * @tc.desc   Press the BACK key.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -6117,7 +6117,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testPressBackUndefined
-         * @tc.number SUB_testfwk_uitest_Api9_0220
+         * @tc.number SUB_testfwk_uitest_Api9_0500
          * @tc.desc   Press the BACK key.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST

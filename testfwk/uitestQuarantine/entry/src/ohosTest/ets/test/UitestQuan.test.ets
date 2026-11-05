@@ -1000,7 +1000,7 @@ export default function UiTest() {
      * @tc.level  LEVEL3
      */
     it('testDisplayRotation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      let carSupported = canIUse("SystemCapability.CarService.Core")
+      let carSupported = canIUse("SystemCapability.Sensors.MiscDevice")
       console.log(`${TestTag}, testDisplayRotation carSupported is: ${JSON.stringify(carSupported)}`);
       if (!carSupported) { // 此用例不支持车机执行
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -1061,7 +1061,7 @@ export default function UiTest() {
      * @tc.level  LEVEL3
      */
     it('testGetDisplayRotationWithId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      let carSupported = canIUse("SystemCapability.CarService.Core")
+      let carSupported = canIUse("SystemCapability.Sensors.MiscDevice")
       console.log(`${TestTag}, testGetDisplayRotationWithId carSupported is: ${JSON.stringify(carSupported)}`);
       if (!carSupported) { // 此用例不支持车机副屏执行
         console.log(TestTag, 'testGetDisplayRotationWithId start');
