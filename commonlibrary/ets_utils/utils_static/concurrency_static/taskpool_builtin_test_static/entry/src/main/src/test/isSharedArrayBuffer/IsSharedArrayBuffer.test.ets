@@ -25,7 +25,7 @@
 //    跨文件 export/reexport），不适用的（JS 互操作、ArkUI 装饰器、自定义装饰器、namespace）
 //    不迁移，见交付清单。
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-static/src/main/indexStatic';
 import util from '@ohos.util';
 import defaultArrayBuffer, {
   exportedArrayBuffer,

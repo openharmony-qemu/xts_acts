@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-import {describe, afterAll, it, expect, TestType, Size, Level, beforeAll, } from '../../../../hypium';
+import {describe, afterAll, it, expect, TestType, Size, Level, beforeAll, } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 // Module-level task functions (arrow functions, no nested definitions, no @Concurrent)
