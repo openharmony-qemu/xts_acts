@@ -928,6 +928,7 @@ export default function UiTest() {
     beforeAll(async (done: Function) => {
       driver = Driver.create()
       user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      console.log(`${TestTag}, UiTest_API9 user is: ${JSON.stringify(user)}`);
       await driver.delayMs(1000)
       await getInputMethodPermission()
       done()
@@ -1003,7 +1004,7 @@ export default function UiTest() {
       console.info(`${TestTag}, testDisplayRotation disArray is: ${JSON.stringify(disArray)}`);
       if (disArray != null) {
         let disLength = disArray.length;
-        if (disLength == 1) { // 此用例不支持在多屏上执行
+        if (disLength == 1 && (user == undefined || user == defaultUserId)) { // 此用例不支持在多屏上执行
           await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
           await driver.delayMs(waitUiReadyMs)
           await driver.setDisplayRotationEnabled(true)
@@ -1067,7 +1068,7 @@ export default function UiTest() {
       console.info(`${TestTag}, testGetDisplayRotationWithId disArray is: ${JSON.stringify(disArray)}`);
       if (disArray != null) {
         let disLength = disArray.length;
-        if (disLength == 1) { // 此用例不支持在多屏上执行
+        if (disLength == 1 && (user == undefined || user == defaultUserId)) { // 此用例不支持在多屏上执行
           console.log(TestTag, 'testGetDisplayRotationWithId start');
           await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
           await driver.delayMs(waitUiReadyMs)
