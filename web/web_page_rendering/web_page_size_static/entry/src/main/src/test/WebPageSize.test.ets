@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach } from "@ohos/hypium-static/src/main/indexStatic";
 import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@ohos.UiTest'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import  hilog  from '@ohos.hilog'
