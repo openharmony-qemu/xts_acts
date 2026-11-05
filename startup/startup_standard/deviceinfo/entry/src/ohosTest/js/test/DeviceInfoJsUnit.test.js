@@ -2400,5 +2400,81 @@ export default function DeviceInfoTest() {
             expect(len).assertLarger(MAX_CHARACTERS_NUM);
             console.info('testGetKernelVersion003 : end');
         })
+
+        /**
+         * @tc.name   testGetInstallTime001
+         * @tc.number SUB_STARTUP_JS_DEVCEINFO_9100
+         * @tc.desc   Get the system installation UTC timestamp represented by a string and the return value is not null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testGetInstallTime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info('testGetInstallTime001 start');
+            let installTimeInfo = deviceinfo.installTime;
+            
+            if (installTimeInfo != "" && installTimeInfo != null && installTimeInfo != undefined) {
+                console.info('the value of the deviceinfo installTime is :' + installTimeInfo);
+                expect(installTimeInfo).assertInstanceOf('String');
+				done();
+            } else {
+                console.info('the return value installTime is null or incorrect.');
+                expect().assertFail();
+				done();
+            }
+
+            console.info('testGetInstallTime001 : end');
+        })
+
+        /**
+         * @tc.name   testGetInstallTime002
+         * @tc.number SUB_STARTUP_JS_DEVCEINFO_9200
+         * @tc.desc   Get the system installation UTC timestamp which format is a numeric string.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testGetInstallTime002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info('testGetInstallTime002 start');
+            let installTimeInfo = deviceinfo.installTime;
+            console.info('the value of the deviceinfo installTime is :' + installTimeInfo);
+
+            if (installTimeInfo != "" && installTimeInfo != null && installTimeInfo != undefined) {
+                expect(installTimeInfo).assertInstanceOf('String');
+                let digitRegex = /^\d+$/;
+                let matchResult = installTimeInfo.match(digitRegex);
+                console.info('the match result is :' + matchResult);
+                expect(matchResult != null).assertTrue();
+                let timestampValue = parseInt(installTimeInfo);
+                console.info('the parsed timestamp value is :' + timestampValue);
+                expect(timestampValue > 0).assertTrue();
+				done();
+            } else {
+                console.info('the return value installTime is null or incorrect.');
+                expect().assertFail();
+				done();
+            }
+
+            console.info('testGetInstallTime002 : end');
+        })
+
+        /**
+         * @tc.name   testGetInstallTime003
+         * @tc.number SUB_STARTUP_JS_DEVCEINFO_9300
+         * @tc.desc   Get the system installation UTC timestamp which has at least one characters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testGetInstallTime003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+            console.info('testGetInstallTime003 start');
+            let installTimeInfo = deviceinfo.installTime;
+            console.info('the value of the deviceinfo installTime is :' + installTimeInfo);
+
+            let len = installTimeInfo.length;
+            console.info('the value of the install time characters is :' + len);
+            expect(len).assertLarger(MAX_CHARACTERS_NUM);
+            console.info('testGetInstallTime003 : end');
+        })
     })
 }
