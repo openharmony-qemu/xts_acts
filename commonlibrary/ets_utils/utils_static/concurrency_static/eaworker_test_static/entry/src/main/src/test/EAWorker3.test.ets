@@ -16,7 +16,7 @@
 
 import {
   describe, it, expect, TestType, Size, afterEach, Level
-} from "../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 import Utils from './Util.test';
 
 export default function EAWorker3Test(): void {
