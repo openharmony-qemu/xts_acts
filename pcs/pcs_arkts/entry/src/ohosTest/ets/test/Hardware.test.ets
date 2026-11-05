@@ -193,7 +193,7 @@ export default function hardwareTest() {
         }
         let photoSession = getResult[1]
         try {
-          let supportedExposureModes = new camera.ExposureMode[]()
+          let supportedExposureModes = new Array<camera.ExposureMode>()
           if (photoSession.isExposureModeSupported(camera.ExposureMode.EXPOSURE_MODE_LOCKED)) {
             supportedExposureModes.push(camera.ExposureMode.EXPOSURE_MODE_LOCKED)
           }
@@ -234,7 +234,7 @@ export default function hardwareTest() {
         }
         let photoSession = getResult[1]
         try {
-          let supportedFocusModes = new camera.FocusMode[]()
+          let supportedFocusModes = new Array<camera.FocusMode>()
           if (photoSession.isFocusModeSupported(camera.FocusMode.FOCUS_MODE_MANUAL)) {
             supportedFocusModes.push(camera.FocusMode.FOCUS_MODE_MANUAL)
           }
@@ -326,9 +326,9 @@ export default function hardwareTest() {
           return
         }
 
-        let previewFormats = new camera.CameraFormat[]()
-        let videoFormats = new camera.CameraFormat[]()
-        let photoFormats = new camera.CameraFormat[]()
+        let previewFormats = new Array<camera.CameraFormat>()
+        let videoFormats = new Array<camera.CameraFormat>()
+        let photoFormats = new Array<camera.CameraFormat>()
         for(let cameraDevice of supportedCameras) {
           let supportedOutputCapability: camera.CameraOutputCapability
           supportedOutputCapability = cameraManager.getSupportedOutputCapability(cameraDevice, camera.SceneMode.NORMAL_VIDEO)
