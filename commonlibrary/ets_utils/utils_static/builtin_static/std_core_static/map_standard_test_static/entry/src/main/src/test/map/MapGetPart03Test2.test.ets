@@ -27,7 +27,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from "../Util.test";
 const FLOAT_POS_INF: float = Double.toFloat(Number.POSITIVE_INFINITY);
 const FLOAT_NEG_INF: float = Double.toFloat(Number.NEGATIVE_INFINITY);
