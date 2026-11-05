@@ -483,7 +483,7 @@ export default function VideoSessionStaticTest():void {
                   (supportedZoomRatioRange[0] - 0.1));
                 await Utils.msSleep(2000);
                 let zoomRatio: number = mVideoSession!.getZoomRatio();
-                if ((zoomRatio - (supportedZoomRatioRange[0] - 0.1)) < 0.01) {
+                if ((zoomRatio - supportedZoomRatioRange[0]) < 0.01) {
                   console.info(TAG + testName + "Entering  PASSED with ZoomRatio is: " + zoomRatio);
                 } else {
                   console.info(TAG + testName + "Entering  FAILED with ZoomRatio is: " + zoomRatio);

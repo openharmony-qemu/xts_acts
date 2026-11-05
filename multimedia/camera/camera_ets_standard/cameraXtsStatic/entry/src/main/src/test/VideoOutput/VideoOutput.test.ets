@@ -424,7 +424,7 @@ export default function VideoOutputStaticTest():void {
           console.info(TAG, testName, 'Start');
           await createVideoOutput();
           await getCreateVideoSession(testName, mPreviewOutput!, mVideoOutput!);
-          if (mVideoOutput!.isMirrorSupported()&&) {
+          if (mVideoOutput!.isMirrorSupported()) {
             mVideoOutput!.enableMirror(false);
             console.info(TAG, testName, `success`);
           } else {

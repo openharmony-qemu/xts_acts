@@ -184,7 +184,7 @@ function createPhotoOutput() {
   mPhotoOutput = mCameraManager!.createPhotoOutput(photoProfile);
 }
 
-async function createSecurePhotoOutput() {
+async function createSecurePhotoOutput(): Promise<boolean> {
   let useDevice: camera.CameraDevice = mCameraDeviceArray![0];
   let haveValidDevice = false;
   for (const device of mCameraDeviceArray!) {
@@ -387,9 +387,9 @@ export default function SecureSessionStaticTest():void {
           console.info(TAG, testName + ' cameraManager is null.');
           expect().assertFail();
         } else {
-          console.info(TAG, testName + " start");
+          console.info(TAG, testName, " start");
           let supp = await createSecurePhotoOutput();
-          if(supp === true) {
+          if (supp === true) {
             console.info(TAG, testName, " createSecurePhotoOutput");
             await getCreateSecurePhotoSession(mPreviewOutput!, mSecureOutput!);
             console.info(TAG, testName, " getCreateSecurePhotoSession");
@@ -439,7 +439,7 @@ export default function SecureSessionStaticTest():void {
           expect().assertFail();
         } else {
           let supp = await createSecurePhotoOutput();
-          if(supp === true) {
+          if (supp === true) {
             await getCreateSecurePhotoSession(mPreviewOutput!, mSecureOutput!);
             mSecureSession?.onFocusStateChange((error, mFocusState) => {
               if (error !== undefined && error!.code !== 0) {

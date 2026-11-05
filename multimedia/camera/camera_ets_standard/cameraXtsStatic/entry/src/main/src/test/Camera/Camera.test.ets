@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Hypium } from '../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Hypium } from '../../../../hypium/index';
 import { common } from '@kit.AbilityKit';
 import { camera } from '@kit.CameraKit';
 import { AppStorage, Context } from '@kit.ArkUI';
