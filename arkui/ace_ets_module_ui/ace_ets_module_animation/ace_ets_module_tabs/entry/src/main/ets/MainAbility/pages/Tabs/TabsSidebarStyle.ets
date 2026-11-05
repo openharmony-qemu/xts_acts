@@ -16,12 +16,12 @@
 import { ComponentContent } from '@kit.ArkUI'
 
 @Builder
-function FooterBuilder() {
+function footerBuilder() {
   Text('FooterContent').id('sidebar_footer_text').fontSize(12)
 }
 
 @Builder
-function BottomBarBuilder() {
+function bottomBarBuilder() {
   Text('BottomBarContent').id('sidebar_bottombar_text').fontSize(12)
 }
 
@@ -29,8 +29,8 @@ function BottomBarBuilder() {
 @Component
 struct TabsSidebarStyle {
   context: UIContext = this.getUIContext();
-  footerContent: ComponentContent<ESObject> = new ComponentContent(this.context, wrapBuilder(FooterBuilder));
-  bottomBarContent: ComponentContent<ESObject> = new ComponentContent(this.context, wrapBuilder(BottomBarBuilder));
+  footerContent: ComponentContent<ESObject> = new ComponentContent(this.context, wrapBuilder(footerBuilder));
+  bottomBarContent: ComponentContent<ESObject> = new ComponentContent(this.context, wrapBuilder(bottomBarBuilder));
 
   build() {
     Scroll() {

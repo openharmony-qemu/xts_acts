@@ -34,8 +34,10 @@ function bottomBarBuilder() {
 @Entry
 @Component
 struct TabsSidebarStyle {
-  footerContent: ComponentContent<ESObject> = new ComponentContent(this.getUIContext(), wrapBuilder(footerBuilder));
-  bottomBarContent: ComponentContent<ESObject> = new ComponentContent(this.getUIContext(), wrapBuilder(bottomBarBuilder));
+  footerContent: ComponentContent<ESObject> =
+    new ComponentContent(this.getUIContext(), wrapBuilder(footerBuilder));
+  bottomBarContent: ComponentContent<ESObject> =
+    new ComponentContent(this.getUIContext(), wrapBuilder(bottomBarBuilder));
   aboutToAppear(): void {
     try {
       const routerInst: Router = this.getUIContext().getRouter();
