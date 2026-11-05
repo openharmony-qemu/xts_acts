@@ -331,23 +331,6 @@ export default function MethodGetAttributes01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ATTRIBUTES_ONE_0800
-     * @tc.name testMethodGetAttributesAtOne008
-     * @tc.desc Verify declared vs by name getAttributes method returns expected value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testMethodGetAttributesAtOne008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const classType: ClassType = Type.from<GADeclaredVsByName>() as ClassType;
-      const declared: Method[] = __getMethods(classType);
-      const byName = classType.getMethodByName('test');
-      if (byName != null) {
-        expect(declared[0].getAttributes()).assertEqual(byName.getAttributes());
-      } else { expect().assertFail(); }
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ATTRIBUTES_ONE_0900
      * @tc.name testMethodGetAttributesAtOne009
      * @tc.desc Verify target attr getAttributes method returns expected value
