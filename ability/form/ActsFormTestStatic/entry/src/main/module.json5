@@ -111,6 +111,14 @@
         "description": "service",
         "type": "service",
         "exported": true
+      },
+      {
+        "name": "FormEditExtAbility",
+        "srcEntry": "./ets/formeditext/FormEditExtAbility.ets",
+        "type": "formEdit",
+        "exported": true,
+        "label": "$string:EntryAbility_label",
+        "description": "$string:EntryAbility_desc"
       }
     ],
     "requestPermissions": [
