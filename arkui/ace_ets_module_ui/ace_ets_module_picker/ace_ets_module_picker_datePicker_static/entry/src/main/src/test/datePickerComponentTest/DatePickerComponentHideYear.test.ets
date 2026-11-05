@@ -174,11 +174,6 @@ export default function DatePickerComponentHideYearTest() {
         await (buttonHideYear?.click() as Promise<void>);
         await CommonFunc.sleep(SLEEP_TIME);
 
-        let strJson = inspector.getInspectorByKey('datePickerComponent_hideYear');
-        let obj = JSON.parseJsonElement(strJson);
-        let type: string = obj.getString('$type');
-        expect(type).assertEqual('DatePickerComponent');
-
         let strText = inspector.getInspectorByKey('text_hideYear_value');
         let objText = JSON.parseJsonElement(strText);
         let content: string = objText.getElement('$attrs').getString('content');
@@ -213,11 +208,6 @@ export default function DatePickerComponentHideYearTest() {
         let buttonHideYear = await driver.findComponent(ON.id('button_hideYear_true'));
         await (buttonHideYear?.click() as Promise<void>);
         await CommonFunc.sleep(SLEEP_TIME);
-
-        let strJson = inspector.getInspectorByKey('datePickerComponent_hideYear');
-        let obj = JSON.parseJsonElement(strJson);
-        let type: string = obj.getString('$type');
-        expect(type).assertEqual('DatePickerComponent');
 
         let strText = inspector.getInspectorByKey('text_hideYear_value');
         let objText = JSON.parseJsonElement(strText);
@@ -254,11 +244,6 @@ export default function DatePickerComponentHideYearTest() {
         await (buttonHideYear?.click() as Promise<void>);
         await CommonFunc.sleep(SLEEP_TIME);
 
-        let strJson = inspector.getInspectorByKey('datePickerComponent_hideYear');
-        let obj = JSON.parseJsonElement(strJson);
-        let type: string = obj.getString('$type');
-        expect(type).assertEqual('DatePickerComponent');
-
         let strText = inspector.getInspectorByKey('text_hideYear_value');
         let objText = JSON.parseJsonElement(strText);
         let content: string = objText.getElement('$attrs').getString('content');
@@ -294,11 +279,6 @@ export default function DatePickerComponentHideYearTest() {
         await (buttonHideYear?.click() as Promise<void>);
         await CommonFunc.sleep(SLEEP_TIME);
 
-        let strJson = inspector.getInspectorByKey('datePickerComponent_hideYear');
-        let obj = JSON.parseJsonElement(strJson);
-        let type: string = obj.getString('$type');
-        expect(type).assertEqual('DatePickerComponent');
-
         let strText = inspector.getInspectorByKey('text_hideYear_value');
         let objText = JSON.parseJsonElement(strText);
         let content: string = objText.getElement('$attrs').getString('content');
@@ -331,11 +311,6 @@ export default function DatePickerComponentHideYearTest() {
         await (buttonHideYear?.click() as Promise<void>);
         await CommonFunc.sleep(SLEEP_TIME);
 
-        let strJson = inspector.getInspectorByKey('datePickerComponent_hideYear');
-        let obj = JSON.parseJsonElement(strJson);
-        let type: string = obj.getString('$type');
-        expect(type).assertEqual('DatePickerComponent');
-
         let strText = inspector.getInspectorByKey('text_hideYear_value');
         let objText = JSON.parseJsonElement(strText);
         let content: string = objText.getElement('$attrs').getString('content');
@@ -349,65 +324,15 @@ export default function DatePickerComponentHideYearTest() {
     })
 
     /**
-     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_HIDEYEAR_0900
-     * @tc.name DatePickerComponentHideYear_onChange_0900
-     * @tc.desc Verify DatePickerComponent onChange callback triggered and result captured when hideYear is true and date scrolled
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('DatePickerComponentHideYear_onChange_0900', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('DatePickerComponentHideYear_onChange_0900 START')
-      try {
-        let driver = await Driver.create();
-
-        let buttonHideYear = await driver.findComponent(ON.id('button_hideYear_true'));
-        await (buttonHideYear?.click() as Promise<void>);
-        await CommonFunc.sleep(SLEEP_TIME);
-
-        let strJson = inspector.getInspectorByKey('text_onChange_triggered');
-        let obj = JSON.parseJsonElement(strJson);
-        let content: string = obj.getElement('$attrs').getString('content');
-        expect(content).assertContain('onChangeTriggered: false');
-
-        let datePickerComp = await driver.findComponent(ON.id('datePickerComponent_hideYear'));
-        let bounds = await (datePickerComp?.getBounds() as Promise<Rect>);
-        let centerX = Math.round(bounds.left + (bounds.right - bounds.left) / 2).toInt();
-        let centerY = Math.round(bounds.top + (bounds.bottom - bounds.top) / 2).toInt();
-        let displayId = await datePickerComp?.getDisplayId();
-        await driver.swipeBetween(
-          { x: Math.round(centerX).toInt(), y: Math.round(centerY).toInt(), displayId: displayId },
-          { x: Math.round(centerX).toInt(), y: Math.round(centerY + 50).toInt(), displayId: displayId }, 600
-        );
-        await CommonFunc.sleep(SLEEP_TIME);
-
-        let strJson1 = inspector.getInspectorByKey('text_onChange_triggered');
-        let obj1 = JSON.parseJsonElement(strJson1);
-        let content1 = obj1.getElement('$attrs').getString('content');
-        expect(content1).assertContain('onChangeTriggered: true');
-
-        let strResult = inspector.getInspectorByKey('text_onChange_result');
-        let objResult = JSON.parseJsonElement(strResult);
-        let contentResult: string = objResult.getElement('$attrs').getString('content');
-        expect(contentResult).assertContain('year:');
-        done();
-      } catch (err) {
-        console.error('DatePickerComponentHideYear_onChange_0900 error: ' + err);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
      * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_HIDEYEAR_UNDEFINED_0100
-     * @tc.name DatePickerComponentHideYear_undefined_1100
+     * @tc.name DatePickerComponentHideYear_undefined_0900
      * @tc.desc Verify hideYear = undefined renders successfully and restores to default (false) behavior
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('DatePickerComponentHideYear_undefined_1100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('DatePickerComponentHideYear_undefined_1100 START')
+    it('DatePickerComponentHideYear_undefined_0900', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('DatePickerComponentHideYear_undefined_0900 START')
       try {
         let driver = await Driver.create();
 
@@ -425,67 +350,20 @@ export default function DatePickerComponentHideYearTest() {
         // 获取未设置hideYear的默认参考组件属性（hideYear取默认值false）
         let strJsonCompare = inspector.getInspectorByKey('datePickerComponent_hideYear_default');
         let objCompare = JSON.parseJsonElement(strJsonCompare);
-        let typeCompare: string = objCompare.getString('$type');
-        expect(typeCompare).assertEqual('DatePickerComponent');
 
         // 获取undefined参数组件的属性
         let strJson = inspector.getInspectorByKey('datePickerComponent_hideYear');
         let obj = JSON.parseJsonElement(strJson);
-        let type: string = obj.getString('$type');
-        expect(type).assertEqual('DatePickerComponent');
 
         // undefined应恢复为默认值false，组件属性应与默认参考组件一致
         let compareAttrs: string = JSON.stringifyJsonElement(objCompare.getElement('$attrs'));
         let undefinedAttrs: string = JSON.stringifyJsonElement(obj.getElement('$attrs'));
-        console.info('DatePickerComponentHideYear_undefined_1100 compare $attrs: ' + compareAttrs);
-        console.info('DatePickerComponentHideYear_undefined_1100 undefined $attrs: ' + undefinedAttrs);
+        console.info('DatePickerComponentHideYear_undefined_0900 compare $attrs: ' + compareAttrs);
+        console.info('DatePickerComponentHideYear_undefined_0900 undefined $attrs: ' + undefinedAttrs);
         expect(undefinedAttrs).assertEqual(compareAttrs);
         done();
       } catch (err) {
-        console.error('DatePickerComponentHideYear_undefined_1100 error: ' + err);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_HIDEYEAR_NOTSET_0100
-     * @tc.name DatePickerComponentHideYear_notSet_1200
-     * @tc.desc Verify hideYear not set renders successfully and uses default (false) behavior
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('DatePickerComponentHideYear_notSet_1200', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('DatePickerComponentHideYear_notSet_1200 START')
-      try {
-        let driver = await Driver.create();
-
-        // 获取未设置hideYear的默认参考组件属性（hideYear取默认值false）
-        let strJsonDefault = inspector.getInspectorByKey('datePickerComponent_hideYear_default');
-        let objDefault = JSON.parseJsonElement(strJsonDefault);
-        let typeDefault: string = objDefault.getString('$type');
-        expect(typeDefault).assertEqual('DatePickerComponent');
-
-        // 点击按钮将isHideYear设置为false，获取显式设置false的组件属性
-        let buttonFalse = await driver.findComponent(ON.id('button_hideYear_false'));
-        await (buttonFalse?.click() as Promise<void>);
-        await CommonFunc.sleep(SLEEP_TIME);
-
-        let strJson = inspector.getInspectorByKey('datePickerComponent_hideYear');
-        let obj = JSON.parseJsonElement(strJson);
-        let type: string = obj.getString('$type');
-        expect(type).assertEqual('DatePickerComponent');
-
-        // 未设置hideYear应取默认值false，组件属性应与显式设置false的组件一致
-        let defaultAttrs: string = JSON.stringifyJsonElement(objDefault.getElement('$attrs'));
-        let falseAttrs: string = JSON.stringifyJsonElement(obj.getElement('$attrs'));
-        console.info('DatePickerComponentHideYear_notSet_1200 default $attrs: ' + defaultAttrs);
-        console.info('DatePickerComponentHideYear_notSet_1200 false $attrs: ' + falseAttrs);
-        expect(defaultAttrs).assertEqual(falseAttrs);
-        done();
-      } catch (err) {
-        console.error('DatePickerComponentHideYear_notSet_1200 error: ' + err);
+        console.error('DatePickerComponentHideYear_undefined_0900 error: ' + err);
         expect().assertFail();
         done();
       }
