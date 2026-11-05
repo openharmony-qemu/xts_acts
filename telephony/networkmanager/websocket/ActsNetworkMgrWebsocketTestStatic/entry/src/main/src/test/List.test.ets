@@ -17,6 +17,7 @@ import WebSocketTest from "./WebSocket.test";
 import webSocketCreateTest from "./WebSocketCreate.test";
 import webSocketJsunitTest from './WebSocketJsunit.test';
 import WebSocketOnOffInfoProtocolTest from './WebSocketOnOffInfoProtocolTest.test';
+import WebSocketMinSupportTlsProtocolTest from './WebSocketMinSupportTlsProtocol.test';
 import WebsocketServerStaticTest from './WebsocketServerStatic.test';
 import EmptyTest from './Empty.test';
 import connection from '@ohos.net.connection';
@@ -30,6 +31,7 @@ export default function testsuite() {
         WebSocketTest();
         WebsocketServerStaticTest();
         WebSocketOnOffInfoProtocolTest();
+        WebSocketMinSupportTlsProtocolTest();
     }else{
         EmptyTest();
     }
