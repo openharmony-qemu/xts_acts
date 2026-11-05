@@ -129,13 +129,14 @@ export default function abilityTest() {
         if (data?.event === 'setAbilityInstanceInfo_success') {
           commonEventManager.unsubscribe(subscriber,()=>{
             hilog.info(DOMAIN, LOG_TAG, tag + " success");
+            expect(true).assertTrue();
             done();
           });
         } else {
           commonEventManager.unsubscribe(subscriber,()=>{
             hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
             hilog.info(DOMAIN, LOG_TAG, tag + " fail");
-            try { expect().assertFail(); } catch (err) {}
+            expect(false).assertTrue();
             done();
           });
         }
@@ -145,9 +146,10 @@ export default function abilityTest() {
         abilityName: 'EntryAbility'
       }).then(()=>{
         hilog.info(DOMAIN, LOG_TAG, tag + " startAbility success");
+        expect(true).assertTrue();
       }).catch(async(err:BusinessError)=>{
         hilog.info(DOMAIN, LOG_TAG, tag + " startAbility fail " + err?.code);
-        try { expect().assertFail(); } catch (err) {}
+        expect(false).assertTrue();
         commonEventManager.unsubscribe(subscriber,()=>{
           done();
         });
@@ -178,14 +180,13 @@ export default function abilityTest() {
           hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
         }
       }
+      expect(successCount === 10).assertTrue();
       if (successCount === 10) {
         hilog.info(DOMAIN, LOG_TAG, tag + " success");
-        done();
       } else {
         hilog.info(DOMAIN, LOG_TAG, tag + " fail");
-        try { expect().assertFail(); } catch (err) {}
-        done();
       }
+      done();
     })
 
     /**
@@ -212,6 +213,7 @@ export default function abilityTest() {
           count++;
           if (count === 2) {
             hilog.info(DOMAIN, LOG_TAG, tag + " success");
+            expect(true).assertTrue();
             commonEventManager.unsubscribe(subscriber,()=>{
               done();
             });
@@ -220,7 +222,7 @@ export default function abilityTest() {
           commonEventManager.unsubscribe(subscriber,()=>{
             hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
             hilog.info(DOMAIN, LOG_TAG, tag + " fail");
-            try { expect().assertFail(); } catch (err) {}
+            expect(false).assertTrue();
             done();
           });
         }
@@ -230,9 +232,10 @@ export default function abilityTest() {
         abilityName: 'EntryAbility'
       }).then(()=>{
         hilog.info(DOMAIN, LOG_TAG, tag + " startAbility success");
+        expect(true).assertTrue();
       }).catch(async(err:BusinessError)=>{
         hilog.info(DOMAIN, LOG_TAG, tag + " startAbility fail " + err?.code);
-        try { expect().assertFail(); } catch (err) {}
+        expect(false).assertTrue();
         commonEventManager.unsubscribe(subscriber,()=>{
           done();
         });
@@ -242,6 +245,7 @@ export default function abilityTest() {
         count++;
         if (count === 2) {
           hilog.info(DOMAIN, LOG_TAG, tag + " success");
+          expect(true).assertTrue();
           done();
         }
       } catch (err) {
