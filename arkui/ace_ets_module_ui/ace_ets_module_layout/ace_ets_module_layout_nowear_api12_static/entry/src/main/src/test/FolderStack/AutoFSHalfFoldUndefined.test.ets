@@ -21,58 +21,59 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-export default function FSAlignContentUndefinedTest() {
-  describe('FSAlignContentUndefinedTest', () => {
-    beforeEach(async (): Promise<void> => {
-      console.info('FSAlignContentUndefinedTest beforeEach start');
+export default function AutoFSHalfFoldUndefinedTest() {
+  describe('AutoFSHalfFoldUndefinedTest', () => {
+    beforeEach( async(): Promise<void> => {
+      console.info('AutoFSHalfFoldUndefinedTest beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/FolderStack/FsAlignContentUndefined',
+        url: 'MainAbility/pages/FolderStack/AutoFSHalfFoldUndefined',
       }
       try {
         const router = AppStorage.get<Router>('router') as Router
         router.clear();
         let pages = router.getState();
-        console.info('get FSAlignContentUndefinedTest state pages:' + JSON.stringify(pages));
-        if (!('FsAlignContentUndefined' == pages.name)) {
-          console.info('get FSAlignContentUndefinedTest pages.name:' + JSON.stringify(pages.name));
+        console.info('get AutoFSHalfFoldUndefinedTest state pages:' + JSON.stringify(pages));
+        if (!('AutoFSHalfFoldUndefined' == pages.name)) {
+          console.info('get AutoFSHalfFoldUndefinedTest pages.name:' + JSON.stringify(pages.name));
           await router.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error('push FSAlignContentUndefinedTest page error:' + err);
+        console.error('push AutoFSHalfFoldUndefinedTest page error:' + err);
       }
-      console.info('FSAlignContentUndefinedTest beforeEach end');
+      console.info('AutoFSHalfFoldUndefinedTest beforeEach end');
     });
 
     /**
-     * @tc.number    SUB_ARKUI_API_FSAlignContentUndefinedTest_static_0100
-     * @tc.name      SUB_ARKUI_API_FSAlignContentUndefinedTest_static_0100
-     * @tc.desc      SUB_ARKUI_API_FSAlignContentUndefinedTest_static_0100
-     * @tc.level     LEVEL1
+     * @tc.number    SUB_ARKUI_API_AutoFSHalfFoldUndefinedTest_static_0100
+     * @tc.name      SUB_ARKUI_API_AutoFSHalfFoldUndefinedTest_static_0100
+     * @tc.desc      SUB_ARKUI_API_AutoFSHalfFoldUndefinedTest_static_0100
+     * @tc.level     Level.LEVEL1
      */
-    it('SUB_ARKUI_API_FSAlignContentUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('SUB_ARKUI_API_FSAlignContentUndefinedTest_static_0100 START');
+    it('SUB_ARKUI_API_AutoFSHalfFoldUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_API_AutoFSHalfFoldUndefinedTest_static_0100 START');
       await CommonFunc.sleep(500);
 
-      let strJson = inspector.getInspectorByKey('FolderStack_AlignContent');
+      let strJson = inspector.getInspectorByKey('FolderStack_AutoHalfFold');
       let obj = JSON.parseJsonElement(strJson);
       await CommonFunc.sleep(1000);
       console.info('Test component obj is: ' + obj.getElement('$attrs'));
-      console.info('Test component obj.alignContent is: ' + obj.getElement('$attrs').getString('alignContent'));
-      expect(obj.getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Start');
+      console.info('Test component obj.autoHalfFold is: ' + obj.getElement('$attrs').getString('autoHalfFold'));
+      expect(obj.getElement('$attrs').getString('autoHalfFold')).assertEqual('false');
+
 
       let driver = Driver.create();
       let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
       await btn_true.click();
       await CommonFunc.sleep(1000);
 
-      let strJson1 = inspector.getInspectorByKey('FolderStack_AlignContent');
+      let strJson1 = inspector.getInspectorByKey('FolderStack_AutoHalfFold');
       let obj1 = JSON.parseJsonElement(strJson1);
       await CommonFunc.sleep(1000);
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
-      console.info('Test component obj.alignContent is: ' + obj1.getElement('$attrs').getString('alignContent'));
-      expect(obj1.getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Center');
-      console.info('SUB_ARKUI_API_FSAlignContentUndefinedTest_static_0100 END');
+      console.info('Test component obj.autoHalfFold is: ' + obj1.getElement('$attrs').getString('autoHalfFold'));
+      expect(obj1.getElement('$attrs').getString('autoHalfFold')).assertEqual('true');
+      console.info('SUB_ARKUI_API_AutoFSHalfFoldUndefinedTest_static_0100 END');
       done();
     });
   })

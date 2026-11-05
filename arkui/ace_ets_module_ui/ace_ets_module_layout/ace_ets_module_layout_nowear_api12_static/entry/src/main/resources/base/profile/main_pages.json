@@ -7,11 +7,11 @@
     "MainAbility/pages/ChipGroup/ChipGroupApi1",
     "MainAbility/pages/FoldSplitContainer/FoldSplitContainer1",
     "MainAbility/pages/FoldSplitContainer/FoldSplitContainer2",
-    "MainAbility/pages/FolderStack/FsAlignContentUndefined",
-    "MainAbility/pages/FolderStack/FsAlignContentModifierUndefined",
-    "MainAbility/pages/FolderStack/FsAutoHalfFoldUndefined",
-    "MainAbility/pages/FolderStack/FsAutoHalfFoldModifierUndefined",
-    "MainAbility/pages/FolderStack/FsEnableAnimationUndefined",
-    "MainAbility/pages/FolderStack/FsEnableAnimationModifierUndefined"
+    "MainAbility/pages/FolderStack/AlignFSContentUndefined",
+    "MainAbility/pages/FolderStack/AlignFSContentModifierUndefined",
+    "MainAbility/pages/FolderStack/AutoFSHalfFoldUndefined",
+    "MainAbility/pages/FolderStack/AutoFSHalfFoldModifierUndefined",
+    "MainAbility/pages/FolderStack/EnableFSAnimationUndefined",
+    "MainAbility/pages/FolderStack/EnableFSAnimationModifierUndefined"
   ]
 }
