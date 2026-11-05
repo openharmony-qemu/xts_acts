@@ -130,7 +130,7 @@ struct WaterFlowModifierEventPage {
       }
 
       Blank().height(5)
-      Column() {
+      Column({ space: 1 } as ColumnOptions) {
         Row() {
           Button('toBottom').width('20%')
             .id('WaterFlowM_toBottom')

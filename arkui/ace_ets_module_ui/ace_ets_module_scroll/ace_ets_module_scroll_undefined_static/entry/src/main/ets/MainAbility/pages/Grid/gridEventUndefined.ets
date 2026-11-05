@@ -67,59 +67,7 @@ struct GridEventUndefined {
     Column() {
       Text(this.message)
         .id('Grid_text')
-      Column() {
-        Grid(this.scroller) {
-          ForEach(this.data, (day: string) => {
-            GridItem() {
-              Text(day).fontSize(16)
-            }.width(40).height('20%').borderWidth(2).borderColor(Color.Red)
-          }, (item: string) => item)
-        }
-        .id('Grid')
-        .columnsTemplate('1fr 1fr')
-        .height('60%')
-        .columnsGap(10)
-        .rowsGap(10)
-        .onScrollFrameBegin(this.onScrollFrameBeginValue ? undefined : (offset: number, state: ScrollState) => {
-          this.message = 'onScrollFrameBegin';
-          console.log(this.message);
-          return { offsetRemain: offset } as OnScrollFrameBeginHandlerResult;
-        })
-        .onDidScroll(this.onDidScrollValue ? undefined : (scrollOffset: number, scrollState: ScrollState) => {
-          this.message = 'onDidScroll';
-          console.log(this.message);
-        })
-        .onReachStart(this.onReachStartValue ? undefined : () => {
-          this.message = 'onReachStart';
-          console.log(this.message);
-        })
-        .onReachEnd(this.onReachEndValue ? undefined : () => {
-          this.message = 'onReachEnd';
-          console.log(this.message);
-        })
-        .onScrollStart(this.onScrollStartValue ? undefined : () => {
-          this.message = 'onScrollStart';
-          console.log(this.message);
-        })
-        .onScrollStop(this.onScrollStopValue ? undefined : () => {
-          this.message = 'onScrollStop';
-          console.log(this.message);
-        })
-        .onScrollBarUpdate(this.onScrollBarUpdateValue ? undefined : (index: int, offset: double) => {
-          this.message = 'onScrollBarUpdate';
-          console.log(this.message);
-          return {
-            totalOffset: (index / 5) * (80 + 10) - offset,
-            totalLength: 80 * 5 + 10 * 4
-          } as ComputedBarAttribute;
-        })
-        .onScrollIndex(this.onScrollIndexValue ? undefined : (first: int, last: int) => {
-          this.message = 'onScrollIndex';
-          console.log(this.message);
-        })
-      }.width('22%')
-
-      Column({ space: 5 } as ColumnOptions) {
+      Column({ space: 2 } as ColumnOptions) {
         Row() {
           Button('flingTop')
             .id('Grid_flingTop')
@@ -190,8 +138,59 @@ struct GridEventUndefined {
             })
         }
         .height('5%')
-
       }
+
+      Column() {
+        Grid(this.scroller) {
+          ForEach(this.data, (day: string) => {
+            GridItem() {
+              Text(day).fontSize(16)
+            }.width(40).height(40).borderWidth(2).borderColor(Color.Red)
+          }, (item: string) => item)
+        }
+        .id('Grid')
+        .columnsTemplate('1fr 1fr')
+        .height(200)
+        .columnsGap(10)
+        .rowsGap(10)
+        .onScrollFrameBegin(this.onScrollFrameBeginValue ? undefined : (offset: number, state: ScrollState) => {
+          this.message = 'onScrollFrameBegin';
+          console.log(this.message);
+          return { offsetRemain: offset } as OnScrollFrameBeginHandlerResult;
+        })
+        .onDidScroll(this.onDidScrollValue ? undefined : (scrollOffset: number, scrollState: ScrollState) => {
+          this.message = 'onDidScroll';
+          console.log(this.message);
+        })
+        .onReachStart(this.onReachStartValue ? undefined : () => {
+          this.message = 'onReachStart';
+          console.log(this.message);
+        })
+        .onReachEnd(this.onReachEndValue ? undefined : () => {
+          this.message = 'onReachEnd';
+          console.log(this.message);
+        })
+        .onScrollStart(this.onScrollStartValue ? undefined : () => {
+          this.message = 'onScrollStart';
+          console.log(this.message);
+        })
+        .onScrollStop(this.onScrollStopValue ? undefined : () => {
+          this.message = 'onScrollStop';
+          console.log(this.message);
+        })
+        .onScrollBarUpdate(this.onScrollBarUpdateValue ? undefined : (index: int, offset: double) => {
+          this.message = 'onScrollBarUpdate';
+          console.log(this.message);
+          return {
+            totalOffset: (index / 5) * (80 + 10) - offset,
+            totalLength: 80 * 5 + 10 * 4
+          } as ComputedBarAttribute;
+        })
+        .onScrollIndex(this.onScrollIndexValue ? undefined : (first: int, last: int) => {
+          this.message = 'onScrollIndex';
+          console.log(this.message);
+        })
+      }.width('22%')
     }.width('100%').margin({ top: 5 } as Margin)
   }
 }

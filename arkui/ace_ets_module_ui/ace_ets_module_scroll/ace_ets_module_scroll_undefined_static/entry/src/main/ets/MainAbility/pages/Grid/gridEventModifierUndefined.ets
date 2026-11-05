@@ -116,23 +116,8 @@ struct GridEventUndefined {
       Text('GridEventModifier')
       Text(this.myModifier.message)
         .id('GridM_text')
-      Column() {
-        Grid(this.scroller) {
-          ForEach(this.data, (day: string) => {
-            GridItem() {
-              Text(day).fontSize(16)
-            }.width(40).height('20%').borderWidth(2).borderColor(Color.Red)
-          }, (item: string) => item)
-        }
-        .id('GridM')
-        .columnsTemplate('1fr 1fr')
-        .height('60%')
-        .columnsGap(10)
-        .rowsGap(10)
-        .attributeModifier(this.myModifier)
-      }.width('22%')
-
-      Column({ space: 5 } as ColumnOptions) {
+        
+      Column({ space: 2 } as ColumnOptions) {
         Row() {
           Button('flingTop')
             .id('GridM_flingTop')
@@ -203,8 +188,23 @@ struct GridEventUndefined {
             })
         }
         .height('5%')
-
       }
+
+      Column() {
+        Grid(this.scroller) {
+          ForEach(this.data, (day: string) => {
+            GridItem() {
+              Text(day).fontSize(16)
+            }.width(40).height(40).borderWidth(2).borderColor(Color.Red)
+          }, (item: string) => item)
+        }
+        .id('GridM')
+        .columnsTemplate('1fr 1fr')
+        .height(200)
+        .columnsGap(10)
+        .rowsGap(10)
+        .attributeModifier(this.myModifier)
+      }.width('22%')
     }.width('100%').margin({ top: 5 } as Margin)
   }
 }

@@ -111,7 +111,7 @@ struct WaterFlowEventPage {
 
       Blank().height(5)
       Scroll() {
-        Column() {
+        Column({ space: 1 } as ColumnOptions) {
           Row() {
             Button('flingTop')
               .id('WaterFlow_flingTop')
