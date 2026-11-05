@@ -72,13 +72,12 @@ export default function ImagePictureTest() {
   describe('ImagePictureTest', () => {
     beforeAll(async () => {
       AppStorage.setOrCreate('emptyString', '');
-      isSupportVPE = await fs.access("/sys_prod/etc/VideoProcessingEngine/Image_SR_Model_576x576_20240402.omc").then((res: boolean) => {
-        return res;
-      }).catch((err: ESObject) => {
-        console.error(TAG, 'access VPE model failed: ' + err.message + ', code: ' + err.code);
-        return false;
-      });
-      console.info(TAG, 'beforeAll case. isSupportVPE: ' + isSupportVPE);
+      try {
+        isSupportVPE = await fs.access('/sys_prod/lib64/VideoProcessingEngine/libaihdr_engine.so');
+        console.info('isSupportVPE  is ' + isSupportVPE);
+      } catch (err) {
+        console.error('The file path does not exist');
+      }
     });
 
     beforeEach(() => {
