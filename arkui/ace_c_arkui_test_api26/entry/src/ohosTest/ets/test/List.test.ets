@@ -65,6 +65,7 @@ import RuntimeCheckModeTest from './nativeModule/RuntimeCheckModeTest.test'
 import UIAgentGetPageTextTest from './node/UIAgentGetPageTextTest.test'
 import UIAgentTreeRequestCreateTest from './node/UIAgentTreeRequestCreateTest.test'
 import UIAgentTreeRequestSetFilterTest from './node/UIAgentTreeRequestSetFilterTest.test'
+import UIContentChangeEventGetTest from './node/UIContentChangeEventGetTest.test'
 import GetImagesByNodeIdAsyncTest from './node/GetImagesByNodeIdAsyncTest.test'
 import ContentChangeEventTest from './node/ContentChangeEventTest.test'
 import NativeModuleAnimationTest from './animate/NativeModuleAnimation.test'
@@ -84,6 +85,7 @@ export default function testsuite() {
   UIAgentGetPageTextTest()
   UIAgentTreeRequestCreateTest()
   UIAgentTreeRequestSetFilterTest()
+  UIContentChangeEventGetTest()
   GetImagesByNodeIdAsyncTest()
   ContentChangeEventTest()
   RegisterCommonAreaApproximateChangeEventTest();
