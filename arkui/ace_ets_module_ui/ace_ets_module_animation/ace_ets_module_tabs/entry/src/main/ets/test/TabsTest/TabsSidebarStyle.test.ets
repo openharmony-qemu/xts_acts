@@ -827,5 +827,107 @@ export default function tabsSidebarStyleTest() {
       done();
     });
 
+    /**
+     * @tc.number SUB_ARKUI_TABS_SIDEBAR_SIDEBARFOOTER_4300
+     * @tc.name SUB_ARKUI_TABS_SIDEBAR_SIDEBARFOOTER_4300
+     * @tc.desc Cover Tabs sidebarFooter normal
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARFOOTER_4300', Level.LEVEL1, async (done: Function) => {
+      await CommonFunc.sleep(400);
+      let node = getInspectorByKey('sidebar_footer_text');
+      expect(JSON.parse(node).$attrs.content).assertEqual('FooterContent');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_TABS_SIDEBAR_SIDEBARFOOTER_4400
+     * @tc.name SUB_ARKUI_TABS_SIDEBAR_SIDEBARFOOTER_4400
+     * @tc.desc Cover Tabs sidebarFooter undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARFOOTER_4400', Level.LEVEL1, async (done: Function) => {
+      await CommonFunc.sleep(400);
+      let nodeUndef = getInspectorByKey('tabs_sidebarFooter_undefined');
+      let valUndef: string = getAttrAsString(nodeUndef, 'sidebarFooter');
+      let nodeBase = getInspectorByKey('tabs_barStyle_normal');
+      let valBase: string = getAttrAsString(nodeBase, 'sidebarFooter');
+      expect(valUndef).assertEqual(valBase);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_TABS_SIDEBAR_SIDEBARFOOTER_4500
+     * @tc.name SUB_ARKUI_TABS_SIDEBAR_SIDEBARFOOTER_4500
+     * @tc.desc Cover Tabs sidebarFooter null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARFOOTER_4500', Level.LEVEL1, async (done: Function) => {
+      await CommonFunc.sleep(400);
+      let nodeUndef = getInspectorByKey('tabs_sidebarFooter_undefined');
+      let valUndef: string = getAttrAsString(nodeUndef, 'sidebarFooter');
+      let nodeNull = getInspectorByKey('tabs_sidebarFooter_null');
+      let valNull: string = getAttrAsString(nodeNull, 'sidebarFooter');
+      expect(valNull).assertEqual(valUndef);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_TABS_SIDEBAR_SIDEBARBOTTOMBAR_4600
+     * @tc.name SUB_ARKUI_TABS_SIDEBAR_SIDEBARBOTTOMBAR_4600
+     * @tc.desc Cover Tabs sidebarBottomBar normal
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARBOTTOMBAR_4600', Level.LEVEL1, async (done: Function) => {
+      await CommonFunc.sleep(400);
+      let node = getInspectorByKey('sidebar_bottombar_text');
+      expect(JSON.parse(node).$attrs.content).assertEqual('BottomBarContent');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_TABS_SIDEBAR_SIDEBARBOTTOMBAR_4700
+     * @tc.name SUB_ARKUI_TABS_SIDEBAR_SIDEBARBOTTOMBAR_4700
+     * @tc.desc Cover Tabs sidebarBottomBar undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARBOTTOMBAR_4700', Level.LEVEL1, async (done: Function) => {
+      await CommonFunc.sleep(400);
+      let nodeUndef = getInspectorByKey('tabs_sidebarBottomBar_undefined');
+      let valUndef: string = getAttrAsString(nodeUndef, 'sidebarBottomBar');
+      let nodeBase = getInspectorByKey('tabs_barStyle_normal');
+      let valBase: string = getAttrAsString(nodeBase, 'sidebarBottomBar');
+      expect(valUndef).assertEqual(valBase);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_TABS_SIDEBAR_SIDEBARBOTTOMBAR_4800
+     * @tc.name SUB_ARKUI_TABS_SIDEBAR_SIDEBARBOTTOMBAR_4800
+     * @tc.desc Cover Tabs sidebarBottomBar null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARBOTTOMBAR_4800', Level.LEVEL1, async (done: Function) => {
+      await CommonFunc.sleep(400);
+      let nodeUndef = getInspectorByKey('tabs_sidebarBottomBar_undefined');
+      let valUndef: string = getAttrAsString(nodeUndef, 'sidebarBottomBar');
+      let nodeNull = getInspectorByKey('tabs_sidebarBottomBar_null');
+      let valNull: string = getAttrAsString(nodeNull, 'sidebarBottomBar');
+      expect(valNull).assertEqual(valUndef);
+      done();
+    });
+
   });
 }

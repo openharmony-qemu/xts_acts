@@ -13,9 +13,25 @@
  * limitations under the License.
  */
 
+import { ComponentContent } from '@kit.ArkUI'
+
+@Builder
+function FooterBuilder() {
+  Text('FooterContent').id('sidebar_footer_text').fontSize(12)
+}
+
+@Builder
+function BottomBarBuilder() {
+  Text('BottomBarContent').id('sidebar_bottombar_text').fontSize(12)
+}
+
 @Entry
 @Component
 struct TabsSidebarStyle {
+  context: UIContext = this.getUIContext();
+  footerContent: ComponentContent<ESObject> = new ComponentContent(this.context, wrapBuilder(FooterBuilder));
+  bottomBarContent: ComponentContent<ESObject> = new ComponentContent(this.context, wrapBuilder(BottomBarBuilder));
+
   build() {
     Scroll() {
       Column({ space: 8 }) {
@@ -34,6 +50,8 @@ struct TabsSidebarStyle {
         this.sidebarUnselectedIconColorBlocks()
         this.sidebarUnselectedTextColorBlocks()
         this.sidebarSelectedBoardColorBlocks()
+        this.sidebarFooterBlocks()
+        this.sidebarBottomBarBlocks()
       }
       .width('100%')
       .padding(8)
@@ -709,6 +727,102 @@ struct TabsSidebarStyle {
         .height(120)
         .barStyle(TabBarStyle.SIDEBAR)
         .sidebarSelectedBoardColor(null)
+  }
+
+  @Builder
+  sidebarFooterBlocks() {
+        Text('sidebarFooter normal').fontSize(12)
+        Tabs({ barPosition: BarPosition.Start }) {
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Blue)
+          }.tabBar('A')
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Green)
+          }.tabBar('B')
+        }
+        .id('tabs_sidebarFooter_normal')
+        .width('100%')
+        .height(120)
+        .barStyle(TabBarStyle.SIDEBAR)
+        .sidebarFooter(this.footerContent)
+
+        Text('sidebarFooter undefined').fontSize(12)
+        Tabs({ barPosition: BarPosition.Start }) {
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Blue)
+          }.tabBar('A')
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Green)
+          }.tabBar('B')
+        }
+        .id('tabs_sidebarFooter_undefined')
+        .width('100%')
+        .height(120)
+        .barStyle(TabBarStyle.SIDEBAR)
+        .sidebarFooter(undefined)
+
+        Text('sidebarFooter null').fontSize(12)
+        Tabs({ barPosition: BarPosition.Start }) {
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Blue)
+          }.tabBar('A')
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Green)
+          }.tabBar('B')
+        }
+        .id('tabs_sidebarFooter_null')
+        .width('100%')
+        .height(120)
+        .barStyle(TabBarStyle.SIDEBAR)
+        .sidebarFooter(null)
+  }
+
+  @Builder
+  sidebarBottomBarBlocks() {
+        Text('sidebarBottomBar normal').fontSize(12)
+        Tabs({ barPosition: BarPosition.Start }) {
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Blue)
+          }.tabBar('A')
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Green)
+          }.tabBar('B')
+        }
+        .id('tabs_sidebarBottomBar_normal')
+        .width('100%')
+        .height(120)
+        .barStyle(TabBarStyle.SIDEBAR)
+        .sidebarBottomBar(this.bottomBarContent)
+
+        Text('sidebarBottomBar undefined').fontSize(12)
+        Tabs({ barPosition: BarPosition.Start }) {
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Blue)
+          }.tabBar('A')
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Green)
+          }.tabBar('B')
+        }
+        .id('tabs_sidebarBottomBar_undefined')
+        .width('100%')
+        .height(120)
+        .barStyle(TabBarStyle.SIDEBAR)
+        .sidebarBottomBar(undefined)
+
+        Text('sidebarBottomBar null').fontSize(12)
+        Tabs({ barPosition: BarPosition.Start }) {
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Blue)
+          }.tabBar('A')
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Green)
+          }.tabBar('B')
+        }
+        .id('tabs_sidebarBottomBar_null')
+        .width('100%')
+        .height(120)
+        .barStyle(TabBarStyle.SIDEBAR)
+        .sidebarBottomBar(null)
   }
 
 }
