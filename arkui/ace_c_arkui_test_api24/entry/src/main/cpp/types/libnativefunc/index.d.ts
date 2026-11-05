@@ -24,3 +24,15 @@ export const TestErrorCode009: () => number;
 export const TestErrorCode010: () => number;
 export const TestErrorCode011: () => number;
 export const TestErrorCode012: () => number;
+
+export const TestNodeAdoptChildWithPolicy001: () => number;
+export const TestNodeAdoptChildWithPolicy002: () => number;
+export const TestNodeAdoptChildWithPolicy003: () => number;
+export const TestNodeAdoptChildWithPolicy004: () => number;
+export const TestNodeAdoptChildWithPolicy005: () => number;
+export const TestSetAdoptedChildOverlayPositionCompensation001: () => number;
+export const TestSetAdoptedChildOverlayPositionCompensation002: () => number;
+export const TestSetAdoptedChildOverlayPositionCompensation003: () => number;
+export const TestSetAdoptedChildOverlayPositionCompensation004: () => number;
+export const TestSetAdoptedChildOverlayPositionCompensation005: () => number;
+export const TestSetAdoptedChildOverlayPositionCompensation006: () => number;
