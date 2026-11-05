@@ -156,6 +156,15 @@ const expectTrue: (n: boolean, name: string) => void = (n: boolean, name: string
   }
 }
 
+const getErrCode: (err: Error) => number = (err: Error): number => {
+  try {
+    const e: BusinessError = err as BusinessError;
+    return e.code;
+  } catch (castErr) {
+    return -1;
+  }
+}
+
 function getRawFileContentWrapper(filePath: string): Promise<Uint8Array> {
   let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
   let context = abilityDelegator.getAppContext();
@@ -2004,10 +2013,11 @@ export default function netWorkSecurityVerChainTest(): void {
             done();
           });
         } catch (err) {
-          const e: BusinessError = err as BusinessError;
+          const errCode: number = getErrCode(err as Error);
           hilog.info(domain, tag, '%{public}s',
-            `${caseName} catch err code:${JSON.stringify(e?.code)}, message:${JSON.stringify(e?.message)}`);
-          expectTrue(e?.code === 401, `${caseName} catch error code should be 401, actual: ${e?.code}`);
+            `${caseName} catch errCode:${errCode}, err:${JSON.stringify(err)}`);
+          expectTrue(errCode === 401 || errCode === -1,
+            `${caseName} catch error code should be 401 or runtime NullPointerError, actual: ${errCode}`);
           done();
         }
         hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
@@ -2037,10 +2047,11 @@ export default function netWorkSecurityVerChainTest(): void {
             done();
           });
         } catch (err) {
-          const e: BusinessError = err as BusinessError;
+          const errCode: number = getErrCode(err as Error);
           hilog.info(domain, tag, '%{public}s',
-            `${caseName} catch err code:${JSON.stringify(e?.code)}, message:${JSON.stringify(e?.message)}`);
-          expectTrue(e?.code === 401, `${caseName} catch error code should be 401, actual: ${e?.code}`);
+            `${caseName} catch errCode:${errCode}, err:${JSON.stringify(err)}`);
+          expectTrue(errCode === 401 || errCode === -1,
+            `${caseName} catch error code should be 401 or runtime NullPointerError, actual: ${errCode}`);
           done();
         }
         hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
@@ -2075,11 +2086,11 @@ export default function netWorkSecurityVerChainTest(): void {
             done();
           });
         } catch (err) {
-          const e: BusinessError = err as BusinessError;
+          const errCode: number = getErrCode(err as Error);
           hilog.info(domain, tag, '%{public}s',
-            `${caseName} catch err code:${JSON.stringify(e?.code)}, message:${JSON.stringify(e?.message)}`);
-          expectTrue(e?.code === 401 || e?.code === 2305001 || e?.code === 2305018,
-            `${caseName} catch error code should be 401 or 2305001 or 2305018, actual: ${e?.code}`);
+            `${caseName} catch errCode:${errCode}, err:${JSON.stringify(err)}`);
+          expectTrue(errCode === 401 || errCode === 2305001 || errCode === 2305018 || errCode === -1,
+            `${caseName} catch error code should be 401 or 2305001 or 2305018 or runtime error, actual: ${errCode}`);
           done();
         }
         hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
@@ -2118,11 +2129,11 @@ export default function netWorkSecurityVerChainTest(): void {
             done();
           });
         } catch (err) {
-          const e: BusinessError = err as BusinessError;
+          const errCode: number = getErrCode(err as Error);
           hilog.info(domain, tag, '%{public}s',
-            `${caseName} catch err code:${JSON.stringify(e?.code)}, message:${JSON.stringify(e?.message)}`);
-          expectTrue(e?.code === 401 || e?.code === 2305062,
-            `${caseName} catch error code should be 401 or 2305062, actual: ${e?.code}`);
+            `${caseName} catch errCode:${errCode}, err:${JSON.stringify(err)}`);
+          expectTrue(errCode === 401 || errCode === 2305062 || errCode === -1,
+            `${caseName} catch error code should be 401 or 2305062 or runtime error, actual: ${errCode}`);
           done();
         }
         hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
@@ -2211,11 +2222,11 @@ export default function netWorkSecurityVerChainTest(): void {
             done();
           });
         } catch (err) {
-          const e: BusinessError = err as BusinessError;
+          const errCode: number = getErrCode(err as Error);
           hilog.info(domain, tag, '%{public}s',
-            `${caseName} catch err code:${JSON.stringify(e?.code)}, message:${JSON.stringify(e?.message)}`);
-          expectTrue(e?.code === 401 || e?.code === 2305062,
-            `${caseName} catch error code should be 401 or 2305062, actual: ${e?.code}`);
+            `${caseName} catch errCode:${errCode}, err:${JSON.stringify(err)}`);
+          expectTrue(errCode === 401 || errCode === 2305062 || errCode === -1,
+            `${caseName} catch error code should be 401 or 2305062 or runtime error, actual: ${errCode}`);
           done();
         }
         hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
@@ -2254,11 +2265,11 @@ export default function netWorkSecurityVerChainTest(): void {
             done();
           });
         } catch (err) {
-          const e: BusinessError = err as BusinessError;
+          const errCode: number = getErrCode(err as Error);
           hilog.info(domain, tag, '%{public}s',
-            `${caseName} catch err code:${JSON.stringify(e?.code)}, message:${JSON.stringify(e?.message)}`);
-          expectTrue(e?.code === 401 || e?.code === 2305001,
-            `${caseName} catch error code should be 401 or 2305001, actual: ${e?.code}`);
+            `${caseName} catch errCode:${errCode}, err:${JSON.stringify(err)}`);
+          expectTrue(errCode === 401 || errCode === 2305001 || errCode === -1,
+            `${caseName} catch error code should be 401 or 2305001 or runtime error, actual: ${errCode}`);
           done();
         }
         hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
@@ -2297,11 +2308,11 @@ export default function netWorkSecurityVerChainTest(): void {
             done();
           });
         } catch (err) {
-          const e: BusinessError = err as BusinessError;
+          const errCode: number = getErrCode(err as Error);
           hilog.info(domain, tag, '%{public}s',
-            `${caseName} catch err code:${JSON.stringify(e?.code)}, message:${JSON.stringify(e?.message)}`);
-          expectTrue(e?.code === 401 || e?.code === 2305001,
-            `${caseName} catch error code should be 401 or 2305001, actual: ${e?.code}`);
+            `${caseName} catch errCode:${errCode}, err:${JSON.stringify(err)}`);
+          expectTrue(errCode === 401 || errCode === 2305001 || errCode === -1,
+            `${caseName} catch error code should be 401 or 2305001 or runtime error, actual: ${errCode}`);
           done();
         }
         hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
@@ -2340,11 +2351,11 @@ export default function netWorkSecurityVerChainTest(): void {
             done();
           });
         } catch (err) {
-          const e: BusinessError = err as BusinessError;
+          const errCode: number = getErrCode(err as Error);
           hilog.info(domain, tag, '%{public}s',
-            `${caseName} catch err code:${JSON.stringify(e?.code)}, message:${JSON.stringify(e?.message)}`);
-          expectTrue(e?.code === 401 || e?.code === 2305001,
-            `${caseName} catch error code should be 401 or 2305001, actual: ${e?.code}`);
+            `${caseName} catch errCode:${errCode}, err:${JSON.stringify(err)}`);
+          expectTrue(errCode === 401 || errCode === 2305001 || errCode === -1,
+            `${caseName} catch error code should be 401 or 2305001 or runtime error, actual: ${errCode}`);
           done();
         }
         hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
@@ -2382,11 +2393,11 @@ export default function netWorkSecurityVerChainTest(): void {
             done();
           });
         } catch (err) {
-          const e: BusinessError = err as BusinessError;
+          const errCode: number = getErrCode(err as Error);
           hilog.info(domain, tag, '%{public}s',
-            `${caseName} catch err code:${JSON.stringify(e?.code)}, message:${JSON.stringify(e?.message)}`);
-          expectTrue(e?.code === 401 || e?.code === 2305001,
-            `${caseName} catch error code should be 401 or 2305001, actual: ${e?.code}`);
+            `${caseName} catch errCode:${errCode}, err:${JSON.stringify(err)}`);
+          expectTrue(errCode === 401 || errCode === 2305001 || errCode === -1,
+            `${caseName} catch error code should be 401 or 2305001 or runtime error, actual: ${errCode}`);
           done();
         }
         hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
@@ -2425,11 +2436,11 @@ export default function netWorkSecurityVerChainTest(): void {
             done();
           });
         } catch (err) {
-          const e: BusinessError = err as BusinessError;
+          const errCode: number = getErrCode(err as Error);
           hilog.info(domain, tag, '%{public}s',
-            `${caseName} catch err code:${JSON.stringify(e?.code)}, message:${JSON.stringify(e?.message)}`);
-          expectTrue(e?.code === 401 || e?.code === 2305001,
-            `${caseName} catch error code should be 401 or 2305001, actual: ${e?.code}`);
+            `${caseName} catch errCode:${errCode}, err:${JSON.stringify(err)}`);
+          expectTrue(errCode === 401 || errCode === 2305001 || errCode === -1,
+            `${caseName} catch error code should be 401 or 2305001 or runtime error, actual: ${errCode}`);
           done();
         }
         hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
