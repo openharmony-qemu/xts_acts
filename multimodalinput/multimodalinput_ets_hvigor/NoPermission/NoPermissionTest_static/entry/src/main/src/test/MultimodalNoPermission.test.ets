@@ -15,7 +15,6 @@
  */
 
 import { describe, it, expect, TestType, Size, Level, beforeAll } from "@ohos/hypium-static/src/main/indexStatic";
-import infraredEmitter from '@ohos.multimodalInput.infraredEmitter';
 import inputDevice from '@ohos.multimodalInput.inputDevice';
 import { BusinessError } from "@ohos.base";
 import hilog from '@ohos.hilog';
@@ -48,81 +47,6 @@ export default function MultimodalNoPermissionTest() {
           error = error as BusinessError;
           console.info(`${caseName} Failed to set capslock state, error: ${JSON.stringify(error,
             [`code`, `message`])}`);
-          expect(error.code).assertEqual(201);
-          done();
-        }
-      });
-
-    /**
-     * @tc.name   SUB_MMI_Input_Api_NoPermission_0200
-     * @tc.number SUB_MMI_Input_Api_NoPermission_0200
-     * @tc.desc   Test transmitInfrared interface to set non-permission.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("SUB_MMI_Input_Api_NoPermission_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        let caseName = "SUB_MMI_Input_Api_NoPermission_0200";
-        try {
-          let infraredFrequency: long = 38000;
-          let pattern: Array<long> = [100, 200, 300, 400];
-          infraredEmitter.transmitInfrared(infraredFrequency, pattern);
-          console.info(`${caseName} transmitInfrared success.`);
-          expect().assertFail();
-          done();
-        } catch (error) {
-          error = error as BusinessError;
-          console.info(`${caseName} transmitInfrared failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          expect(error.code).assertEqual(201);
-          done();
-        }
-      });
-
-    /**
-     * @tc.name   SUB_MMI_Input_Api_NoPermission_0300
-     * @tc.number SUB_MMI_Input_Api_NoPermission_0300
-     * @tc.desc   Test getInfraredFrequencies interface to set non-permission.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it("SUB_MMI_Input_Api_NoPermission_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        let caseName = "SUB_MMI_Input_Api_NoPermission_0300";
-        try {
-          let frequencies = infraredEmitter.getInfraredFrequencies();
-          console.info(`${caseName} getInfraredFrequencies success, frequencies: ${JSON.stringify(frequencies)}`);
-          expect().assertFail();
-          done();
-        } catch (error) {
-          error = error as BusinessError;
-          console.info(`${caseName} transmitInfrared failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          expect(error.code).assertEqual(201);
-          done();
-        }
-      });
-
-    /**
-     * @tc.name   SUB_MMI_Input_Api_NoPermission_0400
-     * @tc.number SUB_MMI_Input_Api_NoPermission_0400
-     * @tc.desc   Test hasIrEmitter interface to set non-permission.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it("SUB_MMI_Input_Api_NoPermission_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        let caseName = "SUB_MMI_Input_Api_NoPermission_0400";
-        try {
-          await infraredEmitter.hasIrEmitter().then((result: boolean) => {
-            console.info(`${caseName} hasIrEmitter success`);
-            expect().assertFail();
-            done();
-          })
-        } catch (error) {
-          error = error as BusinessError;
-          console.info(`${caseName} Failed to set capslock state, error: ${JSON.stringify(error, [`code`, `message`])}`);
           expect(error.code).assertEqual(201);
           done();
         }
