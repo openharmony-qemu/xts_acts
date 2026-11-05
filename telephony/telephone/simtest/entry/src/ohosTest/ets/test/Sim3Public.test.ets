@@ -75,7 +75,7 @@ export default function Sim3Public() {
       let caseName: string = 'testTelephonySimGetMaxSimCount0100';
       console.info(`${caseName} test start `);
       let maxSimCount: number = sim.getMaxSimCount();
-      ExpectTrue(maxSimCount >= 0);
+      ExpectTrue(maxSimCount >= 0 && maxSimCount <= 3);
       console.info(`${caseName} test end `);
       done();
     });
