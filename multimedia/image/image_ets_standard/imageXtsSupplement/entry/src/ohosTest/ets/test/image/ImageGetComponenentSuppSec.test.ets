@@ -270,7 +270,6 @@ async function ImageGetComponent(done: Function, testName: string, callback: (re
       callback(receiver);
       await sleep(1000);
       await releasePhotoSession();
-      await receiver.release();
       done();
     }
   } catch (error) {
@@ -295,7 +294,6 @@ async function sendableGetComponent(done: Function, testName: string, callback: 
       callback(receiver);
       await sleep(1000);
       await releasePhotoSession();
-      await receiver.release();
       done();
     }
   } catch (error) {
@@ -315,6 +313,7 @@ export default function ImageGetComponentSuppSec() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
+      await getVideoSurfaceId();
     });
     beforeEach(async () => {
       await sleep(500);
@@ -517,7 +516,10 @@ export default function ImageGetComponentSuppSec() {
         let receiver: sendableImage.ImageReceiver = sendableImage.createImageReceiver(size, image.ImageFormat.JPEG, 8);
         mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
         console.info(TAG,testName,"get receiver SurfaceId success")
+        let isDone = false
         receiver.on('imageArrival', async () => {
+          if (isDone) return
+          isDone = true
           let img = await receiver.readNextImage();
           console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
           img.getComponent(image.ComponentType.JPEG).then((component: image.Component) => {
@@ -548,7 +550,10 @@ export default function ImageGetComponentSuppSec() {
     it('image_sendableImage_getComponent_Promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_sendableImage_getComponent_Promise_002';
       sendableGetComponent(done,testName, async (receiver) => {
+        let isDone = false
         receiver.on('imageArrival', async () => {
+          if (isDone) return
+          isDone = true
           try {
             let img = await receiver.readNextImage();
             console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
@@ -576,7 +581,10 @@ export default function ImageGetComponentSuppSec() {
     it('image_sendableImage_getComponent_Promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_sendableImage_getComponent_Promise_003';
       sendableGetComponent(done,testName, async (receiver) => {
+        let isDone = false
         receiver.on('imageArrival', async () => {
+          if (isDone) return
+          isDone = true
           try {
             let img = await receiver.readNextImage();
             console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
@@ -604,7 +612,10 @@ export default function ImageGetComponentSuppSec() {
     it('image_sendableImage_getComponent_Promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_sendableImage_getComponent_Promise_004';
       sendableGetComponent(done,testName, async (receiver) => {
+        let isDone = false
         receiver.on('imageArrival', async () => {
+          if (isDone) return
+          isDone = true
           try {
             let img = await receiver.readNextImage();
             console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
@@ -633,7 +644,10 @@ export default function ImageGetComponentSuppSec() {
     it('image_sendableImage_getComponent_Promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_sendableImage_getComponent_Promise_005';
       sendableGetComponent(done,testName, async (receiver) => {
+        let isDone = false
         receiver.on('imageArrival', async () => {
+          if (isDone) return
+          isDone = true
           let img = await receiver.readNextImage();
           console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
           try {
@@ -662,7 +676,10 @@ export default function ImageGetComponentSuppSec() {
     it('image_sendableImage_getComponent_Promise_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_sendableImage_getComponent_Promise_006';
       sendableGetComponent(done,testName, async (receiver) => {
+        let isDone = false
         receiver.on('imageArrival', async () => {
+          if (isDone) return
+          isDone = true
           let img = await receiver.readNextImage();
           console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
           try {
@@ -691,7 +708,10 @@ export default function ImageGetComponentSuppSec() {
     it('SUB_IMAGE_SENDABLE_GET_COMPONENT_PROMISE_0007', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_SENDABLE_GET_COMPONENT_PROMISE_0007';
       sendableGetComponent(done,testName, async (receiver) => {
+        let isDone = false
         receiver.on('imageArrival', async () => {
+          if (isDone) return
+          isDone = true
           try {
             let img = await receiver.readNextImage();
             console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
@@ -720,7 +740,10 @@ export default function ImageGetComponentSuppSec() {
     it('SUB_IMAGE_SENDABLE_GET_COMPONENT_PROMISE_0008', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_IMAGE_SENDABLE_GET_COMPONENT_PROMISE_0008';
       sendableGetComponent(done,testName, async (receiver) => {
+        let isDone = false
         receiver.on('imageArrival', async () => {
+          if (isDone) return
+          isDone = true
           try {
             let img = await receiver.readNextImage();
             console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
@@ -760,6 +783,7 @@ export default function ImageGetComponentSuppSec() {
             console.info(TAG ,testName, err.message, err.code);
             expect().assertFail();
           }
+          receiver.off('imageArrival');
         });
         createPhotoOutput();
         await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
@@ -785,10 +809,12 @@ export default function ImageGetComponentSuppSec() {
             expect(img.clipRect.x).assertEqual(0);
             console.info(TAG, testName, 'receiver.readNextImage succeeded.', img.clipRect.y);
             expect(img.clipRect.y).assertEqual(0);
+            receiver.off('imageArrival');
             done();
           } catch (err) {
             console.info(TAG, testName, err.message, err.code);
             expect().assertFail();
+            receiver.off('imageArrival');
             done();
           }
         });
@@ -812,6 +838,7 @@ export default function ImageGetComponentSuppSec() {
         receiver.on('imageArrival', async () => {
           try {
             receiver.readLatestImage((err: BusinessError, img: image.Image) => {
+              receiver.off('imageArrival');
               if (err) {
                 console.error(TAG ,testName,`Failed to read the latest Image.code ${err.code},message is ${err.message}`);
                 expect().assertFail();
@@ -825,6 +852,7 @@ export default function ImageGetComponentSuppSec() {
           }catch (err) {
             console.info(TAG ,testName, err.message, err.code);
             expect().assertFail();
+            receiver.off('imageArrival');
           }
         });
         createPhotoOutput();
@@ -844,7 +872,10 @@ export default function ImageGetComponentSuppSec() {
     it('image_sendableImage_readLatestImage_Promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_sendableImage_readLatestImage_Promise_001';
       sendableGetComponent(done,testName, async (receiver) => {
+        let isDone = false
         receiver.on('imageArrival', async () => {
+          if (isDone) return
+          isDone = true
           try {
             let img = await receiver.readLatestImage();
             console.info(TAG, testName, 'receiver.readNextImage succeeded.',img.size);
@@ -877,7 +908,10 @@ export default function ImageGetComponentSuppSec() {
     it('image_sendableImage_readLatestImage_Promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_sendableImage_readLatestImage_Promise_002';
       sendableGetComponent(done,testName, async (receiver) => {
+        let isDone = false
         receiver.on('imageArrival', async () => {
+          if (isDone) return
+          isDone = true
           try {
             let img = await receiver.readLatestImage();
             console.info(TAG, testName, 'receiver.readLatestImage succeeded.',img.clipRect.x);
@@ -908,7 +942,10 @@ export default function ImageGetComponentSuppSec() {
     it('image_sendableImage_readNextImage_Promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_sendableImage_readNextImage_Promise_001';
       sendableGetComponent(done,testName, async (receiver) => {
+        let isDone = false
         receiver.on('imageArrival', async () => {
+          if (isDone) return
+          isDone = true
           try {
             let img = await receiver.readNextImage();
             console.info(TAG, testName, 'receiver.readNextImage succeeded.',img.size);
@@ -937,7 +974,10 @@ export default function ImageGetComponentSuppSec() {
     it('image_sendableImage_readNextImage_Promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_sendableImage_readNextImage_Promise_003';
       sendableGetComponent(done,testName, async (receiver) => {
+        let isDone = false
         receiver.on('imageArrival', async () => {
+          if (isDone) return
+          isDone = true
           try {
             let img = await receiver.readNextImage();
             console.info(TAG, testName, 'receiver.readNextImage succeeded.',img.format);
@@ -954,6 +994,144 @@ export default function ImageGetComponentSuppSec() {
         mPhotoSession.start();
       })
     })
+
+    /**
+     * @tc.number     SUB_IMAGE_SENDABLE_IMAGE_GET_COMPONENT_PROMISE_ABNORMAL_0005
+     * @tc.name       SUB_IMAGE_SENDABLE_IMAGE_GET_COMPONENT_PROMISE_ABNORMAL_0005
+     * @tc.desc       Image.getComponent,ComponentType: null, expect error code 1
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_IMAGE_SENDABLE_IMAGE_GET_COMPONENT_PROMISE_ABNORMAL_0005', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SENDABLE_IMAGE_GET_COMPONENT_PROMISE_ABNORMAL_0005';
+      sendableGetComponent(done,testName, async (receiver) => {
+        let isDone = false
+        receiver.on('imageArrival', async () => {
+          if (isDone) return
+          isDone = true
+          try {
+            let img = await receiver.readNextImage();
+            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
+            AppStorage.setOrCreate('key', null);
+            let componentType: image.ComponentType = AppStorage.get('key') as ESObject;
+            let component = await img.getComponent(componentType);
+            console.info(TAG, testName, 'getComponent succeeded.',component.componentType);
+            expect().assertFail();
+          }catch (error) {
+            console.error(TAG, testName, `getComponent failed code ${error.code}, message is ${error.message}`);
+            expect(Number(error.code)).assertEqual(1);
+          }
+        });
+        createPhotoOutput();
+        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+        mPhotoSession.start();
+      })
+    })
+
+    /**
+     * @tc.number     SUB_IMAGE_SENDABLE_IMAGE_GET_COMPONENT_PROMISE_ABNORMAL_0006
+     * @tc.name       SUB_IMAGE_SENDABLE_IMAGE_GET_COMPONENT_PROMISE_ABNORMAL_0006
+     * @tc.desc       Image.getComponent,ComponentType: undefined, expect error code 1
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_IMAGE_SENDABLE_IMAGE_GET_COMPONENT_PROMISE_ABNORMAL_0006', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SENDABLE_IMAGE_GET_COMPONENT_PROMISE_ABNORMAL_0006';
+      sendableGetComponent(done,testName, async (receiver) => {
+        let isDone = false
+        receiver.on('imageArrival', async () => {
+          if (isDone) return
+          isDone = true
+          try {
+            let img = await receiver.readNextImage();
+            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
+            AppStorage.setOrCreate('key', undefined);
+            let componentType: image.ComponentType = AppStorage.get('key') as ESObject;
+            let component = await img.getComponent(componentType);
+            console.info(TAG, testName, 'getComponent succeeded.',component.componentType);
+            expect().assertFail();
+          }catch (error) {
+            console.error(TAG, testName, `getComponent failed code ${error.code}, message is ${error.message}`);
+            expect(Number(error.code)).assertEqual(1);
+          }
+        });
+        createPhotoOutput();
+        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+        mPhotoSession.start();
+      })
+    })
+
+    /**
+     * @tc.number     SUB_IMAGE_SENDABLE_IMAGE_ON_IMAGE_ARRIVAL_DUP_0001
+     * @tc.name       SUB_IMAGE_SENDABLE_IMAGE_ON_IMAGE_ARRIVAL_DUP_0001
+     * @tc.desc       sendableImage.ImageReceiver.on('imageArrival') register two different callbacks, verify second overwrites first
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_IMAGE_SENDABLE_IMAGE_ON_IMAGE_ARRIVAL_DUP_0001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SENDABLE_IMAGE_ON_IMAGE_ARRIVAL_DUP_0001';
+      if (isEmpty(mCameraDeviceArray)) {
+        console.error(TAG, testName, 'mCameraDeviceArray is null.');
+        done();
+        return;
+      }
+      let firstCallbackCount = 0;
+      let secondCallbackCount = 0;
+      try {
+        let size: image.Size = {
+          height: 8192,
+          width: 8
+        };
+        let receiver: sendableImage.ImageReceiver = sendableImage.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+        mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
+        console.info(TAG, testName, "get receiver SurfaceId success", mReceiverSurfaceId);
+
+        receiver.on('imageArrival', async () => {
+          firstCallbackCount++;
+          console.info(TAG, testName, `first callback triggered, count=${firstCallbackCount}`);
+          try {
+            let img = await receiver.readNextImage();
+            console.info(TAG, testName, 'first callback readNextImage succeeded', img);
+          } catch (error) {
+            console.error(TAG, testName, 'first callback readNextImage error:', error);
+          }
+        });
+
+        receiver.on('imageArrival', async () => {
+          secondCallbackCount++;
+          console.info(TAG, testName, `second callback triggered, count=${secondCallbackCount}`);
+          try {
+            let img = await receiver.readNextImage();
+            console.info(TAG, testName, 'second callback readNextImage succeeded', img);
+          } catch (error) {
+            console.error(TAG, testName, 'second callback readNextImage error:', error);
+          }
+        });
+
+        createPhotoOutput();
+        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+        mPhotoSession.start();
+        await sleep(3000);
+
+        console.info(TAG, testName, `final counts: first=${firstCallbackCount}, second=${secondCallbackCount}`);
+        expect(secondCallbackCount > 0).assertTrue();
+        expect(firstCallbackCount).assertEqual(0);
+      } catch (error) {
+        console.error(TAG, testName, 'Test setup error:', error.message, error.code);
+        expect().assertFail();
+      } finally {
+        try {
+          await releasePhotoSession();
+          console.info(TAG, testName, "releasePhotoSession success");
+        } catch (releaseError) {
+          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
+        }
+        done();
+      }
+    });
 
   })
 }
