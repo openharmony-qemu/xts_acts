@@ -3072,7 +3072,6 @@ export default function TCPSocketConnectionTest() {
         await tcp.bind(bindAddress).then(() => {
           console.info(`${caseName} bind success`);
           expectTrue(true, `${caseName} bind should succeed`);
-          expect(true).assertTrue();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} bind fail err:${JSON.stringify(err)}`);
           expectFail();
