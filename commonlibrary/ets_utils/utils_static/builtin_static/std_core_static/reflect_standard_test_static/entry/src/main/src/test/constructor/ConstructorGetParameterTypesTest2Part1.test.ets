@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from "../../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 import Utils from "../Util.test";
 import {EmptyCls,GO2_Ext_AbstractGeneric,StringFieldWithMethod,DefaultAndRequired_Ext,FourParams,CtorMultiI,Ctor6MixedParam,SevenParams,EightParams,CtorAllPrimitivesParam,TenParams,PubDouble,IP2_110_PubDefBool,PubShortParam,PubByteParam,IP3_193_PubFloat,Ext4_CharOptParam,CustomParamCtor,TcPub19,EnumParamCtor,ObjectParamCtor_Ext,TwoSameString,TwoSameInt,ParamCountCls,BoolDoubleString,FivePrimitiveTypes,RefAndInt,TwoCustomTypes,ArrayAndPrimitive,EnumAndInt,CtorDoubleExtremesParam,StrIntStr,TcMixArr,Pub2BoolIntExt,PGN_RestWithMand,Ctor_double_String_boolean,OrdPrimitiveThenRef,FourTypesOrder,FourTypesReverse,IntBoolFloatStr,AllIndexesAccessible,ConsistencyWithNum,TwoCtorsNoArg,TwoCtorsSameArity,CtorOverload3,EqOverloadCls,OT_OverloadDefaultValue,IndepCtorTypes,FourOverloads,Ctor_long_String_double,Ctor_int_bool_String,Ctor_boolArr_intArr_StringArr,Ctor_Bool_Int_String,Ctor_Object_String_Int,GetParamTypeABC,LongParamCls,Eq02_D,ThreeParamCtor,MultiParamCtor,CI_DefaultMix,StrIntCls,PGN_Config,TwoParamCtor,} from "../Util.test";
 
