@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 
 class A_access {
   public x: int

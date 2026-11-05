@@ -27,7 +27,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 
 // 14
 class Pa_0<T> {
