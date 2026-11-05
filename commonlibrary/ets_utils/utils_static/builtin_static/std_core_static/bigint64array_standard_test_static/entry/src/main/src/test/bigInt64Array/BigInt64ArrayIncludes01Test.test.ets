@@ -18,7 +18,7 @@
 import {
   afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level,
   Size, TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from './../Util.test';
 
 const BIGINT_HEX_1F = BigInt('0x1F');
