@@ -25,20 +25,6 @@ let tag: string = 'testTag';
 
 export default function MultimodalTouchEventTest() {
   describe("MultimodalTouchEventTest", (): void => {
-    const ExpectTrue = (n: boolean) => {
-      try {
-        expect(n).assertTrue();
-      } catch (err) {
-        console.info("expectInfo", `test failed`);
-      }
-    }
-    const ExpectFalse = (n: boolean) => {
-      try {
-        expect(n).assertFail();
-      } catch (err) {
-        console.info("expectInfo", `test failed`);
-      }
-    }
 
     /**
      * @tc.name   SUB_MMI_Input_Api_TouchEvent_Action_0100
@@ -53,14 +39,14 @@ export default function MultimodalTouchEventTest() {
         let caseName = "SUB_MMI_Input_Api_TouchEvent_Action_0100";
         hilog.info(domain, tag, `${caseName} enter`);
         try {
-          ExpectTrue(Action.CANCEL == 0);
-          ExpectTrue(Action.DOWN == 1);
-          ExpectTrue(Action.MOVE == 2);
-          ExpectTrue(Action.UP == 3);
+          expect(Action.CANCEL == 0).assertTrue();
+          expect(Action.DOWN == 1).assertTrue();
+          expect(Action.MOVE == 2).assertTrue();
+          expect(Action.UP == 3).assertTrue();
           done();
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(true);
+          expect().assertFail();
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
@@ -79,18 +65,18 @@ export default function MultimodalTouchEventTest() {
         let caseName = "SUB_MMI_Input_Api_TouchEvent_ToolType_0100";
         hilog.info(domain, tag, `${caseName} enter`);
         try {
-          ExpectTrue(ToolType.FINGER == 0);
-          ExpectTrue(ToolType.PEN == 1);
-          ExpectTrue(ToolType.RUBBER == 2);
-          ExpectTrue(ToolType.BRUSH == 3);
-          ExpectTrue(ToolType.PENCIL == 4);
-          ExpectTrue(ToolType.AIRBRUSH == 5);
-          ExpectTrue(ToolType.MOUSE == 6);
-          ExpectTrue(ToolType.LENS == 7);
+          expect(ToolType.FINGER == 0).assertTrue();
+          expect(ToolType.PEN == 1).assertTrue();
+          expect(ToolType.RUBBER == 2).assertTrue();
+          expect(ToolType.BRUSH == 3).assertTrue();
+          expect(ToolType.PENCIL == 4).assertTrue();
+          expect(ToolType.AIRBRUSH == 5).assertTrue();
+          expect(ToolType.MOUSE == 6).assertTrue();
+          expect(ToolType.LENS == 7).assertTrue();
           done();
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(true);
+          expect().assertFail();
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
@@ -109,13 +95,13 @@ export default function MultimodalTouchEventTest() {
         let caseName = "SUB_MMI_Input_Api_TouchEvent_SourceType_0100";
         hilog.info(domain, tag, `${caseName} enter`);
         try {
-          ExpectTrue(SourceType.TOUCH_SCREEN == 0);
-          ExpectTrue(SourceType.PEN == 1);
-          ExpectTrue(SourceType.TOUCH_PAD == 2);
+          expect(SourceType.TOUCH_SCREEN == 0).assertTrue();
+          expect(SourceType.PEN == 1).assertTrue();
+          expect(SourceType.TOUCH_PAD == 2).assertTrue();
           done();
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(true);
+          expect().assertFail();
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
@@ -156,30 +142,30 @@ export default function MultimodalTouchEventTest() {
             fixedDisplayX: 1,
             fixedDisplayY: 1,
           };
-          ExpectTrue(testTouch.id == 1);
-          ExpectTrue(testTouch.pressedTime == 1);
-          ExpectTrue(testTouch.screenX == 1);
-          ExpectTrue(testTouch.screenY == 1);
-          ExpectTrue(testTouch.windowX == 1);
-          ExpectTrue(testTouch.windowY == 1);
-          ExpectTrue(testTouch.pressure == 1.0);
-          ExpectTrue(testTouch.width == 1);
-          ExpectTrue(testTouch.height == 1);
-          ExpectTrue(testTouch.tiltX == 1);
-          ExpectTrue(testTouch.tiltY == 1);
-          ExpectTrue(testTouch.toolX == 1);
-          ExpectTrue(testTouch.toolY == 1);
-          ExpectTrue(testTouch.toolWidth == 1);
-          ExpectTrue(testTouch.toolHeight == 1);
-          ExpectTrue(testTouch.rawX == 1);
-          ExpectTrue(testTouch.rawY == 1);
-          ExpectTrue(testTouch.toolType == ToolType.FINGER);
-          ExpectTrue(testTouch.fixedDisplayX == 1);
-          ExpectTrue(testTouch.fixedDisplayY == 1);
+          expect(testTouch.id == 1).assertTrue();
+          expect(testTouch.pressedTime == 1).assertTrue();
+          expect(testTouch.screenX == 1).assertTrue();
+          expect(testTouch.screenY == 1).assertTrue();
+          expect(testTouch.windowX == 1).assertTrue();
+          expect(testTouch.windowY == 1).assertTrue();
+          expect(testTouch.pressure == 1.0).assertTrue();
+          expect(testTouch.width == 1).assertTrue();
+          expect(testTouch.height == 1).assertTrue();
+          expect(testTouch.tiltX == 1).assertTrue();
+          expect(testTouch.tiltY == 1).assertTrue();
+          expect(testTouch.toolX == 1).assertTrue();
+          expect(testTouch.toolY == 1).assertTrue();
+          expect(testTouch.toolWidth == 1).assertTrue();
+          expect(testTouch.toolHeight == 1).assertTrue();
+          expect(testTouch.rawX == 1).assertTrue();
+          expect(testTouch.rawY == 1).assertTrue();
+          expect(testTouch.toolType == ToolType.FINGER).assertTrue();
+          expect(testTouch.fixedDisplayX == 1).assertTrue();
+          expect(testTouch.fixedDisplayY == 1).assertTrue();
           done();
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(true);
+          expect().assertFail();
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
@@ -231,14 +217,14 @@ export default function MultimodalTouchEventTest() {
             touches: [testTouch],
             sourceType: SourceType.TOUCH_SCREEN,
           };
-          ExpectTrue(testTouchEvent.action == Action.CANCEL);
-          ExpectTrue(testTouchEvent.touch.id == 1);
-          ExpectTrue(testTouchEvent.touches[0].id == 1);
-          ExpectTrue(testTouchEvent.sourceType == SourceType.TOUCH_SCREEN);
+          expect(testTouchEvent.action == Action.CANCEL).assertTrue();
+          expect(testTouchEvent.touch.id == 1).assertTrue();
+          expect(testTouchEvent.touches[0].id == 1).assertTrue();
+          expect(testTouchEvent.sourceType == SourceType.TOUCH_SCREEN).assertTrue();
           done();
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(true);
+          expect().assertFail();
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
@@ -264,15 +250,15 @@ export default function MultimodalTouchEventTest() {
             screenId: 1,
             windowId: 1
           };
-          ExpectTrue(testInputEvent.id == 1);
-          ExpectTrue(testInputEvent.actionTime == 1);
-          ExpectTrue(testInputEvent.deviceId == 1);
-          ExpectTrue(testInputEvent.screenId == 1);
-          ExpectTrue(testInputEvent.windowId == 1);
+          expect(testInputEvent.id == 1).assertTrue();
+          expect(testInputEvent.actionTime == 1).assertTrue();
+          expect(testInputEvent.deviceId == 1).assertTrue();
+          expect(testInputEvent.screenId == 1).assertTrue();
+          expect(testInputEvent.windowId == 1).assertTrue();
           done();
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(true);
+          expect().assertFail();
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
