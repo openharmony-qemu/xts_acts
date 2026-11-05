@@ -3091,7 +3091,6 @@ export default function TCPSocketConnectionTest() {
         await tcp.close().then(() => {
           console.info(`${caseName} close success`);
           expectTrue(true, `${caseName} close should succeed`);
-          expect(true).assertTrue();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} close fail err:${JSON.stringify(err)}`);
           expectFail();
