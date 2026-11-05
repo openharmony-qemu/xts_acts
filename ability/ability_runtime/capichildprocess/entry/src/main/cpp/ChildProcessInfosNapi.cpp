@@ -34,9 +34,10 @@ namespace {
 
 // G.CNS.02: named lengths for NAPI int arrays returned to Hypium.
 constexpr size_t K_ACQUIRE_RESULT_LEN = 2;
+constexpr size_t K_ERR_ENUM_PAIR_LEN = 2;
 constexpr size_t K_QUERY_RESULT_LEN = 9;
 constexpr size_t K_PARENT_PID_DETAIL_LEN = 3;
-constexpr size_t K_PARENT_PID_ERR_ENUM_LEN = 2;
+constexpr size_t K_PARENT_PID_ERR_ENUM_LEN = K_ERR_ENUM_PAIR_LEN;
 
 struct QueryResultFields {
     int32_t acquireCode = 0;
@@ -99,11 +100,11 @@ napi_value AcquireChildCountNull(napi_env env, napi_callback_info info)
 napi_value AcquireChildErrorEnums(napi_env env, napi_callback_info info)
 {
     (void)info;
-    int32_t vals[2] = {
+    int32_t vals[K_ERR_ENUM_PAIR_LEN] = {
         static_cast<int32_t>(NCP_ERR_INVALID_PARAM),
         static_cast<int32_t>(NCP_ERR_INTERNAL),
     };
-    return MakeIntArray(env, vals, 2);
+    return MakeIntArray(env, vals, K_ERR_ENUM_PAIR_LEN);
 }
 
 napi_value AcquireChildEmpty(napi_env env, napi_callback_info info)
@@ -142,11 +143,11 @@ napi_value AcquireUIAbilityCountNull(napi_env env, napi_callback_info info)
 napi_value AcquireUIAbilityErrorEnums(napi_env env, napi_callback_info info)
 {
     (void)info;
-    int32_t vals[2] = {
+    int32_t vals[K_ERR_ENUM_PAIR_LEN] = {
         static_cast<int32_t>(ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID),
         static_cast<int32_t>(ABILITY_RUNTIME_ERROR_CODE_INTERNAL),
     };
-    return MakeIntArray(env, vals, 2);
+    return MakeIntArray(env, vals, K_ERR_ENUM_PAIR_LEN);
 }
 
 napi_value AcquireUIAbilityEmpty(napi_env env, napi_callback_info info)
@@ -244,11 +245,11 @@ napi_value GetPidNullOut(napi_env env, napi_callback_info info)
 napi_value GetPidErrorEnums(napi_env env, napi_callback_info info)
 {
     (void)info;
-    int32_t vals[2] = {
+    int32_t vals[K_ERR_ENUM_PAIR_LEN] = {
         static_cast<int32_t>(ABILITY_RUNTIME_ERROR_CODE_NO_ERROR),
         static_cast<int32_t>(ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID),
     };
-    return MakeIntArray(env, vals, 2);
+    return MakeIntArray(env, vals, K_ERR_ENUM_PAIR_LEN);
 }
 
 napi_value GetParentPidInvalid(napi_env env, napi_callback_info info)
@@ -528,9 +529,7 @@ napi_value GetProcessNameRequiredNull(napi_env env, napi_callback_info info)
     return MakeInt32(env, result);
 }
 
-} // namespace
-
-void RegisterChildProcessInfosNapi(napi_env env, napi_value exports)
+void DefineChildInfosNapiAcquire(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
         { "acquireChildProcessInfosInvalidParam", nullptr,
@@ -566,6 +565,13 @@ void RegisterChildProcessInfosNapi(napi_env env, napi_value exports)
             nullptr, nullptr, napi_default, nullptr },
         { "childProcessInfoGetPidErrorEnums", nullptr, GetPidErrorEnums, nullptr,
             nullptr, nullptr, napi_default, nullptr },
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+}
+
+void DefineChildInfosNapiQuery(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
         { "childProcessInfoGetParentPidInvalid", nullptr, GetParentPidInvalid,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "childProcessInfoGetParentPidBothNull", nullptr, GetParentPidBothNull,
@@ -597,4 +603,12 @@ void RegisterChildProcessInfosNapi(napi_env env, napi_value exports)
             nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+}
+
+} // namespace
+
+void RegisterChildProcessInfosNapi(napi_env env, napi_value exports)
+{
+    DefineChildInfosNapiAcquire(env, exports);
+    DefineChildInfosNapiQuery(env, exports);
 }
