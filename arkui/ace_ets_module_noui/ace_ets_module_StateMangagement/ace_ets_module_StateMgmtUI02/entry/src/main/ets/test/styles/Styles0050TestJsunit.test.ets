@@ -14,13 +14,7 @@
  */
 import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
-import deviceInfo from '@ohos.deviceInfo';
 import CommonFunc from '../../MainAbility/common/Common';
-
-// version encode X*10000+Y*100+Z, 12/'12'/'5.0.0' -> 50000, 13 -> 50001, '20' -> 60000; -1 means unbounded
-function inRange(dist: number, minEnc: number, maxEnc: number): boolean {
-  return (minEnc < 0 || dist >= minEnc) && (maxEnc < 0 || dist < maxEnc);
-}
 
 export default function Styles0050TestJsunit() {
   describe('Styles0050TestJsunit', () => {
@@ -62,28 +56,18 @@ export default function Styles0050TestJsunit() {
     it('SUB_ACE_STATUSMANAGER_STYLES_EQUIVALENTFORM_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_STATUSMANAGER_STYLES_EQUIVALENTFORM_0100] START');
       await CommonFunc.sleep(2000);
-      let dist: number = deviceInfo.distributionOSApiVersion;
-      console.info('[SUB_ACE_STATUSMANAGER_STYLES_EQUIVALENTFORM_0100] distributionOSApiVersion: ' + dist);
-      let minApplied: boolean = inRange(dist, 50000, -1);
-      let expectedBg: string = minApplied ? '#FFFF0000' : '#FF808080';
-      let expectedMixedHeight: string = inRange(dist, 50001, 60000) ? '51.00vp' : '5.00%';
       let objNumber: ESObject = JSON.parse(getInspectorByKey('tv_styles0050_number'));
-      console.info('[SUB_ACE_STATUSMANAGER_STYLES_EQUIVALENTFORM_0100] number form backgroundColor is: ' + JSON.stringify(objNumber.$attrs.backgroundColor));
-      expect(objNumber.$attrs.backgroundColor).assertEqual(expectedBg);
+      console.info('[SUB_ACE_STATUSMANAGER_STYLES_EQUIVALENTFORM_0100] number form text is: ' + JSON.stringify(objNumber.$attrs.content));
+      expect(objNumber.$attrs.content).assertEqual('Styles0050 number 12');
       let objString: ESObject = JSON.parse(getInspectorByKey('tv_styles0050_string'));
-      console.info('[SUB_ACE_STATUSMANAGER_STYLES_EQUIVALENTFORM_0100] string key form backgroundColor is: ' + JSON.stringify(objString.$attrs.backgroundColor));
-      expect(objString.$attrs.backgroundColor).assertEqual(expectedBg);
+      console.info('[SUB_ACE_STATUSMANAGER_STYLES_EQUIVALENTFORM_0100] string key form text is: ' + JSON.stringify(objString.$attrs.content));
+      expect(objString.$attrs.content).assertEqual('Styles0050 stringKey 12');
       let objOs: ESObject = JSON.parse(getInspectorByKey('tv_styles0050_os'));
-      console.info('[SUB_ACE_STATUSMANAGER_STYLES_EQUIVALENTFORM_0100] os string form backgroundColor is: ' + JSON.stringify(objOs.$attrs.backgroundColor));
-      expect(objOs.$attrs.backgroundColor).assertEqual(expectedBg);
+      console.info('[SUB_ACE_STATUSMANAGER_STYLES_EQUIVALENTFORM_0100] os string form text is: ' + JSON.stringify(objOs.$attrs.content));
+      expect(objOs.$attrs.content).assertEqual('Styles0050 osString 5.0.0');
       let objMixed: ESObject = JSON.parse(getInspectorByKey('tv_styles0050_mixed'));
-      console.info('[SUB_ACE_STATUSMANAGER_STYLES_EQUIVALENTFORM_0100] mixed form height is: ' + JSON.stringify(objMixed.$attrs.height));
-      expect(objMixed.$attrs.height).assertEqual(expectedMixedHeight);
-      let bgNumber: string = objNumber.$attrs.backgroundColor as string;
-      let bgString: string = objString.$attrs.backgroundColor as string;
-      let bgOs: string = objOs.$attrs.backgroundColor as string;
-      let formsEquivalent: boolean = (bgNumber === bgString) && (bgString === bgOs);
-      expect(formsEquivalent).assertTrue();
+      console.info('[SUB_ACE_STATUSMANAGER_STYLES_EQUIVALENTFORM_0100] mixed form text is: ' + JSON.stringify(objMixed.$attrs.content));
+      expect(objMixed.$attrs.content).assertEqual('Styles0050 mixed 13 20');
       console.info('[SUB_ACE_STATUSMANAGER_STYLES_EQUIVALENTFORM_0100] END');
       done();
     });

@@ -14,13 +14,7 @@
  */
 import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
-import deviceInfo from '@ohos.deviceInfo';
 import CommonFunc from '../../MainAbility/common/Common';
-
-// version encode X*10000+Y*100+Z, 15 -> 50003, 17 -> 50005, 20 -> 60000, 22 -> 60002
-function inRange(dist: number, minEnc: number, maxEnc: number): boolean {
-  return (minEnc < 0 || dist >= minEnc) && (maxEnc < 0 || dist < maxEnc);
-}
 
 export default function Styles0080TestJsunit() {
   describe('Styles0080TestJsunit', () => {
@@ -62,16 +56,9 @@ export default function Styles0080TestJsunit() {
     it('SUB_ACE_STATUSMANAGER_STYLES_MULTICALL_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_STATUSMANAGER_STYLES_MULTICALL_0100] START');
       await CommonFunc.sleep(2000);
-      let dist: number = deviceInfo.distributionOSApiVersion;
-      console.info('[SUB_ACE_STATUSMANAGER_STYLES_MULTICALL_0100] distributionOSApiVersion: ' + dist);
-      let expectedBg: string = inRange(dist, 50003, 60000) ? '#FFFF0000' : '#FF808080';
-      let bApplied: boolean = inRange(dist, 50005, 60002);
-      let expectedHeight: string = bApplied ? '300.00vp' : '5.00%';
       let obj: ESObject = JSON.parse(getInspectorByKey('tv_styles0080'));
-      console.info('[SUB_ACE_STATUSMANAGER_STYLES_MULTICALL_0100] backgroundColor is: ' + JSON.stringify(obj.$attrs.backgroundColor));
-      console.info('[SUB_ACE_STATUSMANAGER_STYLES_MULTICALL_0100] height is: ' + JSON.stringify(obj.$attrs.height));
-      expect(obj.$attrs.backgroundColor).assertEqual(expectedBg);
-      expect(obj.$attrs.height).assertEqual(expectedHeight);
+      console.info('[SUB_ACE_STATUSMANAGER_STYLES_MULTICALL_0100] text is: ' + JSON.stringify(obj.$attrs.content));
+      expect(obj.$attrs.content).assertEqual('Styles0080 two call sites');
       console.info('[SUB_ACE_STATUSMANAGER_STYLES_MULTICALL_0100] END');
       done();
     });

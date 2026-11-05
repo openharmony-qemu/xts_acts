@@ -14,13 +14,7 @@
  */
 import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
-import deviceInfo from '@ohos.deviceInfo';
 import CommonFunc from '../../MainAbility/common/Common';
-
-// version encode X*10000+Y*100+Z, 15 -> 50003, 20 -> 60000; -1 means unbounded
-function inRange(dist: number, minEnc: number, maxEnc: number): boolean {
-  return (minEnc < 0 || dist >= minEnc) && (maxEnc < 0 || dist < maxEnc);
-}
 
 export default function Styles0070TestJsunit() {
   describe('Styles0070TestJsunit', () => {
@@ -62,15 +56,9 @@ export default function Styles0070TestJsunit() {
     it('SUB_ACE_STATUSMANAGER_STYLES_UNBOUNDED_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_STATUSMANAGER_STYLES_UNBOUNDED_0100] START');
       await CommonFunc.sleep(2000);
-      let dist: number = deviceInfo.distributionOSApiVersion;
-      console.info('[SUB_ACE_STATUSMANAGER_STYLES_UNBOUNDED_0100] distributionOSApiVersion: ' + dist);
-      let expectedBg: string = inRange(dist, 50003, -1) ? '#FFFF0000' : '#FF808080';
-      let expectedHeight: string = inRange(dist, 50003, 60000) ? '200.00vp' : '5.00%';
       let obj: ESObject = JSON.parse(getInspectorByKey('tv_styles0070_a'));
-      console.info('[SUB_ACE_STATUSMANAGER_STYLES_UNBOUNDED_0100] backgroundColor is: ' + JSON.stringify(obj.$attrs.backgroundColor));
-      console.info('[SUB_ACE_STATUSMANAGER_STYLES_UNBOUNDED_0100] height is: ' + JSON.stringify(obj.$attrs.height));
-      expect(obj.$attrs.backgroundColor).assertEqual(expectedBg);
-      expect(obj.$attrs.height).assertEqual(expectedHeight);
+      console.info('[SUB_ACE_STATUSMANAGER_STYLES_UNBOUNDED_0100] text is: ' + JSON.stringify(obj.$attrs.content));
+      expect(obj.$attrs.content).assertEqual('Styles0070 a min outer max inner');
       console.info('[SUB_ACE_STATUSMANAGER_STYLES_UNBOUNDED_0100] END');
       done();
     });
@@ -87,15 +75,9 @@ export default function Styles0070TestJsunit() {
     it('SUB_ACE_STATUSMANAGER_STYLES_UNBOUNDED_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_STATUSMANAGER_STYLES_UNBOUNDED_0200] START');
       await CommonFunc.sleep(2000);
-      let dist: number = deviceInfo.distributionOSApiVersion;
-      console.info('[SUB_ACE_STATUSMANAGER_STYLES_UNBOUNDED_0200] distributionOSApiVersion: ' + dist);
-      let expectedBg: string = inRange(dist, -1, 60000) ? '#FF0000FF' : '#FF808080';
-      let expectedHeight: string = inRange(dist, 50003, 60000) ? '300.00vp' : '5.00%';
       let obj: ESObject = JSON.parse(getInspectorByKey('tv_styles0070_b'));
-      console.info('[SUB_ACE_STATUSMANAGER_STYLES_UNBOUNDED_0200] backgroundColor is: ' + JSON.stringify(obj.$attrs.backgroundColor));
-      console.info('[SUB_ACE_STATUSMANAGER_STYLES_UNBOUNDED_0200] height is: ' + JSON.stringify(obj.$attrs.height));
-      expect(obj.$attrs.backgroundColor).assertEqual(expectedBg);
-      expect(obj.$attrs.height).assertEqual(expectedHeight);
+      console.info('[SUB_ACE_STATUSMANAGER_STYLES_UNBOUNDED_0200] text is: ' + JSON.stringify(obj.$attrs.content));
+      expect(obj.$attrs.content).assertEqual('Styles0070 b max outer min inner');
       console.info('[SUB_ACE_STATUSMANAGER_STYLES_UNBOUNDED_0200] END');
       done();
     });

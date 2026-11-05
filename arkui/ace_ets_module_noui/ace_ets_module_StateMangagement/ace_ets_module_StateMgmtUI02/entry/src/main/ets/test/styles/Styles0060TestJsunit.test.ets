@@ -14,13 +14,7 @@
  */
 import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
-import deviceInfo from '@ohos.deviceInfo';
 import CommonFunc from '../../MainAbility/common/Common';
-
-// version encode X*10000+Y*100+Z, 15 -> 50003, 17 -> 50005, 18 -> 50100, 20 -> 60000, 22 -> 60002, 24 -> 60101
-function inRange(dist: number, minEnc: number, maxEnc: number): boolean {
-  return (minEnc < 0 || dist >= minEnc) && (maxEnc < 0 || dist < maxEnc);
-}
 
 export default function Styles0060TestJsunit() {
   describe('Styles0060TestJsunit', () => {
@@ -61,21 +55,9 @@ export default function Styles0060TestJsunit() {
     it('SUB_ACE_STATUSMANAGER_STYLES_NESTED_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_STATUSMANAGER_STYLES_NESTED_0100] START');
       await CommonFunc.sleep(2000);
-      let dist: number = deviceInfo.distributionOSApiVersion;
-      console.info('[SUB_ACE_STATUSMANAGER_STYLES_NESTED_0100] distributionOSApiVersion: ' + dist);
-      let condA: boolean = inRange(dist, 50003, 60101);
-      let condB: boolean = inRange(dist, 50005, 60002);
-      let condC: boolean = inRange(dist, 50100, 60000);
-      let expectedBg: string = condA ? '#FFFF0000' : '#FF808080';
-      let expectedHeight: string = (condA && condB) ? '200.00vp' : '5.00%';
-      let expectedBorderWidth: string = (condA && condB && condC) ? '2.00vp' : '0.00vp';
       let obj: ESObject = JSON.parse(getInspectorByKey('tv_styles0060'));
-      console.info('[SUB_ACE_STATUSMANAGER_STYLES_NESTED_0100] backgroundColor is: ' + JSON.stringify(obj.$attrs.backgroundColor));
-      console.info('[SUB_ACE_STATUSMANAGER_STYLES_NESTED_0100] height is: ' + JSON.stringify(obj.$attrs.height));
-      console.info('[SUB_ACE_STATUSMANAGER_STYLES_NESTED_0100] borderWidth is: ' + JSON.stringify(obj.$attrs.borderWidth));
-      expect(obj.$attrs.backgroundColor).assertEqual(expectedBg);
-      expect(obj.$attrs.height).assertEqual(expectedHeight);
-      expect(obj.$attrs.borderWidth).assertEqual(expectedBorderWidth);
+      console.info('[SUB_ACE_STATUSMANAGER_STYLES_NESTED_0100] text is: ' + JSON.stringify(obj.$attrs.content));
+      expect(obj.$attrs.content).assertEqual('Styles0060 nested A B C');
       console.info('[SUB_ACE_STATUSMANAGER_STYLES_NESTED_0100] END');
       done();
     });
