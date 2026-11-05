@@ -822,8 +822,116 @@ export default function tabsSidebarStyleTest() {
       await CommonFunc.sleep(400);
       let nodeUndef = getInspectorByKey('tabs_sidebarSelectedBoardColor_undefined');
       let nodeNull = getInspectorByKey('tabs_sidebarSelectedBoardColor_null');
-      expect(JSON.parse(nodeNull).$attrs.sidebarSelectedBoardColor)
-        .assertEqual(JSON.parse(nodeUndef).$attrs.sidebarSelectedBoardColor);
+       expect(JSON.parse(nodeNull).$attrs.sidebarSelectedBoardColor)
+         .assertEqual(JSON.parse(nodeUndef).$attrs.sidebarSelectedBoardColor);
+       done();
+     });
+
+    /**
+     * @tc.number SUB_ARKUI_TABS_SIDEBAR_SHOWSIDEBARCONTROLBUTTON_4300
+     * @tc.name SUB_ARKUI_TABS_SIDEBAR_SHOWSIDEBARCONTROLBUTTON_4300
+     * @tc.desc Cover Tabs showSidebarControlButton true
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_TABS_SIDEBAR_SHOWSIDEBARCONTROLBUTTON_4300', Level.LEVEL1, async (done: Function) => {
+      await CommonFunc.sleep(400);
+      let node = getInspectorByKey('tabs_showSidebarControlButton_true');
+      let val: string = getAttrAsString(node, 'showSidebarControlButton');
+      if (softSkipMissing(val, 'showSidebarControlButton')) {
+        done();
+        return;
+      }
+      expect(val === 'true').assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_TABS_SIDEBAR_SHOWSIDEBARCONTROLBUTTON_4400
+     * @tc.name SUB_ARKUI_TABS_SIDEBAR_SHOWSIDEBARCONTROLBUTTON_4400
+     * @tc.desc Cover Tabs showSidebarControlButton false
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_TABS_SIDEBAR_SHOWSIDEBARCONTROLBUTTON_4400', Level.LEVEL1, async (done: Function) => {
+      await CommonFunc.sleep(400);
+      let nodeFalse = getInspectorByKey('tabs_showSidebarControlButton_false');
+      let nodeBase = getInspectorByKey('tabs_barStyle_normal');
+      let a: string = getAttrAsString(nodeFalse, 'showSidebarControlButton');
+      let b: string = getAttrAsString(nodeBase, 'showSidebarControlButton');
+      if (softSkipMissing(a, 'showSidebarControlButton') || softSkipMissing(b, 'showSidebarControlButton')) {
+        done();
+        return;
+      }
+      expect(a).assertEqual(b);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_TABS_SIDEBAR_SHOWSIDEBARCONTROLBUTTON_4500
+     * @tc.name SUB_ARKUI_TABS_SIDEBAR_SHOWSIDEBARCONTROLBUTTON_4500
+     * @tc.desc Cover Tabs showSidebarControlButton undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_TABS_SIDEBAR_SHOWSIDEBARCONTROLBUTTON_4500', Level.LEVEL1, async (done: Function) => {
+      await CommonFunc.sleep(400);
+      let nodeUndef = getInspectorByKey('tabs_showSidebarControlButton_undefined');
+      let nodeBase = getInspectorByKey('tabs_barStyle_normal');
+      let a: string = getAttrAsString(nodeUndef, 'showSidebarControlButton');
+      let b: string = getAttrAsString(nodeBase, 'showSidebarControlButton');
+      if (softSkipMissing(a, 'showSidebarControlButton') || softSkipMissing(b, 'showSidebarControlButton')) {
+        done();
+        return;
+      }
+      expect(a).assertEqual(b);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_TABS_SIDEBAR_SHOWSIDEBARCONTROLBUTTON_4600
+     * @tc.name SUB_ARKUI_TABS_SIDEBAR_SHOWSIDEBARCONTROLBUTTON_4600
+     * @tc.desc Cover Tabs showSidebarControlButton null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_TABS_SIDEBAR_SHOWSIDEBARCONTROLBUTTON_4600', Level.LEVEL1, async (done: Function) => {
+      await CommonFunc.sleep(400);
+      let nodeUndef = getInspectorByKey('tabs_showSidebarControlButton_undefined');
+      let nodeNull = getInspectorByKey('tabs_showSidebarControlButton_null');
+      let a: string = getAttrAsString(nodeUndef, 'showSidebarControlButton');
+      let b: string = getAttrAsString(nodeNull, 'showSidebarControlButton');
+      if (softSkipMissing(a, 'showSidebarControlButton') || softSkipMissing(b, 'showSidebarControlButton')) {
+        done();
+        return;
+      }
+      expect(a).assertEqual(b);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_TABS_SIDEBAR_SHOWSIDEBARCONTROLBUTTON_4700
+     * @tc.name SUB_ARKUI_TABS_SIDEBAR_SHOWSIDEBARCONTROLBUTTON_4700
+     * @tc.desc Cover Tabs showSidebarControlButton empty string
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_TABS_SIDEBAR_SHOWSIDEBARCONTROLBUTTON_4700', Level.LEVEL1, async (done: Function) => {
+      await CommonFunc.sleep(400);
+      let nodeUndef = getInspectorByKey('tabs_showSidebarControlButton_undefined');
+      let nodeEmpty = getInspectorByKey('tabs_showSidebarControlButton_empty');
+      let a: string = getAttrAsString(nodeUndef, 'showSidebarControlButton');
+      let b: string = getAttrAsString(nodeEmpty, 'showSidebarControlButton');
+      if (softSkipMissing(a, 'showSidebarControlButton') || softSkipMissing(b, 'showSidebarControlButton')) {
+        done();
+        return;
+      }
+      expect(a).assertEqual(b);
       done();
     });
 

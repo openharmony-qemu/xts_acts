@@ -34,6 +34,7 @@ struct TabsSidebarStyle {
         this.sidebarUnselectedIconColorBlocks()
         this.sidebarUnselectedTextColorBlocks()
         this.sidebarSelectedBoardColorBlocks()
+        this.showSidebarControlButtonBlocks()
       }
       .width('100%')
       .padding(8)
@@ -709,6 +710,84 @@ struct TabsSidebarStyle {
         .height(120)
         .barStyle(TabBarStyle.SIDEBAR)
         .sidebarSelectedBoardColor(null)
+  }
+
+  @Builder
+  showSidebarControlButtonBlocks() {
+        Text('showSidebarControlButton true').fontSize(12)
+        Tabs({ barPosition: BarPosition.Start }) {
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Blue)
+          }.tabBar('A')
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Green)
+          }.tabBar('B')
+        }
+        .id('tabs_showSidebarControlButton_true')
+        .width('100%')
+        .height(120)
+        .barStyle(TabBarStyle.SIDEBAR)
+        .showSidebarControlButton(true)
+
+        Text('showSidebarControlButton false').fontSize(12)
+        Tabs({ barPosition: BarPosition.Start }) {
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Blue)
+          }.tabBar('A')
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Green)
+          }.tabBar('B')
+        }
+        .id('tabs_showSidebarControlButton_false')
+        .width('100%')
+        .height(120)
+        .barStyle(TabBarStyle.SIDEBAR)
+        .showSidebarControlButton(false)
+
+        Text('showSidebarControlButton undefined').fontSize(12)
+        Tabs({ barPosition: BarPosition.Start }) {
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Blue)
+          }.tabBar('A')
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Green)
+          }.tabBar('B')
+        }
+        .id('tabs_showSidebarControlButton_undefined')
+        .width('100%')
+        .height(120)
+        .barStyle(TabBarStyle.SIDEBAR)
+        .showSidebarControlButton(undefined)
+
+        Text('showSidebarControlButton null').fontSize(12)
+        Tabs({ barPosition: BarPosition.Start }) {
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Blue)
+          }.tabBar('A')
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Green)
+          }.tabBar('B')
+        }
+        .id('tabs_showSidebarControlButton_null')
+        .width('100%')
+        .height(120)
+        .barStyle(TabBarStyle.SIDEBAR)
+        .showSidebarControlButton(null)
+
+        Text('showSidebarControlButton empty').fontSize(12)
+        Tabs({ barPosition: BarPosition.Start }) {
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Blue)
+          }.tabBar('A')
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Green)
+          }.tabBar('B')
+        }
+        .id('tabs_showSidebarControlButton_empty')
+        .width('100%')
+        .height(120)
+        .barStyle(TabBarStyle.SIDEBAR)
+        .showSidebarControlButton('')
   }
 
 }
