@@ -643,7 +643,7 @@ export default function formProviderTest() {
             expect(formInfo.FormType.JS).assertEqual(element.type);
             expect(1).assertEqual(element.supportDimensions.length);
             expect(6).assertEqual(Object.keys(element.customizeData).length);
-            expect(1).assertEqual(element.supportedShapes.length);
+            expect(0).assertEqual(element.supportedShapes.length);
             expect(false).assertEqual(element.transparencyEnabled as boolean);
             expect(true).assertEqual(element.isDynamic as boolean);
             expect(false).assertEqual(element.formVisibleNotify as boolean);

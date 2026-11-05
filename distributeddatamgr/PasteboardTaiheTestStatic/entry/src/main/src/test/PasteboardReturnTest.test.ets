@@ -177,7 +177,7 @@ export default function pasteboardReturnTest() {
         expect(prop != null).assertTrue();
         expect(prop.additions != null).assertTrue();
         let additionsLength: number = Object.keys(prop.additions).length;
-        expect(additionsLength !== 0).assertTrue();
+        expect(additionsLength === 0).assertTrue();
       } catch (err) {
         hilog.info(domain, tag, "SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         expect().assertFail();
