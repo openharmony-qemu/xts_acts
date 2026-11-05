@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from './../Util.test';
 
 function modifyArray(arr: Float64Array, idx: int, val: number): void {

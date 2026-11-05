@@ -27,7 +27,7 @@ import {
   Level,
   Size,
   TestType,
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 function isMatchInt16SomePart01(element: number, index: int, array: Int16Array): boolean {
