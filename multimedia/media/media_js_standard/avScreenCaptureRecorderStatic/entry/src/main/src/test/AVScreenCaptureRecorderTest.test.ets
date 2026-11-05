@@ -494,15 +494,7 @@ export default function AVScreenCaptureRecorderTest() {
         mediaTestBase.SETONCALLBACK_EVENT,
         // setPickerMode
         mediaTestBase.SET_PICKER_MODE_EVENT,
-        // start recorder
-        mediaTestBase.STARTRECORDER_EVENT,
-        // skip PrivacyMode
-        mediaTestBase.SKIPPRIVACYMODE_EVENT,
-        // stop recorder
-        mediaTestBase.STOPRECORDER_EVENT,
-        // release recorder
-        // close fd
-        mediaTestBase.RELEASECORDER_EVENT,
+        // end
         mediaTestBase.END_EVENT);
 
       mediaTestBase.outputName = mediaTestBase.resourceName();
@@ -521,6 +513,7 @@ export default function AVScreenCaptureRecorderTest() {
       };
       expect(avConfig.fd).not().assertNull();
       await mediaTestBase.toNextStep(mediaTestBase.avScreenCaptureRecorder, avConfig, 3000, mySteps, done);
+      expect(mediaTestBase.isTestSucceeded()).assertTrue();
 
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SETPICKERMODE_static_0100 end');
     });
@@ -545,15 +538,7 @@ export default function AVScreenCaptureRecorderTest() {
         mediaTestBase.SETONCALLBACK_EVENT,
         // excludePickerWindows
         mediaTestBase.EXCLUDE_PICKER_WINDOWS_EVENT,
-        // start recorder
-        mediaTestBase.STARTRECORDER_EVENT,
-        // skip PrivacyMode
-        mediaTestBase.SKIPPRIVACYMODE_EVENT,
-        // stop recorder
-        mediaTestBase.STOPRECORDER_EVENT,
-        // release recorder
-        // close fd
-        mediaTestBase.RELEASECORDER_EVENT,
+        // end
         mediaTestBase.END_EVENT);
 
       mediaTestBase.outputName = mediaTestBase.resourceName();
@@ -572,6 +557,7 @@ export default function AVScreenCaptureRecorderTest() {
       };
       expect(avConfig.fd).not().assertNull();
       await mediaTestBase.toNextStep(mediaTestBase.avScreenCaptureRecorder, avConfig, 3000, mySteps, done);
+      expect(mediaTestBase.isTestSucceeded()).assertTrue();
 
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_EXCLUDEPICKERWINDOWS_static_0100 end');
     });
@@ -593,17 +579,15 @@ export default function AVScreenCaptureRecorderTest() {
         // init
         mediaTestBase.INIT_EVENT,
         mediaTestBase.SETONCALLBACK_EVENT,
+        // setMicEnable
+        mediaTestBase.SET_MIC_ENABLE_EVENT,
         // start recorder
         mediaTestBase.STARTRECORDER_EVENT,
-        // PresentPicker
+        // presentPicker
         mediaTestBase.PRESENT_PICKER,
-        // skip PrivacyMode
-        mediaTestBase.SKIPPRIVACYMODE_EVENT,
         // stop recorder
         mediaTestBase.STOPRECORDER_EVENT,
-        // release recorder
-        // close fd
-        mediaTestBase.RELEASECORDER_EVENT,
+        // end
         mediaTestBase.END_EVENT);
 
       mediaTestBase.outputName = mediaTestBase.resourceName();
@@ -622,6 +606,7 @@ export default function AVScreenCaptureRecorderTest() {
       };
       expect(avConfig.fd).not().assertNull();
       await mediaTestBase.toNextStep(mediaTestBase.avScreenCaptureRecorder, avConfig, 3000, mySteps, done);
+      expect(mediaTestBase.isTestSucceeded()).assertTrue();
 
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PRESENT_PICKER_static_0100 end');
     });
@@ -1375,6 +1360,206 @@ export default function AVScreenCaptureRecorderTest() {
       await mediaTestBase.toNextStep(mediaTestBase.avScreenCaptureRecorder, avConfig, 3000, mySteps, done)
       expect(mediaTestBase.isTestSucceeded()).assertTrue();
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_STRATEGY_0100 end')
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_STRATEGY_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_STRATEGY_0200
+     * @tc.desc   AVScreenCaptureRecorder static with strategy.contentAutoPauseScenes SCENE_SCREEN_FOLD_STATE_CHANGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_STRATEGY_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_STRATEGY_0200 start')
+
+      let mySteps = new Array<string>(
+        mediaTestBase.CREATE_EVENT,
+        mediaTestBase.INIT_EVENT,
+        mediaTestBase.SETONCALLBACK_EVENT,
+        mediaTestBase.SET_MIC_ENABLE_EVENT,
+        mediaTestBase.STARTRECORDER_EVENT,
+        mediaTestBase.SKIPPRIVACYMODE_EVENT,
+        mediaTestBase.STOPRECORDER_EVENT,
+        mediaTestBase.RELEASECORDER_EVENT,
+        mediaTestBase.END_EVENT);
+
+      mediaTestBase.outputName = mediaTestBase.resourceName();
+      mediaTestBase.outputFdObject = mediaTestBase.getFd(mediaTestBase.outputName);
+      let avConfig: media.AVScreenCaptureRecordConfig = {
+        fd: mediaTestBase.outputFdObject.fd,
+        frameWidth: 640,
+        frameHeight: 480,
+        videoBitrate: 10000000,
+        audioSampleRate: 48000,
+        audioChannelCount: 1,
+        audioBitrate: 96000,
+        preset: media.AVScreenCaptureRecordPreset.SCREEN_RECORD_PRESET_H264_AAC_MP4,
+        strategy: {
+          contentAutoPauseScenes: [media.AVScreenCaptureAutoPauseCaptureScene.SCENE_SCREEN_FOLD_STATE_CHANGE],
+        }
+      }
+      await mediaTestBase.toNextStep(mediaTestBase.avScreenCaptureRecorder, avConfig, 3000, mySteps, done)
+      expect(mediaTestBase.isTestSucceeded()).assertTrue();
+      if (avConfig.strategy != undefined) {
+        expect(avConfig.strategy!!.contentAutoPauseScenes !== undefined).assertTrue();
+      } else {
+        expect(false).assertTrue();
+      }
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_STRATEGY_0200 end')
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_STRATEGY_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_STRATEGY_0300
+     * @tc.desc   AVScreenCaptureRecorder static with strategy.contentAutoPauseScenes SCENE_NONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_STRATEGY_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_STRATEGY_0300 start')
+
+      let mySteps = new Array<string>(
+        mediaTestBase.CREATE_EVENT,
+        mediaTestBase.INIT_EVENT,
+        mediaTestBase.SETONCALLBACK_EVENT,
+        mediaTestBase.SET_MIC_ENABLE_EVENT,
+        mediaTestBase.STARTRECORDER_EVENT,
+        mediaTestBase.SKIPPRIVACYMODE_EVENT,
+        mediaTestBase.STOPRECORDER_EVENT,
+        mediaTestBase.RELEASECORDER_EVENT,
+        mediaTestBase.END_EVENT);
+
+      mediaTestBase.outputName = mediaTestBase.resourceName();
+      mediaTestBase.outputFdObject = mediaTestBase.getFd(mediaTestBase.outputName);
+      let avConfig: media.AVScreenCaptureRecordConfig = {
+        fd: mediaTestBase.outputFdObject.fd,
+        frameWidth: 640,
+        frameHeight: 480,
+        videoBitrate: 10000000,
+        audioSampleRate: 48000,
+        audioChannelCount: 1,
+        audioBitrate: 96000,
+        preset: media.AVScreenCaptureRecordPreset.SCREEN_RECORD_PRESET_H264_AAC_MP4,
+        strategy: {
+          contentAutoPauseScenes: [media.AVScreenCaptureAutoPauseCaptureScene.SCENE_NONE],
+        }
+      }
+      await mediaTestBase.toNextStep(mediaTestBase.avScreenCaptureRecorder, avConfig, 3000, mySteps, done)
+      expect(mediaTestBase.isTestSucceeded()).assertTrue();
+      if (avConfig.strategy != undefined) {
+        expect(avConfig.strategy!!.contentAutoPauseScenes !== undefined).assertTrue();
+      } else {
+        expect(false).assertTrue();
+      }
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_STRATEGY_0300 end')
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_STRATEGY_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_STRATEGY_0400
+     * @tc.desc   AVScreenCaptureRecorder static with strategy.enableHDR true to output HDR vivid video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_STRATEGY_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_STRATEGY_0400 start')
+      let mySteps = new Array<string>(
+        mediaTestBase.CREATE_EVENT,
+        mediaTestBase.INIT_EVENT,
+        mediaTestBase.SETONCALLBACK_EVENT,
+        mediaTestBase.SET_MIC_ENABLE_EVENT,
+        mediaTestBase.STARTRECORDER_EVENT,
+        mediaTestBase.SKIPPRIVACYMODE_EVENT,
+        mediaTestBase.STOPRECORDER_EVENT,
+        mediaTestBase.RELEASECORDER_EVENT,
+        mediaTestBase.END_EVENT);
+
+      mediaTestBase.outputName = mediaTestBase.resourceName();
+      mediaTestBase.outputFdObject = mediaTestBase.getFd(mediaTestBase.outputName);
+      let avConfig: media.AVScreenCaptureRecordConfig = {
+        fd: -1,
+        frameWidth: 640,
+        frameHeight: 480,
+        videoBitrate: 10000000,
+        audioSampleRate: 48000,
+        audioChannelCount: 1,
+        audioBitrate: 96000,
+        preset: media.AVScreenCaptureRecordPreset.SCREEN_RECORD_PRESET_H265_AAC_MP4,
+        strategy: {
+          enableHDR: true,
+        }
+      }
+      await mediaTestBase.toNextStep(mediaTestBase.avScreenCaptureRecorder, avConfig, 3000, mySteps, done)
+      expect(mediaTestBase.isTestSucceeded()).assertTrue();
+      if (avConfig.strategy != undefined) {
+        expect(avConfig.strategy!!.enableHDR).assertTrue();
+      } else {
+        expect(false).assertTrue();
+      }
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_STRATEGY_0400 end')
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_STRATEGY_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_STRATEGY_0500
+     * @tc.desc   AVScreenCaptureRecorder static with strategy.enableHDR false to output SDR video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_STRATEGY_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_STRATEGY_0500 start')
+      let mySteps = new Array<string>(
+        mediaTestBase.CREATE_EVENT,
+        mediaTestBase.INIT_EVENT,
+        mediaTestBase.SETONCALLBACK_EVENT,
+        mediaTestBase.SET_MIC_ENABLE_EVENT,
+        mediaTestBase.STARTRECORDER_EVENT,
+        mediaTestBase.SKIPPRIVACYMODE_EVENT,
+        mediaTestBase.STOPRECORDER_EVENT,
+        mediaTestBase.RELEASECORDER_EVENT,
+        mediaTestBase.END_EVENT);
+
+      mediaTestBase.outputName = mediaTestBase.resourceName();
+      mediaTestBase.outputFdObject = mediaTestBase.getFd(mediaTestBase.outputName);
+      let avConfig: media.AVScreenCaptureRecordConfig = {
+        fd: -1,
+        frameWidth: 640,
+        frameHeight: 480,
+        videoBitrate: 10000000,
+        audioSampleRate: 48000,
+        audioChannelCount: 1,
+        audioBitrate: 96000,
+        preset: media.AVScreenCaptureRecordPreset.SCREEN_RECORD_PRESET_H265_AAC_MP4,
+        strategy: {
+          enableHDR: false,
+        }
+      }
+      await mediaTestBase.toNextStep(mediaTestBase.avScreenCaptureRecorder, avConfig, 3000, mySteps, done)
+      expect(mediaTestBase.isTestSucceeded()).assertTrue();
+      if (avConfig.strategy != undefined) {
+        expect(avConfig.strategy!!.enableHDR).assertFalse();
+      } else {
+        expect(false).assertTrue();
+      }
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_STRATEGY_0500 end')
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURE_AUTOPAUSESCENE_ENUM_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURE_AUTOPAUSESCENE_ENUM_static_0100
+     * @tc.desc   AVScreenCaptureRecorder static Enumeration test - AVScreenCaptureAutoPauseCaptureScene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURE_AUTOPAUSESCENE_ENUM_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      expect(Number(media.AVScreenCaptureAutoPauseCaptureScene.SCENE_NONE)).assertEqual(0);
+      expect(Number(media.AVScreenCaptureAutoPauseCaptureScene.SCENE_SCREEN_FOLD_STATE_CHANGE)).assertEqual(1);
+      done();
     })
   })
 }

@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect } from '../../../../hypium/index';
-import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { describe, it, expect } from '@ohos/hypium-static/src/main/indexStatic';
+import { TestType, Size, Level } from '@ohos/hypium-static/src/main/indexStatic';
 
 export default function BigIntConstructorDoubleTest(): void {
   describe('BigInt double constructor (mindmap constructor_6)', () => {

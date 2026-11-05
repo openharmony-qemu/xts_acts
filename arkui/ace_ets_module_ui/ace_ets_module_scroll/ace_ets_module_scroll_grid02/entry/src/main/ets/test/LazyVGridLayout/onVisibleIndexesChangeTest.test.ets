@@ -129,8 +129,10 @@ export default function onVisibleIndexesChangeTest() {
     it('onVisibleIndexesChangeTest_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[onVisibleIndexesChangeTest_0400] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let scrollColumn = await driver.findComponent(ON.type('Scroll'));
       let button = await scrollColumn.scrollSearch(ON.id('item2_10'));
+      await CommonFunc.sleep(1000);
 
       let strJson: string = getInspectorByKey('text_visible_start');
       let obj: Record<string, ESObject> = JSON.parse(strJson);

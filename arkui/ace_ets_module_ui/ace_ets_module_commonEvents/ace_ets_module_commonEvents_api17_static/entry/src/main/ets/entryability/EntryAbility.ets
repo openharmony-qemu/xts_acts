@@ -52,6 +52,7 @@ class EntryAbility extends UIAbility {
             let wRect: window.Rect | undefined = properties?.windowRect;
             AppStorage.setOrCreate<number>('winLeft', wRect?.left ?? 0);
             AppStorage.setOrCreate<number>('winTop', wRect?.top ?? 0);
+            AppStorage.setOrCreate<number>('displayID', properties?.displayId ?? 0);
             hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + wRect?.left + ',winTop:' + wRect?.top);
           } catch (exception) {
             hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));

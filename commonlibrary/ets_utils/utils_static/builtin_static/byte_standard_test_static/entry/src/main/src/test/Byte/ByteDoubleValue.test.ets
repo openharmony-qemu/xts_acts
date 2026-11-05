@@ -24,7 +24,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 
 export default function ByteDoubleValueTest_02(): void {
   describe("ByteDoubleValueTest_02", () => {

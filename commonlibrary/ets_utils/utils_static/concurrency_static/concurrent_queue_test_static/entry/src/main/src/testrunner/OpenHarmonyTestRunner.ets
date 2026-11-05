@@ -15,7 +15,7 @@
  */
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { TestRunner } from '@kit.TestKit';
-import { Hypium } from '../../../hypium/index';
+import { Hypium } from '@ohos/hypium-static/src/main/indexStatic';
 import testsuite from '../test/List.test';
 
 export class OpenHarmonyTestRunner implements TestRunner {

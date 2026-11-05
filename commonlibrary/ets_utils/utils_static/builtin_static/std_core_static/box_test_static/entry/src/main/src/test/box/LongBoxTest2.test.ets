@@ -26,7 +26,7 @@ import {
   Level,
   Size,
   TestType,
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils, { LongBoxWrapper, LongBoxWrapper3333, NestedLongBox } from '../Util.test';
 
 function createLongBox9999(): LongBox {

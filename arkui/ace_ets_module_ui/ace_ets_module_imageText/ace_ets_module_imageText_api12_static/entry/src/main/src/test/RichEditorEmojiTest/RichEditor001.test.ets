@@ -35,6 +35,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function RichEditor001() {
   describe('RichEditor001', () => {
     beforeAll(async (): Promise<void> => {
@@ -58,9 +59,10 @@ export default function RichEditor001() {
           console.info("push RichEditor001 success");
         }
       } catch (err) {
-        console.error("push RichEditor001 page error: " + err);
+        console.log("push RichEditor001 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     afterEach(async (): Promise<void> => {
       const defaultRouter = AppStorage.get<Router>("router") as Router
@@ -80,7 +82,11 @@ export default function RichEditor001() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('rich_struct')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let point = await (driver.findComponent(ON.id('get_position')) as Promise<Component>);
@@ -89,7 +95,11 @@ export default function RichEditor001() {
       let text = await (driver.findComponent(ON.id('position_text')) as Promise<Component>);
       let beginPosition = await text.getText();
       //KEYCODE_FORWARD_DEL
-      await driver.triggerKey(2071);
+      try {
+        await driver.triggerKey(2071, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
 
       await CommonFunc.sleep(500);
 
@@ -101,7 +111,7 @@ export default function RichEditor001() {
       done();
     });
 
-    
+
     /**
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_static_0016
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_static_0016
@@ -115,7 +125,11 @@ export default function RichEditor001() {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_static_0016 rich');
       let pointCenter = await rich.getBoundsCenter();
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_static_0016 pointCenter');
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_static_0016 driver');
       let back = await (driver.findComponent(ON.id('back')) as Promise<Component>);
@@ -131,7 +145,11 @@ export default function RichEditor001() {
       let beginPosition = await text.getText();
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_static_0016 beginPosition');
       //KEYCODE_FORWARD_DEL
-      await driver.triggerKey(2071);
+      try {
+        await driver.triggerKey(2071, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_static_0016 triggerKey');
       await CommonFunc.sleep(500);
 

@@ -17,10 +17,10 @@ import { describe, it, expect, beforeAll, Level, TestType, Size } from '@ohos/hy
 import call from '@ohos.telephony.call';
 import { BusinessError, AsyncCallback } from '@ohos.base';
 import sim from '@ohos.telephony.sim';
-import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
-import account from '@ohos.account.osAccount';
-import bundleManager from '@ohos.bundle.bundleManager';
 import sms from '@ohos.telephony.sms';
+import { Driver, ON, MatchPattern } from '@ohos.UiTest';
+import abilityAccessCtrl, { PermissionRequestResult, Permissions } from '@ohos.abilityAccessCtrl';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 const ExpectFail = () => {
   try {
@@ -46,26 +46,53 @@ const landlineNumber: string = "057126885879";
 const telphoneErr: string = '+861xxxxxxxxxxx';
 const CALL_NUMBER = '10086';
 
+function sleep(time: number): Promise<string> {
+  return new Promise<string>((resolve) => {
+    setTimeout(() => {
+      resolve('ok');
+    }, time);
+  });
+}
+
 async function getPermissions() {
   console.info('getPermission start');
-  type MyPermissions = "ohos.permission.READ_CALL_LOG" | "ohos.permission.WRITE_CALL_LOG" | "ohos.permission.ANSWER_CALL";
-  let list: MyPermissions[] = ['ohos.permission.ANSWER_CALL', 'ohos.permission.WRITE_CALL_LOG', 'ohos.permission.READ_CALL_LOG'];
+  let list: Array<Permissions> = ['ohos.permission.DIRECT_CALL'];
   try {
-    let userId: number = await account.getAccountManager().getOsAccountLocalId();
-    let applicationFlags: number = bundleManager.ApplicationFlag.GET_APPLICATION_INFO_DEFAULT;
-    let applicationInfo: bundleManager.ApplicationInfo = await bundleManager.getApplicationInfoSync('com.example.calltest', applicationFlags, userId);
-    let tokenId: number = applicationInfo.accessTokenId;
-    for (let index = 0; index < list.length; index++) {
-      await  abilityAccessCtrl.createAtManager().grantUserGrantedPermission(tokenId, list[index], 1);
+    let ability = await AbilityDelegatorRegistry.getAbilityDelegator().getCurrentTopAbility();
+    let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+    atManager.requestPermissionsFromUser(ability.context, list).then((data: PermissionRequestResult) => {
+      console.info(`getPermission result ${JSON.stringify(data)}`);
+    }).catch((err: BusinessError) => {
+      console.info(`getPermission err ${JSON.stringify(err)}`);
+    });
+    for (let index = 0; index < 3; index++) {
+      let driver: Driver = Driver.create();
+      await driver.delayMs(1000);
+      try {
+        let allowButton = await driver.findComponent(ON.text('允许', MatchPattern.EQUALS));
+        if (allowButton !== null) {
+          await allowButton.click();
+          await driver.delayMs(1000);
+          console.info(`getPermission click allow button, round ${index}`);
+          break;
+        }
+      } catch (err) {
+        console.info(`getPermission find allow button round ${index} failed`);
+      }
     }
   } catch (err) {
-    console.info(`getPermission error ${JSON.stringify(err)}`)
+    console.info(`getPermission error ${JSON.stringify(err)}`);
   }
   console.info('getPermission end');
 }
 
 export default function HasCard2PublicNeedCardTest() {
   describe('TelephonyCallHasCard2PublicNeedCardTest', () => {
+    beforeAll(async (done: Function) => {
+      console.info('getPermission beforeAll');
+      await getPermissions();
+      done();
+    });
     /**
      * @tc.name   testTelephonyCallManagerHasCallSync0200
      * @tc.number SUB_Telephony_CallManager_HasCallSync_0200
@@ -1068,6 +1095,127 @@ export default function HasCard2PublicNeedCardTest() {
         expect(err !== null).assertTrue();
         done();
       }
+    });
+
+    /**
+     * @tc.name   testTelephonyCallManagerMakeDirectCall0100
+     * @tc.number SUB_Telephony_CallManager_MakeDirectCall_0100
+      * @tc.desc   Application makes calls with one tap with a valid phone number
+      *             by promise with ohos.permission.DIRECT_CALL granted, expect
+      *             the promise resolved. api26+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerMakeDirectCall0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCallManagerMakeDirectCall0100';
+      console.info(`${caseName} test start`);
+      if (!sim.hasSimCardSync(0)) {
+        console.info(`${caseName} failed, NO SIM`);
+        console.info(`${caseName} test end`);
+        done();
+      } else {
+        try {
+          await call.makeDirectCall(CALL_NUMBER);
+          console.info(`${caseName} makeDirectCall success`);
+        } catch (err) {
+          console.info(`${caseName} makeDirectCall fail, err->${JSON.stringify(err)}`);
+          ExpectFail();
+        } finally {
+          await sleep(5000);
+          try {
+            call.hangUpCall((err: BusinessError) => {
+              if (err) {
+                console.info(`${caseName} hangUpCall fail, err->${JSON.stringify(err)}`);
+              } else {
+                console.info(`${caseName} hangUpCall success`);
+              }
+              console.info(`${caseName} test end`);
+              done();
+            });
+          } catch (err) {
+            console.info(`${caseName} hangUpCall throw, err->${JSON.stringify(err)}`);
+            console.info(`${caseName} test end`);
+            done();
+          }
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyCallManagerMakeDirectCall0200
+     * @tc.number SUB_Telephony_CallManager_MakeDirectCall_0200
+     * @tc.desc   Application makes calls with one tap with an empty phone number
+     *             by promise with DIRECT_CALL permission granted, expect error
+     *             code 8300001 (Invalid parameter value). api26+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerMakeDirectCall0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCallManagerMakeDirectCall0200';
+      console.info(`${caseName} test start`);
+      try {
+        await call.makeDirectCall("");
+        console.info(`${caseName} makeDirectCall success unexpectedly with empty number`);
+        ExpectFail();
+        done();
+      } catch (err) {
+        console.info(`${caseName} makeDirectCall fail, err->${JSON.stringify(err)}`);
+        ExpectTrue(err.code === 8300001);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyCallManagerMakeDirectCall0300
+     * @tc.number SUB_Telephony_CallManager_MakeDirectCall_0300
+     * @tc.desc   Application makes calls with one tap with a null phone number,
+     *             framework parameter check rejects with error code 401. api26+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerMakeDirectCall0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCallManagerMakeDirectCall0300';
+      console.info(`${caseName} test start`);
+      try {
+        await call.makeDirectCall(null);
+        console.info(`${caseName} makeDirectCall success unexpectedly with null number`);
+        ExpectFail();
+        done();
+      } catch (err) {
+        console.info(`${caseName} makeDirectCall fail, err->${JSON.stringify(err)}`);
+        ExpectTrue(err.code === 401);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyCallManagerMakeDirectCall0400
+     * @tc.number SUB_Telephony_CallManager_MakeDirectCall_0400
+     * @tc.desc   Application makes calls with one tap with an undefined phone number,
+     *             framework parameter check rejects with error code 401. api26+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerMakeDirectCall0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCallManagerMakeDirectCall0400';
+      console.info(`${caseName} test start`);
+      try {
+        await call.makeDirectCall(undefined);
+        console.info(`${caseName} makeDirectCall success unexpectedly with undefined number`);
+        ExpectFail();
+        done();
+      } catch (err) {
+        console.info(`${caseName} makeDirectCall fail, err->${JSON.stringify(err)}`);
+        ExpectTrue(err.code === 401);
+        done();
+      }
+      console.info(`${caseName} test end`);
     });
 
   });

@@ -22,24 +22,6 @@ let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 class Utils{
-  static isloadAndSetUpUiTest = false;
-
-  static async loadAndSetUpUiTest() : Promise<boolean> {
-    return new Promise<boolean>((resolve, reject) => {
-      hilog.info(domain, tag, `loadAndSetUpUiTest, isloadAndSetUpUiTest: ${JSON.stringify(Utils.isloadAndSetUpUiTest)}`);
-      try {
-        if (!Utils.isloadAndSetUpUiTest) {
-          Utils.loadAndSetUpUiTest();
-          hilog.info(domain, tag, `loadAndSetUpUiTest, success`);
-          Utils.isloadAndSetUpUiTest = true;
-        }
-        resolve(true)
-      } catch(error) {
-        hilog.info(domain, tag, `UiTestCase, start abilityFailed: ${JSON.stringify(error)}`);
-        reject(error)
-      }
-    })
-  }
 
   static async msSleep(count:int) : Promise<int> {
     return new Promise<int>((resolve, reject) => {

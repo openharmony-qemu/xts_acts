@@ -21,6 +21,7 @@ group("startup_standard") {
       "deviceinfo:startup_deviceinfo_js_test",
       "deviceinfo_lite:startup_deviceinfolite_js_test",
       "init_ndkTest:ActsInitNdkTest",
+      "init_ndkTest_permission:ActsInitNdkTestPermissionTest",
       "syscap_ndk:startup_syscapability_js_test",
       "deviceinfo_static:ActsStartupInitDeviceInfoStaticTest",
       "boardinfo:startup_boardinfo_js_test",

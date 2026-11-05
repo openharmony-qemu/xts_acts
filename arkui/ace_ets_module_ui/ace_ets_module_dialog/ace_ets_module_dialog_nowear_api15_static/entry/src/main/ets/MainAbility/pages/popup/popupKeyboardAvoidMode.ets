@@ -112,12 +112,11 @@ struct popupKeyboardAvoidMode {
           } as CustomPopupOptions)
       }
       .width('100%')
-      .height('80%')
-      .margin({ bottom: 10 } as Margin)
-      .justifyContent(FlexAlign.End)
+      .height('40%')
+      .justifyContent(FlexAlign.Center)
     }
     .width('100%')
     .height('100%')
-    .justifyContent(FlexAlign.SpaceEvenly)
+    .justifyContent(FlexAlign.Start)
   }
 }

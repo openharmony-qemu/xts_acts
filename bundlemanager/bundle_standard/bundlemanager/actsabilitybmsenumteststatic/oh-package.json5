@@ -17,7 +17,6 @@
   "modelVersion": "26.0.0",
   "description": "Please describe the basic information.",
   "dependencies": {
-    "@ohos/hypium-binary": "1.0.28-rc4",
     "@ohos/hypium-static": "file:../../../../../tools/hypium_prepare/hypium-static.har"
   },
   "devDependencies": {}

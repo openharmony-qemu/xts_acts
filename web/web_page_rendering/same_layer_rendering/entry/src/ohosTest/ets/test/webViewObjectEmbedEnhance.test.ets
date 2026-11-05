@@ -59,7 +59,7 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
       emitKey = "emitWebViewObjectEmbedAbc"
       Utils.emitEvent(emitKey, 153680);
       Utils.registerEvent("testWebViewObjectEmbedAbc", 'success', 153690, done);
-      waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
+      await waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
     /**
@@ -74,7 +74,7 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
       emitKey = "emitWebViewObjectEmbedId"
       Utils.emitEvent(emitKey, 153680);
       Utils.registerEvent("testWebViewObjectEmbedId", 'success', 153700, done);
-      waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
+      await waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
     /**
@@ -89,7 +89,7 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
       emitKey = "emitWebViewObjectEmbedType"
       Utils.emitEvent(emitKey, 153680);
       Utils.registerEvent("testWebViewObjectEmbedType", 'success', 153710, done);
-      waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
+      await waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
     /**
@@ -104,7 +104,7 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
       emitKey = "emitWebViewObjectEmbedSrc"
       Utils.emitEvent(emitKey, 153680);
       Utils.registerEvent("testWebViewObjectEmbedSrc", 'success', 153720, done);
-      waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
+      await waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
     /**
@@ -119,7 +119,7 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
       emitKey = "emitWebViewObjectEmbedWidth"
       Utils.emitEvent(emitKey, 153680);
       Utils.registerEvent("testWebViewObjectEmbedWidth", 'success', 153730, done);
-      waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
+      await waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
     /**
@@ -134,7 +134,7 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
       emitKey = "emitWebViewObjectEmbedHeight"
       Utils.emitEvent(emitKey, 153680);
       Utils.registerEvent("testWebViewObjectEmbedHeight", 'success', 153740, done);
-      waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
+      await waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
     /**
@@ -149,7 +149,7 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
       emitKey = "emitWebViewObjectEmbedTagEmbed"
       Utils.emitEvent(emitKey, 153680);
       Utils.registerEvent("testWebViewObjectEmbedTagEmbed", 'success', 153750, done);
-      waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
+      await waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
     /**
@@ -164,7 +164,7 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
       emitKey = "emitWebViewObjectEmbedTagObject"
       Utils.emitEvent(emitKey, 153680);
       Utils.registerEvent("testWebViewObjectEmbedTagObject", 'success', 153760, done);
-      waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
+      await waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
     /**
@@ -179,7 +179,7 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
       emitKey = "emitWebViewObjectEmbedPosition"
       Utils.emitEvent(emitKey, 153680);
       Utils.registerEvent("testWebViewObjectEmbedPosition", 'success', 153770, done);
-      waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
+      await waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
     /**
@@ -194,7 +194,7 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
       emitKey = "emitWebViewObjectEmbedUrl"
       Utils.emitEvent(emitKey, 153680);
       Utils.registerEvent("testWebViewObjectEmbedUrl", 'success', 153780, done);
-      waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
+      await waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
     /**
@@ -209,7 +209,7 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
       emitKey = "emitWebViewObjectEmbedParams"
       Utils.emitEvent(emitKey, 153680);
       Utils.registerEvent("testWebViewObjectEmbedParams", 'success', 153790, done);
-      waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
+      await waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
     /**
@@ -224,7 +224,7 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
       emitKey = "emitWebViewObjectEmbedHasParams"
       Utils.emitEvent(emitKey, 153680);
       Utils.registerEvent("testWebViewObjectEmbedHasParams", 'success', 153800, done);
-      waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
+      await waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
     /**
@@ -239,7 +239,7 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
       emitKey = "emitWebViewObjectEmbedTest"
       Utils.emitEvent(emitKey, 153680);
       Utils.registerEvent("testWebViewObjectEmbedTest", 'success', 153810, done);
-      waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
+      await waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
   })
 }

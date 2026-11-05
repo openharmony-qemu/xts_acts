@@ -16,7 +16,7 @@
 
 
 
-import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType, } from '../../../../hypium/index';
+import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType, } from '@ohos/hypium-static/src/main/indexStatic';
 import { Derived } from "./ImplicitExport1";
 import { a, b, c } from "./ImplicitExport4";
 import { PI, NAME, FLAG } from "./ImplicitExport2";

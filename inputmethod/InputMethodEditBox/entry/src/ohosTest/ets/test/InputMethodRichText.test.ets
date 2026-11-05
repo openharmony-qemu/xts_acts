@@ -61,6 +61,17 @@ export default function InputMethodRichText() {
       }
     })
 
+    afterEach(async (done: Function) => {
+      try {
+        await inputMethod.getController().hideSoftKeyboard();
+        console.info('====>afterEach hideSoftKeyboard success');
+        done();
+      } catch (err) {
+        console.info(`====>afterEach throw err, err.code: ${err.code}, err.message: ${err.message}`);
+        done();
+      }
+    })
+
     let testTemplate: (testName: string, code: number, done: Function) => void =
       async (testName, code, done) => {
         let unSubscriberCallback = (err: BusinessError) => {

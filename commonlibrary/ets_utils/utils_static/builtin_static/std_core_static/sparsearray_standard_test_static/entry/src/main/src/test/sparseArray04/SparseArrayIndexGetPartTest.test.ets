@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType,
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 // Merged from SparseArrayIndexGetPart01Test + SparseArrayIndexGetPart03Test (70 scenarios -> 7 cases, each <=10)

@@ -25,7 +25,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 
 let x: FixedArray<Number> = [1, 2, 3];
 let y: FixedArray<Object> = x;

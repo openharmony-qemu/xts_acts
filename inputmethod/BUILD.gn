@@ -15,6 +15,7 @@ import("//build/ohos_var.gni")
 group("inputmethod") {
   testonly = true
   deps = [
+    "InputMethodInAppProxy:ActsInputMethodInAppProxyTest",
     "InputMethodAuthorityTest:ActsInputMethodAuthorityTest",
     "InputMethodDrawnControl:ActsInputMethodDrawnControlTest",
     "InputMethodEngine:ActsInputMethodEngineTest",

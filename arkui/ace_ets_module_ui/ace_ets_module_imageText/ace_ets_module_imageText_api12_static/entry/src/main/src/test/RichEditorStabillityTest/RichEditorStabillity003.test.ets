@@ -34,6 +34,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function RichEditorStabillity003() {
   describe('RichEditorStabillity003', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,9 +58,10 @@ export default function RichEditorStabillity003() {
           console.info("push RichEditorStabillity003 success");
         }
       } catch (err) {
-        console.error("push RichEditorStabillity003 page error: " + err);
+        console.log("push RichEditorStabillity003 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
@@ -75,7 +77,11 @@ export default function RichEditorStabillity003() {
       let rich = await (driver.findComponent(ON.id('RichEditorStabillity003')) as Promise<Component>);
       let getBounds = await rich.getBounds();
       await CommonFunc.sleep(200);
-      await driver.click(getBounds.left + 30, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 30, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(200);
       let getPosition = await (driver.findComponent(ON.id('getPosition')) as Promise<Component>);
       await getPosition.click();
@@ -83,37 +89,61 @@ export default function RichEditorStabillity003() {
       let pointPosition = await (driver.findComponent(ON.id('pointPosition')) as Promise<Component>);
       let pointPositionText = await pointPosition.getText();
       await CommonFunc.sleep(200);
-      await driver.click(getBounds.left + 60, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 60, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(200);
       await getPosition.click();
       await CommonFunc.sleep(200);
       pointPositionText = await pointPosition.getText();
       await CommonFunc.sleep(200);
-      await driver.click(getBounds.left + 90, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 90, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(200);
       await getPosition.click();
       await CommonFunc.sleep(200);
       pointPositionText = await pointPosition.getText();
       await CommonFunc.sleep(200);
-      await driver.click(getBounds.left + 120, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 120, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(200);
       await getPosition.click();
       await CommonFunc.sleep(200);
       pointPositionText = await pointPosition.getText();
       await CommonFunc.sleep(200);
-      await driver.click(getBounds.left + 150, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 150, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(200);
       await getPosition.click();
       await CommonFunc.sleep(200);
       pointPositionText = await pointPosition.getText();
       await CommonFunc.sleep(200);
-      await driver.click(getBounds.left + 180, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 180, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(200);
       await getPosition.click();
       await CommonFunc.sleep(200);
       pointPositionText = await pointPosition.getText();
       await CommonFunc.sleep(200);
-      await driver.click(getBounds.left + 210, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 210, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(200);
       await getPosition.click();
       await CommonFunc.sleep(200);
@@ -136,7 +166,11 @@ export default function RichEditorStabillity003() {
       let rich = await (driver.findComponent(ON.id('RichEditorStabillity003')) as Promise<Component>);
       let getBounds = await rich.getBounds();
       await CommonFunc.sleep(200);
-      await driver.doubleClick(getBounds.left + 30, getBounds.top + 30);
+      try {
+        await driver.doubleClickAt({ x: getBounds.left + 30, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.doubleClickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(400);
       let getPosition = await (driver.findComponent(ON.id('getPosition')) as Promise<Component>);
       await getPosition.click();
@@ -144,37 +178,61 @@ export default function RichEditorStabillity003() {
       let pointPosition = await (driver.findComponent(ON.id('pointPosition')) as Promise<Component>);
       let pointPositionText = await pointPosition.getText();
       await CommonFunc.sleep(300);
-      await driver.doubleClick(getBounds.left + 60, getBounds.top + 30);
+      try {
+        await driver.doubleClickAt({ x: getBounds.left + 60, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.doubleClickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(400);
       await getPosition.click();
       await CommonFunc.sleep(300);
       pointPositionText = await pointPosition.getText();
       await CommonFunc.sleep(300);
-      await driver.doubleClick(getBounds.left + 90, getBounds.top + 30);
+      try {
+        await driver.doubleClickAt({ x: getBounds.left + 90, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.doubleClickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(400);
       await getPosition.click();
       await CommonFunc.sleep(300);
       pointPositionText = await pointPosition.getText();
       await CommonFunc.sleep(300);
-      await driver.doubleClick(getBounds.left + 120, getBounds.top + 30);
+      try {
+        await driver.doubleClickAt({ x: getBounds.left + 120, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.doubleClickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(400);
       await getPosition.click();
       await CommonFunc.sleep(300);
       pointPositionText = await pointPosition.getText();
       await CommonFunc.sleep(300);
-      await driver.doubleClick(getBounds.left + 150, getBounds.top + 30);
+      try {
+        await driver.doubleClickAt({ x: getBounds.left + 150, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.doubleClickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(400);
       await getPosition.click();
       await CommonFunc.sleep(300);
       pointPositionText = await pointPosition.getText();
       await CommonFunc.sleep(300);
-      await driver.doubleClick(getBounds.left + 180, getBounds.top + 30);
+      try {
+        await driver.doubleClickAt({ x: getBounds.left + 180, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.doubleClickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(400);
       await getPosition.click();
       await CommonFunc.sleep(300);
       pointPositionText = await pointPosition.getText();
       await CommonFunc.sleep(300);
-      await driver.doubleClick(getBounds.left + 210, getBounds.top + 30);
+      try {
+        await driver.doubleClickAt({ x: getBounds.left + 210, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.doubleClickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(400);
       await getPosition.click();
       await CommonFunc.sleep(300);
@@ -197,29 +255,77 @@ export default function RichEditorStabillity003() {
       let rich = await (driver.findComponent(ON.id('RichEditorStabillity003')) as Promise<Component>);
       let getBounds = await rich.getBounds();
       await CommonFunc.sleep(200);
-      await driver.click(getBounds.left + 90, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 90, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 90, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 90, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 90, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 90, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 190, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 190, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 190, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 190, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 190, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 190, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 190, getBounds.top + 90);
+      try {
+        await driver.clickAt({ x: getBounds.left + 190, y: getBounds.top + 90, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 190, getBounds.top + 90);
+      try {
+        await driver.clickAt({ x: getBounds.left + 190, y: getBounds.top + 90, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 190, getBounds.top + 90);
+      try {
+        await driver.clickAt({ x: getBounds.left + 190, y: getBounds.top + 90, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 190, getBounds.top + 190);
+      try {
+        await driver.clickAt({ x: getBounds.left + 190, y: getBounds.top + 190, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 190, getBounds.top + 190);
+      try {
+        await driver.clickAt({ x: getBounds.left + 190, y: getBounds.top + 190, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 190, getBounds.top + 190);
+      try {
+        await driver.clickAt({ x: getBounds.left + 190, y: getBounds.top + 190, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
       let getPosition = await (driver.findComponent(ON.id('getPosition')) as Promise<Component>);
       await getPosition.click();
@@ -245,15 +351,35 @@ export default function RichEditorStabillity003() {
       let rich = await (driver.findComponent(ON.id('RichEditorStabillity003')) as Promise<Component>);
       let center = await rich.getBoundsCenter();
       await CommonFunc.sleep(200);
-      await driver.doubleClick(center.x, center.y);
+      try {
+        await driver.doubleClickAt({ x: center.x, y: center.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.doubleClickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.doubleClick(center.x, center.y);
+      try {
+        await driver.doubleClickAt({ x: center.x, y: center.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.doubleClickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.doubleClick(center.x, center.y);
+      try {
+        await driver.doubleClickAt({ x: center.x, y: center.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.doubleClickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500)
-      await driver.doubleClick(center.x, center.y);
+      try {
+        await driver.doubleClickAt({ x: center.x, y: center.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.doubleClickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500)
-      await driver.doubleClick(center.x, center.y);
+      try {
+        await driver.doubleClickAt({ x: center.x, y: center.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.doubleClickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500)
       let getPosition = await (driver.findComponent(ON.id('getPosition')) as Promise<Component>);
       await getPosition.click();

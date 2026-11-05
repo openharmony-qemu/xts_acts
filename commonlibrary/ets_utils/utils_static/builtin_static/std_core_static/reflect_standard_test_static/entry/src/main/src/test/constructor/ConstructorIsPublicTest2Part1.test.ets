@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from "../../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 import Utils from "../Util.test";
 import {StringFieldWithMethod,IP2_110_PubDefBool,ParamCountCls,TcPub19,Ctor_ConstructorParam,EmptyCls,GenericsMultiResolved_Ext,OT_Outer_OT_InnerGeneric,EqOverloadCls,Eq04_TripleOL,IP2_128_5CIdx0,IP_Ext_DerivGen,TcTwoPubA,PrivFixedArrParam,TcPriv5,PrivateCtorWithDefault,IsPrivateWithFactory,IsPrivateThenPublicCtor,GO2_Ext_AbstractGeneric,GetParamTypeABC,Ext4_FixedArrOptParam,OT_DerivedWithParam,IsPublicCtorRefParam,PubDouble,GN3_Mix4ISBD,IsPublicGenericTwo,IsPublicImplIfc,ObjectParamCtor_Ext,IsPublicThenPrivateCtor,IsPublicGeneric,IsPublicGenericParam,IsPublicGenericBound,IsPrivateGenericParam,IP_Ext_GenCls,IP2_121_GenTUPub,IP2_122_GenTCtor,IP3_181_PubDblInt,IP3_183_PubClsParam,IP3_191_ArrIdx4,IP3_198_PubMap,IP3_200_PubDblFixedArr,IP3_209_7Overload,IP3_211_PubObjArr,IP3_214_PubCtorArr,IP3_216_All6Idx2,IP3_217_PubClsArr,TcPubPrivA,} from "../Util.test";
 

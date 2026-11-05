@@ -335,7 +335,6 @@ static napi_value Init(napi_env env, napi_value exports)
 
         {"RichEditorEnumTest_001", nullptr, RichEditorEnumTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"RichEditorEnumTest_002", nullptr, RichEditorEnumTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"RichEditorEnumTest_003", nullptr, RichEditorEnumTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"RichEditorEnumTest_004", nullptr, RichEditorEnumTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"RichEditorEnumTest_005", nullptr, RichEditorEnumTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"RichEditorEnumTest_006", nullptr, RichEditorEnumTest_006, nullptr, nullptr, nullptr, napi_default, nullptr},

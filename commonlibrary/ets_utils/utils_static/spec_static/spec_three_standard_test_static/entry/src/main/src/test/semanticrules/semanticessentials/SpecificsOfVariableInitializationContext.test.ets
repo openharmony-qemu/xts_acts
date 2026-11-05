@@ -17,7 +17,7 @@
 import {
   afterAll,
   afterEach,
-  beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../hypium/index';
+  beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../../Util.test'
 
 function foo1(x: boolean) { let v = x; const c = x; }

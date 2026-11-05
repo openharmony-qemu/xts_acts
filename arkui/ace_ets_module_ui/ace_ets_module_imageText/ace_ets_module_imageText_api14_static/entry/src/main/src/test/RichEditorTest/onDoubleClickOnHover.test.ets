@@ -31,6 +31,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 
+let displayID: Int = 0;
 export default function RichEditorOnDoubleClickTest() {
   describe('RichEditorOnDoubleClickTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -56,9 +57,10 @@ export default function RichEditorOnDoubleClickTest() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push RichEditorOnDoubleClickTest page error:" + err);
+        console.log("push RichEditorOnDoubleClickTest page error:" + err);
       }
       console.info("RichEditorOnDoubleClickTest beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     }); 
 
 
@@ -78,7 +80,11 @@ it('RichEditorOnDoubleClickTest_static_0010', Level.LEVEL0, async (done: () => v
       let RichEditor = await driver.findComponent(ON.id('RichEditor_OnDoubleClickOnHover'));
       let point:Point = await RichEditor!.getBoundsCenter()
       await CommonFunc.sleep(500);
-      await driver.mouseMoveTo({ x: point.x , y: point.y })
+      try {
+        await driver.mouseMoveTo({ x: point.x , y: point.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.mouseMoveTo error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('OnDoubleClickOnHover');
       let obj = JSON.parseJsonElement(strJson);
@@ -104,12 +110,20 @@ it('RichEditorOnDoubleClickTest_static_0020', Level.LEVEL0, async (done: () => v
       let RichEditor = await driver.findComponent(ON.id('RichEditor_OnDoubleClickOnHover'));
       let point:Point = await RichEditor!.getBoundsCenter()
       await CommonFunc.sleep(500);
-      await driver.mouseMoveTo({ x:point.x , y:point.y })
+      try {
+        await driver.mouseMoveTo({ x:point.x , y:point.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.mouseMoveTo error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let text = await driver.findComponent(ON.id('OnDoubleClickOnHover'));
       let point2:Point = await text!.getBoundsCenter()
       await CommonFunc.sleep(500);
-      await driver.mouseMoveTo({ x:point2.x , y:point2.y })
+      try {
+        await driver.mouseMoveTo({ x:point2.x , y:point2.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.mouseMoveTo error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('OnDoubleClickOnHover');
       let obj = JSON.parseJsonElement(strJson);

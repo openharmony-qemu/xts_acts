@@ -19,8 +19,6 @@
         "power-shell timeout -o 2147483647",
         "uinput -T -m 300 2700 280 200",
         "power-shell setmode 602",
-        "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.media.xts/haps/entry_test/files",
-        "chmod 777 -R /data/app/el2/100/base/ohos.acts.multimedia.media.xts/haps/entry_test",
         "uitest dumpLayout"
       ]
     },
@@ -101,7 +99,6 @@
         "hilog -Q pidon",
         "hilog -Q domainon",
         "sleep 5",
-        "rm -rf /data/app/el2/100/base/ohos.acts.multimedia.media.xts/*",
         "kill -9 `pidof ohos.acts.multimedia.media.xts`"
       ]
     }

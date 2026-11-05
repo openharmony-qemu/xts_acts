@@ -37,5 +37,7 @@ napi_value VideoVp9DecFunction0019(napi_env env, napi_callback_info info);
 napi_value VideoVp9DecFunction0020(napi_env env, napi_callback_info info);
 napi_value VideoVp8DecFunction0021(napi_env env, napi_callback_info info);
 napi_value VideoCinepakDecFunction0022(napi_env env, napi_callback_info info);
+napi_value VideoWmv1DecFunction0023(napi_env env, napi_callback_info info);
+napi_value VideoWmv1DecFunction0024(napi_env env, napi_callback_info info);
 
 #endif // VIDEO_DECODER_FUNC_TEST_H

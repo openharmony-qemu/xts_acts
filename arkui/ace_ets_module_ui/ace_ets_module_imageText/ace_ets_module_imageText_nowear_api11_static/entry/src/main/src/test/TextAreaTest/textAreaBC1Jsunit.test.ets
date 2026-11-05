@@ -32,6 +32,9 @@ import { RecordData } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+
+let displayID: Int = 0;
+
 export default function textAreaBC1Jsunit() {
   describe('textAreaBC1Jsunit', () :void=> {
     beforeAll(async (): Promise<void> => {
@@ -56,9 +59,10 @@ export default function textAreaBC1Jsunit() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push textAreaBC1Jsunit page error:" + err);
+        console.log("push textAreaBC1Jsunit page error:" + err);
       }
       console.info("textAreaBC1Jsunit beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     afterEach(async (): Promise<void> => {
       const routerInstance = AppStorage.get<Router>("router") as Router
@@ -193,7 +197,11 @@ it('textAreaBC1Jsunit_static_0400', Level.LEVEL3, async (done: ()=>void) => {
       await CommonFunc.sleep(1000);
       let text = await driver.findComponent(ON.id('textArea1'));
       await (text?.inputText('rrr') as Promise<void>);
-	  await driver.triggerKey(2047)
+	  try {
+	    await driver.triggerKey(2047, displayID)
+	  } catch (err) {
+	    console.log('driver.triggerKey error: ' + JSON.stringify(err));
+	  }
       await CommonFunc.sleep(2000);
       let strJson1 = inspector.getInspectorByKey('textAreaBC1' + '_change');
       let obj1 = JSON.parseJsonElement(strJson1);
@@ -253,7 +261,11 @@ it('textAreaBC1Jsunit_static_0600', Level.LEVEL3, async (done: ()=>void) => {
       let textAreaRect = CommonFunc.getComponentRectOnScreen('textArea1')
       let clickX = Math.round((textAreaRect.right + textAreaRect.left)/2).toInt()
       let clickY = Math.round((textAreaRect.bottom + textAreaRect.top)/2).toInt()
-      await driverX.mouseClick({ x: clickX , y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
+      try {
+        await driverX.mouseClick({ x: clickX , y: clickY, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT)
+      } catch (err) {
+        console.log('driver.mouseClick error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let allSelect = await driver.findComponent(ON.text('全选'));
       await CommonFunc.sleep(1000);
@@ -263,7 +275,11 @@ it('textAreaBC1Jsunit_static_0600', Level.LEVEL3, async (done: ()=>void) => {
         await allSelect.click();
         await CommonFunc.sleep(1000);
       }
-      await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
+      try {
+        await driverX.mouseClick({ x: clickX, y: clickY, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT)
+      } catch (err) {
+        console.log('driver.mouseClick error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let copy = await driver.findComponent(ON.text('复制'));
       await CommonFunc.sleep(1000);
@@ -279,7 +295,11 @@ it('textAreaBC1Jsunit_static_0600', Level.LEVEL3, async (done: ()=>void) => {
       await CommonFunc.sleep(1000);
       console.info('textAreaBC1Jsunit_0600 component obj is: ' + txt);
 
-      await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
+      try {
+        await driverX.mouseClick({ x: clickX, y: clickY, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT)
+      } catch (err) {
+        console.log('driver.mouseClick error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let paste = await driver.findComponent(ON.text('粘贴'));
       if (paste != null) {
@@ -317,7 +337,11 @@ it('textAreaBC1Jsunit_static_0700', Level.LEVEL3, async (done: ()=>void) => {
       let textAreaRect = CommonFunc.getComponentRectOnScreen('textArea1')
       let clickX = Math.round((textAreaRect.right + textAreaRect.left)/2).toInt()
       let clickY = Math.round((textAreaRect.bottom + textAreaRect.top)/2).toInt()
-      await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
+      try {
+        await driverX.mouseClick({ x: clickX, y: clickY, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT)
+      } catch (err) {
+        console.log('driver.mouseClick error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let allSelect = await driver.findComponent(ON.text('全选'));
       await CommonFunc.sleep(2000);
@@ -325,7 +349,11 @@ it('textAreaBC1Jsunit_static_0700', Level.LEVEL3, async (done: ()=>void) => {
         await allSelect.click();
         await CommonFunc.sleep(1000);
       }
-      await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
+      try {
+        await driverX.mouseClick({ x: clickX, y: clickY, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT)
+      } catch (err) {
+        console.log('driver.mouseClick error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let cutComponent = await driver.findComponent(ON.text('剪切'));
       await CommonFunc.sleep(2000);
@@ -356,7 +384,11 @@ it('textAreaBC1Jsunit_static_0800', Level.LEVEL2, async (done: ()=>void) => {
       let driver =  Driver.create()
       let text = await driver.findComponent(ON.id('textArea1'));
       await (text?.inputText('ee') as Promise<void>);
-	  await driver.triggerKey(2047)
+	  try {
+	    await driver.triggerKey(2047, displayID)
+	  } catch (err) {
+	    console.log('driver.triggerKey error: ' + JSON.stringify(err));
+	  }
       await CommonFunc.sleep(2000);
       let strJson1 = inspector.getInspectorByKey('textAreaBC1' + '_change');
       let obj1 = JSON.parseJsonElement(strJson1);

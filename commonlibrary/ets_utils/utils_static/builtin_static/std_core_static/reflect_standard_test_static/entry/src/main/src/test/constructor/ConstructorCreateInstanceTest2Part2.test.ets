@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from "../../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 import Utils from "../Util.test";
 
 import {TcTwoPubA,StringFieldWithMethod,DoubleFieldClass,MultiFieldClass,ChildClass,ComputedClass,CtorOverload3,Ctor2DblDbl,InterfaceImplClass,ConcreteFromAbstract_Ext,ArrayCtor,NoArgClass,IntFieldClass,StringFieldClass,BoolFieldClass,ParentClass,ManyFieldsClass,ArrayWrapClass,IntCtor,BoolCtor,EmptyCls,CI02_Inner,CI02_Multi,NumberCtor,StringCtor,CI02_OneInt,CI_20Params,CI_Default1,CI02_Default,CI_ThreeLeaf,SixMixed_Ext,TwoParamCtor,CI02_Overload,CI_DefaultMix,CI_SuperChild,CI_ThisChain0,CI_ThisChain1,ParamCountCls,CI02_Container,CI02_TwoIntStr,CI_DefaultFlag,CI_DefaultZero,EightMixed_Ext,ThreeParamCtor,CI02_TwoStrBool,CI02_WithMethod,MultiInterface_Ext,OverloadMiddleCtor,PubByteParam,PubShortParam,FiveParamCls,Ext4_CharOptParam,CtorDoubleArrParam,CtorMultiDimArrParam,CtorFixedArrStrParam,Ext4_FixedArrOptParam,Ctor_MapStrInt,Ext2_MapStrBoolParam,EqExt_CustomParamCtor,EqExt_CustomAndStr,ObjectParamCtor_Ext,GN_ExtCombStrArr,Ctor_int_String_double,IP3_193_PubFloat,} from "../Util.test";

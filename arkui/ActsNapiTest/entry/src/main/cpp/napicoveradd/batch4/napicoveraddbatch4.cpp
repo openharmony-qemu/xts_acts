@@ -197,6 +197,9 @@ static napi_value TsfnDestroyRuntimeWithoutExplicitCleanupProbe(napi_env env, na
         napi_status tsfnCreate = napi_create_threadsafe_function(isolatedEnv, function, nullptr, name, 0, 1, nullptr,
                                                                  nullptr, nullptr, nullptr, &tsfn);
         tsfnStatus.store(static_cast<int32_t>(tsfnCreate));
+        if (tsfnCreate == napi_ok && tsfn != nullptr) {
+            napi_release_threadsafe_function(tsfn, napi_tsfn_release);
+        }
         destroyStatus.store(static_cast<int32_t>(napi_destroy_ark_runtime(&isolatedEnv)));
     });
     worker.join();
@@ -1274,15 +1277,13 @@ static napi_value TestAddFinalizerReturnValue(napi_env env, napi_callback_info i
 
     napi_value obj = nullptr;
     napi_create_object(env, &obj);
-    int32_t finalizeCount = 0;
+    int32_t* finalizeCount = new int32_t(0);
     napi_ref ref = nullptr;
 
     napi_status status = napi_add_finalizer(
-        env, obj, &finalizeCount,
+        env, obj, finalizeCount,
         [](napi_env env, void *data, void *hint) {
-            (void)env;
-            (void)data;
-            (void)hint;
+            delete static_cast<int32_t*>(data);
         },
         nullptr, &ref);
 

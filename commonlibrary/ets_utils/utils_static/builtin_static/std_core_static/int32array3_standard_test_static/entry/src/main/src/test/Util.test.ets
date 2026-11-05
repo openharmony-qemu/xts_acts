@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll } from '../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium-static/src/main/indexStatic';
 
 describe('UtilSkeleton', (): void => {
   beforeAll((): void => {

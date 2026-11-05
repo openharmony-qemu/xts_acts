@@ -21,6 +21,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function counterApi() {
   describe('counterApi', () => {
 
@@ -74,7 +75,7 @@ export default function counterApi() {
         console.info('[counterApi_static_001] sleep err: ' + JSON.stringify(err));
       }
       try {
-        await driver.triggerKey(2049);
+        await driver.triggerKey(2049, displayID);
       } catch (err) {
         console.info('[counterApi_static_001] triggerKey err: ' + JSON.stringify(err));
       }
@@ -124,7 +125,7 @@ export default function counterApi() {
         console.info('[counterApi_static_002] sleep err: ' + JSON.stringify(err));
       }
       try {
-        await driver.triggerKey(2049);
+        await driver.triggerKey(2049, displayID);
       } catch (err) {
         console.info('[counterApi_static_002] triggerKey err: ' + JSON.stringify(err));
       }
@@ -180,7 +181,7 @@ export default function counterApi() {
         console.info('[counterApi_static_003] sleep err: ' + JSON.stringify(err));
       }
       try {
-        await driver.triggerKey(2049);
+        await driver.triggerKey(2049, displayID);
       } catch (err) {
         console.info('[counterApi_static_003] triggerKey err: ' + JSON.stringify(err));
       }

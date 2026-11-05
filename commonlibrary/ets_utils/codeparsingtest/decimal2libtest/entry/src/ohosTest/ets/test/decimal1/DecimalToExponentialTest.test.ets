@@ -16,7 +16,6 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { Decimal } from '@kit.ArkTS';
 import * as common from '../common/DecimalTestCommon';
-import { BusinessError } from '@kit.BasicServicesKit';
 
 type Rounding = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
@@ -39,6 +38,7 @@ export default function DecimalToExponentialTest() {
     afterEach(() => { common.resetDecimalConfig(Decimal); });
     afterAll(() => {
     });
+
 
     /**
      * @tc.name testDecimalToExponentialPart01Test001
@@ -210,7 +210,7 @@ export default function DecimalToExponentialTest() {
         try {
           dec.toExponential(dp as number, Decimal.ROUND_HALF_UP);
         } catch (e) {
-          errCode = (e as BusinessError).code;
+          errCode = (e as ESObject).code;
         }
         expect(errCode).assertEqual(10200001);
       };
@@ -227,7 +227,7 @@ export default function DecimalToExponentialTest() {
       try {
         strDpDec.toExponential(badDp as number, Decimal.ROUND_HALF_UP);
       } catch (e) {
-        strDpErr = (e as BusinessError).code;
+        strDpErr = (e as ESObject).code;
       }
       expect(strDpErr).assertEqual(10200001);
     });
@@ -247,7 +247,7 @@ export default function DecimalToExponentialTest() {
         try {
           dec.toExponential(1, rm as Rounding);
         } catch (e) {
-          errCode = (e as BusinessError).code;
+          errCode = (e as ESObject).code;
         }
         expect(errCode).assertEqual(10200001);
       };
@@ -263,7 +263,7 @@ export default function DecimalToExponentialTest() {
       try {
         strRmDec.toExponential(1, strRm as Rounding);
       } catch (e) {
-        strRmErr = (e as BusinessError).code;
+        strRmErr = (e as ESObject).code;
       }
       expect(strRmErr).assertEqual(10200001);
       let bothInvalidDec: Decimal = new Decimal(45.6);
@@ -272,7 +272,7 @@ export default function DecimalToExponentialTest() {
       try {
         bothInvalidDec.toExponential(-1, bothInvalidRm as Rounding);
       } catch (e) {
-        bothInvalidErr = (e as BusinessError).code;
+        bothInvalidErr = (e as ESObject).code;
       }
       expect(bothInvalidErr).assertEqual(10200001);
       let decKeep: Decimal = new Decimal('123.4567');
@@ -281,6 +281,7 @@ export default function DecimalToExponentialTest() {
       let decCarry: Decimal = new Decimal('9.999');
       expect(decCarry.toExponential(2, Decimal.ROUND_HALF_UP)).assertEqual('1.00e+1');
     });
+
 
     /**
      * @tc.name testDecimalToExponentialPart02Test001
@@ -384,7 +385,7 @@ export default function DecimalToExponentialTest() {
         dec.toExponential(n as number);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code !== undefined).assertTrue();
       }
       let decB: Decimal = new Decimal(45.6);
@@ -472,7 +473,7 @@ export default function DecimalToExponentialTest() {
           dec.toExponential(val as number);
           expect().assertFail();
         } catch (e) {
-          let err: BusinessError = e as BusinessError;
+          let err: ESObject = e;
           expect(err.code !== undefined).assertTrue();
         }
       };
@@ -551,7 +552,7 @@ export default function DecimalToExponentialTest() {
         Decimal.set(cfg1);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       Decimal.set({ defaults: true });
@@ -560,7 +561,7 @@ export default function DecimalToExponentialTest() {
         Decimal.set(cfg2);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       Decimal.set({ defaults: true });
@@ -569,7 +570,7 @@ export default function DecimalToExponentialTest() {
         Decimal.set(cfg3);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       Decimal.set({ defaults: true });
@@ -628,7 +629,7 @@ export default function DecimalToExponentialTest() {
           dec.toExponential(dp as number);
           expect().assertFail();
         } catch (e) {
-          let err: BusinessError = e as BusinessError;
+          let err: ESObject = e;
           expect(err.code).assertEqual(10200001);
         }
       };
@@ -645,6 +646,7 @@ export default function DecimalToExponentialTest() {
       probeThrows(Number.MAX_VALUE);
     });
 
+
     /**
      * @tc.name testDecimalToExponentialPart03Test001
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART03_TEST_0100
@@ -658,27 +660,27 @@ export default function DecimalToExponentialTest() {
       let undef: ESObject = undefined;
       expect(d.toExponential()).assertEqual(d.toExponential(undef as number));
       expect(d.toExponential(3)).assertEqual(d.toExponential(3, Decimal.ROUND_HALF_UP));
-      let d996: Decimal = new Decimal('9.996');
-      expect(d996.toExponential(2)).assertEqual(d996.toExponential(2, Decimal.ROUND_HALF_UP));
-      let d1235: Decimal = new Decimal('1.235');
-      expect(d1235.toExponential(2, Decimal.ROUND_DOWN)).assertEqual('1.23e+0');
-      expect(d1235.toExponential(2)).assertEqual('1.24e+0');
+      let decimal996: Decimal = new Decimal('9.996');
+      expect(decimal996.toExponential(2)).assertEqual(decimal996.toExponential(2, Decimal.ROUND_HALF_UP));
+      let decimal1235: Decimal = new Decimal('1.235');
+      expect(decimal1235.toExponential(2, Decimal.ROUND_DOWN)).assertEqual('1.23e+0');
+      expect(decimal1235.toExponential(2)).assertEqual('1.24e+0');
       expect(d.toExponential(0)).assertEqual('1e+2');
       expect(d.toExponential()).assertEqual('1.23456e+2');
-      let d7: Decimal = new Decimal('7');
-      expect(d7.toExponential()).assertEqual('7e+0');
-      expect(d7.toExponential(1)).assertEqual('7.0e+0');
-      expect(d7.toExponential(1, Decimal.ROUND_HALF_UP)).assertEqual('7.0e+0');
+      let decimal7: Decimal = new Decimal('7');
+      expect(decimal7.toExponential()).assertEqual('7e+0');
+      expect(decimal7.toExponential(1)).assertEqual('7.0e+0');
+      expect(decimal7.toExponential(1, Decimal.ROUND_HALF_UP)).assertEqual('7.0e+0');
       let d1e21: Decimal = new Decimal(1e21);
       expect(d1e21.toExponential()).assertEqual('1e+21');
       expect(d1e21.toExponential(2)).assertEqual('1.00e+21');
       let d1eN21: Decimal = new Decimal('1e-21');
       expect(d1eN21.toExponential()).assertEqual('1e-21');
       expect(d1eN21.toExponential(2)).assertEqual('1.00e-21');
-      let d0: Decimal = new Decimal(0);
-      expect(d0.toExponential()).assertEqual('0e+0');
-      expect(d0.toExponential(2)).assertEqual('0.00e+0');
-      expect(d0.toExponential(2, Decimal.ROUND_HALF_UP)).assertEqual('0.00e+0');
+      let decimal0: Decimal = new Decimal(0);
+      expect(decimal0.toExponential()).assertEqual('0e+0');
+      expect(decimal0.toExponential(2)).assertEqual('0.00e+0');
+      expect(decimal0.toExponential(2, Decimal.ROUND_HALF_UP)).assertEqual('0.00e+0');
       let dNeg: Decimal = new Decimal('-123.456');
       expect(dNeg.toExponential().charAt(0)).assertEqual('-');
       expect(dNeg.toExponential(2).charAt(0)).assertEqual('-');
@@ -707,7 +709,7 @@ export default function DecimalToExponentialTest() {
         dNp.toExponential(2.5);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       expect(new Decimal('123456789012345678901234567890').toExponential()).assertEqual(
@@ -757,7 +759,7 @@ export default function DecimalToExponentialTest() {
         d.toExponential(2000000000);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       expect(d.toString()).assertEqual('123.45');
@@ -767,7 +769,7 @@ export default function DecimalToExponentialTest() {
         dS.toExponential(-5);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       expect(dS.s).assertEqual(s0);
@@ -777,7 +779,7 @@ export default function DecimalToExponentialTest() {
         dE.toExponential(-1);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       expect(dE.e).assertEqual(e0);
@@ -787,7 +789,7 @@ export default function DecimalToExponentialTest() {
         dD.toExponential(2000000000);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       expect(dD.d === ref).assertTrue();
@@ -796,7 +798,7 @@ export default function DecimalToExponentialTest() {
         dNoArg.toExponential(-1);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       expect(dNoArg.toExponential()).assertEqual('1.2345e+2');
@@ -805,7 +807,7 @@ export default function DecimalToExponentialTest() {
         dOne.toExponential(-1);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       expect(dOne.toExponential(2)).assertEqual('1.23e+2');
@@ -815,7 +817,7 @@ export default function DecimalToExponentialTest() {
         dArith.toExponential(2, rm as Rounding);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       expect(dArith.add(5).toString()).assertEqual('15');
@@ -826,7 +828,7 @@ export default function DecimalToExponentialTest() {
         a.toExponential(2, rmB as Rounding);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       expect(b.toExponential(2)).assertEqual('2.00e+1');
@@ -836,7 +838,7 @@ export default function DecimalToExponentialTest() {
         dMix.toExponential(-1);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       expect(dMix.toString()).assertEqual('9.996');
@@ -846,7 +848,7 @@ export default function DecimalToExponentialTest() {
         dCatch.toExponential(1000000001);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
         caught = true;
       }
@@ -868,7 +870,7 @@ export default function DecimalToExponentialTest() {
         d.toExponential(-1);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       let dB: Decimal = new Decimal('123.45');
@@ -876,7 +878,7 @@ export default function DecimalToExponentialTest() {
         dB.toExponential(1000000001);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       let dC: Decimal = new Decimal('123.45');
@@ -885,7 +887,7 @@ export default function DecimalToExponentialTest() {
         dC.toExponential(2, rm as Rounding);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       let dD: Decimal = new Decimal('123.45');
@@ -894,7 +896,7 @@ export default function DecimalToExponentialTest() {
         dD.toExponential(2, rmD as Rounding);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
     });
@@ -1052,7 +1054,7 @@ export default function DecimalToExponentialTest() {
         dInv.toExponential(2, rm as Rounding);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       let obj: ESObject = Decimal;
@@ -1077,9 +1079,9 @@ export default function DecimalToExponentialTest() {
       expect(d.toExponential(2, Decimal.ROUND_DOWN)).assertEqual('1.23e+0');
       expect(d.toExponential(3, Decimal.ROUND_DOWN)).assertEqual('1.235e+0');
       expect(new Decimal('123.45').toExponential(0, Decimal.ROUND_HALF_UP)).assertEqual('1e+2');
-      let d15: Decimal = new Decimal('1.5');
-      expect(d15.toExponential(0, Decimal.ROUND_HALF_FLOOR)).assertEqual('1e+0');
-      expect(d15.toExponential(0, Decimal.ROUND_HALF_UP)).assertEqual('2e+0');
+      let decimal15: Decimal = new Decimal('1.5');
+      expect(decimal15.toExponential(0, Decimal.ROUND_HALF_FLOOR)).assertEqual('1e+0');
+      expect(decimal15.toExponential(0, Decimal.ROUND_HALF_UP)).assertEqual('2e+0');
       let dLarge: Decimal = new Decimal('123.456');
       expect(dLarge.toExponential(10, Decimal.ROUND_UP)).assertEqual('1.2345600000e+2');
       let dBad: Decimal = new Decimal('1.235');
@@ -1088,7 +1090,7 @@ export default function DecimalToExponentialTest() {
         dBad.toExponential(-1, badRm as Rounding);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       let dMulti: Decimal = new Decimal('123.456');

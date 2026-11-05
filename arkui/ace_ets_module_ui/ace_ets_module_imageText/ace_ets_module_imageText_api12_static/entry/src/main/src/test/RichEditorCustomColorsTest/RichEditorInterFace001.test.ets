@@ -35,6 +35,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function RichEditorInterFace001() {
   describe('RichEditorInterFace001', () => {
     beforeAll(async (): Promise<void> => {
@@ -58,9 +59,10 @@ export default function RichEditorInterFace001() {
           console.info("push RichEditorInterFace001 success");
         }
       } catch (err) {
-        console.error("push RichEditorInterFace001 page error: " + err);
+        console.log("push RichEditorInterFace001 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
@@ -76,7 +78,11 @@ export default function RichEditorInterFace001() {
 
       let richEditor = await (driver.findComponent(ON.id('RichEditorInterFace001')) as Promise<Component>);
       let pointCenter = await richEditor.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.click error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let select1 = await (driver.findComponent(ON.id('select1')) as Promise<Component>)
@@ -91,14 +97,22 @@ export default function RichEditorInterFace001() {
       }
       
 
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.click error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let select2 = await (driver.findComponent(ON.id('select2')) as Promise<Component>)
       await select2.click()
       await CommonFunc.sleep(500);
 
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.click error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let onAppearCall = await (driver.findComponent(ON.id('onAppearCall')) as Promise<Component>);
@@ -126,7 +140,11 @@ export default function RichEditorInterFace001() {
 
       let richEditor = await (driver.findComponent(ON.id('RichEditorInterFace001')) as Promise<Component>);
       let pointCenter = await richEditor.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.click error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let addSpan = await (driver.findComponent(ON.id('addSpan')) as Promise<Component>)

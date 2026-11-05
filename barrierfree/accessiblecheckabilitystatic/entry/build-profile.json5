@@ -19,7 +19,6 @@
     "arkOptions": {
       "runtimeOnly": {
         "packages": [
-          "@ohos/hypium-binary"
         ]
       }
     }
