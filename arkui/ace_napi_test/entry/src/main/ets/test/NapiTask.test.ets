@@ -597,7 +597,7 @@ export default function NapiTaskTest() {
   describe('napiTaskTest', () => {
 
     beforeEach(async () => {
-      await sleep(50);
+      await sleep(200);
     });
 
     afterEach(async () => {

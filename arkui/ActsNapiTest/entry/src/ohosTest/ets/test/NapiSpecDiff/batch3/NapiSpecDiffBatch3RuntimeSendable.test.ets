@@ -82,12 +82,21 @@ export default function napiSpecDiffBatch3RuntimeSendableTest() {
      * @tc.level  LEVEL3
      */
     it('testRefThreadsafeFunctionFromTaskPoolReturnsGenericFailure',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         // OH-NAPI-DIFF-045
         expect(napispecdiffbatch3ndktest.setupThreadsafeFunctionCrossThreadProbe()).assertEqual(1);
-        const status: number = await taskpool.execute(refThreadsafeFunctionInTaskPool) as number;
-        expect(status).assertEqual(NAPI_GENERIC_FAILURE);
-        expect(napispecdiffbatch3ndktest.cleanupThreadsafeFunctionCrossThreadProbe()).assertEqual(1);
+        let status: number = 0;
+        try {
+          status = await taskpool.execute(refThreadsafeFunctionInTaskPool) as number;
+        } catch (e) {
+          console.error('taskpool.execute error occurred');
+        }
+        try {
+          expect(status).assertEqual(NAPI_GENERIC_FAILURE);
+        } finally {
+          expect(napispecdiffbatch3ndktest.cleanupThreadsafeFunctionCrossThreadProbe()).assertEqual(1);
+        }
+        done();
       });
 
     /**
@@ -99,12 +108,21 @@ export default function napiSpecDiffBatch3RuntimeSendableTest() {
      * @tc.level  LEVEL3
      */
     it('testUnrefThreadsafeFunctionFromTaskPoolReturnsGenericFailure',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         // OH-NAPI-DIFF-046
         expect(napispecdiffbatch3ndktest.setupThreadsafeFunctionCrossThreadProbe()).assertEqual(1);
-        const status: number = await taskpool.execute(unrefThreadsafeFunctionInTaskPool) as number;
-        expect(status).assertEqual(NAPI_GENERIC_FAILURE);
-        expect(napispecdiffbatch3ndktest.cleanupThreadsafeFunctionCrossThreadProbe()).assertEqual(1);
+        let status: number = 0;
+        try {
+          status = await taskpool.execute(unrefThreadsafeFunctionInTaskPool) as number;
+        } catch (e) {
+          console.error('taskpool.execute error occurred');
+        }
+        try {
+          expect(status).assertEqual(NAPI_GENERIC_FAILURE);
+        } finally {
+          expect(napispecdiffbatch3ndktest.cleanupThreadsafeFunctionCrossThreadProbe()).assertEqual(1);
+        }
+        done();
       });
 
     /**
