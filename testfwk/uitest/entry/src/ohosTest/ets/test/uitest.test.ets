@@ -6117,7 +6117,7 @@ export default function UiTest() {
 
         /**
          * @tc.name   testPressBackUndefined
-         * @tc.number SUB_testfwk_uitest_Api9_0500
+         * @tc.number SUB_testfwk_uitest_Api9_0200
          * @tc.desc   Press the BACK key.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
