@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, it, expect, TestType, Size, Level } from '../../../hypium/index';
+import { describe, beforeAll, it, expect, TestType, Size, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 import ble from '@ohos.bluetooth.ble';
