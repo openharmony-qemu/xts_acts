@@ -54,7 +54,7 @@ struct Index {
             Text(item)
           }
           .width(80)
-          .height(80)
+          .height('20%')
           .borderRadius(4)
           .id('List_item' + item)
         }, (item: string) => item)
@@ -77,8 +77,7 @@ struct Index {
         console.log('xxx onItemMove')
         return true
       } : undefined)
-      .id('')
-
+      
       Button('Change').onClick(() => {
         this.isChange = !this.isChange;
       })

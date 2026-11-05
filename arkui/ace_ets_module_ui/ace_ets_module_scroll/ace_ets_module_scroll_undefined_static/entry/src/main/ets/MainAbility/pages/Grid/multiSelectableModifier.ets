@@ -72,13 +72,14 @@ struct GridExample {
               Text(day)
                 .fontSize(16)
                 .width('100%')
-                .height(80)
+                .height('20%')
                 .textAlign(TextAlign.Center)
             }.selectable(false)
           }, (day: string) => day)
         }
         .attributeModifier(this.modifier4)
         .id('multiSelectableModifier')
+        .height('70%')
 
         Button('Change').onClick(() => {
           this.modifier4.multiSelectable_ = this.modifier4.multiSelectable_ === undefined ? true : undefined

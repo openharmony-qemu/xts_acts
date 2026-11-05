@@ -125,10 +125,10 @@ struct GridDragEventUndefined {
   build() {
     Column({ space: 5 } as ColumnOptions) {
 
-      Row({ space: 10 } as RowOptions) {
+      Row({ space: 2 } as RowOptions) {
         Column() {
           Text(this.myModifier1.message)
-            .id('GridM_text1')
+            .id('GridM_text1').fontSize(10)
           Grid(this.scroller) {
             GridItem() {
               Text('GridItem_M1')
@@ -139,7 +139,7 @@ struct GridDragEventUndefined {
             .borderColor(Color.Red)
           }
           .id('GridM_1')
-          .height('10%')
+          .height('30%')
           .width('30%')
           .borderWidth(2)
           .borderColor(Color.Black)
@@ -153,7 +153,7 @@ struct GridDragEventUndefined {
 
         Column() {
           Text(this.myModifier2.message)
-            .id('GridM_text2')
+            .id('GridM_text2').fontSize(10)
           Grid(this.scroller) {
             GridItem() {
               Text('GridItem_M2')
@@ -164,7 +164,7 @@ struct GridDragEventUndefined {
             .borderColor(Color.Red)
           }
           .id('GridM_2')
-          .height('10%')
+          .height('30%')
           .width('30%')
           .borderWidth(2)
           .borderColor(Color.Blue)
@@ -182,7 +182,7 @@ struct GridDragEventUndefined {
 
         Column() {
           Text(this.myModifier3.message)
-            .id('GridM_text3')
+            .id('GridM_text3').fontSize(10)
           Grid(this.scroller) {
             GridItem() {
               Text('GridItem3')
@@ -193,7 +193,7 @@ struct GridDragEventUndefined {
             .borderColor(Color.Red)
           }
           .id('GridM_3')
-          .height('10%')
+          .height('30%')
           .width('30%')
           .borderWidth(2)
           .borderColor(Color.Blue)
@@ -203,6 +203,7 @@ struct GridDragEventUndefined {
         }
 
       }
+      .width('70%')
 
       Column({ space: 5 } as ColumnOptions) {
         Row() {

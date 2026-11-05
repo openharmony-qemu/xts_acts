@@ -73,7 +73,7 @@ struct GridDragEventUndefined {
     Column({ space: 5 } as ColumnOptions) {
       Text(this.message)
         .id('Grid_text')
-      Row({ space: 10 } as RowOptions) {
+      Row({ space: 2 } as RowOptions) {
         Grid(this.scroller) {
           GridItem() {
             Text('GridItem1')
@@ -84,7 +84,7 @@ struct GridDragEventUndefined {
           .borderColor(Color.Red)
         }
         .id('Grid_1')
-        .height('10%')
+        .height('30%')
         .width('30%')
         .borderWidth(2)
         .borderColor(Color.Black)
@@ -113,7 +113,7 @@ struct GridDragEventUndefined {
           .borderColor(Color.Red)
         }
         .id('Grid_2')
-        .height('10%')
+        .height('30%')
         .width('30%')
         .borderWidth(2)
         .borderColor(Color.Blue)
@@ -145,7 +145,7 @@ struct GridDragEventUndefined {
           .borderColor(Color.Red)
         }
         .id('Grid_3')
-        .height('10%')
+        .height('30%')
         .width('30%')
         .borderWidth(2)
         .borderColor(Color.Blue)
@@ -157,6 +157,7 @@ struct GridDragEventUndefined {
           console.log(this.message);
         })
       }
+      .width('70%')
 
       Column({ space: 5 } as ColumnOptions) {
         Row() {

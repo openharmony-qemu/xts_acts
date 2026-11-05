@@ -78,8 +78,8 @@ struct Index {
             GridItem() {
               Text(day)
                 .fontSize(16)
-                .width(80)
-                .height(80)
+                .width('100%')
+                .height('20%')
                 .textAlign(TextAlign.Center)
             }
           })
@@ -94,6 +94,7 @@ struct Index {
           }
         })
         .id('editModeModifier')
+        .height('70%')
 
         Button('Change').onClick(() => {
 

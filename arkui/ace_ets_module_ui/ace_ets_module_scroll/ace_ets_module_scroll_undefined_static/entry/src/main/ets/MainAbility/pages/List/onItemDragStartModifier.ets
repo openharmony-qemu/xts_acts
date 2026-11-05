@@ -73,13 +73,13 @@ struct Index {
             Text(item)
           }
           .width(80)
-          .height(80)
+          .height('20%')
           .borderRadius(4)
           .id('List_item' + item)
         }, (item: string) => item)
       }
       .width('100%')
-      .height(450)
+      .height('50%')
       .alignListItem(ListItemAlign.Center)
       .attributeModifier(this.modifier4)
       .onItemDrop((event: ItemDragInfo, itemIndex: Int, insertIndex: Int, isSuccess: boolean) => {
