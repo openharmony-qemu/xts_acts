@@ -44,15 +44,6 @@ export default class FormEditExtAbility extends FormEditExtensionAbility {
     console.info(`${TAG} onSessionCreate, action: ${action}`);
 
     let color: string = typeof want.parameters?.['color'] === 'string' ? (want.parameters?.['color'] as string) : '';
-    let useNull: boolean = typeof want.parameters?.['useNull'] === 'boolean' ? (want.parameters?.['useNull'] as boolean) : false;
-    let useUndefined: boolean = typeof want.parameters?.['useUndefined'] === 'boolean' ? (want.parameters?.['useUndefined'] as boolean) : false;
-
-    let actualColor: string = color;
-    if (useNull) {
-      actualColor = 'null';
-    } else if (useUndefined) {
-      actualColor = 'undefined';
-    }
 
     // loadContent to create uiContent before setWindowBackgroundColor (required for success path)
     let needLoadContent: boolean = typeof want.parameters?.['needLoadContent'] === 'boolean' ? (want.parameters?.['needLoadContent'] as boolean) : false;
@@ -60,9 +51,9 @@ export default class FormEditExtAbility extends FormEditExtensionAbility {
       session.loadContent('formeditext/pages/Index');
     }
 
-    console.info(`${TAG} ${action} setWindowBackgroundColor, color: ${actualColor}, needLoadContent: ${needLoadContent}`);
+    console.info(`${TAG} ${action} setWindowBackgroundColor, color: ${color}, needLoadContent: ${needLoadContent}`);
     try {
-      this.formEditContext.setWindowBackgroundColor(actualColor).then((): void => {
+      this.formEditContext.setWindowBackgroundColor(color).then((): void => {
         console.info(`${TAG} ${action} setWindowBackgroundColor success`);
         this.publishResult(action, 0, 'success');
       }).catch((error: Error): void => {

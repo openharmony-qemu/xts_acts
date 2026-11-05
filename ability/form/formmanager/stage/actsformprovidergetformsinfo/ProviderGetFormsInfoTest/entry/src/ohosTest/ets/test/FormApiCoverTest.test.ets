@@ -1177,7 +1177,7 @@ export default function formApiCoverTest() {
     it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0100';
       hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
-      let callBack = (_: BusinessError, data: commonEventManager.CommonEventPublishData) => {
+      let callBack = (_: BusinessError, data: commonEventManager.CommonEventData) => {
         hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} data: ${JSON.stringify(data)}`);
         if (data.parameters?.['action'] === TAG) {
           let code: number = data.code ?? -1;
@@ -1217,7 +1217,7 @@ export default function formApiCoverTest() {
     it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0200';
       hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
-      let callBack = (_: BusinessError, data: commonEventManager.CommonEventPublishData) => {
+      let callBack = (_: BusinessError, data: commonEventManager.CommonEventData) => {
         hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} data: ${JSON.stringify(data)}`);
         if (data.parameters?.['action'] === TAG) {
           let code: number = data.code ?? -1;
@@ -1257,7 +1257,7 @@ export default function formApiCoverTest() {
     it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0300';
       hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
-      let callBack = (_: BusinessError, data: commonEventManager.CommonEventPublishData) => {
+      let callBack = (_: BusinessError, data: commonEventManager.CommonEventData) => {
         hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} data: ${JSON.stringify(data)}`);
         if (data.parameters?.['action'] === TAG) {
           let code: number = data.code ?? -1;
@@ -1297,7 +1297,7 @@ export default function formApiCoverTest() {
     it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0400';
       hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
-      let callBack = (_: BusinessError, data: commonEventManager.CommonEventPublishData) => {
+      let callBack = (_: BusinessError, data: commonEventManager.CommonEventData) => {
         hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} data: ${JSON.stringify(data)}`);
         if (data.parameters?.['action'] === TAG) {
           let code: number = data.code ?? -1;
@@ -1337,7 +1337,7 @@ export default function formApiCoverTest() {
     it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0500';
       hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
-      let callBack = (_: BusinessError, data: commonEventManager.CommonEventPublishData) => {
+      let callBack = (_: BusinessError, data: commonEventManager.CommonEventData) => {
         hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} data: ${JSON.stringify(data)}`);
         if (data.parameters?.['action'] === TAG) {
           let code: number = data.code ?? -1;
@@ -1377,7 +1377,7 @@ export default function formApiCoverTest() {
     it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0600';
       hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
-      let callBack = (_: BusinessError, data: commonEventManager.CommonEventPublishData) => {
+      let callBack = (_: BusinessError, data: commonEventManager.CommonEventData) => {
         hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} data: ${JSON.stringify(data)}`);
         if (data.parameters?.['action'] === TAG) {
           let code: number = data.code ?? -1;
@@ -1417,7 +1417,7 @@ export default function formApiCoverTest() {
     it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0700';
       hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
-      let callBack = (_: BusinessError, data: commonEventManager.CommonEventPublishData) => {
+      let callBack = (_: BusinessError, data: commonEventManager.CommonEventData) => {
         hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} data: ${JSON.stringify(data)}`);
         if (data.parameters?.['action'] === TAG) {
           let code: number = data.code ?? -1;
@@ -1458,7 +1458,7 @@ export default function formApiCoverTest() {
     it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0800';
       hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
-      let callBack = (_: BusinessError, data: commonEventManager.CommonEventPublishData) => {
+      let callBack = (_: BusinessError, data: commonEventManager.CommonEventData) => {
         hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} data: ${JSON.stringify(data)}`);
         if (data.parameters?.['action'] === TAG) {
           let code: number = data.code ?? -1;
@@ -1499,7 +1499,7 @@ export default function formApiCoverTest() {
     it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0900';
       hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
-      let callBack = (_: BusinessError, data: commonEventManager.CommonEventPublishData) => {
+      let callBack = (_: BusinessError, data: commonEventManager.CommonEventData) => {
         hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} data: ${JSON.stringify(data)}`);
         if (data.parameters?.['action'] === TAG) {
           let code: number = data.code ?? -1;
@@ -1540,7 +1540,7 @@ export default function formApiCoverTest() {
     it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_1000';
       hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
-      let callBack = (_: BusinessError, data: commonEventManager.CommonEventPublishData) => {
+      let callBack = (_: BusinessError, data: commonEventManager.CommonEventData) => {
         hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} data: ${JSON.stringify(data)}`);
         if (data.parameters?.['action'] === TAG) {
           let code: number = data.code ?? -1;
