@@ -14,7 +14,9 @@
  */
 
 import MultimodalInputPointerTest from './MultimodalInputPointer.test';
+import PointerTest from './Pointer.test';
 
 export default function testsuite() {
   MultimodalInputPointerTest();
+  PointerTest();
 }
