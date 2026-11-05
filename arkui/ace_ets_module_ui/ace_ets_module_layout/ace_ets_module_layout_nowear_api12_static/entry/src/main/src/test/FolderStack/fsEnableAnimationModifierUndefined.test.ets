@@ -26,14 +26,14 @@ export default function FSEnableAnimationModifierUndefinedTest() {
     beforeEach( async(): Promise<void> => {
       console.info('FSEnableAnimationModifierUndefinedTest beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/FolderStack/fsEnableAnimationModifierUndefined',
+        url: 'MainAbility/pages/FolderStack/FsEnableAnimationModifierUndefined',
       }
       try {
         const router = AppStorage.get<Router>('router') as Router
         router.clear();
         let pages = router.getState();
         console.info('get FSEnableAnimationModifierUndefinedTest state pages:' + JSON.stringify(pages));
-        if (!('fsEnableAnimationModifierUndefined' == pages.name)) {
+        if (!('FsEnableAnimationModifierUndefined' == pages.name)) {
           console.info('get FSEnableAnimationModifierUndefinedTest pages.name:' + JSON.stringify(pages.name));
           await router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -45,13 +45,13 @@ export default function FSEnableAnimationModifierUndefinedTest() {
     });
 
     /**
-     * @tc.number    FSEnableAnimationModifierUndefinedTest_static_0100
-     * @tc.name      FSEnableAnimationModifierUndefinedTest_static_0100
-     * @tc.desc      FSEnableAnimationModifierUndefinedTest_static_0100
+     * @tc.number    SUB_ARKUI_API_FSEnableAnimationModifierUndefinedTest_static_0100
+     * @tc.name      SUB_ARKUI_API_FSEnableAnimationModifierUndefinedTest_static_0100
+     * @tc.desc      SUB_ARKUI_API_FSEnableAnimationModifierUndefinedTest_static_0100
      * @tc.level     Level.LEVEL1
      */
-    it('FSEnableAnimationModifierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('FSEnableAnimationModifierUndefinedTest_static_0100 START');
+    it('SUB_ARKUI_API_FSEnableAnimationModifierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_API_FSEnableAnimationModifierUndefinedTest_static_0100 START');
       await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('FolderStack_EnableAnimation_Modifier');
@@ -72,7 +72,7 @@ export default function FSEnableAnimationModifierUndefinedTest() {
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
       console.info('Test component obj.enableAnimation is: ' + obj1.getElement('$attrs').getString('enableAnimation'));
       expect(obj1.getElement('$attrs').getString('enableAnimation')).assertEqual('true');
-      console.info('FSEnableAnimationModifierUndefinedTest_static_0100 END');
+      console.info('SUB_ARKUI_API_FSEnableAnimationModifierUndefinedTest_static_0100 END');
       done();
     });
   })

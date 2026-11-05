@@ -26,14 +26,14 @@ export default function FSAutoHalfFoldUndefinedTest() {
     beforeEach( async(): Promise<void> => {
       console.info('FSAutoHalfFoldUndefinedTest beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/FolderStack/fsAutoHalfFoldUndefined',
+        url: 'MainAbility/pages/FolderStack/FsAutoHalfFoldUndefined',
       }
       try {
         const router = AppStorage.get<Router>('router') as Router
         router.clear();
         let pages = router.getState();
         console.info('get FSAutoHalfFoldUndefinedTest state pages:' + JSON.stringify(pages));
-        if (!('fsAutoHalfFoldUndefined' == pages.name)) {
+        if (!('FsAutoHalfFoldUndefined' == pages.name)) {
           console.info('get FSAutoHalfFoldUndefinedTest pages.name:' + JSON.stringify(pages.name));
           await router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -45,13 +45,13 @@ export default function FSAutoHalfFoldUndefinedTest() {
     });
 
     /**
-     * @tc.number    FSAutoHalfFoldUndefinedTest_static_0100
-     * @tc.name      FSAutoHalfFoldUndefinedTest_static_0100
-     * @tc.desc      FSAutoHalfFoldUndefinedTest_static_0100
+     * @tc.number    SUB_ARKUI_API_FSAutoHalfFoldUndefinedTest_static_0100
+     * @tc.name      SUB_ARKUI_API_FSAutoHalfFoldUndefinedTest_static_0100
+     * @tc.desc      SUB_ARKUI_API_FSAutoHalfFoldUndefinedTest_static_0100
      * @tc.level     Level.LEVEL1
      */
-    it('FSAutoHalfFoldUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('FSAutoHalfFoldUndefinedTest_static_0100 START');
+    it('SUB_ARKUI_API_FSAutoHalfFoldUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_API_FSAutoHalfFoldUndefinedTest_static_0100 START');
       await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('FolderStack_AutoHalfFold');
@@ -73,7 +73,7 @@ export default function FSAutoHalfFoldUndefinedTest() {
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
       console.info('Test component obj.autoHalfFold is: ' + obj1.getElement('$attrs').getString('autoHalfFold'));
       expect(obj1.getElement('$attrs').getString('autoHalfFold')).assertEqual('true');
-      console.info('FSAutoHalfFoldUndefinedTest_static_0100 END');
+      console.info('SUB_ARKUI_API_FSAutoHalfFoldUndefinedTest_static_0100 END');
       done();
     });
   })

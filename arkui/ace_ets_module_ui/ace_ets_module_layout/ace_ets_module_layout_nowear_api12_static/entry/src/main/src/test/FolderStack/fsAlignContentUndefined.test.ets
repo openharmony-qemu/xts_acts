@@ -26,14 +26,14 @@ export default function FSAlignContentUndefinedTest() {
     beforeEach(async (): Promise<void> => {
       console.info('FSAlignContentUndefinedTest beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/FolderStack/fsAlignContentUndefined',
+        url: 'MainAbility/pages/FolderStack/FsAlignContentUndefined',
       }
       try {
         const router = AppStorage.get<Router>('router') as Router
         router.clear();
         let pages = router.getState();
         console.info('get FSAlignContentUndefinedTest state pages:' + JSON.stringify(pages));
-        if (!('fsAlignContentUndefined' == pages.name)) {
+        if (!('FsAlignContentUndefined' == pages.name)) {
           console.info('get FSAlignContentUndefinedTest pages.name:' + JSON.stringify(pages.name));
           await router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -45,13 +45,13 @@ export default function FSAlignContentUndefinedTest() {
     });
 
     /**
-     * @tc.number    FSAlignContentUndefinedTest_static_0100
-     * @tc.name      FSAlignContentUndefinedTest_static_0100
-     * @tc.desc      FSAlignContentUndefinedTest_static_0100
+     * @tc.number    SUB_ARKUI_API_FSAlignContentUndefinedTest_static_0100
+     * @tc.name      SUB_ARKUI_API_FSAlignContentUndefinedTest_static_0100
+     * @tc.desc      SUB_ARKUI_API_FSAlignContentUndefinedTest_static_0100
      * @tc.level     LEVEL1
      */
-    it('FSAlignContentUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('FSAlignContentUndefinedTest_static_0100 START');
+    it('SUB_ARKUI_API_FSAlignContentUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_API_FSAlignContentUndefinedTest_static_0100 START');
       await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('FolderStack_AlignContent');
@@ -72,7 +72,7 @@ export default function FSAlignContentUndefinedTest() {
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
       console.info('Test component obj.alignContent is: ' + obj1.getElement('$attrs').getString('alignContent'));
       expect(obj1.getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Center');
-      console.info('FSAlignContentUndefinedTest_static_0100 END');
+      console.info('SUB_ARKUI_API_FSAlignContentUndefinedTest_static_0100 END');
       done();
     });
   })

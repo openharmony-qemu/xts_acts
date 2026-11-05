@@ -20,12 +20,12 @@ import ChipApi1 from './Chip/ChipApi1.test';
 import ChipGroupApi1 from './ChipGroup/ChipGroupApi1.test';
 import FoldSplitContainerTest1 from './FoldSplitContainer/FoldSplitContainerTest1.test';
 import FoldSplitContainerTest2 from './FoldSplitContainer/FoldSplitContainerTest2.test';
-import FSAlignContentUndefinedTest from './FolderStack/fsAlignContentUndefined.test';
-import FSAlignContentModifierUndefinedTest from './FolderStack/fsAlignContentModifierUndefined.test';
-import FSAutoHalfFoldUndefinedTest from './FolderStack/fsAutoHalfFoldUndefined.test';
-import FSAutoHalfFoldModifierUndefinedTest from './FolderStack/fsAutoHalfFoldModifierUndefined.test';
-import FSEnableAnimationUndefinedTest from './FolderStack/fsEnableAnimationUndefined.test';
-import FSEnableAnimationModifierUndefinedTest from './FolderStack/fsEnableAnimationModifierUndefined.test';
+import FSAlignContentUndefinedTest from './FolderStack/FsAlignContentUndefined.test';
+import FSAlignContentModifierUndefinedTest from './FolderStack/FsAlignContentModifierUndefined.test';
+import FSAutoHalfFoldUndefinedTest from './FolderStack/FsAutoHalfFoldUndefined.test';
+import FSAutoHalfFoldModifierUndefinedTest from './FolderStack/FsAutoHalfFoldModifierUndefined.test';
+import FSEnableAnimationUndefinedTest from './FolderStack/FsEnableAnimationUndefined.test';
+import FSEnableAnimationModifierUndefinedTest from './FolderStack/FsEnableAnimationModifierUndefined.test';
 
 export default function testsuite() {
   FolderStackTest1();

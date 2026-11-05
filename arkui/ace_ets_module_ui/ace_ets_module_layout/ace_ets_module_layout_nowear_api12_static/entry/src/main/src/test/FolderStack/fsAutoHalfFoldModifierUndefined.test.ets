@@ -26,14 +26,14 @@ export default function FSAutoHalfFoldModifierUndefinedTest() {
     beforeEach(async (): Promise<void> => {
       console.info('FSAutoHalfFoldModifierUndefinedTest beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/FolderStack/fsAutoHalfFoldModifierUndefined',
+        url: 'MainAbility/pages/FolderStack/FsAutoHalfFoldModifierUndefined',
       }
       try {
         const router = AppStorage.get<Router>('router') as Router
         router.clear();
         let pages = router.getState();
         console.info('get FSAutoHalfFoldModifierUndefinedTest state pages:' + JSON.stringify(pages));
-        if (!('fsAutoHalfFoldModifierUndefined' == pages.name)) {
+        if (!('FsAutoHalfFoldModifierUndefined' == pages.name)) {
           console.info('get FSAutoHalfFoldModifierUndefinedTest pages.name:' + JSON.stringify(pages.name));
           await router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -45,13 +45,13 @@ export default function FSAutoHalfFoldModifierUndefinedTest() {
     });
 
     /**
-     * @tc.number    FSAutoHalfFoldModifierUndefinedTest_static_0100
-     * @tc.name      FSAutoHalfFoldModifierUndefinedTest_static_0100
-     * @tc.desc      FSAutoHalfFoldModifierUndefinedTest_static_0100
+     * @tc.number    SUB_ARKUI_API_FSAutoHalfFoldModifierUndefinedTest_static_0100
+     * @tc.name      SUB_ARKUI_API_FSAutoHalfFoldModifierUndefinedTest_static_0100
+     * @tc.desc      SUB_ARKUI_API_FSAutoHalfFoldModifierUndefinedTest_static_0100
      * @tc.level     Level.LEVEL1
      */
-    it('FSAutoHalfFoldModifierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('FSAutoHalfFoldModifierUndefinedTest_static_0100 START');
+    it('SUB_ARKUI_API_FSAutoHalfFoldModifierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_API_FSAutoHalfFoldModifierUndefinedTest_static_0100 START');
       await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('FolderStack_AutoHalfFold_Modifier');
@@ -72,7 +72,7 @@ export default function FSAutoHalfFoldModifierUndefinedTest() {
       console.info('Test component obj is: ' + obj1.getElement('$attrs'));
       console.info('Test component obj.autoHalfFold is: ' + obj1.getElement('$attrs').getString('autoHalfFold'));
       expect(obj1.getElement('$attrs').getString('autoHalfFold')).assertEqual('true');
-      console.info('FSAutoHalfFoldModifierUndefinedTest_static_0100 END');
+      console.info('SUB_ARKUI_API_FSAutoHalfFoldModifierUndefinedTest_static_0100 END');
       done();
     });
   })
