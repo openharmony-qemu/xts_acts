@@ -1,4 +1,5 @@
 'use static';
+
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,12 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import { NodeController, FrameNode } from '@ohos.arkui.node';
 import {
   Entry,
   Column,
   Component,
   Flex,
+  ColumnOptions,
   FlexDirection,
   ItemAlign,
   FlexAlign,
@@ -31,11 +34,7 @@ import {
   Color,
   Builder,
   Row,
-  NodeContainer,
-  Scroller,
-  Scroll,
-  ScrollDirection,
-  BarState
+  NodeContainer
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
@@ -51,7 +50,7 @@ export class MyNodeController extends NodeController {
     return this.rootNode
   }
 
-  addCommonEvent(frameNode: FrameNode, ratios: Array<number>, expectedUpdateInterval?: int) {
+  addCommonEvent(frameNode: FrameNode, ratios: Array<number>, expectedUpdateInterval?: int): void {
     frameNode.commonEvent.setOnVisibleAreaApproximateChange({
       ratios, expectedUpdateInterval: expectedUpdateInterval as int
     }, (isVisible: boolean, currentRatio: number):void => {
@@ -65,7 +64,7 @@ export class MyNodeController extends NodeController {
     })
   }
 
-  resetCommonEvent(buttonNode: FrameNode) {
+  resetCommonEvent(buttonNode: FrameNode): void {
     buttonNode.commonEvent.setOnVisibleAreaApproximateChange({ ratios: [] }, undefined);
   }
 }
@@ -74,21 +73,19 @@ export class MyNodeController extends NodeController {
 @Component
 struct FrameNodeTypeTest {
   @State index: number = 0
-  scroller: Scroller = new Scroller()
   @State ratios: Array<number> = new Array<number>()
   @State expectedUpdateInterval: number | undefined = undefined
   private myNodeController: MyNodeController = new MyNodeController();
 
   build() {
-    Column() {
-      Text(`expectedUpdateInterval : ${this.expectedUpdateInterval ? this.expectedUpdateInterval : "undefined"}`).id("expectedUpdateIntervalValue")
-      Scroll(this.scroller) {
-        Column() {
+    Column({space:2} as ColumnOptions) {
+      Text(`expectedUpdateInterval : ${this.expectedUpdateInterval ? this.expectedUpdateInterval : "undefined"}`)
+        .id("expectedUpdateIntervalValue")
+        .height(15)
+      Column() {
           Text("This is A TextNode")
             .borderWidth(1)
-            .width(300)
-            .height(100)
-            .fontSize(20)
+            .height(15)
             .backgroundColor(0x70FF0000)
             .onVisibleAreaChange([0, 0.5, 1], (isVisible: boolean, currentRatio: number): void=> {
               if(isVisible && currentRatio >= 1.0) {
@@ -100,13 +97,12 @@ struct FrameNodeTypeTest {
             })
           NodeContainer(this.myNodeController)
             .borderWidth(1)
-            .width(300)
+            .width(200)
             .height(100)
 
           Button("ADD commonEvent to FrameNode change expectedUpdateInterval")
             .id("expectedUpdateInterval")
-            .fontSize(16)
-            .borderWidth(1)
+            .height(15)
             .onClick((e:ClickEvent) => {
               this.ratios = [0, 0.6, 0.8, 1.0];
               this.expectedUpdateInterval = 2000;
@@ -116,13 +112,8 @@ struct FrameNodeTypeTest {
             .onClick((e:ClickEvent) => {
               this.myNodeController.resetCommonEvent(this.myNodeController.rootNode!)
             })
-        }.height("200%")
-      }
-      .backgroundColor(0x70317aff)
-      .scrollable(ScrollDirection.Vertical)
-      .scrollBar(BarState.On)
-      .scrollBarColor(Color.Gray)
-      .scrollBarWidth(10)
-    }.width("100%")
+            .height(15)
+        }
+    }.width("100%").height('100%')
   }
 }

@@ -28,12 +28,6 @@ import ColumnSplitDividerUndefinedTest from './ColumnSplitTest/columnSplitDivide
 import ColumnSplitDividerModifierUndefinedTest from './ColumnSplitTest/columnSplitDividerModifierUndefined.test';
 import ColumnSplitResizeableUndefinedTest from './ColumnSplitTest/columnSplitResizeableUndefined.test';
 import ColumnSplitResizeableModifierUndefinedTest from './ColumnSplitTest/columnSplitResizeableModifierUndefined.test';
-import FSAlignContentUndefinedTest from './FolderStackTest/fsAlignContentUndefined.test';
-import FSAlignContentModifierUndefinedTest from './FolderStackTest/fsAlignContentModifierUndefined.test';
-import FSAutoHalfFoldUndefinedTest from './FolderStackTest/fsAutoHalfFoldUndefined.test';
-import FSAutoHalfFoldModifierUndefinedTest from './FolderStackTest/fsAutoHalfFoldModifierUndefined.test';
-import FSEnableAnimationUndefinedTest from './FolderStackTest/fsEnableAnimationUndefined.test';
-import FSEnableAnimationModifierUndefinedTest from './FolderStackTest/fsEnableAnimationModifierUndefined.test';
 import RowAlignItemsUndefinedTest from './RowTest/rowAlignItemsUndefined.test';
 import RowAlignItemsModifierUndefinedTest from './RowTest/rowAlignItemsModifierUndefined.test';
 import RowJustifyContentUndefinedTest from './RowTest/rowJustifyContentUndefined.test';
@@ -107,12 +101,6 @@ export default function testsuite() {
   ColumnSplitDividerModifierUndefinedTest();
   ColumnSplitResizeableUndefinedTest();
   ColumnSplitResizeableModifierUndefinedTest();
-  FSAlignContentUndefinedTest();
-  FSAlignContentModifierUndefinedTest();
-  FSAutoHalfFoldUndefinedTest();
-  FSAutoHalfFoldModifierUndefinedTest();
-  FSEnableAnimationUndefinedTest();
-  FSEnableAnimationModifierUndefinedTest();
   RowAlignItemsUndefinedTest();
   RowAlignItemsModifierUndefinedTest();
   RowJustifyContentUndefinedTest();

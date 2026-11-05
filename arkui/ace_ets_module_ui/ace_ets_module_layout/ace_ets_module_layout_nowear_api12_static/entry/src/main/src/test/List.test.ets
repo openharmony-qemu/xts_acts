@@ -20,6 +20,12 @@ import ChipApi1 from './Chip/ChipApi1.test';
 import ChipGroupApi1 from './ChipGroup/ChipGroupApi1.test';
 import FoldSplitContainerTest1 from './FoldSplitContainer/FoldSplitContainerTest1.test';
 import FoldSplitContainerTest2 from './FoldSplitContainer/FoldSplitContainerTest2.test';
+import FSAlignContentUndefinedTest from './FolderStack/fsAlignContentUndefined.test';
+import FSAlignContentModifierUndefinedTest from './FolderStack/fsAlignContentModifierUndefined.test';
+import FSAutoHalfFoldUndefinedTest from './FolderStack/fsAutoHalfFoldUndefined.test';
+import FSAutoHalfFoldModifierUndefinedTest from './FolderStack/fsAutoHalfFoldModifierUndefined.test';
+import FSEnableAnimationUndefinedTest from './FolderStack/fsEnableAnimationUndefined.test';
+import FSEnableAnimationModifierUndefinedTest from './FolderStack/fsEnableAnimationModifierUndefined.test';
 
 export default function testsuite() {
   FolderStackTest1();
@@ -28,4 +34,10 @@ export default function testsuite() {
   ChipGroupApi1();
   FoldSplitContainerTest1();
   FoldSplitContainerTest2();
+  FSAlignContentUndefinedTest();
+  FSAlignContentModifierUndefinedTest();
+  FSAutoHalfFoldUndefinedTest();
+  FSAutoHalfFoldModifierUndefinedTest();
+  FSEnableAnimationUndefinedTest();
+  FSEnableAnimationModifierUndefinedTest();
 }

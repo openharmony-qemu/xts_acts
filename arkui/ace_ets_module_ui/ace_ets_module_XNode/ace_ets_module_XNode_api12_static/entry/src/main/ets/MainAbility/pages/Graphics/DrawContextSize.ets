@@ -1,4 +1,5 @@
 'use static';
+
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
  * See the License for specific language governing permissions and
  * limitations under the License.
  */
+
 import {
-  Entry, Component, Column, Text, Button, ClickEvent, NodeContainer,
+  Entry, Component, Column, Text, Button, ClickEvent, NodeContainer, ColumnOptions
 } from '@ohos.arkui.component'
 import { UIContext } from '@ohos.arkui.UIContext';
 import { RenderNode, FrameNode, NodeController, DrawContext } from '@ohos.arkui.node';
@@ -101,31 +103,30 @@ struct DrawContextSize {
   readonly expectedHeightPx: number = vp2px(100);
 
   build() {
-    Column() {
+    Column({space:2} as ColumnOptions) {
       NodeContainer(this.myNodeController)
-        .width('100%')
-        .height(200)
-        .margin(10)
+        .width('80%')
+        .height(100)
 
       Text('size width: ' + this.sizeWidth)
         .id('textSizeWidth')
-        .margin(5)
+        .height(15)
 
       Text('size height: ' + this.sizeHeight)
         .id('textSizeHeight')
-        .margin(5)
+        .height(15)
 
       Text('sizeInPixel width: ' + this.sizeInPixelWidth + ', expected: ' + this.expectedWidthPx)
         .id('textSizeInPixelWidth')
-        .margin(5)
+        .height(15)
 
       Text('sizeInPixel height: ' + this.sizeInPixelHeight + ', expected: ' + this.expectedHeightPx)
         .id('textSizeInPixelHeight')
-        .margin(5)
+        .height(15)  
 
       Text('canvas valid: ' + this.canvasValid)
         .id('textCanvasValid')
-        .margin(5)
+        .height(15)
 
       Button('Get DrawContext properties')
         .id('buttonGetProps')
@@ -139,10 +140,9 @@ struct DrawContextSize {
             this.canvasValid = testNode.isCanvasValid();
           }
         })
-        .margin(10)
+        .height(15)
     }
     .width('100%')
     .height('100%')
-    .padding(20)
   }
 }

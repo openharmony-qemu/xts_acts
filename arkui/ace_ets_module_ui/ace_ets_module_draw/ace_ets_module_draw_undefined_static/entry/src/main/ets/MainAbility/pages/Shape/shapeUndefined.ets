@@ -84,43 +84,40 @@ struct ShapeEventPage {
       Row() {
         Button('isStroke : ' + this.isStroke)
           .id('Shape_stroke')
-          .height(10)
+          .height(10).width(70)
           .onClick((e: ClickEvent) => {
             this.isStroke = !this.isStroke;
           })
         Button('isAntiAlias : ' + this.isAntiAlias)
           .id('Shape_antiAlias')
-          .height(10)
+          .height(10).width(70)
           .onClick((e: ClickEvent) => {
             this.isAntiAlias = !this.isAntiAlias;
           })
-      }
-
-      Row() {
         Button('isStrokeDashOffset : ' + this.isStrokeDashOffset)
           .id('Shape_strokeDashOffset')
-          .height(10)
+          .height(10).width(70)
           .onClick((e: ClickEvent) => {
             this.isStrokeDashOffset = !this.isStrokeDashOffset;
           })
-        Button('isStrokeWidth : ' + this.isStrokeWidth)
-          .id('Shape_strokeWidth')
-          .height(10)
-          .onClick((e: ClickEvent) => {
-            this.isStrokeWidth = !this.isStrokeWidth;
-          })
       }
 
       Row() {
+        Button('isStrokeWidth : ' + this.isStrokeWidth)
+          .id('Shape_strokeWidth')
+          .height(10).width(70)
+          .onClick((e: ClickEvent) => {
+            this.isStrokeWidth = !this.isStrokeWidth;
+          })
         Button('isStrokeMiterLimit : ' + this.isStrokeMiterLimit)
           .id('Shape_strokeMiterLimit')
-          .height(10)
+          .height(10).width(70)
           .onClick((e: ClickEvent) => {
             this.isStrokeMiterLimit = !this.isStrokeMiterLimit;
           })
         Button('isStrokeLineCap : ' + this.isStrokeLineCap)
           .id('Shape_strokeLineCap')
-          .height(10)
+          .height(10).width(70)
           .onClick((e: ClickEvent) => {
             this.isStrokeLineCap = !this.isStrokeLineCap;
           })
@@ -129,7 +126,7 @@ struct ShapeEventPage {
       Row() {
         Button('isStrokeDashArray : ' + this.isStrokeDashArray)
           .id('Shape_strokeDashArray')
-          .height(10)
+          .height(10).width(70)
           .onClick((e: ClickEvent) => {
             if (this.isStrokeDashArray == undefined) {
               this.isStrokeDashArray = [20];
@@ -139,37 +136,34 @@ struct ShapeEventPage {
           })
         Button('isStrokeOpacity : ' + this.isStrokeOpacity)
           .id('Shape_strokeOpacity')
-          .height(10)
+          .height(10).width(70)
           .onClick((e: ClickEvent) => {
             this.isStrokeOpacity = !this.isStrokeOpacity;
           })
-      }
-
-      Row() {
         Button('isStrokeLineJoin : ' + this.isStrokeLineJoin)
           .id('Shape_strokeLineJoin')
-          .height(10)
+          .height(10).width(70)
           .onClick((e: ClickEvent) => {
             this.isStrokeLineJoin = !this.isStrokeLineJoin;
           })
-        Button('isFill : ' + this.isFill)
-          .id('Shape_fill')
-          .height(10)
-          .onClick((e: ClickEvent) => {
-            this.isFill = !this.isFill;
-          })
       }
 
       Row() {
+        Button('isFill : ' + this.isFill)
+          .id('Shape_fill')
+          .height(10).width(70)
+          .onClick((e: ClickEvent) => {
+            this.isFill = !this.isFill;
+          })
         Button('isFillOpacity : ' + this.isFillOpacity)
           .id('Shape_fillOpacity')
-          .height(10)
+          .height(10).width(70)
           .onClick((e: ClickEvent) => {
             this.isFillOpacity = !this.isFillOpacity;
           })
         Button('isValue: ' + this.isValue)
           .id('Shape_mesh')
-          .height(10)
+          .height(10).width(70)
           .onClick((e: ClickEvent) => {
             this.isValue = !this.isValue
           })
@@ -178,13 +172,13 @@ struct ShapeEventPage {
       Row() {
         Button('isViewPort: ' + this.isViewPort)
           .id('Shape_viewPort')
-          .height(10)
+          .height(10).width(70)
           .onClick((e: ClickEvent) => {
             this.isViewPort = !this.isViewPort
           })
         Button('isShow: ' + this.isShow)
           .id('Shape_show')
-          .height(10)
+          .height(10).width(70)
           .onClick((e: ClickEvent) => {
             this.isShow = !this.isShow
           })
