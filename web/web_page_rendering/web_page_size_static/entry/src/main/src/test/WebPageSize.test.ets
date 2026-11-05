@@ -61,12 +61,12 @@ export default function webPageSizeTest():void {
         });
 
         /**
-         * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_GETPAGEHEIGHT_0100
-         * @tc.name       : testGetPageHeight001
-         * @tc.desc       : test getPageHeight
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.number     SUB_WEB_WEBVIEWCONTROLLER_GETPAGEHEIGHT_0100
+         * @tc.name       testGetPageHeight001
+         * @tc.desc       test getPageHeight
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 1
         */
         it("testGetPageHeight001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (): Promise<void> => {
             hilog.info(domain, tag, 'testGetPageHeight001 start!!!');
