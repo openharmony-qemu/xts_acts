@@ -6866,6 +6866,27 @@ export default function ConnectionPublicTest(): void {
       });
 
     /**
+      * @tc.name   testNetworkMgrConnectionNetBearType_static_0100
+      * @tc.number SUB_NetworkMgr_Connection_NetBearType_0100
+      * @tc.desc   Test connection.NetBearType Enum value
+      * @tc.type   FUNCTION
+      * @tc.size   SMALLTEST
+      * @tc.level  LEVEL3
+      */
+    it("testNetworkMgrConnectionNetBearType_static_0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = "testNetworkMgrConnectionNetBearType_static_0100";
+        hilog.info(domain, tag, `${caseName}---Start`);
+        ExpectTrue(0 === connection.NetBearType.BEARER_CELLULAR);
+        ExpectTrue(1 === connection.NetBearType.BEARER_WIFI);
+        ExpectTrue(2 === connection.NetBearType.BEARER_BLUETOOTH);
+        ExpectTrue(3 === connection.NetBearType.BEARER_ETHERNET);
+        ExpectTrue(4 === connection.NetBearType.BEARER_VPN);
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      });
+
+    /**
      * @tc.name   testNetworkMgrConnectionTraceRoute_static_0100
      * @tc.number SUB_NetworkMgr_Connection_TraceRoute_0100
      * @tc.desc   Test the API function of TraceRoute
