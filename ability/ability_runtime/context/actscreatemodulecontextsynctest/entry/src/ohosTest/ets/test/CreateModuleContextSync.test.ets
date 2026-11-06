@@ -407,9 +407,11 @@ export default function actsCreateModuleContextSyncTest() {
     it('SUB_Ability_AbilityRuntime_CreateModuleContextSync_1500', Level.LEVEL0, (done: Function) => {
       console.info('SUB_Ability_AbilityRuntime_CreateModuleContextSync_1500 begin');
       moduleContext = null;
+      let shortName = 'x';
+      expect(shortName.length).assertEqual(1);
       try {
         moduleContext = application.createModuleContextSync(
-          globalThis.abilityContext, 'x');
+          globalThis.abilityContext, shortName);
         expect().assertFail();
       } catch (err) {
         let e = err as BusinessError;

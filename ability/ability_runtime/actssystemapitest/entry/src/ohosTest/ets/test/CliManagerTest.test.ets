@@ -948,8 +948,10 @@ export default function cliManagerTest() {
      */
     it('SUB_Ability_AbilityRuntime_CliManager_ClearSession_Len1_0230',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let sid = 'x';
+        expect(sid.length).assertEqual(1);
         try {
-          await cliManager.clearSession('x');
+          await cliManager.clearSession(sid);
           expect().assertFail();
         } catch (error) {
           let code = errCodeOf(error);

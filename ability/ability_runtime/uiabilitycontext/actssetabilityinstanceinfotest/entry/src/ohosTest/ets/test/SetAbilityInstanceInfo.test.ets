@@ -1219,8 +1219,8 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4100
      * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4100
-     * @tc.desc   setAbilityInstanceInfo: isStrideAlignment=false true/false成对覆盖;
-     *     createPixelMapSync icon then setAbilityInstanceInfo
+     * @tc.desc   setAbilityInstanceInfo icon PixelMap isStrideAlignment=false true/false成对;
+     *     createPixelMapSync then real call setAbilityInstanceInfo
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -1236,16 +1236,13 @@ export default function abilityTest() {
       let editMap: image.PixelMap = image.createPixelMapSync(color, editOpts);
       expect(editMap.isEditable).assertEqual(true);
       expect(editMap.isStrideAlignment).assertEqual(false);
-      if (!isPc2in1()) {
-        done();
-        return;
-      }
       try {
         await testContext.setAbilityInstanceInfo('label_stride_false', editMap);
-        hilog.info(DOMAIN, LOG_TAG, tag + ' success');
+        hilog.info(DOMAIN, LOG_TAG, tag + ' success isStrideAlignment=false');
         done();
       } catch (err) {
-        hilog.info(DOMAIN, LOG_TAG, 'setAbilityInstanceInfo failed: ' + JSON.stringify(err));
+        hilog.info(DOMAIN, LOG_TAG, 'setAbilityInstanceInfo isStrideAlignment=false failed: ' +
+          JSON.stringify(err));
         expect(getBizCode(err) === 401 || getBizCode(err) === 801 ||
           getBizCode(err) === 16000011 || getBizCode(err) === 201).assertTrue();
         done();
@@ -1255,8 +1252,8 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4200
      * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4200
-     * @tc.desc   setAbilityInstanceInfo: isStrideAlignment=false true/false成对覆盖;
-     *     editable=false createPixelMapSync then setAbilityInstanceInfo
+     * @tc.desc   setAbilityInstanceInfo icon PixelMap isStrideAlignment=false true/false成对;
+     *     editable=false createPixelMapSync then real call setAbilityInstanceInfo
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -1272,16 +1269,13 @@ export default function abilityTest() {
       let roMap: image.PixelMap = image.createPixelMapSync(color, roOpts);
       expect(roMap.isEditable).assertEqual(false);
       expect(roMap.isStrideAlignment).assertEqual(false);
-      if (!isPc2in1()) {
-        done();
-        return;
-      }
       try {
         await testContext.setAbilityInstanceInfo('label_stride_false_ro', roMap);
-        hilog.info(DOMAIN, LOG_TAG, tag + ' success');
+        hilog.info(DOMAIN, LOG_TAG, tag + ' success isStrideAlignment=false');
         done();
       } catch (err) {
-        hilog.info(DOMAIN, LOG_TAG, 'setAbilityInstanceInfo failed: ' + JSON.stringify(err));
+        hilog.info(DOMAIN, LOG_TAG, 'setAbilityInstanceInfo isStrideAlignment=false failed: ' +
+          JSON.stringify(err));
         expect(getBizCode(err) === 401 || getBizCode(err) === 801 ||
           getBizCode(err) === 16000011 || getBizCode(err) === 201).assertTrue();
         done();
@@ -1291,8 +1285,8 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4300
      * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4300
-     * @tc.desc   setAbilityInstanceInfo: isStrideAlignment=true true/false成对覆盖;
-     *     createPixelMapUsingAllocatorSync(DMA) then setAbilityInstanceInfo
+     * @tc.desc   setAbilityInstanceInfo icon PixelMap isStrideAlignment=true true/false成对;
+     *     DMA createPixelMapUsingAllocatorSync then real call setAbilityInstanceInfo
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -1310,16 +1304,13 @@ export default function abilityTest() {
       let dmaMap: image.PixelMap =
         image.createPixelMapUsingAllocatorSync(smallColor, dmaOpts, image.AllocatorType.DMA);
       expect(dmaMap.isStrideAlignment).assertEqual(true);
-      if (!isPc2in1()) {
-        done();
-        return;
-      }
       try {
         await testContext.setAbilityInstanceInfo('label_stride_true', dmaMap);
-        hilog.info(DOMAIN, LOG_TAG, tag + ' success');
+        hilog.info(DOMAIN, LOG_TAG, tag + ' success isStrideAlignment=true');
         done();
       } catch (err) {
-        hilog.info(DOMAIN, LOG_TAG, 'setAbilityInstanceInfo failed: ' + JSON.stringify(err));
+        hilog.info(DOMAIN, LOG_TAG, 'setAbilityInstanceInfo isStrideAlignment=true failed: ' +
+          JSON.stringify(err));
         expect(getBizCode(err) === 401 || getBizCode(err) === 801 ||
           getBizCode(err) === 16000011 || getBizCode(err) === 201).assertTrue();
         done();
