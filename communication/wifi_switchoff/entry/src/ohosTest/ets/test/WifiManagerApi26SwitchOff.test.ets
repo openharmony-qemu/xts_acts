@@ -115,7 +115,7 @@ export default function wifiManagerApi26SwitchOffTest() {
           expect().assertFail();
         } catch (error) {
           console.error("${caseName} error, errCode:" + error.code + ",errMessage:" + error.message);
-          if (err.code === 801) {
+          if (error.code === 801) {
             expect(error.code).assertEqual(801);
           } else {
             expect(error.code).assertEqual(2501001);
@@ -142,7 +142,7 @@ export default function wifiManagerApi26SwitchOffTest() {
           expect().assertFail();
         } catch (error) {
           console.error("${caseName} error, errCode:" + error.code + ",errMessage:" + error.message);
-          if (err.code === 801) {
+          if (error.code === 801) {
             expect(error.code).assertEqual(801);
           } else {
             expect(error.code).assertEqual(2501001);
