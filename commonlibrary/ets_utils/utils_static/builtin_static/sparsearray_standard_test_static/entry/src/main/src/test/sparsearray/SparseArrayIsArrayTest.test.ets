@@ -253,8 +253,9 @@ export default function SparseArrayIsArrayTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArrayIsArray019', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(SparseArray.isArray(new Promise<void>(() => {}))).assertEqual(false)
+    it('testSparseArrayIsArray019', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
+        expect(SparseArray.isArray(new Promise<void>(() => {}))).assertEqual(false);
+        done();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_IS_ARRAY_2000

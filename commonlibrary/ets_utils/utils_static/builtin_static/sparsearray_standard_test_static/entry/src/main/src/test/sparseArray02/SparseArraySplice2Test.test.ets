@@ -38,7 +38,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice001', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2001', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30)
         arr.splice(1)
         expect(arr.length).assertEqual(1)
@@ -51,7 +51,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice002', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2002', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
         const arr = new SparseArray<int>(10, 20, 30)
         const deleted = arr.splice(0)
@@ -70,7 +70,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice003', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2003', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30, 40, 50)
         expect(arr instanceof SparseArray).assertTrue();
         const deleted = arr.splice(-2)
@@ -86,7 +86,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice004', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2004', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30)
         expect(arr instanceof SparseArray).assertTrue();
         const deleted = arr.splice(2147483647)
@@ -101,7 +101,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice005', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2005', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30)
         const deleted = arr.splice(3)
         expect(deleted.length).assertEqual(0)
@@ -115,7 +115,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice006', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2006', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30)
         try {
           arr.splice((null as Object as int))
@@ -132,7 +132,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice007', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2007', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30)
         expect(arr instanceof SparseArray).assertTrue();
         const deleted = arr.splice((2147483647 + 1) as int)
@@ -152,7 +152,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice008', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2008', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30)
         expect(arr instanceof SparseArray).assertTrue();
         const deleted = arr.splice((-2147483648 - 1) as int)
@@ -169,7 +169,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice009', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2009', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30);
         const deleted = arr.splice(10, 1);
         expect(deleted.length).assertEqual(0);
@@ -183,7 +183,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice010', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2010', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30)
         const deleted = arr.splice(5)
         expect(deleted.length).assertEqual(0)
@@ -197,7 +197,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice011', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2011', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(6)
         expect(arr instanceof SparseArray).assertTrue();
         arr[2] = 10
@@ -215,7 +215,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice012', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2012', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>("apple", "banana", "cherry")
         const deleted: SparseArray<string> = arr.splice(1)
         expect(deleted[0]).assertEqual("banana")
@@ -229,7 +229,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice013', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2013', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30)
         let finallyExecuted = false
         try {
@@ -247,7 +247,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice014', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2014', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
         const deleted = arr.splice(0)
         expect(deleted.length).assertEqual(0)
@@ -261,7 +261,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice015', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2015', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(6)
         expect(arr instanceof SparseArray).assertTrue();
         arr[2] = 10
@@ -280,7 +280,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice016', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2016', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
         const arr = new SparseArray<int>(10, 20, 30)
         const deleted: SparseArray<int> = arr.splice(1)
@@ -298,7 +298,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice017', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2017', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<SparseArray<int>>()
         const inner = new SparseArray<int>(1, 2, 3)
         arr.push(inner)
@@ -313,7 +313,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice018', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2018', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30)
         expect(arr instanceof SparseArray).assertTrue();
         const deleted = arr.splice(-100)
@@ -331,7 +331,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice019', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2019', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30, 40, 50)
         let deleted1 = arr.splice(2)
         expect(deleted1.length).assertEqual(3)
@@ -348,7 +348,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice020', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2020', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30, 40, 50)
         const deleted = arr.splice(2)
         expect(deleted === arr).assertFalse()
@@ -361,7 +361,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice021', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2021', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
         const deleted = arr.splice(5)
         expect(arr.length).assertEqual(5)
@@ -375,7 +375,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice022', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2022', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30)
         const deleted = arr.splice(2)
         expect(arr.length).assertEqual(2)
@@ -390,7 +390,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice023', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2023', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<short>(10 as short, 20 as short, 30 as short);
         const deleted = arr.splice(1);
         expect(arr.length).assertEqual(1);
@@ -405,7 +405,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice024', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2024', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30);
         const deleted = arr.splice(0x0, 0b1);
         expect(deleted.length).assertEqual(1);
@@ -421,7 +421,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice025', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2025', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<boolean>(true, false, true);
         const deleted = arr.splice(1);
         expect(arr.length).assertEqual(1);
@@ -438,7 +438,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice026', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2026', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<byte>(0 as byte, (-128 as byte), 127 as byte);
         const deleted = arr.splice(1);
         expect(arr.length).assertEqual(1);
@@ -454,7 +454,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice027', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2027', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<long>(1 as long, 10000000000 as long, 20000000000 as long);
         const deleted = arr.splice(1);
         expect(arr.length).assertEqual(1);
@@ -470,7 +470,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice028', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2028', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<float>(1.0f, 2.5f, 3.0f);
         const deleted = arr.splice(1);
         expect(arr.length).assertEqual(1);
@@ -486,7 +486,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice029', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2029', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<double>(1.25, 2.5, 3.75);
         const deleted = arr.splice(1);
         expect(arr.length).assertEqual(1);
@@ -502,7 +502,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testSparseArraySplice030', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSparseArraySplice2030', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<char>(c'A', c'B', c'C');
         const deleted = arr.splice(1);
         expect(arr.length).assertEqual(1);
