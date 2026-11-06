@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 class PresenceMap008 {
@@ -537,7 +537,7 @@ export default function ArrayReduce2Test(): void {
           if (index === 0) {
             source[1] = 2;
           }
-          return acc + (value === undefined ? 0 : value);
+          return acc + (value === undefined ? 0.0 : value);
         }, 10);
       expect(result).assertEqual(16);
       expect(indexes.toString()).assertEqual('0,1,2');
@@ -1184,7 +1184,7 @@ export default function ArrayReduce2Test(): void {
       let seen = '';
       const result = arr.reduce((acc: number, value: number | undefined, index: int): number => {
         seen += index.toString() + (value === undefined ? 'u' : 'n');
-        return acc + (value === undefined ? index : value);
+        return acc + (value === undefined ? Int.toDouble(index) : value);
       }, 0);
       expect(result).assertEqual(4);
       expect(seen).assertEqual('0u1n2u');
@@ -1205,7 +1205,7 @@ export default function ArrayReduce2Test(): void {
       let seen = '';
       const result = arr.reduce((acc: number, value: number | undefined, index: int): number => {
         seen += index.toString() + (value === undefined ? 'u' : 'n');
-        return acc + (value === undefined ? 0 : value);
+        return acc + (value === undefined ? 0.0 : value);
       }, 1);
       expect(result).assertEqual(7);
       expect(seen).assertEqual('0u1n2u3n');
@@ -1431,7 +1431,7 @@ export default function ArrayReduce2Test(): void {
     it('testArrayReduceTwo069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(2, 5, 1);
       const result = arr.reduce((acc: Array<number>, value: number): Array<number> => {
-        const prior = acc.length === 0 ? 0 : acc[acc.length - 1];
+        const prior = acc.length === 0 ? 0.0 : acc[acc.length - 1];
         acc.pushOne(prior + value);
         return acc;
       }, new Array<number>());

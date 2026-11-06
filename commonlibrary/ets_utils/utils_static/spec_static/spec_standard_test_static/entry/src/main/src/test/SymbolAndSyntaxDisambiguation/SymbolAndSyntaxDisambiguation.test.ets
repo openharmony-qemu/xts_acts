@@ -25,7 +25,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 import { result1 } from './SymbolAndSyntaxDisambiguation1';
 import { result2_1, result2_2 } from './SymbolAndSyntaxDisambiguation2';
 import { result3_1, result3_2 } from './SymbolAndSyntaxDisambiguation3';

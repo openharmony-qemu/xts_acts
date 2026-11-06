@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 function createSymbol(description?: string): SymbolLike {
@@ -1318,7 +1318,7 @@ export default function IndexedCollections09Test(): void {
 
         const arr56: (number | undefined)[] = [1, undefined, 3];
         const sum56 = arr56.reduce((acc: number, x: number | undefined) => 
-        acc + ( x !== undefined ? x : 0), 0);
+        acc + ( x !== undefined ? x : 0.0), 0);
         const result56: boolean = sum56 === 4;
 
         expect(result56).assertTrue();

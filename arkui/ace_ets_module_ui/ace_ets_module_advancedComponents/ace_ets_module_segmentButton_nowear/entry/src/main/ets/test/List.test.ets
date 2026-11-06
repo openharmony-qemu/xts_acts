@@ -38,6 +38,7 @@ import segmentButtonEnableStateAnimation from './segmentButton/segmentButtonEnab
 import TabSegmentButtonV2Animation from './segmentButtonV2/TabSegmentButtonV2Animation.test';
 import EnableStateAnimationIndexTest from './migratedActs/EnableStateAnimationIndex.test';
 import SegmentButtonV2HybridTest from './segmentButtonV2/SegmentButtonV2Hybrid.test';
+import SegmentButtonInteractionModeTest from './segmentButton/SegmentButtonInteractionModeTest.test';
 
 export default function testsuite() {
   SegmentButtonBorderTest();
@@ -64,4 +65,5 @@ export default function testsuite() {
   TabSegmentButtonV2Animation();
   segmentButtonEnableStateAnimation();
   SegmentButtonV2HybridTest();
+  SegmentButtonInteractionModeTest();
 }

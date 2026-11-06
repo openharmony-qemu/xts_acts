@@ -21,6 +21,10 @@ import { HashMap } from '@kit.ArkTS';
 import { fileIo as fs } from '@kit.CoreFileKit';
 
 const MAX_COUNT = 999999999;
+const READ_TO_END = -1; // SourceReadCallback request extending to the resource end.
+const MAX_PUSH_CHUNK_SIZE = 64 * 1024; // Bound each file read and data push to 64 KiB.
+const DATA_NOT_NEEDED = -2; // Stop the current read.
+const DATA_BUFFER_FULL = -3; // Wait for the next read or close callback.
 const CREAT_PROMISE_EVENT = 'createPromise';
 const SET_CALLBACK_EVENT = 'setCallback';
 const SET_MEDIA_SOURCE_EVENT = 'setMediaSource';
@@ -44,6 +48,7 @@ let fileDescriptor: resourceManager.RawFileDescriptor | undefined;
 let mgr: resourceManager.ResourceManager;
 let uuid: number = 0;
 let count: number = 0;
+let loaderFailure: string = '';
 let mediaTestBase = new MediaTestBase()
 
 interface PreDownConfig {
@@ -95,7 +100,7 @@ async function setCallbackEvent(avPlayer: media.AVPlayer | null, config: PreDown
   toNextStep(avPlayer, config, steps, done);
 }
 
-async function respondHeader(uuid: number, config: PreDownConfig) {
+function respondHeader(uuid: number, config: PreDownConfig) {
   let request = requests.get(uuid);
   if (request) {
     let url = request.url;
@@ -106,29 +111,72 @@ async function respondHeader(uuid: number, config: PreDownConfig) {
   }
 }
 
-async function respondData(uuid: number, offset: number, length: number) {
-  let request = requests.get(uuid);
-  if (request) {
-    let buf = new ArrayBuffer(length);
-    if (fileDescriptor) {
-      console.log("offset" + fileDescriptor.offset + "length:" +  fileDescriptor.length);
-      let num = fs.readSync(fileDescriptor.fd, buf, { offset: fileDescriptor.offset + offset, length: length});
-      console.log(`respondData uuid: ${uuid},num: ${num}`);
-      request.respondData(uuid, offset, buf);
+function getReadEnd(offset: number, length: number, resourceLength: number): number {
+  if (!Number.isSafeInteger(offset) || offset < 0 || offset > resourceLength ||
+      !Number.isSafeInteger(length) || length < READ_TO_END) {
+    throw new Error(`Invalid loader range: offset=${offset}, length=${length}, resourceLength=${resourceLength}`);
+  }
+  return length === READ_TO_END ? resourceLength : offset + Math.min(length, resourceLength - offset);
+}
+
+async function respondData(uuid: number, offset: number, length: number, config: PreDownConfig) {
+  const request = requests.get(uuid);
+  const descriptor = fileDescriptor;
+  if (!request) {
+    return;
+  }
+  if (!descriptor) {
+    throw new Error(`Loader resource is not open: uuid=${uuid}`);
+  }
+  const end = getReadEnd(offset, length, descriptor.length);
+  while (offset < end && requests.get(uuid) === request) {
+    const size = Math.min(MAX_PUSH_CHUNK_SIZE, end - offset);
+    const buffer = new ArrayBuffer(size);
+    const bytesRead = fs.readSync(descriptor.fd, buffer, { offset: descriptor.offset + offset, length: size });
+    if (bytesRead <= 0) {
+      throw new Error(`Unexpected loader EOF: uuid=${uuid}, offset=${offset}, end=${end}`);
     }
+    const accepted = request.respondData(uuid, offset, bytesRead === size ? buffer : buffer.slice(0, bytesRead));
+    if (accepted === DATA_NOT_NEEDED || accepted === DATA_BUFFER_FULL) {
+      return;
+    }
+    if (!Number.isSafeInteger(accepted) || accepted <= 0 || accepted > bytesRead) {
+      throw new Error(`Invalid accepted length: uuid=${uuid}, accepted=${accepted}, sent=${bytesRead}`);
+    }
+    offset += accepted;
+    if (offset < end) {
+      await new Promise<void>((resolve) => {
+        setTimeout(resolve, 0); // Let close/read callbacks run before the next chunk.
+      });
+    }
+  }
+  if (requests.get(uuid) === request && offset === descriptor.length &&
+      (config.loadingError === undefined || config.loadingError === media.LoadingRequestError.LOADING_ERROR_SUCCESS)) {
+    finishLoading(uuid, config);
   }
 }
 
-async function finishLoading(uuid: number, config: PreDownConfig) {
+function reportLoaderFailure(uuid: number, error: BusinessError) {
+  loaderFailure = `Loader failure: uuid=${uuid}, message=${error.message}`;
+  console.error(loaderFailure);
+  try {
+    requests.get(uuid)?.finishLoading(uuid, media.LoadingRequestError.LOADING_ERROR_NO_RESOURCE);
+  } catch (finishError) {
+    console.error(`Failed to report loader failure: ${(finishError as BusinessError).message}`);
+  }
+}
+
+function finishLoading(uuid: number, config: PreDownConfig) {
   let request = requests.get(uuid);
   if (request) {
     console.log(`case in finishLoading loadingError ${config.loadingError}`)
-    request.finishLoading(uuid, config.loadingError);
+    request.finishLoading(uuid, config.loadingError ?? media.LoadingRequestError.LOADING_ERROR_SUCCESS);
   }
 }
 
 function initResourceLoader(avPlayer: media.AVPlayer | null, config: PreDownConfig,
     steps: Array<string>, done: Function) {
+  loaderFailure = '';
   resourceLoader = {
     open: (request: media.MediaSourceLoadingRequest) => {
       if (!request) {
@@ -140,27 +188,29 @@ function initResourceLoader(avPlayer: media.AVPlayer | null, config: PreDownConf
       return uuid;
     },
     read: (uuid: number, requestedOffset: number, requestedLength: number) => {
-      if (!requests.hasKey(uuid)) {
-        console.warn('uuid not find')
-        return;
-      }
-      if (config.needHeader) {
-        respondHeader(uuid, config);
-      }
-      if (config.respondDataCount == 0) {
-        finishLoading(uuid, config);
-      } else {
-        config.respondDataCount -= 1;
-        if (config.loadingError == media.LoadingRequestError.LOADING_ERROR_NOT_READY) {
-          finishLoading(uuid, config);
-          config.loadingError = 0;
+      try {
+        if (!requests.hasKey(uuid)) {
+          console.warn('uuid not find');
           return;
         }
-        respondData(uuid, requestedOffset, requestedLength);
-        if (requestedOffset + requestedLength == FILE_LENGTH
-            && config.loadingError == media.LoadingRequestError.LOADING_ERROR_SUCCESS) {
-          finishLoading(uuid, config);
+        if (config.needHeader) {
+          respondHeader(uuid, config);
         }
+        if (config.respondDataCount == 0) {
+          finishLoading(uuid, config);
+        } else {
+          config.respondDataCount -= 1;
+          if (config.loadingError == media.LoadingRequestError.LOADING_ERROR_NOT_READY) {
+            finishLoading(uuid, config);
+            config.loadingError = media.LoadingRequestError.LOADING_ERROR_SUCCESS;
+            return;
+          }
+          respondData(uuid, requestedOffset, requestedLength, config).catch((error: BusinessError) => {
+            reportLoaderFailure(uuid, error);
+          });
+        }
+      } catch (error) {
+        reportLoaderFailure(uuid, error as BusinessError);
       }
     },
     close: (uuid: number) => {
@@ -247,6 +297,7 @@ function releaseEvent(avPlayer: media.AVPlayer | null, config: PreDownConfig, st
 
 function toNextStep(avPlayer: media.AVPlayer | null, config: PreDownConfig, steps: Array<string>, done: Function) {
   if (steps[0] == END_EVENT) {
+    expect(loaderFailure).assertEqual('');
     console.info('case success!!');
     done();
   }
@@ -291,6 +342,7 @@ function toNextStep(avPlayer: media.AVPlayer | null, config: PreDownConfig, step
 function getFd(path: string) {
   mgr = globalThis.getContext().resourceManager;
   fileDescriptor = mgr.getRawFdSync(path);
+  expect(fileDescriptor.length).assertEqual(FILE_LENGTH);
 }
 
 export default function PreDownLoadTest() {

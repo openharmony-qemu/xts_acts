@@ -90,5 +90,7 @@ struct WaterflowDemo {
       .height('80%')
       .layoutDirection(FlexDirection.Column)
     }
+    .padding(10)
+    .margin(10)
   }
 }

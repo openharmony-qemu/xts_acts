@@ -220,6 +220,8 @@ struct RefreshOffsetOffsetExample {
           .width('30%')
         }
       }
+    .padding(10)
+    .margin(10)
       .height('90%')
 
       Button('changeOrientation').id('changeOrientation')
@@ -228,5 +230,7 @@ struct RefreshOffsetOffsetExample {
           this.changeOrientation()
         })
     }
+    .padding(10)
+    .margin(10)
   }
 }

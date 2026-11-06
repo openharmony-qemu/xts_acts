@@ -30,13 +30,14 @@ let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
+let displayID: Int = 0;
+
 export default function SelectionMenuOptions() {
   describe('SelectionMenuOptions', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ResourceDefaultTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api15.static", "EntryAbility")
-
     });
 
     beforeEach(async (): Promise<void> => {
@@ -56,9 +57,10 @@ export default function SelectionMenuOptions() {
           console.info("push SelectionMenuOptions page success " + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push SelectionMenuOptions page error:" + err);
+        console.log("push SelectionMenuOptions page error:" + err);
       }
       console.info("SelectionMenuOptions beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
 
@@ -91,7 +93,7 @@ export default function SelectionMenuOptions() {
         let point: Point = await (richEditor?.getBoundsCenter() as Promise<Point>)
         console.info('SelectionMenuOptions SelectionMenuOptions0001 START444');
         await CommonFunc.sleep(500);
-        await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
+        await driver.mouseClick({ x: point.x, y: point.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT);
         console.info('SelectionMenuOptions SelectionMenuOptions0001 START555');
         await CommonFunc.sleep(500);
         console.info('SelectionMenuOptions SelectionMenuOptions0001 START666');
@@ -152,7 +154,7 @@ export default function SelectionMenuOptions() {
         await CommonFunc.sleep(500);
         let point: Point = await (image?.getBoundsCenter() as Promise<Point>)
         await CommonFunc.sleep(500);
-        await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
+        await driver.mouseClick({ x: point.x, y: point.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT);
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('自定义菜单'));
         console.info("[SelectionMenuOptions0004] end");
@@ -210,7 +212,7 @@ export default function SelectionMenuOptions() {
         await CommonFunc.sleep(500);
         let point: Point = await (mixed?.getBoundsCenter() as Promise<Point>)
         await CommonFunc.sleep(500);
-        await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
+        await driver.mouseClick({ x: point.x, y: point.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT);
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('自定义菜单'));
         console.info("[SelectionMenuOptions0007] end");

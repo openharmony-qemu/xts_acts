@@ -59,16 +59,16 @@ it('ScrollToIndexForWaterFlow02_static_0100', Level.LEVEL1, async (done: () => v
       console.info('[ScrollToIndexForWaterFlow02_static_0900] START');
       let driver = Driver.create();
 
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.text('Grid-66-true'));
       await (button?.click() as Promise<void>)
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
       let button_Item = await driver.findComponent(ON.text('Item-99-true'));
       await (button_Item?.click() as Promise<void>)
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
       let textItemCom = await driver.findComponent(ON.text("NN99"));
       let currentItemID = await textItemCom!.getId();
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
       let isSmoothObj = await driver.findComponent(ON.id("isHaveSmooth_WaterFlow02"));
       console.log('isSmoothText' + isSmoothObj);
       console.log('isSmoothText' + JSON.stringify(isSmoothObj));
@@ -91,13 +91,13 @@ it('ScrollToIndexForWaterFlow02_static_0200', Level.LEVEL1, async (done: () => v
       console.info('[ScrollToIndexForWaterFlow02_static_0200] START');
       let driver = Driver.create();
 
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       let button_Item = await driver.findComponent(ON.text("Item-10-false"));
       await (button_Item?.click() as Promise<void>)
-      await driver.delayMs(3000);
+      await CommonFunc.sleep(3000);
       let textItemCom = await driver.findComponent(ON.text("NN10"));
       let currentItemID = await textItemCom!.getId();
-      await driver.delayMs(3000);
+      await CommonFunc.sleep(3000);
       expect(currentItemID).assertEqual("ItemTextWaterFlow02_10");
 
       console.info('[ScrollToIndexForWaterFlow02_static_0200] END');

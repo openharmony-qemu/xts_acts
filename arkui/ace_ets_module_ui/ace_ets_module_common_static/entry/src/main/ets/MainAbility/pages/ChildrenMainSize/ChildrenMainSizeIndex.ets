@@ -71,7 +71,7 @@ struct ChildrenMainSizeIndex {
         ForEach(this.arr, (item: number) => {
           ListItem() {
             Text('item-' + item)
-              .height(item < 5 ? 300 : this.listChildrenSize.childDefaultSize)
+              .height(item < 5 ? 300.0 : this.listChildrenSize.childDefaultSize)
               .width('90%')
               .fontSize(16)
               .textAlign(TextAlign.Center)

@@ -41,6 +41,8 @@ struct pageB {
       }
       .width('100%')
     }
+    .padding(10)
+    .margin(10)
     .height('100%')
   }
 }

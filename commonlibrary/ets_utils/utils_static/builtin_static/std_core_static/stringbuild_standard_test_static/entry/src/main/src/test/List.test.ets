@@ -10,6 +10,8 @@ import StringBuilderToStringTwoTest from "./stringbuild/StringBuilderToStringTwo
 import StringBuilderSupplementTest from "./stringbuild/StringBuilderSupplementTest.test";
 import StringBuilderXtsFillTest from "./stringbuild/StringBuilderXtsFillTest.test";
 
+import StringBuilderToStringTest from './stringbuild/StringBuilderToStringTest.test';
+import StringBuilderSupplementTest1 from './stringbuild/StringBuilderSupplementTest1.test';
 
 export default function testsuite():void {
   StringBuilderAppendTest()
@@ -22,4 +24,7 @@ export default function testsuite():void {
   StringBuilderToStringTwoTest()
   StringBuilderSupplementTest()
   StringBuilderXtsFillTest()
+
+  StringBuilderToStringTest();
+  StringBuilderSupplementTest1();
 }

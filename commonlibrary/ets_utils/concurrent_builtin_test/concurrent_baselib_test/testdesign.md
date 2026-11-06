@@ -1,0 +1,163 @@
+- concurrent builtins / base lib 测试设计
+	- 说明：基于 concurrent_builtins_baselib_testpoint.md §1 接口维度脑图生成，覆盖 9 接口/类 × 7 测试逻辑分类；本套件形态为 taskpool 并发应力，故 ①②③④ 多为缺口标记
+	- 1. 接口测试（Functional）
+		- Buffer 内置
+			- 入参范围覆盖
+				- ❌ 固定入参调用 test<Method>，未遍历方法参数类型空间（缺口）
+				- 建议补 alloc 的 0/1/极值/多类型入参矩阵
+			- 边界值测试
+				- ❌ 无 length=0/1/超大规模/字节数对齐边界（缺口）
+			- 异常与非法输入
+				- ❌ catch 仅 expect().assertFail()，未断言 401(类型)/10200001(越界)/10200011(解绑) 错误码
+			- 返回值与类型验证
+				- ❌ 仅断言 result.length==concurrentNum，未校验方法返回值内容/类型
+			- 组合场景
+				- ✅ TaskGroup(name) + group.addTask(fn) + taskpool.execute(group) 标准组合
+			- 重复调用/幂等性
+				- ✅ for(i<concurrentNum) group.addTask(fn) 重复 concurrentNum 次
+			- 并发跨线程
+				- ✅ taskpool worker 池并发调度 + 跨线程结果回传（核心形态）
+				- ❌ 未校验多任务写同一 Buffer/TypedArray 的竞态数据可见性（缺口）
+		- String 内置
+			- 入参范围覆盖
+				- ❌ 固定入参调用 test<Method>，未遍历方法参数类型空间（缺口）
+				- 建议补 charAt 的 0/1/极值/多类型入参矩阵
+			- 边界值测试
+				- ❌ 无 length=0/1/超大规模/字节数对齐边界（缺口）
+			- 异常与非法输入
+				- ❌ catch 仅 expect().assertFail()，未断言 401(类型)/10200001(越界)/10200011(解绑) 错误码
+			- 返回值与类型验证
+				- ❌ 仅断言 result.length==concurrentNum，未校验方法返回值内容/类型
+			- 组合场景
+				- ✅ TaskGroup(name) + group.addTask(fn) + taskpool.execute(group) 标准组合
+			- 重复调用/幂等性
+				- ✅ for(i<concurrentNum) group.addTask(fn) 重复 concurrentNum 次
+			- 并发跨线程
+				- ✅ taskpool worker 池并发调度 + 跨线程结果回传（核心形态）
+				- ❌ 未校验多任务写同一 Buffer/TypedArray 的竞态数据可见性（缺口）
+		- TypedArray 内置
+			- 入参范围覆盖
+				- ❌ 固定入参调用 test<Method>，未遍历方法参数类型空间（缺口）
+				- 建议补 copyWithin 的 0/1/极值/多类型入参矩阵
+			- 边界值测试
+				- ❌ 无 length=0/1/超大规模/字节数对齐边界（缺口）
+			- 异常与非法输入
+				- ❌ catch 仅 expect().assertFail()，未断言 401(类型)/10200001(越界)/10200011(解绑) 错误码
+			- 返回值与类型验证
+				- ❌ 仅断言 result.length==concurrentNum，未校验方法返回值内容/类型
+			- 组合场景
+				- ✅ TaskGroup(name) + group.addTask(fn) + taskpool.execute(group) 标准组合
+			- 重复调用/幂等性
+				- ✅ for(i<concurrentNum) group.addTask(fn) 重复 concurrentNum 次
+			- 并发跨线程
+				- ✅ taskpool worker 池并发调度 + 跨线程结果回传（核心形态）
+				- ❌ 未校验多任务写同一 Buffer/TypedArray 的竞态数据可见性（缺口）
+		- DataView 内置
+			- 入参范围覆盖
+				- ❌ 固定入参调用 test<Method>，未遍历方法参数类型空间（缺口）
+				- 建议补 byteLength 的 0/1/极值/多类型入参矩阵
+			- 边界值测试
+				- ❌ 无 length=0/1/超大规模/字节数对齐边界（缺口）
+			- 异常与非法输入
+				- ❌ catch 仅 expect().assertFail()，未断言 401(类型)/10200001(越界)/10200011(解绑) 错误码
+			- 返回值与类型验证
+				- ❌ 仅断言 result.length==concurrentNum，未校验方法返回值内容/类型
+			- 组合场景
+				- ✅ TaskGroup(name) + group.addTask(fn) + taskpool.execute(group) 标准组合
+			- 重复调用/幂等性
+				- ✅ for(i<concurrentNum) group.addTask(fn) 重复 concurrentNum 次
+			- 并发跨线程
+				- ✅ taskpool worker 池并发调度 + 跨线程结果回传（核心形态）
+				- ❌ 未校验多任务写同一 Buffer/TypedArray 的竞态数据可见性（缺口）
+		- 并发基础库·taskpool 运行时（TaskGroup/execute）
+			- 入参范围覆盖
+				- 🟡 TaskGroup(name)/addTask(fn)/execute(group) 主路径覆盖；❌ 未遍历 addTask 重载/优先级/取消/序列化失败
+			- 边界值测试
+				- 🟡 concurrentNum 次中等并发；❌ 无 1/1000+ 任务梯度边界
+			- 异常与非法输入
+				- ❌ 未断言 taskpool 序列化失败/超时/取消错误码
+			- 返回值与类型验证
+				- ✅ result.length==concurrentNum 任务数回传；❌ 未校验返回值内容
+			- 组合场景
+				- ✅ TaskGroup+addTask+execute 组合（全套件载体）
+			- 重复调用/幂等性
+				- ✅ concurrentNum 次 addTask
+			- 并发跨线程
+				- ✅ 核心形态；❌ Sendable 跨线程可见性未显式断言
+		- 并发基础库·SendableLRUCache（put/get/remove/contains/updateCapacity/getCapacity/clear/keys/values/entries/isEmpty/createDefault）
+			- 入参范围覆盖
+				- 🟡 12 个 API 点全覆盖；❌ 未遍历 capacity 取值/键值类型
+			- 边界值测试
+				- ❌ 无 capacity=0/1/超容 LRU 淘汰边界
+			- 异常与非法输入
+				- ❌ 未断言超容/缺参错误码
+			- 返回值与类型验证
+				- 🟡 get/remove 返回值未显式断言（并发包装）
+			- 组合场景
+				- ✅ put→get→contains→remove 链
+			- 重复调用/幂等性
+				- ✅ concurrentNum 次
+			- 并发跨线程
+				- ✅ taskpool 并发（Sendable 跨线程）
+		- 并发基础库·容器集合（List/HashMap/Deque/ArrayList/PlainArray/LinkedList/Queue/Stack/TreeMap/TreeSet/LightWeightMap）
+			- 入参范围覆盖
+				- 🟡 各容器 constructor/add/insert/has/get/getIndexOf/remove/set/clear/sort/clone/forEach/[Symbol.iterator] 全方法点
+			- 边界值测试
+				- ❌ 无空容器/单元素/超大规模边界
+			- 异常与非法输入
+				- ❌ 未断言越界/类型错误码；sort 比较器异常未覆盖
+			- 返回值与类型验证
+				- 🟡 返回值未显式断言；clone 深拷贝独立性未校验
+			- 组合场景
+				- ✅ add→get→remove 链
+			- 重复调用/幂等性
+				- ✅ concurrentNum 次
+			- 并发跨线程
+				- ✅ taskpool 并发
+		- 并发基础库·工具类（Xml/ConvertXml/Stream/Uri/Url/Timer/Process/Util/TextEncoder/Decoder/JSON）
+			- 入参范围覆盖
+				- 🟡 各工具类主 API 点覆盖（XmlSerializer/PullParser 全 set*、Stream writable/read/pause/on、URLParams 全方法、Uri 解析、Timer set/clear、Process uid/pid/exit、Util format/uuid/hash/promisify、TextEncoder/Decoder、JSON parse/stringify）
+			- 边界值测试
+				- ❌ 无空输入/超长/深嵌套边界
+			- 异常与非法输入
+				- ❌ 未断言非法 XML/URL/不支持 charset 的错误码
+			- 返回值与类型验证
+				- 🟡 返回值未显式断言
+			- 组合场景
+				- ✅ 序列化→解析链（Xml）、set→get 链（URLParams）
+			- 重复调用/幂等性
+				- ✅ concurrentNum 次
+			- 并发跨线程
+				- ✅ taskpool 并发
+		- 并发基础库·JS 内置（BigInt/Boolean/Error/Intl/Number/字面量/AsIntN/泛型/Partial/Global/Map/Set/WeakMap/WeakSet/RegExp/Reflect/Locale/Promise）
+			- 入参范围覆盖
+				- 🟡 各内置主路径覆盖（BigInt 运算/toString、Boolean 构造/逻辑、Error 子类、Intl Collator/DateTimeFormat/NumberFormat/PluralRules、Number 构造/isNaN、字面量、AsIntN、泛型、Partial/Readonly/Record/Proxy）
+			- 边界值测试
+				- ❌ 无极值/溢出/精度边界
+			- 异常与非法输入
+				- ❌ 未断言类型错误码；Error cause 链未覆盖
+			- 返回值与类型验证
+				- 🟡 返回值未显式断言
+			- 组合场景
+				- ✅ 类型组合/泛型组合
+			- 重复调用/幂等性
+				- ✅ concurrentNum 次
+			- 并发跨线程
+				- ✅ taskpool 并发
+	- 2. 稳定性（Stability）
+		- ❌ 无大容量（1000/10250/500000）/循环创建销毁/长时运行压测
+	- 3. 性能（Performance）
+		- ❌ 无计时/吞吐量/P95 延迟基准
+	- 4. 并发安全（Concurrency Safety）
+		- ✅ taskpool.TaskGroup + execute 并发应力（全套件核心形态，986 用例）
+		- ❌ 跨线程数据可见性未校验（多任务写同一 Buffer/TypedArray/容器的竞态结果未断言）
+		- ❌ 并发错误码未断言（10200201 并发修改/10200011 解绑，catch 仅 assertFail）
+		- ❌ 并发量边界未覆盖（无 1/100/1000+ 任务梯度）
+	- 5. 兼容性与继承（Compatibility & Inheritance）
+		- ❌ Buffer 子类化/自定义 TypedArray/DataView 继承未覆盖
+		- 🟡 跨线程引用传递由 taskpool 序列化间接覆盖
+	- 6. 资料与文档符合性（Doc Conformance）
+		- ⚠️ Buffer/FastBuffer 无独立 SDK .md（apis-arkts 缺失）
+		- ⚠️ String/TypedArray/DataView 无独立 SDK .md（仅 @arkts.collections.d.ets 声明具体 typed-array 子类）
+		- ⚠️ @tc.desc 普遍为 'Test'（无信息量，可追溯性差）
+		- ⚠️ 已有 .md 错误码表与本套件无对位基础（本套件不测错误码）

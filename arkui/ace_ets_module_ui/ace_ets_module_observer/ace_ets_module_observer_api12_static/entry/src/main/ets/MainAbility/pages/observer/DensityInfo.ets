@@ -43,5 +43,7 @@ struct DensityInfo1 {
           this.message = 'DensityInfo succ'
         })
     }
+    .padding(10)
+    .margin(10)
   }
 }

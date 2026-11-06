@@ -87,6 +87,9 @@ struct APITabsBarBackgroundBlurStyle {
       .margin({ top: 52 } as Margin)
       .backgroundColor('#F1F3F5')
       .key('APITabsBarBackgroundBlurStyle01')
-    }.width('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%')
   }
 }

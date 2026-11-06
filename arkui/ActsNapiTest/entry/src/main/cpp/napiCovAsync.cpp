@@ -27,7 +27,11 @@ static void AsyncComplete(napi_env env, napi_status status, void* data)
 {
     (void)env;
     (void)status;
-    (void)data;
+    if (data != nullptr) {
+        napi_async_work* workPtr = static_cast<napi_async_work*>(data);
+        napi_delete_async_work(env, *workPtr);
+        delete workPtr;
+    }
 }
 
 static napi_value CreateAsyncWorkNormal(napi_env env, napi_callback_info info)
@@ -69,8 +73,13 @@ static napi_value CreateAsyncWorkReturnVal(napi_env env, napi_callback_info info
 
     int32_t ret = 0;
     if (status == napi_ok && work != nullptr) {
-        napi_status queueStatus = napi_queue_async_work(env, work);
+        napi_async_work* workPtr = new napi_async_work(work);
+        napi_status queueStatus = napi_queue_async_work(env, *workPtr);
         ret = (queueStatus == napi_ok) ? 1 : 0;
+        if (queueStatus != napi_ok) {
+            napi_delete_async_work(env, work);
+            delete workPtr;
+        }
     }
 
     napi_close_handle_scope(env, scope);

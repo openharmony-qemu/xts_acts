@@ -18,10 +18,8 @@
                 "power-shell timeout -o 2147483647",
                 "uinput -T -m 300 2700 280 200",
                 "power-shell setmode 602",
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.photoAccess.supp.xts/haps/entry_test/files/",
-                "chmod -R 777 /data/app/el2/100/base/ohos.acts.multimedia.photoAccess.supp.xts/haps/entry_test/files/",
                 "mkdir -p /data/tmp/case",
-                "chmod -R 777 /data/tmp/case "
+                "chmod -R 777 /data/tmp/case"
             ],
             "teardown-command": [
                 "power-shell setmode 600",
@@ -40,7 +38,17 @@
                 "./resource/medialibrary/01.gif ->/data/tmp/case",
                 "./resource/medialibrary/01.png ->/data/tmp/case",
                 "./resource/medialibrary/01.mpeg ->/data/tmp/case",
-                "./resource/medialibrary/stm_RAW.dng ->/data/tmp/case"
+                "./resource/medialibrary/stm_RAW.dng ->/data/tmp/case",
+                "./resource/medialibrary/01.gif ->/data/local/tmp/",
+                "./resource/medialibrary/01.jpg ->/data/local/tmp/",
+                "./resource/medialibrary/01.mp4 ->/data/local/tmp/",
+                "./resource/medialibrary/01.mpeg ->/data/local/tmp/",
+                "./resource/medialibrary/01.png ->/data/local/tmp/",
+                "./resource/media/1vp9_320x240_30.mp4 ->/data/local/tmp/",
+                "./resource/medialibrary/stm_RAW.dng ->/data/local/tmp/",
+                "./resource/medialibrary/test_mov_1.jpg ->/data/local/tmp/",
+                "./resource/medialibrary/test_mov_1.mp4 ->/data/local/tmp/",
+                "./resource/medialibrary/sh/setup_photoAccessSupplement_test.sh ->/data/local/tmp/"
             ]
         },
         {
@@ -78,6 +86,13 @@
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
+        },
+        {
+            "type": "ShellKit",
+            "run-command": [
+                "chmod 755 /data/local/tmp/setup_photoAccessSupplement_test.sh",
+                "sh /data/local/tmp/setup_photoAccessSupplement_test.sh"
+            ]
         }
     ]
 }

@@ -74,5 +74,7 @@ struct SwiperInterfaceMix0220 {
 
       Text(this.onAnimationStart).key('swiper_interfacemix_0220')
     }
+    .padding(10)
+    .margin(10)
   }
 }

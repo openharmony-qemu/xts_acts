@@ -33,6 +33,7 @@
 #include "TextCommon/SetUiDvsyncSwitchTest.cpp"
 #include "TextCommon/ImageSpanResizableTest.cpp"
 #include "TextCommon/TextStrokeTest.cpp"
+#include "Richeditor/RichEditorEnumTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -331,6 +332,38 @@ static napi_value Init(napi_env env, napi_value exports)
         {"TextStrokeTest_036", nullptr, TextStrokeTest_036, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextStrokeTest_037", nullptr, TextStrokeTest_037, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextStrokeTest_038", nullptr, TextStrokeTest_038, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"RichEditorEnumTest_001", nullptr, RichEditorEnumTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_002", nullptr, RichEditorEnumTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_004", nullptr, RichEditorEnumTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_005", nullptr, RichEditorEnumTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_006", nullptr, RichEditorEnumTest_006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_007", nullptr, RichEditorEnumTest_007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_008", nullptr, RichEditorEnumTest_008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_009", nullptr, RichEditorEnumTest_009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_010", nullptr, RichEditorEnumTest_010, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_011", nullptr, RichEditorEnumTest_011, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_012", nullptr, RichEditorEnumTest_012, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_013", nullptr, RichEditorEnumTest_013, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_014", nullptr, RichEditorEnumTest_014, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_015", nullptr, RichEditorEnumTest_015, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_016", nullptr, RichEditorEnumTest_016, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_017", nullptr, RichEditorEnumTest_017, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_018", nullptr, RichEditorEnumTest_018, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_019", nullptr, RichEditorEnumTest_019, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_020", nullptr, RichEditorEnumTest_020, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_021", nullptr, RichEditorEnumTest_021, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_022", nullptr, RichEditorEnumTest_022, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_023", nullptr, RichEditorEnumTest_023, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_024", nullptr, RichEditorEnumTest_024, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_025", nullptr, RichEditorEnumTest_025, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_026", nullptr, RichEditorEnumTest_026, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_027", nullptr, RichEditorEnumTest_027, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_028", nullptr, RichEditorEnumTest_028, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_029", nullptr, RichEditorEnumTest_029, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_030", nullptr, RichEditorEnumTest_030, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_031", nullptr, RichEditorEnumTest_031, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorEnumTest_032", nullptr, RichEditorEnumTest_032, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

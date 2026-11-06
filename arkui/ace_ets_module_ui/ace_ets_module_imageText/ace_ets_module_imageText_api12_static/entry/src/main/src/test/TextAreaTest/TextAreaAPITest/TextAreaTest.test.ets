@@ -30,6 +30,7 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
+let displayID: Int = 0;
 export default function TextAreaTest() {
   describe('TextAreaTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -54,9 +55,10 @@ export default function TextAreaTest() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push TextAreaTest page error:" + err);
+        console.log("push TextAreaTest page error:" + err);
       }
       console.info("TextAreaTest beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     }); 
 
     
@@ -73,11 +75,19 @@ export default function TextAreaTest() {
       let button = await (driver.findComponent(ON.id('TextArea_5')) as Promise<Component>);
       await button.click();
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       await button.inputText("hello")
       await CommonFunc.sleep(2000);
-	    await driver.triggerKey(2070);
+	    try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('TextArea_1');
       let obj = JSON.parseJsonElement(strJson);
@@ -103,11 +113,19 @@ export default function TextAreaTest() {
       let button = await (driver.findComponent(ON.id('TextArea_6')) as Promise<Component>);
       await button.click();
       await CommonFunc.sleep(1000);
-	  await driver.triggerKey(2070);
+	  try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       await button.clearText()
       await CommonFunc.sleep(3000);
-	  await driver.triggerKey(2070);
+	  try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('TextArea_3');
       let obj = JSON.parseJsonElement(strJson);

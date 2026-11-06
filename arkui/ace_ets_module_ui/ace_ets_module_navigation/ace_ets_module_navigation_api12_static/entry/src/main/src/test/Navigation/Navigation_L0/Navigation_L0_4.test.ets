@@ -27,6 +27,7 @@ import { UtilsTest, startAbility } from '../../Util.test';
 import {SharedTransitionEffectType,Color} from '@ohos.arkui.component';
 import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function Navigation_L0_4() {
   describe('Navigation_L0_4', () => {
     beforeAll(async (): Promise<void> => {
@@ -78,7 +79,7 @@ it('Navigation_L0_4_static_0100', Level.LEVEL0, async (done: () => void): Promis
 
       let list = CommonFunc.getComponentRect('Navigation_L0_4_list');
       await CommonFunc.sleep(1000);
-      await driver.swipe( Math.round(list.left + (list.right - list.left) / 2).toInt(),Math.round(list.top + (list.bottom - list.top) / 4 * 3).toInt() ,Math.round(list.left + (list.right - list.left) / 2).toInt() ,Math.round(list.top + (list.bottom -  list.top) / 4).toInt());
+      await driver.swipeBetween({ x: Math.round(list.left + (list.right - list.left) / 2).toInt(), y: Math.round(list.top + (list.bottom - list.top) / 4 * 3).toInt(), displayId: displayID.toInt() }, { x: Math.round(list.left + (list.right - list.left) / 2).toInt(), y: Math.round(list.top + (list.bottom -  list.top) / 4).toInt(), displayId: displayID.toInt() });
 
       await CommonFunc.sleep(1000);
 

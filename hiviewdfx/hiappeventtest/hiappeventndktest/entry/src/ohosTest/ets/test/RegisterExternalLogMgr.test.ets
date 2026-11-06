@@ -209,7 +209,7 @@ export default function RegisterExternalLogMgr() {
     it('CheckHiAppEventSysEventAppCpuUsageHigh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_HIVIEWDFX_HIAPPEVENT_HiAppEventSysEvent_0600 start");
       try {
-        expect(testNapi.CheckHiAppEventSysEventAppHicollte() == true).assertTrue();
+        expect(testNapi.CheckHiAppEventSysEventAppCpuUsageHigh() == true).assertTrue();
         console.info("SUB_HIVIEWDFX_HIAPPEVENT_HiAppEventSysEvent_0600 success");
         done();
       } catch (err) {

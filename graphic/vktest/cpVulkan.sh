@@ -33,5 +33,4 @@ cp -rf "graphic/graphic_2d/libdeqp_ohos_platform.z.so" "suites/acts/acts/testcas
 cp -rf "graphic/graphic_2d/librosen_context.z.so" "suites/acts/acts/testcases/vulkandata"
 cp -rf "xts/acts/libdeqp_amber.z.so" "suites/acts/acts/testcases/vulkandata"
 cp -rf "thirdparty/vk-gl-cts/libdeqp_spirv.z.so" "suites/acts/acts/testcases/vulkandata"
-cp -rf "thirdparty/vk-gl-cts/libdeqp_spvremapper.z.so" "suites/acts/acts/testcases/vulkandata"
 cp -rf "thirdparty/skia/libskia_canvaskit.z.so" "suites/acts/acts/testcases/vulkandata"

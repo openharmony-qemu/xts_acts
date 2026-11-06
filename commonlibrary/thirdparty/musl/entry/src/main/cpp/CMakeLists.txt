@@ -305,3 +305,111 @@ target_link_libraries(pthreadsetcanceltype PUBLIC libace_napi.z.so)
 target_link_libraries(pthreadyield PUBLIC libace_napi.z.so)
 target_link_libraries(pthreadtsd PUBLIC libace_napi.z.so)
 target_link_libraries(pthreadkeycreate PUBLIC libace_napi.z.so)
+
+add_library(openat64_2_test SHARED openat64_2_test.cpp)
+target_link_libraries(openat64_2_test PUBLIC libace_napi.z.so)
+
+add_library(closefrom_test SHARED closefrom_test.cpp)
+target_link_libraries(closefrom_test PUBLIC libace_napi.z.so)
+
+add_library(close_range_test SHARED close_range_test.cpp)
+target_link_libraries(close_range_test PUBLIC libace_napi.z.so)
+
+add_library(group_member_test SHARED group_member_test.cpp)
+target_link_libraries(group_member_test PUBLIC libace_napi.z.so)
+
+add_library(getpagesize_test SHARED getpagesize_test.cpp)
+target_link_libraries(getpagesize_test PUBLIC libace_napi.z.so)
+
+add_library(libc_single_threaded_test SHARED libc_single_threaded_test.cpp)
+target_link_libraries(libc_single_threaded_test PUBLIC libace_napi.z.so)
+
+add_library(libc_stack_end_test SHARED libc_stack_end_test.cpp)
+target_link_libraries(libc_stack_end_test PUBLIC libace_napi.z.so)
+
+add_library(pthread_sigqueue_test SHARED pthread_sigqueue_test.cpp)
+target_link_libraries(pthread_sigqueue_test PUBLIC libace_napi.z.so)
+
+add_library(getgrent_r_test SHARED getgrent_r_test.cpp)
+target_link_libraries(getgrent_r_test PUBLIC libace_napi.z.so)
+
+add_library(getpwent_r_test SHARED getpwent_r_test.cpp)
+target_link_libraries(getpwent_r_test PUBLIC libace_napi.z.so)
+
+add_library(fgetpwent_r_test SHARED fgetpwent_r_test.cpp)
+target_link_libraries(fgetpwent_r_test PUBLIC libace_napi.z.so)
+
+add_library(getprotobyname_r_test SHARED getprotobyname_r_test.cpp)
+target_link_libraries(getprotobyname_r_test PUBLIC libace_napi.z.so)
+
+add_library(getprotobynumber_r_test SHARED getprotobynumber_r_test.cpp)
+target_link_libraries(getprotobynumber_r_test PUBLIC libace_napi.z.so)
+
+add_library(getprotoent_r_test SHARED getprotoent_r_test.cpp)
+target_link_libraries(getprotoent_r_test PUBLIC libace_napi.z.so)
+
+add_library(getservent_r_test SHARED getservent_r_test.cpp)
+target_link_libraries(getservent_r_test PUBLIC libace_napi.z.so)
+
+add_library(isoc23_strtol_test SHARED isoc23_strtol_test.cpp)
+target_link_libraries(isoc23_strtol_test PUBLIC libace_napi.z.so)
+
+add_library(isoc23_strtoll_test SHARED isoc23_strtoll_test.cpp)
+target_link_libraries(isoc23_strtoll_test PUBLIC libace_napi.z.so)
+
+add_library(isoc23_strtoul_test SHARED isoc23_strtoul_test.cpp)
+target_link_libraries(isoc23_strtoul_test PUBLIC libace_napi.z.so)
+
+add_library(isoc23_strtoull_test SHARED isoc23_strtoull_test.cpp)
+target_link_libraries(isoc23_strtoull_test PUBLIC libace_napi.z.so)
+
+add_library(isoc23_strtoimax_test SHARED isoc23_strtoimax_test.cpp)
+target_link_libraries(isoc23_strtoimax_test PUBLIC libace_napi.z.so)
+
+add_library(isoc23_strtoumax_test SHARED isoc23_strtoumax_test.cpp)
+target_link_libraries(isoc23_strtoumax_test PUBLIC libace_napi.z.so)
+
+add_library(strtol_l_test SHARED strtol_l_test.cpp)
+target_link_libraries(strtol_l_test PUBLIC libace_napi.z.so)
+
+add_library(isoc23_strtoll_l_test SHARED isoc23_strtoll_l_test.cpp)
+target_link_libraries(isoc23_strtoll_l_test PUBLIC libace_napi.z.so)
+
+add_library(isoc23_strtoull_l_test SHARED isoc23_strtoull_l_test.cpp)
+target_link_libraries(isoc23_strtoull_l_test PUBLIC libace_napi.z.so)
+
+add_library(strtol_legacy_test SHARED strtol_legacy_test.cpp)
+target_link_libraries(strtol_legacy_test PUBLIC libace_napi.z.so)
+
+add_library(isoc23_wcstol_test SHARED isoc23_wcstol_test.cpp)
+target_link_libraries(isoc23_wcstol_test PUBLIC libace_napi.z.so)
+
+add_library(isoc23_wcstoll_test SHARED isoc23_wcstoll_test.cpp)
+target_link_libraries(isoc23_wcstoll_test PUBLIC libace_napi.z.so)
+
+add_library(isoc23_wcstoul_test SHARED isoc23_wcstoul_test.cpp)
+target_link_libraries(isoc23_wcstoul_test PUBLIC libace_napi.z.so)
+
+add_library(isoc23_wcstoull_test SHARED isoc23_wcstoull_test.cpp)
+target_link_libraries(isoc23_wcstoull_test PUBLIC libace_napi.z.so)
+
+add_library(isoc23_fscanf_test SHARED isoc23_fscanf_test.cpp)
+target_link_libraries(isoc23_fscanf_test PUBLIC libace_napi.z.so)
+
+add_library(isoc23_scanf_test SHARED isoc23_scanf_test.cpp)
+target_link_libraries(isoc23_scanf_test PUBLIC libace_napi.z.so)
+
+add_library(isoc23_sscanf_test SHARED isoc23_sscanf_test.cpp)
+target_link_libraries(isoc23_sscanf_test PUBLIC libace_napi.z.so)
+
+add_library(isoc23_swscanf_test SHARED isoc23_swscanf_test.cpp)
+target_link_libraries(isoc23_swscanf_test PUBLIC libace_napi.z.so)
+
+add_library(isoc23_vfscanf_test SHARED isoc23_vfscanf_test.cpp)
+target_link_libraries(isoc23_vfscanf_test PUBLIC libace_napi.z.so)
+
+add_library(isoc23_vsscanf_test SHARED isoc23_vsscanf_test.cpp)
+target_link_libraries(isoc23_vsscanf_test PUBLIC libace_napi.z.so)
+
+add_library(pthread_key_test SHARED pthread_key_test.cpp ${src_sec})
+target_link_libraries(pthread_key_test PUBLIC libace_napi.z.so)

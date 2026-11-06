@@ -29,7 +29,7 @@ let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resol
 async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
   let startNum = (AppStorage.get('startNum') ? AppStorage.get('startNum') : 0) as number
   let want: Want = {
-    bundleName: 'com.example.myapplication',
+    bundleName: 'com.example.windowstagetwo',
     abilityName: 'StartAbility'
   };
   if (options) {

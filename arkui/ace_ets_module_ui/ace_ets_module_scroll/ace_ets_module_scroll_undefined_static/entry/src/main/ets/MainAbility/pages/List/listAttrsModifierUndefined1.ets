@@ -70,17 +70,17 @@ struct ListEventPage1 {
 
         Blank().height('5vp')
         Button('isCachedCount: ' + this.myModifier.isCachedCount)
-          .id('ListModifier_CachedCount')
+          .id('ListModifier_CachedCount').height('5%')
           .onClick((e: ClickEvent) => {
             this.myModifier.isCachedCount = !this.myModifier.isCachedCount
           })
         Button('isCachedIsShown: ' + this.myModifier.isCachedIsShown)
-          .id('List_cachedIsShown')
+          .id('List_cachedIsShown').height('5%')
           .onClick((e: ClickEvent) => {
             this.myModifier.isCachedIsShown = !this.myModifier.isCachedIsShown
           })
         Button('isMaintainVisibleContentPosition: ' + this.myModifier.isMaintainVisibleContentPosition)
-          .id('List_maintainVisibleContentPosition')
+          .id('List_maintainVisibleContentPosition').height('5%')
           .onClick((e: ClickEvent) => {
             this.myModifier.isMaintainVisibleContentPosition = !this.myModifier.isMaintainVisibleContentPosition
           })

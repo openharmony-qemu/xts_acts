@@ -38,6 +38,8 @@ struct lifeCycle {
     Column() {
       CustomLayout({ builder: ColumnChildren })
     }
+    .padding(10)
+    .margin(10)
   }
 }
 

@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 
 let a_1: boolean = false;
 let b_1: boolean = false;

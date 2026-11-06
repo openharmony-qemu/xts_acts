@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../../hypium/index"
+} from "@ohos/hypium-static/src/main/indexStatic"
 
 interface GenericInterfaceWithMethod_0 {
   getValue<T>(value: T): string;

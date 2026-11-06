@@ -100,6 +100,8 @@ struct navigationType {
       .navBarWidth(100)
       .navBarWidthRange([50, 300])
     }
+    .padding(10)
+    .margin(10)
     .height('100%')
     .width('100%')
     .backgroundColor('#F1F3F5')

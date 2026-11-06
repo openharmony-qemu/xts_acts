@@ -211,6 +211,9 @@ struct GridColExample {
       .onBreakpointChange((breakpoint) => {
         this.currentBp = breakpoint
       })
-    }.width('90%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('90%')
   }
 }

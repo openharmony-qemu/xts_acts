@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 class Item020 {
@@ -952,7 +952,7 @@ export default function ArrayMapTest(): void {
       let arr = new Array<string>('1', '2', '3', 'abc');
       let numbers = arr.map((s: string): number => {
         let num = Number.parseInt(s);
-        return Number.isNaN(num) ? 0 : num;
+        return Number.isNaN(num) ? 0.0 : num;
       });
       expect(numbers.toString()).assertEqual('1,2,3,0');
     });

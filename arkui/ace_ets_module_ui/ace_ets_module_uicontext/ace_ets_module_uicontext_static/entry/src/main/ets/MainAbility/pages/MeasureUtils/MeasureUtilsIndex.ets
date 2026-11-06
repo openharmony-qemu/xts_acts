@@ -51,6 +51,8 @@ struct MeasureUtilsIndex {
 
       Text(this.measureTextStatus).key('measureTextStatus').height('5%');
     }
+    .padding(10)
+    .margin(10)
     .width('100%')
     .height('100%');
   }

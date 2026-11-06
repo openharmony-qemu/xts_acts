@@ -1,0 +1,137 @@
+- collections.ArrayBuffer 测试设计
+	- 说明：基于 collections_arraybuffer_testpoint.md §1 接口维度脑图生成，覆盖 3 声明接口（constructor/byteLength/slice）+ 1 非声明相邻表面（isView/Like/View）×7 测试逻辑分类（缺项类按 §1 树跳过）
+	- 1. 接口测试（Functional）
+		- constructor
+			- 入参范围覆盖
+				- 整数(0/1/8/1024/1MB/100MB/65536)、浮点取整(10.5→10、123.456→123、10.0→10、floor(1.5)→1)
+				- 十六进制字面量(0x0102/0x01020304/0x3/0xcafebabe)
+				- -0→0、NaN→0、Number.MIN_VALUE→0、Number.EPSILON→0
+			- 边界值测试
+				- 0 长度、1 字节、2147483647 上限
+				- 2147483648(超上限)、Number.MAX_SAFE_INTEGER、Number.MAX_VALUE
+				- 65536/1MB/100MB 大缓冲
+			- 异常与非法输入
+				- 负数(-1/-Infinity)→RangeError
+				- Infinity→RangeError、Number.MAX_VALUE→RangeError、0xcafebabe→RangeError
+				- 10200012 守卫不可达性证据（缺项，待补 SUP_ARRAYBUFFER_CTOR_10200012_001）
+				- 401 byteLength 错型注入（缺项，待补 SUP_ARRAYBUFFER_CTOR_401_001）
+			- 返回值与类型验证
+				- typeof==='object'
+				- instanceof collections.ArrayBuffer===true
+				- byteLength===入参(取整后)
+			- 组合场景
+				- 构造后立即 slice
+				- 构造后作为 TypedArray 底座
+				- CustomArrayBuffer extends super(byteLength)
+			- 重复调用/幂等性
+				- 同长度多次构造 byteLength 一致
+				- 循环构造 0..1000
+			- 并发跨线程
+				- crossThreadCreateArrayBuffer 跨 TaskPool 构造
+				- TaskGroup 并发构造不同尺寸
+		- byteLength
+			- 入参范围覆盖
+				- 随 0/1/8/10/100/1000/65536/1MB/100MB 构造长度返回对应数值
+			- 边界值测试
+				- 0 长度→0、1 字节、2147483647 上限
+				- 大缓冲(1MB/100MB)
+			- 异常与非法输入
+				- readonly 写入拦截（缺项，待补 SUP_ARRAYBUFFER_BYTELENGTH_READONLY_001）
+				- 无 @throws 契约
+			- 返回值与类型验证
+				- number 类型(typeof==='number')
+				- 构造后等于入参取整值
+				- slice 后原 buffer byteLength 不变
+			- 组合场景
+				- slice→原 byteLength 不变
+				- 跨线程读取 byteLength 一致
+				- TaskGroup 并发 slice 后原长不变
+			- 重复调用/幂等性
+				- 多次读取 byteLength 一致
+				- 循环 1000 次 slice 后 byteLength 仍为原值
+			- 并发跨线程
+				- crossThreadReadByteLength 跨 TaskPool 读
+				- 10 任务×100 迭代一致性
+				- 跨线程返回 buffer 后读 byteLength
+		- slice
+			- 入参范围覆盖
+				- begin 整数/浮点取整(123.456→123)/-0/NaN/±Infinity/MAX_VALUE/MIN_VALUE/EPSILON/0x 字面量/极大±999999
+				- end 同矩阵 + 可选(省略=原长)
+			- 边界值测试
+				- 空 buffer slice→0
+				- begin=0、begin=byteLength→0、begin>byteLength→0、begin<-byteLength→从 0
+				- end=byteLength、end>byteLength clamp、end<-byteLength→0、end<begin→0
+				- 1MB 大缓冲 slice
+			- 异常与非法输入
+				- 10200011 detached bind（缺项，待补 SUP_ARRAYBUFFER_SLICE_BIND_001）
+				- 10200201 并发修改 pin（缺项，待补 SUP_ARRAYBUFFER_SLICE_10200201_001）
+				- 401 begin/end 错型注入（缺项，待补 SUP_ARRAYBUFFER_SLICE_401_001）
+			- 返回值与类型验证
+				- 返回新 ArrayBuffer 实例(!== 原)
+				- instanceof collections.ArrayBuffer===true
+				- byteLength=(end-begin) 经 clamp/取整
+				- 内容拷贝正确(view 对比)
+			- 组合场景
+				- slice→原 buffer 不变(独立性)
+				- 链式 slice(slice 的 slice)
+				- slice 后 TypedArray view 内容一致
+				- 跨线程 slice 返回新 buffer
+			- 重复调用/幂等性
+				- 1000 次循环 slice 原长不变
+				- 多次 slice(0) 各得新实例
+			- 并发跨线程
+				- crossThreadSliceArrayBuffer
+				- TaskGroup 并发 slice 不同范围
+				- 10 任务×50 迭代并发 slice 容错
+		- [非声明表面] isView/Like/View
+			- 入参范围覆盖
+				- isView: collections 8 类 TypedArray/DataView/原始值(number/string/boolean/undefined/null/BigInt)
+				- ArrayBufferLike: collections.ArrayBuffer 与 SharedArrayBuffer union
+				- View: 8 类 TypedArray(buffer,offset,length) 重载
+			- 边界值测试
+				- 空 TypedArray(0 长度)、空 ArrayBuffer 底座
+				- 负 offset/length→SAFE_NUMBER 报错
+			- 异常与非法输入
+				- 负 offset 抛 "integerIndex < 0 or integerIndex > SAFE_NUMBER"
+				- 负 length 抛同上
+			- 返回值与类型验证
+				- isView 返回 boolean(collections TypedArray→false、DataView→true、原始值→false)
+				- View 返回 byteLength/byteOffset 正确
+				- ArrayBufferLike 返回 byteLength
+			- 组合场景
+				- collections.ArrayBuffer 作为 TypedArray 底座
+				- slice 产物作为 TypedArray 底座
+			- 重复调用/幂等性
+				- 同底座多次构造 view 各得独立实例
+			- 并发跨线程
+				- （无跨线程用例，相邻表面不强制）
+	- 2. 稳定性
+		- 1MB/100MB 大缓冲构造/slice/跨线程传递
+		- 1000 次循环 slice 原长不变
+		- GC 存活(跨线程返回后 ArkTools.forceFullGC)
+		- TaskGroup 并发创建不同尺寸
+		- （缺项：>100MB 超大规模或长时间持续创建销毁基准）
+	- 3. 性能
+		- 1000 次 slice 计 successCount===TOTAL
+		- 10 任务×50/100 迭代并发容错
+		- 5 任务并发 slice 循环
+		- （缺项：单接口基线性能基准或与 ES ArrayBuffer 对比基准）
+	- 4. 并发安全
+		- TaskPool 传递读 byteLength、多任务共享同 buffer 数据
+		- 多 TypedArray view 共享同 buffer、跨线程修改可见
+		- 并发 slice 2/5 任务、空 buffer 跨线程
+		- crossThreadCreate/Slice/Read/Return、TaskGroup 并发 slice
+		- 10 任务×50 迭代 concurrentSliceOps/concurrentAllOpsTryCatch
+		- 1MB 跨线程、多 buffer 跨线程
+		- （缺项：10200201 pin 断言、多 Worker 写写逐字节一致性）
+	- 5. 兼容性与继承
+		- CustomArrayBuffer extends collections.ArrayBuffer + @Sendable + super(byteLength)
+		- 自定义方法 getHalfLength()、instanceof、typeof==='object'
+		- ArrayBufferLike ∪ SharedArrayBuffer union 兼容
+		- （缺项：二级继承链、子类覆写 slice、子类跨线程调用覆写方法）
+	- 6. 资料与文档符合性
+		- @Sendable 装饰、import @kit.ArkTS
+		- 2147483647 上限声明符合 .md 取值范围 [0,2147483647]
+		- 负向索引与 clamp 语义符合 .md slice 说明
+		- ArrayBufferLike 与 SharedArrayBuffer 区分
+		- （缺项：10200012/10200011/10200201 三码逐条断言、.md 补 401 声明）

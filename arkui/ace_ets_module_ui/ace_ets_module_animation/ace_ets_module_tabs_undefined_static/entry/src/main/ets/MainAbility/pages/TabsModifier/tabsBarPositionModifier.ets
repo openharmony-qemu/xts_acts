@@ -73,6 +73,8 @@ struct tabsBarPositionTest {
       }
       .width(400)
     }
+    .padding(10)
+    .margin(10)
     .height(400)
   }
 }

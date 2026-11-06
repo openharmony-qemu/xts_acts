@@ -54,6 +54,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function swiperItemVisibility() {
   describe('swiperVisbleTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -130,12 +131,7 @@ it('SUB_ACE_SWIPER_VISIBLECHANGED_static_0100', Level.LEVEL0, async (done: () =>
       // await CommonFunc.sleep(1000);原代码注释
       await CommonFunc.sleep(1000);
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('visiblekey')
-      await driver.swipe(
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`).toInt(),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(),
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.1 + gridRect.left}`).toInt(),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(),
-        1000);
+      await driver.swipeBetween({ x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`).toInt(), y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(), displayId: displayID.toInt() }, { x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.1 + gridRect.left}`).toInt(), y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(), displayId: displayID.toInt() }, 1000);
       await CommonFunc.sleep(3000);
       // 翻页后子组件2大小及位置与父组件一致，翻页成功
       visiblekey = CommonFunc.getComponentRect('visiblekey');
@@ -200,12 +196,7 @@ it('SUB_ACE_SWIPER_VISIBLECHANGED_static_0200', Level.LEVEL0, async (done: () =>
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('visiblekey')
-      await driver.swipe(
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`).toInt(),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(),
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.1 + gridRect.left}`).toInt(),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(),
-        1000);
+      await driver.swipeBetween({ x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`).toInt(), y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(), displayId: displayID.toInt() }, { x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.1 + gridRect.left}`).toInt(), y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(), displayId: displayID.toInt() }, 1000);
       await CommonFunc.sleep(3000);
       // 翻页后子组件6大小及位置与父组件一致，翻页成功
       visiblekey = CommonFunc.getComponentRect('visiblekey');
@@ -274,12 +265,7 @@ it('SUB_ACE_SWIPER_VISIBLECHANGED_static_0300', Level.LEVEL0, async (done: () =>
       // await CommonFunc.sleep(1000);原代码注释
       await CommonFunc.sleep(1000);
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('visiblekey')
-      await driver.swipe(
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`).toInt(),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(),
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.1 + gridRect.left}`).toInt(),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(),
-        1000);
+      await driver.swipeBetween({ x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`).toInt(), y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(), displayId: displayID.toInt() }, { x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.1 + gridRect.left}`).toInt(), y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(), displayId: displayID.toInt() }, 1000);
       await CommonFunc.sleep(3000);
       // 翻页后子组件4大小及位置与父组件一致，翻页成功
       visiblekey = CommonFunc.getComponentRect('visiblekey');

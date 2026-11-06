@@ -84,6 +84,60 @@ export function runMonitoredBlankScreenCase(action: string): void {
       }
       break;
     }
+    case "testEnableBlankScreenMonitorUndefined": {
+      try {
+        Utils.emitEvent(true, 20260459)
+      } catch (error) {
+        error = error as BusinessError;
+        Utils.emitEvent(error.code, 20260459)
+      }
+      break;
+    }
+    case "testOnMonitoredBlankScreenReturn": {
+      try {
+        Utils.emitEvent('return-monitored-ok', 20260460)
+      } catch (error) {
+        error = error as BusinessError;
+        Utils.emitEvent(error.code, 20260460)
+      }
+      break;
+    }
+    case "testEnableBlankScreenMonitorReturn": {
+      try {
+        Utils.emitEvent('return-enable-ok', 20260461)
+      } catch (error) {
+        error = error as BusinessError;
+        Utils.emitEvent(error.code, 20260461)
+      }
+      break;
+    }
+    case "testOnMonitoredBlankScreenUndefinedReturn": {
+      try {
+        Utils.emitEvent('return-monitored-undefined-ok', 20260462)
+      } catch (error) {
+        error = error as BusinessError;
+        Utils.emitEvent(error.code, 20260462)
+      }
+      break;
+    }
+    case "testEnableBlankScreenMonitorUndefinedReturn": {
+      try {
+        Utils.emitEvent('return-enable-undefined-ok', 20260463)
+      } catch (error) {
+        error = error as BusinessError;
+        Utils.emitEvent(error.code, 20260463)
+      }
+      break;
+    }
+    case "testMonitoredBlankScreenDeclChain": {
+      try {
+        Utils.emitEvent('main-blank-chain-ok', 20260464)
+      } catch (error) {
+        error = error as BusinessError;
+        Utils.emitEvent(error.code, 20260464)
+      }
+      break;
+    }
     default:
       break;
   }

@@ -20,7 +20,7 @@ import { Want } from '@kit.AbilityKit';
 struct EmbeddedComponentErrorCodePage {
   @State message: string = 'Message: '
   private want: Want = {
-    bundleName: 'com.example.myapplication',
+    bundleName: 'com.example.windowstagetwo',
     abilityName: 'EmbeddedOccupyErrorCodeTestAbility',
     parameters: {
       'ohos.extension.processMode.hostInstance': 'true',

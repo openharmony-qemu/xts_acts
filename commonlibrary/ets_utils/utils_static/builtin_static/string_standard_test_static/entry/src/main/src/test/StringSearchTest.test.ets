@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from './Util.test';
 
 class SearchObjectStringifier {
@@ -250,7 +250,7 @@ class SearchHelperTest {
     const str: string = "hello hello";
     const searchResult: number = str.search(new RegExp("hello"));
     const matchResult: RegExpMatchArray | null = str.match(new RegExp("hello", "g"));
-    const matchCount: number = matchResult !== null ? matchResult.length : 0;
+    const matchCount: number = matchResult !== null ? Int.toDouble(matchResult.length) : 0.0;
     return [searchResult, matchCount];
   }
 

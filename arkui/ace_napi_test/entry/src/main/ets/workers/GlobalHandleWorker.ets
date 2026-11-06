@@ -20,8 +20,13 @@ const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
 workerPort.onmessage = (e: MessageEvents) => {
   switch (e.data) {
     case 'getCount': {
-      let count: number = napitestex.getGlobalHandleCountValue();
-      workerPort.postMessage(count);
+      try {
+        let count: number = napitestex.getGlobalHandleCountValue();
+        workerPort.postMessage(count);
+      } catch (error) {
+        console.error(`GlobalHandleWorker getCount error: ${JSON.stringify(error)}`);
+        workerPort.postMessage(-1);
+      }
       break;
     }
     default:

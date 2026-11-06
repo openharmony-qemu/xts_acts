@@ -138,6 +138,8 @@ struct arcSwiperTestShow {
         console.info('current offset: ' + event.currentOffset)
       })
     }
+    .padding(10)
+    .margin(10)
     .width('90%')
     .height('100%')
   }

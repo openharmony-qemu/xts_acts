@@ -145,7 +145,10 @@ struct RefreshDrag {
           console.info("Drag emit action state err: " + JSON.stringify((err as Error)?.message))
         }
       })
-    }.width("100%").height("100%")
+    }
+    .padding(10)
+    .margin(10)
+    .width("100%").height("100%")
   }
 }
 

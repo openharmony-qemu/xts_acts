@@ -87,7 +87,7 @@ export default function alertDialogCenterStartJsunit() {
      
     /**
      * @tc.name   testMeasureText0001
-     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ALERTDIALOG_MEASURETEXT_0001
      * @tc.desc   testMeasureText0001
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -72,7 +72,7 @@ it('ArkUI_List_Swipe_static_0100', Level.LEVEL1, async (done: () => void): Promi
       let CASE: string = 'ArkUI_List_Swipe_static_0100'
       console.info(`${SUITE} ${CASE} START`);
       let driver: Driver = Driver.create()
-      await driver.delayMs(waitUiReadyMs)
+      await CommonFunc.sleep(waitUiReadyMs)
       // 3.swipe item to left
       let baseKey: string = 'MyList1_ListItem0'
       let strJson: string = inspector.getInspectorByKey(baseKey);
@@ -85,9 +85,9 @@ it('ArkUI_List_Swipe_static_0100', Level.LEVEL1, async (done: () => void): Promi
         ',width: ' + width + ',height: ' + height + ',displayId: ' + displayId);
       await driver.swipeBetween(
         { x: (Math.round(rect.right - width / 4)).toInt(),
-          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId },
+          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId.toInt() },
         { x: (Math.round(rect.left)).toInt(),
-          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId }
+          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId.toInt() }
       )
       await sleep(3000) // wait for ui update
       console.info('get getInspectorByKey swipe0100')
@@ -112,7 +112,7 @@ it('ArkUI_List_Swipe_static_0300', Level.LEVEL1, async (done: () => void): Promi
       let CASE: string = 'ArkUI_List_Swipe_static_0300'
       console.info(`${SUITE} ${CASE} START`);
       let driver: Driver = Driver.create()
-      await driver.delayMs(waitUiReadyMs)
+      await CommonFunc.sleep(waitUiReadyMs)
 
       let baseKey: string = 'MyList2_ListItem0'
       let strJson: string = inspector.getInspectorByKey(baseKey);
@@ -125,10 +125,10 @@ it('ArkUI_List_Swipe_static_0300', Level.LEVEL1, async (done: () => void): Promi
         ',width: ' + width + ',height: ' + height + ',displayId: ' + displayId);
       // 2.swipe right
       await driver.swipeBetween(
-        { x: (Math.round(rect.left)).toInt(),
-          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId },
-        { x: (Math.round(rect.left + width / 4)).toInt(),
-          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId }
+        { x: (Math.round(rect.left + width * 0.3)).toInt(),
+          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId.toInt() },
+        { x: (Math.round(rect.left + width * 0.9)).toInt(),
+          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId.toInt() }
       )
 
       await sleep(3000) // wait for ui update
@@ -154,7 +154,7 @@ it('ArkUI_List_Swipe_static_0400', Level.LEVEL1, async (done: () => void): Promi
       let CASE: string = 'ArkUI_List_Swipe_static_0400'
       console.info(`${SUITE} ${CASE} START`);
       let driver: Driver = Driver.create()
-      await driver.delayMs(waitUiReadyMs)
+      await CommonFunc.sleep(waitUiReadyMs)
 
       // 2.trigger button click, expect state change COLLAPSED and onFinish be called
       inspector.sendEventByKey('MyList2CloseButton', 10, '')
@@ -180,7 +180,7 @@ it('ArkUI_List_Swipe_static_0500', Level.LEVEL1, async (done: () => void): Promi
       let CASE: string = 'ArkUI_List_Swipe_static_0500'
       console.info(`${SUITE} ${CASE} START`);
       let driver: Driver = Driver.create()
-      await driver.delayMs(waitUiReadyMs)
+      await CommonFunc.sleep(waitUiReadyMs)
       // 2.swipe item to left
       let baseKey: string = 'MyList1_ListItem1'
       let strJson: string = inspector.getInspectorByKey(baseKey);
@@ -193,9 +193,9 @@ it('ArkUI_List_Swipe_static_0500', Level.LEVEL1, async (done: () => void): Promi
         ',width: ' + width + ',height: ' + height + ',displayId: ' + displayId);
       await driver.swipeBetween(
         { x: (Math.round(rect.right - width / 4)).toInt(),
-          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId },
+          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId.toInt() },
         { x: (Math.round(rect.left)).toInt(),
-          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId }
+          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId.toInt() }
       )
       await sleep(8000) // wait for ui update
       let strJson2: string = inspector.getInspectorByKey('swipe0500')

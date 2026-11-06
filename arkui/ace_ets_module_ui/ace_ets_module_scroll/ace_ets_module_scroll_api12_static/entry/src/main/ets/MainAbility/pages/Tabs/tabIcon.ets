@@ -108,5 +108,7 @@ struct TabIconStyleExample {
         .backgroundColor(0xF1F3F5)
       }.width('100%').height(250)
     }
+    .padding(10)
+    .margin(10)
   }
 }

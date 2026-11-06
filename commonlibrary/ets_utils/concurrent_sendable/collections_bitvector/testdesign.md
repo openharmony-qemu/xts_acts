@@ -1,0 +1,380 @@
+- BitVector 测试设计
+	- 说明：按接口维度组织的完整测试设计框架（19个测试文件/688用例/0注释）。接口契约来源 @arkts.collections.d.ets，共17个成员。
+	- 1. 接口测试（Functional / Interface）
+		- 1.1 constructor(length: number)
+			- 入参范围覆盖
+				- 正常数值 length=10/1/8/1024/100000/1000000 验证length一致
+				- length=0 空容器 length=0
+				- 容量规格 cap=64/128/1024/1025(跨1024) 构造
+			- 边界值测试
+				- size=0 空容器
+				- 64/128/1024 word边界构造（cap=64/128/1024/1025）
+				- 大长度 100000 / 1000000
+			- 异常与非法输入
+				- 类型错误401：浮点(10.5/0.5)、NaN、Infinity、-Infinity、字符串(JSON转换)
+				- 负数-1 行为验证（容错为0或抛401）
+			- 返回值与类型验证
+				- 构造后所有位默认为0
+				- instanceof collections.BitVector / typeof===object
+				- cap边界构造后 setAllBits/push/resize 跨word正确
+			- 组合场景
+				- constructor + setAllBits(1)/(0) 全置位/清零
+				- constructor + push 跨word边界
+				- constructor + resize 跨word边界
+			- 非二进制值：-1/2/65535 经构造+setAllBits 验证存储为1
+		- 1.2 length（只读属性）
+			- 入参范围覆盖：构造后=初始值；push后+1；pop后-1；resize后=新值
+			- 边界值测试：length=0(空)/1(单元素)/64/128/1024(word边界)
+			- 异常与非法输入：readonly 无入参（不适用）
+			- 返回值与类型验证：类型为number
+			- 组合场景：push/pop/resize 交替后 length 变化链
+		- 1.3 push(element: number): boolean
+			- 入参范围覆盖
+				- 0→存储位0；1→存储位1
+				- 非零值 2/-1/65535/-65535/MAX_SAFE_INTEGER/MIN_SAFE_INTEGER → 均存储为1
+				- 浮点 2.5/0.5/-0.5 → 均存储为1
+			- 边界值测试
+				- 空BV push(1) length=1 值=1
+				- 64边界：push64个 / push65个跨word
+				- 128边界：push128 / 129跨边界
+				- 1024边界：push1024 / 1025跨边界
+			- 异常与非法输入
+				- NaN/Infinity 入参（length仍增长，位值按非零=1）
+				- 解绑10200011：解绑push调用
+			- 返回值与类型验证
+				- 返回boolean 成功true
+				- 额外参数被忽略 length=1
+			- 组合场景
+				- push+pop+resize length联动
+				- push1000次0/1交替 length=2000
+				- push非0/1值 + getBitCountByRange 验证
+			- 重复调用：重复push10次 验证length与值
+		- 1.4 pop(): number
+			- 入参范围覆盖
+				- 连续pop返回LIFO顺序(0/1)
+				- pop64次 / 10000次 返回对应位值
+			- 边界值测试
+				- 空BV pop 返回undefined
+				- 单元素pop后变空 再pop返回undefined
+				- pop至空后再push验证
+			- 异常与非法输入：解绑10200011（解绑pop调用）
+			- 返回值与类型验证：number；无参/额外参数被忽略
+			- 组合场景
+				- 交替push/pop操作
+				- pop后索引访问验证
+				- pop后迭代器遍历验证
+				- pop后再push
+			- 重复调用：重复pop5次至空
+		- 1.5 has(element, fromIndex, toIndex): boolean
+			- 入参范围覆盖
+				- 查0/查1/查非零值2 范围内存在true 不存在false
+				- 多值多范围组合查询
+			- 边界值测试
+				- 首元素(from=0,to=1) 存在/不存在
+				- 末尾元素(from=length-1,to=length) 存在/不存在
+				- toIndex=length(合法边界) 存在true / 不存在false
+				- 单元素BV、大BV(100)全范围
+				- 64边界：跨64边界 has(范围60-65)
+			- 异常与非法输入
+				- 类型错误401：浮点索引(0.1,6.1/1.5,3.5)、NaN、Infinity
+				- 范围错误10200001：fromIndex=-1/-3、toIndex=超长度(17)、fromIndex大于toIndex、fromIndex=toIndex
+				- 空BV has(0,0,0) → 10200001
+				- 解绑10200011
+			- 返回值与类型验证：boolean
+			- 组合场景：setBitsByRange后has验证范围内外
+			- 模式覆盖（PatternBoundary）
+				- 全0 / 全1 / 全-1(按1) / 全2(按1)
+				- 0,1交替 / 1,0交替
+				- 全0中单1 / 全1中单0
+		- 1.6 setBitsByRange(element, fromIndex, toIndex): void
+			- 入参范围覆盖
+				- 范围内置1/置0 验证位值变化
+				- 元素0与非零值2设置（非零→1）
+				- 大范围(100元素)设置
+			- 边界值测试
+				- 全范围 from=0,to=length
+				- 仅末尾 from=length-1
+				- 仅首元素 from=0,to=1
+				- 单元素全范围
+				- 64/128/1024边界：跨边界设置 + flipBitsByRange联动
+			- 异常与非法输入
+				- 类型错误401：字符串fromIndex、NaN
+				- 范围错误10200001：from=-1/-3、to=超长度(17)、from大于to、from=to(8=8)、toIndex=3超length=2
+				- 空BV setBitsByRange(1,0,0) → 10200001
+				- 解绑10200011
+			- 返回值与类型验证：void(undefined)
+			- 组合场景：setBitsByRange + has 范围内外验证
+			- 重复调用：3次不同范围重复设置
+			- 非二进制值：-1/2/65535 经setBitsByRange 验证存储为1
+		- 1.7 setAllBits(element): void
+			- 入参范围覆盖
+				- set(0)全0；set(1)全1；set(2/-1/65535/-65535)全1（非零→1）
+				- set(2.5)浮点全1
+			- 边界值测试
+				- 空BV setAllBits length保持0
+				- 单元素BV setAllBits
+				- 64边界：恰好64元素setAllBits
+				- 128/1024边界：setAllBits + values()迭代 / flip联动
+			- 异常与非法输入：解绑10200011
+			- 返回值与类型验证：void(undefined)
+			- 组合场景：set(1)→set(0)往复；flip + setAllBits在边界
+			- 重复调用：3次 0→1→0→1往复
+		- 1.8 getBitsByRange(fromIndex, toIndex): BitVector
+			- 入参范围覆盖
+				- 正常范围返回子向量 length与值正确
+				- 大范围(100元素)获取
+			- 边界值测试
+				- 全范围 from=0,to=length
+				- 仅末尾 from=length-1
+				- 仅首元素 from=0,to=1
+				- 单元素全范围
+				- 64/128边界：跨边界获取(范围60-65 / 125-129)
+				- toIndex=length 合法边界
+			- 异常与非法输入
+				- 类型错误401：字符串toIndex、NaN fromIndex/toIndex
+				- 范围错误10200001：from=-1/-3、to=超长度(17/11)、from大于to、from=to
+				- 空BV getBitsByRange(0,0) → 10200001
+				- 解绑10200011
+			- 返回值与类型验证：返回新BitVector实例（instanceof、不等于原bv）
+			- 组合场景：getBitsByRange + setAllBits联动
+		- 1.9 getBitCountByRange(element, fromIndex, toIndex): number
+			- 入参范围覆盖
+				- 统计0/1/非零值2个数（非零按1计）
+				- 不同子范围统计
+				- 全范围统计返回number
+			- 边界值测试
+				- 全范围 toIndex=length
+				- 末尾 from=length-1
+				- 首元素 from=0,to=1
+				- 单元素BV
+				- 全0统计1=0；全1统计0=0
+				- 64/128/1024边界：跨边界统计(60-65 / 125-129 / 1020-1025)
+				- 容器规格 size=1/2/100全范围
+			- 异常与非法输入
+				- 类型错误401：NaN toIndex、fromIndex=Infinity/toIndex=Infinity、字符串toIndex
+				- 范围错误10200001：from=-1/-3、to=超长度(17/11)、from大于to、from=to
+				- 空BV统计 → 10200001
+				- 解绑10200011
+			- 返回值与类型验证：number
+			- 组合场景：getBitCountByRange + has / getBitsByRange联动
+			- 模式覆盖：全0/全1/全-1(按1)/全2(按1)/0,1交替/全0中单1/全1中单0
+		- 1.10 resize(size): void
+			- 入参范围覆盖
+				- 扩容(size大于length) 新增位为0
+				- 缩容(size小于length) 截断
+				- resize到相同size 数据不变
+				- 大尺寸100000扩容
+			- 边界值测试
+				- resize(0)清空
+				- 空BV resize(0) length保持0
+				- 空BV resize(1/64)（已知问题用例）
+				- 变空后(pop) resize(1)
+				- 64/128/1024边界：64↔65、128↔129、1024↔1025 扩/缩跨word
+				- 扩容后原数据保留
+			- 异常与非法输入
+				- 类型错误401：NaN、Infinity
+				- 范围错误10200001：size=-1
+				- 解绑10200011（隐含）
+			- 返回值与类型验证：void(undefined)
+			- 组合场景：扩容→缩容→扩容 length与数据联动
+			- 重复调用：扩→缩→扩往复
+			- 并发跨线程：testBitVectorResize10200201（跨线程并发修改抛10200201）
+		- 1.11 getIndexOf(element, fromIndex, toIndex): number
+			- 入参范围覆盖
+				- 查0/查1 第一次出现位置
+				- 非零值2查找 → 返回第一个1位置
+				- 负数-1查找 → 返回第一个1位置
+				- 指定范围查找 未找到返回-1
+			- 边界值测试
+				- 全范围未找到返回-1
+				- 末尾元素 from=length-1
+				- 首元素 from=0,to=1
+				- 全0查1返回-1；全1查0返回-1
+				- 单元素BV查找 / 大BV(100)查找
+				- 64边界跨word查找
+			- 异常与非法输入
+				- 类型错误401：浮点索引(0.1,6.1)、NaN fromIndex/toIndex
+				- 范围错误10200001：from=-1/-3、to=超长度(17/11)、from大于to、from=to
+				- 空BV getIndexOf → 10200001
+				- 解绑10200011
+			- 返回值与类型验证：number
+			- 模式覆盖：全0/全1/全-1(按1)/全2(按1)/0,1交替(0→0,1→1)/全0中单1(→9)
+		- 1.12 getLastIndexOf(element, fromIndex, toIndex): number
+			- 入参范围覆盖
+				- 查0/查1 最后出现位置
+				- 非零值2/负数-1查找 → 最后1位置
+				- 未找到返回-1
+			- 边界值测试
+				- 全范围未找到返回-1
+				- 末尾元素 from=length-1
+				- 首元素 from=0,to=1
+				- 全0查1返回-1；全1查0返回-1
+				- 单元素BV / 大BV(100)查找（0最后位置=98）
+				- 64边界跨word查找
+			- 异常与非法输入
+				- 类型错误401：浮点索引(0.1,6.1)、NaN fromIndex/toIndex、Infinity
+				- 范围错误10200001：from=-1/-3、to=超长度(17/11)、from大于to、from=to
+				- 空BV getLastIndexOf → 10200001
+				- 解绑10200011
+			- 返回值与类型验证：number
+			- 组合场景：getIndexOf(首) vs getLastIndexOf(末) 对比
+			- 模式覆盖：全0/全1/全-1(按1)/全2(按1)/0,1交替(1→9,0→8)/全1中单0(0→9)
+		- 1.13 flipBitByIndex(index): void
+			- 入参范围覆盖
+				- 0→1翻转、1→0翻转
+				- 二次翻转恢复原值
+			- 边界值测试
+				- 首元素 index=0
+				- 末尾元素 index=length-1
+				- 单元素 index=0 二次翻转恢复
+				- 64/128/1024边界：边界索引63/64、127/128/129、1023翻转
+				- 全64元素翻转 / 74元素翻转(索引10-73)
+			- 异常与非法输入
+				- 类型错误401：浮点index(6.1/5.5)、NaN、Infinity、字符串index
+				- 范围错误10200001：index=-1/-2、index=20/16/=length 超范围
+				- 空BV翻转 → 10200001
+				- 解绑10200011
+			- 返回值与类型验证：void(undefined)
+			- 并发跨线程：跨线程翻转抛10200201（SUB_COLLECTIONS_BITVECTOR_05200）
+		- 1.14 flipBitsByRange(fromIndex, toIndex): void
+			- 入参范围覆盖
+				- 范围内0→1、1→0翻转
+				- 全范围翻转 / 单元素范围翻转
+				- 范围外元素不变
+				- 二次翻转恢复原值
+			- 边界值测试
+				- 全范围 from=0,to=length
+				- 仅末尾 from=length-1
+				- 仅首元素 from=0,to=1
+				- 单元素BV全范围翻转
+				- 64/128边界：跨边界翻转(范围60-65 / 125-129)
+				- 大BV(100)翻转
+			- 异常与非法输入
+				- 类型错误401：浮点fromIndex(3.11)、NaN fromIndex/toIndex、Infinity、字符串toIndex
+				- 范围错误10200001：from=-1/-3、to=超长度(17/11)、from大于to、from=to
+				- 空BV翻转 → 10200001
+				- 解绑10200011
+			- 返回值与类型验证：void(undefined)；翻转后length不变
+			- 组合场景：setBitsByRange后flip再has验证；flip + setAllBits
+			- 重复调用：两次同范围翻转恢复原值
+			- 进制索引：十六进制(0x1A,0x1E)、八进制(0o12,0o15)索引翻转
+			- 并发跨线程：跨线程翻转抛10200201（SUB_COLLECTIONS_BITVECTOR_05300）
+		- 1.15 values() / [Symbol.iterator]()
+			- 入参范围覆盖
+				- for...of遍历 / while循环迭代
+				- next()逐个获取
+				- 展开运算符...转数组 / Array.from转换
+				- 部分迭代(前N个) / 解构赋值 / break提前终止
+				- 迭代顺序 head→tail 验证
+			- 边界值测试
+				- 空BV迭代器立即done
+				- 单元素迭代器
+				- 全0迭代 / 全1迭代
+				- 大BV(1000/100)迭代
+				- 64边界：values() + pop(65→64)
+			- 异常与非法输入：解绑10200011（values）
+			- 返回值与类型验证：function(迭代器) / value为number(0或1) / done状态
+			- 组合场景
+				- 多迭代器独立性
+				- 迭代器耗尽后done
+				- flipBitsByRange后重新迭代
+				- pop后迭代
+				- [Symbol.iterator]与values()比较
+			- 并发跨线程：跨线程values抛10200201（SUB_COLLECTIONS_BITVECTOR_05400）
+		- 1.16 [index: number] 索引访问器（get/set）
+			- 入参范围覆盖
+				- get返回正确位值(0/1)
+				- set赋值0/1
+				- 多索引访问
+			- 边界值测试
+				- 首元素 index=0
+				- 末尾元素 index=length-1
+				- 单元素 index=0 / index=1超范围
+				- 构造初始length的索引访问
+				- 64边界：边界索引63/64/65超范围
+			- 异常与非法输入
+				- 范围错误10200001：index=length超范围、大索引100000、负索引-1、空BV[0]
+				- 非整数索引返回undefined：字符串index、NaN、Infinity、浮点1.5
+			- 返回值与类型验证：number
+			- 组合场景：set后get一致；flip/get联动
+	- 2. 稳定性（Stability）
+		- 长时重复
+			- 重复push10次 / 重复pop5次 / 重复setBitsByRange3次 / 重复setAllBits3次 / 重复flipBitsByRange2次
+			- 扩→缩→扩 resize往复
+		- 大规模数据
+			- 构造 length=1000000
+			- push 1000次交替 length=2000
+			- resize 100000扩容
+			- 大BV(1000) values迭代 / 大BV(100) getBitCountByRange
+			- 容器规格 size=10000 全范围（综合套件）
+		- 资源释放：afterAll sleep(100) 确保上一用例资源释放
+		- 边界跨word反复：64/128/1024边界扩缩/设置/翻转/获取反复不崩溃
+		- 空容器操作：空BV各只读/写接口不崩溃（已知问题用例标注）
+	- 3. 性能（Performance）
+		- 大规模构造时延：length=1000000 / 100000构造
+		- 大规模写入：push1000次交替 / setBitsByRange大范围100 / setAllBits大BV1000
+		- 大规模查询：getBitCountByRange大BV / getBitsByRange大BV
+		- 大规模迭代：values大BV1000 / [Symbol.iterator]100
+		- 100并发吞吐：ConcurrentSingle/Multi 100任务TaskPool/TaskGroup
+		- 缺口：无显式时延/吞吐断言阈值（建议补充perf用例）
+	- 4. 并发安全（Concurrency Safety）
+		- Sendable跨线程读写（BitVectorUnbound.test.ets 31用例）
+			- 跨线程读取：length / [index] / has / getBitCountByRange / getIndexOf / values求和
+			- 跨线程写入后主线程可见：push / setAllBits / setBitsByRange / flipBitsByRange / resize
+			- Worker创建BV返回主线程 / Worker创建并填充 / Worker getBitsByRange返回
+			- Worker创建→主线程操作（push/has/setBitsByRange）
+			- 边界：单元素全操作 / 空push / 大BV(1000)边界操作 / 超范围错误传播 / 多BV操作
+		- 100并发TaskPool单任务（BitVectorConcurrentSingle 8用例）
+			- pop / has / getBitsByRange / getBitCountByRange / getIndexOf / getLastIndexOf / [index] / flipBitsByRange+values
+		- 100并发TaskGroup多任务（BitVectorConcurrentMulti 7用例）
+			- push / setBitsByRange / setAllBits / resize / flipBitByIndex / SendableClass传递 / SendableClass+AsyncLock
+		- 并发错误码10200201（跨线程写）
+			- flipBitByIndex跨线程（SUB_COLLECTIONS_BITVECTOR_05200）
+			- flipBitsByRange跨线程（SUB_COLLECTIONS_BITVECTOR_05300）
+			- values跨线程（SUB_COLLECTIONS_BITVECTOR_05400）
+			- resize跨线程（testBitVectorResize10200201）
+		- AsyncLock序列化：10轮全接口+AsyncLock（Unbound _4780）
+		- 全接口try-catch并发：10轮主线程+TaskPool同时调用（Unbound _4770）
+		- 综合套件并发（BitVectorTest 6900~7100）：countBitsFunc跨线程统计 / modifyBitVector跨线程修改 / concurrentPush多任务+AsyncLock
+	- 5. 兼容性与继承（Compatibility & Inheritance）
+		- 类型校验
+			- instanceof collections.BitVector
+			- typeof === object
+		- @Sendable子类继承
+			- 自定义MyBitVector extends collections.BitVector，super(length)构造
+			- 子类扩展方法countOnes()调用父类getBitCountByRange
+			- 子类实例 instanceof collections.BitVector
+		- SendableClass传递：BitVector作为@Sendable class字段传递到Worker
+		- 跨套件一致性：综合套件BitVectorTest与各专用文件场景对齐验证
+	- 6. 资料与文档符合性（Doc Conformance）  对照 @arkts.collections.d.ets
+		- constructor(length)：number参数 → 已覆盖（0/正常/大数/浮点/NaN/Inf/-Inf/负数）
+		- length只读：readonly number → 已覆盖
+		- push返回boolean：true成功 → 已覆盖；false失败路径（必填缺失/类型错）→ 缺口
+		- push throws 10200011/10200201 → 已覆盖
+		- pop返回number → 已覆盖；pop throws 10200201 → 缺口
+		- has返回boolean + throws 10200001 → 已覆盖
+		- setBitsByRange/setAllBits返回void → 已覆盖
+		- getBitsByRange返回BitVector新实例 → 已覆盖（instanceof + 不等于原）
+		- resize返回void → 已覆盖
+		- getBitCountByRange/getIndexOf/getLastIndexOf返回number → 已覆盖
+		- flipBitByIndex/flipBitsByRange返回void → 已覆盖
+		- [Symbol.iterator] throws 10200011 → 已覆盖（values解绑）
+		- values throws 10200011/10200201 → 已覆盖
+		- [index] get/set number → 已覆盖
+		- fromIndex语义(inclusive)/toIndex语义(exclusive) → 已覆盖（首元素/末尾to=length/包含/排除验证）
+	- 7. 覆盖度矩阵与缺口分析
+		- 覆盖矩阵：16接口 × 7测试逻辑分类，已基本全覆盖（详见testpoint.md §7.1）
+		- 缺口1：push返回false路径（必填缺失/类型错）未显式断言
+		- 缺口2：pop跨线程10200201缺独立用例
+		- 缺口3：getBitsByRange跨线程并发可见性缺
+		- 缺口4：显式性能用例（带时延/吞吐阈值）缺
+		- 缺口5：has/getIndexOf/getLastIndexOf对称模式（全1/全-1/全2查0返回false）已删除，建议恢复
+		- 缺口6：空resize已知问题用例（_4640~4670）跟踪产品修复后转正向
+	- 附：测试逻辑分类口径
+		- 入参范围覆盖：合法/正常取值下行为正确性
+		- 边界值测试：0/1/单元素/空/length边界/64-128-1024 word边界
+		- 异常与非法输入：类型错误401 / 范围错误10200001 / 解绑10200011 / 并发10200201
+		- 返回值与类型验证：返回类型与具体值断言
+		- 组合场景：多接口串联、读写联动
+		- 重复调用/幂等性：同操作多次、二次操作恢复原值
+		- 并发跨线程：TaskPool/Worker/AsyncLock/100并发、跨线程修改可见性与错误码

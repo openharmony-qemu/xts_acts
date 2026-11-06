@@ -17,6 +17,7 @@ group("DFXTest") {
     deps = [
       "ace_web_resource_enhanced_dev_one:ActsWebResourceEnhancedDevOneTest",
       "ace_web_blank_screen_monitor_dev_one:ActsWebBlankScreenMonitorDevOneTest",
+      "ace_web_dynamic_sdk_blankscreen_dev_one:ActsWebDynamicSdkBlankScreenDevOneTest",
       "crash_information:ActsWebCrashInformationTest",
       "crash_information_static:ActsWebCrashInformationStaticTest",
       "log_dotting:ActsWebLogDottingTest",

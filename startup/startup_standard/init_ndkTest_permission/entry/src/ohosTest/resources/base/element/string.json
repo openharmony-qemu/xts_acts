@@ -1,0 +1,28 @@
+{
+  "string": [
+    {
+      "name": "module_test_desc",
+      "value": "test ability description"
+    },
+    {
+      "name": "TestAbility_desc",
+      "value": "the test ability"
+    },
+    {
+      "name": "TestAbility_label",
+      "value": "test label"
+    },
+    {
+      "name": "reason_usb_ddk",
+      "value": "usb_ddk ndk test"
+    },
+    {
+      "name": "reason_device_driver",
+      "value": "device driver test"
+    },
+    {
+      "name": "reason_access_disk_phy_info",
+      "value": "need access disk physical info"
+    }
+  ]
+}

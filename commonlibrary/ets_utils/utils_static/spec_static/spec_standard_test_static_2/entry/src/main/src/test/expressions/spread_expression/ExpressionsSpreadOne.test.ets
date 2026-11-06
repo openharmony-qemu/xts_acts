@@ -25,7 +25,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 import Utils from '../../Util.test'
 
 let a2_spex_const_44: [int, int] = [6, 5]
@@ -203,7 +203,7 @@ function foo_13600(a: int, ...p: Any[]): number {
   return a + p.length
 }
 function foo_13900(...p: number[]): number {
-  return p.length ? p[p.length - 1] : -1
+  return p.length ? p[p.length - 1] : -1.0
 }
 function foo_14000(...p: double[]): double {
   return p[0] + p[1]
@@ -1751,7 +1751,7 @@ export default function ExpressionsSpreadOneTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpreadOne0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(((...p: number[]): number =>  p.length ? p[p.length - 1] : -1)(...[256])).assertEqual(256);
+      expect(((...p: number[]): number =>  p.length ? p[p.length - 1] : -1.0)(...[256])).assertEqual(256);
     });
 
     /**

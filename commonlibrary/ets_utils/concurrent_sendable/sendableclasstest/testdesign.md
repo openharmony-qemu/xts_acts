@@ -1,0 +1,342 @@
+- ArkTS @Sendable/@Concurrent 特性 测试设计
+	- 1. 接口测试（Functional）
+		- 1.1 类定义/装饰器/instanceof
+			- ①入参范围覆盖
+				- @Sendable class 7 种形态（Default/Func/Arrow/ArrowOut/FuncIn/NonParameterFunc/NonFunc/OutArrow/ParameterFunc/ArrowNew）
+				- 全字段类型矩阵：string/number/boolean/BigInt/null/undefined/enum/class/function
+				- 容器字段：Array/Map/Set/TypedArray×6/ArrayBuffer/ConcatArray/BitVector/ASON
+				- AsyncLock/SendableUnionType 字段
+				- ECMA 声明：abstract/extends/implements/composition/构造参数/字段初始化
+				- static + readonly 字段全类型
+				- @Sendable + 自定义装饰器叠加：class/method/property/factory/closure/multiple 形式
+			- ②边界值测试
+				- 空字段 Sendable class、单字段
+				- 深嵌套 Sendable（Sendable class 字段为另一 Sendable class）
+				- 循环引用 Sendable 对象
+				- 大对象字段（large object/array）
+			- ③异常与非法输入
+				- 10200012 constructor cannot be directly invoked（12 类容器散落覆盖）
+				- 非 Sendable 字段拒绝（闭包变量/#私有属性/类型别名/计算属性）[缺口]
+				- @Sendable 装饰非 class/function [缺口]
+				- 普通 class 继承 Sendable class 拒绝 [缺口]
+			- ④返回值与类型验证
+				- instanceof lang.ISendable
+				- instanceof 自定义 @Sendable class
+				- ArkTSUtils.isSendable(instance)===true / 普通对象===false
+				- typeof 字段断言
+			- ⑤组合场景
+				- @Sendable + 自定义装饰器叠加（F01 概览/F02 class/F03 method/F04 property/F05 factory/F06 组合）
+				- ECMA extends abstract + implements interface + static 成员
+				- multi-level 继承 + field shadowing
+				- composition（Sendable class 持有另一 Sendable class）
+			- ⑥重复调用/幂等性
+				- 相同字段多次赋值结果一致
+				- 多次 new 同一 Sendable class 得独立实例
+				- 装饰器叠加多次实例化行为一致
+			- ⑦并发跨线程
+				- 三层继承 Sendable class 跨 TaskPool
+				- 三层继承 Sendable class 跨 Worker
+				- static 字段跨线程可见
+				- 嵌套 ISendable 在 TaskPool 任务中修改
+				- isSendable 在 TaskPool 并发函数内保持 true
+		- 1.2 跨线程传递(TaskPool/Worker)
+			- ①入参范围覆盖
+				- Sendable 对象引用传递（基本类型字段）
+				- Sendable 对象引用传递（容器字段）
+				- Sendable 对象引用传递（嵌套 Sendable 字段）
+			- ②边界值测试
+				- 空 Sendable 对象跨线程
+				- 单字段对象跨线程
+				- 大对象/深嵌套跨线程
+			- ③异常与非法输入
+				- 跨线程传递非 Sendable 对象（普通对象/对象字面量）应报错或拷贝 [缺口]
+				- 跨线程传递 >16MB Sendable 错误 [缺口]
+			- ④返回值与类型验证
+				- 跨线程后引用相等（同一 JS 对象）
+				- 跨线程后字段值一致
+			- ⑤组合场景
+				- TaskPool 接收→修改→回传主线程
+				- Worker 接收→读取
+				- 多 TaskPool 共享同一 Sendable 实例
+				- TaskPool + Worker 混合
+			- ⑥重复调用/幂等性
+				- 多次传递同一 Sendable 引用稳定
+			- ⑦并发跨线程
+				- 3+ TaskPool 并发传递同一实例
+				- Worker 与 TaskPool 混合并发
+		- 1.3 @Concurrent 函数执行
+			- ①入参范围覆盖
+				- @Concurrent function 参数：number/string/boolean
+				- @Concurrent function 参数：collections.Array/Map/Set/BitVector
+				- @Concurrent function 参数：ArrayBuffer
+				- @Concurrent function 参数：@Sendable class（读/修改/嵌套/round-trip）
+				- @Concurrent function 返回：number/string/collections.Array
+				- @Sendable function 在 .ets/.ts/.js 文件定义
+			- ②边界值测试
+				- 空参 @Concurrent function
+				- 单参/多参 @Concurrent function
+				- 嵌套 Sendable 参数
+			- ③异常与非法输入
+				- @Concurrent 任务内 throw → execute promise reject
+				- retry 两次失败后恢复
+				- retry 到最大次数停止
+				- cancel 进行中任务 → execute reject + 共享状态不变
+				- timeout 超时任务 cancel + 另一任务仍完成
+				- @Concurrent 装饰非 function（class/async）拒绝 [缺口]
+				- @Concurrent 闭包变量拒绝 [缺口]
+			- ④返回值与类型验证
+				- 返回值类型断言（number/string/Array）
+				- 跨线程返回 Sendable 对象引用相等
+			- ⑤组合场景
+				- @Concurrent + TaskPool.Task
+				- @Concurrent + TaskGroup 多任务
+				- @Concurrent + AsyncLock 保护字段修改
+				- @Concurrent + ORM/事务模型
+			- ⑥重复调用/幂等性
+				- 同一 @Concurrent function 多次 execute 结果一致
+			- ⑦并发跨线程
+				- 100 并发 TaskPool stress
+				- TaskGroup 多任务并发计算
+				- race condition handling with AsyncLock
+				- 多实例内存管理
+		- 1.4 跨线程数据可见性/一致性
+			- ①入参范围覆盖
+				- 共享 Sendable 对象多线程读写基本类型字段
+				- 共享 Sendable 对象多线程读写容器字段
+				- 共享嵌套 Sendable 多线程读写
+			- ②边界值测试
+				- 空对象共享、单字段共享
+				- 深嵌套/循环引用共享
+			- ③异常与非法输入
+				- 10200201 并发修改错误 [缺口：4 目录零覆盖]
+				- 多写者写写数据竞态逐键值正确性 [缺口：不抛即通过]
+			- ④返回值与类型验证
+				- 跨线程后字段值一致
+				- 引用相等（同一 JS 对象）
+				- 状态同步可见
+			- ⑤组合场景
+				- 多 TaskPool 写不同字段→主线程读
+				- 读写锁(ReadWriteLock)保护
+				- Sendable 链式传递
+				- Sendable 对象组传递（带/不带 alloc）
+			- ⑥重复调用/幂等性
+				- 多次读写结果稳定
+			- ⑦并发跨线程
+				- 多写者竞态
+				- 读写锁跨线程
+				- 共享计数器跨线程
+				- Sendable basic type 跨线程可见
+		- 1.5 Sendable + 锁/条件变量
+			- ①入参范围覆盖
+				- AsyncLock 保护 Sendable 字段修改
+				- ConditionVariable 跨线程同步
+				- lockAsync mode 参数（SHARED/EXCLUSIVE）
+				- 读写锁
+			- ②边界值测试
+				- 空锁、单锁
+				- 循环依赖死锁
+				- lockAsync mode 越界
+			- ③异常与非法输入
+				- lockAsync mode 越界 → 401
+				- 循环依赖死锁警告
+			- ④返回值与类型验证
+				- lockAsync 返回值
+				- 锁内字段修改后跨线程可见
+			- ⑤组合场景
+				- AsyncLock + TaskPool
+				- AsyncLock + ConditionVariable
+				- 读写锁 + 共享 Sendable
+			- ⑥重复调用/幂等性
+				- 多次 lockAsync 行为一致
+			- ⑦并发跨线程
+				- AsyncLock 多线程并发写
+				- ConditionVariable 跨线程等待/通知
+		- 1.6 Sendable + 容器互操作
+			- ①入参范围覆盖
+				- Map/Set/Array/BitVector/TypedArray×6/ArrayBuffer/ConcatArray/ASON 作为 Sendable class 字段
+				- collections 容器 + Sendable class 键值真实操作（set/get/has/delete/push/pop）
+				- collections 容器 + Sendable enum 键
+				- 三类容器对比：基础库/内置/collections
+			- ②边界值测试
+				- 空容器字段
+				- 单元素容器
+				- 嵌套容器（Map of Map of Array）
+				- collectionsMap get empty / collectionsArray pop empty
+			- ③异常与非法输入
+				- 非 Sendable 容器字段拒绝（普通 Array/Map 字段）[缺口]
+			- ④返回值与类型验证
+				- 容器字段类型断言
+				- 容器操作返回值（get/delete/push/pop）
+			- ⑤组合场景
+				- Sendable class 持有 Map→跨 TaskPool 修改 Map→主线程读
+				- collections + 基础库 + 内置容器对比
+				- Sendable class 键值在 Map 中存取
+			- ⑥重复调用/幂等性
+				- 多次容器操作一致
+			- ⑦并发跨线程
+				- 容器字段跨 TaskPool 修改
+				- 多线程并发容器操作（容错）
+		- 1.7 错误场景(10200201/401/非Sendable字段)
+			- ①入参范围覆盖
+				- @Concurrent 任务 throw 类型空间 [薄]
+				- lockAsync mode 越界 [薄]
+			- ②边界值测试
+				- cancel 进行中任务
+				- timeout 超时任务
+				- retry 到最大次数
+			- ③异常与非法输入
+				- @Concurrent 任务 throw → execute promise reject
+				- 12 类容器 constructor cannot be directly invoked → 10200012
+				- lockAsync mode 越界 → 401
+				- 10200201 并发修改错误 [缺口：零覆盖]
+				- 10200011 bind 错误 [缺口：零覆盖]
+				- 非 Sendable 字段拒绝（闭包/#私有/类型别名/计算属性）[缺口：零覆盖]
+				- @Concurrent 装饰非 function 拒绝 [缺口]
+				- 普通 class 继承 Sendable class 拒绝 [缺口]
+				- 跨线程传递非 Sendable 应报错 [缺口]
+			- ④返回值与类型验证
+				- cancel 后共享状态不变
+				- timeout 后另一任务仍完成
+			- ⑤组合场景
+				- retry 两次失败后恢复
+				- cancel + 共享状态保持
+			- ⑥重复调用/幂等性
+				- retry 到最大次数停止
+			- ⑦并发跨线程
+				- cancel 进行中任务
+				- timeout 超时任务
+		- 1.8 端到端场景(Scenario)
+			- ①入参范围覆盖
+				- 缓存场景（ApiResponse/CacheIR/ComputeResult/DbQuery/Image/Session）
+				- 连接池场景（Acquire/Capacity/Stats/Timeout/Wait/Init/Lock/IR）
+				- 状态机场景（Approval/Device/Order/Concurrent/IR）
+				- 事件总线场景（Bus/Publish/Subscribe/Queue/Handler/Error）
+				- 共享计数器/模块场景（Counter IR/Resource/Inventory/Request/TaskComplete + Module GC/Nested/Stability）
+			- ②边界值测试
+				- GC/堆隔离边界（ConcurrentGC/HeapIsolation/MemoryLeak/MultiThreadRef/PostGC/RefCount/SharedModuleGC2）
+				- 批量创建销毁（BatchCreateDestroy）
+				- 大对象/深嵌套场景
+			- ③异常与非法输入
+				- RealErrorPath（throw→reject/retry/cancel/timeout）
+				- 事件错误（EventError）
+			- ④返回值与类型验证
+				- 场景态 Sendable 对象引用相等
+				- 跨线程状态一致
+			- ⑤组合场景
+				- 同步原语（BoundedQueue/SlidingWindow/RateLimiter/Pipeline）
+				- 结果收集（Data/Error/Image/Metrics/Timeout）
+				- 依赖链（DependencyChain）
+				- 生产消费（ProducerConsumerCoord）
+				- 序列化边界（SerializationBoundary/AsonSendable）
+			- ⑥重复调用/幂等性
+				- 服务热更新（ServiceHotUpdate）
+				- 配置版本（ConfigVersion）
+			- ⑦并发跨线程
+				- 生命周期跨线程（Sendable/Service Lifecycle）
+				- 注册中心/单例跨线程（Registry/Singleton/Monitor）
+				- 进度跨线程（Batch/DataProcess/MultiStage/MultiTask/Upload）
+				- 配置跨线程（Environment/Global/IR）
+				- ID 生成跨线程（IDGenerator）
+				- 冻结跨线程（FreezeSendable + 跨 TaskPool 读）
+				- IR 优化/加固跨线程（IROptimization/IRReinforcement）
+	- 1.9 @Sendable/'use sendable' 类 Object 方法
+		- ①入参范围覆盖
+			- Object.prototype: hasOwnProperty（own/inherited/nonexistent）、toString（"[object Object]"）、toLocaleString、valueOf、propertyIsEnumerable
+			- Object 静态: keys/values/entries/getOwnPropertyNames/getOwnPropertyDescriptors/getOwnPropertySymbols/getPrototypeOf/is/isFrozen/isSealed/assign/freeze/create/defineProperty/setPrototypeOf
+			- Function.prototype: call/apply/bind（@Concurrent 函数与 @Sendable 类方法）、bound 函数 length/name/prototype
+			- 'use sendable' 类（UseSendablePoint/Rich/Empty/WithMethod）Object 方法全覆盖
+		- ②边界值测试
+			- 空类 Object 方法（keys=0、hasOwnProperty=false、toString=[object Object]）
+			- nullish 入参（undefined/null → keys/entries/getOwnPropertyNames/getOwnPropertyDescriptors 抛错；isFrozen/isSealed 返回 true）
+			- 原始值入参（number/boolean → keys/getOwnPropertyNames 返回空数组）
+			- 属性名边界（空串/unicode emoji/256 字符长名）
+			- bound 函数 length 递减（3→2→1）、name 含 "bound" 前缀
+		- ③异常与非法输入
+			- hasOwnProperty.call(null/undefined) 抛错
+			- Object.setPrototypeOf(null/undefined/primitive/bool/string) 抛错
+			- Object.create(non-object proto/@Sendable proto) 抛错
+			- Object.assign(@Sendable target) 抛错（不可扩展）
+			- bind/call/apply on non-callable @Sendable property 抛错
+			- apply(non-object argArray) 抛错
+			- bound 函数不可跨线程传递（taskpool.execute 抛错）
+		- ④返回值与类型验证
+			- hasOwnProperty boolean、toString string、valueOf 原对象引用
+			- Object.keys/values/entries 数组长度与内容、getOwnPropertyDescriptors 含 own 字段
+			- bound 函数 length（剩余未绑定参数数）、name（含 "bound" 前缀）
+			- instanceof true/false、typeof === "object"、constructor.name
+		- ⑤组合场景
+			- call rebinds this 到另一 @Sendable 实例（getX.call(otherInstance)）
+			- Object.assign 多字段/数值键/符号键拷贝
+			- bind(this + prefix args) → bound(partial) 结果
+		- ⑥重复调用/幂等性
+			- 多次 call/apply 同结果
+		- ⑦并发跨线程
+			- 4 Worker × 1000 轮 stress（hasOwnProperty/toString/valueOf/propertyIsEnumerable/keys/getPrototypeOf/is/getOwnPropertyNames/instanceof/typeof/constructor/JSON.stringify）
+			- 4 Worker 并发读共享 @Sendable 字段一致性
+	- 2. 稳定性（Stability）
+		- 2.1 GC/堆隔离稳定性
+			- ConcurrentGCTest（跨线程 GC 回收）
+			- HeapIsolationTest（SharedHeap/LocalHeap 隔离）
+			- MemoryLeakGCTest（内存泄漏）
+			- MultiThreadRefGCTest（多线程引用计数）
+			- PostGCStateTest（GC 后状态）
+			- RefCountGCTest（引用计数）
+		- 2.2 生命周期稳定性
+			- BatchCreateDestroyTest（批量创建销毁）
+			- SendableLifecycleTest（Sendable 生命周期）
+			- ServiceLifecycleTest（服务生命周期）
+			- ServiceHotUpdateTest（服务热更新）
+		- 2.3 共享对象稳定性
+			- SharedCounter 系列（IR/Resource/Inventory/Request/TaskComplete）
+			- SharedModule 系列（GC/Nested/Stability）
+			- SharedHeapGCTest
+	- 3. 性能（Performance）
+		- 3.1 并发性能
+			- 100 并发 TaskPool stress
+			- TaskGroup 多任务并发计算
+			- 多实例内存管理
+		- 3.2 IR 优化性能
+			- IROptimizationTest（26 例 IR 优化）
+			- IRReinforcementTest（29 例 IR 加固）
+			- DictModeTriggerTest（27 例字典模式触发）
+		- 3.3 传输性能 [缺口]
+			- Sendable vs 结构化克隆传输耗时对比基准（文档宣称 100KB 提升 20 倍、1MB 提升 100 倍）[缺口]
+	- 4. 并发安全（Concurrency Safety）
+		- 4.1 共享对象读写
+			- ConcurrentSharedObjectRW（共享对象多线程读写）
+			- ReadWriteLockTest（读写锁保护）
+		- 4.2 锁/CV 同步
+			- AsyncLockBasicTest
+			- ConditionVariableTest
+			- LockIRTest
+		- 4.3 race condition handling
+			- SendableDecoratorConcurrentTest race condition + AsyncLock
+			- 100 并发 stress
+		- 4.4 并发修改错误 [缺口]
+			- 10200201 并发修改错误（4 目录零覆盖）[缺口]
+			- 多写者写写数据逐键值正确性断言[缺口]
+	- 5. 兼容性与继承（Compatibility & Inheritance）
+		- 5.1 Sendable class 继承
+			- SendableClassEcmaTest（extends abstract/implements/multi-level/field shadowing）
+			- SendableClassInherit（默认/私有继承×全字段）
+			- tripleInheritanceTaskPool/Worker（三层继承跨线程）
+		- 5.2 装饰器叠加兼容性
+			- SendableDecoratorTest（@Sendable + 自定义装饰器）
+			- SendableDecoratorBasic F01~F06（API 22+ 叠加边界）
+		- 5.3 约束兼容性
+			- SendableConstraintTest（Sendable 约束）
+		- 5.4 继承拒绝路径 [缺口]
+			- 普通 class 继承 Sendable class 拒绝（文档：Sendable class 只能继承 Sendable class）[缺口]
+	- 6. 资料与文档符合性（Doc Conformance）
+		- 6.1 ISendable 符合性
+			- ISendableImplTest（ISendable 实现 + instanceof）
+			- IsSendableTest（ArkTSUtils.isSendable true/false）
+		- 6.2 @Sendable 装饰器符合性
+			- SendableDecoratorBasicTest（@Sendable 装饰器形式）
+			- UseSendableTest（@Sendable function 在 .ets/.ts/.js）
+		- 6.3 错误码符合性
+			- ConcurrencyCoveredSupplement（10200012 constructor + 401 mode）
+		- 6.4 文档逐条符合性 [缺口]
+			- 对象字面量/数组字面量非 Sendable 验证 [缺口]
+			- Sendable 支持的 10 类数据类型逐类型验证 [缺口]
+			- arkts-sendable.md 逐条断言符合性 [缺口]

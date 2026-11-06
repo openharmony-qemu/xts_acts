@@ -38,6 +38,7 @@ import XComponentAttributeTest from './nullandundefinedcoverage/xcomponent/XComp
 import xComponentInterfaceConstructorNullUndefinedTest from './nullandundefinedcoverage/xcomponent/XComponentInterfaceConstructorNullUndefined.test';
 import getFilteredInspectorTreeByIdDepthBoundaryTest from './UIContext/GetFilteredInspectorTreeByIdDepthBoundaryTest.test';
 import inspectorLabelTest from './inspectorLabel/inspectorLabelTest.test';
+import BufferQueueCountTest from './nullandundefinedcoverage/xcomponent/BufferQueueCountTest.test';
 
 
 export default function testsuite() {
@@ -66,4 +67,5 @@ export default function testsuite() {
   LayoutChildrenTest();
   getFilteredInspectorTreeByIdDepthBoundaryTest();
   inspectorLabelTest();
+  BufferQueueCountTest();
 }

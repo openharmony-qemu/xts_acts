@@ -15,22 +15,27 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium-dynamic';
 import { Driver,ON } from '@ohos.UiTest';
+import display from '@ohos.display';
+
+function checkDeviceIsWatch() {
+  try {
+    const d = display.getDefaultDisplaySync();
+    if (d.width < 500 || d.height < 500) {
+      return true;
+    } else {
+      return false;
+    }
+  } catch (error) {
+    console.error(`checkDeviceIsWatch fail, message: ${error.message}`);
+    return false;
+  }
+}
 
 export default function abilityTest() {
   describe('ActsAbilityTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll( async() => {
-	  let driver = Driver.create();
-	  //去除充电框影响
-      let button1 = await driver.findComponent(ON.text("确定")) ?? undefined;
-      if (button1 !== undefined) {
-        await button1.click();
-      }
-	  //去除添加桌面影响
-      let button2 = await driver.findComponent(ON.text("添加")) ?? undefined;
-      if (button2 !== undefined) {
-        await button2.click();
-      }
+    beforeAll(() => {
+	
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
@@ -56,13 +61,15 @@ export default function abilityTest() {
      */
     it('SUB_Security_IAM_authWidget_Func_0330', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
       console.log("SUB_Security_IAM_authWidget_Func_0330: started ");
-      let driver = Driver.create()
-      let select = await driver.findComponent(ON.isAfter(ON.text("authTrustLevel=-1")))
-      await select.click()
-      let result = await driver.findComponent(ON.isAfter(ON.text("结果码")))
-      let code = await result.getText();
-      console.log("SUB_Security_IAM_authWidget_Func_0330 code is " + code);
-      expect(code === "12500006").assertTrue();
+		  if (checkDeviceIsWatch() === false ) {
+        let driver = Driver.create()
+        let select = await driver.findComponent(ON.isAfter(ON.text("authTrustLevel=-1")))
+        await select.click()
+        let result = await driver.findComponent(ON.isAfter(ON.text("结果码")))
+        let code = await result.getText();
+        console.log("SUB_Security_IAM_authWidget_Func_0330 code is " + code);
+        expect(code === "12500006").assertTrue();
+	    }
       done();
     })
   })

@@ -34,6 +34,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function RichEditorOnWillChange006() {
   describe('RichEditorOnWillChange006', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,9 +58,10 @@ export default function RichEditorOnWillChange006() {
           console.info("push RichEditorOnWillChange006 success");
         }
       } catch (err) {
-        console.error("push RichEditorOnWillChange006 page error: " + err);
+        console.log("push RichEditorOnWillChange006 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
@@ -74,12 +76,24 @@ export default function RichEditorOnWillChange006() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('rich_struct')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.click error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(KeyCode.KEYCODE_A);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_A, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.triggerKey(KeyCode.KEYCODE_B);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_B, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let onWillChange = await (driver.findComponent(ON.id('onWillChange_callback')) as Promise<Component>);
@@ -96,14 +110,22 @@ export default function RichEditorOnWillChange006() {
       expect(replaceText).assertEqual('replacedSpans_callback:true');
       expect(didText).assertEqual('onDidChange_callback:true');
 
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.click error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let selectAll = await (driver.findComponent(ON.text('全选')) as Promise<Component>)
       await selectAll.click();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(KeyCode.KEYCODE_A);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_A, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let range_text = await (driver.findComponent(ON.id('range_text')) as Promise<Component>);

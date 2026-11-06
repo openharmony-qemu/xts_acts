@@ -78,6 +78,8 @@ struct SlelectExample {
           console.info("Select:" + index)
         })
     }
+    .padding(10)
+    .margin(10)
 
   }
 }

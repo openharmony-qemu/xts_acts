@@ -27,7 +27,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 
 enum Enum_1 { first, second, third = 0 }
 enum Enum_2 { first = 11, second = 11, third = 11 }

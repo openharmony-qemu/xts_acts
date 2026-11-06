@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,7 +18,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import window from '@ohos.window';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
@@ -84,7 +84,7 @@ class EntryAbility extends UIAbility {
     return false;
   }
 
-  onCollaborate(wantParam: Record<string, Object>): AbilityConstant.CollaborateResult {
+  onCollaborate(wantParam: Record<string, RecordData>): AbilityConstant.CollaborateResult {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCollaborate');
     return AbilityConstant.CollaborateResult.ACCEPT;
   }

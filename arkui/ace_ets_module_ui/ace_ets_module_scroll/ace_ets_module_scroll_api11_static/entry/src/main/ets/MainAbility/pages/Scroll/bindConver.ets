@@ -165,6 +165,8 @@ struct ModalTransitionExample {
           }
         })
     }
+    .padding(10)
+    .margin(10)
     .justifyContent(FlexAlign.Center)
     .backgroundColor("#ff49c8ab")
     .width('100%')

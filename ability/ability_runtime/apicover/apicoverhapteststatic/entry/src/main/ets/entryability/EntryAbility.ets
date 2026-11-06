@@ -18,7 +18,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import window from '@ohos.window';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
@@ -83,7 +83,7 @@ class EntryAbility extends UIAbility {
   }
 
   async onSaveStateAsync(reason: AbilityConstant.StateType,
-    wantParam: Record<string, Object>): Promise<AbilityConstant.OnSaveResult> {
+    wantParam: Record<string, RecordData>): Promise<AbilityConstant.OnSaveResult> {
     await new Promise<string>((res, rej) => {
       setTimeout(res, 1000);
     });

@@ -206,6 +206,8 @@ struct GridRowXl {
       }.backgroundColor(Color.Red)
       .key("breakpointsText")
     }
+    .padding(10)
+    .margin(10)
     .width("100%")
     .height("100%")
   }

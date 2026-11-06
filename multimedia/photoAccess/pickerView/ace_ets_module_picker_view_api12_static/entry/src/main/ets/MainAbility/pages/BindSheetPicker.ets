@@ -30,7 +30,7 @@ const topMargin: number = 20;
 @Component
 struct BindSheetPicker {
   private photoSelectOptions: photoAccessHelper.PhotoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
-  private eventId: long = EventType.PICKER_SHEET_PAGE;
+  private eventId: long = EventType.PICKER_SHEET_PAGE.valueOf().toLong();
 
   private photoPicker: photoAccessHelper.PhotoViewPicker = new photoAccessHelper.PhotoViewPicker();
 

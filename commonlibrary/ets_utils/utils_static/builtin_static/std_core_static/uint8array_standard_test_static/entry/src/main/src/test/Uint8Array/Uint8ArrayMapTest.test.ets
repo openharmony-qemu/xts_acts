@@ -26,7 +26,7 @@ import {
   TestType,
   Size,
   Level
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 export default function Uint8ArrayMapTest(): void {
@@ -1244,7 +1244,7 @@ export default function Uint8ArrayMapTest(): void {
      */
     it('testUint8ArrayMap075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Uint8Array = new Uint8Array([0, 1, 128, 255]);
-      const result: Uint8Array = src.map((v: number, i: int, a: Uint8Array): number => v === 0 ? 255 : v);
+      const result: Uint8Array = src.map((v: number, i: int, a: Uint8Array): number => v === 0 ? 255.0 : v);
       expect(result[0]).assertEqual(255);
       expect(result[1]).assertEqual(1);
       expect(result[2]).assertEqual(128);
@@ -1261,7 +1261,7 @@ export default function Uint8ArrayMapTest(): void {
      */
     it('testUint8ArrayMap076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Uint8Array = new Uint8Array([0, 1, 2, 3, 4]);
-      const result: Uint8Array = src.map((v: number, i: int, a: Uint8Array): number => v & 1 ? v : 0);
+      const result: Uint8Array = src.map((v: number, i: int, a: Uint8Array): number => v & 1 ? v : 0.0);
       expect(result[0]).assertEqual(0);
       expect(result[1]).assertEqual(1);
       expect(result[2]).assertEqual(0);

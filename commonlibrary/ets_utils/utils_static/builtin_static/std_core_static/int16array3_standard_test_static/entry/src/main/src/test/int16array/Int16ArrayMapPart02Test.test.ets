@@ -26,7 +26,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 export default function int16ArrayMapPart02Test(): void {
@@ -786,7 +786,7 @@ export default function int16ArrayMapPart02Test(): void {
       // --- [2] Verify map ternary keeps values greater than 1 ---
       {
         let arr: Int16Array = Int16Array.of(1, 2, 3);
-        let result: Int16Array = arr.map((value: number, index: int) => (value > 1) ? value : 0);
+        let result: Int16Array = arr.map((value: number, index: int) => (value > 1) ? value : 0.0);
         expect(result.$_get(0)).assertEqual(0);
         expect(result.$_get(1)).assertEqual(2);
         expect(result.$_get(2)).assertEqual(3);

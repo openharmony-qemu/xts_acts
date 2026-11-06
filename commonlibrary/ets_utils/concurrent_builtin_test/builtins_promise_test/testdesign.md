@@ -1,0 +1,149 @@
+- ArkTS 并发内建 测试设计
+	- 说明：基于 arkts_concurrency_builtins_testpoint.md §1 逐特性接口设计生成；4 特性（async/await · Atomics · Promise · SharedArrayBuffer）均为 JS/ArkTS 内建对象/语法，契约由 arkts/builtin/dynamic/lib.*.d.ts + static/*.static.d.ets 承载；逐特性 7 测试逻辑分类，缺项按 §1 树跳过
+	- 1. 接口测试（Functional）
+		- async/await（语法特性 + 生态）
+			- 入参范围覆盖
+				- async 函数：无参/带参/默认参/剩余参/泛型参；await 外部 Promise/同步值/thenable/多个
+				- async generator：yield 值/yield Promise/for-await 各种可迭代源
+				- async 生态：isAsyncFunction 对 async 声明/箭头/类方法(getter/setter 后)/TS/JS/namespace/generic/re-export/interface-abstract 源
+				- promisify/callbackWrapper：回调→Promise、async 函数返回 number/object/array/boolean × 全语言源矩阵
+			- 边界值测试
+				- 无返回→Promise.resolve(undefined)；返回 BigInt/Symbol/对象/数组/typed-array
+				- await in loop/forEach；深嵌套 10 层；超大数组；100 并发；50 顺序 await；超长串；深对象
+				- async generator 空/单 yield/4 层嵌套；连续 throw 序列；return 后再调用
+			- 异常与非法输入
+				- async 内 throw→reject；await 抛错→reject；rejected Promise await→reject
+				- 未声明 async 用 await→编译期错误（语法门禁，运行期不可注入）
+				- generator throw() 注入错误；uncaught 异常 bubbling（被 outer 捕获）
+				- Promise.all 内 rejection；混合错误类型；循环 Promise 链
+			- 返回值与类型验证
+				- 返回 Promise<T>；await 解包；返回 resolved/rejected Promise
+				- AsyncGenerator next()/return()/throw() 返回 {value,done}
+				- uncaught 异常对象 Type&Properties
+				- type.isAsyncFunction 返回 boolean（true 仅 async 函数）
+			- 组合场景
+				- async×Promise.all/race/allSettled；嵌套 async 调 async；条件 await（typed 分支）
+				- then/catch 混用；Promise 构造器包装 async；setTimeout；pipeline 组合
+				- errorPropagationChain；returnValuePropagation；async 函数+类继承
+				- AsyncNesting lazy import × asyncLock/promise/async/setTimeout/taskPool 三层嵌套
+			- 重复调用/幂等性
+				- rapid re-execution；相同入参多次调用一致
+				- 连续 throw 序列；return 后再调用
+			- 并发跨线程
+				- AsyncNesting lazy import 跨 asyncLock/promise/async/setTimeout/taskPool
+				- async lazy import taskPool 三层嵌套（PromiseErrorTest）
+		- Atomics（JS 全局对象，12 方法）
+			- 入参范围覆盖
+				- add/sub/and/or/xor：Int8/Uint8/Int16/Uint16/Int32/Uint32 + BigInt64Array/BigUint64Array 全 8 整数类型
+				- load/store/exchange：全 8 整数类型 + BigInt64/BigUint64
+				- compareExchange：6 整数类型（❌ BigInt 重载缺口，见 §7.2#3）
+				- wait/notify：Int32Array + BigInt64Array；notify count=0/1/3/NaN/Infinity/MAX_VALUE+1
+				- isLockFree：size 1/2/4/8 真；0/3/16/-1/2.5/string/null/undefined/object/array/boolean/BigInt/NaN/Infinity 假
+			- 边界值测试
+				- 值边界：0/正/负/最大/最小/溢出回绕/underflow；BigInt 大值
+				- 索引边界：0/length-1/非零索引；OOB/负索引
+				- timeout 边界：0/undefined(Infinity)/NaN/negative(→0)；值变更后唤醒
+				- count 边界：0/1/3/NaN/Infinity/MAX_VALUE+1
+			- 异常与非法输入
+				- 非共享 buffer→TypeError；OOB/负/非整数索引→RangeError
+				- Float32Array 不支持；非整数 value；detached；非 typed-array；非整数 typed-array
+				- wait：Uint32Array→TypeError；非共享→TypeError；OOB/负索引→RangeError
+				- notify：typedArray/index 校验错误路径（❌ 缺口，见 §7.2#6）
+				- compareExchange：NaN expected/replacement（❌ 缺口，见 §7.2#4）
+			- 返回值与类型验证
+				- add/sub/and/or/xor/exchange/compareExchange/load 返回旧值；store 返回新值
+				- wait 返回 "ok"/"not-equal"/"timed-out"；notify 返回唤醒数
+				- isLockFree 返回 boolean（1/2/4/8→true，其余→false）
+				- compareExchange 匹配→交换返回旧值、不匹配→不交换返回当前值
+			- 组合场景
+				- add+notify（唤醒 wait）；wait+add+load；多索引多 worker；值变更后 notify
+				- 连续 add；store→load；exchange→load；连续 compareExchange；同实例多索引
+				- atomicsComb 50 例全方法组合；async/Promise.resolve 内 isLockFree
+			- 重复调用/幂等性
+				- 连续相同操作旧值序列；重复 store/load 一致；isLockFree 多次一致
+				- 连续 notify 唤醒数衰减；相同 expected 多次 compareExchange
+			- 并发跨线程
+				- AtomicsMultithreadTest 多线程原子性；多 Worker Atomics.add on SAB 写可见性
+				- Worker 内 wait；notify 唤醒多 worker；多 worker 不同索引
+		- Promise（constructor + 实例方法 + 静态组合器 + 生态）
+			- 入参范围覆盖
+				- constructor：executor 同步执行；resolve 非thenable/已有 Promise/thenable/rejected Promise；reject 直接 reason/非 Error/Promise reason
+				- then：返回值 normal/无返回/Promise/thenable/boolean/object/array/0/空串/空对象；onFulfilled/onRejected 省略
+				- catch：executor throw/reject/onRejected 返值
+				- finally：fulfilled/rejected/无参/空 callback
+				- all/race：全 resolve/混合/非 Promise/thenable/Set 可迭代/generator/大数量
+				- allSettled/any：全类型矩阵（object/function/symbol/bigint/date/array/class-instance/嵌套）
+				- 生态：type.isPromise 全态（Pending/Fulfilled/Rejected）；PromiseChain 全值类型链
+			- 边界值测试
+				- 空 resolve；undefined/null reason；thenable 嵌套
+				- pending Promise；已 settled；finally 空 callback
+				- all/race 空数组、单元素、延迟递增、快拒绝慢解析
+				- allSettled/any 空数组（allSettled→空 resolve、any→reject AggregateError）、单 resolve/reject
+			- 异常与非法输入
+				- 无 new 调用→TypeError；executor 抛错→reject
+				- then callback throw→reject；finally throw 覆盖 fulfilled/rejected；finally throw 非 Error
+				- all 首拒即拒（早终止）；race fastest拒绝优先
+				- any 全拒→AggregateError（errors 数组内容校验）
+			- 返回值与类型验证
+				- Promise<T>；resolve 实例复用；reject rejected 状态
+				- then 返 Promise<Awaited<U|E>>；catch 返 Promise<T|U>；finally 返 Promise<Awaited<T>>（值保持）
+				- CustomThenable(PromiseLike) 采纳；resolve(thenable) 采纳
+				- all 返 Promise<Array<Awaited>>（保序）；race 返fastest settled
+				- allSettled 返 Promise<PromiseSettledResult[]>（fulfilled{status,value}/rejected{status,reason} 保序）
+				- any 返首 resolve；AggregateError.errors instanceof TypeError/CustomError + deepEquals
+				- type.isPromise 返回 boolean
+			- 组合场景
+				- reject×all/race/allSettled/any/finally/async；嵌套 new Promise；PromiseChain 全值类型
+				- 链式 then；then 嵌套 then；多 finally 顺序；finally+catch；finally+race/all；finally+async/await
+				- promiseCombTest 60 例组合；PromiseChain 每层入参校验
+			- 重复调用/幂等性
+				- resolve/reject 不可逆（状态固化）；同 Promise 多次 then 独立执行；finally 每实例一次
+			- 并发跨线程
+				- （Promise 跨线程传递见 AsyncNesting/PromiseErrorTest；type 守卫同步）
+		- SharedArrayBuffer（constructor + slice + 属性 + 生态）
+			- 入参范围覆盖
+				- constructor：byteLength=0/1/8/large
+				- slice：start>end/start<end/start=end/start=0..end=1..length..length+1..length-1 全边界
+				- 生态：type.isSharedArrayBuffer 对 SAB create/size/zero/large/slice/view.buffer(int8/16/uint8)
+			- 边界值测试
+				- byteLength=0→byteLength=0；-1→抛错；MAX_SAFE_INTEGER→"Out of range"；MAX_SAFE_INTEGER+1→抛错
+				- zero-size SAB→true（isSharedArrayBuffer）
+				- slice 各 start/end 组合（含 length 边界）
+			- 异常与非法输入
+				- 负 byteLength；超 MAX_SAFE（ArkTS 非标错误消息 "integerIndex<0 or integerIndex>SAFE_NUMBER"/"Out of range"）
+				- DataView→false（isSharedArrayBuffer）；ArrayBuffer→false
+			- 返回值与类型验证
+				- instanceof SharedArrayBuffer；byteLength number；slice 返新 SAB（独立拷贝）
+				- type.isSharedArrayBuffer 返回 boolean（SAB→true，非 SAB→false）
+			- 组合场景
+				- 构造后 Int32/Float64/Uint8 视图访问；slice 后视图；view.buffer 链
+				- SAB 继承+方法覆写（CustomSharedArrayBuffer grow）
+				- export/re-export/namespace/generic/interface-abstract 源矩阵
+			- 重复调用/幂等性
+				- 相同 byteLength 多次构造一致；同 SAB 多次 isSharedArrayBuffer 一致
+			- 并发跨线程
+				- 跨 worker slice（主构造+worker slice）；SAB 作类属性跨线程传递
+				- 跨 worker 写可见性（❌ 缺口，经 Atomics 间接，见 §7.2#19）
+	- 2. 稳定性
+		- 深嵌套 10 层；超大数组；100 并发；50 顺序 await；recursive Promise 链；cyclic chain
+		- 反复创建销毁内存泄漏（SAB）；1000 次 GC 压力生命周期；10 线程×1000 迭代
+		- rapid re-execution；内存清理多 Promise；批量/限流/防抖真实世界
+		- AsyncNesting lazy import 三层嵌套 ×5 异步原语
+	- 3. 性能
+		- async sequential-100/memory/rapid-creation/chain/complex-object
+		- SAB 10 线程×1000 迭代性能；Promise race 压力
+		- rate-limit/debounce/batch 真实世界吞吐
+	- 4. 并发安全
+		- Atomics 原子性多线程；wait/notify 跨 worker 唤醒；多 worker add on SAB 写可见性
+		- SAB 跨线程传递/slice；10 线程竞态
+		- async×TaskPool 嵌套；async lazy import taskPool 三层嵌套
+	- 5. 兼容性与继承
+		- SAB 子类化+方法覆写（CustomSharedArrayBuffer grow）
+		- PromiseLike/thenable 类继承采纳（CustomThenable、level1Thenable 等）
+		- async 函数+类继承；泛型约束
+		- 全语言源兼容（.ets/.ts/.js/namespace/generic/re-export/interface-abstract）
+	- 6. 资料与文档符合性
+		- .d.ts 声明符合性（无 new→TypeError、executor 同步、isLockFree 1/2/4/8→true）
+		- async 语法门禁（must-declare-async 编译期）
+		- ArkTS 静态 vs 动态条件编译（static/Promise.static.d.ets vs lib.es5；static/Atomics.static.d.ets Atomic* 独立体系）
+		- ArkTS 错误消息非标（SAB 构造）；JS 内建无独立 SDK 文档（契约以 .d.ts 为authoritative）

@@ -22,7 +22,6 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
-let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function FocusScopePriority3() {
   describe('FocusScopePriority3', () => {
     beforeEach(async (): Promise<void> => {
@@ -61,6 +60,7 @@ export default function FocusScopePriority3() {
      * @tc.level     Level 2
      */
     it('FocusScopePriority3_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
       console.info('[FocusScopePriority3_static_0100] START');
       try {
         await CommonFunc.sleep(1000);

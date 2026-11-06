@@ -85,6 +85,8 @@ struct CounterPage {
         }
       }
     }
+    .padding(10)
+    .margin(10)
     .alignItems(VerticalAlign.Center)
     .height('100%')
   }

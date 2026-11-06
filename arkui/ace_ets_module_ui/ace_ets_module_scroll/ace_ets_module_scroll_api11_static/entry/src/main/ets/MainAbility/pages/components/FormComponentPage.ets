@@ -115,5 +115,7 @@ struct FormComponentPage {
         right: 10
       } as Margin)
     }
+    .padding(10)
+    .margin(10)
   }
 }

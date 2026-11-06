@@ -368,16 +368,11 @@ function registerHidDeviceAsync3(): Promise<boolean> {
     const timeout = setTimeout(() => {
       reject(new Error("[bluetooth_js]registerHidDeviceAsync timeout"));
     }, 20000);
-    try {
-      hidDevice!.registerHidDevice(sdp3, inqos2, outqos, (data: boolean) => {
-        clearTimeout(timeout)
-        hilog.info(domain, tag, '[bluetooth_js] registerHidDeviceAsync success' + JSON.stringify(data));
-        resolve(data);
-      });
-    } catch (err) {
-      hilog.info(domain, tag, '[bluetooth_js] errcode' + err.code + 'err message' + err.message);
-      reject(new Error("[bluetooth_js]registerHidDeviceAsync err"));
-    }
+    hidDevice!.registerHidDevice(sdp3, inqos2, outqos, (data: boolean) => {
+      clearTimeout(timeout)
+      hilog.info(domain, tag, '[bluetooth_js] registerHidDeviceAsync success' + JSON.stringify(data));
+      resolve(data);
+    });
   });
 }
 
@@ -1303,6 +1298,127 @@ export default function btHidTest(): void {
           if (err.code === 801) {
             hilog.info(domain, tag, "设备（除手机外） is not support.");
             expect(err.code).assertEqual(801);
+          } else {
+            expect(err.code).assertEqual(2903051);
+          }
+        }
+        done();
+      })
+
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_RH_static_0300
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILERH_0300
+     * @tc.desc   Test registerHidDevice outQos.serviceType SERVICE_NO_TRAFFIC api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_RH_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        try {
+          let outqosNoTraffic: hid.HidDeviceQos = {
+            serviceType: hid.ServiceType.SERVICE_NO_TRAFFIC,
+            tokenRate: 0,
+            tokenBucketSize: 0,
+            peakBandwidth: 0,
+            latency: -1,
+            delayVariation: -1,
+          };
+          hidDevice!.registerHidDevice(sdp, inqos, outqosNoTraffic, (data: boolean) => {
+            hilog.info(domain, tag, "[bluetooth_js] registerHidDevice RH 0300 success" + JSON.stringify(data));
+          });
+          hilog.info(domain, tag, "[bluetooth_js]hid registerHidDevice RH 0300 is called ");
+          await sleep(1000);
+        } catch (err) {
+          hilog.error(domain, tag,
+            "[bluetooth_js]hid registerHidDevice is fail , errCode:" + err.code + ",errMessage:" + err.message);
+          if (err.code === 801) {
+            hilog.info(domain, tag, "设备（除手机外） is not support.");
+            expect(err.code).assertEqual(801);
+          } else if (err.code === 401) {
+            hilog.info(domain, tag, "invalid param");
+            expect(err.code).assertEqual(401);
+          } else {
+            expect(err.code).assertEqual(2903051);
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_RH_static_0400
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILERH_0400
+     * @tc.desc   Test registerHidDevice outQos.serviceType SERVICE_BEST_EFFORT api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_RH_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        try {
+          let outqosBestEffort: hid.HidDeviceQos = {
+            serviceType: hid.ServiceType.SERVICE_BEST_EFFORT,
+            tokenRate: 0,
+            tokenBucketSize: 0,
+            peakBandwidth: 0,
+            latency: -1,
+            delayVariation: -1,
+          };
+          hidDevice!.registerHidDevice(sdp, inqos, outqosBestEffort, (data: boolean) => {
+            hilog.info(domain, tag, "[bluetooth_js] registerHidDevice RH 0400 success" + JSON.stringify(data));
+          });
+          hilog.info(domain, tag, "[bluetooth_js]hid registerHidDevice RH 0400 is called ");
+          await sleep(1000);
+        } catch (err) {
+          hilog.error(domain, tag,
+            "[bluetooth_js]hid registerHidDevice is fail , errCode:" + err.code + ",errMessage:" + err.message);
+          if (err.code === 801) {
+            hilog.info(domain, tag, "设备（除手机外） is not support.");
+            expect(err.code).assertEqual(801);
+          } else if (err.code === 401) {
+            hilog.info(domain, tag, "invalid param");
+            expect(err.code).assertEqual(401);
+          } else {
+            expect(err.code).assertEqual(2903051);
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_RH_static_0500
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILERH_0500
+     * @tc.desc   Test registerHidDevice outQos.serviceType SERVICE_GUARANTEED api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_RH_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        try {
+          let outqosGuaranteed: hid.HidDeviceQos = {
+            serviceType: hid.ServiceType.SERVICE_GUARANTEED,
+            tokenRate: 0,
+            tokenBucketSize: 0,
+            peakBandwidth: 0,
+            latency: -1,
+            delayVariation: -1,
+          };
+          hidDevice!.registerHidDevice(sdp, inqos, outqosGuaranteed, (data: boolean) => {
+            hilog.info(domain, tag, "[bluetooth_js] registerHidDevice RH 0500 success" + JSON.stringify(data));
+          });
+          hilog.info(domain, tag, "[bluetooth_js]hid registerHidDevice RH 0500 is called ");
+          await sleep(1000);
+        } catch (err) {
+          hilog.error(domain, tag,
+            "[bluetooth_js]hid registerHidDevice is fail , errCode:" + err.code + ",errMessage:" + err.message);
+          if (err.code === 801) {
+            hilog.info(domain, tag, "设备（除手机外） is not support.");
+            expect(err.code).assertEqual(801);
+          } else if (err.code === 401) {
+            hilog.info(domain, tag, "invalid param");
+            expect(err.code).assertEqual(401);
           } else {
             expect(err.code).assertEqual(2903051);
           }

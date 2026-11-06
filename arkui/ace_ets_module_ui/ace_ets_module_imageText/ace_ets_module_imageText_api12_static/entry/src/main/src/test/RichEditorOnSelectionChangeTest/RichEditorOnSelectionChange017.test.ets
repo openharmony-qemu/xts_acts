@@ -35,6 +35,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function RichEditorOnSelectionChange017() {
   describe('RichEditorOnSelectionChange017', () => {
     beforeAll(async (): Promise<void> => {
@@ -58,9 +59,10 @@ export default function RichEditorOnSelectionChange017() {
           console.info("push RichEditorOnSelectionChange017 success");
         }
       } catch (err) {
-        console.error("push RichEditorOnSelectionChange017 page error: " + err);
+        console.log("push RichEditorOnSelectionChange017 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
@@ -75,7 +77,11 @@ export default function RichEditorOnSelectionChange017() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('rich_struct')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.click error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let del_spans = await (driver.findComponent(ON.id('del_spans')) as Promise<Component>)
@@ -107,13 +113,25 @@ export default function RichEditorOnSelectionChange017() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('rich_struct')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.click error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
-      driver.triggerKey(KeyCode.KEYCODE_A);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_A, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
-      driver.triggerKey(KeyCode.KEYCODE_B);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_B, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let onSelectCallBack = await (driver.findComponent(ON.id('onSelectCallBack')) as Promise<Component>);

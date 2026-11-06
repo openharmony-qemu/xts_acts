@@ -13,10 +13,12 @@
  * limitations under the License.
  */
 import eapNoPTest from './EapNoP.test';
+import sim from '@ohos.telephony.sim';
 import EmptyTest from './Empty.test';
+import { deviceInfo } from '@kit.BasicServicesKit';
 
 export default function testsuite() {
-  if(canIUse('SystemCapability.Communication.NetManager.Eap')){
+  if(canIUse('SystemCapability.Communication.NetManager.Eap') && sim.getMaxSimCount()<1){
     eapNoPTest();
   }else{
     EmptyTest();

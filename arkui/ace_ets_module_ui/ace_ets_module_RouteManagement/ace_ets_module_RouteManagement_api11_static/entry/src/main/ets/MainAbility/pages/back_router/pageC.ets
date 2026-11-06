@@ -44,6 +44,9 @@ struct router_PageC {
           this.getUIContext().getRouter().back({ url: "MainAbility/pages/back_router/pageC" })
         })
 
-    }.width('100%').height('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%').height('100%')
   }
 }

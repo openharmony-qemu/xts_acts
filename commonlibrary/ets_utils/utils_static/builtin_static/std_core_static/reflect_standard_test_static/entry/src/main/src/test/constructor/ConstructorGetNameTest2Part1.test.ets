@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from "../../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 import Utils from "../Util.test";
 
 import {TcPub19,TcStr2D,EmptyCls,GN_4Ctor,GN_6Ctor,GenChild,TcBool2D,GN_Long2D,GN_SetDbl,GN_SetStr,GenParent,PubDouble,TcTwoPubA,ComboChild,GN_ByteArr,GN_CharArr,GenericOne,GenericTwo,GN_FloatArr,GN_ShortArr,SingleField,GN_MapIntDbl,GN_MapIntSet,GenericBound,PubByteParam,ParamCountCls,PubShortParam,Ctor_MapStrInt,TripleOverload,AbstractGeneric,GN_MapStrDblArr,ImplIfaceMethod,Ext3_HasSetParam,IP3_193_PubFloat,Ext4_CharOptParam,GenericArrayField,CtorDoubleArrParam,IP2_110_PubDefBool,IP3_201_PubBoolArr,CtorMultiDimArrParam,Ext2_MapStrBoolParam,StringFieldWithMethod,DefaultAndRequired_Ext,GenericsMultiResolved_Ext,EqOverloadCls,GN_ExtCombBI,GN_ExtCombIF,GN_ExtCombStrArr,GN_ExtOv5,GN_P15,GN_P20,GN_P30,GN_P50,MultiParamCtor,} from "../Util.test";

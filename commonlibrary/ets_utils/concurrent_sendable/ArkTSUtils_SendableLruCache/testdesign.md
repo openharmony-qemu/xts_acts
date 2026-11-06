@@ -1,0 +1,340 @@
+- SendableLruCache 测试设计
+	- 说明：基于 arktsutils_sendablelrucache_testpoint.md §1 接口维度脑图生成，覆盖 19 接口（+ createDefault 钩子）×7 测试逻辑分类（缺项类按 §1 树跳过，无 @throws 的只读属性/无参方法跳过 ③异常）
+	- 1. 接口测试（Functional）
+		- constructor
+			- 入参范围覆盖
+				- 无参（默认容量 64）、正整数 1/10/100/1000
+				- number|string 联合泛型、子类 super(capacity)
+			- 边界值测试
+				- capacity=1（最小有效，仅留 1 条）
+				- capacity=2147483647（最大）
+				- capacity=0、负数、小数 0.1/-0.1、NaN、Infinity
+			- 异常与非法输入
+				- capacity≤0 / NaN / Infinity / 小数 → 抛异常（断言 401）
+			- 返回值与类型验证
+				- instanceof ArkTSUtils.SendableLruCache
+				- 空构造 length=0、isEmpty()=true、getCapacity()==capacity
+			- 组合场景
+				- 构造后立即 put、子类 super 传 capacity
+				- 构造后 toString/entries 可用
+			- 重复调用/幂等性
+				- 相同 capacity 多次构造结果一致
+			- 并发跨线程
+				- 子类构造体跨 TaskPool、Worker 接收构造
+		- length
+			- 入参范围覆盖
+				- 随 number/string/boolean/bigint/Sendable/联合 等全类型键的 put/remove 变化
+			- 边界值测试
+				- 空缓存 length=0、单元素、capacity=1 仅留 1 条
+				- 1000 容量大缓存、1024 边界
+			- 返回值与类型验证
+				- number 类型、put++/remove--/clear→0
+				- 淘汰后正确衰减
+			- 组合场景
+				- put→remove→clear 链中持续校验 length
+				- putCount==累计 put 次数
+			- 重复调用/幂等性
+				- 重复 put 同键 length 不变
+				- 重复 remove 不再衰减、重复 clear 保持 0
+			- 并发跨线程
+				- TaskPool 多写者下 length 一致性、跨线程读取
+		- updateCapacity
+			- 入参范围覆盖
+				- 正整数扩容/缩容（10/20/50/100/2147483646/2147483647）
+			- 边界值测试
+				- 缩容到 1（仅留最近 1 条）
+				- 缩容触发 LRU 顺序淘汰
+				- 1023→1024→1025 边界
+			- 异常与非法输入
+				- 0/负数/NaN/小数 → 抛 401（.md 已声明）
+			- 返回值与类型验证
+				- void、getCapacity()==newCapacity
+				- 缩容后 length<=newCapacity
+			- 组合场景
+				- 扩容后继续 put 不淘汰
+				- 缩容后保留最近条目、与 get/remove 联动
+			- 重复调用/幂等性
+				- 重复相同 capacity 不变、连续多次 updateCapacity
+			- 并发跨线程
+				- 多线程并发 updateCapacity、1024 边界并发 updateCapacity
+		- getCapacity
+			- 入参范围覆盖
+				- 随构造/updateCapacity 后取值
+			- 边界值测试
+				- 默认 64、1、1000、2147483647
+			- 返回值与类型验证
+				- number、==构造值/==updateCapacity 值
+			- 组合场景
+				- put/get/remove/clear 后 capacity 不变（仅 updateCapacity 改变）
+			- 重复调用/幂等性
+				- 连续多次 getCapacity 一致
+			- 并发跨线程
+				- 跨线程 getCapacity、并发 updateCapacity 后 getCapacity
+		- get
+			- 入参范围覆盖
+				- number/string/boolean/bigint/Sendable/联合/空串/unicode/emoji/特殊字符 键取值
+			- 边界值测试
+				- 空缓存 get→undefined、单元素、capacity=1、1000 大缓存、缺失键
+			- 异常与非法输入
+				- null/undefined 键被拒（put 路径间接；非 Sendable key→miss 语义）
+			- 返回值与类型验证
+				- 命中→值+matchCount++、缺失→createDefault 钩子（非 undefined 入缓存+createCount++，否则 undefined+missCount++）
+				- BigInt≠Number、-0/+0、返回类型 V|undefined
+			- 组合场景
+				- put→get、remove→get→undefined、clear→get→undefined
+				- updateCapacity 后 get、get 提升 LRU 位置
+			- 重复调用/幂等性
+				- 同键多次 get 一致、重复 get 累加 matchCount
+			- 并发跨线程
+				- 跨 TaskPool/Worker 传递后 get、并发 get 同键/不同键/缺失键
+		- put
+			- 入参范围覆盖
+				- number|string|boolean|bigint|Sendable|联合 键值、同键覆盖、不同键同值
+			- 边界值测试
+				- value=0/MAX_SAFE/MIN_SAFE/-0、capacity=1/2/1024
+				- 超容淘汰 LRU、1025th 淘汰
+			- 异常与非法输入
+				- null/undefined key 或 value → 拒绝（断言 message）
+				- 非 Sendable 值→运行错误
+			- 返回值与类型验证
+				- 返回 value、覆盖返回新 value、putCount++
+				- 超容淘汰触发 getRemoveCount++
+			- 组合场景
+				- put 覆盖刷新 LRU 位置
+				- put→get/contains/keys/values 联动、updateCapacity 后 put
+			- 重复调用/幂等性
+				- 重复 put 同键 length 不增、putCount 累加、返回最新 value
+			- 并发跨线程
+				- 并发 put 同键/不同键/超容淘汰、Worker 并发 put、AsyncLock 串行 put
+		- remove
+			- 入参范围覆盖
+				- number/string/boolean/bigint/Sendable/联合 键移除
+			- 边界值测试
+				- 空缓存 remove→undefined、单元素、首/末元素、删全后空
+			- 异常与非法输入
+				- null key 抛错（.md 注明）、非 Sendable key→miss 语义
+			- 返回值与类型验证
+				- 存在→返回旧值、缺失→undefined、返回类型 V|undefined
+				- 不累加 getRemoveCount（仅淘汰累加）
+			- 组合场景
+				- remove→contains→false/get→undefined、remove→重加、remove 后 length--
+			- 重复调用/幂等性
+				- remove 两次第二次 undefined、循环 remove
+			- 并发跨线程
+				- 并发 remove 同键/不同键、原子性校验
+		- contains
+			- 入参范围覆盖
+				- number/string/boolean/bigint/Sendable/联合 键存在性
+			- 边界值测试
+				- 空缓存→false、单元素、删后→false
+			- 异常与非法输入
+				- 非 Sendable key→false（miss 语义）
+			- 返回值与类型验证
+				- boolean true/false
+			- 组合场景
+				- put→contains→true、remove→false
+				- contains 刷新 LRU 位置
+			- 重复调用/幂等性
+				- 同键多次 contains 一致、重复 contains 累加 matchCount
+			- 并发跨线程
+				- 并发 contains 查询
+		- clear
+			- 入参范围覆盖
+				- 对各类键值缓存 clear
+			- 边界值测试
+				- 空缓存 clear 无副作用、单元素、多元素、capacity 不变
+			- 返回值与类型验证
+				- void、length→0、isEmpty→true、keys/values/entries 空
+			- 组合场景
+				- clear→has/get→false/undefined、clear 后再 put 再 clear
+				- 统计计数器保留不重置（putCount/matchCount/missCount/removeCount/createCount）
+			- 重复调用/幂等性
+				- 连续多次 clear、clear 后 remove 无效
+			- 并发跨线程
+				- 并发 clear + 统计查询
+		- isEmpty
+			- 入参范围覆盖
+				- 随状态变化
+			- 边界值测试
+				- 新缓存→true、put 后→false、remove 到空→true、clear→true
+			- 返回值与类型验证
+				- boolean
+			- 组合场景
+				- put→false、remove→true、clear→true、updateCapacity 不影响
+			- 重复调用/幂等性
+				- 连续多次 isEmpty 一致
+			- 并发跨线程
+				- 并发操作下 isEmpty
+		- toString
+			- 入参范围覆盖
+				- 随统计状态变化
+			- 边界值测试
+				- 空缓存格式、含命中/未命中后的格式
+			- 返回值与类型验证
+				- string、格式 SendableLruCache[ maxSize = X, hits = Y, misses = Z, hitRate = W% ]
+				- 含子串校验
+			- 组合场景
+				- put/get 后 toString 反映 hits/misses
+				- clear 后 toString 不变（计数器保留）、子类覆写 toString
+			- 重复调用/幂等性
+				- 连续多次 toString 一致
+			- 并发跨线程
+				- 跨线程 toString、并发操作后 toString
+		- keys
+			- 入参范围覆盖
+				- number/string/boolean/bigint/Sendable/联合 键返回
+			- 边界值测试
+				- 空缓存→[]、单元素、多元素、1024 边界
+			- 异常与非法输入
+				- 快照独立性（命名含 10200201 实为快照语义，非抛错）
+			- 返回值与类型验证
+				- K[]（数组，非 IterableIterator）、LRU 访问序、唯一无重复
+				- 快照独立（修改缓存不影响已返回数组）
+			- 组合场景
+				- 与 get/contains 一致性、put/remove 后 keys 反映
+				- 与 collections.Map.keys() 对比（Map 返回迭代器、LRU 返回数组）
+			- 重复调用/幂等性
+				- 多次 keys() 各得新数组
+			- 并发跨线程
+				- 并发 keys 迭代、跨线程 keys
+		- values
+			- 入参范围覆盖
+				- number/string/Sendable/collections.Array/SendableClass 值返回
+			- 边界值测试
+				- 空缓存→[]、单元素、多元素、1024 边界
+			- 异常与非法输入
+				- 快照独立性
+			- 返回值与类型验证
+				- V[]（数组）、LRU 访问序（most→least recently used）
+				- 快照独立、含重复值（同值不同键）
+			- 组合场景
+				- 与 get/keys 一致性、put/remove 后 values 反映
+				- 与 Map.values() 对比
+			- 重复调用/幂等性
+				- 多次 values() 各得新数组
+			- 并发跨线程
+				- 并发 values 迭代
+		- entries
+			- 入参范围覆盖
+				- number/string/Sendable/nested LruCache 键值对返回
+			- 边界值测试
+				- 空缓存→迭代器立即 done、单对、多对、1024 边界
+			- 异常与非法输入
+				- get 不影响迭代器（快照语义）
+			- 返回值与类型验证
+				- IterableIterator<[K,V]>、含 next()、每次返回新迭代器
+				- for...of/Array.from 可消费
+			- 组合场景
+				- 与 get 一致性、put/remove 后新迭代器反映
+				- 与 Map.entries() 对比（同为迭代器）
+			- 重复调用/幂等性
+				- 多次 entries() 各得新迭代器、可重复遍历
+			- 并发跨线程
+				- 并发 entries 迭代
+		- getCreateCount
+			- 入参范围覆盖
+				- 随 createDefault 钩子调用变化
+			- 边界值测试
+				- 无 createDefault 覆写→始终 0、覆写后未命中 get→++、命中 get 不++
+			- 返回值与类型验证
+				- number、==createDefault 返回非 undefined 次数
+			- 组合场景
+				- createDefault 返回 undefined 不入缓存
+				- clear 后 createCount 保留累加
+			- 重复调用/幂等性
+				- 多次未命中 get 累加
+			- 并发跨线程
+				- 跨线程 createDefault 钩子
+		- getMissCount
+			- 入参范围覆盖
+				- 随未命中 get 变化
+			- 边界值测试
+				- 0 次 get→0、未命中→++、命中不++
+			- 返回值与类型验证
+				- number
+			- 组合场景
+				- clear 后 missCount 保留
+			- 重复调用/幂等性
+				- 多次未命中 get 累加
+			- 并发跨线程
+				- 并发 get 缺失键验证 missCount
+		- getRemoveCount
+			- 入参范围覆盖
+				- 随 LRU 淘汰变化
+			- 边界值测试
+				- 无淘汰→0、超容淘汰→++、updateCapacity 缩容淘汰→++
+			- 返回值与类型验证
+				- number、==LRU 淘汰次数（非手动 remove）
+			- 组合场景
+				- 手动 remove 不累加、clear 后保留
+			- 重复调用/幂等性
+				- 多次淘汰累加
+			- 并发跨线程
+				- 并发淘汰验证 removeCount
+		- getMatchCount
+			- 入参范围覆盖
+				- 随命中 get/contains 变化
+			- 边界值测试
+				- 0→0、命中→++、未命中不++
+			- 返回值与类型验证
+				- number、命中 get 与 contains 均++
+			- 组合场景
+				- clear 后 matchCount 保留
+			- 重复调用/幂等性
+				- 多次命中累加
+			- 并发跨线程
+				- 并发 get 命中验证 matchCount
+		- getPutCount
+			- 入参范围覆盖
+				- 随 put 变化
+			- 边界值测试
+				- 0→0、每次 put→++（含覆盖/同值）
+			- 返回值与类型验证
+				- number、==put 调用次数（覆盖/同值均累加）
+			- 组合场景
+				- clear 后 putCount 保留
+			- 重复调用/幂等性
+				- 重复 put 同值累加
+			- 并发跨线程
+				- 并发 put 验证 putCount
+		- createDefault（钩子，非声明成员）
+			- 入参范围覆盖
+				- 未命中 get(key) 时以 key 为参调用
+			- 边界值测试
+				- 返回非 undefined→入缓存+createCount++、返回 undefined→不入缓存+missCount++
+			- 返回值与类型验证
+				- 返回值作为 get 的返回、非 undefined 则新增条目
+			- 组合场景
+				- createDefault 触发淘汰、clear 后再次未命中触发累加
+			- 重复调用/幂等性
+				- 多次未命中同键均触发
+			- 并发跨线程
+				- 跨线程 createDefault 钩子
+	- 2. 稳定性（Stability）
+		- 大规模 put 压测（capacity-100 缓存 1000 次 put）
+		- 1024 容量边界稳定性（填充/淘汰/1100 插入/重复键）
+		- 长跑内存泄漏检测（100 TaskPool × 1000 次 put/get/remove 迭代）
+		- 高并发统计准确性（200 TaskPool 全计数器校验）
+	- 3. 性能（Performance）
+		- 高并发 put 吞吐（1000 TaskPool put）
+		- 高并发 get 吞吐（1000 TaskPool × 10 = 10000 get）
+		- 大容量并发访问（100 TaskPool × 100 put/get 迭代）
+	- 4. 并发安全（Concurrency Safety）
+		- TaskPool/Worker 跨线程引用传递（postMessageWithSharedSendable）
+		- AsyncLock 串行化（多写者加锁）
+		- 读写隔离（读-写同键/不同键/触发淘汰）
+		- 容量 1 边界并发（无数据损坏）
+		- 并发淘汰 + 统计准确性
+	- 5. 兼容性与继承
+		- 子类化（instanceof 子类+父类、多态、super 构造、泛型继承）
+		- createDefault 覆写（返回非 undefined/undefined 两态）
+		- 子类自定义方法、包装父 API、覆写 toString/contains
+		- 跨线程子类引用
+	- 6. 资料与文档符合性
+		- @Sendable 装饰验证（跨 TaskPool）
+		- @Concurrent 装饰（taskpool 任务函数）
+		- import ArkTSUtils 解析
+		- 泛型 Sendable 约束（非 Sendable 拒绝、nullable 泛型）
+		- 无 forEach 契约符合性（编译期检查）
+		- 无 Symbol.iterator 契约符合性（编译期检查）
+		- 与 collections.Map 差异对比（keys/values 返回数组 vs 迭代器、固定容量 vs 无界、LRU 淘汰 vs 永不淘汰）

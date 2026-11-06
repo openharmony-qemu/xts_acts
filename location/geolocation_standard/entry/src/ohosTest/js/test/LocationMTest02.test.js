@@ -22,6 +22,7 @@ import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestTy
 import notificationManager from '@ohos.notificationManager';
 import wantAgent from '@ohos.wantAgent'
 import FenceExtensionAbility from '@ohos.app.ability.FenceExtensionAbility'
+import { tryToEnableBt, tryToDisableBt } from './Util.test.js';
 
 let request_scenario_UNSET = geolocationm.LocationRequestScenario.UNSET
 let request_scenario_NAVIGATION = geolocationm.LocationRequestScenario.NAVIGATION
@@ -87,6 +88,7 @@ async function applyPermission() {
         let permissionName1 = 'ohos.permission.LOCATION';
         let permissionName2 = 'ohos.permission.LOCATION_IN_BACKGROUND';
         let permissionName3 = 'ohos.permission.APPROXIMATELY_LOCATION';
+        let permissionName4 = 'ohos.permission.ACCESS_BLUETOOTH';
         await atManager.grantUserGrantedPermission(tokenID, permissionName1, 1).then((result) => {
             console.info('[permission] case grantUserGrantedPermission success :' + JSON.stringify(result));
         }).catch((err) => {
@@ -98,6 +100,11 @@ async function applyPermission() {
             console.info('[permission] case grantUserGrantedPermission failed :' + JSON.stringify(err));
         });
         await atManager.grantUserGrantedPermission(tokenID, permissionName3, 1).then((result) => {
+            console.info('[permission] case grantUserGrantedPermission success :' + JSON.stringify(result));
+        }).catch((err) => {
+            console.info('[permission] case grantUserGrantedPermission failed :' + JSON.stringify(err));
+        });
+        await atManager.grantUserGrantedPermission(tokenID, permissionName4, 1).then((result) => {
             console.info('[permission] case grantUserGrantedPermission success :' + JSON.stringify(result));
         }).catch((err) => {
             console.info('[permission] case grantUserGrantedPermission failed :' + JSON.stringify(err));
@@ -1939,6 +1946,56 @@ export default function geolocationTest_geo8() {
             console.info('[lbs_js] isLocationEnabled_perm_test_0200 restore switch err: ' + JSON.stringify(e));
         }
         done();
+    });
+
+    /**
+     * @tc.name   SUB_Location_Location_startBluetoothSearch_bluetoothoff_test_0600
+     * @tc.number SUB_Location_Location_startBluetoothSearch_bluetoothoff_test_0600
+     * @tc.desc   Start bluetooth search with bluetooth switch off, expect error code 3301800.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_Location_Location_startBluetoothSearch_bluetoothoff_test_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        var isAcessToken = canIUse('SystemCapability.Location.Location.Core');
+        console.info('SUB_Location_Location_startBluetoothSearch_bluetoothoff_test_0600: ' + isAcessToken);
+        if (!isAcessToken) {
+            console.info('[lbs_js] startBluetoothSearch_bluetoothoff_test_0600 the device does not support location core');
+            done();
+            return;
+        }
+        let requestInfo = {"deviceIdArray":['00:11:22:33:44:55'], "rssiThreshold":-100};
+        let callback = (result) => {
+            console.info('[lbs_js] startBluetoothSearch_bluetoothoff_test_0600 callback: ' + JSON.stringify(result));
+        };
+        await tryToDisableBt();
+        await sleep(2000);
+        try {
+            geolocationm.startBluetoothSearch(requestInfo, callback);
+            console.info('[lbs_js] startBluetoothSearch_bluetoothoff_test_0600 subscribe done');
+            try {
+                geolocationm.stopBluetoothSearch(callback);
+                console.info('[lbs_js] startBluetoothSearch_bluetoothoff_test_0600 cleanup stop done');
+            } catch (e) {
+                console.info('[lbs_js] startBluetoothSearch_bluetoothoff_test_0600 cleanup stop err: ' + JSON.stringify(e));
+            }
+            expect().assertFail();
+            await tryToEnableBt();
+            await sleep(1000);
+            done();
+        } catch (err) {
+            console.info('[lbs_js] startBluetoothSearch_bluetoothoff_test_0600 catch err: ' + JSON.stringify(err));
+            if (err.code === 3301800) {
+                expect(err.code).assertEqual(3301800);
+            } else if (err.code === 801) {
+                expect(err.code).assertEqual(801);
+            } else {
+                expect().assertFail();
+            }
+            await tryToEnableBt();
+            await sleep(1000);
+            done();
+        }
     });
 
     });

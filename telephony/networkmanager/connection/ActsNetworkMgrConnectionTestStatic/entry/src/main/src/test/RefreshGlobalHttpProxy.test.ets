@@ -224,5 +224,41 @@ export default function RefreshGlobalHttpProxyTest(): void {
           done();
         }
       });
+
+    /**
+     * @tc.name    testRefreshGlobalHttpProxyWithErrorCode_static_0700
+     * @tc.number  SUB_Network_RefreshGlobalHttpProxy_ReturnValueProperties_0700
+     * @tc.desc    Test refreshGlobalHttpProxy return value properties, verify that returned HttpProxy object contains all properties.
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testRefreshGlobalHttpProxyWithErrorCode_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const caseName: string = 'testRefreshGlobalHttpProxyWithErrorCode_static_0700';
+        hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
+        try {
+          const httpProxy = await connection.refreshGlobalHttpProxy();
+          hilog.info(domain, tag, '%{public}s', `${caseName} refreshGlobalHttpProxy success, httpProxy: ${JSON.stringify(httpProxy)}`);
+          ExpectTrue(httpProxy !== undefined);
+          ExpectTrue(httpProxy.host !== undefined);
+          ExpectTrue(httpProxy.port !== undefined);
+          ExpectTrue(httpProxy.exclusionList !== undefined);
+          ExpectTrue(httpProxy.username !== undefined);
+          ExpectTrue(httpProxy.password !== undefined);
+          ExpectTrue(typeof httpProxy.host === 'string');
+          ExpectTrue(typeof httpProxy.port === 'number');
+          ExpectTrue(Array.isArray(httpProxy.exclusionList));
+          ExpectTrue(typeof httpProxy.username === 'string');
+          ExpectTrue(typeof httpProxy.password === 'string');
+          hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+          done();
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} test failed err.code: ${err.code}`);
+          ExpectTrue(err.code === 2100003 || err.code === 2100002);
+          hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+          done();
+        }
+      });
   });
 }

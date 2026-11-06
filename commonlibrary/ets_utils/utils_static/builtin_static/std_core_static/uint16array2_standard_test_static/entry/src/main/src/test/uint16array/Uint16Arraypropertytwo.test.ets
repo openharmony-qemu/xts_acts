@@ -867,7 +867,7 @@ export default function uint16ArraypropertytwoTest(): void {
      */
     it('testUint16Arraypropertytwo060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const s: Array<number> = [1, 2, 3];
-      const a: Uint16Array = Uint16Array.from(s, (v: number, i: number): number => i === 0 ? -1 : 65536 + v);
+      const a: Uint16Array = Uint16Array.from(s, (v: number, i: number): number => i === 0 ? -1.0 : 65536 + v);
       expect(a.join(',')).assertEqual('65535,2,3');
     });
 

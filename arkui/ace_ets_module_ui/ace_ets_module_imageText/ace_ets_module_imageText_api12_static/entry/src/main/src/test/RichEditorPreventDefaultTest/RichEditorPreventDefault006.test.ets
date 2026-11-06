@@ -33,6 +33,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function RichEditorPreventDefault006() {
   describe('RichEditorPreventDefault006', () => {
     beforeAll(async (): Promise<void> => {
@@ -56,9 +57,10 @@ export default function RichEditorPreventDefault006() {
           console.info("push RichEditorPreventDefault006 success");
         }
       } catch (err) {
-        console.error("push RichEditorPreventDefault006 page error: " + err);
+        console.log("push RichEditorPreventDefault006 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
@@ -75,7 +77,11 @@ export default function RichEditorPreventDefault006() {
       let getBounds = await rich.getBounds();
       await CommonFunc.sleep(500);
 
-      await driver.click(getBounds.left + 30, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 30, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.click error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let callOnClick = await (driver.findComponent(ON.id('callOnClick')) as Promise<Component>);

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from './../Util.test';
 import { BusinessError } from '@ohos.base';
 
@@ -988,7 +988,7 @@ export default function ArrayMapTest(): void {
         { a: 3, b: 4 },
         { a: 5 }
       ];
-      const result = arr.map((items: BaseI062) => items.a + (items.b ? items.b as number: 0));
+      const result = arr.map((items: BaseI062) => items.a + (items.b ? items.b as number: 0.0));
 
       expect(JSON.stringify(result)).assertDeepEquals(JSON.stringify([3, 7, 5]));
     });

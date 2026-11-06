@@ -259,5 +259,7 @@ struct sidebarType {
         }
       })
     }
+    .padding(10)
+    .margin(10)
   }
 }

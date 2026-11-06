@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 // function sumReducer(arr: number[], initial: number): number {
@@ -1154,7 +1154,7 @@ export default function BuiltinsArrayPrototypeReduceTest(): void {
     it('BuiltinsArrayPrototypeReduceTest6600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr: (number | null)[] = [1, null, 3];
       const result: number = arr.reduce((acc: number, cur: number | null): number => {
-        return acc + (cur === null ? 0 : cur);
+        return acc + (cur === null ? 0.0 : cur);
       }, 0);
       expect(result).assertEqual(4);
     });
@@ -1170,7 +1170,7 @@ export default function BuiltinsArrayPrototypeReduceTest(): void {
     it('BuiltinsArrayPrototypeReduceTest6700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr: (number | undefined)[] = [1, undefined, 3];
       const result: number = arr.reduce((acc: number, cur: number | undefined): number => {
-        return acc + (cur === undefined ? 0 : cur);
+        return acc + (cur === undefined ? 0.0 : cur);
       }, 0);
       expect(result).assertEqual(4);
     });

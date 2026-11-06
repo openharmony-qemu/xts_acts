@@ -117,5 +117,7 @@ struct ScrollBarPage {
         }.width(30).backgroundColor(this.backColor).key('scrollBar')
       }
     }
+    .padding(10)
+    .margin(10)
   }
 }

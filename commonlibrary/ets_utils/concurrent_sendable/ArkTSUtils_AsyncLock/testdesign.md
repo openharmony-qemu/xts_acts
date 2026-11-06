@@ -1,0 +1,206 @@
+- ArkTSUtils.locks.AsyncLock 测试设计
+	- 说明：基于 arktsutils_asynclock_testpoint.md §1 接口维度脑图生成，覆盖 11 接口×7 测试逻辑分类（缺项类按 §1 树跳过）
+	- 1. 接口测试（Functional）
+		- constructor()
+			- 入参范围覆盖
+				- new ArkTSUtils.locks.AsyncLock() 无参默认构造
+			- 边界值测试
+				- 无名锁（name 为内部生成）
+			- 返回值与类型验证
+				- instanceof AsyncLock
+			- 组合场景
+				- new vs request(name) 实例独立性
+			- 重复调用/幂等性
+				- 多次 new 各得独立实例
+			- 并发跨线程
+				- ConcurrentAsyncLock_0001
+				- AsynclockDifferent* 跨 TaskPool/Worker 构造
+		- static request(name)
+			- 入参范围覆盖
+				- 普通串、空串("")、同名/异名、跨 TaskPool/Worker 上下文请求
+			- 边界值测试
+				- 空串边界 lock.name===""
+			- 异常与非法输入
+				- 非字符串入参 401（未测；ArkTS 严格为编译期，需 undefined as string 注入）
+			- 返回值与类型验证
+				- instanceof AsyncLock、lock.name === name
+			- 组合场景
+				- 同名→同实例（AsynclockSame* 92 例）
+				- 异名→异实例（AsynclockDifferent* 100 例）
+			- 重复调用/幂等性
+				- 同线程/跨线程重复 request 同名返回同实例
+			- 并发跨线程
+				- AsynclockSame*/Different* 跨 TaskPool/Worker
+				- ConcurrentAsyncLock_0002
+		- static query(name)
+			- 入参范围覆盖
+				- 已存在锁、不存在锁、空串
+			- 边界值测试
+				- 空闲态 held/pending length===0
+				- 持有态 held 非空
+			- 异常与非法输入
+				- 不存在锁→10200030（AsyncLocktest_0001）
+			- 返回值与类型验证
+				- AsyncLockState、held/pending 为 Array
+			- 组合场景
+				- request 后 query、lockAsync 持有期间 query
+			- 重复调用/幂等性
+				- 同锁多次 query 状态一致
+			- 并发跨线程
+				- ConcurrentAsyncLock_0003
+		- static queryAll()
+			- 入参范围覆盖
+				- 0/1/多把锁场景
+			- 边界值测试
+				- 无锁（不创建仅查询）
+				- 3 把锁 states.length>=3
+			- 返回值与类型验证
+				- AsyncLockState[] 数组
+			- 组合场景
+				- request 多名后 queryAll 校验条数
+			- 重复调用/幂等性
+				- 多次 queryAll 条数稳定
+			- 并发跨线程
+				- ConcurrentAsyncLock_0004
+		- lockAsync（3 重载）
+			- 入参范围覆盖
+				- 回调返回 T / Promise<T>
+				- SHARED/EXCLUSIVE mode
+				- options.isAvailable/signal/timeout
+			- 边界值测试
+				- 空操作回调、timeout=0(默认)/1000
+				- isAvailable true/false、signal aborted true/false
+			- 异常与非法输入
+				- 非法 mode(123/-1/999)→401（AsyncLocktest_0002~0004）
+				- timeout→10200031（AsyncLocktest_0005）
+				- 10200030(lockAsync 路径)未触发（缺口）
+			- 返回值与类型验证
+				- Promise<T>、string/number/boolean/Sendable 对象返回值
+			- 组合场景
+				- 嵌套重入（内外 mode 组合 LockTest_0024~0031）
+				- 顺序获取（0013~0021）
+				- SHARED 并行 / EXCLUSIVE 互斥
+			- 重复调用/幂等性
+				- 同锁多次 lockAsync 顺序排队
+			- 并发跨线程
+				- 多线程同锁（LockTest_0022/0023/0032）
+				- worker（0003/0006/0017/0035）
+				- 死锁检测（AsyncLockConcurrencyBaseTest_0005）
+		- readonly name
+			- 入参范围覆盖
+				- 普通串、空串
+			- 边界值测试
+				- 空串 name===""
+			- 异常与非法输入
+				- readonly 赋值拒绝证据（严格模式编译期，缺口）
+			- 返回值与类型验证
+				- string、=== request 入参
+			- 组合场景
+				- request 后 name 一致、new 的无名锁 name
+			- 重复调用/幂等性
+				- 同锁 name 稳定
+			- 并发跨线程
+				- 跨 TaskPool/Worker 引用 name 一致
+		- AsyncLockMode（SHARED=1 / EXCLUSIVE=2）
+			- 入参范围覆盖
+				- SHARED / EXCLUSIVE 两值
+			- 异常与非法输入
+				- 非法值(123/-1/999)→401（经 lockAsync mode 位）
+			- 返回值与类型验证
+				- SHARED=1/EXCLUSIVE=2（held[i].mode 比对）
+			- 组合场景
+				- SHARED 并行 / EXCLUSIVE 互斥
+				- SHARED 可重入、嵌套内外 mode 组合
+			- 重复调用/幂等性
+				- 同 mode 多次行为一致
+			- 并发跨线程
+				- worker 内 SHARED/EXCLUSIVE（LockTest_0003/0006/0035）
+		- AsyncLockOptions（constructor + isAvailable/signal/timeout）
+			- 入参范围覆盖
+				- isAvailable true/false
+				- signal {aborted,reason}|null
+				- timeout 0/1000
+			- 边界值测试
+				- 默认值 false/null/0
+			- 返回值与类型验证
+				- instanceof AsyncLockOptions
+				- 默认值三连断言、set/get 回读
+			- 组合场景
+				- options 传入 lockAsync 重载③
+				- isAvailable+signal+timeout 组合
+			- 重复调用/幂等性
+				- 同 options 多次 lockAsync 行为一致
+			- 并发跨线程
+				- options 随 lockAsync 跨 worker（间接）
+		- AsyncLockState（held[] / pending[]）
+			- 入参范围覆盖
+				- held / pending 两数组
+			- 边界值测试
+				- 空闲态 length===0
+				- 持有态 held 非空、等待态 pending 非空
+			- 返回值与类型验证
+				- Array.isArray(held/pending)
+			- 组合场景
+				- lockAsync 持有期间 query → held[i] 命中
+			- 重复调用/幂等性
+				- 同状态多次 query 一致
+			- 并发跨线程
+				- 并发 queryAll
+		- AsyncLockInfo（name / mode / contextId）
+			- 入参范围覆盖
+				- name / mode / contextId 三字段
+			- 边界值测试
+				- contextId Number.isFinite
+			- 返回值与类型验证
+				- held[i].name===TAG、mode===SHARED/EXCLUSIVE、contextId isFinite
+			- 组合场景
+				- 不同 mode 下 held[i].mode 命中
+			- 重复调用/幂等性
+				- 同锁 held[i] 稳定
+			- 并发跨线程
+				- contextId 跨上下文（main vs worker）区分（缺口）
+		- AbortSignal（aborted / reason；同线程约束）
+			- 入参范围覆盖
+				- aborted true/false、reason 串
+			- 边界值测试
+				- aborted true 跳过回调
+			- 异常与非法输入
+				- 跨线程访问 UB 未取证（.d.ets L320 警告，缺口）
+			- 返回值与类型验证
+				- reason 拒绝 Promise 值（.d.ets L347，缺口）
+			- 组合场景
+				- signal + isAvailable + timeout 组合传入 lockAsync
+			- 重复调用/幂等性
+				- 同 signal 多次行为一致
+			- 并发跨线程
+				- 同线程约束未测（缺口）
+	- 2. 稳定性（Stability）
+		- GC 期间 lockAsync 稳定性（AsyncLockConcurrencyBaseTest_0002）
+		- 共享锁销毁后 GC（AsyncLockConcurrencyBaseTest_0004）
+		- timeout 回调与 env 销毁处理（AsyncLockConcurrencyBaseTest_0003）
+		- 跨 TaskPool/Worker 反复 request/name 压力（AsynclockSame*/Different* ~100 例）
+		- 大规模（1000+ 把锁）创建/销毁稳定性（缺口）
+	- 3. 性能（Performance）
+		- 多线程并发吞吐（LockTest_0032 many threads）
+		- 多 TaskPool 并发（AsynclockSame*/Different*）
+		- 单接口基线性能基准（缺口）
+	- 4. 并发安全（Concurrency Safety）
+		- TaskPool/Worker 跨线程引用传递
+		- SHARED 并行 / EXCLUSIVE 互斥（LockTest_0001~0006/0011/0022~0023/0035）
+		- 嵌套重入（LockTest_0024~0031）
+		- 顺序排队/唤醒（LockTest_0013~0021）
+		- 死锁检测（AsyncLockConcurrencyBaseTest_0005）
+		- 跨并发实例同名共享（AsynclockSame*）
+	- 5. 兼容性与继承
+		- @Sendable 跨线程引用传递
+		- 跨并发实例共享同名锁
+		- worker 内 lockAsync
+		- 子类化（AsyncLock 为 final 风格 @Sendable，非契约支持范围）
+	- 6. 资料与文档符合性
+		- @Sendable 装饰验证
+		- import 可用性
+		- instanceof 校验
+		- @since 12 / @crossplatform[since 18] 版本符合性
+		- 错误码 10200030/10200031 符合性
+		- 401 声明缺口（⚠️ 文档未列 401，见 §7.4）
+		- .md SHARED 说明未提"可重入"（⚠️ 与 .d.ets 注不一致，见 §7.4）

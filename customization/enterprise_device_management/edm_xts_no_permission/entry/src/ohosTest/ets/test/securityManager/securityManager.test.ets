@@ -1506,7 +1506,7 @@ function testGetPasswordLastChangedTime() {
       securityManager.getPasswordLastChangedTime(INT_VALID_ACCOUNTID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 201).assertTrue();
+      expect(error.code).assertEqual(201);
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }

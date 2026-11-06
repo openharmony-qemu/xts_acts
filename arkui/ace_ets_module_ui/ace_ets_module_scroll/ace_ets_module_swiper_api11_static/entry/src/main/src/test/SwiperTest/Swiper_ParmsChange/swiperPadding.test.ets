@@ -53,6 +53,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function swiperPadding() {
   describe('swiperMarPadTest02', () => {
     beforeAll(async (): Promise<void> => {
@@ -126,12 +127,7 @@ it('testSwiperSetPadding_static', Level.LEVEL0, async (done: () => void): Promis
       // //  await driver.swipe(250, 230, 200, 230);
       // await CommonFunc.sleep(1000);
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('swiperPadding')
-      await driver.swipe(
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`).toInt(),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(),
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.1 + gridRect.left}`).toInt(),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(),
-        1000);
+      await driver.swipeBetween({ x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`).toInt(), y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(), displayId: displayID.toInt() }, { x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.1 + gridRect.left}`).toInt(), y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(), displayId: displayID.toInt() }, 1000);
       await CommonFunc.sleep(3000);
       swiperPadding = CommonFunc.getComponentRectOnScreen('swiperPadding');
       swiperPadding01 = CommonFunc.getComponentRectOnScreen('swiperPadding01');

@@ -48,6 +48,8 @@ struct SwiperDisplayCount {
         Text('6')
       }.width('100%').height('100%').backgroundColor(0xD2B48C).id('swiperDisplayCount06')
     }
+    .padding(10)
+    .margin(10)
     .id('swiperDisplayCount')
     .loop(true)
     .autoPlay(true, undefined)

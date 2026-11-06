@@ -25,7 +25,7 @@ export default function NapiWorkerTest() {
 
   describe('napiWorkerTest', () => {
     beforeEach(async () => {
-      await sleep(50);
+      await sleep(200);
     });
 
     /**
@@ -856,23 +856,33 @@ export default function NapiWorkerTest() {
       myWorker.postMessage('getNull');
       await new Promise<void>((resolve, reject) => {
         let resolved = false;
+        const timer = setTimeout(() => {
+          if (!resolved) {
+            myWorker.terminate();
+            reject(new Error(`${caseName}: timeout`));
+          }
+        }, 5000);
         myWorker.onmessage = (e) => {
           try {
+            clearTimeout(timer);
             expect(e.data).assertEqual(0);
             resolved = true;
             myWorker.terminate();
             resolve();
           } catch (error) {
+            clearTimeout(timer);
             myWorker.terminate();
             reject(error);
           }
         };
         myWorker.onexit = () => {
           if (!resolved) {
+            clearTimeout(timer);
             reject(new Error(`${caseName}: Worker exited without sending result`));
           }
         };
         myWorker.onerror = (e) => {
+          clearTimeout(timer);
           myWorker.terminate();
           reject(e);
         };
@@ -893,23 +903,33 @@ export default function NapiWorkerTest() {
       myWorker.postMessage('getUndefined');
       await new Promise<void>((resolve, reject) => {
         let resolved = false;
+        const timer = setTimeout(() => {
+          if (!resolved) {
+            myWorker.terminate();
+            reject(new Error(`${caseName}: timeout`));
+          }
+        }, 5000);
         myWorker.onmessage = (e) => {
           try {
+            clearTimeout(timer);
             expect(e.data).assertEqual(0);
             resolved = true;
             myWorker.terminate();
             resolve();
           } catch (error) {
+            clearTimeout(timer);
             myWorker.terminate();
             reject(error);
           }
         };
         myWorker.onexit = () => {
           if (!resolved) {
+            clearTimeout(timer);
             reject(new Error(`${caseName}: Worker exited without sending result`));
           }
         };
         myWorker.onerror = (e) => {
+          clearTimeout(timer);
           myWorker.terminate();
           reject(e);
         };

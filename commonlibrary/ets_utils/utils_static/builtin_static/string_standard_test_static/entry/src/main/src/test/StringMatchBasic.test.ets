@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from './Util.test';
 
 export interface MatchIsTypeErrorResult {
@@ -401,7 +401,7 @@ namespace matchHelperTest {
   export function testNoParam(): MatchNoParamResult {
     const str: string = 'Hello';
     const result: RegExpMatchArray | null = str.match(new RegExp(''));
-    const len: number = result !== null ? result.length : 0;
+    const len: number = result !== null ? Int.toDouble(result.length) : 0.0;
     const first: string = result !== null && result[0] !== undefined ? String(result[0]) : '';
     return { length: len, result: first };
   }
@@ -409,7 +409,7 @@ namespace matchHelperTest {
   export function testEmptyStringNoParam(): MatchNoParamResult {
     const str: string = '';
     const result: RegExpMatchArray | null = str.match(new RegExp(''));
-    const len: number = result !== null ? result.length : 0;
+    const len: number = result !== null ? Int.toDouble(result.length) : 0.0;
     const first: string = result !== null && result[0] !== undefined ? String(result[0]) : '';
     return { length: len, result: first };
   }

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,7 +26,7 @@ import {
   Size,
   Level,
   beforeAll
-} from "../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 import Utils from './Util.test';
 import {quitErrorMsg} from './Util.test';
 

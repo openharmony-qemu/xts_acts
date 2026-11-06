@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium-static/src/main/indexStatic';
 import collections from '@arkts.collections';
 import Utils from '../utils/Utils';
 import { delay, getTaskStateByTaskName } from '../utils/taskPoolCommon';
@@ -1331,7 +1331,7 @@ export default function TaskPoolStaticTest(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200079);
+        expect(error.code).assertEqual(10200056);
       }
       console.info(`${caseName} test end`);
       done();
@@ -1463,7 +1463,7 @@ export default function TaskPoolStaticTest(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200097);
+        expect(error.code).assertEqual(10200027);
       }
       console.info(`${caseName} test end`);
       done();
@@ -1489,7 +1489,7 @@ export default function TaskPoolStaticTest(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200097);
+        expect(error.code).assertEqual(10200027);
       }
       console.info(`${caseName} test end`);
       done();
@@ -1848,7 +1848,7 @@ export default function TaskPoolStaticTest(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200088);
+        expect(error.code).assertEqual(10200015);
       }
       console.info(`${caseName} test end`);
       done();
@@ -1874,7 +1874,7 @@ export default function TaskPoolStaticTest(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200088);
+        expect(error.code).assertEqual(10200015);
       }
       console.info(`${caseName} test end`);
       done();
@@ -1940,7 +1940,7 @@ export default function TaskPoolStaticTest(): void {
         } catch (e) {
           cancelCaught = true;
           console.info(`${caseName} cancel completed task code => ${e.code} message => ${e.message}`);
-          expect(e.code).assertEqual(10200085);
+          expect(e.code).assertEqual(10200057);
         }
         expect(cancelCaught).assertTrue();
         expect(await p2 as number).assertEqual(201);
@@ -2021,7 +2021,7 @@ export default function TaskPoolStaticTest(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200085);
+        expect(error.code).assertEqual(10200057);
       }
       console.info(`${caseName} test end`);
       done();
@@ -2044,7 +2044,7 @@ export default function TaskPoolStaticTest(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200088);
+        expect(error.code).assertEqual(10200015);
       }
       console.info(`${caseName} test end`);
       done();
@@ -2140,7 +2140,7 @@ export default function TaskPoolStaticTest(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200089);
+        expect(error.code).assertEqual(10200018);
       }
       console.info(`${caseName} test end`);
       done();
@@ -2166,7 +2166,7 @@ export default function TaskPoolStaticTest(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200089);
+        expect(error.code).assertEqual(10200018);
       }
       console.info(`${caseName} test end`);
       done();
@@ -2224,7 +2224,7 @@ export default function TaskPoolStaticTest(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200089);
+        expect(error.code).assertEqual(10200018);
       }
       console.info(`${caseName} test end`);
       done();
@@ -2280,7 +2280,7 @@ export default function TaskPoolStaticTest(): void {
           taskpool.cancel(task);
           expect().assertFail();
         } catch (error) {
-          expect(error.code).assertEqual(10200085);
+          expect(error.code).assertEqual(10200057);
         }
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
@@ -2710,7 +2710,7 @@ export default function TaskPoolStaticTest(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200096);
+        expect(error.code).assertEqual(10200028);
       }
       console.info(`${caseName} test end`);
       done();
@@ -2761,7 +2761,7 @@ export default function TaskPoolStaticTest(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200086);
+        expect(error.code).assertEqual(10200050);
       }
       console.info(`${caseName} test end`);
       done();
@@ -2784,7 +2784,7 @@ export default function TaskPoolStaticTest(): void {
           taskpool.executePeriodically(100, task);
           expect().assertFail();
         } catch (error) {
-          expect(error.code).assertEqual(10200086);
+          expect(error.code).assertEqual(10200050);
         }
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);

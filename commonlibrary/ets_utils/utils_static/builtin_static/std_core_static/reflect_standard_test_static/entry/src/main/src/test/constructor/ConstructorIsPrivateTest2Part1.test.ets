@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from "../../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 import Utils from "../Util.test";
 
 import {EmptyCls,IsPrivateWithFactory,IsProtectedWithStatic,TcTwoPubA,PrivateCtorWithDefault,ParamCountCls,PrivateCtorTwoParams,PublicCtorThreeParams,PrivateCtorThreeParams,GetParamTypeABC,StringFieldWithMethod,PrivSpecialStrDefault,IP2_110_PubDefBool,IP5_278_PrivDefBool,TcPub19,ChildPublicCtor,ChildPrivateCtor,ChildProtectedCtor,TwoSameInt,ThreeOverloadPrivateCtor,PubDouble,PubIfcImpl,IP3_193_PubFloat,PubShortParam,PubByteParam,Ext4_CharOptParam,TcPub12,GN_P5,Pub6IntExt,Pub7IntExt,MultiPrivPubExt,PubGen,PubGenTwo,DefGenNoCtor,NoModCtor,DefaultCtor,PublicCtorEmpty,ProtectedCtorEmpty,PublicCtorIntParam,PublicCtorTwoParams,PublicMixedParams,PublicCtorWithDefault,PublicStrCtor,PublicBoolCtor,PublicArrCtor,ParentBase,PublicOverloadedCtor,ThreeOverloadPublicCtor,PrivateCtorEmpty,PrivateCtorIntParam,PrivateMixedParams,PrivateStrCtor,PrivateBoolCtor,PrivateArrCtor,UtilityClass,PrivateOverloadedCtor,} from "../Util.test";

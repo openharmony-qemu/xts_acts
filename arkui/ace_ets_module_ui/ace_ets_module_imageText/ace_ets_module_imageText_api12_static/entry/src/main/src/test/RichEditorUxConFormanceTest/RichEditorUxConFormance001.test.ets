@@ -34,6 +34,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function RichEditorUxConFormance001() {
   describe('RichEditorUxConFormance001', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,9 +58,10 @@ export default function RichEditorUxConFormance001() {
           console.info("push RichEditorUxConFormance001 success");
         }
       } catch (err) {
-        console.error("push RichEditorUxConFormance001 page error: " + err);
+        console.log("push RichEditorUxConFormance001 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
@@ -74,7 +76,11 @@ export default function RichEditorUxConFormance001() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorUxConFormance001')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let updateSpanStyle = await (driver.findComponent(ON.id('updateSpanStyle')) as Promise<Component>);

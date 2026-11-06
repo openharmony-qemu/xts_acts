@@ -45,6 +45,9 @@ let testAbilityContext: common.UIAbilityContext;
 const searchIconLeftSpace = 12;
 const searchIconRightSpace = 8;
 const defaultSearchIconWidth = 16;
+
+let displayID: Int = 0;
+
 export default function search_gesture() {
   describe('search_gesture', () => {
     beforeAll(async (): Promise<void> => {
@@ -69,9 +72,10 @@ export default function search_gesture() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push search_gesture page error:" + err);
+        console.log("push search_gesture page error:" + err);
       }
       console.info("search_gesture beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     
     /**
@@ -92,7 +96,11 @@ it('search_gesture_static_001', Level.LEVEL0, async (done: () => void): Promise<
           console.info('search_gesture_001 click success');
           //first step: input hello
           await (searchComponent.inputText('hello') as Promise<void>);
-          await driver.triggerKey(2047)
+          try {
+            await driver.triggerKey(2047, displayID)
+          } catch (err) {
+            console.log('driver.triggerKey error: ' + JSON.stringify(err));
+          }
           await CommonFunc.sleep(1000);
         }
         //second step: get caret position and click caret
@@ -107,7 +115,11 @@ it('search_gesture_static_001', Level.LEVEL0, async (done: () => void): Promise<
         let searchRect = CommonFunc.getComponentRectOnScreen('SearchGesture');
         let clickX = Math.round(searchRect.left + caretRelativeX + Number.parseInt(Number(AppStorage.get<UIContext>('uiContext')!.vp2px(searchIconLeftSpace + searchIconRightSpace + defaultSearchIconWidth)).toFixed(2))).toInt();
         let clickY = Math.round((searchRect.bottom + searchRect.top) / 2).toInt();
-        await (driver.click(clickX, clickY) as Promise<void>);
+        try {
+          await (driver.clickAt({ x: clickX, y: clickY, displayId: displayID }) as Promise<void>);
+        } catch (err) {
+          console.log('driver.clickAt error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
 
         //check the text selection menu appearing
@@ -156,7 +168,11 @@ it('SUB_ACE_UI_SEARCH_GESTURE_static_0200', Level.LEVEL0, async (done: () => voi
         let searchRect = CommonFunc.getComponentRectOnScreen('SearchGesture');
         let clickX = Math.round(searchRect.left + caretRelativeX + (Number.parseInt(Number(AppStorage.get<UIContext>('uiContext')!.vp2px(searchIconLeftSpace + searchIconRightSpace + defaultSearchIconWidth)).toFixed(2))) - AppStorage.get<UIContext>('uiContext')!.vp2px(10)).toInt();
         let clickY = Math.round((searchRect.bottom + searchRect.top) / 2).toInt();
-        await (driver.longClick(clickX, clickY) as Promise<void>);
+        try {
+          await (driver.longClickAt({ x: clickX, y: clickY, displayId: displayID }) as Promise<void>);
+        } catch (err) {
+          console.log('driver.longClickAt error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
         let selectAllButton1 = await driver.findComponent(ON.text('全选'));
 
@@ -170,7 +186,11 @@ it('SUB_ACE_UI_SEARCH_GESTURE_static_0200', Level.LEVEL0, async (done: () => voi
 
         //second step: longClick on an empty space and check
         let clickX2 = Math.round(searchRect.left + caretRelativeX + (Number.parseInt(Number(AppStorage.get<UIContext>('uiContext')!.vp2px(searchIconLeftSpace + searchIconRightSpace + defaultSearchIconWidth)).toFixed(2))) + AppStorage.get<UIContext>('uiContext')!.vp2px(2)).toInt();
-        await (driver.longClick(clickX2, clickY) as Promise<void>);
+        try {
+          await (driver.longClickAt({ x: clickX2, y: clickY, displayId: displayID }) as Promise<void>);
+        } catch (err) {
+          console.log('driver.longClickAt error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
         let strJson3 = inspector.getInspectorByKey('SearchGesture');
         let obj3 = JSON.parseJsonElement(strJson3);
@@ -193,7 +213,11 @@ it('SUB_ACE_UI_SEARCH_GESTURE_static_0200', Level.LEVEL0, async (done: () => voi
         if (search != null && search != undefined) {
           let point: Point = await (search.getBoundsCenter() as Promise<Point>);
           await CommonFunc.sleep(500);
-          await (driver.longClick(point.x as int, point.y as int) as Promise<void>);
+          try {
+            await (driver.longClickAt({ x: point.x as int, y: point.y as int, displayId: displayID }) as Promise<void>);
+          } catch (err) {
+            console.log('driver.longClickAt error: ' + JSON.stringify(err));
+          }
           await CommonFunc.sleep(500);
           let strJson5 = inspector.getInspectorByKey('SearchGesture');
           let obj5 = JSON.parseJsonElement(strJson5);
@@ -228,11 +252,19 @@ it('SUB_ACE_UI_SEARCH_GESTURE_static_0300', Level.LEVEL2, async (done: () => voi
         console.info('[search_gesture_003] click success');
         //first step: input long text
         await (searchComponent.inputText('helloWORLD!helloWORLD!helloWORLD!helloWORLD!helloWORLD!helloWORLD!') as Promise<void>);
-        await driver.triggerKey(2047)
+        try {
+          await driver.triggerKey(2047, displayID)
+        } catch (err) {
+          console.log('driver.triggerKey error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
 
         //second step: trigger enter and check focus state
-        await driver.triggerKey(2119);
+        try {
+          await driver.triggerKey(2119, displayID);
+        } catch (err) {
+          console.log('driver.triggerKey error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
         let focusState = await (searchComponent.isFocused() as Promise<Boolean>);
         expect(focusState).assertEqual(false);
@@ -265,15 +297,24 @@ it('SUB_ACE_UI_SEARCH_GESTURE_static_0400', Level.LEVEL2, async (done: () => voi
         await CommonFunc.sleep(300);
 
         //second step: move mouse on searchComponent and check mouse state
-        await (driver.mouseMoveTo(point as Point) as Promise<void>);
+        try {
+          await (driver.mouseMoveTo({ x: (point as Point).x, y: (point as Point).y, displayId: displayID }) as Promise<void>);
+        } catch (err) {
+          console.log('driver.mouseMoveTo error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(300);
         let focusState = await (searchComponent.isFocused() as Promise<boolean>);
 
         //third step: move mouse out searchComponent and check mouse state
         let searchRect = await searchComponent.getBounds();
-        await driver.mouseMoveTo({
-          x: (point.x as int), y: Math.round(searchRect.bottom + AppStorage.get<UIContext>('uiContext')!.vp2px(2)).toInt()
-        });
+        try {
+          await driver.mouseMoveTo({
+            x: (point.x as int), y: Math.round(searchRect.bottom + AppStorage.get<UIContext>('uiContext')!.vp2px(2)).toInt(),
+            displayId: displayID
+          });
+        } catch (err) {
+          console.log('driver.mouseMoveTo error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(300);
         let focusState2 = await (searchComponent.isFocused() as Promise<boolean>);
         expect(focusState).assertEqual(true);
@@ -305,12 +346,20 @@ it('SUB_ACE_UI_SEARCH_GESTURE_static_0500', Level.LEVEL2, async (done: () => voi
       console.info('[search_gesture_005] click success');
       //first step: input hello and click the head of line,check caret position
       await (searchComponent?.inputText('hello') as Promise<void>);
-      await driver.triggerKey(2047)
+      try {
+        await driver.triggerKey(2047, displayID)
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let searchRect = await (searchComponent?.getBounds() as Promise<Rect>);
       let clickX = Math.round(searchRect.left + (Number.parseInt(Number(AppStorage.get<UIContext>('uiContext')!.vp2px(searchIconLeftSpace + searchIconRightSpace + defaultSearchIconWidth)).toFixed(2)))).toInt();
       let clickY = Math.round((searchRect.top + searchRect.bottom) / 2).toInt();
-      await driver.click(clickX, clickY)
+      try {
+        await driver.clickAt({ x: clickX, y: clickY, displayId: displayID })
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('GetCaret'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(500);

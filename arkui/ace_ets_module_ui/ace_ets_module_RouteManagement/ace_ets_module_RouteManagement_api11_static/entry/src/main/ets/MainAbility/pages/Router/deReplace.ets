@@ -30,6 +30,9 @@ struct routerReplace_getParams {
 
       Text('router_replaceUrl:' + JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams()))).id('replace_getParams')
 
-    }.width('100%').height('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%').height('100%')
   }
 }

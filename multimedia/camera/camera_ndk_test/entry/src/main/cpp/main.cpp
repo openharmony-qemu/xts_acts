@@ -3071,6 +3071,22 @@ static napi_value SessionEnableAutoDeviceSwitch(napi_env env, napi_callback_info
     napi_create_int32(env, code, &result);
     return result;
 }
+
+static napi_value OHCaptureSessionEnableAutoDeviceSwitch(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_value result;
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    bool isEnable;
+    napi_get_value_bool(env, args[1], &isEnable);
+    Camera_ErrorCode code = ndkCamera_->EnableAutoDeviceSwitch(useCaseCode, isEnable);
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
 static napi_value SessionRegisterAutoDeviceSwitchStatusChange(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -4471,6 +4487,8 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr },
         { "sessionEnableAutoDeviceSwitch", nullptr, SessionEnableAutoDeviceSwitch, nullptr, nullptr, nullptr,
             napi_default, nullptr },
+        { "oHCaptureSessionEnableAutoDeviceSwitch", nullptr, OHCaptureSessionEnableAutoDeviceSwitch, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
         { "sessionRegisterAutoDeviceSwitchStatusChange", nullptr, SessionRegisterAutoDeviceSwitchStatusChange,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "sessionUnregisterAutoDeviceSwitchStatusChange", nullptr, SessionUnregisterAutoDeviceSwitchStatusChange,

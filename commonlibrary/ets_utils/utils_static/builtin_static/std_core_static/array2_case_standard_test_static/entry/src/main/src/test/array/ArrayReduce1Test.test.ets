@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 class IndexMap009 {
@@ -472,7 +472,7 @@ export default function ArrayReduce1Test(): void {
           if (index === 0) {
             source[1] = 2;
           }
-          return acc + (value === undefined ? 0 : value);
+          return acc + (value === undefined ? 0.0 : value);
         }, 0);
       expect(result).assertEqual(6);
       expect(visited.toString()).assertEqual('0:1,1:2,2:3');

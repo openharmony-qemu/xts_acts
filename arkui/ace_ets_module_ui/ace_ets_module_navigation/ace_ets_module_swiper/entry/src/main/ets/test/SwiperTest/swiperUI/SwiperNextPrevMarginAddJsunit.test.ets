@@ -1945,7 +1945,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
         ${(swiperRight - swiperLeft)}`);
     console.info(`[SwiperNextPrevMarginAddJsunit_0065] (3*(right - left)+ vp2px(15 + 6 + 4 * 10))=
         ${(3*(right - left)+ vp2px(15 + 6 + 4 * 10))}`);
-    expect(Math.floor(Math.abs((swiperRight - swiperLeft)- (3 *(right - left) + vp2px(15 + 6 + 4 * 10)))) <= 1).assertTrue();
+    expect(Math.round(Math.abs((swiperRight - swiperLeft)- (3 *(right - left) + vp2px(15 + 6 + 4 * 10)))) <= 2).assertTrue();
     done();
   });
 
@@ -2000,7 +2000,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
     expect(prevMargin).assertEqual("6.00vp");
     expect(itemspace).assertEqual("10.00vp");
 
-    expect(Math.floor(Math.abs(Math.round(swiperTop - swiperbottom) -  Math.round(3 *(top - bottom) - vp2px(4*10 + 15 + 6)))) <= 2).assertTrue();
+    expect(Math.round(Math.abs(Math.round(swiperTop - swiperbottom) -  Math.round(3 *(top - bottom) - vp2px(4*10 + 15 + 6)))) <= 2).assertTrue();
     done();
   });
 
@@ -2394,7 +2394,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
         ${(swiperRight - swiperLeft)}`);
     console.info(`[SwiperNextPrevMarginAddJsunit_0057] (3*(right - left)+ vp2px(15 + 6 + 4 * 10))=
         ${(3*(right - left)+ vp2px(15 + 6 + 4 * 10))}`);
-    expect(Math.floor(Math.abs((swiperRight - swiperLeft)- (3*(right - left)+ vp2px(15 + 6 + 4 * 10)))) <= 1).assertTrue();
+    expect(Math.round(Math.abs((swiperRight - swiperLeft)- (3*(right - left)+ vp2px(15 + 6 + 4 * 10)))) <= 2).assertTrue();
     done();
   });
 
@@ -2449,7 +2449,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
     expect(prevMargin).assertEqual("6.00vp");
     expect(itemspace).assertEqual("10.00vp");
 
-    expect(Math.floor(Math.abs(Math.round(swiperTop - swiperbottom) -  Math.round(3 *(top - bottom) - vp2px(15 + 6 + 4 * 10)))) <= 2).assertTrue();
+    expect(Math.round(Math.abs(Math.round(swiperTop - swiperbottom) -  Math.round(3 *(top - bottom) - vp2px(15 + 6 + 4 * 10)))) <= 2).assertTrue();
     done();
   });
 

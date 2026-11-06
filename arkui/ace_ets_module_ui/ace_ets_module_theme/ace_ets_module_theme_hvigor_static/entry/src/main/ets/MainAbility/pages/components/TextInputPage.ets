@@ -131,5 +131,7 @@ struct TextInputPage {
         }.width('100%')
       }
     }
+    .padding(10)
+    .margin(10)
   }
 }

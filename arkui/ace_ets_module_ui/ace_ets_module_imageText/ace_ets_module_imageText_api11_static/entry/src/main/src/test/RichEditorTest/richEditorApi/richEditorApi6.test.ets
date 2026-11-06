@@ -42,6 +42,8 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
+let displayID: Int = 0;
+
 export default function richEditorApi6() {
   describe('richEditorApi6', () => {
     beforeEach(async (): Promise<void> => {
@@ -60,15 +62,15 @@ export default function richEditorApi6() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push richEditorApi6 page error:" + err);
+        console.log("push richEditorApi6 page error:" + err);
       }
       console.info("richEditorApi6 beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     beforeAll(async (): Promise<void> => {
       console.info("richEditorApi6 beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
-
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);
@@ -90,7 +92,11 @@ export default function richEditorApi6() {
       let richEditor = CommonFunc.getComponentRectOnScreen('RichEditor6');
       let clickButton = await driver.findComponent(ON.id('RichEditor6'))
       let point : Point = await (clickButton?.getBoundsCenter() as Promise<Point>);
-      await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT)
+      try {
+        await driver.mouseClick({ x: point.x, y: point.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_LEFT)
+      } catch (err) {
+        console.log('driver.mouseClick error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       console.info("text1111");

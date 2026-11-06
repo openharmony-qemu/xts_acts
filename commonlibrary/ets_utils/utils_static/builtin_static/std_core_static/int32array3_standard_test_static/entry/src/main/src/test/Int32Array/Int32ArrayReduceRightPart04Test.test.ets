@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 export default function int32ArrayReduceRightPart04Test(): void {
@@ -466,7 +466,7 @@ export default function int32ArrayReduceRightPart04Test(): void {
     it('int32ArrayReduceRightPart04Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, 2, 3, 4]);
       let r: number = arr.reduceRight((p: number, c: number, _i: int, _a: Int32Array): number => {
-        return p + (c % 2 === 0 ? c : 0);
+        return p + (c % 2 === 0 ? c : 0.0);
       }, 0);
       expect(r).assertEqual(6);
     });

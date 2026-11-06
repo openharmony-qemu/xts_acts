@@ -100,6 +100,9 @@ struct SearchExample {
         .onClick((e: ClickEvent) => {
           this.controller.stopEditing();
         }).margin({ top: 20 } as Margin)
-    }.width('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%')
   }
 }

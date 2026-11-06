@@ -409,6 +409,20 @@ export default function DrawingTsColorFilterPart2Test() {
         console.info(msg + ` 2 errorCode: ${e.code}, message: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
+
+      let matrixWithString: Array<any> = [
+        'invalid', 0, 0, 0, 0,
+        0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0
+      ];
+      try {
+        drawing.ColorFilter.createMatrixColorFilter(matrixWithString);
+        console.info(msg + ' createMatrixColorFilter with string element succeeded');
+      } catch (e) {
+        console.info(msg + ` errorCode: ${e.code}, message: ${e.message}`);
+        expect().assertFail();
+      }
     });
 
     /**

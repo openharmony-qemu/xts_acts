@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from "../../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 import Utils from "../Util.test";
 import {DefaultAndRequired_Ext,StringFieldWithMethod,C4,C5,C6Last,TcTwoPubA,IP2_110_PubDefBool,PubByteParam,PubShortParam,IP3_193_PubFloat,PubDouble,Ext4_CharOptParam,C1Object,FiftyParam,C2Byte,PGN_ObjectParam,TcPub19,CtorMultiDimArrParam,IP3_201_PubBoolArr,CtorMultiI,CtorInterface,CtorMixedA,EmptyCls,FiveCtor,GetParamTypeAC,BoolDoubleString,CtorDoubleExtremesParam,CtorTestColor,CtorTestFlag,CtorDataWrap,ExtGenChild,CtorBox,CtorAllPrim,} from "../Util.test";
 export default function ConstructorGetParameterTypeTest2Part1(): void {

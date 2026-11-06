@@ -54,14 +54,14 @@ struct Index {
           ListItem() {
             Text(item)
           }
-          .width(80)
-          .height(80)
+          .width('100%')
+          .height('20%')
           .borderRadius(4)
           .id('List_item' + item)
         }, (item: string) => item)
       }
       .width('100%')
-      .height(450)
+      .height('40%')
       .alignListItem(ListItemAlign.Center)
       .onItemDragStart(this.isChange ? (event: ItemDragInfo) => {
         console.log('xxx onItemDragStart')

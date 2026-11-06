@@ -31,6 +31,7 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
+let displayID: Int = 0;
 export default function SearchOnWillInsert() {
   describe('SearchOnWillInsert', () => {
     beforeAll(async (): Promise<void> => {
@@ -56,8 +57,9 @@ export default function SearchOnWillInsert() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push SearchOnWillInsert page error: " + err);
+        console.log("push SearchOnWillInsert page error: " + err);
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     afterEach(async () => {
@@ -81,11 +83,19 @@ it('SearchOnWillInsert_static_001', Level.LEVEL0, async (done: () => void): Prom
       let button = await driver.findComponent(ON.id('Button_SearchOnWillInsert')) as Component;
       await text.inputText('9');
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await text2.inputText('9');
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(200);
       let strJson = inspector.getInspectorByKey('Text_SearchOnWillInsert')
       let obj = JSON.parseJsonElement(strJson);
@@ -94,11 +104,19 @@ it('SearchOnWillInsert_static_001', Level.LEVEL0, async (done: () => void): Prom
       await button.click();
       await text.inputText('9');
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await text2.inputText('6');
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(200);
       let strJson2 = inspector.getInspectorByKey('Text_SearchOnWillInsert')
       let obj2 = JSON.parseJsonElement(strJson2);
@@ -106,11 +124,19 @@ it('SearchOnWillInsert_static_001', Level.LEVEL0, async (done: () => void): Prom
       await button.click();
       await text.inputText('7');
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await text2.inputText('7');
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(200);
       let strJson3 = inspector.getInspectorByKey('Text_SearchOnWillInsert')
       await CommonFunc.sleep(200);

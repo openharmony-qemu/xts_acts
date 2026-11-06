@@ -32,6 +32,9 @@ struct router_back12 {
         .onClick((e:ClickEvent) => {
           this.getUIContext().getRouter().pushUrl({ url: "MainAbility/pages/router/router_back012" })
         })
-    }.width('100%').height('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%').height('100%')
   }
 }

@@ -16,7 +16,7 @@
 
 import {
   describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level
-} from '../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from './Util.test';
 
 class ExclusiveScopePayload {

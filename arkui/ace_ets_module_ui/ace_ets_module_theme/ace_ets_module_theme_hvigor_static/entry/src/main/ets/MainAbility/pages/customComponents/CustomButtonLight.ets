@@ -49,5 +49,7 @@ export struct CustomButtonLight {
         Button(this.btnText)
       }
     }
+    .padding(10)
+    .margin(10)
   }
 }

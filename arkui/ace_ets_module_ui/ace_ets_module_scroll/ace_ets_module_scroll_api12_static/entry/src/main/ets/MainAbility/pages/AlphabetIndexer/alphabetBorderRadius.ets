@@ -146,5 +146,7 @@ struct AlphabetIndexerBorderRadius {
           })
       }
     }
+    .padding(10)
+    .margin(10)
   }
 }

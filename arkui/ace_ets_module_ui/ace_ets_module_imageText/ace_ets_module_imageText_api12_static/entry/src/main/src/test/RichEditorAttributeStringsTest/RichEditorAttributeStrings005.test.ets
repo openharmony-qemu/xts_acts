@@ -35,6 +35,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function RichEditorAttributeStrings005() {
   describe('RichEditorAttributeStrings005', () => {
     beforeAll(async (): Promise<void> => {
@@ -58,9 +59,10 @@ export default function RichEditorAttributeStrings005() {
           console.info("push RichEditorAttributeStrings005 success");
         }
       } catch (err) {
-        console.error("push RichEditorAttributeStrings005 page error: " + err);
+        console.log("push RichEditorAttributeStrings005 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
@@ -76,7 +78,11 @@ export default function RichEditorAttributeStrings005() {
       let rich = await (driver.findComponent(ON.id('RichEditorAttributeStrings005')) as Promise<Component>);
       let getBounds = await rich.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.x, getBounds.y );
+      try {
+        await driver.clickAt({ x: getBounds.x, y: getBounds.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.click error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let fromStyledString = await (driver.findComponent(ON.id('fromStyledString')) as Promise<Component>);
       await fromStyledString.click();

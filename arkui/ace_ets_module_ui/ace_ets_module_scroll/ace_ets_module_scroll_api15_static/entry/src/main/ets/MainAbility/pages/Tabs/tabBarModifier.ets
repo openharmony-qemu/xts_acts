@@ -98,6 +98,8 @@ struct TabsBarModifierExample {
       .backgroundColor('0xf1f3f5')
       .barMode(BarMode.Scrollable)
     }
+    .padding(10)
+    .margin(10)
     .width('100%')
     .height('100%')
   }

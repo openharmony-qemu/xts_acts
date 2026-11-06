@@ -82,7 +82,6 @@ struct ScrollCommonExample {
             .padding(20)
             .borderRadius(15)
             .backgroundColor(Color.Blue)
-            .margin({ top: 30, bottom: 30 } as Margin)
           })
         }.width('100%').backgroundColor('rgb(213,213,213)')
       }

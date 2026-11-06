@@ -36,6 +36,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function RichEditorDoubleClick006() {
   describe('RichEditorDoubleClick006', () => {
     beforeAll(async (): Promise<void> => {
@@ -59,9 +60,10 @@ export default function RichEditorDoubleClick006() {
           console.info("push RichEditorDoubleClick006 success");
         }
       } catch (err) {
-        console.error("push RichEditorDoubleClick006 page error: " + err);
+        console.log("push RichEditorDoubleClick006 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     
     
@@ -77,11 +79,23 @@ export default function RichEditorDoubleClick006() {
       let rich = await (driver.findComponent(ON.id('RichEditorDoubleClick006')) as Promise<Component>);
       let getBounds = await rich.getBounds();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 30, getBounds.top + 20);
+      try {
+        await driver.clickAt({ x: getBounds.left + 30, y: getBounds.top + 20, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 110, getBounds.top + 20);
+      try {
+        await driver.clickAt({ x: getBounds.left + 110, y: getBounds.top + 20, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 110, getBounds.top + 20);
+      try {
+        await driver.clickAt({ x: getBounds.left + 110, y: getBounds.top + 20, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
       let message = await (driver.findComponent(ON.id('message')) as Promise<Component>);
       let messageText = await message.getText();

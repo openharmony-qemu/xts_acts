@@ -334,5 +334,217 @@ describe("HitraceMeterTest", function () {
         done();
     })
 
+    /**
+     * @tc.name   DFX_DFR_HitraceMeter_0700
+     * @tc.number DFX_DFR_HitraceMeter_0700
+     * @tc.desc   startAsyncTrace level参数枚举类型null、undefined及越界值覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("DFX_DFR_HitraceMeter_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+        console.info("-------DFX_DFR_HitraceMeter_0700 start--------");
+        let flag = false;
+        // level = null
+        try {
+            console.info("DFX_DFR_HitraceMeter_0700 1 start, level=null");
+            hiTraceMeter.startAsyncTrace(null, 'testNullLevel', 7001, 'categoryTest', 'key=value');
+            flag = true;
+            console.info("DFX_DFR_HitraceMeter_0700 1 end, no exception thrown");
+        } catch (err) {
+            flag = true;
+            console.info("DFX_DFR_HitraceMeter_0700 1 err = " + err);
+        }
+        expect(flag).assertTrue();
+        // level = undefined
+        flag = false;
+        try {
+            console.info("DFX_DFR_HitraceMeter_0700 2 start, level=undefined");
+            hiTraceMeter.startAsyncTrace(undefined, 'testUndefinedLevel', 7002, 'categoryTest', 'key=value');
+            flag = true;
+            console.info("DFX_DFR_HitraceMeter_0700 2 end, no exception thrown");
+        } catch (err) {
+            flag = true;
+            console.info("DFX_DFR_HitraceMeter_0700 2 err = " + err);
+        }
+        expect(flag).assertTrue();
+        // level = invalid enum value (outside API definition, e.g. 4, -1, 99)
+        let invalidValues = [4, -1, 99, 100];
+        for (let idx = 0; idx < invalidValues.length; idx++) {
+            flag = false;
+            try {
+                console.info("DFX_DFR_HitraceMeter_0700 " + (3 + idx) + " start, level=" + invalidValues[idx]);
+                hiTraceMeter.startAsyncTrace(invalidValues[idx], 'testInvalidLevel', 7003 + idx, 'categoryTest', 'key=value');
+                flag = true;
+                console.info("DFX_DFR_HitraceMeter_0700 " + (3 + idx) + " end, no exception thrown");
+            } catch (err) {
+                flag = true;
+                console.info("DFX_DFR_HitraceMeter_0700 " + (3 + idx) + " err = " + err);
+            }
+            expect(flag).assertTrue();
+        }
+        console.info("-------DFX_DFR_HitraceMeter_0700 end--------");
+        done();
+    })
+
+    /**
+     * @tc.name   DFX_DFR_HitraceMeter_0800
+     * @tc.number DFX_DFR_HitraceMeter_0800
+     * @tc.desc   finishAsyncTrace level参数枚举类型null、undefined及越界值覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("DFX_DFR_HitraceMeter_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+        console.info("-------DFX_DFR_HitraceMeter_0800 start--------");
+        let flag = false;
+        // level = null
+        try {
+            console.info("DFX_DFR_HitraceMeter_0800 1 start, level=null");
+            hiTraceMeter.finishAsyncTrace(null, 'testNullLevel', 8001);
+            flag = true;
+            console.info("DFX_DFR_HitraceMeter_0800 1 end, no exception thrown");
+        } catch (err) {
+            flag = true;
+            console.info("DFX_DFR_HitraceMeter_0800 1 err = " + err);
+        }
+        expect(flag).assertTrue();
+        // level = undefined
+        flag = false;
+        try {
+            console.info("DFX_DFR_HitraceMeter_0800 2 start, level=undefined");
+            hiTraceMeter.finishAsyncTrace(undefined, 'testUndefinedLevel', 8002);
+            flag = true;
+            console.info("DFX_DFR_HitraceMeter_0800 2 end, no exception thrown");
+        } catch (err) {
+            flag = true;
+            console.info("DFX_DFR_HitraceMeter_0800 2 err = " + err);
+        }
+        expect(flag).assertTrue();
+        // level = invalid enum value (outside API definition, e.g. 4, -1, 99)
+        let invalidValues = [4, -1, 99, 100];
+        for (let idx = 0; idx < invalidValues.length; idx++) {
+            flag = false;
+            try {
+                console.info("DFX_DFR_HitraceMeter_0800 " + (3 + idx) + " start, level=" + invalidValues[idx]);
+                hiTraceMeter.finishAsyncTrace(invalidValues[idx], 'testInvalidLevel', 8003 + idx);
+                flag = true;
+                console.info("DFX_DFR_HitraceMeter_0800 " + (3 + idx) + " end, no exception thrown");
+            } catch (err) {
+                flag = true;
+                console.info("DFX_DFR_HitraceMeter_0800 " + (3 + idx) + " err = " + err);
+            }
+            expect(flag).assertTrue();
+        }
+        console.info("-------DFX_DFR_HitraceMeter_0800 end--------");
+        done();
+    })
+
+    /**
+     * @tc.name   DFX_DFR_HitraceMeter_0900
+     * @tc.number DFX_DFR_HitraceMeter_0900
+     * @tc.desc   startSyncTrace level参数枚举类型null、undefined及越界值覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("DFX_DFR_HitraceMeter_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+        console.info("-------DFX_DFR_HitraceMeter_0900 start--------");
+        let flag = false;
+        // level = null
+        try {
+            console.info("DFX_DFR_HitraceMeter_0900 1 start, level=null");
+            hiTraceMeter.startSyncTrace(null, 'testNullLevel', 'key=value');
+            flag = true;
+            console.info("DFX_DFR_HitraceMeter_0900 1 end, no exception thrown");
+        } catch (err) {
+            flag = true;
+            console.info("DFX_DFR_HitraceMeter_0900 1 err = " + err);
+        }
+        expect(flag).assertTrue();
+        // level = undefined
+        flag = false;
+        try {
+            console.info("DFX_DFR_HitraceMeter_0900 2 start, level=undefined");
+            hiTraceMeter.startSyncTrace(undefined, 'testUndefinedLevel', 'key=value');
+            flag = true;
+            console.info("DFX_DFR_HitraceMeter_0900 2 end, no exception thrown");
+        } catch (err) {
+            flag = true;
+            console.info("DFX_DFR_HitraceMeter_0900 2 err = " + err);
+        }
+        expect(flag).assertTrue();
+        // level = invalid enum value (outside API definition, e.g. 4, -1, 99)
+        let invalidValues = [4, -1, 99, 100];
+        for (let idx = 0; idx < invalidValues.length; idx++) {
+            flag = false;
+            try {
+                console.info("DFX_DFR_HitraceMeter_0900 " + (3 + idx) + " start, level=" + invalidValues[idx]);
+                hiTraceMeter.startSyncTrace(invalidValues[idx], 'testInvalidLevel', 'key=value');
+                flag = true;
+                console.info("DFX_DFR_HitraceMeter_0900 " + (3 + idx) + " end, no exception thrown");
+            } catch (err) {
+                flag = true;
+                console.info("DFX_DFR_HitraceMeter_0900 " + (3 + idx) + " err = " + err);
+            }
+            expect(flag).assertTrue();
+        }
+        console.info("-------DFX_DFR_HitraceMeter_0900 end--------");
+        done();
+    })
+
+    /**
+     * @tc.name   DFX_DFR_HitraceMeter_1000
+     * @tc.number DFX_DFR_HitraceMeter_1000
+     * @tc.desc   traceByValue level参数枚举类型null、undefined及越界值覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("DFX_DFR_HitraceMeter_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+        console.info("-------DFX_DFR_HitraceMeter_1000 start--------");
+        let flag = false;
+        // level = null
+        try {
+            console.info("DFX_DFR_HitraceMeter_1000 1 start, level=null");
+            hiTraceMeter.traceByValue(null, 'testNullLevel', 1);
+            flag = true;
+            console.info("DFX_DFR_HitraceMeter_1000 1 end, no exception thrown");
+        } catch (err) {
+            flag = true;
+            console.info("DFX_DFR_HitraceMeter_1000 1 err = " + err);
+        }
+        expect(flag).assertTrue();
+        // level = undefined
+        flag = false;
+        try {
+            console.info("DFX_DFR_HitraceMeter_1000 2 start, level=undefined");
+            hiTraceMeter.traceByValue(undefined, 'testUndefinedLevel', 2);
+            flag = true;
+            console.info("DFX_DFR_HitraceMeter_1000 2 end, no exception thrown");
+        } catch (err) {
+            flag = true;
+            console.info("DFX_DFR_HitraceMeter_1000 2 err = " + err);
+        }
+        expect(flag).assertTrue();
+        // level = invalid enum value (outside API definition, e.g. 4, -1, 99)
+        let invalidValues = [4, -1, 99, 100];
+        for (let idx = 0; idx < invalidValues.length; idx++) {
+            flag = false;
+            try {
+                console.info("DFX_DFR_HitraceMeter_1000 " + (3 + idx) + " start, level=" + invalidValues[idx]);
+                hiTraceMeter.traceByValue(invalidValues[idx], 'testInvalidLevel', 3 + idx);
+                flag = true;
+                console.info("DFX_DFR_HitraceMeter_1000 " + (3 + idx) + " end, no exception thrown");
+            } catch (err) {
+                flag = true;
+                console.info("DFX_DFR_HitraceMeter_1000 " + (3 + idx) + " err = " + err);
+            }
+            expect(flag).assertTrue();
+        }
+        console.info("-------DFX_DFR_HitraceMeter_1000 end--------");
+        done();
+    })
+
 })
 }

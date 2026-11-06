@@ -16,8 +16,10 @@
 #include "onAreaChange/AreaChangeErrorCodeTest.cpp"
 #include "gestureIntercept/GestureErrorCodeTest.cpp"
 #include "scroll/scrollWithMouseTest.cpp"
+#include "scroll/scrollWithKeyboardTest.cpp"
 #include "scroll/autoAdjustMarginTest.cpp"
 #include "scroll/scrollBarHeightTest.cpp"
+#include "scroll/scrollStateTest.cpp"
 #include "list/listBackBehaviorTest.cpp"
 #include "list/listEnableEditModeTest.cpp"
 #include "list/listEditModeOptionsTest.cpp"
@@ -55,7 +57,9 @@
 #include "image/ImageAnimatorInterpolationTest.cpp"
 #include "calendarPicker/CalendarPickerFirstDayOfWeekTest.cpp"
 #include "accessibilityBindExportTree/AccessibilityBindExportTreeTest.cpp"
+#include "collection/CollectionEnumTest.cpp"
 #include "uiEventInjection/UIEventInjectionTest.cpp"
+#include "node/BufferQueueSizeTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -82,6 +86,16 @@ static napi_value Init(napi_env env, napi_value exports)
          napi_default, nullptr},
         {"ScrollWithMouseTest_004", nullptr, ScrollWithMouseTest_004, nullptr, nullptr, nullptr,
          napi_default, nullptr},
+        {"ScrollWithKeyboardTest_001", nullptr, ScrollWithKeyboardTest_001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ScrollWithKeyboardTest_002", nullptr, ScrollWithKeyboardTest_002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ScrollWithKeyboardTest_003", nullptr, ScrollWithKeyboardTest_003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ScrollWithKeyboardTest_004", nullptr, ScrollWithKeyboardTest_004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ScrollWithKeyboardTest_005", nullptr, ScrollWithKeyboardTest_005, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
         {"AutoAdjustMarginTest_001", nullptr, AutoAdjustMarginTest_001, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"AutoAdjustMarginTest_002", nullptr, AutoAdjustMarginTest_002, nullptr, nullptr, nullptr,
@@ -97,6 +111,12 @@ static napi_value Init(napi_env env, napi_value exports)
         {"ScrollBarHeightTest_003", nullptr, ScrollBarHeightTest_003, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"ScrollBarHeightTest_004", nullptr, ScrollBarHeightTest_004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ScrollStateTest_001", nullptr, ScrollStateTest_001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ScrollStateTest_002", nullptr, ScrollStateTest_002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ScrollStateTest_003", nullptr, ScrollStateTest_003, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"ScrollAlignmentStartTest_001", nullptr, ScrollAlignmentStartTest_001, nullptr, nullptr, nullptr,
          napi_default, nullptr},
@@ -381,6 +401,56 @@ static napi_value Init(napi_env env, napi_value exports)
         {"UnbindExportTreeTest009", nullptr, UnbindExportTreeTest009, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UnbindExportTreeTest010", nullptr, UnbindExportTreeTest010, nullptr, nullptr, nullptr, napi_default, nullptr},
 
+        {"CollectionEnumTest_001", nullptr, CollectionEnumTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_002", nullptr, CollectionEnumTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_003", nullptr, CollectionEnumTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_004", nullptr, CollectionEnumTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_005", nullptr, CollectionEnumTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_006", nullptr, CollectionEnumTest_006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_007", nullptr, CollectionEnumTest_007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_008", nullptr, CollectionEnumTest_008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_009", nullptr, CollectionEnumTest_009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_010", nullptr, CollectionEnumTest_010, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_011", nullptr, CollectionEnumTest_011, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_012", nullptr, CollectionEnumTest_012, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_013", nullptr, CollectionEnumTest_013, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_014", nullptr, CollectionEnumTest_014, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_015", nullptr, CollectionEnumTest_015, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_016", nullptr, CollectionEnumTest_016, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_017", nullptr, CollectionEnumTest_017, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_018", nullptr, CollectionEnumTest_018, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_019", nullptr, CollectionEnumTest_019, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_020", nullptr, CollectionEnumTest_020, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_021", nullptr, CollectionEnumTest_021, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_022", nullptr, CollectionEnumTest_022, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_023", nullptr, CollectionEnumTest_023, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_024", nullptr, CollectionEnumTest_024, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_025", nullptr, CollectionEnumTest_025, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_026", nullptr, CollectionEnumTest_026, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_027", nullptr, CollectionEnumTest_027, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_028", nullptr, CollectionEnumTest_028, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_029", nullptr, CollectionEnumTest_029, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_030", nullptr, CollectionEnumTest_030, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_031", nullptr, CollectionEnumTest_031, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_032", nullptr, CollectionEnumTest_032, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_033", nullptr, CollectionEnumTest_033, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_034", nullptr, CollectionEnumTest_034, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_035", nullptr, CollectionEnumTest_035, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_036", nullptr, CollectionEnumTest_036, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_037", nullptr, CollectionEnumTest_037, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_038", nullptr, CollectionEnumTest_038, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_039", nullptr, CollectionEnumTest_039, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_040", nullptr, CollectionEnumTest_040, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_041", nullptr, CollectionEnumTest_041, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_042", nullptr, CollectionEnumTest_042, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_043", nullptr, CollectionEnumTest_043, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_044", nullptr, CollectionEnumTest_044, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_045", nullptr, CollectionEnumTest_045, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_046", nullptr, CollectionEnumTest_046, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_047", nullptr, CollectionEnumTest_047, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_048", nullptr, CollectionEnumTest_048, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_049", nullptr, CollectionEnumTest_049, nullptr, nullptr, nullptr, napi_default, nullptr},
+
         {"UIEventInjectionResultCodeTest001", nullptr, UIEventInjectionResultCodeTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UIEventInjectionResultCodeTest002", nullptr, UIEventInjectionResultCodeTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UIEventInjectionResultCodeTest003", nullptr, UIEventInjectionResultCodeTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -398,6 +468,24 @@ static napi_value Init(napi_env env, napi_value exports)
         {"UIEventInjectCompositeCommandTest011", nullptr, UIEventInjectCompositeCommandTest011, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UIEventInjectionCallbackTest001", nullptr, UIEventInjectionCallbackTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UIEventInjectionCallbackTest002", nullptr, UIEventInjectionCallbackTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"BufferQueueSizeTest001", nullptr, BufferQueueSizeTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest002", nullptr, BufferQueueSizeTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest003", nullptr, BufferQueueSizeTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest004", nullptr, BufferQueueSizeTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest005", nullptr, BufferQueueSizeTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest006", nullptr, BufferQueueSizeTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest007", nullptr, BufferQueueSizeTest007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest008", nullptr, BufferQueueSizeTest008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest009", nullptr, BufferQueueSizeTest009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest010", nullptr, BufferQueueSizeTest010, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest011", nullptr, BufferQueueSizeTest011, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest012", nullptr, BufferQueueSizeTest012, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest013", nullptr, BufferQueueSizeTest013, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest014", nullptr, BufferQueueSizeTest014, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest015", nullptr, BufferQueueSizeTest015, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest016", nullptr, BufferQueueSizeTest016, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest017", nullptr, BufferQueueSizeTest017, nullptr, nullptr, nullptr, napi_default, nullptr},
         };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

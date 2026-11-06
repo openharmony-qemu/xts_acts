@@ -8,6 +8,8 @@
     "MainAbility/pages/Tabs/TabsSidebarDisplayStyle",
     "MainAbility/pages/Tabs/TopFloatingBarStyle",
     "MainAbility/pages/Tabs/TopFloatingBarInvalid",
-    "MainAbility/pages/Tabs/TopFloatingBarLegacy"
+    "MainAbility/pages/Tabs/TopFloatingBarLegacy",
+    "MainAbility/pages/Tabs/TabsTopOffsetMaxWidth",
+    "MainAbility/pages/Tabs/TabsBottomOffsetMaxWidth"
   ]
 }

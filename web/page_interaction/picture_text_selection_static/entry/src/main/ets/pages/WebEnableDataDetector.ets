@@ -44,6 +44,7 @@ import { Callback } from '@ohos.base'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import image from '@ohos.multimedia.image'
 import { canIUse } from '@internal.full.global'
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 const EVENT_ID_SET_SUITE_KEY = 176101;
 export class StringFields {
@@ -96,6 +97,13 @@ struct WebOnFirstContentfulPaint1 {
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
+                break;
+              }
+              case 'SwitchNextPageStatic': {
+                let uiContext: UIContext = this.getUIContext();
+                let router: Router = uiContext.getRouter();
+                router.pushUrl({ url: 'pages/WebCaretColor' });
+                console.log('push WebCaretColor success');
                 break;
               }
 

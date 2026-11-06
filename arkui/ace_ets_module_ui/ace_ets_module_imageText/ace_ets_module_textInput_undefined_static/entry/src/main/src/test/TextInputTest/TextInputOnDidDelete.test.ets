@@ -17,6 +17,7 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
+let displayID: Int = 0;
 export default function TextInputOnDidDelete() {
   describe('TextInputOnDidDelete', () => {
     beforeAll(async (): Promise<void> => {
@@ -43,9 +44,10 @@ export default function TextInputOnDidDelete() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push TextInputOnDidDelete page error:" + err);
+        console.log("push TextInputOnDidDelete page error:" + err);
       }
       console.info("TextInputOnDidDelete beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
 
@@ -69,7 +71,11 @@ export default function TextInputOnDidDelete() {
       let btn_true = await driver.findComponent(ON.id('onDidDeleteButton')) as Component;
       await text.inputText('1');
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2055);
+      try {
+        await driver.triggerKey(2055, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let strJsonNew = inspector.getInspectorByKey('DeleteValue');
@@ -81,7 +87,11 @@ export default function TextInputOnDidDelete() {
       await btn_true.click();
       await CommonFunc.sleep(1000);
       await text.inputText('6');
-      await driver.triggerKey(2055);
+      try {
+        await driver.triggerKey(2055, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let strJsonNew1 = inspector.getInspectorByKey('DeleteValue');

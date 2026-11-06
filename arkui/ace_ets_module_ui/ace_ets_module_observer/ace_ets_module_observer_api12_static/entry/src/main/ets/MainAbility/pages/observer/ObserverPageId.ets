@@ -52,6 +52,8 @@ struct ObserverPageId {
 
       CustomCom({pageIdValue: this.pageIdValue} )
     }
+    .padding(10)
+    .margin(10)
   }
 }
 

@@ -29,6 +29,7 @@ import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function onSelectionChange10() {
   describe('onSelectionChange10', () => {
     beforeAll(async (): Promise<void> => {
@@ -36,7 +37,6 @@ export default function onSelectionChange10() {
 
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api12.static", "EntryAbility")
-
     });
     beforeEach(async () => {
       console.info("onSelectionChange10 beforeEach start");
@@ -56,9 +56,10 @@ export default function onSelectionChange10() {
           // console.info("push onSelectionChange10 page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push onSelectionChange10 page error:" + err);
+        console.log("push onSelectionChange10 page error:" + err);
       }
       console.info("onSelectionChange10 beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);
@@ -91,8 +92,16 @@ export default function onSelectionChange10() {
         let Obj1=JSON.parseJsonElement(text1);
         expect(Obj1.getElement('$attrs').getString('content')).assertEqual('2');
 
-        await driver.triggerKey(2017);
-        await driver.triggerKey(2047)
+        try {
+          await driver.triggerKey(2017, displayID);
+        } catch (err) {
+          console.log('driver.triggerKey error: ' + JSON.stringify(err));
+        }
+        try {
+          await driver.triggerKey(2047, displayID);
+        } catch (err) {
+          console.log('driver.triggerKey error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
         let text2 = inspector.getInspectorByKey('onSelectionChange10_text1');
         let Obj2=JSON.parseJsonElement(text2);

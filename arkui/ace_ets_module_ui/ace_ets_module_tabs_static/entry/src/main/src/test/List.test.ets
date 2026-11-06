@@ -21,6 +21,8 @@ import tabsSidebarDisplayStyle from './TabsTest/TabsSidebarDisplayStyle.test';
 import topFloatingBarStyle from './TabsTest/TopFloatingBarStyle.test';
 import topFloatingBarInvalid from './TabsTest/TopFloatingBarInvalid.test';
 import topFloatingBarLegacy from './TabsTest/TopFloatingBarLegacy.test';
+import tabsTopOffsetMaxWidth from './TabsTest/TabsTopOffsetMaxWidth.test';
+import tabsBottomOffsetMaxWidth from './TabsTest/TabsBottomOffsetMaxWidth.test';
 
 export default function testsuite(): void {
   TabsTest();
@@ -31,4 +33,6 @@ export default function testsuite(): void {
   topFloatingBarStyle();
   topFloatingBarInvalid();
   topFloatingBarLegacy();
+  tabsTopOffsetMaxWidth();
+  tabsBottomOffsetMaxWidth();
 }

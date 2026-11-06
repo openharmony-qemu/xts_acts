@@ -27,6 +27,7 @@ import CollectionsSetValuesTest from "./CollectionsSetValuesTest.test";
 import CollectionsSetSizeTest from "./CollectionsSetSizeTest.test";
 import CollectionsSetSymbolIteratorTest from './CollectionsSetSymbolIteratorTest.test'
 import CollectionsSetExpand1024Test from './CollectionsSetExpand1024Test.test';
+import CollectionsSetMultiRoundConsistencyTest from './CollectionsSetMultiRoundConsistencyTest.test';
 
 import collectionsSetConstructorTest from './CollectionSetBase/CollectionsSetConstructor.test';
 import collectionsSetForEachEntriesTest from './CollectionSetBase/CollectionsSetForEachEntries.test';
@@ -43,6 +44,7 @@ import SetNormalTest from './Normal/SetNormal.test';
 import SetTaskPoolTest from './TaskPool/SetTaskPool.test';
 
 import SetInheritanceTest from './collections/SetInheritanceTest.test';
+import CollectionsSetThisArgTest from './CollectionsSetThisArgTest.test';
 
 export default function testsuite() {
   SetBasicTest();
@@ -63,6 +65,7 @@ export default function testsuite() {
   CollectionsSetSizeTest();
   CollectionsSetSymbolIteratorTest();
   CollectionsSetExpand1024Test();
+  CollectionsSetMultiRoundConsistencyTest();
   
   collectionsSetConcurrentTest();
   collectionsSetWorkerTest();
@@ -76,5 +79,6 @@ export default function testsuite() {
   collectionsSetSendableFunctionTest();
   
   SetInheritanceTest();
+  CollectionsSetThisArgTest();
 }
 

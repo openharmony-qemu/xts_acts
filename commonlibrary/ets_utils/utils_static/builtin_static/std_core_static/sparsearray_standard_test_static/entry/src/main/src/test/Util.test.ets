@@ -1,6 +1,6 @@
 'use static';
 import { BusinessError } from '@ohos.base';
-import { expect } from '../../../hypium/index';
+import { expect } from '@ohos/hypium-static/src/main/indexStatic';
 
 
 export default class Utils {

@@ -1289,6 +1289,107 @@ export default function initNdkTest() {
     });
 
     /**
+     * @tc.name   testOHGetOdid001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETODID_0100
+     * @tc.desc   test OH_GetOdid for non-empty strings without special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOHGetOdid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let odidInfo: string = initndk.oHGetOdid();
+
+      console.info('the value of the deviceinfo odid is :' + odidInfo);
+      expect(odidInfo).assertInstanceOf('String');
+      if (odidInfo != "" && odidInfo != null && odidInfo != undefined) {
+        let str: RegExp = new RegExp("[\\w\\-]","g");
+        let arr = odidInfo.match(str);
+        if(arr !== null){
+          let bufferstr = arr.join('');
+          console.info('the value of the bufferstr is :' + bufferstr);
+          expect(odidInfo).assertEqual(bufferstr);
+        }
+      } else {
+        console.info('the return value odid is null or incorrect.');
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   testOHGetOdid002
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETODID_0200
+     * @tc.desc   test OH_GetOdid return value has valid UUID-like format and length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOHGetOdid002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let odidInfo: string = initndk.oHGetOdid();
+
+      console.info('the value of the deviceinfo odid is :' + odidInfo);
+      expect(odidInfo).assertInstanceOf('String');
+      if (odidInfo != "" && odidInfo != null && odidInfo != undefined) {
+        let len = odidInfo.length;
+        console.info('the length of the odid is :' + len);
+        expect(len).assertLarger(MAX_CHARACTERS_NUM);
+      } else {
+        console.info('the return value odid is null or incorrect.');
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   testOHGetOdid003
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETODID_0300
+     * @tc.desc   test OH_GetOdid return value is consistent across multiple calls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOHGetOdid003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let odid1: string = initndk.oHGetOdid();
+      console.info('the value of the deviceinfo odid1 is :' + odid1);
+
+      expect(odid1).assertInstanceOf('String');
+      if (odid1 != "" && odid1 != null && odid1 != undefined) {
+        let odid2: string = initndk.oHGetOdid();
+        console.info('the value of the deviceinfo odid2 is :' + odid2);
+        expect(odid2).assertInstanceOf('String');
+        expect(odid1).assertEqual(odid2);
+      } else {
+        console.info('the return value odid is null or incorrect.');
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   testOHGetDiskSN001
+     * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETDISKSN_0100
+     * @tc.desc   test OH_GetDiskSN without permission, diskSn is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOHGetDiskSN001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = initndk.oHGetDiskSN();
+      let code: number = result.code;
+      let diskSn: string = result.diskSn;
+      console.info('the value of the OH_GetDiskSN code is :' + code);
+      console.info('the value of the OH_GetDiskSN diskSn is :' + diskSn);
+
+      expect(diskSn).assertInstanceOf('String');
+      if (code == 0) {
+        expect(diskSn).assertEqual("");
+      } else {
+        expect(code).assertEqual(201);
+      }
+      done();
+    });
+
+    /**
      * @tc.name   testCanIUse001
      * @tc.number SUB_STARTUP_INIT_SYSCAPNDK_CANIUSE_0100
      * @tc.desc   test canIUse with using SystemCapability.Location.Location.Core
