@@ -15,11 +15,11 @@
  */
 import {
   Entry, Component, Column, Text, Scroll, Tabs, TabContent,
-  TabBarStyle, BarPosition, Color, BlurStyle
+  TabBarStyle, BarPosition, Color, BlurStyle, wrapBuilder
 } from '@ohos.arkui.component';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
-import { ComponentContent } from '@kit.ArkUI';
+import { ComponentContent } from '@ohos.arkui.node';
 
 @Builder
 function footerBuilder() {
