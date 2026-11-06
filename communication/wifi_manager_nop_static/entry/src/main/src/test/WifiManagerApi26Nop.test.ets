@@ -53,14 +53,14 @@ export default function wifiManagerApi26NopTest() {
     });
 
     /**
-     * @tc.number SUB_Communication_WiFiManager_DisconnectFromCandidateConfig_NOP_0100
-     * @tc.name SUB_Communication_WiFiManager_DisconnectFromCandidateConfig_NOP_0100
+     * @tc.number SUB_Communication_WiFiManager_DisconnectFromCandidateConfig_NOP_0200
+     * @tc.name SUB_Communication_WiFiManager_DisconnectFromCandidateConfig_NOP_0200
      * @tc.desc disconnectFromCandidateConfig with permanent blockDuration permission denied test.
      * @tc.level Level 0
      * @tc.type Function
      * @tc.size MEDIUMTEST
      */
-    it("SUB_Communication_WiFiManager_DisconnectFromCandidateConfig_NOP_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("SUB_Communication_WiFiManager_DisconnectFromCandidateConfig_NOP_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       try{
         wifiManager.disconnectFromCandidateConfig(0, -1);
         hilog.info(domain, tag, "disconnectFromCandidateConfig success");
