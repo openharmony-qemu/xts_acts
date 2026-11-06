@@ -63,7 +63,7 @@ export default function fadingEdgeUndefinedTest() {
 
       let driver = Driver.create();
       let btn1: Component | null = await driver.findComponent(ON.id('button_fadingEdge'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
 
       let strJson1 = inspector.getInspectorByKey('common_fadingEdge');
