@@ -122,7 +122,7 @@ export default function GraphicEffectKitStaticTest() {
             done();
           }
         } catch (err) {
-          console.info('www data effectKitTest_static_0100 error ' + JSON.stringify(err));
+          console.info('www data effectKitTest_static_0200 error ' + JSON.stringify(err));
           expect().assertFail();
           done();
         }
