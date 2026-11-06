@@ -1219,15 +1219,15 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4100
      * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4100
-     * @tc.desc   setAbilityInstanceInfo icon PixelMap isStrideAlignment=false true/false成对;
-     *     createPixelMapSync then real call setAbilityInstanceInfo
+     * @tc.desc   setAbilityInstanceInfo icon isStrideAlignment=false true/false成对; real call;
+     *     2in1 may success; phone/default may 401/801/16000011/201 (API device limit)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4100', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4100';
-      hilog.info(DOMAIN, LOG_TAG, tag + ' it begin');
+      hilog.info(DOMAIN, LOG_TAG, tag + ' it begin deviceType=' + deviceInfo.deviceType);
       let editOpts: image.InitializationOptions = {
         editable: true,
         pixelFormat: image.PixelMapFormat.RGBA_8888,
@@ -1241,10 +1241,10 @@ export default function abilityTest() {
         hilog.info(DOMAIN, LOG_TAG, tag + ' success isStrideAlignment=false');
         done();
       } catch (err) {
-        hilog.info(DOMAIN, LOG_TAG, 'setAbilityInstanceInfo isStrideAlignment=false failed: ' +
-          JSON.stringify(err));
-        expect(getBizCode(err) === 401 || getBizCode(err) === 801 ||
-          getBizCode(err) === 16000011 || getBizCode(err) === 201).assertTrue();
+        let code = getBizCode(err);
+        hilog.info(DOMAIN, LOG_TAG, tag + ' isStrideAlignment=false deviceType=' +
+          deviceInfo.deviceType + ' code=' + code);
+        expect(code === 401 || code === 801 || code === 16000011 || code === 201).assertTrue();
         done();
       }
     })
@@ -1252,15 +1252,15 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4200
      * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4200
-     * @tc.desc   setAbilityInstanceInfo icon PixelMap isStrideAlignment=false true/false成对;
-     *     editable=false createPixelMapSync then real call setAbilityInstanceInfo
+     * @tc.desc   setAbilityInstanceInfo icon isStrideAlignment=false true/false成对; real call;
+     *     2in1 may success; phone/default may 401/801/16000011/201 (API device limit)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4200', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4200';
-      hilog.info(DOMAIN, LOG_TAG, tag + ' it begin');
+      hilog.info(DOMAIN, LOG_TAG, tag + ' it begin deviceType=' + deviceInfo.deviceType);
       let roOpts: image.InitializationOptions = {
         editable: false,
         pixelFormat: image.PixelMapFormat.RGBA_8888,
@@ -1274,10 +1274,10 @@ export default function abilityTest() {
         hilog.info(DOMAIN, LOG_TAG, tag + ' success isStrideAlignment=false');
         done();
       } catch (err) {
-        hilog.info(DOMAIN, LOG_TAG, 'setAbilityInstanceInfo isStrideAlignment=false failed: ' +
-          JSON.stringify(err));
-        expect(getBizCode(err) === 401 || getBizCode(err) === 801 ||
-          getBizCode(err) === 16000011 || getBizCode(err) === 201).assertTrue();
+        let code = getBizCode(err);
+        hilog.info(DOMAIN, LOG_TAG, tag + ' isStrideAlignment=false deviceType=' +
+          deviceInfo.deviceType + ' code=' + code);
+        expect(code === 401 || code === 801 || code === 16000011 || code === 201).assertTrue();
         done();
       }
     })
@@ -1285,15 +1285,15 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4300
      * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4300
-     * @tc.desc   setAbilityInstanceInfo icon PixelMap isStrideAlignment=true true/false成对;
-     *     DMA createPixelMapUsingAllocatorSync then real call setAbilityInstanceInfo
+     * @tc.desc   setAbilityInstanceInfo icon isStrideAlignment=true true/false成对; DMA real call;
+     *     2in1 may success; phone/default may 401/801/16000011/201 (API device limit)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4300', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4300';
-      hilog.info(DOMAIN, LOG_TAG, tag + ' it begin');
+      hilog.info(DOMAIN, LOG_TAG, tag + ' it begin deviceType=' + deviceInfo.deviceType);
       const smallColor: ArrayBuffer = new ArrayBuffer(96);
       let dmaOpts: image.InitializationOptions = {
         editable: true,
@@ -1309,10 +1309,10 @@ export default function abilityTest() {
         hilog.info(DOMAIN, LOG_TAG, tag + ' success isStrideAlignment=true');
         done();
       } catch (err) {
-        hilog.info(DOMAIN, LOG_TAG, 'setAbilityInstanceInfo isStrideAlignment=true failed: ' +
-          JSON.stringify(err));
-        expect(getBizCode(err) === 401 || getBizCode(err) === 801 ||
-          getBizCode(err) === 16000011 || getBizCode(err) === 201).assertTrue();
+        let code = getBizCode(err);
+        hilog.info(DOMAIN, LOG_TAG, tag + ' isStrideAlignment=true deviceType=' +
+          deviceInfo.deviceType + ' code=' + code);
+        expect(code === 401 || code === 801 || code === 16000011 || code === 201).assertTrue();
         done();
       }
     })
