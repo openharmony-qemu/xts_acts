@@ -56,7 +56,7 @@ struct TransPageEnabled {
         .width('80%')
         .onClick(() => {
           try {
-            this.getUIContext().setTransPageEnabled(null as boolean);
+            this.getUIContext().setTransPageEnabled(null as unknown as boolean);
             this.transPageResult = 'null_no_error';
           } catch (err) {
             this.transPageResult = 'null_error';
@@ -70,7 +70,7 @@ struct TransPageEnabled {
         .width('80%')
         .onClick(() => {
           try {
-            this.getUIContext().setTransPageEnabled(undefined as boolean);
+            this.getUIContext().setTransPageEnabled(undefined as unknown as boolean);
             this.transPageResult = 'undefined_no_error';
           } catch (err) {
             this.transPageResult = 'undefined_error';
