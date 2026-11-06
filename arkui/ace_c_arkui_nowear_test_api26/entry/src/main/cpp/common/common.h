@@ -19,6 +19,9 @@
 #include <napi/native_api.h>
 #include <hilog/log.h>
 #include <cstdio>
+#include <cstdint>
+#include <algorithm>
+#include <initializer_list>
 #include <arkui/native_interface.h>
 #include <arkui/native_node.h>
 #include <string>
@@ -83,6 +86,7 @@ namespace ArkUICapiTest {
 #define PARAM_NEGATIVE_50_POINT_5 (-50.5)
 #define PARAM_NEGATIVE_100 (-100)
 #define PARAM_64 64
+#define PARAM_500 500
 #define DEFAULT_MARGIN 10
 #define SIZE_10 10
 #define SIZE_20 20
@@ -234,6 +238,19 @@ const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
             return nullptr;                                                                                            \
         }                                                                                                              \
     } while (0)
+
+[[nodiscard]] inline napi_value ErrCodeAnyOfFailed(
+    napi_env env, int32_t result, std::initializer_list<int32_t> expectedOneOf)
+{
+    if (std::find(expectedOneOf.begin(), expectedOneOf.end(), result) != expectedOneOf.end()) {
+        return nullptr;
+    }
+    std::string s = std::string("assert error code in set failed, result is ") + std::to_string(result);
+    (void)napi_throw_error(env, nullptr, s.c_str());
+    napi_value out = nullptr;
+    (void)napi_create_int32(env, PARAM_NEGATIVE_1, &out);
+    return out;
+}
 
 } // namespace ArkUICapiTest
 #endif // ARKUI_CAPI_XTS_COMMON_TEST_H
