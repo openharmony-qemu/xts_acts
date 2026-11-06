@@ -27,6 +27,8 @@ struct DNSHostIP {
   @State str: string = "";
   @State getURL: string = "";
   @State getURL1: string = "";
+  @State getTitle1: string = "";
+  @State getTitle2: string = "";
   @State getURL2: string = "";
   @State getURL3: string = "";
   @State getURL4: string = "";
@@ -78,16 +80,16 @@ struct DNSHostIP {
                 break;
               }
               this.value = false;
-              this.getURL = '';
-              this.getURL1 = '';
+              this.getTitle1 = '';
+              this.getTitle2 = '';
               try {
                 web_webview.WebviewController.setHostIP('www.baidu.com', '124.95.179.4', 30);
                 await Utils.sleep(3000);
                 this.isPageEnd = -1;
                 this.controller.loadUrl('www.baidu.com');
                 await waitForExist(() => this.isPageEnd, this.str, 0);
-                this.getURL = this.controller.getUrl();
-                console.log('setHostIP0100_getUrl: ' + this.getURL);
+                this.getTitle1 = this.controller.getTitle();
+                console.log('setHostIP0100_getTitle1: ' + this.getTitle1);
                 web_webview.WebviewController.clearHostIP('www.baidu.com');
                 let filesBeforeRemove = Utils.listFile(this.cachePath)
                 this.controller.removeCache(true);
@@ -105,9 +107,9 @@ struct DNSHostIP {
                   return this.controller.getUrl().includes(v2);
                 }
                 await waitForAssert1(() => this.controller.getUrl(), checkUrl, "baidu.com", this.str,5000);
-                this.getURL1 = this.controller.getUrl();
-                console.log('setHostIP0100_getUrl1: ' + this.getURL1)
-                if (this.getURL != this.getURL1) {
+                this.getTitle2 = this.controller.getTitle();
+                console.log('setHostIP0100_getTitle2: ' + this.getTitle2);
+                if (this.getTitle1 != this.getTitle2) {
                   this.value = true;
                 }
                 console.log('setHostIP0100_value: ' + this.value)
@@ -134,15 +136,15 @@ struct DNSHostIP {
                 break;
               }
               this.value = false;
-              this.getURL = '';
-              this.getURL1 = '';
+              this.getTitle1 = '';
+              this.getTitle2 = '';
               try {
                 web_webview.WebviewController.setHostIP('baidu.com', '124.95.179.4', 30);
                 this.isPageEnd = -1;
                 this.controller.loadUrl('baidu.com');
                 await waitForExist(() => this.isPageEnd, this.str, 0);
-                this.getURL = this.controller.getUrl();
-                console.log('setHostIP1200_getUrl: ' + this.getURL);
+                this.getTitle1 = this.controller.getTitle();
+                console.log('setHostIP1200_getTitle1: ' + this.getTitle1);
                 web_webview.WebviewController.clearHostIP('baidu.com');
                 let filesBeforeRemove = Utils.listFile(this.cachePath)
                 this.controller.removeCache(true);
@@ -154,15 +156,15 @@ struct DNSHostIP {
                 this.isPageEnd = -1;
                 this.controller.loadUrl('baidu.com');
                 await waitForExist(() => this.isPageEnd, this.str, 0);
-                console.log('setHostIP1200_getUrl1: ' + this.getURL1)
                 let checkUrl = (v1: string, v2: string): boolean => {
                   this.controller.loadUrl('baidu.com');
                   console.log(this.str,"url2222:"+this.controller.getUrl());
                   return this.controller.getUrl().includes(v2);
                 }
                 await waitForAssert1(() => this.controller.getUrl(), checkUrl, "baidu.com", this.str,5000);
-                this.getURL1 = this.controller.getUrl();
-                if (this.getURL != this.getURL1) {
+                this.getTitle2 = this.controller.getTitle();
+                console.log('setHostIP1200_getTitle2: ' + this.getTitle2);
+                if (this.getTitle1 != this.getTitle2) {
                   this.value = true;
                 }
                 console.log('setHostIP1200_value: ' + this.value)
@@ -189,15 +191,15 @@ struct DNSHostIP {
                 break;
               }
               this.value = false;
-              this.getURL = '';
-              this.getURL1 = '';
+              this.getTitle1 = '';
+              this.getTitle2 = '';
               try {
                 web_webview.WebviewController.setHostIP('store.apple.com', '124.95.179.4', 30);
                 this.isPageEnd = -1;
                 this.controller.loadUrl('store.apple.com');
                 await waitForExist(() => this.isPageEnd, this.str, 0);
-                this.getURL = this.controller.getUrl();
-                console.log('setHostIP1300_getUrl: ' + this.getURL);
+                this.getTitle1 = this.controller.getTitle();
+                console.log('setHostIP1300_getTitle1: ' + this.getTitle1);
                 web_webview.WebviewController.clearHostIP('store.apple.com');
                 let filesBeforeRemove = Utils.listFile(this.cachePath)
                 this.controller.removeCache(true);
@@ -209,15 +211,15 @@ struct DNSHostIP {
                 this.isPageEnd = -1;
                 this.controller.loadUrl('store.apple.com');
                 await waitForExist(() => this.isPageEnd, this.str, 0);
-                console.log('setHostIP1300_getUrl1: ' + this.getURL1);
                 let checkUrl = (v1: string, v2: string): boolean => {
                   this.controller.loadUrl('store.apple.com');
                   console.log(this.str,"url333:"+this.controller.getUrl());
                   return this.controller.getUrl().includes(v2);
                 }
                 await waitForAssert1(() => this.controller.getUrl(), checkUrl, "store.apple.com", this.str,5000);
-                this.getURL1 = this.controller.getUrl();
-                if (this.getURL != this.getURL1) {
+                this.getTitle2 = this.controller.getTitle();
+                console.log('setHostIP1300_getTitle2: ' + this.getTitle2);
+                if (this.getTitle1 != this.getTitle2) {
                   this.value = true;
                 }
                 console.log('setHostIP1300_value: ' + this.value);
