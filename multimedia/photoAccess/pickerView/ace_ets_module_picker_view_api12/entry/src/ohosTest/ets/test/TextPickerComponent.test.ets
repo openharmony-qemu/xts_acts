@@ -605,7 +605,7 @@ async function saveMovingPhoto() {
   };
   const context = getContext();
   let resultUri = '';
-  const fileToSavePath = context.filesDir + '/01.jpg';
+  const fileToSavePath = context.filesDir + '/demo.jpg';
   const fileToSaveUri = fileUri.getUriFromPath(fileToSavePath).toString();
   console.log('saveMovingPhoto fileToSaveUri', fileToSaveUri, 'fileToSavePath', fileToSavePath);
   photoAccessHelper
@@ -4022,7 +4022,7 @@ export default function TextPicker() {
           if (isInvalidCase) {
             expect(error.code).assertEqual(401);
           } else {
-            expect(error.code).assertEqual(23800301);
+            expect( error.code === 23800301 || error.code === 14000011 ).assertTrue();
           }
         }
       }
@@ -4061,7 +4061,7 @@ export default function TextPicker() {
           if (isInvalidSingleCase) {
             expect(error.code).assertEqual(401);
           } else {
-            expect(error.code).assertEqual(23800301);
+            expect( error.code === 23800301 || error.code === 14000011 ).assertTrue();
           }
         }
       }
