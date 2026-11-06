@@ -116,6 +116,29 @@ export default function focusedApplicationChangedTest() {
       });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_OnFocusedApplicationChanged_0310
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_OnFocusedApplicationChanged_0310
+     * @tc.desc   onFocusedApplicationChanged: observer=undefined; 有效范围 out of valid observer;
+     *     expect throw 401 or 201/16000050/16000165
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_OnFocusedApplicationChanged_0310', Level.LEVEL0,
+      (done: Function) => {
+        let tag = 'SUB_Ability_AbilityRuntime_AppManager_OnFocusedApplicationChanged_0310';
+        try {
+          appManager.onFocusedApplicationChanged(undefined);
+          expect().assertFail();
+        } catch (err) {
+          let e = err as BusinessError;
+          console.error(`${tag} err code=${e.code} msg=${e.message}`);
+          expect(e.code === 401 || isFocusedOnErr(e.code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_OffFocusedApplicationChanged_0400
      * @tc.number SUB_Ability_AbilityRuntime_AppManager_OffFocusedApplicationChanged_0400
      * @tc.desc   offFocusedApplicationChanged: on then off pair; second off expects 16300004 or
@@ -147,6 +170,52 @@ export default function focusedApplicationChangedTest() {
           let e = err as BusinessError;
           console.error(`${tag} err code=${e.code}`);
           expect(isFocusedOnErr(e.code) || isFocusedOffErr(e.code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_OffFocusedApplicationChanged_0410
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_OffFocusedApplicationChanged_0410
+     * @tc.desc   offFocusedApplicationChanged: observerId=null; 有效范围 out of valid int;
+     *     expect throw 401 or 201/16000050/16300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_OffFocusedApplicationChanged_0410', Level.LEVEL0,
+      (done: Function) => {
+        let tag = 'SUB_Ability_AbilityRuntime_AppManager_OffFocusedApplicationChanged_0410';
+        try {
+          appManager.offFocusedApplicationChanged(null);
+          expect().assertFail();
+        } catch (err) {
+          let e = err as BusinessError;
+          console.error(`${tag} err code=${e.code} msg=${e.message}`);
+          expect(e.code === 401 || isFocusedOffErr(e.code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_OffFocusedApplicationChanged_0420
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_OffFocusedApplicationChanged_0420
+     * @tc.desc   offFocusedApplicationChanged: observerId=undefined; 有效范围 out of valid int;
+     *     expect throw 401 or 201/16000050/16300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_OffFocusedApplicationChanged_0420', Level.LEVEL0,
+      (done: Function) => {
+        let tag = 'SUB_Ability_AbilityRuntime_AppManager_OffFocusedApplicationChanged_0420';
+        try {
+          appManager.offFocusedApplicationChanged(undefined);
+          expect().assertFail();
+        } catch (err) {
+          let e = err as BusinessError;
+          console.error(`${tag} err code=${e.code} msg=${e.message}`);
+          expect(e.code === 401 || isFocusedOffErr(e.code)).assertTrue();
         }
         done();
       });
