@@ -1219,7 +1219,8 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4100
      * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4100
-     * @tc.desc   PixelMap createPixelMapSync: isStrideAlignment=false; then setAbilityInstanceInfo
+     * @tc.desc   setAbilityInstanceInfo: isStrideAlignment=false true/false成对覆盖;
+     *     createPixelMapSync icon then setAbilityInstanceInfo
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -1227,10 +1228,6 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4100', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4100';
       hilog.info(DOMAIN, LOG_TAG, tag + ' it begin');
-      if (!isPc2in1()) {
-        done();
-        return;
-      }
       let editOpts: image.InitializationOptions = {
         editable: true,
         pixelFormat: image.PixelMapFormat.RGBA_8888,
@@ -1239,6 +1236,10 @@ export default function abilityTest() {
       let editMap: image.PixelMap = image.createPixelMapSync(color, editOpts);
       expect(editMap.isEditable).assertEqual(true);
       expect(editMap.isStrideAlignment).assertEqual(false);
+      if (!isPc2in1()) {
+        done();
+        return;
+      }
       try {
         await testContext.setAbilityInstanceInfo('label_stride_false', editMap);
         hilog.info(DOMAIN, LOG_TAG, tag + ' success');
@@ -1254,8 +1255,8 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4200
      * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4200
-     * @tc.desc   PixelMap editable=false createPixelMapSync: isStrideAlignment=false;
-     *     then setAbilityInstanceInfo
+     * @tc.desc   setAbilityInstanceInfo: isStrideAlignment=false true/false成对覆盖;
+     *     editable=false createPixelMapSync then setAbilityInstanceInfo
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -1263,10 +1264,6 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4200', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4200';
       hilog.info(DOMAIN, LOG_TAG, tag + ' it begin');
-      if (!isPc2in1()) {
-        done();
-        return;
-      }
       let roOpts: image.InitializationOptions = {
         editable: false,
         pixelFormat: image.PixelMapFormat.RGBA_8888,
@@ -1275,6 +1272,10 @@ export default function abilityTest() {
       let roMap: image.PixelMap = image.createPixelMapSync(color, roOpts);
       expect(roMap.isEditable).assertEqual(false);
       expect(roMap.isStrideAlignment).assertEqual(false);
+      if (!isPc2in1()) {
+        done();
+        return;
+      }
       try {
         await testContext.setAbilityInstanceInfo('label_stride_false_ro', roMap);
         hilog.info(DOMAIN, LOG_TAG, tag + ' success');
@@ -1290,8 +1291,8 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4300
      * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4300
-     * @tc.desc   PixelMap createPixelMapUsingAllocatorSync(DMA): isStrideAlignment=true;
-     *     then setAbilityInstanceInfo
+     * @tc.desc   setAbilityInstanceInfo: isStrideAlignment=true true/false成对覆盖;
+     *     createPixelMapUsingAllocatorSync(DMA) then setAbilityInstanceInfo
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -1299,10 +1300,6 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4300', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4300';
       hilog.info(DOMAIN, LOG_TAG, tag + ' it begin');
-      if (!isPc2in1()) {
-        done();
-        return;
-      }
       const smallColor: ArrayBuffer = new ArrayBuffer(96);
       let dmaOpts: image.InitializationOptions = {
         editable: true,
@@ -1313,6 +1310,10 @@ export default function abilityTest() {
       let dmaMap: image.PixelMap =
         image.createPixelMapUsingAllocatorSync(smallColor, dmaOpts, image.AllocatorType.DMA);
       expect(dmaMap.isStrideAlignment).assertEqual(true);
+      if (!isPc2in1()) {
+        done();
+        return;
+      }
       try {
         await testContext.setAbilityInstanceInfo('label_stride_true', dmaMap);
         hilog.info(DOMAIN, LOG_TAG, tag + ' success');

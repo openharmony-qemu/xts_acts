@@ -874,7 +874,7 @@ export default function cliManagerTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CliManager_ClearSession_Empty_0200
      * @tc.number SUB_Ability_AbilityRuntime_CliManager_ClearSession_Empty_0200
-     * @tc.desc   clearSession: sessionId length=0 out of valid non-empty string range;
+     * @tc.desc   clearSession: 参数长度 length=0; 有效范围 non-empty string;
      *     expect 201/202/401/35600032/35600050
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -896,7 +896,7 @@ export default function cliManagerTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CliManager_ClearSession_Null_0210
      * @tc.number SUB_Ability_AbilityRuntime_CliManager_ClearSession_Null_0210
-     * @tc.desc   clearSession: sessionId=null out of valid string range;
+     * @tc.desc   clearSession: sessionId=null; 有效范围 out of valid string;
      *     expect 201/202/401/35600032/35600050
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -918,7 +918,7 @@ export default function cliManagerTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CliManager_ClearSession_Undefined_0220
      * @tc.number SUB_Ability_AbilityRuntime_CliManager_ClearSession_Undefined_0220
-     * @tc.desc   clearSession: sessionId=undefined out of valid string range;
+     * @tc.desc   clearSession: sessionId=undefined; 有效范围 out of valid string;
      *     expect 201/202/401/35600032/35600050
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -940,7 +940,7 @@ export default function cliManagerTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CliManager_ClearSession_Len1_0230
      * @tc.number SUB_Ability_AbilityRuntime_CliManager_ClearSession_Len1_0230
-     * @tc.desc   clearSession: sessionId length=1 non-empty but not existing;
+     * @tc.desc   clearSession: 参数长度 length=1; 有效范围 non-empty but not existing;
      *     expect 201/202/401/35600032/35600050
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -962,7 +962,7 @@ export default function cliManagerTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CliManager_ClearSession_Overlong_0240
      * @tc.number SUB_Ability_AbilityRuntime_CliManager_ClearSession_Overlong_0240
-     * @tc.desc   clearSession: sessionId length=1024 over typical session-id range;
+     * @tc.desc   clearSession: 参数长度 length=1024; 有效范围 over typical session-id;
      *     expect 201/202/401/35600032/35600050
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1249,7 +1249,7 @@ export default function cliManagerTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CliManager_SendMessage_EmptyMsg_0230
      * @tc.number SUB_Ability_AbilityRuntime_CliManager_SendMessage_EmptyMsg_0230
-     * @tc.desc   sendMessage: message length=0 with invalid sessionId;
+     * @tc.desc   sendMessage: 参数长度 length=0; 有效范围 with invalid sessionId;
      *     expect 201/202/401/35600032/35600033/35600050
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1271,7 +1271,7 @@ export default function cliManagerTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CliManager_SendMessage_NullMsg_0240
      * @tc.number SUB_Ability_AbilityRuntime_CliManager_SendMessage_NullMsg_0240
-     * @tc.desc   sendMessage: message=null out of valid string range;
+     * @tc.desc   sendMessage: message=null; 有效范围 out of valid string;
      *     expect 201/202/401/35600032/35600033/35600050
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1293,7 +1293,7 @@ export default function cliManagerTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CliManager_SendMessage_UndefinedMsg_0250
      * @tc.number SUB_Ability_AbilityRuntime_CliManager_SendMessage_UndefinedMsg_0250
-     * @tc.desc   sendMessage: message=undefined out of valid string range;
+     * @tc.desc   sendMessage: message=undefined; 有效范围 out of valid string;
      *     expect 201/202/401/35600032/35600033/35600050
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1315,7 +1315,7 @@ export default function cliManagerTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CliManager_SendMessage_MsgMax_0260
      * @tc.number SUB_Ability_AbilityRuntime_CliManager_SendMessage_MsgMax_0260
-     * @tc.desc   sendMessage: message length=10240 at API max; invalid sessionId;
+     * @tc.desc   sendMessage: 参数长度 length=10240 API max; 有效范围 invalid sessionId;
      *     expect 201/202/401/35600032/35600033/35600050
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1339,7 +1339,7 @@ export default function cliManagerTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CliManager_SendMessage_MsgOver_0270
      * @tc.number SUB_Ability_AbilityRuntime_CliManager_SendMessage_MsgOver_0270
-     * @tc.desc   sendMessage: message length=10241 over API max 10240;
+     * @tc.desc   sendMessage: 参数长度 length=10241; 有效范围 over API max 10240;
      *     expect 201/202/401/35600032/35600033/35600050
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

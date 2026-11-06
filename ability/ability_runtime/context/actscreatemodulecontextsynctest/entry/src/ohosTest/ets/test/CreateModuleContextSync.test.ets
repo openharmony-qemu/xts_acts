@@ -144,7 +144,7 @@ export default function actsCreateModuleContextSyncTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CreateModuleContextSync_0500
      * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_0500
-     * @tc.desc   createModuleContextSync: moduleName=undefined out of valid string range;
+     * @tc.desc   createModuleContextSync: moduleName=undefined; 有效范围 out of valid string;
      *     expect BusinessError 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -169,7 +169,7 @@ export default function actsCreateModuleContextSyncTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CreateModuleContextSync_0510
      * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_0510
-     * @tc.desc   createModuleContextSync: moduleName=null out of valid string range;
+     * @tc.desc   createModuleContextSync: moduleName=null; 有效范围 out of valid string;
      *     expect BusinessError 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -349,7 +349,7 @@ export default function actsCreateModuleContextSyncTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CreateModuleContextSync_1300
      * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_1300
-     * @tc.desc   createModuleContextSync: moduleName length=0 out of valid non-empty range;
+     * @tc.desc   createModuleContextSync: 参数长度 length=0; 有效范围 non-empty string;
      *     expect BusinessError 16000021
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -398,7 +398,7 @@ export default function actsCreateModuleContextSyncTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CreateModuleContextSync_1500
      * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_1500
-     * @tc.desc   createModuleContextSync: moduleName length=1 non-empty but not installed;
+     * @tc.desc   createModuleContextSync: 参数长度 length=1; 有效范围 non-empty but not installed;
      *     expect BusinessError 16000021
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -423,7 +423,7 @@ export default function actsCreateModuleContextSyncTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CreateModuleContextSync_1600
      * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_1600
-     * @tc.desc   createModuleContextSync: moduleName length=256 over typical module-name range;
+     * @tc.desc   createModuleContextSync: 参数长度 length=256; 有效范围 over typical module-name;
      *     expect BusinessError 16000021 or 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
