@@ -15,7 +15,7 @@
 import { describe, it, expect, afterEach, TestType, Size, Level} from '@ohos/hypium';
 import taskpool from '@ohos.taskpool';
 import { BusinessError } from '@ohos.base';
-import { additionF, printArgs } from '../utils';
+import { additionF, printArgs } from '../../utils';
 
 const asyncSleep: Function = (time: number): Promise<Object> => {
   return new Promise(resolve => setTimeout(resolve, time));
@@ -37,7 +37,7 @@ export default function TaskpoolTestTask() {
     })
     /**
      * @tc.name   testTaskpoolTask001
-     * @tc.number SUB_Runtime_Language_Backend_TaskpoolConcurrency_4601
+     * @tc.number SUB_Runtime_Language_Backend_TaskpoolConcurrency_2500
      * @tc.desc   Perform serial tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
