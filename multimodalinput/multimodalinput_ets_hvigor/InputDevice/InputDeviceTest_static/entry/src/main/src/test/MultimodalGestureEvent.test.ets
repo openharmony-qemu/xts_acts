@@ -31,20 +31,6 @@ let tag: string = 'testTag';
 
 export default function MultimodalGestureEventTest() {
   describe("MultimodalGestureEventTest", (): void => {
-    const ExpectTrue = (n: boolean) => {
-      try {
-        expect(n).assertTrue();
-      } catch (err) {
-        console.info("expectInfo", `test failed`);
-      }
-    }
-    const ExpectFalse = (n: boolean) => {
-      try {
-        expect(n).assertFail();
-      } catch (err) {
-        console.info("expectInfo", `test failed`);
-      }
-    }
 
     /**
      * @tc.name   SUB_MMI_Input_Api_GestureEvent_0100
@@ -63,12 +49,12 @@ export default function MultimodalGestureEventTest() {
             type: ActionType.BEGIN,
             scale: 1
           }
-          ExpectTrue(pinch.type == 1);
-          ExpectTrue(pinch.scale == 1);
+          expect(pinch.type == 1).assertTrue();
+          expect(pinch.scale == 1).assertTrue();
           done();
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(true);
+          expect().assertFail();
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
@@ -91,12 +77,12 @@ export default function MultimodalGestureEventTest() {
             type: ActionType.BEGIN,
             angle: 0
           }
-          ExpectTrue(rotate.type == 1);
-          ExpectTrue(rotate.angle == 0);
+          expect(rotate.type == 1).assertTrue();
+          expect(rotate.angle == 0).assertTrue();
           done();
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(true);
+          expect().assertFail();
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
@@ -120,11 +106,11 @@ export default function MultimodalGestureEventTest() {
             x: 1,
             y: 2
           }];
-          ExpectTrue(ThreeFingersSwipe[0].type == 2);
+          expect(ThreeFingersSwipe[0].type == 2).assertTrue();
           done();
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(true);
+          expect().assertFail();
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
@@ -149,11 +135,11 @@ export default function MultimodalGestureEventTest() {
             y: 2
           }];
           console.info(`${caseName} success, FourFingersSwipe is ${JSON.stringify(FourFingersSwipe)}`);
-          ExpectTrue(FourFingersSwipe[0].type == 3);
+          expect(FourFingersSwipe[0].type == 3).assertTrue();
           done();
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(true);
+          expect().assertFail();
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
@@ -176,11 +162,11 @@ export default function MultimodalGestureEventTest() {
             type: ActionType.CANCEL
           }];
           console.info(`${caseName} success, ThreeFingersTap is ${JSON.stringify(ThreeFingersTap)}`);
-          ExpectTrue(ThreeFingersTap[0].type == 0);
+          expect(ThreeFingersTap[0].type == 0).assertTrue();
           done();
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(true);
+          expect().assertFail();
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
@@ -199,14 +185,14 @@ export default function MultimodalGestureEventTest() {
         let caseName = "SUB_MMI_Input_Api_GestureEvent_0600";
         hilog.info(domain, tag, `${caseName} enter`);
         try {
-          ExpectTrue(ActionType.CANCEL == 0);
-          ExpectTrue(ActionType.BEGIN == 1);
-          ExpectTrue(ActionType.UPDATE == 2);
-          ExpectTrue(ActionType.END == 3);
+          expect(ActionType.CANCEL == 0).assertTrue();
+          expect(ActionType.BEGIN == 1).assertTrue();
+          expect(ActionType.UPDATE == 2).assertTrue();
+          expect(ActionType.END == 3).assertTrue();
           done();
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(true);
+          expect().assertFail();
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);

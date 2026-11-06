@@ -25,20 +25,6 @@ let tag: string = 'testTag';
 
 export default function MultimodalKeyEventTest() {
   describe("MultimodalKeyEventTest", (): void => {
-    const ExpectTrue = (n: boolean) => {
-      try {
-        expect(n).assertTrue();
-      } catch (err) {
-        console.info("expectInfo", `test failed`);
-      }
-    }
-    const ExpectFalse = (n: boolean) => {
-      try {
-        expect(n).assertFail();
-      } catch (err) {
-        console.info("expectInfo", `test failed`);
-      }
-    }
 
     /**
      * @tc.name   SUB_MMI_Input_Api_KeyEvent_Action_0100
@@ -53,13 +39,13 @@ export default function MultimodalKeyEventTest() {
         let caseName = "SUB_MMI_Input_Api_KeyEvent_Action_0100";
         hilog.info(domain, tag, `${caseName} enter`);
         try {
-          ExpectTrue(Action.CANCEL == 0);
-          ExpectTrue(Action.DOWN == 1);
-          ExpectTrue(Action.UP == 2);
+          expect(Action.CANCEL == 0).assertTrue();
+          expect(Action.DOWN == 1).assertTrue();
+          expect(Action.UP == 2).assertTrue();
           done();
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(true);
+          expect().assertFail();
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
@@ -83,13 +69,13 @@ export default function MultimodalKeyEventTest() {
             pressedTime: 10,
             deviceId: 1
           };
-          ExpectTrue(testKey.code == KeyCode.KEYCODE_FN);
-          ExpectTrue(testKey.pressedTime == 10);
-          ExpectTrue(testKey.deviceId == 1);
+          expect(testKey.code == KeyCode.KEYCODE_FN).assertTrue();
+          expect(testKey.pressedTime == 10).assertTrue();
+          expect(testKey.deviceId == 1).assertTrue();
           done();
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(true);
+          expect().assertFail();
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
@@ -132,21 +118,21 @@ export default function MultimodalKeyEventTest() {
             numLock: true,
             scrollLock: true
           };
-          ExpectTrue(testKeyEvent.action == Action.DOWN);
-          ExpectTrue(testKeyEvent.key.code == testKey.code);
-          ExpectTrue(testKeyEvent.keys[0].code == testKey.code);
-          ExpectTrue(testKeyEvent.ctrlKey == true);
-          ExpectTrue(testKeyEvent.altKey == true);
-          ExpectTrue(testKeyEvent.shiftKey == true);
-          ExpectTrue(testKeyEvent.logoKey == true);
-          ExpectTrue(testKeyEvent.fnKey == true);
-          ExpectTrue(testKeyEvent.capsLock == true);
-          ExpectTrue(testKeyEvent.numLock == true);
-          ExpectTrue(testKeyEvent.scrollLock == true);
+          expect(testKeyEvent.action == Action.DOWN).assertTrue();
+          expect(testKeyEvent.key.code == testKey.code).assertTrue();
+          expect(testKeyEvent.keys[0].code == testKey.code).assertTrue();
+          expect(testKeyEvent.ctrlKey == true).assertTrue();
+          expect(testKeyEvent.altKey == true).assertTrue();
+          expect(testKeyEvent.shiftKey == true).assertTrue();
+          expect(testKeyEvent.logoKey == true).assertTrue();
+          expect(testKeyEvent.fnKey == true).assertTrue();
+          expect(testKeyEvent.capsLock == true).assertTrue();
+          expect(testKeyEvent.numLock == true).assertTrue();
+          expect(testKeyEvent.scrollLock == true).assertTrue();
           done();
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(true);
+          expect().assertFail();
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);

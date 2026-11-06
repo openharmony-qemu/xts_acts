@@ -25,20 +25,6 @@ let tag: string = 'testTag';
 
 export default function MultimodalMouseEventTest() {
   describe("MultimodalMouseEventTest", (): void => {
-    const ExpectTrue = (n: boolean) => {
-      try {
-        expect(n).assertTrue();
-      } catch (err) {
-        console.info("expectInfo", `test failed`);
-      }
-    }
-    const ExpectFalse = (n: boolean) => {
-      try {
-        expect(n).assertFail();
-      } catch (err) {
-        console.info("expectInfo", `test failed`);
-      }
-    }
 
     /**
      * @tc.name   SUB_MMI_Input_Api_MouseEvent_Action_0100
@@ -53,19 +39,19 @@ export default function MultimodalMouseEventTest() {
         let caseName = "SUB_MMI_Input_Api_MouseEvent_Action_0100";
         hilog.info(domain, tag, `${caseName} enter`);
         try {
-          ExpectTrue(Action.CANCEL == 0);
-          ExpectTrue(Action.MOVE == 1);
-          ExpectTrue(Action.BUTTON_DOWN == 2);
-          ExpectTrue(Action.BUTTON_UP == 3);
-          ExpectTrue(Action.AXIS_BEGIN == 4);
-          ExpectTrue(Action.AXIS_UPDATE == 5);
-          ExpectTrue(Action.AXIS_END == 6);
-          ExpectTrue(Action.ACTION_DOWN == 7);
-          ExpectTrue(Action.ACTION_UP == 8);
+          expect(Action.CANCEL == 0).assertTrue();
+          expect(Action.MOVE == 1).assertTrue();
+          expect(Action.BUTTON_DOWN == 2).assertTrue();
+          expect(Action.BUTTON_UP == 3).assertTrue();
+          expect(Action.AXIS_BEGIN == 4).assertTrue();
+          expect(Action.AXIS_UPDATE == 5).assertTrue();
+          expect(Action.AXIS_END == 6).assertTrue();
+          expect(Action.ACTION_DOWN == 7).assertTrue();
+          expect(Action.ACTION_UP == 8).assertTrue();
           done();
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(true);
+          expect().assertFail();
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
@@ -84,19 +70,19 @@ export default function MultimodalMouseEventTest() {
         let caseName = "SUB_MMI_Input_Api_MouseEvent_Button_0100";
         hilog.info(domain, tag, `${caseName} enter`);
         try {
-          ExpectTrue(Button.LEFT == 0);
-          ExpectTrue(Button.MIDDLE == 1);
-          ExpectTrue(Button.RIGHT == 2);
-          ExpectTrue(Button.SIDE == 3);
-          ExpectTrue(Button.EXTRA == 4);
-          ExpectTrue(Button.FORWARD == 5);
-          ExpectTrue(Button.BACK == 6);
-          ExpectTrue(Button.TASK == 7);
+          expect(Button.LEFT == 0).assertTrue();
+          expect(Button.MIDDLE == 1).assertTrue();
+          expect(Button.RIGHT == 2).assertTrue();
+          expect(Button.SIDE == 3).assertTrue();
+          expect(Button.EXTRA == 4).assertTrue();
+          expect(Button.FORWARD == 5).assertTrue();
+          expect(Button.BACK == 6).assertTrue();
+          expect(Button.TASK == 7).assertTrue();
 
           done();
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(true);
+          expect().assertFail();
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
@@ -115,13 +101,13 @@ export default function MultimodalMouseEventTest() {
         let caseName = "SUB_MMI_Input_Api_MouseEvent_Axis_0100";
         hilog.info(domain, tag, `${caseName} enter`);
         try {
-          ExpectTrue(Axis.SCROLL_VERTICAL == 0);
-          ExpectTrue(Axis.SCROLL_HORIZONTAL == 1);
-          ExpectTrue(Axis.PINCH == 2);
+          expect(Axis.SCROLL_VERTICAL == 0).assertTrue();
+          expect(Axis.SCROLL_HORIZONTAL == 1).assertTrue();
+          expect(Axis.PINCH == 2).assertTrue();
           done();
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(true);
+          expect().assertFail();
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
@@ -144,12 +130,12 @@ export default function MultimodalMouseEventTest() {
             axis: Axis.SCROLL_VERTICAL,
             value: 1
           };
-          ExpectTrue(testAxisValue.axis == Axis.SCROLL_VERTICAL);
-          ExpectTrue(testAxisValue.value == 1);
+          expect(testAxisValue.axis == Axis.SCROLL_VERTICAL).assertTrue();
+          expect(testAxisValue.value == 1).assertTrue();
           done();
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(true);
+          expect().assertFail();
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
@@ -168,14 +154,14 @@ export default function MultimodalMouseEventTest() {
         let caseName = "SUB_MMI_Input_Api_MouseEvent_ToolType_0100";
         hilog.info(domain, tag, `${caseName} enter`);
         try {
-          ExpectTrue(ToolType.UNKNOWN == 0);
-          ExpectTrue(ToolType.MOUSE == 1);
-          ExpectTrue(ToolType.JOYSTICK == 2);
-          ExpectTrue(ToolType.TOUCHPAD == 3);
+          expect(ToolType.UNKNOWN == 0).assertTrue();
+          expect(ToolType.MOUSE == 1).assertTrue();
+          expect(ToolType.JOYSTICK == 2).assertTrue();
+          expect(ToolType.TOUCHPAD == 3).assertTrue();
           done();
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(true);
+          expect().assertFail();
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
@@ -225,30 +211,30 @@ export default function MultimodalMouseEventTest() {
             scrollLock: true,
             toolType: ToolType.MOUSE
           };
-          ExpectTrue(testMouseEvent.action == Action.CANCEL);
-          ExpectTrue(testMouseEvent.screenX == 1);
-          ExpectTrue(testMouseEvent.screenY == 1);
-          ExpectTrue(testMouseEvent.windowX == 1);
-          ExpectTrue(testMouseEvent.windowY == 1);
-          ExpectTrue(testMouseEvent.rawDeltaX == 1);
-          ExpectTrue(testMouseEvent.rawDeltaY == 1);
-          ExpectTrue(testMouseEvent.button == Button.LEFT);
-          ExpectTrue(testMouseEvent.pressedButtons[0] == Button.LEFT);
-          ExpectTrue(testMouseEvent.axes[0].axis == Axis.SCROLL_VERTICAL);
-          ExpectTrue(testMouseEvent.pressedKeys[0] == KeyCode.KEYCODE_FN);
-          ExpectTrue(testMouseEvent.ctrlKey == true);
-          ExpectTrue(testMouseEvent.altKey == true);
-          ExpectTrue(testMouseEvent.shiftKey == true);
-          ExpectTrue(testMouseEvent.logoKey == true);
-          ExpectTrue(testMouseEvent.fnKey == true);
-          ExpectTrue(testMouseEvent.capsLock == true);
-          ExpectTrue(testMouseEvent.numLock == true);
-          ExpectTrue(testMouseEvent.scrollLock == true);
-          ExpectTrue(testMouseEvent.toolType == ToolType.MOUSE);
+          expect(testMouseEvent.action == Action.CANCEL).assertTrue();
+          expect(testMouseEvent.screenX == 1).assertTrue();
+          expect(testMouseEvent.screenY == 1).assertTrue();
+          expect(testMouseEvent.windowX == 1).assertTrue();
+          expect(testMouseEvent.windowY == 1).assertTrue();
+          expect(testMouseEvent.rawDeltaX == 1).assertTrue();
+          expect(testMouseEvent.rawDeltaY == 1).assertTrue();
+          expect(testMouseEvent.button == Button.LEFT).assertTrue();
+          expect(testMouseEvent.pressedButtons[0] == Button.LEFT).assertTrue();
+          expect(testMouseEvent.axes[0].axis == Axis.SCROLL_VERTICAL).assertTrue();
+          expect(testMouseEvent.pressedKeys[0] == KeyCode.KEYCODE_FN).assertTrue();
+          expect(testMouseEvent.ctrlKey == true).assertTrue();
+          expect(testMouseEvent.altKey == true).assertTrue();
+          expect(testMouseEvent.shiftKey == true).assertTrue();
+          expect(testMouseEvent.logoKey == true).assertTrue();
+          expect(testMouseEvent.fnKey == true).assertTrue();
+          expect(testMouseEvent.capsLock == true).assertTrue();
+          expect(testMouseEvent.numLock == true).assertTrue();
+          expect(testMouseEvent.scrollLock == true).assertTrue();
+          expect(testMouseEvent.toolType == ToolType.MOUSE).assertTrue();
           done();
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(true);
+          expect().assertFail();
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
