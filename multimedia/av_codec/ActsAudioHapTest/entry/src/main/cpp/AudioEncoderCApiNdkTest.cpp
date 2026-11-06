@@ -252,6 +252,10 @@ void AudioCodeCApiEncoderNdkTestContext::ChannelLayoutTest(map<OH_AudioChannelLa
 bool AudioCodeCApiEncoderNdkTestContext::IsSupportHeAac()
 {
     OH_AVCapability* cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_AUDIO_AAC, true);
+    if (cap == nullptr) {
+        cout << "not support HE-AAC" << endl;
+        return false;
+    }
     const int32_t* profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability_GetSupportedProfiles(cap, &profiles, &profileNum);

@@ -49,7 +49,6 @@ static void CompleteWork(napi_env env, napi_status status, void* data)
     AsyncWorkData* workData = static_cast<AsyncWorkData*>(data);
     
     if (status != napi_ok) {
-        napi_reject_deferred(env, workData->deferred, nullptr);
         goto cleanup;
     }
 
@@ -83,11 +82,18 @@ static napi_value CreateAsyncWrapper(napi_env env, napi_callback_info info, int 
 
         napi_value workName;
         napi_create_string_utf8(env, "AudioEncoderTest", NAPI_AUTO_LENGTH, &workName);
-        napi_create_async_work(env, nullptr, workName, ExecuteWork, CompleteWork, workData, &workData->work);
+        napi_status createStatus = napi_create_async_work(env, nullptr, workName, ExecuteWork, CompleteWork, workData, &workData->work);
+        if (createStatus != napi_ok) {
+            goto cleanup;
+        }
 
         napi_queue_async_work(env, workData->work);
 
         return promise;
+
+    cleanup:
+        delete workData;
+        napi_reject_deferred(env, deferred, nullptr);
     });
 }
 
