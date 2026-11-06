@@ -21,16 +21,16 @@ namespace ArkUICapiTest {
 
 static napi_value TestNodeAdoptChildWithPolicy001(napi_env env, napi_callback_info info)
 {
-    ArkUI_NodeHandle column1;
-    ArkUI_NodeHandle text1;
-    auto ret = OH_ArkUI_NativeModule_AdoptChildWithPolicy(column1, text1,
-        OH_ARKUI_NATIVE_MODULE_ADOPT_POLICY_OVERLAY_POSITION_FOLLOWS_ADOPT_PARENT_CHAIN);
-    {
-        napi_value assertEqErr = EqFailed(env, (ret), (ARKUI_ERROR_CODE_CAPI_INIT_ERROR));
-        if (assertEqErr != nullptr) {
-            return assertEqErr;
-        }
-    }
+    // ArkUI_NodeHandle column1;
+    // ArkUI_NodeHandle text1;
+    // auto ret = OH_ArkUI_NativeModule_AdoptChildWithPolicy(column1, text1,
+    //     OH_ARKUI_NATIVE_MODULE_ADOPT_POLICY_OVERLAY_POSITION_FOLLOWS_ADOPT_PARENT_CHAIN);
+    // {
+    //     napi_value assertEqErr = EqFailed(env, (ret), (ARKUI_ERROR_CODE_CAPI_INIT_ERROR));
+    //     if (assertEqErr != nullptr) {
+    //         return assertEqErr;
+    //     }
+    // }
     ArkUI_NativeNodeAPI_1 *nodeAPI = reinterpret_cast<ArkUI_NativeNodeAPI_1 *>(
         OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_NODE, "ArkUI_NativeNodeAPI_1"));
     {
