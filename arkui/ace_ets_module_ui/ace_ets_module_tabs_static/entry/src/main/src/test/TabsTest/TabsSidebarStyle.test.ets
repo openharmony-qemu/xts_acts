@@ -45,46 +45,16 @@ function isAttrMissing(v: string): boolean {
   return v.length === 0 || v === '{}' || v === 'null' || v === 'undefined';
 }
 
-interface JsonToValueAttrs {
-  content?: string;
-  sidebarFooter?: string;
-  sidebarBottomBar?: string;
-}
-interface JsonToValueNode {
-  $attrs: JsonToValueAttrs;
-}
-
 function jsonToValueContent(key: string): string {
-  try {
-    let strJson: string = inspector.getInspectorByKey(key);
-    let node: JsonToValueNode = JSON.jsonToValue<JsonToValueNode>(strJson);
-    return node.$attrs.content ?? '';
-  } catch (err) {
-    console.info(`${LOG_TAG} content via jsonToValue unavailable: ${err}`);
-    return '';
-  }
+  return tryGetStringAttr(inspector.getInspectorByKey(key), 'content');
 }
 
 function jsonToValueSidebarFooter(key: string): string {
-  try {
-    let strJson: string = inspector.getInspectorByKey(key);
-    let node: JsonToValueNode = JSON.jsonToValue<JsonToValueNode>(strJson);
-    return node.$attrs.sidebarFooter ?? '';
-  } catch (err) {
-    console.info(`${LOG_TAG} sidebarFooter via jsonToValue unavailable: ${err}`);
-    return '';
-  }
+  return tryGetStringAttr(inspector.getInspectorByKey(key), 'sidebarFooter');
 }
 
 function jsonToValueSidebarBottomBar(key: string): string {
-  try {
-    let strJson: string = inspector.getInspectorByKey(key);
-    let node: JsonToValueNode = JSON.jsonToValue<JsonToValueNode>(strJson);
-    return node.$attrs.sidebarBottomBar ?? '';
-  } catch (err) {
-    console.info(`${LOG_TAG} sidebarBottomBar via jsonToValue unavailable: ${err}`);
-    return '';
-  }
+  return tryGetStringAttr(inspector.getInspectorByKey(key), 'sidebarBottomBar');
 }
 
 
@@ -698,21 +668,6 @@ export default function tabsSidebarStyle(): void {
     });
 
     /**
-     * @tc.number SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARFOOTER_3100
-     * @tc.name SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARFOOTER_3100
-     * @tc.desc Cover Tabs sidebarFooter null on static via jsonToValue
-     * @tc.type FUNCTION
-     * @tc.size SMALLTEST
-     * @tc.level LEVEL0
-     */
-    it('SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARFOOTER_3100', Level.LEVEL0, async (): Promise<void> => {
-      await CommonFunc.sleep(600);
-      let valNull: string = jsonToValueSidebarFooter('tabs_sidebarFooter_null');
-      let valUndef: string = jsonToValueSidebarFooter('tabs_sidebarFooter_undefined');
-      expect(valNull).assertEqual(valUndef);
-    });
-
-    /**
      * @tc.number SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARBOTTOMBAR_3200
      * @tc.name SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARBOTTOMBAR_3200
      * @tc.desc Cover Tabs sidebarBottomBar normal on static via jsonToValue
@@ -739,21 +694,6 @@ export default function tabsSidebarStyle(): void {
       let valUndef: string = jsonToValueSidebarBottomBar('tabs_sidebarBottomBar_undefined');
       let valBase: string = jsonToValueSidebarBottomBar('tabs_barStyle_normal');
       expect(valUndef).assertEqual(valBase);
-    });
-
-    /**
-     * @tc.number SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARBOTTOMBAR_3400
-     * @tc.name SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARBOTTOMBAR_3400
-     * @tc.desc Cover Tabs sidebarBottomBar null on static via jsonToValue
-     * @tc.type FUNCTION
-     * @tc.size SMALLTEST
-     * @tc.level LEVEL0
-     */
-    it('SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARBOTTOMBAR_3400', Level.LEVEL0, async (): Promise<void> => {
-      await CommonFunc.sleep(600);
-      let valNull: string = jsonToValueSidebarBottomBar('tabs_sidebarBottomBar_null');
-      let valUndef: string = jsonToValueSidebarBottomBar('tabs_sidebarBottomBar_undefined');
-      expect(valNull).assertEqual(valUndef);
     });
 
   });

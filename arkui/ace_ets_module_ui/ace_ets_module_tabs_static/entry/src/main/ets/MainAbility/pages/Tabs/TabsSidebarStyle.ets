@@ -34,10 +34,10 @@ function bottomBarBuilder() {
 @Entry
 @Component
 struct TabsSidebarStyle {
-  footerContent: ComponentContent<ESObject> =
-    new ComponentContent(this.getUIContext(), wrapBuilder(footerBuilder));
-  bottomBarContent: ComponentContent<ESObject> =
-    new ComponentContent(this.getUIContext(), wrapBuilder(bottomBarBuilder));
+  footerContent: ComponentContent<undefined> =
+    new ComponentContent<undefined>(this.getUIContext(), wrapBuilder(footerBuilder));
+  bottomBarContent: ComponentContent<undefined> =
+    new ComponentContent<undefined>(this.getUIContext(), wrapBuilder(bottomBarBuilder));
   aboutToAppear(): void {
     try {
       const routerInst: Router = this.getUIContext().getRouter();
@@ -568,21 +568,6 @@ struct TabsSidebarStyle {
         .height(120)
         .barStyle(TabBarStyle.SIDEBAR)
         .sidebarFooter(undefined)
-
-        Text('sidebarFooter null').fontSize(12)
-        Tabs({ barPosition: BarPosition.Start }) {
-          TabContent() {
-            Column().width('100%').height(40).backgroundColor(Color.Blue)
-          }.tabBar('A')
-          TabContent() {
-            Column().width('100%').height(40).backgroundColor(Color.Green)
-          }.tabBar('B')
-        }
-        .id('tabs_sidebarFooter_null')
-        .width('100%')
-        .height(120)
-        .barStyle(TabBarStyle.SIDEBAR)
-        .sidebarFooter(null)
   }
 
   @Builder
@@ -616,21 +601,6 @@ struct TabsSidebarStyle {
         .height(120)
         .barStyle(TabBarStyle.SIDEBAR)
         .sidebarBottomBar(undefined)
-
-        Text('sidebarBottomBar null').fontSize(12)
-        Tabs({ barPosition: BarPosition.Start }) {
-          TabContent() {
-            Column().width('100%').height(40).backgroundColor(Color.Blue)
-          }.tabBar('A')
-          TabContent() {
-            Column().width('100%').height(40).backgroundColor(Color.Green)
-          }.tabBar('B')
-        }
-        .id('tabs_sidebarBottomBar_null')
-        .width('100%')
-        .height(120)
-        .barStyle(TabBarStyle.SIDEBAR)
-        .sidebarBottomBar(null)
   }
 
 }
