@@ -17,9 +17,9 @@ import {describe, it, expect, TestType, Size, Level} from '@ohos/hypium'
 import { taskpool } from '@kit.ArkTS'
 import { BusinessError } from '@ohos.base'
 import { timeoutDemo, demoSenddata, taskFunc, sendableClassWithTime, taskError, sendableFuncWithTime,
-  setTransferListTestWithTime, setCloneListTestWithTime} from '../utils/TimeoutFuncList';
-import { promiseCase } from './testFunclist';
-import { SendableClassTest, sendableFunc } from './sendable';
+  setTransferListTestWithTime, setCloneListTestWithTime} from '../../utils/TimeoutFuncList';
+import { promiseCase } from '../testFunclist';
+import { SendableClassTest, sendableFunc } from '../sendable';
 
 export default function TaskTimeoutTest() {
   describe('ActTaskTimeoutTest', () => {
@@ -27,7 +27,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass001
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0496
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_0100
      * @tc.desc   Task set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -53,7 +53,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass002
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0497
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_0200
      * @tc.desc   GenericsTask set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -76,15 +76,15 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass003
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0498
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_0300
      * @tc.desc   TaskGroup set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('TaskTimeoutTestClass003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let dealTime = 500;
-      let timeout = 200;
+      let dealTime = 1200;
+      let timeout = 1000;
       let terminate = false;
       let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, dealTime);
@@ -105,7 +105,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass004
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0274
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_0400
      * @tc.desc   Timeout TaskGroup execute again
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -141,7 +141,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass005
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0275
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_0500
      * @tc.desc   configs set undefined, throwing 401 error
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -159,7 +159,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass006
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0276
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_0600
      * @tc.desc   When configs is an empty object, default values are used for execution
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -174,7 +174,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass007
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0277
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_0700
      * @tc.desc   When only the priority is set in configs, the timeout defaults to 0
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -201,7 +201,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass008
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0278
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_0800
      * @tc.desc   configs set priority and timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -216,7 +216,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass009
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0279
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_0900
      * @tc.desc   configs type error, throwing 401 error
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -234,7 +234,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass010
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0280
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_1000
      * @tc.desc   When timeout is 0, it means that no timeout has been set and the task has been completed normally
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -249,7 +249,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass011
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0281
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_1100
      * @tc.desc   When timeout is negative -1, it is processed as 0, indicating that timeout has not been set
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -264,7 +264,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass012
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0282
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_1200
      * @tc.desc   When timeout is negative -100, it is processed as 0, indicating that timeout has not been set
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -279,7 +279,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass013
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0283
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_1300
      * @tc.desc   Timeout is executed normally when it is a decimal
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -300,7 +300,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass014
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0284
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_1400
      * @tc.desc   When timeout is set to Infinity, use the default value with no timeout limit
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -315,7 +315,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass015
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0285
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_1500
      * @tc.desc   When timeout is set to -Infinity, use the default value with no timeout limit
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -330,7 +330,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass016
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0286
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_1600
      * @tc.desc   When timeout is set to NaN, use the default value with no timeout limit
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -345,7 +345,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass017
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0287
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_1700
      * @tc.desc   When timeout is set to undefined, use the default value with no timeout limit
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -360,7 +360,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass018
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0288
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_1800
      * @tc.desc   Different priorities
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -389,7 +389,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass019
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0289
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_1900
      * @tc.desc   Priority is 999, throwing 401 error
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -407,7 +407,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass020
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0290
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_2000
      * @tc.desc   Use default MEDIUM priority when priority is undefined
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -428,7 +428,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass021
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0291
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_2100
      * @tc.desc   Timeout is 10
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -451,7 +451,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass022
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0292
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_2200
      * @tc.desc   Timeout is less than or equal to int32_max, task cannot be executed again
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -472,7 +472,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass023
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0293
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_2300
      * @tc.desc   When timeout greater than int32_max, no timeout limit
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -490,7 +490,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass024
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0294
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_2400
      * @tc.desc   When timeout is Number.MAX_SAFE_INTEGER, no timeout limit
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -508,7 +508,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass025
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0295
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_2500
      * @tc.desc   Timeout equals the task execution time
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -532,7 +532,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass026
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0296
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_2600
      * @tc.desc   Return results normally when timeout is slightly greater than task execution time
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -547,7 +547,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass027
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0297
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_2700
      * @tc.desc   Timeout slightly less than the task execution time, throwing 10200058 error
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -568,7 +568,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass028
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0298
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_2800
      * @tc.desc   When timeout is Number.MIN_VALUE, no timeout limit
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -586,7 +586,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass029
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0299
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_2900
      * @tc.desc   Verify serialization error
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -625,7 +625,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass031
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0301
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_3000
      * @tc.desc   Executed task can not set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -644,7 +644,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass032
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0302
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_3100
      * @tc.desc   Task throw error before timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -665,7 +665,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass033
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0303
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_3200
      * @tc.desc   Task throw error after timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -686,7 +686,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass034
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0304
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_3300
      * @tc.desc   TaskGroup task throw error before timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -711,7 +711,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass035
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0305
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_3400
      * @tc.desc   TaskGroup task throw error after timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -736,7 +736,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass036
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0306
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_3500
      * @tc.desc   TaskGroup task throw error after timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -761,7 +761,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass037
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0307
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_3600
      * @tc.desc   Empty TaskGroup set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -783,7 +783,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass038
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0308
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_3700
      * @tc.desc   Executed Task set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -803,7 +803,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass039
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0309
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_3800
      * @tc.desc   DelayedTask set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -823,7 +823,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass040
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0310
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_3900
      * @tc.desc   PeriodicallyTask set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -843,7 +843,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass041
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0311
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_4000
      * @tc.desc   SequenceTask can not set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -863,7 +863,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass042
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0312
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_4100
      * @tc.desc   TimeoutTask can not addDependency
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -884,7 +884,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass043
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0313
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_4200
      * @tc.desc   Task can not addDependency TimeoutTask
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -904,7 +904,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass044
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0314
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_4300
      * @tc.desc   Normal taskGroup set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -930,7 +930,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass045
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0315
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_4400
      * @tc.desc   LongTask set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -952,7 +952,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass046
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0316
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_4500
      * @tc.desc   Task can be executed repeatedly when timeout=0
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -969,7 +969,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass047
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0317
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_4600
      * @tc.desc   Task can be executed again when timeout=0, not throwing anomalies
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -986,7 +986,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass048
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0318
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_4700
      * @tc.desc   Tasks can be executed repeatedly without setting timeout, not throwing anomalies
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1003,7 +1003,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass049
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0319
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_4800
      * @tc.desc   Constraint not applicable when negative timeout occurs, not throwing anomalies
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1020,7 +1020,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass050
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0320
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_4900
      * @tc.desc   Constraint not applicable when empty configs, not throwing anomalies
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1037,7 +1037,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass051
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0321
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_5000
      * @tc.desc   TaskGroup can be executed again when timeout=0, not throwing anomalies
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1058,7 +1058,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass052
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0322
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_5100
      * @tc.desc   TaskGroup can be executed repeatedly without setting timeout, not throwing anomalies
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1079,7 +1079,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass053
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0323
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_5200
      * @tc.desc   DelayedTask can be executed repeatedly without setting timeout, not throwing anomalies
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1096,7 +1096,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass054
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0324
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_5300
      * @tc.desc   TimeoutTask can addDependency task when timeout = 0
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1123,7 +1123,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass055
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0325
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_5400
      * @tc.desc   Task can addDependency timeoutTask when timeout = 0
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1150,7 +1150,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass056
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0326
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_5500
      * @tc.desc   Do not trigger onExecutionFailed after timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1176,7 +1176,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass057
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0327
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_5600
      * @tc.desc   Do not trigger sendData after timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1196,13 +1196,20 @@ export default function TaskTimeoutTest() {
       while (!terminate) {
         await promiseCase();
       }
-      expect(count).assertLessOrEqual(10);
+      for (let i: number = 0; i < 5; i++) {
+        await promiseCase();
+      }
+      let settledCount: number = count;
+      for (let i: number = 0; i < 5; i++) {
+        await promiseCase();
+      }
+      expect(count).assertEqual(settledCount);
       done();
     })
 
     /**
      * @tc.name   TaskTimeoutTestClass058
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0328
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_5700
      * @tc.desc   Do trigger sendData before timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1227,7 +1234,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass059
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0329
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_5800
      * @tc.desc   Normal completion trigger onExecutionSucceeded
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1252,7 +1259,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass060
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0330
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_5900
      * @tc.desc   OnEnqueued status verification after timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1278,7 +1285,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass061
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0331
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_6000
      * @tc.desc   onStartExecution status verification after timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1304,7 +1311,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass062
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0332
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_6100
      * @tc.desc   Different priorities
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1347,7 +1354,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass063
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0333
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_6200
      * @tc.desc   TimeoutTask use sendable params
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1377,7 +1384,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass064
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0334
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_6300
      * @tc.desc   TimeoutTask use sendable params
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1407,7 +1414,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass065
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0335
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_6400
      * @tc.desc   TimeoutTask use ArrayBuffer params
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1436,7 +1443,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass066
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0336
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_6500
      * @tc.desc   TimeoutTask use ArrayBuffer params
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1465,7 +1472,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass067
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0337
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_6600
      * @tc.desc   TimeoutTask use setCloneList
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1493,7 +1500,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass068
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0338
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_6700
      * @tc.desc   TimeoutTask use setCloneList
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1521,7 +1528,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass069
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_1001
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_6800
      * @tc.desc   Task set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1548,7 +1555,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass070
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_1002
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_6900
      * @tc.desc   Task set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1575,7 +1582,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass071
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_1003
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_7000
      * @tc.desc   Task set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
@@ -1602,7 +1609,7 @@ export default function TaskTimeoutTest() {
 
     /**
      * @tc.name   TaskTimeoutTestClass072
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_1004
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TIMEOUT_7100
      * @tc.desc   Task set timeout
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
