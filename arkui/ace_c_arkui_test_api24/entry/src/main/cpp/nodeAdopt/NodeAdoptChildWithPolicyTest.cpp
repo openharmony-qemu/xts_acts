@@ -41,7 +41,7 @@ static napi_value TestNodeAdoptChildWithPolicy001(napi_env env, napi_callback_in
     }
     auto column = nodeAPI->createNode(ARKUI_NODE_COLUMN);
     auto text = nodeAPI->createNode(ARKUI_NODE_TEXT);
-    ret = OH_ArkUI_NativeModule_AdoptChildWithPolicy(column, text,
+    auto ret = OH_ArkUI_NativeModule_AdoptChildWithPolicy(column, text,
         OH_ARKUI_NATIVE_MODULE_ADOPT_POLICY_OVERLAY_POSITION_FOLLOWS_ADOPT_PARENT_CHAIN);
     {
         napi_value assertEqErr = EqFailed(env, (ret), (ARKUI_ERROR_CODE_NO_ERROR));
