@@ -129,13 +129,14 @@ export default function abilityTest() {
         if (data?.event === 'setAbilityInstanceInfo_success') {
           commonEventManager.unsubscribe(subscriber,()=>{
             hilog.info(DOMAIN, LOG_TAG, tag + " success");
+            expect(data.event).assertEqual('setAbilityInstanceInfo_success');
             done();
           });
         } else {
           commonEventManager.unsubscribe(subscriber,()=>{
             hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
             hilog.info(DOMAIN, LOG_TAG, tag + " fail");
-            try { expect().assertFail(); } catch (err) {}
+            expect().assertFail();
             done();
           });
         }
@@ -147,7 +148,7 @@ export default function abilityTest() {
         hilog.info(DOMAIN, LOG_TAG, tag + " startAbility success");
       }).catch(async(err:BusinessError)=>{
         hilog.info(DOMAIN, LOG_TAG, tag + " startAbility fail " + err?.code);
-        try { expect().assertFail(); } catch (err) {}
+        expect().assertFail();
         commonEventManager.unsubscribe(subscriber,()=>{
           done();
         });
@@ -178,14 +179,13 @@ export default function abilityTest() {
           hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
         }
       }
+      expect(successCount === 10).assertTrue();
       if (successCount === 10) {
         hilog.info(DOMAIN, LOG_TAG, tag + " success");
-        done();
       } else {
         hilog.info(DOMAIN, LOG_TAG, tag + " fail");
-        try { expect().assertFail(); } catch (err) {}
-        done();
       }
+      done();
     })
 
     /**
@@ -207,11 +207,13 @@ export default function abilityTest() {
       let subscriber = commonEventManager.createSubscriberSync({
         events: ['setAbilityInstanceInfo_success', 'setAbilityInstanceInfo_fail']
       });
+      const expectBothDone = 2;
       commonEventManager.subscribe(subscriber, (err, data) => {
         if (data?.event === 'setAbilityInstanceInfo_success') {
           count++;
-          if (count === 2) {
+          if (count === expectBothDone) {
             hilog.info(DOMAIN, LOG_TAG, tag + " success");
+            expect(count).assertEqual(expectBothDone);
             commonEventManager.unsubscribe(subscriber,()=>{
               done();
             });
@@ -220,7 +222,7 @@ export default function abilityTest() {
           commonEventManager.unsubscribe(subscriber,()=>{
             hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
             hilog.info(DOMAIN, LOG_TAG, tag + " fail");
-            try { expect().assertFail(); } catch (err) {}
+            expect().assertFail();
             done();
           });
         }
@@ -232,7 +234,7 @@ export default function abilityTest() {
         hilog.info(DOMAIN, LOG_TAG, tag + " startAbility success");
       }).catch(async(err:BusinessError)=>{
         hilog.info(DOMAIN, LOG_TAG, tag + " startAbility fail " + err?.code);
-        try { expect().assertFail(); } catch (err) {}
+        expect().assertFail();
         commonEventManager.unsubscribe(subscriber,()=>{
           done();
         });
@@ -240,8 +242,9 @@ export default function abilityTest() {
       try {
         await testContext.setAbilityInstanceInfo('111111', pixelMap);
         count++;
-        if (count === 2) {
+        if (count === expectBothDone) {
           hilog.info(DOMAIN, LOG_TAG, tag + " success");
+          expect(count).assertEqual(expectBothDone);
           done();
         }
       } catch (err) {
@@ -1216,68 +1219,100 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4100
      * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4100
-     * @tc.desc   PixelMap editable=true: assert isEditable true and isStrideAlignment;
-     *     then setAbilityInstanceInfo
+     * @tc.desc   setAbilityInstanceInfo icon isStrideAlignment=false true/false成对; real call;
+     *     2in1 may success; phone/default may 401/801/16000011/201 (API device limit)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4100', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4100';
-      hilog.info(DOMAIN, LOG_TAG, tag + ' it begin');
+      hilog.info(DOMAIN, LOG_TAG, tag + ' it begin deviceType=' + deviceInfo.deviceType);
       let editOpts: image.InitializationOptions = {
         editable: true,
         pixelFormat: image.PixelMapFormat.RGBA_8888,
         size: { height: 64, width: 64 }
       };
       let editMap: image.PixelMap = image.createPixelMapSync(color, editOpts);
-      expect(typeof editMap.isEditable).assertEqual('boolean');
       expect(editMap.isEditable).assertEqual(true);
-      expect(typeof editMap.isStrideAlignment).assertEqual('boolean');
+      expect(editMap.isStrideAlignment).assertEqual(false);
       try {
-        await testContext.setAbilityInstanceInfo('label_editable_true', editMap);
-        hilog.info(DOMAIN, LOG_TAG, tag + ' success');
+        await testContext.setAbilityInstanceInfo('label_stride_false', editMap);
+        hilog.info(DOMAIN, LOG_TAG, tag + ' success isStrideAlignment=false');
         done();
       } catch (err) {
-        hilog.info(DOMAIN, LOG_TAG, 'setAbilityInstanceInfo failed: ' + JSON.stringify(err));
-        try {
-          expect(err?.code === 401 || err?.code === 801 ||
-            err?.code === 16000011 || err?.code === 201).assertTrue();
-        } catch (assertErr) {}
+        let code = getBizCode(err);
+        hilog.info(DOMAIN, LOG_TAG, tag + ' isStrideAlignment=false deviceType=' +
+          deviceInfo.deviceType + ' code=' + code);
+        expect(code === 401 || code === 801 || code === 16000011 || code === 201).assertTrue();
         done();
       }
     })
+
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4200
      * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4200
-     * @tc.desc   PixelMap editable=false: assert isEditable false and isStrideAlignment;
-     *     then setAbilityInstanceInfo
+     * @tc.desc   setAbilityInstanceInfo icon isStrideAlignment=false true/false成对; real call;
+     *     2in1 may success; phone/default may 401/801/16000011/201 (API device limit)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4200', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4200';
-      hilog.info(DOMAIN, LOG_TAG, tag + ' it begin');
+      hilog.info(DOMAIN, LOG_TAG, tag + ' it begin deviceType=' + deviceInfo.deviceType);
       let roOpts: image.InitializationOptions = {
         editable: false,
         pixelFormat: image.PixelMapFormat.RGBA_8888,
         size: { height: 64, width: 64 }
       };
       let roMap: image.PixelMap = image.createPixelMapSync(color, roOpts);
-      expect(typeof roMap.isEditable).assertEqual('boolean');
       expect(roMap.isEditable).assertEqual(false);
-      expect(typeof roMap.isStrideAlignment).assertEqual('boolean');
+      expect(roMap.isStrideAlignment).assertEqual(false);
       try {
-        await testContext.setAbilityInstanceInfo('label_editable_false', roMap);
-        hilog.info(DOMAIN, LOG_TAG, tag + ' success');
+        await testContext.setAbilityInstanceInfo('label_stride_false_ro', roMap);
+        hilog.info(DOMAIN, LOG_TAG, tag + ' success isStrideAlignment=false');
         done();
       } catch (err) {
-        hilog.info(DOMAIN, LOG_TAG, 'setAbilityInstanceInfo failed: ' + JSON.stringify(err));
-        try {
-          expect(err?.code === 401 || err?.code === 801 ||
-            err?.code === 16000011 || err?.code === 201).assertTrue();
-        } catch (assertErr) {}
+        let code = getBizCode(err);
+        hilog.info(DOMAIN, LOG_TAG, tag + ' isStrideAlignment=false deviceType=' +
+          deviceInfo.deviceType + ' code=' + code);
+        expect(code === 401 || code === 801 || code === 16000011 || code === 201).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4300
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4300
+     * @tc.desc   setAbilityInstanceInfo icon isStrideAlignment=true true/false成对; DMA real call;
+     *     2in1 may success; phone/default may 401/801/16000011/201 (API device limit)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4300', Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4300';
+      hilog.info(DOMAIN, LOG_TAG, tag + ' it begin deviceType=' + deviceInfo.deviceType);
+      const smallColor: ArrayBuffer = new ArrayBuffer(96);
+      let dmaOpts: image.InitializationOptions = {
+        editable: true,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: image.PixelMapFormat.BGRA_8888,
+        size: { height: 4, width: 6 }
+      };
+      let dmaMap: image.PixelMap =
+        image.createPixelMapUsingAllocatorSync(smallColor, dmaOpts, image.AllocatorType.DMA);
+      expect(dmaMap.isStrideAlignment).assertEqual(true);
+      try {
+        await testContext.setAbilityInstanceInfo('label_stride_true', dmaMap);
+        hilog.info(DOMAIN, LOG_TAG, tag + ' success isStrideAlignment=true');
+        done();
+      } catch (err) {
+        let code = getBizCode(err);
+        hilog.info(DOMAIN, LOG_TAG, tag + ' isStrideAlignment=true deviceType=' +
+          deviceInfo.deviceType + ' code=' + code);
+        expect(code === 401 || code === 801 || code === 16000011 || code === 201).assertTrue();
         done();
       }
     })
