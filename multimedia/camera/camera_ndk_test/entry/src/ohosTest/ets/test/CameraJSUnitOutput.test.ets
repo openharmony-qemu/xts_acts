@@ -1731,7 +1731,7 @@ export default function cameraJSUnitOutput() {
           cameraObj.oHCameraC2PASignatureConfigCreate(Parameter_Setting.ALL_PARAMETER_OK);
           let configRet = cameraObj.oHPhotoOutputConfigureC2PASignature(Parameter_Setting.ALL_PARAMETER_OK, true);
           console.info(TAG + `ConfigureC2PASignature ret (not supported): ${configRet}`);
-          expect(configRet).assertEqual(Camera_ErrorCode.CAMERA_ERROR_CAPABILITY_NOT_SUPPORTED);
+          expect(configRet).assertEqual(7400114);
           cameraObj.oHCameraC2PASignatureConfigDestroy(Parameter_Setting.ALL_PARAMETER_OK);
         } else {
           // 支持 C2PA 时，创建配置并设置作者信息
@@ -1833,7 +1833,7 @@ export default function cameraJSUnitOutput() {
           cameraObj.oHCameraC2PASignatureConfigCreate(Parameter_Setting.ALL_PARAMETER_OK);
           let configRet = cameraObj.oHPhotoOutputConfigureC2PASignature(Parameter_Setting.ALL_PARAMETER_OK, true);
           console.info(TAG + `ConfigureC2PASignature ret (not supported): ${configRet}`);
-          expect(configRet).assertEqual(Camera_ErrorCode.CAMERA_ERROR_CAPABILITY_NOT_SUPPORTED);
+          expect(configRet).assertEqual(7400114);
           cameraObj.oHCameraC2PASignatureConfigDestroy(Parameter_Setting.ALL_PARAMETER_OK);
         } else {
           // 支持 C2PA 时，config 为 nullptr：根据文档允许，仅启用 C2PA 不带作者信息
