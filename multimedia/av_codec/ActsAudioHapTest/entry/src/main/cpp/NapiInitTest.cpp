@@ -82,7 +82,8 @@ static napi_value CreateAsyncWrapper(napi_env env, napi_callback_info info, int 
 
         napi_value workName;
         napi_create_string_utf8(env, "AudioEncoderTest", NAPI_AUTO_LENGTH, &workName);
-        napi_status createStatus = napi_create_async_work(env, nullptr, workName, ExecuteWork, CompleteWork, workData, &workData->work);
+        napi_status createStatus = napi_create_async_work(env, nullptr, workName, ExecuteWork, CompleteWork, workData,
+                                                          &workData->work);
         if (createStatus != napi_ok) {
             goto cleanup;
         }
