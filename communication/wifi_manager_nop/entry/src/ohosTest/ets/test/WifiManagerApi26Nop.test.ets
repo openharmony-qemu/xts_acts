@@ -39,22 +39,22 @@ export default function wifiManagerApi26NopTest() {
     })
 
     /**
-      * @tc.name   SUB_Communication_WiFi_DisconnectFromCandidateConfig_Nop
-      * @tc.number SUB_Communication_WiFi_DisconnectFromCandidateConfig_Nop
+      * @tc.name   SUB_Communication_WiFi_DisconnectFromCandidateConfig_Nop_0100
+      * @tc.number SUB_Communication_WiFi_DisconnectFromCandidateConfig_Nop_0100
       * @tc.desc   Test disconnectFromCandidateConfig API without permission
       * @tc.type   FUNCTION
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL2
       */
-    it('SUB_Communication_WiFi_DisconnectFromCandidateConfig_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_DisconnectFromCandidateConfig_Nop begin');
+    it('SUB_Communication_WiFi_DisconnectFromCandidateConfig_Nop_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_DisconnectFromCandidateConfig_Nop_0100 begin');
       try {
         wifiManager.disconnectFromCandidateConfig(0, 30);
-        hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_DisconnectFromCandidateConfig_Nop success');
+        hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_DisconnectFromCandidateConfig_Nop_0100 success');
         expect().assertFail();
         done();
       } catch (error) {
-        hilog.error(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_DisconnectFromCandidateConfig_Nop failed ' + JSON.stringify(error));
+        hilog.error(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_DisconnectFromCandidateConfig_Nop_0100 failed ' + JSON.stringify(error));
         if (error.code === 801) {
           expect(error.code).assertEqual(801);
         } else {
@@ -65,22 +65,22 @@ export default function wifiManagerApi26NopTest() {
     });
 
     /**
-      * @tc.name   SUB_Communication_WiFi_DisconnectFromCandidateConfig_Permanent_Nop
-      * @tc.number SUB_Communication_WiFi_DisconnectFromCandidateConfig_Permanent_Nop
+      * @tc.name   SUB_Communication_WiFi_DisconnectFromCandidateConfig_Permanent_Nop_0200
+      * @tc.number SUB_Communication_WiFi_DisconnectFromCandidateConfig_Permanent_Nop_0200
       * @tc.desc   Test disconnectFromCandidateConfig API with permanent blockDuration without permission
       * @tc.type   FUNCTION
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL2
       */
-    it('SUB_Communication_WiFi_DisconnectFromCandidateConfig_Permanent_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_DisconnectFromCandidateConfig_Permanent_Nop begin');
+    it('SUB_Communication_WiFi_DisconnectFromCandidateConfig_Permanent_Nop_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_DisconnectFromCandidateConfig_Permanent_Nop_0200 begin');
       try {
         wifiManager.disconnectFromCandidateConfig(0, -1);
-        hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_DisconnectFromCandidateConfig_Permanent_Nop success');
+        hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_DisconnectFromCandidateConfig_Permanent_Nop_0200 success');
         expect().assertFail();
         done();
       } catch (error) {
-        hilog.error(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_DisconnectFromCandidateConfig_Permanent_Nop failed ' + JSON.stringify(error));
+        hilog.error(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_DisconnectFromCandidateConfig_Permanent_Nop_0200 failed ' + JSON.stringify(error));
         if (error.code === 801) {
           expect(error.code).assertEqual(801);
         } else {
