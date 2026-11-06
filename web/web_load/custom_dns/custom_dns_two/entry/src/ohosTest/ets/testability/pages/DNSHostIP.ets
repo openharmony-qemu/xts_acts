@@ -25,7 +25,6 @@ struct DNSHostIP {
   @State userAgentPC:string = "";
   @State hostName: string | null | undefined= 'www.baidu.com';
   @State str: string = "";
-  @State getURL: string = "";
   @State getURL1: string = "";
   @State getTitle1: string = "";
   @State getTitle2: string = "";
