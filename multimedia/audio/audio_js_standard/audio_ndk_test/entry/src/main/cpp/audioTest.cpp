@@ -15245,8 +15245,254 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_SUCCESS_0100(napi_e
     return res;
 }
 
+static OH_AudioStream_Result CreateStartedRendererWithUsage(OH_AudioStream_Usage usage,
+    OH_AudioRenderer** outRenderer,OH_AudioStreamBuilder** outBuilder)
+{
+    OH_AudioStreamBuilder* builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_RENDERER;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_Create(&builder,type);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return result;
+    }
+    OH_AudioStreamBuilder_SetRendererInfo(builder,usage);
+    OH_AudioRenderer_Callbacks callbacks;
+
+    callbacks.OH_AudioRenderer_OnWriteData = AudioRendererOnWriteData;
+    callbacks.OH_AudioRenderer_OnInterruptEvent = AudioRendererInterruptEvent;
+
+    OH_AudioStreamBuilder_SetRendererCallback(builder,callbacks,nullptr);
+    OH_AudioRenderer* renderer = nullptr;
+    result = OH_AudioStreamBuilder_GenerateRenderer(builder,&renderer);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        OH_AudioStreamBuilder_Destroy(builder);
+        return result;
+    }
+
+    result = OH_AudioRenderer_Start(renderer);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        OH_AudioRenderer_Release(renderer);
+        OH_AudioStreamBuilder_Destroy(builder);
+        return result;
+    }
+
+    *outRenderer = renderer;
+    *outBuilder = builder;
+    return AUDIOSTREAM_SUCCESS;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioRenderer *renderer = nullptr;
+    OH_AudioStreamBuilder* builder = nullptr;
+    OH_AudioStream_Result result = CreateStartedRendererWithUsage(AUDIOSTREAM_USAGE_MUSIC,&renderer,&builder);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        LOG("SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0100 setup failed: result = %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    result = OH_AudioRenderer_Standby(renderer,true);
+    LOG("SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0100 Standby(true) result = %{public}d", result);
+
+    if (result == AUDIOSTREAM_SUCCESS) {
+        OH_AudioRenderer_Standby(renderer,false);
+        napi_create_int32(env, TEST_PASS, &res);
+    }else{
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+
+    OH_AudioRenderer_Release(renderer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0200(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioRenderer *renderer = nullptr;
+    OH_AudioStreamBuilder* builder = nullptr;
+    OH_AudioStream_Result result = CreateStartedRendererWithUsage(AUDIOSTREAM_USAGE_MUSIC,&renderer,&builder);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    result = OH_AudioRenderer_Standby(renderer,true);
+
+    if (result != AUDIOSTREAM_SUCCESS) {
+        LOG("SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0200 enter standby failed, result = %{public}d", result);
+        OH_AudioRenderer_Release(renderer);
+        OH_AudioStreamBuilder_Destroy(builder);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    result = OH_AudioRenderer_Standby(renderer,false);
+    LOG("SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0200 Standby(false) result = %{public}d", result);
+
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+    }else{
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+
+    OH_AudioRenderer_Release(renderer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0300(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder* builder = CreateRenderBuilder();
+    OH_AudioStream_Usage usage = AUDIOSTREAM_USAGE_MUSIC;
+
+    OH_AudioStreamBuilder_SetRendererInfo(builder,usage);
+    OH_AudioRenderer_Callbacks callbacks;
+    callbacks.OH_AudioRenderer_OnWriteData = AudioRendererOnWriteData;
+    callbacks.OH_AudioRenderer_OnInterruptEvent = AudioRendererInterruptEvent;
+    
+    OH_AudioStreamBuilder_SetRendererCallback(builder,callbacks,nullptr);
+    OH_AudioRenderer *renderer = nullptr;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_GenerateRenderer(builder,&renderer);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        OH_AudioStreamBuilder_Destroy(builder);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    result = OH_AudioRenderer_Standby(renderer,true);
+    LOG("SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0300 Standby(true) in PREPARED result = %{public}d", result);
+
+    if (result == AUDIOSTREAM_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+    }else{
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+
+    OH_AudioRenderer_Release(renderer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0400(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioRenderer *renderer = nullptr;
+    OH_AudioStreamBuilder* builder = nullptr;
+    OH_AudioStream_Result result = CreateStartedRendererWithUsage(AUDIOSTREAM_USAGE_MUSIC,&renderer,&builder);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    result = OH_AudioRenderer_Standby(renderer,false);
+    LOG("SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0400 Standby(false) not-in-standby result = %{public}d", result);
+
+    if (result == AUDIOSTREAM_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+    }else{
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+
+    OH_AudioRenderer_Release(renderer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0500(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioRenderer *renderer = nullptr;
+    OH_AudioStreamBuilder* builder = nullptr;
+    OH_AudioStream_Result result = CreateStartedRendererWithUsage(AUDIOSTREAM_USAGE_MUSIC,&renderer,&builder);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    result = OH_AudioRenderer_Standby(renderer,true);
+
+    if (result != AUDIOSTREAM_SUCCESS) {
+        OH_AudioRenderer_Release(renderer);
+        OH_AudioStreamBuilder_Destroy(builder);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    result = OH_AudioRenderer_Start(renderer);
+    LOG("SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0500 Start() in standby result = %{public}d", result);
+
+    if (result == AUDIOSTREAM_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+    }else{
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+
+    OH_AudioRenderer_Standby(renderer,false);
+
+    OH_AudioRenderer_Release(renderer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0600(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioRenderer *renderer = nullptr;
+    OH_AudioStreamBuilder* builder = nullptr;
+    OH_AudioStream_Result result = CreateStartedRendererWithUsage(AUDIOSTREAM_USAGE_ALARM,&renderer,&builder);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    result = OH_AudioRenderer_Standby(renderer,true);
+
+    LOG("SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0600 Standby(true) ALARM result = %{public}d", result);
+
+    if (result == AUDIOSTREAM_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+    }else{
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+
+    OH_AudioRenderer_Release(renderer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0700(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStream_Result result = OH_AudioRenderer_Standby(nullptr,true);
+
+    LOG("SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0700 Standby(nullptr) result = %{public}d", result);
+
+    if (result == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    }else{
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+
+    return res;
+}
+
 EXTERN_C_START
 napi_property_descriptor desc1[] = {
+    {"SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0200, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0300", nullptr,
+        SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0300, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0400", nullptr,
+        SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0400, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0500", nullptr,
+        SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0500, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0600", nullptr,
+        SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0600, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0700", nullptr,
+        SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0700, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"SUB_MULTIMEDIA_AUDIO_NOISE_REDUCTION_MODE_ENUM_0100", nullptr,
         SUB_MULTIMEDIA_AUDIO_NOISE_REDUCTION_MODE_ENUM_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0100", nullptr,
