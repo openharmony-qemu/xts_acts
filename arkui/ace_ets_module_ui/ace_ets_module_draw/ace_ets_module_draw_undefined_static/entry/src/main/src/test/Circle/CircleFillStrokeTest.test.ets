@@ -34,7 +34,7 @@ export default function CircleFillStrokeTest() {
         router.clear();
         let pages = router.getState();
         console.info('get CircleFillStroke state pages:' + JSON.stringify(pages));
-        if (!('pointsUndefined' == pages.name)) {
+        if (!('CircleFillStroke' == pages.name)) {
           console.info('get CircleFillStroke pages.name:' + JSON.stringify(pages.name));
           await router.pushUrl(options);
           await CommonFunc.sleep(2000);
