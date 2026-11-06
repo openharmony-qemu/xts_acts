@@ -39,3 +39,5 @@ export const ArcAlphabetIndexerEventCallbackTest: (a: string) => void;
 export const DragEventSummaryTest: (a: string) => void;
 
 export const ImageCollectionTakeItemByNodeIdTest001: (content: Object) => void;
+
+export const UIContentChangeEventGetTest001: (content: Object) => void;
