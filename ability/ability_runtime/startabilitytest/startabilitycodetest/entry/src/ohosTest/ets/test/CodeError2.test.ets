@@ -74,15 +74,27 @@ export default function codeError2() {
             console.log(`${tag}-is need to click ` + JSON.stringify(allowed));
             if (allowed) {
               let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'))
+              console.info(`${tag}-find advanced_dialog_button_1 count=${buttons ? buttons.length : 0}`)
               if (buttons && buttons.length > 0) {
                 await buttons[buttons.length - 1].click()
+                console.info(`${tag}-click advanced_dialog_button_1 success`)
+              } else {
+                console.warn(`${tag}-弹窗按钮 advanced_dialog_button_1 未找到，无法点中授权弹窗`)
               }
               await sleep(2000)
+            } else {
+              console.warn(`${tag}-未发现授权弹窗(想要打开)，可能弹窗未弹出或未找到`)
             }
             let button = await driver.findComponent(ON.text('startUIServiceExtensionAbility 801'));
-            button.click()
+            if (button) {
+              await button.click()
+              console.info(`${tag}-click target button startUIServiceExtensionAbility 801 success`)
+            } else {
+              console.warn(`${tag}-目标按钮 startUIServiceExtensionAbility 801 未找到，无法点击触发用例`)
+            }
           } catch (e) {
             console.error(`${tag}-driver error`, JSON.stringify(e))
+            console.error(`${tag}-driver error detail`, (e as Error)?.message)
           }
         })
         .catch((err: BusinessError) => {
@@ -142,15 +154,27 @@ export default function codeError2() {
             console.log(`${tag}-is need to click ` + JSON.stringify(allowed));
             if (allowed) {
               let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'))
+              console.info(`${tag}-find advanced_dialog_button_1 count=${buttons ? buttons.length : 0}`)
               if (buttons && buttons.length > 0) {
                 await buttons[buttons.length - 1].click()
+                console.info(`${tag}-click advanced_dialog_button_1 success`)
+              } else {
+                console.warn(`${tag}-弹窗按钮 advanced_dialog_button_1 未找到，无法点中授权弹窗`)
               }
+            } else {
+              console.warn(`${tag}-未发现授权弹窗(想要打开)，可能弹窗未弹出或未找到`)
             }
             await sleep(2000)
             let button = await driver.findComponent(ON.text('startUIServiceExtensionAbility 16000001'));
-            button.click()
+            if (button) {
+              await button.click()
+              console.info(`${tag}-click target button startUIServiceExtensionAbility 16000001 success`)
+            } else {
+              console.warn(`${tag}-目标按钮 startUIServiceExtensionAbility 16000001 未找到，无法点击触发用例`)
+            }
           } catch (e) {
             console.error(`${tag}-driver error`, JSON.stringify(e))
+            console.error(`${tag}-driver error detail`, (e as Error)?.message)
           }
         })
         .catch((err: BusinessError) => {
@@ -210,15 +234,27 @@ export default function codeError2() {
             console.log(`${tag}-is need to click ` + JSON.stringify(allowed));
             if (allowed) {
               let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'))
+              console.info(`${tag}-find advanced_dialog_button_1 count=${buttons ? buttons.length : 0}`)
               if (buttons && buttons.length > 0) {
                 await buttons[buttons.length - 1].click()
+                console.info(`${tag}-click advanced_dialog_button_1 success`)
+              } else {
+                console.warn(`${tag}-弹窗按钮 advanced_dialog_button_1 未找到，无法点中授权弹窗`)
               }
               await sleep(2000)
+            } else {
+              console.warn(`${tag}-未发现授权弹窗(想要打开)，可能弹窗未弹出或未找到`)
             }
             let button = await driver.findComponent(ON.text('startUIServiceExtensionAbility 16000002'));
-            button.click()
+            if (button) {
+              await button.click()
+              console.info(`${tag}-click target button startUIServiceExtensionAbility 16000002 success`)
+            } else {
+              console.warn(`${tag}-目标按钮 startUIServiceExtensionAbility 16000002 未找到，无法点击触发用例`)
+            }
           } catch (e) {
             console.error(`${tag}-driver error`, JSON.stringify(e))
+            console.error(`${tag}-driver error detail`, (e as Error)?.message)
           }
         })
         .catch((err: BusinessError) => {
@@ -277,15 +313,27 @@ export default function codeError2() {
             console.log(`${tag}-is need to click ` + JSON.stringify(allowed));
             if (allowed) {
               let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'))
+              console.info(`${tag}-find advanced_dialog_button_1 count=${buttons ? buttons.length : 0}`)
               if (buttons && buttons.length > 0) {
                 await buttons[buttons.length - 1].click()
+                console.info(`${tag}-click advanced_dialog_button_1 success`)
+              } else {
+                console.warn(`${tag}-弹窗按钮 advanced_dialog_button_1 未找到，无法点中授权弹窗`)
               }
               await sleep(2000)
+            } else {
+              console.warn(`${tag}-未发现授权弹窗(想要打开)，可能弹窗未弹出或未找到`)
             }
             let button = await driver.findComponent(ON.text('connectUIServiceExtensionAbility 16000001'));
-            button.click()
+            if (button) {
+              await button.click()
+              console.info(`${tag}-click target button connectUIServiceExtensionAbility 16000001 success`)
+            } else {
+              console.warn(`${tag}-目标按钮 connectUIServiceExtensionAbility 16000001 未找到，无法点击触发用例`)
+            }
           } catch (e) {
             console.error(`${tag}-driver error`, JSON.stringify(e))
+            console.error(`${tag}-driver error detail`, (e as Error)?.message)
           }
         })
         .catch((err: BusinessError) => {
@@ -342,15 +390,27 @@ export default function codeError2() {
             console.log(`${tag}-is need to click ` + JSON.stringify(allowed));
             if (allowed) {
               let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'))
+              console.info(`${tag}-find advanced_dialog_button_1 count=${buttons ? buttons.length : 0}`)
               if (buttons && buttons.length > 0) {
                 await buttons[buttons.length - 1].click()
+                console.info(`${tag}-click advanced_dialog_button_1 success`)
+              } else {
+                console.warn(`${tag}-弹窗按钮 advanced_dialog_button_1 未找到，无法点中授权弹窗`)
               }
               await sleep(2000)
+            } else {
+              console.warn(`${tag}-未发现授权弹窗(想要打开)，可能弹窗未弹出或未找到`)
             }
             let button = await driver.findComponent(ON.text('connectServiceExtensionAbility 16000002'));
-            button.click()
+            if (button) {
+              await button.click()
+              console.info(`${tag}-click target button connectServiceExtensionAbility 16000002 success`)
+            } else {
+              console.warn(`${tag}-目标按钮 connectServiceExtensionAbility 16000002 未找到，无法点击触发用例`)
+            }
           } catch (e) {
             console.error(`${tag}-driver error`, JSON.stringify(e))
+            console.error(`${tag}-driver error detail`, (e as Error)?.message)
           }
         })
         .catch((err: BusinessError) => {
