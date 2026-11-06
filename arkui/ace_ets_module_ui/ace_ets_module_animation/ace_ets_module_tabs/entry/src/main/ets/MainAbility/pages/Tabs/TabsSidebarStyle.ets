@@ -16,6 +16,8 @@
 @Entry
 @Component
 struct TabsSidebarStyle {
+  @State emptyStrValue: ESObject = '';
+
   build() {
     Scroll() {
       Column({ space: 8 }) {
@@ -787,7 +789,7 @@ struct TabsSidebarStyle {
         .width('100%')
         .height(120)
         .barStyle(TabBarStyle.SIDEBAR)
-        .showSidebarControlButton('')
+        .showSidebarControlButton(this.emptyStrValue)
   }
 
 }
