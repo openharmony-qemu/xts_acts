@@ -36,14 +36,14 @@ export default function wifiApi26SwitchOffTest() {
       hilog.info(domain, tag, '%{public}s', 'afterAll end');
     });
     /**
-     * @tc.number SUB_Communication_WifiManager_DisconnectFromCandidateConfig_Disable_0001
-     * @tc.name SUB_Communication_WifiManager_DisconnectFromCandidateConfig_Disable_0001
+     * @tc.number SUB_Communication_WifiManager_DisconnectFromCandidateConfig_Disable_0100
+     * @tc.name SUB_Communication_WifiManager_DisconnectFromCandidateConfig_Disable_0100
      * @tc.desc Test disconnectFromCandidateConfig API when wifi is disabled
      * @tc.level Level 0
      * @tc.type Function
      * @tc.size MEDIUMTEST
      */
-    it("SUB_Communication_WifiManager_DisconnectFromCandidateConfig_Disable_0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("SUB_Communication_WifiManager_DisconnectFromCandidateConfig_Disable_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       try{
         wifiManager.disconnectFromCandidateConfig(0, 30);
         hilog.info(domain, tag, "disconnectFromCandidateConfig success");
@@ -62,14 +62,14 @@ export default function wifiApi26SwitchOffTest() {
     });
 
     /**
-     * @tc.number SUB_Communication_WifiManager_DisconnectFromCandidateConfig_Disable_0002
-     * @tc.name SUB_Communication_WifiManager_DisconnectFromCandidateConfig_Disable_0002
+     * @tc.number SUB_Communication_WifiManager_DisconnectFromCandidateConfig_Disable_0200
+     * @tc.name SUB_Communication_WifiManager_DisconnectFromCandidateConfig_Disable_0200
      * @tc.desc Test disconnectFromCandidateConfig API with permanent blockDuration when wifi is disabled
      * @tc.level Level 0
      * @tc.type Function
      * @tc.size MEDIUMTEST
      */
-    it("SUB_Communication_WifiManager_DisconnectFromCandidateConfig_Disable_0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("SUB_Communication_WifiManager_DisconnectFromCandidateConfig_Disable_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       try{
         wifiManager.disconnectFromCandidateConfig(0, -1);
         hilog.info(domain, tag, "disconnectFromCandidateConfig success");
