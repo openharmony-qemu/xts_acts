@@ -427,10 +427,10 @@ int32_t ActsGameControllerGamePadAxisEventGetAxisSourceType01()
 {
     GameController_ErrorCode code = GAME_CONTROLLER_SUCCESS;
     if (CheckGetAxisSourceType(GamePad_AxisSourceType::DPAD)
-        && GamePad_AxisSourceType::LEFT_THUMBSTICK
-        && GamePad_AxisSourceType::RIGHT_THUMBSTICK
-        && GamePad_AxisSourceType::LEFT_TRIGGER
-        && GamePad_AxisSourceType::RIGHT_TRIGGER) {
+        && CheckGetAxisSourceType(GamePad_AxisSourceType::LEFT_THUMBSTICK)
+        && CheckGetAxisSourceType(GamePad_AxisSourceType::RIGHT_THUMBSTICK)
+        && CheckGetAxisSourceType(GamePad_AxisSourceType::LEFT_TRIGGER)
+        && CheckGetAxisSourceType(GamePad_AxisSourceType::RIGHT_TRIGGER)) {
         code = GameController_ErrorCode::GAME_CONTROLLER_SUCCESS;
     } else {
         code = GameController_ErrorCode::GAME_CONTROLLER_PARAM_ERROR;
