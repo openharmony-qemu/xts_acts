@@ -15,7 +15,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Hypium,
   Size,
-  TestType} from '../../../../hypium/index';
+  TestType} from '@ohos/hypium-static/src/main/indexStatic';
 import { camera } from '@kit.CameraKit';
 import {
   COMMON_WAIT_DURATION, getFd, getPermission, resourceName, sleep
