@@ -73,7 +73,6 @@ export default function gridDragEventModifierUndefinedTest() {
       let text = await driver.findComponent(ON.id('GridM_text1'));
       await CommonFunc.sleep(500);
       expect(await (text?.getText() as Promise<String>)).assertEqual('onItemDragStart');
-      console.info('[gridDragEventModifierUndefinedTest_static_0001] text: ' + text?.getText());
 
       await CommonFunc.sleep(500);
       await (changeBtn?.click() as Promise<void>);
@@ -86,7 +85,6 @@ export default function gridDragEventModifierUndefinedTest() {
       await CommonFunc.sleep(500);
       text = await driver.findComponent(ON.id('GridM_text1'));
       await CommonFunc.sleep(500);
-      console.info('[gridDragEventModifierUndefinedTest_static_0001] text2: ' + text?.getText());
       if (text) {
         expect(await (text.getText() as Promise<String>)).assertEqual('Hello World');
       }

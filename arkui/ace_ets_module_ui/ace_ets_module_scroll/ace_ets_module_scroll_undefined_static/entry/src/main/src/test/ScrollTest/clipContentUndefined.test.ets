@@ -64,7 +64,7 @@ export default function clipContentUndefinedTest() {
 
       let driver = Driver.create();
       let btn2: Component | null = await driver.findComponent(ON.id('button_clipContent'));
-      btn2?.click();
+      await (btn2?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
 
       let strJson1 = inspector.getInspectorByKey('common_clipContent');
