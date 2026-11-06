@@ -1262,6 +1262,134 @@ export default function applicationManagerTest() {
       }
       done();
     });
-    
+
+    // ========== OptimizationBatteryExclusionApps Permission Tests ==========
+
+    /**
+     * @tc.name   test_addOptimizationBatteryExclusionApps_permission_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDOPTIMIZATIONBATTERYEXCLUSIONAPPS_NO_PERMISSION_JS_0100
+     * @tc.desc   test addOptimizationBatteryExclusionApps with normal admin (should fail with 201)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addOptimizationBatteryExclusionApps_permission_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      try {
+        applicationManager.addOptimizationBatteryExclusionApps([TEST_BUNDLENAME], DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code).assertEqual(201);
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_addOptimizationBatteryExclusionApps_permission_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDOPTIMIZATIONBATTERYEXCLUSIONAPPS_NO_PERMISSION_JS_0200
+     * @tc.desc   test addOptimizationBatteryExclusionApps with BYOD admin (should fail with 9200002)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addOptimizationBatteryExclusionApps_permission_0200", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        applicationManager.addOptimizationBatteryExclusionApps([TEST_BUNDLENAME], DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code).assertEqual(9200002);
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_removeOptimizationBatteryExclusionApps_permission_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEOPTIMIZATIONBATTERYEXCLUSIONAPPS_NO_PERMISSION_JS_0100
+     * @tc.desc   test removeOptimizationBatteryExclusionApps with normal admin (should fail with 201)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeOptimizationBatteryExclusionApps_permission_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      try {
+        applicationManager.removeOptimizationBatteryExclusionApps([TEST_BUNDLENAME], DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code).assertEqual(201);
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_removeOptimizationBatteryExclusionApps_permission_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEOPTIMIZATIONBATTERYEXCLUSIONAPPS_NO_PERMISSION_JS_0200
+     * @tc.desc   test removeOptimizationBatteryExclusionApps with BYOD admin (should fail with 9200002)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeOptimizationBatteryExclusionApps_permission_0200", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        applicationManager.removeOptimizationBatteryExclusionApps([TEST_BUNDLENAME], DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code).assertEqual(9200002);
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_getOptimizationBatteryExclusionApps_permission_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETOPTIMIZATIONBATTERYEXCLUSIONAPPS_NO_PERMISSION_JS_0100
+     * @tc.desc   test getOptimizationBatteryExclusionApps with normal admin (should fail with 201)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getOptimizationBatteryExclusionApps_permission_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      try {
+        applicationManager.getOptimizationBatteryExclusionApps(DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code).assertEqual(201);
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_getOptimizationBatteryExclusionApps_permission_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETOPTIMIZATIONBATTERYEXCLUSIONAPPS_NO_PERMISSION_JS_0200
+     * @tc.desc   test getOptimizationBatteryExclusionApps with BYOD admin (should fail with 9200002)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getOptimizationBatteryExclusionApps_permission_0200", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        applicationManager.getOptimizationBatteryExclusionApps(DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code).assertEqual(9200002);
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
   })
 }
