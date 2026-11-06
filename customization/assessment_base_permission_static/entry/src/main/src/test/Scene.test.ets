@@ -160,7 +160,8 @@ export default function AutomaticSceneConStaticTest(): void {
           return;
         } else {
           hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
-          expect(err.code).assertEqual(0);
+          expect(err.code).assertEqual(201);
+          expect(err.message).assertEqual('Permission denied');
         }
       }
       done();
@@ -192,7 +193,8 @@ export default function AutomaticSceneConStaticTest(): void {
           return;
         } else {
           hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
-          expect(err.code).assertEqual(36700001);
+          expect(err.code).assertEqual(201);
+          expect(err.message).assertEqual('Permission denied');
         }
       }
       done();
