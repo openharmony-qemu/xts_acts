@@ -57,12 +57,12 @@ export default function dragEventJsunit() {
     
     
 /**
-     * @tc.number   dragEventTest_static_0100
-     * @tc.name     dragEventTest_static_0100
-     * @tc.desc     dragEventTest_static_0100
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DRAG_EVENT_STATIC_0100
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_DRAG_EVENT_STATIC_0100
+     * @tc.desc     Verify dragEvent onDragStart action triggered when dragging apple
      * @tc.level    Level.LEVEL0
      */
-it('dragEventTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_ACE_ENGINE_DRAG_EVENT_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('dragEventTest_0100 START');
       let rect: RectValue = Utils.getComponentRect('dragEvent_apple')
       console.info("dragEventTest_0100 rectInfo is " + JSON.stringify(rect));
@@ -96,12 +96,12 @@ it('dragEventTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<
     
     
 /**
-     * @tc.number   dragEventTest_static_0200
-     * @tc.name     dragEventTest_static_0200
-     * @tc.desc     dragEventTest_static_0200
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DRAG_EVENT_STATIC_0200
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_DRAG_EVENT_STATIC_0200
+     * @tc.desc     Verify dragEvent pointX and pointY are valid numbers when dragging orange
      * @tc.level    Level.LEVEL0
      */
-it('dragEventTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_ACE_ENGINE_DRAG_EVENT_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('dragEventTest_0200 START');
       let rect = Utils.getComponentRect('orange')
       console.info("dragEventTest_0200 rectInfo is " + JSON.stringify(rect));
@@ -136,12 +136,12 @@ it('dragEventTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<
     
     
 /**
-     * @tc.number   dragEventTest_static_0300
-     * @tc.name     dragEventTest_static_0300
-     * @tc.desc     dragEventTest_static_0300
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DRAG_EVENT_STATIC_0300
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_DRAG_EVENT_STATIC_0300
+     * @tc.desc     Verify dragEvent onDragMove action triggered when dragging banana
      * @tc.level    Level.LEVEL0
      */
-it('dragEventTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_ACE_ENGINE_DRAG_EVENT_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('dragEventTest_0300 START');
       let rect = Utils.getComponentRect('banana')
       console.info("dragEventTest_0300 rectInfo is " + JSON.stringify(rect));
@@ -175,12 +175,12 @@ it('dragEventTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<
     
     
 /**
-     * @tc.number   dragEventTest_static_0400
-     * @tc.name     dragEventTest_static_0400
-     * @tc.desc     dragEventTest_static_0400
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DRAG_EVENT_STATIC_0400
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_DRAG_EVENT_STATIC_0400
+     * @tc.desc     Verify dragEvent onDragLeave action triggered when dragging mango out of bounds
      * @tc.level    Level.LEVEL0
      */
-it('dragEventTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_ACE_ENGINE_DRAG_EVENT_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('dragEventTest_0400 START');
       let rect = Utils.getComponentRect('mango')
       console.info("dragEventTest_0400 rectInfo is " + JSON.stringify(rect));
@@ -212,12 +212,12 @@ it('dragEventTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<
     
     
 /**
-     * @tc.number   dragEventTest_static_0500
-     * @tc.name     dragEventTest_static_0500
-     * @tc.desc     dragEventTest_static_0500
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DRAG_EVENT_STATIC_0500
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_DRAG_EVENT_STATIC_0500
+     * @tc.desc     Verify dragEvent onDrop action triggered when dropping strawberry
      * @tc.level    Level.LEVEL0
      */
-it('dragEventTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_ACE_ENGINE_DRAG_EVENT_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('dragEventTest_0500 START');
       let rect = Utils.getComponentRect('strawberry')
       console.info("dragEventTest_0500 rectInfo is " + JSON.stringify(rect));

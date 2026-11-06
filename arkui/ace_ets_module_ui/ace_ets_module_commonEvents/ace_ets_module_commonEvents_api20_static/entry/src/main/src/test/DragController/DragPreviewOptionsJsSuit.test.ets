@@ -27,33 +27,33 @@ import {
   WindowMode
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
+
 import emitter from '@ohos.events.emitter'
-import accessibility from '@ohos.accessibility';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
-export default function dragPreviewJsSuit() {
-  describe('dragPreviewJsSuit', () => {
+export default function dragPreviewOptionsJsSuit() {
+  describe('dragPreviewOptionsJsSuit', () => {
     beforeEach(async (): Promise<void> => {
-      console.info("dragPreviewJsSuit beforeEach start");
+      console.info("dragPreviewOptionsJsSuit beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/DragController/dragPreview',
+        url: 'MainAbility/pages/DragController/dragPreviewOptions',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info("get dragPreviewJsSuit state pages:" + JSON.stringify(pages));
-        if (!("dragPreview" == pages.name)) {
-          console.info("get dragPreviewJsSuit pages.name:" + JSON.stringify(pages.name));
+        console.info("get dragPreviewOptionsJsSuit state pages:" + JSON.stringify(pages));
+        if (!("dragPreviewOptions" == pages.name)) {
+          console.info("get dragPreviewOptionsJsSuit pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push dragPreviewJsSuit page error:" + err);
+        console.error("push dragPreviewOptionsJsSuit page error:" + err);
       }
-      console.info("dragPreviewJsSuit beforeEach end");
+      console.info("dragPreviewOptionsJsSuit beforeEach end");
     });
 
 
@@ -66,23 +66,23 @@ export default function dragPreviewJsSuit() {
     
     
 /**
-     * @tc.number   dragPreviewJsSuit_static_0100
-     * @tc.name     dragPreviewJsSuit_static_0100
-     * @tc.desc     dragPreviewJsSuit_static_0100
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DRAG_PREVIEW_OPTIONS_STATIC_0100
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_DRAG_PREVIEW_OPTIONS_STATIC_0100
+     * @tc.desc     Verify dragPreviewOptions height attribute renders correctly
      * @tc.level    Level.LEVEL0
      */
-it('dragPreviewJsSuit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[dragPreviewJsSuit_0100] START');
+it('SUB_ARKUI_ACE_ENGINE_DRAG_PREVIEW_OPTIONS_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[dragPreviewOptionsJsSuit_0100] START');
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('imagepreview');
+      let strJson = inspector.getInspectorByKey("dragPreviewOption");
       await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[dragPreviewJsSuit_0100] obj is: " + obj.getElement('$attrs').getString('width'));
-      console.info("[dragPreviewJsSuit_0100] obj is: " + obj.getElement('$attrs').getString('height'));
-      expect(obj.getElement('$attrs').getString('width') == '30.00%').assertTrue();
-      expect(obj.getElement('$attrs').getString('height') == '100.00vp').assertTrue();
-      console.info('[dragPreviewJsSuit_0100] END');
+      console.info("[dragPreviewOptionsJsSuit_0100] obj is: " + obj.getElement('$attrs').getString('height'));
+      expect(obj.getElement('$attrs').getString('height') == '150.00vp').assertTrue();
+      console.info('[dragPreviewOptionsJsSuit_0100] END');
       done();
     });
   })
 }
+
+

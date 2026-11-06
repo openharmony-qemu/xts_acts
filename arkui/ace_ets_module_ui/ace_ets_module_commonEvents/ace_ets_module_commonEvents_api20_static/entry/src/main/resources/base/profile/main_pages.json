@@ -6,6 +6,12 @@
     "MainAbility/pages/measureFromViewport/measureFromViewport",
     "MainAbility/pages/measureFromViewport/measureFromViewportOnVisible",
     "MainAbility/pages/onVisibleAreaNullUndefined/onVisibleAreaApproximateChangeNullAndUndefined",
-    "MainAbility/pages/renderNode/renderNodeState"
+    "MainAbility/pages/renderNode/renderNodeState",
+    "MainAbility/pages/DragController/DragAction",
+    "MainAbility/pages/DragController/dragEvent",
+    "MainAbility/pages/DragController/dragEvent2",
+    "MainAbility/pages/DragController/dragPreview",
+    "MainAbility/pages/DragController/dragPreviewOptions",
+    "MainAbility/pages/onGestureJudgeBegin/GestureDrag"
   ]
 }

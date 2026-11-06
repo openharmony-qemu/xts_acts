@@ -59,12 +59,12 @@ export default function GestureDrag() {
 
     
     /**
-     * @tc.number   GestureDrag_static_0100
-     * @tc.name     GestureDrag_static_0100
-     * @tc.desc     GestureDrag_static_0100
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_GESTURE_DRAG_STATIC_0100
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_GESTURE_DRAG_STATIC_0100
+     * @tc.desc     Verify GestureDrag button label changes to 'Gesture is DRAG' after click
      * @tc.level    Level.LEVEL0
      */
-it('GestureDrag_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_ACE_ENGINE_GESTURE_DRAG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('GestureDrag_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
