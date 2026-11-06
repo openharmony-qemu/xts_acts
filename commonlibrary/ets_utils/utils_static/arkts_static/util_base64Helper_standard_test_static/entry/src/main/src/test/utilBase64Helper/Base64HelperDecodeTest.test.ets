@@ -26,12 +26,10 @@ import {
   Level,
   Size,
   TestType,
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import util from "@ohos.util";
 import Utils from '../utilcommon.test';
 import { byteStr } from '../utilcommon.test';
-
-import { AnyType } from "../../../../hypium/module/types/common";
 
 
 export default function Base64HelperDecodeTest(): void {

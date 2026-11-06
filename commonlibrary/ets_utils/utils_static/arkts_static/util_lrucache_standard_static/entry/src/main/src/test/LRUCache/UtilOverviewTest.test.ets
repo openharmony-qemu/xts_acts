@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-static/src/main/indexStatic';
 
 import Utils from '../Util.test';
 
 import util from "@ohos.util";
 
-import { AnyType } from "../../../../hypium/module/types/common";
+import { AnyType } from '../Util.test';
 
 async function wrapFn(value: string): Promise<string> {
   return value;
