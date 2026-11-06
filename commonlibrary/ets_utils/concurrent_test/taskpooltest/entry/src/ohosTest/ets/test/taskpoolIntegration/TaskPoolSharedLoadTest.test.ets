@@ -13,7 +13,7 @@
 * limitations under the License.
 */
 import { worker, MessageEvents, ErrorEvent } from '@kit.ArkTS';
-import { WorkerSrc, Worker3 } from '../testability/pages/WorkerSrc'
+import { WorkerSrc, Worker3 } from '../../testability/pages/WorkerSrc'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import {
   awaitAsync,
@@ -27,8 +27,8 @@ import {
   printArgs1,
   printArgs2,
   concurrentTask3
-} from '../testability/pages/SequenceRunnerSendableTest'
-import { Calculator } from '../testability/pages/CalculateIndex';
+} from '../../testability/pages/SequenceRunnerSendableTest'
+import { Calculator } from '../../testability/pages/CalculateIndex';
 import { taskpool } from '@kit.ArkTS';
 
 function sleep(time: number): Promise<void> {
@@ -42,8 +42,8 @@ function sleep(time: number): Promise<void> {
 const TASK_COUNT = 10;
 let task1Count = 0;
 
-export default function taskPoolTaskShareTest() {
-  describe('TASKPOOL_TASKGROUP_SHARE_TEST', () => {
+export default function TaskPoolSharedLoadTest() {
+  describe('TaskPoolSharedLoadTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -697,7 +697,7 @@ export default function taskPoolTaskShareTest() {
       let result1 = 0;
       let completedCount = 0;
       for (let i = 0; i < TASK_COUNT; i++) {
-        let work = new worker.ThreadWorker('../workers/workers1/WorkerOne');
+        let work = new worker.ThreadWorker('../../workers/workers1/WorkerOne');
         work.postMessage(i);
         work.onmessage = async (e: MessageEvents): Promise<void> => {
           let data: number = e.data;
@@ -728,7 +728,7 @@ export default function taskPoolTaskShareTest() {
       let result1 = 0;
       let completedCount = 0;
       for (let i = 0; i < TASK_COUNT; i++) {
-        let work = new worker.ThreadWorker('../workers/workers1/WorkerTwo');
+        let work = new worker.ThreadWorker('../../workers/workers1/WorkerTwo');
         work.postMessage(i);
         work.onmessage = async (e: MessageEvents): Promise<void> => {
           let data: number = e.data;
