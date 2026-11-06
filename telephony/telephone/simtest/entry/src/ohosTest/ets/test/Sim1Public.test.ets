@@ -296,7 +296,7 @@ export default function Sim1Public() {
           } else {
             console.info(`${caseName} , err: ${JSON.stringify(err)}`);
             console.info(`${caseName} , 0000, data: ${JSON.stringify(data)}`);
-            ExpectTrue(data.length >= 0);
+            ExpectTrue(data !== undefined && typeof data === 'string');
             console.info(`${caseName} test end`);
             done();
           }
@@ -1311,7 +1311,7 @@ export default function Sim1Public() {
         sim.getSimSpn(3).then((data: string) => {
           console.info(`${caseName} failed, The result is not in line with expectations`);
           console.info(`${caseName} , 0000, data: ${JSON.stringify(data)}`);
-          ExpectTrue(data.length >= 0);
+          ExpectTrue(data !== undefined && typeof data === 'string');
           console.info(`${caseName} test end`);
           done();
         }).catch((err: BusinessError) => {

@@ -30,6 +30,9 @@ group("arkts_static") {
       "util_types_standard_static:ActsUtilTypesStaticTest",
       "global_standard_static:ActsGlobalStaticTest",
       "util_lrucache_standard_static:ActsUtilsLRUCacheStaticTest",
+      "util_base64Helper_standard_test_static:ActsUtilBase64HelperCaseStaticTest",
+      "util_scopeComparable_standard_test_static:ActsUtilScopeComparableCaseStaticTest",
+      "util_text_standard_test_static:ActsUtilTextCaseStaticTest"
     ]
   }
 }
