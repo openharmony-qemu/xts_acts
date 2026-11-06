@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import httpCertificatePinTest from "./HttpCertificatePin.test"
 import httpRequestProtocolTest from "./HttpProtocol.test";
 import httpMultiFormDataListTest from "./HttpMultiFormDataList.test";
 import HttpClientCertTest from "./HttpClientCert.test";
@@ -21,11 +22,12 @@ import connection from '@ohos.net.connection';
 
 let isDefaultNet: boolean = connection.hasDefaultNetSync();
 
-export default function testsuite() {
+export default function testsuite(): void {
     if(isDefaultNet){
+        httpCertificatePinTest();
         httpRequestProtocolTest();
-        httpMultiFormDataListTest();
         HttpClientCertTest();
+        httpMultiFormDataListTest();
     }else{
         EmptyTest();
     }
