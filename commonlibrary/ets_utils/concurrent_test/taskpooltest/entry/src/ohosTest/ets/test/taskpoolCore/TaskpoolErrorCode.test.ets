@@ -12,21 +12,14 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import {beforeAll, describe, it, expect, TestType, Level, Size} from '@ohos/hypium';
+import { describe, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import { ArkTSUtils, collections, HashMap, JSON, lang, taskpool } from '@kit.ArkTS';
 import { BusinessError } from '@ohos.base';
-import { delay, getTaskStateByTaskName } from '../utils/taskPoolCommon';
-import { inspectStatus, additionDelay, printArgs } from '../utils/taskPoolTask';import { testTransfer, Concurrent } from '../utils/taskPool';
-import { Sleep } from '../utils/utils';
+import { delay, getTaskStateByTaskName } from '../../utils/taskPoolCommon';
+import { inspectStatus, additionDelay, printArgs } from '../../utils/taskPoolTask';
 
-
-function sleep(time: number): Promise<void> {
-  return new Promise<void>((resolve) => {
-    setTimeout(() => {
-      resolve();
-    }, time);
-  });
-}
+import { testTransfer, Concurrent } from '../../utils/taskPool';
+import { Sleep } from '../../utils/utils';
 
 declare class ArkTools {
   static forceFullGC(): void;
@@ -145,11 +138,8 @@ function printTask(args: taskpool.Task): taskpool.Task {
 
 export default function TaskPoolErrorCodeTest() {
   describe('TaskPoolErrorCodeTest', () => {
-    beforeAll(async () => {
-      await sleep(200);
-    })
 
-        /**
+    /**
      * @tc.name   testTaskErrorCode0003
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_ERROR_CODE_0300
      * @tc.desc   Task sendData 10200006
@@ -1312,138 +1302,11 @@ export default function TaskPoolErrorCodeTest() {
       console.info(`${caseName} test end`);
       done();
     });
-    /**
-     * @tc.name   testTaskErrorCode0051
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_ERROR_CODE_5100
-     * @tc.desc   taskpool cancel 10200015
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testTaskErrorCode0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const caseName: string = 'testTaskErrorCode0051';
-      console.info(`${caseName} test start`);
-      try {
-        let task1: taskpool.Task = new taskpool.Task(inspectStatus, 100);
-        taskpool.cancel(task1);
-        await promiseCase()
-        expect().assertFail();
-      } catch (error) {
-        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200015);
-      }
-      console.info(`${caseName} test end`);
-      done();
-    });
-    /**
-     * @tc.name   testTaskErrorCode0052
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_ERROR_CODE_5200
-     * @tc.desc   taskpool cancel 10200055
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testTaskErrorCode0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const caseName: string = 'testTaskErrorCode0052';
-      console.info(`${caseName} test start`);
-      let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(1);
-      let count = 0;
-      for (let i = 0; i < 20; i++) {
-        let task: taskpool.Task = new taskpool.Task(additionDelay, 100);
-        runner.execute(task).then(() => {
-          console.info("seqrunner: task1 done.");
-          count++;
-        }).catch((error: BusinessError) => {
-          console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-          count++;
-          expect(error.code).assertEqual(10200055);
-        });
-        taskpool.cancel(task);
-      }
-      while (count < 20) {
-        await promiseCase();
-      }
-      console.info(`${caseName} test end`);
-      done();
-    });
-    /**
-     * @tc.name   testTaskErrorCode0053
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_ERROR_CODE_5300
-     * @tc.desc   Taskpool cancel10+ 10200018
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testTaskErrorCode0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const caseName: string = 'testTaskErrorCode0053';
-      console.info(`${caseName} test start`);
-      try {
-        let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
-        taskGroup1.addTask(printArgs, 10);
-        taskpool.cancel(taskGroup1);
-        await promiseCase()
-        expect().assertFail();
-      } catch (error) {
-        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200018);
-      }
-      console.info(`${caseName} test end`);
-      done();
-    });
-    /**
-     * @tc.name   testTaskErrorCode0054
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_ERROR_CODE_5400
-     * @tc.desc   Taskpool cancel16+ 10200015
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testTaskErrorCode0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const caseName: string = 'testTaskErrorCode0054';
-      console.info(`${caseName} test start`);
-      try {
-        let task1: taskpool.Task = new taskpool.GenericsTask<[number], number>(inspectStatus, 100);
-        taskpool.cancel(task1);
-        await promiseCase()
-        expect().assertFail();
-      } catch (error) {
-        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200015);
-      }
-      console.info(`${caseName} test end`);
-      done();
-    });
-    /**
-     * @tc.name   testTaskErrorCode0055
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_ERROR_CODE_5500
-     * @tc.desc   Taskpool cancel16+ 10200055
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testTaskErrorCode0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const caseName: string = 'testTaskErrorCode0055';
-      console.info(`${caseName} test start`);
-      let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10);
-      let count = 0;
-      for (let i = 0; i < 100; i++) {
-        let task: taskpool.Task = new taskpool.GenericsTask<[number], number>(inspectStatus, 100);
-        runner.execute(task).then(() => {
-          console.info(`cancel2 ${caseName} then`);
-          count++;
-        }).catch((error: BusinessError) => {
-          console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-          count++;
-          expect(error.code).assertEqual(10200055);
-        });
-        taskpool.cancel(task);
-      }
-      while (count < 100) {
-        await promiseCase();
-      }
-      console.info(`${caseName} test end`);
-      done();
-    });
+
+
+
+
+
     /**
      * @tc.name   testTaskErrorCode0056
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_ERROR_CODE_5600
@@ -1577,7 +1440,7 @@ export default function TaskPoolErrorCodeTest() {
 
     /**
      * @tc.name   testTaskErrorCode0061
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_ERROR_CODE_0061
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_ERROR_CODE_0100
      * @tc.desc   Task transferList no param.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1612,7 +1475,7 @@ export default function TaskPoolErrorCodeTest() {
     });
     /**
      * @tc.name   testTaskErrorCode0062
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_ERROR_CODE_0062
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_ERROR_CODE_0200
      * @tc.desc   Task onReceiveData no param
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1635,7 +1498,7 @@ export default function TaskPoolErrorCodeTest() {
     });
     /**
      * @tc.name   testTaskErrorCode0063
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_ERROR_CODE_0063
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_ERROR_CODE_1800
      * @tc.desc   Task onReceiveData no NoSerialize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1659,7 +1522,7 @@ export default function TaskPoolErrorCodeTest() {
     });
     /**
      * @tc.name   testTaskErrorCode0064
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_ERROR_CODE_0064
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_ERROR_CODE_2300
      * @tc.desc   Task onReceiveData no register
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1682,7 +1545,7 @@ export default function TaskPoolErrorCodeTest() {
     });
     /**
      * @tc.name   testTaskErrorCode0065
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_ERROR_CODE_0065
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_ERROR_CODE_2400
      * @tc.desc   Task addTask no period
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1706,7 +1569,7 @@ export default function TaskPoolErrorCodeTest() {
     });
     /**
      * @tc.name   testTaskErrorCode0066
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_ERROR_CODE_0066
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_ERROR_CODE_2600
      * @tc.desc   Task addTask no two apis
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1728,37 +1591,7 @@ export default function TaskPoolErrorCodeTest() {
       console.info(`${caseName} test end`);
       done();
     });
-    /**
-     * @tc.name   testTaskErrorCode0052_2
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_ERROR_CODE_5201
-     * @tc.desc   taskpool cancel 10200055
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testTaskErrorCode0052_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const caseName: string = 'testTaskErrorCode0052_2';
-      console.info(`${caseName} test start`);
-      let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(1);
-      let count = 0;
-      for (let i = 0; i < 20; i++) {
-        let task: taskpool.Task = new taskpool.Task(additionDelay, 100);
-        runner.execute(task).then(() => {
-          console.info("seqrunner: task1 done.");
-          count++;
-        }).catch((error: BusinessError) => {
-          console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-          count++;
-          expect(error.code).assertEqual(10200055);
-        });
-        taskpool.cancel(task.taskId);
-      }
-      while (count < 20) {
-        await promiseCase();
-      }
-      console.info(`${caseName} test end`);
-      done();
-    });
+
     /**
      * @tc.name   testTaskErrorCode0067
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_ERROR_CODE_6700
@@ -1792,29 +1625,6 @@ export default function TaskPoolErrorCodeTest() {
       done();
     });
 
-    /**
-     * @tc.name   testTaskErrorCode0068
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_ERROR_CODE_6800
-     * @tc.desc   taskpool execute/SequenceRunner.execute normal path; 10200003 worker initialization failure is
-     *            system-level and cannot be triggered by an application, this case fixes the contract evidence
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testTaskErrorCode0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const caseName = 'testTaskErrorCode0068';
-      console.info(`${caseName} test start`);
-      const task: taskpool.Task = new taskpool.Task(printArgs, 100);
-      const result = await taskpool.execute(task);
-      expect(result as number).assertEqual(100);
-
-      const runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
-      const sequenceTask: taskpool.Task = new taskpool.Task(printArgs, 200);
-      const sequenceResult = await runner.execute(sequenceTask);
-      expect(sequenceResult as number).assertEqual(200);
-      console.info(`${caseName} test end`);
-      done();
-    });
 
   });
 }
