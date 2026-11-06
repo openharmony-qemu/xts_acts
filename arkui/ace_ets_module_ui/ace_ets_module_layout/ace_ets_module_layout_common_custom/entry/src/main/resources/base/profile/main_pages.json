@@ -38,6 +38,11 @@
         "MainAbility/pages/CommonAttrs/LayoutGravityNullUndefined",
         "MainAbility/pages/CommonAttrs/IgnoreLayoutSafeAreaNullUndefined",
         "MainAbility/pages/CommonAttrs/ExpandSafeAreaNullUndefined",
+        "MainAbility/pages/CommonAttrs/safeAreaInset/SafeAreaInsetNormal_1",
+        "MainAbility/pages/CommonAttrs/safeAreaInset/SafeAreaInsetNormal_2",
+        "MainAbility/pages/CommonAttrs/safeAreaInset/SafeAreaInsetNormal_3",
+        "MainAbility/pages/CommonAttrs/safeAreaInset/SafeAreaInsetNormal_4",
+        "MainAbility/pages/CommonAttrs/safeAreaInset/SafeAreaInsetNormal_5",
 
         "MainAbility/pages/CommonCustom/MediaQueryMatchMediaNullUndefined",
         "MainAbility/pages/CommonCustom/MediaQueryMatchMediaSyncNullUndefined",
