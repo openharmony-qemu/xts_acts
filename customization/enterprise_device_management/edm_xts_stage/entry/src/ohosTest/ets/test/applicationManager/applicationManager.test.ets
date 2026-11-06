@@ -11025,7 +11025,7 @@ export default function applicationManagerTest() {
     /**
      * @tc.name   test_addOptimizationBatteryExclusionApps_0400
      * @tc.number SUB_CUSTOMIZATION_EDM_ADDOPTIMIZATIONBATTERYEXCLUSIONAPPS_0400
-     * @tc.desc   test addOptimizationBatteryExclusionApps with appIdentifiers exceed limit(201 elements)
+     * @tc.desc   test addOptimizationBatteryExclusionApps with appIdentifiers exceed limit(11 elements, limit is 10)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -11033,7 +11033,7 @@ export default function applicationManagerTest() {
     it("test_addOptimizationBatteryExclusionApps_0400", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        applicationManager.addOptimizationBatteryExclusionApps(APP_IDS_201, DEFAULT_USER_ID);
+        applicationManager.addOptimizationBatteryExclusionApps(APP_IDS_11, DEFAULT_USER_ID);
         expect().assertFail();
       } catch (error) {
         expect(error.code).assertEqual(9200019);
@@ -11130,22 +11130,22 @@ export default function applicationManagerTest() {
     /**
      * @tc.name   test_addOptimizationBatteryExclusionApps_0900
      * @tc.number SUB_CUSTOMIZATION_EDM_ADDOPTIMIZATIONBATTERYEXCLUSIONAPPS_0900
-     * @tc.desc   test addOptimizationBatteryExclusionApps success with 200 elements
+     * @tc.desc   test addOptimizationBatteryExclusionApps with 11 elements (exceeds limit of 10)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it("test_addOptimizationBatteryExclusionApps_0900", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let apps: Array<string> = [];
-        for (let i = 0; i < 200; i++) {
+        for (let i = 0; i < 11; i++) {
           apps.push(TEST_REAL_APP_ID_1);
         }
         applicationManager.addOptimizationBatteryExclusionApps(apps, DEFAULT_USER_ID);
         expect().assertFail();
       } catch (error) {
-        expect(error.code).assertEqual(9201015);
+        expect(error.code).assertEqual(9200019);
       } finally {
         try {
           applicationManager.removeOptimizationBatteryExclusionApps([TEST_REAL_APP_ID_1], DEFAULT_USER_ID);
@@ -11249,7 +11249,7 @@ export default function applicationManagerTest() {
     /**
      * @tc.name   test_removeOptimizationBatteryExclusionApps_0400
      * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEOPTIMIZATIONBATTERYEXCLUSIONAPPS_0400
-     * @tc.desc   test removeOptimizationBatteryExclusionApps with appIdentifiers exceed limit(201 elements)
+     * @tc.desc   test removeOptimizationBatteryExclusionApps with appIdentifiers exceed limit(11 elements, limit is 10)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -11257,7 +11257,7 @@ export default function applicationManagerTest() {
     it("test_removeOptimizationBatteryExclusionApps_0400", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        applicationManager.removeOptimizationBatteryExclusionApps(APP_IDS_201, DEFAULT_USER_ID);
+        applicationManager.removeOptimizationBatteryExclusionApps(APP_IDS_11, DEFAULT_USER_ID);
         expect().assertFail();
       } catch (error) {
         expect(error.code).assertEqual(9200019);
