@@ -1648,3 +1648,524 @@ export default function ExecuteDelayedGenericsTaskTest(): void {
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedGenericsTaskTest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let sharedArr: collections.Array<number> = new collections.Array<number>()
+      sharedArr.push(1)
+      sharedArr.push(2)
+      sharedArr.push(3)
+      let task: taskpool.Task = new taskpool.GenericsTask<[collections.Array<number>], collections.Array<number>>(edgCollectionsEchoFunc, sharedArr)
+      try {
+        let result: Object = await taskpool.executeDelayed<[collections.Array<number>], collections.Array<number>>(200, task)
+        let returned: collections.Array<number> = result as collections.Array<number>
+        expect(returned.length).assertEqual(3)
+        expect(returned[0]).assertEqual(1)
+      } catch (error) {
+        console.error('ExecuteDelayedGenericsTaskTest6100 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    // ===== 13. M5 Additions: Boundary Input Value Families =====
+
+    /**
+     * @tc.name   ExecuteDelayedGenericsTaskTest6200
+     * @tc.number SUB_EXECUTE_DELAYED_GENERICS_TASK_TEST_6200
+     * @tc.desc   Verify executeDelayed with number boundary inputs (MAX_SAFE_INTEGER / MIN_SAFE_INTEGER / 0) each round-trip unchanged (per-input assertion)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedGenericsTaskTest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let maxTask: taskpool.Task = new taskpool.GenericsTask<[number], number>(edgEchoNumFunc, Number.MAX_SAFE_INTEGER)
+        let maxResult: Object = await taskpool.executeDelayed<[number], number>(200, maxTask)
+        expect(maxResult as number).assertEqual(Number.MAX_SAFE_INTEGER)
+        let minTask: taskpool.Task = new taskpool.GenericsTask<[number], number>(edgEchoNumFunc, Number.MIN_SAFE_INTEGER)
+        let minResult: Object = await taskpool.executeDelayed<[number], number>(200, minTask)
+        expect(minResult as number).assertEqual(Number.MIN_SAFE_INTEGER)
+        let zeroTask: taskpool.Task = new taskpool.GenericsTask<[number], number>(edgEchoNumFunc, 0)
+        let zeroResult: Object = await taskpool.executeDelayed<[number], number>(200, zeroTask)
+        expect(zeroResult as number).assertEqual(0)
+      } catch (error) {
+        console.error('ExecuteDelayedGenericsTaskTest6200 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedGenericsTaskTest6300
+     * @tc.number SUB_EXECUTE_DELAYED_GENERICS_TASK_TEST_6300
+     * @tc.desc   Verify executeDelayed with string boundary inputs (empty string / 10000-char long string / unicode with Chinese and emoji) each round-trip completely (per-input assertion)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedGenericsTaskTest6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let emptyTask: taskpool.Task = new taskpool.GenericsTask<[string], string>(edgEchoStrFunc, '')
+        let emptyResult: Object = await taskpool.executeDelayed<[string], string>(200, emptyTask)
+        expect(emptyResult as string).assertEqual('')
+        let longStr: string = ''
+        for (let i: number = 0; i < 10000; i++) {
+          longStr += 'a'
+        }
+        let longTask: taskpool.Task = new taskpool.GenericsTask<[string], string>(edgEchoStrFunc, longStr)
+        let longResult: Object = await taskpool.executeDelayed<[string], string>(200, longTask)
+        expect(longResult as string).assertEqual(longStr)
+        let unicodeStr: string = '中文😀测试'
+        let unicodeTask: taskpool.Task = new taskpool.GenericsTask<[string], string>(edgEchoStrFunc, unicodeStr)
+        let unicodeResult: Object = await taskpool.executeDelayed<[string], string>(200, unicodeTask)
+        expect(unicodeResult as string).assertEqual(unicodeStr)
+      } catch (error) {
+        console.error('ExecuteDelayedGenericsTaskTest6300 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedGenericsTaskTest6400
+     * @tc.number SUB_EXECUTE_DELAYED_GENERICS_TASK_TEST_6400
+     * @tc.desc   Verify executeDelayed with array boundary inputs (empty array / single element / 10000 elements) each return the correct length (per-input assertion)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedGenericsTaskTest6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let emptyArrTask: taskpool.Task = new taskpool.GenericsTask<[number[]], number>(edgArrArgFunc, [])
+        let emptyArrResult: Object = await taskpool.executeDelayed<[number[]], number>(200, emptyArrTask)
+        expect(emptyArrResult as number).assertEqual(0)
+        let singleArrTask: taskpool.Task = new taskpool.GenericsTask<[number[]], number>(edgArrArgFunc, [1])
+        let singleArrResult: Object = await taskpool.executeDelayed<[number[]], number>(200, singleArrTask)
+        expect(singleArrResult as number).assertEqual(1)
+        let bigArr: number[] = new Array<number>(10000)
+        for (let i: number = 0; i < bigArr.length; i++) {
+          bigArr[i] = i
+        }
+        let bigArrTask: taskpool.Task = new taskpool.GenericsTask<[number[]], number>(edgArrArgFunc, bigArr)
+        let bigArrResult: Object = await taskpool.executeDelayed<[number[]], number>(200, bigArrTask)
+        expect(bigArrResult as number).assertEqual(10000)
+      } catch (error) {
+        console.error('ExecuteDelayedGenericsTaskTest6400 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedGenericsTaskTest6500
+     * @tc.number SUB_EXECUTE_DELAYED_GENERICS_TASK_TEST_6500
+     * @tc.desc   Verify subtype compatibility: a Sendable instance passed through the base Object generic slot computes correctly (ExtendedInput-into-BaseInput semantics under ArkTS constraints)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedGenericsTaskTest6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let data: EDGSharedData = new EDGSharedData()
+      data.value = 21
+      let task: taskpool.Task = new taskpool.GenericsTask<[Object], number>(edgObjValueFunc, data)
+      try {
+        let result: Object = await taskpool.executeDelayed<[Object], number>(200, task)
+        expect(result as number).assertEqual(42)
+      } catch (error) {
+        console.error('ExecuteDelayedGenericsTaskTest6500 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedGenericsTaskTest6600
+     * @tc.number SUB_EXECUTE_DELAYED_GENERICS_TASK_TEST_6600
+     * @tc.desc   Verify heterogeneous inputs (number then string) through the Object generic slot as the ArkTS-constrained equivalent of the number|string union type (per-input assertion)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedGenericsTaskTest6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let numTask: taskpool.Task = new taskpool.GenericsTask<[Object], Object>(edgEchoObjFunc, 7)
+        let numResult: Object = await taskpool.executeDelayed<[Object], Object>(200, numTask)
+        expect(numResult as number).assertEqual(7)
+        let strTask: taskpool.Task = new taskpool.GenericsTask<[Object], Object>(edgEchoObjFunc, 'text')
+        let strResult: Object = await taskpool.executeDelayed<[Object], Object>(200, strTask)
+        expect(strResult as string).assertEqual('text')
+      } catch (error) {
+        console.error('ExecuteDelayedGenericsTaskTest6600 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    // ===== 14. M5 Additions: Return Value Type Variants (Generics) =====
+
+    /**
+     * @tc.name   ExecuteDelayedGenericsTaskTest6700
+     * @tc.number SUB_EXECUTE_DELAYED_GENERICS_TASK_TEST_6700
+     * @tc.desc   Verify executeDelayed<A,R=void> resolves with undefined when the generic task returns undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedGenericsTaskTest6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let task: taskpool.Task = new taskpool.GenericsTask<[], void>(edgNoopFunc)
+      try {
+        let result: ESObject = await taskpool.executeDelayed<[], void>(200, task)
+        expect(result === undefined).assertTrue()
+      } catch (error) {
+        console.error('ExecuteDelayedGenericsTaskTest6700 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedGenericsTaskTest6800
+     * @tc.number SUB_EXECUTE_DELAYED_GENERICS_TASK_TEST_6800
+     * @tc.desc   Verify executeDelayed returns a Map<string, number> generic result with correct content
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedGenericsTaskTest6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let task: taskpool.Task = new taskpool.GenericsTask<[], Map<string, number>>(edgMapReturnFunc)
+      try {
+        let result: Object = await taskpool.executeDelayed<[], Map<string, number>>(200, task)
+        let returnedMap: Map<string, number> = result as Map<string, number>
+        expect(returnedMap.get('answer') as number).assertEqual(42)
+      } catch (error) {
+        console.error('ExecuteDelayedGenericsTaskTest6800 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedGenericsTaskTest6900
+     * @tc.number SUB_EXECUTE_DELAYED_GENERICS_TASK_TEST_6900
+     * @tc.desc   Verify executeDelayed with omitted explicit generic type arguments infers <[], number> from the GenericsTask and returns the correct result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedGenericsTaskTest6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let task = new taskpool.GenericsTask<[], number>(edgSimpleFunc)
+      try {
+        let result = await taskpool.executeDelayed(200, task)
+        expect(result).assertEqual(42)
+      } catch (error) {
+        console.error('ExecuteDelayedGenericsTaskTest6900 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedGenericsTaskTest7000
+     * @tc.number SUB_EXECUTE_DELAYED_GENERICS_TASK_TEST_7000
+     * @tc.desc   Verify executeDelayed with the SDK generic constraint A extends Array<Object> satisfied by an [Object] slot carrying a Sendable instance compiles and returns 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedGenericsTaskTest7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let data: EDGSharedData = new EDGSharedData()
+      data.value = 1
+      let task: taskpool.Task = new taskpool.GenericsTask<[Object], number>(edgConstrainedFunc, data)
+      try {
+        let result: Object = await taskpool.executeDelayed<[Object], number>(200, task)
+        expect(result as number).assertEqual(1)
+      } catch (error) {
+        console.error('ExecuteDelayedGenericsTaskTest7000 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    // ===== 15. M5 Additions: Promise Chain and Error Content (Generics) =====
+
+    /**
+     * @tc.name   ExecuteDelayedGenericsTaskTest7100
+     * @tc.number SUB_EXECUTE_DELAYED_GENERICS_TASK_TEST_7100
+     * @tc.desc   Verify generic delayed promise chain: .then transforms 42 to 84, .catch captures the task error, .finally always runs, and the typed HELLO then-result is asserted (runtime arbitration 2026-09-06: rejection content read from error.message because the cross-thread rejection is an ErrorEvent-like plain object)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ExecuteDelayedGenericsTaskTest7100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let task42: taskpool.Task = new taskpool.GenericsTask<[], number>(edgSimpleFunc)
+        let chained: number = await taskpool.executeDelayed<[], number>(200, task42).then((r: number): number => {
+          return r * 2
+        })
+        expect(chained).assertEqual(84)
+      } catch (error) {
+        console.error('ExecuteDelayedGenericsTaskTest7100 failed');
+        expect(false).assertFail();
+      }
+      let taskErr: taskpool.Task = new taskpool.GenericsTask<[], number>(edgErrorFunc)
+      let catchFlag7400: boolean = false
+      let catchText7400: string = ''
+      await taskpool.executeDelayed<[], number>(200, taskErr).catch((e: ESObject): void => {
+        catchFlag7400 = true
+        // Root cause: the rejection value is an ErrorEvent-like plain object, String(e) is '[object Object]';
+        // the worker-side text is carried on .message with the native 'Error: ' prefix
+        let err7100: EDGErrorInfo = e as EDGErrorInfo
+        catchText7400 = err7100.message.replace('Error: ', '')
+      })
+      expect(catchFlag7400).assertTrue()
+      expect(catchText7400.includes('generic delayed error')).assertTrue()
+      let finallyFlag7400: boolean = false
+      await taskpool.executeDelayed<[], number>(200, new taskpool.GenericsTask<[], number>(edgSimpleFunc)).finally((): void => {
+        finallyFlag7400 = true
+      })
+      expect(finallyFlag7400).assertTrue()
+      let helloCaptured7400: string = ''
+      await taskpool.executeDelayed<[string], string>(200, new taskpool.GenericsTask<[string], string>(edgStrFunc, 'hello')).then((r: string): void => {
+        helloCaptured7400 = r
+      })
+      expect(helloCaptured7400).assertEqual('HELLO')
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedGenericsTaskTest7200
+     * @tc.number SUB_EXECUTE_DELAYED_GENERICS_TASK_TEST_7200
+     * @tc.desc   Verify executeDelayed with a negative number input rejects with an error whose content contains 'negative input' (content asserted via error.message.includes; runtime arbitration 2026-09-06: rejection is an ErrorEvent-like plain object)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedGenericsTaskTest7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let task: taskpool.Task = new taskpool.GenericsTask<[number], number>(edgGuardFunc, -1)
+      let threwError7200: boolean = false
+      try {
+        await taskpool.executeDelayed<[number], number>(200, task)
+      } catch (e) {
+        threwError7200 = true
+        // Root cause: String(e) on the ErrorEvent-like plain object is '[object Object]'; use .message
+        let err7200: EDGErrorInfo = e as EDGErrorInfo
+        expect(err7200.message.includes('negative input')).assertTrue()
+      }
+      expect(threwError7200).assertTrue()
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedGenericsTaskTest7300
+     * @tc.number SUB_EXECUTE_DELAYED_GENERICS_TASK_TEST_7300
+     * @tc.desc   Verify executeDelayed with a legal input 5 returns 5 while a zero input rejects with an error whose content contains 'zero input' (content asserted via error.message.includes; runtime arbitration 2026-09-06: rejection is an ErrorEvent-like plain object)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedGenericsTaskTest7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let legalTask: taskpool.Task = new taskpool.GenericsTask<[number], number>(edgGuardFunc, 5)
+        let legalResult: Object = await taskpool.executeDelayed<[number], number>(200, legalTask)
+        expect(legalResult as number).assertEqual(5)
+      } catch (error) {
+        console.error('ExecuteDelayedGenericsTaskTest7300 failed');
+        expect(false).assertFail();
+      }
+      let zeroTask: taskpool.Task = new taskpool.GenericsTask<[number], number>(edgGuardFunc, 0)
+      let zeroRejected7600: boolean = false
+      try {
+        await taskpool.executeDelayed<[number], number>(200, zeroTask)
+      } catch (e) {
+        zeroRejected7600 = true
+        // Root cause: String(e) on the ErrorEvent-like plain object is '[object Object]'; use .message
+        let err7300: EDGErrorInfo = e as EDGErrorInfo
+        expect(err7300.message.includes('zero input')).assertTrue()
+      }
+      expect(zeroRejected7600).assertTrue()
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedGenericsTaskTest7400
+     * @tc.number SUB_EXECUTE_DELAYED_GENERICS_TASK_TEST_7400
+     * @tc.desc   Verify executeDelayed with an object missing the value property rejects with an error whose content contains 'missing property' (content asserted via error.message.includes; runtime arbitration 2026-09-06: rejection is an ErrorEvent-like plain object)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedGenericsTaskTest7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let emptyInput: Record<string, Object> = {}
+      let task: taskpool.Task = new taskpool.GenericsTask<[Object], number>(edgRequireValueFunc, emptyInput)
+      let threwError7400: boolean = false
+      try {
+        await taskpool.executeDelayed<[Object], number>(200, task)
+      } catch (e) {
+        threwError7400 = true
+        // Root cause: String(e) on the ErrorEvent-like plain object is '[object Object]'; use .message
+        let err7400: EDGErrorInfo = e as EDGErrorInfo
+        expect(err7400.message.includes('missing property')).assertTrue()
+      }
+      expect(threwError7400).assertTrue()
+      done()
+    })
+
+    // ===== 16. M5 Additions: Stress and Async (Generics) =====
+
+    /**
+     * @tc.name   ExecuteDelayedGenericsTaskTest7500
+     * @tc.number SUB_EXECUTE_DELAYED_GENERICS_TASK_TEST_7500
+     * @tc.desc   Verify executeDelayed with a 100000-element string[] generic input returns the correct length after the delay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ExecuteDelayedGenericsTaskTest7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let bigWords: string[] = new Array<string>(100000)
+      for (let i: number = 0; i < bigWords.length; i++) {
+        bigWords[i] = 'w' + (i % 10)
+      }
+      let task: taskpool.Task = new taskpool.GenericsTask<[string[]], number>(edgStrArrLenFunc, bigWords)
+      try {
+        let result: Object = await taskpool.executeDelayed<[string[]], number>(200, task)
+        expect(result as number).assertEqual(100000)
+      } catch (error) {
+        console.error('ExecuteDelayedGenericsTaskTest7500 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedGenericsTaskTest7600
+     * @tc.number SUB_EXECUTE_DELAYED_GENERICS_TASK_TEST_7600
+     * @tc.desc   Verify an async generic task function delayed via executeDelayed awaits internally and returns the typed result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedGenericsTaskTest7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let task: taskpool.Task = new taskpool.GenericsTask<[number], number>(edgAsyncFunc, 5)
+      try {
+        let result: Object = await taskpool.executeDelayed<[number], number>(200, task)
+        expect(result as number).assertEqual(10)
+      } catch (error) {
+        console.error('ExecuteDelayedGenericsTaskTest7600 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedGenericsTaskTest7700
+     * @tc.number SUB_EXECUTE_DELAYED_GENERICS_TASK_TEST_7700
+     * @tc.desc   Verify the generic delayed result type is asserted via typeof (string) before value comparison, complementing the suite's as-cast style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedGenericsTaskTest7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let task: taskpool.Task = new taskpool.GenericsTask<[string], string>(edgStrFunc, 'hello')
+      try {
+        let result: Object = await taskpool.executeDelayed<[string], string>(200, task)
+        expect(typeof result === 'string').assertTrue()
+        expect(result as string).assertEqual('HELLO')
+      } catch (error) {
+        console.error('ExecuteDelayedGenericsTaskTest7700 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    // ===== 17. M5 Additions: Locking and Nesting (Generics) =====
+
+    /**
+     * @tc.name   ExecuteDelayedGenericsTaskTest7800
+     * @tc.number SUB_EXECUTE_DELAYED_GENERICS_TASK_TEST_7800
+     * @tc.desc   Verify 3 concurrent generic delayed tasks increment a Sendable shared counter protected by AsyncLock and count is exactly 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ExecuteDelayedGenericsTaskTest7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let counter: EDGLockedCounter = new EDGLockedCounter()
+      let promises: Promise<Object>[] = []
+      for (let i: number = 0; i < 3; i++) {
+        let task: taskpool.Task = new taskpool.GenericsTask<[EDGLockedCounter], number>(edgLockedIncrementFunc, counter)
+        promises.push(taskpool.executeDelayed<[EDGLockedCounter], number>(200, task))
+      }
+      try {
+        let results: Object[] = await Promise.all(promises)
+        expect(results.length).assertEqual(3)
+        expect(counter.count).assertEqual(3)
+      } catch (error) {
+        console.error('ExecuteDelayedGenericsTaskTest7800 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedGenericsTaskTest7900
+     * @tc.number SUB_EXECUTE_DELAYED_GENERICS_TASK_TEST_7900
+     * @tc.desc   Verify a nested generic delayed task started from onStartExecution completes with the exact shared counter count 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ExecuteDelayedGenericsTaskTest7900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let counter: EDGCounter = new EDGCounter()
+      let task: taskpool.Task = new taskpool.GenericsTask<[], number>(edgSimpleFunc)
+      task.onStartExecution((): void => {
+        let nestedTask: taskpool.Task = new taskpool.GenericsTask<[EDGCounter], number>(edgCounterFunc, counter)
+        taskpool.executeDelayed<[EDGCounter], number>(200, nestedTask).then((r: Object): void => {
+          counter.nestedResult = r as number
+          counter.nestedExecuted = true
+        }).catch((e: ESObject): void => {
+          console.info('ExecuteDelayedGenericsTaskTest7900 catch: ' + String(e))
+        })
+      })
+      try {
+        await taskpool.executeDelayed<[], number>(200, task)
+      } catch (error) {
+        console.error('ExecuteDelayedGenericsTaskTest7900 failed');
+        expect(false).assertFail();
+      }
+      let waitCount8200: number = 0
+      while (!counter.nestedExecuted && waitCount8200 < 50) {
+        await new Promise<void>((resolve: Function): void => { setTimeout(resolve, 100) })
+        waitCount8200++
+      }
+      expect(counter.nestedExecuted).assertTrue()
+      expect(counter.count).assertEqual(1)
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedGenericsTaskTest8000
+     * @tc.number SUB_EXECUTE_DELAYED_GENERICS_TASK_TEST_8000
+     * @tc.desc   Verify a generic @Concurrent task function can create a nested GenericsTask and start a nested executeDelayed; nested completion collected via shared Sendable counter with 5s bounded poll, exact count asserted (F4 real-case probe; runtime infeasibility would be converted to NAC with run evidence)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ExecuteDelayedGenericsTaskTest8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let counter: EDGCounter = new EDGCounter()
+      let launcherTask: taskpool.Task = new taskpool.GenericsTask<[EDGCounter], number>(edgNestedLauncherFunc, counter)
+      try {
+        let hostResult: Object = await taskpool.executeDelayed<[EDGCounter], number>(200, launcherTask)
+        expect(hostResult as number).assertEqual(1)
+      } catch (error) {
+        console.error('ExecuteDelayedGenericsTaskTest8000 failed');
+        expect(false).assertFail();
+      }
+      let waited8000: number = 0
+      while (counter.count < 1 && waited8000 < 5000) {
+        await sleep(100)
+        waited8000 += 100
+      }
+      expect(counter.count).assertEqual(1)
+      done()
+    })
+  })
+}
