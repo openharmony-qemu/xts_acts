@@ -25,6 +25,7 @@ import myavcapability from 'libavcapability.so'
 
 const TAG = LOG_TAG + 'AVTranscoderTest';
 const VIDEO_SOURCE = 'H264_AAC.mp4';
+const VIDEO_SOURCE_HDR = 'hdrvivid_1080p.mp4';
 const VIDEO_EXCEEDS_8K_RESOLUTION = 'output_avc_7680x4320.mp4';
 const VIDEO_LARGE_4096_RESOLUTION = 'output_avc_4096x2304.mp4';
 const VIDEO_FEWER_238_RESOLUTION = 'output_avc_238x238.mp4';
@@ -2123,6 +2124,248 @@ export default function AVTranscoderTest() {
         expect(error.code).assertEqual(401);
         done();
       });
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_DESTHDRMODE_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_DESTHDRMODE_PARAM_0100
+     * @tc.desc   Test AVTranscoderConfig.destHDRMode set to SDR, full transcoding succeeds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_DESTHDRMODE_PARAM_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_DESTHDRMODE_PARAM_0100';
+      let destHDRConfig: media.AVTranscoderConfig = {
+        audioBitrate: 200000,
+        audioCodec: media.CodecMimeType.AUDIO_AAC,
+        fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+        videoBitrate: 3000000,
+        videoCodec: media.CodecMimeType.VIDEO_HEVC,
+        destHDRMode: media.DestHDRMode.SDR,
+      };
+      await createAVTranscoderNormal(done, testContext, VIDEO_SOURCE_HDR, testName);
+      await prepareAVTranscoderNormal(destHDRConfig, done, testName);
+      await startAVTranscoder(done, testName);
+      await listenComplete(done);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_DESTHDRMODE_PARAM_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_DESTHDRMODE_PARAM_0200
+     * @tc.desc   Test AVTranscoderConfig.destHDRMode set to AUTO_HDR_VIVID with HDR vivid source, target is HDR VIVID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_DESTHDRMODE_PARAM_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_DESTHDRMODE_PARAM_0200';
+      let destHDRConfig: media.AVTranscoderConfig = {
+        audioBitrate: 200000,
+        audioCodec: media.CodecMimeType.AUDIO_AAC,
+        fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+        videoBitrate: 3000000,
+        videoCodec: media.CodecMimeType.VIDEO_HEVC,
+        destHDRMode: media.DestHDRMode.AUTO_HDR_VIVID,
+      };
+      await createAVTranscoderNormal(done, testContext, VIDEO_SOURCE_HDR, testName);
+      await prepareAVTranscoderNormal(destHDRConfig, done, testName);
+      await startAVTranscoder(done, testName);
+      await listenComplete(done);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_STARTTIME_PARAM_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_STARTTIME_PARAM_0300
+     * @tc.desc   Test AVTranscoderConfig.startTime set to 1000ms, transcoding starts from 1000ms.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_STARTTIME_PARAM_0300', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_STARTTIME_PARAM_0300';
+      let startTimeConfig: media.AVTranscoderConfig = {
+        audioBitrate: 200000,
+        audioCodec: media.CodecMimeType.AUDIO_AAC,
+        fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+        videoBitrate: 3000000,
+        videoCodec: media.CodecMimeType.VIDEO_HEVC,
+        startTime: 1000,
+      };
+      await createAVTranscoderNormal(done, testContext, VIDEO_SOURCE_HDR, testName);
+      await prepareAVTranscoderNormal(startTimeConfig, done, testName);
+      await startAVTranscoder(done, testName);
+      await listenComplete(done);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_STARTTIME_BOUNDARY_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_STARTTIME_BOUNDARY_0400
+     * @tc.desc   Test AVTranscoderConfig.startTime lower boundary value 0, full transcoding succeeds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_STARTTIME_BOUNDARY_0400', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_STARTTIME_BOUNDARY_0400';
+      let startTimeConfig: media.AVTranscoderConfig = {
+        audioBitrate: 200000,
+        audioCodec: media.CodecMimeType.AUDIO_AAC,
+        fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+        videoBitrate: 3000000,
+        videoCodec: media.CodecMimeType.VIDEO_HEVC,
+        startTime: 0,
+      };
+      await createAVTranscoderNormal(done, testContext, VIDEO_SOURCE_HDR, testName);
+      await prepareAVTranscoderNormal(startTimeConfig, done, testName);
+      await startAVTranscoder(done, testName);
+      await listenComplete(done);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_STARTTIME_ERROR_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_STARTTIME_ERROR_0500
+     * @tc.desc   Test AVTranscoderConfig.startTime -1 below lower boundary, expect 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_STARTTIME_ERROR_0500', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_STARTTIME_ERROR_0500';
+      await createAVTranscoderNormal(done, testContext, VIDEO_SOURCE_HDR, testName);
+      let startTimeErrorConfig: media.AVTranscoderConfig = {
+        audioBitrate: 200000,
+        audioCodec: media.CodecMimeType.AUDIO_AAC,
+        fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+        videoBitrate: 3000000,
+        videoCodec: media.CodecMimeType.VIDEO_HEVC,
+        startTime: -1,
+      };
+      await mTranscoder?.prepare(startTimeErrorConfig).then(() => {
+        console.error(TAG, testName + ' prepare should fail.');
+        expect().assertFail();
+        done();
+      }).catch((error: BusinessError) => {
+        console.info(TAG, testName + ' prepare failed as expected, code: ' + error.code + ', msg: ' + error.message);
+        expect(error.code).assertEqual(401);
+        done();
+      });
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ENDTIME_PARAM_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ENDTIME_PARAM_0600
+     * @tc.desc   Test AVTranscoderConfig.endTime set to 5000ms, transcoding ends at 5000ms.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ENDTIME_PARAM_0600', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ENDTIME_PARAM_0600';
+      let endTimeConfig: media.AVTranscoderConfig = {
+        audioBitrate: 200000,
+        audioCodec: media.CodecMimeType.AUDIO_AAC,
+        fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+        videoBitrate: 3000000,
+        videoCodec: media.CodecMimeType.VIDEO_HEVC,
+        endTime: 5000,
+      };
+      await createAVTranscoderNormal(done, testContext, VIDEO_SOURCE_HDR, testName);
+      await prepareAVTranscoderNormal(endTimeConfig, done, testName);
+      await startAVTranscoder(done, testName);
+      await listenComplete(done);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ENDTIME_ERROR_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ENDTIME_ERROR_0700
+     * @tc.desc   Test AVTranscoderConfig.endTime -1 below lower boundary, expect 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ENDTIME_ERROR_0700', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ENDTIME_ERROR_0700';
+      await createAVTranscoderNormal(done, testContext, VIDEO_SOURCE_HDR, testName);
+      let endTimeErrorConfig: media.AVTranscoderConfig = {
+        audioBitrate: 200000,
+        audioCodec: media.CodecMimeType.AUDIO_AAC,
+        fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+        videoBitrate: 3000000,
+        videoCodec: media.CodecMimeType.VIDEO_HEVC,
+        endTime: -1,
+      };
+      await mTranscoder?.prepare(endTimeErrorConfig).then(() => {
+        console.error(TAG, testName + ' prepare should fail.');
+        expect().assertFail();
+        done();
+      }).catch((error: BusinessError) => {
+        console.info(TAG, testName + ' prepare failed as expected, code: ' + error.code + ', msg: ' + error.message);
+        expect(error.code).assertEqual(401);
+        done();
+      });
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ENDTIME_ERROR_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ENDTIME_ERROR_0800
+     * @tc.desc   Test AVTranscoderConfig.endTime 1000 less than startTime 5000, expect 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ENDTIME_ERROR_0800', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ENDTIME_ERROR_0800';
+      await createAVTranscoderNormal(done, testContext, VIDEO_SOURCE_HDR, testName);
+      let endTimeErrorConfig: media.AVTranscoderConfig = {
+        audioBitrate: 200000,
+        audioCodec: media.CodecMimeType.AUDIO_AAC,
+        fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+        videoBitrate: 3000000,
+        videoCodec: media.CodecMimeType.VIDEO_HEVC,
+        startTime: 5000,
+        endTime: 1000,
+      };
+      await mTranscoder?.prepare(endTimeErrorConfig).then(() => {
+        console.error(TAG, testName + ' prepare should fail.');
+        expect().assertFail();
+        done();
+      }).catch((error: BusinessError) => {
+        console.info(TAG, testName + ' prepare failed as expected, code: ' + error.code + ', msg: ' + error.message);
+        expect(error.code).assertEqual(401);
+        done();
+      });
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_TIMESLICE_PARAM_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_TIMESLICE_PARAM_0900
+     * @tc.desc   Test AVTranscoderConfig.startTime 1000 and endTime 5000 combined, transcoding time slice succeeds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_TIMESLICE_PARAM_0900', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_TIMESLICE_PARAM_0900';
+      let timeSliceConfig: media.AVTranscoderConfig = {
+        audioBitrate: 200000,
+        audioCodec: media.CodecMimeType.AUDIO_AAC,
+        fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+        videoBitrate: 3000000,
+        videoCodec: media.CodecMimeType.VIDEO_HEVC,
+        startTime: 1000,
+        endTime: 5000,
+      };
+      await createAVTranscoderNormal(done, testContext, VIDEO_SOURCE_HDR, testName);
+      await prepareAVTranscoderNormal(timeSliceConfig, done, testName);
+      await startAVTranscoder(done, testName);
+      await listenComplete(done);
+      done();
     })
   })
 }
