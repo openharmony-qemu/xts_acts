@@ -188,5 +188,29 @@ export default function HyperSnapManagerTest() {
       expect(onCreate).assertEqual('onCreate');
       done();
     })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_HyperSnapManager_IsHyperSnapInitializing_0100
+     * @tc.number SUB_Ability_AbilityRuntime_HyperSnapManager_IsHyperSnapInitializing_0100
+     * @tc.desc   isHyperSnapInitializing: Promise<boolean> true/false; or BusinessError 16000050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_HyperSnapManager_IsHyperSnapInitializing_0100', Level.LEVEL0,
+      async (done: Function) => {
+        let tag = 'SUB_Ability_AbilityRuntime_HyperSnapManager_IsHyperSnapInitializing_0100';
+        try {
+          let initializing: boolean = await hyperSnapManager.isHyperSnapInitializing();
+          hilog.info(0x0000, 'testTag', `${tag} result=${initializing}`);
+          expect(typeof initializing).assertEqual('boolean');
+          expect(initializing === true || initializing === false).assertTrue();
+        } catch (e) {
+          let err: BusinessError = e as BusinessError;
+          hilog.info(0x0000, 'testTag', `${tag} catch code=${err.code}`);
+          expect(err.code).assertEqual(16000050);
+        }
+        done();
+      })
   })
 }
