@@ -1332,6 +1332,525 @@ export default function cameraJSUnitOutput() {
         console.info(`Exit ${caseName}`)
       }
     })
+	
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_IS_C2PA_SIGNATURE_SUPPORTED_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_IS_C2PA_SIGNATURE_SUPPORTED_0100
+     * @tc.desc   Check OH_PhotoOutput_IsC2PASignatureSupported with valid photoOutput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_IS_C2PA_SIGNATURE_SUPPORTED_0100', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_IS_C2PA_SIGNATURE_SUPPORTED_0100";
+      console.info(TAG + ` --------------${caseName}--------------`);
+      try {
+        cameraObj.initCamera(GlobalThis.getInstance().getValue());
+        cameraObj.getSupportedCameras();
+        cameraObj.getSupportedOutputCapability();
+        cameraObj.createCameraInput();
+        cameraObj.cameraInputOpen();
+        cameraObj.createPreviewOutput();
+        cameraObj.createPhotoOutput(surfaceId1);
+        cameraObj.createSession();
+        cameraObj.sessionBegin();
+        cameraObj.sessionAddInput();
+        cameraObj.sessionAddPreviewOutput();
+        cameraObj.sessionAddPhotoOutput();
+        cameraObj.sessionCommitConfig();
+        cameraObj.sessionStart();
+
+        let result = cameraObj.oHPhotoOutputIsC2PASignatureSupported(Parameter_Setting.ALL_PARAMETER_OK);
+        console.info(TAG + `IsC2PASignatureSupported result: ${JSON.stringify(result)}`);
+        expect(result.errorCode).assertEqual(Camera_ErrorCode.CAMERA_OK);
+        console.info(`${caseName} PASSED`);
+      } catch (error) {
+        console.error(`${caseName} FAILED, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        console.info(`Exit ${caseName}`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_IS_C2PA_SIGNATURE_SUPPORTED_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_IS_C2PA_SIGNATURE_SUPPORTED_0200
+     * @tc.desc   Check OH_PhotoOutput_IsC2PASignatureSupported with null photoOutput, expect CAMERA_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_IS_C2PA_SIGNATURE_SUPPORTED_0200', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_IS_C2PA_SIGNATURE_SUPPORTED_0200";
+      console.info(TAG + ` --------------${caseName}--------------`);
+      try {
+        cameraObj.initCamera(GlobalThis.getInstance().getValue());
+        cameraObj.getSupportedCameras();
+        cameraObj.getSupportedOutputCapability();
+        cameraObj.createCameraInput();
+        cameraObj.cameraInputOpen();
+        cameraObj.createPreviewOutput();
+        cameraObj.createPhotoOutput(surfaceId1);
+        cameraObj.createSession();
+        cameraObj.sessionBegin();
+        cameraObj.sessionAddInput();
+        cameraObj.sessionAddPreviewOutput();
+        cameraObj.sessionAddPhotoOutput();
+        cameraObj.sessionCommitConfig();
+        cameraObj.sessionStart();
+
+        let result = cameraObj.oHPhotoOutputIsC2PASignatureSupported(Parameter_Setting.FIRST_PARAMETER_ERROR);
+        console.info(TAG + `IsC2PASignatureSupported(null photoOutput) result: ${JSON.stringify(result)}`);
+        expect(result.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
+        console.info(`${caseName} PASSED`);
+      } catch (error) {
+        console.error(`${caseName} FAILED, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        console.info(`Exit ${caseName}`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_IS_C2PA_SIGNATURE_SUPPORTED_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_IS_C2PA_SIGNATURE_SUPPORTED_0300
+     * @tc.desc   Check OH_PhotoOutput_IsC2PASignatureSupported with null isSupported pointer, expect CAMERA_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_IS_C2PA_SIGNATURE_SUPPORTED_0300', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_IS_C2PA_SIGNATURE_SUPPORTED_0300";
+      console.info(TAG + ` --------------${caseName}--------------`);
+      try {
+        cameraObj.initCamera(GlobalThis.getInstance().getValue());
+        cameraObj.getSupportedCameras();
+        cameraObj.getSupportedOutputCapability();
+        cameraObj.createCameraInput();
+        cameraObj.cameraInputOpen();
+        cameraObj.createPreviewOutput();
+        cameraObj.createPhotoOutput(surfaceId1);
+        cameraObj.createSession();
+        cameraObj.sessionBegin();
+        cameraObj.sessionAddInput();
+        cameraObj.sessionAddPreviewOutput();
+        cameraObj.sessionAddPhotoOutput();
+        cameraObj.sessionCommitConfig();
+        cameraObj.sessionStart();
+
+        let result = cameraObj.oHPhotoOutputIsC2PASignatureSupported(Parameter_Setting.SECOND_PARAMETER_ERROR);
+        console.info(TAG + `IsC2PASignatureSupported(null isSupported) result: ${JSON.stringify(result)}`);
+        expect(result.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
+        console.info(`${caseName} PASSED`);
+      } catch (error) {
+        console.error(`${caseName} FAILED, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        console.info(`Exit ${caseName}`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_CREATE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_CREATE_0100
+     * @tc.desc   Check OH_Camera_C2PASignatureConfig_Create returns CAMERA_OK with valid input
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_CREATE_0100', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_CREATE_0100";
+      console.info(TAG + ` --------------${caseName}--------------`);
+      try {
+        let ret = cameraObj.oHCameraC2PASignatureConfigCreate(Parameter_Setting.ALL_PARAMETER_OK);
+        console.info(TAG + `C2PASignatureConfigCreate ret: ${ret}`);
+        expect(ret).assertEqual(Camera_ErrorCode.CAMERA_OK);
+        // cleanup
+        cameraObj.oHCameraC2PASignatureConfigDestroy(Parameter_Setting.ALL_PARAMETER_OK);
+        console.info(`${caseName} PASSED`);
+      } catch (error) {
+        console.error(`${caseName} FAILED, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        console.info(`Exit ${caseName}`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_DESTROY_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_DESTROY_0100
+     * @tc.desc   Check OH_Camera_C2PASignatureConfig_Destroy returns CAMERA_OK after create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_DESTROY_0100', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_DESTROY_0100";
+      console.info(TAG + ` --------------${caseName}--------------`);
+      try {
+        let createRet = cameraObj.oHCameraC2PASignatureConfigCreate(Parameter_Setting.ALL_PARAMETER_OK);
+        expect(createRet).assertEqual(Camera_ErrorCode.CAMERA_OK);
+        let ret = cameraObj.oHCameraC2PASignatureConfigDestroy(Parameter_Setting.ALL_PARAMETER_OK);
+        console.info(TAG + `C2PASignatureConfigDestroy ret: ${ret}`);
+        expect(ret).assertEqual(Camera_ErrorCode.CAMERA_OK);
+        console.info(`${caseName} PASSED`);
+      } catch (error) {
+        console.error(`${caseName} FAILED, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        console.info(`Exit ${caseName}`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_DESTROY_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_DESTROY_0200
+     * @tc.desc   Check OH_Camera_C2PASignatureConfig_Destroy with nullptr does not crash (void return)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_DESTROY_0200', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_DESTROY_0200";
+      console.info(TAG + ` --------------${caseName}--------------`);
+      try {
+        // 调用销毁 nullptr，函数无返回值，验证不崩溃
+        let ret = cameraObj.oHCameraC2PASignatureConfigDestroy(Parameter_Setting.FIRST_PARAMETER_ERROR);
+        console.info(TAG + `C2PASignatureConfigDestroy(nullptr) ret: ${ret}`);
+        expect(ret).assertEqual(Camera_ErrorCode.CAMERA_OK);
+        console.info(`${caseName} PASSED`);
+      } catch (error) {
+        console.error(`${caseName} FAILED, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        console.info(`Exit ${caseName}`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_SET_AUTHOR_NAME_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_SET_AUTHOR_NAME_0100
+     * @tc.desc   Check OH_Camera_C2PASignatureConfig_SetAuthorName with valid config and authorName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_SET_AUTHOR_NAME_0100', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_SET_AUTHOR_NAME_0100";
+      console.info(TAG + ` --------------${caseName}--------------`);
+      try {
+        let createRet = cameraObj.oHCameraC2PASignatureConfigCreate(Parameter_Setting.ALL_PARAMETER_OK);
+        expect(createRet).assertEqual(Camera_ErrorCode.CAMERA_OK);
+        let ret = cameraObj.oHCameraC2PASignatureConfigSetAuthorName(Parameter_Setting.ALL_PARAMETER_OK, "TestAuthor");
+        console.info(TAG + `SetAuthorName ret: ${ret}`);
+        expect(ret).assertEqual(Camera_ErrorCode.CAMERA_OK);
+        cameraObj.oHCameraC2PASignatureConfigDestroy(Parameter_Setting.ALL_PARAMETER_OK);
+        console.info(`${caseName} PASSED`);
+      } catch (error) {
+        console.error(`${caseName} FAILED, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        console.info(`Exit ${caseName}`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_SET_AUTHOR_NAME_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_SET_AUTHOR_NAME_0200
+     * @tc.desc   Check OH_Camera_C2PASignatureConfig_SetAuthorName with null config, expect CAMERA_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_SET_AUTHOR_NAME_0200', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_SET_AUTHOR_NAME_0200";
+      console.info(TAG + ` --------------${caseName}--------------`);
+      try {
+        let ret = cameraObj.oHCameraC2PASignatureConfigSetAuthorName(Parameter_Setting.FIRST_PARAMETER_ERROR, "TestAuthor");
+        console.info(TAG + `SetAuthorName(null config) ret: ${ret}`);
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+        console.info(`${caseName} PASSED`);
+      } catch (error) {
+        console.error(`${caseName} FAILED, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        console.info(`Exit ${caseName}`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_SET_AUTHOR_NAME_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_SET_AUTHOR_NAME_0300
+     * @tc.desc   Check OH_Camera_C2PASignatureConfig_SetAuthorName with null authorName, expect CAMERA_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_SET_AUTHOR_NAME_0300', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_SET_AUTHOR_NAME_0300";
+      console.info(TAG + ` --------------${caseName}--------------`);
+      try {
+        let createRet = cameraObj.oHCameraC2PASignatureConfigCreate(Parameter_Setting.ALL_PARAMETER_OK);
+        expect(createRet).assertEqual(Camera_ErrorCode.CAMERA_OK);
+        // 由于 ETS 层无法传 nullptr 字符串，这里传空字符串模拟异常场景；底层按文档要求传入 nullptr
+        let ret = cameraObj.oHCameraC2PASignatureConfigSetAuthorName(Parameter_Setting.SECOND_PARAMETER_ERROR, "");
+        console.info(TAG + `SetAuthorName(null authorName) ret: ${ret}`);
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+        cameraObj.oHCameraC2PASignatureConfigDestroy(Parameter_Setting.ALL_PARAMETER_OK);
+        console.info(`${caseName} PASSED`);
+      } catch (error) {
+        console.error(`${caseName} FAILED, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        console.info(`Exit ${caseName}`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_SET_AUTHOR_ID_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_SET_AUTHOR_ID_0100
+     * @tc.desc   Check OH_Camera_C2PASignatureConfig_SetAuthorID with valid config and authorID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_SET_AUTHOR_ID_0100', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_SET_AUTHOR_ID_0100";
+      console.info(TAG + ` --------------${caseName}--------------`);
+      try {
+        let createRet = cameraObj.oHCameraC2PASignatureConfigCreate(Parameter_Setting.ALL_PARAMETER_OK);
+        expect(createRet).assertEqual(Camera_ErrorCode.CAMERA_OK);
+        let ret = cameraObj.oHCameraC2PASignatureConfigSetAuthorID(Parameter_Setting.ALL_PARAMETER_OK, "TestAuthorID");
+        console.info(TAG + `SetAuthorID ret: ${ret}`);
+        expect(ret).assertEqual(Camera_ErrorCode.CAMERA_OK);
+        cameraObj.oHCameraC2PASignatureConfigDestroy(Parameter_Setting.ALL_PARAMETER_OK);
+        console.info(`${caseName} PASSED`);
+      } catch (error) {
+        console.error(`${caseName} FAILED, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        console.info(`Exit ${caseName}`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_SET_AUTHOR_ID_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_SET_AUTHOR_ID_0200
+     * @tc.desc   Check OH_Camera_C2PASignatureConfig_SetAuthorID with null config, expect CAMERA_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_SET_AUTHOR_ID_0200', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_SET_AUTHOR_ID_0200";
+      console.info(TAG + ` --------------${caseName}--------------`);
+      try {
+        let ret = cameraObj.oHCameraC2PASignatureConfigSetAuthorID(Parameter_Setting.FIRST_PARAMETER_ERROR, "TestAuthorID");
+        console.info(TAG + `SetAuthorID(null config) ret: ${ret}`);
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+        console.info(`${caseName} PASSED`);
+      } catch (error) {
+        console.error(`${caseName} FAILED, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        console.info(`Exit ${caseName}`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_SET_AUTHOR_ID_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_SET_AUTHOR_ID_0300
+     * @tc.desc   Check OH_Camera_C2PASignatureConfig_SetAuthorID with null authorID, expect CAMERA_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_SET_AUTHOR_ID_0300', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_C2PA_SIGNATURE_CONFIG_SET_AUTHOR_ID_0300";
+      console.info(TAG + ` --------------${caseName}--------------`);
+      try {
+        let createRet = cameraObj.oHCameraC2PASignatureConfigCreate(Parameter_Setting.ALL_PARAMETER_OK);
+        expect(createRet).assertEqual(Camera_ErrorCode.CAMERA_OK);
+        let ret = cameraObj.oHCameraC2PASignatureConfigSetAuthorID(Parameter_Setting.SECOND_PARAMETER_ERROR, "");
+        console.info(TAG + `SetAuthorID(null authorID) ret: ${ret}`);
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+        cameraObj.oHCameraC2PASignatureConfigDestroy(Parameter_Setting.ALL_PARAMETER_OK);
+        console.info(`${caseName} PASSED`);
+      } catch (error) {
+        console.error(`${caseName} FAILED, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        console.info(`Exit ${caseName}`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CONFIGURE_C2PA_SIGNATURE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CONFIGURE_C2PA_SIGNATURE_0100
+     * @tc.desc   Check OH_PhotoOutput_ConfigureC2PASignature with valid photoOutput, enable=true, valid config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CONFIGURE_C2PA_SIGNATURE_0100', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CONFIGURE_C2PA_SIGNATURE_0100";
+      console.info(TAG + ` --------------${caseName}--------------`);
+      try {
+        cameraObj.initCamera(GlobalThis.getInstance().getValue());
+        cameraObj.getSupportedCameras();
+        cameraObj.getSupportedOutputCapability();
+        cameraObj.createCameraInput();
+        cameraObj.cameraInputOpen();
+        cameraObj.createPreviewOutput();
+        cameraObj.createPhotoOutput(surfaceId1);
+        cameraObj.createSession();
+        cameraObj.sessionBegin();
+        cameraObj.sessionAddInput();
+        cameraObj.sessionAddPreviewOutput();
+        cameraObj.sessionAddPhotoOutput();
+        cameraObj.sessionCommitConfig();
+        cameraObj.sessionStart();
+
+        // 先检查是否支持 C2PA
+        let supportResult = cameraObj.oHPhotoOutputIsC2PASignatureSupported(Parameter_Setting.ALL_PARAMETER_OK);
+        console.info(TAG + `C2PA support: ${JSON.stringify(supportResult)}`);
+        if (!supportResult.isC2PASignatureSupported) {
+          // 不支持 C2PA 时，先创建配置再调用使能接口，应返回 CAMERA_ERROR_CAPABILITY_NOT_SUPPORTED (7400114)
+          cameraObj.oHCameraC2PASignatureConfigCreate(Parameter_Setting.ALL_PARAMETER_OK);
+          let configRet = cameraObj.oHPhotoOutputConfigureC2PASignature(Parameter_Setting.ALL_PARAMETER_OK, true);
+          console.info(TAG + `ConfigureC2PASignature ret (not supported): ${configRet}`);
+          expect(configRet).assertEqual(Camera_ErrorCode.CAMERA_ERROR_CAPABILITY_NOT_SUPPORTED);
+          cameraObj.oHCameraC2PASignatureConfigDestroy(Parameter_Setting.ALL_PARAMETER_OK);
+        } else {
+          // 支持 C2PA 时，创建配置并设置作者信息
+          let createRet = cameraObj.oHCameraC2PASignatureConfigCreate(Parameter_Setting.ALL_PARAMETER_OK);
+          expect(createRet).assertEqual(Camera_ErrorCode.CAMERA_OK);
+          cameraObj.oHCameraC2PASignatureConfigSetAuthorName(Parameter_Setting.ALL_PARAMETER_OK, "TestAuthor");
+          cameraObj.oHCameraC2PASignatureConfigSetAuthorID(Parameter_Setting.ALL_PARAMETER_OK, "TestAuthorID");
+          // 启用 C2PA 签名
+          let configRet = cameraObj.oHPhotoOutputConfigureC2PASignature(Parameter_Setting.ALL_PARAMETER_OK, true);
+          console.info(TAG + `ConfigureC2PASignature ret: ${configRet}`);
+          expect(configRet).assertEqual(Camera_ErrorCode.CAMERA_OK);
+          cameraObj.oHCameraC2PASignatureConfigDestroy(Parameter_Setting.ALL_PARAMETER_OK);
+        }
+        console.info(`${caseName} PASSED`);
+      } catch (error) {
+        console.error(`${caseName} FAILED, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        console.info(`Exit ${caseName}`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CONFIGURE_C2PA_SIGNATURE_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CONFIGURE_C2PA_SIGNATURE_0200
+     * @tc.desc   Check OH_PhotoOutput_ConfigureC2PASignature with null photoOutput, expect CAMERA_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CONFIGURE_C2PA_SIGNATURE_0200', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CONFIGURE_C2PA_SIGNATURE_0200";
+      console.info(TAG + ` --------------${caseName}--------------`);
+      try {
+        cameraObj.initCamera(GlobalThis.getInstance().getValue());
+        cameraObj.getSupportedCameras();
+        cameraObj.getSupportedOutputCapability();
+        cameraObj.createCameraInput();
+        cameraObj.cameraInputOpen();
+        cameraObj.createPreviewOutput();
+        cameraObj.createPhotoOutput(surfaceId1);
+        cameraObj.createSession();
+        cameraObj.sessionBegin();
+        cameraObj.sessionAddInput();
+        cameraObj.sessionAddPreviewOutput();
+        cameraObj.sessionAddPhotoOutput();
+        cameraObj.sessionCommitConfig();
+        cameraObj.sessionStart();
+
+        let createRet = cameraObj.oHCameraC2PASignatureConfigCreate(Parameter_Setting.ALL_PARAMETER_OK);
+        expect(createRet).assertEqual(Camera_ErrorCode.CAMERA_OK);
+        let configRet = cameraObj.oHPhotoOutputConfigureC2PASignature(Parameter_Setting.FIRST_PARAMETER_ERROR, true);
+        console.info(TAG + `ConfigureC2PASignature(null photoOutput) ret: ${configRet}`);
+        expect(configRet).assertEqual(CAMERA_INVALID_ARGUMENT);
+        cameraObj.oHCameraC2PASignatureConfigDestroy(Parameter_Setting.ALL_PARAMETER_OK);
+        console.info(`${caseName} PASSED`);
+      } catch (error) {
+        console.error(`${caseName} FAILED, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        console.info(`Exit ${caseName}`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CONFIGURE_C2PA_SIGNATURE_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CONFIGURE_C2PA_SIGNATURE_0300
+     * @tc.desc   Check OH_PhotoOutput_ConfigureC2PASignature with null config (no author info), valid per API doc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CONFIGURE_C2PA_SIGNATURE_0300', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CONFIGURE_C2PA_SIGNATURE_0300";
+      console.info(TAG + ` --------------${caseName}--------------`);
+      try {
+        cameraObj.initCamera(GlobalThis.getInstance().getValue());
+        cameraObj.getSupportedCameras();
+        cameraObj.getSupportedOutputCapability();
+        cameraObj.createCameraInput();
+        cameraObj.cameraInputOpen();
+        cameraObj.createPreviewOutput();
+        cameraObj.createPhotoOutput(surfaceId1);
+        cameraObj.createSession();
+        cameraObj.sessionBegin();
+        cameraObj.sessionAddInput();
+        cameraObj.sessionAddPreviewOutput();
+        cameraObj.sessionAddPhotoOutput();
+        cameraObj.sessionCommitConfig();
+        cameraObj.sessionStart();
+
+        // 先检查是否支持 C2PA
+        let supportResult = cameraObj.oHPhotoOutputIsC2PASignatureSupported(Parameter_Setting.ALL_PARAMETER_OK);
+        console.info(TAG + `C2PA support: ${JSON.stringify(supportResult)}`);
+        if (!supportResult.isC2PASignatureSupported) {
+          // 不支持 C2PA 时，先创建配置再调用使能接口，应返回 CAMERA_ERROR_CAPABILITY_NOT_SUPPORTED (7400114)
+          cameraObj.oHCameraC2PASignatureConfigCreate(Parameter_Setting.ALL_PARAMETER_OK);
+          let configRet = cameraObj.oHPhotoOutputConfigureC2PASignature(Parameter_Setting.ALL_PARAMETER_OK, true);
+          console.info(TAG + `ConfigureC2PASignature ret (not supported): ${configRet}`);
+          expect(configRet).assertEqual(Camera_ErrorCode.CAMERA_ERROR_CAPABILITY_NOT_SUPPORTED);
+          cameraObj.oHCameraC2PASignatureConfigDestroy(Parameter_Setting.ALL_PARAMETER_OK);
+        } else {
+          // 支持 C2PA 时，config 为 nullptr：根据文档允许，仅启用 C2PA 不带作者信息
+          let configRet = cameraObj.oHPhotoOutputConfigureC2PASignature(Parameter_Setting.SECOND_PARAMETER_ERROR, true);
+          console.info(TAG + `ConfigureC2PASignature(null config) ret: ${configRet}`);
+          // 文档允许 NULL config，返回 CAMERA_OK
+          expect(configRet).assertEqual(Camera_ErrorCode.CAMERA_OK);
+        }
+        console.info(`${caseName} PASSED`);
+      } catch (error) {
+        console.error(`${caseName} FAILED, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        console.info(`Exit ${caseName}`);
+        done();
+      }
+    });
 
   })
 }
