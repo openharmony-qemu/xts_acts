@@ -95,7 +95,7 @@ export default function focusedApplicationChangedTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_OnFocusedApplicationChanged_0300
      * @tc.number SUB_Ability_AbilityRuntime_AppManager_OnFocusedApplicationChanged_0300
-     * @tc.desc   onFocusedApplicationChanged: observer missing callback out of valid range;
+     * @tc.desc   onFocusedApplicationChanged: observer=null; 有效范围 out of valid observer;
      *     expect throw 401 or 201/16000050/16000165
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -105,8 +105,7 @@ export default function focusedApplicationChangedTest() {
       (done: Function) => {
         let tag = 'SUB_Ability_AbilityRuntime_AppManager_OnFocusedApplicationChanged_0300';
         try {
-          let bad = {} as appManager.FocusedApplicationObserver;
-          appManager.onFocusedApplicationChanged(bad);
+          appManager.onFocusedApplicationChanged(null);
           expect().assertFail();
         } catch (err) {
           let e = err as BusinessError;
