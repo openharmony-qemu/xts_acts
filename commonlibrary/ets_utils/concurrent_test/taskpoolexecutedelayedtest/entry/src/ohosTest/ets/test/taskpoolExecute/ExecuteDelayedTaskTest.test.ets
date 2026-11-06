@@ -1648,3 +1648,858 @@ export default function ExecuteDelayedTaskTest(): void {
      */
     it('ExecuteDelayedTaskTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let threwError5000: boolean = false
+      let err5000: EDErrorInfo | null = null
+      try {
+        await taskpool.executeDelayed(50, null as ESObject)
+      } catch (e) {
+        threwError5000 = true
+        err5000 = e
+        if (err5000 !== null) {
+          expect(err5000 instanceof Error).assertTrue()
+          expect(err5000.code).assertEqual(401)
+        }
+      }
+      expect(threwError5000).assertTrue()
+      expect(err5000 !== null).assertTrue()
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest5100
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_5100
+     * @tc.desc   Verify executeDelayed(50, undefined) fails parameter validation and throws error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ExecuteDelayedTaskTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let threwError5100: boolean = false
+      let err5100: EDErrorInfo | null = null
+      try {
+        await taskpool.executeDelayed(50, undefined as ESObject)
+      } catch (e) {
+        threwError5100 = true
+        err5100 = e
+        if (err5100 !== null) {
+          expect(err5100 instanceof Error).assertTrue()
+          expect(err5100.code).assertEqual(401)
+        }
+      }
+      expect(threwError5100).assertTrue()
+      expect(err5100 !== null).assertTrue()
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest5200
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_5200
+     * @tc.desc   Verify executeDelayed with string[] serialized argument passes data completely and returns joined result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedTaskTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let words: string[] = ['hello', 'delayed', 'world']
+      let task: taskpool.Task = new taskpool.Task(edtStrArrFunc, words)
+      try {
+        let result: Object = await taskpool.executeDelayed(50, task)
+        expect(result as string).assertEqual('hello-delayed-world')
+      } catch (error) {
+        console.error('ExecuteDelayedTaskTest5200 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    // ===== 13. M5 Additions: Task State / Queue Membership Errors =====
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest5300
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_5300
+     * @tc.desc   Verify executeDelayed rejects a task already submitted to a SequenceRunner serial queue with error code 401 (native arbitration)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedTaskTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner()
+      let task: taskpool.Task = new taskpool.Task(edtLongFunc, 800)
+      let runnerPromise: Promise<Object> = runner.execute(task)
+      let threwError5300: boolean = false
+      let err5300: EDErrorInfo | null = null
+      try {
+        await taskpool.executeDelayed(50, task)
+      } catch (e) {
+        threwError5300 = true
+        err5300 = e
+        if (err5300 !== null) {
+          expect(err5300 instanceof Error).assertTrue()
+          expect(err5300.code).assertEqual(401)
+        }
+      }
+      expect(threwError5300).assertTrue()
+      expect(err5300 !== null).assertTrue()
+      try {
+        await runnerPromise
+      } catch (e) {
+        console.info(`ExecuteDelayedTaskTest.test.ets runner done: ${JSON.stringify(e)}`)
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest5400
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_5400
+     * @tc.desc   Verify executeDelayed rejects a task already submitted to an AsyncRunner asynchronous queue with error code 10200057 (native arbitration)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedTaskTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(1, 1)
+      let task: taskpool.Task = new taskpool.Task(edtLongFunc, 800)
+      let runnerPromise: Promise<Object> = runner.execute(task)
+      let threwError5400: boolean = false
+      let err5400: EDErrorInfo | null = null
+      try {
+        await taskpool.executeDelayed(50, task)
+      } catch (e) {
+        threwError5400 = true
+        err5400 = e
+        if (err5400 !== null) {
+          expect(err5400 instanceof Error).assertTrue()
+          expect(err5400.code).assertEqual(10200057)
+        }
+      }
+      expect(threwError5400).assertTrue()
+      expect(err5400 !== null).assertTrue()
+      try {
+        await runnerPromise
+      } catch (e) {
+        console.info(`ExecuteDelayedTaskTest.test.ets runner done: ${JSON.stringify(e)}`)
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest5500
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_5500
+     * @tc.desc   Verify executeDelayed rejects a periodic task already running via executePeriodically with error code 10200051 (runtime arbitration: design expected 10200050 but SDK contract for executeDelayed declares 10200051 - the periodic task cannot be executed again)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedTaskTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let counter: EDTCounter = new EDTCounter()
+      let task: taskpool.Task = new taskpool.Task(edtCounterFunc, counter)
+      taskpool.executePeriodically(200, task)
+      let waited5500: number = 0
+      while (counter.count < 1 && waited5500 < 5000) {
+        await sleep(100)
+        waited5500 += 100
+      }
+      let threwError5500: boolean = false
+      let err5500: EDErrorInfo | null = null
+      try {
+        await taskpool.executeDelayed(50, task)
+      } catch (e) {
+        threwError5500 = true
+        err5500 = e
+        if (err5500 !== null) {
+          expect(err5500 instanceof Error).assertTrue()
+          expect(err5500.code).assertEqual(10200051)
+        }
+      }
+      expect(threwError5500).assertTrue()
+      expect(err5500 !== null).assertTrue()
+      try {
+        taskpool.cancel(task)
+      } catch (e) {
+        console.info(`ExecuteDelayedTaskTest5500 cancel skip: ${JSON.stringify(e)}`)
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest5600
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_5600
+     * @tc.desc   Verify executeDelayed on a task whose dependency is satisfied completes with the correct result (runtime arbitration 2026-09-06: 401 is only thrown for an already-executed COMMON_TASK with dependency; a fresh task waits for its dependency, which must be executed to avoid an unbounded wait)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedTaskTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      // Root cause: CanExecuteDelayed only rejects when IsCommonTask() && HasDependency(); a fresh task is
+      // still TaskType::TASK, so no 401 is thrown and the delayed task waits forever on the unexecuted
+      // dependency (observed as execute timeout). Execute the dependency and assert bounded completion
+      let depTask: taskpool.Task = new taskpool.Task(edtSimpleFunc)
+      let mainTask: taskpool.Task = new taskpool.Task(edtSimpleFunc)
+      mainTask.addDependency(depTask)
+      try {
+        let depPromise: Promise<Object> = taskpool.execute(depTask)
+        let result: Object = await taskpool.executeDelayed(50, mainTask)
+        await depPromise
+        expect(result as number).assertEqual(42)
+      } catch (error) {
+        console.error('ExecuteDelayedTaskTest5600 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest5700
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_5700
+     * @tc.desc   Verify executeDelayed on an already cancelled task is rejected on the first cancel path, and a re-execute of the cancelled task is accepted and completes (runtime arbitration 2026-09-06: UpdateTaskStateToDelayed accepts really-canceled tasks, so the second call resolves with the task result instead of rejecting)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedTaskTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let task: taskpool.Task = new taskpool.Task(edtSimpleFunc)
+      let firstPromise: Promise<Object> = taskpool.executeDelayed(1500, task)
+      try {
+        await sleep(100)
+      } catch (error) {
+        console.error('ExecuteDelayedTaskTest5700 failed');
+        expect(false).assertFail();
+      }
+      try {
+        taskpool.cancel(task)
+      } catch (e) {
+        console.info(`ExecuteDelayedTaskTest5700 cancel skip: ${JSON.stringify(e)}`)
+      }
+      let firstRejected5700: boolean = false
+      try {
+        await firstPromise
+      } catch (error) {
+        firstRejected5700 = true
+      }
+      expect(firstRejected5700).assertTrue()
+      // Root cause (runtime arbitration): IsRealyCanceled() lets UpdateTaskStateToDelayed accept the cancelled
+      // task again, so the second executeDelayed runs normally and resolves with the result instead of rejecting
+      let secondRejected5700: boolean = false
+      let secondResult5700: Object | null = null
+      try {
+        secondResult5700 = await taskpool.executeDelayed(50, task)
+      } catch (error) {
+        secondRejected5700 = true
+      }
+      expect(secondRejected5700).assertFalse()
+      expect(secondResult5700 as number).assertEqual(42)
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest5800
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_5800
+     * @tc.desc   Verify executeDelayed accepts a fresh LongTask (continuous task not yet executed) and returns the correct result (native arbitration: SDK d.ts forbids calling executeDelayed again on an already-executed continuous task; a fresh LongTask is legal)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedTaskTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let longTask: taskpool.Task = new taskpool.LongTask(edtSimpleFunc)
+      try {
+        let result: Object = await taskpool.executeDelayed(50, longTask)
+        expect(result as number).assertEqual(42)
+      } catch (error) {
+        console.error('ExecuteDelayedTaskTest5800 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    // ===== 14. M5 Additions: priority Parameter Validation =====
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest5900
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_5900
+     * @tc.desc   Verify executeDelayed with priority=null is rejected by parameter validation with error code 401 (runtime arbitration 2026-09-06: the third param must be a number, null does not fall back to the default priority)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedTaskTest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      // Root cause: CheckDelayedParams requires args[2] to be a number; null fails NapiHelper::IsNumber and
+      // throws TYPE_ERROR (=401) synchronously, so the runtime rejects instead of applying a default priority
+      let task: taskpool.Task = new taskpool.Task(edtSimpleFunc)
+      let threwError5900: boolean = false
+      let err5900: EDErrorInfo | null = null
+      try {
+        await taskpool.executeDelayed(50, task, null as ESObject)
+      } catch (e) {
+        threwError5900 = true
+        err5900 = e
+        if (err5900 !== null) {
+          expect(err5900 instanceof Error).assertTrue()
+          expect(err5900.code).assertEqual(401)
+        }
+      }
+      expect(threwError5900).assertTrue()
+      expect(err5900 !== null).assertTrue()
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest6000
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_6000
+     * @tc.desc   Verify executeDelayed with priority=undefined is rejected by parameter validation with error code 401 (runtime arbitration 2026-09-06: an explicitly passed undefined still counts as the third argument and must be a number)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedTaskTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      // Root cause: argc is still 3 when undefined is passed explicitly; NapiHelper::IsNumber(undefined) is
+      // false, so CheckDelayedParams throws TYPE_ERROR (=401) instead of falling back to the default priority
+      let task: taskpool.Task = new taskpool.Task(edtSimpleFunc)
+      let threwError6000: boolean = false
+      let err6000: EDErrorInfo | null = null
+      try {
+        await taskpool.executeDelayed(50, task, undefined as ESObject)
+      } catch (e) {
+        threwError6000 = true
+        err6000 = e
+        if (err6000 !== null) {
+          expect(err6000 instanceof Error).assertTrue()
+          expect(err6000.code).assertEqual(401)
+        }
+      }
+      expect(threwError6000).assertTrue()
+      expect(err6000 !== null).assertTrue()
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest6100
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_6100
+     * @tc.desc   Verify executeDelayed with invalid priority=-1 is rejected by parameter validation with error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedTaskTest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let task: taskpool.Task = new taskpool.Task(edtSimpleFunc)
+      let threwError6100: boolean = false
+      let err6100: EDErrorInfo | null = null
+      try {
+        await taskpool.executeDelayed(50, task, -1 as ESObject)
+      } catch (e) {
+        threwError6100 = true
+        err6100 = e
+        if (err6100 !== null) {
+          expect(err6100 instanceof Error).assertTrue()
+          expect(err6100.code).assertEqual(401)
+        }
+      }
+      expect(threwError6100).assertTrue()
+      expect(err6100 !== null).assertTrue()
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest6200
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_6200
+     * @tc.desc   Verify executeDelayed with out-of-range priority=999 is rejected by parameter validation with error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedTaskTest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let task: taskpool.Task = new taskpool.Task(edtSimpleFunc)
+      let threwError6200: boolean = false
+      let err6200: EDErrorInfo | null = null
+      try {
+        await taskpool.executeDelayed(50, task, 999 as ESObject)
+      } catch (e) {
+        threwError6200 = true
+        err6200 = e
+        if (err6200 !== null) {
+          expect(err6200 instanceof Error).assertTrue()
+          expect(err6200.code).assertEqual(401)
+        }
+      }
+      expect(threwError6200).assertTrue()
+      expect(err6200 !== null).assertTrue()
+      done()
+    })
+
+    // ===== 15. M5 Additions: Return Value Type Variants =====
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest6300
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_6300
+     * @tc.desc   Verify executeDelayed resolves with undefined when the task returns undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedTaskTest6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let task: taskpool.Task = new taskpool.Task(edtReturnUndefinedFunc)
+      try {
+        let result: Object = await taskpool.executeDelayed(50, task)
+        expect(result === undefined).assertTrue()
+      } catch (error) {
+        console.error('ExecuteDelayedTaskTest6300 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest6400
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_6400
+     * @tc.desc   Verify executeDelayed resolves with a plain object result and its fields are correct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedTaskTest6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let task: taskpool.Task = new taskpool.Task(edtReturnObjFunc)
+      try {
+        let result: Object = await taskpool.executeDelayed(50, task)
+        let obj: Record<string, Object> = result as Record<string, Object>
+        expect(obj['a'] as number).assertEqual(1)
+        expect(obj['b'] as string).assertEqual('ok')
+      } catch (error) {
+        console.error('ExecuteDelayedTaskTest6400 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest6500
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_6500
+     * @tc.desc   Verify executeDelayed resolves with a Map<string, number> result and its content is correct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedTaskTest6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let task: taskpool.Task = new taskpool.Task(edtReturnMapFunc)
+      try {
+        let result: Object = await taskpool.executeDelayed(50, task)
+        let map: Map<string, number> = result as Map<string, number>
+        expect(map.get('answer') as number).assertEqual(42)
+      } catch (error) {
+        console.error('ExecuteDelayedTaskTest6500 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest6600
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_6600
+     * @tc.desc   Verify executeDelayed resolves with a Sendable instance result and its field value is correct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedTaskTest6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let data: EDTSharedData = new EDTSharedData()
+      data.value = 21
+      let task: taskpool.Task = new taskpool.Task(edtSendableEchoFunc, data)
+      try {
+        let result: Object = await taskpool.executeDelayed(50, task)
+        let returned: EDTSharedData = result as EDTSharedData
+        expect(returned.value).assertEqual(21)
+      } catch (error) {
+        console.error('ExecuteDelayedTaskTest6600 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    // ===== 16. M5 Additions: Error Transmission and Promise Callbacks =====
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest6700
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_6700
+     * @tc.desc   Verify a custom-named Error thrown inside the delayed task is transmitted to the awaiting catch (content asserted via error.message.includes; runtime arbitration 2026-09-06: the rejection is an ErrorEvent-like plain object whose String form is '[object Object]')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedTaskTest6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let task: taskpool.Task = new taskpool.Task(edtCustomErrorFunc)
+      let threwError6700: boolean = false
+      try {
+        await taskpool.executeDelayed(50, task)
+      } catch (e) {
+        threwError6700 = true
+        // Root cause: the worker serializes the thrown error through TranslateErrorEvent, so the host-side
+        // rejection is a plain object and the worker text (name: message) is carried on .message
+        let err6700: EDErrorInfo = e as EDErrorInfo
+        expect(err6700.message.includes('edt custom error')).assertTrue()
+      }
+      expect(threwError6700).assertTrue()
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest6800
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_6800
+     * @tc.desc   Verify the .then callback of a delayed-task promise receives the correct result value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedTaskTest6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let task: taskpool.Task = new taskpool.Task(edtSimpleFunc)
+      let thenResult6800: Object | null = null
+      let p: Promise<void> = taskpool.executeDelayed(50, task).then((r: Object): void => {
+        thenResult6800 = r
+      })
+      try {
+        await p
+      } catch (error) {
+        console.error('ExecuteDelayedTaskTest6800 failed');
+        expect(false).assertFail();
+      }
+      expect(thenResult6800 !== null).assertTrue()
+      if (thenResult6800 !== null) {
+        expect(thenResult6800 as number).assertEqual(42)
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest6900
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_6900
+     * @tc.desc   Verify the .catch callback captures the rejection of a failing delayed task (single .catch callback attached before await, no chained call style; runtime arbitration 2026-09-06: rejection content read from error.message with the native 'Error: ' prefix normalized away)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedTaskTest6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let task: taskpool.Task = new taskpool.Task(edtErrorFunc)
+      let caughtByCatch6900: boolean = false
+      let caughtText6900: string = ''
+      let p = taskpool.executeDelayed(50, task).catch((e: ESObject): void => {
+        caughtByCatch6900 = true
+        // Root cause: the rejection value is an ErrorEvent-like plain object, so String(e) is
+        // '[object Object]'; use .message and strip the native 'Error: ' prefix for comparison
+        let err6900: EDErrorInfo = e as EDErrorInfo
+        caughtText6900 = err6900.message.replace('Error: ', '')
+      })
+      try {
+        await p
+      } catch (error) {
+        console.error('ExecuteDelayedTaskTest6900 failed');
+        expect(false).assertFail();
+      }
+      expect(caughtByCatch6900).assertTrue()
+      expect(caughtText6900.includes('delayed task error')).assertTrue()
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest7000
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_7000
+     * @tc.desc   Verify the .finally callback executes for both resolved and rejected delayed-task promises
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedTaskTest7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let finallySuccess7000: boolean = false
+      let p1 = taskpool.executeDelayed(50, new taskpool.Task(edtSimpleFunc)).finally((): void => {
+        finallySuccess7000 = true
+      })
+      let finallyFailed7000: boolean = false
+      let catchCalled7000: boolean = false
+      let p2 = taskpool.executeDelayed(50, new taskpool.Task(edtErrorFunc)).catch((e: ESObject): void => {
+        console.info('ExecuteDelayedTaskTest7000 catch: ' + String(e))
+        catchCalled7000 = true
+      }).finally((): void => {
+        finallyFailed7000 = true
+      })
+      try {
+        await p1
+        await p2
+      } catch (error) {
+        console.error('ExecuteDelayedTaskTest7000 failed');
+        expect(false).assertFail();
+      }
+      expect(finallySuccess7000).assertTrue()
+      expect(catchCalled7000).assertTrue()
+      expect(finallyFailed7000).assertTrue()
+      done()
+    })
+
+    // ===== 17. M5 Additions: Concurrency, Containers, Locking, Data Volume =====
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest7100
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_7100
+     * @tc.desc   Verify 5 concurrent delayed tasks increment a Sendable shared counter protected by AsyncLock and count is exactly 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ExecuteDelayedTaskTest7100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let counter: EDTLockedCounter = new EDTLockedCounter()
+      let promises: Promise<Object>[] = []
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.executeDelayed(50, new taskpool.Task(edtLockedIncrementFunc, counter)))
+      }
+      try {
+        let results: Object[] = await Promise.all(promises)
+        expect(results.length).assertEqual(5)
+        expect(counter.count).assertEqual(5)
+      } catch (error) {
+        console.error('ExecuteDelayedTaskTest7100 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest7200
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_7200
+     * @tc.desc   Verify executeDelayed with a collections.Array container argument returns the correct container length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedTaskTest7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let sharedArr: collections.Array<number> = new collections.Array<number>()
+      sharedArr.push(1)
+      sharedArr.push(2)
+      sharedArr.push(3)
+      let task: taskpool.Task = new taskpool.Task(edtCollectionsLenFunc, sharedArr)
+      try {
+        let result: Object = await taskpool.executeDelayed(50, task)
+        expect(result as number).assertEqual(3)
+      } catch (error) {
+        console.error('ExecuteDelayedTaskTest7200 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest7300
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_7300
+     * @tc.desc   Verify executeDelayed with an object argument containing an array field passes all fields completely and computes correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedTaskTest7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let input: Record<string, Object> = { 'base': 10, 'nums': [1, 2, 3, 4] }
+      let task: taskpool.Task = new taskpool.Task(edtObjArrFieldFunc, input)
+      try {
+        let result: Object = await taskpool.executeDelayed(50, task)
+        expect(result as number).assertEqual(14)
+      } catch (error) {
+        console.error('ExecuteDelayedTaskTest7300 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest7400
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_7400
+     * @tc.desc   Verify executeDelayed with medium serialized data volume (100K number elements, about 800KB, 1KB-1MB range) succeeds and returns correct length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedTaskTest7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let midData: number[] = new Array<number>(100 * 1024)
+      for (let i: number = 0; i < midData.length; i++) {
+        midData[i] = i
+      }
+      let task: taskpool.Task = new taskpool.Task(edtArrArgFunc, midData)
+      try {
+        let result: Object = await taskpool.executeDelayed(50, task)
+        expect(result as number).assertEqual(100 * 1024)
+      } catch (error) {
+        console.error('ExecuteDelayedTaskTest7400 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest7500
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_7500
+     * @tc.desc   Verify an async @Concurrent task function delayed via executeDelayed awaits internally and returns correct result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecuteDelayedTaskTest7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let task: taskpool.Task = new taskpool.Task(edtAsyncFunc, 42)
+      try {
+        let result: Object = await taskpool.executeDelayed(50, task)
+        expect(result as number).assertEqual(84)
+      } catch (error) {
+        console.error('ExecuteDelayedTaskTest7500 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    // ===== 18. M5 Additions: Nesting Limit Probe (F4) =====
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest7600
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_7600
+     * @tc.desc   Verify a @Concurrent task function can create a nested Task and start a nested executeDelayed; nested completion collected via shared Sendable counter with 5s bounded poll, exact count asserted (F4 real-case probe; runtime infeasibility would be converted to NAC with run evidence)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ExecuteDelayedTaskTest7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let counter: EDTCounter = new EDTCounter()
+      let launcherTask: taskpool.Task = new taskpool.Task(edtNestedLauncherFunc, counter)
+      try {
+        let hostResult: Object = await taskpool.executeDelayed(50, launcherTask)
+        expect(hostResult as number).assertEqual(1)
+      } catch (error) {
+        console.error('ExecuteDelayedTaskTest7600 failed');
+        expect(false).assertFail();
+      }
+      let waited7600: number = 0
+      while (counter.count < 1 && waited7600 < 5000) {
+        await sleep(100)
+        waited7600 += 100
+      }
+      expect(counter.count).assertEqual(1)
+      done()
+    })
+
+    // ===== 19. M5 Additions: Locking Pattern, Stability, Batch Cancel, Loop =====
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest7700
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_7700
+     * @tc.desc   Verify 3 concurrent delayed tasks push into a shared collections.Array protected by AsyncLock and the container length is exactly 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ExecuteDelayedTaskTest7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let holder: EDTLockedArrayHolder = new EDTLockedArrayHolder()
+      let promises: Promise<Object>[] = []
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.executeDelayed(50, new taskpool.Task(edtLockedPushFunc, holder)))
+      }
+      try {
+        let results: Object[] = await Promise.all(promises)
+        expect(results.length).assertEqual(3)
+        expect(holder.items.length).assertEqual(3)
+      } catch (error) {
+        console.error('ExecuteDelayedTaskTest7700 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest7800
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_7800
+     * @tc.desc   Verify 5 repeated 500ms delayed tasks all complete with consistent correct results (elapsed window not asserted per stability rules)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ExecuteDelayedTaskTest7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let promises: Promise<Object>[] = []
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.executeDelayed(500, new taskpool.Task(edtSimpleFunc)))
+      }
+      try {
+        let results: Object[] = await Promise.all(promises)
+        expect(results.length).assertEqual(5)
+        for (let r of results) {
+          expect(r as number).assertEqual(42)
+        }
+      } catch (error) {
+        console.error('ExecuteDelayedTaskTest7800 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest7900
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_7900
+     * @tc.desc   Verify batch cancellation of 5 pending delayed tasks: all 5 promises settle as rejected with no residual executing tasks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ExecuteDelayedTaskTest7900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let tasks7900: taskpool.Task[] = []
+      let promises: Promise<Object>[] = []
+      for (let i: number = 0; i < 5; i++) {
+        let t: taskpool.Task = new taskpool.Task(edtSimpleFunc)
+        tasks7900.push(t)
+        edtPendingDelayedTasks.push(t)
+        promises.push(taskpool.executeDelayed(3000, t))
+      }
+      try {
+        await sleep(100)
+      } catch (error) {
+        console.error('ExecuteDelayedTaskTest7900 failed');
+        expect(false).assertFail();
+      }
+      for (let t of tasks7900) {
+        try {
+          taskpool.cancel(t)
+        } catch (e) {
+          console.info(`ExecuteDelayedTaskTest7900 cancel skip: ${JSON.stringify(e)}`)
+        }
+      }
+      let settledResults: PromiseSettledResult<Object>[] = []
+      try {
+        settledResults = await Promise.allSettled(promises)
+      } catch (error) {
+        console.error('ExecuteDelayedTaskTest7900 failed');
+        expect(false).assertFail();
+      }
+      expect(settledResults.length).assertEqual(5)
+      let rejectedCount7900: number = 0
+      for (let s of settledResults) {
+        if (s.status === 'rejected') {
+          rejectedCount7900++
+        }
+      }
+      expect(rejectedCount7900).assertEqual(5)
+      done()
+    })
+
+    /**
+     * @tc.name   ExecuteDelayedTaskTest8000
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_TEST_8000
+     * @tc.desc   Verify repeated delayed execution in batches (2 batches x 100 tasks, 50ms delay) completes exactly 200 tasks without failure accumulation (leak-detection equivalent observable per F5)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ExecuteDelayedTaskTest8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let completed8000: number = 0
+      try {
+        for (let batch: number = 0; batch < 2; batch++) {
+          let promises: Promise<Object>[] = []
+          for (let i: number = 0; i < 100; i++) {
+            promises.push(taskpool.executeDelayed(50, new taskpool.Task(edtNumFunc, i)))
+          }
+          let results: Object[] = await Promise.all(promises)
+          completed8000 += results.length
+        }
+      } catch (error) {
+        console.error('ExecuteDelayedTaskTest8000 failed');
+        expect(false).assertFail();
+      }
+      expect(completed8000).assertEqual(200)
+      done()
+    })
+  })
+}
