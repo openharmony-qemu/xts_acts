@@ -15,6 +15,7 @@
 
 import { describe, it, expect, TestType, Size, Level, beforeAll } from '@ohos/hypium'
 import huksndk from 'libhuksndk.so'
+import { YieldToEventLoop } from '../utils/common/CommonUtils'
 
 const ARKUI_ERROR_CODE_NO_ERROR = 0;
 const ARKUI_ERROR_CODE_ERROR = 1;
@@ -37,6 +38,7 @@ export default function HuksApiTest3() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.ErrCodeTest_001();
           console.info(`====>testOH_HUKS_ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -60,6 +62,7 @@ export default function HuksApiTest3() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.ErrCodeTest_002();
           console.info(`====>testOH_HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -83,6 +86,7 @@ export default function HuksApiTest3() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_ERR_CODE_ITEM_NOT_EXIST0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.ErrCodeTest_003();
           console.info(`====>testOH_HUKS_ERR_CODE_ITEM_NOT_EXIST0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -106,6 +110,7 @@ export default function HuksApiTest3() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_ERR_CODE_DEVICE_PASSWORD_UNSET0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.ErrCodeTest_004();
           console.info(`====>testOH_HUKS_ERR_CODE_DEVICE_PASSWORD_UNSET0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -129,6 +134,7 @@ export default function HuksApiTest3() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_ERR_CODE_KEY_ALREADY_EXIST0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.ErrCodeTest_005();
           console.info(`====>testOH_HUKS_ERR_CODE_KEY_ALREADY_EXIST0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -152,6 +158,7 @@ export default function HuksApiTest3() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_ERR_CODE_INVALID_ARGUMENT0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.ErrCodeTest_006();
           console.info(`====>testOH_HUKS_ERR_CODE_INVALID_ARGUMENT0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -175,6 +182,7 @@ export default function HuksApiTest3() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_ERR_CODE_FEATURE_NOT_SUPPORTED0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.ErrCodeTest_007();
           console.info(`====>testOH_HUKS_ERR_CODE_FEATURE_NOT_SUPPORTED0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -199,6 +207,7 @@ export default function HuksApiTest3() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_AUTH_STORAGE_LEVEL_CE0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.AuthStorageLevelTest_001();
           console.info(`====>testOH_HUKS_AUTH_STORAGE_LEVEL_CE0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -222,6 +231,7 @@ export default function HuksApiTest3() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_AUTH_STORAGE_LEVEL_ECE0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.AuthStorageLevelTest_002();
           console.info(`====>testOH_HUKS_AUTH_STORAGE_LEVEL_ECE0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);

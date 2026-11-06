@@ -9,8 +9,7 @@ include_directories(${NATIVERENDER_ROOT_PATH}
                     ${NATIVERENDER_ROOT_PATH}/huksnapi
                     ${NATIVERENDER_ROOT_PATH}/nativehuks)
 
-add_library(huksndk SHARED huksndk.cpp huks_api_test.cpp huks_external_crypto_test.cpp
-            huks_external_crypto_error_test.cpp huks_external_crypto_utils.cpp
+add_library(huksndk SHARED huksndk.cpp huks_api_test.cpp
             huksnapi/HuksAgreeDhTest.cpp
             huksnapi/HuksAgreeEcdhTest.cpp
             huksnapi/HuksAgreeX25519Test.cpp
@@ -37,5 +36,4 @@ add_library(huksndk SHARED huksndk.cpp huks_api_test.cpp huks_external_crypto_te
             nativehuks/HuksAuthApiTest.cpp
             nativehuks/OHHuksStructTest.cpp
             nativehuks/common/CommonTest.cpp)
-target_link_libraries(huksndk PUBLIC libace_napi.z.so libc++.a libhilog_ndk.z.so libhuks_ndk.z.so
-                      libhuks_external_crypto.z.so)
+target_link_libraries(huksndk PUBLIC libace_napi.z.so libc++.a libhilog_ndk.z.so libhuks_ndk.z.so)

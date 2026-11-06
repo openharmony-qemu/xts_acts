@@ -15,6 +15,7 @@
 
 import { describe, it, expect, TestType, Size, Level, beforeAll } from '@ohos/hypium'
 import huksndk from 'libhuksndk.so'
+import { YieldToEventLoop } from '../utils/common/CommonUtils'
 
 const ARKUI_ERROR_CODE_NO_ERROR = 0;
 const ARKUI_ERROR_CODE_ERROR = 1;
@@ -36,6 +37,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_GetSdkVersion0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.GetSdkVersionTest_001();
           console.info(`====>testOH_Huks_GetSdkVersion0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -59,6 +61,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_GenerateKeyItem0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.GenerateKeyItemTest_001();
           console.info(`====>testOH_Huks_GenerateKeyItem0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -82,6 +85,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_GenerateKeyItem0200 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.GenerateKeyItemTest_002();
           console.info(`====>testOH_Huks_GenerateKeyItem0200 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -105,6 +109,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_GenerateKeyItem0300 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.GenerateKeyItemTest_003();
           console.info(`====>testOH_Huks_GenerateKeyItem0300 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -128,6 +133,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_GenerateKeyItem0400 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.GenerateKeyItemTest_004();
           console.info(`====>testOH_Huks_GenerateKeyItem0400 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -151,6 +157,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_GenerateKeyItem0500 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.GenerateKeyItemTest_005();
           console.info(`====>testOH_Huks_GenerateKeyItem0500 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -174,6 +181,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_ImportKeyItem0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.ImportKeyItemTest_001();
           console.info(`====>testOH_Huks_ImportKeyItem0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -197,6 +205,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_ImportKeyItem0200 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.ImportKeyItemTest_002();
           console.info(`====>testOH_Huks_ImportKeyItem0200 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -220,6 +229,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_ImportKeyItem0300 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.ImportKeyItemTest_003();
           console.info(`====>testOH_Huks_ImportKeyItem0300 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -243,6 +253,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_ImportKeyItem0400 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.ImportKeyItemTest_004();
           console.info(`====>testOH_Huks_ImportKeyItem0400 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -266,6 +277,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_ImportWrappedKeyItem0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.ImportWrappedKeyItemTest_001();
           console.info(`====>testOH_Huks_ImportWrappedKeyItem0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -289,6 +301,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_ImportWrappedKeyItem0200 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.ImportWrappedKeyItemTest_002();
           console.info(`====>testOH_Huks_ImportWrappedKeyItem0200 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -312,6 +325,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_ExportPublicKeyItem0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.ExportPublicKeyItemTest_001();
           console.info(`====>testOH_Huks_ExportPublicKeyItem0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -335,6 +349,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_ExportPublicKeyItem0200 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.ExportPublicKeyItemTest_002();
           console.info(`====>testOH_Huks_ExportPublicKeyItem0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -358,6 +373,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_DeleteKeyItem0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.DeleteKeyItemTest_001();
           console.info(`====>testOH_Huks_DeleteKeyItem0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -381,6 +397,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_DeleteKeyItem0200 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.DeleteKeyItemTest_002();
           console.info(`====>testOH_Huks_DeleteKeyItem0200 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -404,6 +421,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_GetKeyItemParamSet0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.GetKeyItemParamSetTest_001();
           console.info(`====>testOH_Huks_GetKeyItemParamSet0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -427,6 +445,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_GetKeyItemParamSet0200 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.GetKeyItemParamSetTest_002();
           console.info(`====>testOH_Huks_GetKeyItemParamSet0200 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -450,6 +469,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_IsKeyItemExist0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.IsKeyItemExistTest_001();
           console.info(`====>testOH_Huks_IsKeyItemExist0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -473,6 +493,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_IsKeyItemExist0200 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.IsKeyItemExistTest_002();
           console.info(`====>testOH_Huks_IsKeyItemExist0200 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -496,6 +517,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_InitSession0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.InitSessionTest_001();
           console.info(`====>testOH_Huks_InitSession0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -519,6 +541,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_InitSession0200 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.InitSessionTest_002();
           console.info(`====>testOH_Huks_InitSession0200 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -542,6 +565,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_InitSession0300 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.InitSessionTest_003();
           console.info(`====>testOH_Huks_InitSession0300 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -565,6 +589,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_UpdateSession0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.UpdateSessionTest_001();
           console.info(`====>testOH_Huks_UpdateSession0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -588,6 +613,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_UpdateSession0200 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.UpdateSessionTest_002();
           console.info(`====>testOH_Huks_UpdateSession0200 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -611,6 +637,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_FinishSession0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.FinishSessionTest_001();
           console.info(`====>testOH_Huks_FinishSession0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -634,6 +661,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_FinishSession0200 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.FinishSessionTest_002();
           console.info(`====>testOH_Huks_FinishSession0200 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -657,6 +685,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_AbortSession0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.AbortSessionTest_001();
           console.info(`====>testOH_Huks_AbortSession0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -680,6 +709,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_ListAliases0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.ListAliasesTest_001();
           console.info(`====>testOH_Huks_ListAliases0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -703,6 +733,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_WrapKey0200 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.WrapKeyTest_002();
           console.info(`====>testOH_Huks_WrapKey0200 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -726,6 +757,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_WrapKey0300 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.WrapKeyTest_003();
           console.info(`====>testOH_Huks_WrapKey0300 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -749,6 +781,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_UnwrapKey0200 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.UnwrapKeyTest_001();
           console.info(`====>testOH_Huks_UnwrapKey0200 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -772,6 +805,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_InitParamSet0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.InitParamSetTest_001();
           console.info(`====>testOH_Huks_InitParamSet0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -795,6 +829,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_AddParams0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.AddParamsTest_001();
           console.info(`====>testOH_Huks_AddParams0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -818,6 +853,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_BuildParamSet0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.BuildParamSetTest_001();
           console.info(`====>testOH_Huks_BuildParamSet0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -841,6 +877,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_CopyParamSet0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.CopyParamSetTest_001();
           console.info(`====>testOH_Huks_CopyParamSet0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -864,6 +901,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_GetParam0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.GetParamTest_001();
           console.info(`====>testOH_Huks_GetParam0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -887,6 +925,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_FreshParamSet0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.FreshParamSetTest_001();
           console.info(`====>testOH_Huks_FreshParamSet0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -910,6 +949,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_IsParamSetTagValid0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.IsParamSetTagValidTest_001();
           console.info(`====>testOH_Huks_IsParamSetTagValid0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -933,6 +973,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_IsParamSetValid0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.IsParamSetValidTest_001();
           console.info(`====>testOH_Huks_IsParamSetValid0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -956,6 +997,7 @@ export default function HuksApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_Huks_CheckParamMatch0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.CheckParamMatchTest_001();
           console.info(`====>testOH_Huks_CheckParamMatch0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);

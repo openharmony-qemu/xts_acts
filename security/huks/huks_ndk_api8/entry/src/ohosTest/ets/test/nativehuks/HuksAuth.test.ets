@@ -15,6 +15,7 @@
 
 import { describe, it, expect, TestType, Size, Level, beforeAll } from '@ohos/hypium'
 import huksndk from 'libhuksndk.so'
+import { YieldToEventLoop } from '../utils/common/CommonUtils'
 
 const ARKUI_ERROR_CODE_NO_ERROR = 0;
 const ARKUI_ERROR_CODE_ERROR = 1;
@@ -37,6 +38,7 @@ export default function HuksAuthApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_AUTH_ACCESS_INVALID_CLEAR_PASSWORD0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.AuthAccessTypeTest_001();
           console.info(`====>testOH_HUKS_AUTH_ACCESS_INVALID_CLEAR_PASSWORD0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -60,6 +62,7 @@ export default function HuksAuthApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_AUTH_ACCESS_INVALID_NEW_BIO_ENROLL0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.AuthAccessTypeTest_002();
           console.info(`====>testOH_HUKS_AUTH_ACCESS_INVALID_NEW_BIO_ENROLL0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -83,6 +86,7 @@ export default function HuksAuthApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_AUTH_ACCESS_ALWAYS_VALID0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.AuthAccessTypeTest_003();
           console.info(`====>testOH_HUKS_AUTH_ACCESS_ALWAYS_VALID0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -106,6 +110,7 @@ export default function HuksAuthApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_USER_AUTH_MODE_LOCAL0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.UserAuthModeTest_001();
           console.info(`====>testOH_HUKS_USER_AUTH_MODE_LOCAL0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -129,6 +134,7 @@ export default function HuksAuthApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_USER_AUTH_MODE_COAUTH0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.UserAuthModeTest_002();
           console.info(`====>testOH_HUKS_USER_AUTH_MODE_COAUTH0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -151,6 +157,7 @@ export default function HuksAuthApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_TAG_NO_AUTH_REQUIRED0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.TagTest_012();
           console.info(`====>testOH_HUKS_TAG_NO_AUTH_REQUIRED0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -174,6 +181,7 @@ export default function HuksAuthApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_TAG_USER_AUTH_TYPE0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.TagTest_013();
           console.info(`====>testOH_HUKS_TAG_USER_AUTH_TYPE0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -197,6 +205,7 @@ export default function HuksAuthApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_TAG_AUTH_TIMEOUT0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.TagTest_014();
           console.info(`====>testOH_HUKS_TAG_AUTH_TIMEOUT0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -220,6 +229,7 @@ export default function HuksAuthApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_TAG_AUTH_TOKEN0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.TagTest_015();
           console.info(`====>testOH_HUKS_TAG_AUTH_TOKEN0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -243,6 +253,7 @@ export default function HuksAuthApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_TAG_KEY_AUTH_ACCESS_TYPE0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.TagTest_016();
           console.info(`====>testOH_HUKS_TAG_KEY_AUTH_ACCESS_TYPE0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -266,6 +277,7 @@ export default function HuksAuthApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_TAG_USER_AUTH_MODE0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.TagTest_021();
           console.info(`====>testOH_HUKS_TAG_USER_AUTH_MODE0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -289,6 +301,7 @@ export default function HuksAuthApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_TAG_KEY_AUTH_ID0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.TagTest_026();
           console.info(`====>testOH_HUKS_TAG_KEY_AUTH_ID0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -312,6 +325,7 @@ export default function HuksAuthApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_TAG_RSA_PSS_SALT_LEN_TYPE0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.TagTest_009();
           console.info(`====>testOH_HUKS_TAG_RSA_PSS_SALT_LEN_TYPE0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -334,6 +348,7 @@ export default function HuksAuthApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_TAG_KEY_SECURE_SIGN_TYPE0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.TagTest_017();
           console.info(`====>testOH_HUKS_TAG_KEY_SECURE_SIGN_TYPE0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -357,6 +372,7 @@ export default function HuksAuthApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_SECURE_SIGN_WITH_AUTHINFO0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.SecureSignTypeTest_001();
           console.info(`====>testOH_HUKS_SECURE_SIGN_WITH_AUTHINFO0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -380,6 +396,7 @@ export default function HuksAuthApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_USER_AUTH_TYPE_FINGERPRINT0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.UserAuthTypeTest_001();
           console.info(`====>testOH_HUKS_USER_AUTH_TYPE_FINGERPRINT0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -403,6 +420,7 @@ export default function HuksAuthApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_USER_AUTH_TYPE_FACE0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.UserAuthTypeTest_002();
           console.info(`====>testOH_HUKS_USER_AUTH_TYPE_FACE0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -426,6 +444,7 @@ export default function HuksAuthApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_USER_AUTH_TYPE_PIN0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.UserAuthTypeTest_003();
           console.info(`====>testOH_HUKS_USER_AUTH_TYPE_PIN0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -449,6 +468,7 @@ export default function HuksAuthApiTest() {
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_USER_AUTH_TYPE_TUI_PIN0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.UserAuthTypeTest_004();
           console.info(`====>testOH_HUKS_USER_AUTH_TYPE_TUI_PIN0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);

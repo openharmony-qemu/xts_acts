@@ -66,18 +66,6 @@ export const huksNativeApi22Type0300: () => number;
 export const huksNativeApi22Type0400: () => number;
 export const huksNativeApi22Type0500: () => number;
 export const huksNativeApi22Type0600: () => number;
-export const huksNativeApi22Type0100: () => number;
-export const huksNativeApi22Type0200: () => number;
-export const huksNativeApi22KeyAlg0100: () => number;
-export const huksNativeApi22Struct0100: () => number;
-export const huksNativeApi22Struct0200: () => number;
-export const huksNativeApi22Utils0100: () => number;
-export const huksNativeApi22Err0100: () => number;
-export const huksNativeApi22Err0200: () => number;
-export const huksNativeApi22Err0300: () => number;
-export const huksNativeApi22Err0400: () => number;
-export const huksNativeApi22Err0500: () => number;
-export const huksNativeApi22Err0600: () => number;
 
 // ---- Migrated from ActsHuksNapiTest (libhuks.so) ----
 export const HuksAgreeDhTest: (caseName: number) => number;
@@ -100,7 +88,7 @@ export const HuksSignVerifyRsaTest: (caseName: number) => Promise<number>;
 export const HuksSignVerifySm2Test: (caseName: number) => number;
 export const HuksWrappedTest: (caseName: number) => Promise<number>;
 
-// ---- Migrated from huks_ndk_api20 (libnativehuksndk.so) ----
+// ---- Migrated from the HUKS native API 20 suite ----
 export const GetSdkVersionTest_001: () => number;
 export const GenerateKeyItemTest_001: () => number;
 export const GenerateKeyItemTest_002: () => number;

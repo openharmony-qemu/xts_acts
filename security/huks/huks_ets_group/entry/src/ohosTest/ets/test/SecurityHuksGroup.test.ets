@@ -57,7 +57,7 @@ export default function SecurityHuksGroupAPI23Test() {
           await huks.generateKeyItem(testNumber, genGroupKeyOptions);
           expect(null).assertFail()
         } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000018);
         }
       })
@@ -79,7 +79,7 @@ export default function SecurityHuksGroupAPI23Test() {
           await huksCallbackUtils.generateKeyItem(testNumber, genGroupKeyOptions);
           expect(null).assertFail()
         } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000018);
         }
       })
@@ -101,7 +101,7 @@ export default function SecurityHuksGroupAPI23Test() {
           await huks.importKeyItem(testNumber, SetInData(genGroupKeyOptions, GetAesImportData(128)));
           expect(null).assertFail()
         } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000018);
         }
       })
@@ -123,7 +123,7 @@ export default function SecurityHuksGroupAPI23Test() {
           await huksCallbackUtils.importKeyItem(testNumber, SetInData(genGroupKeyOptions, GetAesImportData(128)));
           expect(null).assertFail()
         } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000018);
         }
       })
@@ -150,7 +150,7 @@ export default function SecurityHuksGroupAPI23Test() {
           await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
           expect(null).assertFail();
         } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000018);
         }
       })
@@ -177,7 +177,7 @@ export default function SecurityHuksGroupAPI23Test() {
           await huksCallbackUtils.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
           expect(null).assertFail();
         } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000018);
         }
       })
@@ -207,7 +207,7 @@ export default function SecurityHuksGroupAPI23Test() {
           await Agree(testNumber, agreeInitOptions, agreeFinishOptions);
           expect(null).assertFail();
         } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000018);
         }
       })
@@ -239,7 +239,7 @@ export default function SecurityHuksGroupAPI23Test() {
           await huksCallbackUtils.finishSession(handle, agreeFinishOptions);
           expect(null).assertFail();
         } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000018);
         }
       })
@@ -266,7 +266,7 @@ export default function SecurityHuksGroupAPI23Test() {
           await Agree(testNumber, deriveInitOptions, deriveFinishOptions);
           expect(null).assertFail();
         } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000018);
         }
       })
@@ -295,7 +295,7 @@ export default function SecurityHuksGroupAPI23Test() {
           await huksCallbackUtils.finishSession(handle, deriveFinishOptions);
           expect(null).assertFail();
         } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000018);
         }
       })
@@ -317,7 +317,7 @@ export default function SecurityHuksGroupAPI23Test() {
           await huks.exportKeyItem(testNumber, genKeyOptions);
           expect(null).assertFail();
         } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000018);
         }
       })
@@ -339,7 +339,7 @@ export default function SecurityHuksGroupAPI23Test() {
           await huksCallbackUtils.exportKeyItem(testNumber, genKeyOptions);
           expect(null).assertFail();
         } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000018);
         }
       })
@@ -361,7 +361,7 @@ export default function SecurityHuksGroupAPI23Test() {
           await huks.wrapKeyItem(testNumber, genKeyOptions);
           expect(null).assertFail();
         } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
           if (useSoftware || err.code == 801) {
             expect(err.code).assertEqual(801);
           } else {
@@ -390,7 +390,7 @@ export default function SecurityHuksGroupAPI23Test() {
           await Cipher(testNumber, cipherOptions, cipherData);
           expect(null).assertFail();
         } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000018);
         }
       })
@@ -413,7 +413,7 @@ export default function SecurityHuksGroupAPI23Test() {
           await huksCallbackUtils.initSession(testNumber, cipherOptions)
           expect(null).assertFail();
         } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000018);
         }
       })
@@ -438,7 +438,7 @@ export default function SecurityHuksGroupAPI23Test() {
           await huks.anonAttestKeyItem(testNumber, attestOptions);
           expect(null).assertFail();
         } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000018);
         }
       })
@@ -463,7 +463,7 @@ export default function SecurityHuksGroupAPI23Test() {
           await huksCallbackUtils.anonAttestKeyItem(testNumber, attestOptions);
           expect(null).assertFail();
         } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000018);
         }
       })
@@ -485,7 +485,7 @@ export default function SecurityHuksGroupAPI23Test() {
           await huks.getKeyItemProperties(testNumber, genKeyOptions);
           expect(null).assertFail();
         } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000018);
         }
       })
@@ -507,7 +507,7 @@ export default function SecurityHuksGroupAPI23Test() {
           await huksCallbackUtils.getKeyItemProperties(testNumber, genKeyOptions);
           expect(null).assertFail();
         } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000018);
         }
       })
@@ -529,7 +529,7 @@ export default function SecurityHuksGroupAPI23Test() {
           await huks.hasKeyItem(testNumber, genKeyOptions);
           expect(null).assertFail();
         } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000018);
         }
       })
@@ -551,7 +551,7 @@ export default function SecurityHuksGroupAPI23Test() {
           await huksCallbackUtils.hasKeyItem(testNumber, genKeyOptions);
           expect(null).assertFail();
         } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000018);
         }
       })
@@ -573,7 +573,7 @@ export default function SecurityHuksGroupAPI23Test() {
           await huks.listAliases(genKeyOptions);
           expect(null).assertFail();
         } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000018);
         }
       })
@@ -595,7 +595,7 @@ export default function SecurityHuksGroupAPI23Test() {
           await huksCallbackUtils.deleteKeyItem(testNumber, genKeyOptions);
           expect(null).assertFail();
         } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000018);
         }
       })
@@ -617,7 +617,7 @@ export default function SecurityHuksGroupAPI23Test() {
           await huks.deleteKeyItem(testNumber, genKeyOptions);
           expect(null).assertFail();
         } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000018);
         }
       })

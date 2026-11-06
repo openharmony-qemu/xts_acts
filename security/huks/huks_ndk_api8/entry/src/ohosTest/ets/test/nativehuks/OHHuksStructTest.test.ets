@@ -15,6 +15,7 @@
 
 import { describe, it, expect, TestType, Size, Level, beforeAll } from '@ohos/hypium'
 import huksndk from 'libhuksndk.so'
+import { YieldToEventLoop } from '../utils/common/CommonUtils'
 
 export default function OHHuksStructTest() {
   describe('OHHuksStructTest', () => {
@@ -34,6 +35,7 @@ export default function OHHuksStructTest() {
       async (done: Function) => {
         try {
           console.info("====>testGetOHHuksResult0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.GetOHHuksResult0100();
           console.info(`====>testGetOHHuksResult0100 result====${result}`);
           expect(result).assertEqual(0);
@@ -57,6 +59,7 @@ export default function OHHuksStructTest() {
       async (done: Function) => {
         try {
           console.info("====>testGetOHHuksResult0200 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.GetOHHuksResult0200();
           console.info(`====>testGetOHHuksResult0200 result====${result}`);
           expect(result).assertEqual(0);
@@ -80,6 +83,7 @@ export default function OHHuksStructTest() {
       async (done: Function) => {
         try {
           console.info("====>testGetOHHuksParamSet0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.GetOHHuksParamSet0100();
           console.info(`====>testGetOHHuksParamSet0100 result====${result}`);
           expect(result).assertEqual(0);
@@ -103,6 +107,7 @@ export default function OHHuksStructTest() {
       async (done: Function) => {
         try {
           console.info("====>testGetOHHuksParamSet0200 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.GetOHHuksParamSet0200();
           console.info(`====>testGetOHHuksParamSet0200 result====${result}`);
           expect(result).assertEqual(0);
@@ -126,6 +131,7 @@ export default function OHHuksStructTest() {
       async (done: Function) => {
         try {
           console.info("====>testGetOHHuksParam0100 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.GetOHHuksParam0100();
           console.info(`====>testGetOHHuksParam0100 result====${result}`);
           expect(result).assertEqual(0);
@@ -149,6 +155,7 @@ export default function OHHuksStructTest() {
       async (done: Function) => {
         try {
           console.info("====>testGetOHHuksParam0200 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.GetOHHuksParam0200();
           console.info(`====>testGetOHHuksParam0200 result====${result}`);
           expect(result).assertEqual(0);
@@ -172,6 +179,7 @@ export default function OHHuksStructTest() {
       async (done: Function) => {
         try {
           console.info("====>testGetOHHuksParam0300 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.GetOHHuksParam0300();
           console.info(`====>testGetOHHuksParam0300 result====${result}`);
           expect(result).assertEqual(0);
@@ -195,6 +203,7 @@ export default function OHHuksStructTest() {
       async (done: Function) => {
         try {
           console.info("====>testGetOHHuksParam0400 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.GetOHHuksParam0400();
           console.info(`====>testGetOHHuksParam0400 result====${result}`);
           expect(result).assertEqual(0);
@@ -218,6 +227,7 @@ export default function OHHuksStructTest() {
       async (done: Function) => {
         try {
           console.info("====>testGetOHHuksParam0500 start====");
+          await YieldToEventLoop();
           let result: number = huksndk.GetOHHuksParam0500();
           console.info(`====>testGetOHHuksParam0500 result====${result}`);
           expect(result).assertEqual(0);

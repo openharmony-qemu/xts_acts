@@ -15,8 +15,7 @@
 import { beforeAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { huks } from '@kit.UniversalKeystoreKit';
 import { CheckSoftware } from './utils/huks/HuksOptionsUtils';
-import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils';
-import { GetWrapKeyOptions } from './utils/huks/WrapKeyUtils';
+import { GetWrapKeyGenerateOptions, GetWrapKeyOptions } from './utils/huks/WrapKeyUtils';
 import { Logger } from './utils/common/Logger';
 
 
@@ -38,17 +37,32 @@ export default function SecurityHuksWrapKeyTest() {
      */
     it('SUB_Security_HUKS_KeyGenerate_WrapKey_API20_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_WrapKey_API20_Func_0100";
+      let genKeyOptions: huks.HuksOptions = GetWrapKeyGenerateOptions();
       let wrapKeyOptions: huks.HuksOptions = GetWrapKeyOptions();
+      let keyGenerated: boolean = false;
+      const cleanupKey: () => Promise<void> = async () => {
+        if (keyGenerated) {
+          try {
+            await huks.deleteKeyItem(testNumber, genKeyOptions);
+            keyGenerated = false;
+          } catch (err) {
+            Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+            expect(null).assertFail();
+          }
+        }
+      };
       try {
-        await huks.wrapKeyItem(testNumber, wrapKeyOptions);
-        expect(null).assertFail();
+        await huks.generateKeyItem(testNumber, genKeyOptions);
+        keyGenerated = true;
+        let wrapResult: huks.HuksReturnResult = await huks.wrapKeyItem(testNumber, wrapKeyOptions);
+        expect(useSoftware).assertEqual(false);
+        expect(wrapResult.outData?.length).assertLarger(0);
+        await cleanupKey();
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
-        if (useSoftware || err.code == 801) {
-          expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_NOT_SUPPORTED_API);
-        } else {
-          expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INSUFFICIENT_MEMORY);
-        }
+        expect(useSoftware).assertEqual(true);
+        expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_NOT_SUPPORTED_API);
+        await cleanupKey();
       }
     })
 
@@ -62,17 +76,34 @@ export default function SecurityHuksWrapKeyTest() {
      */
     it('SUB_Security_HUKS_KeyGenerate_UnwrapKey_API20_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_UnwrapKey_API20_Func_0100";
+      let genKeyOptions: huks.HuksOptions = GetWrapKeyGenerateOptions();
       let wrapKeyOptions: huks.HuksOptions = GetWrapKeyOptions();
+      let keyGenerated: boolean = false;
+      const cleanupKey: () => Promise<void> = async () => {
+        if (keyGenerated) {
+          try {
+            await huks.deleteKeyItem(testNumber, genKeyOptions);
+            keyGenerated = false;
+          } catch (err) {
+            Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+            expect(null).assertFail();
+          }
+        }
+      };
       try {
-        await huks.unwrapKeyItem(testNumber, wrapKeyOptions, StringToUint8Array(GetDataBySize(64)));
-        expect(null).assertFail();
+        await huks.generateKeyItem(testNumber, genKeyOptions);
+        keyGenerated = true;
+        let wrapResult: huks.HuksReturnResult = await huks.wrapKeyItem(testNumber, wrapKeyOptions);
+        let wrappedKey: Uint8Array = wrapResult.outData as Uint8Array;
+        await huks.deleteKeyItem(testNumber, genKeyOptions);
+        await huks.unwrapKeyItem(testNumber, wrapKeyOptions, wrappedKey);
+        expect(useSoftware).assertEqual(false);
+        await cleanupKey();
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
-        if (useSoftware || err.code == 801) {
-          expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_NOT_SUPPORTED_API);
-        } else {
-          expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INSUFFICIENT_MEMORY);
-        }
+        expect(useSoftware).assertEqual(true);
+        expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_NOT_SUPPORTED_API);
+        await cleanupKey();
       }
     })
   })

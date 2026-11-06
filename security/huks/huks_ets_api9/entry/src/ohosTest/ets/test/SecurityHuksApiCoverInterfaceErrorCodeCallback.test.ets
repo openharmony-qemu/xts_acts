@@ -841,7 +841,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCodeCallback() {
       importWrappedKeyOption.inData = wrappedKeyData;
       MergeOptions(importWrappedKeyOption, GetWrapKeyOptions());
       await huksCallback.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
-      expect(true).assertTrue();
+      expect(await huksCallback.hasKeyItem(testNumber, importWrappedKeyOption)).assertTrue();
     })
 
     /**

@@ -60,10 +60,9 @@ namespace HuksApiTest {
         uint32_t certDataSize;
     };
     const uint32_t CERT_COUNT = 4;
-    const uint32_t INVALID_Param = 0xFFFFFFFF;
+    const uint32_t INVALID_ALG_VALUE = 0xFFFFFFFF;
     const uint32_t COMMON_SIZE = 2048;
-    const uint32_t g_size = 4096;
-    const uint32_t g_size1 = 65536;
+    const uint32_t HUGE_KEY_SIZE = 65536;
     napi_value GetSdkVersionTest_001(napi_env env, napi_callback_info info);
     napi_value GenerateKeyItemTest_001(napi_env env, napi_callback_info info);
     napi_value GenerateKeyItemTest_002(napi_env env, napi_callback_info info);

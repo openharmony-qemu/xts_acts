@@ -296,7 +296,6 @@ napi_value KeyPaddingTest_005(napi_env env, napi_callback_info info)
     // OH_HUKS_PADDING_ISO_IEC_9797_1
     const char *alias = "test_generate_invalid_param";
     struct OH_Huks_Blob aliasBlob = { .size = (uint32_t)strlen(alias), .data = (uint8_t *)alias };
-    uint8_t IV[IV_SIZE] = { 0 };
     struct OH_Huks_Param testParams[] = {
         {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_HMAC},
         {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_512},
@@ -1524,7 +1523,7 @@ napi_value ErrCodeTest_001(napi_env env, napi_callback_info info)
     }
     struct OH_Huks_Param hugeParam = {
         .tag = OH_HUKS_TAG_KEY_SIZE,
-        .uint32Param = g_size1
+        .uint32Param = HUGE_KEY_SIZE
     };
     ohResult = OH_Huks_AddParams(paramSet, &hugeParam, 1);
     if (ohResult.errorCode != OH_HUKS_SUCCESS) {
@@ -1566,7 +1565,7 @@ napi_value ErrCodeTest_002(napi_env env, napi_callback_info info)
     struct OH_Huks_Param invalidParams[] = {
         {
             .tag = OH_HUKS_TAG_ALGORITHM,
-            .uint32Param = INVALID_Param
+            .uint32Param = INVALID_ALG_VALUE
         },
         {
             .tag = OH_HUKS_TAG_PURPOSE,

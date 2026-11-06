@@ -153,7 +153,7 @@ napi_value GenerateKeyItemTest_004(napi_env env, napi_callback_info info)
     }
     struct OH_Huks_Param hugeParam = {
         .tag = OH_HUKS_TAG_KEY_SIZE,
-        .uint32Param = g_size1
+        .uint32Param = HUGE_KEY_SIZE
     };
     ohResult = OH_Huks_AddParams(paramSet, &hugeParam, 1);
     if (ohResult.errorCode != OH_HUKS_SUCCESS) {
@@ -281,7 +281,7 @@ napi_value ImportKeyItemTest_003(napi_env env, napi_callback_info info)
     struct OH_Huks_Param invalidParams[] = {
         {
             .tag = OH_HUKS_TAG_ALGORITHM,
-            .uint32Param = INVALID_Param
+            .uint32Param = INVALID_ALG_VALUE
         },
         {
             .tag = OH_HUKS_TAG_PURPOSE,
@@ -370,7 +370,7 @@ napi_value ImportWrappedKeyItemTest_001(napi_env env, napi_callback_info info)
 void *HksMalloc(size_t size)
 {
     if (size == 0 || size > SIZE_MAX) {
-        return NULL;
+        return nullptr;
     }
     return malloc(size);
 }

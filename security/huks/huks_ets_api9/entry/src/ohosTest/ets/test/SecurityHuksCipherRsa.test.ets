@@ -1225,7 +1225,7 @@ function SecurityHuksCipherRSATest() {
         expect(null).assertFail();
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
-        if (err.code != 801 && err.code != 12000001) {
+        if (err.code !== 801 && err.code !== 12000001) {
           expect(err.code).assertEqual(12000003);
         }
       }
