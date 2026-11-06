@@ -47,7 +47,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_0100
      * @tc.name testSparseArrayFind001
      * @tc.desc Test SparseArray.find, verify method result (length equals 5, found equals 3)
      * @tc.size MediumTest
@@ -64,7 +64,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_0200
      * @tc.name testSparseArrayFind002
      * @tc.desc Test SparseArray.find, verify method result (found equals 3)
      * @tc.size MediumTest
@@ -85,7 +85,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_0300
      * @tc.name testSparseArrayFind003
      * @tc.desc Test SparseArray.find, verify method result (found equals 3)
      * @tc.size MediumTest
@@ -101,7 +101,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_0400
      * @tc.name testSparseArrayFind004
      * @tc.desc Test SparseArray.find, verify method result (found equals 1)
      * @tc.size MediumTest
@@ -117,7 +117,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_0500
      * @tc.name testSparseArrayFind005
      * @tc.desc Test SparseArray.find, verify method result (found equals undefined)
      * @tc.size MediumTest
@@ -133,7 +133,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_0600
      * @tc.name testSparseArrayFind006
      * @tc.desc Test SparseArray.find error path, verify expected exception is thrown (assertFail is triggered, error.name equals "Error")
      * @tc.size MediumTest
@@ -155,7 +155,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_0700
      * @tc.name testSparseArrayFind007
      * @tc.desc Test SparseArray.find, verify method result (found equals undefined)
      * @tc.size MediumTest
@@ -170,7 +170,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_0800
      * @tc.name testSparseArrayFind008
      * @tc.desc Test SparseArray.find, verify method result (found equals 0)
      * @tc.size MediumTest
@@ -186,7 +186,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_0900
      * @tc.name testSparseArrayFind009
      * @tc.desc Test SparseArray.find, verify method result (found equals undefined)
      * @tc.size MediumTest
@@ -202,7 +202,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_1000
      * @tc.name testSparseArrayFind010
      * @tc.desc Test SparseArray.find, verify method result (found equals 3, found equals undefined)
      * @tc.size MediumTest
@@ -220,7 +220,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_1100
      * @tc.name testSparseArrayFind011
      * @tc.desc Test SparseArray.find, verify method result (found equals 5)
      * @tc.size MediumTest
@@ -236,7 +236,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_1200
      * @tc.name testSparseArrayFind012
      * @tc.desc Test SparseArray.find, verify method result (found equals 500)
      * @tc.size MediumTest
@@ -254,7 +254,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_1300
      * @tc.name testSparseArrayFind013
      * @tc.desc Test SparseArray.find, verify method result (found equals 3)
      * @tc.size MediumTest
@@ -270,7 +270,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_1400
      * @tc.name testSparseArrayFind014
      * @tc.desc Test SparseArray.find error path, verify expected exception is thrown (assertFail is triggered, error.name equals "Error")
      * @tc.size MediumTest
@@ -291,7 +291,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_1500
      * @tc.name testSparseArrayFind015
      * @tc.desc Test SparseArray.find error path, verify expected exception is thrown (assertFail is triggered, error.name equals "CustomFindError016")
      * @tc.size MediumTest
@@ -313,7 +313,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_1600
      * @tc.name testSparseArrayFind016
      * @tc.desc Test SparseArray.find, verify method result (found equals 3, length keeps 9)
      * @tc.size MediumTest
@@ -330,7 +330,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_1700
      * @tc.name testSparseArrayFind017
      * @tc.desc Test SparseArray.find, verify method result (found equals "banana")
      * @tc.size MediumTest
@@ -346,7 +346,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_1800
      * @tc.name testSparseArrayFind018
      * @tc.desc Test SparseArray.find, verify method result (found equals true)
      * @tc.size MediumTest
@@ -362,7 +362,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_1900
      * @tc.name testSparseArrayFind019
      * @tc.desc Test SparseArray.find, verify method result (found equals c'C')
      * @tc.size MediumTest
@@ -380,7 +380,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_2000
      * @tc.name testSparseArrayFind020
      * @tc.desc Test SparseArray.find, verify method result (found name equals "Charlie", age equals 35)
      * @tc.size MediumTest
@@ -399,7 +399,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_2100
      * @tc.name testSparseArrayFind021
      * @tc.desc Test SparseArray.find, verify method result (found equals "hello")
      * @tc.size MediumTest
@@ -415,7 +415,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_2200
      * @tc.name testSparseArrayFind022
      * @tc.desc Test SparseArray.find, verify method result (found equals 5)
      * @tc.size MediumTest
@@ -431,7 +431,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_2300
      * @tc.name testSparseArrayFind023
      * @tc.desc Test SparseArray.find, verify method result (found equals 3)
      * @tc.size MediumTest
@@ -450,7 +450,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_2400
      * @tc.name testSparseArrayFind024
      * @tc.desc Test SparseArray.find, verify method result (found equals 3)
      * @tc.size MediumTest
@@ -466,7 +466,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_2500
      * @tc.name testSparseArrayFind025
      * @tc.desc Sparse find v>20 returns 30 and callback invoked at most 3 times on sparse array
      * @tc.size MediumTest
@@ -489,7 +489,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_2600
      * @tc.name testSparseArrayFind026
      * @tc.desc Test SparseArray.find, verify method result (calledIndices.length equals 3, calledIndices[0] equals 0)
      * @tc.size MediumTest
@@ -514,7 +514,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_2700
      * @tc.name testSparseArrayFind027
      * @tc.desc Test SparseArray.find, verify method result (found equals undefined)
      * @tc.size MediumTest
@@ -529,7 +529,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_2800
      * @tc.name testSparseArrayFind028
      * @tc.desc Test SparseArray.find, verify method result (found equals 9999)
      * @tc.size MediumTest
@@ -549,7 +549,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_2900
      * @tc.name testSparseArrayFind029
      * @tc.desc Test SparseArray.find, verify method result (found equals 5000)
      * @tc.size MediumTest
@@ -567,7 +567,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_3000
      * @tc.name testSparseArrayFind030
      * @tc.desc Test SparseArray.find, verify method result (found equals 3, callCount equals 3)
      * @tc.size MediumTest
@@ -588,7 +588,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_3100
      * @tc.name testSparseArrayFind031
      * @tc.desc Test SparseArray.find, verify method result (found !== null && found !== undefined is true)
      * @tc.size MediumTest
@@ -612,7 +612,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_3200
      * @tc.name testSparseArrayFind032
      * @tc.desc find long element matching large business threshold
      * @tc.size MediumTest
@@ -627,7 +627,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_3300
      * @tc.name testSparseArrayFind033
      * @tc.desc find short element matching threshold in SparseArray<short>
      * @tc.size MediumTest
@@ -641,7 +641,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_3400
      * @tc.name testSparseArrayFind034
      * @tc.desc find locates null element in SparseArray<int|null>
      * @tc.size MediumTest
@@ -655,7 +655,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_3500
      * @tc.name testSparseArrayFind035
      * @tc.desc find locates XSS script string element
      * @tc.size MediumTest
@@ -670,7 +670,7 @@ export default function SparseArrayFindTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_3600
      * @tc.name testSparseArrayFind036
      * @tc.desc find locates binary literal element 0b111 in SparseArray<int>
      * @tc.size MediumTest

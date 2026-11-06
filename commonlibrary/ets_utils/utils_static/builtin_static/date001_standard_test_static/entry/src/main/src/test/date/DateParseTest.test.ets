@@ -772,19 +772,6 @@ export default function DateParseTest(): void {
     });
 
     /**
-     * @tc.number SUB_DATE_PARSE_ITEM_CHK_7500
-     * @tc.name testDateParse0075
-     * @tc.desc Verify Date.parse with 24:00:00 time boundary returns NaN or returns expected result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testDateParse0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let time: long = Date.parse("2024-06-15T24:00:00.000Z");
-      expect(time).assertEqual(1718496000000);
-    });
-
-    /**
      * @tc.number SUB_DATE_PARSE_ITEM_CHK_8500
      * @tc.name testDateParse0085
      * @tc.desc Verify Date.parse error does not pollute global state

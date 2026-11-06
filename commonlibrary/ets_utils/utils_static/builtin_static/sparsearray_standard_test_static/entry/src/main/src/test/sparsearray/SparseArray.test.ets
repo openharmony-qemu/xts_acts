@@ -38,7 +38,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_0100
      * @tc.name testSparseArrayPush
      * @tc.desc Verify push method adds elements to SparseArray
      * @tc.size MediumTest
@@ -56,7 +56,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_0200
      * @tc.name testSparseArrayForEach
      * @tc.desc Verify forEach method iterates through SparseArray elements
      * @tc.size MediumTest
@@ -76,7 +76,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_0300
      * @tc.name testSparseArrayToString
      * @tc.desc Verify toString method converts SparseArray to string representation
      * @tc.size MediumTest
@@ -92,7 +92,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_0400
      * @tc.name testSparseArrayFind
      * @tc.desc Verify find method returns first element matching predicate
      * @tc.size MediumTest
@@ -108,7 +108,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_0500
      * @tc.name testSparseArraySplice
      * @tc.desc Verify splice method removes and adds elements
      * @tc.size MediumTest
@@ -128,7 +128,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_0600
      * @tc.name testSparseArrayFindIndex
      * @tc.desc Verify findIndex method returns index of first matching element
      * @tc.size MediumTest
@@ -144,7 +144,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_0700
      * @tc.name testSparseArrayFilter
      * @tc.desc Verify filter method returns elements matching predicate
      * @tc.size MediumTest
@@ -160,7 +160,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_0800
      * @tc.name testSparseArrayIncludes
      * @tc.desc Verify includes method checks if element exists
      * @tc.size MediumTest
@@ -176,7 +176,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_0900
      * @tc.name testSparseArrayIndexOf
      * @tc.desc Verify indexOf method returns index of element
      * @tc.size MediumTest
@@ -192,7 +192,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_1000
      * @tc.name testSparseArrayIsSparseArray
      * @tc.desc Verify isArray method checks if value is SparseArray
      * @tc.size MediumTest
@@ -207,7 +207,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_1100
      * @tc.name testSparseArrayJoin
      * @tc.desc Verify join method concatenates array elements
      * @tc.size MediumTest
@@ -224,7 +224,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_1200
      * @tc.name testSparseArraySlice
      * @tc.desc Verify slice method extracts section of SparseArray
      * @tc.size MediumTest
@@ -240,7 +240,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_1300
      * @tc.name testSparseArrayLengthSetter
      * @tc.desc Verify length setter truncates SparseArray
      * @tc.size MediumTest
@@ -257,7 +257,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_1400
      * @tc.name testSparseArrayFrom
      * @tc.desc Verify from method creates SparseArray from iterable
      * @tc.size MediumTest
@@ -274,7 +274,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_1500
      * @tc.name testSparseArrayFindLastAndIndex
      * @tc.desc Verify findLast and findLastIndex methods
      * @tc.size MediumTest
@@ -293,7 +293,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_1600
      * @tc.name testSparseArraySort
      * @tc.desc Verify sort method sorts SparseArray elements
      * @tc.size MediumTest
@@ -311,7 +311,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_1700
      * @tc.name testSparseArrayCopyWithin
      * @tc.desc Verify copyWithin method copies elements within SparseArray
      * @tc.size MediumTest
@@ -326,7 +326,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_1800
      * @tc.name testSparseArrayConcat
      * @tc.desc Verify concat method merges SparseArrays
      * @tc.size MediumTest
@@ -342,7 +342,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_1900
      * @tc.name testSparseArrayFlat
      * @tc.desc Verify flat method flattens nested SparseArray
      * @tc.size MediumTest
@@ -359,7 +359,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_2000
      * @tc.name testSparseArrayFlatMap
      * @tc.desc Verify flatMap method maps and flattens SparseArray
      * @tc.size MediumTest
@@ -377,7 +377,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_2100
      * @tc.name testSparseArraySome
      * @tc.desc Verify some method checks if any element matches predicate
      * @tc.size MediumTest
@@ -391,7 +391,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_2200
      * @tc.name testSparseArrayMap
      * @tc.desc Verify map method transforms SparseArray elements
      * @tc.size MediumTest
@@ -406,7 +406,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_2300
      * @tc.name testSparseArrayPopAndShift
      * @tc.desc Verify pop and shift methods remove elements
      * @tc.size MediumTest
@@ -423,7 +423,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_2400
      * @tc.name testSparseArrayFill
      * @tc.desc Verify fill method fills SparseArray with value
      * @tc.size MediumTest
@@ -438,7 +438,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_2500
      * @tc.name testSparseArrayUnshift
      * @tc.desc Verify unshift method adds elements to front
      * @tc.size MediumTest
@@ -454,7 +454,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_2600
      * @tc.name testSparseArrayReverse
      * @tc.desc Verify reverse method reverses SparseArray
      * @tc.size MediumTest
@@ -469,7 +469,7 @@ export default function SparseArrayTest(): void {
     });
     
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_2700
      * @tc.name testSparseArrayToReversed
      * @tc.desc Verify toReversed method returns reversed copy
      * @tc.size MediumTest
@@ -484,7 +484,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_2800
      * @tc.name testSparseArrayLastIndexOf
      * @tc.desc Verify lastIndexOf method returns last index of element
      * @tc.size MediumTest
@@ -498,7 +498,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_2900
      * @tc.name testSparseArrayReduce
      * @tc.desc Verify reduce and reduceRight methods
      * @tc.size MediumTest
@@ -514,7 +514,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_3000
      * @tc.name testSparseArrayEvery
      * @tc.desc Verify every method checks if all elements match predicate
      * @tc.size MediumTest
@@ -528,7 +528,7 @@ export default function SparseArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_3100
      * @tc.name testSparseArrayOf
      * @tc.desc Verify of method creates SparseArray from arguments
      * @tc.size MediumTest
@@ -542,7 +542,7 @@ export default function SparseArrayTest(): void {
     });
     
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SparseArray_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TEST_3200
      * @tc.name testSparseArrayIterators
      * @tc.desc Verify keys, values, and entries iterator methods
      * @tc.size MediumTest

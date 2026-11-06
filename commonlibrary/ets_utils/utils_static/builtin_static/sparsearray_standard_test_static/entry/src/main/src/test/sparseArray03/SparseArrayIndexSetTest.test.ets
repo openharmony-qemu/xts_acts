@@ -41,7 +41,7 @@ export default function sparseArrayIndexSetTest(): void {
 
     afterAll((): void => {});
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSEARRAY_INDEXSET_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_INDEX_SET_0100
      * @tc.name sparseArrayIndexSetTest001
      * @tc.desc index-set grows length & iterator interaction (10 scenarios)
      * @tc.size MediumTest
@@ -144,7 +144,7 @@ export default function sparseArrayIndexSetTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSEARRAY_INDEXSET_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_INDEX_SET_0200
      * @tc.name sparseArrayIndexSetTest002
      * @tc.desc index-set beyond length (holes) & string results (7 scenarios)
      * @tc.size MediumTest
@@ -204,7 +204,7 @@ export default function sparseArrayIndexSetTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSEARRAY_INDEXSET_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_INDEX_SET_0300
      * @tc.name sparseArrayIndexSetTest003
      * @tc.desc negative index ignored & typed elements (4 scenarios)
      * @tc.size MediumTest

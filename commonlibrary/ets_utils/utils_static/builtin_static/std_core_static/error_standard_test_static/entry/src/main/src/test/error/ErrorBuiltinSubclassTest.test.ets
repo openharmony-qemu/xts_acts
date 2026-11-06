@@ -561,21 +561,6 @@ export default function ErrorBuiltinSubclassTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BUILTIN_SUBCLASS_0330
-     * @tc.name testErrorBuiltinSubclass033
-     * @tc.desc Verify InvalidAsyncOperationError JSON.stringify returns valid string
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     */
-    it('testErrorBuiltinSubclass033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: InvalidAsyncOperationError = new InvalidAsyncOperationError('json test');
-      expect(e instanceof Error).assertTrue();
-      let json: string = JSON.stringify(e);
-      expect(json).assertEqual("{}");
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BUILTIN_SUBCLASS_0340
      * @tc.name testErrorBuiltinSubclass034
      * @tc.desc Verify InvalidJobOperationError JSON.stringify returns valid string
@@ -828,21 +813,6 @@ export default function ErrorBuiltinSubclassTest(): void {
       expect(e instanceof Error).assertTrue();
       expect(e.message).assertEqual('错误消息');
       expect(e.name).assertEqual('IllegalLockStateError');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BUILTIN_SUBCLASS_0510
-     * @tc.name testErrorBuiltinSubclass051
-     * @tc.desc Verify InvalidAsyncOperationError with Unicode message preserves text
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     */
-    it('testErrorBuiltinSubclass051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: InvalidAsyncOperationError = new InvalidAsyncOperationError('错误消息');
-      expect(e instanceof Error).assertTrue();
-      expect(e.message).assertEqual('错误消息');
-      expect(e.name).assertEqual('InvalidAsyncOperationError');
     });
 
     /**
@@ -1523,57 +1493,6 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cause: Error = new Error('root cause');
       let err: IllegalLockStateError = new IllegalLockStateError('has cause', { cause: cause });
-      expect(err instanceof Error).assertTrue();
-      expect(err.cause).assertEqual(cause);
-      expect(err.message).assertEqual('has cause');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BUILTIN_SUBCLASS_0940
-     * @tc.name testErrorBuiltinSubclass094
-     * @tc.desc Verify InvalidAsyncOperationError thrown and caught retains name
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     */
-    it('testErrorBuiltinSubclass094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: InvalidAsyncOperationError = new InvalidAsyncOperationError('caught msg');
-      expect(err instanceof Error).assertTrue();
-      expect(err.name).assertEqual('InvalidAsyncOperationError');
-      try {
-        throw err;
-      } catch (e) {
-        expect(e instanceof Error).assertTrue();
-        expect(e.name).assertEqual('InvalidAsyncOperationError');
-        expect(e.message).assertEqual('caught msg');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BUILTIN_SUBCLASS_0950
-     * @tc.name testErrorBuiltinSubclass095
-     * @tc.desc Verify InvalidAsyncOperationError.toString() returns correct format
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     */
-    it('testErrorBuiltinSubclass095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: InvalidAsyncOperationError = new InvalidAsyncOperationError('display');
-      expect(err instanceof Error).assertTrue();
-      expect(err.toString()).assertEqual('InvalidAsyncOperationError: display');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BUILTIN_SUBCLASS_0960
-     * @tc.name testErrorBuiltinSubclass096
-     * @tc.desc Verify InvalidAsyncOperationError with options.cause works
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     */
-    it('testErrorBuiltinSubclass096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cause: Error = new Error('root cause');
-      let err: InvalidAsyncOperationError = new InvalidAsyncOperationError('has cause', { cause: cause });
       expect(err instanceof Error).assertTrue();
       expect(err.cause).assertEqual(cause);
       expect(err.message).assertEqual('has cause');

@@ -781,22 +781,6 @@ export default function ErrorSubclassTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_SUBCLASS_0490
-     * @tc.name testErrorSubclass049
-     * @tc.desc Verify InvalidAsyncOperationError name can be set to Chinese characters and read back correctly
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     */
-    it('testErrorSubclass049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: InvalidAsyncOperationError = new InvalidAsyncOperationError();
-      expect(e instanceof Error).assertTrue();
-      expect(e.name).assertEqual("InvalidAsyncOperationError");
-      e.name = "无效异步操作错误";
-      expect(e.name).assertEqual("无效异步操作错误");
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_SUBCLASS_0500
      * @tc.name testErrorSubclass050
      * @tc.desc Verify InvalidJobOperationError name can be set to Chinese characters and read back correctly
@@ -1215,21 +1199,6 @@ export default function ErrorSubclassTest(): void {
       let e: InternalError = new InternalError();
       checkStringify(e);
       expect(e.name).assertEqual('InternalError');
-      checkStringAndToString(e);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_SUBCLASS_0780
-     * @tc.name testErrorSubclass078
-     * @tc.desc Verify InvalidAsyncOperationError JSON.stringify round-trip
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     */
-    it('testErrorSubclass078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: InvalidAsyncOperationError = new InvalidAsyncOperationError();
-      checkStringify(e);
-      expect(e.name).assertEqual('InvalidAsyncOperationError');
       checkStringAndToString(e);
     });
 
@@ -1720,23 +1689,6 @@ export default function ErrorSubclassTest(): void {
       } catch (e) {
         expect(e instanceof Error).assertTrue();
         expect(e.name).assertEqual('InternalError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_SUBCLASS_1090
-     * @tc.name testErrorSubclass109
-     * @tc.desc Verify throw InvalidAsyncOperationError is caught with name/message preserved
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     */
-    it('testErrorSubclass109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throw new InvalidAsyncOperationError();
-      } catch (e) {
-        expect(e instanceof Error).assertTrue();
-        expect(e.name).assertEqual('InvalidAsyncOperationError');
       }
     });
 

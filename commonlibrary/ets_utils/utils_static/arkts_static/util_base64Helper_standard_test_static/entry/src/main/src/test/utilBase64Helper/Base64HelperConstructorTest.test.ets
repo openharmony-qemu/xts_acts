@@ -26,12 +26,10 @@ import {
   Level,
   Size,
   TestType,
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import util from "@ohos.util";
 import Utils from '../utilcommon.test';
 import { Decimal } from '@kit.ArkTS';
-
-import { AnyType } from "../../../../hypium/module/types/common";
 
 function createCodec(): util.Base64Helper {
   let b64 = new util.Base64Helper();

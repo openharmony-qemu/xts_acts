@@ -50,7 +50,7 @@ export default function sparseArrayOverviewTest(): void {
     afterAll((): void => {});
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSEARRAY_OVERVIEW_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_OVERVIEW_0100
      * @tc.name sparseArrayOverviewTest001
      * @tc.desc iteration, iterator & search query APIs (10 scenarios)
      * @tc.size MediumTest
@@ -102,7 +102,7 @@ export default function sparseArrayOverviewTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSEARRAY_OVERVIEW_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_OVERVIEW_0200
      * @tc.name sparseArrayOverviewTest002
      * @tc.desc search, callback & array mutation APIs (10 scenarios)
      * @tc.size MediumTest
