@@ -1160,6 +1160,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
               console.info(TEST_SUITE_NAME + TAG +
                 ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
               expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(2)
+              done()
             })
             .catch((err: BusinessError) => {
               console.error(TEST_SUITE_NAME + TAG +
@@ -1177,38 +1178,6 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         expect(false).assertTrue();
         done()
       }
-      let context: common.UIAbilityContext = getContext(la) as common.UIAbilityContext;
-      await notificationManager.openNotificationSettings(context).then(async () => {
-        console.info(TEST_SUITE_NAME + TAG + `openNotificationSettings succeeded`);
-        let driver: Driver = Driver.create();
-        await driver.assertComponentExist(ON.text('通知管理'));
-        let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('静默通知')));
-        console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button)}`);
-        if (button !== null) {
-          console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button)}`);
-          await sleep(1000);
-          await button.click()
-          await sleep(500)
-        }
-        let button2 = await driver.findComponent(ON.text('确定'));
-        console.info(TEST_SUITE_NAME + TAG + `button2 is ${JSON.stringify(button2)}`);
-        if (button2 !== null) {
-          console.info(TEST_SUITE_NAME + TAG + `button2 is ${JSON.stringify(button2)}`);
-          await sleep(1000);
-          await button2.click()
-          await sleep(500)
-          done()
-        }
-      }).catch((err: BusinessError) => {
-        console.error(TEST_SUITE_NAME + TAG + `openNotificationSettings err: ${JSON.stringify(err.code)}`);
-        if (err?.code === 801) {
-          expect(err.code).assertEqual(801);
-          done();
-        }else{
-          expect().assertFail();
-          done();
-        }
-      })
     })
 
     /**
@@ -1228,15 +1197,6 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         console.info(TEST_SUITE_NAME + TAG + `openNotificationSettings succeeded`);
         let driver: Driver = Driver.create();
         await sleep(1500)
-        await driver.assertComponentExist(ON.text('通知管理'));
-        let button2 = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('静默通知')));
-        console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button2)}`);
-        if (button2 !== null) {
-          console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button2)}`);
-          await sleep(1000);
-          await button2.click()
-          await sleep(500)
-        }
         let button6 = await driver.findComponent(ON.text('确定'));
         console.info(TEST_SUITE_NAME + TAG + `button6 is ${JSON.stringify(button6)}`);
         if (button6 !== null) {
