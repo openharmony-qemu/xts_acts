@@ -52,6 +52,7 @@
 #include "node/SetUiDvsyncSwitchTest.cpp"
 #include "nativeModule/RuntimeCheckModeTest.cpp"
 #include "node/UIAgentGetPageTextTest.cpp"
+#include "node/UIAgentGetTreeJsonTest.cpp"
 #include "node/GetImagesByNodeIdAsyncTest.cpp"
 #include "node/ContentChangeEventTest.cpp"
 #include "image/ImageAnimatorInterpolationTest.cpp"
@@ -327,6 +328,24 @@ static napi_value Init(napi_env env, napi_value exports)
         {"UIAgentGetPageTextTest003", nullptr, UIAgentGetPageTextTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UIAgentGetPageTextTest004", nullptr, UIAgentGetPageTextTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UIAgentGetPageTextTest005", nullptr, UIAgentGetPageTextTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"UIAgentGetTreeJsonAsyncTest001", nullptr, UIAgentGetTreeJsonAsyncTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonAsyncTest002", nullptr, UIAgentGetTreeJsonAsyncTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonAsyncTest003", nullptr, UIAgentGetTreeJsonAsyncTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonAsyncTest004", nullptr, UIAgentGetTreeJsonAsyncTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonAsyncTest005", nullptr, UIAgentGetTreeJsonAsyncTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonAsyncTest006", nullptr, UIAgentGetTreeJsonAsyncTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonAsyncTest007", nullptr, UIAgentGetTreeJsonAsyncTest007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonAsyncTest008", nullptr, UIAgentGetTreeJsonAsyncTest008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonAsyncCallbackResult", nullptr, UIAgentGetTreeJsonAsyncCallbackResult, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"UIAgentGetTreeJsonTest001", nullptr, UIAgentGetTreeJsonTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonTest002", nullptr, UIAgentGetTreeJsonTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonTest003", nullptr, UIAgentGetTreeJsonTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonTest004", nullptr, UIAgentGetTreeJsonTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonTest005", nullptr, UIAgentGetTreeJsonTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonTest006", nullptr, UIAgentGetTreeJsonTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonTest007", nullptr, UIAgentGetTreeJsonTest007, nullptr, nullptr, nullptr, napi_default, nullptr},
 
         {"GetImagesByNodeIdAsyncTest001", nullptr, GetImagesByNodeIdAsyncTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetImagesByNodeIdAsyncTest002", nullptr, GetImagesByNodeIdAsyncTest002, nullptr, nullptr, nullptr, napi_default, nullptr},

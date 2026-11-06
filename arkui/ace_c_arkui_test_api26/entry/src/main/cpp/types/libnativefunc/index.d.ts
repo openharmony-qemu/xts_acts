@@ -236,6 +236,24 @@ export const UIAgentGetPageTextTest003: () => number;
 export const UIAgentGetPageTextTest004: () => number;
 export const UIAgentGetPageTextTest005: () => number;
 
+export const UIAgentGetTreeJsonAsyncTest001: () => number;
+export const UIAgentGetTreeJsonAsyncTest002: () => number;
+export const UIAgentGetTreeJsonAsyncTest003: () => number;
+export const UIAgentGetTreeJsonAsyncTest004: () => number;
+export const UIAgentGetTreeJsonAsyncTest005: () => number;
+export const UIAgentGetTreeJsonAsyncTest006: () => number;
+export const UIAgentGetTreeJsonAsyncTest007: () => number;
+export const UIAgentGetTreeJsonAsyncTest008: () => number;
+export const UIAgentGetTreeJsonAsyncCallbackResult: () => number;
+
+export const UIAgentGetTreeJsonTest001: () => number;
+export const UIAgentGetTreeJsonTest002: () => number;
+export const UIAgentGetTreeJsonTest003: () => number;
+export const UIAgentGetTreeJsonTest004: () => number;
+export const UIAgentGetTreeJsonTest005: () => number;
+export const UIAgentGetTreeJsonTest006: () => number;
+export const UIAgentGetTreeJsonTest007: () => number;
+
 export const GetImagesByNodeIdAsyncTest001: () => number;
 export const GetImagesByNodeIdAsyncTest002: () => number;
 export const GetImagesByNodeIdAsyncTest003: () => number;
