@@ -1648,3 +1648,411 @@ export default function ExecutePeriodicallyTaskTest(): void {
       let receivedCount: number = 0
       let receivedValue: string = ''
       let data: string[] = ['a', 'b', 'c']
+      let task: taskpool.Task = new taskpool.Task(epStrArrFuncSendData, data)
+      periodicTasks.push(task)
+      task.onReceiveData((value: string): void => {
+        receivedCount++
+        receivedValue = value
+      })
+      taskpool.executePeriodically(200, task)
+      const condReceivedCount2: () => boolean = (): boolean => receivedCount >= 2
+      try {
+        await waitForCondition(condReceivedCount2, 5000)
+      } catch (error) {
+        console.error('ExecutePeriodicallyTaskTest5400 failed');
+        expect(false).assertFail();
+      }
+      expect(receivedCount >= 2).assertTrue()
+      expect(receivedValue).assertEqual('a|b|c')
+      done()
+    })
+
+    /**
+     * @tc.name   ExecutePeriodicallyTaskTest5500
+     * @tc.number SUB_EXECUTE_PERIODICALLY_TASK_TEST_5500
+     * @tc.desc   Verify periodic task with plain object {timestamp} serialized argument passes the object field correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecutePeriodicallyTaskTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let receivedCount: number = 0
+      let receivedTimestamp: number = 0
+      let msg: EPTimestampMsg = { timestamp: 123 }
+      let task: taskpool.Task = new taskpool.Task(epObjFuncSendData, msg)
+      periodicTasks.push(task)
+      task.onReceiveData((value: number): void => {
+        receivedCount++
+        receivedTimestamp = value
+      })
+      taskpool.executePeriodically(200, task)
+      const condReceivedCount2: () => boolean = (): boolean => receivedCount >= 2
+      try {
+        await waitForCondition(condReceivedCount2, 5000)
+      } catch (error) {
+        console.error('ExecutePeriodicallyTaskTest5500 failed');
+        expect(false).assertFail();
+      }
+      expect(receivedCount >= 2).assertTrue()
+      expect(receivedTimestamp).assertEqual(123)
+      done()
+    })
+
+    /**
+     * @tc.name   ExecutePeriodicallyTaskTest5600
+     * @tc.number SUB_EXECUTE_PERIODICALLY_TASK_TEST_5600
+     * @tc.desc   Verify async @Concurrent function works as periodic task (async execution increments shared counter each tick)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecutePeriodicallyTaskTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let counter: EPCounter = new EPCounter()
+      let task: taskpool.Task = new taskpool.Task(epAsyncCounterFunc, counter)
+      periodicTasks.push(task)
+      taskpool.executePeriodically(200, task)
+      const condCounterCount2: () => boolean = (): boolean => counter.count >= 2
+      try {
+        await waitForCondition(condCounterCount2, 5000)
+      } catch (error) {
+        console.error('ExecutePeriodicallyTaskTest5600 failed');
+        expect(false).assertFail();
+      }
+      expect(counter.count >= 2 && counter.count <= 20).assertTrue()
+      taskpool.cancel(task)
+      done()
+    })
+
+    /**
+     * @tc.name   ExecutePeriodicallyTaskTest5700
+     * @tc.number SUB_EXECUTE_PERIODICALLY_TASK_TEST_5700
+     * @tc.desc   Verify high frequency periodic execution with 50ms period reaches 20 executions (range assert 15-28, count assertion instead of exact timing)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecutePeriodicallyTaskTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let counter: EPCounter = new EPCounter()
+      let task: taskpool.Task = new taskpool.Task(epCounterFunc, counter)
+      periodicTasks.push(task)
+      taskpool.executePeriodically(50, task)
+      const condCounterCount20: () => boolean = (): boolean => counter.count >= 20
+      try {
+        await waitForCondition(condCounterCount20, 5000)
+      } catch (error) {
+        console.error('ExecutePeriodicallyTaskTest5700 failed');
+        expect(false).assertFail();
+      }
+      expect(counter.count >= 15 && counter.count <= 28).assertTrue()
+      taskpool.cancel(task)
+      done()
+    })
+
+    /**
+     * @tc.name   ExecutePeriodicallyTaskTest5800
+     * @tc.number SUB_EXECUTE_PERIODICALLY_TASK_TEST_5800
+     * @tc.desc   Verify 1000ms period reaches 5 executions (range assert 5-7; count assertion replaces 990-1100ms interval assertion per no-exact-time rule)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecutePeriodicallyTaskTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let counter: EPCounter = new EPCounter()
+      let task: taskpool.Task = new taskpool.Task(epCounterFunc, counter)
+      periodicTasks.push(task)
+      taskpool.executePeriodically(1000, task)
+      const condCounterCount5: () => boolean = (): boolean => counter.count >= 5
+      try {
+        await waitForCondition(condCounterCount5, 8000)
+      } catch (error) {
+        console.error('ExecutePeriodicallyTaskTest5800 failed');
+        expect(false).assertFail();
+      }
+      expect(counter.count >= 5 && counter.count <= 7).assertTrue()
+      taskpool.cancel(task)
+      done()
+    })
+
+    /**
+     * @tc.name   ExecutePeriodicallyTaskTest5900
+     * @tc.number SUB_EXECUTE_PERIODICALLY_TASK_TEST_5900
+     * @tc.desc   Verify 3 periodic tasks with periods 500/1000/1500ms run concurrently, each keeps its own execution count
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ExecutePeriodicallyTaskTest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let counter1: EPCounter = new EPCounter()
+      let counter2: EPCounter = new EPCounter()
+      let counter3: EPCounter = new EPCounter()
+      let task1: taskpool.Task = new taskpool.Task(epCounterFunc, counter1)
+      let task2: taskpool.Task = new taskpool.Task(epCounterFunc, counter2)
+      let task3: taskpool.Task = new taskpool.Task(epCounterFunc, counter3)
+      periodicTasks.push(task1, task2, task3)
+      taskpool.executePeriodically(500, task1)
+      taskpool.executePeriodically(1000, task2)
+      taskpool.executePeriodically(1500, task3)
+      const condCounter1Count5: () => boolean = (): boolean => counter1.count >= 5
+      try {
+        await waitForCondition(condCounter1Count5, 8000)
+      } catch (error) {
+        console.error('ExecutePeriodicallyTaskTest5900 failed');
+        expect(false).assertFail();
+      }
+      expect(counter1.count >= 5 && counter1.count <= 7).assertTrue()
+      expect(counter2.count >= 2 && counter2.count <= 4).assertTrue()
+      expect(counter3.count >= 1 && counter3.count <= 3).assertTrue()
+      taskpool.cancel(task1)
+      taskpool.cancel(task2)
+      taskpool.cancel(task3)
+      done()
+    })
+
+    /**
+     * @tc.name   ExecutePeriodicallyTaskTest6000
+     * @tc.number SUB_EXECUTE_PERIODICALLY_TASK_TEST_6000
+     * @tc.desc   Verify periodic task updates shared collections.Array container concurrently (shared sendable container grows each tick)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ExecutePeriodicallyTaskTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let sharedArr: collections.Array<number> = new collections.Array<number>()
+      let arrLock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
+      let task: taskpool.Task = new taskpool.Task(epCollectionsPushFunc, sharedArr, arrLock)
+      periodicTasks.push(task)
+      taskpool.executePeriodically(200, task)
+      let lenSnapshot: number = 0
+      let waited: number = 0
+      while (lenSnapshot < 3 && waited < 5000) {
+        await arrLock.lockAsync((): void => {
+          lenSnapshot = sharedArr.length
+        })
+        if (lenSnapshot < 3) {
+          await sleep(100)
+          waited += 100
+        }
+      }
+      expect(lenSnapshot >= 3 && lenSnapshot <= 8).assertTrue()
+      taskpool.cancel(task)
+      done()
+    })
+
+    /**
+     * @tc.name   ExecutePeriodicallyTaskTest6100
+     * @tc.number SUB_EXECUTE_PERIODICALLY_TASK_TEST_6100
+     * @tc.desc   Verify periodic task keeps executing when every execution throws (always-throw task still ticks, shared counter observes each execution)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecutePeriodicallyTaskTest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let counter: EPIntermittentCounter = new EPIntermittentCounter()
+      let task: taskpool.Task = new taskpool.Task(epAlwaysThrowFunc, counter)
+      periodicTasks.push(task)
+      taskpool.executePeriodically(200, task)
+      const condCounterCount4: () => boolean = (): boolean => counter.count >= 4
+      try {
+        await waitForCondition(condCounterCount4, 5000)
+      } catch (error) {
+        console.error('ExecutePeriodicallyTaskTest6100 failed');
+        expect(false).assertFail();
+      }
+      expect(counter.count >= 4).assertTrue()
+      taskpool.cancel(task)
+      done()
+    })
+
+    /**
+     * @tc.name   ExecutePeriodicallyTaskTest6200
+     * @tc.number SUB_EXECUTE_PERIODICALLY_TASK_TEST_6200
+     * @tc.desc   Verify onExecutionSucceeded never fires for periodic task and nesting inside it is impossible (actual behavior: after 3+ executions succeededCount stays 0 and no inner task was created)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecutePeriodicallyTaskTest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let counter: EPCounter = new EPCounter()
+      let succeededCount: number = 0
+      let innerCreated: boolean = false
+      let task: taskpool.Task = new taskpool.Task(epCounterFunc, counter)
+      periodicTasks.push(task)
+      const onSucceeded: () => void = (): void => {
+        succeededCount++
+        if (!innerCreated) {
+          innerCreated = true
+          let innerTask: taskpool.Task = new taskpool.Task(epCounterFunc, counter)
+          periodicTasks.push(innerTask)
+          taskpool.executePeriodically(200, innerTask)
+        }
+      }
+      task.onExecutionSucceeded(onSucceeded)
+      taskpool.executePeriodically(200, task)
+      const condCounterCount3: () => boolean = (): boolean => counter.count >= 3
+      try {
+        await waitForCondition(condCounterCount3, 5000)
+      } catch (error) {
+        console.error('ExecutePeriodicallyTaskTest6200 failed');
+        expect(false).assertFail();
+      }
+      expect(counter.count >= 3).assertTrue()
+      expect(succeededCount).assertEqual(0)
+      expect(innerCreated).assertFalse()
+      taskpool.cancel(task)
+      done()
+    })
+
+    /**
+     * @tc.name   ExecutePeriodicallyTaskTest6300
+     * @tc.number SUB_EXECUTE_PERIODICALLY_TASK_TEST_6300
+     * @tc.desc   Verify onExecutionFailed never fires for periodic task even when every execution throws (actual behavior: failed executions keep ticking but failedCount stays 0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecutePeriodicallyTaskTest6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let counter: EPIntermittentCounter = new EPIntermittentCounter()
+      let failedCount: number = 0
+      let task: taskpool.Task = new taskpool.Task(epAlwaysThrowFunc, counter)
+      periodicTasks.push(task)
+      const onFailed: () => void = (): void => {
+        failedCount++
+      }
+      task.onExecutionFailed(onFailed)
+      taskpool.executePeriodically(200, task)
+      const condCounterCount3: () => boolean = (): boolean => counter.count >= 3
+      try {
+        await waitForCondition(condCounterCount3, 5000)
+      } catch (error) {
+        console.error('ExecutePeriodicallyTaskTest6300 failed');
+        expect(false).assertFail();
+      }
+      expect(counter.count >= 3).assertTrue()
+      expect(failedCount).assertEqual(0)
+      taskpool.cancel(task)
+      done()
+    })
+
+    /**
+     * @tc.name   ExecutePeriodicallyTaskTest6400
+     * @tc.number SUB_EXECUTE_PERIODICALLY_TASK_TEST_6400
+     * @tc.desc   Verify nesting inside onExecutionFailed is impossible for periodic task (callback never fires so no inner periodic task is created)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ExecutePeriodicallyTaskTest6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let counter: EPIntermittentCounter = new EPIntermittentCounter()
+      let failedCount: number = 0
+      let innerCreated: boolean = false
+      let task: taskpool.Task = new taskpool.Task(epAlwaysThrowFunc, counter)
+      periodicTasks.push(task)
+      const onFailed: () => void = (): void => {
+        failedCount++
+        if (!innerCreated) {
+          innerCreated = true
+          let innerTask: taskpool.Task = new taskpool.Task(epSimpleFunc)
+          periodicTasks.push(innerTask)
+          taskpool.executePeriodically(200, innerTask)
+        }
+      }
+      task.onExecutionFailed(onFailed)
+      taskpool.executePeriodically(200, task)
+      const condCounterCount3: () => boolean = (): boolean => counter.count >= 3
+      try {
+        await waitForCondition(condCounterCount3, 5000)
+      } catch (error) {
+        console.error('ExecutePeriodicallyTaskTest6400 failed');
+        expect(false).assertFail();
+      }
+      expect(counter.count >= 3).assertTrue()
+      expect(failedCount).assertEqual(0)
+      expect(innerCreated).assertFalse()
+      taskpool.cancel(task)
+      done()
+    })
+
+
+
+
+
+    /**
+     * @tc.name   ExecutePeriodicallyTaskTest6700
+     * @tc.number SUB_EXECUTE_PERIODICALLY_TASK_TEST_6700
+     * @tc.desc   Verify nesting probe: executePeriodically called inside @Concurrent task body (F4 probe; exactly one attempt is made and it either succeeds with inner ticks or throws once, runtime arbitration by main workflow with run evidence)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ExecutePeriodicallyTaskTest6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let state: EPNestedProbeState = new EPNestedProbeState()
+      let innerCounter: EPCounter = new EPCounter()
+      let outerTask: taskpool.Task = new taskpool.Task(epNestedPeriodicProbeFunc, state, innerCounter)
+      periodicTasks.push(outerTask)
+      taskpool.executePeriodically(200, outerTask)
+      state.outerTaskId = outerTask.taskId
+      const condProbeDone: () => boolean = (): boolean =>
+        state.nestedError >= 1 || (state.nestedCount >= 1 && innerCounter.count >= 3)
+      try {
+        await waitForCondition(condProbeDone, 5000)
+      } catch (error) {
+        console.error('ExecutePeriodicallyTaskTest6700 failed');
+        expect(false).assertFail();
+      }
+      expect(state.execCount >= 1).assertTrue()
+      expect(state.attempted).assertTrue()
+      expect(state.nestedCount + state.nestedError).assertEqual(1)
+      if (state.innerTaskId > 0) {
+        try {
+          taskpool.cancel(state.innerTaskId)
+        } catch (e) {
+          console.info(`ExecutePeriodicallyTaskTest.test.ets catch error: ${JSON.stringify(e)}`)
+        }
+      }
+      taskpool.cancel(outerTask)
+      done()
+    })
+
+    /**
+     * @tc.name   ExecutePeriodicallyTaskTest6800
+     * @tc.number SUB_EXECUTE_PERIODICALLY_TASK_TEST_6800
+     * @tc.desc   Verify executeDelayed and executePeriodically work in combination (delayed one-shot returns 42 while periodic task runs concurrently)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ExecutePeriodicallyTaskTest6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let counter: EPCounter = new EPCounter()
+      let delayTask: taskpool.Task = new taskpool.Task(epSimpleFunc)
+      let periodicTask: taskpool.Task = new taskpool.Task(epCounterFunc, counter)
+      periodicTasks.push(periodicTask)
+      taskpool.executePeriodically(200, periodicTask)
+      let delayed: number = 0
+      try {
+        delayed = await taskpool.executeDelayed(300, delayTask) as number
+      } catch (error) {
+        console.error('ExecutePeriodicallyTaskTest6800 failed');
+        expect(false).assertFail();
+      }
+      expect(delayed).assertEqual(42)
+      const condCounterCount2: () => boolean = (): boolean => counter.count >= 2
+      try {
+        await waitForCondition(condCounterCount2, 5000)
+      } catch (error) {
+        console.error('ExecutePeriodicallyTaskTest6800 failed');
+        expect(false).assertFail();
+      }
+      expect(counter.count >= 2 && counter.count <= 20).assertTrue()
+      taskpool.cancel(periodicTask)
+      done()
+    })
+
+
+
+    // ===== 11. W5 AsyncLock protected shared-state Tests =====
+
+
+
+
+  })
+}
