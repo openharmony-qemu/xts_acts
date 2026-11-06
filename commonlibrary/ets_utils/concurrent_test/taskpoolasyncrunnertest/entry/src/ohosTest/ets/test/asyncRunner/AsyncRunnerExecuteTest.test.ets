@@ -1648,3 +1648,468 @@ export default function AsyncRunnerExecuteTest(): void {
       const rejected: Promise<Object>[] = [pA, pB, pC]
       for (let i = 0; i < rejected.length; i++) {
         try {
+          await rejected[i]
+          console.error('AsyncRunnerExecuteTest5500 rejected promise resolved unexpectedly')
+          expect(false).assertFail()
+        } catch (e) {
+          discardCount++
+          discardErr = e
+          if (discardErr !== null) {
+            expect(discardErr.code).assertEqual(10200054)
+          }
+        }
+      }
+      expect(discardCount).assertEqual(3)
+      expect(discardErr !== null).assertTrue()
+      try {
+        const survivor = await pD
+        expect(survivor as number).assertEqual(44)
+      } catch (error) {
+        console.error('AsyncRunnerExecuteTest5500 survivor failed');
+        expect(false).assertFail();
+      }
+      try {
+        await blockerPromise
+      } catch (error) {
+        console.error('AsyncRunnerExecuteTest5500 blocker failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   AsyncRunnerExecuteTest5600
+     * @tc.number SUB_ASYNC_RUNNER_EXECUTE_TEST_5600
+     * @tc.desc   Verify sendData from task executed by AsyncRunner triggers onReceiveData three times with values 1 2 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncRunnerExecuteTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const runner = new taskpool.AsyncRunner(3)
+      const task = new taskpool.Task(arSendDataFunc)
+      const received: number[] = []
+      task.onReceiveData((data: Object): void => {
+        received.push(data as number)
+      })
+      try {
+        const result = await runner.execute(task)
+        expect(result as number).assertEqual(42)
+      } catch (error) {
+        console.error('AsyncRunnerExecuteTest5600 failed');
+        expect(false).assertFail();
+      }
+      let waited: number = 0
+      while (received.length < 3 && waited < 5000) {
+        await sleep(100)
+        waited += 100
+      }
+      expect(received.length).assertEqual(3)
+      expect(received[0]).assertEqual(1)
+      expect(received[1]).assertEqual(2)
+      expect(received[2]).assertEqual(3)
+      done()
+    })
+
+    /**
+     * @tc.name   AsyncRunnerExecuteTest5700
+     * @tc.number SUB_ASYNC_RUNNER_EXECUTE_TEST_5700
+     * @tc.desc   Verify onEnqueued callback triggers when task joins AsyncRunner queue and nested execute inside callback completes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncRunnerExecuteTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const runner = new taskpool.AsyncRunner(3)
+      const task = new taskpool.Task(simpleFunc)
+      let triggered: boolean = false
+      let nestedPromise: Promise<Object> | null = null
+      const onEnqueued = (): void => {
+        triggered = true
+        nestedPromise = runner.execute(new taskpool.Task(simpleFunc))
+      }
+      task.onEnqueued(onEnqueued)
+      try {
+        const result = await runner.execute(task)
+        expect(result as number).assertEqual(42)
+      } catch (error) {
+        console.error('AsyncRunnerExecuteTest5700 failed');
+        expect(false).assertFail();
+      }
+      let waited: number = 0
+      while (nestedPromise === null && waited < 5000) {
+        await sleep(100)
+        waited += 100
+      }
+      expect(triggered).assertTrue()
+      try {
+        if (nestedPromise !== null) {
+          const nestedResult = await nestedPromise
+          expect(nestedResult as number).assertEqual(42)
+        }
+      } catch (error) {
+        console.error('AsyncRunnerExecuteTest5700 nested failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   AsyncRunnerExecuteTest5800
+     * @tc.number SUB_ASYNC_RUNNER_EXECUTE_TEST_5800
+     * @tc.desc   Verify onStartExecution callback triggers when task actually starts and nested execute inside callback completes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncRunnerExecuteTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const runner = new taskpool.AsyncRunner(3)
+      const task = new taskpool.Task(simpleFunc)
+      let triggered: boolean = false
+      let nestedPromise: Promise<Object> | null = null
+      const onStartExec = (): void => {
+        triggered = true
+        nestedPromise = runner.execute(new taskpool.Task(simpleFunc))
+      }
+      task.onStartExecution(onStartExec)
+      try {
+        const result = await runner.execute(task)
+        expect(result as number).assertEqual(42)
+      } catch (error) {
+        console.error('AsyncRunnerExecuteTest5800 failed');
+        expect(false).assertFail();
+      }
+      let waited: number = 0
+      while (nestedPromise === null && waited < 5000) {
+        await sleep(100)
+        waited += 100
+      }
+      expect(triggered).assertTrue()
+      try {
+        if (nestedPromise !== null) {
+          const nestedResult = await nestedPromise
+          expect(nestedResult as number).assertEqual(42)
+        }
+      } catch (error) {
+        console.error('AsyncRunnerExecuteTest5800 nested failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   AsyncRunnerExecuteTest5900
+     * @tc.number SUB_ASYNC_RUNNER_EXECUTE_TEST_5900
+     * @tc.desc   Verify onExecutionFailed callback triggers on task failure and nested execute inside callback completes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncRunnerExecuteTest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const runner = new taskpool.AsyncRunner(3)
+      const task = new taskpool.Task(errorFunc)
+      let triggered: boolean = false
+      let nestedPromise: Promise<Object> | null = null
+      const onFailed = (): void => {
+        triggered = true
+        nestedPromise = runner.execute(new taskpool.Task(simpleFunc))
+      }
+      task.onExecutionFailed(onFailed)
+      let caught: boolean = false
+      try {
+        await runner.execute(task)
+      } catch (e) {
+        caught = true
+      }
+      expect(caught).assertTrue()
+      let waited: number = 0
+      while (nestedPromise === null && waited < 5000) {
+        await sleep(100)
+        waited += 100
+      }
+      expect(triggered).assertTrue()
+      try {
+        if (nestedPromise !== null) {
+          const nestedResult = await nestedPromise
+          expect(nestedResult as number).assertEqual(42)
+        }
+      } catch (error) {
+        console.error('AsyncRunnerExecuteTest5900 nested failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   AsyncRunnerExecuteTest6000
+     * @tc.number SUB_ASYNC_RUNNER_EXECUTE_TEST_6000
+     * @tc.desc   Verify onExecutionSucceeded callback triggers on task success and nested execute inside callback completes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncRunnerExecuteTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const runner = new taskpool.AsyncRunner(3)
+      const task = new taskpool.Task(simpleFunc)
+      let triggered: boolean = false
+      let nestedPromise: Promise<Object> | null = null
+      const onSuccess = (): void => {
+        triggered = true
+        nestedPromise = runner.execute(new taskpool.Task(simpleFunc))
+      }
+      task.onExecutionSucceeded(onSuccess)
+      try {
+        const result = await runner.execute(task)
+        expect(result as number).assertEqual(42)
+      } catch (error) {
+        console.error('AsyncRunnerExecuteTest6000 failed');
+        expect(false).assertFail();
+      }
+      let waited: number = 0
+      while (nestedPromise === null && waited < 5000) {
+        await sleep(100)
+        waited += 100
+      }
+      expect(triggered).assertTrue()
+      try {
+        if (nestedPromise !== null) {
+          const nestedResult = await nestedPromise
+          expect(nestedResult as number).assertEqual(42)
+        }
+      } catch (error) {
+        console.error('AsyncRunnerExecuteTest6000 nested failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   AsyncRunnerExecuteTest6100
+     * @tc.number SUB_ASYNC_RUNNER_EXECUTE_TEST_6100
+     * @tc.desc   Verify high concurrency stress with runningCapacity=50 and 100 tasks all complete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AsyncRunnerExecuteTest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      const runner = new taskpool.AsyncRunner(50, 0)
+      const taskCount: number = 100
+      const promises: Promise<Object>[] = []
+      for (let i = 0; i < taskCount; i++) {
+        promises.push(runner.execute(new taskpool.Task(simpleFunc)))
+      }
+      try {
+        const results = await Promise.all(promises)
+        expect(results.length).assertEqual(taskCount)
+        for (let i = 0; i < taskCount; i++) {
+          expect(results[i] as number).assertEqual(42)
+        }
+      } catch (error) {
+        console.error('AsyncRunnerExecuteTest6100 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   AsyncRunnerExecuteTest6200
+     * @tc.number SUB_ASYNC_RUNNER_EXECUTE_TEST_6200
+     * @tc.desc   Verify discard policy stress with 50 tasks and separately counted success and discard outcomes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AsyncRunnerExecuteTest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      const runner = new taskpool.AsyncRunner(2, 3)
+      const taskCount: number = 50
+      const promises: Promise<Object>[] = []
+      for (let i = 0; i < taskCount; i++) {
+        promises.push(runner.execute(new taskpool.Task(longFunc, 150)))
+      }
+      let successCount: number = 0
+      let discardCount: number = 0
+      for (let i = 0; i < promises.length; i++) {
+        try {
+          await promises[i]
+          successCount++
+        } catch (e) {
+          discardCount++
+          console.info(`AsyncRunnerExecuteTest.test.ets catch error: ${JSON.stringify(e)}`)
+        }
+      }
+      expect(successCount + discardCount).assertEqual(taskCount)
+      expect(discardCount > 0).assertTrue()
+      expect(successCount > 0).assertTrue()
+      done()
+    })
+
+    /**
+     * @tc.name   AsyncRunnerExecuteTest6300
+     * @tc.number SUB_ASYNC_RUNNER_EXECUTE_TEST_6300
+     * @tc.desc   Verify Sendable shared counter statistics with concurrency 5 and 10 tasks count exactly 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncRunnerExecuteTest6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const runner = new taskpool.AsyncRunner(5)
+      const counter = new ARSharedCounter()
+      const taskCount: number = 10
+      const promises: Promise<Object>[] = []
+      for (let i = 0; i < taskCount; i++) {
+        promises.push(runner.execute(new taskpool.Task(arCountFunc, counter)))
+      }
+      try {
+        const results = await Promise.all(promises)
+        expect(results.length).assertEqual(taskCount)
+      } catch (error) {
+        console.error('AsyncRunnerExecuteTest6300 failed');
+        expect(false).assertFail();
+      }
+      expect(counter.count).assertEqual(taskCount)
+      done()
+    })
+
+    /**
+     * @tc.name   AsyncRunnerExecuteTest6400
+     * @tc.number SUB_ASYNC_RUNNER_EXECUTE_TEST_6400
+     * @tc.desc   Verify two-stage callback chain nesting via onExecutionSucceeded completes all chained tasks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AsyncRunnerExecuteTest6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      const runner = new taskpool.AsyncRunner(3, 10)
+      let chainCount: number = 0
+      let p2: Promise<Object> | null = null
+      let p3: Promise<Object> | null = null
+      const task1 = new taskpool.Task(simpleFunc)
+      task1.onExecutionSucceeded((): void => {
+        chainCount++
+        const task2 = new taskpool.Task(simpleFunc)
+        task2.onExecutionSucceeded((): void => {
+          chainCount++
+          p3 = runner.execute(new taskpool.Task(addFunc, 21))
+        })
+        p2 = runner.execute(task2)
+      })
+      try {
+        const r1 = await runner.execute(task1)
+        expect(r1 as number).assertEqual(42)
+      } catch (error) {
+        console.error('AsyncRunnerExecuteTest6400 failed');
+        expect(false).assertFail();
+      }
+      let waited: number = 0
+      while (p2 === null && waited < 5000) {
+        await sleep(100)
+        waited += 100
+      }
+      try {
+        if (p2 !== null) {
+          const r2 = await p2
+          expect(r2 as number).assertEqual(42)
+        }
+      } catch (error) {
+        console.error('AsyncRunnerExecuteTest6400 stage2 failed');
+        expect(false).assertFail();
+      }
+      waited = 0
+      while (p3 === null && waited < 5000) {
+        await sleep(100)
+        waited += 100
+      }
+      expect(chainCount).assertEqual(2)
+      try {
+        if (p3 !== null) {
+          const r3 = await p3
+          expect(r3 as number).assertEqual(42)
+        }
+      } catch (error) {
+        console.error('AsyncRunnerExecuteTest6400 stage3 failed');
+        expect(false).assertFail();
+      }
+      expect(chainCount).assertEqual(2)
+      done()
+    })
+
+    /**
+     * @tc.name   AsyncRunnerExecuteTest6500
+     * @tc.number SUB_ASYNC_RUNNER_EXECUTE_TEST_6500
+     * @tc.desc   Verify AsyncRunner.execute with task argument over 16M serialization limit throws error code 10200006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncRunnerExecuteTest6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const runner = new taskpool.AsyncRunner(3)
+      let bigData: number[] = new Array<number>(2 * 1024 * 1024)
+      for (let i: number = 0; i < bigData.length; i++) {
+        bigData[i] = i
+      }
+      let caught: boolean = false
+      let err: BusinessError | null = null
+      try {
+        await runner.execute(new taskpool.Task(arBigDataFunc, bigData))
+      } catch (e) {
+        caught = true
+        err = e
+        if (err !== null) {
+          expect(err.code).assertEqual(10200006)
+        }
+      }
+      expect(caught).assertTrue()
+      expect(err !== null).assertTrue()
+      done()
+    })
+
+    /**
+     * @tc.name   AsyncRunnerExecuteTest6600
+     * @tc.number SUB_ASYNC_RUNNER_EXECUTE_TEST_6600
+     * @tc.desc   Verify F4 probe: a @Concurrent function body constructs an AsyncRunner and executes an inner task through it while collecting module-level Sendable counts; host polls up to 5s and asserts inner increment plus outer success marker both landed exactly (count == 2, result == 1); 15s race guard prevents a wedged probe from hanging (M15b ex#052; if infeasible at runtime the main workflow converts it to NAC with run evidence)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AsyncRunnerExecuteTest6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      const counter: ARProbeCounter = new ARProbeCounter()
+      const probeTask = new taskpool.Task(arProbeExecConstructFunc, counter)
+      let probeResult: Object = 'timeout'
+      try {
+        probeResult = await Promise.race([taskpool.execute(probeTask), arProbeTimeoutGuard(15000)])
+      } catch (error) {
+        console.info(`AsyncRunnerExecuteTest6600 probe rejected: ${JSON.stringify(error)}`)
+        probeResult = 'rejected'
+      }
+      let waited6600: number = 0
+      while (counter.count < 2 && waited6600 < 5000) {
+        await sleep(100)
+        waited6600 += 100
+      }
+      expect(probeResult as number).assertEqual(1)
+      expect(counter.count).assertEqual(2)
+      done()
+    })
+
+    /**
+     * @tc.name   AsyncRunnerExecuteTest6700
+     * @tc.number SUB_ASYNC_RUNNER_EXECUTE_TEST_6700
+     * @tc.desc   Verify a GenericsTask instance executed through AsyncRunner.execute returns the exact generic result (M14b #087/#088; GenericsTask subclass instance enqueued into an async Runner)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AsyncRunnerExecuteTest6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const runner = new taskpool.AsyncRunner(3)
+      const genTask = new taskpool.GenericsTask<[number], number>(addFunc, 21)
+      try {
+        const result = await runner.execute(genTask)
+        expect(result as number).assertEqual(42)
+      } catch (error) {
+        console.error('AsyncRunnerExecuteTest6700 failed');
+        expect(false).assertFail();
+      }
+      done()
+    })
+  })
+}
