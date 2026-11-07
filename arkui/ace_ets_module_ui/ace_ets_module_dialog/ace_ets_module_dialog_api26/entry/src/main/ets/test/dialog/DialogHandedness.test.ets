@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { Driver, ON } from '@ohos.UiTest';
 import DialogApi26TestHelper from '../common/DialogApi26TestHelper';
 
@@ -22,7 +22,7 @@ export default function DialogHandedness() {
     beforeEach(async (done: Function) => {
       console.info('[ARKUI_DYN] dialogHandedness beforeEach');
       await DialogApi26TestHelper.openPageIfNeeded(
-        'dialogHandedness', 'MainAbility/pages/dialog/dialogHandedness');
+        'DialogHandedness', 'MainAbility/pages/dialog/DialogHandedness');
       let driver = await Driver.create();
       await DialogApi26TestHelper.drainCustomDialogs(driver);
       done();
