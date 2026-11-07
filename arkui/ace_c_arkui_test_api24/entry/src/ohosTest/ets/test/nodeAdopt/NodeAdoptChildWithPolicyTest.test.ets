@@ -14,8 +14,25 @@
  */
 
 import { beforeEach, describe, expect, it, Level } from '@ohos/hypium';
+import router from '@ohos.router';
 import Utils from '../common/Utils';
 import nativeFunc from 'libnativefunc.so'
+
+async function pushNodeAdoptChildWithPolicyPage() {
+  try {
+    router.clear();
+    let pages = router.getState();
+    if ('NodeAdoptChildWithPolicy' !== pages.name) {
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/nodeAdopt/NodeAdoptChildWithPolicy',
+      }
+      await router.pushUrl(options);
+      await Utils.sleep(2000);
+    }
+  } catch (err) {
+    console.error(`push NodeAdoptChildWithPolicy page error: ${String(err)}`);
+  }
+}
 
 export default function nodeAdoptChildWithPolicyTest() {
 
@@ -57,26 +74,30 @@ export default function nodeAdoptChildWithPolicyTest() {
     /**
      * @tc.name   nodeAdoptChildWithPolicyTest_003
      * @tc.number SUB_ACE_C_ARKUI_NODE_ADOPT_CHILD_WITH_POLICY_0300
-     * @tc.desc   adopt with null child, expect ARKUI_ERROR_CODE_NODE_CAN_NOT_BE_ADOPTED(106208)
+     * @tc.desc   adopt the page root node obtained from the ets page UIContext as a child,
+     *             expect ARKUI_ERROR_CODE_NODE_CAN_NOT_BE_ADOPTED(106208)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('nodeAdoptChildWithPolicyTest_003', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.TestNodeAdoptChildWithPolicy003()).assertEqual(0)
+      await pushNodeAdoptChildWithPolicyPage();
+      expect(globalThis.nodeAdoptChildWithPolicy003Result).assertEqual(0)
       done()
     })
 
     /**
      * @tc.name   nodeAdoptChildWithPolicyTest_004
      * @tc.number SUB_ACE_C_ARKUI_NODE_ADOPT_CHILD_WITH_POLICY_0400
-     * @tc.desc   adopt with null parent node, expect ARKUI_ERROR_CODE_NODE_CAN_NOT_ADOPT_TO(106209)
+     * @tc.desc   adopt a native text node to the page root node obtained from the ets page
+     *             UIContext, expect ARKUI_ERROR_CODE_NODE_CAN_NOT_ADOPT_TO(106209)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('nodeAdoptChildWithPolicyTest_004', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.TestNodeAdoptChildWithPolicy004()).assertEqual(0)
+      await pushNodeAdoptChildWithPolicyPage();
+      expect(globalThis.nodeAdoptChildWithPolicy004Result).assertEqual(0)
       done()
     })
 

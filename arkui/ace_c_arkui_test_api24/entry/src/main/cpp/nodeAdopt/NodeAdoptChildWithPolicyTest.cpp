@@ -15,6 +15,7 @@
 
 #include "../common/common.h"
 #include <arkui/native_node.h>
+#include <arkui/native_node_napi.h>
 #include <arkui/native_type.h>
 
 namespace ArkUICapiTest {
@@ -78,6 +79,15 @@ static napi_value TestNodeAdoptChildWithPolicy002(napi_env env, napi_callback_in
 
 static napi_value TestNodeAdoptChildWithPolicy003(napi_env env, napi_callback_info info)
 {
+    size_t argc = PARAM_1;
+    napi_value args[PARAM_1] = { nullptr };
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    {
+        napi_value assertTrueErr = TrueFailed(env, (argc == PARAM_1));
+        if (assertTrueErr != nullptr) {
+            return assertTrueErr;
+        }
+    }
     ArkUI_NativeNodeAPI_1 *nodeAPI = reinterpret_cast<ArkUI_NativeNodeAPI_1 *>(
         OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_NODE, "ArkUI_NativeNodeAPI_1"));
     {
@@ -86,9 +96,44 @@ static napi_value TestNodeAdoptChildWithPolicy003(napi_env env, napi_callback_in
             return assertTrueErr;
         }
     }
+    ArkUI_ContextHandle context = nullptr;
+    auto ret = OH_ArkUI_GetContextFromNapiValue(env, args[PARAM_0], &context);
+    {
+        napi_value assertEqErr = EqFailed(env, (ret), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (assertEqErr != nullptr) {
+            return assertEqErr;
+        }
+    }
+    {
+        napi_value assertTrueErr = TrueFailed(env, (context != nullptr));
+        if (assertTrueErr != nullptr) {
+            return assertTrueErr;
+        }
+    }
+    ArkUI_NodeHandle root = nullptr;
+    ret = OH_ArkUI_NativeModule_GetPageRootNodeHandleByContext(context, &root);
+    {
+        napi_value assertEqErr = EqFailed(env, (ret), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (assertEqErr != nullptr) {
+            return assertEqErr;
+        }
+    }
+    {
+        napi_value assertTrueErr = TrueFailed(env, (root != nullptr));
+        if (assertTrueErr != nullptr) {
+            return assertTrueErr;
+        }
+    }
     auto column = nodeAPI->createNode(ARKUI_NODE_COLUMN);
-    auto ret = OH_ArkUI_NativeModule_AdoptChildWithPolicy(column, nullptr,
+    ret = OH_ArkUI_NativeModule_AdoptChildWithPolicy(column, root,
         OH_ARKUI_NATIVE_MODULE_ADOPT_POLICY_OVERLAY_POSITION_FOLLOWS_ADOPT_PARENT_CHAIN);
+    int32_t removeRoot = ARKUI_ERROR_CODE_NO_ERROR;
+    if (ret == ARKUI_ERROR_CODE_NO_ERROR) {
+        removeRoot = OH_ArkUI_NativeModule_RemoveAdoptedChild(column, root);
+    }
+    if (removeRoot == ARKUI_ERROR_CODE_NO_ERROR) {
+        nodeAPI->disposeNode(column);
+    }
     {
         napi_value assertEqErr = EqFailed(env, (ret), (ARKUI_ERROR_CODE_NODE_CAN_NOT_BE_ADOPTED));
         if (assertEqErr != nullptr) {
@@ -100,6 +145,15 @@ static napi_value TestNodeAdoptChildWithPolicy003(napi_env env, napi_callback_in
 
 static napi_value TestNodeAdoptChildWithPolicy004(napi_env env, napi_callback_info info)
 {
+    size_t argc = PARAM_1;
+    napi_value args[PARAM_1] = { nullptr };
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    {
+        napi_value assertTrueErr = TrueFailed(env, (argc == PARAM_1));
+        if (assertTrueErr != nullptr) {
+            return assertTrueErr;
+        }
+    }
     ArkUI_NativeNodeAPI_1 *nodeAPI = reinterpret_cast<ArkUI_NativeNodeAPI_1 *>(
         OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_NODE, "ArkUI_NativeNodeAPI_1"));
     {
@@ -108,9 +162,44 @@ static napi_value TestNodeAdoptChildWithPolicy004(napi_env env, napi_callback_in
             return assertTrueErr;
         }
     }
-    auto column = nodeAPI->createNode(ARKUI_NODE_COLUMN);
-    auto ret = OH_ArkUI_NativeModule_AdoptChildWithPolicy(nullptr, column,
+    ArkUI_ContextHandle context = nullptr;
+    auto ret = OH_ArkUI_GetContextFromNapiValue(env, args[PARAM_0], &context);
+    {
+        napi_value assertEqErr = EqFailed(env, (ret), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (assertEqErr != nullptr) {
+            return assertEqErr;
+        }
+    }
+    {
+        napi_value assertTrueErr = TrueFailed(env, (context != nullptr));
+        if (assertTrueErr != nullptr) {
+            return assertTrueErr;
+        }
+    }
+    ArkUI_NodeHandle root = nullptr;
+    ret = OH_ArkUI_NativeModule_GetPageRootNodeHandleByContext(context, &root);
+    {
+        napi_value assertEqErr = EqFailed(env, (ret), (ARKUI_ERROR_CODE_NO_ERROR));
+        if (assertEqErr != nullptr) {
+            return assertEqErr;
+        }
+    }
+    {
+        napi_value assertTrueErr = TrueFailed(env, (root != nullptr));
+        if (assertTrueErr != nullptr) {
+            return assertTrueErr;
+        }
+    }
+    auto text = nodeAPI->createNode(ARKUI_NODE_TEXT);
+    ret = OH_ArkUI_NativeModule_AdoptChildWithPolicy(root, text,
         OH_ARKUI_NATIVE_MODULE_ADOPT_POLICY_OVERLAY_POSITION_FOLLOWS_ADOPT_PARENT_CHAIN);
+    int32_t removeChild = ARKUI_ERROR_CODE_NO_ERROR;
+    if (ret == ARKUI_ERROR_CODE_NO_ERROR) {
+        removeChild = OH_ArkUI_NativeModule_RemoveAdoptedChild(root, text);
+    }
+    if (removeChild == ARKUI_ERROR_CODE_NO_ERROR) {
+        nodeAPI->disposeNode(text);
+    }
     {
         napi_value assertEqErr = EqFailed(env, (ret), (ARKUI_ERROR_CODE_NODE_CAN_NOT_ADOPT_TO));
         if (assertEqErr != nullptr) {
