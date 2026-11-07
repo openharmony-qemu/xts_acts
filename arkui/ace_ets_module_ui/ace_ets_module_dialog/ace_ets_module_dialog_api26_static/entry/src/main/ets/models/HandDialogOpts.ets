@@ -18,9 +18,10 @@ import { DialogAlignment } from '@ohos.arkui.component';
 
 /**
  * Opts bag for CustomDialogController when HandednessFollowMode is absent from CI SDK.
+ * Assign a @Builder method reference to builder (do not wrap in a plain lambda).
  */
 export class HandDialogOpts {
   builder: () => void = (): void => {};
   alignment: DialogAlignment = DialogAlignment.Center;
-  adaptToHandedness: number = 0;
+  public adaptToHandedness: number = 0;
 }

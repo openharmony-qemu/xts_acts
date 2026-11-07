@@ -38,38 +38,52 @@ struct CustomDialogHandedness {
   aboutToAppear(): void {
     AppStorage.setOrCreate<Router>('router', this.getUIContext().getRouter());
     // CI static runtimeapi may omit HandednessFollowMode; inject numeric via HandDialogOpts.
-    // Call @Builder only from CustomDialogController.builder lambda (not from plain methods).
+    // Assign @Builder method refs to builder (plain lambdas that call @Builder lose memo).
     let noneOpts: HandDialogOpts = new HandDialogOpts();
-    noneOpts.builder = (): void => {
-      this.handBuilder(this.noneDialog, 'mode_NONE');
-    };
+    noneOpts.builder = this.noneHandBuilder;
     noneOpts.alignment = DialogAlignment.Center;
     noneOpts.adaptToHandedness = HAND_NONE;
     this.noneDialog = new CustomDialogController(noneOpts as CustomDialogControllerOptions);
 
     let anchorOpts: HandDialogOpts = new HandDialogOpts();
-    anchorOpts.builder = (): void => {
-      this.handBuilder(this.anchorDialog, 'mode_FOLLOW_ANCHOR');
-    };
+    anchorOpts.builder = this.anchorHandBuilder;
     anchorOpts.alignment = DialogAlignment.Center;
     anchorOpts.adaptToHandedness = HAND_FOLLOW_ANCHOR;
     this.anchorDialog = new CustomDialogController(anchorOpts as CustomDialogControllerOptions);
 
     let gripOpts: HandDialogOpts = new HandDialogOpts();
-    gripOpts.builder = (): void => {
-      this.handBuilder(this.gripDialog, 'mode_FOLLOW_GRIP_HAND');
-    };
+    gripOpts.builder = this.gripHandBuilder;
     gripOpts.alignment = DialogAlignment.Center;
     gripOpts.adaptToHandedness = HAND_FOLLOW_GRIP;
     this.gripDialog = new CustomDialogController(gripOpts as CustomDialogControllerOptions);
   }
 
   @Builder
-  handBuilder(controller: CustomDialogController, label: string): void {
+  noneHandBuilder(): void {
     Column() {
-      Text(label).fontSize(18).id('handedness_dialog_text')
+      Text('mode_NONE').fontSize(18).id('handedness_dialog_text')
       Button('Close_handedness').id('close_handedness_btn').onClick((): void => {
-        controller.close();
+        this.noneDialog.close();
+      })
+    }.padding(20)
+  }
+
+  @Builder
+  anchorHandBuilder(): void {
+    Column() {
+      Text('mode_FOLLOW_ANCHOR').fontSize(18).id('handedness_dialog_text')
+      Button('Close_handedness').id('close_handedness_btn').onClick((): void => {
+        this.anchorDialog.close();
+      })
+    }.padding(20)
+  }
+
+  @Builder
+  gripHandBuilder(): void {
+    Column() {
+      Text('mode_FOLLOW_GRIP_HAND').fontSize(18).id('handedness_dialog_text')
+      Button('Close_handedness').id('close_handedness_btn').onClick((): void => {
+        this.gripDialog.close();
       })
     }.padding(20)
   }
