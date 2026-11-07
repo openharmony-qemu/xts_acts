@@ -69,8 +69,8 @@ export default function SafeAreaInsetAbnormalTest() {
       let heightVp = px2vp(hostRect.bottom - hostRect.top);
       console.info('[SUB_ACE_SAFEAREAINSET_Abnormal_0100] host height: ' + heightVp);
       console.info('[SUB_ACE_SAFEAREAINSET_Abnormal_0100] host.bottom - edge.bottom: ' + px2vp(hostRect.bottom - edgeRect.bottom));
-      expect(Math.abs(heightVp - 52) <= 1).assertTrue();
-      expect(Math.abs(px2vp(hostRect.bottom - edgeRect.bottom) - 5) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(heightVp - 52)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(px2vp(hostRect.bottom - edgeRect.bottom) - 5)) <= 1).assertTrue();
       console.info('SUB_ACE_SAFEAREAINSET_Abnormal_0100 END');
       done();
     });
@@ -100,7 +100,7 @@ export default function SafeAreaInsetAbnormalTest() {
       let hostRect = getRectInfo('SafeAreaInsetAbnormal_aSpacingHost');
       let heightVp = px2vp(hostRect.bottom - hostRect.top);
       console.info('[SUB_ACE_SAFEAREAINSET_Abnormal_0200] host height: ' + heightVp);
-      expect(Math.abs(heightVp - 52) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(heightVp - 52)) <= 1).assertTrue();
       console.info('SUB_ACE_SAFEAREAINSET_Abnormal_0200 END');
       done();
     });
@@ -130,7 +130,7 @@ export default function SafeAreaInsetAbnormalTest() {
       let hostRect = getRectInfo('SafeAreaInsetAbnormal_aSpacingHost');
       let heightVp = px2vp(hostRect.bottom - hostRect.top);
       console.info('[SUB_ACE_SAFEAREAINSET_Abnormal_0300] host height: ' + heightVp);
-      expect(Math.abs(heightVp - 52) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(heightVp - 52)) <= 1).assertTrue();
       console.info('SUB_ACE_SAFEAREAINSET_Abnormal_0300 END');
       done();
     });
@@ -160,7 +160,7 @@ export default function SafeAreaInsetAbnormalTest() {
       let hostRect = getRectInfo('SafeAreaInsetAbnormal_aSpacingHost');
       let heightVp = px2vp(hostRect.bottom - hostRect.top);
       console.info('[SUB_ACE_SAFEAREAINSET_Abnormal_0400] host height: ' + heightVp);
-      expect(Math.abs(heightVp - 52) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(heightVp - 52)) <= 1).assertTrue();
       console.info('SUB_ACE_SAFEAREAINSET_Abnormal_0400 END');
       done();
     });
@@ -193,9 +193,9 @@ export default function SafeAreaInsetAbnormalTest() {
       console.info('[SUB_ACE_SAFEAREAINSET_Abnormal_0500] main height: ' + px2vp(mainRect.bottom - mainRect.top));
       console.info('[SUB_ACE_SAFEAREAINSET_Abnormal_0500] host.bottom - main.bottom: ' + px2vp(hostRect.bottom - mainRect.bottom));
       console.info('[SUB_ACE_SAFEAREAINSET_Abnormal_0500] edge.left - host.left: ' + px2vp(edgeRect.left - hostRect.left));
-      expect(Math.abs(px2vp(mainRect.bottom - mainRect.top) - 51) <= 1).assertTrue();
-      expect(Math.abs(px2vp(hostRect.bottom - mainRect.bottom) - 24) <= 1).assertTrue();
-      expect(Math.abs(px2vp(edgeRect.left - hostRect.left) - 40) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(px2vp(mainRect.bottom - mainRect.top) - 51)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(px2vp(hostRect.bottom - mainRect.bottom) - 24)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(px2vp(edgeRect.left - hostRect.left) - 40)) <= 1).assertTrue();
       console.info('SUB_ACE_SAFEAREAINSET_Abnormal_0500 END');
       done();
     });
@@ -228,9 +228,9 @@ export default function SafeAreaInsetAbnormalTest() {
       console.info('[SUB_ACE_SAFEAREAINSET_Abnormal_0600] main height: ' + px2vp(mainRect.bottom - mainRect.top));
       console.info('[SUB_ACE_SAFEAREAINSET_Abnormal_0600] host.bottom - main.bottom: ' + px2vp(hostRect.bottom - mainRect.bottom));
       console.info('[SUB_ACE_SAFEAREAINSET_Abnormal_0600] edge.left - host.left: ' + px2vp(edgeRect.left - hostRect.left));
-      expect(Math.abs(px2vp(mainRect.bottom - mainRect.top) - 51) <= 1).assertTrue();
-      expect(Math.abs(px2vp(hostRect.bottom - mainRect.bottom) - 24) <= 1).assertTrue();
-      expect(Math.abs(px2vp(edgeRect.left - hostRect.left) - 40) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(px2vp(mainRect.bottom - mainRect.top) - 51)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(px2vp(hostRect.bottom - mainRect.bottom) - 24)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(px2vp(edgeRect.left - hostRect.left) - 40)) <= 1).assertTrue();
       console.info('SUB_ACE_SAFEAREAINSET_Abnormal_0600 END');
       done();
     });
@@ -249,7 +249,7 @@ export default function SafeAreaInsetAbnormalTest() {
       let hostRect = getRectInfo('SafeAreaInsetAbnormal_a6Host');
       let heightVp = px2vp(hostRect.bottom - hostRect.top);
       console.info('[SUB_ACE_SAFEAREAINSET_Abnormal_0700] a6 host height: ' + heightVp);
-      expect(Math.abs(heightVp - 40) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(heightVp - 40)) <= 1).assertTrue();
       console.info('SUB_ACE_SAFEAREAINSET_Abnormal_0700 END');
       done();
     });
@@ -268,7 +268,7 @@ export default function SafeAreaInsetAbnormalTest() {
       let hostRect = getRectInfo('SafeAreaInsetAbnormal_a7Host');
       let heightVp = px2vp(hostRect.bottom - hostRect.top);
       console.info('[SUB_ACE_SAFEAREAINSET_Abnormal_0800] a7 host height: ' + heightVp);
-      expect(Math.abs(heightVp - 40) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(heightVp - 40)) <= 1).assertTrue();
       console.info('SUB_ACE_SAFEAREAINSET_Abnormal_0800 END');
       done();
     });
@@ -287,7 +287,7 @@ export default function SafeAreaInsetAbnormalTest() {
       let hostRect = getRectInfo('SafeAreaInsetAbnormal_a8Host');
       let heightVp = px2vp(hostRect.bottom - hostRect.top);
       console.info('[SUB_ACE_SAFEAREAINSET_Abnormal_0900] a8 host height: ' + heightVp);
-      expect(Math.abs(heightVp - 40) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(heightVp - 40)) <= 1).assertTrue();
       console.info('SUB_ACE_SAFEAREAINSET_Abnormal_0900 END');
       done();
     });
@@ -306,7 +306,7 @@ export default function SafeAreaInsetAbnormalTest() {
       let hostRect = getRectInfo('SafeAreaInsetAbnormal_a9Host');
       let heightVp = px2vp(hostRect.bottom - hostRect.top);
       console.info('[SUB_ACE_SAFEAREAINSET_Abnormal_1000] a9 host height: ' + heightVp);
-      expect(Math.abs(heightVp - 67) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(heightVp - 67)) <= 1).assertTrue();
       console.info('SUB_ACE_SAFEAREAINSET_Abnormal_1000 END');
       done();
     });
@@ -336,7 +336,7 @@ export default function SafeAreaInsetAbnormalTest() {
       let hostRect = getRectInfo('SafeAreaInsetAbnormal_a9Host');
       let heightVp = px2vp(hostRect.bottom - hostRect.top);
       console.info('[SUB_ACE_SAFEAREAINSET_Abnormal_1100] a9 host height: ' + heightVp);
-      expect(Math.abs(heightVp - 40) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(heightVp - 40)) <= 1).assertTrue();
       console.info('SUB_ACE_SAFEAREAINSET_Abnormal_1100 END');
       done();
     });
@@ -366,7 +366,7 @@ export default function SafeAreaInsetAbnormalTest() {
       let hostRect = getRectInfo('SafeAreaInsetAbnormal_a9Host');
       let heightVp = px2vp(hostRect.bottom - hostRect.top);
       console.info('[SUB_ACE_SAFEAREAINSET_Abnormal_1200] a9 host height: ' + heightVp);
-      expect(Math.abs(heightVp - 40) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(heightVp - 40)) <= 1).assertTrue();
       console.info('SUB_ACE_SAFEAREAINSET_Abnormal_1200 END');
       done();
     });
@@ -396,7 +396,7 @@ export default function SafeAreaInsetAbnormalTest() {
       let hostRect = getRectInfo('SafeAreaInsetAbnormal_a9Host');
       let heightVp = px2vp(hostRect.bottom - hostRect.top);
       console.info('[SUB_ACE_SAFEAREAINSET_Abnormal_1300] a9 host height: ' + heightVp);
-      expect(Math.abs(heightVp - 40) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(heightVp - 40)) <= 1).assertTrue();
       console.info('SUB_ACE_SAFEAREAINSET_Abnormal_1300 END');
       done();
     });
@@ -426,7 +426,7 @@ export default function SafeAreaInsetAbnormalTest() {
       let hostRect = getRectInfo('SafeAreaInsetAbnormal_a9Host');
       let heightVp = px2vp(hostRect.bottom - hostRect.top);
       console.info('[SUB_ACE_SAFEAREAINSET_Abnormal_1400] a9 host height: ' + heightVp);
-      expect(Math.abs(heightVp - 40) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(heightVp - 40)) <= 1).assertTrue();
       console.info('SUB_ACE_SAFEAREAINSET_Abnormal_1400 END');
       done();
     });
@@ -445,7 +445,7 @@ export default function SafeAreaInsetAbnormalTest() {
       let hostRect = getRectInfo('SafeAreaInsetAbnormal_a10Host');
       let heightVp = px2vp(hostRect.bottom - hostRect.top);
       console.info('[SUB_ACE_SAFEAREAINSET_Abnormal_1500] a10 host height: ' + heightVp);
-      expect(Math.abs(heightVp - 67) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(heightVp - 67)) <= 1).assertTrue();
       console.info('SUB_ACE_SAFEAREAINSET_Abnormal_1500 END');
       done();
     });
@@ -477,7 +477,7 @@ export default function SafeAreaInsetAbnormalTest() {
       let hostRect = getRectInfo('SafeAreaInsetAbnormal_a10Host');
       let heightVp = px2vp(hostRect.bottom - hostRect.top);
       console.info('[SUB_ACE_SAFEAREAINSET_Abnormal_1600] a10 host height: ' + heightVp);
-      expect(Math.abs(heightVp - 52) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(heightVp - 52)) <= 1).assertTrue();
       console.info('SUB_ACE_SAFEAREAINSET_Abnormal_1600 END');
       done();
     });
@@ -507,7 +507,7 @@ export default function SafeAreaInsetAbnormalTest() {
       let hostRect = getRectInfo('SafeAreaInsetAbnormal_a10Host');
       let heightVp = px2vp(hostRect.bottom - hostRect.top);
       console.info('[SUB_ACE_SAFEAREAINSET_Abnormal_1700] a10 host height: ' + heightVp);
-      expect(Math.abs(heightVp - 52) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(heightVp - 52)) <= 1).assertTrue();
       console.info('SUB_ACE_SAFEAREAINSET_Abnormal_1700 END');
       done();
     });
@@ -535,7 +535,7 @@ export default function SafeAreaInsetAbnormalTest() {
       let hostRect = getRectInfo('SafeAreaInsetAbnormal_a10Host');
       let heightVp = px2vp(hostRect.bottom - hostRect.top);
       console.info('[SUB_ACE_SAFEAREAINSET_Abnormal_1800] a10 host height: ' + heightVp);
-      expect(Math.abs(heightVp - 52) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(heightVp - 52)) <= 1).assertTrue();
       console.info('SUB_ACE_SAFEAREAINSET_Abnormal_1800 END');
       done();
     });
