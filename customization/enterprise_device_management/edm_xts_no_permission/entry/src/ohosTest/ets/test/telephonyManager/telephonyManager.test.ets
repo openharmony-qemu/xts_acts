@@ -36,6 +36,7 @@ export default function telephonyManagerTest() {
     testGetIncomingCallPolicyNumbers();
     testHangupCalling();
     testGetCallLogs();
+    testGetSmsMessages();
   })
 }
 
@@ -421,6 +422,36 @@ function testHangupCalling() {
   });
 }
 
+function testGetSmsMessages() {
+  /**
+   * @tc.name   test_get_sms_messages_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_SMS_MESSAGES_JS_0100
+   * @tc.desc   test getSmsMessages with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_sms_messages_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      await telephonyManager.getSmsMessages({
+        startTime: 1609459200,
+        endTime: 1735689600,
+        telephoneNumber: '13800138000'
+      });
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
+      } else {
+        expect(error.code === 201).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
 function testGetCallLogs() {
   /**
    * @tc.name   test_get_call_logs_0100
