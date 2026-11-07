@@ -50,6 +50,9 @@ import LayoutlableMeasureUndefinedTest from './CommonCustom/LayoutlableMeasureUn
 import LayoutGravityNullUndefinedTest from './CommonAttrs/LayoutGravityNullUndefined.test';
 import IgnoreLayoutSafeAreaNullUndefinedTest from './CommonAttrs/IgnoreLayoutSafeAreaNullUndefined.test';
 import ExpandSafeAreaNullUndefinedTest from './CommonAttrs/ExpandSafeAreaNullUndefined.test';
+import SafeAreaInsetNormalTest from './CommonAttrs/safeAreaInset/SafeAreaInsetNormalTest.test';
+import SafeAreaInsetAbnormalTest from './CommonAttrs/safeAreaInset/SafeAreaInsetAbnormalTest.test';
+import SafeAreaInsetNullUndefinedTest from './CommonAttrs/safeAreaInset/SafeAreaInsetNullUndefinedTest.test';
 
 import MediaQueryMatchMediaNullUndefinedTest from './CommonCustom/MediaQueryMatchMediaNullUndefinedTest.test';
 import MediaQueryMatchMediaSyncNullUndefinedTest from './CommonCustom/MediaQueryMatchMediaSyncNullUndefinedTest.test';
@@ -109,6 +112,9 @@ export default function testsuite() {
   LayoutGravityNullUndefinedTest();
   IgnoreLayoutSafeAreaNullUndefinedTest();
   ExpandSafeAreaNullUndefinedTest();
+  SafeAreaInsetNormalTest();
+  SafeAreaInsetAbnormalTest();
+  SafeAreaInsetNullUndefinedTest();
 
   MediaQueryMatchMediaNullUndefinedTest();
   MediaQueryMatchMediaSyncNullUndefinedTest();
