@@ -759,7 +759,6 @@ export default function HasCard2PublicTest() {
         done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
-      done();
     });
 
     /**
@@ -792,7 +791,6 @@ export default function HasCard2PublicTest() {
         done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
-      done();
     });
 
     /**
@@ -825,7 +823,6 @@ export default function HasCard2PublicTest() {
         done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
-      done();
     });
 
     /**
@@ -858,7 +855,6 @@ export default function HasCard2PublicTest() {
         done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
-      done();
     });
 
     /**
@@ -891,7 +887,6 @@ export default function HasCard2PublicTest() {
         done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
-      done();
     });
 
     /**
@@ -927,7 +922,6 @@ export default function HasCard2PublicTest() {
         done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
-      done();
     });
 
     /**
@@ -963,7 +957,6 @@ export default function HasCard2PublicTest() {
         done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
-      done();
     });
 
     /**
@@ -1000,7 +993,6 @@ export default function HasCard2PublicTest() {
         done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
-      done();
     });
 
     /**
@@ -1037,7 +1029,6 @@ export default function HasCard2PublicTest() {
         done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
-      done();
     });
 
     /**
@@ -1074,7 +1065,6 @@ export default function HasCard2PublicTest() {
         done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
-      done();
     });
 
     /**
@@ -1111,7 +1101,6 @@ export default function HasCard2PublicTest() {
         done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
-      done();
     });
 
     /**
@@ -1147,7 +1136,6 @@ export default function HasCard2PublicTest() {
         done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
-      done();
     });
 
     /**
@@ -1183,7 +1171,6 @@ export default function HasCard2PublicTest() {
         done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
-      done();
     });
 
     /**
@@ -1226,7 +1213,6 @@ export default function HasCard2PublicTest() {
         done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
-      done();
     });
 
     /**
@@ -1269,7 +1255,6 @@ export default function HasCard2PublicTest() {
         done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
-      done();
     });
 
     /**
@@ -1300,7 +1285,6 @@ export default function HasCard2PublicTest() {
         done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
-      done();
     });
 
     /**
@@ -1334,7 +1318,6 @@ export default function HasCard2PublicTest() {
         done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
-      done();
     });
 
     /**
@@ -1368,7 +1351,6 @@ export default function HasCard2PublicTest() {
         done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
-      done();
     });
 
     /**
@@ -1402,7 +1384,6 @@ export default function HasCard2PublicTest() {
         done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
-      done();
     });
 
     /**
@@ -1434,7 +1415,6 @@ export default function HasCard2PublicTest() {
         done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
-      done();
     });
 
     /**
@@ -1469,7 +1449,6 @@ export default function HasCard2PublicTest() {
         done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
-      done();
     });
 
     /**
@@ -1503,7 +1482,6 @@ export default function HasCard2PublicTest() {
         done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
-      done();
     });
 
   });
