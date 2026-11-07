@@ -9160,5 +9160,117 @@ export default function audioNDK() {
       expect(result).assertEqual(test_pass);
       done();
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0100
+     * @tc.desc   running+MUSIC,OH_AudioRenderer_Standby(renderer,true) enter standby normally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0100 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0200
+     * @tc.desc   already in standby,OH_AudioRenderer_Standby(renderer,false) exit standby normally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0200();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0200 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0300
+     * @tc.desc   not started(STATE_PREPARED),OH_AudioRenderer_Standby(Renderer,true) return ILLEGAL_STATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0300',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0300();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0300 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0400
+     * @tc.desc   not in standby(STATE_RUNNING),OH_AudioRenderer_Standby(Renderer,false) return ILLEGAL_STATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0400',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0400();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0400 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0500
+     * @tc.desc   in standby state OH_AudioRenderer_Start returns ILLEGAL_STATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0500',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0500();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0500 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0600
+     * @tc.desc   ALARM usage (not in MUSIC/MOVIE/GAME/AUDIOBOOK),OH_AudioRenderer_Standby returns ILLEGAL_STATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0600',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0600();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0600 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0700
+     * @tc.desc   abnormal value null-OH_AudioRenderer_Standby(nullptr,true) returns INVALID_PARAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0700',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0700();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0700 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
   })
 }
