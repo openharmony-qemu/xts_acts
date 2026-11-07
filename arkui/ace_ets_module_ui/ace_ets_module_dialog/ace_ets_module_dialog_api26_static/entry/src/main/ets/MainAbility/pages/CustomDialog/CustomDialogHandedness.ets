@@ -37,29 +37,31 @@ struct CustomDialogHandedness {
 
   aboutToAppear(): void {
     AppStorage.setOrCreate<Router>('router', this.getUIContext().getRouter());
-    this.noneDialog = this.createHandDialog('mode_NONE', HAND_NONE);
-    this.anchorDialog = this.createHandDialog('mode_FOLLOW_ANCHOR', HAND_FOLLOW_ANCHOR);
-    this.gripDialog = this.createHandDialog('mode_FOLLOW_GRIP_HAND', HAND_FOLLOW_GRIP);
-  }
-
-  private createHandDialog(label: string, mode: number): CustomDialogController {
-    let raw: HandDialogOpts = new HandDialogOpts();
-    raw.builder = (): void => {
-      this.handBuilderByLabel(label);
+    // CI static runtimeapi may omit HandednessFollowMode; inject numeric via HandDialogOpts.
+    // Call @Builder only from CustomDialogController.builder lambda (not from plain methods).
+    let noneOpts: HandDialogOpts = new HandDialogOpts();
+    noneOpts.builder = (): void => {
+      this.handBuilder(this.noneDialog, 'mode_NONE');
     };
-    raw.alignment = DialogAlignment.Center;
-    raw.adaptToHandedness = mode;
-    return new CustomDialogController(raw as CustomDialogControllerOptions);
-  }
+    noneOpts.alignment = DialogAlignment.Center;
+    noneOpts.adaptToHandedness = HAND_NONE;
+    this.noneDialog = new CustomDialogController(noneOpts as CustomDialogControllerOptions);
 
-  private handBuilderByLabel(label: string): void {
-    if (label === 'mode_NONE') {
-      this.handBuilder(this.noneDialog, label);
-    } else if (label === 'mode_FOLLOW_ANCHOR') {
-      this.handBuilder(this.anchorDialog, label);
-    } else {
-      this.handBuilder(this.gripDialog, label);
-    }
+    let anchorOpts: HandDialogOpts = new HandDialogOpts();
+    anchorOpts.builder = (): void => {
+      this.handBuilder(this.anchorDialog, 'mode_FOLLOW_ANCHOR');
+    };
+    anchorOpts.alignment = DialogAlignment.Center;
+    anchorOpts.adaptToHandedness = HAND_FOLLOW_ANCHOR;
+    this.anchorDialog = new CustomDialogController(anchorOpts as CustomDialogControllerOptions);
+
+    let gripOpts: HandDialogOpts = new HandDialogOpts();
+    gripOpts.builder = (): void => {
+      this.handBuilder(this.gripDialog, 'mode_FOLLOW_GRIP_HAND');
+    };
+    gripOpts.alignment = DialogAlignment.Center;
+    gripOpts.adaptToHandedness = HAND_FOLLOW_GRIP;
+    this.gripDialog = new CustomDialogController(gripOpts as CustomDialogControllerOptions);
   }
 
   @Builder
