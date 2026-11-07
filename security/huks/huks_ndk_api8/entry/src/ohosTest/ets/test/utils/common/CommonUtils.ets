@@ -69,3 +69,16 @@ export async function Sleep(ms: number) {
     }, ms)
   })
 }
+
+const EVENT_LOOP_YIELD_DELAY_MS = 10;
+
+/**
+ * Yields the current ArkTS task to the event loop before a synchronous NAPI call.
+ */
+export function YieldToEventLoop(): Promise<void> {
+  return new Promise<void>((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, EVENT_LOOP_YIELD_DELAY_MS);
+  });
+}

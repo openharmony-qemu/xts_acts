@@ -17,6 +17,7 @@ import huks from '@ohos.security.huks';
 import * as huksCallback from './utils/huks/HuksCallbackUtils';
 
 import { GetAesGenerateOptions } from './utils/huks/GenerateKeyUtils';
+import { Logger } from './utils/common/Logger';
 
 
 export default function SecurityHuksQueryKey() {
@@ -42,7 +43,7 @@ export default function SecurityHuksQueryKey() {
         let res = await huks.hasKeyItem(srcKeyAlias, huksOptions);
         expect(res).assertEqual(false);
       } catch (err) {
-        console.error(testNumber + ` catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -63,7 +64,7 @@ export default function SecurityHuksQueryKey() {
         let res = await huksCallback.hasKeyItem(srcKeyAlias, huksOptions);
         expect(res).assertEqual(false);
       } catch (err) {
-        console.error(testNumber + ` catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -86,7 +87,7 @@ export default function SecurityHuksQueryKey() {
         let res = await huks.hasKeyItem(srcKeyAlias, huksOptions);
         expect(res).assertEqual(false);
       } catch (err) {
-        console.error(testNumber + ` catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -108,7 +109,7 @@ export default function SecurityHuksQueryKey() {
         let res = await huks.isKeyItemExist(srcKeyAlias, huksOptions);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.error(testNumber + ` catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -129,7 +130,7 @@ export default function SecurityHuksQueryKey() {
         await huks.isKeyItemExist(srcKeyAlias, huksOptions);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + ` catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(12000011);
       }
     });
@@ -152,7 +153,7 @@ export default function SecurityHuksQueryKey() {
         await huks.isKeyItemExist(srcKeyAlias, huksOptions);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + ` catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(12000011);
       }
     });
@@ -174,7 +175,7 @@ export default function SecurityHuksQueryKey() {
         let res = await huksCallback.isKeyItemExist(srcKeyAlias, huksOptions)
         expect(res).assertEqual(true);
       } catch (err) {
-        console.error(testNumber + ` catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -195,7 +196,7 @@ export default function SecurityHuksQueryKey() {
         await huksCallback.isKeyItemExist(srcKeyAlias, huksOptions)
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + ` catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(12000011);
       }
     });

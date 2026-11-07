@@ -12,6 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import promptAction from '@ohos.promptAction';
+
 let tag = "HUKS_XTS"
 
 export class logger {
@@ -26,4 +28,51 @@ export class logger {
     static error(...args) {
         console.error(tag, args);
     }
+}
+
+
+const loggerTag = "[HUKS_XTS]"
+
+export class Logger {
+  static maxCount         = 5;
+  static msgArr           = []
+  static curIndex         = 0;
+
+  static info(...args          ) {
+    console.info(loggerTag, ...args);
+  }
+
+  static log(...args          ) {
+    console.log(loggerTag, ...args);
+  }
+
+  static error(...args          ) {
+    console.error(loggerTag, ...args);
+  }
+
+  static showMsg(str        ) {
+    let msg = "";
+    for (let i = Logger.curIndex; i < Logger.maxCount; i++) {
+      msg += Logger.msgArr[i%Logger.maxCount];
+    }
+    LogToConsoleToastUi(`${str}: ${msg}`)
+  }
+
+  static pushMsg(str        ) {
+    Logger.msgArr[Logger.curIndex] = str;
+    Logger.curIndex = (Logger.curIndex + 1) % Logger.maxCount;
+  }
+
+  static clearMsg() {
+    Logger.msgArr = [];
+    Logger.curIndex = 0;
+  }
+}
+
+export function LogToConsoleToastUi(msg        ) {
+  Logger.info(msg);
+  promptAction.showToast({
+    message: msg,
+    duration: 3000,
+  })
 }

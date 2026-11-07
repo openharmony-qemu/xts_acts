@@ -55,7 +55,7 @@ export default function SecurityHuksMacHmac() {
 
         await MacCallback(srcKeyAlias, macOptions, macData);
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -106,7 +106,7 @@ export default function SecurityHuksMacHmac() {
 
         await MacCallback(srcKeyAlias, macOptions, macData);
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -131,7 +131,7 @@ export default function SecurityHuksMacHmac() {
 
         await MacCallbackEndWithAbort(srcKeyAlias, macOptions, macData);
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -156,7 +156,7 @@ export default function SecurityHuksMacHmac() {
 
         await MacCallback(srcKeyAlias, macOptions, macData);
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -182,7 +182,7 @@ export default function SecurityHuksMacHmac() {
 
         await MacCallbackEndWithAbort(srcKeyAlias, macOptions, macData);
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -207,7 +207,7 @@ export default function SecurityHuksMacHmac() {
 
         await MacCallback(srcKeyAlias, macOptions, macData);
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -232,7 +232,7 @@ export default function SecurityHuksMacHmac() {
 
         await MacCallbackEndWithAbort(srcKeyAlias, macOptions, macData);
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -284,7 +284,7 @@ export default function SecurityHuksMacHmac() {
 
         await MacEndWithAbort(srcKeyAlias, macOptions, macData);
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -310,7 +310,7 @@ export default function SecurityHuksMacHmac() {
 
         await Mac(srcKeyAlias, macOptions, macData);
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -336,7 +336,7 @@ export default function SecurityHuksMacHmac() {
 
         await MacEndWithAbort(srcKeyAlias, macOptions, macData);
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -361,7 +361,7 @@ export default function SecurityHuksMacHmac() {
 
         await Mac(srcKeyAlias, macOptions, macData);
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -386,7 +386,7 @@ export default function SecurityHuksMacHmac() {
 
         await MacEndWithAbort(srcKeyAlias, macOptions, macData);
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -411,7 +411,7 @@ export default function SecurityHuksMacHmac() {
 
         await Mac(srcKeyAlias, macOptions, macData);
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -437,7 +437,7 @@ export default function SecurityHuksMacHmac() {
 
         await MacEndWithAbort(srcKeyAlias, macOptions, macData);
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -463,7 +463,7 @@ export default function SecurityHuksMacHmac() {
 
         await Mac(srcKeyAlias, macOptions, macData);
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -489,7 +489,7 @@ export default function SecurityHuksMacHmac() {
 
         await MacEndWithAbort(srcKeyAlias, macOptions, macData);
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });

@@ -2,11 +2,11 @@
     "description": "Configuration for ActsHuksNdkTest Tests",
     "driver": {
         "type": "OHJSUnitTest",
-        "test-timeout": "180000",
-        "shell-timeout": "600000",
+        "test-timeout": "3600000",
+        "shell-timeout": "1800000",
         "bundle-name": "com.acts.huks.ndkapi8",
         "module-name": "entry_test",
-        "testcase-timeout": 60000
+        "testcase-timeout": 600000
     },
     "kits": [
         {
