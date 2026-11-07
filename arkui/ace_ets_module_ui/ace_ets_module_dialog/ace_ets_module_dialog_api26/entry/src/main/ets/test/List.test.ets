@@ -39,6 +39,7 @@ import DialogAlignWordBreak from './dialog/DialogAlignWordBreak.test';
 import DialogAlignWordBreakExtra from './dialog/DialogAlignWordBreakExtra.test';
 import DialogAbnormalOpts from './dialog/DialogAbnormalOpts.test';
 import DialogAbnormalOptsExtra from './dialog/DialogAbnormalOptsExtra.test';
+import DialogHandedness from './dialog/DialogHandedness.test';
 
 export default function testsuite() {
   PopupOptionsColorMode();
@@ -67,7 +68,8 @@ export default function testsuite() {
   DialogAlignWordBreakExtra();
   DialogAbnormalOpts();
   DialogAbnormalOptsExtra();
-  
+
   DialogBaseOptionsLayout();
   DialogAlignWordBreak();
+  DialogHandedness();
 }

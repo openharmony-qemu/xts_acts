@@ -26,6 +26,7 @@
     "MainAbility/pages/dialog/DialogAlignWordBreak",
     "MainAbility/pages/dialog/DialogAlignWordBreakExtra",
     "MainAbility/pages/dialog/DialogAbnormalOpts",
-    "MainAbility/pages/dialog/DialogAbnormalOptsExtra"
+    "MainAbility/pages/dialog/DialogAbnormalOptsExtra",
+    "MainAbility/pages/dialog/DialogHandedness"
   ]
 }

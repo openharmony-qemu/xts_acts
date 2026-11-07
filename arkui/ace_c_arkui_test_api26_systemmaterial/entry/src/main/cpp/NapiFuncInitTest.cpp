@@ -112,6 +112,27 @@ static napi_property_descriptor *GetMaterialDialogProps(size_t *count)
     return desc;
 }
 
+static napi_property_descriptor *GetMaterialHandednessProps(size_t *count)
+{
+    static napi_property_descriptor desc[] = {
+        MakeMaterialProp("testHandednessModeEnumValues001", TestHandednessModeEnumValues001),
+        MakeMaterialProp("testCustomDialogSetAdaptToHandedness001", TestCustomDialogSetAdaptToHandedness001),
+        MakeMaterialProp("testCustomDialogSetAdaptToHandedness002", TestCustomDialogSetAdaptToHandedness002),
+        MakeMaterialProp("testCustomDialogSetAdaptToHandedness003", TestCustomDialogSetAdaptToHandedness003),
+        MakeMaterialProp("testCustomDialogSetAdaptToHandedness004", TestCustomDialogSetAdaptToHandedness004),
+        MakeMaterialProp("testCustomDialogSetAdaptToHandednessInOptions001",
+            TestCustomDialogSetAdaptToHandednessInOptions001),
+        MakeMaterialProp("testCustomDialogSetAdaptToHandednessInOptions002",
+            TestCustomDialogSetAdaptToHandednessInOptions002),
+        MakeMaterialProp("testCustomDialogSetAdaptToHandednessInOptions003",
+            TestCustomDialogSetAdaptToHandednessInOptions003),
+        MakeMaterialProp("testCustomDialogSetAdaptToHandednessInOptions004",
+            TestCustomDialogSetAdaptToHandednessInOptions004),
+    };
+    *count = sizeof(desc) / sizeof(desc[0]);
+    return desc;
+}
+
 static napi_property_descriptor *GetMaterialNullPointerProps(size_t *count)
 {
     static napi_property_descriptor desc[] = {
@@ -172,14 +193,19 @@ static bool DefineMaterialProps(napi_env env, napi_value exports)
 {
     size_t coreCount = 0;
     size_t dialogCount = 0;
+    size_t handednessCount = 0;
     size_t nullCount = 0;
     napi_property_descriptor *coreDesc = GetMaterialCoreProps(&coreCount);
     napi_property_descriptor *dialogDesc = GetMaterialDialogProps(&dialogCount);
+    napi_property_descriptor *handednessDesc = GetMaterialHandednessProps(&handednessCount);
     napi_property_descriptor *nullDesc = GetMaterialNullPointerProps(&nullCount);
     if (napi_define_properties(env, exports, coreCount, coreDesc) != napi_ok) {
         return false;
     }
     if (napi_define_properties(env, exports, dialogCount, dialogDesc) != napi_ok) {
+        return false;
+    }
+    if (napi_define_properties(env, exports, handednessCount, handednessDesc) != napi_ok) {
         return false;
     }
     if (napi_define_properties(env, exports, nullCount, nullDesc) != napi_ok) {

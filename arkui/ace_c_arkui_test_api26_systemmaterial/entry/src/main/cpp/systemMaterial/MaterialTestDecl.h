@@ -19,7 +19,6 @@
 #include <napi/native_api.h>
 
 namespace ArkUICapiTest {
-
 napi_value TestImmersiveStyleEnumValues001(napi_env env, napi_callback_info info);
 napi_value TestMaterialLevelEnumValues001(napi_env env, napi_callback_info info);
 napi_value TestGetSystemMaterialSupported001(napi_env env, napi_callback_info info);
@@ -112,6 +111,17 @@ napi_value TestLinearGradientBlurGetDirectionNull016(napi_env env, napi_callback
 napi_value TestLinearGradientBlurGetDefaultDirection017(napi_env env, napi_callback_info info);
 napi_value TestLinearGradientBlurGetDefaultFractionStops018(napi_env env, napi_callback_info info);
 napi_value TestLinearGradientBlurUpdateAllParams019(napi_env env, napi_callback_info info);
+
+
+napi_value TestHandednessModeEnumValues001(napi_env env, napi_callback_info info);
+napi_value TestCustomDialogSetAdaptToHandedness001(napi_env env, napi_callback_info info);
+napi_value TestCustomDialogSetAdaptToHandedness002(napi_env env, napi_callback_info info);
+napi_value TestCustomDialogSetAdaptToHandedness003(napi_env env, napi_callback_info info);
+napi_value TestCustomDialogSetAdaptToHandedness004(napi_env env, napi_callback_info info);
+napi_value TestCustomDialogSetAdaptToHandednessInOptions001(napi_env env, napi_callback_info info);
+napi_value TestCustomDialogSetAdaptToHandednessInOptions002(napi_env env, napi_callback_info info);
+napi_value TestCustomDialogSetAdaptToHandednessInOptions003(napi_env env, napi_callback_info info);
+napi_value TestCustomDialogSetAdaptToHandednessInOptions004(napi_env env, napi_callback_info info);
 
 } // namespace ArkUICapiTest
 

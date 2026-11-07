@@ -8,6 +8,7 @@
     "MainAbility/pages/popupBackground/CustomPopupOptionsBackgroundBlurStyleOptions",
     "MainAbility/pages/CustomDialog/CustomDialogDisplayModeInSubWindow",
     "MainAbility/pages/CustomDialog/CustomDialogSystemMaterial",
+    "MainAbility/pages/CustomDialog/CustomDialogHandedness",
     "MainAbility/pages/Menu/subMenuBuilder",
     "MainAbility/pages/MenuSystemMaterial/MenuSystemMaterial"
   ]

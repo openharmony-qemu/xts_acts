@@ -22,6 +22,7 @@ add_library(nativefunc SHARED
     systemMaterial/CustomDialogOpenCallbackTest.cpp
     systemMaterial/NodeSystemMaterialTest.cpp
     systemMaterial/LinearGradientBlurOptionsTest.cpp
+    systemMaterial/CustomDialogHandednessTest.cpp
 )
 
 set(_OHOS_NATIVE_TAG_PART_A "nd")
@@ -35,4 +36,4 @@ find_library(libuv-lib uv)
 
 target_link_libraries(nativefunc PUBLIC
     libnative_drawing.so libpixelmap.so libace_napi.z.so libudmf.so libnative_window_manager.so
-    ${hilog-lib} ${libace-lib} ${libnapi-lib} ${libuv-lib})
+    ${hilog-lib} ${libace-lib} ${libnapi-lib} ${libuv-lib} dl)
