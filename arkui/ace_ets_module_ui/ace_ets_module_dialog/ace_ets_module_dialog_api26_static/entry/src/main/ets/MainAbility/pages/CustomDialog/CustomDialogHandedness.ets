@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,10 +16,16 @@
 
 import {
   Entry, Component, Column, Button, Text, FlexAlign, ColumnOptions,
-  CustomDialogController, DialogAlignment, Builder, HandednessFollowMode,
+  CustomDialogController, CustomDialogControllerOptions, DialogAlignment, Builder,
 } from '@ohos.arkui.component';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
+import { HandDialogOpts } from '../../../models/HandDialogOpts';
+
+/** HandednessFollowMode numeric values (NONE/FOLLOW_ANCHOR/FOLLOW_GRIP_HAND). */
+const HAND_NONE: number = 0;
+const HAND_FOLLOW_ANCHOR: number = 1;
+const HAND_FOLLOW_GRIP: number = 2;
 
 @Entry
 @Component
@@ -31,27 +37,29 @@ struct CustomDialogHandedness {
 
   aboutToAppear(): void {
     AppStorage.setOrCreate<Router>('router', this.getUIContext().getRouter());
-    this.noneDialog = new CustomDialogController({
-      builder: (): void => {
-        this.handBuilder(this.noneDialog, 'mode_NONE');
-      },
-      alignment: DialogAlignment.Center,
-      adaptToHandedness: HandednessFollowMode.NONE,
-    });
-    this.anchorDialog = new CustomDialogController({
-      builder: (): void => {
-        this.handBuilder(this.anchorDialog, 'mode_FOLLOW_ANCHOR');
-      },
-      alignment: DialogAlignment.Center,
-      adaptToHandedness: HandednessFollowMode.FOLLOW_ANCHOR,
-    });
-    this.gripDialog = new CustomDialogController({
-      builder: (): void => {
-        this.handBuilder(this.gripDialog, 'mode_FOLLOW_GRIP_HAND');
-      },
-      alignment: DialogAlignment.Center,
-      adaptToHandedness: HandednessFollowMode.FOLLOW_GRIP_HAND,
-    });
+    this.noneDialog = this.createHandDialog('mode_NONE', HAND_NONE);
+    this.anchorDialog = this.createHandDialog('mode_FOLLOW_ANCHOR', HAND_FOLLOW_ANCHOR);
+    this.gripDialog = this.createHandDialog('mode_FOLLOW_GRIP_HAND', HAND_FOLLOW_GRIP);
+  }
+
+  private createHandDialog(label: string, mode: number): CustomDialogController {
+    let raw: HandDialogOpts = new HandDialogOpts();
+    raw.builder = (): void => {
+      this.handBuilderByLabel(label);
+    };
+    raw.alignment = DialogAlignment.Center;
+    raw.adaptToHandedness = mode;
+    return new CustomDialogController(raw as CustomDialogControllerOptions);
+  }
+
+  private handBuilderByLabel(label: string): void {
+    if (label === 'mode_NONE') {
+      this.handBuilder(this.noneDialog, label);
+    } else if (label === 'mode_FOLLOW_ANCHOR') {
+      this.handBuilder(this.anchorDialog, label);
+    } else {
+      this.handBuilder(this.gripDialog, label);
+    }
   }
 
   @Builder
@@ -65,9 +73,7 @@ struct CustomDialogHandedness {
   }
 
   private enumOk(): boolean {
-    return HandednessFollowMode.NONE === 0 &&
-      HandednessFollowMode.FOLLOW_ANCHOR === 1 &&
-      HandednessFollowMode.FOLLOW_GRIP_HAND === 2;
+    return HAND_NONE === 0 && HAND_FOLLOW_ANCHOR === 1 && HAND_FOLLOW_GRIP === 2;
   }
 
   build() {
