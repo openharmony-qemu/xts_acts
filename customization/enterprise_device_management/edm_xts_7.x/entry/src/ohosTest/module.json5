@@ -216,6 +216,9 @@
       },
       {
         "name": "ohos.permission.ENTERPRISE_READ_CALL_LOG"
+      },
+      {
+        "name": "ohos.permission.ENTERPRISE_MANAGE_NOTIFICATION"
       }
     ]
   }
