@@ -8,6 +8,7 @@
     "MainAbility/pages/ellipsisModeTest/ellipsisModeStart",
     "MainAbility/pages/pointerEventGetCurrentLocal/PointerEventGetCurrentLocalTest",
     "MainAbility/pages/TextGetCharacter/TextGetCharacterTest",
-    "MainAbility/pages/FrameNode/CrossLanguageOptionsSupportFiveMethods"
+    "MainAbility/pages/FrameNode/CrossLanguageOptionsSupportFiveMethods",
+    "MainAbility/pages/nodeAdopt/NodeAdoptChildWithPolicy"
   ]
 }
