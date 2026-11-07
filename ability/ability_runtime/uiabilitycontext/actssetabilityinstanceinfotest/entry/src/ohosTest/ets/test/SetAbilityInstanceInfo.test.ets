@@ -44,8 +44,8 @@ function isPc2in1(): boolean {
   return deviceInfo.deviceType === '2in1';
 }
 
-function getBizCode(err: Object): number {
-  return (err as BusinessError).code;
+function getBizCode(err: BusinessError): number {
+  return err.code;
 }
 
 function createOnceDone(done: Function): (pass: boolean) => void {
@@ -78,7 +78,8 @@ async function expectThreeArgReject(
     expect().assertFail();
   } catch (err) {
     hilog.info(DOMAIN, LOG_TAG, tag + ' err=' + JSON.stringify(err));
-    expect(getBizCode(err)).assertEqual(expectCode);
+    let bizErr: BusinessError = err as BusinessError;
+    expect(getBizCode(bizErr)).assertEqual(expectCode);
     hilog.info(DOMAIN, LOG_TAG, tag + ' success');
   }
   done();
@@ -1208,7 +1209,8 @@ export default function abilityTest() {
         expect().assertFail();
       } catch (err) {
         hilog.info(DOMAIN, LOG_TAG, tag + ' err=' + JSON.stringify(err));
-        let code = getBizCode(err);
+        let bizErr: BusinessError = err as BusinessError;
+        let code: number = getBizCode(bizErr);
         // Invalid context commonly returns 16000011; some runtimes reject earlier as 401.
         expect(code === 16000011 || code === 401).assertTrue();
         hilog.info(DOMAIN, LOG_TAG, tag + ' success');
@@ -1241,7 +1243,8 @@ export default function abilityTest() {
         hilog.info(DOMAIN, LOG_TAG, tag + ' success isStrideAlignment=false');
         done();
       } catch (err) {
-        let code = getBizCode(err);
+        let bizErr: BusinessError = err as BusinessError;
+        let code: number = getBizCode(bizErr);
         hilog.info(DOMAIN, LOG_TAG, tag + ' isStrideAlignment=false deviceType=' +
           deviceInfo.deviceType + ' code=' + code);
         expect(code === 401 || code === 801 || code === 16000011 || code === 201).assertTrue();
@@ -1274,7 +1277,8 @@ export default function abilityTest() {
         hilog.info(DOMAIN, LOG_TAG, tag + ' success isStrideAlignment=false');
         done();
       } catch (err) {
-        let code = getBizCode(err);
+        let bizErr: BusinessError = err as BusinessError;
+        let code: number = getBizCode(bizErr);
         hilog.info(DOMAIN, LOG_TAG, tag + ' isStrideAlignment=false deviceType=' +
           deviceInfo.deviceType + ' code=' + code);
         expect(code === 401 || code === 801 || code === 16000011 || code === 201).assertTrue();
@@ -1309,7 +1313,8 @@ export default function abilityTest() {
         hilog.info(DOMAIN, LOG_TAG, tag + ' success isStrideAlignment=true');
         done();
       } catch (err) {
-        let code = getBizCode(err);
+        let bizErr: BusinessError = err as BusinessError;
+        let code: number = getBizCode(bizErr);
         hilog.info(DOMAIN, LOG_TAG, tag + ' isStrideAlignment=true deviceType=' +
           deviceInfo.deviceType + ' code=' + code);
         expect(code === 401 || code === 801 || code === 16000011 || code === 201).assertTrue();
