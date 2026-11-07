@@ -20,7 +20,6 @@ import {
 } from '@ohos.arkui.component';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
-import { HandDialogOpts } from '../../../models/HandDialogOpts';
 
 /** HandednessFollowMode numeric values (NONE/FOLLOW_ANCHOR/FOLLOW_GRIP_HAND). */
 const HAND_NONE: number = 0;
@@ -37,53 +36,38 @@ struct CustomDialogHandedness {
 
   aboutToAppear(): void {
     AppStorage.setOrCreate<Router>('router', this.getUIContext().getRouter());
-    // CI static runtimeapi may omit HandednessFollowMode; inject numeric via HandDialogOpts.
-    // Assign @Builder method refs to builder (plain lambdas that call @Builder lose memo).
-    let noneOpts: HandDialogOpts = new HandDialogOpts();
-    noneOpts.builder = this.noneHandBuilder;
-    noneOpts.alignment = DialogAlignment.Center;
-    noneOpts.adaptToHandedness = HAND_NONE;
-    this.noneDialog = new CustomDialogController(noneOpts as CustomDialogControllerOptions);
-
-    let anchorOpts: HandDialogOpts = new HandDialogOpts();
-    anchorOpts.builder = this.anchorHandBuilder;
-    anchorOpts.alignment = DialogAlignment.Center;
-    anchorOpts.adaptToHandedness = HAND_FOLLOW_ANCHOR;
-    this.anchorDialog = new CustomDialogController(anchorOpts as CustomDialogControllerOptions);
-
-    let gripOpts: HandDialogOpts = new HandDialogOpts();
-    gripOpts.builder = this.gripHandBuilder;
-    gripOpts.alignment = DialogAlignment.Center;
-    gripOpts.adaptToHandedness = HAND_FOLLOW_GRIP;
-    this.gripDialog = new CustomDialogController(gripOpts as CustomDialogControllerOptions);
+    // Same shape as CustomDialogSystemMaterial (CI-green in this module):
+    // builder lambda must sit on CustomDialogController object-literal.
+    // adaptToHandedness uses numeric constants; whole opts cast (CI may omit enum).
+    this.noneDialog = new CustomDialogController({
+      builder: (): void => {
+        this.handBuilder(this.noneDialog, 'mode_NONE');
+      },
+      alignment: DialogAlignment.Center,
+      adaptToHandedness: HAND_NONE,
+    } as CustomDialogControllerOptions);
+    this.anchorDialog = new CustomDialogController({
+      builder: (): void => {
+        this.handBuilder(this.anchorDialog, 'mode_FOLLOW_ANCHOR');
+      },
+      alignment: DialogAlignment.Center,
+      adaptToHandedness: HAND_FOLLOW_ANCHOR,
+    } as CustomDialogControllerOptions);
+    this.gripDialog = new CustomDialogController({
+      builder: (): void => {
+        this.handBuilder(this.gripDialog, 'mode_FOLLOW_GRIP_HAND');
+      },
+      alignment: DialogAlignment.Center,
+      adaptToHandedness: HAND_FOLLOW_GRIP,
+    } as CustomDialogControllerOptions);
   }
 
   @Builder
-  noneHandBuilder(): void {
+  handBuilder(controller: CustomDialogController, label: string): void {
     Column() {
-      Text('mode_NONE').fontSize(18).id('handedness_dialog_text')
+      Text(label).fontSize(18).id('handedness_dialog_text')
       Button('Close_handedness').id('close_handedness_btn').onClick((): void => {
-        this.noneDialog.close();
-      })
-    }.padding(20)
-  }
-
-  @Builder
-  anchorHandBuilder(): void {
-    Column() {
-      Text('mode_FOLLOW_ANCHOR').fontSize(18).id('handedness_dialog_text')
-      Button('Close_handedness').id('close_handedness_btn').onClick((): void => {
-        this.anchorDialog.close();
-      })
-    }.padding(20)
-  }
-
-  @Builder
-  gripHandBuilder(): void {
-    Column() {
-      Text('mode_FOLLOW_GRIP_HAND').fontSize(18).id('handedness_dialog_text')
-      Button('Close_handedness').id('close_handedness_btn').onClick((): void => {
-        this.gripDialog.close();
+        controller.close();
       })
     }.padding(20)
   }
