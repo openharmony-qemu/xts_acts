@@ -117,7 +117,7 @@ export default function AtomicsAPISecondTest() {
           ArkTSUtils.Atomics.notify(typedArray, -1);
           expect(false).assertTrue();
         } catch (error) {
-          expect(error instanceof RangeError).assertTrue();
+          expect((error as BusinessError).code).assertEqual(ATOMIC_INDEX_ERROR);
         }
         
         try {
