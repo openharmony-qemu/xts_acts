@@ -43,6 +43,10 @@
         "MainAbility/pages/CommonAttrs/safeAreaInset/SafeAreaInsetNormal_3",
         "MainAbility/pages/CommonAttrs/safeAreaInset/SafeAreaInsetNormal_4",
         "MainAbility/pages/CommonAttrs/safeAreaInset/SafeAreaInsetNormal_5",
+        "MainAbility/pages/CommonAttrs/safeAreaInset/SafeAreaInsetAbnormal_1",
+        "MainAbility/pages/CommonAttrs/safeAreaInset/SafeAreaInsetAbnormal_2",
+        "MainAbility/pages/CommonAttrs/safeAreaInset/SafeAreaInsetAbnormal_3",
+        "MainAbility/pages/CommonAttrs/safeAreaInset/SafeAreaInsetAbnormal_4",
 
         "MainAbility/pages/CommonCustom/MediaQueryMatchMediaNullUndefined",
         "MainAbility/pages/CommonCustom/MediaQueryMatchMediaSyncNullUndefined",

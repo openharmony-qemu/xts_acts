@@ -132,5 +132,6 @@ struct SafeAreaInsetNormal_5 {
     }
     .width('80%')
     .height('80%')
+    .justifyContent(FlexAlign.Center)
   }
 }
