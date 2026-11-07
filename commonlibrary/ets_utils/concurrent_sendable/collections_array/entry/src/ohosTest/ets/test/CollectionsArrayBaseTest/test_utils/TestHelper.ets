@@ -1,4 +1,4 @@
-﻿export class TestHelper {
+export class TestHelper {
   static log(testName: string, message: string): void {
     console.info('[ArrayTest][' + testName + '] ' + message);
   }

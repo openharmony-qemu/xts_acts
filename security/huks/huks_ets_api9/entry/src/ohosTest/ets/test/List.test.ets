@@ -33,6 +33,23 @@ import SecurityHuksSignVerifyEcc from './SecurityHuksSignVerifyEcc.test'
 import SecurityHuksSignVerifyEd25519 from './SecurityHuksSignVerifyEd25519.test'
 import SecurityHuksSignVerifyRsa from './SecurityHuksSignVerifyRsa.test'
 import SecurityHuksSignVerifySm2 from './SecurityHuksSignVerifySm2.test'
+import SecurityHuksAccessControlGroup from './SecurityHuksAccessControlGroup.test'
+import SecurityHuksAccessControlMultiUser from './SecurityHuksAccessControlMultiUser.test'
+import SecurityHuksAccessControlUserAuth from './SecurityHuksAccessControlUserAuth.test'
+import SecurityHuksApiCoverEnum from './SecurityHuksApiCoverEnum.test'
+import SecurityHuksApiCoverInterfaceErrorCode from './SecurityHuksApiCoverInterfaceErrorCode.test'
+import SecurityHuksApiCoverInterfaceErrorCodeCallback from './SecurityHuksApiCoverInterfaceErrorCodeCallback.test'
+import SecurityHuksApiCoverInterfaceParam from './SecurityHuksApiCoverInterfaceParam.test'
+import SecurityHuksApiCoverInterfaceParamCallback from './SecurityHuksApiCoverInterfaceParamCallback.test'
+import SecurityHuksCipher3Des from './SecurityHuksCipher3Des.test'
+import SecurityHuksCipherDes from './SecurityHuksCipherDes.test'
+import SecurityHuksCmac from './SecurityHuksCmac.test'
+import SecurityHuksKeyAttestation from './SecurityHuksKeyAttestation.test'
+import SecurityHuksKeyGenerateListAliases from './SecurityHuksKeyGenerateListAliases.test'
+import SecurityHuksKeyGenerateOverride from './SecurityHuksKeyGenerateOverride.test'
+import SecurityHuksMlKem from './SecurityHuksMlKem.test'
+import SecurityHuksSignVerifyMlDsa from './SecurityHuksSignVerifyMlDsa.test'
+import SecurityHuksWrapKey from './SecurityHuksWrapKey.test'
 
 export default function testsuite() {
   SecurityHuksAccessControl()
@@ -56,4 +73,21 @@ export default function testsuite() {
   SecurityHuksSignVerifyEd25519()
   SecurityHuksSignVerifyRsa()
   SecurityHuksSignVerifySm2()
+  SecurityHuksAccessControlGroup()
+  SecurityHuksAccessControlMultiUser()
+  SecurityHuksAccessControlUserAuth()
+  SecurityHuksApiCoverEnum()
+  SecurityHuksApiCoverInterfaceErrorCode()
+  SecurityHuksApiCoverInterfaceErrorCodeCallback()
+  SecurityHuksApiCoverInterfaceParam()
+  SecurityHuksApiCoverInterfaceParamCallback()
+  SecurityHuksCipher3Des()
+  SecurityHuksCipherDes()
+  SecurityHuksCmac()
+  SecurityHuksKeyAttestation()
+  SecurityHuksKeyGenerateListAliases()
+  SecurityHuksKeyGenerateOverride()
+  SecurityHuksMlKem()
+  SecurityHuksSignVerifyMlDsa()
+  SecurityHuksWrapKey()
 }

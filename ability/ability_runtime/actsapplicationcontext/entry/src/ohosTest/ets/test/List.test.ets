@@ -14,8 +14,14 @@
  */
 import abilityTest from './Ability.test'
 import SystemConfigurationTest from './SystemConfiguration.test'
+import AppProcessStateChangeTest from './AppProcessStateChange.test'
+import ConfigurationHasBrandColorTest from './ConfigurationHasBrandColor.test'
+import BackToCallerAppWithResultTest from './BackToCallerAppWithResult.test'
 
 export default function testsuite() {
   abilityTest()
   SystemConfigurationTest()
+  AppProcessStateChangeTest()
+  ConfigurationHasBrandColorTest()
+  BackToCallerAppWithResultTest()
 }

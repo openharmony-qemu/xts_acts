@@ -21,6 +21,8 @@
 #include "napi/native_api.h"
 #include "utils.cpp"
 #include "huks_api_test.h"
+#include "huksnapi/huks_napi_register.h"
+#include "nativehuks/NativeHuksRegister.h"
 
 #define FAIL (-1)
 #define PARAM_0 0
@@ -1289,60 +1291,80 @@ static napi_value OHHuksFreeKeyAliasSet(napi_env env, napi_callback_info info)
     return result;
 }
 
+static const uint32_t WRAP_KEY_DATA_SIZE = 2048;
+static struct OH_Huks_Param g_wrapKeyGenParams[] = {
+    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_AES},
+    {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_ENCRYPT | OH_HUKS_KEY_PURPOSE_DECRYPT},
+    {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_256},
+    {.tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_NONE},
+    {.tag = OH_HUKS_TAG_BLOCK_MODE, .uint32Param = OH_HUKS_MODE_CBC},
+    {.tag = OH_HUKS_TAG_IS_ALLOWED_WRAP, .boolParam = true},
+};
+static struct OH_Huks_Param g_wrapKeyParams[] = {
+    {.tag = OH_HUKS_TAG_KEY_WRAP_TYPE, .uint32Param = OH_HUKS_KEY_WRAP_TYPE_HUK_BASED},
+};
+
 static napi_value OHHuksWrapKey(napi_env env, napi_callback_info info)
 {
-    const uint32_t wrapKeyDataSize = 2048;
-    char alias[64] = {0};
-    strcpy(alias, ALIAS);
-    static const struct OH_Huks_Blob gkeyAlias = {sizeof(ALIAS),
-                                                  reinterpret_cast<uint8_t *>(static_cast<char *>(alias))};
-    static struct OH_Huks_Param g_wrapKeyParams[] = {
-        {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_AES},
-        {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_128},
-        {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_ENCRYPT},
-        {.tag = OH_HUKS_TAG_KEY_WRAP_TYPE, .uint32Param = OH_HUKS_KEY_WRAP_TYPE_HUK_BASED},
-    };
-    struct OH_Huks_ParamSet *wrapKeyParamSet = nullptr;
-    GenerateParamSet(&wrapKeyParamSet, g_wrapKeyParams, sizeof(g_wrapKeyParams) / sizeof(OH_Huks_Param));
-    uint8_t tmpPublicKey[wrapKeyDataSize] = {PARAM_0};
-    struct OH_Huks_Blob outData = {wrapKeyDataSize, static_cast<unsigned char *>(tmpPublicKey)};
-    struct OH_Huks_Result resultSt = OH_Huks_WrapKey(&gkeyAlias, wrapKeyParamSet, &outData);
-    int returnValue = SUCCESS;
-    if (resultSt.errorCode != (int32_t)OH_HUKS_ERR_CODE_INSUFFICIENT_MEMORY &&
-        resultSt.errorCode != OH_HUKS_ERR_CODE_NOT_SUPPORTED_API) {
-        returnValue = FAIL;
+    char alias[] = "test_wrap_key";
+    struct OH_Huks_Blob keyAlias = {(uint32_t)strlen(alias), reinterpret_cast<uint8_t *>(alias)};
+    struct OH_Huks_ParamSet *genParamSet = nullptr;
+    struct OH_Huks_ParamSet *wrapParamSet = nullptr;
+    uint8_t wrappedData[WRAP_KEY_DATA_SIZE] = {PARAM_0};
+    struct OH_Huks_Blob wrappedKey = {WRAP_KEY_DATA_SIZE, static_cast<unsigned char *>(wrappedData)};
+    struct OH_Huks_Result resultSt = GenerateParamSet(&genParamSet, g_wrapKeyGenParams,
+                                                      sizeof(g_wrapKeyGenParams) / sizeof(OH_Huks_Param));
+    if (resultSt.errorCode == (int32_t)OH_HUKS_SUCCESS) {
+        resultSt = OH_Huks_GenerateKeyItem(&keyAlias, genParamSet, nullptr);
     }
+    if (resultSt.errorCode == (int32_t)OH_HUKS_SUCCESS) {
+        resultSt = GenerateParamSet(&wrapParamSet, g_wrapKeyParams,
+                                    sizeof(g_wrapKeyParams) / sizeof(OH_Huks_Param));
+    }
+    if (resultSt.errorCode == (int32_t)OH_HUKS_SUCCESS) {
+        resultSt = OH_Huks_WrapKey(&keyAlias, wrapParamSet, &wrappedKey);
+    }
+    (void)OH_Huks_DeleteKeyItem(&keyAlias, genParamSet);
+    OH_Huks_FreeParamSet(&genParamSet);
+    OH_Huks_FreeParamSet(&wrapParamSet);
     napi_value result = nullptr;
-    napi_create_int32(env, returnValue, &result);
+    napi_create_int32(env, resultSt.errorCode, &result);
     return result;
 }
 
 static napi_value OHHuksUnwrapKey(napi_env env, napi_callback_info info)
 {
-    const uint32_t wrapKeyDataSize = 2048;
-    char alias[64] = {0};
-    strcpy(alias, ALIAS);
-    static const struct OH_Huks_Blob gkeyAlias = {sizeof(ALIAS),
-                                                  reinterpret_cast<uint8_t *>(static_cast<char *>(alias))};
-    static struct OH_Huks_Param g_wrapKeyParams[] = {
-        {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_AES},
-        {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_256},
-        {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_ENCRYPT},
-        {.tag = OH_HUKS_TAG_KEY_WRAP_TYPE, .uint32Param = OH_HUKS_KEY_WRAP_TYPE_HUK_BASED},
-    };
-    struct OH_Huks_ParamSet *paramSet = nullptr;
-    struct OH_Huks_ParamSet *wrapKeyParamSet = nullptr;
-    GenerateParamSet(&wrapKeyParamSet, g_wrapKeyParams, sizeof(g_wrapKeyParams) / sizeof(OH_Huks_Param));
-    uint8_t tmpPublicKey[wrapKeyDataSize] = {PARAM_0};
-    struct OH_Huks_Blob outData = {wrapKeyDataSize, static_cast<unsigned char *>(tmpPublicKey)};
-    struct OH_Huks_Result resultSt = OH_Huks_UnwrapKey(&gkeyAlias, wrapKeyParamSet, &outData);
-    int returnValue = SUCCESS;
-    if (resultSt.errorCode != (int32_t)OH_HUKS_ERR_CODE_INSUFFICIENT_MEMORY &&
-        resultSt.errorCode != OH_HUKS_ERR_CODE_NOT_SUPPORTED_API) {
-        returnValue = FAIL;
+    char alias[] = "test_unwrap_key";
+    struct OH_Huks_Blob keyAlias = {(uint32_t)strlen(alias), reinterpret_cast<uint8_t *>(alias)};
+    struct OH_Huks_ParamSet *genParamSet = nullptr;
+    struct OH_Huks_ParamSet *wrapParamSet = nullptr;
+    uint8_t wrappedData[WRAP_KEY_DATA_SIZE] = {PARAM_0};
+    struct OH_Huks_Blob wrappedKey = {WRAP_KEY_DATA_SIZE, static_cast<unsigned char *>(wrappedData)};
+    struct OH_Huks_Result resultSt = GenerateParamSet(&genParamSet, g_wrapKeyGenParams,
+                                                      sizeof(g_wrapKeyGenParams) / sizeof(OH_Huks_Param));
+    if (resultSt.errorCode == (int32_t)OH_HUKS_SUCCESS) {
+        resultSt = OH_Huks_GenerateKeyItem(&keyAlias, genParamSet, nullptr);
     }
+    if (resultSt.errorCode == (int32_t)OH_HUKS_SUCCESS) {
+        resultSt = GenerateParamSet(&wrapParamSet, g_wrapKeyParams,
+                                    sizeof(g_wrapKeyParams) / sizeof(OH_Huks_Param));
+    }
+    if (resultSt.errorCode == (int32_t)OH_HUKS_SUCCESS) {
+        resultSt = OH_Huks_WrapKey(&keyAlias, wrapParamSet, &wrappedKey);
+    }
+    if (resultSt.errorCode == (int32_t)OH_HUKS_SUCCESS) {
+        (void)OH_Huks_DeleteKeyItem(&keyAlias, genParamSet);
+        resultSt = OH_Huks_UnwrapKey(&keyAlias, wrapParamSet, &wrappedKey);
+        if (resultSt.errorCode == (int32_t)OH_HUKS_SUCCESS) {
+            (void)OH_Huks_DeleteKeyItem(&keyAlias, genParamSet);
+        }
+    } else {
+        (void)OH_Huks_DeleteKeyItem(&keyAlias, genParamSet);
+    }
+    OH_Huks_FreeParamSet(&genParamSet);
+    OH_Huks_FreeParamSet(&wrapParamSet);
     napi_value result = nullptr;
-    napi_create_int32(env, returnValue, &result);
+    napi_create_int32(env, resultSt.errorCode, &result);
     return result;
 }
 
@@ -1418,9 +1440,11 @@ static napi_value Init(napi_env env, napi_value exports)
         {"huksNativeApi22Type0500", nullptr, OHHuksNativeApi22Type0500, nullptr, nullptr, nullptr, napi_default,
             nullptr},
         {"huksNativeApi22Type0600", nullptr, OHHuksNativeApi22Type0600, nullptr, nullptr, nullptr, napi_default,
-            nullptr}
+            nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    RegisterHuksNapiTests(env, exports);
+    NativeHuksTest::RegisterNativeHuksTests(env, exports);
     return exports;
 }
 

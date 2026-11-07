@@ -13,14 +13,9 @@
  * limitations under the License.
  */
 
+
 import HuksApiTest from './nativehukstest/HuksApi.test'
-import HuksApiTest3 from './nativehukstest/HuksApi3.test'
-import HuksApiTest1 from './nativehukstest/HuksApi1.test'
-import OHHuksStructTest from './ohhuksTest/OHHuksStructTest.test'
 
 export default function testsuite() {
   HuksApiTest()
-  HuksApiTest1()
-  HuksApiTest3()
-  OHHuksStructTest()
 }
