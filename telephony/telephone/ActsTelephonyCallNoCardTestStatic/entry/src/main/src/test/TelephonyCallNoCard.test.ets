@@ -53,18 +53,20 @@ async function getPermissions(): Promise<void> {
     let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
     atManager.requestPermissionsFromUser(ability.context, list).then((data: PermissionRequestResult) => {
       hilog.info(domain, tag, `getPermission result ${JSON.stringify(data)}`);
-    }).catch((error: BusinessError) => {
-      hilog.info(domain, tag, `getPermission err ->error.code: ${JSON.stringify(error.code)}, error?.message: ${JSON.stringify(error?.message)}`);
+    }).catch((error: Error) => {
+      hilog.info(domain, tag, `getPermission err ->error.code: ${JSON.stringify((error as BusinessError).code)}, error?.message: ${JSON.stringify((error as BusinessError).message)}`);
     });
     for (let index = 0; index < 3; index++) {
       let driver: Driver = Driver.create();
       await driver.delayMs(1000);
       try {
-        let allowButton: Component = await driver.findComponent(ON.text('允许', MatchPattern.EQUALS));
-        await allowButton.click();
-        await driver.delayMs(1000);
-        hilog.info(domain, tag, `getPermission click allow button, round ${index}`);
-        break;
+        let allowButton: Component | null = await driver.findComponent(ON.text('允许', MatchPattern.EQUALS));
+        if (allowButton !== null) {
+          await allowButton.click();
+          await driver.delayMs(1000);
+          hilog.info(domain, tag, `getPermission click allow button, round ${index}`);
+          break;
+        }
       } catch (error) {
         hilog.info(domain, tag, `getPermission find allow button round ${index} failed, error.code: ${JSON.stringify(error.code)}, error?.message: ${JSON.stringify(error?.message)}`);
       }
