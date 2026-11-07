@@ -623,6 +623,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
 
       let handler: CompletionHandler = {
         onRequestSuccess: (element: bundleManager.ElementName, message: string) => {
+          isOpen = false;
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0600 onRequestSuccess called,
             element: ${JSON.stringify(element)}, message: ${message}`);
           expect(element.bundleName).assertEqual('com.example.completionhandlerrely');
@@ -631,6 +632,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
           done();
         },
         onRequestFailure: (element: bundleManager.ElementName, message: string) => {
+          isOpen = false;
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0600 onRequestFailure called,
             element: ${JSON.stringify(element)}, message: ${message}`);
           if(message.indexOf('Failed to call startAbility') != -1){
