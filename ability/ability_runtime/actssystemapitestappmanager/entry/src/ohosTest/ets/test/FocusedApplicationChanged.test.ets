@@ -34,8 +34,8 @@ export default function focusedApplicationChangedTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_OnFocusedApplicationChanged_0100
      * @tc.number SUB_Ability_AbilityRuntime_AppManager_OnFocusedApplicationChanged_0100
-     * @tc.desc   onFocusedApplicationChanged: valid observer; returns observerId number or
-     *     BusinessError 201/16000050/16000165
+     * @tc.desc   onFocusedApplicationChanged: valid observer; returns observerId or
+     *     BusinessError 201(ohos.permission.RUNNING_STATE_OBSERVER)/16000050/16000165
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0

@@ -51,7 +51,8 @@ export default function BackToCallerAppWithResultTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_BackToCallerAppWithResult_0100
      * @tc.number SUB_Ability_AbilityRuntime_BackToCallerAppWithResult_0100
-     * @tc.desc   backToCallerAppWithResult: valid args; success or documented BusinessError
+     * @tc.desc   backToCallerAppWithResult: valid args; success or 201/16000009/16000011/
+     *     16000050/16000074/16000075
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -74,7 +75,8 @@ export default function BackToCallerAppWithResultTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_BackToCallerAppWithResult_0200
      * @tc.number SUB_Ability_AbilityRuntime_BackToCallerAppWithResult_0200
-     * @tc.desc   backToCallerAppWithResult: abilityResult=null; expect 401 or documented codes
+     * @tc.desc   backToCallerAppWithResult: abilityResult=null; expect 401/201/16000009/
+     *     16000011/16000050/16000074/16000075
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -95,7 +97,8 @@ export default function BackToCallerAppWithResultTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_BackToCallerAppWithResult_0210
      * @tc.number SUB_Ability_AbilityRuntime_BackToCallerAppWithResult_0210
-     * @tc.desc   backToCallerAppWithResult: abilityResult=undefined; expect 401 or documented codes
+     * @tc.desc   backToCallerAppWithResult: abilityResult=undefined; expect 401/201/16000009/
+     *     16000011/16000050/16000074/16000075
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -116,7 +119,8 @@ export default function BackToCallerAppWithResultTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_BackToCallerAppWithResult_0300
      * @tc.number SUB_Ability_AbilityRuntime_BackToCallerAppWithResult_0300
-     * @tc.desc   backToCallerAppWithResult: requestCode=null; expect 401 or documented codes
+     * @tc.desc   backToCallerAppWithResult: requestCode=null; expect 401/201/16000009/16000011/
+     *     16000050/16000074/16000075
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -129,6 +133,53 @@ export default function BackToCallerAppWithResultTest() {
       try {
         await context.backToCallerAppWithResult(abilityResult, null);
         expect().assertFail();
+      } catch (err) {
+        acceptCatch(tag, err as Object);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_BackToCallerAppWithResult_0310
+     * @tc.number SUB_Ability_AbilityRuntime_BackToCallerAppWithResult_0310
+     * @tc.desc   backToCallerAppWithResult: requestCode=undefined; expect 401/201/16000009/
+     *     16000011/16000050/16000074/16000075
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_BackToCallerAppWithResult_0310', Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_BackToCallerAppWithResult_0310';
+      let context = getUiContext();
+      expect(typeof context.backToCallerAppWithResult).assertEqual('function');
+      let abilityResult: common.AbilityResult = { resultCode: 0 };
+      try {
+        await context.backToCallerAppWithResult(abilityResult, undefined);
+        expect().assertFail();
+      } catch (err) {
+        acceptCatch(tag, err as Object);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_BackToCallerAppWithResult_0400
+     * @tc.number SUB_Ability_AbilityRuntime_BackToCallerAppWithResult_0400
+     * @tc.desc   backToCallerAppWithResult: empty requestCode; expect success or 201/16000009/
+     *     16000011/16000050/16000074/16000075
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_BackToCallerAppWithResult_0400', Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_BackToCallerAppWithResult_0400';
+      let context = getUiContext();
+      expect(typeof context.backToCallerAppWithResult).assertEqual('function');
+      let abilityResult: common.AbilityResult = { resultCode: 0 };
+      try {
+        await context.backToCallerAppWithResult(abilityResult, '');
+        console.info(`${tag} success`);
+        expect(true).assertTrue();
       } catch (err) {
         acceptCatch(tag, err as Object);
       }

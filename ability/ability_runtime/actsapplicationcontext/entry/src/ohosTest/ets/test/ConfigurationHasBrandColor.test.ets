@@ -21,7 +21,7 @@ export default function ConfigurationHasBrandColorTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_Configuration_HasBrandColorChanged_0100
      * @tc.number SUB_Ability_AbilityRuntime_Configuration_HasBrandColorChanged_0100
-     * @tc.desc   Configuration.hasBrandColorChanged: optional boolean on TestAbility config
+     * @tc.desc   Configuration.hasBrandColorChanged: live TestAbility config is boolean|undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -36,9 +36,51 @@ export default function ConfigurationHasBrandColorTest() {
         let val = cfg.hasBrandColorChanged;
         console.info(`${tag} hasBrandColorChanged=${val}`);
         expect(val === undefined || typeof val === 'boolean').assertTrue();
-        if (typeof val === 'boolean') {
-          expect(val === true || val === false).assertTrue();
-        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_Configuration_HasBrandColorChanged_0200
+     * @tc.number SUB_Ability_AbilityRuntime_Configuration_HasBrandColorChanged_0200
+     * @tc.desc   Configuration.hasBrandColorChanged: true means brand color has changed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_Configuration_HasBrandColorChanged_0200', Level.LEVEL0,
+      (done: Function) => {
+        let cfg: Configuration = { hasBrandColorChanged: true };
+        expect(cfg.hasBrandColorChanged).assertEqual(true);
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_Configuration_HasBrandColorChanged_0300
+     * @tc.number SUB_Ability_AbilityRuntime_Configuration_HasBrandColorChanged_0300
+     * @tc.desc   Configuration.hasBrandColorChanged: false means brand color has not changed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_Configuration_HasBrandColorChanged_0300', Level.LEVEL0,
+      (done: Function) => {
+        let cfg: Configuration = { hasBrandColorChanged: false };
+        expect(cfg.hasBrandColorChanged).assertEqual(false);
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_Configuration_HasBrandColorChanged_0400
+     * @tc.number SUB_Ability_AbilityRuntime_Configuration_HasBrandColorChanged_0400
+     * @tc.desc   Configuration.hasBrandColorChanged: optional unset stays undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_Configuration_HasBrandColorChanged_0400', Level.LEVEL0,
+      (done: Function) => {
+        let cfg: Configuration = {};
+        expect(cfg.hasBrandColorChanged === undefined).assertTrue();
         done();
       });
   });
