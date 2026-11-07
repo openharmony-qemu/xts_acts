@@ -62,10 +62,13 @@ export default function BackToCallerAppWithResultTest() {
       let context = getUiContext();
       expect(typeof context.backToCallerAppWithResult).assertEqual('function');
       let abilityResult: common.AbilityResult = { resultCode: 0 };
+      let isReturn = false;
       try {
         await context.backToCallerAppWithResult(abilityResult, 'xts_request_code');
+        isReturn = true;
         console.info(`${tag} success`);
-        expect(true).assertTrue();
+        expect(isReturn).assertTrue();
+        expect(abilityResult.resultCode).assertEqual(0);
       } catch (err) {
         acceptCatch(tag, err as Object);
       }
@@ -176,10 +179,13 @@ export default function BackToCallerAppWithResultTest() {
       let context = getUiContext();
       expect(typeof context.backToCallerAppWithResult).assertEqual('function');
       let abilityResult: common.AbilityResult = { resultCode: 0 };
+      let isReturn = false;
       try {
         await context.backToCallerAppWithResult(abilityResult, '');
+        isReturn = true;
         console.info(`${tag} success`);
-        expect(true).assertTrue();
+        expect(isReturn).assertTrue();
+        expect(abilityResult.resultCode).assertEqual(0);
       } catch (err) {
         acceptCatch(tag, err as Object);
       }

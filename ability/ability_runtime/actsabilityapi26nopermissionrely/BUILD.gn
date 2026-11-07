@@ -13,11 +13,11 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_js_app_suite("ActsAbilityApi26NoPermissionRely") {
+ohos_js_app_suite("ActsAbilityApi26NoPermissionTest") {
   test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsAbilityApi26NoPermissionRely"
+  hap_name = "ActsAbilityApi26NoPermissionTest"
   part_name = "ability_runtime"
   subsystem_name = "ability"
 }

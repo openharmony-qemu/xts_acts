@@ -43,7 +43,7 @@ group("ability_runtime") {
       "actsaappserviceextensioncontexttest:ActsAAppServiceExtensionContextTest",
       "actsaastartabilitytest:actsaastartabilitytest",
       "actsabilityamstest:ActsAbilityAmsTest",
-      "actsabilityapi26nopermissionrely:ActsAbilityApi26NoPermissionRely",
+      "actsabilityapi26nopermissionrely:ActsAbilityApi26NoPermissionTest",
       "actsabilityapplicationteststatic:ActsAbilityApplicationStaticTest",
       "actsabilitydelegatorcase:ActsAbilityDelegatorCaseTest",
       "actsabilityerrcodequery:actsabilityerrcodequery",

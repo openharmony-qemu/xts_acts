@@ -10,7 +10,7 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsAbilityApi26NoPermissionRely.hap"
+                "ActsAbilityApi26NoPermissionTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
