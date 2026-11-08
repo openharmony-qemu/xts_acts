@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
-import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common'
 
@@ -28,16 +27,12 @@ export default function TransPageEnabledTest() {
       }
       try {
         router.clear();
-        let pages = router.getState();
-        console.info('TransPageEnabledTest state pages: ' + JSON.stringify(pages));
-        if (pages.name !== 'TransPageEnabled') {
-          console.info('TransPageEnabledTest pages.name: ' + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          console.info('push TransPageEnabledTest page success: ' + JSON.stringify(result));
-        }
+        await CommonFunc.sleep(500);
+        await router.replaceUrl(options);
+        await CommonFunc.sleep(2000);
+        console.info('replace TransPageEnabledTest page success');
       } catch (err) {
-        console.error('push TransPageEnabledTest page error: ' + JSON.stringify(err));
+        console.error('replace TransPageEnabledTest page error: ' + JSON.stringify(err));
       }
       done();
     });
@@ -57,11 +52,9 @@ export default function TransPageEnabledTest() {
      */
     it('testIsTransPageEnabledDefault0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[testIsTransPageEnabledDefault0100] START');
-      let driver = await Driver.create();
       await CommonFunc.sleep(SLEEP_TIME);
 
-      let checkBtn = await driver.findComponent(ON.id('transPage_check_btn'));
-      await checkBtn.click();
+      sendEventByKey('transPage_check_btn', 10, '');
       await CommonFunc.sleep(SLEEP_TIME);
 
       let strJson = getInspectorByKey('transPage_result_text');
@@ -83,11 +76,9 @@ export default function TransPageEnabledTest() {
      */
     it('testSetTransPageEnabledFalse0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[testSetTransPageEnabledFalse0100] START');
-      let driver = await Driver.create();
       await CommonFunc.sleep(SLEEP_TIME);
 
-      let setFalseBtn = await driver.findComponent(ON.id('transPage_setFalse_btn'));
-      await setFalseBtn.click();
+      sendEventByKey('transPage_setFalse_btn', 10, '');
       await CommonFunc.sleep(SLEEP_TIME);
 
       let strJson = getInspectorByKey('transPage_result_text');
@@ -109,15 +100,12 @@ export default function TransPageEnabledTest() {
      */
     it('testSetTransPageEnabledTrue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[testSetTransPageEnabledTrue0100] START');
-      let driver = await Driver.create();
       await CommonFunc.sleep(SLEEP_TIME);
 
-      let setFalseBtn = await driver.findComponent(ON.id('transPage_setFalse_btn'));
-      await setFalseBtn.click();
+      sendEventByKey('transPage_setFalse_btn', 10, '');
       await CommonFunc.sleep(SLEEP_TIME);
 
-      let setTrueBtn = await driver.findComponent(ON.id('transPage_setTrue_btn'));
-      await setTrueBtn.click();
+      sendEventByKey('transPage_setTrue_btn', 10, '');
       await CommonFunc.sleep(SLEEP_TIME);
 
       let strJson = getInspectorByKey('transPage_result_text');
@@ -139,11 +127,9 @@ export default function TransPageEnabledTest() {
      */
     it('testSetTransPageEnabledNull0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('[testSetTransPageEnabledNull0100] START');
-      let driver = await Driver.create();
       await CommonFunc.sleep(SLEEP_TIME);
 
-      let setNullBtn = await driver.findComponent(ON.id('transPage_setNull_btn'));
-      await setNullBtn.click();
+      sendEventByKey('transPage_setNull_btn', 10, '');
       await CommonFunc.sleep(SLEEP_TIME);
 
       let strJson = getInspectorByKey('transPage_result_text');
@@ -165,11 +151,9 @@ export default function TransPageEnabledTest() {
      */
     it('testSetTransPageEnabledUndefined0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('[testSetTransPageEnabledUndefined0100] START');
-      let driver = await Driver.create();
       await CommonFunc.sleep(SLEEP_TIME);
 
-      let setUndefinedBtn = await driver.findComponent(ON.id('transPage_setUndefined_btn'));
-      await setUndefinedBtn.click();
+      sendEventByKey('transPage_setUndefined_btn', 10, '');
       await CommonFunc.sleep(SLEEP_TIME);
 
       let strJson = getInspectorByKey('transPage_result_text');
