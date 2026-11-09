@@ -42,7 +42,7 @@ struct GridExample {
               Text(day)
                 .fontSize(16)
                 .width('100%')
-                .height(80)
+                .height('20%')
                 .textAlign(TextAlign.Center)
             }.selectable(false)
           }, (day: string) => day)
@@ -50,7 +50,7 @@ struct GridExample {
         .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
         .multiSelectable(this.multiSelectable_)
         .enableScrollInteraction(true)
-        .height(300)
+        .height('50%')
         .id('TestGridMultiSelectable')
 
         Button('Change').onClick(() => {

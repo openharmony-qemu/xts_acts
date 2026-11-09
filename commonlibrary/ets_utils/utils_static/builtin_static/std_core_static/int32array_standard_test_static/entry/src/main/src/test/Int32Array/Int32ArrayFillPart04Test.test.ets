@@ -26,7 +26,7 @@ import {
   TestType,
   Size,
   Level
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 export default function int32ArrayFillPart04Test(): void {
   describe('Int32ArrayFillPart04Test', (): void => {

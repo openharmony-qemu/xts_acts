@@ -28,9 +28,7 @@ function bottomBarBuilder() {
 @Entry
 @Component
 struct TabsSidebarStyle {
-  context: UIContext = this.getUIContext();
-  footerContent: ComponentContent<ESObject> = new ComponentContent(this.context, wrapBuilder(footerBuilder));
-  bottomBarContent: ComponentContent<ESObject> = new ComponentContent(this.context, wrapBuilder(bottomBarBuilder));
+  @State emptyStrValue: ESObject = '';
 
   build() {
     Scroll() {
@@ -50,8 +48,7 @@ struct TabsSidebarStyle {
         this.sidebarUnselectedIconColorBlocks()
         this.sidebarUnselectedTextColorBlocks()
         this.sidebarSelectedBoardColorBlocks()
-        this.sidebarFooterBlocks()
-        this.sidebarBottomBarBlocks()
+        this.showSidebarControlButtonBlocks()
       }
       .width('100%')
       .padding(8)
@@ -730,8 +727,8 @@ struct TabsSidebarStyle {
   }
 
   @Builder
-  sidebarFooterBlocks() {
-        Text('sidebarFooter normal').fontSize(12)
+  showSidebarControlButtonBlocks() {
+        Text('showSidebarControlButton true').fontSize(12)
         Tabs({ barPosition: BarPosition.Start }) {
           TabContent() {
             Column().width('100%').height(40).backgroundColor(Color.Blue)
@@ -740,13 +737,13 @@ struct TabsSidebarStyle {
             Column().width('100%').height(40).backgroundColor(Color.Green)
           }.tabBar('B')
         }
-        .id('tabs_sidebarFooter_normal')
+        .id('tabs_showSidebarControlButton_true')
         .width('100%')
         .height(120)
         .barStyle(TabBarStyle.SIDEBAR)
-        .sidebarFooter(this.footerContent)
+        .showSidebarControlButton(true)
 
-        Text('sidebarFooter undefined').fontSize(12)
+        Text('showSidebarControlButton false').fontSize(12)
         Tabs({ barPosition: BarPosition.Start }) {
           TabContent() {
             Column().width('100%').height(40).backgroundColor(Color.Blue)
@@ -755,13 +752,13 @@ struct TabsSidebarStyle {
             Column().width('100%').height(40).backgroundColor(Color.Green)
           }.tabBar('B')
         }
-        .id('tabs_sidebarFooter_undefined')
+        .id('tabs_showSidebarControlButton_false')
         .width('100%')
         .height(120)
         .barStyle(TabBarStyle.SIDEBAR)
-        .sidebarFooter(undefined)
+        .showSidebarControlButton(false)
 
-        Text('sidebarFooter null').fontSize(12)
+        Text('showSidebarControlButton undefined').fontSize(12)
         Tabs({ barPosition: BarPosition.Start }) {
           TabContent() {
             Column().width('100%').height(40).backgroundColor(Color.Blue)
@@ -770,16 +767,13 @@ struct TabsSidebarStyle {
             Column().width('100%').height(40).backgroundColor(Color.Green)
           }.tabBar('B')
         }
-        .id('tabs_sidebarFooter_null')
+        .id('tabs_showSidebarControlButton_undefined')
         .width('100%')
         .height(120)
         .barStyle(TabBarStyle.SIDEBAR)
-        .sidebarFooter(null)
-  }
+        .showSidebarControlButton(undefined)
 
-  @Builder
-  sidebarBottomBarBlocks() {
-        Text('sidebarBottomBar normal').fontSize(12)
+        Text('showSidebarControlButton null').fontSize(12)
         Tabs({ barPosition: BarPosition.Start }) {
           TabContent() {
             Column().width('100%').height(40).backgroundColor(Color.Blue)
@@ -788,13 +782,13 @@ struct TabsSidebarStyle {
             Column().width('100%').height(40).backgroundColor(Color.Green)
           }.tabBar('B')
         }
-        .id('tabs_sidebarBottomBar_normal')
+        .id('tabs_showSidebarControlButton_null')
         .width('100%')
         .height(120)
         .barStyle(TabBarStyle.SIDEBAR)
-        .sidebarBottomBar(this.bottomBarContent)
+        .showSidebarControlButton(null)
 
-        Text('sidebarBottomBar undefined').fontSize(12)
+        Text('showSidebarControlButton empty').fontSize(12)
         Tabs({ barPosition: BarPosition.Start }) {
           TabContent() {
             Column().width('100%').height(40).backgroundColor(Color.Blue)
@@ -803,26 +797,11 @@ struct TabsSidebarStyle {
             Column().width('100%').height(40).backgroundColor(Color.Green)
           }.tabBar('B')
         }
-        .id('tabs_sidebarBottomBar_undefined')
+        .id('tabs_showSidebarControlButton_empty')
         .width('100%')
         .height(120)
         .barStyle(TabBarStyle.SIDEBAR)
-        .sidebarBottomBar(undefined)
-
-        Text('sidebarBottomBar null').fontSize(12)
-        Tabs({ barPosition: BarPosition.Start }) {
-          TabContent() {
-            Column().width('100%').height(40).backgroundColor(Color.Blue)
-          }.tabBar('A')
-          TabContent() {
-            Column().width('100%').height(40).backgroundColor(Color.Green)
-          }.tabBar('B')
-        }
-        .id('tabs_sidebarBottomBar_null')
-        .width('100%')
-        .height(120)
-        .barStyle(TabBarStyle.SIDEBAR)
-        .sidebarBottomBar(null)
+        .showSidebarControlButton(this.emptyStrValue)
   }
 
 }

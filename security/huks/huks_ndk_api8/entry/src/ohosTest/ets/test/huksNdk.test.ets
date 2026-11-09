@@ -660,7 +660,13 @@ export default function huksNdkTest() {
      */
     it('SUB_Security_HUKS_WrapKey_Native_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksWrapKey();
-      expect(result).assertEqual(0);
+      if (!useSoftware) {
+        expect(useSoftware).assertEqual(false);
+        expect(result).assertEqual(0);
+      } else {
+        expect(useSoftware).assertEqual(true);
+        expect(result).assertEqual(801);
+      }
     });
     /**
      * @tc.name   SUB_Security_HUKS_UnwrapKey_Native_Func_0100
@@ -672,7 +678,13 @@ export default function huksNdkTest() {
      */
     it('SUB_Security_HUKS_UnwrapKey_Native_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: number = huksndk.oHHuksUnwrapKey();
-      expect(result).assertEqual(0);
+      if (!useSoftware) {
+        expect(useSoftware).assertEqual(false);
+        expect(result).assertEqual(0);
+      } else {
+        expect(useSoftware).assertEqual(true);
+        expect(result).assertEqual(801);
+      }
     });
   })
 }

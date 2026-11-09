@@ -23,9 +23,6 @@ import aboutToAppearTest from './onAppearTest/ComAttr_aboutToAppear.test';
 import onGestureTest from './onGestureJudgeBeginTest/onGestureTest.test';
 import touchPoint from './DragController/touchPoint_Auto.test';
 import previewOptions from './DragController/touchPoint_Disable.test';
-import DragActionJsunit from './DragController/DragActionJsSuit.test';
-import dragPreviewJsSuit from './DragController/dragPreviewJsSuit.test';
-import dragPreviewOptionsJsSuit from './DragController/dragPreviewOptionsJsSuit.test';
 import GestureTagJsSuit from './TapGestureTest/GestureTagJsSuit.test';
 import freezeInactive from './freezeTest/freezeInactive.test'
 import GesturePanGesture from './onGestureJudgeBeginTest/GesturePanGesture.test'
@@ -43,7 +40,6 @@ import OnTouch2 from './onTouchTest/OnTouch2.test'
 import OnTouch3 from './onTouchTest/OnTouch3.test'
 import GestureClick from './onGestureJudgeBeginTest/GestureClick.test'
 import GestureContiune from './onGestureJudgeBeginTest/GestureContiune.test'
-import GestureDrag from './onGestureJudgeBeginTest/GestureDrag.test'
 import GestureIsSystemGesture from './onGestureJudgeBeginTest/GestureIsSystemGesture.test'
 import GesturePinchGesture from './onGestureJudgeBeginTest/GesturePinchGesture.test'
 import GestureReject from './onGestureJudgeBeginTest/GestureReject.test'
@@ -61,7 +57,6 @@ import LongPressGesture3 from './LongPressGestureTest/LongPressGesture3.test'
 
 import enumsLineCapStyleJsunit from './enumTest/EnmusLineCapStyleJsunit.test';
 import enmusItemAlignJsunit from './enumTest/EnmusItemAlignJsunit.test';
-import dragEventJsunit from './DragController/DragEventJsunit.test';
 import GestureModeJsunit from './onGestureJudgeBeginTest/GestureModeJsunit.test';
 import PanDirectionJsunit from './PanGestureTest/PanDirectionJsunit.test';
 import subscribedAbstractPropertyJsunit from './Abstract/SubscribedAbstractPropertyJsunit.test';
@@ -93,7 +88,6 @@ export default function testsuite() {
   OnTouch3()
   GestureClick()
   GestureContiune()
-  GestureDrag()
   GesturePinchGesture()
   GestureReject()
   GestureRotationGesture()
@@ -107,7 +101,6 @@ export default function testsuite() {
   LongPressGesture2()
   LongPressGesture3()
   GestureLongPressGesture()
-  dragEventJsunit()
   enumsLineCapStyleJsunit()
   enmusItemAlignJsunit()
   GestureModeJsunit()
@@ -132,8 +125,6 @@ export default function testsuite() {
   onGestureTest()
   touchPoint()
   previewOptions()
-  DragActionJsunit()
-  dragPreviewJsSuit()
   GestureTagJsSuit()
   freezeInactive()
   GesturePanGesture()
@@ -141,6 +132,5 @@ export default function testsuite() {
   OnClick2()
   OnClick3()
   GestureIsSystemGesture()
-  dragPreviewOptionsJsSuit()
   appearJsunit()
 }

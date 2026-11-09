@@ -30,9 +30,9 @@ function sleep(ms: number): Promise<void> {
 }
 
 async function waitFinalizerCalled(id: number): Promise<number> {
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 30; i++) {
     forceFullGC();
-    await sleep(50);
+    await sleep(100);
     if (napicallbackriskndktest.isRiskCalled(id) === 1) {
       return 1;
     }
@@ -60,7 +60,7 @@ async function collectRemoveWrapSendableSpecRisk(id: number, action: () => numbe
   napicallbackriskndktest.resetRiskStatus(id);
   let resNum: number = action();
   forceFullGC();
-  await sleep(50);
+  await sleep(200);
   let called: number = napicallbackriskndktest.isRiskCalled(id);
   let status: number = napicallbackriskndktest.getRiskStatus(id);
   return [resNum, called, status];
@@ -70,7 +70,7 @@ async function collectSendableGcProbeRisk(id: number, action: () => number): Pro
   napicallbackriskndktest.resetRiskStatus(id);
   let resNum: number = action();
   forceFullGC();
-  await sleep(50);
+  await sleep(200);
   let called: number = napicallbackriskndktest.isRiskCalled(id);
   let status: number = napicallbackriskndktest.getRiskStatus(id);
   return [resNum, called, status];

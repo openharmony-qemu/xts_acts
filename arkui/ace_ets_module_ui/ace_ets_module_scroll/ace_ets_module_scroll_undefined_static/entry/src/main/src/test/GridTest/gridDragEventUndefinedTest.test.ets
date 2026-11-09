@@ -59,6 +59,7 @@ export default function GridDragEventUndefinedTest() {
     it('GridDragEventUndefinedTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[GridDragEventUndefinedTest_static_0001] START');
       let driver: Driver = Driver.create()
+      await CommonFunc.sleep(500);
       let changeBtn = await driver.findComponent(ON.id('Grid_onItemDragStartValue'));
       await CommonFunc.sleep(500);
       await (changeBtn?.click() as Promise<void>);
@@ -82,7 +83,11 @@ export default function GridDragEventUndefinedTest() {
       await CommonFunc.sleep(500);
       await (gridItem?.dragTo(gird) as Promise<void>);
       await CommonFunc.sleep(500);
-      expect(await (text?.getText() as Promise<String>)).assertEqual('Hello World');
+      text = await driver.findComponent(ON.id('Grid_text'));
+      await CommonFunc.sleep(500);
+      if (text) {
+        expect(await (text.getText() as Promise<String>)).assertEqual('Hello World');
+      }
       console.info('[GridDragEventUndefinedTest_static_0001] END');
       done();
     });

@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from "../../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 import Utils from "../Util.test";
 
 import {C5,CtorBox,TcPub10,TcPub12,TcPub19,C1Object,FiveCtor,PubDouble,TcTwoPubA,CtorMixedA,CtorMixedC,CtorMixedE,CtorMixedF,CtorMixedH,CtorMultiI,FiftyParam,FourParams,GN_ByteArr,GN_CharArr,CtorAllPrim,CtorArrPrim,CtorGeneric,GN_FloatArr,GN_ShortArr,CtorOverload,CtorInterface,CtorOverload3,PubShortParam,CtorFixArrLong,Ctor6MixedParam,PGN_ObjectParam,BoolDoubleString,DoubleFieldClass,CtorDoubleArrParam,IP2_110_PubDefBool,IP3_201_PubBoolArr,CtorMultiDimArrParam,StringFieldWithMethod,DefaultAndRequired_Ext,CtorDoubleExtremesParam,C2Byte,C4,C6Last,CtorDataWrap,CtorFixedArrStrParam,CtorTestColor,CtorTestFlag,Ctor_int_String_double,EmptyCls,Eq03_FixedBoolCls,Ext2_MapStrBoolParam,Ext4_FixedArrOptParam,ExtGenChild,ExtInheritChild,GN3_Mix4ISBD,GN_Long2D,GetParamTypeABC,GetParamTypeAC,GetParamTypeBC,IP3_193_PubFloat,ParamCountCls,PubByteParam,TenCtor,} from "../Util.test";

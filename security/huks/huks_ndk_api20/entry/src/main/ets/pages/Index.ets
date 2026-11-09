@@ -12,7 +12,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import Utils from '../../../ohosTest/ets/test/common/Utils'
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
+
+// Inlined helper (previously imported from ohosTest/ets/test/common/Utils).
+// The main module must not depend on test sources; only this single helper is needed here.
+function simulateByShell(cmd: string): Promise<string> {
+  let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
+  return new Promise<string>((resolve, reject) => {
+    abilityDelegator.executeShellCommand(cmd, (err, data) => {
+      if (err) {
+        console.error(`command ${cmd} failed: ${JSON.stringify(err)}`);
+        reject("failed");
+      } else {
+        console.info(`command ${cmd} executed: ${data.stdResult}`);
+        resolve("executed");
+      }
+    });
+  });
+}
 
 @Entry
 @Component
@@ -25,7 +42,7 @@ struct Index {
         Button('keyCodeEvent')
           .defaultFocus(true)
           .onClick(()=>{
-            Utils.simulateByShell('uinput -K -d 1 -u 1');
+            simulateByShell('uinput -K -d 1 -u 1');
           })
       }
       .width('100%')

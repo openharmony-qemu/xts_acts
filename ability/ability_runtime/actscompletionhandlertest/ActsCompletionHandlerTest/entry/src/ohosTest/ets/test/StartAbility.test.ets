@@ -65,12 +65,12 @@ let openDialog = async (dialogKey: string, text: string, done: Function) => {
         await sleep(1000);
       }
       hilog.info(DOMAIN, LOG_TAG, 'findComponents: start');
-      let buttons = await driver.findComponents(ON.text(text, MatchPattern.CONTAINS).belongingDisplay(currentDisplayId));
+      let buttons = await driver.findComponents(ON.text(text, MatchPattern.EQUALS).belongingDisplay(currentDisplayId));
       hilog.info(DOMAIN, LOG_TAG, 'buttons text: %{public}s', JSON.stringify(buttons));
       if (buttons && buttons.length > 0) {
         hilog.info(DOMAIN, LOG_TAG, 'buttons.length: %{public}d', buttons.length);
         hilog.info(DOMAIN, LOG_TAG, 'clicking %{public}s', text);
-        await buttons[buttons.length - 1].click();
+        await buttons[0].click();
         hilog.info(DOMAIN, LOG_TAG, '%{public}s clicked', text);
         buttonClicked = true;
       } else {
@@ -81,12 +81,12 @@ let openDialog = async (dialogKey: string, text: string, done: Function) => {
       hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
       if (allowed) {
         hilog.info(DOMAIN, LOG_TAG, 'findComponents: start');
-        let buttons = await driver.findComponents(ON.text(text, MatchPattern.CONTAINS).belongingDisplay(currentDisplayId));
+        let buttons = await driver.findComponents(ON.text(text, MatchPattern.EQUALS).belongingDisplay(currentDisplayId));
         hilog.info(DOMAIN, LOG_TAG, 'buttons text: %{public}s', JSON.stringify(buttons));
         if (buttons && buttons.length > 0) {
           hilog.info(DOMAIN, LOG_TAG, 'buttons.length: %{public}d', buttons.length);
           hilog.info(DOMAIN, LOG_TAG, 'clicking %{public}s', text);
-          await buttons[buttons.length - 1].click();
+          await buttons[0].click();
           hilog.info(DOMAIN, LOG_TAG, '%{public}s clicked', text);
           buttonClicked = true;
           hilog.info(DOMAIN, LOG_TAG, 'current device is amsdialog');
@@ -102,12 +102,12 @@ let openDialog = async (dialogKey: string, text: string, done: Function) => {
     let allowed = await driver.waitForComponent(ON.text(dialogKey, MatchPattern.CONTAINS).belongingDisplay(currentDisplayId), DELAY_TIME);
     hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
     if(allowed){
-      let buttons = await driver.findComponents(ON.text(text, MatchPattern.CONTAINS).belongingDisplay(currentDisplayId));
+      let buttons = await driver.findComponents(ON.text(text, MatchPattern.EQUALS).belongingDisplay(currentDisplayId));
       hilog.info(DOMAIN, LOG_TAG, 'buttons text: %{public}s', JSON.stringify(buttons));
       if (buttons && buttons.length > 0) {
         hilog.info(DOMAIN, LOG_TAG, 'buttons.length: %{public}d', buttons.length);
         hilog.info(DOMAIN, LOG_TAG, 'clicking %{public}s', text);
-        await buttons[buttons.length - 1].click();
+        await buttons[0].click();
         hilog.info(DOMAIN, LOG_TAG, '%{public}s clicked', text);
         buttonClicked = true;
       } else {
@@ -117,12 +117,12 @@ let openDialog = async (dialogKey: string, text: string, done: Function) => {
       allowed = await driver.waitForComponent(ON.text('无法打开此文件', MatchPattern.CONTAINS).belongingDisplay(currentDisplayId), DELAY_TIME);
       hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
       if(allowed){
-        let buttons = await driver.findComponents(ON.text(text, MatchPattern.CONTAINS).belongingDisplay(currentDisplayId));
+        let buttons = await driver.findComponents(ON.text(text, MatchPattern.EQUALS).belongingDisplay(currentDisplayId));
         hilog.info(DOMAIN, LOG_TAG, 'buttons text: %{public}s', JSON.stringify(buttons));
         if (buttons && buttons.length > 0) {
           hilog.info(DOMAIN, LOG_TAG, 'buttons.length: %{public}d', buttons.length);
           hilog.info(DOMAIN, LOG_TAG, 'clicking %{public}s', text);
-          await buttons[buttons.length - 1].click();
+          await buttons[0].click();
           hilog.info(DOMAIN, LOG_TAG, '%{public}s clicked', text);
           buttonClicked = true;
         } else {
@@ -175,7 +175,7 @@ let allowOpen = async () => {
     if (buttons && buttons.length > 0) {
       hilog.info(DOMAIN, LOG_TAG, 'buttons.length: %{public}d', buttons.length);
       hilog.info(DOMAIN, LOG_TAG, 'clicking %{public}s', '本次允许');
-      await buttons[buttons.length - 1].click();
+      await buttons[0].click();
       hilog.info(DOMAIN, LOG_TAG, '%{public}s clicked', '本次允许');
       buttonClicked = true;
       return;
@@ -193,7 +193,7 @@ let disallowOpen = async () => {
     if (buttons && buttons.length > 0) {
       hilog.info(DOMAIN, LOG_TAG, 'buttons.length: %{public}d', buttons.length);
       hilog.info(DOMAIN, LOG_TAG, 'clicking %{public}s', '不允许');
-      await buttons[buttons.length - 1].click();
+      await buttons[0].click();
       hilog.info(DOMAIN, LOG_TAG, '%{public}s clicked', '不允许');
       buttonClicked = true;
       return;
@@ -202,7 +202,7 @@ let disallowOpen = async () => {
     if (buttons && buttons.length > 0) {
       hilog.info(DOMAIN, LOG_TAG, 'buttons.length: %{public}d', buttons.length);
       hilog.info(DOMAIN, LOG_TAG, 'clicking %{public}s', '取消');
-      await buttons[buttons.length - 1].click();
+      await buttons[0].click();
       hilog.info(DOMAIN, LOG_TAG, '%{public}s clicked', '取消');
       buttonClicked = true;
       return;

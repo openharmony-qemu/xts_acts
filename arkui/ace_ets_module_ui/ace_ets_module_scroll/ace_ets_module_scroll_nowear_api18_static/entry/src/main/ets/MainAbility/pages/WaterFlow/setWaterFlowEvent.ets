@@ -125,25 +125,29 @@ struct setOnWaterFlowIndex04 {
         .height('5%')
         .fontWeight(700).fontColor(Color.Green)
         .onClick((e: ClickEvent) => {
-          this.text = storage.get('WaterFlow_setOnWillScroll') + '_' + storage.get('WaterFlow_setOnDidScroll') + '';
+          this.text = storage.get<string>('WaterFlow_setOnWillScroll') as string +
+           '_' + storage.get<string>('WaterFlow_setOnDidScroll') as string + '';
         })
       Text(this.text1).id('WaterFlow_setOnReach_04')
         .height('5%')
         .fontWeight(700).fontColor(Color.Green)
         .onClick((e: ClickEvent) => {
-          this.text1 = storage1.get('WaterFlow_setOnReachStart') + '_' + storage1.get('WaterFlow_setOnReachEnd') + '';
+          this.text1 = storage1.get<string>('WaterFlow_setOnReachStart') as string +
+           '_' + storage1.get<string>('WaterFlow_setOnReachEnd') as string + '';
         })
       Text(this.text2).id('WaterFlow_setOnScroll_04')
         .height('5%')
         .fontWeight(700).fontColor(Color.Green)
         .onClick((e: ClickEvent) => {
-          this.text2 = storage2.get('WaterFlow_setOnScrollStart') + '_' + storage2.get('WaterFlow_setOnScrollStop');
+          this.text2 = storage2.get<string>('WaterFlow_setOnScrollStart') as string +
+           '_' + storage2.get<string>('WaterFlow_setOnScrollStop') as string;
         })
       Text(this.text3).id('WaterFlow_setOnScrollIndex_04')
         .height('5%')
         .fontWeight(700).fontColor(Color.Green)
         .onClick((e: ClickEvent) => {
-          this.text3 = storage3.get('WaterFlow_setOnScrollFrameBegin') + '_' + storage3.get('WaterFlow_setOnScrollIndex');
+          this.text3 = storage3.get<string>('WaterFlow_setOnScrollFrameBegin') as string +
+           '_' + storage3.get<string>('WaterFlow_setOnScrollIndex') as string;
         })
       WaterFlow() {
         FlowItem()

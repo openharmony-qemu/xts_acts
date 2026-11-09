@@ -17,6 +17,7 @@
 #include "renderNode/RenderNodeBlurStyleOptionTest.cpp"
 #include "renderNode/NativeModuleCapiInitErrorCodeTest.cpp"
 #include "renderNode/NodeChildMountPolicyTest.cpp"
+#include "uiInfoCollection/UIInfoCollectionTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -118,6 +119,25 @@ static napi_value Init(napi_env env, napi_value exports)
                 napi_default, nullptr},
         {"TestGetRenderNodeAt_005", nullptr, TestGetRenderNodeAt_005, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
+
+        {"UIInfoCollectionRegisterObserverTest001", nullptr,
+         UIInfoCollectionRegisterObserverTest001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"UIInfoCollectionRegisterObserverTest002", nullptr,
+         UIInfoCollectionRegisterObserverTest002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"UIInfoCollectionRegisterObserverTest003", nullptr,
+         UIInfoCollectionRegisterObserverTest003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"UIInfoCollectionRegisterObserverTest004", nullptr,
+         UIInfoCollectionRegisterObserverTest004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"UIInfoCollectionRegisterObserverTest005", nullptr,
+         UIInfoCollectionRegisterObserverTest005, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"UIInfoCollectionUnregisterObserverTest001", nullptr,
+         UIInfoCollectionUnregisterObserverTest001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
 
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {

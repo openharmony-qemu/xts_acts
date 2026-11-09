@@ -43,8 +43,8 @@ struct ListSwipeAction {
   }
 
   build() {
-    Column({ space: 20 }) {
-      List({ space: 20, initialIndex: 0 }) {
+    Column({ space: 2 }) {
+      List({ space: 2, initialIndex: 0 }) {
         ListItem() {
           Text('ListItem0')
             .width('100%')
@@ -121,7 +121,7 @@ struct ListSwipeAction {
       .key('MyList1_swipe')
       .width('90%')
 
-      List({ space: 20, initialIndex: 0, scroller: this.listScroller }) {
+      List({ space: 2, initialIndex: 0, scroller: this.listScroller }) {
         ListItem() {
           Text('ListItem0')
             .width('100%')
@@ -215,7 +215,7 @@ struct ListSwipeAction {
 
       Button('Collapse All')
         .width('60%')
-        .height(80)
+        .height('5%')
         .key('MyList2CloseButton')
         .onClick(() => {
           console.info('onClick closeAllSwipeActions')
@@ -228,22 +228,22 @@ struct ListSwipeAction {
       Text(this.list1Item0State)
         .key('swipe0100')
         .width('60%')
-        .height(80)
+        .fontSize(10)
         .backgroundColor(0x0000ff)
       Text(this.list2Item0State)
         .key('swipe0300')
         .width('60%')
-        .height(80)
+        .fontSize(10)
         .backgroundColor(0x0000ff)
       Text(this.closeButtonContent)
         .key('swipe0400')
         .width('60%')
-        .height(80)
+        .fontSize(10)
         .backgroundColor(0x0000ff)
       Text(this.list1Item1Offset)
         .key('swipe0500')
         .width('60%')
-        .height(80)
+        .fontSize(10)
         .backgroundColor(0x0000ff)
     }
     .padding(10)

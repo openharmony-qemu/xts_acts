@@ -16,6 +16,7 @@
 
 import actsWifiManagerFunctionsTest from "./WifiManagerStationFunctionsStatic.test";
 import actsWifiManagerP2PTest from "./WifiManagerP2PStatic.test";
+import wifiManagerApi26StaticTest from "./WifiManagerApi26Static.test";
 import wifiManager from '@ohos.wifiManager';
 
 let iswifisupport: boolean = true;
@@ -29,5 +30,6 @@ export default function testsuite() {
   if(iswifisupport){
     actsWifiManagerFunctionsTest();
     actsWifiManagerP2PTest();
+    wifiManagerApi26StaticTest();
   }
 }

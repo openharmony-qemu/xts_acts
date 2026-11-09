@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from "../../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 import Utils from "../Util.test";
 import {EmptyCls,MultiCtorTarget,DualParamCons,MixedParamCons,ZeroParamCons,SingleParamCons,DoubleFieldClass,Eq02_C,Eq04_StrP,EqOneParam,EqTwoParam,GetParamTypeABC,ParamCountCls,RecovOne,S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,TcTwoPubA,} from "../Util.test";
 

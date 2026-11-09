@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 
 export default function BooleanLogicalOperatorsTest(): void {
   describe("BooleanLogicalOperatorsTest", () => {

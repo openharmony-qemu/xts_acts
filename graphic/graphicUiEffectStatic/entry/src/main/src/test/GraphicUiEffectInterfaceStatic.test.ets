@@ -154,7 +154,7 @@ export default function GraphicUiEffectInterfaceStatic() {
           done()
         }
       })
-
+      
     /**
      * @tc.name   testHdrBrightnessRatio_static_permissions
      * @tc.number SUB_GRAPHIC_UIEFFECT_FILTER_0200

@@ -135,7 +135,7 @@ export async function waitAndClickComponent(componentId: string, driver: Driver)
 
   let retryTimes: number = 0;
   let retry: boolean = true;
-  while (retry && retryTimes <= 3) {
+  while (retry && retryTimes <= 10) {
     retry = false;
     try {
       const buttonComponent = await driver.waitForComponent(ON.id(componentId), 10000);
@@ -153,7 +153,7 @@ export async function waitAndClickComponent(componentId: string, driver: Driver)
       console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
       if (error.code === 17000002) {
         retry = true;
-        await sleep(500);
+        await sleep(2000);
         retryTimes++;
         console.log('retryTimes = ' + retryTimes);
       }

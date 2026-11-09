@@ -52,6 +52,8 @@
 #include "node/SetUiDvsyncSwitchTest.cpp"
 #include "nativeModule/RuntimeCheckModeTest.cpp"
 #include "node/UIAgentGetPageTextTest.cpp"
+#include "node/UIAgentTreeRequestCreateTest.cpp"
+#include "node/UIAgentTreeRequestSetFilterTest.cpp"
 #include "node/GetImagesByNodeIdAsyncTest.cpp"
 #include "node/ContentChangeEventTest.cpp"
 #include "image/ImageAnimatorInterpolationTest.cpp"
@@ -327,6 +329,35 @@ static napi_value Init(napi_env env, napi_value exports)
         {"UIAgentGetPageTextTest003", nullptr, UIAgentGetPageTextTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UIAgentGetPageTextTest004", nullptr, UIAgentGetPageTextTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UIAgentGetPageTextTest005", nullptr, UIAgentGetPageTextTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"UIAgentTreeRequestCreateTest001", nullptr, UIAgentTreeRequestCreateTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestCreateTest002", nullptr, UIAgentTreeRequestCreateTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestCreateTest003", nullptr, UIAgentTreeRequestCreateTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestCreateTest004", nullptr, UIAgentTreeRequestCreateTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestCreateTest005", nullptr, UIAgentTreeRequestCreateTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestCreateTest006", nullptr, UIAgentTreeRequestCreateTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestCreateTest007", nullptr, UIAgentTreeRequestCreateTest007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestCreateTest008", nullptr, UIAgentTreeRequestCreateTest008, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"UIAgentTreeRequestSetFilterTest001", nullptr, UIAgentTreeRequestSetFilterTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestSetFilterTest002", nullptr, UIAgentTreeRequestSetFilterTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestSetFilterTest003", nullptr, UIAgentTreeRequestSetFilterTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"UIAgentTreeRequestSetInteractionInfoTest001", nullptr, UIAgentTreeRequestSetInteractionInfoTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestSetInteractionInfoTest002", nullptr, UIAgentTreeRequestSetInteractionInfoTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestSetInteractionInfoTest003", nullptr, UIAgentTreeRequestSetInteractionInfoTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"UIAgentTreeRequestSetAccessibilityInfoTest001", nullptr, UIAgentTreeRequestSetAccessibilityInfoTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestSetAccessibilityInfoTest002", nullptr, UIAgentTreeRequestSetAccessibilityInfoTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestSetAccessibilityInfoTest003", nullptr, UIAgentTreeRequestSetAccessibilityInfoTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"UIAgentTreeRequestSetCollectVisualPropertiesTest001", nullptr, UIAgentTreeRequestSetCollectVisualPropertiesTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestSetCollectVisualPropertiesTest002", nullptr, UIAgentTreeRequestSetCollectVisualPropertiesTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestSetCollectVisualPropertiesTest003", nullptr, UIAgentTreeRequestSetCollectVisualPropertiesTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"UIAgentTreeRequestSetCollectFunctionalPropertiesTest001", nullptr, UIAgentTreeRequestSetCollectFunctionalPropertiesTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestSetCollectFunctionalPropertiesTest002", nullptr, UIAgentTreeRequestSetCollectFunctionalPropertiesTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestSetCollectFunctionalPropertiesTest003", nullptr, UIAgentTreeRequestSetCollectFunctionalPropertiesTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
 
         {"GetImagesByNodeIdAsyncTest001", nullptr, GetImagesByNodeIdAsyncTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetImagesByNodeIdAsyncTest002", nullptr, GetImagesByNodeIdAsyncTest002, nullptr, nullptr, nullptr, napi_default, nullptr},

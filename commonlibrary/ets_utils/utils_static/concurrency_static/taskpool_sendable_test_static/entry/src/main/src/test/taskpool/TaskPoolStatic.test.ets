@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium-static/src/main/indexStatic';
 import collections from '@arkts.collections';
 import Utils from '../utils/Utils';
 import { delay, getTaskStateByTaskName } from '../utils/taskPoolCommon';

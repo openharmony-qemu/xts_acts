@@ -1,4 +1,5 @@
 'use static';
+
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,12 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import { typeNode, NodeController, FrameNode, ComponentContent } from '@ohos.arkui.node';
 import {
   Entry,
   Column,
   Component,
   Flex,
+  ColumnOptions,
   FlexDirection,
   ItemAlign,
   FlexAlign,
@@ -40,8 +43,7 @@ import { UIContext } from '@ohos.arkui.UIContext';
 function buildText() {
   Column() {
     Text('hello')
-      .width(50)
-      .height(50)
+      .height(15)
       .backgroundColor(Color.Yellow)
   }
 }
@@ -51,10 +53,10 @@ export class MyNodeController extends NodeController {
   public node: FrameNode | null = null;
   makeNode(uiContext: UIContext): FrameNode | null {
     this.node = new FrameNode(uiContext)
-    this.node?.commonAttribute.width(300).height(300).backgroundColor(Color.Red)
+    this.node?.commonAttribute.width(220).height(200).backgroundColor(Color.Red)
     let col = typeNode.createFlexNode(uiContext)
     col.attribute.width(200)
-      .height(200)
+      .height(180)
       .borderWidth(1)
       .borderColor(Color.Black)
       .backgroundColor(0xAFEEEE)
@@ -65,19 +67,17 @@ export class MyNodeController extends NodeController {
       .borderWidth(1)
       .borderColor(Color.Black)
       .backgroundColor(Color.Green)
-    let component = new ComponentContent<Object>(uiContext, wrapBuilder(buildText))
+    let component = new ComponentContent<ESObject>(uiContext, wrapBuilder(buildText))
     row4.addComponentContent(component)
     col.appendChild(row4)
     return this.node
   }
-  getNodeType()
+  getNodeType(): string
   {
     let inspectorInfo = this.node?.getFirstChild()?.getNodeType();
     console.info("inspectorInfo " + JSON.stringify(inspectorInfo));
     return JSON.stringify(inspectorInfo)
   }
-
-
 
 }
 
@@ -90,17 +90,17 @@ struct createNodeFlexTest {
   @State type: string = "getNodeType"
 
   build() {
-    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
+    Column({space:3} as ColumnOptions) {
       Column(){
         Row() {
           NodeContainer(this.myNodeController);
-        }
-        Text(this.type).margin(30).id("createNodeFlexText")
+        }.height(150)
+        Text(this.type).id("createNodeFlexText").height(15)
         Button("getInspectorInfo").id("createNodeFlexType").onClick((e:ClickEvent) => {
           this.type = this.myNodeController?.getNodeType()!
         })
+        .height(15)
       }
-    }
-
+    }.width('100%').height('100%')
   }
 }

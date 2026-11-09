@@ -33,7 +33,8 @@ add_library(nativerender SHARED
     arcAlphabetIndexer/ArcAlphabetIndexerEventCallbackTest.cpp
     dragEventSummary/DragEventSummaryTest.cpp
     node/ImageCollectionTakeItemByNodeId.cpp
-    node/UIAgentGetPageTextErrorCodeTest.cpp    
+    node/UIAgentGetPageTextErrorCodeTest.cpp
+    node/UIContentChangeEventGetTest.cpp
 )
 
  add_library(nativeNode SHARED 

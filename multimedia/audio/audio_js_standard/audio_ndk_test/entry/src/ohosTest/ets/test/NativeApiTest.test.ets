@@ -4522,6 +4522,246 @@ export default function audioNDK() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0100
+     * @tc.desc   test OH_AudioStreamManager_IsUltraFastPlaybackSupported with valid params
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0100 SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0100: ${result}`);
+      expect(result).assertEqual(test_pass)
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0200
+     * @tc.desc   test OH_AudioStreamManager_IsUltraFastPlaybackSupported with streamManager nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0200();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0200 SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0200: ${result}`);
+      expect(result).assertEqual(test_pass)
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0300
+     * @tc.desc   test OH_AudioStreamManager_IsUltraFastPlaybackSupported with streamInfo nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0300();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0300 SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0300: ${result}`);
+      expect(result).assertEqual(test_pass)
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0400
+     * @tc.desc   test OH_AudioStreamManager_IsUltraFastPlaybackSupported with supported nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0400();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0400 SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0400: ${result}`);
+      expect(result).assertEqual(test_pass)
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0100
+     * @tc.desc   test OH_AudioStreamManager_IsUltraFastRecordingSupported with valid params
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0100 SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0100: ${result}`);
+      expect(result).assertEqual(test_pass)
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0200
+     * @tc.desc   test OH_AudioStreamManager_IsUltraFastRecordingSupported with streamManager nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0200();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0200 SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0200: ${result}`);
+      expect(result).assertEqual(test_pass)
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0300
+     * @tc.desc   test OH_AudioStreamManager_IsUltraFastRecordingSupported with streamInfo nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0300();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0300 SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0300: ${result}`);
+      expect(result).assertEqual(test_pass)
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0400
+     * @tc.desc   test OH_AudioStreamManager_IsUltraFastRecordingSupported with supported nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0400();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0400 SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0400: ${result}`);
+      expect(result).assertEqual(test_pass)
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_ULTRA_FAST_LATENCY_MODE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_ULTRA_FAST_LATENCY_MODE_0100
+     * @tc.desc   test OH_AudioStreamBuilder_SetLatencyMode with AUDIOSTREAM_LATENCY_MODE_ULTRA_FAST on renderer builder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SET_ULTRA_FAST_LATENCY_MODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_SET_ULTRA_FAST_LATENCY_MODE_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SET_ULTRA_FAST_LATENCY_MODE_0100 SUB_MULTIMEDIA_AUDIO_SET_ULTRA_FAST_LATENCY_MODE_0100: ${result}`);
+      expect(result).assertEqual(test_pass)
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_ULTRA_FAST_LATENCY_MODE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_ULTRA_FAST_LATENCY_MODE_0200
+     * @tc.desc   test OH_AudioStreamBuilder_SetLatencyMode with AUDIOSTREAM_LATENCY_MODE_ULTRA_FAST on capturer builder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SET_ULTRA_FAST_LATENCY_MODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_SET_ULTRA_FAST_LATENCY_MODE_0200();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SET_ULTRA_FAST_LATENCY_MODE_0200 SUB_MULTIMEDIA_AUDIO_SET_ULTRA_FAST_LATENCY_MODE_0200: ${result}`);
+      expect(result).assertEqual(test_pass)
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GENERATE_RENDERER_ULTRA_FAST_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GENERATE_RENDERER_ULTRA_FAST_0100
+     * @tc.desc   test OH_AudioStreamBuilder_GenerateRenderer with AUDIOSTREAM_LATENCY_MODE_ULTRA_FAST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_GENERATE_RENDERER_ULTRA_FAST_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_GENERATE_RENDERER_ULTRA_FAST_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_GENERATE_RENDERER_ULTRA_FAST_0100 SUB_MULTIMEDIA_AUDIO_GENERATE_RENDERER_ULTRA_FAST_0100: ${result}`);
+      expect(result).assertEqual(test_pass)
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GENERATE_CAPTURER_ULTRA_FAST_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GENERATE_CAPTURER_ULTRA_FAST_0100
+     * @tc.desc   test OH_AudioStreamBuilder_GenerateCapturer with AUDIOSTREAM_LATENCY_MODE_ULTRA_FAST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_GENERATE_CAPTURER_ULTRA_FAST_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_GENERATE_CAPTURER_ULTRA_FAST_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_GENERATE_CAPTURER_ULTRA_FAST_0100 SUB_MULTIMEDIA_AUDIO_GENERATE_CAPTURER_ULTRA_FAST_0100: ${result}`);
+      expect(result).assertEqual(test_pass)
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GET_ULTRA_FAST_STATUS_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GET_ULTRA_FAST_STATUS_0100
+     * @tc.desc   test OH_AudioRenderer_GetFastStatus with AUDIOSTREAM_LATENCY_MODE_ULTRA_FAST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_GET_ULTRA_FAST_STATUS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_GET_ULTRA_FAST_STATUS_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_GET_ULTRA_FAST_STATUS_0100 SUB_MULTIMEDIA_AUDIO_RENDERER_GET_ULTRA_FAST_STATUS_0100: ${result}`);
+      expect(result).assertEqual(test_pass)
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_ULTRA_FAST_STATUS_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_ULTRA_FAST_STATUS_0100
+     * @tc.desc   test OH_AudioCapturer_GetFastStatus with AUDIOSTREAM_LATENCY_MODE_ULTRA_FAST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_ULTRA_FAST_STATUS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_ULTRA_FAST_STATUS_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_ULTRA_FAST_STATUS_0100 SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_ULTRA_FAST_STATUS_0100: ${result}`);
+      expect(result).assertEqual(test_pass)
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_RENDERER_ULTRA_FAST_STATUS_CHANGE_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_RENDERER_ULTRA_FAST_STATUS_CHANGE_CALLBACK_0100
+     * @tc.desc   test OH_AudioStreamBuilder_SetRendererFastStatusChangeCallback with AUDIOSTREAM_LATENCY_MODE_ULTRA_FAST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SET_RENDERER_ULTRA_FAST_STATUS_CHANGE_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_SET_RENDERER_ULTRA_FAST_STATUS_CHANGE_CALLBACK_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SET_RENDERER_ULTRA_FAST_STATUS_CHANGE_CALLBACK_0100 SUB_MULTIMEDIA_AUDIO_SET_RENDERER_ULTRA_FAST_STATUS_CHANGE_CALLBACK_0100: ${result}`);
+      expect(result).assertEqual(test_pass)
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_CAPTURER_ULTRA_FAST_STATUS_CHANGE_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_CAPTURER_ULTRA_FAST_STATUS_CHANGE_CALLBACK_0100
+     * @tc.desc   test OH_AudioStreamBuilder_SetCapturerFastStatusChangeCallback with AUDIOSTREAM_LATENCY_MODE_ULTRA_FAST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SET_CAPTURER_ULTRA_FAST_STATUS_CHANGE_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_SET_CAPTURER_ULTRA_FAST_STATUS_CHANGE_CALLBACK_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SET_CAPTURER_ULTRA_FAST_STATUS_CHANGE_CALLBACK_0100 SUB_MULTIMEDIA_AUDIO_SET_CAPTURER_ULTRA_FAST_STATUS_CHANGE_CALLBACK_0100: ${result}`);
+      expect(result).assertEqual(test_pass)
+      done()
+    })
+
+    /**
      * @tc.name   TestSetCapturerFastStatusChangeCallback001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET_CAPTURER_FAST_STATUS_CHANGED_CALLBACK_001
      * @tc.desc   test OH_AudioStreamBuilder_SetCapturerFastStatusChangeCallback
@@ -8917,6 +9157,118 @@ export default function audioNDK() {
         TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_SCENE_0100();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_SCENE_0100 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0100
+     * @tc.desc   running+MUSIC,OH_AudioRenderer_Standby(renderer,true) enter standby normally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0100 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0200
+     * @tc.desc   already in standby,OH_AudioRenderer_Standby(renderer,false) exit standby normally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0200();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0200 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0300
+     * @tc.desc   not started(STATE_PREPARED),OH_AudioRenderer_Standby(Renderer,true) return ILLEGAL_STATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0300',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0300();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0300 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0400
+     * @tc.desc   not in standby(STATE_RUNNING),OH_AudioRenderer_Standby(Renderer,false) return ILLEGAL_STATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0400',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0400();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0400 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0500
+     * @tc.desc   in standby state OH_AudioRenderer_Start returns ILLEGAL_STATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0500',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0500();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0500 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0600
+     * @tc.desc   ALARM usage (not in MUSIC/MOVIE/GAME/AUDIOBOOK),OH_AudioRenderer_Standby returns ILLEGAL_STATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0600',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0600();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0600 : ${result}`);
+      expect(result).assertEqual(test_pass);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0700
+     * @tc.desc   abnormal value null-OH_AudioRenderer_Standby(nullptr,true) returns INVALID_PARAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0700',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0700();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0700 : ${result}`);
       expect(result).assertEqual(test_pass);
       done();
     })

@@ -42,3 +42,13 @@ async function ParsingCert(certData: string): Promise<void> {
   let pubKey = x509Cert.getPublicKey();
   await x509Cert.verify(pubKey);
 }
+
+// ===== merged from huksApi12 utils =====
+export function GetAttestKeyBaseOptions(): huks.HuksOptions {
+  let huksOptions: huks.HuksOptions = {
+    properties: new Array(
+      GenParam(huks.HuksTag.HUKS_TAG_ATTESTATION_CHALLENGE, StringToUint8Array("challenge_data")),
+    )
+  };
+  return huksOptions;
+}

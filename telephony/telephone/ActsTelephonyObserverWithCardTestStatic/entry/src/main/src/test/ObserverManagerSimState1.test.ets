@@ -18,6 +18,7 @@ import { describe, afterEach, it, expect, Level, TestType, Size } from '@ohos/hy
 import observer from '@ohos.telephony.observer';
 import sim from '@ohos.telephony.sim';
 import { BusinessError } from "@ohos.base";
+import Utils from './Util.test';
 
 const ExpectFail =() =>{
   try {
@@ -94,15 +95,19 @@ export default function observerManagerSimStateTest1() {
       let caseName: string = 'testTelephonyObserverSimStateChangeOff0300';
       console.info(`${caseName} test start`);
       try {
-        let myNumber: int = 1;
+        let slotId: int = 0;
+        let num: int = 0;
         let callback: (data: observer.SimStateData) => void = (data: observer.SimStateData) => {
           console.info(`${caseName} data ${JSON.stringify(data)}`);
-          myNumber++;
-          console.info(`${caseName} myNumber ` + myNumber);
+          num++;
+          console.info(`${caseName} num ` + num);
         };
         observer.onSimStateChange(callback);
+        let numBefore: int = num;
         observer.offSimStateChange(callback);
-        ExpectTrue(true);
+        await sim.activateSim(slotId);
+        await Utils.msSleep(3000);
+        ExpectTrue(num === numBefore);
         done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}`);

@@ -144,7 +144,8 @@ export default function actsCreateModuleContextSyncTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CreateModuleContextSync_0500
      * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_0500
-     * @tc.desc   moduleName undefined out of valid range; expect BusinessError 401.
+     * @tc.desc   createModuleContextSync: moduleName=undefined; 有效范围 out of valid string;
+     *     expect BusinessError 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -168,7 +169,8 @@ export default function actsCreateModuleContextSyncTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CreateModuleContextSync_0510
      * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_0510
-     * @tc.desc   moduleName null out of valid range; expect BusinessError 401.
+     * @tc.desc   createModuleContextSync: moduleName=null; 有效范围 out of valid string;
+     *     expect BusinessError 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -347,7 +349,8 @@ export default function actsCreateModuleContextSyncTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CreateModuleContextSync_1300
      * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_1300
-     * @tc.desc   moduleName empty string "" length out of valid non-empty range; expect 16000021.
+     * @tc.desc   createModuleContextSync: 参数长度 length=0; 有效范围 non-empty string;
+     *     expect BusinessError 16000021
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -389,6 +392,63 @@ export default function actsCreateModuleContextSyncTest() {
       expect(typeof ctx.tempDir).assertEqual('string');
       expect(typeof ctx.databaseDir).assertEqual('string');
       expect(`${ctx.stageMode}`).assertEqual('true');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateModuleContextSync_1500
+     * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_1500
+     * @tc.desc   createModuleContextSync: 参数长度 length=1; 有效范围 non-empty but not installed;
+     *     expect BusinessError 16000021
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CreateModuleContextSync_1500', Level.LEVEL0, (done: Function) => {
+      console.info('SUB_Ability_AbilityRuntime_CreateModuleContextSync_1500 begin');
+      moduleContext = null;
+      let shortName = 'x';
+      expect(shortName.length).assertEqual(1);
+      try {
+        moduleContext = application.createModuleContextSync(
+          globalThis.abilityContext, shortName);
+        expect().assertFail();
+      } catch (err) {
+        let e = err as BusinessError;
+        console.debug('====>e====>' + JSON.stringify(e));
+        expect(e.code).assertEqual(ERR_MODULE_NOT_EXIST);
+      }
+      expect(moduleContext).assertEqual(null);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateModuleContextSync_1600
+     * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_1600
+     * @tc.desc   createModuleContextSync: 参数长度 length=256; 有效范围 over typical module-name;
+     *     expect BusinessError 16000021 or 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CreateModuleContextSync_1600', Level.LEVEL0, (done: Function) => {
+      console.info('SUB_Ability_AbilityRuntime_CreateModuleContextSync_1600 begin');
+      moduleContext = null;
+      let longName = '';
+      for (let i = 0; i < 256; i++) {
+        longName += 'a';
+      }
+      expect(longName.length).assertEqual(256);
+      try {
+        moduleContext = application.createModuleContextSync(
+          globalThis.abilityContext, longName);
+        expect().assertFail();
+      } catch (err) {
+        let e = err as BusinessError;
+        console.debug('====>e====>' + JSON.stringify(e));
+        expect(e.code === ERR_MODULE_NOT_EXIST || e.code === ERR_INVALID_PARAM).assertTrue();
+      }
+      expect(moduleContext).assertEqual(null);
       done();
     });
   });

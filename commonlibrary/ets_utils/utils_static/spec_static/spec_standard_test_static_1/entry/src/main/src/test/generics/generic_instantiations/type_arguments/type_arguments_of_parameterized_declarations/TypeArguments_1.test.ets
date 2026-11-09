@@ -27,7 +27,7 @@ import {
   Size,
   Level,
   expect
-} from "../../../../../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 
 interface IEmpty {}
 class XClass implements IEmpty {}

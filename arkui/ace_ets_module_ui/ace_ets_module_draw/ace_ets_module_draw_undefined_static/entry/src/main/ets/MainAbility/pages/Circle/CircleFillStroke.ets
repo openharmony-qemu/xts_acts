@@ -19,19 +19,10 @@ import {
   Entry,
   Column,
   Component,
-  Button,
-  ClickEvent,
   Color,
   Text,
-  Builder,
-  Row,
-  ColumnOptions,
-  Blank,
-  Margin,
-  Circle,
-  Resource
+  Circle
 } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
 import drawing from '@ohos.graphics.drawing';
 import { UIContext,DrawModifier,DrawContext} from '@kit.ArkUI';
 
@@ -74,7 +65,7 @@ struct CircleFillStroke {
   private fullModifier: MyFullDrawModifier = new MyFullDrawModifier(this.getUIContext());
 
   build() {
-    Column({space:5} as ColumnOptions) {
+    Column() {
       Text('text')
         .id('TextDrawModifier')
         .height(20)

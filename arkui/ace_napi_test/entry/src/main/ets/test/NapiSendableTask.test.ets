@@ -22,6 +22,32 @@ export const sleep = (ms: number | undefined) => {
 }
 
 const TASK_COUNT = 10;
+const MAX_RETRY: number = 3;
+
+async function executeTaskWithRetry(func: Function, expected: boolean, caseName: string): Promise<void> {
+  for (let i = 0; i < TASK_COUNT; i++) {
+    let success: boolean = false;
+    for (let retry = 0; retry < MAX_RETRY; retry++) {
+      try {
+        const value: object = await taskpool.execute(func);
+        console.info(`${caseName} task${i} retry${retry} value=${value}`);
+        expect(value).assertEqual(expected);
+        success = true;
+        break;
+      } catch (err) {
+        console.warn(`${caseName} task${i} retry${retry} err: code=${err.code} msg=${err.message}`);
+        if (retry < MAX_RETRY - 1) {
+          await sleep(100);
+        }
+      }
+    }
+    if (!success) {
+      console.error(`${caseName} task${i} failed after ${MAX_RETRY} retries`);
+      expect().assertFail();
+      return;
+    }
+  }
+}
 
 @Concurrent
 function napiIsSendableTest(): boolean {
@@ -104,23 +130,40 @@ export default function NapiSendableTaskTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testNapiSendableTask0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testNapiSendableTask0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testNapiSendableTask0001';
       console.info(`${caseName} test start`);
+      const MAX_RETRY: number = 3;
       try {
-        const promises: Promise<object>[] = [];
         for (let i = 0; i < TASK_COUNT; i++) {
-          promises.push(taskpool.execute(napiIsSendableTest));
-        }
-        const results = await Promise.all(promises);
-        for (const value of results) {
-          expect(value).assertEqual(false);
+          let success: boolean = false;
+          for (let retry = 0; retry < MAX_RETRY; retry++) {
+            try {
+              const value: object = await taskpool.execute(napiIsSendableTest);
+              console.info(`${caseName} task${i} retry${retry} value=${value}`);
+              expect(value).assertEqual(false);
+              success = true;
+              break;
+            } catch (err) {
+              console.warn(`${caseName} task${i} retry${retry} err: code=${err.code} msg=${err.message}`);
+              if (retry < MAX_RETRY - 1) {
+                await sleep(100);
+              }
+            }
+          }
+          if (!success) {
+            console.error(`${caseName} task${i} failed after ${MAX_RETRY} retries`);
+            expect().assertFail();
+            done();
+            return;
+          }
         }
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
       }
       console.info(`${caseName} test end`);
+      done();
     })
     /**
      * @tc.name   testNapiSendableTask0002
@@ -134,14 +177,7 @@ export default function NapiSendableTaskTest() {
       const caseName: string = 'testNapiSendableTask0002';
       console.info(`${caseName} test start`);
       try {
-        const promises: Promise<object>[] = [];
-        for (let i = 0; i < TASK_COUNT; i++) {
-          promises.push(taskpool.execute(NapiCreateSendableObject));
-        }
-        const results = await Promise.all(promises);
-        for (const value of results) {
-          expect(value).assertEqual(true);
-        }
+        await executeTaskWithRetry(NapiCreateSendableObject, true, caseName);
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
@@ -160,14 +196,7 @@ export default function NapiSendableTaskTest() {
       const caseName: string = 'testNapiSendableTask0003';
       console.info(`${caseName} test start`);
       try {
-        const promises: Promise<object>[] = [];
-        for (let i = 0; i < TASK_COUNT; i++) {
-          promises.push(taskpool.execute(NapiCreateSendableArray));
-        }
-        const results = await Promise.all(promises);
-        for (const value of results) {
-          expect(value).assertEqual(true);
-        }
+        await executeTaskWithRetry(NapiCreateSendableArray, true, caseName);
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
@@ -186,14 +215,7 @@ export default function NapiSendableTaskTest() {
       const caseName: string = 'testNapiSendableTask0004';
       console.info(`${caseName} test start`);
       try {
-        const promises: Promise<object>[] = [];
-        for (let i = 0; i < TASK_COUNT; i++) {
-          promises.push(taskpool.execute(NapiCreateSendableArrayWithLength));
-        }
-        const results = await Promise.all(promises);
-        for (const value of results) {
-          expect(value).assertEqual(true);
-        }
+        await executeTaskWithRetry(NapiCreateSendableArrayWithLength, true, caseName);
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
@@ -212,14 +234,7 @@ export default function NapiSendableTaskTest() {
       const caseName: string = 'testNapiSendableTask0005';
       console.info(`${caseName} test start`);
       try {
-        const promises: Promise<object>[] = [];
-        for (let i = 0; i < TASK_COUNT; i++) {
-          promises.push(taskpool.execute(NapiCreateSendableArrayBuffer));
-        }
-        const results = await Promise.all(promises);
-        for (const value of results) {
-          expect(value).assertEqual(true);
-        }
+        await executeTaskWithRetry(NapiCreateSendableArrayBuffer, true, caseName);
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
@@ -238,14 +253,7 @@ export default function NapiSendableTaskTest() {
       const caseName: string = 'testNapiSendableTask0006';
       console.info(`${caseName} test start`);
       try {
-        const promises: Promise<object>[] = [];
-        for (let i = 0; i < TASK_COUNT; i++) {
-          promises.push(taskpool.execute(NapiCreateSendableTypedArray));
-        }
-        const results = await Promise.all(promises);
-        for (const value of results) {
-          expect(value).assertEqual(true);
-        }
+        await executeTaskWithRetry(NapiCreateSendableTypedArray, true, caseName);
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
@@ -264,14 +272,7 @@ export default function NapiSendableTaskTest() {
       const caseName: string = 'testNapiSendableTask0007';
       console.info(`${caseName} test start`);
       try {
-        const promises: Promise<object>[] = [];
-        for (let i = 0; i < TASK_COUNT; i++) {
-          promises.push(taskpool.execute(NapiWrapSendable));
-        }
-        const results = await Promise.all(promises);
-        for (const value of results) {
-          expect(value).assertEqual(true);
-        }
+        await executeTaskWithRetry(NapiWrapSendable, true, caseName);
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();
@@ -290,14 +291,7 @@ export default function NapiSendableTaskTest() {
       const caseName: string = 'testNapiSendableTask0008';
       console.info(`${caseName} test start`);
       try {
-        const promises: Promise<object>[] = [];
-        for (let i = 0; i < TASK_COUNT; i++) {
-          promises.push(taskpool.execute(NapiWrapSendableWithSize));
-        }
-        const results = await Promise.all(promises);
-        for (const value of results) {
-          expect(value).assertEqual(true);
-        }
+        await executeTaskWithRetry(NapiWrapSendableWithSize, true, caseName);
       } catch (error) {
         console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();

@@ -67,6 +67,79 @@ struct GridEventUndefined {
     Column() {
       Text(this.message)
         .id('Grid_text')
+      Column({ space: 2 } as ColumnOptions) {
+        Row() {
+          Button('flingTop')
+            .id('Grid_flingTop')
+            .onClick((e: ClickEvent) => {
+              this.scroller.fling(4000);
+            })
+          Button('flingBottom')
+            .id('Grid_flingBottom')
+            .onClick((e: ClickEvent) => {
+              this.scroller.fling(-4000);
+            })
+          Button('resetText')
+            .id('Grid_resetText')
+            .onClick((e: ClickEvent) => {
+              this.message = 'Hello World';
+            })
+        }
+        .height('5%')
+
+        Row() {
+          Button('' + this.onScrollFrameBeginValue)
+            .id('Grid_onScrollFrameBeginValue')
+            .onClick((e: ClickEvent) => {
+              this.onScrollFrameBeginValue = !this.onScrollFrameBeginValue
+            })
+          Button('' + this.onDidScrollValue)
+            .id('Grid_onDidScrollValue')
+            .onClick((e: ClickEvent) => {
+              this.onDidScrollValue = !this.onDidScrollValue
+            })
+          Button('' + this.onReachStartValue)
+            .id('Grid_onReachStartValue')
+            .onClick((e: ClickEvent) => {
+              this.onReachStartValue = !this.onReachStartValue
+            })
+        }
+        .height('5%')
+
+        Row() {
+          Button('' + this.onReachEndValue)
+            .id('Grid_onReachEndValue')
+            .onClick((e: ClickEvent) => {
+              this.onReachEndValue = !this.onReachEndValue
+            })
+          Button('' + this.onScrollStartValue)
+            .id('Grid_onScrollStartValue')
+            .onClick((e: ClickEvent) => {
+              this.onScrollStartValue = !this.onScrollStartValue
+            })
+          Button('' + this.onScrollStopValue)
+            .id('Grid_onScrollStopValue')
+            .onClick((e: ClickEvent) => {
+              this.onScrollStopValue = !this.onScrollStopValue
+            })
+        }
+        .height('5%')
+
+        Row() {
+          Button('' + this.onScrollBarUpdateValue)
+            .id('Grid_onScrollBarUpdateValue')
+            .onClick((e: ClickEvent) => {
+              this.onScrollBarUpdateValue = !this.onScrollBarUpdateValue
+            })
+          Button('' + this.onScrollIndexValue)
+            .id('Grid_onScrollIndexValue')
+            .onClick((e: ClickEvent) => {
+              this.onScrollIndexValue = !this.onScrollIndexValue
+            })
+        }
+        .height('5%')
+      }
+
       Column() {
         Grid(this.scroller) {
           ForEach(this.data, (day: string) => {
@@ -118,76 +191,6 @@ struct GridEventUndefined {
           console.log(this.message);
         })
       }.width('22%')
-
-      Column({ space: 5 } as ColumnOptions) {
-        Row() {
-          Button('flingTop')
-            .id('Grid_flingTop')
-            .onClick((e: ClickEvent) => {
-              this.scroller.fling(4000);
-            })
-          Button('flingBottom')
-            .id('Grid_flingBottom')
-            .onClick((e: ClickEvent) => {
-              this.scroller.fling(-4000);
-            })
-          Button('resetText')
-            .id('Grid_resetText')
-            .onClick((e: ClickEvent) => {
-              this.message = 'Hello World';
-            })
-        }
-
-        Row() {
-          Button('' + this.onScrollFrameBeginValue)
-            .id('Grid_onScrollFrameBeginValue')
-            .onClick((e: ClickEvent) => {
-              this.onScrollFrameBeginValue = !this.onScrollFrameBeginValue
-            })
-          Button('' + this.onDidScrollValue)
-            .id('Grid_onDidScrollValue')
-            .onClick((e: ClickEvent) => {
-              this.onDidScrollValue = !this.onDidScrollValue
-            })
-          Button('' + this.onReachStartValue)
-            .id('Grid_onReachStartValue')
-            .onClick((e: ClickEvent) => {
-              this.onReachStartValue = !this.onReachStartValue
-            })
-        }
-
-        Row() {
-          Button('' + this.onReachEndValue)
-            .id('Grid_onReachEndValue')
-            .onClick((e: ClickEvent) => {
-              this.onReachEndValue = !this.onReachEndValue
-            })
-          Button('' + this.onScrollStartValue)
-            .id('Grid_onScrollStartValue')
-            .onClick((e: ClickEvent) => {
-              this.onScrollStartValue = !this.onScrollStartValue
-            })
-          Button('' + this.onScrollStopValue)
-            .id('Grid_onScrollStopValue')
-            .onClick((e: ClickEvent) => {
-              this.onScrollStopValue = !this.onScrollStopValue
-            })
-        }
-
-        Row() {
-          Button('' + this.onScrollBarUpdateValue)
-            .id('Grid_onScrollBarUpdateValue')
-            .onClick((e: ClickEvent) => {
-              this.onScrollBarUpdateValue = !this.onScrollBarUpdateValue
-            })
-          Button('' + this.onScrollIndexValue)
-            .id('Grid_onScrollIndexValue')
-            .onClick((e: ClickEvent) => {
-              this.onScrollIndexValue = !this.onScrollIndexValue
-            })
-        }
-
-      }
     }.width('100%').margin({ top: 5 } as Margin)
   }
 }

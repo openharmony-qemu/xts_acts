@@ -10,7 +10,8 @@
     },
     "kits": [{
         "test-file-name": [
-            "ActsFormStaticTest.hap"
+            "ActsFormStaticTest.hap",
+            "StageFormSystemHost.hap"
         ],
         "type": "AppInstallKit",
         "cleanup-apps": true

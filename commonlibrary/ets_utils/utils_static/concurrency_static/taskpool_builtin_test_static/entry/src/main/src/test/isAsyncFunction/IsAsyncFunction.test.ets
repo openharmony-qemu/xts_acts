@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils, { sleep } from '../Utils.test';
 import util from '@ohos.util';
 import defaultExportedAsync, {

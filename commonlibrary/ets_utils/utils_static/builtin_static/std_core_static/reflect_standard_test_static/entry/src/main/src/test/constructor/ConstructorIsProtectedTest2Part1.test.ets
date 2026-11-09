@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from "../../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 import Utils from "../Util.test";
 
 import {TcAllVisA,TcTwoPubA,GN3_Mix4ISBD,CtorArr3D,EmptyCls,TcPub10,GetParamTypeABC,TcPub12,OT_Outer_OT_InnerGeneric,IsPublicGenericTwo,TcPub19,StringFieldWithMethod,Ctor_MapStrInt,TcPub23,TcPub24,DoubleFieldClass,PubDouble,TcPub33,TcPub34,IP2_110_PubDefBool,PubByteParam,PubShortParam,IP3_193_PubFloat,ParamCountCls,TcPubPrivA,TcPubProtA,TcPub13,TcPub14,TcPub15,TcGenPub,C1Char,Ext4_CharOptParam,Ext4_CharStringMix,GN_ByteArr,GN_SetStr,IP5_268_ProChar,ObjectParamCtor_Ext,PGN_UnionType,TcAllOpt5,TcBool2D,TcGapByte2D,TcGapCustArr,TcGapFloat2D,TcGapFnParam,TcGapIfcProt,TcGapIfcPub,TcGapMapII,TcGapNameGen,TcGapShort2D,TcGapUniNB,TcIntMap,TcMapSS,TcStr2D,TcStrIntArr,} from "../Util.test";

@@ -182,6 +182,7 @@ it('apiCommponentAddJsunit_static_0300', Level.LEVEL0, async (done: () => void):
       })
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id('nexpageAdd'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -220,9 +221,10 @@ it('apiCommponentAddJsunit_static_0400', Level.LEVEL0, async (done: () => void):
       })
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let scrollBar = await driver.findComponent(ON.type('Scroll')) as Component;
       await scrollBar.scrollToBottom();
-      await CommonFunc.sleep(100);
+      await CommonFunc.sleep(1000);
       // wether if swipe
       let gridText = await driver.findComponent(ON.id('9'));
       let text = await (gridText?.getText() as Promise<string>);
@@ -480,9 +482,10 @@ it('apiCommponentAddJsunit_static_1300', Level.LEVEL0, async (done: () => void):
       })
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let scrollBar = await driver.findComponent(ON.type('Scroll'));
       await (scrollBar?.scrollToBottom() as Promise<void>);
-      await CommonFunc.sleep(100);
+      await CommonFunc.sleep(1000);
       // wether if swipe
       let gridText = await driver.findComponent(ON.id('9'));
       let text = await (gridText?.getText() as Promise<string>);

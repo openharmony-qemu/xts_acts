@@ -13,6 +13,8 @@
  * limitations under the License.
  */
  
+ 
+import PresetTest from './Preset.test';
 import primary from './AlertDialogTest/primary.test';
 import PopupOptionsTest from './PopupTest/PopupApiTest/PopupApiTest.test';
 import DismissReasonTest from './PopupTest/DismissReason.test';
@@ -51,6 +53,7 @@ import selectJsunit2 from './select/SelectJsunit.test'
 import AdvancedPopupTest from './popup/AdvancedPopup.test';
 
 export default function testsuite() {
+    PresetTest();
     SelectJsunit();
 	SelectJsunit01();
     selectApi1();
@@ -59,7 +62,7 @@ export default function testsuite() {
     primary();
 	PopupOptionsTest();
 	DismissReasonTest();
-	popupKeyboardAvoidMode();
+	
     showActionSheetOrder();
     MaxwidthTest();
     showActionSheetBackgroundEffectTest();

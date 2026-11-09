@@ -22,6 +22,8 @@ group("customization") {
       "config_policy_static:ActsConfigPolicyStaticTest",
       "assessment_base:ActsAssessmentTest",
       "assessment_base_permission:ActsAssessmentPermissionTest",
+      "assessment_base_static:ActsAssessmentStaticTest",
+      "assessment_base_permission_static:ActsAssessmentPermissionStaticTest",
     ]
   }
 }

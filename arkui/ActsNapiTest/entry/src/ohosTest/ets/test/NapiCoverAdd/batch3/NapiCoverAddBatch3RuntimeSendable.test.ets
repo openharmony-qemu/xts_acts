@@ -54,8 +54,11 @@ export default function NapiCoverAddBatch3RuntimeSendableTest() {
         } catch (e) {
           console.error('taskpool.execute error occurred');
         }
-        expect(status).assertEqual(NAPI_GENERIC_FAILURE);
-        expect(napicoveraddbatch3ndktest.cleanupThreadsafeFunctionCrossThreadProbe()).assertEqual(1);
+        try {
+          expect(status).assertEqual(NAPI_GENERIC_FAILURE);
+        } finally {
+          expect(napicoveraddbatch3ndktest.cleanupThreadsafeFunctionCrossThreadProbe()).assertEqual(1);
+        }
         console.info(`${caseName} END`);
         done();
       });
@@ -79,8 +82,11 @@ export default function NapiCoverAddBatch3RuntimeSendableTest() {
         } catch (e) {
           console.error('taskpool.execute error occurred');
         }
-        expect(status).assertEqual(NAPI_GENERIC_FAILURE);
-        expect(napicoveraddbatch3ndktest.cleanupThreadsafeFunctionCrossThreadProbe()).assertEqual(1);
+        try {
+          expect(status).assertEqual(NAPI_GENERIC_FAILURE);
+        } finally {
+          expect(napicoveraddbatch3ndktest.cleanupThreadsafeFunctionCrossThreadProbe()).assertEqual(1);
+        }
         console.info(`${caseName} END`);
         done();
       });

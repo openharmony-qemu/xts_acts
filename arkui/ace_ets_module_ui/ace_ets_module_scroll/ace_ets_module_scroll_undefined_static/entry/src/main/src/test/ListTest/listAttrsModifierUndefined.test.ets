@@ -811,6 +811,9 @@ export default function ListAttrsModifierUndefinedTest() {
         .getElement('sticky')))
         .assertEqual('\"StickyStyle.Header\"');
 
+      let scrollColumn = await driver.findComponent(ON.id('listAttrsModifierUndefined_btn'));
+      await scrollColumn!.scrollSearch(ON.id('List_sticky'));
+      await CommonFunc.sleep(2000);
       let changeBtn = await driver.findComponent(ON.id('List_sticky'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -837,6 +840,9 @@ export default function ListAttrsModifierUndefinedTest() {
       console.info('[ListAttrsModifierUndefinedTest_static_2100] START');
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(1000);
+      let scrollColumn = await driver.findComponent(ON.id('listAttrsModifierUndefined_btn'));
+      await scrollColumn!.scrollSearch(ON.id('List_sticky'));
+      await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('MyListAttrsModifier');
       await CommonFunc.sleep(1000);
       let changeBtn_top = await driver.findComponent(ON.id('List_toTop'));

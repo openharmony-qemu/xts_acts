@@ -28,6 +28,7 @@
 #include "dragEventSummary/DragEventSummaryTest.h"
 #include "node/ImageCollectionTakeItemByNodeId.h"
 #include "node/UIAgentGetPageTextErrorCodeTest.h"
+#include "node/UIContentChangeEventGetTest.h"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -66,6 +67,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"UIAgentGetPageTextErrorCodeTest002", nullptr, UIAgentGetPageTextErrorCodeTest::UIAgentGetPageTextErrorCodeTest002,
                 nullptr, nullptr, nullptr, napi_default, nullptr},
         {"ImageCollectionTakeItemByNodeIdTest001", nullptr, ImageCollectionTakeItemByNodeId::ImageCollectionTakeItemByNodeIdTest001,
+                nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIContentChangeEventGetTest001", nullptr, UIContentChangeEventGetTest::UIContentChangeEventGetTest001,
                 nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {

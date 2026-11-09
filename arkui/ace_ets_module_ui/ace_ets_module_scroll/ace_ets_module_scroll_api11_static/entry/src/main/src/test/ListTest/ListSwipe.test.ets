@@ -125,9 +125,9 @@ it('ArkUI_List_Swipe_static_0300', Level.LEVEL1, async (done: () => void): Promi
         ',width: ' + width + ',height: ' + height + ',displayId: ' + displayId);
       // 2.swipe right
       await driver.swipeBetween(
-        { x: (Math.round(rect.left)).toInt(),
+        { x: (Math.round(rect.left + width * 0.3)).toInt(),
           y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId.toInt() },
-        { x: (Math.round(rect.left + width / 4)).toInt(),
+        { x: (Math.round(rect.left + width * 0.9)).toInt(),
           y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId.toInt() }
       )
 

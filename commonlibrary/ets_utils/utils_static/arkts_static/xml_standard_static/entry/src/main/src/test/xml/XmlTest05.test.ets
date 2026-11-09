@@ -25,7 +25,7 @@ import {
   Size,
   Level,
   expect
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import { util, xml } from '@kit.ArkTS';
 import Utils from '../Util.test';
 

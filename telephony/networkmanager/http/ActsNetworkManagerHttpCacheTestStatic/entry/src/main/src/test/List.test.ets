@@ -14,15 +14,17 @@
  * limitations under the License.
  */
 import HttpDeleteTest from "./HttpDelete.test";
+import HttpFlush from "./HttpFlush.test";
 import connection from '@ohos.net.connection';
 import EmptyTest from './Empty.test';
 import HttpCreateHttpResponseCacheTest from './HttpCreateHttpResponseCache.test';
 let isDefaultNet: boolean = connection.hasDefaultNetSync();
 
-export default function testsuite() {
+export default function testsuite(): void {
     if(isDefaultNet){
         HttpDeleteTest();
         HttpCreateHttpResponseCacheTest();
+        HttpFlush();
     }else{
         EmptyTest();
     }

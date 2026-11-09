@@ -56,11 +56,13 @@ export default function onItemDragStartUndefinedTest() {
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let listItem = await driver.findComponent(ON.id('List_item1'));
       await CommonFunc.sleep(500);
       let dragText = await driver.findComponent(ON.id('dragText')) as Component;
       await CommonFunc.sleep(500);
       await (listItem?.dragTo(dragText) as Promise<void>);
+      await CommonFunc.sleep(2000);
 
       let strJson = inspector.getInspectorByKey('dragText');
       let obj = JSON.parseJsonElement(strJson);
@@ -74,6 +76,7 @@ export default function onItemDragStartUndefinedTest() {
       await CommonFunc.sleep(1000);
 
       await (listItem?.dragTo(dragText) as Promise<void>);
+      await CommonFunc.sleep(2000);
 
       let strJson1 = inspector.getInspectorByKey('dragText');
       let obj1 = JSON.parseJsonElement(strJson1);

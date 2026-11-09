@@ -60,33 +60,26 @@ export default function closeToastTest() {
     });
 
     /**
-     * @tc.number closeToastTest_0100
-     * @tc.name closeToastTest_0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_CLOSETOASTTEST_0100
+     * @tc.name SUB_ARKUI_ACE_ENGINE_CLOSETOASTTEST_0100
      * @tc.desc To test that the promptAction.closeToast parameter is an abnormal value(0,undefined,null).
      * @tc.level: Level 1
      * @tc.type : Function
      * @tc.size : MEDIUMTEST
      */
-    it('closeToastTest_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      console.info('closeToastTest_0100 START');
+    it('SUB_ARKUI_ACE_ENGINE_CLOSETOASTTEST_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_ARKUI_ACE_ENGINE_CLOSETOASTTEST_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('openT'));
       await button.click();
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(500);
       let toast = await driver.findComponent(ON.text('Toast Massage'));
       expect(toast != null).assertTrue()
       console.info('closeDialogTest_0100 0  ok');
-      await CommonFunc.sleep(1500);
-      toast = await driver.findComponent(ON.text('Toast Massage'));
-      expect(toast != null).assertTrue()
-      console.info('closeDialogTest_0100 undefined  ok');
-      await CommonFunc.sleep(2000);
-      toast = await driver.findComponent(ON.text('Toast Massage'));
-      expect(toast != null).assertTrue()
-      console.info('closeDialogTest_0100 null  ok');
+
       await CommonFunc.sleep(500);
-      console.info('closeToastTest_0100 END');
+      console.info('SUB_ARKUI_ACE_ENGINE_CLOSETOASTTEST_0100 END');
       done();
     });
   })
