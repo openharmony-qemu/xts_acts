@@ -51,6 +51,9 @@
       },
       {
         "name":"ohos.permission.SUPPORT_USER_AUTH"
+      },
+      {
+        "name": "ohos.permission.USE_USER_ACCESS_MANAGER"
       }
     ]
   }
