@@ -36,6 +36,29 @@ import {
 struct SafeAreaInsetStatic_7 {
   @State r5BottomCleared: boolean = false;
 
+  private cfg(): SafeAreaInsetOptions | undefined {
+    if (this.r5BottomCleared) {
+      return {
+        top: {
+          content: () => { this.r5TopContent(); },
+          spacing: LengthMetrics.vp(2)
+        },
+        bottom: undefined
+      }
+    } else {
+      return {
+        top: {
+          content: () => { this.r5TopContent(); },
+          spacing: LengthMetrics.vp(2)
+        },
+        bottom: {
+          content: () => { this.r5BottomContent(); },
+          spacing: LengthMetrics.vp(3)
+        }
+      }
+    }
+  }
+
   @Builder
   r4TopContent() {
     Text('top 10')
@@ -118,16 +141,7 @@ struct SafeAreaInsetStatic_7 {
       .height(LayoutPolicy.wrapContent)
       .padding(5)
       .backgroundColor('#F5F5F5')
-      .safeAreaInset({
-        top: {
-          content: () => { this.r5TopContent(); },
-          spacing: LengthMetrics.vp(2)
-        },
-        bottom: this.r5BottomCleared ? undefined : {
-          content: () => { this.r5BottomContent(); },
-          spacing: LengthMetrics.vp(3)
-        }
-      } as SafeAreaInsetOptions)
+      .safeAreaInset(this.cfg())
       .id('SafeAreaInsetStatic_r5Host')
 
       Stack() {
