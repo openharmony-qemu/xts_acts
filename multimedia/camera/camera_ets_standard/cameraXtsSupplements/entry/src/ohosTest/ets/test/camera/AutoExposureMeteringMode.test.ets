@@ -421,7 +421,7 @@ export default function AutoExposureMeteringModeTest() {
         expect().assertFail();
       } catch (err) {
         console.info(TAG, testName + ' err.code: ' + err.code + ', err.message: ' + err.message);
-        expect(Number(err.code)).assertEqual(7400103);
+        expect(err.code).assertEqual('7400103');
       }
       
       // ========== 恢复过程 ==========
