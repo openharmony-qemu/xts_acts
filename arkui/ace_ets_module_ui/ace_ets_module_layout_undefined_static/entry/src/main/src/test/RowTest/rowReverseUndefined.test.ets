@@ -45,32 +45,38 @@ export default function RowReverseUndefinedTest() {
     });
 
     /**
-     * @tc.number    RowReverseUndefinedTest_static_0100
-     * @tc.name      RowReverseUndefinedTest_static_0100
-     * @tc.desc      RowReverseUndefinedTest_static_0100
+     * @tc.number    SUB_ARKUI_API_RowReverseUndefinedTest_static_0100
+     * @tc.name      SUB_ARKUI_API_RowReverseUndefinedTest_static_0100
+     * @tc.desc      SUB_ARKUI_API_RowReverseUndefinedTest_static_0100
      * @tc.level     Level.LEVEL1
      */
-    it('RowReverseUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('RowReverseUndefinedTest_static_0100 START');
-      await CommonFunc.sleep(500);
-      let driver: Driver = Driver.create();
-      let component2 = await driver.findComponent(ON.id('row2')) as Component;
-      let row2 = await component2.getBounds();
-      let component1 = await driver.findComponent(ON.id('row1')) as Component;
-      let row1 = await component1.getBounds();
-      expect(Math.abs(Math.round(row1.left - row2.right)) > 1).assertTrue();
+    it('SUB_ARKUI_API_RowReverseUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('SUB_ARKUI_API_RowReverseUndefinedTest_static_0100 START');
+        await CommonFunc.sleep(500);
+        let driver: Driver = Driver.create();
+        let component2 = await driver.findComponent(ON.id('row2')) as Component;
+        let row2 = await component2.getBounds();
+        let component1 = await driver.findComponent(ON.id('row1')) as Component;
+        let row1 = await component1.getBounds();
+        expect(Math.abs(Math.round(row1.left - row2.right)) > 1).assertTrue();
 
-      let changeBtn = await driver.findComponent(ON.id('changeButton'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        let changeBtn = await driver.findComponent(ON.id('changeButton'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      component2 = await driver.findComponent(ON.id('row2')) as Component;
-      row2 = await component2.getBounds();
-      component1 = await driver.findComponent(ON.id('row1')) as Component;
-      row1 = await component1.getBounds();
-      expect(Math.abs(Math.round(row1.left - row2.right)) <= 1).assertTrue();
-      console.info('RowReverseUndefinedTest_static_0100 END');
-      done();
+        component2 = await driver.findComponent(ON.id('row2')) as Component;
+        row2 = await component2.getBounds();
+        component1 = await driver.findComponent(ON.id('row1')) as Component;
+        row1 = await component1.getBounds();
+        expect(Math.abs(Math.round(row1.left - row2.right)) <= 1).assertTrue();
+        console.info('SUB_ARKUI_API_RowReverseUndefinedTest_static_0100 END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_RowReverseUndefinedTest_static_0100] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

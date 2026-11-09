@@ -50,7 +50,8 @@ struct FlexExample {
           .onClick((e: ClickEvent) => {
             this.modifier.flag = !this.modifier.flag;
           })
-      }.width('100%').height('100%')
+      }.width('80%').height('80%')
     }
+    .alignItems(HorizontalAlign.Center)
   }
 }

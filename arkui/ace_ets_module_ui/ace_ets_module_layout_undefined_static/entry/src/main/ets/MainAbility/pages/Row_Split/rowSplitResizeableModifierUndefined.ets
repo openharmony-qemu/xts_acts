@@ -17,7 +17,7 @@
 import { Entry, Text, Column, Component, Button, ClickEvent, Flex,
   FlexAlign,ItemAlign, Select, Color, Row, Font, SymbolEffectStrategy,
   SymbolGlyph, $r, Navigation, List, TextInput, AttributeModifier,
-  RowSplitAttribute, RowSplit, TextAlign} from '@ohos.arkui.component'
+  RowSplitAttribute, RowSplit, TextAlign, HorizontalAlign } from '@ohos.arkui.component'
 import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
@@ -65,9 +65,10 @@ struct Index {
           .attributeModifier(this.modifier)
           .id('rowSplit_resizeable_modifier')
           .padding(10)
-          .width('100%')
+          .width('80%')
         }
       }
     }
+    .alignItems(HorizontalAlign.Center)
   }
 }

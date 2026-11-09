@@ -15,7 +15,7 @@
  */
 import {  State, Observed } from '@ohos.arkui.stateManagement'
 import { Entry,Column,Text,Button,Divider,SafeAreaType,SafeAreaEdge,SizeOptions,
-  Component,ButtonAttribute,AttributeModifier} from '@ohos.arkui.component'
+  Component,ButtonAttribute,AttributeModifier, HorizontalAlign } from '@ohos.arkui.component'
 
 @Observed
 export class SizeModifierCommon implements AttributeModifier<ButtonAttribute> {
@@ -35,7 +35,7 @@ struct CommonExample {
 
   build() {
     Column() {
-      Text('height-动态切换').fontSize(20).margin(15).width('90%')
+      Text('height-动态切换').fontSize(20).margin(15).width('80%')
       Button('Button')
         .fontSize(50)
         .attributeModifier(this.modifier4)
@@ -44,7 +44,7 @@ struct CommonExample {
       Button('Button')
         .fontSize(50)
         .id('Common_height_base')
-      
+
       Divider()
       Button('isUndefined = ' + this.buttonText)
         .id('changeButton')
@@ -52,6 +52,7 @@ struct CommonExample {
           this.modifier4.isUndefined == true ? this.modifier4.isUndefined = false : this.modifier4.isUndefined = true
           this.modifier4.isUndefined == true ? this.buttonText = 'true' : this.buttonText = 'false'
         })
-    }.width('100%')
+    }.width('80%')
+    .alignItems(HorizontalAlign.Center)
   }
 }

@@ -15,8 +15,7 @@
  */
 
 import {  Entry,  Column,  Component,  Text,  Color,  ItemAlign,  FlexAlign,  Scroll,  ColumnSplit,  FontWeight,
-  TextAlign,  Stack,  Alignment,  SafeAreaType,  Divider,  Button,  StackAttribute,  AttributeModifier
-} from '@ohos.arkui.component'
+  TextAlign,  Stack,  Alignment,  SafeAreaType,  Divider,  Button,  StackAttribute,  AttributeModifier, HorizontalAlign } from '@ohos.arkui.component'
 import { State, AppStorage,Observed } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 
@@ -36,15 +35,15 @@ struct StackExampleM {
     Column() {
       Stack() {
         Column() {
-          Text('video zone').height('100%').width('100%').textAlign(TextAlign.Center).fontSize(25)
-        }.backgroundColor(Color.Pink).width('60%').height('100%').id('upperItemsId')
+          Text('video zone').height('80%').width('80%').textAlign(TextAlign.Center).fontSize(25)
+        }.backgroundColor(Color.Pink).width('60%').height('80%').id('upperItemsId')
         Column() {
           Text('video title')
-            .width('100%')
+            .width('80%')
             .height(20)
             .textAlign(TextAlign.Center)
             .backgroundColor('rgb(213, 213, 213)')
-        }.width('100%').height('100%')
+        }.width('80%').height('80%')
       }
       .height('15%')
       .backgroundColor(Color.Yellow)
@@ -56,6 +55,7 @@ struct StackExampleM {
           this.myModifier.isUndefined = !this.myModifier.isUndefined
         }
         ).id('changeButton')
-    }.width('100%')
+    }.width('80%')
+    .alignItems(HorizontalAlign.Center)
   }
 }

@@ -53,5 +53,6 @@ struct Align {
         }
       }
     }
+    .alignItems(HorizontalAlign.Center)
   }
 }

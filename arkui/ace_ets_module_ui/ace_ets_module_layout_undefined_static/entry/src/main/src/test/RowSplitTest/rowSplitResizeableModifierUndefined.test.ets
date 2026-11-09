@@ -49,35 +49,41 @@ export default function RowSplitResizeableModifierUndefinedTest() {
 
 
     /**
-     * @tc.number   RowSplitResizeableModifierUndefinedTest_static_0100
-     * @tc.name     RowSplitResizeableModifierUndefinedTest_static_0100
-     * @tc.desc     RowSplitResizeableModifierUndefinedTest_static_0100
+     * @tc.number   SUB_ARKUI_API_RowSplitResizeableModifierUndefinedTest_static_0100
+     * @tc.name     SUB_ARKUI_API_RowSplitResizeableModifierUndefinedTest_static_0100
+     * @tc.desc     SUB_ARKUI_API_RowSplitResizeableModifierUndefinedTest_static_0100
      * @tc.level    Level.LEVEL1
      */
-    it('RowSplitResizeableModifierUndefinedTest_static_0100', Level.LEVEL1,
+    it('SUB_ARKUI_API_RowSplitResizeableModifierUndefinedTest_static_0100', Level.LEVEL1,
           async (done: () => void): Promise<void> => {
-      console.info('RowSplitResizeableModifierUndefinedTest_static_0100 START');
-      await CommonFunc.sleep(500)
-      let strJson = inspector.getInspectorByKey('rowSplit_resizeable_modifier');
-      let obj = JSON.parseJsonElement(strJson);
-      await CommonFunc.sleep(1000);
-      console.info('Test component obj is: ' + obj.getElement('$attrs'));
-      console.info('Test component obj.resizeable is: ' + obj.getElement('$attrs').getString('resizeable'));
-      expect(obj.getElement('$attrs').getString('resizeable')).assertEqual('true');
+      try {
+        console.info('SUB_ARKUI_API_RowSplitResizeableModifierUndefinedTest_static_0100 START');
+        await CommonFunc.sleep(500)
+        let strJson = inspector.getInspectorByKey('rowSplit_resizeable_modifier');
+        let obj = JSON.parseJsonElement(strJson);
+        await CommonFunc.sleep(1000);
+        console.info('Test component obj is: ' + obj.getElement('$attrs'));
+        console.info('Test component obj.resizeable is: ' + obj.getElement('$attrs').getString('resizeable'));
+        expect(obj.getElement('$attrs').getString('resizeable')).assertEqual('true');
 
-      let driver = Driver.create();
-      let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
-      await btn_true.click();
-      await CommonFunc.sleep(1000);
+        let driver = Driver.create();
+        let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+        await btn_true.click();
+        await CommonFunc.sleep(1000);
 
-      let strJson1 = inspector.getInspectorByKey('rowSplit_resizeable_modifier');
-      let obj1 = JSON.parseJsonElement(strJson1);
-      await CommonFunc.sleep(1000);
-      console.info('Test component obj is: ' + obj1.getElement('$attrs'));
-      console.info('Test component obj.resizeable is: ' + obj1.getElement('$attrs').getString('resizeable'));
-      expect(obj1.getElement('$attrs').getString('resizeable')).assertEqual('false');
-      console.info('RowSplitResizeableModifierUndefinedTest_static_0100 END');
-      done();
+        let strJson1 = inspector.getInspectorByKey('rowSplit_resizeable_modifier');
+        let obj1 = JSON.parseJsonElement(strJson1);
+        await CommonFunc.sleep(1000);
+        console.info('Test component obj is: ' + obj1.getElement('$attrs'));
+        console.info('Test component obj.resizeable is: ' + obj1.getElement('$attrs').getString('resizeable'));
+        expect(obj1.getElement('$attrs').getString('resizeable')).assertEqual('false');
+        console.info('SUB_ARKUI_API_RowSplitResizeableModifierUndefinedTest_static_0100 END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_RowSplitResizeableModifierUndefinedTest_static_0100] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

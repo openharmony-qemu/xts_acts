@@ -35,15 +35,15 @@ struct Align {
   build() {
     Column() {
       Column() {
-        List() {
+        Column() {
           Text('padding-动态切换(undefined/padding(10))')
             .fontSize(20)
             .margin(15)
-            .width('90%')
+            .width('80%')
           Row() {
             Row() {
               Row()
-                .size({ width: '100%', height: '100%' })
+                .size({ width: '80%', height: '80%' })
                 .backgroundColor(Color.Yellow)
             }
             .width(80)
@@ -53,7 +53,7 @@ struct Align {
             .margin(20)
             .backgroundColor(Color.White)
           }.backgroundColor(Color.Blue)
-          .width('90%')
+          .width('80%')
 
         }
 
@@ -66,5 +66,6 @@ struct Align {
         }
       }
     }
+    .alignItems(HorizontalAlign.Center)
   }
 }

@@ -49,16 +49,16 @@ struct GridColExample {
             span: 1,
             offset: 0,
           }) {
-            Row().width('100%').height('70%')
+            Row().width('80%').height('70%')
           }.borderColor(Color.Red).borderWidth(2)
 
           GridCol({
             span: 1,
             offset: 0,
           }) {
-            Row().width('100%').height('100%')
+            Row().width('80%').height('80%')
           }.borderColor(Color.Blue).borderWidth(2)
-        }.width('100%').height('100%')
+        }.width('80%').height('80%')
         .id('MyGridRow1')
         .onBreakpointChange((breakpoint) => {
           this.currentBp = breakpoint
@@ -96,7 +96,7 @@ struct GridColExample {
             offset: 0,
             order: 0
           }) {
-            Row().width('100%').height('20vp')
+            Row().width('80%').height('20vp')
           }.borderColor(this.bgColors[0]).borderWidth(2)
 
           GridCol({
@@ -109,7 +109,7 @@ struct GridColExample {
             offset: 0,
             order: 0
           }) {
-            Row().width('100%').height('20vp')
+            Row().width('80%').height('20vp')
           }.borderColor(this.bgColors[1]).borderWidth(2)
 
           GridCol({
@@ -122,7 +122,7 @@ struct GridColExample {
             offset: 0,
             order: 0
           }) {
-            Row().width('100%').height('20vp')
+            Row().width('80%').height('20vp')
           }.borderColor(this.bgColors[2]).borderWidth(2)
 
           GridCol({
@@ -135,7 +135,7 @@ struct GridColExample {
             offset: 0,
             order: 0
           }) {
-            Row().width('100%').height('20vp')
+            Row().width('80%').height('20vp')
           }.borderColor(this.bgColors[3]).borderWidth(2)
 
         }.width(this.widthArray[this.widthIndex])
@@ -144,7 +144,7 @@ struct GridColExample {
           this.currentBp = breakpoint
         } : undefined)
 
-      }.width('100%').height('35%')
+      }.width('80%').height('35%')
       .border({ color: '#880606', width: 2 })
 
       Button('22、onBreakpointChange:' + this.isDef).onClick((e: ClickEvent) => {
@@ -163,6 +163,7 @@ struct GridColExample {
         })
         .height('3%')
         .id('ChangeBreakpoint')
-    }.width('100%').height('100%')
+    }.width('80%').height('80%')
+    .alignItems(HorizontalAlign.Center)
   }
 }

@@ -49,81 +49,93 @@ export default function GridRowModifierUndefinedTest() {
 
 
     /**
-     * @tc.number   GridRowModifierUndefinedTest_static_0100
-     * @tc.name     GridRowModifierUndefinedTest_static_0100
-     * @tc.desc     GridRowModifierUndefinedTest_static_0100
+     * @tc.number   SUB_ARKUI_API_GridRowModifierUndefinedTest_static_0100
+     * @tc.name     SUB_ARKUI_API_GridRowModifierUndefinedTest_static_0100
+     * @tc.desc     SUB_ARKUI_API_GridRowModifierUndefinedTest_static_0100
      * @tc.level    Level.LEVEL1
      */
-    it('GridRowModifierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[GridRowModifierUndefinedTest_static_0100] START');
-      let driver: Driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('MyGridRowModifier1');
-      await CommonFunc.sleep(1000);
+    it('SUB_ARKUI_API_GridRowModifierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('[SUB_ARKUI_API_GridRowModifierUndefinedTest_static_0100] START');
+        let driver: Driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('MyGridRowModifier1');
+        await CommonFunc.sleep(1000);
 
-      console.info('[GridRowModifierUndefinedTest_static_0100] $attrs: ' +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      console.info('[GridRowAttrsModifierUndefinedTest_static_0100] alignItems: ' +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('alignItems')));
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getElement('alignItems')))
-        .assertEqual('\"ItemAlign.End\"');
+        console.info('[SUB_ARKUI_API_GridRowModifierUndefinedTest_static_0100] $attrs: ' +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
+        console.info('[SUB_ARKUI_API_GridRowAttrsModifierUndefinedTest_static_0100] alignItems: ' +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('alignItems')));
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getElement('alignItems')))
+          .assertEqual('\"ItemAlign.End\"');
 
-      let changeBtn = await driver.findComponent(ON.id('GridRowModifier_AlignItems'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      console.info('[GridRowModifierUndefinedTest_static_0100] click GridRowModifier_AlignItems');
-      strJson = inspector.getInspectorByKey('MyGridRowModifier1');
-      await CommonFunc.sleep(1000);
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getElement('alignItems')))
-        .assertEqual('\"ItemAlign.Start\"');
-      await CommonFunc.sleep(1000);
-      await (changeBtn?.click() as Promise<void>);
-      console.info('[GridRowModifierUndefinedTest_static_0100] END');
-      done();
+        let changeBtn = await driver.findComponent(ON.id('GridRowModifier_AlignItems'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        console.info('[SUB_ARKUI_API_GridRowModifierUndefinedTest_static_0100] click GridRowModifier_AlignItems');
+        strJson = inspector.getInspectorByKey('MyGridRowModifier1');
+        await CommonFunc.sleep(1000);
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getElement('alignItems')))
+          .assertEqual('\"ItemAlign.Start\"');
+        await CommonFunc.sleep(1000);
+        await (changeBtn?.click() as Promise<void>);
+        console.info('[SUB_ARKUI_API_GridRowModifierUndefinedTest_static_0100] END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_GridRowModifierUndefinedTest_static_0100] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
-     * @tc.number   GridRowModifierUndefinedTest_static_0200
-     * @tc.name     GridRowModifierUndefinedTest_static_0200
-     * @tc.desc     GridRowModifierUndefinedTest_static_0200
+     * @tc.number   SUB_ARKUI_API_GridRowModifierUndefinedTest_static_0200
+     * @tc.name     SUB_ARKUI_API_GridRowModifierUndefinedTest_static_0200
+     * @tc.desc     SUB_ARKUI_API_GridRowModifierUndefinedTest_static_0200
      * @tc.level    Level.LEVEL1
      */
-    it('GridRowModifierUndefinedTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[GridRowModifierUndefinedTest_static_0200] START');
-      let driver: Driver = Driver.create()
-      await CommonFunc.sleep(1000);
+    it('SUB_ARKUI_API_GridRowModifierUndefinedTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('[SUB_ARKUI_API_GridRowModifierUndefinedTest_static_0200] START');
+        let driver: Driver = Driver.create()
+        await CommonFunc.sleep(1000);
 
-      let text = await driver.findComponent(ON.id('GridRowModifier_Text'));
-      await CommonFunc.sleep(1000);
-      expect(await (text?.getText() as Promise<String>)).assertEqual('xs');
-      await CommonFunc.sleep(1000);
+        let text = await driver.findComponent(ON.id('GridRowModifier_Text'));
+        await CommonFunc.sleep(1000);
+        expect(await (text?.getText() as Promise<String>)).assertEqual('xs');
+        await CommonFunc.sleep(1000);
 
-      let changeBtn_Breakpoint = await driver.findComponent(ON.id('ChangeBreakpoint'));
-      await (changeBtn_Breakpoint?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      text = await driver.findComponent(ON.id('GridRowModifier_Text'));
-      await CommonFunc.sleep(1000);
-      expect(await (text?.getText() as Promise<String>)).assertEqual('sm');
-      await CommonFunc.sleep(1000);
+        let changeBtn_Breakpoint = await driver.findComponent(ON.id('ChangeBreakpoint'));
+        await (changeBtn_Breakpoint?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        text = await driver.findComponent(ON.id('GridRowModifier_Text'));
+        await CommonFunc.sleep(1000);
+        expect(await (text?.getText() as Promise<String>)).assertEqual('sm');
+        await CommonFunc.sleep(1000);
 
 
-      let changeBtn = await driver.findComponent(ON.id('GridRow_onBreakpointChange'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
-      console.info('[GridRowModifierUndefinedTest_static_0200] click GridRow_onBreakpointChange');
-      await (changeBtn_Breakpoint?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      text = await driver.findComponent(ON.id('GridRowModifier_Text'));
-      await CommonFunc.sleep(1000);
-      expect(await (text?.getText() as Promise<String>)).assertEqual('sm');
-      await CommonFunc.sleep(1000);
-      await (changeBtn?.click() as Promise<void>);
-      console.info('[GridRowModifierUndefinedTest_static_0200] END');
-      done();
+        let changeBtn = await driver.findComponent(ON.id('GridRow_onBreakpointChange'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(2000);
+        console.info('[SUB_ARKUI_API_GridRowModifierUndefinedTest_static_0200] click GridRow_onBreakpointChange');
+        await (changeBtn_Breakpoint?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        text = await driver.findComponent(ON.id('GridRowModifier_Text'));
+        await CommonFunc.sleep(1000);
+        expect(await (text?.getText() as Promise<String>)).assertEqual('sm');
+        await CommonFunc.sleep(1000);
+        await (changeBtn?.click() as Promise<void>);
+        console.info('[SUB_ARKUI_API_GridRowModifierUndefinedTest_static_0200] END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_GridRowModifierUndefinedTest_static_0200] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }
