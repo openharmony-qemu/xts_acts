@@ -34,6 +34,29 @@ import {
 @Component
 struct SafeAreaInsetStatic_5 {
   @Builder
+  n5BottomContent() {
+    Text('50x12')
+      .fontSize(8)
+      .width(50)
+      .height(12)
+      .textAlign(TextAlign.Center)
+      .backgroundColor('#E8F5E9')
+      .id('SafeAreaInsetStatic_n5Bottom')
+  }
+
+  @Builder
+  n6BottomContent() {
+    Text('mar2')
+      .fontSize(8)
+      .width(50)
+      .height(12)
+      .margin(2)
+      .textAlign(TextAlign.Center)
+      .backgroundColor('#E8F5E9')
+      .id('SafeAreaInsetStatic_n6Bottom')
+  }
+
+  @Builder
   n7aBottomContent() {
     Text('50x12')
       .fontSize(8)
@@ -44,19 +67,49 @@ struct SafeAreaInsetStatic_5 {
       .id('SafeAreaInsetStatic_n7aBottom')
   }
 
-  @Builder
-  n7bBottomContent() {
-    Text('50x12')
-      .fontSize(8)
-      .width(50)
-      .height(12)
-      .textAlign(TextAlign.Center)
-      .backgroundColor('#E8F5E9')
-      .id('SafeAreaInsetStatic_n7bBottom')
-  }
-
   build() {
     Column({ space: 8 } as ColumnOptions) {
+      Stack() {
+        Text('n5 main')
+          .width(60)
+          .height(30)
+          .fontSize(8)
+          .textAlign(TextAlign.Center)
+          .backgroundColor('#D1C4E9')
+          .id('SafeAreaInsetStatic_n5Main')
+      }
+      .width(100)
+      .height(LayoutPolicy.wrapContent)
+      .padding(5)
+      .backgroundColor('#F5F5F5')
+      .safeAreaInset({
+        bottom: {
+          content: () => { this.n5BottomContent(); }
+        }
+      } as SafeAreaInsetOptions)
+      .id('SafeAreaInsetStatic_n5Host')
+
+      Stack() {
+        Text('n6 main')
+          .width(60)
+          .height(30)
+          .fontSize(8)
+          .textAlign(TextAlign.Center)
+          .backgroundColor('#D1C4E9')
+          .id('SafeAreaInsetStatic_n6Main')
+      }
+      .width(100)
+      .height(LayoutPolicy.wrapContent)
+      .padding(5)
+      .backgroundColor('#F5F5F5')
+      .safeAreaInset({
+        bottom: {
+          content: () => { this.n6BottomContent(); },
+          spacing: LengthMetrics.vp(3)
+        }
+      } as SafeAreaInsetOptions)
+      .id('SafeAreaInsetStatic_n6Host')
+
       Stack() {
         Text('n7a main')
           .width(60)
@@ -78,28 +131,6 @@ struct SafeAreaInsetStatic_5 {
         }
       } as SafeAreaInsetOptions)
       .id('SafeAreaInsetStatic_n7aHost')
-
-      Stack() {
-        Text('n7b main')
-          .width(60)
-          .height(30)
-          .fontSize(8)
-          .textAlign(TextAlign.Center)
-          .backgroundColor('#D1C4E9')
-          .id('SafeAreaInsetStatic_n7bMain')
-      }
-      .width(100)
-      .height(LayoutPolicy.wrapContent)
-      .padding(5)
-      .backgroundColor('#F5F5F5')
-      .safeAreaPadding({ bottom: LengthMetrics.vp(20) } as LocalizedPadding)
-      .safeAreaInset({
-        bottom: {
-          content: () => { this.n7bBottomContent(); },
-          spacing: LengthMetrics.vp(3)
-        }
-      } as SafeAreaInsetOptions)
-      .id('SafeAreaInsetStatic_n7bHost')
     }
     .width('80%')
     .height('80%')

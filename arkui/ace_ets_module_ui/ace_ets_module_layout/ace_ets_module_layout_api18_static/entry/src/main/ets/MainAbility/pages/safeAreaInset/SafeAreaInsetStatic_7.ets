@@ -27,143 +27,70 @@ import {
   SafeAreaInsetOptions,
   ColumnOptions,
   LengthMetrics,
-  LayoutPolicy,
   State
 } from '@kit.ArkUI';
 
 @Entry
 @Component
 struct SafeAreaInsetStatic_7 {
-  @State r5BottomCleared: boolean = false;
-
-  private cfg(): SafeAreaInsetOptions | undefined {
-    if (this.r5BottomCleared) {
-      return {
-        top: {
-          content: () => { this.r5TopContent(); },
-          spacing: LengthMetrics.vp(2)
-        },
-        bottom: undefined
-      }
-    } else {
-      return {
-        top: {
-          content: () => { this.r5TopContent(); },
-          spacing: LengthMetrics.vp(2)
-        },
-        bottom: {
-          content: () => { this.r5BottomContent(); },
-          spacing: LengthMetrics.vp(3)
-        }
-      }
-    }
-  }
+  @State r3Reset: boolean = false;
 
   @Builder
-  r4TopContent() {
-    Text('top 10')
+  r3BottomContent() {
+    Text('50x12')
       .fontSize(8)
-      .width(60)
-      .height(10)
-      .textAlign(TextAlign.Center)
-      .backgroundColor('#E3F2FD')
-      .id('SafeAreaInsetStatic_r4Top')
-  }
-
-  @Builder
-  r5TopContent() {
-    Text('top 10')
-      .fontSize(8)
-      .width(60)
-      .height(10)
-      .textAlign(TextAlign.Center)
-      .backgroundColor('#E3F2FD')
-      .id('SafeAreaInsetStatic_r5Top')
-  }
-
-  @Builder
-  r5BottomContent() {
-    Text('bot 12')
-      .fontSize(8)
-      .width(60)
+      .width(50)
       .height(12)
       .textAlign(TextAlign.Center)
       .backgroundColor('#E8F5E9')
-      .id('SafeAreaInsetStatic_r5Bottom')
+      .id('SafeAreaInsetStatic_r3Bottom')
   }
 
   build() {
     Column({ space: 8 } as ColumnOptions) {
-      Stack() {
-        Text('r4 main')
-          .width(60)
-          .height(30)
-          .fontSize(8)
-          .textAlign(TextAlign.Center)
-          .backgroundColor('#D1C4E9')
-          .id('SafeAreaInsetStatic_r4Main')
-      }
-      .width(100)
-      .height(LayoutPolicy.wrapContent)
-      .padding(5)
-      .backgroundColor('#F5F5F5')
-      .safeAreaInset({
-        top: {
-          content: () => { this.r4TopContent(); },
-          spacing: LengthMetrics.vp(2)
-        },
-        bottom: {
-          content: (): void => {
-          },
-          spacing: LengthMetrics.vp(3)
-        }
-      } as SafeAreaInsetOptions)
-      .id('SafeAreaInsetStatic_r4Host')
-
-      Button('r5 toggle')
+      Button('r3 toggle')
         .fontSize(10)
         .height(24)
-        .id('SafeAreaInsetStatic_r5Toggle')
+        .id('SafeAreaInsetStatic_r3Toggle')
         .onClick(() => {
-          this.r5BottomCleared = !this.r5BottomCleared;
+          this.r3Reset = !this.r3Reset;
         })
 
       Stack() {
-        Text('r5 main')
-          .width(60)
-          .height(30)
+        Text('r3 main')
+          .width('100%')
+          .height('100%')
           .fontSize(8)
           .textAlign(TextAlign.Center)
           .backgroundColor('#D1C4E9')
-          .id('SafeAreaInsetStatic_r5Main')
+          .id('SafeAreaInsetStatic_r3Main')
       }
       .width(100)
-      .height(LayoutPolicy.wrapContent)
+      .height(80)
       .padding(5)
       .backgroundColor('#F5F5F5')
-      .safeAreaInset(this.cfg())
-      .id('SafeAreaInsetStatic_r5Host')
+      .safeAreaInset(this.r3Reset ? {} as SafeAreaInsetOptions : {
+        bottom: {
+          content: () => { this.r3BottomContent(); },
+          spacing: LengthMetrics.vp(3)
+        }
+      } as SafeAreaInsetOptions)
+      .id('SafeAreaInsetStatic_r3Host')
 
       Stack() {
-        Text('r6 main')
-          .width(60)
-          .height(30)
+        Text('r1 main')
+          .width('100%')
+          .height('100%')
           .fontSize(8)
           .textAlign(TextAlign.Center)
           .backgroundColor('#D1C4E9')
-          .id('SafeAreaInsetStatic_r6Main')
+          .id('SafeAreaInsetStatic_r1Main')
       }
       .width(100)
-      .height(LayoutPolicy.wrapContent)
+      .height(80)
       .padding(5)
       .backgroundColor('#F5F5F5')
-      .safeAreaInset({
-        top: undefined,
-        end: undefined,
-        bottom: undefined,
-        start: undefined
-      } as SafeAreaInsetOptions)
-      .id('SafeAreaInsetStatic_r6Host')
+      .id('SafeAreaInsetStatic_r1Host')
     }
     .width('80%')
     .height('80%')

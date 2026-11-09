@@ -56,7 +56,7 @@ export default function SafeAreaInsetStaticResetTest() {
     it('SUB_ACE_SAFEAREAINSET_Reset_Static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         console.info('[SUB_ACE_SAFEAREAINSET_Reset_Static_0100] START');
-        await goToPage('MainAbility/pages/safeAreaInset/SafeAreaInsetStatic_6', 'SafeAreaInsetStatic_6');
+        await goToPage('MainAbility/pages/safeAreaInset/SafeAreaInsetStatic_7', 'SafeAreaInsetStatic_7');
         const uiContext = AppStorage.get<UIContext>('uiContext')!;
         let hostRect = CommonFunc.getComponentRect('SafeAreaInsetStatic_r1Host');
         let mainRect = CommonFunc.getComponentRect('SafeAreaInsetStatic_r1Main');
@@ -125,7 +125,7 @@ export default function SafeAreaInsetStaticResetTest() {
     it('SUB_ACE_SAFEAREAINSET_Reset_Static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         console.info('[SUB_ACE_SAFEAREAINSET_Reset_Static_0300] START');
-        await goToPage('MainAbility/pages/safeAreaInset/SafeAreaInsetStatic_6', 'SafeAreaInsetStatic_6');
+        await goToPage('MainAbility/pages/safeAreaInset/SafeAreaInsetStatic_7', 'SafeAreaInsetStatic_7');
         const uiContext = AppStorage.get<UIContext>('uiContext')!;
         let hostRect = CommonFunc.getComponentRect('SafeAreaInsetStatic_r3Host');
         let mainRect = CommonFunc.getComponentRect('SafeAreaInsetStatic_r3Main');
@@ -165,7 +165,7 @@ export default function SafeAreaInsetStaticResetTest() {
     it('SUB_ACE_SAFEAREAINSET_Reset_Static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         console.info('[SUB_ACE_SAFEAREAINSET_Reset_Static_0400] START');
-        await goToPage('MainAbility/pages/safeAreaInset/SafeAreaInsetStatic_7', 'SafeAreaInsetStatic_7');
+        await goToPage('MainAbility/pages/safeAreaInset/SafeAreaInsetStatic_8', 'SafeAreaInsetStatic_8');
         const uiContext = AppStorage.get<UIContext>('uiContext')!;
         let hostRect = CommonFunc.getComponentRect('SafeAreaInsetStatic_r4Host');
         let mainRect = CommonFunc.getComponentRect('SafeAreaInsetStatic_r4Main');
@@ -196,7 +196,7 @@ export default function SafeAreaInsetStaticResetTest() {
     it('SUB_ACE_SAFEAREAINSET_Reset_Static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         console.info('[SUB_ACE_SAFEAREAINSET_Reset_Static_0500] START');
-        await goToPage('MainAbility/pages/safeAreaInset/SafeAreaInsetStatic_7', 'SafeAreaInsetStatic_7');
+        await goToPage('MainAbility/pages/safeAreaInset/SafeAreaInsetStatic_8', 'SafeAreaInsetStatic_8');
         const uiContext = AppStorage.get<UIContext>('uiContext')!;
         let hostRect = CommonFunc.getComponentRect('SafeAreaInsetStatic_r5Host');
         console.info('[SUB_ACE_SAFEAREAINSET_Reset_Static_0500] before click host height: ' + (hostRect.bottom - hostRect.top));
@@ -235,7 +235,7 @@ export default function SafeAreaInsetStaticResetTest() {
     it('SUB_ACE_SAFEAREAINSET_Reset_Static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         console.info('[SUB_ACE_SAFEAREAINSET_Reset_Static_0600] START');
-        await goToPage('MainAbility/pages/safeAreaInset/SafeAreaInsetStatic_7', 'SafeAreaInsetStatic_7');
+        await goToPage('MainAbility/pages/safeAreaInset/SafeAreaInsetStatic_8', 'SafeAreaInsetStatic_8');
         const uiContext = AppStorage.get<UIContext>('uiContext')!;
         let hostRect = CommonFunc.getComponentRect('SafeAreaInsetStatic_r6Host');
         let mainRect = CommonFunc.getComponentRect('SafeAreaInsetStatic_r6Main');
