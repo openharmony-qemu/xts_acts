@@ -26,6 +26,13 @@ let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 let ACTS_CallFunction: commonEvent.CommonEventSubscribeInfo = {
   events: ['ACTS_CALL_EVENT', 'ACTS_CALL_EVENT_ANOTHER']
 };
+let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+let cmd1 =  'aa force-stop com.example.forresulttestsecond';
+let cmd2 =  'aa force-stop com.example.forresulttestthrid';
+if(user !== undefined){
+  cmd1 += ' -u ' + user;
+  cmd2 += ' -u ' + user;
+}
 
 function sleep(time: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, time));
@@ -116,7 +123,7 @@ export default function abilityTest() {
               commonEvent.unsubscribe(subscriber, () => {
                 console.info(`====>AsyncCallback_0200 unSubscribeCallback 'ACTS_CALL_EVENT'`);
                 setTimeout(() => {
-                  abilityDelegator.executeShellCommand('aa force-stop com.example.forresulttestsecond')
+                  abilityDelegator.executeShellCommand(cmd1)
                     .then(result => {
                       console.info('====>AsyncCallback_0200 unSubscribeCallback pkill ok' + JSON.stringify(result));
                       done();
@@ -175,7 +182,7 @@ export default function abilityTest() {
                 console.info(`====>AsyncCallback_0300 unSubscribeCallback 'ACTS_CALL_EVENT'`);
                 setTimeout(() => {
                   globalThis.terminate('AsyncCallback_0300');
-                  abilityDelegator.executeShellCommand('aa force-stop com.example.forresulttestsecond')
+                  abilityDelegator.executeShellCommand(cmd1)
                     .then((result) => {
                       console.info('====>AsyncCallback_0300 unSubscribeCallback pkill ok' + JSON.stringify(result));
                       done();
@@ -245,7 +252,7 @@ export default function abilityTest() {
           })
 
           setTimeout(() => {
-            abilityDelegator.executeShellCommand('aa force-stop com.example.forresulttestsecond')
+            abilityDelegator.executeShellCommand(cmd1)
               .then(result => {
                 console.info('====>AsyncCallback_0400 pkill ok' + JSON.stringify(result));
               })
@@ -319,7 +326,7 @@ export default function abilityTest() {
               commonEvent.unsubscribe(subscriber, () => {
                 console.info(`====>AsyncCallback_0600 unSubscribeCallback 'ACTS_CALL_EVENT'`);
                 setTimeout(() => {
-                  abilityDelegator.executeShellCommand('aa force-stop com.example.forresulttestthrid')
+                  abilityDelegator.executeShellCommand(cmd2)
                     .then(result => {
                       console.info('====>AsyncCallback_0600 unSubscribeCallback pkill ok' + JSON.stringify(result));
                       done();
@@ -401,11 +408,14 @@ export default function abilityTest() {
               expect(data.parameters!.result).assertEqual(0);
               commonEvent.unsubscribe(subscriber, () => {
                 console.info(`====>Promise_0200 unSubscribeCallback 'ACTS_CALL_EVENT'`);
-                abilityDelegator.executeShellCommand('aa force-stop com.example.forresulttestsecond')
-                  .then(result => {
+                abilityDelegator.executeShellCommand(cmd1).then(result => {
                     console.info('====>Promise_0200 unSubscribeCallback pkill ok' + JSON.stringify(result));
                     done();
-                  })
+                }).catch((err: BusinessError) => {
+                  console.info(
+                    '====>ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0200 ' + JSON.stringify(err));
+                  done();
+                })
               })
             }
           });
@@ -453,7 +463,7 @@ export default function abilityTest() {
               expect(data.parameters!.result).assertEqual(0);
             }
             globalThis.terminate('Promise_0300');
-            abilityDelegator.executeShellCommand('aa force-stop com.example.forresulttestsecond')
+            abilityDelegator.executeShellCommand(cmd1)
               .then(result => {
                 console.info('====>Promise_0300 unSubscribeCallback pkill ok' + JSON.stringify(result));
                 commonEvent.unsubscribe(subscriber, () => {
@@ -526,7 +536,7 @@ export default function abilityTest() {
           })
 
           setTimeout(() => {
-            abilityDelegator.executeShellCommand('aa force-stop com.example.forresulttestsecond')
+            abilityDelegator.executeShellCommand(cmd1)
               .then(result => {
                 console.info('====>Promise_0400 pkill ok' + JSON.stringify(result));
               })
@@ -600,7 +610,7 @@ export default function abilityTest() {
               commonEvent.unsubscribe(subscriber, () => {
                 console.info(`====>Promise_0600 unSubscribeCallback 'ACTS_CALL_EVENT'`);
                 setTimeout(() => {
-                  abilityDelegator.executeShellCommand('aa force-stop com.example.forresulttestthrid')
+                  abilityDelegator.executeShellCommand(cmd2)
                     .then(result => {
                       console.info('====>AsyncCallback_0600 unSubscribeCallback pkill ok' + JSON.stringify(result));
                       done();

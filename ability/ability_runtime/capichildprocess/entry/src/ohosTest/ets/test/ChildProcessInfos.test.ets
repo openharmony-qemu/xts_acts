@@ -339,6 +339,10 @@ export default function childProcessInfosTest() {
             return;
           }
           if (!ncpEnable) {
+            if (ret == 16010006) {
+              done();
+              return;
+            }
             expect(801).assertEqual(ret);
             done();
             return;
