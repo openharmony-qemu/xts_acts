@@ -16,7 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import taskpool from '@ohos.taskpool';
 import { ArkTSUtils, collections } from '@kit.ArkTS';
-import { sleep, fillBigArrayChunked, nestedSubFunc } from '../utils';
+import { sleep, fillBigArrayChunked, nestedSubFunc } from '../Utils';
 
 interface TaskpoolError {
   code: number

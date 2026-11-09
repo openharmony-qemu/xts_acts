@@ -15,7 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import taskpool from '@ohos.taskpool';
-import { sleep } from '../utils';
+import { sleep } from '../Utils';
 import { addFunc } from './TaskpoolPriorityTestInner';
 
 @Concurrent
