@@ -16,10 +16,10 @@
 import Want from '@ohos.app.ability.Want'
 import { BusinessError } from '@ohos.base';
 import installer from '@ohos.bundle.installer';
-import bundleManager from '@ohos.bundle.bundleManager';
+import stdBundleManager from '@ohos.bundle.bundleManager';
 import accountManager from '@ohos.enterprise.accountManager';
 import adminManager from '@ohos.enterprise.adminManager'
-import enterpriseBundleManager from '@ohos.enterprise.bundleManager'
+import bundleManager from '@ohos.enterprise.bundleManager'
 import securityManager from '@ohos.enterprise.securityManager'
 import image from '@ohos.multimedia.image';
 import osAccount from '@ohos.account.osAccount';
@@ -137,7 +137,7 @@ const MULTI_USER_PARAMS : Record<string, string> = {
   'ohos.bms.param.enterpriseForAllUser' : 'user'
 }
 
-const EDM_INSTALL_PARAM_FOR_ALL_USER : bundleManager.InstallParam = {
+const EDM_INSTALL_PARAM_FOR_ALL_USER : enterpriseBundleManager.InstallParam = {
   userId: 100,
   installFlag: 0,
   parameters: MULTI_USER_PARAMS
@@ -188,7 +188,7 @@ async function initAppIds11WithRealApps(): Promise<void> {
     // Query appIdentifier for each known bundle using standard bundleManager
     for (let bundleName of knownBundles) {
       try {
-        let bundleInfo = await bundleManager.getBundleInfo(bundleName, bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION);
+        let bundleInfo = await stdBundleManager.getBundleInfo(bundleName, stdBundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION);
         if (bundleInfo && bundleInfo.appId && bundleInfo.appId.length > 0) {
           realAppIds.push(bundleInfo.appId);
           if (realAppIds.length >= 11) {
