@@ -49,43 +49,49 @@ export default function CommonAlignRulesModifierUndefinedTest() {
     });
 
     /**
-     * @tc.number   CommonAlignRulesModifierUndefinedTest_static_0100
-     * @tc.name     CommonAlignRulesModifierUndefinedTest_static_0100
-     * @tc.desc     CommonAlignRulesModifierUndefinedTest_static_0100
+     * @tc.number   SUB_ARKUI_API_CommonAlignRulesModifierUndefinedTest_static_0100
+     * @tc.name     SUB_ARKUI_API_CommonAlignRulesModifierUndefinedTest_static_0100
+     * @tc.desc     SUB_ARKUI_API_CommonAlignRulesModifierUndefinedTest_static_0100
      * @tc.level    Level.LEVEL1
      */
-    it('CommonAlignRulesModifierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[CommonAlignRulesModifierUndefinedTest_static_0100] START');
-      let driver: Driver = Driver.create()
-      await CommonFunc.sleep(1000);
+    it('SUB_ARKUI_API_CommonAlignRulesModifierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('[SUB_ARKUI_API_CommonAlignRulesModifierUndefinedTest_static_0100] START');
+        let driver: Driver = Driver.create()
+        await CommonFunc.sleep(1000);
 
-      let row1 = await driver.findComponent(ON.id('MyRow1'));
-      await CommonFunc.sleep(500);
-      let point1: Point = await (row1?.getBoundsCenter() as Promise<Point>);
-      console.log(`[CommonAlignRulesModifierUndefinedTest_static_0100] point1{x:${point1.x}, y:${point1.y}}`);
-      let row2 = await driver.findComponent(ON.id('MyRow2'));
-      await CommonFunc.sleep(500);
-      let point2: Point = await (row2?.getBoundsCenter() as Promise<Point>);
-      console.log(`[CommonAlignRulesModifierUndefinedTest_static_0100] point2{x:${point2.x}, y:${point2.y}}`);
-      expect(point1.x !== point2.x).assertTrue();
+        let row1 = await driver.findComponent(ON.id('MyRow1'));
+        await CommonFunc.sleep(500);
+        let point1: Point = await (row1?.getBoundsCenter() as Promise<Point>);
+        console.log(`[SUB_ARKUI_API_CommonAlignRulesModifierUndefinedTest_static_0100] point1{x:${point1.x}, y:${point1.y}}`);
+        let row2 = await driver.findComponent(ON.id('MyRow2'));
+        await CommonFunc.sleep(500);
+        let point2: Point = await (row2?.getBoundsCenter() as Promise<Point>);
+        console.log(`[SUB_ARKUI_API_CommonAlignRulesModifierUndefinedTest_static_0100] point2{x:${point2.x}, y:${point2.y}}`);
+        expect(point1.x !== point2.x).assertTrue();
 
-      let changeBtn = await driver.findComponent(ON.id('Common_AlignRules'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
-      console.info('[CommonAlignRulesModifierUndefinedTest_static_0100] click Common_AlignRules');
-      let row3 = await driver.findComponent(ON.id('MyRow1'));
-      await CommonFunc.sleep(500);
-      let point3: Point = await (row3?.getBoundsCenter() as Promise<Point>);
-      console.log(`[CommonAlignRulesModifierUndefinedTest_static_0100] point3{x:${point3.x}, y:${point3.y}}`);
-      let row4 = await driver.findComponent(ON.id('MyRow2'));
-      await CommonFunc.sleep(500);
-      let point4: Point = await (row4?.getBoundsCenter() as Promise<Point>);
-      console.log(`[CommonAlignRulesModifierUndefinedTest_static_0100] point4{x:${point4.x}, y:${point4.y}}`);
-      expect(point3.x === point4.x).assertTrue();
-      await CommonFunc.sleep(1000);
-      await (changeBtn?.click() as Promise<void>);
-      console.info('[CommonAlignRulesModifierUndefinedTest_static_0100] END');
-      done();
+        let changeBtn = await driver.findComponent(ON.id('Common_AlignRules'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(2000);
+        console.info('[SUB_ARKUI_API_CommonAlignRulesModifierUndefinedTest_static_0100] click Common_AlignRules');
+        let row3 = await driver.findComponent(ON.id('MyRow1'));
+        await CommonFunc.sleep(500);
+        let point3: Point = await (row3?.getBoundsCenter() as Promise<Point>);
+        console.log(`[SUB_ARKUI_API_CommonAlignRulesModifierUndefinedTest_static_0100] point3{x:${point3.x}, y:${point3.y}}`);
+        let row4 = await driver.findComponent(ON.id('MyRow2'));
+        await CommonFunc.sleep(500);
+        let point4: Point = await (row4?.getBoundsCenter() as Promise<Point>);
+        console.log(`[SUB_ARKUI_API_CommonAlignRulesModifierUndefinedTest_static_0100] point4{x:${point4.x}, y:${point4.y}}`);
+        expect(point3.x === point4.x).assertTrue();
+        await CommonFunc.sleep(1000);
+        await (changeBtn?.click() as Promise<void>);
+        console.info('[SUB_ARKUI_API_CommonAlignRulesModifierUndefinedTest_static_0100] END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_CommonAlignRulesModifierUndefinedTest_static_0100] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
   })

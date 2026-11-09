@@ -16,7 +16,7 @@
 
 import { Entry, Text, Column, Component, Button, ClickEvent, Flex,
   FlexAlign,ItemAlign, Select, Color, Row, Font, SymbolEffectStrategy,
-  SymbolGlyph, $r, Navigation, List, TextInput, ColumnSplit, TextAlign } from '@ohos.arkui.component'
+  SymbolGlyph, $r, Navigation, List, TextInput, ColumnSplit, TextAlign, HorizontalAlign } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
@@ -42,16 +42,17 @@ struct ColumnReversePage {
       }
       Column() {
         Text('1').width('200').height(50).backgroundColor(0xF5DEB3).id('column1')
-        Text('2').width('300').height(50).backgroundColor(0xD2B48C).id('column2')
+        Text('2').width('200').height(50).backgroundColor(0xD2B48C).id('column2')
         Text('3').width('100').height(50).backgroundColor(0xF5DEB3).id('column3')
         Text('4').width('100').height(50).backgroundColor(0xD2B48C).id('column4')
-        Text('5').width('300').height(50).backgroundColor(0xF5DEB3).id('column5')
+        Text('5').width('200').height(50).backgroundColor(0xF5DEB3).id('column5')
       }
-      .width('90%')
+      .width('80%')
       .height('40%')
       .backgroundColor(Color.Pink)
       .key('Column_Reverse')
       .reverse(this.isUndefined ? undefined : false)
     }
+    .alignItems(HorizontalAlign.Center)
   }
 }

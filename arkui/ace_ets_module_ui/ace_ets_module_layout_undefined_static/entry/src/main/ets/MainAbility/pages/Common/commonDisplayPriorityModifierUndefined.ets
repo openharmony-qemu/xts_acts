@@ -15,7 +15,7 @@
  */
 
 import {  Entry,  Text,  Column,  ColumnOptions,  Component,  Button,  ClickEvent,  Color,  Row,  $r,
-  Direction,  AttributeModifier,  RowAttribute } from '@ohos.arkui.component'
+  Direction,  AttributeModifier,  RowAttribute, HorizontalAlign } from '@ohos.arkui.component'
 import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
@@ -52,5 +52,6 @@ struct Index {
           })
       }
     }
+    .alignItems(HorizontalAlign.Center)
   }
 }

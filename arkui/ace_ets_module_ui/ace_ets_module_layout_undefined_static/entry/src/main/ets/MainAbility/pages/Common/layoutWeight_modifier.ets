@@ -15,7 +15,7 @@
  */
 import {  State, Observed } from '@ohos.arkui.stateManagement'
 import { Entry,Column,Text,Button,Divider,SafeAreaType,SafeAreaEdge, ColumnOptions,
-  Component,ButtonAttribute,AttributeModifier} from '@ohos.arkui.component'
+  Component,ButtonAttribute,AttributeModifier, HorizontalAlign } from '@ohos.arkui.component'
 
 @Observed
 export class LayoutWeightModifierCommon implements AttributeModifier<ButtonAttribute> {
@@ -48,6 +48,7 @@ struct CommonExample {
         .id('Common_layoutWeightModifier')
 
       Divider()
-    }.width('100%').height('100%')
+    }.width('80%').height('80%')
+    .alignItems(HorizontalAlign.Center)
   }
 }

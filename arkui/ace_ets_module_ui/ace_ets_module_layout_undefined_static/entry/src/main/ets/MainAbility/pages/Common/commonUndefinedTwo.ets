@@ -93,7 +93,7 @@ struct Align {
         .borderColor('#ffAFEEEE')
         .borderWidth(2)
         .backgroundColor(0xAFEEEE)
-      }.width('100%')
+      }.width('80%')
 
       Column({space:2} as ColumnOptions) {
         Button('isAlignUndefined = ' + this.isAlignUndefined)
@@ -115,6 +115,7 @@ struct Align {
           .height(15)
           .id('Common_AlignSelf')
       }
-    }.width('100%').height('100%')
+    }.width('80%').height('80%')
+    .alignItems(HorizontalAlign.Center)
   }
 }

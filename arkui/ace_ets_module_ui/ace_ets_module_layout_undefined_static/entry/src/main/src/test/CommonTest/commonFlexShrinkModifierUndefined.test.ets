@@ -49,36 +49,42 @@ export default function CommonFlexShrinkModifierUndefinedTest() {
     });
 
     /**
-     * @tc.number   CommonFlexShrinkModifierUndefinedTest_static_0001
-     * @tc.name     CommonFlexShrinkModifierUndefinedTest_static_0001
+     * @tc.number   SUB_ARKUI_API_CommonFlexShrinkModifierUndefinedTest_static_0001
+     * @tc.name     SUB_ARKUI_API_CommonFlexShrinkModifierUndefinedTest_static_0001
      * @tc.desc     test flexShrink
      * @tc.level    Level.LEVEL1
      */
-    it('CommonFlexShrinkModifierUndefinedTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[CommonFlexShrinkModifierUndefinedTest_static_0001] START');
-      let driver: Driver = Driver.create();
+    it('SUB_ARKUI_API_CommonFlexShrinkModifierUndefinedTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('[SUB_ARKUI_API_CommonFlexShrinkModifierUndefinedTest_static_0001] START');
+        let driver: Driver = Driver.create();
 
-      let strJson = inspector.getInspectorByKey('common_FlexShrink');
-      console.info('[CommonFlexShrinkModifierUndefinedTest_static_0001] flexShrink: ' +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('flexShrink'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('flexShrink'))
-        .assertEqual(8);
+        let strJson = inspector.getInspectorByKey('common_FlexShrink');
+        console.info('[SUB_ARKUI_API_CommonFlexShrinkModifierUndefinedTest_static_0001] flexShrink: ' +
+        JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('flexShrink'));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('flexShrink'))
+          .assertEqual(8);
 
-      let changeBtn = await driver.findComponent(ON.id('changeButton'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        let changeBtn = await driver.findComponent(ON.id('changeButton'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('common_FlexShrink');
-      console.info('[CommonFlexShrinkModifierUndefinedTest_static_0001] flexShrink: ' +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('flexShrink'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('flexShrink'))
-        .assertEqual(1);
+        strJson = inspector.getInspectorByKey('common_FlexShrink');
+        console.info('[SUB_ARKUI_API_CommonFlexShrinkModifierUndefinedTest_static_0001] flexShrink: ' +
+        JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('flexShrink'));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('flexShrink'))
+          .assertEqual(1);
 
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      console.info('[CommonFlexShrinkModifierUndefinedTest_static_0001] END');
-      done();
+        console.info('[SUB_ARKUI_API_CommonFlexShrinkModifierUndefinedTest_static_0001] END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_CommonFlexShrinkModifierUndefinedTest_static_0001] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

@@ -45,23 +45,29 @@ export default function MeasurableLayoutableReturnUndefinedTest() {
     });
 
     /**
-     * @tc.number    MeasurableLayoutableReturnUndefinedTest_static_0001
-     * @tc.name      MeasurableLayoutableReturnUndefinedTest_static_0001
-     * @tc.desc      MeasurableLayoutableReturnUndefinedTest_static_0001
+     * @tc.number    SUB_ARKUI_API_MeasurableLayoutableReturnUndefinedTest_static_0001
+     * @tc.name      SUB_ARKUI_API_MeasurableLayoutableReturnUndefinedTest_static_0001
+     * @tc.desc      SUB_ARKUI_API_MeasurableLayoutableReturnUndefinedTest_static_0001
      * @tc.level     Level.LEVEL1
      */
-    it('MeasurableLayoutableReturnUndefinedTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[MeasurableLayoutableReturnUndefinedTest_static_0001] START.');
-      let strJson = inspector.getInspectorByKey('Text_Measurable');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content').asString())
-        .assertEqual('Measurable');
+    it('SUB_ARKUI_API_MeasurableLayoutableReturnUndefinedTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('[SUB_ARKUI_API_MeasurableLayoutableReturnUndefinedTest_static_0001] START.');
+        let strJson = inspector.getInspectorByKey('Text_Measurable');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content').asString())
+          .assertEqual('Measurable');
 
-      let strJson2 = inspector.getInspectorByKey('Text_Layoutable');
-      expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('content').asString())
-        .assertEqual('Layoutable');
+        let strJson2 = inspector.getInspectorByKey('Text_Layoutable');
+        expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('content').asString())
+          .assertEqual('Layoutable');
 
-      console.info('[MeasurableLayoutableReturnUndefinedTest_static_0001] END');
-      done();
+        console.info('[SUB_ARKUI_API_MeasurableLayoutableReturnUndefinedTest_static_0001] END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_MeasurableLayoutableReturnUndefinedTest_static_0001] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
   })

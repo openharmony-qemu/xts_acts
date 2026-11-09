@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { TextAlign, FlexDirection, Flex, Entry,  Text,  Column,  ColumnOptions,  Component,  Button,
-  ClickEvent,  Color,  Row,  $r,  Direction,  RowOptions } from '@ohos.arkui.component'
+  ClickEvent,  Color,  Row,  $r,  Direction,  RowOptions, HorizontalAlign } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
@@ -26,7 +26,7 @@ struct FlexExample {
 
   build() {
     Column() {
-      Text('flexShrink-动态切换').fontSize(20).margin(15).width('90%')
+      Text('flexShrink-动态切换').fontSize(20).margin(15).width('80%')
       Flex({ direction: FlexDirection.Row }) {
         Text('flexShrink(0)')
           .flexShrink(this.flag ? 8 as Double : undefined)
@@ -35,7 +35,7 @@ struct FlexExample {
           .backgroundColor('#0ff5DEB3')
           .textAlign(TextAlign.Center)
           .id('common_FlexShrink')
-      }.width('90%').height(60).padding(10).backgroundColor('#ffAFEEEE')
+      }.width('80%').height(60).padding(10).backgroundColor('#ffAFEEEE')
 
       Column() {
         Button('flag is' + this.flag).fontSize(20).id('changeButton')
@@ -43,6 +43,7 @@ struct FlexExample {
             this.flag = !this.flag;
           })
       }
-    }.width('100%')
+    }.width('80%')
+    .alignItems(HorizontalAlign.Center)
   }
 }

@@ -45,40 +45,46 @@ export default function widthUndefinedTest() {
     });
 
     /**
-     * @tc.number    widthUndefinedTest_0100
-     * @tc.name      widthUndefinedTest_0100
-     * @tc.desc      widthUndefinedTest_0100
+     * @tc.number    SUB_ARKUI_API_widthUndefinedTest_0100
+     * @tc.name      SUB_ARKUI_API_widthUndefinedTest_0100
+     * @tc.desc      SUB_ARKUI_API_widthUndefinedTest_0100
      * @tc.level     0
      */
-    it('widthUndefinedTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('widthUndefinedTest_0100 START');
-      await CommonFunc.sleep(500);
-      let strJson = inspector.getInspectorByKey('Common_width');
+    it('SUB_ARKUI_API_widthUndefinedTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        console.info('SUB_ARKUI_API_widthUndefinedTest_0100 START');
+        await CommonFunc.sleep(500);
+        let strJson = inspector.getInspectorByKey('Common_width');
 
-      let obj = JSON.parseJsonElement(strJson);
-      await CommonFunc.sleep(500);
-      console.info('Test component obj.width is: ' + obj.getElement('$attrs').getString('width'));
-      expect(obj.getElement('$attrs').getString('width')).assertEqual('100.00vp');
+        let obj = JSON.parseJsonElement(strJson);
+        await CommonFunc.sleep(500);
+        console.info('Test component obj.width is: ' + obj.getElement('$attrs').getString('width'));
+        expect(obj.getElement('$attrs').getString('width')).assertEqual('100.00vp');
 
-      let driver = Driver.create();
-      let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
-      await (btn_true?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
+        let driver = Driver.create();
+        let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+        await (btn_true?.click() as Promise<void>);
+        await CommonFunc.sleep(500);
 
-      let strJson1 = inspector.getInspectorByKey('Common_width');
-      let obj1 = JSON.parseJsonElement(strJson1);
-      await CommonFunc.sleep(500);
-      console.info('Test component obj.width is: ' + obj1.getElement('$attrs').getString('width'));
+        let strJson1 = inspector.getInspectorByKey('Common_width');
+        let obj1 = JSON.parseJsonElement(strJson1);
+        await CommonFunc.sleep(500);
+        console.info('Test component obj.width is: ' + obj1.getElement('$attrs').getString('width'));
 
-      let strJsonBase = inspector.getInspectorByKey('Common_width_base');
-      let objBase = JSON.parseJsonElement(strJsonBase);
-      await CommonFunc.sleep(500);
-      console.info('Test component obj.width is: ' + objBase.getElement('$attrs').getString('width'));
+        let strJsonBase = inspector.getInspectorByKey('Common_width_base');
+        let objBase = JSON.parseJsonElement(strJsonBase);
+        await CommonFunc.sleep(500);
+        console.info('Test component obj.width is: ' + objBase.getElement('$attrs').getString('width'));
 
-      expect(obj1.getElement('$attrs').getString('width')).assertEqual(objBase.getElement('$attrs').getString('width'));
+        expect(obj1.getElement('$attrs').getString('width')).assertEqual(objBase.getElement('$attrs').getString('width'));
 
-      console.info('[widthUndefinedTest_0100] END');
-      done();
+        console.info('[SUB_ARKUI_API_widthUndefinedTest_0100] END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_widthUndefinedTest_0100] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

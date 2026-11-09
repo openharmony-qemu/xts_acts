@@ -15,7 +15,7 @@
  */
 
 import {  Entry,  Component,  Text,  Button,  Divider,  Column,  Margin,  Padding,  Color,  ResourceColor,
-  ClickEvent,  LineCapStyle } from '@ohos.arkui.component';
+  ClickEvent,  LineCapStyle, HorizontalAlign } from '@ohos.arkui.component';
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Entry
@@ -77,6 +77,7 @@ struct DividerExample {
         .strokeWidth(this.strokeWidth)
         .vertical(this.vertical)
         .id('divider')
-    }.width('100%').padding({ top: 24 } as Padding)
+    }.width('80%').padding({ top: 24 } as Padding)
+    .alignItems(HorizontalAlign.Center)
   }
 }
