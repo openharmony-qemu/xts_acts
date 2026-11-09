@@ -137,7 +137,7 @@ const MULTI_USER_PARAMS : Record<string, string> = {
   'ohos.bms.param.enterpriseForAllUser' : 'user'
 }
 
-const EDM_INSTALL_PARAM_FOR_ALL_USER : enterpriseBundleManager.InstallParam = {
+const EDM_INSTALL_PARAM_FOR_ALL_USER : bundleManager.InstallParam = {
   userId: 100,
   installFlag: 0,
   parameters: MULTI_USER_PARAMS
