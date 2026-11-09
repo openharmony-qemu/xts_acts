@@ -12,12 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic'
-import testNapi from 'libentry.so'
-const sleep = (ms: number) => {
-  return new Promise<void>(resolve => setTimeout(resolve, ms));
-}
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
+import testNapi from 'libentry.so';
+
+const sleep = (ms: number): Promise<void> =>
+  new Promise<void>(resolve => setTimeout(resolve, ms));
 
 export default function KernelEnhanceKitTest() {
   describe('kernelEnhanceKitTest', () => {
@@ -31,7 +30,7 @@ export default function KernelEnhanceKitTest() {
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
     });
-    afterEach(async (done:Function) => {
+    afterEach(async (done: Function) => {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
@@ -52,10 +51,10 @@ export default function KernelEnhanceKitTest() {
      */
     it('SUB_CstandardLibrary_calloc', Level.LEVEL1, () => {
       try {
-        let c: number = testNapi.cstandardLibrary_calloc();
+        const c: number = testNapi.cstandardLibrary_calloc();
         expect(c).assertEqual(1);
       } catch (err) {
-        console.error("====>SUB_CstandardLibrary_calloc catch err: " + err);
+        console.error(`====>SUB_CstandardLibrary_calloc catch err: ${err}`);
         expect(false).assertEqual(0);
       }
     });
@@ -70,10 +69,10 @@ export default function KernelEnhanceKitTest() {
      */
     it('SUB_CstandardLibrary_realloc', Level.LEVEL1, () => {
       try {
-        let c: number = testNapi.cstandardLibrary_realloc();
+        const c: number = testNapi.cstandardLibrary_realloc();
         expect(c).assertEqual(1);
       } catch (err) {
-        console.error("====>SUB_CstandardLibrary_realloc catch err: " + err);
+        console.error(`====>SUB_CstandardLibrary_realloc catch err: ${err}`);
         expect(false).assertEqual(0);
       }
     });
@@ -88,10 +87,10 @@ export default function KernelEnhanceKitTest() {
      */
     it('SUB_CstandardLibrary_valloc', Level.LEVEL1, () => {
       try {
-        let c: number = testNapi.cstandardLibrary_valloc();
+        const c: number = testNapi.cstandardLibrary_valloc();
         expect(c).assertEqual(1);
       } catch (err) {
-        console.error("====>SUB_CstandardLibrary_valloc catch err: " + err);
+        console.error(`====>SUB_CstandardLibrary_valloc catch err: ${err}`);
         expect(false).assertEqual(0);
       }
     });
@@ -106,10 +105,10 @@ export default function KernelEnhanceKitTest() {
      */
     it('SUB_CstandardLibrary_memalign', Level.LEVEL1, () => {
       try {
-        let c: number = testNapi.cstandardLibrary_memalign();
+        const c: number = testNapi.cstandardLibrary_memalign();
         expect(c).assertEqual(1);
       } catch (err) {
-        console.error("====>SUB_CstandardLibrary_memalign catch err: " + err);
+        console.error(`====>SUB_CstandardLibrary_memalign catch err: ${err}`);
         expect(false).assertEqual(0);
       }
     });
@@ -124,10 +123,10 @@ export default function KernelEnhanceKitTest() {
      */
     it('SUB_CstandardLibrary_mallinfo', Level.LEVEL1, () => {
       try {
-        let c: number = testNapi.cstandardLibrary_mallinfo();
+        const c: number = testNapi.cstandardLibrary_mallinfo();
         expect(c).assertEqual(1);
       } catch (err) {
-        console.error("====>SUB_CstandardLibrary_mallinfo catch err: " + err);
+        console.error(`====>SUB_CstandardLibrary_mallinfo catch err: ${err}`);
         expect(false).assertEqual(0);
       }
     });
@@ -142,10 +141,10 @@ export default function KernelEnhanceKitTest() {
      */
     it('SUB_CstandardLibrary_mallinfo2', Level.LEVEL1, () => {
       try {
-        let c: number = testNapi.cstandardLibrary_mallinfo2();
+        const c: number = testNapi.cstandardLibrary_mallinfo2();
         expect(c).assertEqual(1);
       } catch (err) {
-        console.error("====>SUB_CstandardLibrary_mallinfo2 catch err: " + err);
+        console.error(`====>SUB_CstandardLibrary_mallinfo2 catch err: ${err}`);
         expect(false).assertEqual(0);
       }
     });
@@ -153,17 +152,17 @@ export default function KernelEnhanceKitTest() {
     /**
      * @tc.name   SUB_CstandardLibrary_malloc_check_from_ptr
      * @tc.number SUB_CstandardLibrary_malloc_check_from_ptr
-     * @tc.desc   test CstandardLibrary_mallinfo2_keepcost
+     * @tc.desc   test CstandardLibrary_malloc_check_from_ptr
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('SUB_CstandardLibrary_malloc_check_from_ptr', Level.LEVEL1, () => {
       try {
-        let c: number = testNapi.cstandardLibrary_malloc_check_from_ptr();
+        const c: number = testNapi.cstandardLibrary_malloc_check_from_ptr();
         expect(c).assertEqual(3);
       } catch (err) {
-        console.error("====>SUB_CstandardLibrary_malloc_check_from_ptr catch err: " + err);
+        console.error(`====>SUB_CstandardLibrary_malloc_check_from_ptr catch err: ${err}`);
         expect(false).assertEqual(0);
       }
     });
