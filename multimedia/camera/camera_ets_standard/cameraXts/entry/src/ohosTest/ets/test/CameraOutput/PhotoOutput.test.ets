@@ -1466,7 +1466,7 @@ export default function PhotoOutputTest() {
               expect().assertFail();
             } catch (error) {
               console.info(TAG, testName + ' configureC2PASignature threw as expected on unsupported device. err: ' + error.code + ', msg: ' + error.message);
-              expect(error.code).assertEqual(7400102);
+              expect(error.code).assertEqual(801);
             }
           }
           await releasePhotoSession();
@@ -1512,7 +1512,7 @@ export default function PhotoOutputTest() {
               expect().assertFail();
             } catch (error) {
               console.info(TAG, testName + ' configureC2PASignature(false) threw as expected on unsupported device. err: ' + error.code + ', msg: ' + error.message);
-              expect(error.code).assertEqual(7400102);
+              expect(error.code).assertEqual(801);
             }
           }
           await releasePhotoSession();
@@ -1654,7 +1654,7 @@ export default function PhotoOutputTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_ERROR_0100
      * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_ERROR_0100
-     * @tc.desc   Configure C2PA signature without session -> error_code: 7400103
+     * @tc.desc   Configure C2PA signature without session -> error_code: 7400201
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -1675,7 +1675,7 @@ export default function PhotoOutputTest() {
             expect().assertFail();
           } catch (error) {
             console.error(TAG, testName + ' configureC2PASignature threw, err: ' + error.code + ', msg: ' + error.message);
-            expect(error.code).assertEqual(7400103);
+            expect(error.code).assertEqual(7400201);
           }
           await mPhotoOutput.release();
           console.info(TAG, testName + ' end.');
