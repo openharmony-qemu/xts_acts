@@ -1289,7 +1289,7 @@ export default function applicationManagerTest() {
     /**
      * @tc.name   test_addOptimizationBatteryExclusionApps_permission_0200
      * @tc.number SUB_CUSTOMIZATION_EDM_ADDOPTIMIZATIONBATTERYEXCLUSIONAPPS_NO_PERMISSION_JS_0200
-     * @tc.desc   test addOptimizationBatteryExclusionApps with BYOD admin (should fail with 9200002)
+     * @tc.desc   test addOptimizationBatteryExclusionApps with BYOD admin (should fail with 201)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1300,7 +1300,7 @@ export default function applicationManagerTest() {
         applicationManager.addOptimizationBatteryExclusionApps([TEST_BUNDLENAME], DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code).assertEqual(9200002);
+        expect(error.code).assertEqual(201);
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -1331,7 +1331,7 @@ export default function applicationManagerTest() {
     /**
      * @tc.name   test_removeOptimizationBatteryExclusionApps_permission_0200
      * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEOPTIMIZATIONBATTERYEXCLUSIONAPPS_NO_PERMISSION_JS_0200
-     * @tc.desc   test removeOptimizationBatteryExclusionApps with BYOD admin (should fail with 9200002)
+     * @tc.desc   test removeOptimizationBatteryExclusionApps with BYOD admin (should fail with 201)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1342,7 +1342,7 @@ export default function applicationManagerTest() {
         applicationManager.removeOptimizationBatteryExclusionApps([TEST_BUNDLENAME], DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code).assertEqual(9200002);
+        expect(error.code).assertEqual(201);
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -1373,7 +1373,7 @@ export default function applicationManagerTest() {
     /**
      * @tc.name   test_getOptimizationBatteryExclusionApps_permission_0200
      * @tc.number SUB_CUSTOMIZATION_EDM_GETOPTIMIZATIONBATTERYEXCLUSIONAPPS_NO_PERMISSION_JS_0200
-     * @tc.desc   test getOptimizationBatteryExclusionApps with BYOD admin (should fail with 9200002)
+     * @tc.desc   test getOptimizationBatteryExclusionApps with BYOD admin (should fail with 201)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1384,7 +1384,7 @@ export default function applicationManagerTest() {
         applicationManager.getOptimizationBatteryExclusionApps(DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code).assertEqual(9200002);
+        expect(error.code).assertEqual(201);
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
