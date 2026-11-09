@@ -17,14 +17,12 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import hilog from '@ohos.hilog';
 import { pinAuth } from '@kit.UserAuthenticationKit';
+import deviceInfo from '@ohos.deviceInfo';
+import display from '@ohos.display';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let format: string = '%{public}s';
-
-
-import deviceInfo from '@ohos.deviceInfo';
-import display from '@ohos.display';
 
 function checkDeviceIsDevBoard(): boolean {
   const chipType = deviceInfo.chipType?.toLowerCase();
