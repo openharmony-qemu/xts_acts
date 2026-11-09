@@ -29,8 +29,8 @@ const abnormalDisplayName = 'text';
 
 async function createResource(
   context: common.UIAbilityContext,
-  fileNameList: Array<string>,       // 沙箱中的源文件名（静态名，如 "testGetAsset1.jpg"）
-  displayNameList: Array<string>     // 新创建资产的显示名（带时间戳，如 "testGetAsset1${TIMESTAMP}.jpg"）
+  fileNameList: Array<string>,
+  displayNameList: Array<string>
 ) {
   try {
     let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
