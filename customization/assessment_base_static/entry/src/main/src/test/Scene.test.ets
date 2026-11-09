@@ -672,6 +672,7 @@ export default function AutomaticSceneConStaticTest(): void {
         await driver.delayMs(1000);
         const getconfig: assessment.AssessmentConfig = assessment.getConfiguration();
         expect(getconfig.duration).assertEqual(3600000);
+        expect(typeof getconfig.duration).assertEqual('int');
       } catch (err) {
         if (err.code === 801) {
           expect(err.code).assertEqual(801);
