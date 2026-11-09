@@ -6702,7 +6702,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testCreatePiPWindow_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+    it('testCreatePiPWindow_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'testCreatePiPWindow_02';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -6760,7 +6760,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             done();
           }
         });
-        await sleep(5000);
+        await sleep(3000);
 
 
       } catch (exception) {
@@ -6778,9 +6778,9 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testCreatePiPWindow_03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+    it('testCreatePiPWindow_03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'testCreatePiPWindow_03';
-      await sleep(5000);
+      await sleep(3000);
       try {
         let windowClass = windowStage.getMainWindowSync();
         let pipController: pipWindow.PiPController;
