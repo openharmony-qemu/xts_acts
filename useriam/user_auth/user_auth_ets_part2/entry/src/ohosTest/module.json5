@@ -54,6 +54,9 @@
       },
       {
         "name":"ohos.permission.ACCESS_USER_PASSIVE_RECOGNITION"
+      },
+      {
+        "name":"ohos.permission.USE_USER_ACCESS_MANAGER"
       }
     ]
   }

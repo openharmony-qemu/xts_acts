@@ -1,0 +1,177 @@
+/*
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { pinAuth } from '@kit.UserAuthenticationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import account_osAccount from '@ohos.account.osAccount';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
+
+export default function PinAuthPermissionTest() {
+  describe('PinAuthPermissionTest', () => {
+    let userId: number = 0;
+    beforeAll(async () => {
+      const accountMgr = account_osAccount.getAccountManager();
+      userId = await accountMgr.getOsAccountLocalId();
+    })
+    beforeEach(() => {
+    })
+    afterEach(() => {
+    })
+    afterAll(() => {
+    })
+
+    // ==================== setPinValidityPeriod ====================
+
+    /**
+     * @tc.name   SUB_Security_PinAuth_SetPinValidityPeriod_Permission_0100
+     * @tc.number SUB_Security_PinAuth_SetPinValidityPeriod_Permission_0100
+     * @tc.desc   Set PIN validity period without ohos.permission.USE_USER_ACCESS_MANAGER permission, expected to return error code 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_PinAuth_SetPinValidityPeriod_Permission_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_Security_PinAuth_SetPinValidityPeriod_Permission_0100 start');
+      try {
+        pinAuth.setPinValidityPeriod(userId, 1000);
+        console.error('SUB_Security_PinAuth_SetPinValidityPeriod_Permission_0100 unexpected success, expected to throw 201');
+        expect(false).assertTrue();
+      } catch (err) {
+        console.error(`SUB_Security_PinAuth_SetPinValidityPeriod_Permission_0100 failed. code:${err.code}, message:${err.message}`);
+        expect(err.code).assertEqual(201);
+      }
+      done();
+    });
+
+    // ==================== getPinValidityPeriod ====================
+
+    /**
+     * @tc.name   SUB_Security_PinAuth_GetPinValidityPeriod_Permission_0200
+     * @tc.number SUB_Security_PinAuth_GetPinValidityPeriod_Permission_0200
+     * @tc.desc   Get PIN validity period without ohos.permission.USE_USER_ACCESS_MANAGER permission, expected to return error code 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_PinAuth_GetPinValidityPeriod_Permission_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_Security_PinAuth_GetPinValidityPeriod_Permission_0200 start');
+      try {
+        pinAuth.getPinValidityPeriod(userId);
+        console.error('SUB_Security_PinAuth_GetPinValidityPeriod_Permission_0200 unexpected success, expected to throw 201');
+        expect(false).assertTrue();
+      } catch (err) {
+        console.error(`SUB_Security_PinAuth_GetPinValidityPeriod_Permission_0200 failed. code:${err.code}, message:${err.message}`);
+        expect(err.code).assertEqual(201);
+      }
+      done();
+    });
+
+    // ==================== setPinDeletionDisabledState ====================
+
+    /**
+     * @tc.name   SUB_Security_PinAuth_SetPinDeletionDisabledState_Permission_0300
+     * @tc.number SUB_Security_PinAuth_SetPinDeletionDisabledState_Permission_0300
+     * @tc.desc   Set PIN deletion disabled state without ohos.permission.USE_USER_ACCESS_MANAGER permission, expected to return error code 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_PinAuth_SetPinDeletionDisabledState_Permission_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_Security_PinAuth_SetPinDeletionDisabledState_Permission_0300 start');
+      try {
+        pinAuth.setPinDeletionDisabledState(userId, true);
+        console.error('SUB_Security_PinAuth_SetPinDeletionDisabledState_Permission_0300 unexpected success, expected to throw 201');
+        expect(false).assertTrue();
+      } catch (err) {
+        console.error(`SUB_Security_PinAuth_SetPinDeletionDisabledState_Permission_0300 failed. code:${err.code}, message:${err.message}`);
+        expect(err.code).assertEqual(201);
+      }
+      done();
+    });
+
+    // ==================== getPinDeletionDisabledState ====================
+
+    /**
+     * @tc.name   SUB_Security_PinAuth_GetPinDeletionDisabledState_Permission_0400
+     * @tc.number SUB_Security_PinAuth_GetPinDeletionDisabledState_Permission_0400
+     * @tc.desc   Get PIN deletion disabled state without ohos.permission.USE_USER_ACCESS_MANAGER permission, expected to return error code 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_PinAuth_GetPinDeletionDisabledState_Permission_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_Security_PinAuth_GetPinDeletionDisabledState_Permission_0400 start');
+      try {
+        pinAuth.getPinDeletionDisabledState(userId);
+        console.error('SUB_Security_PinAuth_GetPinDeletionDisabledState_Permission_0400 unexpected success, expected to throw 201');
+        expect(false).assertTrue();
+      } catch (err) {
+        console.error(`SUB_Security_PinAuth_GetPinDeletionDisabledState_Permission_0400 failed. code:${err.code}, message:${err.message}`);
+        expect(err.code).assertEqual(201);
+      }
+      done();
+    });
+
+    // ==================== setPinComplexityPolicy ====================
+
+    /**
+     * @tc.name   SUB_Security_PinAuth_SetPinComplexityPolicy_Permission_0500
+     * @tc.number SUB_Security_PinAuth_SetPinComplexityPolicy_Permission_0500
+     * @tc.desc   Set PIN complexity policy without ohos.permission.USE_USER_ACCESS_MANAGER permission, expected to return error code 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_PinAuth_SetPinComplexityPolicy_Permission_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_Security_PinAuth_SetPinComplexityPolicy_Permission_0500 start');
+      try {
+        let policy: pinAuth.PinComplexityPolicy = {
+          complexityReg: '^[0-9]{6,}$',
+          policyDescription: 'PIN must be at least 6 digits'
+        };
+        pinAuth.setPinComplexityPolicy(userId, policy);
+        console.error('SUB_Security_PinAuth_SetPinComplexityPolicy_Permission_0500 unexpected success, expected to throw 201');
+        expect(false).assertTrue();
+      } catch (err) {
+        console.error(`SUB_Security_PinAuth_SetPinComplexityPolicy_Permission_0500 failed. code:${err.code}, message:${err.message}`);
+        expect(err.code).assertEqual(201);
+      }
+      done();
+    });
+
+    // ==================== getPinComplexityPolicy ====================
+
+    /**
+     * @tc.name   SUB_Security_PinAuth_GetPinComplexityPolicy_Permission_0600
+     * @tc.number SUB_Security_PinAuth_GetPinComplexityPolicy_Permission_0600
+     * @tc.desc   Get PIN complexity policy without ohos.permission.USE_USER_ACCESS_MANAGER permission, expected to return error code 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_PinAuth_GetPinComplexityPolicy_Permission_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_Security_PinAuth_GetPinComplexityPolicy_Permission_0600 start');
+      try {
+        pinAuth.getPinComplexityPolicy(userId);
+        console.error('SUB_Security_PinAuth_GetPinComplexityPolicy_Permission_0600 unexpected success, expected to throw 201');
+        expect(false).assertTrue();
+      } catch (err) {
+        console.error(`SUB_Security_PinAuth_GetPinComplexityPolicy_Permission_0600 failed. code:${err.code}, message:${err.message}`);
+        expect(err.code).assertEqual(201);
+      }
+      done();
+    });
+  })
+}
