@@ -1187,5 +1187,139 @@ export default function WorkSchedulerMgrNewTest() {
                 done();
             }
         })
+        /**
+         * @tc.name   testStartWorkNEW035
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_NEW_XTS_3500
+         * @tc.desc   startWork with isPerformanceSensitive true and periodic task repeatCycleTime 24h
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("testStartWorkNEW035", Level.LEVEL0, async function (done) {
+            console.info('----------------------testStartWorkNEW035---------------------------');
+            workScheduler.stopAndClearWorks();
+            let workInfo = {
+                workId: 1,
+                bundleName: "ohos.acts.resourceschedule.workscheduler.js.function",
+                abilityName: "com.mytest.abilityName",
+                networkType: workScheduler.NetworkType.NETWORK_TYPE_ANY,
+                isCharging: true,
+                isDeepIdle: true,
+                isPerformanceSensitive: true,
+                isRepeat: true,
+                repeatCycleTime: 86400000,
+                repeatCount: 100
+            }
+            try{
+                expect(workScheduler.startWork(workInfo)).assertNull();
+                console.info("testStartWorkNEW035 startWork success");
+                done();
+            }catch(error){
+                console.info("testStartWorkNEW035 ----------------error: " + error.code);
+                expect(false).assertTrue();
+                done();
+            }
+        })
+        /**
+         * @tc.name   testStartWorkNEW036
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_NEW_XTS_3600
+         * @tc.desc   startWork with isPerformanceSensitive false
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("testStartWorkNEW036", Level.LEVEL0, async function (done) {
+            console.info('----------------------testStartWorkNEW036---------------------------');
+            workScheduler.stopAndClearWorks();
+            let workInfo = {
+                workId: 2,
+                bundleName: "ohos.acts.resourceschedule.workscheduler.js.function",
+                abilityName: "com.mytest.abilityName",
+                networkType: workScheduler.NetworkType.NETWORK_TYPE_ANY,
+                isPerformanceSensitive: false
+            }
+            try{
+                expect(workScheduler.startWork(workInfo)).assertNull();
+                console.info("testStartWorkNEW036 startWork success");
+                done();
+            }catch(error){
+                console.info("testStartWorkNEW036 ----------------error: " + error.code);
+                expect(false).assertTrue();
+                done();
+            }
+        })
+        /**
+         * @tc.name   testStopWorkNEW037
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_NEW_XTS_3700
+         * @tc.desc   stopWork with isPerformanceSensitive true and periodic task repeatCycleTime 24h
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("testStopWorkNEW037", Level.LEVEL0, async function (done) {
+            console.info('----------------------testStopWorkNEW037---------------------------');
+            workScheduler.stopAndClearWorks();
+            let workInfo = {
+                workId: 3,
+                bundleName: "ohos.acts.resourceschedule.workscheduler.js.function",
+                abilityName: "com.mytest.abilityName",
+                networkType: workScheduler.NetworkType.NETWORK_TYPE_ANY,
+                isCharging: true,
+                isDeepIdle: true,
+                isPerformanceSensitive: true,
+                isRepeat: true,
+                repeatCycleTime: 86400000,
+                repeatCount: 100
+            }
+            try{
+                expect(workScheduler.startWork(workInfo)).assertNull();
+                console.info("testStopWorkNEW037 startWork success");
+            }catch(error){
+                console.info("testStopWorkNEW037 startWork ----------------error: " + error.code);
+            }
+            try{
+                expect(workScheduler.stopWork(workInfo)).assertNull();
+                console.info("testStopWorkNEW037 stopWork success");
+                done();
+            }catch(error){
+                console.info("testStopWorkNEW037 stopWork ----------------error: " + error.code);
+                expect(false).assertTrue();
+                done();
+            }
+        })
+        /**
+         * @tc.name   testStopWorkNEW038
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_NEW_XTS_3800
+         * @tc.desc   stopWork with isPerformanceSensitive false
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("testStopWorkNEW038", Level.LEVEL0, async function (done) {
+            console.info('----------------------testStopWorkNEW038---------------------------');
+            workScheduler.stopAndClearWorks();
+            let workInfo = {
+                workId: 4,
+                bundleName: "ohos.acts.resourceschedule.workscheduler.js.function",
+                abilityName: "com.mytest.abilityName",
+                networkType: workScheduler.NetworkType.NETWORK_TYPE_ANY,
+                isPerformanceSensitive: false
+            }
+            try{
+                expect(workScheduler.startWork(workInfo)).assertNull();
+                console.info("testStopWorkNEW038 startWork success");
+            }catch(error){
+                console.info("testStopWorkNEW038 startWork ----------------error: " + error.code);
+            }
+            try{
+                expect(workScheduler.stopWork(workInfo)).assertNull();
+                console.info("testStopWorkNEW038 stopWork success");
+                done();
+            }catch(error){
+                console.info("testStopWorkNEW038 stopWork ----------------error: " + error.code);
+                expect(false).assertTrue();
+                done();
+            }
+        })
     })
 }
