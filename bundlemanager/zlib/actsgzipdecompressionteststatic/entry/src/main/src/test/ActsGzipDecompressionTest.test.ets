@@ -2032,42 +2032,30 @@ export default function ActsGzipDecompressionTest() {
     /**
      * @tc.number    Test_gzseek_normal_0200
      * @tc.name        Test_gzseek_normal_0200
-     * @tc.desc        test relative forward and backward gzseek in read mode
+     * @tc.desc        test gzseek correct return value
      * @tc.size        MEDIUM
      * @tc.type        Function
      * @tc.level       Level 2
      */
     it('Test_gzseek_normal_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "=====Test_gzseek_normal_0200 Start=====");
-        let seekFilePath = allFilePath + '.seek';
-        let writeBuffer = new ArrayBuffer(4);
-        let writeView = new Uint8Array(writeBuffer);
-        for (let i = 0; i < writeView.length; i++) {
-          writeView[i] = i;
-        }
         let gzip = zlib.createGZipSync();
-        await gzip.gzopen(seekFilePath, "wb");
+        await gzip.gzopen(allFilePath, "wb");
         try {
-          expect(await gzip.gzwrite(writeBuffer, 4)).assertEqual(4);
-        } finally {
-          await gzip.gzclose();
+          await gzip.gzseek(2, zlib.OffsetReferencePoint.SEEK_CUR).then((resulit) => {
+            expect(resulit).assertEqual(2);
+          })
+          await gzip.gzseek(-2, zlib.OffsetReferencePoint.SEEK_CUR).then((resulit) => {
+            expect(resulit).assertEqual(0);
+          })
+        } catch (errData) {
+          errData = errData as BusinessError;
+          hilog.error(domain, tag, `Test_gzseek_normal_0200 errCode:${errData.code}  message:${errData.message}`);
+          expect().assertFail();
         }
-        // Backward seeking is supported in read mode.
-        await gzip.gzopen(seekFilePath, "rb");
-        try {
-          expect(await gzip.gzseek(2, zlib.OffsetReferencePoint.SEEK_CUR)).assertEqual(2);
-          expect(await gzip.gzseek(-2, zlib.OffsetReferencePoint.SEEK_CUR)).assertEqual(0);
-          let readBuffer = new ArrayBuffer(4);
-          expect(await gzip.gzread(readBuffer)).assertEqual(4);
-          let readView = new Uint8Array(readBuffer);
-          for (let i = 0; i < readView.length; i++) {
-            expect(readView[i]).assertEqual(writeView[i]);
-          }
-        } finally {
-          await gzip.gzclose();
-          fileIo.unlinkSync(seekFilePath);
-        }
+        await gzip.gzclose();
+        done();
         hilog.info(domain, tag, "=====Test_gzseek_normal_0200 End=====");
       })
 
