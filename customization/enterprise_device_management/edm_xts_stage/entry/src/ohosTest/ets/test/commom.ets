@@ -164,6 +164,62 @@ function appIdsInit(){
   }
 }
 
+async function initAppIds11WithRealApps(): Promise<void> {
+  try {
+    // Use known installed bundle names to query their appIdentifiers
+    // These are common system apps and test apps that should be installed
+    const knownBundles = [
+      'com.edm.acts.normal',
+      'com.ohos.systemui',
+      'com.ohos.launcher',
+      'com.ohos.settings',
+      'com.ohos.phone',
+      'com.ohos.contacts',
+      'com.ohos.messages',
+      'com.ohos.camera',
+      'com.ohos.gallery',
+      'com.ohos.music',
+      'com.ohos.filemanager'
+    ];
+    
+    let realAppIds: Array<string> = [];
+    
+    // Query appIdentifier for each known bundle
+    for (let bundleName of knownBundles) {
+      try {
+        let bundleInfo = await bundleManager.getBundleInfo(bundleName, 0);
+        if (bundleInfo && bundleInfo.appIdentifier && bundleInfo.appIdentifier.length > 0) {
+          realAppIds.push(bundleInfo.appIdentifier);
+          if (realAppIds.length >= 11) {
+            break;
+          }
+        }
+      } catch (e) {
+        // Bundle not installed or query failed, skip it
+        continue;
+      }
+    }
+    
+    // If we got enough real appIdentifiers, use them
+    if (realAppIds.length >= 11) {
+      APP_IDS_11 = realAppIds.slice(0, 11);
+    } else {
+      // Fallback: use TEST_REAL_APP_ID_1 repeated or generated values
+      console.warn(`Only found ${realAppIds.length} real appIdentifiers, padding with generated values`);
+      for (let i = realAppIds.length; i < 11; i++) {
+        realAppIds.push(`generated_app_id_${i}`);
+      }
+      APP_IDS_11 = realAppIds;
+    }
+  } catch (error) {
+    // Fallback to generated values if query fails
+    console.error('Failed to query installed bundles, using generated appIdentifiers');
+    for (let i = 0; i < 11; i++) {
+      APP_IDS_11[i] = `fallback_app_id_${i}`;
+    }
+  }
+}
+
 let BUNDLE_NAME_200: Array<string> = new Array<string>(200);
 let BUNDLE_NAME_201: Array<string> = new Array<string>(201);
 let BUNDLE_NAME_ONE_REAL_200: Array<string> = new Array<string>(200);
@@ -322,7 +378,7 @@ export {
   ACCOUNT_ID_ZERO, ACCOUNT_ID_LARGE, SUBSCRIBE_EVENTS, SUBSCRIBE_INVALID_EVENTS,
   HAP_FILE_PATH, HAP_FILE_PATH_ERROR, EMPTY_HAP_FILE_PATH,
   appIdsInit, EDM_INSTALL_PARAM, EDM_INSTALL_PARAM_FOR_ALL_USER, APP_IDS_1, BUNDLE_NAME_ONE_REAL_200,
-  APP_IDS_200, APP_IDS_201, APP_IDS_11, TEST_APP_ID_1, TEST_APP_ID_2, TEST_POLICIES, TEST_POLICY_NAME, TEST_POLICY_VALUE,
+  APP_IDS_200, APP_IDS_201, APP_IDS_11, initAppIds11WithRealApps, TEST_APP_ID_1, TEST_APP_ID_2, TEST_POLICIES, TEST_POLICY_NAME, TEST_POLICY_VALUE,
   INVALID_WANT, TEST_TOKEN_ID, TEST_CLIPBOARD_POLICY, UPDATE_VERSION, INVALID_UPDATE_VERSION, getPixelMap,
   PIXEL_MAP, WATERMARK_BUNDLE_NAME, TEST_BUNDLENAME, PARAMETERS_LOWER_BOUND, INVALID_PARAMETERS,
   INVALID_PARAMETERS_LOWER_THAN_UPPER_BOUND, DOMAIN_ACCOUNT_INFO1, DOMAIN_ACCOUNT_POLICY1,

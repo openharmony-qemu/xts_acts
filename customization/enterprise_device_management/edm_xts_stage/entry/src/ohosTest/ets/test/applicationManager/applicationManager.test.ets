@@ -22,6 +22,7 @@ import {
   APP_IDS_200,
   APP_IDS_201,
   APP_IDS_11,
+  initAppIds11WithRealApps,
   APP_IDS_AND_IDENTIFIER_1,
   DEFAULT_APP_INDEX,
   INVALID_APP_INDEX,
@@ -55,8 +56,9 @@ const LABEL_NOTIFICATION = "notification";
 
 export default function applicationManagerTest() {
   describe('applicationManager_test', () => {
-    beforeAll((done: Function) => {
+    beforeAll(async (done: Function) => {
       bundleNamesInit();
+      await initAppIds11WithRealApps();
       done();
     })
 
