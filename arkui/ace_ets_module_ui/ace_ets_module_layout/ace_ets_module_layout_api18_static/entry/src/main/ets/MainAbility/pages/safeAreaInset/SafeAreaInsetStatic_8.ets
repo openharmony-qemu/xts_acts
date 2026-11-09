@@ -25,6 +25,7 @@ import {
   FlexAlign,
   Button,
   SafeAreaInsetOptions,
+  SafeAreaInsetEdgeConfig,
   ColumnOptions,
   LengthMetrics,
   LayoutPolicy,
@@ -122,11 +123,11 @@ struct SafeAreaInsetStatic_8 {
         top: {
           content: () => { this.r5TopContent(); },
           spacing: LengthMetrics.vp(2)
-        },
+        } as SafeAreaInsetEdgeConfig,
         bottom: this.r5BottomCleared ? undefined : {
           content: () => { this.r5BottomContent(); },
           spacing: LengthMetrics.vp(3)
-        }
+        } as SafeAreaInsetEdgeConfig
       } as SafeAreaInsetOptions)
       .id('SafeAreaInsetStatic_r5Host')
 
