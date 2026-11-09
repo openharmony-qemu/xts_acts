@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import taskpool from '@ohos.taskpool';
 import { BusinessError } from '@ohos.base';
 import { collections, ArkTSUtils } from '@kit.ArkTS';
-import { sleep } from '../Utils';
+import { sleep } from '../TaskpoolTestSharedUtils';
 import { EPCounter, EPNestedProbeState, epNestedInnerFunc } from './ExecutePeriodicallyTaskTestInner';
 
 // ========== Module-level @Concurrent Functions ==========

@@ -16,7 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import taskpool from '@ohos.taskpool';
 import { ArkTSUtils } from '@kit.ArkTS';
-import { sleep, drainTaskPool } from '../Utils';
+import { sleep, drainTaskPool } from '../TaskpoolTestSharedUtils';
 import { addConfigsFunc } from './TaskpoolConfigsTestInner';
 
 // ============ @Concurrent Helper Functions (module top-level) ============

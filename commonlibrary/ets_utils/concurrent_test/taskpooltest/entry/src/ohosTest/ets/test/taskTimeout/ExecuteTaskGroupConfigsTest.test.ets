@@ -16,7 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import taskpool from '@ohos.taskpool';
 import { ArkTSUtils } from '@kit.ArkTS';
-import { sleep , cooperativeGc , fillBigArrayChunked } from '../Utils';
+import { sleep , cooperativeGc , fillBigArrayChunked } from '../TaskpoolTestSharedUtils';
 
 import { ETGCCounter, etgcCounter } from './ExecuteTaskGroupConfigsTestInner';
 
