@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import taskpool from '@ohos.taskpool';
 import { BusinessError } from '@ohos.base';
 import { ArkTSUtils } from '@kit.ArkTS';
-import { sleep , cooperativeGc , fillBigArrayChunked } from '../TaskpoolTestSharedUtils';
+import { sleep , cooperativeGc , fillBigArrayChunked } from '../utils';
 
 import { ECTCounter, ectCounter } from './ExecuteTaskConfigsTestInner';
 

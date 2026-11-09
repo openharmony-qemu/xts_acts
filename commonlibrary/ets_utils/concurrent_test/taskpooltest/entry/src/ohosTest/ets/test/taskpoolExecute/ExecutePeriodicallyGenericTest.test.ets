@@ -16,7 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import taskpool from '@ohos.taskpool';
 import { collections, ArkTSUtils } from '@kit.ArkTS';
-import { sleep } from '../TaskpoolTestSharedUtils';
+import { sleep } from '../utils';
 import { EPGResult } from './ExecutePeriodicallyGenericTestInner';
 
 // ========== Module-level @Concurrent Functions ==========
