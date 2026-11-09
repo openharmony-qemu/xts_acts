@@ -21,6 +21,7 @@ import {
   SELFHAPNAME,
   APP_IDS_200,
   APP_IDS_201,
+  APP_IDS_11,
   APP_IDS_AND_IDENTIFIER_1,
   DEFAULT_APP_INDEX,
   INVALID_APP_INDEX,
@@ -32,7 +33,9 @@ import {
   bundleNamesInit,
   BUNDLE_NAME_200,
   BUNDLE_NAME_201,
-  INVALID_WANT
+  INVALID_WANT,
+  TEST_REAL_APP_ID_1,
+  TEST_REAL_APP_ID_2
 } from '../commom.ets';
 
 import adminManager from '@ohos.enterprise.adminManager';
