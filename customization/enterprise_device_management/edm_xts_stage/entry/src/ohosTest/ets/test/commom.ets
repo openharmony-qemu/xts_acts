@@ -189,8 +189,8 @@ async function initAppIds11WithRealApps(): Promise<void> {
     for (let bundleName of knownBundles) {
       try {
         let bundleInfo = await stdBundleManager.getBundleInfo(bundleName, stdBundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION);
-        if (bundleInfo && bundleInfo.appId && bundleInfo.appId.length > 0) {
-          realAppIds.push(bundleInfo.appId);
+        if (bundleInfo && bundleInfo.signatureInfo && bundleInfo.signatureInfo.appIdentifier && bundleInfo.signatureInfo.appIdentifier.length > 0) {
+          realAppIds.push(bundleInfo.signatureInfo.appIdentifier);
           if (realAppIds.length >= 11) {
             break;
           }
