@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../../hypium/index"
+} from "@ohos/hypium-static/src/main/indexStatic"
 
 // 3
 interface Producer_0<T> {

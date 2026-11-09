@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType,
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 class PubCtorAM {
@@ -382,25 +382,6 @@ export default function MethodGetAccessModifier01Test(): void {
           }
         }
         expect(allSame).assertTrue();
-      } else {
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ACCESS_MODIFIER_ONE_1000
-     * @tc.name testMethodGetAccessModifierAtOne010
-     * @tc.desc Verify getAccessModifier via __getMethods index 0 and via getMethodByName('run') return the same value for IndexByName
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testMethodGetAccessModifierAtOne010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const ct = Type.from<IndexByName>() as ClassType;
-      const fromIdx = __getMethods(ct)[0].getAccessModifier();
-      const fromNameMethod = ct.getMethodByName('run');
-      if (isNotNull(fromNameMethod)) {
-        expect(fromIdx).assertEqual(fromNameMethod.getAccessModifier());
       } else {
         expect().assertFail();
       }

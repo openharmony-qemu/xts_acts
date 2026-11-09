@@ -14,6 +14,7 @@
  */
 import { huks } from '@kit.UniversalKeystoreKit';
 import { GenParam } from './HuksOptionsUtils';
+import { StringToUint8Array } from '../common/CommonUtils';
 
 export function GetAccessControlOptions(): huks.HuksOptions {
   let huksOptions: huks.HuksOptions = {
@@ -113,6 +114,50 @@ export function GetChallengeCustomOptions(): huks.HuksOptions {
     properties: new Array(
       GenParam(huks.HuksTag.HUKS_TAG_CHALLENGE_TYPE, huks.HuksChallengeType.HUKS_CHALLENGE_TYPE_CUSTOM),
       GenParam(huks.HuksTag.HUKS_TAG_CHALLENGE_POS, huks.HuksChallengePosition.HUKS_CHALLENGE_POS_0),
+    )
+  };
+  return huksOptions;
+}
+
+// ===== merged from huksApi12 utils =====
+export function GetUserAuthOptions(): huks.HuksOptions {
+  let huksOptions: huks.HuksOptions = {
+    properties: new Array(
+      GenParam(huks.HuksTag.HUKS_TAG_USER_AUTH_TYPE, huks.HuksUserAuthType.HUKS_USER_AUTH_TYPE_PIN),
+      GenParam(huks.HuksTag.HUKS_TAG_CHALLENGE_TYPE, huks.HuksChallengeType.HUKS_CHALLENGE_TYPE_NORMAL),
+      GenParam(huks.HuksTag.HUKS_TAG_KEY_AUTH_ACCESS_TYPE, huks.HuksAuthAccessType.HUKS_AUTH_ACCESS_ALWAYS_VALID)
+    )
+  };
+  return huksOptions;
+}
+export function GetStorageLevelDeOptions(): huks.HuksOptions {
+  let huksOptions: huks.HuksOptions = {
+    properties: new Array(
+      GenParam(huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_DE),
+    )
+  };
+  return huksOptions;
+}
+export function GetStorageLevelCeOptions(): huks.HuksOptions {
+  let huksOptions: huks.HuksOptions = {
+    properties: new Array(
+      GenParam(huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_CE),
+    )
+  };
+  return huksOptions;
+}
+export function GetStorageLevelEceOptions(): huks.HuksOptions {
+  let huksOptions: huks.HuksOptions = {
+    properties: new Array(
+      GenParam(huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_ECE),
+    )
+  };
+  return huksOptions;
+}
+export function GetAccessGroupOptions(groupId: string): huks.HuksOptions {
+  let huksOptions: huks.HuksOptions = {
+    properties: new Array(
+      GenParam(huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(groupId)),
     )
   };
   return huksOptions;

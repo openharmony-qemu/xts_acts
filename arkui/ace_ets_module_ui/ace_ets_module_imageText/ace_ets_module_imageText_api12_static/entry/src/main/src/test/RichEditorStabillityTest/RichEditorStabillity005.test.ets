@@ -34,6 +34,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function RichEditorStabillity005() {
   describe('RichEditorStabillity005', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,9 +58,10 @@ export default function RichEditorStabillity005() {
           console.info("push RichEditorStabillity005 success");
         }
       } catch (err) {
-        console.error("push RichEditorStabillity005 page error: " + err);
+        console.log("push RichEditorStabillity005 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
@@ -74,7 +76,11 @@ export default function RichEditorStabillity005() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorStabillity005')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let getPosition = await (driver.findComponent(ON.id('getPosition')) as Promise<Component>);
       await getPosition.click();
@@ -83,9 +89,17 @@ export default function RichEditorStabillity005() {
       let pointPositionText = await pointPosition.getText();
       await CommonFunc.sleep(500);
       expect(Number(pointPositionText)).assertLarger(0);
-      await driver.drag(pointCenter.x + 50, pointCenter.y + 50, pointCenter.x + 50, pointCenter.y + 650, 600);
+      try {
+        await driver.dragBetween({ x: pointCenter.x + 50, y: pointCenter.y + 50, displayId: displayID }, { x: pointCenter.x + 50, y: pointCenter.y + 650, displayId: displayID }, 600);
+      } catch (err) {
+        console.log('driver.dragBetween error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
-      await driver.click(pointCenter.x + 50, pointCenter.y + 650);
+      try {
+        await driver.clickAt({ x: pointCenter.x + 50, y: pointCenter.y + 650, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await getPosition.click();
       await CommonFunc.sleep(500);

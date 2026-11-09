@@ -45,6 +45,7 @@ import GraphicImageGetImageInfoRepeat from './GraphicImageGetImageInfoRepeat.tes
 import GraphicImagePixelMapGetterRepeat from './GraphicImagePixelMapGetterRepeat.test';
 import GraphicImageGetColorSpace from './GraphicImageGetColorSpace.test';
 import GraphicImageWritePixelsFromAreaAPI2610 from './GraphicImageWritePixelsFromAreaAPI2610.test';
+import GraphicImageWriteAllPixelsFromBufferAPI2610 from './GraphicImageWriteAllPixelsFromBufferAPI2610.test';
 
 export default function testsuite() {
   imagePixelMapTest()
@@ -80,4 +81,5 @@ export default function testsuite() {
   GraphicImagePixelMapGetterRepeat();
   GraphicImageGetColorSpace();
   GraphicImageWritePixelsFromAreaAPI2610();
+  GraphicImageWriteAllPixelsFromBufferAPI2610();
 }

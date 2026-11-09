@@ -36,6 +36,9 @@ export const ScrollBarHeightTest_001: () => number;
 export const ScrollBarHeightTest_002: () => number;
 export const ScrollBarHeightTest_003: () => number;
 export const ScrollBarHeightTest_004: () => number;
+export const ScrollStateTest_001: () => number;
+export const ScrollStateTest_002: () => number;
+export const ScrollStateTest_003: () => number;
 export const ScrollAlignmentStartTest_001: () => number;
 export const ListBackBehaviorTest_001: () => number;
 export const ListBackBehaviorTest_002: () => number;
@@ -232,6 +235,35 @@ export const UIAgentGetPageTextTest002: () => number;
 export const UIAgentGetPageTextTest003: () => number;
 export const UIAgentGetPageTextTest004: () => number;
 export const UIAgentGetPageTextTest005: () => number;
+
+export const UIAgentTreeRequestCreateTest001: () => number;
+export const UIAgentTreeRequestCreateTest002: () => number;
+export const UIAgentTreeRequestCreateTest003: () => number;
+export const UIAgentTreeRequestCreateTest004: () => number;
+export const UIAgentTreeRequestCreateTest005: () => number;
+export const UIAgentTreeRequestCreateTest006: () => number;
+export const UIAgentTreeRequestCreateTest007: () => number;
+export const UIAgentTreeRequestCreateTest008: () => number;
+
+export const UIAgentTreeRequestSetFilterTest001: () => number;
+export const UIAgentTreeRequestSetFilterTest002: () => number;
+export const UIAgentTreeRequestSetFilterTest003: () => number;
+
+export const UIAgentTreeRequestSetInteractionInfoTest001: () => number;
+export const UIAgentTreeRequestSetInteractionInfoTest002: () => number;
+export const UIAgentTreeRequestSetInteractionInfoTest003: () => number;
+
+export const UIAgentTreeRequestSetAccessibilityInfoTest001: () => number;
+export const UIAgentTreeRequestSetAccessibilityInfoTest002: () => number;
+export const UIAgentTreeRequestSetAccessibilityInfoTest003: () => number;
+
+export const UIAgentTreeRequestSetCollectVisualPropertiesTest001: () => number;
+export const UIAgentTreeRequestSetCollectVisualPropertiesTest002: () => number;
+export const UIAgentTreeRequestSetCollectVisualPropertiesTest003: () => number;
+
+export const UIAgentTreeRequestSetCollectFunctionalPropertiesTest001: () => number;
+export const UIAgentTreeRequestSetCollectFunctionalPropertiesTest002: () => number;
+export const UIAgentTreeRequestSetCollectFunctionalPropertiesTest003: () => number;
 
 export const GetImagesByNodeIdAsyncTest001: () => number;
 export const GetImagesByNodeIdAsyncTest002: () => number;

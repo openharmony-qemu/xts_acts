@@ -35,6 +35,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function RichEditorOnSelectionChange015() {
   describe('RichEditorOnSelectionChange015', () => {
     beforeAll(async (): Promise<void> => {
@@ -58,9 +59,10 @@ export default function RichEditorOnSelectionChange015() {
           console.info("push RichEditorOnSelectionChange015 success");
         }
       } catch (err) {
-        console.error("push RichEditorOnSelectionChange015 page error: " + err);
+        console.log("push RichEditorOnSelectionChange015 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
@@ -75,7 +77,11 @@ export default function RichEditorOnSelectionChange015() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorOnSelectionChange015')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.click error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let set_begin = await (driver.findComponent(ON.id('set_begin')) as Promise<Component>)

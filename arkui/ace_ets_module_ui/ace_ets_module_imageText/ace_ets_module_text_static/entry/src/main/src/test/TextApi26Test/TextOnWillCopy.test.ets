@@ -23,6 +23,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 import { inputMethod } from '@kit.IMEKit';
 
+let displayID: Int = 0;
 export default function TextOnWillCopyTest() {
   describe('TextOnWillCopyTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -46,9 +47,10 @@ export default function TextOnWillCopyTest() {
           console.info("push TextOnWillCopy success ");
         }
       } catch (err) {
-          console.error("push TextOnWillCopy page error:" + err);
+          console.log("push TextOnWillCopy page error:" + err);
 	        expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     afterAll(async(): Promise<void> => {
@@ -72,9 +74,17 @@ export default function TextOnWillCopyTest() {
       await CommonFunc.sleep(500);
       await (Text?.longClick() as Promise<void>);
       await CommonFunc.sleep(500);
-      await driver.triggerCombineKeys(2072,2017);
+      try {
+        await driver.triggerCombineKeys(2072,2017, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.triggerCombineKeys(2072,2019);
+      try {
+        await driver.triggerCombineKeys(2072,2019, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       expect(AppStorage.get<string>('TextAllowCopyResult')).assertEqual('onWillCopyAllowCopy');
       console.info('[textOnWillCopy_allow_static_0100] END');
@@ -96,9 +106,17 @@ export default function TextOnWillCopyTest() {
       await CommonFunc.sleep(500);
       await (Text?.longClick() as Promise<void>);
       await CommonFunc.sleep(500);
-      await driver.triggerCombineKeys(2072,2017);
+      try {
+        await driver.triggerCombineKeys(2072,2017, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.triggerCombineKeys(2072,2019);
+      try {
+        await driver.triggerCombineKeys(2072,2019, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       expect(AppStorage.get<string>('TextBlockCopyResult')).assertEqual('onWillCopyBlockCopy');
       console.info('[textOnWillCopy_block_static_0100] END');

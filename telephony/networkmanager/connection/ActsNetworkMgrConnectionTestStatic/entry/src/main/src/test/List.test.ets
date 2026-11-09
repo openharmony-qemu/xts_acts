@@ -15,6 +15,7 @@
  */
 import ConnectionTest from "./Connection.test";
 import ConnectionPublicTest from "./ConnectionPublic.test";
+import ConnectionUnMeteredTest from "./ConnectionUnMetered.test";
 import ConnectionCallbackTest from "./ConnectionCallback.test";
 import ConnectionPromiseTest from "./ConnectionPromise.test";
 import ConnectionErrorCodeTest from "./ConnectionErrorCode.test";
@@ -27,6 +28,7 @@ import connection from '@ohos.net.connection';
 import RefreshGlobalHttpProxy from './RefreshGlobalHttpProxy.test';
 
 let isDefaultNet: boolean = connection.hasDefaultNetSync();
+let isDefaultNetMetered: boolean = connection.isDefaultNetMeteredSync();
 
 export default function testsuite(): void {
     if(isDefaultNet){
@@ -39,6 +41,9 @@ export default function testsuite(): void {
         ConnectionAsciiTest();
         RefreshGlobalHttpProxy();
         ConnectionPublicTest();
+        if(!isDefaultNetMetered){
+            ConnectionUnMeteredTest();
+        }
     }else{
         EmptyTest();
     }

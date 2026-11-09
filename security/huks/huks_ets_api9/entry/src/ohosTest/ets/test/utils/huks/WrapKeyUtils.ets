@@ -26,3 +26,15 @@ export function GetGenWrapKeyOptions() {
   SetParam(huksOptions, huks.HuksTag.HUKS_TAG_IS_ALLOWED_WRAP, true);
   return huksOptions;
 }
+
+export function GetWrapKeyGenerateOptions() {
+  let huksOptions: huks.HuksOptions = GetEmptyOptions();
+  SetParam(huksOptions, huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_AES);
+  SetParam(huksOptions, huks.HuksTag.HUKS_TAG_KEY_SIZE, huks.HuksKeySize.HUKS_AES_KEY_SIZE_256);
+  SetParam(huksOptions, huks.HuksTag.HUKS_TAG_PURPOSE,
+    huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT);
+  SetParam(huksOptions, huks.HuksTag.HUKS_TAG_PADDING, huks.HuksKeyPadding.HUKS_PADDING_NONE);
+  SetParam(huksOptions, huks.HuksTag.HUKS_TAG_BLOCK_MODE, huks.HuksCipherMode.HUKS_MODE_CBC);
+  SetParam(huksOptions, huks.HuksTag.HUKS_TAG_IS_ALLOWED_WRAP, true);
+  return huksOptions;
+}

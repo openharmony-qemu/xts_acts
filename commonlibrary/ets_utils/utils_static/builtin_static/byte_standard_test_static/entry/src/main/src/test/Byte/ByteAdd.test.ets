@@ -24,7 +24,7 @@ import {
   beforeEach,
   afterEach,
   afterAll
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 export default function ByteAddTest07(): void {
   describe("ByteAddTest07", () => {

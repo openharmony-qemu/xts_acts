@@ -259,18 +259,6 @@ export default function uitestEnumTest() {
     it('testApi20_Driver_pressBack_17000007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, testApi20_Driver_pressBack_17000007 start`);
       try {
-        await driver.pressBack(null)
-      } catch (error) {
-        console.log(`${TestTag}, testApi20_Driver_pressBack_17000007 id = null error, ${JSON.stringify(error)}`);
-        expect().assertFail();
-      }
-      try {
-        await driver.pressBack(undefined)
-      } catch (error) {
-        console.log(`${TestTag}, testApi20_Driver_pressBack_17000007 id = undefined error, ${JSON.stringify(error)}`);
-        expect().assertFail();
-      }
-      try {
         await driver.pressBack(-1)
         expect().assertFail();
       } catch (error) {

@@ -53,11 +53,11 @@ class PermissionPreset(TestCase):
             driver.touch(accept_button)
             driver.wait(1)
         # 服务, 搜索         服务686, 247
-        search = driver.wait_for_component(BY.text("服务, 搜索"))
+        search = driver.wait_for_component(BY.text("搜应用和服务"))
         if search is not None:
             search_button = search
         else:
-            search_button = driver.wait_for_component(BY.text("服务"))
+            search_button = driver.wait_for_component(BY.text("搜索"))
         driver.touch(search_button)
         driver.wait(1)
         # 同意    Paf.Permission.button_confirm
@@ -82,6 +82,16 @@ class PermissionPreset(TestCase):
         if search_field is not None:
             driver.touch(search_field)
             driver.wait(1)
+            # 输入文本内容
+            driver.input_text(search_field, "测试搜索文本")
+            # 移动光标到文本末尾
+            driver.move_cursor(UiParam.END)
+            # 移动光标到文本最前
+            driver.move_cursor(UiParam.BEGIN)
+            # 向后移动两下
+            driver.move_cursor(UiParam.RIGHT)
+            driver.move_cursor(UiParam.RIGHT)
+            driver.wait(10)
 
     def teardown(self):
         self.driver.go_home()

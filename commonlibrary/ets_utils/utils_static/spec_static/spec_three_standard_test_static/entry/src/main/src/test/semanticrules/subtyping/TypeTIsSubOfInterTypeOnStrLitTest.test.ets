@@ -15,7 +15,7 @@
  */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
-from '../../../../../hypium/index'
+from '@ohos/hypium-static/src/main/indexStatic'
   
 
 // 顶层函数同样修改

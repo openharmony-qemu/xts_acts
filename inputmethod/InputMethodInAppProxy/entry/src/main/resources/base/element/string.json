@@ -1,0 +1,12 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "验证真实应用内代理输入法接口和编辑会话"
+    },
+    {
+      "name": "ime_probe_name",
+      "value": "输入法框架接口验证扩展"
+    }
+  ]
+}

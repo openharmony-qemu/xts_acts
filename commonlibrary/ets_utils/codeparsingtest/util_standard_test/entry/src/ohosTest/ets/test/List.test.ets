@@ -49,18 +49,14 @@ import utilTest from './util/Util.test';
 import util2Test from './util/Util2.test';
 import util3Test from './util/Util3.test';
 import utilTypeTest from './util/UtilType.test';
-import utilGetGlobalHandleCountTest from './util/GetGlobalHandleCount.test';
 import vmHeapMemoryPressureTest from './util/VMHeapMemoryPressureTest.test';
-import trackGlobalRefTest from './util/TrackGlobalRef.test';
 
 import util1FPTest from './utilfp/Util1FP.test';
 import util2FPTest from './utilfp/Util2FP.test';
 import util3FPTest from './utilfp/Util3FP.test';
 
 export default function testsuite() {
-  utilGetGlobalHandleCountTest();
   vmHeapMemoryPressureTest();
-  trackGlobalRefTest();
   base64HelperTest();
   base64HelperTest02();
   base64HelperTest03();

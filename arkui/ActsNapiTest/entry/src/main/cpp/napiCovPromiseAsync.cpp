@@ -29,7 +29,11 @@ static void AsyncComplete(napi_env env, napi_status status, void* data)
 {
     (void)env;
     (void)status;
-    (void)data;
+    if (data != nullptr) {
+        napi_async_work* workPtr = static_cast<napi_async_work*>(data);
+        napi_delete_async_work(env, *workPtr);
+        delete workPtr;
+    }
 }
 
 static napi_value CreatePromiseStable(napi_env env, napi_callback_info info)
@@ -643,10 +647,14 @@ static napi_value QueueAsyncWorkRetVal(napi_env env, napi_callback_info info)
 {
     napi_value asyncName = nullptr;
     napi_create_string_utf8(env, "queueAsync", NAPI_AUTO_LENGTH, &asyncName);
-    napi_async_work work = nullptr;
-    napi_create_async_work(env, nullptr, asyncName, AsyncExecute, AsyncComplete, nullptr, &work);
-    napi_status status = napi_queue_async_work(env, work);
+    napi_async_work* workPtr = new napi_async_work(nullptr);
+    napi_create_async_work(env, nullptr, asyncName, AsyncExecute, AsyncComplete, workPtr, workPtr);
+    napi_status status = napi_queue_async_work(env, *workPtr);
     int32_t ret = status == napi_ok ? 1 : 0;
+    if (status != napi_ok) {
+        napi_delete_async_work(env, *workPtr);
+        delete workPtr;
+    }
     return Ret(env, ret);
 }
 
@@ -656,11 +664,13 @@ static napi_value QueueAsyncWorkStable(napi_env env, napi_callback_info info)
     for (int32_t i = 0; i < STABLE_LOOP_COUNT; i++) {
         napi_value asyncName = nullptr;
         napi_create_string_utf8(env, "queueAsync", NAPI_AUTO_LENGTH, &asyncName);
-        napi_async_work work = nullptr;
-        napi_create_async_work(env, nullptr, asyncName, AsyncExecute, AsyncComplete, nullptr, &work);
-        napi_status status = napi_queue_async_work(env, work);
+        napi_async_work* workPtr = new napi_async_work(nullptr);
+        napi_create_async_work(env, nullptr, asyncName, AsyncExecute, AsyncComplete, workPtr, workPtr);
+        napi_status status = napi_queue_async_work(env, *workPtr);
         int32_t singleRet = status == napi_ok ? 1 : 0;
         if (singleRet == 0) {
+            napi_delete_async_work(env, *workPtr);
+            delete workPtr;
             pass = 0;
             break;
         }

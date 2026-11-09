@@ -84,6 +84,26 @@ function assertSessionInfoShape(info: cliManager.CliSessionInfo): void {
   expect(info.status !== undefined).assertTrue();
 }
 
+function assertExecResultShape(result: cliManager.ExecResult): void {
+  // Cover ExecResult fields: exitCode/outputText/errorText/signalNumber/timeOut/executionTime.
+  expect(result.timeOut !== undefined).assertTrue();
+  expect(typeof result.timeOut).assertEqual('boolean');
+  expect(typeof result.executionTime).assertEqual('number');
+  expect(result.executionTime >= 0).assertTrue();
+  if (result.exitCode !== undefined) {
+    expect(typeof result.exitCode).assertEqual('number');
+  }
+  if (result.outputText !== undefined) {
+    expect(typeof result.outputText).assertEqual('string');
+  }
+  if (result.errorText !== undefined) {
+    expect(typeof result.errorText).assertEqual('string');
+  }
+  if (result.signalNumber !== undefined) {
+    expect(typeof result.signalNumber).assertEqual('number');
+  }
+}
+
 function assertShellCompleted(info: cliManager.CliSessionInfo, outputMarker: string): void {
   expect(info.sessionId.length > 0).assertTrue();
   expect(info.toolName).assertEqual('shell');
@@ -92,8 +112,8 @@ function assertShellCompleted(info: cliManager.CliSessionInfo, outputMarker: str
   if (info.result === undefined) {
     return;
   }
+  assertExecResultShape(info.result);
   expect(info.result.timeOut).assertEqual(false);
-  expect(info.result.executionTime >= 0).assertTrue();
   if (info.result.exitCode !== undefined) {
     expect(info.result.exitCode).assertEqual(0);
   }
@@ -101,6 +121,39 @@ function assertShellCompleted(info: cliManager.CliSessionInfo, outputMarker: str
   if (info.result.outputText !== undefined) {
     expect(info.result.outputText.indexOf(outputMarker) >= 0).assertTrue();
   }
+}
+
+function isClearSessionBizCode(code: number): boolean {
+  return code === ERR_PERMISSION || code === ERR_SYSTEM_API ||
+    code === ERR_SESSION_NOT_FOUND || code === ERR_SYSTEM || code === ERR_PARAM;
+}
+
+function isSendMessageBizCode(code: number): boolean {
+  return code === ERR_PERMISSION || code === ERR_SYSTEM_API || code === ERR_PARAM ||
+    code === ERR_SESSION_NOT_FOUND || code === 35600033 || code === ERR_SYSTEM;
+}
+
+/** Build a string of exact length for param-length boundary cases. */
+function makeLenStr(unit: string, len: number): string {
+  let out = '';
+  let i = 0;
+  while (i < len) {
+    out += unit;
+    i++;
+  }
+  return out;
+}
+
+const SEND_MESSAGE_MAX_LEN = 10240;
+
+function isExecCmdBizCode(code: number): boolean {
+  return code === ERR_PERMISSION || code === ERR_SYSTEM_API || code === ERR_PARAM ||
+    code === ERR_CAPABILITY || code === 35600031 || code === ERR_SYSTEM;
+}
+
+function isGetToolBizCode(code: number): boolean {
+  return code === ERR_PERMISSION || code === ERR_SYSTEM_API || code === ERR_PARAM ||
+    code === ERR_TOOL_NOT_FOUND || code === ERR_SYSTEM;
 }
 
 async function clearSessionQuiet(sessionId: string): Promise<void> {
@@ -144,7 +197,7 @@ export default function cliManagerTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CliManager_QueryToolSummaries_0100
      * @tc.number SUB_Ability_AbilityRuntime_CliManager_QueryToolSummaries_0100
-     * @tc.desc   Normal queryToolSummaries; expect list or known biz error
+     * @tc.desc   queryToolSummaries returns Array; empty length===0 path or known biz error 201/202/35600050
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -153,14 +206,51 @@ export default function cliManagerTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
           let list = await cliManager.queryToolSummaries();
-          hilog.info(0x0000, TAG, 'QueryToolSummaries size=%{public}d', list.length);
+          hilog.info(0x0000, TAG, 'QueryToolSummaries empty-path size=%{public}d', list.length);
           expect(Array.isArray(list)).assertTrue();
-          if (list.length > 0) {
-            expect(list[0].name.length > 0).assertTrue();
+          if (list.length === 0) {
+            expect(list.length).assertEqual(0);
+          } else {
+            // Device has tools: empty path not hit; still assert Array shape.
+            expect(list.length > 0).assertTrue();
           }
         } catch (error) {
-          hilog.info(0x0000, TAG, 'QueryToolSummaries %{public}s', safeErrorText(error));
-          expect(isExpectedBizCode(errCodeOf(error))).assertTrue();
+          hilog.info(0x0000, TAG, 'QueryToolSummaries empty-path %{public}s', safeErrorText(error));
+          let code = errCodeOf(error);
+          expect(code === ERR_PERMISSION || code === ERR_SYSTEM_API || code === ERR_SYSTEM ||
+            isExpectedBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_QueryToolSummaries_NonEmpty_0110
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_QueryToolSummaries_NonEmpty_0110
+     * @tc.desc   queryToolSummaries non-empty: assert ToolSummary name/description/version;
+     *     if empty on device, assert length===0; or BusinessError 201/202/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_QueryToolSummaries_NonEmpty_0110',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          let list = await cliManager.queryToolSummaries();
+          hilog.info(0x0000, TAG, 'QueryToolSummaries non-empty size=%{public}d', list.length);
+          expect(Array.isArray(list)).assertTrue();
+          if (list.length > 0) {
+            expect(typeof list[0].name).assertEqual('string');
+            expect(list[0].name.length > 0).assertTrue();
+            expect(typeof list[0].description).assertEqual('string');
+            expect(typeof list[0].version).assertEqual('string');
+          } else {
+            expect(list.length).assertEqual(0);
+          }
+        } catch (error) {
+          hilog.info(0x0000, TAG, 'QueryToolSummaries non-empty %{public}s', safeErrorText(error));
+          let code = errCodeOf(error);
+          expect(code === ERR_PERMISSION || code === ERR_SYSTEM_API || code === ERR_SYSTEM ||
+            isExpectedBizCode(code)).assertTrue();
         }
         done();
       });
@@ -168,7 +258,7 @@ export default function cliManagerTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CliManager_QueryTools_0100
      * @tc.number SUB_Ability_AbilityRuntime_CliManager_QueryTools_0100
-     * @tc.desc   Normal queryTools; expect list or known biz error
+     * @tc.desc   queryTools returns Array; empty length===0 path or known biz error 201/202/35600050
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -177,11 +267,50 @@ export default function cliManagerTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
           let list = await cliManager.queryTools();
-          hilog.info(0x0000, TAG, 'QueryTools size=%{public}d', list.length);
+          hilog.info(0x0000, TAG, 'QueryTools empty-path size=%{public}d', list.length);
           expect(Array.isArray(list)).assertTrue();
+          if (list.length === 0) {
+            expect(list.length).assertEqual(0);
+          } else {
+            expect(list.length > 0).assertTrue();
+          }
         } catch (error) {
-          hilog.info(0x0000, TAG, 'QueryTools %{public}s', safeErrorText(error));
-          expect(isExpectedBizCode(errCodeOf(error))).assertTrue();
+          hilog.info(0x0000, TAG, 'QueryTools empty-path %{public}s', safeErrorText(error));
+          let code = errCodeOf(error);
+          expect(code === ERR_PERMISSION || code === ERR_SYSTEM_API || code === ERR_SYSTEM ||
+            isExpectedBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_QueryTools_NonEmpty_0110
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_QueryTools_NonEmpty_0110
+     * @tc.desc   queryTools non-empty: assert ToolInfo fields; if empty assert length===0;
+     *     or BusinessError 201/202/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_QueryTools_NonEmpty_0110',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          let list = await cliManager.queryTools();
+          hilog.info(0x0000, TAG, 'QueryTools non-empty size=%{public}d', list.length);
+          expect(Array.isArray(list)).assertTrue();
+          if (list.length > 0) {
+            expect(typeof list[0].name).assertEqual('string');
+            expect(list[0].name.length > 0).assertTrue();
+            expect(typeof list[0].description).assertEqual('string');
+            expect(typeof list[0].version).assertEqual('string');
+          } else {
+            expect(list.length).assertEqual(0);
+          }
+        } catch (error) {
+          hilog.info(0x0000, TAG, 'QueryTools non-empty %{public}s', safeErrorText(error));
+          let code = errCodeOf(error);
+          expect(code === ERR_PERMISSION || code === ERR_SYSTEM_API || code === ERR_SYSTEM ||
+            isExpectedBizCode(code)).assertTrue();
         }
         done();
       });
@@ -210,7 +339,7 @@ export default function cliManagerTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CliManager_GetToolInfoByName_Empty_0200
      * @tc.number SUB_Ability_AbilityRuntime_CliManager_GetToolInfoByName_Empty_0200
-     * @tc.desc   getToolInfoByName with empty String; expect biz error
+     * @tc.desc   getToolInfoByName toolName="" length out of 1..32 valid range; expect 401/201/202/35600030/35600050
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -223,7 +352,84 @@ export default function cliManagerTest() {
         } catch (error) {
           let code = errCodeOf(error);
           hilog.info(0x0000, TAG, 'GetToolInfoByName empty %{public}s', safeErrorText(error));
-          expect(code === ERR_PARAM || isExpectedBizCode(code)).assertTrue();
+          expect(isGetToolBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_GetToolInfoByName_Null_0210
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_GetToolInfoByName_Null_0210
+     * @tc.desc   getToolInfoByName(null) out of valid string range; expect 401/201/202/35600030/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_GetToolInfoByName_Null_0210',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          await cliManager.getToolInfoByName(null);
+          expect().assertFail();
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'GetToolInfoByName null %{public}s', safeErrorText(error));
+          expect(isGetToolBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_GetToolInfoByName_Undefined_0220
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_GetToolInfoByName_Undefined_0220
+     * @tc.desc   getToolInfoByName(undefined) out of valid string range; expect 401/201/202/35600030/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_GetToolInfoByName_Undefined_0220',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          await cliManager.getToolInfoByName(undefined);
+          expect().assertFail();
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'GetToolInfoByName undefined %{public}s', safeErrorText(error));
+          expect(isGetToolBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_GetToolInfoByName_Return_0230
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_GetToolInfoByName_Return_0230
+     * @tc.desc   getToolInfoByName return ToolInfo name/version/description/executablePath or 201/202/35600030/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_GetToolInfoByName_Return_0230',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          let summaries = await cliManager.queryToolSummaries();
+          expect(Array.isArray(summaries)).assertTrue();
+          if (summaries.length === 0) {
+            hilog.info(0x0000, TAG, 'GetToolInfoByName return skip: empty summaries');
+            done();
+            return;
+          }
+          let toolName = summaries[0].name;
+          expect(toolName.length > 0 && toolName.length <= 32).assertTrue();
+          let info = await cliManager.getToolInfoByName(toolName);
+          expect(info !== undefined).assertTrue();
+          expect(typeof info.name).assertEqual('string');
+          expect(info.name.length > 0 && info.name.length <= 32).assertTrue();
+          expect(typeof info.version).assertEqual('string');
+          expect(typeof info.description).assertEqual('string');
+          expect(typeof info.executablePath).assertEqual('string');
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'GetToolInfoByName return %{public}s', safeErrorText(error));
+          expect(isGetToolBizCode(code)).assertTrue();
         }
         done();
       });
@@ -270,7 +476,7 @@ export default function cliManagerTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CliManager_ExecCmd_Empty_0200
      * @tc.number SUB_Ability_AbilityRuntime_CliManager_ExecCmd_Empty_0200
-     * @tc.desc   execCmd with empty command; expect biz error
+     * @tc.desc   execCmd cmd="" empty length; expect 201/202/401/801/35600031/35600050 (EXEC_CLI_TOOL/PUBLIC)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -283,7 +489,166 @@ export default function cliManagerTest() {
         } catch (error) {
           let code = errCodeOf(error);
           hilog.info(0x0000, TAG, 'ExecCmd empty %{public}s', safeErrorText(error));
-          expect(code === ERR_PARAM || isExpectedBizCode(code)).assertTrue();
+          expect(isExecCmdBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_ExecCmd_Null_0210
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_ExecCmd_Null_0210
+     * @tc.desc   execCmd(null) out of valid string range; expect 201/202/401/801/35600031/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_ExecCmd_Null_0210',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          await cliManager.execCmd(null);
+          expect().assertFail();
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'ExecCmd null %{public}s', safeErrorText(error));
+          expect(isExecCmdBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_ExecCmd_Undefined_0220
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_ExecCmd_Undefined_0220
+     * @tc.desc   execCmd(undefined) out of valid string range; expect 201/202/401/801/35600031/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_ExecCmd_Undefined_0220',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          await cliManager.execCmd(undefined);
+          expect().assertFail();
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'ExecCmd undefined %{public}s', safeErrorText(error));
+          expect(isExecCmdBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_ExecCmd_OptionsNull_0230
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_ExecCmd_OptionsNull_0230
+     * @tc.desc   execCmd options=null; expect success ExecResult or 201/202/401/801/35600031/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_ExecCmd_OptionsNull_0230',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          let info = await cliManager.execCmd('echo xts_cli_opt_null', null);
+          assertSessionInfoShape(info);
+          if (info.result !== undefined) {
+            assertExecResultShape(info.result);
+          }
+          await clearSessionQuiet(info.sessionId);
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'ExecCmd options null %{public}s', safeErrorText(error));
+          expect(isExecCmdBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_ExecCmd_OptionsUndefined_0240
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_ExecCmd_OptionsUndefined_0240
+     * @tc.desc   execCmd options=undefined; expect success ExecResult or 201/202/401/801/35600031/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_ExecCmd_OptionsUndefined_0240',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          let info = await cliManager.execCmd('echo xts_cli_opt_undef', undefined);
+          assertSessionInfoShape(info);
+          if (info.result !== undefined) {
+            assertExecResultShape(info.result);
+          }
+          await clearSessionQuiet(info.sessionId);
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'ExecCmd options undefined %{public}s', safeErrorText(error));
+          expect(isExecCmdBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_ExecCmd_WorkDirEmpty_0250
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_ExecCmd_WorkDirEmpty_0250
+     * @tc.desc   execCmd workDir="" empty string coverage; expect result or 201/202/401/801/35600031/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_ExecCmd_WorkDirEmpty_0250',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          let info = await cliManager.execCmd('echo xts_cli_workdir_empty', {
+            workDir: '',
+            background: false,
+            yieldMs: 0,
+            timeout: 30
+          });
+          assertSessionInfoShape(info);
+          if (info.result !== undefined) {
+            assertExecResultShape(info.result);
+          }
+          await clearSessionQuiet(info.sessionId);
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'ExecCmd workDir empty %{public}s', safeErrorText(error));
+          expect(isExecCmdBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_ExecResult_ErrorText_0260
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_ExecResult_ErrorText_0260
+     * @tc.desc   ExecResult.errorText/signalNumber/exitCode/outputText/timeOut/executionTime coverage via stderr cmd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_ExecResult_ErrorText_0260',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          let info = await cliManager.execCmd('ls /xts_cli_not_exist_path_for_stderr', {
+            background: false,
+            yieldMs: 0,
+            timeout: 30
+          });
+          hilog.info(0x0000, TAG, 'ExecResult stderr status=%{public}s result=%{public}s',
+            info.status, JSON.stringify(info.result));
+          expect(info.result !== undefined).assertTrue();
+          if (info.result !== undefined) {
+            assertExecResultShape(info.result);
+            if (info.result.errorText !== undefined) {
+              expect(typeof info.result.errorText).assertEqual('string');
+            }
+            if (info.result.signalNumber !== undefined) {
+              expect(typeof info.result.signalNumber).assertEqual('number');
+            }
+          }
+          await clearSessionQuiet(info.sessionId);
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'ExecResult errorText %{public}s', safeErrorText(error));
+          expect(isExecCmdBizCode(code)).assertTrue();
         }
         done();
       });
@@ -488,7 +853,7 @@ export default function cliManagerTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CliManager_ClearSession_Abnormal_0100
      * @tc.number SUB_Ability_AbilityRuntime_CliManager_ClearSession_Abnormal_0100
-     * @tc.desc   clearSession with invalid sessionId; expect 35600032 or known error
+     * @tc.desc   clearSession invalid sessionId; expect 201/202/35600032/35600050 (perm EXEC_CLI_TOOL/PUBLIC)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -501,6 +866,295 @@ export default function cliManagerTest() {
         } catch (error) {
           let code = errCodeOf(error);
           hilog.info(0x0000, TAG, 'ClearSession abnormal %{public}s', safeErrorText(error));
+          expect(isClearSessionBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_ClearSession_Empty_0200
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_ClearSession_Empty_0200
+     * @tc.desc   clearSession: 参数长度 length=0; 有效范围 non-empty string;
+     *     expect 201/202/401/35600032/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_ClearSession_Empty_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          await cliManager.clearSession('');
+          expect().assertFail();
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'ClearSession empty %{public}s', safeErrorText(error));
+          expect(isClearSessionBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_ClearSession_Null_0210
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_ClearSession_Null_0210
+     * @tc.desc   clearSession: sessionId=null; 有效范围 out of valid string;
+     *     expect 201/202/401/35600032/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_ClearSession_Null_0210',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          await cliManager.clearSession(null);
+          expect().assertFail();
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'ClearSession null %{public}s', safeErrorText(error));
+          expect(isClearSessionBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_ClearSession_Undefined_0220
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_ClearSession_Undefined_0220
+     * @tc.desc   clearSession: sessionId=undefined; 有效范围 out of valid string;
+     *     expect 201/202/401/35600032/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_ClearSession_Undefined_0220',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          await cliManager.clearSession(undefined);
+          expect().assertFail();
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'ClearSession undefined %{public}s', safeErrorText(error));
+          expect(isClearSessionBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_ClearSession_Len1_0230
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_ClearSession_Len1_0230
+     * @tc.desc   clearSession: 参数长度 length=1; 有效范围 non-empty but not existing;
+     *     expect 201/202/401/35600032/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_ClearSession_Len1_0230',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let sid = 'x';
+        expect(sid.length).assertEqual(1);
+        try {
+          await cliManager.clearSession(sid);
+          expect().assertFail();
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'ClearSession len1 %{public}s', safeErrorText(error));
+          expect(isClearSessionBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_ClearSession_Overlong_0240
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_ClearSession_Overlong_0240
+     * @tc.desc   clearSession: 参数长度 length=1024; 有效范围 over typical session-id;
+     *     expect 201/202/401/35600032/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_ClearSession_Overlong_0240',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let sid = makeLenStr('a', 1024);
+        expect(sid.length).assertEqual(1024);
+        try {
+          await cliManager.clearSession(sid);
+          expect().assertFail();
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'ClearSession overlong %{public}s', safeErrorText(error));
+          expect(isClearSessionBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_QuerySession_Empty_0200
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_QuerySession_Empty_0200
+     * @tc.desc   querySession sessionId=""; expect 201/202/401/35600032/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_QuerySession_Empty_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          await cliManager.querySession('');
+          expect().assertFail();
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'QuerySession empty %{public}s', safeErrorText(error));
+          expect(code === ERR_SESSION_NOT_FOUND || isExpectedBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_QuerySession_Null_0210
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_QuerySession_Null_0210
+     * @tc.desc   querySession(null) out of valid string range; expect 201/202/401/35600032/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_QuerySession_Null_0210',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          await cliManager.querySession(null);
+          expect().assertFail();
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'QuerySession null %{public}s', safeErrorText(error));
+          expect(code === ERR_SESSION_NOT_FOUND || isExpectedBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_QuerySession_Undefined_0220
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_QuerySession_Undefined_0220
+     * @tc.desc   querySession(undefined) out of valid string range; expect 201/202/401/35600032/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_QuerySession_Undefined_0220',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          await cliManager.querySession(undefined);
+          expect().assertFail();
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'QuerySession undefined %{public}s', safeErrorText(error));
+          expect(code === ERR_SESSION_NOT_FOUND || isExpectedBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_QuerySession_Return_0230
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_QuerySession_Return_0230
+     * @tc.desc   querySession after execCmd; cover CliSessionInfo sessionId/toolName/status/result
+     *     or BusinessError 201/202/35600032/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_QuerySession_Return_0230',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          let marker = 'xts_cli_query_session_return';
+          let info = await cliManager.execCmd('echo ' + marker, {
+            background: false,
+            yieldMs: 5000,
+            timeout: 30
+          });
+          assertSessionInfoShape(info);
+          let queried = await cliManager.querySession(info.sessionId);
+          expect(typeof queried.sessionId).assertEqual('string');
+          expect(queried.sessionId.length > 0).assertTrue();
+          expect(typeof queried.toolName).assertEqual('string');
+          expect(queried.toolName.length > 0).assertTrue();
+          expect(queried.status !== undefined).assertTrue();
+          if (queried.status === cliManager.SessionStatus.COMPLETED ||
+            queried.status === cliManager.SessionStatus.FAILED) {
+            expect(queried.result !== undefined).assertTrue();
+            if (queried.result !== undefined) {
+              assertExecResultShape(queried.result);
+            }
+          }
+          await clearSessionQuiet(info.sessionId);
+        } catch (error) {
+          hilog.info(0x0000, TAG, 'QuerySession return %{public}s', safeErrorText(error));
+          expect(isExpectedBizCode(errCodeOf(error))).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_SubscribeSession_Empty_0200
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_SubscribeSession_Empty_0200
+     * @tc.desc   subscribeSession sessionId=""; expect 201/202/401/35600032/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_SubscribeSession_Empty_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          await cliManager.subscribeSession('', {
+            onEvent: (_event) => {
+            }
+          });
+          expect().assertFail();
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'SubscribeSession empty %{public}s', safeErrorText(error));
+          expect(code === ERR_SESSION_NOT_FOUND || isExpectedBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_SubscribeSession_Null_0210
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_SubscribeSession_Null_0210
+     * @tc.desc   subscribeSession(null); expect 201/202/401/35600032/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_SubscribeSession_Null_0210',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          await cliManager.subscribeSession(null, {
+            onEvent: (_event) => {
+            }
+          });
+          expect().assertFail();
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'SubscribeSession null %{public}s', safeErrorText(error));
+          expect(code === ERR_SESSION_NOT_FOUND || isExpectedBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_SubscribeSession_Undefined_0220
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_SubscribeSession_Undefined_0220
+     * @tc.desc   subscribeSession(undefined); expect 201/202/401/35600032/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_SubscribeSession_Undefined_0220',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          await cliManager.subscribeSession(undefined, {
+            onEvent: (_event) => {
+            }
+          });
+          expect().assertFail();
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'SubscribeSession undefined %{public}s', safeErrorText(error));
           expect(code === ERR_SESSION_NOT_FOUND || isExpectedBizCode(code)).assertTrue();
         }
         done();
@@ -509,7 +1163,7 @@ export default function cliManagerTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CliManager_SendMessage_Abnormal_0100
      * @tc.number SUB_Ability_AbilityRuntime_CliManager_SendMessage_Abnormal_0100
-     * @tc.desc   sendMessage with invalid sessionId; expect 35600032 or known error
+     * @tc.desc   sendMessage with invalid sessionId; expect 201/202/35600032/35600033/35600050
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -522,7 +1176,188 @@ export default function cliManagerTest() {
         } catch (error) {
           let code = errCodeOf(error);
           hilog.info(0x0000, TAG, 'SendMessage abnormal %{public}s', safeErrorText(error));
-          expect(code === ERR_SESSION_NOT_FOUND || isExpectedBizCode(code)).assertTrue();
+          expect(code === ERR_SESSION_NOT_FOUND || code === 35600033 ||
+            isExpectedBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_SendMessage_EmptySid_0200
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_SendMessage_EmptySid_0200
+     * @tc.desc   sendMessage sessionId=""; expect 201/202/401/35600032/35600033/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_SendMessage_EmptySid_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          await cliManager.sendMessage('', 'hello');
+          expect().assertFail();
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'SendMessage empty sid %{public}s', safeErrorText(error));
+          expect(code === ERR_SESSION_NOT_FOUND || code === 35600033 ||
+            isExpectedBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_SendMessage_NullSid_0210
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_SendMessage_NullSid_0210
+     * @tc.desc   sendMessage(null, msg); expect 201/202/401/35600032/35600033/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_SendMessage_NullSid_0210',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          await cliManager.sendMessage(null, 'hello');
+          expect().assertFail();
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'SendMessage null sid %{public}s', safeErrorText(error));
+          expect(code === ERR_SESSION_NOT_FOUND || code === 35600033 ||
+            isExpectedBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_SendMessage_UndefinedSid_0220
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_SendMessage_UndefinedSid_0220
+     * @tc.desc   sendMessage(undefined, msg); expect 201/202/401/35600032/35600033/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_SendMessage_UndefinedSid_0220',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          await cliManager.sendMessage(undefined, 'hello');
+          expect().assertFail();
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'SendMessage undefined sid %{public}s', safeErrorText(error));
+          expect(code === ERR_SESSION_NOT_FOUND || code === 35600033 ||
+            isExpectedBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_SendMessage_EmptyMsg_0230
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_SendMessage_EmptyMsg_0230
+     * @tc.desc   sendMessage: 参数长度 length=0; 有效范围 with invalid sessionId;
+     *     expect 201/202/401/35600032/35600033/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_SendMessage_EmptyMsg_0230',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          await cliManager.sendMessage('xts_invalid_session_id', '');
+          expect().assertFail();
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'SendMessage empty msg %{public}s', safeErrorText(error));
+          expect(isSendMessageBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_SendMessage_NullMsg_0240
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_SendMessage_NullMsg_0240
+     * @tc.desc   sendMessage: message=null; 有效范围 out of valid string;
+     *     expect 201/202/401/35600032/35600033/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_SendMessage_NullMsg_0240',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          await cliManager.sendMessage('xts_invalid_session_id', null);
+          expect().assertFail();
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'SendMessage null msg %{public}s', safeErrorText(error));
+          expect(isSendMessageBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_SendMessage_UndefinedMsg_0250
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_SendMessage_UndefinedMsg_0250
+     * @tc.desc   sendMessage: message=undefined; 有效范围 out of valid string;
+     *     expect 201/202/401/35600032/35600033/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_SendMessage_UndefinedMsg_0250',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          await cliManager.sendMessage('xts_invalid_session_id', undefined);
+          expect().assertFail();
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'SendMessage undefined msg %{public}s', safeErrorText(error));
+          expect(isSendMessageBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_SendMessage_MsgMax_0260
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_SendMessage_MsgMax_0260
+     * @tc.desc   sendMessage: 参数长度 length=10240 API max; 有效范围 invalid sessionId;
+     *     expect 201/202/401/35600032/35600033/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_SendMessage_MsgMax_0260',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let msg = makeLenStr('m', SEND_MESSAGE_MAX_LEN);
+        expect(msg.length).assertEqual(SEND_MESSAGE_MAX_LEN);
+        try {
+          await cliManager.sendMessage('xts_invalid_session_id', msg);
+          expect().assertFail();
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'SendMessage msgMax %{public}s', safeErrorText(error));
+          expect(isSendMessageBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_SendMessage_MsgOver_0270
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_SendMessage_MsgOver_0270
+     * @tc.desc   sendMessage: 参数长度 length=10241; 有效范围 over API max 10240;
+     *     expect 201/202/401/35600032/35600033/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_SendMessage_MsgOver_0270',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let msg = makeLenStr('m', SEND_MESSAGE_MAX_LEN + 1);
+        expect(msg.length).assertEqual(SEND_MESSAGE_MAX_LEN + 1);
+        try {
+          await cliManager.sendMessage('xts_invalid_session_id', msg);
+          expect().assertFail();
+        } catch (error) {
+          let code = errCodeOf(error);
+          hilog.info(0x0000, TAG, 'SendMessage msgOver %{public}s', safeErrorText(error));
+          expect(isSendMessageBizCode(code)).assertTrue();
         }
         done();
       });

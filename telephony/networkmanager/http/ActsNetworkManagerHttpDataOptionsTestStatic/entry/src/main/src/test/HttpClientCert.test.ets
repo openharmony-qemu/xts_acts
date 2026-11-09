@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -44,622 +44,1234 @@ const ExpectTrue = (n: boolean) => {
 }
 
 
-export default function httpClientCertTest() {
+export default function httpClientCertTest(): void {
 
-    describe("HttpClientCertTest", (): void => {
-        hilog.info(domain, tag, '%{public}s', 'describe start');
+  describe("HttpClientCertTest", (): void => {
+    hilog.info(domain, tag, '%{public}s', 'describe start');
 
-        /**
-         * @tc.name   testHttpClientCert_static_0100
-         * @tc.number SUB_NetworkMgr_Http_ClientCert_0100
-         * @tc.desc   test clientCert with no certPath no keyPath certType any
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it("testHttpClientCert_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            let caseName: string = 'test0100';
-            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try{
-                connection.getDefaultNet((error: BusinessError<void>|null, data: connection.NetHandle| undefined) => {
-                    if (data?.netId == 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
-                        ExpectFail();
-                        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                        done();
-                    } else {
-                        hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
-                        let httpRequest: http.HttpRequest = http.createHttp();
-                        httpRequest.request(
-                            ADDR_TEST_DOMAIN_HTTPS,
-                            {
-                                method: http.RequestMethod.GET,
-                                extraData: "MineMine",
-                                header: {
-                                    "Content-Type": "application/json",
-                                } as Record<string,string>,
-                                readTimeout: 60000,
-                                connectTimeout: 60000,
-                                clientCert: {
-                                    certPath: "",
-                                    keyPath: "",
-                                    keyPassword: pwd,
-                                    certType: http.CertType.P12,
-                                } as http.ClientCert,
-                            },
-                            (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
-                                if (err?.code != 0) {
-                                    hilog.info(domain, tag, '%{public}s', caseName +' httpRequest fail, get error is '+JSON.stringify(err));
-                                    ExpectFail();
-                                    httpRequest.destroy();
-                                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                                    done();
-                                } else {
-                                    hilog.info(domain, tag, '%{public}s', caseName +'httpRequest success: data ->'+JSON.stringify(data));
-                                    ExpectTrue(data?.responseCode === 200);
-                                    httpRequest.destroy();
-                                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                                    done();
-                                }
-                            });
-                    }
+    /**
+     * @tc.name   testHttpClientCert_static_0100
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_0100
+     * @tc.desc   test clientCert with no certPath no keyPath certType any
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHttpClientCert_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'test0100';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
+              let httpRequest: http.HttpRequest = http.createHttp();
+              httpRequest.request(
+                ADDR_TEST_DOMAIN_HTTPS,
+                {
+                  method: http.RequestMethod.GET,
+                  extraData: "MineMine",
+                  header: {
+                    "Content-Type": "application/json",
+                  } as Record<string, string>,
+                  readTimeout: 60000,
+                  connectTimeout: 60000,
+                  clientCert: {
+                    certPath: "",
+                    keyPath: "",
+                    keyPassword: pwd,
+                    certType: http.CertType.P12,
+                  } as http.ClientCert,
+                },
+                (err: BusinessError<void> | null, data: http.HttpResponse | undefined) => {
+                  if (err?.code != 0) {
+                    hilog.info(domain, tag, '%{public}s',
+                      caseName + ' httpRequest fail, get error is ' + JSON.stringify(err));
+                    ExpectFail();
+                    httpRequest.destroy();
+                    hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                    done();
+                  } else {
+                    hilog.info(domain, tag, '%{public}s',
+                      caseName + 'httpRequest success: data ->' + JSON.stringify(data));
+                    ExpectTrue(data?.responseCode == 200);
+                    httpRequest.destroy();
+                    hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                    done();
+                  }
                 });
-            }catch(err){
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-                ExpectFail();
-                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
-                done();
             }
-        })
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+          done();
+        }
+      })
 
-        /**
-         * @tc.name   testHttpClientCert_static_0200
-         * @tc.number SUB_NetworkMgr_Http_ClientCert_0200
-         * @tc.desc   test clientCert with no certPath no keyPath certType any
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
-         */
-        it("testHttpClientCert_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testHttpClientCert_static_0200';
-            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try{
-                connection.getDefaultNet((error: BusinessError<void>|null, data: connection.NetHandle| undefined) => {
-                    if (data?.netId == 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
-                        ExpectFail();
-                        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                        done();
-                    } else {
-                        hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
-                        let httpRequest: http.HttpRequest = http.createHttp();
-                        httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, {
-                            method: http.RequestMethod.GET,
-                            extraData: "MineMine",
-                            header: {
-                                "Content-Type": "application/json",
-                            } as Record<string,string>,
-                            readTimeout: 60000,
-                            connectTimeout: 60000,
-                            clientCert: {
-                                certPath: "",
-                                keyPath: "",
-                                keyPassword: pwd,
-                                certType: http.CertType.P12,
-                            }as http.ClientCert,
-                        }).then((res: http.HttpResponse) => {
-                            hilog.info(domain, tag, '%{public}s', caseName +'request success res: res ->'+JSON.stringify(res));
-                            ExpectTrue(res.responseCode === 200);
-                            httpRequest.destroy();
-                            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                            done();
-                        }).catch((error: Error) => {
-                            let err = error as BusinessError;
-                            hilog.info(domain, tag, '%{public}s', caseName +' request failed err '+JSON.stringify(err));
-                            ExpectFail();
-                            httpRequest.destroy();
-                            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                            done();
-                        });
-                    }
+    /**
+     * @tc.name   testHttpClientCert_static_0200
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_0200
+     * @tc.desc   test clientCert with no certPath no keyPath certType any
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testHttpClientCert_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testHttpClientCert_static_0200';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
+              let httpRequest: http.HttpRequest = http.createHttp();
+              httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, {
+                method: http.RequestMethod.GET,
+                extraData: "MineMine",
+                header: {
+                  "Content-Type": "application/json",
+                } as Record<string, string>,
+                readTimeout: 60000,
+                connectTimeout: 60000,
+                clientCert: {
+                  certPath: "",
+                  keyPath: "",
+                  keyPassword: pwd,
+                  certType: http.CertType.P12,
+                } as http.ClientCert,
+              }).then((res: http.HttpResponse) => {
+                hilog.info(domain, tag, '%{public}s', caseName + 'request success res: res ->' + JSON.stringify(res));
+                ExpectTrue(res.responseCode == 200);
+                httpRequest.destroy();
+                hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                done();
+              }).catch((error: Error) => {
+                let err = error as BusinessError;
+                hilog.info(domain, tag, '%{public}s', caseName + ' request failed err ' + JSON.stringify(err));
+                ExpectFail();
+                httpRequest.destroy();
+                hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                done();
+              });
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testHttpClientCert_static_0300
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_0300
+     * @tc.desc   test clientCert with illegal certPath illegal keyPath certType any legitimated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testHttpClientCert_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testHttpClientCert_static_0300';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
+              let httpRequest: http.HttpRequest = http.createHttp();
+              httpRequest.request(
+                ADDR_TEST_DOMAIN_HTTPS,
+                {
+                  method: http.RequestMethod.GET,
+                  extraData: "MineMine",
+                  header: {
+                    "Content-Type": "application/json",
+                  } as Record<string, string>,
+                  readTimeout: 60000,
+                  connectTimeout: 60000,
+                  clientCert: {
+                    certPath: "aaa",
+                    keyPath: "aaa",
+                    keyPassword: pwd,
+                    certType: http.CertType.P12,
+                  } as http.ClientCert,
+                },
+                (err: BusinessError<void> | null, data: http.HttpResponse | undefined) => {
+                  if (err?.code != 0) {
+                    hilog.info(domain, tag, '%{public}s', caseName + '  get error is ' + JSON.stringify(err));
+                    ExpectTrue(err?.code == 2300058);
+                    httpRequest.destroy();
+                    hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                    done();
+                  } else {
+                    hilog.info(domain, tag, '%{public}s', caseName + ' request success ');
+                    ExpectFail();
+                    httpRequest.destroy();
+                    hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                    done();
+                  }
+                }
+              );
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testHttpClientCert_static_0400
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_0400
+     * @tc.desc   test clientCert with illegal certPath illegal keyPath certType any legitimated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testHttpClientCert_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testHttpClientCert_static_0400';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
+              let httpRequest: http.HttpRequest = http.createHttp();
+              httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, {
+                method: http.RequestMethod.GET,
+                extraData: "MineMine",
+                header: {
+                  "Content-Type": "application/json",
+                } as Record<string, string>,
+                readTimeout: 60000,
+                connectTimeout: 60000,
+                clientCert: {
+                  certPath: "aaa",
+                  keyPath: "aaa",
+                  keyPassword: pwd,
+                  certType: http.CertType.P12,
+                } as http.ClientCert,
+              }).then((res: http.HttpResponse) => {
+                hilog.info(domain, tag, '%{public}s', caseName + ' request success res:' + JSON.stringify(res));
+                ExpectFail();
+                httpRequest.destroy();
+                hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                done();
+              }).catch((error: Error) => {
+                let err = error as BusinessError;
+                hilog.info(domain, tag, '%{public}s', caseName + '  get error is ' + JSON.stringify(err));
+                ExpectTrue(err?.code == 2300058);
+                httpRequest.destroy();
+                hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                done();
+              });
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testHttpClientCert_static_0500
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_0500
+     * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.P12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testHttpClientCert_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testHttpClientCert_static_0500';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
+              let httpRequest: http.HttpRequest = http.createHttp();
+              httpRequest.request(
+                ADDR_TEST_DOMAIN_HTTPS,
+                {
+                  method: http.RequestMethod.GET,
+                  extraData: "MineMine",
+                  header: {
+                    "Content-Type": "application/json",
+                  } as Record<string, string>,
+                  readTimeout: 60000,
+                  connectTimeout: 60000,
+                  clientCert: {
+                    certPath: certPath_legitimate,
+                    keyPath: keyPath_legitimate,
+                    keyPassword: pwd,
+                    certType: http.CertType.P12,
+                  } as http.ClientCert,
+                },
+                (err: BusinessError<void> | null, data: http.HttpResponse | undefined) => {
+                  if (err?.code != 0) {
+                    hilog.info(domain, tag, '%{public}s',
+                      caseName + '  httpRequest fail err is ' + JSON.stringify(err));
+                    ExpectTrue(err?.code == 2300058);
+                    httpRequest.destroy();
+                    hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                    done();
+                  } else {
+                    hilog.info(domain, tag, '%{public}s',
+                      caseName + 'httpRequest success : data ->' + JSON.stringify(data));
+                    ExpectFail();
+                    httpRequest.destroy();
+                    hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                    done();
+                  }
                 });
-            }catch(err){
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-                ExpectFail();
-                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
-                done();
             }
-        })
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+          done();
+        }
+      })
 
-        /**
-         * @tc.name   testHttpClientCert_static_0300
-         * @tc.number SUB_NetworkMgr_Http_ClientCert_0300
-         * @tc.desc   test clientCert with illegal certPath illegal keyPath certType any legitimated
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
-         */
-        it("testHttpClientCert_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testHttpClientCert_static_0300';
-            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try{
-                connection.getDefaultNet((error: BusinessError<void>|null, data: connection.NetHandle| undefined) => {
-                    if (data?.netId == 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
-                        ExpectFail();
-                        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                        done();
-                    } else {
-                        hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
-                        let httpRequest: http.HttpRequest = http.createHttp();
-                        httpRequest.request(
-                            ADDR_TEST_DOMAIN_HTTPS,
-                            {
-                                method: http.RequestMethod.GET,
-                                extraData: "MineMine",
-                                header: {
-                                    "Content-Type": "application/json",
-                                }as Record<string,string>,
-                                readTimeout: 60000,
-                                connectTimeout: 60000,
-                                clientCert: {
-                                    certPath: "aaa",
-                                    keyPath: "aaa",
-                                    keyPassword: pwd,
-                                    certType: http.CertType.P12,
-                                } as http.ClientCert,
-                            },
-                            (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
-                                if (err?.code != 0) {
-                                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                                    ExpectTrue(err?.code === 2300058);
-                                    httpRequest.destroy();
-                                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                                    done();
-                                } else {
-                                    hilog.info(domain, tag, '%{public}s', caseName +' request success ');
-                                    ExpectFail();
-                                    httpRequest.destroy();
-                                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                                    done();
-                                }
-                            }
-                        );
-                    }
+    /**
+     * @tc.name   testHttpClientCert_static_0600
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_0600
+     * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.P12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testHttpClientCert_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testHttpClientCert_static_0600';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
+              let httpRequest: http.HttpRequest = http.createHttp();
+              httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, {
+                method: http.RequestMethod.GET,
+                extraData: "MineMine",
+                header: {
+                  "Content-Type": "application/json",
+                } as Record<string, string>,
+                readTimeout: 60000,
+                connectTimeout: 60000,
+                clientCert: {
+                  certPath: certPath_legitimate,
+                  keyPath: keyPath_legitimate,
+                  keyPassword: pwd,
+                  certType: http.CertType.P12,
+                } as http.ClientCert,
+              }).then((res: http.HttpResponse) => {
+                hilog.info(domain, tag, '%{public}s', caseName + 'request success res:: data ->' + JSON.stringify(res));
+                ExpectFail();
+                httpRequest.destroy();
+                hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                done();
+              }).catch((error: Error) => {
+                let err = error as BusinessError;
+                hilog.info(domain, tag, '%{public}s',
+                  caseName + '  httpRequest fail: get error is ' + JSON.stringify(err));
+                ExpectTrue(err?.code == 2300058);
+                httpRequest.destroy();
+                hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                done();
+              });
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testHttpClientCert_static_0700
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_0700
+     * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.PEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testHttpClientCert_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testHttpClientCert_static_0700';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
+              let httpRequest: http.HttpRequest = http.createHttp();
+              httpRequest.request(
+                ADDR_TEST_DOMAIN_HTTPS,
+                {
+                  method: http.RequestMethod.GET,
+                  extraData: "MineMine",
+                  header: {
+                    "Content-Type": "application/json",
+                  } as Record<string, string>,
+                  readTimeout: 60000,
+                  connectTimeout: 60000,
+                  clientCert: {
+                    certPath: certPath_legitimate,
+                    keyPath: keyPath_legitimate,
+                    keyPassword: pwd,
+                    certType: http.CertType.PEM,
+                  } as http.ClientCert,
+                },
+                (err: BusinessError<void> | null, data: http.HttpResponse | undefined) => {
+                  if (err?.code != 0) {
+                    hilog.info(domain, tag, '%{public}s',
+                      caseName + '  httpRequest fail, get error is ' + JSON.stringify(err));
+                    ExpectTrue(err?.code == 2300058);
+                    httpRequest.destroy();
+                    hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                    done();
+                  } else {
+                    hilog.info(domain, tag, '%{public}s',
+                      caseName + 'httpRequest success: data ->' + JSON.stringify(data));
+                    ExpectFail();
+                    httpRequest.destroy();
+                    hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                    done();
+                  }
                 });
-            }catch(err){
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-                ExpectFail();
-                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
-                done();
             }
-        })
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+          done();
+        }
+      })
 
-        /**
-         * @tc.name   testHttpClientCert_static_0400
-         * @tc.number SUB_NetworkMgr_Http_ClientCert_0400
-         * @tc.desc   test clientCert with illegal certPath illegal keyPath certType any legitimated
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
-         */
-        it("testHttpClientCert_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testHttpClientCert_static_0400';
-            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try{
-                connection.getDefaultNet((error: BusinessError<void>|null, data: connection.NetHandle| undefined) => {
-                    if (data?.netId == 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
-                        ExpectFail();
-                        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                        done();
-                    } else {
-                        hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
-                        let httpRequest: http.HttpRequest = http.createHttp();
-                        httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, {
-                            method: http.RequestMethod.GET,
-                            extraData: "MineMine",
-                            header: {
-                                "Content-Type": "application/json",
-                            }as Record<string,string>,
-                            readTimeout: 60000,
-                            connectTimeout: 60000,
-                            clientCert: {
-                                certPath: "aaa",
-                                keyPath: "aaa",
-                                keyPassword: pwd,
-                                certType: http.CertType.P12,
-                            } as http.ClientCert,
-                        }).then((res: http.HttpResponse) => {
-                            hilog.info(domain, tag, '%{public}s', caseName +' request success res:'+JSON.stringify(res));
-                            ExpectFail();
-                            httpRequest.destroy();
-                            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                            done();
-                        }).catch((error: Error) => {
-                            let err = error as BusinessError;
-                            hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                            ExpectTrue(err.code === 2300058);
-                            httpRequest.destroy();
-                            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                            done();
-                        });
-                    }
+    /**
+     * @tc.name   testHttpClientCert_static_0800
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_0800
+     * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.PEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testHttpClientCert_static_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testHttpClientCert_static_0800';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
+              let httpRequest: http.HttpRequest = http.createHttp();
+              httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, {
+                method: http.RequestMethod.GET,
+                extraData: "MineMine",
+                header: {
+                  "Content-Type": "application/json",
+                } as Record<string, string>,
+                readTimeout: 60000,
+                connectTimeout: 60000,
+                clientCert: {
+                  certPath: certPath_legitimate,
+                  keyPath: keyPath_legitimate,
+                  keyPassword: pwd,
+                  certType: http.CertType.PEM,
+                } as http.ClientCert,
+              }).then((res: http.HttpResponse) => {
+                hilog.info(domain, tag, '%{public}s', caseName + 'request success res: ->' + JSON.stringify(res));
+                ExpectFail();
+                httpRequest.destroy();
+                hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                done();
+              }).catch((error: Error) => {
+                let err = error as BusinessError;
+                hilog.info(domain, tag, '%{public}s',
+                  caseName + ' httpRequest fail: get error is ' + JSON.stringify(err));
+                ExpectTrue(err?.code == 2300058);
+                httpRequest.destroy();
+                hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                done();
+              });
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testHttpClientCert_static_0900
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_0900
+     * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.DER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testHttpClientCert_static_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testHttpClientCert_static_0900';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
+              let httpRequest: http.HttpRequest = http.createHttp();
+              httpRequest.request(
+                ADDR_TEST_DOMAIN_HTTPS,
+                {
+                  method: http.RequestMethod.GET,
+                  extraData: "MineMine",
+                  header: {
+                    "Content-Type": "application/json",
+                  } as Record<string, string>,
+                  readTimeout: 60000,
+                  connectTimeout: 60000,
+                  clientCert: {
+                    certPath: certPath_legitimate,
+                    keyPath: keyPath_legitimate,
+                    keyPassword: pwd,
+                    certType: http.CertType.DER,
+                  } as http.ClientCert,
+                },
+                (err: BusinessError<void> | null, data: http.HttpResponse | undefined) => {
+                  if (err?.code != 0) {
+                    hilog.info(domain, tag, '%{public}s', caseName + '  get error is ' + JSON.stringify(err));
+                    ExpectTrue(err?.code == 2300058);
+                    httpRequest.destroy();
+                    hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                    done();
+                  } else {
+                    hilog.info(domain, tag, '%{public}s',
+                      caseName + 'httpRequest success: data ->' + JSON.stringify(data));
+                    ExpectFail();
+                    httpRequest.destroy();
+                    hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                    done();
+                  }
                 });
-            }catch(err){
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-                ExpectFail();
-                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
-                done();
             }
-        })
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+          done();
+        }
+      })
 
-        /**
-         * @tc.name   testHttpClientCert_static_0500
-         * @tc.number SUB_NetworkMgr_Http_ClientCert_0500
-         * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.P12
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
-         */
-        it("testHttpClientCert_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testHttpClientCert_static_0500';
-            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try{
-                connection.getDefaultNet((error: BusinessError<void>|null, data: connection.NetHandle| undefined) => {
-                    if (data?.netId == 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
-                        ExpectFail();
-                        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                        done();
-                    } else {
-                        hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
-                        let httpRequest: http.HttpRequest = http.createHttp();
-                        httpRequest.request(
-                            ADDR_TEST_DOMAIN_HTTPS,
-                            {
-                                method: http.RequestMethod.GET,
-                                extraData: "MineMine",
-                                header: {
-                                    "Content-Type": "application/json",
-                                }as Record<string,string>,
-                                readTimeout: 60000,
-                                connectTimeout: 60000,
-                                clientCert: {
-                                    certPath: certPath_legitimate,
-                                    keyPath: keyPath_legitimate,
-                                    keyPassword: pwd,
-                                    certType: http.CertType.P12,
-                                } as http.ClientCert,
-                            },
-                            (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
-                                if (err?.code != 0) {
-                                    hilog.info(domain, tag, '%{public}s', caseName +'  httpRequest fail err is '+JSON.stringify(err));
-                                    ExpectTrue(err?.code === 2300058);
-                                    httpRequest.destroy();
-                                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                                    done();
-                                } else {
-                                    hilog.info(domain, tag, '%{public}s', caseName +'httpRequest success : data ->'+JSON.stringify(data));
-                                    ExpectFail();
-                                    httpRequest.destroy();
-                                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                                    done();
-                                }
-                            });
-                    }
-                });
-            }catch(err){
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+    /**
+     * @tc.name   testHttpClientCert_static_1000
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_1000
+     * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.DER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testHttpClientCert_static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testHttpClientCert_static_1000';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
+              let httpRequest: http.HttpRequest = http.createHttp();
+              httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, {
+                method: http.RequestMethod.GET,
+                extraData: "MineMine",
+                header: {
+                  "Content-Type": "application/json",
+                } as Record<string, string>,
+                readTimeout: 60000,
+                connectTimeout: 60000,
+                clientCert: {
+                  certPath: certPath_legitimate,
+                  keyPath: keyPath_legitimate,
+                  keyPassword: pwd,
+                  certType: http.CertType.DER,
+                } as http.ClientCert,
+              }).then((res: http.HttpResponse) => {
+                hilog.info(domain, tag, '%{public}s', caseName + 'request success res: ->' + JSON.stringify(res));
                 ExpectFail();
-                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                httpRequest.destroy();
+                hilog.info(domain, tag, '%{public}s', caseName + '---test end');
                 done();
+              }).catch((error: Error) => {
+                let err = error as BusinessError;
+                hilog.info(domain, tag, '%{public}s', caseName + '  get error is ' + JSON.stringify(err));
+                ExpectTrue(err?.code == 2300058);
+                httpRequest.destroy();
+                hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                done();
+              });
             }
-        })
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName + ' end');
+          done();
+        }
+      })
 
-        /**
-         * @tc.name   testHttpClientCert_static_0600
-         * @tc.number SUB_NetworkMgr_Http_ClientCert_0600
-         * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.P12
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
-         */
-        it("testHttpClientCert_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testHttpClientCert_static_0600';
-            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try{
-                connection.getDefaultNet((error: BusinessError<void>|null, data: connection.NetHandle| undefined) => {
-                    if (data?.netId == 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
-                        ExpectFail();
-                        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                        done();
-                    } else {
-                        hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
-                        let httpRequest: http.HttpRequest = http.createHttp();
-                        httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, {
-                            method: http.RequestMethod.GET,
-                            extraData: "MineMine",
-                            header: {
-                                "Content-Type": "application/json",
-                            }as Record<string,string>,
-                            readTimeout: 60000,
-                            connectTimeout: 60000,
-                            clientCert: {
-                                certPath: certPath_legitimate,
-                                keyPath: keyPath_legitimate,
-                                keyPassword: pwd,
-                                certType: http.CertType.P12,
-                            }as http.ClientCert,
-                        }).then((res: http.HttpResponse) => {
-                            hilog.info(domain, tag, '%{public}s', caseName +'request success res:: data ->'+JSON.stringify(res));
-                            ExpectFail();
-                            httpRequest.destroy();
-                            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                            done();
-                        }).catch((error: Error) => {
-                            let err = error as BusinessError;
-                            hilog.info(domain, tag, '%{public}s', caseName +'  httpRequest fail: get error is '+JSON.stringify(err));
-                            ExpectTrue(err.code === 2300058);
-                            httpRequest.destroy();
-                            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                            done();
-                        });
-                    }
-                });
-            }catch(err){
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+    /**
+     * @tc.name   testHttpClientCert_static_1100
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_1100
+     * @tc.desc   test clientCert with no certPath no keyPath certType any
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHttpClientCert_static_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = "testHttpClientCert_static_1100";
+        hilog.info(domain, tag, '%{public}s', `${caseName} test Start`);
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Please connect to the network`);
+              ExpectFail();
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Network connected`);
+              let httpRequest: http.HttpRequest = http.createHttp();
+              let httpRequestOptions: http.HttpRequestOptions = {
+                method: http.RequestMethod.GET,
+                extraData: "MineMine",
+                header: { "Content-Type": "application/json" } as Record<string, string>,
+                readTimeout: 60000,
+                connectTimeout: 60000,
+                clientCert: {
+                  certPath: "",
+                  keyPath: "",
+                  keyPassword: pwd,
+                  certType: http.CertType.P12,
+                }
+              };
+              httpRequest.requestInStream(
+                ADDR_TEST_DOMAIN_HTTPS,
+                httpRequestOptions,
+                (err: BusinessError<void> | null, data: int | undefined) => {
+                  if (err?.code != 0) {
+                    hilog.info(domain, tag, '%{public}s', `${caseName} httpRequest fail ${JSON.stringify(err)}`);
+                    ExpectFail();
+                    httpRequest.destroy();
+                    done();
+                  } else {
+                    hilog.info(domain, tag, '%{public}s', `${caseName} data:${data}`);
+                    ExpectTrue(data == 200);
+                    httpRequest.destroy();
+                    done();
+                  }
+                }
+              );
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} try...catch err: ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName} test End`);
+      });
+
+    /**
+     * @tc.name   testHttpClientCert_static_1200
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_1200
+     * @tc.desc   test clientCert with no certPath no keyPath certType any
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHttpClientCert_static_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = "testHttpClientCert_static_1200";
+        hilog.info(domain, tag, '%{public}s', `${caseName} test Start`);
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Please connect to the network`);
+              ExpectFail();
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Network connected`);
+              let httpRequest: http.HttpRequest = http.createHttp();
+              let httpRequestOptions: http.HttpRequestOptions = {
+                method: http.RequestMethod.GET,
+                extraData: "MineMine",
+                header: { "Content-Type": "application/json" } as Record<string, string>,
+                readTimeout: 60000,
+                connectTimeout: 60000,
+                clientCert: {
+                  certPath: "",
+                  keyPath: "",
+                  keyPassword: pwd,
+                  certType: http.CertType.P12,
+                }
+              }
+              httpRequest.requestInStream(ADDR_TEST_DOMAIN_HTTPS, httpRequestOptions).then((data: int) => {
+                hilog.info(domain, tag, '%{public}s', `${caseName} httpRequest success res:${JSON.stringify(data)}`);
+                ExpectTrue(data == 200);
+                httpRequest.destroy();
+                done();
+              }).catch((err) => {
+                hilog.info(domain, tag, '%{public}s', `${caseName} request failed err: ${JSON.stringify(err)}`);
                 ExpectFail();
-                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                httpRequest.destroy();
                 done();
+              });
             }
-        })
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} try...catch err: ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName} test End`);
+      });
 
-        /**
-         * @tc.name   testHttpClientCert_static_0700
-         * @tc.number SUB_NetworkMgr_Http_ClientCert_0700
-         * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.PEM
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
-         */
-        it("testHttpClientCert_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testHttpClientCert_static_0700';
-            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try{
-                connection.getDefaultNet((error: BusinessError<void>|null, data: connection.NetHandle| undefined) => {
-                    if (data?.netId == 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
-                        ExpectFail();
-                        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                        done();
-                    } else {
-                        hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
-                        let httpRequest: http.HttpRequest = http.createHttp();
-                        httpRequest.request(
-                            ADDR_TEST_DOMAIN_HTTPS,
-                            {
-                                method: http.RequestMethod.GET,
-                                extraData: "MineMine",
-                                header: {
-                                    "Content-Type": "application/json",
-                                }as Record<string,string>,
-                                readTimeout: 60000,
-                                connectTimeout: 60000,
-                                clientCert: {
-                                    certPath: certPath_legitimate,
-                                    keyPath: keyPath_legitimate,
-                                    keyPassword: pwd,
-                                    certType: http.CertType.PEM,
-                                }as http.ClientCert,
-                            },
-                            (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
-                                if (err?.code != 0) {
-                                    hilog.info(domain, tag, '%{public}s', caseName +'  httpRequest fail, get error is '+JSON.stringify(err));
-                                    ExpectTrue(err?.code === 2300058);
-                                    httpRequest.destroy();
-                                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                                    done();
-                                } else {
-                                    hilog.info(domain, tag, '%{public}s', caseName +'httpRequest success: data ->'+JSON.stringify(data));
-                                    ExpectFail();
-                                    httpRequest.destroy();
-                                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                                    done();
-                                }
-                            });
-                    }
-                });
-            }catch(err){
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+    /**
+     * @tc.name   testHttpClientCert_static_1300
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_1300
+     * @tc.desc   test clientCert with illegal certPath illegal keyPath certType any legitimated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHttpClientCert_static_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = "testHttpClientCert_static_1300";
+        hilog.info(domain, tag, '%{public}s', `${caseName} test Start`);
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Please connect to the network`);
+              ExpectFail();
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Network connected`);
+              let httpRequest: http.HttpRequest = http.createHttp();
+              let httpRequestOptions: http.HttpRequestOptions = {
+                method: http.RequestMethod.GET,
+                extraData: "MineMine",
+                header: { "Content-Type": "application/json" } as Record<string, string>,
+                readTimeout: 60000,
+                connectTimeout: 60000,
+                clientCert: {
+                  certPath: "aaa",
+                  keyPath: "aaa",
+                  keyPassword: pwd,
+                  certType: http.CertType.P12,
+                },
+              };
+              httpRequest.requestInStream(
+                ADDR_TEST_DOMAIN_HTTPS,
+                httpRequestOptions,
+                (err: BusinessError<void> | null, data: int | undefined) => {
+                  if (err?.code != 0) {
+                    hilog.info(domain, tag, '%{public}s', `${caseName} httpRequest fail ${JSON.stringify(err)}`);
+                    ExpectTrue(err?.code == 2300058);
+                    httpRequest.destroy();
+                    done();
+                  } else {
+                    hilog.info(domain, tag, '%{public}s', `${caseName} httpRequest success ${JSON.stringify(data)}`);
+                    ExpectFail();
+                    httpRequest.destroy();
+                    done();
+                  }
+                }
+              );
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} try...catch err: ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName} test End`);
+      });
+
+    /**
+     * @tc.name   testHttpClientCert_static_1400
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_1400
+     * @tc.desc   test clientCert with illegal certPath illegal keyPath certType any legitimated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHttpClientCert_static_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = "testHttpClientCert_static_1400";
+        hilog.info(domain, tag, '%{public}s', `${caseName} test Start`);
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Please connect to the network`);
+              ExpectFail();
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Network connected`);
+              let httpRequest: http.HttpRequest = http.createHttp();
+              let httpRequestOptions: http.HttpRequestOptions = {
+                method: http.RequestMethod.GET,
+                extraData: "MineMine",
+                header: {
+                  "Content-Type": "application/json",
+                } as Record<string, string>,
+                readTimeout: 60000,
+                connectTimeout: 60000,
+                clientCert: {
+                  certPath: "aaa",
+                  keyPath: "aaa",
+                  keyPassword: pwd,
+                  certType: http.CertType.P12,
+                },
+              };
+              httpRequest.requestInStream(ADDR_TEST_DOMAIN_HTTPS, httpRequestOptions).then((data: int) => {
+                hilog.info(domain, tag, '%{public}s', `${caseName} httpRequest success res:${JSON.stringify(data)}`);
                 ExpectFail();
-                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                httpRequest.destroy();
                 done();
+              }).catch((err) => {
+                hilog.info(domain, tag, '%{public}s', `${caseName} httpRequest fail:${JSON.stringify(err)}`);
+                ExpectTrue(err?.code == 2300058);
+                httpRequest.destroy();
+                done();
+              });
             }
-        })
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} try...catch err: ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName} test End`);
+      });
 
-        /**
-         * @tc.name   testHttpClientCert_static_0800
-         * @tc.number SUB_NetworkMgr_Http_ClientCert_0800
-         * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.PEM
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
-         */
-        it("testHttpClientCert_static_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testHttpClientCert_static_0800';
-            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try{
-                connection.getDefaultNet((error: BusinessError<void>|null, data: connection.NetHandle| undefined) => {
-                    if (data?.netId == 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
-                        ExpectFail();
-                        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                        done();
-                    } else {
-                        hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
-                        let httpRequest: http.HttpRequest = http.createHttp();
-                        httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, {
-                            method: http.RequestMethod.GET,
-                            extraData: "MineMine",
-                            header: {
-                                "Content-Type": "application/json",
-                            }as Record<string,string>,
-                            readTimeout: 60000,
-                            connectTimeout: 60000,
-                            clientCert: {
-                                certPath: certPath_legitimate,
-                                keyPath: keyPath_legitimate,
-                                keyPassword: pwd,
-                                certType: http.CertType.PEM,
-                            }as http.ClientCert,
-                        }).then((res: http.HttpResponse) => {
-                            hilog.info(domain, tag, '%{public}s', caseName +'request success res: ->'+JSON.stringify(res));
-                            ExpectFail();
-                            httpRequest.destroy();
-                            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                            done();
-                        }).catch((error: Error) => {
-                            let err = error as BusinessError;
-                            hilog.info(domain, tag, '%{public}s', caseName +' httpRequest fail: get error is '+JSON.stringify(err));
-                            ExpectTrue(err.code === 2300058);
-                            httpRequest.destroy();
-                            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                            done();
-                        });
-                    }
-                });
-            }catch(err){
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+    /**
+     * @tc.name   testHttpClientCert_static_1500
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_1500
+     * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.P12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHttpClientCert_static_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = "testHttpClientCert_static_1500";
+        hilog.info(domain, tag, '%{public}s', `${caseName} test Start`);
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Please connect to the network`);
+              ExpectFail();
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Network connected`);
+              let httpRequest: http.HttpRequest = http.createHttp();
+              let httpRequestOptions: http.HttpRequestOptions = {
+                method: http.RequestMethod.GET,
+                extraData: "MineMine",
+                header: {
+                  "Content-Type": "application/json",
+                } as Record<string, string>,
+                readTimeout: 60000,
+                connectTimeout: 60000,
+                clientCert: {
+                  certPath: certPath_legitimate,
+                  keyPath: keyPath_legitimate,
+                  keyPassword: pwd,
+                  certType: http.CertType.P12,
+                }
+              }
+              httpRequest.requestInStream(
+                ADDR_TEST_DOMAIN_HTTPS,
+                httpRequestOptions,
+                (err: BusinessError<void> | null, data: int | undefined) => {
+                  if (err?.code != 0) {
+                    hilog.info(domain, tag, '%{public}s', `${caseName} httpRequest fail ${JSON.stringify(err)}`);
+                    ExpectTrue(err?.code == 2300058);
+                    httpRequest.destroy();
+                    done();
+                  } else {
+                    hilog.info(domain, tag, '%{public}s', `${caseName} httpRequest success ${JSON.stringify(data)}`);
+                    ExpectFail();
+                    httpRequest.destroy();
+                    done();
+                  }
+                }
+              );
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} try...catch err: ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName} test End`);
+      });
+
+    /**
+     * @tc.name   testHttpClientCert_static_1600
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_1600
+     * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.P12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHttpClientCert_static_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = "testHttpClientCert_static_1600";
+        hilog.info(domain, tag, '%{public}s', `${caseName} test Start`);
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Please connect to the network`);
+              ExpectFail();
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Network connected`);
+              let httpRequest: http.HttpRequest = http.createHttp();
+              let httpRequestOptions: http.HttpRequestOptions = {
+                method: http.RequestMethod.GET,
+                extraData: "MineMine",
+                header: {
+                  "Content-Type": "application/json",
+                } as Record<string, string>,
+                readTimeout: 60000,
+                connectTimeout: 60000,
+                clientCert: {
+                  certPath: certPath_legitimate,
+                  keyPath: keyPath_legitimate,
+                  keyPassword: pwd,
+                  certType: http.CertType.P12,
+                },
+              };
+              httpRequest.requestInStream(ADDR_TEST_DOMAIN_HTTPS, httpRequestOptions).then((data: int) => {
+                hilog.info(domain, tag, '%{public}s', `${caseName} httpRequest success res:${JSON.stringify(data)}`);
                 ExpectFail();
-                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                httpRequest.destroy();
                 done();
+              }).catch((err) => {
+                hilog.info(domain, tag, '%{public}s', `${caseName} httpRequest fail:${JSON.stringify(err)}`);
+                ExpectTrue(err?.code == 2300058);
+                httpRequest.destroy();
+                done();
+              });
             }
-        })
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} try...catch err: ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName} test End`);
+      });
 
-        /**
-         * @tc.name   testHttpClientCert_static_0900
-         * @tc.number SUB_NetworkMgr_Http_ClientCert_0900
-         * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.DER
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
-         */
-        it("testHttpClientCert_static_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testHttpClientCert_static_0900';
-            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try{
-                connection.getDefaultNet((error: BusinessError<void>|null, data: connection.NetHandle| undefined) => {
-                    if (data?.netId == 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
-                        ExpectFail();
-                        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                        done();
-                    } else {
-                        hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
-                        let httpRequest: http.HttpRequest = http.createHttp();
-                        httpRequest.request(
-                            ADDR_TEST_DOMAIN_HTTPS,
-                            {
-                                method: http.RequestMethod.GET,
-                                extraData: "MineMine",
-                                header: {
-                                    "Content-Type": "application/json",
-                                }as Record<string,string>,
-                                readTimeout: 60000,
-                                connectTimeout: 60000,
-                                clientCert: {
-                                    certPath: certPath_legitimate,
-                                    keyPath: keyPath_legitimate,
-                                    keyPassword: pwd,
-                                    certType: http.CertType.DER,
-                                }as http.ClientCert,
-                            },
-                            (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
-                                if (err?.code != 0) {
-                                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                                    ExpectTrue(err?.code === 2300058);
-                                    httpRequest.destroy();
-                                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                                    done();
-                                } else {
-                                    hilog.info(domain, tag, '%{public}s', caseName + 'httpRequest success: data ->'+JSON.stringify(data));
-                                    ExpectFail();
-                                    httpRequest.destroy();
-                                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                                    done();
-                                }
-                            });
-                    }
-                });
-            }catch(err){
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+    /**
+     * @tc.name   testHttpClientCert_static_1700
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_1700
+     * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.PEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHttpClientCert_static_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = "testHttpClientCert_static_1700";
+        hilog.info(domain, tag, '%{public}s', `${caseName} test Start`);
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Please connect to the network`);
+              ExpectFail();
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Network connected`);
+              let httpRequest: http.HttpRequest = http.createHttp();
+              let httpRequestOptions: http.HttpRequestOptions = {
+                method: http.RequestMethod.GET,
+                extraData: "MineMine",
+                header: {
+                  "Content-Type": "application/json",
+                } as Record<string, string>,
+                readTimeout: 60000,
+                connectTimeout: 60000,
+                clientCert: {
+                  certPath: certPath_legitimate,
+                  keyPath: keyPath_legitimate,
+                  keyPassword: pwd,
+                  certType: http.CertType.PEM,
+                }
+              };
+              httpRequest.requestInStream(
+                ADDR_TEST_DOMAIN_HTTPS,
+                httpRequestOptions,
+                (err: BusinessError<void> | null, data: int | undefined) => {
+                  if (err?.code != 0) {
+                    hilog.info(domain, tag, '%{public}s', `${caseName} httpRequest fail ${JSON.stringify(err)}`);
+                    ExpectTrue(err?.code == 2300058);
+                    httpRequest.destroy();
+                    done();
+                  } else {
+                    hilog.info(domain, tag, '%{public}s', `${caseName} httpRequest success ${JSON.stringify(data)}`);
+                    ExpectFail();
+                    httpRequest.destroy();
+                    done();
+                  }
+                }
+              );
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} try...catch err: ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName} test End`);
+      });
+
+    /**
+     * @tc.name   testHttpClientCert_static_1800
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_1800
+     * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.PEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHttpClientCert_static_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = "testHttpClientCert_static_1800";
+        hilog.info(domain, tag, '%{public}s', `${caseName} test Start`);
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Please connect to the network`);
+              ExpectFail();
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Network connected`);
+              let httpRequest: http.HttpRequest = http.createHttp();
+              let httpRequestOptions: http.HttpRequestOptions = {
+                method: http.RequestMethod.GET,
+                extraData: "MineMine",
+                header: {
+                  "Content-Type": "application/json",
+                } as Record<string, string>,
+                readTimeout: 60000,
+                connectTimeout: 60000,
+                clientCert: {
+                  certPath: certPath_legitimate,
+                  keyPath: keyPath_legitimate,
+                  keyPassword: pwd,
+                  certType: http.CertType.PEM,
+                }
+              };
+              httpRequest.requestInStream(ADDR_TEST_DOMAIN_HTTPS, httpRequestOptions).then((data: int) => {
+                hilog.info(domain, tag, '%{public}s', `${caseName} httpRequest success res:${JSON.stringify(data)}`);
                 ExpectFail();
-                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                httpRequest.destroy();
                 done();
+              }).catch((err) => {
+                hilog.info(domain, tag, '%{public}s', `${caseName} httpRequest fail:${JSON.stringify(err)}`);
+                ExpectTrue(err?.code == 2300058);
+                httpRequest.destroy();
+                done();
+              });
             }
-        })
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} try...catch err: ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName} test End`);
+      });
 
-        /**
-         * @tc.name   testHttpClientCert_static_1000
-         * @tc.number SUB_NetworkMgr_Http_ClientCert_1000
-         * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.DER
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
-         */
-        it("testHttpClientCert_static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testHttpClientCert_static_1000';
-            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try{
-                connection.getDefaultNet((error: BusinessError<void>|null, data: connection.NetHandle| undefined) => {
-                    if (data?.netId == 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
-                        ExpectFail();
-                        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                        done();
-                    } else {
-                        hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
-                        let httpRequest: http.HttpRequest = http.createHttp();
-                        httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, {
-                            method: http.RequestMethod.GET,
-                            extraData: "MineMine",
-                            header: {
-                                "Content-Type": "application/json",
-                            }as Record<string,string>,
-                            readTimeout: 60000,
-                            connectTimeout: 60000,
-                            clientCert: {
-                                certPath: certPath_legitimate,
-                                keyPath: keyPath_legitimate,
-                                keyPassword: pwd,
-                                certType: http.CertType.DER,
-                            }as http.ClientCert,
-                        }).then((res: http.HttpResponse) => {
-                            hilog.info(domain, tag, '%{public}s', caseName +'request success res: ->'+JSON.stringify(res));
-                            ExpectFail();
-                            httpRequest.destroy();
-                            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                            done();
-                        }).catch((error: Error) => {
-                            let err = error as BusinessError;
-                            hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                            ExpectTrue(err.code === 2300058);
-                            httpRequest.destroy();
-                            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                            done();
-                        });
-                    }
-                });
-            }catch(err){
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+    /**
+     * @tc.name   testHttpClientCert_static_1900
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_1900
+     * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.DER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHttpClientCert_static_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = "testHttpClientCert_static_1900";
+        hilog.info(domain, tag, '%{public}s', `${caseName} test Start`);
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Please connect to the network`);
+              ExpectFail();
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Network connected`);
+              let httpRequest: http.HttpRequest = http.createHttp();
+              let httpRequestOptions: http.HttpRequestOptions = {
+                method: http.RequestMethod.GET,
+                extraData: "MineMine",
+                header: {
+                  "Content-Type": "application/json",
+                } as Record<string, string>,
+                readTimeout: 60000,
+                connectTimeout: 60000,
+                clientCert: {
+                  certPath: certPath_legitimate,
+                  keyPath: keyPath_legitimate,
+                  keyPassword: pwd,
+                  certType: http.CertType.DER,
+                }
+              };
+              httpRequest.requestInStream(
+                ADDR_TEST_DOMAIN_HTTPS,
+                httpRequestOptions,
+                (err: BusinessError<void> | null, data: int | undefined) => {
+                  if (err?.code != 0) {
+                    hilog.info(domain, tag, '%{public}s', `${caseName} httpRequest fail ${JSON.stringify(err)}`);
+                    ExpectTrue(err?.code == 2300058);
+                    httpRequest.destroy();
+                    done();
+                  } else {
+                    hilog.info(domain, tag, '%{public}s', `${caseName} httpRequest success ${JSON.stringify(data)}`);
+                    ExpectFail();
+                    httpRequest.destroy();
+                    done();
+                  }
+                }
+              );
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} try...catch err: ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName} test End`);
+      });
+
+    /**
+     * @tc.name   testHttpClientCert_static_2000
+     * @tc.number SUB_NetworkMgr_Http_ClientCert_2000
+     * @tc.desc   test clientCert with  legitimated certPath and keyPath http.CertType.DER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHttpClientCert_static_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = "testHttpClientCert_static_2000";
+        hilog.info(domain, tag, '%{public}s', `${caseName} test Start`);
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Please connect to the network`);
+              ExpectFail();
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Network connected`);
+              let httpRequest: http.HttpRequest = http.createHttp();
+              let httpRequestOptions: http.HttpRequestOptions = {
+                method: http.RequestMethod.GET,
+                extraData: "MineMine",
+                header: {
+                  "Content-Type": "application/json",
+                } as Record<string, string>,
+                readTimeout: 60000,
+                connectTimeout: 60000,
+                clientCert: {
+                  certPath: certPath_legitimate,
+                  keyPath: keyPath_legitimate,
+                  keyPassword: pwd,
+                  certType: http.CertType.DER,
+                },
+              };
+              httpRequest.requestInStream(ADDR_TEST_DOMAIN_HTTPS, httpRequestOptions).then((data: int) => {
+                hilog.info(domain, tag, '%{public}s', `${caseName} httpRequest success res:${JSON.stringify(data)}`);
                 ExpectFail();
-                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
+                httpRequest.destroy();
                 done();
+              }).catch((err) => {
+                hilog.info(domain, tag, '%{public}s', `${caseName} httpRequest fail:${JSON.stringify(err)}`);
+                ExpectTrue(err?.code == 2300058);
+                httpRequest.destroy();
+                done();
+              });
             }
-        })
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} try...catch err: ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName} test End`);
+      });
 
-    })
-
+  })
 }

@@ -1,4 +1,5 @@
 import { ErrorEvent, MessageEvents, ThreadWorkerGlobalScope, worker, ArkTSUtils, collections } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 import { typeWait01 } from '../atomics';
 
 const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
@@ -11,8 +12,12 @@ const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
  */
 workerPort.onmessage = (e: MessageEvents) => {
   const data = e.data as typeWait01;
-  const res = ArkTSUtils.Atomics.wait(data.ta, data.index, data.value, 10000);
-  workerPort.postMessage(res);
+  try {
+    const res = ArkTSUtils.Atomics.wait(data.ta, data.index, data.value, 10000);
+    workerPort.postMessage(res);
+  } catch (error) {
+    workerPort.postMessage((error as BusinessError).code);
+  }
 };
 
 /**

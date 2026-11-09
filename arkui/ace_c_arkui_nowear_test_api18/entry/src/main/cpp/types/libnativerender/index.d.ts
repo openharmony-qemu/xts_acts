@@ -307,6 +307,22 @@ export const TextPickerCascadeTest_a1: () => string[];
 
 export const TextPickerCascadeTest_a2: () => string[];
 
+export const TextPickerCascadeTest_a3: () => string[];
+
+export const TextPickerCascadeTest_a4: () => string[];
+
+export const TextPickerCascadeTest_a5: () => string[];
+
+export const TextPickerCascadeTest_a7: () => string[];
+
+export const TextPickerCascadeTest_a8: () => string[];
+
+export const TextPickerCascadeTest_a9: () => string[];
+
+export const TextPickerCascadeTest_a10: () => string[];
+
+export const TextPickerCascadeTest_a11: () => string[];
+
 export const TextPickerCascadeTest_b: () => string[];
 
 export const TextPickerCascadeTest_b1: () => string[];

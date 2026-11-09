@@ -23,6 +23,7 @@ import hilog from '@ohos.hilog';
 import { MyCallback } from '../models/MyCallback';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
+import { UIContext } from '@ohos.arkui.UIContext';
 
 class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
@@ -32,12 +33,36 @@ class EntryAbility extends UIAbility {
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onWindowStageCreate');
     windowStage.loadContent('pages/Index', (err: BusinessError<void> | null): void => {
-    // windowStage.loadContent('pages/button/ButtonRollAngleTest', (err: BusinessError<void> | null): void => { //返回为null
       hilog.info(0x0000, 'testTag EntryAbility', 'loadContent entering');
+      MyCallback.runCasesOfCallback();
       if (err?.code) {
         hilog.info(0x0000, 'testTag EntryAbility', 'loadContent error');
         return;
       }
+      let windowClass: window.Window | undefined = undefined;
+      windowStage.getMainWindow((err: BusinessError<void> | null, data): void => {
+        let errCode: number = err!.code;
+        if (errCode) {
+          console.error('Failed to obtain the main window. Cause: ' + JSON.stringify(err));
+          return;
+        }
+        windowClass = data;
+        hilog.info(0x0000, 'testTag', 'Succeeded in obtaining the main window. Data: ' + JSON.stringify(data));
+        try {
+          let properties: window.WindowProperties | undefined = windowClass?.getWindowProperties();
+          let wRect: window.Rect | undefined = properties?.windowRect;
+          AppStorage.setOrCreate<number>('winLeft', wRect?.left ?? 0);
+          AppStorage.setOrCreate<number>('winTop', wRect?.top ?? 0);
+          AppStorage.setOrCreate<number>('displayID', properties?.displayId ?? 0);
+          hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + wRect?.left + ',winTop:' + wRect?.top);
+        } catch (exception) {
+          hilog.error(0x0000, 'testTag',
+            'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
+        }
+        if (windowClass !== null) {
+          AppStorage.setOrCreate<UIContext>('uiContent', windowClass!.getUIContext());
+        }
+      })
       hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok'+JSON.stringify(this.context));
       hilog.info(0x0000, 'testTag EntryAbility', 'onWindowStageCreate ok');
     });

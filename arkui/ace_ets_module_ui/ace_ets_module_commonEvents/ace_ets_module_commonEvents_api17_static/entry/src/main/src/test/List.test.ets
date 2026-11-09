@@ -15,7 +15,48 @@
  */
 import AxisEvent from './AxisEvent/AxisEvent.test';
 import RollAngle from './RollAngle/RollAngle.test';
+import ResponseRegionTest from './ResponseRegionTest/ResponseRegion.test';
+import SourceTypeTest from './SourceTypeTest/SourceType.test';
+import AxisEventTest from './AxisEventTest/AxisEvent.test';
+import DragEventTest from './DragEventTest/DragEvent.test';
+import CommonTest from './CommonTest/Common.test';
+import CommonUndefinedTest from './CommonMethodTest/CommonUndefined.test';
+import CommonAttrsModifierUndefinedTest from './CommonMethodTest/CommonAttrsModifierUndefined.test';
+import OnChildTouchTestUndefinedTest from './CommonMethodTest/OnChildTouchTestUndefined.test';
+import NextFocusUndefinedTest from './CommonMethodTest/NextFocusUndefined.test';
+import DragEventUndefinedTest from './CommonMethodTest/DragEventUndefined.test';
+import DragEventAttrsModifierUndefinedTest from './CommonMethodTest/DragEventAttrsModifierUndefined.test';
+import OnMouseUndefinedTest from './CommonMethodTest/OnMouseUndefined.test';
+import OnMouseAttrsModifierUndefinedTest from './CommonMethodTest/OnMouseAttrsModifierUndefined.test';
+import clickEffectUndefined from './CommonMethodTest/ClickEffectUndefined.test';
+import dragControlUndefined from './CommonMethodTest/DragControlUndefined.test';
+import clickEffectModifierUndefined from './CommonMethodTest/ClickEffectModifierUndefined.test';
+import dragControlModifierUndefined from './CommonMethodTest/DragControlModifierUndefined.test';
+import onBlurUndefinedTest from './CommonMethodTest/OnBlurUndefined.test';
+import tabIndexUndefinedTest from './CommonMethodTest/TabIndexUndefined.test';
+import onBlurModifierUndefinedTest from './CommonMethodTest/OnBlurModifierUndefined.test';
+import tabIndexModifierUndefinedTest from './CommonMethodTest/TabIndexModifierUndefined.test';
 export default function testsuite() {
   AxisEvent(); //11.28master pass
   RollAngle(); //11.28master pass
+  ResponseRegionTest();
+  SourceTypeTest();
+  DragEventTest();
+  CommonTest();
+  CommonUndefinedTest();
+  CommonAttrsModifierUndefinedTest();
+  OnChildTouchTestUndefinedTest();
+  NextFocusUndefinedTest();
+  DragEventUndefinedTest();
+  DragEventAttrsModifierUndefinedTest();
+  OnMouseUndefinedTest();
+  OnMouseAttrsModifierUndefinedTest();
+  clickEffectUndefined();
+  dragControlUndefined();
+  clickEffectModifierUndefined();
+  dragControlModifierUndefined();
+  onBlurUndefinedTest();
+  tabIndexUndefinedTest();
+  onBlurModifierUndefinedTest();
+  tabIndexModifierUndefinedTest();
 }

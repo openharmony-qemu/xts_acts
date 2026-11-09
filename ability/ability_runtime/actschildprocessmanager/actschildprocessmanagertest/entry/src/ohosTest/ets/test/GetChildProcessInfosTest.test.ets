@@ -27,6 +27,7 @@ const ERR_SERVICE = 16000050;
 const ERR_CONTEXT = 16000011;
 const ERR_CAPABILITY = 801;
 const ERR_NOT_SUPPORTED = 16000061;
+const ERR_ABILITY_NOT_EXIST = 16000001;
 const BUNDLE = 'com.acts.childprocessmanagertest';
 
 function sleep(ms: number): Promise<void> {
@@ -74,7 +75,7 @@ export default function getChildProcessInfosTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_GetChildProcessInfos_StartMode_0100
      * @tc.number SUB_Ability_AbilityRuntime_GetChildProcessInfos_StartMode_0100
-     * @tc.desc   Assert StartMode enum values related to child process query scope.
+     * @tc.desc   Assert StartMode enum Values related to child process query scope.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -89,7 +90,7 @@ export default function getChildProcessInfosTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_GetChildProcessInfos_Empty_0100
      * @tc.number SUB_Ability_AbilityRuntime_GetChildProcessInfos_Empty_0100
-     * @tc.desc   getChildProcessInfos returns array (empty or existing children).
+     * @tc.desc   getChildProcessInfos empty coverage: returns Array length === 0 when no child.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -98,14 +99,72 @@ export default function getChildProcessInfosTest() {
       async (done: Function) => {
         try {
           let infos = await childProcessManager.getChildProcessInfos();
+          console.info(`${TAG} Empty_0100 getChildProcessInfos length=${Array.isArray(infos) ? infos.length : -1}`);
           expect(Array.isArray(infos)).assertTrue();
-          for (let i = 0; i < infos.length; i++) {
-            assertInfoShape(infos[i]);
+          if (infos.length === 0) {
+            console.info(`${TAG} Empty_0100 no child process, length === 0`);
+            expect(infos.length).assertEqual(0);
+          } else {
+            for (let i = 0; i < infos.length; i++) {
+              assertInfoShape(infos[i]);
+              console.info(`${TAG} Empty_0100 killing pid=${infos[i].pid}`);
+              let killResult = await abilityDelegator.executeShellCommand(`kill -9 ${infos[i].pid}`);
+              console.info(`${TAG} Empty_0100 kill -9 ${infos[i].pid} result=${JSON.stringify(killResult)}`);
+            }
+            await sleep(500);
+            let afterKill = await childProcessManager.getChildProcessInfos();
+            console.info(`${TAG} Empty_0100 afterKill length=${Array.isArray(afterKill) ? afterKill.length : -1}`);
+            expect(Array.isArray(afterKill)).assertTrue();
+            if (afterKill.length > 0) {
+              console.info(`${TAG} Empty_0100 residual processes remain after kill, length=${afterKill.length}`);
+              for (let i = 0; i < afterKill.length; i++) {
+                assertInfoShape(afterKill[i]);
+              }
+            }
           }
         } catch (e) {
           let err = e as BusinessError;
           console.info(`${TAG} Empty_0100 code=${err.code}`);
           expect(err.code).assertEqual(ERR_SERVICE);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetChildProcessInfos_NonEmpty_0100
+     * @tc.number SUB_Ability_AbilityRuntime_GetChildProcessInfos_NonEmpty_0100
+     * @tc.desc   getChildProcessInfos non-empty coverage: Array length > 0 after child start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_GetChildProcessInfos_NonEmpty_0100', Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          pid = await childProcessManager.startChildProcess(
+            spawnProcessPath, childProcessManager.StartMode.APP_SPAWN_FORK);
+          expect(pid > 0).assertTrue();
+          await sleep(1000);
+          let infos = await childProcessManager.getChildProcessInfos();
+          expect(Array.isArray(infos)).assertTrue();
+          expect(infos.length > 0).assertTrue();
+          let found = false;
+          for (let i = 0; i < infos.length; i++) {
+            assertInfoShape(infos[i]);
+            if (infos[i].pid === pid) {
+              found = true;
+            }
+          }
+          expect(found).assertTrue();
+        } catch (e) {
+          let err = e as BusinessError;
+          console.info(`${TAG} NonEmpty_0100 code=${err.code}`);
+          if (isCreateUnsupported(err.code) || err.code === ERR_SERVICE) {
+            expect(isCreateUnsupported(err.code) || err.code === ERR_SERVICE).assertTrue();
+            done();
+            return;
+          }
+          expect().assertFail();
         }
         done();
       });
@@ -195,22 +254,43 @@ export default function getChildProcessInfosTest() {
       });
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_GetUIAbilityChildProcessInfos_0100
-     * @tc.number SUB_Ability_AbilityRuntime_GetUIAbilityChildProcessInfos_0100
-     * @tc.desc   getUIAbilityChildProcessInfos; after NEW_PROCESS start when supported.
+     * @tc.name   SUB_Ability_AbilityRuntime_GetUIAbilityChildProcessInfos_Empty_0100
+     * @tc.number SUB_Ability_AbilityRuntime_GetUIAbilityChildProcessInfos_Empty_0100
+     * @tc.desc   getUIAbilityChildProcessInfos empty coverage: Array length === 0 baseline.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_GetUIAbilityChildProcessInfos_0100', Level.LEVEL0,
+    it('SUB_Ability_AbilityRuntime_GetUIAbilityChildProcessInfos_Empty_0100', Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let topAbility = await abilityDelegator.getCurrentTopAbility();
+          let appContext = topAbility.context.getApplicationContext();
+          let infos = await appContext.getUIAbilityChildProcessInfos();
+          expect(Array.isArray(infos)).assertTrue();
+          expect(infos.length).assertEqual(0);
+        } catch (e) {
+          let err = e as BusinessError;
+          console.info(`${TAG} UIAbility_Empty code=${err.code}`);
+          expect(err.code === ERR_SERVICE || err.code === ERR_CONTEXT).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetUIAbilityChildProcessInfos_NonEmpty_0100
+     * @tc.number SUB_Ability_AbilityRuntime_GetUIAbilityChildProcessInfos_NonEmpty_0100
+     * @tc.desc   getUIAbilityChildProcessInfos non-empty: length > 0 after NEW_PROCESS start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_GetUIAbilityChildProcessInfos_NonEmpty_0100', Level.LEVEL0,
       async (done: Function) => {
         try {
           let topAbility = await abilityDelegator.getCurrentTopAbility();
           let uiContext = topAbility.context;
           let appContext = uiContext.getApplicationContext();
-          let before = await appContext.getUIAbilityChildProcessInfos();
-          expect(Array.isArray(before)).assertTrue();
-
           let want: Want = {
             bundleName: BUNDLE,
             moduleName: 'entry',
@@ -220,36 +300,28 @@ export default function getChildProcessInfosTest() {
             processMode: contextConstant.ProcessMode.NEW_PROCESS_ATTACH_TO_PARENT,
             startupVisibility: contextConstant.StartupVisibility.STARTUP_HIDE
           };
-          try {
-            await uiContext.startAbility(want, options);
-            await sleep(1500);
-          } catch (startErr) {
-            let se = startErr as BusinessError;
-            console.info(`${TAG} startAbility code=${se.code}`);
-            if (isCreateUnsupported(se.code)) {
-              let emptyCheck = await appContext.getUIAbilityChildProcessInfos();
-              expect(Array.isArray(emptyCheck)).assertTrue();
-              done();
-              return;
-            }
-          }
-
+          console.info(`${TAG} UIAbility_NonEmpty startAbility begin`);
+          await uiContext.startAbility(want, options);
+          await sleep(1500);
+          console.info(`${TAG} UIAbility_NonEmpty getUIAbilityChildProcessInfos after start`);
           let after = await appContext.getUIAbilityChildProcessInfos();
+          console.info(`${TAG} UIAbility_NonEmpty after length=${Array.isArray(after) ? after.length : -1}`);
           expect(Array.isArray(after)).assertTrue();
+          expect(after.length > 0).assertTrue();
           for (let i = 0; i < after.length; i++) {
             assertInfoShape(after[i]);
           }
-          if (after.length > 0) {
-            expect(after.length >= before.length).assertTrue();
-          }
         } catch (e) {
           let err = e as BusinessError;
-          console.info(`${TAG} UIAbility_0100 code=${err.code}`);
-          if (err.code === ERR_SERVICE || err.code === ERR_CONTEXT) {
-            expect(err.code === ERR_SERVICE || err.code === ERR_CONTEXT).assertTrue();
-          } else {
-            expect().assertFail();
+          console.info(`${TAG} UIAbility_NonEmpty code=${err.code}`);
+          if (isCreateUnsupported(err.code) || err.code === ERR_SERVICE || err.code === ERR_CONTEXT ||
+            err.code === ERR_ABILITY_NOT_EXIST) {
+            expect(isCreateUnsupported(err.code) || err.code === ERR_SERVICE ||
+              err.code === ERR_CONTEXT || err.code === ERR_ABILITY_NOT_EXIST).assertTrue();
+            done();
+            return;
           }
+          expect().assertFail();
         }
         done();
       });

@@ -1,6 +1,8 @@
+import { BusinessError } from '@kit.BasicServicesKit';
 import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { ArkTSUtils, collections, worker, taskpool, ErrorEvent, MessageEvents } from '@kit.ArkTS';
 import {
+  ATOMIC_PARAMETER_ERROR,
   atomicsIsLockFreeTest051,
   atomicsIsLockFreeTest067,
   atomicsIsLockFreeTest077,
@@ -1413,8 +1415,9 @@ export default function atomicsIsLockFreeTest() {
       // First result: valid 1-byte
       expect(results[0].hasError).assertEqual(false);
       expect(typeof results[0].isFree).assertEqual('boolean');
-      // Second result: invalid string (no error, returns false)
-      expect(results[1].hasError).assertEqual(false);
+      // Second result: a non-number size must fail strict parameter validation.
+      expect(results[1].hasError).assertEqual(true);
+      expect(results[1].errorCode).assertEqual(ATOMIC_PARAMETER_ERROR);
       expect(results[1].isFree).assertEqual(false);
       // Third result: valid 1-byte
       expect(results[2].hasError).assertEqual(false);
@@ -1772,27 +1775,41 @@ export default function atomicsIsLockFreeTest() {
 /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0069
      * @tc.number SUB_ARKTSUTILS_ATOMICS_IS_LOCK_FREE_6900
-     * @tc.desc   Test ArkTSUtils.Atomics.isLockFree with object argument ({ value: 4 })
+     * @tc.desc   Verify isLockFree rejects an object argument with BusinessError code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testArkTSUtilsAtomicsIsLockFree0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const objectArg: Record<string, number> = { 'value': 4 };
-      expect(ArkTSUtils.Atomics.isLockFree(objectArg as Object as number)).assertFalse();
+      let didThrow: boolean = false;
+      try {
+        ArkTSUtils.Atomics.isLockFree(objectArg as Object as number);
+      } catch (error) {
+        didThrow = true;
+        expect((error as BusinessError).code).assertEqual(ATOMIC_PARAMETER_ERROR);
+      }
+      expect(didThrow).assertTrue();
       done();
     });
 /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0070
      * @tc.number SUB_ARKTSUTILS_ATOMICS_IS_LOCK_FREE_7000
-     * @tc.desc   Test ArkTSUtils.Atomics.isLockFree with array argument ([4])
+     * @tc.desc   Verify isLockFree rejects an array argument with BusinessError code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testArkTSUtilsAtomicsIsLockFree0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const arrayArg: number[] = [4];
-      expect(ArkTSUtils.Atomics.isLockFree(arrayArg as Object as number)).assertTrue();
+      let didThrow: boolean = false;
+      try {
+        ArkTSUtils.Atomics.isLockFree(arrayArg as Object as number);
+      } catch (error) {
+        didThrow = true;
+        expect((error as BusinessError).code).assertEqual(ATOMIC_PARAMETER_ERROR);
+      }
+      expect(didThrow).assertTrue();
       done();
     });
 /**

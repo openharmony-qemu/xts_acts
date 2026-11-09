@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2023-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -256,6 +256,33 @@ static napi_value OHGetDistributionOSReleaseType(napi_env env, napi_callback_inf
     return result;
 }
 
+static napi_value OHGetOdid(napi_env env, napi_callback_info info)
+{
+    std::string resultString = OH_GetOdid();
+    napi_value result = nullptr;
+    napi_create_string_utf8(env, resultString.data(), NAPI_AUTO_LENGTH, &result);
+    return result;
+}
+
+static napi_value OHGetDiskSN(napi_env env, napi_callback_info info)
+{
+    char diskSn[256] = {0};
+    int32_t ret = OH_GetDiskSN(diskSn);
+
+    napi_value result = nullptr;
+    napi_create_object(env, &result);
+
+    napi_value codeValue = nullptr;
+    napi_create_int32(env, ret, &codeValue);
+    napi_set_named_property(env, result, "code", codeValue);
+
+    napi_value diskSnValue = nullptr;
+    napi_create_string_utf8(env, diskSn, NAPI_AUTO_LENGTH, &diskSnValue);
+    napi_set_named_property(env, result, "diskSn", diskSnValue);
+
+    return result;
+}
+
 static napi_value CanIUse(napi_env env, napi_callback_info info)
 {
     const char *cap;
@@ -316,6 +343,8 @@ static napi_value Init(napi_env env, napi_value exports) {
         {"oHGetDistributionOSVersion", nullptr, OHGetDistributionOSVersion, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHGetDistributionOSApiVersion", nullptr, OHGetDistributionOSApiVersion, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHGetDistributionOSReleaseType", nullptr, OHGetDistributionOSReleaseType, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHGetOdid", nullptr, OHGetOdid, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHGetDiskSN", nullptr, OHGetDiskSN, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"canIUse", nullptr, CanIUse, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"canIUseOther", nullptr, CanIUseOther, nullptr, nullptr, nullptr, napi_default, nullptr}
     };

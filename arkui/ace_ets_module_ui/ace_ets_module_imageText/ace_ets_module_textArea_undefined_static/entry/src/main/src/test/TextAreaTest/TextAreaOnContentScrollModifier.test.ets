@@ -28,6 +28,8 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
+let displayID: Int = 0;
+
 export default function textAreaOnContentScrollModifier() {
   describe('textAreaOnContentScrollModifier', () => {
     beforeAll(async (): Promise<void> => {
@@ -54,9 +56,10 @@ export default function textAreaOnContentScrollModifier() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push textAreaOnContentScrollModifier page error:" + err);
+        console.log("push textAreaOnContentScrollModifier page error:" + err);
       }
       console.info("textAreaOnContentScrollModifier beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
 
@@ -80,9 +83,17 @@ export default function textAreaOnContentScrollModifier() {
       let text = await driver.findComponent(ON.id('key_textArea_onContentScroll_002'))
       await (text?.inputText('这是测试文本1') as Promise<void>)
       await CommonFunc.sleep(500);
-      driver.triggerKey(2054);
+      try {
+        driver.triggerKey(2054, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerKey(2054);
+      try {
+        driver.triggerKey(2054, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let strJsonNew = inspector.getInspectorByKey('test_text_onContentScroll1');
       console.info('[' + tagName + '] Search onContentScroll is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
@@ -97,9 +108,17 @@ export default function textAreaOnContentScrollModifier() {
       await CommonFunc.sleep(500);
       button1?.click()
       await CommonFunc.sleep(1000);
-      driver.triggerKey(2054);
+      try {
+        driver.triggerKey(2054, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerKey(2054);
+      try {
+        driver.triggerKey(2054, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let strJsonNew1 = inspector.getInspectorByKey('test_text_onContentScroll1');
       console.info('[' + tagName + '] Search onContentScroll is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew1)

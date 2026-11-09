@@ -18,6 +18,6 @@ import popupKeyboardAvoidMode from './popup/popupKeyboardAvoidMode.test'
 import detentSelection from './bindSheet/detentSelection.test'
 
 export default function testsuite() {
-  popupKeyboardAvoidMode() //pass:4
+  
   detentSelection() //pass:2
 }

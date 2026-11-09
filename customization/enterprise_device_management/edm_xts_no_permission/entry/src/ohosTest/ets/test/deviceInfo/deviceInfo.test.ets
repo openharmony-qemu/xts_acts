@@ -62,9 +62,9 @@ export default function deviceInfoTest() {
         expect(false).assertTrue();
       } catch (error) {
         if (error.code === 801) {
-          expect(error.code === 801).assertTrue();
+          expect(error.code).assertEqual(801);
         } else {
-          expect(error.code == 201).assertTrue();
+          expect(error.code).assertEqual(201);
         }
       } finally {
         await adminManager.disableAdmin(SELFWANT);

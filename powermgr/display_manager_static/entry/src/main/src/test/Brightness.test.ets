@@ -44,7 +44,7 @@ export default function BrightnessTest() {
           let value: int = 200;
           brightness.setValue(value);
         } catch (e) {
-          e = e as BusinessError;
+         
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -67,7 +67,7 @@ export default function BrightnessTest() {
           let value: int = 30;
           brightness.setValue(value, true);
         } catch (e) {
-          e = e as BusinessError;
+         
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -90,7 +90,7 @@ export default function BrightnessTest() {
           let value: int = 255;
           brightness.setValue(value, false);
         } catch (e) {
-          e = e as BusinessError;
+         
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();

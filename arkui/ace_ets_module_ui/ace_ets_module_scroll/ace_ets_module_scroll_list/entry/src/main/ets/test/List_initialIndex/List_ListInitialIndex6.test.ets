@@ -150,6 +150,7 @@ export default function list_ListInitialIndex6Test() {
 
 
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let swipeComponent = await driver.findComponent(ON.id('List_ListInitialIndex6_Container01'));
       let sizeList = await swipeComponent.getBounds();
       let displayId = await swipeComponent.getDisplayId();

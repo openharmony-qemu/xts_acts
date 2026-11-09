@@ -19,7 +19,7 @@ struct ScrollerCallBackNullUndefined {
   scroller: Scroller = new Scroller();
 
   aboutToAppear() {
-    for (let i = 1; i <= 20; i++) {
+    for (let i = 1; i <= 10; i++) {
       this.numbers.push(i + '')
     }
   }
@@ -27,7 +27,7 @@ struct ScrollerCallBackNullUndefined {
   build() {
     Column() {
       // ========== scrollPage tests ==========
-      Text('scrollPage')
+      Text('scrollPage').fontSize(10)
       Row() {
         // Test scrollPage with null
         Button('null')
@@ -45,7 +45,7 @@ struct ScrollerCallBackNullUndefined {
       }.height('5%')
 
       // ========== scrollTo tests ==========
-      Text('scrollTo')
+      Text('scrollTo').fontSize(10)
       Row() {
         // Test scrollTo with null
         Button('null')
@@ -75,7 +75,7 @@ struct ScrollerCallBackNullUndefined {
       }.height('5%')
 
       // ========== scrollEdge tests ==========
-      Text('scrollEdge')
+      Text('scrollEdge').fontSize(10)
       Row() {
         // Test scrollEdge with null
         Button('null')
@@ -107,7 +107,7 @@ struct ScrollerCallBackNullUndefined {
       }.height('5%')
 
       // ========== scrollToIndex tests ==========
-      Text('scrollToIndex')
+      Text('scrollToIndex').fontSize(10)
       Row() {
         // Test scrollToIndex value with null
         Button('null')
@@ -169,7 +169,7 @@ struct ScrollerCallBackNullUndefined {
       }.height('5%')
 
       // ========== scrollBy tests ==========
-      Text('scrollBy')
+      Text('scrollBy').fontSize(10)
       Row() {
         // Test scrollBy dx with null
         Button('1null')
@@ -200,7 +200,7 @@ struct ScrollerCallBackNullUndefined {
       }.height('5%')
 
       // ========== getItemIndex tests ==========
-      Text('getItemIndex')
+      Text('getItemIndex').fontSize(10)
       Row() {
         // Test getItemIndex x with null
         Button('1null')
@@ -251,7 +251,7 @@ struct ScrollerCallBackNullUndefined {
       }.height('5%')
 
       // ========== getItemRect tests ==========
-      Text('getItemRect')
+      Text('getItemRect').fontSize(10)
       Row() {
         // Test getItemRect with null
         Button('null')
@@ -300,6 +300,5 @@ struct ScrollerCallBackNullUndefined {
     .width('100%')
     .height('100%')
     .backgroundColor(0xDCDCDC)
-    .padding({ top: 5 })
   }
 }

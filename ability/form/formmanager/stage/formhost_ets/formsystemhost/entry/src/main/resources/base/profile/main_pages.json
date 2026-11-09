@@ -1,6 +1,8 @@
 {
   "src": [
     "pages/Index",
-    "pages/LiveForm"
+    "pages/LiveForm",
+    "pages/FormEdit",
+    "pages/FormEditStatic"
   ]
 }

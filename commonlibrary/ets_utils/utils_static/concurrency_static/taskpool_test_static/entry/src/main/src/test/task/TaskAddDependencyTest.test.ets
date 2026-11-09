@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
+import { describe, beforeAll, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 let simpleFunc = (): number => { return 100 }

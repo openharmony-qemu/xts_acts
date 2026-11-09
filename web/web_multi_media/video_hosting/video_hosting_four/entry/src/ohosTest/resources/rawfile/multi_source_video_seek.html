@@ -35,6 +35,10 @@
         getVideo('bodyId').currentTime = number;
         return 'setSeek';
     }
+    function setCurrentTime() {
+        getVideo('bodyId').currentTime = 1;
+        return 'setCurrentTime';
+    }
      function setPlayBackRate() {
         getVideo('bodyId').playbackRate = 2;
         return 'setPlayBackRate';

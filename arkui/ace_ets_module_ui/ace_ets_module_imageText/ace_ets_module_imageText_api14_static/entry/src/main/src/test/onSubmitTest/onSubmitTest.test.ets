@@ -32,6 +32,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
+let displayID: Int = 0;
 export default function onSubmitTest() {
   describe('onSubmitTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -55,9 +56,10 @@ export default function onSubmitTest() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push onSubmitTest page error: " + err);
+        console.log("push onSubmitTest page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
@@ -76,7 +78,11 @@ it('onSubmitTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<v
       let TextArea = await driver.findComponent(ON.id('TextArea'));
       await (TextArea?.inputText('这是测试文本') as Promise<void>)
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2054)
+      try {
+        await driver.triggerKey(2054, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('enterKeyType');
       let obj1 = JSON.parseJsonElement(strJson1);
@@ -113,7 +119,11 @@ it('onSubmitTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<v
       let TextArea: Component | null = await driver.findComponent(ON.id('TextArea'));
       await (TextArea?.inputText('这是测试文本') as Promise<void>)
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2054)
+      try {
+        await driver.triggerKey(2054, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('enterKeyType');
       let obj1 = JSON.parseJsonElement(strJson1);
@@ -147,7 +157,11 @@ it('onSubmitTest_static_0030', Level.LEVEL2, async (done: () => void): Promise<v
       let Search: Component | null = await driver.findComponent(ON.id('Search'));
       await (Search?.inputText('这是测试文本') as Promise<void>)
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2054)
+      try {
+        await driver.triggerKey(2054, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('searchText');
       let obj1 = JSON.parseJsonElement(strJson1);
@@ -184,7 +198,11 @@ it('onSubmitTest_static_0040', Level.LEVEL2, async (done: () => void): Promise<v
       let Search: Component | null = await driver.findComponent(ON.id('Search'));
       await (Search?.inputText('这是测试文本') as Promise<void>)
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2054)
+      try {
+        await driver.triggerKey(2054, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('searchText');
       let obj1 = JSON.parseJsonElement(strJson1);

@@ -33,23 +33,27 @@ let filesDir: string | undefined;
 let testContext: common.UIAbilityContext;
 const TAG = "sendableImageAbilityTest: ";
 
-
 export function isSupportedCameras() : boolean {
   const cameraAvailable = canIUse('SystemCapability.Multimedia.Camera.Core');
-  let context = testContext;
 
+  if (!cameraAvailable){
+    return cameraAvailable
+  }
+
+  let context = testContext;
+ 
   let isSupportedCameras = true;
   let isSupportedCameraManager = false;
   let mCameraManager: camera.CameraManager;
   let mCameraDevicesArray: Array<camera.CameraDevice>;
-
+ 
   let isEmpty = (data: ESObject) => {
     if (data == null || data == undefined) {
       return true;
     }
     return false;
   }
-
+ 
   console.info(TAG + 'Enter getCameraManagerInstance');
   try {
     mCameraManager = camera.getCameraManager(context);
@@ -75,6 +79,7 @@ export function isSupportedCameras() : boolean {
   }
   return isSupportedCameraManager;
 }
+
 let sleep = async (delay: number): Promise<void> => {
   return new Promise((resolve, _) => {
     setTimeout(async () => {
@@ -83,8 +88,14 @@ let sleep = async (delay: number): Promise<void> => {
   });
 };
 
-async function createPreview(cameraManager: camera.CameraManager,
-  receiver: sendableImage.ImageReceiver): Promise<void> {
+let cameraManager: camera.CameraManager;
+
+async function createPreview(receiver: sendableImage.ImageReceiver): Promise<camera.PhotoSession> {
+
+  if (!cameraManager) {
+    cameraManager = camera.getCameraManager(testContext);
+  }
+
   // 获取支持的相机设备对象
   let camerasDevices: Array<camera.CameraDevice> = cameraManager.getSupportedCameras();
 
@@ -93,7 +104,7 @@ async function createPreview(cameraManager: camera.CameraManager,
   let isSupportPhotoMode: boolean = sceneModes.indexOf(camera.SceneMode.NORMAL_PHOTO) >= 0;
   if (!isSupportPhotoMode) {
     console.error('photo mode not support');
-    return;
+    return null as ESObject as camera.PhotoSession;
   }
 
   // 获取profile对象
@@ -133,17 +144,47 @@ async function createPreview(cameraManager: camera.CameraManager,
 
   // 会话开始
   await photoSession.start();
+
+  return photoSession;
 }
+
+// 统一释放 camera 预览资源，避免 imageArrival 持续触发串扰后续用例
+let releasePreview = async (photoSession: camera.PhotoSession): Promise<void> => {
+  try {
+    if (photoSession) {
+      await photoSession.stop();
+      await photoSession.release();
+    }
+  } catch (e) {
+    console.info('releasePreview error: ' + JSON.stringify(e));
+  }
+};
+
+// releasePreview 内部已 try/catch 不会 reject；此包装器返回 void，
+// 供回调内直接调用，避免门禁静态检查"未 await 的 Promise 链缺 .catch"
+let releasePreviewAndDone = (photoSession: camera.PhotoSession, done: Function): void => {
+  (async () => {
+    try {
+      await releasePreview(photoSession);
+    } catch (e) {
+      console.info('releasePreviewAndDone error: ' + JSON.stringify(e));
+    }
+    done();
+  })();
+};
 
 class MySequence implements rpc.Parcelable {
   pixel_map: sendableImage.PixelMap;
+
   constructor(conPixelmap: sendableImage.PixelMap) {
     this.pixel_map = conPixelmap;
   }
+
   marshalling(messageSequence: rpc.MessageSequence) {
     this.pixel_map.marshalling(messageSequence);
     return true;
   }
+
   unmarshalling(messageSequence: rpc.MessageSequence) {
     try {
       this.pixel_map = sendableImage.createPixelMapFromParcel(messageSequence);
@@ -179,8 +220,8 @@ export default function sendableImageSource() {
 
     let filePath: string;
     let fdNumber: number;
-    let receiverApi: sendableImage.ImageReceiver
-    let cameraM : camera.CameraManager;
+    let receiverApi: sendableImage.ImageReceiver;
+
 
     let isEmpty = (temp: ESObject) => {
       if (temp == null || temp == undefined) {
@@ -193,11 +234,7 @@ export default function sendableImageSource() {
     beforeAll(async () => {
       filesDir = AppStorage.get('pathDir')
       testContext = AppStorage.get<common.UIAbilityContext>('testContext') as common.UIAbilityContext
-      if(!isSupportedCameras()){
-        console.info('Failed to obtain the default camera object.Not support usb camera');
-      } else {
-        cameraM = camera.getCameraManager(testContext)
-      }
+      
       await ability()
       let driver = Driver.create()
       await sleep(500)
@@ -210,7 +247,7 @@ export default function sendableImageSource() {
         await button1?.click()
         await button2?.click()
       }
-      sleep(2000)
+      await sleep(2000)
     })
 
     let ability = async () => {
@@ -296,11 +333,6 @@ export default function sendableImageSource() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_URI_0100', Level.LEVEL0, async (done: Function) => {
-      if(!isSupportedCameras()){
-        console.info('Failed to obtain the default camera object.Not support usb camera');
-        done();
-        return
-      }
       const tag: string = "SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_URI_0100"
       let fileName = 'test.jpg'
       try {
@@ -325,11 +357,6 @@ export default function sendableImageSource() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_URI_0200', Level.LEVEL0, async (done: Function) => {
-      if(!isSupportedCameras()){
-        console.info('Failed to obtain the default camera object.Not support usb camera');
-        done();
-        return
-      }
       const tag: string = "SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_URI_0200"
       let fileName = 'test.png'
       try {
@@ -353,11 +380,6 @@ export default function sendableImageSource() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_URI_0300', Level.LEVEL0, async (done: Function) => {
-      if(!isSupportedCameras()){
-        console.info('Failed to obtain the default camera object.Not support usb camera');
-        done();
-        return
-      }
       const tag: string = "SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_URI_0300"
       let fileName = ''
       try {
@@ -381,11 +403,6 @@ export default function sendableImageSource() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_FD_0100', Level.LEVEL0, async (done: Function) => {
-      if(!isSupportedCameras()){
-        console.info('Failed to obtain the default camera object.Not support usb camera');
-        done();
-        return
-      }
       const tag: string = "SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_FD_0100"
       let fileName = 'test.gif'
       try {
@@ -409,11 +426,6 @@ export default function sendableImageSource() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_FD_0200', Level.LEVEL0, async (done: Function) => {
-      if(!isSupportedCameras()){
-        console.info('Failed to obtain the default camera object.Not support usb camera');
-        done();
-        return
-      }
       const tag: string = "testCreateImageSourceFd0200"
       let fileName = 'test.jpg'
       try {
@@ -437,11 +449,6 @@ export default function sendableImageSource() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_FD_0300', Level.LEVEL0, async (done: Function) => {
-      if(!isSupportedCameras()){
-        console.info('Failed to obtain the default camera object.Not support usb camera');
-        done();
-        return
-      }
       const tag: string = "SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_FD_0300"
       let fileName = ''
       try {
@@ -465,11 +472,6 @@ export default function sendableImageSource() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_FD_0400', Level.LEVEL0, async (done: Function) => {
-      if(!isSupportedCameras()){
-        console.info('Failed to obtain the default camera object.Not support usb camera');
-        done();
-        return
-      }
       const tag: string = "SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_FD_0400"
       try {
         let imageSourceApi = await sendableImage.createImageSource(-1)
@@ -493,11 +495,6 @@ export default function sendableImageSource() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_BUFFER_0100', Level.LEVEL0, async (done: Function) => {
-      if(!isSupportedCameras()){
-        console.info('Failed to obtain the default camera object.Not support usb camera');
-        done();
-        return
-      }
       const tag: string = "SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_BUFFER_0100"
       let fileName = 'test.bmp'
       try {
@@ -521,11 +518,6 @@ export default function sendableImageSource() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_BUFFER_0200', Level.LEVEL0, async (done: Function) => {
-      if(!isSupportedCameras()){
-        console.info('Failed to obtain the default camera object.Not support usb camera');
-        done();
-        return
-      }
       const tag: string = "SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_BUFFER_0200"
       let fileName = 'test.jpg'
       try {
@@ -549,11 +541,6 @@ export default function sendableImageSource() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_BUFFER_0300', Level.LEVEL0, async (done: Function) => {
-      if(!isSupportedCameras()){
-        console.info('Failed to obtain the default camera object.Not support usb camera');
-        done();
-        return
-      }
       const tag: string = "SUB_MULTIMEDIA_CREATE_IMAGE_SOURCE_BUFFER_0300"
       try {
         const buf: ArrayBuffer = new ArrayBuffer(0)
@@ -578,11 +565,6 @@ export default function sendableImageSource() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_0100', Level.LEVEL0, async (done: Function) => {
-      if(!isSupportedCameras()){
-        console.info('Failed to obtain the default camera object.Not support usb camera');
-        done();
-        return
-      }
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_0100"
       let fileName = 'test.webp'
       let imageSourceApi = await getImageSource(fileName, "uri")
@@ -609,11 +591,6 @@ export default function sendableImageSource() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_0200', Level.LEVEL0, async (done: Function) => {
-      if(!isSupportedCameras()){
-        console.info('Failed to obtain the default camera object.Not support usb camera');
-        done();
-        return
-      }
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_0200"
       let fileName = 'test.dng'
       let imageSourceApi = await getImageSource(fileName, "uri")
@@ -659,11 +636,6 @@ export default function sendableImageSource() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_0300', Level.LEVEL0, async (done: Function) => {
-      if(!isSupportedCameras()){
-        console.info('Failed to obtain the default camera object.Not support usb camera');
-        done();
-        return
-      }
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_0300"
       let fileName = 'SVG.svg'
       let imageSourceApi = await getImageSource(fileName, "uri")
@@ -691,11 +663,6 @@ export default function sendableImageSource() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_0400', Level.LEVEL0, async (done: Function) => {
-      if(!isSupportedCameras()){
-        console.info('Failed to obtain the default camera object.Not support usb camera');
-        done();
-        return
-      }
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_0400"
       let fileName = 'test.ico'
       let imageSourceApi = await getImageSource(fileName, "uri")
@@ -737,11 +704,6 @@ export default function sendableImageSource() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_RELEASE_0100', Level.LEVEL0, async (done: Function) => {
-      if(!isSupportedCameras()){
-        console.info('Failed to obtain the default camera object.Not support usb camera');
-        done();
-        return
-      }
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_RELEASE_0100"
       let fileName = 'test.jpg'
       let imageSourceApi = await getImageSource(fileName, "uri")
@@ -765,17 +727,15 @@ export default function sendableImageSource() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_RELEASE_0200', Level.LEVEL0, async (done: Function) => {
-      if(!isSupportedCameras()){
-        console.info('Failed to obtain the default camera object.Not support usb camera');
-        done();
-        return
-      }
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_RELEASE_0200"
       let fileName = 'test.jpg'
       let imageSourceApi = await getImageSource(fileName, 'uri')
       await imageSourceApi.release().then(() => {
         imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
           console.info(`0x0000 ${tag} success ${pixelMap}`)
+          // release 后 createPixelMap 意外成功，不符合预期
+          expect().assertFail()
+          done()
         }).catch((error: BusinessError) => {
           console.error(`0x0000 ${tag} failed ${error}`);
           expect(true).assertEqual(JSON.stringify(error) != null);
@@ -907,14 +867,19 @@ export default function sendableImageSource() {
       }
       const tag: string = "SUB_MULTIMEDIA_CREATE_IMAGE_RECEIVER_ON_0100"
       let receiver = await getImageReceiver(1)
+      let isDone = false
+      let photoSession: camera.PhotoSession
       console.info(`0x0000 ${tag} success ${receiver}`)
       console.info(`onImageArrival start`)
       receiver.on('imageArrival', () => {
+        if (isDone) return
+        isDone = true
         console.info(`onImageArrival receiver.on start`)
+        // sendableImage.ImageReceiver 无 off 方法，isDone 标志 + releasePreview 已足够防止串扰
         expect(isEmpty(receiver.size)).assertFalse()
-        done()
+        releasePreviewAndDone(photoSession, done)
       })
-      await createPreview(cameraM, receiver)
+      photoSession = await createPreview(receiver)
 
     })
 
@@ -962,9 +927,13 @@ export default function sendableImageSource() {
       }
       const tag: string = "SUB_MULTIMEDIA_RECEIVER_READ_NEXT_IMAGE_0100"
       let receiver = await getImageReceiver(1)
-      await createPreview(cameraM, receiver)
+      let photoSession = await createPreview(receiver)
+      let isDone = false
       console.info(`0x0000 ${tag} success receiver`)
       receiver.on('imageArrival', () => {
+        if (isDone) return
+        isDone = true
+        // sendableImage.ImageReceiver 无 off 方法，isDone 标志 + releasePreview 已足够防止串扰
         console.info(`onImageArrival receiver.on start`)
         receiver.readNextImage().then((img: sendableImage.Image) => {
           console.info(`0x0000 ${tag} readNextImage success`)
@@ -972,11 +941,11 @@ export default function sendableImageSource() {
           expect(isEmpty(img.format)).assertFalse()
           expect(isEmpty(img.size)).assertFalse()
           expect(isEmpty(img.timestamp)).assertFalse()
-          done()
+          releasePreviewAndDone(photoSession, done)
         }).catch((error: BusinessError) => {
           console.error(`0x0000 ${tag} failed ${error}`)
           expect().assertFail()
-          done()
+          releasePreviewAndDone(photoSession, done)
         })
       })
     })
@@ -997,16 +966,21 @@ export default function sendableImageSource() {
       }
       const tag: string = "SUB_MULTIMEDIA_IMG_GET_COMPONENT_0100"
       let receiver = await getImageReceiver(1)
-      await createPreview(cameraM, receiver)
+      let photoSession = await createPreview(receiver)
+      let isDone = false
       console.info(`0x0000 ${tag} success ${receiver}`)
       receiver.on('imageArrival', () => {
+        if (isDone) return
+        isDone = true
+        // sendableImage.ImageReceiver 无 off 方法，isDone 标志 + releasePreview 已足够防止串扰
         console.info(`onImageArrival receiver.on start`)
         receiver.readNextImage().then((img: sendableImage.Image) => {
           let clipRect = img.clipRect
           let format = img.format
           let size = img.size
           let timestamp = img.timestamp
-          console.info(`0x0000 ${tag} img attributes ${JSON.stringify(clipRect)} ${JSON.stringify(size)} ${format} ${timestamp}`)
+          console.info(
+            `0x0000 ${tag} img attributes ${JSON.stringify(clipRect)} ${JSON.stringify(size)} ${format} ${timestamp}`)
           let componentType = image.ComponentType.JPEG
           img.getComponent(componentType).then((Component: image.Component) => {
             console.info(`0x0000 ${tag} img.getComponent succeeded`)
@@ -1017,12 +991,16 @@ export default function sendableImageSource() {
             console.info(`0x0000 ${tag} byteBuffer is: ${Component.byteBuffer}`)
             expect(Component.componentType).assertEqual(4)
             expect(isEmpty(Component.byteBuffer)).assertFalse()
-            done()
+            releasePreviewAndDone(photoSession, done)
+          }).catch((error: BusinessError) => {
+            console.error(`0x0000 ${tag} getComponent failed ${error}`)
+            expect().assertFail()
+            releasePreviewAndDone(photoSession, done)
           })
         }).catch((error: BusinessError) => {
           console.error(`0x0000 ${tag} failed ${error}`)
           expect().assertFail()
-          done()
+          releasePreviewAndDone(photoSession, done)
         })
       })
     })
@@ -1043,20 +1021,28 @@ export default function sendableImageSource() {
       }
       const tag: string = "SUB_MULTIMEDIA_IMG_GET_COMPONENT_0200"
       let receiver = await getImageReceiver(1)
-      await createPreview(cameraM, receiver)
+      let photoSession = await createPreview(receiver)
+      let isDone = false
       console.info(`0x0000 ${tag} success ${receiver}`)
       receiver.on('imageArrival', () => {
+        if (isDone) return
+        isDone = true
+        // sendableImage.ImageReceiver 无 off 方法，isDone 标志 + releasePreview 已足够防止串扰
         console.info(`onImageArrival receiver.on start`)
         receiver.readNextImage().then((img: sendableImage.Image) => {
           img.getComponent(5).then((Component: image.Component) => {
             console.info(`0x0000 ${tag} img.getComponent succeeded`)
             expect().assertFail()
-            done()
+            releasePreviewAndDone(photoSession, done)
+          }).catch((error: BusinessError) => {
+            console.error(`0x0000 ${tag} getComponent failed ${error}`)
+            expect(true).assertEqual(JSON.stringify(error) != null);
+            releasePreviewAndDone(photoSession, done)
           })
         }).catch((error: BusinessError) => {
-          console.error(`0x0000 ${tag} failed ${error}`)
+          console.error(`0x0000 ${tag} readNextImage failed ${error}`)
           expect(true).assertEqual(JSON.stringify(error) != null);
-          done()
+          releasePreviewAndDone(photoSession, done)
         })
       })
     })
@@ -1078,9 +1064,13 @@ export default function sendableImageSource() {
       }
       const tag: string = "SUB_MULTIMEDIA_IMG_GET_COMPONENT_0300"
       let receiver = await getImageReceiver(1)
-      await createPreview(cameraM, receiver)
+      let photoSession = await createPreview(receiver)
+      let isDone = false
       console.info(`0x0000 ${tag} success ${receiver}`)
       receiver.on('imageArrival', async () => {
+        if (isDone) return
+        isDone = true
+        // sendableImage.ImageReceiver 无 off 方法，isDone 标志 + releasePreview 已足够防止串扰
         console.info(`onImageArrival receiver.on start`)
         let img = await receiver.readNextImage()
         let task1: taskpool.Task = new taskpool.Task(getImgs, img);
@@ -1093,11 +1083,11 @@ export default function sendableImageSource() {
           console.info(`0x0000 ${tag} pixelStride is: ${Component.pixelStride}`)
           console.info(`0x0000 ${tag} byteBuffer is: ${Component.byteBuffer}`)
           expect(isEmpty(Component.byteBuffer)).assertFalse()
-          done()
+          releasePreviewAndDone(photoSession, done)
         }).catch((error: BusinessError) => {
           console.info(`0x0000 ${tag} task1 catch error: ${JSON.stringify(error)}`)
           expect().assertFail()
-          done()
+          releasePreviewAndDone(photoSession, done)
         })
       })
     })
@@ -1119,23 +1109,32 @@ export default function sendableImageSource() {
       }
       const tag: string = "SUB_MULTIMEDIA_IMG_GET_COMPONENT_0400"
       let receiver = await getImageReceiver(1)
-      await createPreview(cameraM, receiver)
+      let photoSession = await createPreview(receiver)
+      let isDone = false
+      let isWorkerDone = false
       console.info(`0x0000 ${tag} onImageArrival start`)
       receiver.on('imageArrival', async () => {
+        if (isDone) return
+        isDone = true
+        // sendableImage.ImageReceiver 无 off 方法，isDone 标志 + releasePreview 已足够防止串扰
         console.info(`onImageArrival receiver.on start`)
         let img = await receiver.readNextImage()
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker')
         console.info(`workerInstance: img ${JSON.stringify(img.clipRect)}`)
         workerInstance.postMessageWithSharedSendable(img);
         workerInstance.onmessage = (e: MessageEvents): void => {
+          if (isWorkerDone) return
+          isWorkerDone = true
           console.info(`0x0000 ${tag} workerInstance receive data: ${JSON.stringify(e.data)}`)
           expect(e.data).assertTrue()
-          done()
+          releasePreviewAndDone(photoSession, done)
         }
         workerInstance.onmessageerror = (e: MessageEvents) => {
+          if (isWorkerDone) return
+          isWorkerDone = true
           console.info(`0x0000 ${tag} worker error: ${e.data}`)
           expect().assertFail()
-          done()
+          releasePreviewAndDone(photoSession, done)
         }
       })
     })
@@ -1156,19 +1155,23 @@ export default function sendableImageSource() {
       }
       const tag: string = "SUB_MULTIMEDIA_IMG_RELEASE_0100"
       let receiver = await getImageReceiver(1)
-      await createPreview(cameraM, receiver)
+      let photoSession = await createPreview(receiver)
+      let isDone = false
       console.info(`0x0000 ${tag} onImageArrival start`)
       receiver.on('imageArrival', () => {
+        if (isDone) return
+        isDone = true
+        // sendableImage.ImageReceiver 无 off 方法，isDone 标志 + releasePreview 已足够防止串扰
         console.info(`onImageArrival receiver.on start`)
         receiver.readNextImage().then(async (img: sendableImage.Image) => {
           let result = await img.release()
           console.info(`0x0000 ${tag} img.release succeeded`)
           expect(isEmpty(result)).assertTrue()
-          done()
+          releasePreviewAndDone(photoSession, done)
         }).catch((error: BusinessError) => {
           console.error(`0x0000 ${tag} failed ${error}`)
           expect().assertFail()
-          done()
+          releasePreviewAndDone(photoSession, done)
         })
       })
     })
@@ -1189,9 +1192,13 @@ export default function sendableImageSource() {
       }
       const tag: string = "SUB_MULTIMEDIA_IMG_RELEASE_0200"
       let receiver = await getImageReceiver(1)
-      await createPreview(cameraM, receiver)
+      let photoSession = await createPreview(receiver)
+      let isDone = false
       console.info(`0x0000 ${tag} onImageArrival start`)
       receiver.on('imageArrival', async () => {
+        if (isDone) return
+        isDone = true
+        // sendableImage.ImageReceiver 无 off 方法，isDone 标志 + releasePreview 已足够防止串扰
         console.info(`onImageArrival receiver.on start`)
         let img = await receiver.readNextImage()
         let task2: taskpool.Task = await new taskpool.Task(getRelease, img)
@@ -1207,14 +1214,16 @@ export default function sendableImageSource() {
             img.getComponent(4).then((Component: image.Component) => {
               console.info(`0x0000 ${tag} img getComponent succeeded`)
               expect().assertFail()
-              done()
+              releasePreviewAndDone(photoSession, done)
             }).catch((error: BusinessError) => {
               console.info(`0x0000 ${tag} img getComponent failed`)
+              // 释放后 getComponent 应当失败，符合预期
+              releasePreviewAndDone(photoSession, done)
             })
           } catch (error) {
             console.info(`0x0000 ${tag} getComponent failed error ${error}`)
             expect(true).assertEqual(JSON.stringify(error) != null);
-            done()
+            releasePreviewAndDone(photoSession, done)
           }
         }, 10)
       })
@@ -1236,14 +1245,21 @@ export default function sendableImageSource() {
       }
       const tag: string = "SUB_MULTIMEDIA_IMG_RELEASE_0300"
       let receiver = await getImageReceiver(1)
-      await createPreview(cameraM, receiver)
+      let photoSession = await createPreview(receiver)
+      let isDone = false
+      let isWorkerDone = false
       console.info(`0x0000 ${tag} onImageArrival start`)
       receiver.on('imageArrival', async () => {
+        if (isDone) return
+        isDone = true
+        // sendableImage.ImageReceiver 无 off 方法，isDone 标志 + releasePreview 已足够防止串扰
         console.info(`onImageArrival receiver.on start`)
         let img = await receiver.readNextImage()
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker('../workers/workerRelease')
         workerInstance.postMessageWithSharedSendable(img);
         workerInstance.onmessage = (e: MessageEvents): void => {
+          if (isWorkerDone) return
+          isWorkerDone = true
           console.info(`0x0000 ${tag} workerInstance receive data: ${JSON.stringify(e.data)}`)
           setTimeout(() => {
             console.info(`0x0000 ${tag} img release success `)
@@ -1251,21 +1267,25 @@ export default function sendableImageSource() {
               img.getComponent(4).then((Component: image.Component) => {
                 console.info(`0x0000 ${tag} img getComponent succeeded`)
                 expect().assertFail()
-                done()
+                releasePreviewAndDone(photoSession, done)
               }).catch((error: BusinessError) => {
                 console.info(`0x0000 ${tag} img getComponent failed`)
+                // 释放后 getComponent 应当失败，符合预期
+                releasePreviewAndDone(photoSession, done)
               })
             } catch (error) {
               console.info(`0x0000 ${tag} getComponent failed error ${error}`)
               expect(true).assertEqual(JSON.stringify(error) != null);
-              done()
+              releasePreviewAndDone(photoSession, done)
             }
           }, 10)
         }
         workerInstance.onmessageerror = (e: MessageEvents) => {
+          if (isWorkerDone) return
+          isWorkerDone = true
           console.info(`0x0000 ${tag} worker error: ${e.data}`)
           expect().assertFail()
-          done()
+          releasePreviewAndDone(photoSession, done)
         }
       })
     })
@@ -1286,21 +1306,26 @@ export default function sendableImageSource() {
       }
       const tag: string = "SUB_MULTIMEDIA_RECEIVER_READ_LATEST_IMAGE_0100"
       let receiver = await getImageReceiver(1)
+      let isDone = false
+      let photoSession: camera.PhotoSession
       console.info(`0x0000 ${tag} success receiver`)
       console.info(`onImageArrival start`)
       receiver.on('imageArrival', () => {
+        if (isDone) return
+        isDone = true
+        // sendableImage.ImageReceiver 无 off 方法，isDone 标志 + releasePreview 已足够防止串扰
         console.info(`onImageArrival receiver.on start`)
         receiver.readLatestImage().then((img: sendableImage.Image) => {
           console.info(`0x0000 ${tag} readLatestImage success`)
           expect(isEmpty(img)).assertFalse()
-          done()
+          releasePreviewAndDone(photoSession, done)
         }).catch((error: BusinessError) => {
           console.error(`0x0000 ${tag} failed ${error}`)
           expect().assertFail()
-          done()
+          releasePreviewAndDone(photoSession, done)
         })
       })
-      await createPreview(cameraM, receiver)
+      photoSession = await createPreview(receiver)
     })
 
     /**
@@ -1426,7 +1451,16 @@ export default function sendableImageSource() {
           console.info(tag + ' Succeeded in reading image pixel data.');
           pixelMap.release();
           done();
+        }).catch((error: BusinessError) => {
+          console.error(tag + ` Failed to read image pixel data. error is ${error}`);
+          expect().assertFail();
+          pixelMap.release();
+          done();
         })
+      }).catch((error: BusinessError) => {
+        console.error(`0x0000 ${tag} createPixelMap failed ${error}`);
+        expect().assertFail();
+        done();
       })
     })
     /**
@@ -1447,13 +1481,19 @@ export default function sendableImageSource() {
         expect(pixelMap.isEditable).assertInstanceOf('Boolean')
         if (pixelMap != undefined) {
           pixelMap.readPixelsToBuffer(readBuffer).then(() => {
-            console.info(tag + ' Succeeded in reading image pixel data.');
+            console.info(tag + ' Succeeded in reading image pixel data (unexpected for small buffer).');
+            expect().assertFail();
+            pixelMap.release();
+            done();
           }).catch((error: BusinessError) => {
             console.error(tag + ` Failed to read image pixel data. errer is ${error}`);
             expect(error).assertEqual(62980115);
             pixelMap.release();
             done();
           })
+        } else {
+          expect().assertFail();
+          done();
         }
       }).catch((error: BusinessError) => {
         console.error(`0x0000 ${tag} failed ${error}`);
@@ -1476,9 +1516,11 @@ export default function sendableImageSource() {
         pixels: new ArrayBuffer(8),
         offset: 0,
         stride: 8,
-        region: {size: {height: 1, width: 2},
-        x: 0,
-        y: 0}
+        region: {
+          size: {height: 1, width: 2},
+          x: 0,
+          y: 0
+        }
       }
       let fileName = 'test.webp'
       let imageSourceApi = await getImageSource(fileName, "uri")
@@ -1511,9 +1553,11 @@ export default function sendableImageSource() {
         pixels: new ArrayBuffer(8),
         offset: 0,
         stride: 8,
-        region: {size: {height: 1, width: 2},
-        x: 0,
-        y: 0}
+        region: {
+          size: {height: 1, width: 2},
+          x: 0,
+          y: 0
+        }
       }
       let fileName = 'test.webp'
       let imageSourceApi = await getImageSource(fileName, "uri")
@@ -1547,9 +1591,11 @@ export default function sendableImageSource() {
         pixels: new ArrayBuffer(8),
         offset: 0,
         stride: 8,
-        region: {size: {height: 1, width: 2},
+        region: {
+          size: {height: 1, width: 2},
           x: 0,
-          y: 0}
+          y: 0
+        }
       };
       const color = new ArrayBuffer(96);
       let opts: image.InitializationOptions = {
@@ -1588,9 +1634,11 @@ export default function sendableImageSource() {
         pixels: new ArrayBuffer(8),
         offset: 0,
         stride: 8,
-        region: {size: {height: 1, width: 2},
+        region: {
+          size: {height: 1, width: 2},
           x: 0,
-          y: 0}
+          y: 0
+        }
       };
       const color = new ArrayBuffer(96);
       let opts: image.InitializationOptions = {
@@ -1707,7 +1755,8 @@ export default function sendableImageSource() {
         console.info(tag + " Successed in creating PixelMap from parcel. ");
         done();
       } catch (error) {
-        console.info(tag + ' Failed to create PixelMap from parcel. error is ' + error + ' error code is ' + error.code);
+        console.info(
+          tag + ' Failed to create PixelMap from parcel. error is ' + error + ' error code is ' + error.code);
         expect(error.code == 62980178).assertTrue();
         done();
       }
@@ -1759,9 +1808,11 @@ export default function sendableImageSource() {
         pixels: new ArrayBuffer(8),
         offset: 0,
         stride: 8,
-        region: {size: {height: 1, width: 2},
-        x: 0,
-        y: 0}
+        region: {
+          size: {height: 1, width: 2},
+          x: 0,
+          y: 0
+        }
       }
       let fileName = 'test.webp'
       let imageSourceApi = await getImageSource(fileName, "uri")
@@ -1795,9 +1846,11 @@ export default function sendableImageSource() {
         pixels: new ArrayBuffer(8),
         offset: 0,
         stride: 8,
-        region: {size: {height: 1, width: 2},
-        x: 0,
-        y: 0}
+        region: {
+          size: {height: 1, width: 2},
+          x: 0,
+          y: 0
+        }
       }
       let fileName = 'test.webp'
       let imageSourceApi = await getImageSource(fileName, "uri")
@@ -1831,9 +1884,11 @@ export default function sendableImageSource() {
         pixels: new ArrayBuffer(8),
         offset: 0,
         stride: 8,
-        region: {size: {height: 1, width: 2},
-        x: 0,
-        y: 0}
+        region: {
+          size: {height: 1, width: 2},
+          x: 0,
+          y: 0
+        }
       }
       let fileName = 'test.webp'
       let imageSourceApi = await getImageSource(fileName, "uri")
@@ -2254,7 +2309,8 @@ export default function sendableImageSource() {
         pixelMap.release();
         done();
       }).catch((error: BusinessError) => {
-        console.error(tag + ` Failed to apply color space for pixelmap object. code is ${error.code}, message is ${error.message}`); 
+        console.error(
+          tag + ` Failed to apply color space for pixelmap object. code is ${error.code}, message is ${error.message}`); 
         expect().assertFail();
         done();
         })
@@ -2354,9 +2410,11 @@ export default function sendableImageSource() {
         pixels: new ArrayBuffer(8),
         offset: 0,
         stride: 8,
-        region: {size: {height: 0, width: 0},
-        x: 0,
-        y: 0}
+        region: {
+          size: {height: 0, width: 0},
+          x: 0,
+          y: 0
+        }
       }
       let fileName = 'test.webp'
       let imageSourceApi = await getImageSource(fileName, "uri")
@@ -2373,7 +2431,6 @@ export default function sendableImageSource() {
           done();
         })
       })
-      done();
     })
 
     /**
@@ -2390,9 +2447,11 @@ export default function sendableImageSource() {
         pixels: new ArrayBuffer(8),
         offset: 0,
         stride: 8,
-        region: {size: {height: -1, width: -1},
-        x: 0,
-        y: 0}
+        region: {
+          size: {height: -1, width: -1},
+          x: 0,
+          y: 0
+        }
       }
       let fileName = 'test.webp'
       let imageSourceApi = await getImageSource(fileName, "uri")
@@ -2477,6 +2536,11 @@ export default function sendableImageSource() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_RECEIVER_SIZE_0100', Level.LEVEL0, async (done: Function) => {
+      if(!isSupportedCameras()){
+        console.info('Failed to obtain the default camera object.Not support usb camera');
+        done();
+        return
+      }
       const tag: string = "SUB_MULTIMEDIA_IMAGE_RECEIVER_SIZE_0100"
       let size: image.Size = { height: undefined!, width: undefined! } 
       try {
@@ -2499,6 +2563,11 @@ export default function sendableImageSource() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_RECEIVER_FORMAT_0100', Level.LEVEL0, async (done: Function) => {
+      if(!isSupportedCameras()){
+        console.info('Failed to obtain the default camera object.Not support usb camera');
+        done();
+        return
+      }
       const tag: string = "SUB_MULTIMEDIA_IMAGE_RECEIVER_FORMAT_0100"
       let size: image.Size = { height: 8192, width: 8 } 
       try {
@@ -2521,10 +2590,16 @@ export default function sendableImageSource() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_RECEIVER_CAPACITY_0100', Level.LEVEL0, async (done: Function) => {
+      if(!isSupportedCameras()){
+        console.info('Failed to obtain the default camera object.Not support usb camera');
+        done();
+        return
+      }
       const tag: string = "SUB_MULTIMEDIA_IMAGE_RECEIVER_CAPACITY_0100"
       let size: image.Size = { height: 8192, width: 8 } 
       try {
-        let receiver: sendableImage.ImageReceiver = sendableImage.createImageReceiver(size, image.ImageFormat.JPEG, undefined!);
+        let receiver: sendableImage.ImageReceiver = 
+          sendableImage.createImageReceiver(size, image.ImageFormat.JPEG, undefined!);
         console.info(tag + ' Succeeded in creating Receive Capacity. receiver is ' + receiver);
         expect().assertFail();
         done();
@@ -2543,6 +2618,11 @@ export default function sendableImageSource() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_READ_LATEST_IMAGE_0100', Level.LEVEL0, async (done: Function) => {
+      if(!isSupportedCameras()){
+        console.info('Failed to obtain the default camera object.Not support usb camera');
+        done();
+        return
+      }
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_READ_LATEST_IMAGE_0100"
       let size: image.Size = {
         height: 8192,
@@ -2568,6 +2648,11 @@ export default function sendableImageSource() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_READ_NEXT_IMAGE_0100', Level.LEVEL0, async (done: Function) => {
+      if(!isSupportedCameras()){
+        console.info('Failed to obtain the default camera object.Not support usb camera');
+        done();
+        return
+      }
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_READ_NEXT_IMAGE_0100"
       let size: image.Size = {
         height: 8192,

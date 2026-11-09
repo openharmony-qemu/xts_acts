@@ -2,7 +2,8 @@ import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hy
 import { ArkTSUtils, collections, worker, taskpool, ErrorEvent, MessageEvents } from '@kit.ArkTS';
 import { sleep } from './utils';
 
-import { typeWait01, typeWait02, typeWait03, typeWait04, typeWait05, typeWait06, typeWait07, typeWait11 } from './atomics';
+import { ATOMIC_INDEX_ERROR, typeWait01, typeWait02, typeWait03, typeWait04, typeWait05,
+  typeWait06, typeWait07, typeWait11 } from './atomics';
 
 
 export default function atomicsWaitTest() {
@@ -473,7 +474,7 @@ export default function atomicsWaitTest() {
 /**
      * @tc.name   testArkTSUtilsAtomicsWait0012
      * @tc.number SUB_ARKTSUTILS_ATOMICS_WAIT_1200
-     * @tc.desc   Verify Atomics.wait with out-of-range index 1 returns RangeError in worker
+     * @tc.desc   Verify wait reports BusinessError code 10200001 for an out-of-range index in a worker
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -481,27 +482,25 @@ export default function atomicsWaitTest() {
     it('testArkTSUtilsAtomicsWait0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ta = new collections.Int32Array(sab); // Int32Array with length 1
-      let finish = false;
-
-      const errorResult = await new Promise<string>((resolve) => {
-        const workerInstance = new worker.ThreadWorker("./workers/Worker01.ets");
-        workerInstance.postMessageWithSharedSendable({ ta, index: 1, value: 0 } as typeWait01)
-        workerInstance.onmessage = (e) => {
-          resolve(e.data)
-          workerInstance.terminate()
-        }
-        workerInstance.onerror = (e) => {
-          resolve(e.message)
-          workerInstance.terminate()
-        }
-        workerInstance.onexit = () => {
-          finish = true
-        }
+      const workerInstance = new worker.ThreadWorker('./workers/Worker01.ets');
+      const exited = new Promise<void>((resolve) => {
+        workerInstance.onexit = (): void => { resolve(); };
       });
-      while (!finish) {
-        await sleep(100)
+      try {
+        const errorCode = await new Promise<number>((resolve, reject) => {
+          workerInstance.onmessage = (event: MessageEvents): void => {
+            resolve(event.data as number);
+          };
+          workerInstance.onerror = (event: ErrorEvent): void => {
+            reject(new Error(event.message));
+          };
+          workerInstance.postMessageWithSharedSendable({ ta, index: 1, value: 0 } as typeWait01);
+        });
+        expect(errorCode).assertEqual(ATOMIC_INDEX_ERROR);
+      } finally {
+        workerInstance.terminate();
+        await exited;
       }
-      expect(errorResult).assertContain('RangeError');
       done();
     });
 /**

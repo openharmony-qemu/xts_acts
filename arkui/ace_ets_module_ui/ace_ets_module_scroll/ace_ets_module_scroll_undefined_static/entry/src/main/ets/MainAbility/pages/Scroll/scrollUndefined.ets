@@ -50,13 +50,13 @@ struct Scroll1 {
     Column() {
       Column() {
         Text('Scroll')
-          .height('30%')
+          .fontSize(12)
         Scroll(this.scroller) {
           Column() {
             ForEach(this.arr, (item: number) => {
               Text('Item ' + item)
                 .width('90%')
-                .height(20)
+                .height('20%')
                 .backgroundColor(0xFFFFFF)
                 .borderRadius(10)
                 .fontSize(16)
@@ -66,8 +66,6 @@ struct Scroll1 {
           }
         }
         .id('scroll_action')
-        .width('80%')
-        .height('70%')
         .initialOffset(undefined)
         .enablePaging(this.isEnablePaging ? true : undefined)
         .edgeEffect(this.isEdgeEffect ? EdgeEffect.Spring : undefined)
@@ -117,74 +115,74 @@ struct Scroll1 {
       Row() {
         Button('toTop').onClick((event: ClickEvent) => {
           this.scroller.fling(3000);
-        }).margin(5).id('toTop')
+        }).id('toTop').width('30%')
         Button('toBottom').onClick((event: ClickEvent) => {
           this.scroller.fling(-3000);
-        }).margin(5).id('toBottom')
+        }).id('toBottom').width('30%')
         Button('resetValue').onClick((event: ClickEvent) => {
           this.eventValue = 'value';
-        }).margin(5).id('resetValue')
-      }
+        }).id('resetValue').width('30%')
+      }.height('10%')
 
       Row() {
         Button('0' + this.isEdgeEffect).onClick((event: ClickEvent) => {
           this.isEdgeEffect = !this.isEdgeEffect;
-        }).margin(5).id('edgeEffect_action')
+        }).id('edgeEffect_action').width('25%')
         Button('2' + this.isEnablePaging).onClick((event: ClickEvent) => {
           this.isEnablePaging = !this.isEnablePaging;
-        }).margin(5).id('enablePaging_action')
+        }).id('enablePaging_action').width('25%')
         Button('3' + this.isScrollSnap).onClick((event: ClickEvent) => {
           this.isScrollSnap = !this.isScrollSnap;
-        }).margin(5).id('scrollSnap_action')
+        }).id('scrollSnap_action').width('25%')
         Button('4' + this.isOnWillScroll).onClick((event: ClickEvent) => {
           this.isOnWillScroll = !this.isOnWillScroll;
-        }).margin(5).id('onWillScroll_action')
-      }
+        }).id('onWillScroll_action').width('25%')
+      }.height('10%')
 
       Row() {
         Button('5' + this.isOnDidScroll).onClick((event: ClickEvent) => {
           this.isOnDidScroll = !this.isOnDidScroll;
-        }).margin(5).id('onDidScroll_action')
+        }).id('onDidScroll_action').width('25%')
         Button('6' + this.isOnScrollFrameBegin).onClick((event: ClickEvent) => {
           this.isOnScrollFrameBegin = !this.isOnScrollFrameBegin;
-        }).margin(5).id('onScrollFrameBegin_action')
+        }).id('onScrollFrameBegin_action').width('25%')
         Button('7' + this.isOnScrollStop).onClick((event: ClickEvent) => {
           this.isOnScrollStop = !this.isOnScrollStop;
-        }).margin(5).id('onScrollStop_action')
+        }).id('onScrollStop_action').width('25%')
         Button('8' + this.isOnScrollStart).onClick((event: ClickEvent) => {
           this.isOnScrollStart = !this.isOnScrollStart;
-        }).margin(5).id('onScrollStart_action')
-      }
+        }).id('onScrollStart_action').width('25%')
+      }.height('10%')
 
       Row() {
         Button('9' + this.isOnScrollEdge).onClick((event: ClickEvent) => {
           this.isOnScrollEdge = !this.isOnScrollEdge;
-        }).margin(5).id('onScrollEdge_action')
+        }).id('onScrollEdge_action').width('25%')
         Button('10' + this.isNestedScroll).onClick((event: ClickEvent) => {
           this.isNestedScroll = !this.isNestedScroll;
-        }).margin(5).id('nestedScroll_action')
+        }).id('nestedScroll_action').width('25%')
         Button('11' + this.isEnableScrollInteraction).onClick((event: ClickEvent) => {
           this.isEnableScrollInteraction = !this.isEnableScrollInteraction;
-        }).margin(5).id('enableScrollInteraction_action')
+        }).id('enableScrollInteraction_action').width('25%')
         Button('12' + this.isFriction).onClick((event: ClickEvent) => {
           this.isFriction = !this.isFriction;
-        }).margin(5).id('friction_action')
-      }
+        }).id('friction_action').width('25%')
+      }.height('10%')
 
       Row() {
         Button('13' + this.isScrollable).onClick((event: ClickEvent) => {
           this.isScrollable = !this.isScrollable;
-        }).margin(5).id('scrollable_action')
+        }).id('scrollable_action').width('25%')
         Button('14' + this.isScrollBar).onClick((event: ClickEvent) => {
           this.isScrollBar = !this.isScrollBar;
-        }).margin(5).id('scrollBar_action')
+        }).id('scrollBar_action').width('25%')
         Button('15' + this.isScrollBarColor).onClick((event: ClickEvent) => {
           this.isScrollBarColor = !this.isScrollBarColor;
-        }).margin(5).id('scrollBarColor_action')
+        }).id('scrollBarColor_action').width('25%')
         Button('16' + this.isScrollBarWidth).onClick((event: ClickEvent) => {
           this.isScrollBarWidth = !this.isScrollBarWidth;
-        }).margin(5).id('scrollBarWidth_action')
-      }
+        }).id('scrollBarWidth_action').width('25%')
+      }.height('10%')
     }
     .width('100%')
     .height('100%')

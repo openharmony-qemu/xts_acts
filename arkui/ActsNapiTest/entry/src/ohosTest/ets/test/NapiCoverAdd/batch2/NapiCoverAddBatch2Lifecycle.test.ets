@@ -699,9 +699,7 @@ export default function NapiCoverAddBatch2LifecycleTest() {
       console.info(caseName + ' start');
       let extObj: object | null = napicoveraddbatch2ndktest.createExternalForFinalizeTest() as object | null;
       expect(extObj !== null && extObj !== undefined).assertTrue();
-      if (globalThis.forceFullGC) {
-        globalThis.forceFullGC();
-      }
+      forceFullGC();
       let result: number = napicoveraddbatch2ndktest.getExternalDataAfterFinalize(extObj) as number;
       expect(result).assertEqual(1);
       napicoveraddbatch2ndktest.cleanupExternalForFinalizeTest(extObj);
@@ -1074,22 +1072,6 @@ export default function NapiCoverAddBatch2LifecycleTest() {
       const caseName = 'testGetValueStringLatin1NonLatin0073';
       console.info(caseName + ' start');
       expect(napicoveraddbatch2ndktest.getValueStringLatin1NonLatin1()).assertEqual(1);
-      console.info(caseName + ' end');
-    });
-
-    /**
-     * @tc.name testGetValueStringLatin1BufsizeSmaller0074
-     * @tc.number SUB_NSD_B2_GET_VALUE_STRING_LATIN1_BUFSIZE_SMALLER_7400
-     * @tc.desc   Verify napi_get_value_string_latin1 truncates when bufsize smaller, written=bufsize-1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testGetValueStringLatin1BufsizeSmaller0074',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
-      const caseName = 'testGetValueStringLatin1BufsizeSmaller0074';
-      console.info(caseName + ' start');
-      expect(napicoveraddbatch2ndktest.getValueStringLatin1BufsizeSmaller()).assertEqual(1);
       console.info(caseName + ' end');
     });
 

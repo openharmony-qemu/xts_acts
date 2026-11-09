@@ -15,8 +15,9 @@
 {
   "modelVersion": "26.0.0",
   "description": "ConcurrentHashMap ArkTS static XTS project",
-  "dependencies": {},
+  "dependencies": {
+    "@ohos/hypium-static": "file:../../../../../../tools/hypium_prepare/hypium-static.har"
+  },
   "devDependencies": {
-    "@ohos/hypium": "1.0.26"
   }
 }

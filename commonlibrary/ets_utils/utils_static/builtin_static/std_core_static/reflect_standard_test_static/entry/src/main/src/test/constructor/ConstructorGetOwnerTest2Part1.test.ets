@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from "../../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 import Utils from "../Util.test";
 
 import {BoxCls,MultiIF,RealCls,EmptyCls,OT_Color,SingleIF,GetSetCls,MethodCls,TcTwoPubA,GO_MyIface,G01_AllTypes,GO_ImplIface,OT_DataPoint,OT_Overload6,OT_Overload8,EqOverloadCls,OT_DataPerson,OT_GenericOne,OT_GenericTwo,ParamCountCls,FieldsAndMethods,PGN_GenericThree,GO_ImplMultiIface,MultiIfaceCtorCls,OT_DerivedWithParam,GO2_Ext_AbstractGeneric,GO2_Ext_ConcreteGeneric,OT_Outer_OT_InnerGeneric,OT_OverloadSameParamCount,AbsCls,CI02_Default,GN2_LvlB,GN2_LvlC,DerivedC,EW_ByteParam,EW_CharParam,EW_FixedArrayParam,EW_FloatParam,EW_IntBoundary,EW_LongParam,EW_ObjectParam,EW_ShortParam,G01_AllFieldTypes,G01_FieldExtremes,G01_ManyFields,G01_OnlyMethods,G01_StaticMembers,G01_TenCtors,G01_TenParams,OT_OverloadDefaultValue,OT_ReflectTarget,OT_ReflectWithFields,OT_ReflectWithMethods,} from "../Util.test";

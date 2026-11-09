@@ -382,6 +382,50 @@ function testSetDisallowedPolicy() {
   });
 
   /**
+   * @tc.name   test_set_disallowed_policy_CONTROL_CENTER_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCONTROL_CENTER_0100
+   * @tc.desc   test restrictions setDisallowedPolicy with CONTROL_CENTER feature super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_CONTROL_CENTER_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CONTROL_CENTER, true);
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CONTROL_CENTER);
+      expect(ret).assertTrue();
+    } catch (error) {
+      expect(error.code === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_NOTIFICATION_CENTER_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYNOTIFICATION_CENTER_0100
+   * @tc.desc   test restrictions setDisallowedPolicy with NOTIFICATION_CENTER feature super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_NOTIFICATION_CENTER_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.NOTIFICATION_CENTER, true);
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.NOTIFICATION_CENTER);
+      expect(ret).assertTrue();
+    } catch (error) {
+      expect(error.code === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
    * @tc.name   test_set_disallowed_policy_system_rollback_0100
    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSYSTEM_ROLLBACK_0100
    * @tc.desc   test restrictions setDisallowedPolicy with system_rollback feature byod admin
@@ -992,6 +1036,48 @@ function testGetDisallowedPolicy() {
       } else {
         expect(error.code === 401).assertTrue();
       }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_CONTROL_CENTER_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYCONTROL_CENTER_0100
+   * @tc.desc   test restrictions getDisallowedPolicy with CONTROL_CENTER feature super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_CONTROL_CENTER_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CONTROL_CENTER);
+      expect(ret).assertFalse();
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_NOTIFICATION_CENTER_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYNOTIFICATION_CENTER_0100
+   * @tc.desc   test restrictions getDisallowedPolicy with NOTIFICATION_CENTER feature super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_NOTIFICATION_CENTER_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.NOTIFICATION_CENTER);
+      expect(ret).assertFalse();
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
   });

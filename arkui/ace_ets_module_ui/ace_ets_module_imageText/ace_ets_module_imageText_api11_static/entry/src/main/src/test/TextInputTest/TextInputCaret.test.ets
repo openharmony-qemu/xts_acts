@@ -31,6 +31,8 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
+let displayID: Int = 0;
+
 export default function textInput_caret() {
   describe('textInput_caret', () => {
 
@@ -38,7 +40,6 @@ export default function textInput_caret() {
       console.info("textInput_caret beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
-
     });
 
     beforeEach(async (): Promise<void> => {
@@ -53,16 +54,17 @@ export default function textInput_caret() {
         console.info("get textInput_caret state pages:" + JSON.stringify(pages));
         if (!("textInput_caret" == pages.name)) {
           console.info("get textInput_caret pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // await router 有已知问题，先注释使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push textInput_caret page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push textInput_caret page error:" + err);
+        console.log("push textInput_caret page error:" + err);
       }
       console.info("textInput_caret beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
 
@@ -77,10 +79,18 @@ export default function textInput_caret() {
 
       console.info('[textInput_caret_static_001] START');
       let driver = Driver.create();
-      await driver.mouseClick({x:300, y:200}, MouseButton.MOUSE_BUTTON_LEFT);
+      try {
+        await driver.mouseClick({x:300, y:200, displayId: displayID}, MouseButton.MOUSE_BUTTON_LEFT);
+      } catch (err) {
+        console.log('driver.mouseClick error: ' + JSON.stringify(err));
+      }
       console.info('mouse click success');
       await CommonFunc.sleep(1000);
-	  await driver.triggerKey(2070);
+	  try {
+	    await driver.triggerKey(2070, displayID);
+	  } catch (err) {
+	    console.log('driver.triggerKey error: ' + JSON.stringify(err));
+	  }
 	  await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('inputGetCaret'));
       await (button?.click() as Promise<void>);

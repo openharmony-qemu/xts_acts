@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType,
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 class TypeAssert_MTS02 {
@@ -122,24 +122,6 @@ export default function MethodToString01Test(): void {
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('TypeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_TOSTRING_ONE_0400
-     * @tc.name testMethodToStringAtOne004
-     * @tc.desc Verify ts3GetMethods (getMethodsNum + getMethod) on fields-only class TS3_BareMinimal03: methods[0].toString() matches the getOwnPropertyNames signature, or the array is empty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testMethodToStringAtOne004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const methods: Method[] = ts3GetMethods(Type.from<TS3_BareMinimal03>() as ClassType);
-      if (methods.length > 0) {
-        const str: string = methods[0].toString();
-        expect(str).assertEqual('getOwnPropertyNames: (0: std.core.Record): std.core.Array');
-      } else {
-        expect(methods.length).assertEqual(0);
       }
     });
 

@@ -131,14 +131,14 @@ export default function webExtensionConnectionCallbackOnFailedParameterTest() {
         
         let connId = webNativeMessagingExtensionManager.connectNative(context, invalidWant, callback);
         hilog.info(0x0000, 'testTag', `${tcNumber} connectNative called with connId: ${connId}`);
-        expect(connId).not().assertUndefined();
+        expect(connId > 0).assertTrue();
         
         // 等待足够长的时间让所有回调执行
         setTimeout(() => {
           // 如果没有触发任何回调，测试也通过
           if (!onConnectCalled && !onFailedCalled) {
             hilog.info(0x0000, 'testTag', `${tcNumber} No callbacks triggered, test passed`);
-            expect(1).assertEqual(1);
+
           }
           done();
         }, 5000);
@@ -146,7 +146,7 @@ export default function webExtensionConnectionCallbackOnFailedParameterTest() {
         let err = error as BusinessError;
         if (isCapabilityNotSupported(err)) {
           hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
-          expect(1).assertEqual(1); // KEEP_SKIP_PLACEHOLDER
+          expect(err.code).assertEqual(801); // KEEP_SKIP_PLACEHOLDER
           done();
           return;
         }
@@ -234,14 +234,14 @@ export default function webExtensionConnectionCallbackOnFailedParameterTest() {
         
         let connId = webNativeMessagingExtensionManager.connectNative(context, invalidWant, callback);
         hilog.info(0x0000, 'testTag', `${tcNumber} connectNative called with connId: ${connId}`);
-        expect(connId).not().assertUndefined();
+        expect(connId > 0).assertTrue();
         
         // 等待足够长的时间让所有回调执行
         setTimeout(() => {
           // 如果没有触发任何回调，测试也通过
           if (!onConnectCalled && !onFailedCalled) {
             hilog.info(0x0000, 'testTag', `${tcNumber} No callbacks triggered, test passed`);
-            expect(1).assertEqual(1);
+
           }
           done();
         }, 5000);
@@ -249,7 +249,7 @@ export default function webExtensionConnectionCallbackOnFailedParameterTest() {
         let err = error as BusinessError;
         if (isCapabilityNotSupported(err)) {
           hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
-          expect(1).assertEqual(1); // KEEP_SKIP_PLACEHOLDER
+          expect(err.code).assertEqual(801); // KEEP_SKIP_PLACEHOLDER
           done();
           return;
         }
@@ -337,14 +337,14 @@ export default function webExtensionConnectionCallbackOnFailedParameterTest() {
         
         let connId = webNativeMessagingExtensionManager.connectNative(context, invalidWant, callback);
         hilog.info(0x0000, 'testTag', `${tcNumber} connectNative called with connId: ${connId}`);
-        expect(connId).not().assertUndefined();
+        expect(connId > 0).assertTrue();
         
         // 等待足够长的时间让所有回调执行
         setTimeout(() => {
           // 如果没有触发任何回调，测试也通过
           if (!onConnectCalled && !onFailedCalled) {
             hilog.info(0x0000, 'testTag', `${tcNumber} No callbacks triggered, test passed`);
-            expect(1).assertEqual(1);
+
           }
           done();
         }, 5000);
@@ -352,7 +352,7 @@ export default function webExtensionConnectionCallbackOnFailedParameterTest() {
         let err = error as BusinessError;
         if (isCapabilityNotSupported(err)) {
           hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
-          expect(1).assertEqual(1); // KEEP_SKIP_PLACEHOLDER
+          expect(err.code).assertEqual(true); // KEEP_SKIP_PLACEHOLDER
           done();
           return;
         }
@@ -440,14 +440,14 @@ export default function webExtensionConnectionCallbackOnFailedParameterTest() {
         
         let connId = webNativeMessagingExtensionManager.connectNative(context, invalidWant, callback);
         hilog.info(0x0000, 'testTag', `${tcNumber} connectNative called with connId: ${connId}`);
-        expect(connId).not().assertUndefined();
+        expect(connId > 0).assertTrue();
         
         // 等待足够长的时间让所有回调执行
         setTimeout(() => {
           // 如果没有触发任何回调，测试也通过
           if (!onConnectCalled && !onFailedCalled) {
             hilog.info(0x0000, 'testTag', `${tcNumber} No callbacks triggered, test passed`);
-            expect(1).assertEqual(1);
+
           }
           done();
         }, 5000);
@@ -455,7 +455,7 @@ export default function webExtensionConnectionCallbackOnFailedParameterTest() {
         let err = error as BusinessError;
         if (isCapabilityNotSupported(err)) {
           hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
-          expect(1).assertEqual(1); // KEEP_SKIP_PLACEHOLDER
+          expect(err.code).assertEqual(801); // KEEP_SKIP_PLACEHOLDER
           done();
           return;
         }

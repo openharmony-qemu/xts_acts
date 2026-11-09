@@ -2559,7 +2559,7 @@ export default function bluetoothBleStaticTest(): void {
           let outAdvHandle = await ble.startAdvertising(advertisingParams);
           advHandle = outAdvHandle
           hilog.info(domain, tag, `${caseName} startAdvertising return outAdvHandle: ` + outAdvHandle);
-          ble.stopAdvertising()
+          await ble.stopAdvertising(advHandle);
           console.info(`${caseName}  stopAdvertising promise success:`)
         } catch (err) {
           hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
@@ -2616,7 +2616,7 @@ export default function bluetoothBleStaticTest(): void {
           let outAdvHandle = await ble.startAdvertising(advertisingParams);
           advHandle = outAdvHandle
           hilog.info(domain, tag, `${caseName} startAdvertising return outAdvHandle: ` + outAdvHandle);
-          ble.stopAdvertising()
+          await ble.stopAdvertising(advHandle);
           console.info(`${caseName}  stopAdvertising promise success:`)
         } catch (err) {
           hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
@@ -2669,7 +2669,7 @@ export default function bluetoothBleStaticTest(): void {
           let outAdvHandle = await ble.startAdvertising(advertisingParams);
           advHandle = outAdvHandle
           hilog.info(domain, tag, `${caseName} startAdvertising return outAdvHandle: ` + outAdvHandle);
-          ble.stopAdvertising()
+          await ble.stopAdvertising(advHandle);
           console.info(`${caseName}  stopAdvertising promise success:`)
         } catch (err) {
           hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
@@ -2722,7 +2722,7 @@ export default function bluetoothBleStaticTest(): void {
           let outAdvHandle = await ble.startAdvertising(advertisingParams);
           advHandle = outAdvHandle
           hilog.info(domain, tag, `${caseName} startAdvertising return outAdvHandle: ` + outAdvHandle);
-          ble.stopAdvertising()
+          await ble.stopAdvertising(advHandle);
           console.info(`${caseName}  stopAdvertising promise success:`)
         } catch (err) {
           hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
@@ -2788,7 +2788,7 @@ export default function bluetoothBleStaticTest(): void {
           let outAdvHandle = await ble.startAdvertising(advertisingParams);
           advHandle = outAdvHandle
           hilog.info(domain, tag, `${caseName} startAdvertising return outAdvHandle: ` + outAdvHandle);
-          ble.stopAdvertising()
+          await ble.stopAdvertising(advHandle);
           console.info(`${caseName}  stopAdvertising promise success:`);
         } catch (err) {
           hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
@@ -2850,7 +2850,7 @@ export default function bluetoothBleStaticTest(): void {
           let outAdvHandle = await ble.startAdvertising(advertisingParams);
           advHandle = outAdvHandle
           hilog.info(domain, tag, `${caseName} startAdvertising return outAdvHandle: ` + outAdvHandle);
-          ble.stopAdvertising()
+          await ble.stopAdvertising(advHandle);
           console.info(`${caseName}  stopAdvertising promise success:`);
         } catch (err) {
           hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
@@ -2868,8 +2868,7 @@ export default function bluetoothBleStaticTest(): void {
     /**
      * @tc.number SUB_COMMUNICATION_BLE_STARTADVERTISINGADVERTISINGPARAMSADVERTISINGRESPONSESERVICEUUIDSEMPTYARRAY_0100
      * @tc.name SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingResponse_ServiceUuids_EmptyArray_static_0100
-     * @tc.desc Test startAdvertising(AdvertisingParams) with empty
-    advertisingResponse.serviceUuids array
+     * @tc.desc Test startAdvertising(AdvertisingParams) with empty advertisingResponse.serviceUuids array
      * @tc.level Level 0
      * @tc.type Function
      * @tc.size MEDIUMTEST
@@ -2913,7 +2912,7 @@ export default function bluetoothBleStaticTest(): void {
           let outAdvHandle = await ble.startAdvertising(advertisingParams);
           advHandle = outAdvHandle
           hilog.info(domain, tag, `${caseName} startAdvertising return outAdvHandle: ` + outAdvHandle);
-          ble.stopAdvertising()
+          await ble.stopAdvertising(advHandle);
           console.info(`${caseName}  stopAdvertising promise success:`);
         } catch (err) {
           hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
@@ -2970,7 +2969,7 @@ export default function bluetoothBleStaticTest(): void {
           let outAdvHandle = await ble.startAdvertising(advertisingParams);
           advHandle = outAdvHandle
           hilog.info(domain, tag, `${caseName} startAdvertising return outAdvHandle: ` + outAdvHandle);
-          ble.stopAdvertising()
+          await ble.stopAdvertising(advHandle);
           console.info(`${caseName}  stopAdvertising promise success:`)
         } catch (err) {
           hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
@@ -3027,7 +3026,7 @@ export default function bluetoothBleStaticTest(): void {
           let outAdvHandle = await ble.startAdvertising(advertisingParams);
           advHandle = outAdvHandle
           hilog.info(domain, tag, `${caseName} startAdvertising return outAdvHandle: ` + outAdvHandle);
-          ble.stopAdvertising()
+          await ble.stopAdvertising(advHandle);
           console.info(`${caseName}  stopAdvertising promise success:`)
         } catch (err) {
           hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
@@ -3084,7 +3083,7 @@ export default function bluetoothBleStaticTest(): void {
           let outAdvHandle = await ble.startAdvertising(advertisingParams);
           advHandle = outAdvHandle
           hilog.info(domain, tag, `${caseName} startAdvertising return outAdvHandle: ` + outAdvHandle);
-          ble.stopAdvertising()
+          await ble.stopAdvertising(advHandle);
           console.info(`${caseName}  stopAdvertising promise success:`)
         } catch (err) {
           hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
@@ -3141,7 +3140,7 @@ export default function bluetoothBleStaticTest(): void {
           let outAdvHandle = await ble.startAdvertising(advertisingParams);
           advHandle = outAdvHandle
           hilog.info(domain, tag, `${caseName} startAdvertising return outAdvHandle: ` + outAdvHandle);
-          ble.stopAdvertising()
+          await ble.stopAdvertising(advHandle);
           console.info(`${caseName}  stopAdvertising promise success:`)
         } catch (err) {
           hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
@@ -3199,7 +3198,7 @@ export default function bluetoothBleStaticTest(): void {
           let outAdvHandle = await ble.startAdvertising(advertisingParams);
           advHandle = outAdvHandle
           hilog.info(domain, tag, `${caseName} startAdvertising return outAdvHandle: ` + outAdvHandle);
-          ble.stopAdvertising()
+          await ble.stopAdvertising(advHandle);
           console.info(`${caseName}  stopAdvertising promise success:`)
         } catch (err) {
           hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
@@ -3257,7 +3256,7 @@ export default function bluetoothBleStaticTest(): void {
           let outAdvHandle = await ble.startAdvertising(advertisingParams);
           advHandle = outAdvHandle
           hilog.info(domain, tag, `${caseName} startAdvertising return outAdvHandle: ` + outAdvHandle);
-          ble.stopAdvertising()
+          await ble.stopAdvertising(advHandle);
           console.info(`${caseName}  stopAdvertising promise success:`)
         } catch (err) {
           hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);

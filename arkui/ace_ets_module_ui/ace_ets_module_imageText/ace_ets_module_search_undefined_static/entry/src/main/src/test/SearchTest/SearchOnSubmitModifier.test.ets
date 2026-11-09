@@ -37,6 +37,7 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, Component } from '@kit.TestKit';
 
 
+let displayID: Int = 0;
 export default function SearchOnSubmitModifierTest() {
   describe('SearchOnSubmitModifierTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -62,9 +63,10 @@ export default function SearchOnSubmitModifierTest() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push SearchOnSubmitModifierTest page error: " + err);
+        console.log("push SearchOnSubmitModifierTest page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     /**
          * @tc.number   SearchOnSubmitModifierTest_static_0010
@@ -80,7 +82,11 @@ export default function SearchOnSubmitModifierTest() {
       await CommonFunc.sleep(1000);
       await search.longClick();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2054)
+      try {
+        await driver.triggerKey(2054, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('Text_SearchOnSubmitModifier');
       let obj = JSON.parseJsonElement(strJson);
@@ -100,7 +106,11 @@ export default function SearchOnSubmitModifierTest() {
       await search.longClick();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2054)
+      try {
+        await driver.triggerKey(2054, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       strJson = inspector.getInspectorByKey('Text_SearchOnSubmitModifier');
       obj = JSON.parseJsonElement(strJson);
@@ -116,7 +126,11 @@ export default function SearchOnSubmitModifierTest() {
       await search.longClick();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2054);
+      try {
+        await driver.triggerKey(2054, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       strJson = inspector.getInspectorByKey('Text_SearchOnSubmitModifier');
       obj = JSON.parseJsonElement(strJson);

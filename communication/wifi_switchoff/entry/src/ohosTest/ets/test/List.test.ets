@@ -14,6 +14,7 @@
  */
 
 import wifiManagerOffTest from './WifiManagerOff.test';
+import wifiManagerApi26SwitchOffTest from './WifiManagerApi26SwitchOff.test';
 import wifiManager from '@ohos.wifiManager';
 
 let iswifisupport: boolean = true;
@@ -26,5 +27,6 @@ try {
 export default function testsuite() {
   if(iswifisupport){
 	  wifiManagerOffTest();
+	  wifiManagerApi26SwitchOffTest();
   }
 }

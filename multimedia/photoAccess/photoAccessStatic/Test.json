@@ -33,6 +33,30 @@
             "cleanup-apps": true
         },
         {
+            "type": "PushKit",
+            "pre-push": [],
+            "push": [
+                "./resource/medialibrary/01.gif ->/data/local/tmp/",
+                "./resource/medialibrary/01.jpg ->/data/local/tmp/",
+                "./resource/medialibrary/01.mp4 ->/data/local/tmp/",
+                "./resource/medialibrary/01.mpeg ->/data/local/tmp/",
+                "./resource/medialibrary/01.png ->/data/local/tmp/",
+                "./resource/medialibrary/error_jpg.jpg ->/data/local/tmp/",
+                "./resource/medialibrary/error_mp4.mp4 ->/data/local/tmp/",
+                "./resource/medialibrary/test_hdr_1.mp4 ->/data/local/tmp/",
+                "./resource/medialibrary/test_mov_1.jpg ->/data/local/tmp/",
+                "./resource/medialibrary/test_mov_1.mp4 ->/data/local/tmp/",
+                "./resource/medialibrary/sh/setup_photoAccessStatic_test.sh ->/data/local/tmp/"
+            ]
+        },
+        {
+            "type": "ShellKit",
+            "run-command": [
+                "chmod 755 /data/local/tmp/setup_photoAccessStatic_test.sh",
+                "sh /data/local/tmp/setup_photoAccessStatic_test.sh"
+            ]
+        },
+        {
             "type": "ShellKit",
             "pre-push": [],
             "run-command": [
@@ -46,17 +70,9 @@
                 "mkdir -p /storage/media/100/local/files/Camera",
                 "mkdir -p /storage/media/100/local/files/Audios",
                 "mkdir /storage/media/100/local/files/Pictures/Screenshots",
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.photoaccess.Static/haps/entry/files",
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.photoaccess.Static/haps/entry/photos",
-                "chmod 777 -R /data/app/el2/100/base/ohos.acts.multimedia.photoaccess.Static/haps/entry",
                 "chmod -R 777 /storage/media/100/local/files/*",
                 "chmod -R 777 /data/service/el2/100/hmdfs/account/files/*"
             ]
-        },
-        {
-            "type": "PushKit",
-            "pre-push": [],
-            "push": []
         },
         {
             "type": "ShellKit",

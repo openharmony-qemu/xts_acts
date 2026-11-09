@@ -1,4 +1,4 @@
-﻿'use static'
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect } from '../../../../hypium/index';
-import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect } from '@ohos/hypium-static/src/main/indexStatic';
+import { TestType, Size, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 export default function BigIntConstructorNoArg2Test(): void {

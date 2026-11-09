@@ -20,29 +20,34 @@ const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
 
 workerPort.onmessage = (e: MessageEvents) => {
   console.info(`worker:: worker thread worker data is ${e.data}`);
-  if (e.data === 'call napi_stop_event_loop') {
-    let result = napitest.stopEventLoop(2);
-    console.info('worker:: worker thread runEventLoop result is ' + JSON.stringify(result))
-    if (result === 0) {
-      workerPort.postMessage('success');
-    } else {
-      workerPort.postMessage('failure');
+  try {
+    if (e.data === 'call napi_stop_event_loop') {
+      let result = napitest.stopEventLoop(2);
+      console.info('worker:: worker thread runEventLoop result is ' + JSON.stringify(result))
+      if (result === 0) {
+        workerPort.postMessage('success');
+      } else {
+        workerPort.postMessage('failure');
+      }
     }
-  }
-  if (e.data === 'call napi_define_sendable_class') {
-    let result = napitest.NapiDefineSendableClass();
-    console.info('worker:: worker thread NapiDefineSendableClass result is ' + JSON.stringify(result))
-    if (napitest.NapiIsSendable(result)) {
-      workerPort.postMessage('success');
-    } else {
-      workerPort.postMessage('failure');
+    if (e.data === 'call napi_define_sendable_class') {
+      let result = napitest.NapiDefineSendableClass();
+      console.info('worker:: worker thread NapiDefineSendableClass result is ' + JSON.stringify(result))
+      if (napitest.NapiIsSendable(result)) {
+        workerPort.postMessage('success');
+      } else {
+        workerPort.postMessage('failure');
+      }
     }
-  }
-  if (e.data == 'callLockAsyncAfterRunCleanupTest') {
-    napitest.callLockAsyncAfterRunCleanupTest(() => {
-      let lock = utils.locks.AsyncLock.request('lock');
-      lock.lockAsync(() => {});
-    })
-    workerPort.close();
+    if (e.data == 'callLockAsyncAfterRunCleanupTest') {
+      napitest.callLockAsyncAfterRunCleanupTest(() => {
+        let lock = utils.locks.AsyncLock.request('lock');
+        lock.lockAsync(() => {});
+      })
+      workerPort.close();
+    }
+  } catch (error) {
+    console.error(`worker error: ${JSON.stringify(error)}`);
+    workerPort.postMessage('failure');
   }
 }

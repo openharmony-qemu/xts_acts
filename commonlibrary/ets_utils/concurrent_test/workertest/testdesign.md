@@ -1,0 +1,316 @@
+- @ohos.worker 测试设计
+	- 1. 接口测试（Functional）
+		- ThreadWorker.constructor(scriptURL, options?)
+			- 入参范围覆盖
+				- classic 脚本路径
+				- module 脚本路径
+				- name 选项
+				- priority 选项(ThreadWorkerPriority)
+			- 边界值测试
+				- 空 scriptURL
+				- 不存在路径(10200007)
+				- shared:true(不支持)
+			- 异常与非法输入
+				- type:1 非法类型(401)
+				- name:1 非法类型(401)
+				- 初始化失败(10200003)
+			- 返回值与类型验证
+				- 实例可用性
+			- 组合场景
+				- 多实例创建
+				- 二级 worker
+			- 重复调用/幂等性
+				- 反复创建销毁
+			- 并发跨线程
+				- 二级 worker 跨线程
+		- ThreadWorker.onexit?(code:number)
+			- 入参范围覆盖
+				- code=0 正常退出
+				- code=1 异常退出
+			- 边界值测试
+				- 未设置(undefined)
+			- 异常与非法输入
+				- 10200004 not-running
+				- 10200005 不支持在 worker 线程
+			- 返回值与类型验证
+				- 回调在宿主线程执行
+			- 组合场景
+				- terminate→onexit 联动
+		- ThreadWorker.onerror?(err:ErrorEvent)
+			- 入参范围覆盖
+				- 同步异常捕获
+			- 边界值测试
+				- ErrorEvent 字段(message/filename/lineno/colno/error)
+			- 异常与非法输入
+				- 10200004/10200005
+			- 返回值与类型验证
+				- 捕获后线程销毁语义
+			- 组合场景
+				- vs onAllErrors(销毁 vs 存活)
+		- ThreadWorker.onAllErrors?(ErrorCallback, 18+)
+			- 入参范围覆盖
+				- 全局异常捕获
+			- 边界值测试
+				- 定时器回调异常
+				- 文件执行异常
+			- 异常与非法输入
+				- 10200004/10200005
+			- 返回值与类型验证
+				- 捕获后线程存活
+			- 组合场景
+				- 捕获后 postMessage 可用
+		- ThreadWorker.onmessage?(event:MessageEvents)
+			- 入参范围覆盖
+				- 收 workerPort.postMessage 消息
+			- 边界值测试
+				- data 各类型取值
+			- 异常与非法输入
+				- 10200004/10200005
+			- 返回值与类型验证
+				- 回调在宿主线程
+			- 组合场景
+				- 优先级/terminate 联动
+			- 并发跨线程
+				- 跨线程消息可见性
+		- ThreadWorker.onmessageerror?(event:MessageEvents)
+			- 入参范围覆盖
+				- 不可序列化触发
+			- 边界值测试
+				- 非序列化类型
+			- 异常与非法输入
+				- 10200004/10200005
+			- 组合场景
+				- worker 侧 GlobalScope 回调
+		- ThreadWorker.postMessage(message, transfer:ArrayBuffer[])
+			- 入参范围覆盖
+				- 基本类型/对象/ArrayBuffer
+				- options?:PostMessageOptions 形式
+			- 边界值测试
+				- transfer 所有权转移(发送方不可用)
+			- 异常与非法输入
+				- 10200004 not-running
+				- 10200006 序列化异常
+			- 返回值与类型验证
+				- void
+			- 组合场景
+				- on/off/terminate 联动
+			- 重复调用/幂等性
+				- 多次 postMessage
+			- 并发跨线程
+				- 多实例并发
+		- ThreadWorker.postMessageWithSharedSendable(message, transfer?, 12+)
+			- 入参范围覆盖
+				- Sendable 按引用传递
+				- 非 Sendable 按序列化
+			- 边界值测试
+				- transfer 所有权
+			- 异常与非法输入
+				- 10200004/10200006
+			- 返回值与类型验证
+				- void
+			- 组合场景
+				- vs postMessage 行为差异
+				- 容器/集成/GC 联动
+		- ThreadWorker.on(type, listener)
+			- 入参范围覆盖
+				- message/messageerror/exit/error 类型
+			- 边界值测试
+				- null/empty/undefined type(401)
+				- null/undefined listener(401)
+			- 异常与非法输入
+				- 10200004 not-running
+				- 10200005 不支持在 worker 线程
+			- 组合场景
+				- 多次 on 同类型
+		- ThreadWorker.once(type, listener)
+			- 入参范围覆盖
+				- 一次性监听
+			- 边界值测试
+				- null/empty/undefined(401)
+			- 异常与非法输入
+				- 10200004/10200005
+			- 重复调用/幂等性
+				- 触发后自动移除
+		- ThreadWorker.off(type, listener?)
+			- 入参范围覆盖
+				- 精确移除/全移除
+			- 边界值测试
+				- null/empty/undefined(401)
+			- 异常与非法输入
+				- 10200004/10200005
+		- ThreadWorker.terminate()
+			- 入参范围覆盖
+				- 正常终止
+			- 边界值测试
+				- 终止后消息不再接收
+			- 异常与非法输入
+				- 10200004 not-running
+			- 返回值与类型验证
+				- void
+			- 组合场景
+				- onexit(0) 联动
+				- vs worker 侧 close
+			- 重复调用/幂等性
+				- 二次 terminate(幂等)
+		- ThreadWorker.addEventListener(type, listener)
+			- 入参范围覆盖
+				- 等价 on
+			- 边界值测试
+				- null/empty/undefined(401)
+			- 异常与非法输入
+				- 10200004/10200005
+		- ThreadWorker.dispatchEvent(event):boolean
+			- 入参范围覆盖
+				- null/undefined event
+			- 返回值与类型验证
+				- 返回 true/false
+			- 异常与非法输入
+				- 10200004
+		- ThreadWorker.removeEventListener(type, callback?)
+			- 入参范围覆盖
+				- 精确移除/可选 callback
+			- 边界值测试
+				- null/empty/undefined(401)
+			- 异常与非法输入
+				- 10200004
+		- ThreadWorker.removeAllListener()
+			- 入参范围覆盖
+				- 全移除
+			- 异常与非法输入
+				- 10200004
+		- ThreadWorker.registerGlobalCallObject(instanceName, globalCallObject)
+			- 入参范围覆盖
+				- 注册宿主对象
+			- 边界值测试
+				- instanceName 空/null/undefined(401)
+			- 异常与非法输入
+				- 10200004
+			- 组合场景
+				- 与 call 联动
+		- ThreadWorker.unregisterGlobalCallObject(instanceName?)
+			- 入参范围覆盖
+				- 精确取消/无参全量
+			- 边界值测试
+				- 无匹配不报错
+			- 异常与非法输入
+				- 10200004
+		- ThreadWorkerGlobalScope.callGlobalCallObjectMethod(instanceName, methodName, timeout, ...args)
+			- 入参范围覆盖
+				- 同步调用宿主对象方法
+			- 边界值测试
+				- timeout 0(视为5000)/负数/非整数/越界(>5000)
+				- instanceName/methodName/timeout/args null/undefined(401)
+			- 异常与非法输入
+				- 10200019 未注册
+				- 10200020 不可调用/async/generator
+				- 10200021 超时
+				- 10200004/10200006
+			- 返回值与类型验证
+				- 返回方法结果/void
+			- 组合场景
+				- nested globalCall
+		- ThreadWorkerGlobalScope.postMessageAtFront?(message, priority:Priority, transfer?, 26+)
+			- 入参范围覆盖
+				- Priority.IMMEDIATE/HIGH/LOW/IDLE 四值
+			- 边界值测试
+				- null/undefined/func/buffer 消息
+				- transfer 所有权
+			- 异常与非法输入
+				- 10200004/10200006
+			- 组合场景
+				- 插队语义
+				- 可选链(?.)调用
+		- ThreadWorkerGlobalScope.close()
+			- 入参范围覆盖
+				- worker 侧终止
+			- 组合场景
+				- vs 宿主 terminate
+				- parentPort(deprecated) close
+			- 异常与非法输入
+				- 10200004
+		- ThreadWorkerPriority 枚举(18+) / Priority 枚举(26+)
+			- 入参范围覆盖
+				- HIGH/MEDIUM/LOW/IDLE/DEADLINE/VIP
+				- IMMEDIATE/HIGH/LOW/IDLE
+			- 返回值与类型验证
+				- 与 QoS 映射
+			- 组合场景
+				- Priority 用于 postMessageAtFront
+		- WorkerOptions(type/name/shared/priority)
+			- 入参范围覆盖
+				- type classic/module
+				- name
+				- shared true/false
+				- priority
+			- 边界值测试
+				- type:1/name:1 非法类型(401)
+			- 异常与非法输入
+				- shared:true 不支持
+		- ErrorCodes 专项(10200003/04/05/06/07/19/20/21 + 401)
+			- 入参范围覆盖
+				- 各错误码触发与断言
+			- 异常与非法输入
+				- 10200005 不支持在 worker 线程(缺口)
+		- maxWorkerLimit(最大线程数)
+			- 入参范围覆盖
+				- 创建至上限
+			- 异常与非法输入
+				- 超限错误
+			- 组合场景
+				- 创建-删除混合
+		- 序列化/容器序列化
+			- 入参范围覆盖
+				- ArrayList/HashMap/HashSet/List/LinkedList
+			- 边界值测试
+				- 混合容器
+			- 组合场景
+				- 跨 postMessage 往返
+			- 并发跨线程
+				- 跨线程可见性
+		- GlobalScope / ErrorEvent / Event / MessageEvents
+			- 入参范围覆盖
+				- GlobalScope.name/.self
+				- ErrorEvent.message/filename/lineno/colno/error
+				- Event.type/timeStamp
+	- 2. 稳定性（Stability）
+		- 长时间运行
+			- 反复创建销毁(terminate+onexit)
+		- 内存泄漏
+			- Worker+TaskPool GC
+			- Sendable/容器引用回收
+		- 资源释放
+			- unregisterGlobalCallObject 释放强引用
+	- 3. 性能（Performance）
+		- 消息传输时延
+			- postMessage 往返时延基准
+		- 序列化开销
+			- 容器序列化时延基准
+		- 高并发吞吐
+			- 100 并发 postMessage 吞吐
+	- 4. 并发安全（Concurrency Safety）
+		- 多实例
+			- 多 worker 并发
+			- 二级 worker
+		- 跨线程消息可见性
+			- onmessage/postMessage 往返
+			- Sendable 引用传递
+		- 并发异常
+			- onAllErrors 与定时器回调并发
+			- 并发压测(缺口)
+	- 5. 兼容性与继承（Compatibility & Inheritance）
+		- 旧 Worker(deprecated since 9) 全量
+			- workerjstest 双轨覆盖
+		- parentPort vs workerPort
+			- 双侧 close
+		- EventTarget/EventListener vs WorkerEventTarget/WorkerEventListener
+			- 双轨覆盖
+		- RestrictedWorker(systemapi)
+			- 系统API 测试覆盖(缺口)
+	- 6. 资料与文档符合性（Doc Conformance）
+		- 错误码表一致性
+			- 10200003/04/06/07/19/20/21 + 401 齐备
+			- 10200005 声明未测(文档遗漏)
+		- 语义符合性
+			- onerror 销毁 vs onAllErrors 存活(已正向断言)
+		- timeout 语义
+			- 0 视为 5000(未专项测)

@@ -4018,6 +4018,10 @@ Camera_ErrorCode NDKCamera::GetSupportedISORange(int useCaseCode)
     } else if (useCaseCode == PARAMETER3_ERROR) {
         ret_ = OH_CaptureSession_GetSupportedISORange(captureSession_, &minIsoValue, nullptr);
     }
+    if (ret_ == 0 && minIsoValue == 0 && maxIsoValue == 0) {
+        LOG("GetSupportedISORange return device not support.");
+        return Camera_ErrorCode::CAMERA_OPERATION_NOT_ALLOWED;
+    }
     return ret_;
 }
 
@@ -5004,6 +5008,115 @@ Camera_ErrorCode NDKCamera::GetWhiteBalance(int useCaseCode)
     }
     if (ret_ != CAMERA_OK) {
         LOG("OH_CaptureSession_GetWhiteBalance failed.");
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::IsC2PASignatureSupported(int useCaseCode)
+{
+    LOG("IsC2PASignatureSupported useCaseCode: %d", useCaseCode);
+    ret_ = CAMERA_OK;
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_PhotoOutput_IsC2PASignatureSupported(photoOutput_, &isC2PASignatureSupported_);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_PhotoOutput_IsC2PASignatureSupported(nullptr, &isC2PASignatureSupported_);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_PhotoOutput_IsC2PASignatureSupported(photoOutput_, nullptr);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_PhotoOutput_IsC2PASignatureSupported failed. %d", ret_);
+    } else {
+        LOG("isC2PASignatureSupported: %d", isC2PASignatureSupported_);
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::OHCameraC2PASignatureConfigCreate(int useCaseCode)
+{
+    LOG("OHCameraC2PASignatureConfigCreate useCaseCode: %d", useCaseCode);
+    ret_ = CAMERA_OK;
+    if (useCaseCode == PARAMETER_OK) {
+        c2paConfig_ = OH_Camera_C2PASignatureConfig_Create();
+        if (c2paConfig_ == nullptr) {
+            ret_ = CAMERA_SERVICE_FATAL_ERROR;
+            LOG("OH_Camera_C2PASignatureConfig_Create failed, nullptr returned.");
+        }
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        // 多次创建场景：先释放旧实例再创建
+        if (c2paConfig_ != nullptr) {
+            OH_Camera_C2PASignatureConfig_Destroy(c2paConfig_);
+            c2paConfig_ = nullptr;
+        }
+        c2paConfig_ = OH_Camera_C2PASignatureConfig_Create();
+        if (c2paConfig_ == nullptr) {
+            ret_ = CAMERA_SERVICE_FATAL_ERROR;
+        }
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::OHCameraC2PASignatureConfigDestroy(int useCaseCode)
+{
+    LOG("OHCameraC2PASignatureConfigDestroy useCaseCode: %d", useCaseCode);
+    ret_ = CAMERA_OK;
+    if (useCaseCode == PARAMETER_OK) {
+        OH_Camera_C2PASignatureConfig_Destroy(c2paConfig_);
+        c2paConfig_ = nullptr;
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        // 销毁 nullptr，验证不崩溃（void 返回值）
+        OH_Camera_C2PASignatureConfig_Destroy(nullptr);
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::OHCameraC2PASignatureConfigSetAuthorName(int useCaseCode, const char* authorName)
+{
+    LOG("OHCameraC2PASignatureConfigSetAuthorName useCaseCode: %d", useCaseCode);
+    ret_ = CAMERA_OK;
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_Camera_C2PASignatureConfig_SetAuthorName(c2paConfig_, authorName);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_Camera_C2PASignatureConfig_SetAuthorName(nullptr, authorName);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_Camera_C2PASignatureConfig_SetAuthorName(c2paConfig_, nullptr);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_Camera_C2PASignatureConfig_SetAuthorName failed. %d", ret_);
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::OHCameraC2PASignatureConfigSetAuthorID(int useCaseCode, const char* authorID)
+{
+    LOG("OHCameraC2PASignatureConfigSetAuthorID useCaseCode: %d", useCaseCode);
+    ret_ = CAMERA_OK;
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_Camera_C2PASignatureConfig_SetAuthorID(c2paConfig_, authorID);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_Camera_C2PASignatureConfig_SetAuthorID(nullptr, authorID);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_Camera_C2PASignatureConfig_SetAuthorID(c2paConfig_, nullptr);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_Camera_C2PASignatureConfig_SetAuthorID failed. %d", ret_);
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::ConfigureC2PASignature(int useCaseCode, bool enableC2PA)
+{
+    LOG("ConfigureC2PASignature useCaseCode: %d, enableC2PA: %d", useCaseCode, enableC2PA);
+    ret_ = CAMERA_OK;
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_PhotoOutput_ConfigureC2PASignature(photoOutput_, enableC2PA, c2paConfig_);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_PhotoOutput_ConfigureC2PASignature(nullptr, enableC2PA, c2paConfig_);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        // 文档允许 config 为 NULL：仅启用 C2PA 不带作者信息
+        ret_ = OH_PhotoOutput_ConfigureC2PASignature(photoOutput_, enableC2PA, nullptr);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_PhotoOutput_ConfigureC2PASignature failed. %d", ret_);
     }
     return ret_;
 }

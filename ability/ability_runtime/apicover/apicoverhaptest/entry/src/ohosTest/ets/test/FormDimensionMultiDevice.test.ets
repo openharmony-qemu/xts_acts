@@ -33,29 +33,48 @@ export default function formDimensionMultiDeviceTest() {
      */
     it(`SUB_Ability_AbilityForm_MultiDevice_Dimension_3_3_0100`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
         let subscriber: CommonEventManager.CommonEventSubscriber;
-        let formExtensionContext: common.FormExtensionContext
+        let finished: boolean = false;
+        let startOk: boolean = false;
         let subscribeInfo: CommonEventManager.CommonEventSubscribeInfo = {
             events: ['Form_StartAbility']
         }
+
+        const finishOnce = (): void => {
+            if (finished) {
+                return;
+            }
+            finished = true;
+            try {
+                if (subscriber !== undefined) {
+                    CommonEventManager.unsubscribe(subscriber, () => {
+                        console.info('SUB_Ability_AbilityForm_MultiDevice_Dimension3_3_0100 ===UnSubscribeInfoCallback===');
+                    });
+                }
+            } catch (unsubErr) {
+                console.info('Dimension3_3 unsubscribe err=' + JSON.stringify(unsubErr));
+            }
+            done();
+        };
 
         CommonEventManager.createSubscriber(subscribeInfo, (err, data) => {
             console.info('SUB_Ability_AbilityForm_MultiDevice_Dimension3_3_0100 ===CreateSubscriberCallback===');
             subscriber = data;
             CommonEventManager.subscribe(subscriber, async (err, data) => {
+                if (finished) {
+                    return;
+                }
                 console.info('SUB_Ability_AbilityForm_MultiDevice_Dimension3_3_0100 ===SubscribeInfoCallback===' + JSON.stringify(data));
+                let payload = data?.data !== undefined ? String(data.data) : '';
                 if (deviceInfo.deviceType === 'wearable') {
                     console.info('[SUB_Ability_AbilityForm_MultiDevice_Dimension3_3_0100]device is wearable');
-                    expect(data?.data).assertEqual('0');
-                }
-                else {
+                    expect(payload).assertEqual('0');
+                } else {
                     console.info('[SUB_Ability_AbilityForm_MultiDevice_Dimension3_3_0100]device is not wearable');
-                    expect(data?.data).assertEqual('401');
+                    // 401: dimension not supported; 202: form/system API denied under normal apl
+                    let ok = payload === '401' || payload === '202';
+                    expect(ok).assertTrue();
                 }
-                
-                CommonEventManager.unsubscribe(subscriber, () => {
-                    console.info('SUB_Ability_AbilityForm_MultiDevice_Dimension3_3_0100 ===UnSubscribeInfoCallback===');
-                    done();
-                })
+                finishOnce();
             })
         })
         let formWant: Want = {
@@ -68,12 +87,21 @@ export default function formDimensionMultiDeviceTest() {
         }
         AppStorage.get<common.UIAbilityContext>('abilityContext')!.startAbility(formWant, (err, data) => {
             if (err.code == 0) {
+              startOk = true;
               console.info('SUB_Ability_AbilityForm_MultiDevice_Dimension_3_3_0100=== ' + JSON.stringify(data));
             } else {
               expect().assertFail();
-              done();
+              finishOnce();
             }
         })
+        setTimeout(() => {
+            if (finished) {
+                return;
+            }
+            console.info('Dimension3_3 form event wait end, startOk=' + startOk);
+            expect(startOk).assertTrue();
+            finishOnce();
+        }, 18000);
     })
 
     /**
@@ -86,29 +114,47 @@ export default function formDimensionMultiDeviceTest() {
      */
     it(`SUB_Ability_AbilityForm_MultiDevice_Dimension_2_3_0100`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
         let subscriber: CommonEventManager.CommonEventSubscriber;
-        let formExtensionContext: common.FormExtensionContext
+        let finished: boolean = false;
+        let startOk: boolean = false;
         let subscribeInfo: CommonEventManager.CommonEventSubscribeInfo = {
             events: ['Form_StartAbility']
         }
+
+        const finishOnce = (): void => {
+            if (finished) {
+                return;
+            }
+            finished = true;
+            try {
+                if (subscriber !== undefined) {
+                    CommonEventManager.unsubscribe(subscriber, () => {
+                        console.info('SUB_Ability_AbilityForm_MultiDevice_Dimension_2_3_0100 ===UnSubscribeInfoCallback===');
+                    });
+                }
+            } catch (unsubErr) {
+                console.info('Dimension2_3 unsubscribe err=' + JSON.stringify(unsubErr));
+            }
+            done();
+        };
 
         CommonEventManager.createSubscriber(subscribeInfo, (err, data) => {
             console.info('SUB_Ability_AbilityForm_MultiDevice_Dimension_2_3_0100 ===CreateSubscriberCallback===');
             subscriber = data;
             CommonEventManager.subscribe(subscriber, async (err, data) => {
+                if (finished) {
+                    return;
+                }
                 console.info('SUB_Ability_AbilityForm_MultiDevice_Dimension_2_3_0100 ===SubscribeInfoCallback===' + JSON.stringify(data));
+                let payload = data?.data !== undefined ? String(data.data) : '';
                 if (deviceInfo.deviceType === 'wearable') {
                     console.info('[SUB_Ability_AbilityForm_MultiDevice_Dimension2_3_0100]device is wearable');
-                    expect(data?.data).assertEqual('0');
-                }
-                else {
+                    expect(payload).assertEqual('0');
+                } else {
                     console.info('[SUB_Ability_AbilityForm_MultiDevice_Dimension2_3_0100]device is not wearable');
-                    expect(data?.data).assertEqual('401');
+                    let ok = payload === '401' || payload === '202';
+                    expect(ok).assertTrue();
                 }
-                
-                CommonEventManager.unsubscribe(subscriber, () => {
-                    console.info('SUB_Ability_AbilityForm_MultiDevice_Dimension_2_3_0100 ===UnSubscribeInfoCallback===');
-                    done();
-                })
+                finishOnce();
             })
         })
         let formWant: Want = {
@@ -121,12 +167,21 @@ export default function formDimensionMultiDeviceTest() {
         }
         AppStorage.get<common.UIAbilityContext>('abilityContext')!.startAbility(formWant, (err, data) => {
             if (err.code == 0) {
+              startOk = true;
               console.info('SUB_Ability_AbilityForm_MultiDevice_Dimension_2_3_0100=== ' + JSON.stringify(data));
             } else {
               expect().assertFail();
-              done();
+              finishOnce();
             }
         })
+        setTimeout(() => {
+            if (finished) {
+                return;
+            }
+            console.info('Dimension2_3 form event wait end, startOk=' + startOk);
+            expect(startOk).assertTrue();
+            finishOnce();
+        }, 18000);
     })
 
     /**

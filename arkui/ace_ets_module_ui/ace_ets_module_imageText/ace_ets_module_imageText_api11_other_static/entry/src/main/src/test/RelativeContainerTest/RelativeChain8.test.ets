@@ -57,12 +57,12 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 
+let displayID: Int = 0;
 export default function RelativeChain8() {
   describe('RelativeChain8', () => {
     beforeAll(async () => {
       
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.other.static", "EntryAbility")
-      
     });
 
     beforeEach(async (): Promise<void> => {
@@ -81,9 +81,10 @@ export default function RelativeChain8() {
         }
 
       } catch (err) {
-        console.error("push RelativeChain8 page error:" + err);
+        console.log("push RelativeChain8 page error:" + err);
       }
       console.info("RelativeChain8 foreEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
 
     });
     afterEach(async () => {
@@ -109,8 +110,12 @@ it('RelativeChain8_static_001', Level.LEVEL3, async (done: () => void): Promise<
       let rel_height = rel.bottom - rel.top;
       console.info("[RelativeChain8_001] rel rect_value is: " + JSON.stringify(rel));
       let driver: Driver = Driver.create();
-      await driver.mouseClick({ x: Math.round(rel.left + rel_width * 0.2).toInt(), y: Math.round(rel.top + rel_height * 0.5).toInt() },
-        MouseButton.MOUSE_BUTTON_LEFT);
+      try {
+        await driver.mouseClick({ x: Math.round(rel.left + rel_width * 0.2).toInt(), y: Math.round(rel.top + rel_height * 0.5).toInt(), displayId: displayID },
+          MouseButton.MOUSE_BUTTON_LEFT);
+      } catch (err) {
+        console.log('driver.mouseClick error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('RelativeChain8Text');
       await CommonFunc.sleep(200);
@@ -141,8 +146,12 @@ it('RelativeChain8_static_002', Level.LEVEL3, async (done: () => void): Promise<
       let rel_height = rel.bottom - rel.top;
       console.info("[RelativeChain8_002] rel rect_value is: " + JSON.stringify(rel));
       let driver: Driver = Driver.create();
-      await driver.mouseClick({ x: Math.round(rel.left + rel_width * 0.2).toInt(), y: Math.round(rel.top + rel_height * 0.5).toInt() },
-        MouseButton.MOUSE_BUTTON_LEFT);
+      try {
+        await driver.mouseClick({ x: Math.round(rel.left + rel_width * 0.2).toInt(), y: Math.round(rel.top + rel_height * 0.5).toInt(), displayId: displayID },
+          MouseButton.MOUSE_BUTTON_LEFT);
+      } catch (err) {
+        console.log('driver.mouseClick error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('RelativeChain8Text');
       await CommonFunc.sleep(200);

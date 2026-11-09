@@ -69,6 +69,7 @@ export default function onScrollStopModifierUndefinedTest() {
       expect(onScrollStopValue1.asString()).assertEqual('Count2');
 
       let driver2 = Driver.create();
+      await CommonFunc.sleep(500);
       let btn1 = await driver2.findComponent(ON.id('changeButton')) as Component;
       await btn1.click();
       await CommonFunc.sleep(500);

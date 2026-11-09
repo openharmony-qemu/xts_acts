@@ -40,6 +40,7 @@ import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility } from '../Util.test';
 import type { KeyCode } from '@ohos.multimodalInput.keyCode';
 
+let displayID: Int = 0;
 export default function richEditorUndefined() {
   describe('richEditorUndefined3', () => {
     beforeAll(async (): Promise<void> => {
@@ -66,9 +67,10 @@ export default function richEditorUndefined() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push richEditorUndefined3 page error:" + err);
+        console.log("push richEditorUndefined3 page error:" + err);
       }
       console.info("richEditorUndefined3 beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
 
     });
     afterEach(async () => {
@@ -86,9 +88,17 @@ export default function richEditorUndefined() {
       let richEditor = await driver.findComponent(ON.id('RichEditor_3'));
       await (richEditor?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      driver.triggerKey(KeyCode.KEYCODE_DEL)
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_DEL, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(KeyCode.KEYCODE_TAB);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_TAB, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let text = await driver.findComponent(ON.id('Text_AboutToDelete'));
       expect(await (text?.getText() as Promise<string>)).assertEqual('aboutToDelete:0');
@@ -97,18 +107,34 @@ export default function richEditorUndefined() {
       await (changeBtn?.click() as Promise<void>);
       await (richEditor?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      driver.triggerKey(KeyCode.KEYCODE_DEL)
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_DEL, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(KeyCode.KEYCODE_TAB);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_TAB, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<string>)).assertEqual('aboutToDelete:1');
 
       await (changeBtn?.click() as Promise<void>);
       await (richEditor?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      driver.triggerKey(KeyCode.KEYCODE_DEL)
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_DEL, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(KeyCode.KEYCODE_TAB);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_TAB, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<string>)).assertEqual('aboutToDelete:1');
       console.info('[richEditorUndefined_static_3001] END');
@@ -129,7 +155,11 @@ export default function richEditorUndefined() {
       await CommonFunc.sleep(1000);
       await RichEditor.inputText('123');
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(KeyCode.KEYCODE_TAB);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_TAB, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let text = await driver.findComponent(ON.id('Text_AboutToIMEInput'));
       expect(await (text?.getText() as Promise<string>)).assertEqual('aboutToIMEInput:0');
@@ -141,7 +171,11 @@ export default function richEditorUndefined() {
       await CommonFunc.sleep(1000);
       await RichEditor.inputText('123');
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(KeyCode.KEYCODE_TAB);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_TAB, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<string>)).assertEqual('aboutToIMEInput:3');
 
@@ -151,7 +185,11 @@ export default function richEditorUndefined() {
       await CommonFunc.sleep(1000);
       await RichEditor.inputText('123');
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(KeyCode.KEYCODE_TAB);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_TAB, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<string>)).assertEqual('aboutToIMEInput:3');
 
@@ -173,9 +211,17 @@ export default function richEditorUndefined() {
       await (changeBtnOffset?.click() as Promise<void>);
       await (richEditor?.longClick() as Promise<void>);
       await CommonFunc.sleep(3000);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(KeyCode.KEYCODE_TAB);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_TAB, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let text = await driver.findComponent(ON.id('RichEditor_text_OnCut'));
 
@@ -186,9 +232,17 @@ export default function richEditorUndefined() {
       await (changeBtnOffset?.click() as Promise<void>);
       await (richEditor?.longClick() as Promise<void>);
       await CommonFunc.sleep(3000);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(KeyCode.KEYCODE_TAB);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_TAB, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<string>)).assertEqual('cut:1');
 
@@ -196,9 +250,17 @@ export default function richEditorUndefined() {
       await (changeBtnOffset?.click() as Promise<void>);
       await (richEditor?.longClick() as Promise<void>);
       await CommonFunc.sleep(3000);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(KeyCode.KEYCODE_TAB);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_TAB, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<string>)).assertEqual('cut:1');
       console.info('[richEditorUndefined_static_3003] END');

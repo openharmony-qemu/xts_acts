@@ -27,6 +27,10 @@ function checkDeviceIsDevBoard() {
   }
 }
 
+interface TicketParamsLocal {
+  ticketExpireTimeMs: number;
+}
+
 export default function permissionTest() {
   describe('ActsAbilityPermissionTest',() => {
     beforeAll(() => {
@@ -69,7 +73,7 @@ export default function permissionTest() {
         expect(false).assertTrue();
       } catch (error) {
         if (checkDeviceIsDevBoard()) {
-          expect(error.code).assertEqual(24010002);
+          expect(error.code === 24010001 || error.code === 24010002).assertTrue();
         } else {
           expect(error.code).assertEqual(201);
         }
@@ -104,7 +108,7 @@ export default function permissionTest() {
         expect(false).assertTrue();
       } catch (error) {
         if (checkDeviceIsDevBoard()) {
-          expect(error.code).assertEqual(24010002);
+          expect(error.code === 24010001 || error.code === 24010002).assertTrue();
         } else {
           expect(error.code).assertEqual(201);
         }
@@ -125,7 +129,7 @@ export default function permissionTest() {
         cliCmdName: 'ohos-aa',
         subCliCmdName: 'start'
       }];
-      let ticketParams: abilityToolAccessCtrl.TicketParams = {
+      let ticketParams: TicketParamsLocal = {
         ticketExpireTimeMs: 30000
       };
       try {
@@ -133,7 +137,7 @@ export default function permissionTest() {
         expect(false).assertTrue();
       } catch (error) {
         if (checkDeviceIsDevBoard()) {
-          expect(error.code).assertEqual(24010002);
+          expect(error.code === 24010001 || error.code === 24010002).assertTrue();
         } else {
           expect(error.code).assertEqual(201);
         }

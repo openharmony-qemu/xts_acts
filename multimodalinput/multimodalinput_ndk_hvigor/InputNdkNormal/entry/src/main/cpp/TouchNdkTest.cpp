@@ -815,6 +815,7 @@ static napi_value KeyCode29(napi_env env, napi_callback_info info)
     int32_t keyCode7 = 3241;
     int32_t keyCode8 = 3242;
     int32_t keyCode9 = 3243;
+    int32_t keyCode10 = 3245;
     napi_create_int32(env,
                       (Input_KeyCode::OH_INPUT_KEYCODE_PTZ_CLICK == keyCode1 &&
                       Input_KeyCode::OH_INPUT_KEYCODE_PTZ_FOCUS_LEFT == keyCode2 &&
@@ -824,7 +825,8 @@ static napi_value KeyCode29(napi_env env, napi_callback_info info)
                       Input_KeyCode::OH_INPUT_KEYCODE_PTZ_SHUTTER_LEFT == keyCode6 &&
                       Input_KeyCode::OH_INPUT_KEYCODE_PTZ_SHUTTER_RIGHT == keyCode7 &&
                       Input_KeyCode::OH_INPUT_KEYCODE_PTZ_APERTURE_LEFT == keyCode8 &&
-                      Input_KeyCode::OH_INPUT_KEYCODE_PTZ_APERTURE_RIGHT == keyCode9) ? 1 : 0, &result);
+                      Input_KeyCode::OH_INPUT_KEYCODE_PTZ_APERTURE_RIGHT == keyCode9 &&
+                      Input_KeyCode::OH_INPUT_KEYCODE_DESKTOP == keyCode10) ? 1 : 0, &result);
     return result;
 }
 

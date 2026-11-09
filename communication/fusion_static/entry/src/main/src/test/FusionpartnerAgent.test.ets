@@ -30,7 +30,7 @@ import {
   Level,
   Size,
   Hypium
-} from '../../../hypium';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import {
   Component,
   Driver,

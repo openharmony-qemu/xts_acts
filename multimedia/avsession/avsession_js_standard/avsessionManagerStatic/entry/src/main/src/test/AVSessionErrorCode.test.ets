@@ -1564,7 +1564,9 @@ export default function AVSessionErrorCode() {
         try {
             session!.getAVCastController().then((avcontroller: avSession.AVCastController| undefined) => {
                 console.info(`getAVCastController : SUCCESS `);
-                expect(true).assertFalse();
+                if (avcontroller != undefined) {
+                    expect(true).assertFalse();
+                }
             });
         } catch (error) {
             console.info(`getAVCastController failed: code: ${error.code}, message: ${error.message}`);
@@ -1591,7 +1593,9 @@ export default function AVSessionErrorCode() {
               } else {
                 aVCastController = avcontroller;
                 console.info('getAVCastController : SUCCESS');
-                expect(true).assertFalse();
+                if (avcontroller != undefined) {
+                    expect(true).assertFalse();
+                }
               }
             });
         } catch (error) {

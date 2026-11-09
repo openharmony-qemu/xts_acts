@@ -16,7 +16,6 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { Decimal } from '@kit.ArkTS';
 import * as common from '../common/DecimalTestCommon';
-import { BusinessError } from '@kit.BasicServicesKit';
 
 type Rounding = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
@@ -33,6 +32,7 @@ export default function DecimalToDecimalPlacesTest() {
     });
     afterEach(() => { common.resetDecimalConfig(Decimal); });
     afterAll(() => {});
+
 
     /**
      * @tc.name testDecimalToDecimalPlacesPart01Test001
@@ -163,7 +163,7 @@ export default function DecimalToDecimalPlacesTest() {
         try {
           data.toDecimalPlaces(dp as number, Decimal.ROUND_HALF_UP);
         } catch (e) {
-          errCode = (e as BusinessError).code;
+          errCode = (e as ESObject).code;
         }
         expect(errCode).assertEqual(10200001);
       };
@@ -178,7 +178,7 @@ export default function DecimalToDecimalPlacesTest() {
         let dp: ESObject = '2';
         strDpData.toDecimalPlaces(dp as number, Decimal.ROUND_HALF_UP);
       } catch (e) {
-        errCodeStr = (e as BusinessError).code;
+        errCodeStr = (e as ESObject).code;
       }
       expect(errCodeStr).assertEqual(10200001);
       probeThrows(1000000001, new Decimal(1.5));
@@ -233,7 +233,7 @@ export default function DecimalToDecimalPlacesTest() {
         try {
           data.toDecimalPlaces(1, rm as Rounding);
         } catch (e) {
-          errCode = (e as BusinessError).code;
+          errCode = (e as ESObject).code;
         }
         expect(errCode).assertEqual(10200001);
       };
@@ -295,7 +295,7 @@ export default function DecimalToDecimalPlacesTest() {
         let rm: ESObject = null;
         nullRmData.toDecimalPlaces(1, rm as Rounding);
       } catch (e) {
-        nullRmErr = (e as BusinessError).code;
+        nullRmErr = (e as ESObject).code;
       }
       expect(nullRmErr).assertEqual(10200001);
       let nullDpData: Decimal = new Decimal(1.5);
@@ -304,7 +304,7 @@ export default function DecimalToDecimalPlacesTest() {
         let dp: ESObject = null;
         nullDpData.toDecimalPlaces(dp as number, Decimal.ROUND_HALF_UP);
       } catch (e) {
-        nullDpErr = (e as BusinessError).code;
+        nullDpErr = (e as ESObject).code;
       }
       expect(nullDpErr).assertEqual(10200001);
       let undefDpData: Decimal = new Decimal(1.2345);
@@ -324,7 +324,7 @@ export default function DecimalToDecimalPlacesTest() {
         let rm: ESObject = 99;
         bothInvalidData.toDecimalPlaces(-1, rm as Rounding);
       } catch (e) {
-        bothInvalidErr = (e as BusinessError).code;
+        bothInvalidErr = (e as ESObject).code;
       }
       expect(bothInvalidErr).assertEqual(10200001);
     });
@@ -355,6 +355,7 @@ export default function DecimalToDecimalPlacesTest() {
       expect(new Decimal(1e9).toDecimalPlaces(0, Decimal.ROUND_DOWN).toString()).assertEqual('1000000000');
     });
 
+
     /**
      * @tc.name testDecimalToDecimalPlacesPart02Test001
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_DP_PART02_TEST_0100
@@ -371,7 +372,7 @@ export default function DecimalToDecimalPlacesTest() {
         let out: Decimal = toDpUnsafe(dataB, 1, 99);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       expect(new Decimal(2.5).toDecimalPlaces(0).toString()).assertEqual('3');
@@ -422,7 +423,7 @@ export default function DecimalToDecimalPlacesTest() {
         try {
           data.toDecimalPlaces(dp as number);
         } catch (e) {
-          errCode = (e as BusinessError).code;
+          errCode = (e as ESObject).code;
         }
         expect(errCode).assertEqual(10200001);
       };
@@ -437,7 +438,7 @@ export default function DecimalToDecimalPlacesTest() {
         let dp: ESObject = '2';
         strDpData.toDecimalPlaces(dp as number);
       } catch (e) {
-        strDpErr = (e as BusinessError).code;
+        strDpErr = (e as ESObject).code;
       }
       expect(strDpErr).assertEqual(10200001);
       probeThrows(1000000001, new Decimal(1.5));
@@ -457,7 +458,7 @@ export default function DecimalToDecimalPlacesTest() {
         try {
           data.toDecimalPlaces(dp as number);
         } catch (e) {
-          errCode = (e as BusinessError).code;
+          errCode = (e as ESObject).code;
         }
         expect(errCode).assertEqual(10200001);
       };
@@ -467,7 +468,7 @@ export default function DecimalToDecimalPlacesTest() {
         let dp: ESObject = true;
         boolDpData.toDecimalPlaces(dp as number);
       } catch (e) {
-        boolDpErr = (e as BusinessError).code;
+        boolDpErr = (e as ESObject).code;
       }
       expect(boolDpErr).assertEqual(10200001);
       probeThrows(NaN, new Decimal(1.5));
@@ -495,7 +496,7 @@ export default function DecimalToDecimalPlacesTest() {
         let dp: ESObject = null;
         nullData.toDecimalPlaces(dp as number);
       } catch (e) {
-        nullErr = (e as BusinessError).code;
+        nullErr = (e as ESObject).code;
       }
       expect(nullErr).assertEqual(10200001);
       let undefData: Decimal = new Decimal(1.2345);
@@ -514,7 +515,7 @@ export default function DecimalToDecimalPlacesTest() {
         let dp: ESObject = '';
         emptyStrData.toDecimalPlaces(dp as number);
       } catch (e) {
-        emptyStrErr = (e as BusinessError).code;
+        emptyStrErr = (e as ESObject).code;
       }
       expect(emptyStrErr).assertEqual(10200001);
       let mixedData: Decimal = new Decimal(2.71828);
@@ -535,7 +536,7 @@ export default function DecimalToDecimalPlacesTest() {
         let dp: ESObject = {};
         objData.toDecimalPlaces(dp as number);
       } catch (e) {
-        objErr = (e as BusinessError).code;
+        objErr = (e as ESObject).code;
       }
       expect(objErr).assertEqual(10200001);
     });
@@ -620,7 +621,7 @@ export default function DecimalToDecimalPlacesTest() {
         data.toDecimalPlaces(0);
       } catch (e) {
         thrown = true;
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       } finally {
         Decimal.set({ defaults: true });
@@ -655,7 +656,7 @@ export default function DecimalToDecimalPlacesTest() {
         let rm: ESObject = 99;
         bothInvalidData.toDecimalPlaces(-1, rm as Rounding);
       } catch (e) {
-        bothInvalidErr = (e as BusinessError).code;
+        bothInvalidErr = (e as ESObject).code;
       }
       expect(bothInvalidErr).assertEqual(10200001);
       expect(new Decimal('1.2345').toDecimalPlaces(2).toString()).assertEqual('1.23');
@@ -678,7 +679,7 @@ export default function DecimalToDecimalPlacesTest() {
         data.toDecimalPlaces(1e9);
       } catch (e) {
         thrown = true;
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       } finally {
         Decimal.set({ defaults: true });
@@ -703,6 +704,7 @@ export default function DecimalToDecimalPlacesTest() {
       expect(new Decimal(1.5e-7).toDecimalPlaces(2).toString()).assertEqual('0');
       expect(new Decimal(1e9).toDecimalPlaces(0).toString()).assertEqual('1000000000');
     });
+
 
     /**
      * @tc.name testDecimalToDecimalPlacesPart03Test001
@@ -784,7 +786,7 @@ export default function DecimalToDecimalPlacesTest() {
         decStrRm.toDecimalPlaces(2, rm as Rounding);
       } catch (e) {
         thrown = true;
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       expect(thrown).assertTrue();
@@ -837,7 +839,7 @@ export default function DecimalToDecimalPlacesTest() {
         decThrow.toDecimalPlaces(-1, Decimal.ROUND_HALF_UP);
       } catch (e) {
         thrownB = true;
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       expect(thrownB).assertTrue();
@@ -854,7 +856,7 @@ export default function DecimalToDecimalPlacesTest() {
         decD.toDecimalPlaces(2, rm as Rounding);
       } catch (e) {
         thrownC = true;
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       expect(thrownC).assertTrue();
@@ -867,7 +869,7 @@ export default function DecimalToDecimalPlacesTest() {
         decN.toDecimalPlaces(2.5, Decimal.ROUND_HALF_UP);
       } catch (e) {
         thrownN = true;
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       expect(thrownN).assertTrue();
@@ -890,30 +892,19 @@ export default function DecimalToDecimalPlacesTest() {
         dec.toDecimalPlaces(-5, Decimal.ROUND_HALF_UP);
       } catch (e) {
         thrown = true;
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       expect(thrown).assertTrue();
       expect(prev.toString()).assertEqual('12.34');
       let decB: Decimal = new Decimal(12.34567);
-      let e1: BusinessError | null = null;
-      try {
+      expect(common.getThrownCode(() => {
         decB.toDecimalPlaces(-1, Decimal.ROUND_HALF_UP);
-      } catch (e) {
-        e1 = e as BusinessError;
-      }
-      let e2: BusinessError | null = null;
-      try {
+      })).assertEqual(10200001);
+      expect(common.getThrownCode(() => {
         let rm: ESObject = 9;
         decB.toDecimalPlaces(1, rm as Rounding);
-      } catch (e) {
-        e2 = e as BusinessError;
-      }
-      expect(e1 === null).assertFalse();
-      expect(e2 === null).assertFalse();
-      expect((e1 as BusinessError).code).assertEqual(10200001);
-      expect((e2 as BusinessError).code).assertEqual(10200001);
-      expect(e1 === e2).assertFalse();
+      })).assertEqual(10200001);
       let decC: Decimal = new Decimal(1.235);
       let thrownC: boolean = false;
       try {
@@ -921,7 +912,7 @@ export default function DecimalToDecimalPlacesTest() {
         decC.toDecimalPlaces(1, rm as Rounding);
       } catch (e) {
         thrownC = true;
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       expect(thrownC).assertTrue();
@@ -935,7 +926,7 @@ export default function DecimalToDecimalPlacesTest() {
         decD.toDecimalPlaces(dpE as number, Decimal.ROUND_HALF_UP);
       } catch (e) {
         thrownD = true;
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       expect(thrownD).assertTrue();
@@ -947,7 +938,7 @@ export default function DecimalToDecimalPlacesTest() {
         decE.toDecimalPlaces(dpE as number);
       } catch (e) {
         thrownE = true;
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       expect(thrownE).assertTrue();
@@ -959,7 +950,7 @@ export default function DecimalToDecimalPlacesTest() {
         decF.toDecimalPlaces(1, rm as Rounding);
       } catch (e) {
         thrownF = true;
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       expect(thrownF).assertTrue();
@@ -1073,7 +1064,7 @@ export default function DecimalToDecimalPlacesTest() {
         decH.toDecimalPlaces(2, rm as Rounding);
       } catch (e) {
         thrownH = true;
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       expect(thrownH).assertTrue();
@@ -1132,14 +1123,14 @@ export default function DecimalToDecimalPlacesTest() {
       expect(a).assertEqual('1.5');
       expect(b).assertEqual('1.5');
       let decLvl: Decimal = new Decimal(12.345);
-      let d0: string = decLvl.toDecimalPlaces(0, Decimal.ROUND_HALF_UP).toString();
-      let d1: string = decLvl.toDecimalPlaces(1, Decimal.ROUND_HALF_UP).toString();
-      let d2: string = decLvl.toDecimalPlaces(2, Decimal.ROUND_HALF_UP).toString();
-      let d3: string = decLvl.toDecimalPlaces(3, Decimal.ROUND_HALF_UP).toString();
-      expect(d0).assertEqual('12');
-      expect(d1).assertEqual('12.3');
-      expect(d2).assertEqual('12.35');
-      expect(d3).assertEqual('12.345');
+      let decimal0: string = decLvl.toDecimalPlaces(0, Decimal.ROUND_HALF_UP).toString();
+      let decimal1: string = decLvl.toDecimalPlaces(1, Decimal.ROUND_HALF_UP).toString();
+      let decimal2: string = decLvl.toDecimalPlaces(2, Decimal.ROUND_HALF_UP).toString();
+      let decimal3: string = decLvl.toDecimalPlaces(3, Decimal.ROUND_HALF_UP).toString();
+      expect(decimal0).assertEqual('12');
+      expect(decimal1).assertEqual('12.3');
+      expect(decimal2).assertEqual('12.35');
+      expect(decimal3).assertEqual('12.345');
       let decNeg: Decimal = new Decimal(-12.345);
       let hu: string = decNeg.toDecimalPlaces(2, Decimal.ROUND_HALF_UP).toString();
       let hf: string = decNeg.toDecimalPlaces(2, Decimal.ROUND_HALF_FLOOR).toString();
@@ -1206,7 +1197,7 @@ export default function DecimalToDecimalPlacesTest() {
         decErr.toDecimalPlaces(-1);
       } catch (e) {
         thrownA = true;
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       let thrownB: boolean = false;
@@ -1214,7 +1205,7 @@ export default function DecimalToDecimalPlacesTest() {
         decErr.toDecimalPlaces(-1, Decimal.ROUND_HALF_UP);
       } catch (e) {
         thrownB = true;
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       expect(thrownA).assertTrue();
@@ -1225,7 +1216,7 @@ export default function DecimalToDecimalPlacesTest() {
         decBound.toDecimalPlaces(1000000001);
       } catch (e) {
         thrown = true;
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       expect(thrown).assertTrue();
@@ -1236,7 +1227,7 @@ export default function DecimalToDecimalPlacesTest() {
         dec1250.toDecimalPlaces(-1);
       } catch (e) {
         thrown1250 = true;
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       expect(thrown1250).assertTrue();

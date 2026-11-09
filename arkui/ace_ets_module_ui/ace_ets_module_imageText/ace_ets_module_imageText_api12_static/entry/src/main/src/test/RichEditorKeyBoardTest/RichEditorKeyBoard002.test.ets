@@ -35,6 +35,8 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
+
 export default function RichEditorKeyBoard002() {
   describe('RichEditorKeyBoard002', () => {
     beforeAll(async (): Promise<void> => {
@@ -58,9 +60,10 @@ export default function RichEditorKeyBoard002() {
           console.info("push RichEditorKeyBoard002 success");
         }
       } catch (err) {
-        console.error("push RichEditorKeyBoard002 page error: " + err);
+        console.log("push RichEditorKeyBoard002 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
@@ -75,7 +78,11 @@ export default function RichEditorKeyBoard002() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorKeyBoard002')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let stop_edite = await (driver.findComponent(ON.id('stop_edite')) as Promise<Component>);

@@ -28,6 +28,7 @@ import DatePickerComponentTimeFormatTest from './datePickerComponentTest/DatePic
 import DatePickerComponentUseMilitaryTimeTest from './datePickerComponentTest/DatePickerComponentUseMilitaryTime.test'
 import DatePickerComponentOnChangeTest from './datePickerComponentTest/DatePickerComponentOnChange.test'
 import DatePickerComponentOnScrollStopTest from './datePickerComponentTest/DatePickerComponentOnScrollStop.test'
+import DatePickerComponentHideYearTest from './datePickerComponentTest/DatePickerComponentHideYear.test'
 export default function testsuite() {
   DataPickerCanLoopTest();
   DataPickerCanLoopModifierTest();
@@ -43,4 +44,5 @@ export default function testsuite() {
   DatePickerComponentUseMilitaryTimeTest();
   DatePickerComponentOnChangeTest();
   DatePickerComponentOnScrollStopTest();
+  DatePickerComponentHideYearTest();
 }

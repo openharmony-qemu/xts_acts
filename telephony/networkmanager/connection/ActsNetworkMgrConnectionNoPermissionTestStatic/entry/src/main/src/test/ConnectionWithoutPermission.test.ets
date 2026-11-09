@@ -357,6 +357,73 @@ export default function ConnectionWithoutPermissionTest(): void {
     });
 
     /**
+     * @tc.name   testNetworkMgrConnectionGetAddressesByNameCallbackNop_static_0100
+     * @tc.number SUB_NetworkMgr_Connection_GetAddressesByNameCallbackNop_0100
+     * @tc.desc   Using the module getAddressesByName method with callback without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionGetAddressesByNameCallbackNop_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:() => void): Promise<void> => {
+      const caseName: string = 'testNetworkMgrConnectionGetAddressesByNameCallbackNop_static_0100';
+      hilog.info(domain, tag, `${caseName}---Start`);
+      try {
+        connection.getAddressesByName("www.baidu.com",
+          (error: BusinessError | null, data: connection.NetAddress[] | undefined) => {
+            if (error?.code !== 0) {
+              hilog.error(domain, tag, `${caseName} failed, error: ${JSON.stringify(error)}`);
+              ExpectTrue(error?.code === NOT_PERMISSION);
+              hilog.info(domain, tag, `${caseName}---End`);
+              done();
+            } else {
+              hilog.info(domain, tag, `${caseName} success, data: ${JSON.stringify(data)}`);
+              ExpectFail();
+              hilog.info(domain, tag, `${caseName}---End`);
+              done();
+            }
+          });
+      } catch (error) {
+        hilog.error(domain, tag, `${caseName} catch: ${JSON.stringify(error)}`);
+        ExpectTrue(error.code === NOT_PERMISSION);
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionGetAddressesByNamePromiseNop_static_0200
+     * @tc.number SUB_NetworkMgr_Connection_GetAddressesByNamePromiseNop_0200
+     * @tc.desc   Using the module getAddressesByName method with promise without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionGetAddressesByNamePromiseNop_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:() => void): Promise<void> => {
+      const caseName: string = 'testNetworkMgrConnectionGetAddressesByNamePromiseNop_static_0200';
+      hilog.info(domain, tag, `${caseName}---Start`);
+      try {
+        try {
+          let data = await connection.getAddressesByName("www.baidu.com");
+          hilog.info(domain, tag, `${caseName} success, data: ${JSON.stringify(data)}`);
+          ExpectFail();
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        } catch (error) {
+          const err = error as BusinessError;
+          hilog.error(domain, tag, `${caseName} failed, error: ${JSON.stringify(err)}`);
+          ExpectTrue(err.code === NOT_PERMISSION);
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        }
+      } catch (error) {
+        hilog.error(domain, tag, `${caseName} catch: ${JSON.stringify(error)}`);
+        ExpectTrue(error.code === NOT_PERMISSION);
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testNetworkMgrConnectionGetConnectOwnerUidPromiseNop_static_100
      * @tc.number SUB_NetworkMgr_Connection_GetConnectOwnerUidPromiseNop_0100
      * @tc.desc   Using the on method without permission
@@ -421,6 +488,41 @@ export default function ConnectionWithoutPermissionTest(): void {
       try {
         try {
           let data = await connection.getAddressesByNameWithOptions(host, { family: connection.FamilyType.FAMILY_TYPE_ALL });
+          hilog.info(domain, tag, `${caseName} data: ${JSON.stringify(data)}`);
+          expect().assertFail();
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        } catch (err) {
+          const error = err as BusinessError;
+          hilog.info(domain, tag, `${caseName} Failed to get addresses. error:${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 201);
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        }
+      } catch(err) {
+        hilog.info(domain, tag, `${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testConnectionGetAddressesByNameWithOptionsNetHandle_static_0200
+     * @tc.number  SUB_NetworkMgr_Connection_GetAddressesByNameWithOptions_0200
+     * @tc.desc    Using the netHandle.getAddressesByNameWithOptions method without permission
+     * @tc.level   Level 3
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     */
+    it('testConnectionGetAddressesByNameWithOptionsNetHandle_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done:() => void): Promise<void> => {
+      const caseName: string = 'testConnectionGetAddressesByNameWithOptionsNetHandle_static_0200';
+      hilog.info(domain, tag, `${caseName}---Start`);
+      let host = "www.baidu.com";
+      try {
+        try {
+          let netHandle: connection.NetHandle = connection.getDefaultNetSync();
+          let data = await netHandle.getAddressesByNameWithOptions(host, { family: connection.FamilyType.FAMILY_TYPE_ALL });
           hilog.info(domain, tag, `${caseName} data: ${JSON.stringify(data)}`);
           expect().assertFail();
           hilog.info(domain, tag, `${caseName}---End`);

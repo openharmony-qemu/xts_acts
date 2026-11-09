@@ -24,7 +24,7 @@ import {
   TestType,
   Level,
   Size
-} from "../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 
 import {
   testGetHash_Array,

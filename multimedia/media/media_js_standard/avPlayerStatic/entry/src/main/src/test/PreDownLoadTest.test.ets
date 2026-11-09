@@ -24,6 +24,10 @@ import fs from '@ohos.file.fs';
 import { globalThis } from './Util.test';
 
 const MAX_COUNT = 999999999;
+const READ_TO_END: long = -1;
+const MAX_PUSH_CHUNK_SIZE: long = 64 * 1024;
+const DATA_NOT_NEEDED = -2;
+const DATA_BUFFER_FULL = -3;
 const CREAT_PROMISE_EVENT = 'createPromise';
 const SET_CALLBACK_EVENT = 'setCallback';
 const SET_MEDIA_SOURCE_EVENT = 'setMediaSource';
@@ -35,7 +39,7 @@ const RELEASE_EVENT = 'release'
 const ERROR_EVENT = 'error';
 const END_EVENT = 'end';
 const VIDEO_SOURCE = 'H264_AAC.mp4';
-const FILE_LENGTH: Long = 1894335;
+const FILE_LENGTH: long = 1894335;
 const URL_TO_HEADER: Record<string, Record<string, string>> =
   { "https://xxx/xx.mp4" : {"content-length": "1894335"} }
 const TAG = 'AVPlayer.MediaSource';
@@ -44,11 +48,12 @@ const url_1a1v_m3u8 = "https://hwposter-inland.hwcloudtest.cn/rem/DTA/20240117/h
 let avPlayer: media.AVPlayer | undefined;
 let mediaSource: media.MediaSource | undefined;
 let resourceLoader: media.MediaSourceLoader;
-let requests: HashMap<number, media.MediaSourceLoadingRequest> = new HashMap<number, media.MediaSourceLoadingRequest>(); // uuid:request
+let requests: HashMap<long, media.MediaSourceLoadingRequest> = new HashMap<long, media.MediaSourceLoadingRequest>(); // uuid:request
 let fileDescriptor: resourceManager.RawFileDescriptor | undefined;
-let mgr: resourceManager.ResourceManager;
-let uuid: number = 0;
-let count: number = 0;
+let uuid: long = 0;
+let loaderFailure: string = '';
+let loaderBytesAccepted: long = 0;
+let loadingErrorInjected: boolean = false;
 let mediaTestBase = new MediaTestBase()
 
 interface PreDownConfig {
@@ -56,15 +61,16 @@ interface PreDownConfig {
   playTime: number, // Used to PLAYING_EVENT, -1 means wait for end callback
   respondDataCount: number, // test for finishLoading
   needHeader: boolean,
-  loadingError?: number
+  loadingError?: media.LoadingRequestError,
+  loadingErrorAfterBytes?: long // Inject a fatal error without waiting for another read callback.
 }
 
 async function getAVPlayerRequest(testName: string, url: string, callBack: (request: media.MediaSourceLoadingRequest) => void) {
   let avPlayer = await media.createAVPlayer()
   let headers: Record<string, string> = {"User-Agent": "User-Agent-Value"};
   let mediaSource1 : media.MediaSource | undefined = media.createMediaSourceWithUrl(url, headers);
-  let uuid: int = 1;
-  let requests1: HashMap<number, media.MediaSourceLoadingRequest> = new HashMap<number, media.MediaSourceLoadingRequest>(); //uuid:request
+  let uuid: long = 1;
+  let requests1: HashMap<long, media.MediaSourceLoadingRequest> = new HashMap<long, media.MediaSourceLoadingRequest>();
 
 
   let playStrategy: media.PlaybackStrategy = {
@@ -166,7 +172,7 @@ async function setCallbackEvent(avPlayer: media.AVPlayer | undefined, config: Pr
   toNextStep(avPlayer, config, steps, done);
 }
 
-async function respondHeader(uuid: int, config: PreDownConfig) {
+function respondHeader(uuid: long, config: PreDownConfig) {
   let request = requests.get(uuid);
   if (request) {
     let url = request.url;
@@ -177,52 +183,98 @@ async function respondHeader(uuid: int, config: PreDownConfig) {
   }
 }
 
-async function respondData(uuid: Long, offset: Long, length: Long) {
-  let request = requests.get(uuid);
-  if (request) {
-    let buf = new ArrayBuffer(length);
-    if (fileDescriptor) {
-      console.log("offset" + fileDescriptor!!.offset + "length:" +  fileDescriptor!!.length);
-      let num = fs.readSync(fileDescriptor!!.fd, buf, { offset: (fileDescriptor!!.offset + offset).toLong(), length: length.toLong()});
-      console.log(`respondData uuid: ${uuid},num: ${num}`);
-      let bufArr = new Uint8Array(buf)
-      console.info(`case in respondData ArrayBuffer: ${bufArr}`);
-      try {
-        request.respondData(uuid, offset, buf);
-      } catch(e) {
-        console.error(`Failed to respondData, error message:${JSON.stringify(e)}`);
-      }
-      
-      console.info(`case in respondData end uuid: ${uuid}, offset: ${offset}, length: ${length}`);
+function getReadEnd(offset: long, length: long, resourceLength: long): long {
+  if (resourceLength < 0 || offset < 0 || offset > resourceLength || length < READ_TO_END) {
+    throw new Error(`Invalid loader range: offset=${offset}, length=${length}, resourceLength=${resourceLength}`);
+  }
+  const remaining = resourceLength - offset;
+  return length == READ_TO_END || length > remaining ? resourceLength : offset + length;
+}
+
+async function respondData(uuid: long, offset: long, length: long, config: PreDownConfig) {
+  const request = requests.get(uuid);
+  const descriptor = fileDescriptor;
+  if (!request) {
+    return;
+  }
+  if (!descriptor) {
+    throw new Error(`Loader resource is not open: uuid=${uuid}`);
+  }
+  const end = getReadEnd(offset, length, descriptor.length);
+  const errorAfterBytes = config.loadingErrorAfterBytes;
+  while (offset < end && requests.get(uuid) === request) {
+    let size: long = end - offset;
+    if (size > MAX_PUSH_CHUNK_SIZE) {
+      size = MAX_PUSH_CHUNK_SIZE;
     }
+    if (errorAfterBytes !== undefined) {
+      if (loadingErrorInjected) {
+        return;
+      }
+      if (loaderBytesAccepted >= errorAfterBytes) {
+        finishLoading(uuid, config);
+        return;
+      }
+      const remaining = errorAfterBytes - loaderBytesAccepted;
+      if (size > remaining) {
+        size = remaining;
+      }
+    }
+    const buffer = new ArrayBuffer(size.toInt());
+    const bytesRead = fs.readSync(descriptor.fd, buffer, { offset: descriptor.offset + offset, length: size });
+    if (bytesRead <= 0) {
+      throw new Error(`Unexpected loader EOF: uuid=${uuid}, offset=${offset}, end=${end}`);
+    }
+    const accepted = request.respondData(uuid, offset, bytesRead == size ? buffer : buffer.slice(0, bytesRead.toInt()));
+    if (accepted == DATA_NOT_NEEDED || accepted == DATA_BUFFER_FULL) {
+      return;
+    }
+    if (accepted === undefined || accepted <= 0 || accepted > bytesRead) {
+      throw new Error(`Invalid accepted length: uuid=${uuid}, accepted=${accepted}, sent=${bytesRead}`);
+    }
+    offset += accepted.toLong();
+    loaderBytesAccepted += accepted.toLong();
+    if (errorAfterBytes !== undefined && loaderBytesAccepted >= errorAfterBytes) {
+      finishLoading(uuid, config);
+      return;
+    }
+    if (offset < end) {
+      await mediaTestBase.msleepAsync(0); // Allow read/close callbacks to run between chunks.
+    }
+  }
+  if (requests.get(uuid) === request && offset == descriptor.length &&
+    (config.loadingError === undefined || config.loadingError == media.LoadingRequestError.LOADING_ERROR_SUCCESS)) {
+    finishLoading(uuid, config);
   }
 }
 
-async function finishLoading(uuid: Long, config: PreDownConfig) {
-  let request = requests.get(uuid);
+function reportLoaderFailure(uuid: long, error: Error) {
+  loaderFailure = `Loader failure: uuid=${uuid}, message=${error.message}`;
+  console.error(loaderFailure);
+  try {
+    requests.get(uuid)?.finishLoading(uuid, media.LoadingRequestError.LOADING_ERROR_NO_RESOURCE);
+  } catch (finishError) {
+    console.error(`Failed to report loader failure: ${finishError.message}`);
+  }
+}
+
+function finishLoading(uuid: long, config: PreDownConfig) {
+  const request = requests.get(uuid);
   if (request) {
-    console.log(`case in finishLoading loadingError ${config.loadingError}`)
-    // request.finishLoading(uuid.toLong(), config.loadingError as media.LoadingRequestError);
-    let loadingErr = media.LoadingRequestError.LOADING_ERROR_SUCCESS;
-    if (config.loadingError == 1) {
-      loadingErr = media.LoadingRequestError.LOADING_ERROR_NOT_READY
-    } else if (config.loadingError == 2) {
-      loadingErr = media.LoadingRequestError.LOADING_ERROR_NO_RESOURCE
-    } else if (config.loadingError == 3) {
-      loadingErr = media.LoadingRequestError.LOADING_ERROR_INVAID_HANDLE
-    } else if (config.loadingError == 4) {
-      loadingErr = media.LoadingRequestError.LOADING_ERROR_ACCESS_DENIED
-    } else if (config.loadingError == 5) {
-      loadingErr = media.LoadingRequestError.LOADING_ERROR_ACCESS_TIMEOUT
-    } else if (config.loadingError == 6) {
-      loadingErr = media.LoadingRequestError.LOADING_ERROR_AUTHORIZE_FAILED
-    }
+    const loadingErr = config.loadingError ?? media.LoadingRequestError.LOADING_ERROR_SUCCESS;
+    console.log(`case in finishLoading loadingError ${loadingErr}`);
     request.finishLoading(uuid, loadingErr);
+    if (loadingErr != media.LoadingRequestError.LOADING_ERROR_SUCCESS) {
+      loadingErrorInjected = true;
+    }
   }
 }
 
 function initResourceLoader(avPlayer: media.AVPlayer | undefined, config: PreDownConfig,
   steps: Array<string>, done: () => void) {
+  loaderFailure = '';
+  loaderBytesAccepted = 0;
+  loadingErrorInjected = false;
   resourceLoader = {
     open: (request: media.MediaSourceLoadingRequest) => {
       if (!request) {
@@ -231,38 +283,37 @@ function initResourceLoader(avPlayer: media.AVPlayer | undefined, config: PreDow
       }
       uuid += 1;
       requests.set(uuid, request);
-      return uuid.toLong();
+      return uuid;
     },
-    read: (uuid: Long, requestedOffset: Long, requestedLength: Long) => {
-      if (!requests.hasKey(uuid)) {
-        console.warn('uuid not find')
-        return;
-      }
-      if (config.needHeader) {
-        respondHeader(uuid.toInt(), config);
-      }
-      console.info(`case in respondDataCount ${config.respondDataCount}`);
-      if (config.respondDataCount == 0) {
-        finishLoading(uuid, config);
-      } else {
-        config.respondDataCount -= 1;
-        console.info(`case in loadingError ${config.loadingError}`);
-        if (config.loadingError == Number(media.LoadingRequestError.LOADING_ERROR_NOT_READY)) {
-          finishLoading(uuid, config);
-          config.loadingError = 0;
+    read: (uuid: long, requestedOffset: long, requestedLength: long) => {
+      try {
+        if (!requests.hasKey(uuid)) {
+          console.warn('uuid not find');
           return;
         }
-        console.info(`case in respondData uuid: ${uuid}, requestedOffset: ${requestedOffset}, requestedLength: ${requestedLength}`);
-        respondData(uuid, requestedOffset, requestedLength);
-        if ((requestedOffset + requestedLength) == FILE_LENGTH
-          && (config.loadingError == Number(media.LoadingRequestError.LOADING_ERROR_SUCCESS))) {
-            console.info(`case in finishLoading uuid: ${uuid}`);
-          finishLoading(uuid, config);
+        if (config.needHeader) {
+          respondHeader(uuid, config);
         }
-        console.info(`case in respondDataCount2 ${config.respondDataCount}`);
+        if (config.respondDataCount == 0 && config.loadingErrorAfterBytes === undefined) {
+          finishLoading(uuid, config);
+          return;
+        }
+        if (config.respondDataCount > 0) {
+          config.respondDataCount -= 1;
+        }
+        if (config.loadingError == media.LoadingRequestError.LOADING_ERROR_NOT_READY) {
+          finishLoading(uuid, config);
+          config.loadingError = media.LoadingRequestError.LOADING_ERROR_SUCCESS;
+          return;
+        }
+        respondData(uuid, requestedOffset, requestedLength, config).catch((error: Error) => {
+          reportLoaderFailure(uuid, error);
+        });
+      } catch (error) {
+        reportLoaderFailure(uuid, error);
       }
     },
-    close: (uuid: Long) => {
+    close: (uuid: long) => {
       requests.remove(uuid);
       config.needHeader = true;
     }
@@ -346,8 +397,13 @@ function releaseEvent(avPlayer: media.AVPlayer | undefined, config: PreDownConfi
 
 function toNextStep(avPlayer: media.AVPlayer | undefined, config: PreDownConfig, steps: Array<string>, done: () => void) {
   if (steps[0] == END_EVENT) {
+    expect(loaderFailure).assertEqual('');
+    if (config.loadingErrorAfterBytes !== undefined) {
+      expect(loadingErrorInjected).assertEqual(true);
+    }
     console.info('case success!!');
     done();
+    return;
   }
   console.log("Current step:", steps[0]);
   console.log("Is it PLAY_EVENT?", steps[0] === PLAY_EVENT);
@@ -389,10 +445,11 @@ function toNextStep(avPlayer: media.AVPlayer | undefined, config: PreDownConfig,
   }
 }
 
-function getFd(path: string) {
-  mediaTestBase.getFileDescriptorFromFileDir(VIDEO_SOURCE, () => {}).then((res: media.AVFileDescriptor) => {
-    fileDescriptor = { fd: res!.fd, length: 0, offset: 0 } as resourceManager.RawFileDescriptor;
-  });
+async function getFd(path: string): Promise<void> {
+  const descriptor = await mediaTestBase.getFileDescriptorFromFileDir(path, () => {});
+  const resourceLength = fs.statSync(descriptor.fd).size;
+  fileDescriptor = { fd: descriptor.fd, length: resourceLength, offset: 0 };
+  expect(resourceLength).assertEqual(FILE_LENGTH);
 }
 
 export default function PreDownLoadTest() {
@@ -409,7 +466,7 @@ export default function PreDownLoadTest() {
           break;
         }
       }
-      getFd(VIDEO_SOURCE);
+      await getFd(VIDEO_SOURCE);
       console.log(`fileDescriptor: ${JSON.stringify(fileDescriptor)}`);
       console.log(`laamy ${Number.MAX_VALUE}`)
     })
@@ -547,7 +604,8 @@ export default function PreDownLoadTest() {
         needHeader: true,
         playTime: 3000,
         respondDataCount: 1,
-        loadingError: media.LoadingRequestError.LOADING_ERROR_NO_RESOURCE
+        loadingError: media.LoadingRequestError.LOADING_ERROR_NO_RESOURCE,
+        loadingErrorAfterBytes: 1024
       }
       let mySteps = new Array<string>(
         // create avplayer
@@ -581,7 +639,8 @@ export default function PreDownLoadTest() {
         needHeader: true,
         playTime: 3000,
         respondDataCount: 1,
-        loadingError: media.LoadingRequestError.LOADING_ERROR_INVAID_HANDLE
+        loadingError: media.LoadingRequestError.LOADING_ERROR_INVAID_HANDLE,
+        loadingErrorAfterBytes: 1024
       }
       let mySteps = new Array<string>(
         // create avplayer
@@ -615,7 +674,8 @@ export default function PreDownLoadTest() {
         needHeader: true,
         playTime: 3000,
         respondDataCount: 1,
-        loadingError: media.LoadingRequestError.LOADING_ERROR_ACCESS_DENIED
+        loadingError: media.LoadingRequestError.LOADING_ERROR_ACCESS_DENIED,
+        loadingErrorAfterBytes: 1024
       }
       let mySteps = new Array<string>(
         // create avplayer
@@ -649,7 +709,8 @@ export default function PreDownLoadTest() {
         needHeader: true,
         playTime: 3000,
         respondDataCount: 1,
-        loadingError: media.LoadingRequestError.LOADING_ERROR_ACCESS_TIMEOUT
+        loadingError: media.LoadingRequestError.LOADING_ERROR_ACCESS_TIMEOUT,
+        loadingErrorAfterBytes: 1024
       }
       let mySteps = new Array<string>(
         // create avplayer
@@ -683,7 +744,8 @@ export default function PreDownLoadTest() {
         needHeader: true,
         playTime: 3000,
         respondDataCount: 1,
-        loadingError: media.LoadingRequestError.LOADING_ERROR_AUTHORIZE_FAILED
+        loadingError: media.LoadingRequestError.LOADING_ERROR_AUTHORIZE_FAILED,
+        loadingErrorAfterBytes: 1024
       }
       let mySteps = new Array<string>(
         // create avplayer

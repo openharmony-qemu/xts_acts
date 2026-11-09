@@ -58,7 +58,7 @@ export default function SecurityHuksSignVerifyEd25519() {
         let res = await SignVerifyCallbackReal(srcKeyAlias, newSrcKeyAlias, signOptions, signVerifyData);
         expect(res).assertEqual(true);
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -84,7 +84,7 @@ export default function SecurityHuksSignVerifyEd25519() {
         let signVerifyData: SignVerifyData = BuildSignVerifyData([63]);
         await DoSignCallbackEndWithAbort(srcKeyAlias, signOptions, signVerifyData);
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -115,7 +115,7 @@ export default function SecurityHuksSignVerifyEd25519() {
         let res = await SignVerifyCallbackReal(srcKeyAlias, newSrcKeyAlias, signOptions, signVerifyData);
         expect(res).assertEqual(true);
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -141,7 +141,7 @@ export default function SecurityHuksSignVerifyEd25519() {
         let signVerifyData: SignVerifyData = BuildSignVerifyData([64, 1]);
         await DoSignCallbackEndWithAbort(srcKeyAlias, signOptions, signVerifyData);
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -172,7 +172,7 @@ export default function SecurityHuksSignVerifyEd25519() {
         let res = await SignVerifyReal(srcKeyAlias, newSrcKeyAlias, signOptions, signVerifyData);
         expect(res).assertEqual(true);
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -198,7 +198,7 @@ export default function SecurityHuksSignVerifyEd25519() {
         let signVerifyData: SignVerifyData = BuildSignVerifyData([63]);
         await DoSignEndWithAbort(srcKeyAlias, signOptions, signVerifyData);
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -229,7 +229,7 @@ export default function SecurityHuksSignVerifyEd25519() {
         let res = await SignVerifyReal(srcKeyAlias, newSrcKeyAlias, signOptions, signVerifyData);
         expect(res).assertEqual(true);
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });
@@ -255,7 +255,7 @@ export default function SecurityHuksSignVerifyEd25519() {
         let signVerifyData: SignVerifyData = BuildSignVerifyData([64, 1]);
         await DoSignEndWithAbort(srcKeyAlias, signOptions, signVerifyData);
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     });

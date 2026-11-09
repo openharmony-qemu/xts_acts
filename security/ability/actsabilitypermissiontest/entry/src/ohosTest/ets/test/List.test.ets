@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import permissionTest from './AbilityToolAccessCtrlPermissionTest.test';
+import cliManagerNoPermTest from './CliManagerNoPermTest.test';
 
 export default function testsuite() {
   permissionTest();
+  cliManagerNoPermTest();
 }

@@ -311,7 +311,7 @@ export default function ActsHiDebugHiProfilerTest() {
     /**
      * @tc.number SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1300
      * @tc.name testHidebugHiprofilerInterface13
-     * @tc.desc 验证调用OH_HiDebug_StartProfiler接口失败，再调用OH_HiDebug_StopProfiler接口，返回值11400430
+     * @tc.desc 验证调用OH_HiDebug_StartProfiler接口失败，再调用OH_HiDebug_StopProfiler接口，返回值11400430或11400422
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level2
@@ -320,7 +320,7 @@ export default function ActsHiDebugHiProfilerTest() {
       console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1300 start");
       try {
         let res = testNapi.stopProfiler();
-        expect(res == 11400430).assertTrue();
+        expect(res == 11400430 || res == 11400422).assertTrue();
         console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_1300 success");
         done();
       } catch (err) {

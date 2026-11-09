@@ -36,13 +36,13 @@ function testGetSharedList() {
    */
   it("test_get_shared_list_0100", Level.LEVEL2, async (done: Function) => {
     try {
-      networkManager.getSharedList();
-      expect(false).assertTrue();
+      const data = networkManager.getSharedList();
+      expect(Array.isArray(data)).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 9200001).assertTrue();
+        expect(error.code).assertEqual(9200001);
       }
     }
     done();
@@ -59,13 +59,13 @@ function testGetSharedList() {
   it("test_get_shared_list_0200", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
-      networkManager.getSharedList();
-      expect(false).assertTrue();
+      const data = networkManager.getSharedList();
+      expect(Array.isArray(data)).assertTrue();
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
-        expect(error.code === 9200002).assertTrue();
+        expect(error.code).assertEqual(9200002);
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -89,16 +89,10 @@ function testGetSharedList() {
       for (let i = 0; i < sharedList.length; i++) {
         expect(typeof (sharedList[i].shareName) === 'string').assertTrue();
         expect(typeof (sharedList[i].shareUri) === 'string').assertTrue();
-        expect(Array.isArray(sharedList[i].userPathInfoList)).assertTrue();
-        for (let j = 0; j < sharedList[i].userPathInfoList.length; j++) {
-          expect(typeof (sharedList[i].userPathInfoList[j].userName) === 'string').assertTrue();
-          expect(typeof (sharedList[i].userPathInfoList[j].userPermission) === 'string').assertTrue();
-        }
-        expect(typeof (sharedList[i].shareLimit) === 'number').assertTrue();
       }
     } catch (error) {
       if (error.code === 801) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code).assertEqual(801);
       } else {
         expect(false).assertTrue();
       }

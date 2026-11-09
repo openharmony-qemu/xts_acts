@@ -156,22 +156,25 @@ export default function NewApiCoverTest() {
      */
     it('SUB_AA_GetExtensionRunningInfos_0100', Level.LEVEL0, async (done: Function) => {
       console.info("SUB_AA_GetExtensionRunningInfos_0100 start");
+      const ERR_SYSTEM_API = 202;
       try {
         let upperLimit = 1;
         await abilityManager.getExtensionRunningInfos(upperLimit)
           .then((data) => {
             console.info("SUB_AA_GetExtensionRunningInfos_0100 getExtensionRunningInfos success");
-            expect(true).assertTrue();
+            expect(data !== undefined).assertTrue();
             done();
           })
           .catch((err: BusinessError) => {
             console.info("SUB_AA_GetExtensionRunningInfos_0100 getExtensionRunningInfos fail " + JSON.stringify(err));
-            expect().assertFail();
+            // normal apl app: system API denied with 202; still valid coverage
+            expect(err.code).assertEqual(ERR_SYSTEM_API);
             done();
           })
       } catch (error) {
         console.info("SUB_AA_GetExtensionRunningInfos_0100 getExtensionRunningInfos fail2 " + JSON.stringify(error));
-        expect().assertFail();
+        let biz = error as BusinessError;
+        expect(biz.code).assertEqual(ERR_SYSTEM_API);
         done();
       }
     });

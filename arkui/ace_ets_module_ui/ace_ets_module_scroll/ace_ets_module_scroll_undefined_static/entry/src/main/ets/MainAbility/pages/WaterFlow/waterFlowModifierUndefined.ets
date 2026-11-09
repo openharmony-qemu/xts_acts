@@ -130,116 +130,116 @@ struct WaterFlowModifierEventPage {
       }
 
       Blank().height(5)
-      Column({ space: 5 } as ColumnOptions) {
+      Column({ space: 1 } as ColumnOptions) {
         Row() {
-          Button('toBottom')
+          Button('toBottom').width('20%')
             .id('WaterFlowM_toBottom')
             .onClick((e: ClickEvent) => {
               console.log('scrollToBottom')
               this.scroller.scrollEdge(Edge.Bottom)
             })
-          Button('toTop')
+          Button('toTop').width('20%')
             .id('WaterFlowM_toTop')
             .onClick((e: ClickEvent) => {
               console.log('scrollToBottom')
               this.scroller.scrollEdge(Edge.Top)
             })
-          Button('Top')
+          Button('Top').width('20%')
             .id('WaterFlowM_flingTop')
             .onClick((e: ClickEvent) => {
               this.scroller.fling(10000);
             })
-          Button('Bot')
+          Button('Bot').width('20%')
             .id('WaterFlowM_flingBottom')
             .onClick((e: ClickEvent) => {
               this.scroller.fling(-10000);
             })
-          Button('reset')
+          Button('reset').width('20%')
             .id('WaterFlowM_resetText')
             .onClick((e: ClickEvent) => {
               this.modifier.message = 'Hello World';
             })
-        }
+        }.height('5%')
 
         Row() {
-          Button('onSFB')
+          Button('onSFB').width('16%')
             .id('WaterFlowM_onScrollFrameBeginValue')
             .onClick((e: ClickEvent) => {
               this.modifier.onScrollFrameBeginValue = !this.modifier.onScrollFrameBeginValue
             })
-          Button('onSI')
+          Button('onSI').width('16%')
             .id('WaterFlowM_onScrollIndexValue')
             .onClick((e: ClickEvent) => {
               this.modifier.onScrollIndexValue = !this.modifier.onScrollIndexValue
             })
 
-          Button('onRS')
+          Button('onRS').width('16%')
             .id('WaterFlowM_onReachStart')
             .onClick((e: ClickEvent) => {
               this.modifier.onReachStartValue = !this.modifier.onReachStartValue
             })
-          Button('onRE')
+          Button('onRE').width('16%')
             .id('WaterFlowM_onReachEnd')
             .onClick((e: ClickEvent) => {
               this.modifier.onReachEndValue = !this.modifier.onReachEndValue
             })
-          Button('fri')
+          Button('fri').width('16%')
             .id('WaterFlowM_friction')
             .onClick((e: ClickEvent) => {
               this.modifier.frictionValue = !this.modifier.frictionValue
             })
-          Button('enable')
+          Button('enable').width('16%')
             .id('WaterFlowM_enableScrollInteraction')
             .onClick((e: ClickEvent) => {
               this.modifier.enableScrollInteractionValue = !this.modifier.enableScrollInteractionValue
             })
-        }
+        }.height('5%')
 
         Row() {
-          Button('layout')
+          Button('layout').width('16%')
             .id('WaterFlowM_layoutDirection')
             .onClick((e: ClickEvent) => {
               this.modifier.layoutDirectionValue = !this.modifier.layoutDirectionValue
             })
-          Button('RG')
+          Button('RG').width('16%')
             .id('WaterFlowM_rowsGapValue')
             .onClick((e: ClickEvent) => {
               this.modifier.rowsGapValue = !this.modifier.rowsGapValue
             })
-          Button('CG')
+          Button('CG').width('16%')
             .id('WaterFlowM_columnsGapValue')
             .onClick((e: ClickEvent) => {
               this.modifier.columnsGapValue = !this.modifier.columnsGapValue
             })
-          Button('rowsT')
+          Button('rowsT').width('16%')
             .id('WaterFlowM_rowsTemplateValue')
             .onClick((e: ClickEvent) => {
               this.modifier.rowsTemplateValue = !this.modifier.rowsTemplateValue
             })
-          Button('colT')
+          Button('colT').width('16%')
             .id('WaterFlowM_columnsTemplateValue')
             .onClick((e: ClickEvent) => {
               this.modifier.columnsTemplateValue = !this.modifier.columnsTemplateValue
             })
-          Button('itemCS')
+          Button('itemCS').width('16%')
             .id('WaterFlowM_itemConstraintSizeValue')
             .onClick((e: ClickEvent) => {
               this.modifier.itemConstraintSizeValue = !this.modifier.itemConstraintSizeValue
             })
-        }
+        }.height('5%')
 
         Row() {
-          Button('nes')
+          Button('nes').width('50%')
             .id('WaterFlowM_nestedScrollValue')
             .onClick((e: ClickEvent) => {
               this.modifier.nestedScrollValue = !this.modifier.nestedScrollValue
             })
-          Button('cache')
+          Button('cache').width('50%')
             .id('WaterFlowM_cachedCountValue')
             .onClick((e: ClickEvent) => {
               this.modifier.cachedCountValue = !this.modifier.cachedCountValue
             })
-        }
+        }.height('5%')
       }
     }
   }
