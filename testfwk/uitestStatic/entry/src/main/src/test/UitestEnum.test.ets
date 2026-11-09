@@ -22,14 +22,6 @@ const waitUiReadyMs : int = 1000;
 const DeviceErrorCode = 17000005;
 
 
-async function exitInputMethod() {
-  let driver = Driver.create()
-  let softKeyBoard = await driver.findComponent(ON.type('Canvas'))
-  if (softKeyBoard != null) {
-    await driver.pressBack()
-  }
-}
-
 function sleep(numberMillis: int) {
   const exitTime = new Date().getTime() + numberMillis;
   while (new Date().getTime() < exitTime) { }
