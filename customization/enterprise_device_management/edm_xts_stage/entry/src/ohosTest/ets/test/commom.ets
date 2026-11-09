@@ -16,9 +16,10 @@
 import Want from '@ohos.app.ability.Want'
 import { BusinessError } from '@ohos.base';
 import installer from '@ohos.bundle.installer';
+import bundleManager from '@ohos.bundle.bundleManager';
 import accountManager from '@ohos.enterprise.accountManager';
 import adminManager from '@ohos.enterprise.adminManager'
-import bundleManager from '@ohos.enterprise.bundleManager'
+import enterpriseBundleManager from '@ohos.enterprise.bundleManager'
 import securityManager from '@ohos.enterprise.securityManager'
 import image from '@ohos.multimedia.image';
 import osAccount from '@ohos.account.osAccount';
@@ -184,12 +185,12 @@ async function initAppIds11WithRealApps(): Promise<void> {
     
     let realAppIds: Array<string> = [];
     
-    // Query appIdentifier for each known bundle
+    // Query appIdentifier for each known bundle using standard bundleManager
     for (let bundleName of knownBundles) {
       try {
-        let bundleInfo = await bundleManager.getBundleInfo(bundleName, 0);
-        if (bundleInfo && bundleInfo.appIdentifier && bundleInfo.appIdentifier.length > 0) {
-          realAppIds.push(bundleInfo.appIdentifier);
+        let bundleInfo = await bundleManager.getBundleInfo(bundleName, bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION);
+        if (bundleInfo && bundleInfo.appId && bundleInfo.appId.length > 0) {
+          realAppIds.push(bundleInfo.appId);
           if (realAppIds.length >= 11) {
             break;
           }
@@ -204,19 +205,39 @@ async function initAppIds11WithRealApps(): Promise<void> {
     if (realAppIds.length >= 11) {
       APP_IDS_11 = realAppIds.slice(0, 11);
     } else {
-      // Fallback: use TEST_REAL_APP_ID_1 repeated or generated values
-      console.warn(`Only found ${realAppIds.length} real appIdentifiers, padding with generated values`);
+      // Fallback: use TEST_REAL_APP_ID_1 and TEST_REAL_APP_ID_2, then pad with generated values
+      console.warn(`Only found ${realAppIds.length} real appIdentifiers, padding with known and generated values`);
+      
+      // Add known test app identifiers
+      if (realAppIds.length < 11 && TEST_REAL_APP_ID_1 && !realAppIds.includes(TEST_REAL_APP_ID_1)) {
+        realAppIds.push(TEST_REAL_APP_ID_1);
+      }
+      if (realAppIds.length < 11 && TEST_REAL_APP_ID_2 && !realAppIds.includes(TEST_REAL_APP_ID_2)) {
+        realAppIds.push(TEST_REAL_APP_ID_2);
+      }
+      
+      // Pad with generated values if still not enough
       for (let i = realAppIds.length; i < 11; i++) {
         realAppIds.push(`generated_app_id_${i}`);
       }
       APP_IDS_11 = realAppIds;
     }
   } catch (error) {
-    // Fallback to generated values if query fails
-    console.error('Failed to query installed bundles, using generated appIdentifiers');
-    for (let i = 0; i < 11; i++) {
-      APP_IDS_11[i] = `fallback_app_id_${i}`;
-    }
+    // Fallback to known test values if query fails
+    console.error('Failed to query installed bundles, using known test appIdentifiers');
+    APP_IDS_11 = [
+      TEST_REAL_APP_ID_1 || 'test_app_id_1',
+      TEST_REAL_APP_ID_2 || 'test_app_id_2',
+      'fallback_app_id_2',
+      'fallback_app_id_3',
+      'fallback_app_id_4',
+      'fallback_app_id_5',
+      'fallback_app_id_6',
+      'fallback_app_id_7',
+      'fallback_app_id_8',
+      'fallback_app_id_9',
+      'fallback_app_id_10'
+    ];
   }
 }
 
