@@ -589,7 +589,8 @@ export default function graphicImagePixelMap2() {
      */
     it('graphicImagePixelMap2_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let msgStr = 'www data graphicImagePixelMap2_1600';const options: image.InitializationOptions = {
+        let msgStr = 'www data graphicImagePixelMap2_1600';
+        const options: image.InitializationOptions = {
           pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 512, width: 512 }
         }
         const pixelMap = image.createPixelMapSync(options);
@@ -1933,6 +1934,82 @@ export default function graphicImagePixelMap2() {
           await pixelMap.release();
           done();
         } catch (err) {
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap_share_memory_0100
+     * @tc.number SUB_GRAPHIC_image_graphicImagePixelMap_share_MEMORY_0100
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap_share_memory_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr = 'graphicImagePixelMap_share_memory_0100';
+        let staticMetadata: image.HdrStaticMetadata = {
+          displayPrimariesX: [1.1, 1.1, 1.1],
+          displayPrimariesY: [1.2, 1.2, 1.2],
+          whitePointX: 1.1,
+          whitePointY: 1.2,
+          maxLuminance: 2.1,
+          minLuminance: 1.0,
+          maxContentLightLevel: 2.1,
+          maxFrameAverageLightLevel: 2.1,
+        };
+        let opts: image.InitializationOptions = {
+          editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 }
+        }
+        let pixelMap: image.PixelMap = image.createPixelMapUsingAllocatorSync(opts, image.AllocatorType.SHARE_MEMORY);
+        pixelMap?.setMetadata(image.HdrMetadataKey.HDR_STATIC_METADATA, staticMetadata).then(async () => {
+          console.info(msgStr + ' Succeeded in setting pixelMap metadata.');
+          expect().assertFail();
+          await pixelMap?.release();
+          done();
+        }).catch(async (error: BusinessError) => {
+          console.error(msgStr + " Failed to set the metadata.code ", error);
+          expect(Number(error.code)).assertEqual(62980173);
+          await pixelMap?.release();
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap_share_memory_0200
+     * @tc.number SUB_GRAPHIC_image_graphicImagePixelMap_share_MEMORY_0200
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap_share_memory_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr = 'graphicImagePixelMap_share_memory_0200';
+        let opts: image.InitializationOptions = {
+          editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 }
+        }
+        let pixelMap: image.PixelMap = image.createPixelMapUsingAllocatorSync(opts, image.AllocatorType.SHARE_MEMORY);
+        if (pixelMap != undefined) {
+          console.info('www data Succeeded in creating pixelMap object.');
+          try {
+            let staticMetadata = pixelMap!.getMetadata(image.HdrMetadataKey.HDR_STATIC_METADATA);
+            console.info(msgStr + ` getMetadata:${staticMetadata}`);
+            expect().assertFail();
+            await pixelMap.release();
+            done();
+          } catch (error) {
+            error = error as BusinessError;
+            console.error(msgStr + ' pixelmap create failed' + error);
+            console.error(msgStr + ' pixelmap create failed' + JSON.stringify(error));
+            expect(Number(error.code)).assertEqual(62980173);
+            await pixelMap.release();
+            done();
+          }
+        } else {
+          console.error('www data Failed to create pixelMap.');
           expect().assertFail();
           done();
         }
