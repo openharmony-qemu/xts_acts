@@ -36,12 +36,12 @@ export default function StartSelfUIAbilityInChildProcessTest() {
   describe('StartSelfUIAbilityInChildProcessTest', () => {
     beforeAll(() => {
       context = AppStorage.get<common.UIAbilityContext>('testAbilityContext') as common.UIAbilityContext;
-      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
-      if(user !== undefined){
-          cmd += ' -u ' + user;
-      }
     })
     beforeEach(() => {
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+        cmd += ' -u ' + user;
+      }
       abilityDelegator.executeShellCommand(cmd);
     })
 

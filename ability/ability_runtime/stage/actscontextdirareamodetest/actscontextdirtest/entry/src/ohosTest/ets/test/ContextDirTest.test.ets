@@ -23,6 +23,12 @@ import fs from '@ohos.file.fs';
 
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
 let areaMode: string;
+let cmd = 'aa force-stop com.example.contextdirnormaltest';
+let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+
+if(user !== undefined){
+  cmd += ' -u ' + user;
+}
 
 let sleep = async (delay: number): Promise<void> => {
   return new Promise((resolve, _) => {
@@ -314,7 +320,7 @@ export default function ContextDirTest() {
           areaMode = "el3";
           let result = checkApplicationContextDir(otherAppContext.getApplicationContext());
           expect(result).assertTrue();
-          abilityDelegator.executeShellCommand('aa force-stop com.example.contextdirnormaltest');
+          abilityDelegator.executeShellCommand(cmd);
           await sleep(300);
           done();
         })
@@ -350,7 +356,7 @@ export default function ContextDirTest() {
           areaMode = "el4";
           let result = checkApplicationContextDir(otherAppContext.getApplicationContext());
           expect(result).assertTrue();
-          abilityDelegator.executeShellCommand('aa force-stop com.example.contextdirnormaltest');
+          abilityDelegator.executeShellCommand(cmd);
           await sleep(300);
           done();
         })
@@ -439,7 +445,7 @@ export default function ContextDirTest() {
             getGroupDirDataOther = data.parameters.result;
             expect(getGroupDirDataOther).assertEqual(getGroupDirData);
             commonEventManager.unsubscribe(Subscriber);
-            abilityDelegator.executeShellCommand('aa force-stop com.example.contextdirnormaltest');
+            abilityDelegator.executeShellCommand(cmd);
             await sleep(300);
             done();
           }
@@ -499,7 +505,7 @@ export default function ContextDirTest() {
             getGroupDirDataOther = data.parameters.result;
             expect(getGroupDirDataOther).assertEqual(getGroupDirData);
             commonEventManager.unsubscribe(Subscriber);
-            abilityDelegator.executeShellCommand('aa force-stop com.example.contextdirnormaltest');
+            abilityDelegator.executeShellCommand(cmd);
             await sleep(300);
             done();
           }
@@ -559,7 +565,7 @@ export default function ContextDirTest() {
             getGroupDirDataOther = data.parameters.result;
             expect(getGroupDirDataOther !== getGroupDirData).assertTrue();
             commonEventManager.unsubscribe(Subscriber);
-            abilityDelegator.executeShellCommand('aa force-stop com.example.contextdirnormaltest');
+            abilityDelegator.executeShellCommand(cmd);
             await sleep(300);
             done();
           }
@@ -619,7 +625,7 @@ export default function ContextDirTest() {
             getGroupDirDataOther = data.parameters.result;
             expect(getGroupDirDataOther !== getGroupDirData).assertTrue();
             commonEventManager.unsubscribe(Subscriber);
-            abilityDelegator.executeShellCommand('aa force-stop com.example.contextdirnormaltest');
+            abilityDelegator.executeShellCommand(cmd);
             await sleep(300);
             done();
           }

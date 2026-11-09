@@ -26,10 +26,10 @@ const LOG_TAG = 'COMPLETION_HANDLER_TEST';
 const DELAY_TIME = 2000;
 let currentDisplayId = display.getDefaultDisplaySync().id;
 let allowOpen = async () => {
-  let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS).belongingDisplay(currentDisplayId), DELAY_TIME);
+  let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELAY_TIME);
   hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
   if (allowed) {
-    let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1').belongingDisplay(currentDisplayId));
+    let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
     if (buttons && buttons.length > 0) {
       hilog.info(DOMAIN, LOG_TAG, 'buttons.length: %{public}d', buttons.length);
       hilog.info(DOMAIN, LOG_TAG, 'clicking %{public}s', '本次允许');
@@ -37,6 +37,19 @@ let allowOpen = async () => {
       hilog.info(DOMAIN, LOG_TAG, '%{public}s clicked', '本次允许');
       buttonClicked = true;
       return;
+    }
+    for(const t of ['本次允许', '本次打开', '打开', '始终允许打开']) {
+      try{
+        let btn = await driver.findComponent(ON.text(t, MatchPattern.EQUALS));
+        if (btn){
+          hilog.info(DOMAIN, LOG_TAG, 'clicking %{public}s', t);
+          await btn.click();
+          buttonClicked = true;
+          return;
+        }
+      }catch(e){
+        hilog.info(DOMAIN, LOG_TAG, 'find %{public}s failed:%{public}s', JSON.stringify(e));
+      }
     }
     hilog.info(DOMAIN, LOG_TAG, 'button not found');
   }
@@ -52,7 +65,7 @@ export default function shareAcquireShareDataTest() {
   describe('shareAcquireShareDataTest', () => {
     beforeAll(async () => {
       try {
-        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0').belongingDisplay(currentDisplayId));
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
         if (allowed) {
           await allowed.click();
         }
@@ -131,7 +144,7 @@ export default function shareAcquireShareDataTest() {
               `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
           }
           await driver.delayMs(1000);
-          let button: Component = await driver.findComponent(ON.id(TAG).belongingDisplay(currentDisplayId));
+          let button: Component = await driver.findComponent(ON.id(TAG));
           await button.click();
         })
         .catch((err: BusinessError) => {
@@ -204,7 +217,7 @@ export default function shareAcquireShareDataTest() {
               `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
           }
           await driver.delayMs(1000);
-          let button: Component = await driver.findComponent(ON.id(TAG).belongingDisplay(currentDisplayId));
+          let button: Component = await driver.findComponent(ON.id(TAG));
           await button.click();
         })
         .catch((err: BusinessError) => {

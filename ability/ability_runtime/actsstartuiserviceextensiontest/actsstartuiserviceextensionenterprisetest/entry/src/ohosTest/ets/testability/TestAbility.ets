@@ -30,7 +30,7 @@ export default class TestAbility extends UIAbility {
             AppStorage.setOrCreate<boolean>('appCloneSupport', true); 
         } catch (err) {
             console.info(`testTag error, errorCode: ${err?.code}`);
-            if(err.code == 16000071){
+            if(Number(err.code) == 16000071){
                 AppStorage.setOrCreate<boolean>('appCloneSupport', false);
             }
         }
