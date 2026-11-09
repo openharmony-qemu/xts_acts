@@ -16,15 +16,11 @@
 
 import {
   Entry, Component, Column, Button, Text, FlexAlign, ColumnOptions,
-  CustomDialogController, CustomDialogControllerOptions, DialogAlignment, Builder,
+  CustomDialogController, DialogAlignment, Builder,
 } from '@ohos.arkui.component';
+import { HandednessFollowMode } from '@ohos.arkui.dialog';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
-
-/** HandednessFollowMode numeric values (NONE/FOLLOW_ANCHOR/FOLLOW_GRIP_HAND). */
-const HAND_NONE: number = 0;
-const HAND_FOLLOW_ANCHOR: number = 1;
-const HAND_FOLLOW_GRIP: number = 2;
 
 @Entry
 @Component
@@ -36,30 +32,27 @@ struct CustomDialogHandedness {
 
   aboutToAppear(): void {
     AppStorage.setOrCreate<Router>('router', this.getUIContext().getRouter());
-    // Same shape as CustomDialogSystemMaterial (CI-green in this module):
-    // builder lambda must sit on CustomDialogController object-literal.
-    // adaptToHandedness uses numeric constants; whole opts cast (CI may omit enum).
     this.noneDialog = new CustomDialogController({
       builder: (): void => {
         this.handBuilder(this.noneDialog, 'mode_NONE');
       },
       alignment: DialogAlignment.Center,
-      adaptToHandedness: HAND_NONE,
-    } as CustomDialogControllerOptions);
+      adaptToHandedness: HandednessFollowMode.NONE,
+    });
     this.anchorDialog = new CustomDialogController({
       builder: (): void => {
         this.handBuilder(this.anchorDialog, 'mode_FOLLOW_ANCHOR');
       },
       alignment: DialogAlignment.Center,
-      adaptToHandedness: HAND_FOLLOW_ANCHOR,
-    } as CustomDialogControllerOptions);
+      adaptToHandedness: HandednessFollowMode.FOLLOW_ANCHOR,
+    });
     this.gripDialog = new CustomDialogController({
       builder: (): void => {
         this.handBuilder(this.gripDialog, 'mode_FOLLOW_GRIP_HAND');
       },
       alignment: DialogAlignment.Center,
-      adaptToHandedness: HAND_FOLLOW_GRIP,
-    } as CustomDialogControllerOptions);
+      adaptToHandedness: HandednessFollowMode.FOLLOW_GRIP_HAND,
+    });
   }
 
   @Builder
@@ -73,7 +66,9 @@ struct CustomDialogHandedness {
   }
 
   private enumOk(): boolean {
-    return HAND_NONE === 0 && HAND_FOLLOW_ANCHOR === 1 && HAND_FOLLOW_GRIP === 2;
+    return HandednessFollowMode.NONE !== HandednessFollowMode.FOLLOW_ANCHOR &&
+      HandednessFollowMode.FOLLOW_ANCHOR !== HandednessFollowMode.FOLLOW_GRIP_HAND &&
+      HandednessFollowMode.NONE !== HandednessFollowMode.FOLLOW_GRIP_HAND;
   }
 
   build() {

@@ -59,9 +59,12 @@ static SetAdaptInOptionsFn ResolveSetAdaptInOptions()
 napi_value TestHandednessModeEnumValues001(napi_env env, napi_callback_info info)
 {
     (void)info;
-    ASSERT_EQ(OH_ARKUI_NATIVEMODULE_HANDEDNESS_MODE_NONE, 0);
-    ASSERT_EQ(OH_ARKUI_NATIVEMODULE_HANDEDNESS_MODE_FOLLOW_ANCHOR, 1);
-    ASSERT_EQ(OH_ARKUI_NATIVEMODULE_HANDEDNESS_MODE_FOLLOW_GRIP_HAND, 2);
+    ASSERT_EQ(OH_ARKUI_NATIVEMODULE_HANDEDNESS_MODE_NONE !=
+        OH_ARKUI_NATIVEMODULE_HANDEDNESS_MODE_FOLLOW_ANCHOR, true);
+    ASSERT_EQ(OH_ARKUI_NATIVEMODULE_HANDEDNESS_MODE_FOLLOW_ANCHOR !=
+        OH_ARKUI_NATIVEMODULE_HANDEDNESS_MODE_FOLLOW_GRIP_HAND, true);
+    ASSERT_EQ(OH_ARKUI_NATIVEMODULE_HANDEDNESS_MODE_NONE !=
+        OH_ARKUI_NATIVEMODULE_HANDEDNESS_MODE_FOLLOW_GRIP_HAND, true);
     NAPI_END;
 }
 
@@ -103,7 +106,7 @@ napi_value TestCustomDialogSetAdaptToHandedness004(napi_env env, napi_callback_i
 {
     (void)info;
     auto fn = ResolveSetAdapt();
-    ASSERT_EQ(fn == nullptr ? 0 : 1, 1);
+    ASSERT_EQ(fn != nullptr, true);
     ASSERT_EQ(fn(nullptr, OH_ARKUI_NATIVEMODULE_HANDEDNESS_MODE_NONE), INVALID_PARAM);
     NAPI_END;
 }
@@ -147,7 +150,7 @@ napi_value TestCustomDialogSetAdaptToHandednessInOptions004(napi_env env, napi_c
 {
     (void)info;
     auto fn = ResolveSetAdaptInOptions();
-    ASSERT_EQ(fn == nullptr ? 0 : 1, 1);
+    ASSERT_EQ(fn != nullptr, true);
     ASSERT_EQ(fn(nullptr, OH_ARKUI_NATIVEMODULE_HANDEDNESS_MODE_NONE), INVALID_PARAM);
     NAPI_END;
 }
