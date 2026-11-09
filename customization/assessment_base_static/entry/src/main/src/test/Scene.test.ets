@@ -1565,7 +1565,7 @@ export default function AutomaticSceneConStaticTest(): void {
             hilog.info(DOMAIN, TAG, 'Assessment ended.');
           }
         };
-        assessment.begin(context, config as assessment.AssessmentConfig, assessmentCallback);
+        assessment.begin(context, config as ESObject as assessment.AssessmentConfig, assessmentCallback);
         let driver: Driver = Driver.create();
         await driver.delayMs(1000);
         let button: Component | null = await driver.findComponent(ON.text('取消'));
@@ -1611,7 +1611,7 @@ export default function AutomaticSceneConStaticTest(): void {
             hilog.info(DOMAIN, TAG, 'Assessment ended.');
           }
         };
-        assessment.begin(context, config as assessment.AssessmentConfig, assessmentCallback);
+        assessment.begin(context, config as ESObject as assessment.AssessmentConfig, assessmentCallback);
         let driver: Driver = Driver.create();
         await driver.delayMs(1000);
         let button: Component | null = await driver.findComponent(ON.text('取消'));
@@ -1871,7 +1871,7 @@ export default function AutomaticSceneConStaticTest(): void {
           }
         };
         let onBegin_null: assessment.AssessmentError | null = null;
-        assessmentCallback.onBegin(onBegin_null as assessment.AssessmentError);
+        assessmentCallback.onBegin(onBegin_null as ESObject as assessment.AssessmentError);
         expect(false).assertTrue();
       } catch (err) {
         hilog.info(DOMAIN, TAG, `${testNum} caught expected error, code: ${err.code}, message: ${err.message}`);
@@ -1913,7 +1913,7 @@ export default function AutomaticSceneConStaticTest(): void {
           }
         };
         let onBegin_undefined: assessment.AssessmentError | undefined = undefined;
-        assessmentCallback.onBegin(onBegin_undefined as assessment.AssessmentError);
+        assessmentCallback.onBegin(onBegin_undefined as ESObject as assessment.AssessmentError);
         expect(false).assertTrue();
       } catch (err) {
         hilog.info(DOMAIN, TAG, `${testNum} caught expected error, code: ${err.code}, message: ${err.message}`);
@@ -1955,7 +1955,7 @@ export default function AutomaticSceneConStaticTest(): void {
           }
         };
         let onInterrupted_null: assessment.AssessmentInterruptInfo | null = null;
-        assessmentCallback.onInterrupted(onInterrupted_null as assessment.AssessmentInterruptInfo);
+        assessmentCallback.onInterrupted(onInterrupted_null as ESObject as assessment.AssessmentInterruptInfo);
         expect(false).assertTrue();
       } catch (err) {
         hilog.info(DOMAIN, TAG, `${testNum} caught expected error, code: ${err.code}, message: ${err.message}`);
@@ -1996,8 +1996,8 @@ export default function AutomaticSceneConStaticTest(): void {
             hilog.info(DOMAIN, TAG, 'Assessment ended.');
           }
         };
-        let onInterrupted_undefined: assessment.AssessmentInterruptInfo | undefined = undefined;
-        assessmentCallback.onInterrupted(onInterrupted_undefined as assessment.AssessmentInterruptInfo);
+        let onInterrupted_undefined = undefined;
+        assessmentCallback.onInterrupted(onInterrupted_undefined);
         expect(false).assertTrue();
       } catch (err) {
         hilog.info(DOMAIN, TAG, `${testNum} caught expected error, code: ${err.code}, message: ${err.message}`);
