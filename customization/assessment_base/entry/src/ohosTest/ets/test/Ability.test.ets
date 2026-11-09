@@ -84,7 +84,7 @@ export default function AutomaticSceneConTest() {
 
         let driver: Driver = Driver.create();
         await driver.delayMs(1000);
-        let button: Component = await driver.findComponent(ON.text('允许'));
+        let button: Component = await driver.findComponent(ON.text('开启'));
         await button.click();
         await driver.delayMs(1000);
         const active: boolean = assessment.isActive();
@@ -195,7 +195,7 @@ export default function AutomaticSceneConTest() {
         assessment.begin(context, config, assessmentCallback);
         let driver: Driver = Driver.create();
         await driver.delayMs(1000);
-        let button: Component = await driver.findComponent(ON.text('允许'));
+        let button: Component = await driver.findComponent(ON.text('开启'));
         await button.click();
         await driver.delayMs(1000);
         assessment.begin(context, config, assessmentCallback);
@@ -353,7 +353,7 @@ export default function AutomaticSceneConTest() {
         assessment.begin(context, config, assessmentCallback);
         let driver: Driver = Driver.create();
         await driver.delayMs(1000);
-        let button: Component = await driver.findComponent(ON.text('允许'));
+        let button: Component = await driver.findComponent(ON.text('开启'));
         await button.click();
         await driver.delayMs(1000);
       } catch (err) {
@@ -408,7 +408,7 @@ export default function AutomaticSceneConTest() {
         assessment.begin(context, config, assessmentCallback);
         let driver: Driver = Driver.create();
         await driver.delayMs(1000);
-        let button: Component = await driver.findComponent(ON.text('允许'));
+        let button: Component = await driver.findComponent(ON.text('开启'));
         await button.click();
         await driver.delayMs(1000);
         assessment.end(context);
@@ -461,7 +461,7 @@ export default function AutomaticSceneConTest() {
         assessment.begin(context, config, assessmentCallback);
         let driver: Driver = Driver.create();
         await driver.delayMs(1000);
-        let button: Component = await driver.findComponent(ON.text('允许'));
+        let button: Component = await driver.findComponent(ON.text('开启'));
         await button.click();
         await driver.delayMs(1000);
         assessment.end(context);
@@ -549,7 +549,7 @@ export default function AutomaticSceneConTest() {
         assessment.begin(context, config, assessmentCallback);
         let driver: Driver = Driver.create();
         await driver.delayMs(1000);
-        let button: Component = await driver.findComponent(ON.text('允许'));
+        let button: Component = await driver.findComponent(ON.text('开启'));
         await button.click();
         await driver.delayMs(1000);
         const active: boolean = assessment.isActive();
@@ -633,7 +633,7 @@ export default function AutomaticSceneConTest() {
         assessment.begin(context, config, assessmentCallback);
         let driver: Driver = Driver.create();
         await driver.delayMs(1000);
-        let button: Component = await driver.findComponent(ON.text('允许'));
+        let button: Component = await driver.findComponent(ON.text('开启'));
         await button.click();
         await driver.delayMs(1000);
         const getconfig: assessment.AssessmentConfig = assessment.getConfiguration();
@@ -743,7 +743,7 @@ export default function AutomaticSceneConTest() {
         assessment.begin(context, config, assessmentCallback);
         let driver: Driver = Driver.create();
         await driver.delayMs(1000);
-        let button: Component = await driver.findComponent(ON.text('允许'));
+        let button: Component = await driver.findComponent(ON.text('开启'));
         await button.click();
         await driver.delayMs(1000);
         assessment.end(context);
@@ -797,7 +797,7 @@ export default function AutomaticSceneConTest() {
         assessment.begin(context, config, assessmentCallback);
         let driver: Driver = Driver.create();
         await driver.delayMs(1000);
-        let button: Component = await driver.findComponent(ON.text('允许'));
+        let button: Component = await driver.findComponent(ON.text('开启'));
         await button.click();
         await driver.delayMs(1000);
         const getconfig: assessment.AssessmentConfig = assessment.getConfiguration();
@@ -1370,7 +1370,7 @@ export default function AutomaticSceneConTest() {
         assessment.begin(context, config, assessmentCallback);
         let driver: Driver = Driver.create();
         await driver.delayMs(1000);
-        let button: Component = await driver.findComponent(ON.text('允许'));
+        let button: Component = await driver.findComponent(ON.text('开启'));
         await button.click();
         await driver.delayMs(1000);
       } catch (err) {
@@ -1583,7 +1583,7 @@ export default function AutomaticSceneConTest() {
         assessment.begin(context, config, assessmentCallback);
         let driver: Driver = Driver.create();
         await driver.delayMs(1000);
-        let button: Component = await driver.findComponent(ON.text('允许'));
+        let button: Component = await driver.findComponent(ON.text('开启'));
         await button.click();
         await driver.delayMs(1000);
       } catch (err) {
