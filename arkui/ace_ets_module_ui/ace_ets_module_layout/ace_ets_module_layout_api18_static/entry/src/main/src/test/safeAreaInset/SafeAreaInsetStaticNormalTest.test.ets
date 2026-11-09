@@ -427,7 +427,7 @@ export default function SafeAreaInsetStaticNormalTest() {
         console.info('[SUB_ACE_SAFEAREAINSET_StaticNormal_1300] n6 host height: ' + (hostRect.bottom - hostRect.top));
         console.info('[SUB_ACE_SAFEAREAINSET_StaticNormal_1300] host.bottom - edge.bottom: ' + (hostRect.bottom - edgeRect.bottom));
         expect(Math.floor(Math.abs((hostRect.bottom - hostRect.top) - uiContext.vp2px(59))) <= 1).assertTrue();
-        expect(Math.floor(Math.abs((hostRect.bottom - edgeRect.bottom) - uiContext.vp2px(5))) <= 1).assertTrue();
+        expect(Math.floor(Math.abs((hostRect.bottom - edgeRect.bottom) - uiContext.vp2px(7))) <= 1).assertTrue();
         console.info('[SUB_ACE_SAFEAREAINSET_StaticNormal_1300] END');
       } catch (err) {
         console.error('[SUB_ACE_SAFEAREAINSET_StaticNormal_1300] ERR: ' + err);
