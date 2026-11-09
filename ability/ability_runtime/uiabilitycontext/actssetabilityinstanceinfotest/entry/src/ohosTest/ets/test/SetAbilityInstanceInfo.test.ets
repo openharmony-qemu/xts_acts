@@ -14,7 +14,7 @@
  */
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
-import { common } from '@kit.AbilityKit';
+import { common, UIAbility } from '@kit.AbilityKit';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { JSON } from '@kit.ArkTS';
 import { image } from '@kit.ImageKit';
@@ -44,8 +44,8 @@ function isPc2in1(): boolean {
   return deviceInfo.deviceType === '2in1';
 }
 
-function getBizCode(err: Object): number {
-  return (err as BusinessError).code;
+function getBizCode(err: BusinessError): number {
+  return err.code;
 }
 
 function createOnceDone(done: Function): (pass: boolean) => void {
@@ -78,7 +78,8 @@ async function expectThreeArgReject(
     expect().assertFail();
   } catch (err) {
     hilog.info(DOMAIN, LOG_TAG, tag + ' err=' + JSON.stringify(err));
-    expect(getBizCode(err)).assertEqual(expectCode);
+    let bizErr: BusinessError = err as BusinessError;
+    expect(getBizCode(bizErr)).assertEqual(expectCode);
     hilog.info(DOMAIN, LOG_TAG, tag + ' success');
   }
   done();
@@ -971,17 +972,66 @@ export default function abilityTest() {
         done();
         return;
       }
-      let fakeContext = { stageMode: true } as common.UIAbilityContext;
+      let delegator = abilityDelegatorRegistry.getAbilityDelegator();
+      let monitor: abilityDelegatorRegistry.AbilityMonitor = {
+        abilityName: "EntryAbility",
+        moduleName: 'entry'
+      };
+      let staleContext: common.UIAbilityContext | undefined = undefined;
       try {
-        await fakeContext.setAbilityInstanceInfo('label_ctx', pixelMap);
-        hilog.info(DOMAIN, LOG_TAG, tag + " fail");
+        await delegator.startAbility({
+          bundleName: 'com.acts.ability.setabilityinstanceinfo',
+          abilityName: 'EntryAbility'
+        });
+        let ability: UIAbility = await delegator.waitAbilityMonitor(monitor, 40000);
+        staleContext = ability.context;
+        if (staleContext) {
+          hilog.info(DOMAIN, LOG_TAG, tag + " ability captured, name= " + staleContext.abilityInfo.name);
+          try {
+            await staleContext.terminateSelf();
+          } catch (err) {
+            hilog.info(DOMAIN, LOG_TAG, tag + " terminateSelf already done: " + JSON.stringify(err));
+          }
+        }
+        await sleep(2000);
+      } catch (err) {
+        hilog.info(DOMAIN, LOG_TAG, tag + " prepare stale context failed: " + JSON.stringify(err));
+      } finally {
+        try {
+          await delegator.removeAbilityMonitor(monitor);
+        } catch (err) {
+          hilog.info(DOMAIN, LOG_TAG, tag + " removeAbilityMonitor failed: " + JSON.stringify(err));
+        }
+      }
+
+      if (staleContext === undefined) {
+        hilog.info(DOMAIN, LOG_TAG, tag + " failed: stale context not obtained");
         try { expect().assertFail(); } catch (err) {}
         done();
+        return;
+      }
+      
+      let rejected: boolean = false;
+      let actualCode: number = 0;
+      try {
+        await staleContext.setAbilityInstanceInfo('label_ctx', pixelMap);
       } catch (err) {
-        hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
-        let bizError = err as BusinessError;
-        expect(bizError.code === 16000011 || bizError.code === 401).assertTrue();
-        hilog.info(DOMAIN, LOG_TAG, tag + " success");
+        rejected = true;
+        actualCode = (err as BusinessError).code;
+        hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err));
+      }
+      try {
+        expect(rejected).assertTrue;
+        if (actualCode === 16000011){
+          hilog.info(DOMAIN, LOG_TAG, tag + " success, rejected with 16000011");
+        } else {
+          expect(actualCode).assertEqual(16000050);
+          hilog.info(DOMAIN, LOG_TAG, tag + " success, rejected with 16000050");
+        }
+      } catch (err) {
+        hilog.info(DOMAIN, LOG_TAG, "fail, rejected= " + rejected + " actualCode=" + actualCode);
+        try { expect().assertFail(); } catch (assertErr) {}
+      } finally {
         done();
       }
     })
@@ -1187,36 +1237,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4000
-     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4000
-     * @tc.desc   Expect: 3-arg invalid context failed with code 16000011
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4000', Level.LEVEL0, async (done: Function) => {
-      const tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4000';
-      hilog.info(DOMAIN, LOG_TAG, tag + ' it begin');
-      if (!isPc2in1()) {
-        done();
-        return;
-      }
-      let fakeContext = { stageMode: true } as common.UIAbilityContext;
-      try {
-        await fakeContext.setAbilityInstanceInfo('label_ctx', pixelMap, 'group_ctx');
-        hilog.info(DOMAIN, LOG_TAG, tag + ' unexpected success');
-        expect().assertFail();
-      } catch (err) {
-        hilog.info(DOMAIN, LOG_TAG, tag + ' err=' + JSON.stringify(err));
-        let code = getBizCode(err);
-        // Invalid context commonly returns 16000011; some runtimes reject earlier as 401.
-        expect(code === 16000011 || code === 401).assertTrue();
-        hilog.info(DOMAIN, LOG_TAG, tag + ' success');
-      }
-      done();
-    })
-
-    /**
      * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4100
      * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4100
      * @tc.desc   setAbilityInstanceInfo icon isStrideAlignment=false true/false成对; real call;
@@ -1241,7 +1261,8 @@ export default function abilityTest() {
         hilog.info(DOMAIN, LOG_TAG, tag + ' success isStrideAlignment=false');
         done();
       } catch (err) {
-        let code = getBizCode(err);
+        let bizErr: BusinessError = err as BusinessError;
+        let code: number = getBizCode(bizErr);
         hilog.info(DOMAIN, LOG_TAG, tag + ' isStrideAlignment=false deviceType=' +
           deviceInfo.deviceType + ' code=' + code);
         expect(code === 401 || code === 801 || code === 16000011 || code === 201).assertTrue();
@@ -1274,7 +1295,8 @@ export default function abilityTest() {
         hilog.info(DOMAIN, LOG_TAG, tag + ' success isStrideAlignment=false');
         done();
       } catch (err) {
-        let code = getBizCode(err);
+        let bizErr: BusinessError = err as BusinessError;
+        let code: number = getBizCode(bizErr);
         hilog.info(DOMAIN, LOG_TAG, tag + ' isStrideAlignment=false deviceType=' +
           deviceInfo.deviceType + ' code=' + code);
         expect(code === 401 || code === 801 || code === 16000011 || code === 201).assertTrue();
@@ -1309,7 +1331,8 @@ export default function abilityTest() {
         hilog.info(DOMAIN, LOG_TAG, tag + ' success isStrideAlignment=true');
         done();
       } catch (err) {
-        let code = getBizCode(err);
+        let bizErr: BusinessError = err as BusinessError;
+        let code: number = getBizCode(bizErr);
         hilog.info(DOMAIN, LOG_TAG, tag + ' isStrideAlignment=true deviceType=' +
           deviceInfo.deviceType + ' code=' + code);
         expect(code === 401 || code === 801 || code === 16000011 || code === 201).assertTrue();

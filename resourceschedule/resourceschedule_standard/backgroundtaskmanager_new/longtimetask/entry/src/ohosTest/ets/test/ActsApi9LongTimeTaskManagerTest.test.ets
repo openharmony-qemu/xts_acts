@@ -1019,8 +1019,10 @@ export default function ActsApi9LongTimeTaskManagerTest() {
 
                     backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
                       console.info('SUB_RESOURCESCHEDULE_LONGTIME_TASK_API9_XTS_019 stopBackgroundRunning promise run success.');
+                      done();
                     }).catch((error: BusinessError) => {
                       console.error(` SUB_RESOURCESCHEDULE_LONGTIME_TASK_API9_XTS_019 stopBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+                      done();
                     });
                   }).catch((error: BusinessError) => {
                     console.error(` SUB_RESOURCESCHEDULE_LONGTIME_TASK_API9_XTS_019 startBackgroundRunning failed. code is ${error.code} message is ${error.message}`);

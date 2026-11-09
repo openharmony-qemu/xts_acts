@@ -271,5 +271,55 @@ export default function adminManagerTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   test_subscribe_sms_event_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SUBSCRIBE_SMS_EVENT_NO_PERMISSION_JS_0100
+     * @tc.desc   test subscribeSmsEvent with permission denied 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_subscribe_sms_event_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      try {
+        adminManager.subscribeSmsEvent();
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code === 801).assertTrue();
+        } else {
+          expect(error.code === 201).assertTrue();
+        }
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_unsubscribe_sms_event_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_UNSUBSCRIBE_SMS_EVENT_NO_PERMISSION_JS_0100
+     * @tc.desc   test unsubscribeSmsEvent with permission denied 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_unsubscribe_sms_event_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      try {
+        adminManager.unsubscribeSmsEvent();
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code === 801).assertTrue();
+        } else {
+          expect(error.code === 201).assertTrue();
+        }
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
   })
 }

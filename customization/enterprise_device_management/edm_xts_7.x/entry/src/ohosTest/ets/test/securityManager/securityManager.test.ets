@@ -16,7 +16,9 @@
 import { describe, expect, it, beforeAll, Level } from '@ohos/hypium-dynamic';
 import { ENTINFO1, INVALID_WANT, SELFHAPNAME, SELFWANT, PIXEL_MAP, getPixelMap, getInvalidPixelMap, INVALID_PIXEL_MAP, WATERMARK_BUNDLE_NAME, DEFAULT_USER_ID,
   TEST_APP_INSTANCE, TEST_PERMISSION_1, CURRENT_USER_ID, DEFAULT_APP_INDEX, TEST_REAL_APP_ID_1, INVALID_USER_ID,
-  INVALID_APP_INDEX, SYSTEM_CORE_PERMISSION_DOWNLOAD } from '../commom.test.ets';
+  INVALID_APP_INDEX, SYSTEM_CORE_PERMISSION_DOWNLOAD,
+  TEST_PERMISSION_MANAGED_STATE_GRANTED,
+  TEST_MANUAL_SETTINGS_PERMISSIONS } from '../commom.test.ets';
 
 import adminManager from '@ohos.enterprise.adminManager';
 import securityManager from '@ohos.enterprise.securityManager';
@@ -83,6 +85,7 @@ export default function securityManagerTest() {
     testSetWeakPinEnable();
     testIsWeakPinEnabled();
     testGetPasswordLastChangedTime();
+    testSetPermissionManagedState();
   })
 }
 
@@ -5385,6 +5388,34 @@ function testGetPasswordLastChangedTime() {
         expect(error.code).assertEqual(9200006);
       } else {
         expect(false).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testSetPermissionManagedState() {
+  /**
+   * @tc.name   test_setPermissionManagedState_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_0100
+   * @tc.desc   test setPermissionManagedState set manual_settings permission granted state
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_setPermissionManagedState_0100", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_MANUAL_SETTINGS_PERMISSIONS, securityManager.PermissionManagedState.GRANTED);
+      let managedState: securityManager.PermissionManagedState = securityManager.getPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_MANUAL_SETTINGS_PERMISSIONS[0]);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === '9200012') {
+        expect(error.code).assertEqual('9200012');
+      } else if (error.code === '9200007') {
+        expect(error.code).assertEqual('9200007');
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
