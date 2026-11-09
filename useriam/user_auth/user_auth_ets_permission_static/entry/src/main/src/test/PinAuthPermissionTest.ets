@@ -17,18 +17,42 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import hilog from '@ohos.hilog';
 import { pinAuth } from '@kit.UserAuthenticationKit';
-import account_osAccount from '@ohos.account.osAccount';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let format: string = '%{public}s';
 
-export default function PinAuthPermissionTest() {
+
+import deviceInfo from '@ohos.deviceInfo';
+import display from '@ohos.display';
+
+function checkDeviceIsDevBoard(): boolean {
+  const chipType = deviceInfo.chipType?.toLowerCase();
+  if (chipType === 'rk3568' || chipType === 'uis7885') {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkDeviceIsWatch(): boolean {
+  try {
+    const d = display.getDefaultDisplaySync();
+    if (d.width < 500 || d.height < 500) {
+      return true;
+    } else {
+      return false;
+    }
+  } catch (error) {
+    hilog.info(domain, tag, format, 'checkDeviceIsWatch fail ' + error.message);
+    return false;
+  }
+}
+
+export default function PinAuthPermissionTest(): void {
   describe('PinAuthPermissionTest', (): void => {
-    let userId: number = 0;
+    let userId: int = 100;
     beforeAll((): void => {
-      let accountMgr = account_osAccount.getAccountManager();
-      userId = accountMgr.getOsAccountLocalIdSync();
     })
     beforeEach((): void => {
     })
@@ -48,6 +72,10 @@ export default function PinAuthPermissionTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinValidityPeriod_Permission_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Permission_Static_0100 skip on dev board/watch device');
+        return;
+      }
       hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Permission_Static_0100 start');
       try {
         let validityPeriod: long = Double.toLong(1000);
@@ -72,6 +100,10 @@ export default function PinAuthPermissionTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_GetPinValidityPeriod_Permission_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinValidityPeriod_Permission_Static_0200 skip on dev board/watch device');
+        return;
+      }
       hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinValidityPeriod_Permission_Static_0200 start');
       try {
         pinAuth.getPinValidityPeriod(userId);
@@ -95,6 +127,10 @@ export default function PinAuthPermissionTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinDeletionDisabledState_Permission_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Permission_Static_0300 skip on dev board/watch device');
+        return;
+      }
       hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Permission_Static_0300 start');
       try {
         pinAuth.setPinDeletionDisabledState(userId, true);
@@ -118,6 +154,10 @@ export default function PinAuthPermissionTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_GetPinDeletionDisabledState_Permission_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinDeletionDisabledState_Permission_Static_0400 skip on dev board/watch device');
+        return;
+      }
       hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinDeletionDisabledState_Permission_Static_0400 start');
       try {
         pinAuth.getPinDeletionDisabledState(userId);
@@ -141,6 +181,10 @@ export default function PinAuthPermissionTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinComplexityPolicy_Permission_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Permission_Static_0500 skip on dev board/watch device');
+        return;
+      }
       hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Permission_Static_0500 start');
       try {
         let policy: pinAuth.PinComplexityPolicy = {
@@ -168,6 +212,10 @@ export default function PinAuthPermissionTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_GetPinComplexityPolicy_Permission_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinComplexityPolicy_Permission_Static_0600 skip on dev board/watch device');
+        return;
+      }
       hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinComplexityPolicy_Permission_Static_0600 start');
       try {
         pinAuth.getPinComplexityPolicy(userId);

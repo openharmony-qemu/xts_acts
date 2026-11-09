@@ -18,6 +18,33 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import account_osAccount from '@ohos.account.osAccount';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 
+
+import deviceInfo from '@ohos.deviceInfo';
+import display from '@ohos.display';
+
+function checkDeviceIsDevBoard(): boolean {
+  const chipType = deviceInfo.chipType?.toLowerCase();
+  if (chipType === 'rk3568' || chipType === 'uis7885') {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkDeviceIsWatch(): boolean {
+  try {
+    const d = display.getDefaultDisplaySync();
+    if (d.width < 500 || d.height < 500) {
+      return true;
+    } else {
+      return false;
+    }
+  } catch (error) {
+    console.error(`checkDeviceIsWatch fail, message: ${error.message}`);
+    return false;
+  }
+}
+
 export default function PinAuthErrorCodeTest() {
   describe('PinAuthErrorCodeTest', () => {
     let userId: number = 0;
@@ -43,6 +70,10 @@ export default function PinAuthErrorCodeTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_0110 skip on dev board/watch device');
+        return;
+      }
       console.info('SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_0110 start');
       try {
         pinAuth.setPinValidityPeriod(userId, Math.pow(2, 50));
@@ -64,6 +95,10 @@ export default function PinAuthErrorCodeTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_0120 skip on dev board/watch device');
+        return;
+      }
       console.info('SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_0120 start');
       try {
         pinAuth.setPinValidityPeriod(userId, -1);
@@ -85,6 +120,10 @@ export default function PinAuthErrorCodeTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_0130 skip on dev board/watch device');
+        return;
+      }
       console.info('SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_0130 start');
       try {
         pinAuth.setPinValidityPeriod(null, 1000);
@@ -106,6 +145,10 @@ export default function PinAuthErrorCodeTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_0140 skip on dev board/watch device');
+        return;
+      }
       console.info('SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_0140 start');
       try {
         pinAuth.setPinValidityPeriod(userId, null);
@@ -129,6 +172,10 @@ export default function PinAuthErrorCodeTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_GetPinValidityPeriod_ErrorCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_GetPinValidityPeriod_ErrorCode_0200 skip on dev board/watch device');
+        return;
+      }
       console.info('SUB_Security_PinAuth_GetPinValidityPeriod_ErrorCode_0200 start');
       try {
         pinAuth.getPinValidityPeriod(null);
@@ -152,6 +199,10 @@ export default function PinAuthErrorCodeTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinDeletionDisabledState_ErrorCode_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinDeletionDisabledState_ErrorCode_0300 skip on dev board/watch device');
+        return;
+      }
       console.info('SUB_Security_PinAuth_SetPinDeletionDisabledState_ErrorCode_0300 start');
       try {
         pinAuth.setPinDeletionDisabledState(null, true);
@@ -173,6 +224,10 @@ export default function PinAuthErrorCodeTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinDeletionDisabledState_ErrorCode_0310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinDeletionDisabledState_ErrorCode_0310 skip on dev board/watch device');
+        return;
+      }
       console.info('SUB_Security_PinAuth_SetPinDeletionDisabledState_ErrorCode_0310 start');
       try {
         pinAuth.setPinDeletionDisabledState(userId, null);
@@ -196,6 +251,10 @@ export default function PinAuthErrorCodeTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_GetPinDeletionDisabledState_ErrorCode_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_GetPinDeletionDisabledState_ErrorCode_0400 skip on dev board/watch device');
+        return;
+      }
       console.info('SUB_Security_PinAuth_GetPinDeletionDisabledState_ErrorCode_0400 start');
       try {
         pinAuth.getPinDeletionDisabledState(null);
@@ -219,6 +278,10 @@ export default function PinAuthErrorCodeTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_0500 skip on dev board/watch device');
+        return;
+      }
       console.info('SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_0500 start');
       try {
         pinAuth.setPinComplexityPolicy(userId, null);
@@ -240,6 +303,10 @@ export default function PinAuthErrorCodeTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_0550', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_0550 skip on dev board/watch device');
+        return;
+      }
       console.info('SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_0550 start');
       try {
         let policy: pinAuth.PinComplexityPolicy = {
@@ -265,6 +332,10 @@ export default function PinAuthErrorCodeTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_0560', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_0560 skip on dev board/watch device');
+        return;
+      }
       console.info('SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_0560 start');
       try {
         let policy: pinAuth.PinComplexityPolicy = {
@@ -292,6 +363,10 @@ export default function PinAuthErrorCodeTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_GetPinComplexityPolicy_ErrorCode_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_GetPinComplexityPolicy_ErrorCode_0600 skip on dev board/watch device');
+        return;
+      }
       console.info('SUB_Security_PinAuth_GetPinComplexityPolicy_ErrorCode_0600 start');
       try {
         pinAuth.getPinComplexityPolicy(null);

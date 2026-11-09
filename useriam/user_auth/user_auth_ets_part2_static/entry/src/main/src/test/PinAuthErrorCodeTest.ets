@@ -17,18 +17,42 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import hilog from '@ohos.hilog';
 import { pinAuth } from '@kit.UserAuthenticationKit';
-import account_osAccount from '@ohos.account.osAccount';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let format: string = '%{public}s';
 
-export default function PinAuthErrorCodeTest() {
+
+import deviceInfo from '@ohos.deviceInfo';
+import display from '@ohos.display';
+
+function checkDeviceIsDevBoard(): boolean {
+  const chipType = deviceInfo.chipType?.toLowerCase();
+  if (chipType === 'rk3568' || chipType === 'uis7885') {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkDeviceIsWatch(): boolean {
+  try {
+    const d = display.getDefaultDisplaySync();
+    if (d.width < 500 || d.height < 500) {
+      return true;
+    } else {
+      return false;
+    }
+  } catch (error) {
+    hilog.info(domain, tag, format, 'checkDeviceIsWatch fail ' + error.message);
+    return false;
+  }
+}
+
+export default function PinAuthErrorCodeTest(): void {
   describe('PinAuthErrorCodeTest', (): void => {
-    let userId: number = 0;
+    let userId: int = 100;
     beforeAll((): void => {
-      let accountMgr = account_osAccount.getAccountManager();
-      userId = accountMgr.getOsAccountLocalIdSync();
     })
     beforeEach((): void => {
     })
@@ -48,6 +72,10 @@ export default function PinAuthErrorCodeTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_Static_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_Static_0110 skip on dev board/watch device');
+        return;
+      }
       hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_Static_0110 start');
       try {
         let validityPeriod: long = Double.toLong(Math.pow(2, 50));
@@ -70,6 +98,10 @@ export default function PinAuthErrorCodeTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_Static_0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_Static_0120 skip on dev board/watch device');
+        return;
+      }
       hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_Static_0120 start');
       try {
         let validityPeriod: long = Double.toLong(-1);
@@ -94,6 +126,10 @@ export default function PinAuthErrorCodeTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_Static_0550', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_Static_0550 skip on dev board/watch device');
+        return;
+      }
       hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_Static_0550 start');
       try {
         let policy: pinAuth.PinComplexityPolicy = {
@@ -119,6 +155,10 @@ export default function PinAuthErrorCodeTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_Static_0560', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_Static_0560 skip on dev board/watch device');
+        return;
+      }
       hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_Static_0560 start');
       try {
         let policy: pinAuth.PinComplexityPolicy = {

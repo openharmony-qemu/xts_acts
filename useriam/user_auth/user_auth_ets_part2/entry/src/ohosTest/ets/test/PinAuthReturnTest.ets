@@ -18,6 +18,33 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import account_osAccount from '@ohos.account.osAccount';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 
+
+import deviceInfo from '@ohos.deviceInfo';
+import display from '@ohos.display';
+
+function checkDeviceIsDevBoard(): boolean {
+  const chipType = deviceInfo.chipType?.toLowerCase();
+  if (chipType === 'rk3568' || chipType === 'uis7885') {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkDeviceIsWatch(): boolean {
+  try {
+    const d = display.getDefaultDisplaySync();
+    if (d.width < 500 || d.height < 500) {
+      return true;
+    } else {
+      return false;
+    }
+  } catch (error) {
+    console.error(`checkDeviceIsWatch fail, message: ${error.message}`);
+    return false;
+  }
+}
+
 export default function PinAuthReturnTest() {
   describe('PinAuthReturnTest', () => {
     let userId: number = 0;
@@ -43,6 +70,10 @@ export default function PinAuthReturnTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0100 skip on dev board/watch device');
+        return;
+      }
       console.info('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0100 start');
       try {
         pinAuth.setPinValidityPeriod(userId, 1000);
@@ -65,6 +96,10 @@ export default function PinAuthReturnTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0110 skip on dev board/watch device');
+        return;
+      }
       console.info('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0110 start');
       try {
         pinAuth.setPinValidityPeriod(userId, 0);
@@ -87,6 +122,10 @@ export default function PinAuthReturnTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0120 skip on dev board/watch device');
+        return;
+      }
       console.info('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0120 start');
       try {
         pinAuth.setPinValidityPeriod(userId, Math.pow(2, 50) - 1);
@@ -111,6 +150,10 @@ export default function PinAuthReturnTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_0300 skip on dev board/watch device');
+        return;
+      }
       console.info('SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_0300 start');
       try {
         pinAuth.setPinDeletionDisabledState(userId, true);
@@ -133,6 +176,10 @@ export default function PinAuthReturnTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_0310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_0310 skip on dev board/watch device');
+        return;
+      }
       console.info('SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_0310 start');
       try {
         pinAuth.setPinDeletionDisabledState(userId, false);
@@ -157,6 +204,10 @@ export default function PinAuthReturnTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinComplexityPolicy_Return_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinComplexityPolicy_Return_0500 skip on dev board/watch device');
+        return;
+      }
       console.info('SUB_Security_PinAuth_SetPinComplexityPolicy_Return_0500 start');
       try {
         let policy: pinAuth.PinComplexityPolicy = {
@@ -185,6 +236,10 @@ export default function PinAuthReturnTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinComplexityPolicy_Return_0510', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinComplexityPolicy_Return_0510 skip on dev board/watch device');
+        return;
+      }
       console.info('SUB_Security_PinAuth_SetPinComplexityPolicy_Return_0510 start');
       try {
         let policy: pinAuth.PinComplexityPolicy = {

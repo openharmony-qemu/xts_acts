@@ -17,18 +17,42 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import hilog from '@ohos.hilog';
 import { pinAuth } from '@kit.UserAuthenticationKit';
-import account_osAccount from '@ohos.account.osAccount';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let format: string = '%{public}s';
 
-export default function PinAuthParamTest() {
+
+import deviceInfo from '@ohos.deviceInfo';
+import display from '@ohos.display';
+
+function checkDeviceIsDevBoard(): boolean {
+  const chipType = deviceInfo.chipType?.toLowerCase();
+  if (chipType === 'rk3568' || chipType === 'uis7885') {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkDeviceIsWatch(): boolean {
+  try {
+    const d = display.getDefaultDisplaySync();
+    if (d.width < 500 || d.height < 500) {
+      return true;
+    } else {
+      return false;
+    }
+  } catch (error) {
+    hilog.info(domain, tag, format, 'checkDeviceIsWatch fail ' + error.message);
+    return false;
+  }
+}
+
+export default function PinAuthParamTest(): void {
   describe('PinAuthParamTest', (): void => {
-    let userId: number = 0;
+    let userId: int = 100;
     beforeAll((): void => {
-      let accountMgr = account_osAccount.getAccountManager();
-      userId = accountMgr.getOsAccountLocalIdSync();
     })
     beforeEach((): void => {
     })
@@ -48,6 +72,10 @@ export default function PinAuthParamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinValidityPeriod_Param_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Param_Static_0100 skip on dev board/watch device');
+        return;
+      }
       hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Param_Static_0100 start');
       try {
         let validityPeriod: long = Double.toLong(0);
@@ -71,6 +99,10 @@ export default function PinAuthParamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinValidityPeriod_Param_Static_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Param_Static_0110 skip on dev board/watch device');
+        return;
+      }
       hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Param_Static_0110 start');
       try {
         let validityPeriod: long = Double.toLong(Math.pow(2, 50) - 1);
@@ -94,6 +126,10 @@ export default function PinAuthParamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinValidityPeriod_Param_Static_0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Param_Static_0120 skip on dev board/watch device');
+        return;
+      }
       hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Param_Static_0120 start');
       try {
         let validityPeriod: long = Double.toLong(Math.pow(2, 50));
@@ -116,6 +152,10 @@ export default function PinAuthParamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinValidityPeriod_Param_Static_0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Param_Static_0130 skip on dev board/watch device');
+        return;
+      }
       hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Param_Static_0130 start');
       try {
         let validityPeriod: long = Double.toLong(-1);
@@ -140,11 +180,15 @@ export default function PinAuthParamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_GetPinValidityPeriod_Param_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinValidityPeriod_Param_Static_0200 skip on dev board/watch device');
+        return;
+      }
       hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinValidityPeriod_Param_Static_0200 start');
       try {
         let result = pinAuth.getPinValidityPeriod(userId);
         hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinValidityPeriod_Param_Static_0200 result: ' + JSON.stringify(result));
-        expect(result != undefined || result === undefined).assertTrue();
+        expect(result !== null).assertTrue();
       } catch (err) {
         hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinValidityPeriod_Param_Static_0200 failed ' + err.code + ' ' + err.message);
         expect(false).assertTrue();
@@ -163,6 +207,10 @@ export default function PinAuthParamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinDeletionDisabledState_Param_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Param_Static_0300 skip on dev board/watch device');
+        return;
+      }
       hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Param_Static_0300 start');
       try {
         pinAuth.setPinDeletionDisabledState(userId, true);
@@ -185,6 +233,10 @@ export default function PinAuthParamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinDeletionDisabledState_Param_Static_0310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Param_Static_0310 skip on dev board/watch device');
+        return;
+      }
       hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Param_Static_0310 start');
       try {
         pinAuth.setPinDeletionDisabledState(userId, false);
@@ -209,11 +261,15 @@ export default function PinAuthParamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_GetPinDeletionDisabledState_Param_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinDeletionDisabledState_Param_Static_0400 skip on dev board/watch device');
+        return;
+      }
       hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinDeletionDisabledState_Param_Static_0400 start');
       try {
         let result = pinAuth.getPinDeletionDisabledState(userId);
         hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinDeletionDisabledState_Param_Static_0400 result: ' + JSON.stringify(result));
-        expect(result != undefined || result === undefined).assertTrue();
+        expect(result !== null).assertTrue();
       } catch (err) {
         hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinDeletionDisabledState_Param_Static_0400 failed ' + err.code + ' ' + err.message);
         expect(false).assertTrue();
@@ -232,6 +288,10 @@ export default function PinAuthParamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinComplexityPolicy_Param_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Param_Static_0500 skip on dev board/watch device');
+        return;
+      }
       hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Param_Static_0500 start');
       try {
         let policy: pinAuth.PinComplexityPolicy = {
@@ -258,6 +318,10 @@ export default function PinAuthParamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinComplexityPolicy_Param_Static_0550', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Param_Static_0550 skip on dev board/watch device');
+        return;
+      }
       hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Param_Static_0550 start');
       try {
         let policy: pinAuth.PinComplexityPolicy = {
@@ -283,6 +347,10 @@ export default function PinAuthParamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinComplexityPolicy_Param_Static_0560', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Param_Static_0560 skip on dev board/watch device');
+        return;
+      }
       hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Param_Static_0560 start');
       try {
         let policy: pinAuth.PinComplexityPolicy = {
@@ -308,6 +376,10 @@ export default function PinAuthParamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinComplexityPolicy_Param_Static_0570', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Param_Static_0570 skip on dev board/watch device');
+        return;
+      }
       hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Param_Static_0570 start');
       try {
         let policy: pinAuth.PinComplexityPolicy = {
@@ -336,11 +408,15 @@ export default function PinAuthParamTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_GetPinComplexityPolicy_Param_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinComplexityPolicy_Param_Static_0600 skip on dev board/watch device');
+        return;
+      }
       hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinComplexityPolicy_Param_Static_0600 start');
       try {
         let result = pinAuth.getPinComplexityPolicy(userId);
         hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinComplexityPolicy_Param_Static_0600 result: ' + JSON.stringify(result));
-        expect(result != undefined || result === undefined).assertTrue();
+        expect(result !== null).assertTrue();
       } catch (err) {
         hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinComplexityPolicy_Param_Static_0600 failed ' + err.code + ' ' + err.message);
         expect(false).assertTrue();

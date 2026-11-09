@@ -18,6 +18,33 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import account_osAccount from '@ohos.account.osAccount';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 
+
+import deviceInfo from '@ohos.deviceInfo';
+import display from '@ohos.display';
+
+function checkDeviceIsDevBoard(): boolean {
+  const chipType = deviceInfo.chipType?.toLowerCase();
+  if (chipType === 'rk3568' || chipType === 'uis7885') {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkDeviceIsWatch(): boolean {
+  try {
+    const d = display.getDefaultDisplaySync();
+    if (d.width < 500 || d.height < 500) {
+      return true;
+    } else {
+      return false;
+    }
+  } catch (error) {
+    console.error(`checkDeviceIsWatch fail, message: ${error.message}`);
+    return false;
+  }
+}
+
 export default function PinAuthPermissionTest() {
   describe('PinAuthPermissionTest', () => {
     let userId: number = 0;
@@ -43,6 +70,10 @@ export default function PinAuthPermissionTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinValidityPeriod_Permission_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinValidityPeriod_Permission_0100 skip on dev board/watch device');
+        return;
+      }
       console.info('SUB_Security_PinAuth_SetPinValidityPeriod_Permission_0100 start');
       try {
         pinAuth.setPinValidityPeriod(userId, 1000);
@@ -66,6 +97,10 @@ export default function PinAuthPermissionTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_GetPinValidityPeriod_Permission_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_GetPinValidityPeriod_Permission_0200 skip on dev board/watch device');
+        return;
+      }
       console.info('SUB_Security_PinAuth_GetPinValidityPeriod_Permission_0200 start');
       try {
         pinAuth.getPinValidityPeriod(userId);
@@ -89,6 +124,10 @@ export default function PinAuthPermissionTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinDeletionDisabledState_Permission_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinDeletionDisabledState_Permission_0300 skip on dev board/watch device');
+        return;
+      }
       console.info('SUB_Security_PinAuth_SetPinDeletionDisabledState_Permission_0300 start');
       try {
         pinAuth.setPinDeletionDisabledState(userId, true);
@@ -112,6 +151,10 @@ export default function PinAuthPermissionTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_GetPinDeletionDisabledState_Permission_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_GetPinDeletionDisabledState_Permission_0400 skip on dev board/watch device');
+        return;
+      }
       console.info('SUB_Security_PinAuth_GetPinDeletionDisabledState_Permission_0400 start');
       try {
         pinAuth.getPinDeletionDisabledState(userId);
@@ -135,6 +178,10 @@ export default function PinAuthPermissionTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinComplexityPolicy_Permission_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinComplexityPolicy_Permission_0500 skip on dev board/watch device');
+        return;
+      }
       console.info('SUB_Security_PinAuth_SetPinComplexityPolicy_Permission_0500 start');
       try {
         let policy: pinAuth.PinComplexityPolicy = {
@@ -162,6 +209,10 @@ export default function PinAuthPermissionTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_GetPinComplexityPolicy_Permission_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_GetPinComplexityPolicy_Permission_0600 skip on dev board/watch device');
+        return;
+      }
       console.info('SUB_Security_PinAuth_GetPinComplexityPolicy_Permission_0600 start');
       try {
         pinAuth.getPinComplexityPolicy(userId);
