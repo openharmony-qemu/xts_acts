@@ -17,20 +17,12 @@ import { beforeAll, beforeEach, describe, it, expect,TestType, Size, Level } fro
 import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation, UiWindow, ComponentEventType, WindowChangeType } from '@kit.TestKit'
 import  hilog  from '@ohos.hilog'
 import display from '@ohos.display';
-import { Utils, startAbility, stopApplication } from './Util.test';
+import { Utils, startAbility, stopApplication, exitInputMethod } from './Util.test';
 import { BusinessError } from '@ohos.base';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 const waitUiReadyMs: int = 1000;
 const DeviceErrorCode: string = "17000005";
-
-async function exitInputMethod() {
-  let driver = Driver.create()
-  let softKeyBoard = await driver.findComponent(ON.type('Canvas'))
-  if (softKeyBoard != null) {
-    await driver.pressBack()
-  }
-}
 
 async function maxUiWindow(driver: Driver, window: UiWindow | null): Promise<boolean> {
   if (window != null) {
@@ -1532,7 +1524,6 @@ export default function uitestDriverTest(): void {
           hilog.info(domain, tag, `testMouseMoveWithTrack_static mouseMoveTo success`);
           await driver!.delayMs(1000);
           let checkBox = await driver!.findComponent(ON.type('Checkbox'));
-          expect(checkBox != null).assertTrue();
           if (checkBox != null) {
             let center2 = await checkBox.getBoundsCenter();
             await driver!.mouseMoveWithTrack(center1, center2, 600);
@@ -1620,19 +1611,21 @@ export default function uitestDriverTest(): void {
         let image1 = await driver!.findComponent(ON.id('test_pict'))
         expect(image1 != null).assertTrue();
         if (image1 != null) {
+          let disPlayId = await image1.getDisplayId()
           let bounds1 = await image1.getBounds()
           let left = bounds1.left
           let right = bounds1.right
+          let width = (bounds1.right - bounds1.left) * 0.8
           let centerY = Math.floor((bounds1.top + bounds1.bottom) / 2).toInt()
           let pointer = PointerMatrix.create(2,11)
           await driver!.delayMs(300)
           for (let step = 0; step < 11; step++) {
-            pointer.setPoint(0, step, {x: left + 200 - (step + 1) *20, y: centerY + step * 20})
+            pointer.setPoint(0, step, {x: Math.floor(left + width - (step + 1) * (width / 10)).toInt(), y: centerY, displayId: disPlayId})
           }
           for (let step = 0; step < 11; step++) {
-            pointer.setPoint(1, step, {x: right - 200 + (step + 1) *20, y: centerY - step * 20})
+            pointer.setPoint(1, step, {x: Math.floor(right - width + (step + 1) * (width / 10)).toInt(), y: centerY, displayId: disPlayId})
           }
-          await driver!.injectMultiPointerAction(pointer, 400)
+          let result = await driver!.injectMultiPointerAction(pointer)
           await driver!.delayMs(3000)
           let image2 = await driver!.findComponent(ON.id('test_pict'))
           expect(image2 != null).assertTrue()
@@ -1640,6 +1633,7 @@ export default function uitestDriverTest(): void {
             let bounds2= await image2.getBounds()
             expect(bounds2 != bounds1).assertTrue()
           }
+          expect(result).assertTrue();
         }
       } catch(error) {
         hilog.info(domain, tag, `testInjectMultiPointerAction_static error, ${ JSON.stringify(error) }`);
@@ -1678,19 +1672,21 @@ export default function uitestDriverTest(): void {
         let image1 = await driver!.findComponent(ON.id('test_pict'))
         expect(image1 != null).assertTrue();
         if (image1 != null) {
+          let disPlayId = await image1.getDisplayId()
           let bounds1 = await image1.getBounds()
           let left = bounds1.left
           let right = bounds1.right
+          let width = (bounds1.right - bounds1.left) * 0.8
           let centerY = Math.floor((bounds1.top + bounds1.bottom) / 2).toInt()
           let pointer = PointerMatrix.create(2,11)
           await driver!.delayMs(300)
           for (let step = 0; step < 11; step++) {
-            pointer.setPoint(0, step, {x: left + 200 - (step + 1) *20, y: centerY + step * 20})
+            pointer.setPoint(0, step, {x: Math.floor(left + width - (step + 1) * (width / 10)).toInt(), y: centerY, displayId: disPlayId})
           }
           for (let step = 0; step < 11; step++) {
-            pointer.setPoint(1, step, {x: right - 200 + (step + 1) *20, y: centerY - step * 20})
+            pointer.setPoint(1, step, {x: Math.floor(right - width + (step + 1) * (width / 10)).toInt(), y: centerY, displayId: disPlayId})
           }
-          await driver!.injectMultiPointerAction(pointer)
+          let result = await driver!.injectMultiPointerAction(pointer, 400)
           await driver!.delayMs(3000)
           let image2 = await driver!.findComponent(ON.id('test_pict'))
           expect(image2 != null).assertTrue()
@@ -1698,6 +1694,7 @@ export default function uitestDriverTest(): void {
             let bounds2= await image2.getBounds()
             expect(bounds2 != bounds1).assertTrue()
           }
+          expect(result).assertTrue();
         }
       } catch(error) {
         hilog.info(domain, tag, `testInjectMultiPointerAction_speed_static error, ${ JSON.stringify(error) }`);
@@ -2078,36 +2075,20 @@ export default function uitestDriverTest(): void {
         await driver!.delayMs(2000)
         let text = await driver!.findComponent(ON.type('TextInput'))
         if (text == null) {
-          let scorll = await driver!.findComponent(ON.type('Scroll'))
-          expect(scorll != null).assertTrue();
-          if (scorll != null) {
-            text = await scorll.scrollSearch(ON.type('TextInput'))
-          }
+          let scroll = await driver!.findComponent(ON.type('Scroll'))
+          text = await scroll!.scrollSearch(ON.type('TextInput'))
         }
-        hilog.info(domain, tag, `testDriverInputTextMode_static text, ${ JSON.stringify(text) }`);
-        expect(text != null).assertTrue();
-        if (text != null) {
-          let center = await text.getBoundsCenter()
-          hilog.info(domain, tag, `testDriverInputTextMode_static center, ${ JSON.stringify(center) }`);
-          await driver!.inputText(center, '123', {paste:false, addition:false})
-          await exitInputMethod();
-          await driver!.delayMs(2000);
-          let text1 = await driver!.findComponent(ON.type('TextInput'))
-          if (text1 == null) {
-            let scorll = await driver!.findComponent(ON.type('Scroll'))
-            expect(scorll != null).assertTrue();
-            if (scorll != null) {
-              text1 = await scorll.scrollSearch(ON.type('TextInput'))
-            }
-          }
-          hilog.info(domain, tag, `testDriverInputTextMode_static text1, ${ JSON.stringify(text1) }`);
-          expect(text1 != null).assertTrue();
-          if (text1 != null) {
-            let msg = await text1.getText();
-            hilog.info(domain, tag, `testDriverInputTextMode_static msg, ${ JSON.stringify(msg) }`);
-            expect(msg == 'Hello 123World').assertTrue()
-          }
+        let center = await text!.getBoundsCenter()
+        await driver!.inputText(center, '123', { paste: false, addition: false })
+        await exitInputMethod();
+        await driver!.delayMs(2000);
+        let text1 = await driver!.findComponent(ON.type('TextInput'))
+        if (text1 == null) {
+          let scroll = await driver!.findComponent(ON.type('Scroll'))
+          text1 = await scroll!.scrollSearch(ON.type('TextInput'))
         }
+        let msg = await text1!.getText();
+        expect(msg == 'Hello 123World').assertTrue()
       } catch(error) {
         hilog.info(domain, tag, `testDriverInputText_static error, ${ JSON.stringify(error) }`);
         expect().assertFail();

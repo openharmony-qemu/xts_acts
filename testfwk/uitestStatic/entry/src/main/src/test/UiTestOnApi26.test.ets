@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -28,6 +28,11 @@ const ParameterErrorCode = 17000007;
 
 export default function uitestOnApi26Test(): void {
   describe('UitestOnApi26Test', (): void => {
+    let driver: Driver | undefined;
+    beforeAll(async () : Promise<void> => {
+      driver = Driver.create();
+    })
+
     beforeEach(async () => {
       await stopApplication('com.uitestScene.acts');
     })
@@ -46,19 +51,18 @@ export default function uitestOnApi26Test(): void {
      */
     it('testOnIsBeforeComponentValid_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, 'testOnIsBeforeComponentValid_static start');
-      let driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-      await driver.delayMs(waitUiReadyMs);
-      let text2 = await driver.findComponent(ON.text('dialog'));
+      await driver!.delayMs(waitUiReadyMs);
+      let text2 = await driver!.findComponent(ON.text('dialog'));
       expect(text2 != null).assertTrue();
       if (text2 != null) {
-        let text = await driver.findComponent(ON.text('toast').beforeComponent(text2));
+        let text = await driver!.findComponent(ON.text('toast').beforeComponent(text2));
         expect(text != null).assertTrue();
         if (text != null) {
           let msg = await text.getText();
           expect(msg).assertEqual('toast');
         }
-        let text3 = await driver.findComponent(ON.text('toastNot').beforeComponent(text2));
+        let text3 = await driver!.findComponent(ON.text('toastNot').beforeComponent(text2));
         expect(text3).assertNull();
       }
       await stopApplication('com.uitestScene.acts');
@@ -76,13 +80,12 @@ export default function uitestOnApi26Test(): void {
     it('testOnIsBeforeComponentInvalid_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.info(`testOnIsBeforeComponentInvalid_static start`);
       try {
-        let driver = Driver.create();
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-        await driver.delayMs(waitUiReadyMs);
-        let text2 = await driver.findComponent(ON.text('dialog'));
+        await driver!.delayMs(waitUiReadyMs);
+        let text2 = await driver!.findComponent(ON.text('dialog'));
         let disPlay = display.getDefaultDisplaySync();
-        await driver.pressBack(disPlay.id.toInt());
-        await driver.delayMs(waitUiReadyMs);
+        await driver!.pressBack(disPlay.id.toInt());
+        await driver!.delayMs(waitUiReadyMs);
         if (text2 != null) {
           ON.beforeComponent(text2);
         }
@@ -104,19 +107,18 @@ export default function uitestOnApi26Test(): void {
      */
     it('testOnIsAfterComponentValid_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, 'testOnIsAfterComponentValid_static start');
-      let driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-      await driver.delayMs(waitUiReadyMs);
-      let text2 = await driver.findComponent(ON.text('toast'));
+      await driver!.delayMs(waitUiReadyMs);
+      let text2 = await driver!.findComponent(ON.text('toast'));
       expect(text2 != null).assertTrue();
       if (text2 != null) {
-        let text = await driver.findComponent(ON.text('dialog').afterComponent(text2));
+        let text = await driver!.findComponent(ON.text('dialog').afterComponent(text2));
         expect(text != null).assertTrue();
         if (text != null) {
           let msg = await text.getText();
           expect(msg).assertEqual('dialog');
         }
-        let text3 = await driver.findComponent(ON.text('dialogNot').afterComponent(text2));
+        let text3 = await driver!.findComponent(ON.text('dialogNot').afterComponent(text2));
         expect(text3).assertNull();
       }
       await stopApplication('com.uitestScene.acts');
@@ -134,13 +136,12 @@ export default function uitestOnApi26Test(): void {
     it('testOnIsAfterComponentInvalid_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.info(`testOnIsAfterComponentInvalid_static start`);
       try {
-        let driver = Driver.create();
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-        await driver.delayMs(waitUiReadyMs);
-        let text2 = await driver.findComponent(ON.text('dialog'));
+        await driver!.delayMs(waitUiReadyMs);
+        let text2 = await driver!.findComponent(ON.text('dialog'));
         let disPlay = display.getDefaultDisplaySync();
-        await driver.pressBack(disPlay.id.toInt());
-        await driver.delayMs(waitUiReadyMs);
+        await driver!.pressBack(disPlay.id.toInt());
+        await driver!.delayMs(waitUiReadyMs);
         if (text2 != null) {
           ON.afterComponent(text2);
         }
@@ -162,19 +163,18 @@ export default function uitestOnApi26Test(): void {
      */
     it('testOnWithinComponentValid_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, 'testOnWithinComponentValid_static start');
-      let driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-      await driver.delayMs(waitUiReadyMs);
-      let scroller = await driver.findComponent(ON.type('Scroll'));
+      await driver!.delayMs(waitUiReadyMs);
+      let scroller = await driver!.findComponent(ON.type('Scroll'));
       expect(scroller != null).assertTrue();
       if (scroller != null) {
-        let text = await driver.findComponent(ON.withinComponent(scroller).text('next page'));
+        let text = await driver!.findComponent(ON.withinComponent(scroller).text('next page'));
         expect(text != null).assertTrue();
         if (text != null) {
           let msg = await text.getText();
           expect(msg).assertEqual('next page');
         }
-        let text3 = await driver.findComponent(ON.withinComponent(scroller).text('next pageNot'));
+        let text3 = await driver!.findComponent(ON.withinComponent(scroller).text('next pageNot'));
         expect(text3).assertNull();
       }
       await stopApplication('com.uitestScene.acts');
@@ -193,13 +193,12 @@ export default function uitestOnApi26Test(): void {
     it('testOnWithinComponentInvalid_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.info(`testOnWithinComponentInvalid_static start`);
       try {
-        let driver = Driver.create();
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-        await driver.delayMs(waitUiReadyMs);
-        let scroller = await driver.findComponent(ON.type('Scroll'));
+        await driver!.delayMs(waitUiReadyMs);
+        let scroller = await driver!.findComponent(ON.type('Scroll'));
         let disPlay = display.getDefaultDisplaySync();
-        await driver.pressBack(disPlay.id.toInt());
-        await driver.delayMs(waitUiReadyMs);
+        await driver!.pressBack(disPlay.id.toInt());
+        await driver!.delayMs(waitUiReadyMs);
         if (scroller != null) {
           ON.withinComponent(scroller)
         }
