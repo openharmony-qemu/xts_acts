@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { beforeAll, beforeEach, describe, it, expect,TestType, Size, Level } from "@ohos/hypium-static/src/main/indexStatic"
 import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation, UiWindow, ComponentEventType, WindowChangeType } from '@kit.TestKit'
 import  hilog  from '@ohos.hilog'
@@ -23,6 +24,8 @@ let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 const waitUiReadyMs: int = 1000;
 const DeviceErrorCode: string = "17000005";
+const defaultUserId: string = '100';
+const abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
 
 async function maxUiWindow(driver: Driver, window: UiWindow | null): Promise<boolean> {
   if (window != null) {
@@ -50,9 +53,12 @@ export default function uitestDriverTest(): void {
     let driver: Driver | undefined;
     let displayId: int = 0;
     let primaryId: int = 0;
+    let user:String|undefined = defaultUserId;
     beforeAll(async () : Promise<void> => {
       hilog.info(domain, tag, "uitestDriverTest loadup start!!!!!");
       driver = Driver.create();
+      user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      hilog.info(domain, tag, `uitestDriverTest user: ${user}`);
       displayId = display.getDefaultDisplaySync().id.toInt();
       primaryId = display.getPrimaryDisplaySync().id.toInt();
       hilog.info(domain, tag, `uitestDriverTest displayId: ${displayId}, primaryId: ${primaryId}`);
@@ -116,7 +122,7 @@ export default function uitestDriverTest(): void {
      * @tc.level  LEVEL3
      */
     it('testPressBack_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      if (displayId === primaryId) { // 此用例不支持车机副屏执行
+      if (user == undefined || user == defaultUserId) { // 此用例不支持车机副屏执行
         hilog.info(domain, tag, "testPressBack_static Start!!!");
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver!.delayMs(waitUiReadyMs);
@@ -587,7 +593,7 @@ export default function uitestDriverTest(): void {
      * @tc.level  LEVEL3
      */
     it('testDriverClick_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      if (displayId === primaryId) { // 此用例不支持车机副屏执行
+      if (user == undefined || user == defaultUserId) { // 此用例不支持车机副屏执行
         hilog.info(domain, tag, "testDriverClick_static start!!!!")
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
         await driver!.delayMs(waitUiReadyMs)
@@ -619,7 +625,7 @@ export default function uitestDriverTest(): void {
      * @tc.level  LEVEL3
      */
     it('testUiDriverDoubleClick_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      if (displayId === primaryId) { // 此用例不支持车机副屏执行
+      if (user == undefined || user == defaultUserId) { // 此用例不支持车机副屏执行
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
         await driver!.delayMs(waitUiReadyMs)
         let button = await driver!.findComponent(ON.text('Click twice'))
@@ -656,7 +662,7 @@ export default function uitestDriverTest(): void {
      * @tc.level  LEVEL3
      */
     it('testUiDriverLongClick_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      if (displayId === primaryId) { // 此用例不支持车机副屏执行
+      if (user == undefined || user == defaultUserId) { // 此用例不支持车机副屏执行
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver!.delayMs(waitUiReadyMs);
         let button = await driver!.findComponent(ON.text('next page'));
@@ -1863,7 +1869,7 @@ export default function uitestDriverTest(): void {
      * @tc.level  LEVEL3
      */
     it('testTriggerKey_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      if (displayId === primaryId) { // 此用例不支持车机副屏执行
+      if (user == undefined || user == defaultUserId) { // 此用例不支持车机副屏执行
         hilog.info(domain, tag, "testTriggerKey_static start !!!!")
         try {
           await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');

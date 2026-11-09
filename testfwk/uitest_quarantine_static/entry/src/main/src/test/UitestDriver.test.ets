@@ -13,8 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { beforeAll, beforeEach, describe, it, expect,TestType, Size, Level } from "@ohos/hypium-static/src/main/indexStatic"
 import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation, UiWindow } from '@kit.TestKit'
+import { canIUse } from '@internal.full.global';
 import  hilog  from '@ohos.hilog'
 import display from '@ohos.display';
 import { Utils, startAbility, stopApplication } from './Util.test';
@@ -22,6 +24,8 @@ import { BusinessError } from '@ohos.base';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 const waitUiReadyMs: int = 1000;
+const defaultUserId: string = '100';
+const abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
 
 async function maxUiWindow(driver: Driver, window: UiWindow | null): Promise<boolean> {
   if (window != null) {
@@ -49,12 +53,15 @@ export default function uitestDriverTest(): void {
     let driver: Driver | undefined;
     let displayId: int = 0;
     let primaryId: int = 0;
+    let user:String|undefined = defaultUserId;
     beforeAll(async () : Promise<void> => {
       hilog.info(domain, tag, "uitestDriverTest loadup start!!!!!")
       driver = Driver.create();
       displayId = display.getDefaultDisplaySync().id.toInt();
       primaryId = display.getPrimaryDisplaySync().id.toInt();
       hilog.info(domain, tag, `uitestDriverTest displayId: ${displayId}, primaryId: ${primaryId}`);
+      user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      hilog.info(domain, tag, `uitestDriverTest user: ${displayId}, primaryId: ${user}`);
       await Utils.msSleep(2000)
       hilog.info(domain, tag, "uitestDriverTest loadup over!!!!!")
     })
@@ -116,7 +123,7 @@ export default function uitestDriverTest(): void {
      * @tc.level  LEVEL3
      */
     it('testFling_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      if (displayId === primaryId) { // 不支持车机副屏执行
+      if (user == undefined || user == defaultUserId) { // 不支持车机副屏执行
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver!.delayMs(waitUiReadyMs);
         let window = await driver!.findWindow({bundleName: 'com.uitestScene.acts'});
@@ -151,7 +158,7 @@ export default function uitestDriverTest(): void {
      * @tc.level  LEVEL3
      */
     it('testTriggerCombineKeys_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      if (displayId === primaryId) { // 不支持车机副屏执行
+      if (user == undefined || user == defaultUserId) { // 不支持车机副屏执行
         hilog.info(domain, tag, "testTriggerCombineKeys_static start !!!!")
         try {
           await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
@@ -308,7 +315,7 @@ export default function uitestDriverTest(): void {
      * @tc.level  LEVEL3
      */
     it('testPressHome_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      if (displayId === primaryId) { // 不支持车机副屏执行
+      if (user == undefined || user == defaultUserId) { // 不支持车机副屏执行
         hilog.info(domain, tag, "testPressHome_static Start!!!");
         try {
           await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
@@ -336,7 +343,7 @@ export default function uitestDriverTest(): void {
      * @tc.level  LEVEL3
      */
     it('testDrag_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      if (displayId === primaryId) { // 不支持车机副屏执行
+      if (user == undefined || user == defaultUserId) { // 不支持车机副屏执行
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver!.delayMs(waitUiReadyMs)
         let button = await driver!.findComponent(ON.id('jump'))
@@ -370,7 +377,7 @@ export default function uitestDriverTest(): void {
      * @tc.level  LEVEL3
      */
     it('testDrag_speed_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      if (displayId === primaryId) { // 不支持车机副屏执行
+      if (user == undefined || user == defaultUserId) { // 不支持车机副屏执行
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver!.delayMs(waitUiReadyMs)
         let button = await driver!.findComponent(ON.id('jump'))

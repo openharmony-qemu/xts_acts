@@ -30,8 +30,10 @@ function sleep(numberMillis: int) {
 
 export default function uitestComponentTest(): void {
   describe('uitestComponentTest', (): void => {
+    let driver: Driver | undefined;
     beforeAll(async () : Promise<void> => {
       hilog.info(domain, tag, "uitestComponentTest loadup start!!!!!")
+      driver = Driver.create();
       await Utils.msSleep(1000)
       hilog.info(domain, tag, "uitestComponentTest loadup over!!!!!")
     })
