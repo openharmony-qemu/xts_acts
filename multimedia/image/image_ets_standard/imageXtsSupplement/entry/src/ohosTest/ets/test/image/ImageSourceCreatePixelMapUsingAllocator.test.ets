@@ -404,6 +404,38 @@ export default function ImageSourceCreatePixelMapUsingAllocatorTest() {
     })
 
     /**
+     * @tc.number  SUB_IMAGE_SOURCE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0900
+     * @tc.name    SUB_IMAGE_SOURCE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0900
+     * @tc.desc    imageSource_createPixelMapUsingAllocatorSync 传入 TIFF + ARGB_8888 + DMA，期望 7700203
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
+     */
+    it('SUB_IMAGE_SOURCE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0900', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_CREATE_PIXEL_MAP_USING_ALLOCATOR_SYNC_0900';
+      const path = 'test.tiff';
+      const allocatorType: image.AllocatorType = image.AllocatorType.DMA;
+      const decodingOptions: image.DecodingOptions = {
+        editable: true,
+        desiredPixelFormat: image.PixelMapFormat.ARGB_8888,
+        index: 0
+      };
+      try {
+        console.info(TAG, testName, 'Start ');
+        await ImageSourceCreateTest(done, testName, path, (imageSourceApi) => {
+          imageSourceApi.createPixelMapUsingAllocatorSync(decodingOptions, allocatorType)
+        });
+        console.error(TAG, testName, 'Should throw 7700203 but succeeded');
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Failed createPixelMapUsingAllocatorSync', JSON.stringify(error), error.code);
+        expect(error.code).assertEqual('7700203')
+        done();
+      }
+    })
+
+    /**
      * @tc.number  SUB_IMAGE_SOURCE_CREATE_PIXEL_MAP_SYNC_0100
      * @tc.name    SUB_IMAGE_SOURCE_CREATE_PIXEL_MAP_SYNC_0100
      * @tc.desc    imageSource_createPixelMapSync
