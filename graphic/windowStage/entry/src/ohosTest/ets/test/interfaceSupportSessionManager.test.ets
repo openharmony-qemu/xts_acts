@@ -949,8 +949,8 @@ export default function interfaceSupportSessionManagerTest(context: common.UIAbi
       let winLimits: ohosWindow.WindowLimits = {
         maxWidth: 3003,
         maxHeight: 3003,
-        minWidth: 2002,
-        minHeight: 2002
+        minWidth: 1001,
+        minHeight: 1001
       };
       await tempWnd!.setWindowLimits(winLimits).then((data) => {
         console.info(msgStr + 'Succeeded in changing the window limits. Cause:' + JSON.stringify(data));
@@ -969,8 +969,8 @@ export default function interfaceSupportSessionManagerTest(context: common.UIAbi
         console.log(msgStr + 'windowLimits is: ' + JSON.stringify(windowLimits));
         expect(windowLimits.maxWidth).assertEqual(3003);
         expect(windowLimits.maxHeight).assertEqual(3003);
-        expect(windowLimits.minWidth).assertEqual(2002);
-        expect(windowLimits.minHeight).assertEqual(2002);
+        expect(windowLimits.minWidth).assertEqual(1001);
+        expect(windowLimits.minHeight).assertEqual(1001);
       } catch (exception) {
         if (exception.code != 801) {
           console.error(msgStr + 'Failed to obtain the window limits of window. Cause: ' + JSON.stringify(exception));
