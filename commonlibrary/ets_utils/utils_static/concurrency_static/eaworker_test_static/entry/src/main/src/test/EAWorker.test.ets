@@ -522,10 +522,10 @@ export default function EAWorkerTest() {
           expect(worker != null).assertTrue();
           expect(worker instanceof EAWorker).assertTrue();
           const testInput = 21.0;
-          const result = await worker.run<number>(
+          const result = worker.run<number>(
             (param: number) => param * 2,
             testInput
-          );
+          ).Await();
           expect(result).assertEqual(42.0);
         } catch (err) {
           err = err as Error;
