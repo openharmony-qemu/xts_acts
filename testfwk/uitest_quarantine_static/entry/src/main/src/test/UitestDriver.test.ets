@@ -64,7 +64,7 @@ export default function uitestDriverTest(): void {
 
     /**
      * @tc.name   testMouseDrag_static
-     * @tc.number uitestDriverTest_0001
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_0100
      * @tc.desc   drag on the screen between the specified points by mouse.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -109,7 +109,7 @@ export default function uitestDriverTest(): void {
 
     /**
      * @tc.name   testFling_static
-     * @tc.number uitestDriverTest_0002
+     * @tc.number SUB_testfwk_UITEST_FLING_0100
      * @tc.desc   inject fling on the device display.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -144,7 +144,7 @@ export default function uitestDriverTest(): void {
 
     /**
      * @tc.name   testTriggerCombineKeys_static
-     * @tc.number uitestDriverTest_0048
+     * @tc.number SUB_testfwk_UITEST_TRIGGERCOMBINEKEYS_0100
      * @tc.desc   press the specified key.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -207,14 +207,16 @@ export default function uitestDriverTest(): void {
 
     /**
      * @tc.name   testDisplayRotation_static
-     * @tc.number uiTest_9049
+     * @tc.number SUB_testfwk_UITEST_DISPLAYROTATION_0100
      * @tc.desc   get the rotation of the device display and set it.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDisplayRotation_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      if (displayId === primaryId) { // 不支持车机副屏执行
+    it('testDisplayRotation_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      let carSupported = canIUse("SystemCapability.Sensors.MiscDevice")
+      hilog.info(domain, tag, `testDisplayRotation_static carSupported, ${ JSON.stringify(carSupported) }`);
+      if (carSupported) { // 此用例不支持在多屏上执行
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
         await driver!.delayMs(waitUiReadyMs)
         await driver!.setDisplayRotation(DisplayRotation.ROTATION_0)
@@ -265,7 +267,7 @@ export default function uitestDriverTest(): void {
 
     /**
      * @tc.name   testSetDisplayRotationEnabled_static
-     * @tc.number uitestDriverTest_0053
+     * @tc.number SUB_testfwk_UITEST_SETDISPLAYROTATIONENABLED_0100
      * @tc.desc   setDisplayRotationEnabled test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -299,7 +301,7 @@ export default function uitestDriverTest(): void {
 
     /**
      * @tc.name   testPressHome_static
-     * @tc.number uitestDriverTest_0004
+     * @tc.number SUB_testfwk_UITEST_PRESSHOME_0100
      * @tc.desc   Press the BACK key.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -327,7 +329,7 @@ export default function uitestDriverTest(): void {
 
     /**
      * @tc.name   testDrag_static
-     * @tc.number uitestDriverTest_0034
+     * @tc.number SUB_testfwk_UITEST_DRAG_0100
      * @tc.desc   drag on the screen between the specified points.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -361,7 +363,7 @@ export default function uitestDriverTest(): void {
 
     /**
      * @tc.name   testDrag_speed_static
-     * @tc.number uitestDriverTest_0036
+     * @tc.number SUB_testfwk_UITEST_DRAG_0200
      * @tc.desc   drag on the screen between the specified points.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -395,7 +397,7 @@ export default function uitestDriverTest(): void {
 
     /**
      * @tc.name   testPressHomeWithId_static
-     * @tc.number uitestDriverTest_0037
+     * @tc.number SUB_testfwk_UITEST_PRESSHOME_0200
      * @tc.desc   pressHome test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
