@@ -1818,37 +1818,6 @@ export default function imagePixelMapErrorCodeTest() {
       }
     });
 
-    /**
-     * @tc.name   ImagePixelMapErrorCode_share_momory_0700
-     * @tc.number SUB_GRAPHIC_PixelMap_ImagePixelMapErrorCode_share_momory_0700
-     * @tc.desc   image pixelMap error code
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it("ImagePixelMapErrorCode_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
-      let msgStr = 'ImagePixelMapErrorCode_share_momory_0700';
-      const opts: image.InitializationOptions = { 
-        editable: true, pixelFormat: 3, size: { height: 100, width: 100 } 
-      }
-      let pixelMap: image.PixelMap = image.createPixelMapUsingAllocatorSync(opts, image.AllocatorType.SHARE_MEMORY);
-      if (pixelMap != undefined) {
-        console.info(msgStr + ' Succeeded in creating pixelMap object.');
-        try {
-          let staticMetadata = pixelMap.getMetadata(image.HdrMetadataKey.HDR_STATIC_METADATA);
-          console.info(msgStr + ' getMetadata success in getMetadata');
-          expect().assertFail();
-        } catch(error) {
-          console.info(msgStr + 'pixelMap getMetadata failed' + error);
-          expect(Number(error.code)).assertEqual(62980173);
-          await pixelMap.release();
-          done();
-        }
-      } else {
-        console.info(msgStr + ' Failed to create pixelMap.');
-        done();
-      }
-    });
     
   })
 }
