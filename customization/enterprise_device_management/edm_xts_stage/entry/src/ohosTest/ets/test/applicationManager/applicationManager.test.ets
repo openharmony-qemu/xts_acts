@@ -11141,17 +11141,13 @@ export default function applicationManagerTest() {
     it("test_addOptimizationBatteryExclusionApps_0900", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        let apps: Array<string> = [];
-        for (let i = 0; i < 11; i++) {
-          apps.push(TEST_REAL_APP_ID_1);
-        }
-        applicationManager.addOptimizationBatteryExclusionApps(apps, DEFAULT_USER_ID);
+        applicationManager.addOptimizationBatteryExclusionApps(APP_IDS_11, DEFAULT_USER_ID);
         expect().assertFail();
       } catch (error) {
         expect(error.code).assertEqual(9200019);
       } finally {
         try {
-          applicationManager.removeOptimizationBatteryExclusionApps([TEST_REAL_APP_ID_1], DEFAULT_USER_ID);
+          applicationManager.removeOptimizationBatteryExclusionApps(APP_IDS_11, DEFAULT_USER_ID);
         } catch (e) {
         }
         await adminManager.disableSuperAdmin(SELFHAPNAME);
