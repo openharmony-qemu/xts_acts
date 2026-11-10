@@ -40,7 +40,7 @@ struct DatePickerComponentExtendSelected {
   @State onChangeTriggered2: boolean = false;
   @State onChangeResult3: string = '';
   @State onChangeTriggered3: boolean = false;
-  @State resultExtendSelected: DatePickerComponentResult = { year: 2026, month: 0, day: 1 };
+  @State resultExtendSelected: DatePickerComponentResult = { year: 2026, month: 0, day: 1 } as DatePickerComponentResult;
 
   build() {
     Column({ space: 10 } as ColumnOptions) {
