@@ -3437,5 +3437,205 @@ export default function utilTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   testHintGC001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2710
+     * @tc.desc   Test hintGC with no parameter, default urgency level LOW should be used
+     *             and the VM should stay usable after the call.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHintGC001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG = 'testHintGC001';
+      try {
+        util.ArkTSVM.hintGC();
+        await sleep(200);
+        const heapInfos = await util.ArkTSVM.getAllVMHeapMemoryInfo();
+        expect(heapInfos != null).assertTrue();
+        expect(heapInfos.length > 0).assertTrue();
+        console.info(`${TAG} heapInfos.length = ${heapInfos.length}`);
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error code: ${err.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testHintGC002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2720
+     * @tc.desc   Test hintGC with each valid UrgencyLevel value LOW, MEDIUM and HIGH.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHintGC002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG = 'testHintGC002';
+      try {
+        expect(util.UrgencyLevel.LOW).assertEqual(0);
+        expect(util.UrgencyLevel.MEDIUM).assertEqual(1);
+        expect(util.UrgencyLevel.HIGH).assertEqual(2);
+        util.ArkTSVM.hintGC(util.UrgencyLevel.LOW);
+        await sleep(200);
+        util.ArkTSVM.hintGC(util.UrgencyLevel.MEDIUM);
+        await sleep(200);
+        util.ArkTSVM.hintGC(util.UrgencyLevel.HIGH);
+        await sleep(200);
+        const heapInfos = await util.ArkTSVM.getAllVMHeapMemoryInfo();
+        expect(heapInfos.length > 0).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error code: ${err.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testHintGC003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2730
+     * @tc.desc   Test hintGC of low level after allocating garbage objects, VM should stay usable
+     *             and heap memory info should still be queryable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHintGC003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG = 'testHintGC003';
+      try {
+        let arr: Array<Array<number>> = new Array(10); // 10: array length
+        for (let i = 0; i < 10; i++) {
+          arr[i] = new Array(1024 * 1000 / 8).fill(i); // 1024 * 1000 / 8: array length
+        }
+        arr = [];
+        util.ArkTSVM.hintGC(util.UrgencyLevel.LOW);
+        await sleep(500);
+        const heapInfos = await util.ArkTSVM.getAllVMHeapMemoryInfo();
+        expect(heapInfos.length > 0).assertTrue();
+        for (let i = 0; i < heapInfos.length; i++) {
+          expect(typeof heapInfos[i].heapObjectSize === 'number').assertTrue();
+          expect(heapInfos[i].heapObjectSize >= 0).assertTrue();
+        }
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error code: ${err.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testHintGC004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2740
+     * @tc.desc   Test hintGC of medium level after allocating garbage objects, VM should stay usable
+     *             and heap memory info should still be queryable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHintGC004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG = 'testHintGC004';
+      try {
+        let arr: Array<Array<number>> = new Array(10); // 10: array length
+        for (let i = 0; i < 10; i++) {
+          arr[i] = new Array(1024 * 1000 / 8).fill(i); // 1024 * 1000 / 8: array length
+        }
+        arr = [];
+        util.ArkTSVM.hintGC(util.UrgencyLevel.MEDIUM);
+        await sleep(500);
+        const heapInfos = await util.ArkTSVM.getAllVMHeapMemoryInfo();
+        expect(heapInfos.length > 0).assertTrue();
+        for (let i = 0; i < heapInfos.length; i++) {
+          expect(typeof heapInfos[i].heapObjectSize === 'number').assertTrue();
+          expect(heapInfos[i].heapObjectSize >= 0).assertTrue();
+        }
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error code: ${err.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testHintGC005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2750
+     * @tc.desc   Test hintGC of high level after allocating garbage objects, VM should stay usable
+     *             and heap memory info should still be queryable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHintGC005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG = 'testHintGC005';
+      try {
+        let arr: Array<Array<number>> = new Array(10); // 10: array length
+        for (let i = 0; i < 10; i++) {
+          arr[i] = new Array(1024 * 1000 / 8).fill(i); // 1024 * 1000 / 8: array length
+        }
+        arr = [];
+        util.ArkTSVM.hintGC(util.UrgencyLevel.HIGH);
+        await sleep(500);
+        const heapInfos = await util.ArkTSVM.getAllVMHeapMemoryInfo();
+        expect(heapInfos.length > 0).assertTrue();
+        for (let i = 0; i < heapInfos.length; i++) {
+          expect(typeof heapInfos[i].heapObjectSize === 'number').assertTrue();
+          expect(heapInfos[i].heapObjectSize >= 0).assertTrue();
+        }
+        done();
+      } catch (err) {
+        console.error(`${TAG} failed, error code: ${err.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testHintGC006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2760
+     * @tc.desc   Test hintGC with invalid parameter type, should throw error 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHintGC006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const TAG = 'testHintGC006';
+      try {
+        util.ArkTSVM.hintGC('invalid' as ESObject);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error code: ${err.code}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testHintGC007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2770
+     * @tc.desc   Test hintGC with out-of-range urgency level values, should throw error 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHintGC007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const TAG = 'testHintGC007';
+      try {
+        util.ArkTSVM.hintGC(-1);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error code: ${err.code}`);
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        util.ArkTSVM.hintGC(3);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error code: ${err.code}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
   })
 }
