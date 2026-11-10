@@ -1998,7 +1998,7 @@ export default function AutomaticSceneConStaticTest(): void {
           }
         };
         let onInterrupted_undefined = undefined;
-        assessmentCallback.onInterrupted(onInterrupted_undefined);
+        assessmentCallback.onInterrupted(onInterrupted_undefined as ESObject as assessment.AssessmentInterruptInfo);
         expect(false).assertTrue();
       } catch (err) {
         hilog.info(DOMAIN, TAG, `${testNum} caught expected error, code: ${err.code}, message: ${err.message}`);
