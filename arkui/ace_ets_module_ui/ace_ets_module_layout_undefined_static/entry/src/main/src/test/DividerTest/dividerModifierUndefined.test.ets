@@ -55,7 +55,7 @@ export default function DividerModifierUndefinedTest() {
         console.info('[SUB_ARKUI_API_DividerModifierUndefinedTest_static_0100] START.');
         await CommonFunc.sleep(500);
 
-        let strJson = inspector.getInspectorByKey('divider');
+        let strJson = inspector.getInspectorByKey('dividerModifier');
         let typeValue = JSON.parseJsonElement(strJson).getString('$type');
         expect(typeValue).assertEqual('Divider');
 

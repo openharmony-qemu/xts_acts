@@ -43,14 +43,11 @@ struct Align {
         }
         .width('80%')
         .height(50)
-        .margin(5)
         .borderColor('#FFFFE4C4')
         .borderWidth(2)
         // .backgroundColor(0xFFE4C4)
         .id('common_align_undefined')
         .attributeModifier(this.modifier)
-
-
 
         Column() {
           Button('flag is' + this.modifier.flag).fontSize(20).id('changeButton')

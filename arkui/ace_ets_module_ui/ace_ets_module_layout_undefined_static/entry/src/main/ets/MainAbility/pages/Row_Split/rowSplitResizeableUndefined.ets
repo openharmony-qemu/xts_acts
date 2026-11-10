@@ -44,7 +44,6 @@ struct RowSplitExample {
       .resizeable(this.isUndefined ? undefined : true)
       .id('rowSplit_resizeable')
     }
-    .padding(10)
     .width('80%')
     .height('80%')
     .alignItems(HorizontalAlign.Center)

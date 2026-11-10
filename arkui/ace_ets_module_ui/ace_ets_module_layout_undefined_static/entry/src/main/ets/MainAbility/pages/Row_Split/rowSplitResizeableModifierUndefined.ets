@@ -64,7 +64,6 @@ struct Index {
           }
           .attributeModifier(this.modifier)
           .id('rowSplit_resizeable_modifier')
-          .padding(10)
           .width('80%')
         }
       }

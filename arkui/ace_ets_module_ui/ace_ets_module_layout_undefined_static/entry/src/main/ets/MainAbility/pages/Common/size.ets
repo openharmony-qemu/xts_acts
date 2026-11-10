@@ -24,7 +24,7 @@ struct CommonExample {
 
   build() {
     Column() {
-      Text('size-动态切换').fontSize(20).margin(15).width('80%')
+      Text('size-动态切换').fontSize(20).width('80%')
       Button('Button')
         .fontSize(50)
         .size(this.isUndefined ? undefined:{ width: '100vp', height: '50vp' } as SizeOptions )

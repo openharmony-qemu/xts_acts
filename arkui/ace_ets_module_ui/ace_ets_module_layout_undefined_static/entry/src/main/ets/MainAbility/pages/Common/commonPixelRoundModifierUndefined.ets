@@ -49,7 +49,6 @@ struct Align {
         Column() {
           Text(`pixelRound-动态切换(undefined/NO_FORCE_ROUND) 宽度:${this.curWidth.toFixed(1)}px`)
             .fontSize(20)
-            .margin(15)
             .width('80%')
           Row() {
             Row()
@@ -66,8 +65,7 @@ struct Align {
         }
       }
       .width('80%')
-      .padding(10)
-      .margin(25)
+
     }
     .alignItems(HorizontalAlign.Center)
   }

@@ -47,7 +47,7 @@ struct FlexExample {
           .id('common_alignSelf_undefined')
           // .backgroundColor(0xD2B48C)
           .textAlign(TextAlign.Center)
-      }.width('80%').height(120).padding(10)
+      }.width('80%').height(120)
       .borderColor('#ffAFEEEE')
       .borderWidth(2)
 
@@ -57,7 +57,8 @@ struct FlexExample {
             this.modifier.flag = !this.modifier.flag;
           })
       }
-    }.width('80%').margin(5)
+    }.width('80%')
     .alignItems(HorizontalAlign.Center)
   }
 }
+
