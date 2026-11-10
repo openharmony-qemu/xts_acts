@@ -54,7 +54,7 @@ export default function dumpStackOnFileDeletionTest(): void {
     afterEach(async (): Promise<void> => {
       console.info(TAG + 'afterEach start');
       if (rdbStore != undefined) {
-        await rdbStore.close();
+        await rdbStore!.close();
         rdbStore = undefined;
       }
       await relationalStore.deleteRdbStore(context!, STORE_NAME);
