@@ -25,7 +25,8 @@ static napi_value SetUiDvsyncSwitchTest001(napi_env env, napi_callback_info info
     
     ArkUI_NodeHandle node;
     ArkUI_NodeHandle child;
-    auto code1 = OH_ArkUI_NativeModule_AdoptChildWithPolicy(node, child, 0);
+    auto code1 = OH_ArkUI_NativeModule_AdoptChildWithPolicy(
+        node, child, OH_ARKUI_NATIVE_MODULE_ADOPT_POLICY_OVERLAY_POSITION_FOLLOWS_ADOPT_PARENT_CHAIN);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "OnCollection", "kkk SetUiDvsyncSwitchTest001=%{public}d", code1);
     ASSERT_EQ(code1, ARKUI_ERROR_CODE_CAPI_INIT_ERROR);
     ArkUI_NodeHandle adoptedChild;
