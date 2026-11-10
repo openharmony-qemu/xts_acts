@@ -68,7 +68,7 @@ static napi_value UIAgentGetTreeJsonAsyncTest001(napi_env env, napi_callback_inf
     g_treeJsonCallbackError = CALLBACK_NOT_INVOKED;
     uint64_t requestId = PARAM_0;
     auto ret = OH_ArkUI_NativeModule_UIAgentGetTreeJsonAsync(context, request,
-        OH_ARKUI_NATIVE_MODULE_UI_JSON_FORMAT_COMPACT, OnTreeJsonCallback, &g_treeJsonUserDataValue, &requestId);
+        OH_ARKUI_NATIVE_MODULE_UI_JSON_COMPACT, OnTreeJsonCallback, &g_treeJsonUserDataValue, &requestId);
     OH_ArkUI_NativeModule_UIAgentTreeRequestDestroy(request);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
@@ -83,7 +83,7 @@ static napi_value UIAgentGetTreeJsonAsyncTest002(napi_env env, napi_callback_inf
     ASSERT_EQ(request != nullptr, true);
     uint64_t requestId = PARAM_0;
     auto ret = OH_ArkUI_NativeModule_UIAgentGetTreeJsonAsync(context, request,
-        OH_ARKUI_NATIVE_MODULE_UI_JSON_FORMAT_INDENTED, OnTreeJsonCallback, nullptr, &requestId);
+        OH_ARKUI_NATIVE_MODULE_UI_JSON_PRETTY, OnTreeJsonCallback, nullptr, &requestId);
     OH_ArkUI_NativeModule_UIAgentTreeRequestDestroy(request);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
@@ -95,7 +95,7 @@ static napi_value UIAgentGetTreeJsonAsyncTest003(napi_env env, napi_callback_inf
     ASSERT_EQ(request != nullptr, true);
     uint64_t requestId = PARAM_0;
     auto ret = OH_ArkUI_NativeModule_UIAgentGetTreeJsonAsync(nullptr, request,
-        OH_ARKUI_NATIVE_MODULE_UI_JSON_FORMAT_COMPACT, OnTreeJsonCallback, nullptr, &requestId);
+        OH_ARKUI_NATIVE_MODULE_UI_JSON_COMPACT, OnTreeJsonCallback, nullptr, &requestId);
     OH_ArkUI_NativeModule_UIAgentTreeRequestDestroy(request);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_UI_CONTEXT_INVALID);
     NAPI_END;
@@ -108,7 +108,7 @@ static napi_value UIAgentGetTreeJsonAsyncTest004(napi_env env, napi_callback_inf
     ASSERT_EQ(context != nullptr, true);
     uint64_t requestId = PARAM_0;
     auto ret = OH_ArkUI_NativeModule_UIAgentGetTreeJsonAsync(context, nullptr,
-        OH_ARKUI_NATIVE_MODULE_UI_JSON_FORMAT_COMPACT, OnTreeJsonCallback, nullptr, &requestId);
+        OH_ARKUI_NATIVE_MODULE_UI_JSON_COMPACT, OnTreeJsonCallback, nullptr, &requestId);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
     NAPI_END;
 }
@@ -122,7 +122,7 @@ static napi_value UIAgentGetTreeJsonAsyncTest005(napi_env env, napi_callback_inf
     ASSERT_EQ(request != nullptr, true);
     uint64_t requestId = PARAM_0;
     auto ret = OH_ArkUI_NativeModule_UIAgentGetTreeJsonAsync(context, request,
-        OH_ARKUI_NATIVE_MODULE_UI_JSON_FORMAT_COMPACT, nullptr, nullptr, &requestId);
+        OH_ARKUI_NATIVE_MODULE_UI_JSON_COMPACT, nullptr, nullptr, &requestId);
     OH_ArkUI_NativeModule_UIAgentTreeRequestDestroy(request);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
     NAPI_END;
@@ -136,7 +136,7 @@ static napi_value UIAgentGetTreeJsonAsyncTest006(napi_env env, napi_callback_inf
     auto request = CreateTreeRequest(OH_ARKUI_NATIVE_MODULE_UI_AGENT_TREE_FULL);
     ASSERT_EQ(request != nullptr, true);
     auto ret = OH_ArkUI_NativeModule_UIAgentGetTreeJsonAsync(context, request,
-        OH_ARKUI_NATIVE_MODULE_UI_JSON_FORMAT_COMPACT, OnTreeJsonCallback, nullptr, nullptr);
+        OH_ARKUI_NATIVE_MODULE_UI_JSON_COMPACT, OnTreeJsonCallback, nullptr, nullptr);
     OH_ArkUI_NativeModule_UIAgentTreeRequestDestroy(request);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
     NAPI_END;
@@ -166,14 +166,14 @@ static napi_value UIAgentGetTreeJsonAsyncTest008(napi_env env, napi_callback_inf
     ASSERT_EQ(request1 != nullptr, true);
     uint64_t requestId1 = PARAM_0;
     auto ret1 = OH_ArkUI_NativeModule_UIAgentGetTreeJsonAsync(context, request1,
-        OH_ARKUI_NATIVE_MODULE_UI_JSON_FORMAT_COMPACT, OnTreeJsonCallback, nullptr, &requestId1);
+        OH_ARKUI_NATIVE_MODULE_UI_JSON_COMPACT, OnTreeJsonCallback, nullptr, &requestId1);
     OH_ArkUI_NativeModule_UIAgentTreeRequestDestroy(request1);
     ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     auto request2 = CreateTreeRequest(OH_ARKUI_NATIVE_MODULE_UI_AGENT_TREE_FULL);
     ASSERT_EQ(request2 != nullptr, true);
     uint64_t requestId2 = PARAM_0;
     auto ret2 = OH_ArkUI_NativeModule_UIAgentGetTreeJsonAsync(context, request2,
-        OH_ARKUI_NATIVE_MODULE_UI_JSON_FORMAT_COMPACT, OnTreeJsonCallback, nullptr, &requestId2);
+        OH_ARKUI_NATIVE_MODULE_UI_JSON_COMPACT, OnTreeJsonCallback, nullptr, &requestId2);
     OH_ArkUI_NativeModule_UIAgentTreeRequestDestroy(request2);
     ASSERT_EQ(ret2, ARKUI_ERROR_CODE_COMMAND_UNFINISHED);
     NAPI_END;
@@ -203,7 +203,7 @@ static napi_value UIAgentGetTreeJsonTest001(napi_env env, napi_callback_info inf
     ASSERT_EQ(request != nullptr, true);
     OH_ArkUI_NativeModule_UIJsonWrapper *json = nullptr;
     auto ret = OH_ArkUI_NativeModule_UIAgentGetTreeJson(context, request,
-        OH_ARKUI_NATIVE_MODULE_UI_JSON_FORMAT_COMPACT, &json);
+        OH_ARKUI_NATIVE_MODULE_UI_JSON_COMPACT, &json);
     OH_ArkUI_NativeModule_UIAgentTreeRequestDestroy(request);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(json != nullptr, true);
@@ -222,7 +222,7 @@ static napi_value UIAgentGetTreeJsonTest002(napi_env env, napi_callback_info inf
     ASSERT_EQ(request != nullptr, true);
     OH_ArkUI_NativeModule_UIJsonWrapper *json = nullptr;
     auto ret = OH_ArkUI_NativeModule_UIAgentGetTreeJson(context, request,
-        OH_ARKUI_NATIVE_MODULE_UI_JSON_FORMAT_INDENTED, &json);
+        OH_ARKUI_NATIVE_MODULE_UI_JSON_PRETTY, &json);
     OH_ArkUI_NativeModule_UIAgentTreeRequestDestroy(request);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(json != nullptr, true);
@@ -238,7 +238,7 @@ static napi_value UIAgentGetTreeJsonTest003(napi_env env, napi_callback_info inf
     ASSERT_EQ(request != nullptr, true);
     OH_ArkUI_NativeModule_UIJsonWrapper *json = nullptr;
     auto ret = OH_ArkUI_NativeModule_UIAgentGetTreeJson(nullptr, request,
-        OH_ARKUI_NATIVE_MODULE_UI_JSON_FORMAT_COMPACT, &json);
+        OH_ARKUI_NATIVE_MODULE_UI_JSON_COMPACT, &json);
     OH_ArkUI_NativeModule_UIAgentTreeRequestDestroy(request);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_UI_CONTEXT_INVALID);
     ASSERT_EQ(json == nullptr, true);
@@ -252,7 +252,7 @@ static napi_value UIAgentGetTreeJsonTest004(napi_env env, napi_callback_info inf
     ASSERT_EQ(context != nullptr, true);
     OH_ArkUI_NativeModule_UIJsonWrapper *json = nullptr;
     auto ret = OH_ArkUI_NativeModule_UIAgentGetTreeJson(context, nullptr,
-        OH_ARKUI_NATIVE_MODULE_UI_JSON_FORMAT_COMPACT, &json);
+        OH_ARKUI_NATIVE_MODULE_UI_JSON_COMPACT, &json);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
     ASSERT_EQ(json == nullptr, true);
     NAPI_END;
@@ -266,7 +266,7 @@ static napi_value UIAgentGetTreeJsonTest005(napi_env env, napi_callback_info inf
     auto request = CreateTreeRequest(OH_ARKUI_NATIVE_MODULE_UI_AGENT_TREE_FULL);
     ASSERT_EQ(request != nullptr, true);
     auto ret = OH_ArkUI_NativeModule_UIAgentGetTreeJson(context, request,
-        OH_ARKUI_NATIVE_MODULE_UI_JSON_FORMAT_COMPACT, nullptr);
+        OH_ARKUI_NATIVE_MODULE_UI_JSON_COMPACT, nullptr);
     OH_ArkUI_NativeModule_UIAgentTreeRequestDestroy(request);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
     NAPI_END;
@@ -297,12 +297,12 @@ static napi_value UIAgentGetTreeJsonTest007(napi_env env, napi_callback_info inf
     ASSERT_EQ(request != nullptr, true);
     OH_ArkUI_NativeModule_UIJsonWrapper *json1 = nullptr;
     auto ret1 = OH_ArkUI_NativeModule_UIAgentGetTreeJson(context, request,
-        OH_ARKUI_NATIVE_MODULE_UI_JSON_FORMAT_COMPACT, &json1);
+        OH_ARKUI_NATIVE_MODULE_UI_JSON_COMPACT, &json1);
     ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(json1 != nullptr, true);
     OH_ArkUI_NativeModule_UIJsonWrapper *json2 = nullptr;
     auto ret2 = OH_ArkUI_NativeModule_UIAgentGetTreeJson(context, request,
-        OH_ARKUI_NATIVE_MODULE_UI_JSON_FORMAT_COMPACT, &json2);
+        OH_ARKUI_NATIVE_MODULE_UI_JSON_COMPACT, &json2);
     ASSERT_EQ(ret2, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(json2 != nullptr, true);
     OH_ArkUI_NativeModule_UIAgentTreeRequestDestroy(request);
