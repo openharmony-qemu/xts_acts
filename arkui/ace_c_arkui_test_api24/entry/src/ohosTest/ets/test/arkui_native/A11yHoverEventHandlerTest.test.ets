@@ -26,7 +26,7 @@ export default function arkuiNativeCapiNativeInterfaceA11yHover() {
     });
 
     /**
-     * @tc.number SUB_ACE_ARKUI_ACCESSIBILITY_REGISTERHOVEREVENTHANDLER_0100
+     * @tc.number SUB_ACE_ARKUI_A11Y_REGISTERHOVEREVENTHANDLER_0100
      * @tc.name   RegisterHoverEventHandlerTest001
      * @tc.desc   Case: RegisterHoverEventHandlerTest001. C API: register hover event handler on a
      *             custom host node. Expect success code on registering callback with user data.
@@ -40,7 +40,7 @@ export default function arkuiNativeCapiNativeInterfaceA11yHover() {
     })
 
     /**
-     * @tc.number SUB_ACE_ARKUI_ACCESSIBILITY_REGISTERHOVEREVENTHANDLER_0200
+     * @tc.number SUB_ACE_ARKUI_A11Y_REGISTERHOVEREVENTHANDLER_0200
      * @tc.name   RegisterHoverEventHandlerTest002
      * @tc.desc   Case: RegisterHoverEventHandlerTest002. C API: register hover event handler with
      *             null host node. Expect param invalid error code 401.
@@ -54,7 +54,7 @@ export default function arkuiNativeCapiNativeInterfaceA11yHover() {
     })
 
     /**
-     * @tc.number SUB_ACE_ARKUI_ACCESSIBILITY_REGISTERHOVEREVENTHANDLER_0300
+     * @tc.number SUB_ACE_ARKUI_A11Y_REGISTERHOVEREVENTHANDLER_0300
      * @tc.name   RegisterHoverEventHandlerTest003
      * @tc.desc   Case: RegisterHoverEventHandlerTest003. C API: register hover event handler with
      *             null callback. Expect param error code 100023.
@@ -68,7 +68,7 @@ export default function arkuiNativeCapiNativeInterfaceA11yHover() {
     })
 
     /**
-     * @tc.number SUB_ACE_ARKUI_ACCESSIBILITY_REGISTERHOVEREVENTHANDLER_0400
+     * @tc.number SUB_ACE_ARKUI_A11Y_REGISTERHOVEREVENTHANDLER_0400
      * @tc.name   RegisterHoverEventHandlerTest004
      * @tc.desc   Case: RegisterHoverEventHandlerTest004. C API: register hover event handler on an
      *             unsupported column node. Expect type not supported error code 106102.
@@ -82,7 +82,7 @@ export default function arkuiNativeCapiNativeInterfaceA11yHover() {
     })
 
     /**
-     * @tc.number SUB_ACE_ARKUI_ACCESSIBILITY_REGISTERHOVEREVENTHANDLER_0500
+     * @tc.number SUB_ACE_ARKUI_A11Y_REGISTERHOVEREVENTHANDLER_0500
      * @tc.name   RegisterHoverEventHandlerTest005
      * @tc.desc   Case: RegisterHoverEventHandlerTest005. C API: register hover event handler twice
      *             on the same custom host node. The second register overrides the first one and
@@ -97,7 +97,7 @@ export default function arkuiNativeCapiNativeInterfaceA11yHover() {
     })
 
     /**
-     * @tc.number SUB_ACE_ARKUI_ACCESSIBILITY_REGISTERHOVEREVENTHANDLER_0600
+     * @tc.number SUB_ACE_ARKUI_A11Y_REGISTERHOVEREVENTHANDLER_0600
      * @tc.name   RegisterHoverEventHandlerTest006
      * @tc.desc   Case: RegisterHoverEventHandlerTest006. C API: register hover event handler on an
      *             xcomponent host node. Expect success code.
@@ -111,7 +111,7 @@ export default function arkuiNativeCapiNativeInterfaceA11yHover() {
     })
 
     /**
-     * @tc.number SUB_ACE_ARKUI_ACCESSIBILITY_REGISTERHOVEREVENTHANDLER_0700
+     * @tc.number SUB_ACE_ARKUI_A11Y_REGISTERHOVEREVENTHANDLER_0700
      * @tc.name   RegisterHoverEventHandlerTest007
      * @tc.desc   Case: RegisterHoverEventHandlerTest007. C API: register hover event handler on an
      *             xcomponent texture host node. Expect success code.
@@ -125,7 +125,7 @@ export default function arkuiNativeCapiNativeInterfaceA11yHover() {
     })
 
     /**
-     * @tc.number SUB_ACE_ARKUI_ACCESSIBILITY_UNREGISTERHOVEREVENTHANDLER_0100
+     * @tc.number SUB_ACE_ARKUI_A11Y_UNREGISTERHOVEREVENTHANDLER_0100
      * @tc.name   UnregisterHoverEventHandlerTest001
      * @tc.desc   Case: UnregisterHoverEventHandlerTest001. C API: unregister hover event handler
      *             after registering on a custom host node. Expect success code.
@@ -139,7 +139,7 @@ export default function arkuiNativeCapiNativeInterfaceA11yHover() {
     })
 
     /**
-     * @tc.number SUB_ACE_ARKUI_ACCESSIBILITY_UNREGISTERHOVEREVENTHANDLER_0200
+     * @tc.number SUB_ACE_ARKUI_A11Y_UNREGISTERHOVEREVENTHANDLER_0200
      * @tc.name   UnregisterHoverEventHandlerTest002
      * @tc.desc   Case: UnregisterHoverEventHandlerTest002. C API: unregister hover event handler on
      *             a supported host node without previous registration. Expect success code.
@@ -153,7 +153,7 @@ export default function arkuiNativeCapiNativeInterfaceA11yHover() {
     })
 
     /**
-     * @tc.number SUB_ACE_ARKUI_ACCESSIBILITY_UNREGISTERHOVEREVENTHANDLER_0300
+     * @tc.number SUB_ACE_ARKUI_A11Y_UNREGISTERHOVEREVENTHANDLER_0300
      * @tc.name   UnregisterHoverEventHandlerTest003
      * @tc.desc   Case: UnregisterHoverEventHandlerTest003. C API: unregister hover event handler
      *             with null host node. Expect param invalid error code 401.
@@ -167,7 +167,7 @@ export default function arkuiNativeCapiNativeInterfaceA11yHover() {
     })
 
     /**
-     * @tc.number SUB_ACE_ARKUI_ACCESSIBILITY_UNREGISTERHOVEREVENTHANDLER_0400
+     * @tc.number SUB_ACE_ARKUI_A11Y_UNREGISTERHOVEREVENTHANDLER_0400
      * @tc.name   UnregisterHoverEventHandlerTest004
      * @tc.desc   Case: UnregisterHoverEventHandlerTest004. C API: unregister hover event handler on
      *             an unsupported column node. Expect type not supported error code 106102.
@@ -181,7 +181,7 @@ export default function arkuiNativeCapiNativeInterfaceA11yHover() {
     })
 
     /**
-     * @tc.number SUB_ACE_ARKUI_ACCESSIBILITY_UNREGISTERHOVEREVENTHANDLER_0500
+     * @tc.number SUB_ACE_ARKUI_A11Y_UNREGISTERHOVEREVENTHANDLER_0500
      * @tc.name   UnregisterHoverEventHandlerTest005
      * @tc.desc   Case: UnregisterHoverEventHandlerTest005. C API: unregister hover event handler
      *             twice on the same custom host node. Repeat unregister is idempotent and both
@@ -196,7 +196,7 @@ export default function arkuiNativeCapiNativeInterfaceA11yHover() {
     })
 
     /**
-     * @tc.number SUB_ACE_ARKUI_ACCESSIBILITY_UNREGISTERHOVEREVENTHANDLER_0600
+     * @tc.number SUB_ACE_ARKUI_A11Y_UNREGISTERHOVEREVENTHANDLER_0600
      * @tc.name   UnregisterHoverEventHandlerTest006
      * @tc.desc   Case: UnregisterHoverEventHandlerTest006. C API: register, unregister and register
      *             again the hover event handler on the same custom host node. All steps return
@@ -211,7 +211,7 @@ export default function arkuiNativeCapiNativeInterfaceA11yHover() {
     })
 
     /**
-     * @tc.number SUB_ACE_ARKUI_ACCESSIBILITY_REGISTERHOVEREVENTHANDLER_0800
+     * @tc.number SUB_ACE_ARKUI_A11Y_REGISTERHOVEREVENTHANDLER_0800
      * @tc.name   RegisterHoverEventHandlerTest008
      * @tc.desc   Case: RegisterHoverEventHandlerTest008. C API: register hover event handler with
      *             null user data. User data has no non-null constraint, expect success code.
