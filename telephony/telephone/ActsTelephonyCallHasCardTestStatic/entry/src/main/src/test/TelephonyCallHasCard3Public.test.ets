@@ -14,13 +14,10 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "@ohos/hypium-static/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll } from "@ohos/hypium-static/src/main/indexStatic";
 import call from '@ohos.telephony.call';
-import { BusinessError, AsyncCallback } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import sim from '@ohos.telephony.sim';
-import abilityAccessCtrl, { Permissions, PermissionRequestResult } from '@ohos.abilityAccessCtrl';
-import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import { Driver, ON, MatchPattern, Component } from '@ohos.UiTest';
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
@@ -53,35 +50,24 @@ const telphoneErr: string = '+861xxxxxxxxxxx';
 const CALL_NUMBER = '10086';
 
 async function getPermissions(): Promise<void> {
-  hilog.info(domain, tag, '%{public}s', 'getPermission start');
-  let list: Array<Permissions> = ['ohos.permission.DIRECT_CALL'];
-  try {
-    let ability: UIAbility = await AbilityDelegatorRegistry.getAbilityDelegator().getCurrentTopAbility();
-    let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
-    atManager.requestPermissionsFromUser(ability.context, list).then((data: PermissionRequestResult) => {
-      hilog.info(domain, tag, `getPermission result ${JSON.stringify(data)}`);
-    }).catch((error: Error) => {
-      hilog.info(domain, tag, `getPermission err ->error.code: ${JSON.stringify((error as BusinessError).code)}, error?.message: ${JSON.stringify((error as BusinessError).message)}`);
-    });
-    for (let index = 0; index < 3; index++) {
-      let driver: Driver = Driver.create();
-      await driver.delayMs(1000);
-      try {
-        let allowButton: Component | null = await driver.findComponent(ON.text('允许', MatchPattern.EQUALS));
-        if (allowButton !== null) {
-          await allowButton.click();
-          await driver.delayMs(1000);
-          hilog.info(domain, tag, `getPermission click allow button, round ${index}`);
-          break;
-        }
-      } catch (error) {
-        hilog.info(domain, tag, `getPermission find allow button round ${index} failed, error.code: ${JSON.stringify(error.code)}, error?.message: ${JSON.stringify(error?.message)}`);
+  hilog.info(domain, tag, '%{public}s', 'click allow start');
+  let driver: Driver = Driver.create();
+  for (let index = 0; index < 10; index++) {
+    await driver.delayMs(1000);
+    try {
+      let allowButton: Component | null = await driver.findComponent(ON.text('允许', MatchPattern.EQUALS));
+      if (allowButton !== null) {
+        await allowButton.click();
+        await driver.delayMs(1000);
+        hilog.info(domain, tag, `click allow button success, round ${index}`);
+        break;
       }
+      hilog.info(domain, tag, `allow button not found, round ${index}`);
+    } catch (error) {
+      hilog.info(domain, tag, `click allow button round ${index} failed, error: ${JSON.stringify(error)}`);
     }
-  } catch (error) {
-    hilog.info(domain, tag, `getPermission error ->error.code: ${JSON.stringify(error.code)}, error?.message: ${JSON.stringify(error?.message)}`);
   }
-  hilog.info(domain, tag, '%{public}s', 'getPermission end');
+  hilog.info(domain, tag, '%{public}s', 'click allow end');
 }
 
 export default function HasCard2PublicNeedCardTest() {
@@ -89,6 +75,27 @@ export default function HasCard2PublicNeedCardTest() {
     beforeAll(async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'getPermission beforeAll');
       await getPermissions();
+      done();
+    });
+
+    afterAll(async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'click cancel start');
+      let driver: Driver = Driver.create();
+      for (let index = 0; index < 5; index++) {
+        await driver.delayMs(1000);
+        try {
+          let cancelButton: Component | null = await driver.findComponent(ON.text('取消', MatchPattern.EQUALS));
+          if (cancelButton !== null) {
+            await cancelButton.click();
+            await driver.delayMs(1000);
+            hilog.info(domain, tag, `click cancel button success, round ${index}`);
+            break;
+          }
+        } catch (error) {
+          hilog.info(domain, tag, `click cancel button round ${index} failed, error: ${JSON.stringify(error)}`);
+        }
+      }
+      hilog.info(domain, tag, '%{public}s', 'click cancel end');
       done();
     });
 
