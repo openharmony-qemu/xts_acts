@@ -530,6 +530,20 @@ const napi_property_descriptor kArkUICapiTestPropertyDescriptors[] = {
     {"TestArkUICapi_510", nullptr, TestArkUICapi_510, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"TestArkUICapi_511", nullptr, TestArkUICapi_511, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"TestArkUICapi_512", nullptr, TestArkUICapi_512, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkUICapi_513", nullptr, TestArkUICapi_513, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkUICapi_514", nullptr, TestArkUICapi_514, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkUICapi_515", nullptr, TestArkUICapi_515, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkUICapi_516", nullptr, TestArkUICapi_516, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkUICapi_517", nullptr, TestArkUICapi_517, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkUICapi_518", nullptr, TestArkUICapi_518, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkUICapi_519", nullptr, TestArkUICapi_519, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkUICapi_520", nullptr, TestArkUICapi_520, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkUICapi_521", nullptr, TestArkUICapi_521, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkUICapi_522", nullptr, TestArkUICapi_522, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkUICapi_523", nullptr, TestArkUICapi_523, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkUICapi_524", nullptr, TestArkUICapi_524, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkUICapi_525", nullptr, TestArkUICapi_525, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestArkUICapi_526", nullptr, TestArkUICapi_526, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
 const size_t K_ARK_UI_CAPI_TEST_PROPERTY_DESCRIPTORS_COUNT =
