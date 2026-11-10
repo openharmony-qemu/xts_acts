@@ -40,7 +40,10 @@ class WaterFlowSnapProvider implements ScrollSnapOffsetProvider {
 
   calculateApproachOffset(velocity: double, decayOffset: double): double {
     // 返回距离大小，滚动方向由组件根据速度处理。
-    return velocity === 0 ? 0 : Math.min(decayOffset, SNAP_INTERVAL);
+    if (velocity === 0) {
+      return 0;
+    }
+    return Math.min(decayOffset, SNAP_INTERVAL);
   }
 
   calculateSnapOffset(velocity: double): double {

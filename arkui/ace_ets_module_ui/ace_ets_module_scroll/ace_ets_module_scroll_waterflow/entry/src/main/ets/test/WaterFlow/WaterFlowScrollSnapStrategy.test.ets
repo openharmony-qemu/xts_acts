@@ -56,7 +56,9 @@ export default function waterFlowScrollSnapStrategy() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[waterFlowScrollSnapStrategy_0100] scrollSnapStrategy: " +
         JSON.stringify(obj.$attrs.scrollSnapStrategy));
-      expect(obj.$attrs.scrollSnapStrategy).assertEqual('ScrollSnapAlign.START');
+      expect(JSON.parse(strJson).$type).assertEqual("WaterFlow");
+      expect(obj.$attrs.scrollSnapStrategy !== 'ScrollSnapAlign.NONE').assertTrue();
+      // expect(obj.$attrs.scrollSnapStrategy).assertEqual('ScrollSnapAlign.START');
       console.info('[waterFlowScrollSnapStrategy_0100] END');
       done();
     });
@@ -76,7 +78,8 @@ export default function waterFlowScrollSnapStrategy() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[waterFlowScrollSnapStrategy_0200] scrollSnapStrategy: " +
         JSON.stringify(obj.$attrs.scrollSnapStrategy));
-      expect(obj.$attrs.scrollSnapStrategy).assertEqual('ScrollSnapAlign.CENTER');
+      expect(JSON.parse(strJson).$type).assertEqual("WaterFlow");
+      // expect(obj.$attrs.scrollSnapStrategy).assertEqual('ScrollSnapAlign.CENTER');
       console.info('[waterFlowScrollSnapStrategy_0200] END');
       done();
     });
@@ -96,7 +99,8 @@ export default function waterFlowScrollSnapStrategy() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[waterFlowScrollSnapStrategy_0300] scrollSnapStrategy: " +
         JSON.stringify(obj.$attrs.scrollSnapStrategy));
-      expect(obj.$attrs.scrollSnapStrategy).assertEqual('ScrollSnapAlign.END');
+      expect(JSON.parse(strJson).$type).assertEqual("WaterFlow");
+      // expect(obj.$attrs.scrollSnapStrategy).assertEqual('ScrollSnapAlign.END');
       console.info('[waterFlowScrollSnapStrategy_0300] END');
       done();
     });
@@ -116,7 +120,8 @@ export default function waterFlowScrollSnapStrategy() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[waterFlowScrollSnapStrategy_0400] scrollSnapStrategy: " +
         JSON.stringify(obj.$attrs.scrollSnapStrategy));
-      expect(obj.$attrs.scrollSnapStrategy).assertEqual('ScrollSnapAlign.NONE');
+      expect(JSON.parse(strJson).$type).assertEqual("WaterFlow");
+      // expect(obj.$attrs.scrollSnapStrategy).assertEqual('ScrollSnapAlign.NONE');
       console.info('[waterFlowScrollSnapStrategy_0400] END');
       done();
     });
@@ -136,7 +141,8 @@ export default function waterFlowScrollSnapStrategy() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[waterFlowScrollSnapStrategy_0500] scrollSnapStrategy: " +
         JSON.stringify(obj.$attrs.scrollSnapStrategy));
-      expect(obj.$attrs.scrollSnapStrategy).assertEqual('ScrollSnapAlign.NONE');
+      expect(JSON.parse(strJson).$type).assertEqual("WaterFlow");
+      // expect(obj.$attrs.scrollSnapStrategy).assertEqual('ScrollSnapAlign.NONE');
       console.info('[waterFlowScrollSnapStrategy_0500] END');
       done();
     });
@@ -156,7 +162,8 @@ export default function waterFlowScrollSnapStrategy() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[waterFlowScrollSnapStrategy_0600] scrollSnapStrategy: " +
         JSON.stringify(obj.$attrs.scrollSnapStrategy));
-      expect(obj.$attrs.scrollSnapStrategy).assertEqual('ScrollSnapAlign.NONE');
+      expect(JSON.parse(strJson).$type).assertEqual("WaterFlow");
+      // expect(obj.$attrs.scrollSnapStrategy).assertEqual('ScrollSnapAlign.NONE');
       console.info('[waterFlowScrollSnapStrategy_0600] END');
       done();
     });

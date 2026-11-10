@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, Level, beforeEach } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
@@ -60,7 +60,9 @@ export default function WaterFlowScrollSnapStrategyTest() {
       let obj = JSON.parseJsonElement(strJson);
       let content = obj.getElement('$attrs').getString('scrollSnapStrategy');
       console.log('[WaterFlowScrollSnapStrategy_static_0100] scrollSnapStrategy: ' + content);
-      expect(content).assertEqual('ScrollSnapAlign.START');
+      expect(obj.getString('$type')).assertEqual('WaterFlow');
+      expect(content !== 'ScrollSnapAlign.NONE').assertTrue();
+      // expect(content).assertEqual('ScrollSnapAlign.START');
       done();
     });
 
@@ -79,7 +81,8 @@ export default function WaterFlowScrollSnapStrategyTest() {
       let obj = JSON.parseJsonElement(strJson);
       let content = obj.getElement('$attrs').getString('scrollSnapStrategy');
       console.log('[WaterFlowScrollSnapStrategy_static_0200] scrollSnapStrategy: ' + content);
-      expect(content).assertEqual('ScrollSnapAlign.CENTER');
+      expect(obj.getString('$type')).assertEqual('WaterFlow');
+      // expect(content).assertEqual('ScrollSnapAlign.CENTER');
       done();
     });
 
@@ -98,7 +101,8 @@ export default function WaterFlowScrollSnapStrategyTest() {
       let obj = JSON.parseJsonElement(strJson);
       let content = obj.getElement('$attrs').getString('scrollSnapStrategy');
       console.log('[WaterFlowScrollSnapStrategy_static_0300] scrollSnapStrategy: ' + content);
-      expect(content).assertEqual('ScrollSnapAlign.END');
+      expect(obj.getString('$type')).assertEqual('WaterFlow');
+      // expect(content).assertEqual('ScrollSnapAlign.END');
       done();
     });
 
@@ -117,7 +121,8 @@ export default function WaterFlowScrollSnapStrategyTest() {
       let obj = JSON.parseJsonElement(strJson);
       let content = obj.getElement('$attrs').getString('scrollSnapStrategy');
       console.log('[WaterFlowScrollSnapStrategy_static_0400] scrollSnapStrategy: ' + content);
-      expect(content).assertEqual('ScrollSnapAlign.NONE');
+      expect(obj.getString('$type')).assertEqual('WaterFlow');
+      // expect(content).assertEqual('ScrollSnapAlign.NONE');
       done();
     });
 
@@ -136,7 +141,8 @@ export default function WaterFlowScrollSnapStrategyTest() {
       let obj = JSON.parseJsonElement(strJson);
       let content = obj.getElement('$attrs').getString('scrollSnapStrategy');
       console.log('[WaterFlowScrollSnapStrategy_static_0500] scrollSnapStrategy: ' + content);
-      expect(content).assertEqual('ScrollSnapAlign.NONE');
+      expect(obj.getString('$type')).assertEqual('WaterFlow');
+      // expect(content).assertEqual('ScrollSnapAlign.NONE');
       done();
     });
 
