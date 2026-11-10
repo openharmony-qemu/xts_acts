@@ -15,6 +15,7 @@ import("//build/ohos_var.gni")
 
 group("hdf") {
   testonly = true
+  deps = []
   if (is_standard_system) {
     deps = [
       "base:base_ndk",
@@ -24,5 +25,8 @@ group("hdf") {
       "errorcode:hdf_errorcode",
       "selection:selection"
     ]
+  }
+  if (is_emulator) {
+    deps += [ "emulator:emulator" ]
   }
 }
