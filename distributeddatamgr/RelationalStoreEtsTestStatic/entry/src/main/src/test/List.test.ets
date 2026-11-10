@@ -88,6 +88,7 @@ import RelationalStoreArkPredicatesQueryByStepTest from "./RelationalStoreArkPre
 import RelationalStoreArkSqlQueryByStepTest from "./RelationalStoreArkSqlQueryByStep.test";
 import queryByStepTest from "./QueryByStepTest.test";
 import RdbSetDistributedTableTypeParamErrTest from "./RdbSetDistributedTableTypeParamErr.test";
+import DumpStackOnFileDeletionTest from "./DumpStackOnFileDeletion.test";
 export default function testsuite() {
   RelationStoreRdbStoreTest();
   RelationalStoreEnumTest();
@@ -179,4 +180,5 @@ export default function testsuite() {
   RelationalStoreArkSqlQueryByStepTest();
   queryByStepTest();
   RdbSetDistributedTableTypeParamErrTest();
+  DumpStackOnFileDeletionTest();
 }
