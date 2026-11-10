@@ -61,8 +61,7 @@ export default function WaterFlowScrollSnapStrategyTest() {
       let content = obj.getElement('$attrs').getString('scrollSnapStrategy');
       console.log('[WaterFlowScrollSnapStrategy_static_0100] scrollSnapStrategy: ' + content);
       expect(obj.getString('$type')).assertEqual('WaterFlow');
-      expect(content !== 'ScrollSnapAlign.NONE').assertTrue();
-      // expect(content).assertEqual('ScrollSnapAlign.START');
+      expect(content).assertEqual('ScrollSnapAlign.START');
       done();
     });
 
@@ -82,7 +81,7 @@ export default function WaterFlowScrollSnapStrategyTest() {
       let content = obj.getElement('$attrs').getString('scrollSnapStrategy');
       console.log('[WaterFlowScrollSnapStrategy_static_0200] scrollSnapStrategy: ' + content);
       expect(obj.getString('$type')).assertEqual('WaterFlow');
-      // expect(content).assertEqual('ScrollSnapAlign.CENTER');
+      expect(content).assertEqual('ScrollSnapAlign.CENTER');
       done();
     });
 
@@ -102,7 +101,7 @@ export default function WaterFlowScrollSnapStrategyTest() {
       let content = obj.getElement('$attrs').getString('scrollSnapStrategy');
       console.log('[WaterFlowScrollSnapStrategy_static_0300] scrollSnapStrategy: ' + content);
       expect(obj.getString('$type')).assertEqual('WaterFlow');
-      // expect(content).assertEqual('ScrollSnapAlign.END');
+      expect(content).assertEqual('ScrollSnapAlign.END');
       done();
     });
 
@@ -122,7 +121,7 @@ export default function WaterFlowScrollSnapStrategyTest() {
       let content = obj.getElement('$attrs').getString('scrollSnapStrategy');
       console.log('[WaterFlowScrollSnapStrategy_static_0400] scrollSnapStrategy: ' + content);
       expect(obj.getString('$type')).assertEqual('WaterFlow');
-      // expect(content).assertEqual('ScrollSnapAlign.NONE');
+      expect(content).assertEqual('ScrollSnapAlign.NONE');
       done();
     });
 
@@ -142,7 +141,7 @@ export default function WaterFlowScrollSnapStrategyTest() {
       let content = obj.getElement('$attrs').getString('scrollSnapStrategy');
       console.log('[WaterFlowScrollSnapStrategy_static_0500] scrollSnapStrategy: ' + content);
       expect(obj.getString('$type')).assertEqual('WaterFlow');
-      // expect(content).assertEqual('ScrollSnapAlign.NONE');
+      expect(content).assertEqual('ScrollSnapAlign.NONE');
       done();
     });
 

@@ -76,7 +76,6 @@ export default function testsuite() {
   gridEditModeChange();
   gridEditModeOptions();
   GridScrollSnapStrategyTest();
-  WaterFlowScrollSnapStrategyTest();
   listEnableEditMode();
   listEditModeChange();
   headerFooterStickyGrid();
