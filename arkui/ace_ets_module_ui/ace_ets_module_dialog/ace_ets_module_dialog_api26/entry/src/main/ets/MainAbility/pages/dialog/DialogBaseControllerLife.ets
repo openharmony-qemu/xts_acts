@@ -115,35 +115,37 @@ struct DialogBaseControllerLife {
       }
       Row() {
         Button('onWillDismiss')
-        .id('btn_ctrl_will_dismiss')
-        .onClick(async () => {
-          let opts: dialog.DialogStyleOptions = {
-            title: 'WillDismissTitle',
-            message: { content: 'WillDismissMessage' },
-            autoCancel: true,
-            onWillDismiss: (dismissal: DialogDismissal) => {
-              this.dismissReason = String(dismissal.reason);
-              this.lastAction = 'willDismiss';
-              dismissal.dismiss();
-            },
-            buttons: [
-              {
-                value: 'WillDismissOK',
-                action: () => {
-                  this.lastAction = 'WillDismissOK';
+          .id('btn_ctrl_will_dismiss')
+          .onClick(async () => {
+            let opts: dialog.DialogStyleOptions = {
+              title: 'WillDismissTitle',
+              message: { content: 'WillDismissMessage' },
+              autoCancel: true,
+              onWillDismiss: (dismissal: DialogDismissal) => {
+                this.dismissReason = String(dismissal.reason);
+                this.lastAction = 'willDismiss';
+                dismissal.dismiss();
+              },
+              buttons: [
+                {
+                  value: 'WillDismissOK',
+                  action: () => {
+                    this.lastAction = 'WillDismissOK';
+                  }
                 }
-              }
-            ]
-          };
-          await this.presenter().present(opts);
-        })
-      Button('construct getState only')
-        .id('btn_ctrl_construct')
-        .onClick(() => {
-          let c = new DialogBaseController();
-          this.stateBefore = this.stateName(c.getState());
-          this.lastAction = 'constructed';
-        })
+              ]
+            };
+            await this.presenter().present(opts);
+          })
+      }
+      Row() {
+        Button('construct getState only')
+          .id('btn_ctrl_construct')
+          .onClick(() => {
+            let c = new DialogBaseController();
+            this.stateBefore = this.stateName(c.getState());
+            this.lastAction = 'constructed';
+          })
       }   
     }
     .width('100%')

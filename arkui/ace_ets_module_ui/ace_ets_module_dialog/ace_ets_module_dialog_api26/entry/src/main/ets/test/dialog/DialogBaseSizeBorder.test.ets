@@ -17,20 +17,25 @@ import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium
 import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+import DialogApi26TestHelper from '../common/DialogApi26TestHelper';
 
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function DialogBaseSizeBorder() {
   describe('DialogBaseSizeBorder', () => {
     beforeEach(async (done: Function) => {
       console.info('[ARKUI_DYN] DialogBaseSizeBorder beforeEach');
-      let options: router.RouterOptions = { url: 'MainAbility/pages/dialog/DialogBaseSizeBorder' };
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/dialog/DialogBaseSizeBorder'
+      };
       try {
-        router.clear();
         let pages = router.getState();
         if (pages.name !== 'DialogBaseSizeBorder') {
-          await router.pushUrl(options);
+          router.clear();
+          await CommonFunc.sleep(500);
+          await router.replaceUrl(options);
           await CommonFunc.sleep(2000);
+          let driverNav = await Driver.create();
+          await DialogApi26TestHelper.drainCustomDialogs(driverNav);
         }
       } catch (err) {
         console.error('[ARKUI_DYN] push DialogBaseSizeBorder error: ' + err);
@@ -40,14 +45,10 @@ export default function DialogBaseSizeBorder() {
     });
 
     afterEach(async () => {
+      let driver = await Driver.create();
+      await DialogApi26TestHelper.drainCustomDialogs(driver);
+      await DialogApi26TestHelper.dismissOverlayIfAny(driver);
       await CommonFunc.sleep(800);
-      try {
-        let driver = await Driver.create();
-        await driver.pressBack(displayID);
-      } catch (e) {
-        console.info('[ARKUI_DYN] pressBack skip');
-      }
-      console.info('[ARKUI_DYN] DialogBaseSizeBorder afterEach');
     });
 
     /**
