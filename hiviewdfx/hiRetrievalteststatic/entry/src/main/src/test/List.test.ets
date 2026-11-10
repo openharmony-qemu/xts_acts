@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-import HiRetrievalGetCurrentConfigTest from './HiRetrievalGetCurrentConfig.test.ets';
-import HiRetrievalGetLastParticipationTimestampTest from './HiRetrievalGetLastParticipationTimestamp.test';
-import HiRetrievalInitTest from './HiRetrievalInit.test';
-import HiRetrievalIsParticipantTest from './HiRetrievalIsParticipant.test';
-import HiRetrievalParticipateTest from './HiRetrievalParticipate.test';
-import HiRetrievalQuitTest from './HiRetrievalQuit.test';
-import HiRetrievalRunTest from './HiRetrievalRun.test';
+import HiRetrievalGetCurrentConfigStaticTest from './HiRetrievalGetCurrentConfigStatic.test';
+import HiRetrievalGetLastParticipationTimestampStaticTest from './HiRetrievalGetLastParticipationTimestampStatic.test';
+import HiRetrievalInitStaticTest from './HiRetrievalInitStatic.test';
+import HiRetrievalIsParticipantStaticTest from './HiRetrievalIsParticipantStatic.test';
+import HiRetrievalParticipateStaticTest from './HiRetrievalParticipateStatic.test';
+import HiRetrievalQuitStaticTest from './HiRetrievalQuitStatic.test';
+import HiRetrievalRunStaticTest from './HiRetrievalRunStatic.test';
 
 export default function testsuite() {
-  HiRetrievalGetCurrentConfigTest();
-  HiRetrievalGetLastParticipationTimestampTest();
-  HiRetrievalInitTest();
-  HiRetrievalIsParticipantTest();
-  HiRetrievalParticipateTest();
-  HiRetrievalQuitTest();
-  HiRetrievalRunTest();
+  HiRetrievalGetCurrentConfigStaticTest();
+  HiRetrievalGetLastParticipationTimestampStaticTest();
+  HiRetrievalInitStaticTest();
+  HiRetrievalIsParticipantStaticTest();
+  HiRetrievalParticipateStaticTest();
+  HiRetrievalQuitStaticTest();
+  HiRetrievalRunStaticTest();
 }

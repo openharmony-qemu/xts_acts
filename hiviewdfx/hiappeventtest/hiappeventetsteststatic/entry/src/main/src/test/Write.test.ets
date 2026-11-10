@@ -895,7 +895,6 @@ export default function writeTest() {
         })
         expect(result == null).assertTrue();
       } catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `HiAppEventSub51 delay > error code: ${err.code}, error msg: ${err.message}`)
         expect(err.code == 11102001).assertTrue()
         hilog.info(domain, tag, 'HiAppEventSub51 end')
@@ -930,7 +929,6 @@ export default function writeTest() {
         })
         expect(result == null).assertTrue();
       } catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `HiAppEventSub52 delay > error code: ${err.code}, error msg: ${err.message}`)
         expect(err.code == 11102001).assertTrue()
         hilog.info(domain, tag, 'HiAppEventSub52 end')
@@ -965,7 +963,6 @@ export default function writeTest() {
         })
         expect(result == null).assertTrue();
       } catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `HiAppEventSub53 delay > error code: ${err.code}, error msg: ${err.message}`)
         expect(err.code == 11102001).assertTrue()
         hilog.info(domain, tag, 'HiAppEventSub53 end')
@@ -1000,7 +997,6 @@ export default function writeTest() {
         })
         expect(result == null).assertTrue();
       } catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `HiAppEventSub54 delay > error code: ${err.code}, error msg: ${err.message}`)
         expect(err.code == 11102001).assertTrue()
         hilog.info(domain, tag, 'HiAppEventSub54 end')
@@ -1070,7 +1066,6 @@ export default function writeTest() {
         })
         expect(result == null).assertTrue();
       } catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `HiAppEventSub56 delay > error code: ${err.code}, error msg: ${err.message}`)
         expect(err.code == 11102002).assertTrue()
         hilog.info(domain, tag, 'HiAppEventSub56 end')
@@ -1105,7 +1100,6 @@ export default function writeTest() {
         })
         expect(result == null).assertTrue();
       } catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `HiAppEventSub57 delay > error code: ${err.code}, error msg: ${err.message}`)
         expect(err.code == 11102002).assertTrue()
         hilog.info(domain, tag, 'HiAppEventSub57 end')
@@ -1140,7 +1134,6 @@ export default function writeTest() {
         })
         expect(result == null).assertTrue();
       } catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `HiAppEventSub58 delay > error code: ${err.code}, error msg: ${err.message}`)
         expect(err.code == 11102002).assertTrue()
         hilog.info(domain, tag, 'HiAppEventSub58 end')
@@ -1175,7 +1168,6 @@ export default function writeTest() {
         })
         expect(result == null).assertTrue();
       } catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `HiAppEventSub59 delay > error code: ${err.code}, error msg: ${err.message}`)
         expect(err.code == 11102002).assertTrue()
         hilog.info(domain, tag, 'HiAppEventSub59 end')
@@ -1245,7 +1237,6 @@ export default function writeTest() {
         })
         expect(result == null).assertTrue();
       } catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `HiAppEventSub61 delay > error code: ${err.code}, error msg: ${err.message}`)
         expect(err.code == 11102003).assertTrue()
         hilog.info(domain, tag, 'HiAppEventSub61 end')
@@ -1280,7 +1271,6 @@ export default function writeTest() {
         })
         expect(result == null).assertTrue();
       } catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `HiAppEventSub62 delay > error code: ${err.code}, error msg: ${err.message}`)
         expect(err.code == 11102004).assertTrue()
         hilog.info(domain, tag, 'HiAppEventSub62 end')
@@ -1315,7 +1305,6 @@ export default function writeTest() {
         })
         expect(result == null).assertTrue();
       } catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `HiAppEventSub63 delay > error code: ${err.code}, error msg: ${err.message}`)
         expect(err.code == 11102005).assertTrue()
         hilog.info(domain, tag, 'HiAppEventSub63 end')
@@ -1338,7 +1327,6 @@ export default function writeTest() {
           maxStorage: '100M?'
         });
       } catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `HiAppEventSub64 delay > error code: ${err.code}, error msg: ${err.message}`)
         expect(err.code == 11103001).assertTrue()
         hilog.info(domain, tag, 'HiAppEventSub64 end')
@@ -1361,7 +1349,6 @@ export default function writeTest() {
           maxStorage: '100A'
         });
       } catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `HiAppEventSub65 delay > error code: ${err.code}, error msg: ${err.message}`)
         expect(err.code == 11103001).assertTrue()
         hilog.info(domain, tag, 'HiAppEventSub65 end')
@@ -1385,7 +1372,6 @@ export default function writeTest() {
         });
         holder.setSize(-1000);
       } catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `HiAppEventSub66 delay > error code: ${err.code}, error msg: ${err.message}`)
         expect(err.code == 11104001).assertTrue()
         hilog.info(domain, tag, 'HiAppEventSub66 end')

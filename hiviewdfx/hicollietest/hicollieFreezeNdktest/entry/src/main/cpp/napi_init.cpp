@@ -32,7 +32,9 @@ static napi_value Init(napi_env env, napi_value exports)
         { "TestHiCollieAssociateProcessReport", nullptr, TestHiCollieAssociateProcessReport, nullptr, nullptr,
             nullptr, napi_default, nullptr },
         { "TestHiCollieAssociateProcessReport1", nullptr, TestHiCollieAssociateProcessReport1, nullptr, nullptr,
-            nullptr, napi_default, nullptr }
+            nullptr, napi_default, nullptr },
+        { "TestHiCollieSetFreezeCallback1", nullptr, TestHiCollieSetFreezeCallback1, nullptr, nullptr, nullptr,
+            napi_default, nullptr }
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

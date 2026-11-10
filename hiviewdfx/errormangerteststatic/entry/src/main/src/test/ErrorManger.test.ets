@@ -71,8 +71,8 @@ function offFreezeConcurrentFunc(args: number): number {
   return result;
 }
 
-export default function ErrormangerTest() {
-  describe('ErrormangerTest', (): void => {
+export default function ErrorMangerStaticTest() {
+  describe('ErrorMangerStaticTest', (): void => {
         let originalObserver: errorManager.ResourceUsageObserver;
         /**
         * @tc.name   testOffFreeze_0100
