@@ -112,11 +112,16 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"AddKeyEventMonitorException", nullptr, AddKeyEventMonitorException, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"AddMouseEventMonitorException", nullptr, AddMouseEventMonitorException, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"AddTouchEventMonitorException", nullptr, AddTouchEventMonitorException, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"AddAxisEventMonitorForAllException", nullptr, AddAxisEventMonitorForAllException, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"AddAxisEventMonitorException", nullptr, AddAxisEventMonitorException, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"AddKeyEventMonitorException", nullptr, AddKeyEventMonitorException, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"AddMouseEventMonitorException", nullptr, AddMouseEventMonitorException, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"AddTouchEventMonitorException", nullptr, AddTouchEventMonitorException, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"AddAxisEventMonitorForAllException", nullptr, AddAxisEventMonitorForAllException, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"AddAxisEventMonitorException", nullptr, AddAxisEventMonitorException, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
