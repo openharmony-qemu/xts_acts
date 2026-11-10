@@ -79,6 +79,7 @@ import AccessibilityBindExportTreeTest from './accessibilityBindExportTree/Acces
 import CollectionEnumTest from "./collection/CollectionEnum.test"
 import UIEventInjectionTest from './uiEventInjection/UIEventInjectionTest.test'
 import BufferQueueSizeTest from './node/BufferQueueSizeTest.test'
+import InspectorTreeGetterTest from './nativeModule/InspectorTreeGetterTest.test'
 
 export default function testsuite() {
   SetUiDvsyncSwitchTest() // 此条特殊用例请放在首行，勿动
@@ -146,4 +147,5 @@ export default function testsuite() {
   CollectionEnumTest()
   UIEventInjectionTest()
   BufferQueueSizeTest()
+  InspectorTreeGetterTest()
 }
