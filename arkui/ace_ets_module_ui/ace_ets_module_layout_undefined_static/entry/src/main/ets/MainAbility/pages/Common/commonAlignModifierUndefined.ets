@@ -36,12 +36,12 @@ struct Align {
   build() {
     Column() {
       Column() {
-        Text('align').fontSize(9).fontColor('#ffcccccc').width('90%')
+        Text('align').fontSize(9).fontColor('#ffcccccc').width('80%')
         Stack() {
           Text('First show in bottom end')
           // .backgroundColor(0xD2B48C)
         }
-        .width('90%')
+        .width('80%')
         .height(50)
         .margin(5)
         .borderColor('#FFFFE4C4')
@@ -60,5 +60,6 @@ struct Align {
         }
       }
     }
+    .alignItems(HorizontalAlign.Center)
   }
 }

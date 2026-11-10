@@ -79,7 +79,7 @@ group("std_core_static") {
       "uint16array2_standard_test_static:ActsUint16array2CaseStaticTest",
       "uint32array2_standard_test_static:ActsUint32array2CaseStaticTest",
       "int16array3_standard_test_static:ActsInt16array3CaseStaticTest",
-      "sparsearray_standard_test_static:ActsSparsearrayStaticTest",
+      "int16array4_standard_test_static:ActsInt16arrayCaseStaticTest4",
     ]
   }
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '@ohos/hypium-static/src/main/indexStatic';
 import hilog from '@ohos.hilog'
 import { application,common,Want } from '@kit.AbilityKit';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -86,16 +86,25 @@ export default function ActsStartSelfStaticTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_StartSelf_Static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(DOMAIN, 'testTag', ` start.`);
+      hilog.info(DOMAIN, 'testTag', ` SUB_Ability_AbilityRuntime_StartSelf_Static_0200 start.`);
       try {
         let testType = false
         let deviceCapability = context?.resourceManager.getDeviceCapabilitySync();
         hilog.info(DOMAIN, 'testTag', 'deviceType is ' + deviceCapability?.deviceType);
-        if (deviceCapability?.deviceType == resourceManager.DeviceType.DEVICE_TYPE_PHONE) {
-          hilog.info(DOMAIN, 'testTag', 'skip deviceType is phone');
-          done();
+        if (deviceCapability?.deviceType == resourceManager.DeviceType.DEVICE_TYPE_PHONE ||
+          deviceCapability?.deviceType == resourceManager.DeviceType.DEVICE_TYPE_WEARABLE) {
+          hilog.info(DOMAIN, 'testTag', 'deviceType is phone or wearable, expect 801 not support');
+          context?.startSelf().then(() => {
+            hilog.info(DOMAIN, 'testTag', 'SUB_Ability_AbilityRuntime_StartSelf_Static_0200 startSelf succeed on phone or wearable');
+            expect().assertFail();
+            done();
+          }).catch((err: Error) => {
+            hilog.info(DOMAIN, 'testTag', 'SUB_Ability_AbilityRuntime_StartSelf_Static_0200 startSelf error: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(801);
+            done();
+          });
         } else {
-          hilog.info(DOMAIN, 'testTag', 'skip deviceType is not phone');
+          hilog.info(DOMAIN, 'testTag', 'deviceType is not phone or wearable, expect success');
           context?.startSelf().then(() => {
             testType = true
             hilog.info(DOMAIN, 'testTag', 'SUB_Ability_AbilityRuntime_StartSelf_Static_0200 startSelf succeed');

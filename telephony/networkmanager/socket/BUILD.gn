@@ -19,7 +19,12 @@ group("socket") {
     deps = [ 
     "socketHasNetTest:ActsNetworkMgrSocketHasNetTest",
     "sockettest:ActsNetworkMgrSocketTest",
-    "socketnoptest:ActsNetworkMgrSocketNopTest"
+    "socketnoptest:ActsNetworkMgrSocketNopTest",
+    "ActsNetManagerSocketEtsTestStatic:ActsNetManagerSocketEtsStaticTest",
+    "ActsNetworkMgrSocketHasNetTestStatic:ActsNetworkMgrSocketHasNetStaticTest",
+    "ActsNetworkMgrSocketTestStatic:ActsNetworkMgrSocketStaticTest",
+    "ActsSocketNoPApiTestStatic:ActsSocketNoPApiStaticTest",
+    "ActsTLSSupportSendArrayBufferTestStatic:ActsTLSSupportSendArrayBufferStaticTest",
     ]
   }
 }

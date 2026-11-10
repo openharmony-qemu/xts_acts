@@ -17,7 +17,7 @@
 import type { KeyCode } from '@ohos.multimodalInput.keyCode';
 
 import { Callback, Message, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
-import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterEach, beforeEach, describe, expect, it, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import { Component, Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';

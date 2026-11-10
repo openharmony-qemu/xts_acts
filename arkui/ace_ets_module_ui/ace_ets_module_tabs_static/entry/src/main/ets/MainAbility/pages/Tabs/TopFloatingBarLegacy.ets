@@ -1,0 +1,85 @@
+'use static';
+/**
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import {
+  Entry,
+  Text,
+  Column,
+  Component,
+  Tabs,
+  TabContent,
+  Color,
+  BarMode,
+  TabBarStyle
+} from '@ohos.arkui.component'
+
+@Entry
+@Component
+struct TopFloatingBarLegacy {
+  build() {
+    Column() {
+      Tabs() {
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Pink)
+        }.tabBar('Pink')
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Green)
+        }.tabBar('Green')
+      }
+      .id('tabs_legacy_bottom')
+      .barStyle(TabBarStyle.BOTTOM)
+      .barMode(BarMode.Scrollable)
+      .height('25%')
+      .width('100%')
+
+      Tabs() {
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Pink)
+        }.tabBar('Pink')
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Green)
+        }.tabBar('Green')
+      }
+      .id('tabs_legacy_sidebar')
+      .barStyle(TabBarStyle.SIDEBAR)
+      .barMode(BarMode.Scrollable)
+      .height('25%')
+      .width('100%')
+
+      Tabs() {
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Pink)
+        }.tabBar('Pink')
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor(Color.Green)
+        }.tabBar('Green')
+      }
+      .id('tabs_legacy_bottom_ignores_top_floating')
+      .barStyle(TabBarStyle.BOTTOM)
+      .topBarFloatingStyle({
+        barWidth: 400,
+        maskColor: '#33000000',
+        maskHeight: 200
+      })
+      .barMode(BarMode.Scrollable)
+      .height('25%')
+      .width('100%')
+    }
+    .padding(5)
+    .backgroundColor('#F5F5F5')
+    .height('100%')
+    .width('100%')
+  }
+}

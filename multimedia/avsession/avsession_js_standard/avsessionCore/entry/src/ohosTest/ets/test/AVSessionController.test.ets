@@ -490,6 +490,214 @@ export default function abilityTest() {
       done();
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1300
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1300
+     * @tc.desc   Testing sendAVKeyEvent-callback errcode 6600101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+          await controller.sendAVKeyEvent(event, (err: BusinessError) => {
+            if (err) {
+              console.error(`SendAVKeyEvent BusinessError: code: ${err.code}, message: ${err.message}`);
+              expect().assertFail();
+            } else {
+              console.info('SendAVKeyEvent Successfully');
+            }
+          });
+        await sleep(300);
+        done();
+      } catch (error) {
+        console.info(`SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1300, error code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(6600101);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1400
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1400
+     * @tc.desc   Testing sendAVKeyEvent-callback errcode 6600103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+          await controller.sendAVKeyEvent(event, (err: BusinessError) => {
+            if (err) {
+              console.error(`SendAVKeyEvent BusinessError: code: ${err.code}, message: ${err.message}`);
+              expect().assertFail();
+            } else {
+              console.info('SendAVKeyEvent Successfully');
+            }
+          });
+        await sleep(300);
+        done();
+      } catch (error) {
+        console.info(`SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1400, error code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(6600103);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1500
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1500
+     * @tc.desc   Testing sendAVKeyEvent-callback errcode 6600105
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+          await controller.sendAVKeyEvent(event, (err: BusinessError) => {
+            if (err) {
+              console.error(`SendAVKeyEvent BusinessError: code: ${err.code}, message: ${err.message}`);
+              expect().assertFail();
+            } else {
+              console.info('SendAVKeyEvent Successfully');
+            }
+          });
+        await sleep(300);
+        done();
+      } catch (error) {
+        console.info(`SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1500, error code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(6600105);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1600
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1600
+     * @tc.desc   Testing sendAVKeyEvent-callback errcode 6600106
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+          await controller.sendAVKeyEvent(event, (err: BusinessError) => {
+            if (err) {
+              console.error(`SendAVKeyEvent BusinessError: code: ${err.code}, message: ${err.message}`);
+              expect().assertFail();
+            } else {
+              console.info('SendAVKeyEvent Successfully');
+            }
+          });
+        await sleep(300);
+        done();
+      } catch (error) {
+        console.info(`SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1600, error code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(6600106);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1700
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1700
+     * @tc.desc   Testing sendAVKeyEvent-promise errcode 6600101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await controller.sendAVKeyEvent(event).then(() => {
+          console.info('SendAVKeyEvent Successfully');
+        }).catch((err: BusinessError) => {
+          console.error(`SendAVKeyEvent BusinessError: code: ${err.code}, message: ${err.message}`);
+          expect().assertFail();
+        });
+        await sleep(300);
+        done();
+      } catch (error) {
+        console.info(`SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1700, error code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(6600101);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1800
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1800
+     * @tc.desc   Testing sendAVKeyEvent-promise errcode 6600103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await controller.sendAVKeyEvent(event).then(() => {
+          console.info('SendAVKeyEvent Successfully');
+        }).catch((err: BusinessError) => {
+          console.error(`SendAVKeyEvent BusinessError: code: ${err.code}, message: ${err.message}`);
+          expect().assertFail();
+        });
+        await sleep(300);
+        done();
+      } catch (error) {
+        console.info(`SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1800, error code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(6600103);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1900
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1900
+     * @tc.desc   Testing sendAVKeyEvent-promise errcode 6600105
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await controller.sendAVKeyEvent(event).then(() => {
+          console.info('SendAVKeyEvent Successfully');
+        }).catch((err: BusinessError) => {
+          console.error(`SendAVKeyEvent BusinessError: code: ${err.code}, message: ${err.message}`);
+          expect().assertFail();
+        });
+        await sleep(300);
+        done();
+      } catch (error) {
+        console.info(`SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_1900, error code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(6600105);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_2000
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_2000
+     * @tc.desc   Testing sendAVKeyEvent-promise errcode 6600106
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await controller.sendAVKeyEvent(event).then(() => {
+          console.info('SendAVKeyEvent Successfully');
+        }).catch((err: BusinessError) => {
+          console.error(`SendAVKeyEvent BusinessError: code: ${err.code}, message: ${err.message}`);
+          expect().assertFail();
+        });
+        await sleep(300);
+        done();
+      } catch (error) {
+        console.info(`SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_2000, error code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(6600106);
+      }
+      done();
+    })
+
 
     /**
      * @tc.name   SUB_MULTIMEDIA_AVSESSION_DESTORY_ERRORCODE_0500
@@ -2171,6 +2379,102 @@ export default function abilityTest() {
       } catch (error) {
         console.info(`SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_0100, error code: ${error.code}, message: ${error.message}`);
         expect(false).assertTrue();
+      }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_0200
+     * @tc.desc   getOutputDevice callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        controller.getOutputDevice((err: BusinessError, deviceInfo: avSession.OutputDeviceInfo) => {
+          if (err) {
+            console.error(`Failed to get output device, code: ${err.code}, message: ${err.message}`);
+            expect(false).assertTrue();
+            done();
+            return;
+          }
+          console.info('SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_0200 Succeeded in getting output device.');
+        });
+      } catch (error) {
+        console.info(`SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_0200, error code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(6600101);
+      }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_0300
+     * @tc.desc   getOutputDevice callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        controller.getOutputDevice((err: BusinessError, deviceInfo: avSession.OutputDeviceInfo) => {
+          if (err) {
+            console.error(`Failed to get output device, code: ${err.code}, message: ${err.message}`);
+            expect(false).assertTrue();
+            done();
+            return;
+          }
+          console.info('SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_0300 Succeeded in getting output device.');
+        });
+      } catch (error) {
+        console.info(`SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_0300, error code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(6600103);
+      }
+      done();
+    })
+    /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_0400
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_0400
+     * @tc.desc getOutputDevice Promise
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try{
+          await controller.getOutputDevice().then((device_Info: avSession.OutputDeviceInfo) => {
+            console.info('Get device successfully');
+            done();
+          }).catch((err: Error) => {
+            console.error(`GetOutputDevice BusinessError: code: message: ${err.message}`);
+            expect(false).assertTrue();
+          })
+      } catch(error) {
+        console.info(`Get device BusinessError: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(6600101);
+      }
+      done();
+    })
+    /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_0500
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_0500
+     * @tc.desc getOutputDevice Promise
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try{
+          await controller.getOutputDevice().then((device_Info: avSession.OutputDeviceInfo) => {
+            console.info('Get device successfully');
+            done();
+          }).catch((err: Error) => {
+            console.error(`GetOutputDevice BusinessError: message: ${err.message}`);
+            expect(false).assertTrue();
+          })
+      } catch(error) {
+        console.info(`Get device BusinessError: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(6600103);
       }
       done();
     })

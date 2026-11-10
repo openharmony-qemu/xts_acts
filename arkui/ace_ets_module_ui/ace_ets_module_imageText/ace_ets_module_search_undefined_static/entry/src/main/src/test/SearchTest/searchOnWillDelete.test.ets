@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic'
 import {
   Component,
   Driver,
@@ -40,6 +40,7 @@ import { BusinessError } from '@ohos.base';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
+let displayID: Int = 0;
 export default function searchOnWillDelete() {
   describe('searchOnWillDelete', () => {
     beforeAll(async (): Promise<void> => {
@@ -68,9 +69,10 @@ export default function searchOnWillDelete() {
         }
         console.info("searchOnWillDelete beforeEach start3");
       } catch (err) {
-        console.error("push searchOnWillDelete page error:" + err);
+        console.log("push searchOnWillDelete page error:" + err);
       }
       console.info("searchOnWillDelete beforeEach start4");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
 
@@ -101,9 +103,17 @@ export default function searchOnWillDelete() {
       button?.click()
       console.info("searchOnWillDelete beforeEach start8.2");
       await CommonFunc.sleep(3000);
-      await driver.triggerKey(2055);
+      try {
+        await driver.triggerKey(2055, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(3000);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(3000);
       console.info("searchOnWillDelete beforeEach start9");
       let strJsonNew = inspector.getInspectorByKey('key_search_OnWillDelete_001');
@@ -130,11 +140,19 @@ export default function searchOnWillDelete() {
       newbutton?.click();
       console.info("button_onWillDelete1 beforeEach start12.3");
       await CommonFunc.sleep(3000);
-      await driver.triggerKey(2055);
+      try {
+        await driver.triggerKey(2055, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       console.info("button_onWillDelete1 beforeEach start12.4");
       await CommonFunc.sleep(3000);
       console.info("button_onWillDelete1 beforeEach start13");
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(3000);
       let strJsonNew1 = inspector.getInspectorByKey('key_search_OnWillDelete_001');
       console.info('[' + tagName + '] Search OnWillDelete is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew1)

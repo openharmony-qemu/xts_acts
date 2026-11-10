@@ -26,7 +26,7 @@ import {
   TestType,
   Size,
   Level
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 class SumCount {
@@ -377,7 +377,7 @@ export default function Uint8ArrayReduceRight01Test(): void {
      */
     it('testUint8ArrayReduceRight021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint8Array = Uint8Array.of(1, 2, 3);
-      const result: number = arr.reduceRight((prev: number, cur: number): number => prev + (cur > 1 ? cur : 0), 0);
+      const result: number = arr.reduceRight((prev: number, cur: number): number => prev + (cur > 1 ? cur : 0.0), 0);
       expect(result).assertEqual(5);
     });
 

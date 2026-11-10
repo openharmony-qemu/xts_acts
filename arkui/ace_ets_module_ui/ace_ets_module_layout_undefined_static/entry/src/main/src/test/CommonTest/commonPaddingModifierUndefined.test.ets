@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index'
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic'
 import router from '@ohos.router';
 import {  Driver,  ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -49,42 +49,48 @@ export default function CommonPaddingModifierUndefinedTest() {
     });
 
     /**
-     * @tc.number   CommonPaddingModifierUndefinedTest_static_0100
-     * @tc.name     CommonPaddingModifierUndefinedTest_static_0100
-     * @tc.desc     CommonPaddingModifierUndefinedTest_static_0100
+     * @tc.number   SUB_ARKUI_API_CommonPaddingModifierUndefinedTest_static_0100
+     * @tc.name     SUB_ARKUI_API_CommonPaddingModifierUndefinedTest_static_0100
+     * @tc.desc     SUB_ARKUI_API_CommonPaddingModifierUndefinedTest_static_0100
      * @tc.level    Level.LEVEL1
      */
-    it('CommonPaddingModifierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[CommonPaddingModifierUndefinedTest_static_0100] START');
-      let driver: Driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('MyRow1');
-      await CommonFunc.sleep(1000);
+    it('SUB_ARKUI_API_CommonPaddingModifierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('[SUB_ARKUI_API_CommonPaddingModifierUndefinedTest_static_0100] START');
+        let driver: Driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('MyRow1');
+        await CommonFunc.sleep(1000);
 
-      console.info('[CommonPaddingModifierUndefinedTest_static_0100] $attrs: ' +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      console.info('[CommonPaddingModifierUndefinedTest_static_0100] padding: ' +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('padding')));
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getElement('padding')))
-        .assertEqual('\"{\\"top\\":\\"5.00vp\\",\\"right\\":\\"20.00vp\\",\\"bottom\\":\\"15.00vp\\",\\"left\\":\\"10.00vp\\"}\"');
+        console.info('[SUB_ARKUI_API_CommonPaddingModifierUndefinedTest_static_0100] $attrs: ' +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
+        console.info('[SUB_ARKUI_API_CommonPaddingModifierUndefinedTest_static_0100] padding: ' +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('padding')));
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getElement('padding')))
+          .assertEqual('\"{\\"top\\":\\"5.00vp\\",\\"right\\":\\"20.00vp\\",\\"bottom\\":\\"15.00vp\\",\\"left\\":\\"10.00vp\\"}\"');
 
-      let changeBtn = await driver.findComponent(ON.id('Common_Padding'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
-      console.info('[CommonPaddingModifierUndefinedTest_static_0100] click Common_Padding');
-      strJson = inspector.getInspectorByKey('MyRow1');
-      await CommonFunc.sleep(2000);
-      console.info('[CommonPaddingModifierUndefinedTest_static_0100] padding: ' +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('padding')));
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getElement('padding')))
-        .assertEqual('\"0.00px\"');
-      await CommonFunc.sleep(1000);
-      console.info('[CommonPaddingModifierUndefinedTest_static_0100] END');
-      done();
+        let changeBtn = await driver.findComponent(ON.id('Common_Padding'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(2000);
+        console.info('[SUB_ARKUI_API_CommonPaddingModifierUndefinedTest_static_0100] click Common_Padding');
+        strJson = inspector.getInspectorByKey('MyRow1');
+        await CommonFunc.sleep(2000);
+        console.info('[SUB_ARKUI_API_CommonPaddingModifierUndefinedTest_static_0100] padding: ' +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('padding')));
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getElement('padding')))
+          .assertEqual('\"0.00px\"');
+        await CommonFunc.sleep(1000);
+        console.info('[SUB_ARKUI_API_CommonPaddingModifierUndefinedTest_static_0100] END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_CommonPaddingModifierUndefinedTest_static_0100] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
   })

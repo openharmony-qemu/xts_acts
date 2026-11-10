@@ -10,7 +10,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import {
   BuiltinsStatementContinueTest0100,
   BuiltinsStatementContinueTest0200,

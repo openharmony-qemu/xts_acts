@@ -22,7 +22,7 @@ import {
   it,
   expect,
   Level
-} from '../../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import {
@@ -50,6 +50,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function swiperEdgeTest() {
   describe('swiperEdgeTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -108,9 +109,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0290', Level.LEVEL0, async (don
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
 
-      await driver.swipe((winLeft + Math.round(btRight)).toInt(), (winTop.toInt() + Math.round(btBottom / 2)).toInt(),
-        (winLeft + Math.round(btRight) - Math.round(UIContext.resolveUIContext()!.vp2px(20))).toInt(),
-        (winTop.toInt() + Math.round(btBottom / 2)).toInt());
+      await driver.swipeBetween({ x: (winLeft + Math.round(btRight)).toInt(), y: (winTop.toInt() + Math.round(btBottom / 2)).toInt(), displayId: displayID.toInt() }, { x: (winLeft + Math.round(btRight) - Math.round(UIContext.resolveUIContext()!.vp2px(20))).toInt(), y: (winTop.toInt() + Math.round(btBottom / 2)).toInt(), displayId: displayID.toInt() });
       // await CommonFunc.sleep(3000);
 
       // get the component of text_10, scroll distance is to short can not slow

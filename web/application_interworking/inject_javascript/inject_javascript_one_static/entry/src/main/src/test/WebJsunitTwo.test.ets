@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it, TestType, Size, Level, expect } from '../../../hypium/index';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level, expect } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import Utils from './Util.test';
 import inspector from '@ohos.arkui.inspector';
@@ -419,7 +419,7 @@ export default function webJsunitTwo() {
         emitKey = "emitWebMessExtGetError";
         Utils.emitEvent(emitKey, 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("WebMessExtGetError", "result type:string", 516, done);
+        Utils.registerEvent("WebMessExtGetError", "result type:object", 516, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('webcomponent', 10, '');
         await Utils.msSleep(12000);

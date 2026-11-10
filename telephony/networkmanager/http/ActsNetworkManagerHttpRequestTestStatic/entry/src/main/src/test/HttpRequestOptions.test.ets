@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium-static/src/main/indexStatic";
 import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
@@ -43,7 +43,7 @@ const ExpectTrue = (n: boolean) => {
 }
 
 
-export default function httpRequestOptionsTest() {
+export default function httpRequestOptionsTest(): void {
 
     describe("HttpRequestOptionsTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
@@ -1505,6 +1505,605 @@ export default function httpRequestOptionsTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
-    })
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_7200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_7200
+     * @tc.desc   Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHttpHttpRequestOptionsTest_static_7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_7200';
+        hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId === 0) {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Please connect to the network`);
+              ExpectFail();
+              done();
+              return;
+            }
+            hilog.info(domain, tag, '%{public}s', `${caseName} Network connected`);
+            const httpRequestOptions: http.HttpRequestOptions = {
+              usingProxy: true
+            };
+            const httpRequest: http.HttpRequest = http.createHttp();
+            httpRequest.requestInStream(XTS_TEST_HTTP_URL, httpRequestOptions,
+              (err: BusinessError<void> | null, responseCode: int | undefined) => {
+                if (err?.code != 0) {
+                  hilog.info(domain, tag, '%{public}s', `${caseName} err:--- ${JSON.stringify(err)}`);
+                  ExpectFail();
+                  httpRequest.destroy();
+                  done();
+                  return;
+                }
+                hilog.info(domain, tag, '%{public}s', `${caseName} responseCode:--- ${responseCode}`);
 
+                ExpectTrue(responseCode === 200);
+                httpRequest.destroy();
+                done();
+              });
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} trycatch err: ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+      });
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_7300
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_7300
+     * @tc.desc   Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHttpHttpRequestOptionsTest_static_7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_7300';
+        hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId === 0) {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Please connect to the network`);
+              ExpectFail();
+              done();
+              return;
+            }
+            hilog.info(domain, tag, '%{public}s', `${caseName} Network connected`);
+            const httpRequestOptions: http.HttpRequestOptions = {
+              usingProxy: true
+            };
+            const httpRequest: http.HttpRequest = http.createHttp();
+            httpRequest.requestInStream(XTS_TEST_HTTP_URL, httpRequestOptions)
+              .then((responseCode: int) => {
+                hilog.info(domain, tag, '%{public}s', `${caseName} responseCode:--- ${responseCode}`);
+                ExpectTrue(responseCode === 200);
+                httpRequest.destroy();
+                done();
+              })
+              .catch((error: Error) => {
+                let err = error as BusinessError;
+                hilog.info(domain, tag, '%{public}s', `${caseName} request fail err : ${JSON.stringify(err)}`);
+                ExpectFail();
+                httpRequest.destroy();
+                done();
+              });
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} trycatch err: ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+      });
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_7400
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_7400
+     * @tc.desc   Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHttpHttpRequestOptionsTest_static_7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_7400';
+        hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
+
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId === 0) {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Please connect to the network`);
+              ExpectFail();
+              done();
+              return;
+            }
+            hilog.info(domain, tag, '%{public}s', `${caseName} Network connected`);
+            const httpRequestOptions: http.HttpRequestOptions = {
+              usingProxy: false
+            };
+            const httpRequest: http.HttpRequest = http.createHttp();
+
+            httpRequest.requestInStream(XTS_TEST_HTTP_URL, httpRequestOptions,
+              (error: BusinessError<void> | null, responseCode: int | undefined) => {
+                if (error?.code != 0) {
+                  hilog.info(domain, tag, '%{public}s', `${caseName} err:--- ${JSON.stringify(error)}`);
+                  ExpectFail();
+                  httpRequest.destroy();
+                  done();
+                } else if (responseCode !== undefined) {
+                  hilog.info(domain, tag, '%{public}s', `${caseName} responseCode:--- ${responseCode}`);
+                  ExpectTrue(responseCode === 200);
+                  httpRequest.destroy();
+                  done();
+                } else {
+                  hilog.info(domain, tag, '%{public}s', `${caseName} Unknown error: responseCode is undefined`);
+                  ExpectFail();
+                  httpRequest.destroy();
+                  done();
+                }
+              });
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} trycatch err: ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+      });
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_7500
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_7500
+     * @tc.desc   Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHttpHttpRequestOptionsTest_static_7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_7500';
+        hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId === 0) {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Please connect to the network`);
+              ExpectFail();
+              done();
+              return;
+            }
+            hilog.info(domain, tag, '%{public}s', `${caseName} Network connected`);
+            const httpRequestOptions: http.HttpRequestOptions = {
+              usingProxy: false
+            };
+            const httpRequest: http.HttpRequest = http.createHttp();
+
+            httpRequest.requestInStream(XTS_TEST_HTTP_URL, httpRequestOptions)
+              .then((responseCode: int) => {
+                hilog.info(domain, tag, '%{public}s', `${caseName} responseCode:--- ${responseCode}`);
+                ExpectTrue(responseCode === 200);
+                httpRequest.destroy();
+                done();
+              })
+              .catch((error: Error) => {
+                let err = error as BusinessError;
+                hilog.info(domain, tag, '%{public}s', `${caseName} request fail err : ${JSON.stringify(err)}`);
+                ExpectFail();
+                httpRequest.destroy();
+                done();
+              });
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} trycatch err: ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+
+        hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+      });
+
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_7900
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_7900
+     * @tc.desc   Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHttpHttpRequestOptionsTest_static_7900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_7900';
+        hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Please connect to the network`);
+              ExpectFail();
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Network connected`);
+              let httpRequestOptions: http.HttpRequestOptions = {
+                usingCache: true
+              }
+              let httpRequest: http.HttpRequest = http.createHttp();
+              let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache(undefined);
+              httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions,
+                (err: BusinessError<void> | null, data: http.HttpResponse | undefined) => {
+                  if (err?.code != 0) {
+                    hilog.info(domain, tag, '%{public}s', `${caseName} firstResponse err ---${JSON.stringify(err)}`);
+                    ExpectFail();
+                    httpRequest.destroy();
+                    done();
+                  } else {
+                    hilog.info(domain, tag, '%{public}s',
+                      `${caseName} firstResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
+                    httpResponseCache.flush((err: BusinessError | null) => {
+                      if (err?.code != 0) {
+                        hilog.info(domain, tag, '%{public}s', `${caseName} flush err ---${JSON.stringify(err)}`);
+                        ExpectFail();
+                        httpRequest.destroy();
+                        done();
+                      } else {
+                        httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions,
+                          (err: BusinessError<void> | null, data: http.HttpResponse | undefined) => {
+                            if (err?.code != 0) {
+                              hilog.info(domain, tag, '%{public}s',
+                                `${caseName} secondResponse err ---${JSON.stringify(err)}`);
+                              ExpectFail();
+                              httpRequest.destroy();
+                              done();
+                            } else {
+                              hilog.info(domain, tag, '%{public}s',
+                                `${caseName} secondResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
+                              hilog.info(domain, tag, '%{public}s',
+                                `${caseName} secondResponse tcpTiming ${data?.performanceTiming.tcpTiming}`);
+                              ExpectTrue(data?.performanceTiming.tcpTiming == 0);
+                              httpRequest.destroy();
+                              done();
+                            }
+                          });
+                      }
+                    });
+                  }
+                });
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} trycatch err: ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName}---End `);
+      });
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_8000
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_8000
+     * @tc.desc   Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHttpHttpRequestOptionsTest_static_8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_8000';
+        hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Please connect to the network`);
+              ExpectFail();
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Network connected`);
+              let httpRequestOptions: http.HttpRequestOptions = {
+                usingCache: true
+              }
+              let httpRequest: http.HttpRequest = http.createHttp();
+              let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache(0);
+              httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions,
+                (err: BusinessError<void> | null, data: http.HttpResponse | undefined) => {
+                  if (err?.code != 0) {
+                    hilog.info(domain, tag, '%{public}s', `${caseName} firstResponse err ---${JSON.stringify(err)}`);
+                    ExpectFail();
+                    httpRequest.destroy();
+                    done();
+                  } else {
+                    hilog.info(domain, tag, '%{public}s',
+                      `${caseName} firstResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
+                    httpResponseCache.flush((err: BusinessError | null) => {
+                      if (err?.code != 0) {
+                        hilog.info(domain, tag, '%{public}s', `${caseName} flush err ---${JSON.stringify(err)}`);
+                        ExpectFail();
+                        httpRequest.destroy();
+                        done();
+                      } else {
+                        httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions,
+                          (error: BusinessError<void> | null, data: http.HttpResponse | undefined) => {
+                            if (error?.code != 0) {
+                              hilog.info(domain, tag, '%{public}s',
+                                `${caseName} secondResponse err ---${JSON.stringify(err)}`);
+                              ExpectFail();
+                              httpRequest.destroy();
+                              done();
+                            } else {
+                              hilog.info(domain, tag, '%{public}s',
+                                `${caseName} secondResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
+                              hilog.info(domain, tag, '%{public}s',
+                                `${caseName} secondResponse tcpTiming ${data?.performanceTiming.tcpTiming}`);
+                              ExpectTrue(data?.performanceTiming.tcpTiming == 0);
+                              httpRequest.destroy();
+                              done();
+                            }
+                          });
+                      }
+                    });
+                  }
+                });
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} trycatch err: ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName}---End `);
+      });
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_8100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_8100
+     * @tc.desc   Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHttpHttpRequestOptionsTest_static_8100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_8100';
+        hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Please connect to the network`);
+              ExpectFail();
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Network connected`);
+              let httpRequestOptions: http.HttpRequestOptions = {
+                usingCache: true
+              }
+              let httpRequest: http.HttpRequest = http.createHttp();
+              let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache(-1);
+              httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions,
+                (err: BusinessError<void> | null, data: http.HttpResponse | undefined) => {
+                  if (err?.code != 0) {
+                    hilog.info(domain, tag, '%{public}s', `${caseName} firstResponse err ---${JSON.stringify(err)}`);
+                    ExpectFail();
+                    httpRequest.destroy();
+                    done();
+                  } else {
+                    hilog.info(domain, tag, '%{public}s',
+                      `${caseName} firstResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
+                    httpResponseCache.flush((err: BusinessError | null) => {
+                      if (err?.code != 0) {
+                        hilog.info(domain, tag, '%{public}s', `${caseName} flush err ---${JSON.stringify(err)}`);
+                        ExpectFail();
+                        httpRequest.destroy();
+                        done();
+                      } else {
+                        httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions,
+                          (error: BusinessError<void> | null, data: http.HttpResponse | undefined) => {
+                            if (error?.code != 0) {
+                              hilog.info(domain, tag, '%{public}s',
+                                `${caseName} secondResponse err ---${JSON.stringify(err)}`);
+                              ExpectFail();
+                              httpRequest.destroy();
+                              done();
+                            } else {
+                              hilog.info(domain, tag, '%{public}s',
+                                `${caseName} secondResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
+                              hilog.info(domain, tag, '%{public}s',
+                                `${caseName} secondResponse tcpTiming ${data?.performanceTiming.tcpTiming}`);
+                              ExpectTrue(data?.performanceTiming.tcpTiming == 0);
+                              httpRequest.destroy();
+                              done();
+                            }
+                          });
+                      }
+                    });
+                  }
+                });
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} trycatch err: ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName}---End `);
+      });
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_8200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_8200
+     * @tc.desc   Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHttpHttpRequestOptionsTest_static_8200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_8200';
+        hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Please connect to the network`);
+              ExpectFail();
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Network connected`);
+              let httpRequestOptions: http.HttpRequestOptions = {
+                usingCache: true
+              }
+              let httpResponseCache: http.HttpResponseCache;
+              try {
+                httpResponseCache = http.createHttpResponseCache(10 * 1024 * 1024 + 1);
+                hilog.info(domain, tag, '%{public}s',
+                  `${caseName} httpResponseCache created successfully, address: ${JSON.stringify(httpResponseCache)}`);
+              } catch (cacheErr) {
+                hilog.info(domain, tag, '%{public}s',
+                  `${caseName} Failed to create httpResponseCache: ${JSON.stringify(cacheErr)}`);
+                ExpectFail();
+                done();
+                return;
+              }
+              let httpRequest: http.HttpRequest = http.createHttp();
+              httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions,
+                (err: BusinessError<void> | null, data: http.HttpResponse | undefined) => {
+                  if (err?.code != 0) {
+                    hilog.info(domain, tag, '%{public}s', `${caseName} firstResponse err ---${JSON.stringify(err)}`);
+                    ExpectFail();
+                    httpRequest.destroy();
+                    done();
+                  } else {
+                    hilog.info(domain, tag, '%{public}s',
+                      `${caseName} firstResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
+                    httpResponseCache.flush((err: BusinessError | null) => {
+                      if (err?.code != 0) {
+                        hilog.info(domain, tag, '%{public}s', `${caseName} flush err ---${JSON.stringify(err)}`);
+                        ExpectFail();
+                        httpRequest.destroy();
+                        done();
+                      } else {
+                        httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions,
+                          (error: BusinessError<void> | null, data: http.HttpResponse | undefined) => {
+                            if (error?.code != 0) {
+                              hilog.info(domain, tag, '%{public}s',
+                                `${caseName} secondResponse err ---${JSON.stringify(err)}`);
+                              ExpectFail();
+                              httpRequest.destroy();
+                              done();
+                            } else {
+                              hilog.info(domain, tag, '%{public}s',
+                                `${caseName} secondResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
+                              hilog.info(domain, tag, '%{public}s',
+                                `${caseName} secondResponse tcpTiming ${data?.performanceTiming.tcpTiming}`);
+                              ExpectTrue(data?.performanceTiming.tcpTiming == 0);
+                              httpRequest.destroy();
+                              done();
+                            }
+                          });
+                      }
+                    });
+                  }
+                });
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} trycatch err: ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName}---End `);
+      });
+
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_8400
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_8400
+     * @tc.desc   Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHttpHttpRequestOptionsTest_static_8400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_8400';
+        hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Please connect to the network`);
+              ExpectFail();
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Network connected`);
+              let httpRequestOptions: http.HttpRequestOptions = {
+                method: http.RequestMethod.GET,
+                resumeTo: 0,
+                addressFamily: http.AddressFamily.ONLY_V4
+              }
+              let httpRequest: http.HttpRequest = http.createHttp();
+              httpRequest.requestInStream(XTS_TEST_HTTP_URL, httpRequestOptions,
+                (error: BusinessError<void> | null, data: int | undefined) => {
+                  if (error?.code != 0) {
+                    hilog.info(domain, tag, '%{public}s', `${caseName} err:--- ${JSON.stringify(error)}`);
+                    ExpectFail();
+                    httpRequest.destroy();
+                    done();
+                  } else {
+                    hilog.info(domain, tag, '%{public}s', `${caseName} data:--- ${JSON.stringify(data)}`);
+                    ExpectTrue(data == 200);
+                    httpRequest.destroy();
+                    done();
+                  }
+                });
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} trycatch err: ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName}---End `);
+      });
+
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_8700
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_8700
+     * @tc.desc   Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHttpHttpRequestOptionsTest_static_8700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_8700';
+        hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
+        try {
+          connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
+            if (data?.netId == 0) {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Please connect to the network`);
+              ExpectFail();
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', `${caseName} Network connected`);
+              let httpRequestOptions: http.HttpRequestOptions = {
+                method: http.RequestMethod.GET,
+                resumeTo: 0,
+                addressFamily: http.AddressFamily.ONLY_V4
+              }
+              let httpRequest: http.HttpRequest = http.createHttp();
+              httpRequest.requestInStream(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: int) => {
+                hilog.info(domain, tag, '%{public}s', `${caseName} data:--- ${JSON.stringify(data)}`);
+                ExpectTrue(data == 200);
+                httpRequest.destroy();
+                done();
+              }).catch((error) => {
+                let err = error as BusinessError;
+                hilog.info(domain, tag, '%{public}s',
+                  `${caseName} request fail err : ${JSON.stringify(err)} code:---${JSON.stringify(err?.code)}`);
+                ExpectFail();
+                done();
+              });
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} trycatch err: ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName}---End `);
+      });
+  })
 }

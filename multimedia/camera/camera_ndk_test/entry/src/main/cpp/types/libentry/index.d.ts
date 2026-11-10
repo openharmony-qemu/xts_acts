@@ -99,6 +99,11 @@ interface photoQualityPrioritizationInstance {
   isPhotoQualityPrioritizationSupported: boolean;
 }
 
+interface c2paSignatureSupported {
+  errorCode: number;
+  isC2PASignatureSupported: boolean;
+}
+
 interface isTorchSupported {
   errorCode: number;
   isTorchSupported: boolean;
@@ -561,6 +566,8 @@ export const oHPhotoOutputUnregisterEstimatedCaptureDurationCallback: (index:num
 export const sessionIsAutoDeviceSwitchSupported: () => autoDeviceSwitchSupportInfo;
  
 export const sessionEnableAutoDeviceSwitch: (enable:boolean) => number;
+
+export const oHCaptureSessionEnableAutoDeviceSwitch: (useCaseCode:number, enable:boolean) => number;
  
 export const sessionRegisterAutoDeviceSwitchStatusChange: (index:number) => number;
  
@@ -740,3 +747,16 @@ export const oHgetExposureDuration: (index: number) => number;
 export const getWhiteBalanceRange: (index: number) => number;
 
 export const getWhiteBalance: (index: number) => number;
+
+
+export const oHPhotoOutputIsC2PASignatureSupported: (index: number) => c2paSignatureSupported;
+ 
+export const oHCameraC2PASignatureConfigCreate: (index: number) => number;
+ 
+export const oHCameraC2PASignatureConfigDestroy: (index: number) => number;
+ 
+export const oHCameraC2PASignatureConfigSetAuthorName: (index: number, authorName: string) => number;
+ 
+export const oHCameraC2PASignatureConfigSetAuthorID: (index: number, authorID: string) => number;
+ 
+export const oHPhotoOutputConfigureC2PASignature: (index: number, enableC2PA: boolean) => number;

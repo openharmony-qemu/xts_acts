@@ -1,5 +1,5 @@
 'use static';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { UtilsTest } from './Util.test';
 import { Router } from '@ohos.arkui.UIContext';
@@ -15,7 +15,7 @@ const MOD_PAGE_URL = 'MainAbility/pages/ModifierRecyclePage';
 
 function getAppStorageNumber(key: string): number {
   let val: number | undefined = AppStorage.get<number>(key);
-  return val !== undefined ? val : 0;
+  return val !== undefined ? val : 0.0;
 }
 
 function getAppStorageString(key: string): string {

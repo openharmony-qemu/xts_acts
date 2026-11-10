@@ -131,22 +131,22 @@ export default function ActsNotificationAnsReduceAlertsTest() {
           await scrollBar.scrollToBottom()
           await sleep(1500)
           await driver.assertComponentExist(ON.text('横幅通知'));
-          await sleep(1500)
+          await sleep(1000)
           let button = await driver.findComponent(ON.text('横幅通知'));
           console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button)}`);
           if (button !== null) {
             console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button)}`);
-            await sleep(1000);
+            await sleep(500);
             await button.click()
-            await sleep(1500)
+            await sleep(1000)
           }
           let button2 = await driver.findComponent(ON.text('确定'));
           console.info(TEST_SUITE_NAME + TAG + `button2 is ${JSON.stringify(button2)}`);
           if (button2 !== null) {
             console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button)}`);
-            await sleep(1000);
+            await sleep(500);
             await button2.click()
-            await sleep(1500)
+            await sleep(1000)
           }
           let notificationRequest: notificationManager.NotificationRequest = {
             id: getRandomNumber(1, 1000),
@@ -256,7 +256,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                 done();
               }else{
                 expect().assertFail();
-               done();
+                done();
               }
             });
         }).catch((err: BusinessError) => {
@@ -266,7 +266,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -394,7 +394,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                 done();
               }else{
                 expect().assertFail();
-               done();
+                done();
               }
             });
         }).catch((err: BusinessError) => {
@@ -404,7 +404,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -457,7 +457,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                 done();
               }else{
                 expect().assertFail();
-               done();
+                done();
               }
             });
         }).catch((err: BusinessError) => {
@@ -467,7 +467,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -521,13 +521,13 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .catch((err: BusinessError) => {
               console.error(TEST_SUITE_NAME + TAG +
                 `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err?.code === 801) {
-                  expect(err.code).assertEqual(801);
-                  done();
-                }else{
-                  expect().assertFail();
-                 done();
-                }
+              if (err?.code === 801) {
+                expect(err.code).assertEqual(801);
+                done();
+              }else{
+                expect().assertFail();
+                done();
+              }
             });
         }).catch((err: BusinessError) => {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
@@ -536,7 +536,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -590,13 +590,13 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .catch((err: BusinessError) => {
               console.error(TEST_SUITE_NAME + TAG +
                 `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err?.code === 801) {
-                  expect(err.code).assertEqual(801);
-                  done();
-                }else{
-                  expect().assertFail();
-                 done();
-                }
+              if (err?.code === 801) {
+                expect(err.code).assertEqual(801);
+                done();
+              }else{
+                expect().assertFail();
+                done();
+              }
             });
         }).catch((err: BusinessError) => {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
@@ -605,7 +605,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -659,13 +659,13 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .catch((err: BusinessError) => {
               console.error(TEST_SUITE_NAME + TAG +
                 `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err?.code === 801) {
-                  expect(err.code).assertEqual(801);
-                  done();
-                }else{
-                  expect().assertFail();
-                 done();
-                }
+              if (err?.code === 801) {
+                expect(err.code).assertEqual(801);
+                done();
+              }else{
+                expect().assertFail();
+                done();
+              }
             });
         }).catch((err: BusinessError) => {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
@@ -674,7 +674,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -722,13 +722,13 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .catch((err: BusinessError) => {
               console.error(TEST_SUITE_NAME + TAG +
                 `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err?.code === 801) {
-                  expect(err.code).assertEqual(801);
-                  done();
-                }else{
-                  expect().assertFail();
-                 done();
-                }
+              if (err?.code === 801) {
+                expect(err.code).assertEqual(801);
+                done();
+              }else{
+                expect().assertFail();
+                done();
+              }
             });
         }).catch((err: BusinessError) => {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
@@ -737,7 +737,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -791,13 +791,13 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .catch((err: BusinessError) => {
               console.error(TEST_SUITE_NAME + TAG +
                 `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err?.code === 801) {
-                  expect(err.code).assertEqual(801);
-                  done();
-                }else{
-                  expect().assertFail();
-                 done();
-                }
+              if (err?.code === 801) {
+                expect(err.code).assertEqual(801);
+                done();
+              }else{
+                expect().assertFail();
+                done();
+              }
             });
         }).catch((err: BusinessError) => {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
@@ -806,7 +806,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -860,13 +860,13 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .catch((err: BusinessError) => {
               console.error(TEST_SUITE_NAME + TAG +
                 `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err?.code === 801) {
-                  expect(err.code).assertEqual(801);
-                  done();
-                }else{
-                  expect().assertFail();
-                 done();
-                }
+              if (err?.code === 801) {
+                expect(err.code).assertEqual(801);
+                done();
+              }else{
+                expect().assertFail();
+                done();
+              }
             });
         }).catch((err: BusinessError) => {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
@@ -875,7 +875,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -929,13 +929,13 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .catch((err: BusinessError) => {
               console.error(TEST_SUITE_NAME + TAG +
                 `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err?.code === 801) {
-                  expect(err.code).assertEqual(801);
-                  done();
-                }else{
-                  expect().assertFail();
-                 done();
-                }
+              if (err?.code === 801) {
+                expect(err.code).assertEqual(801);
+                done();
+              }else{
+                expect().assertFail();
+                done();
+              }
             });
         }).catch((err: BusinessError) => {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
@@ -944,7 +944,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -998,13 +998,13 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .catch((err: BusinessError) => {
               console.error(TEST_SUITE_NAME + TAG +
                 `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err?.code === 801) {
-                  expect(err.code).assertEqual(801);
-                  done();
-                }else{
-                  expect().assertFail();
-                 done();
-                }
+              if (err?.code === 801) {
+                expect(err.code).assertEqual(801);
+                done();
+              }else{
+                expect().assertFail();
+                done();
+              }
             });
         }).catch((err: BusinessError) => {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
@@ -1013,7 +1013,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             done();
           }else{
             expect().assertFail();
-           done();
+            done();
           }
         });
       } catch (err) {
@@ -1040,13 +1040,76 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       let cmd = 'aa start -a TestAbility -b com.example.actsnotificationansreducealertstest';
       let user = abilityDelegatorRegistry.getArguments().parameters['-u'];
       if(user !== undefined){
-          cmd += ' -u ' + user;
+        cmd += ' -u ' + user;
       }
       abilityDelegator.executeShellCommand(cmd)
       await sleep(3000)
       let context: common.UIAbilityContext = getContext(la) as common.UIAbilityContext;
-      await notificationManager.openNotificationSettings(context).then(() => {
+      await notificationManager.openNotificationSettings(context).then(async () => {
         console.info(TEST_SUITE_NAME + TAG + `openNotificationSettings succeeded`);
+        let driver: Driver = Driver.create();
+        await sleep(1500)
+        await driver.assertComponentExist(ON.text('通知管理'));
+        let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('静默通知')));
+        console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button)}`);
+        if (button !== null) {
+          console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button)}`);
+          await sleep(1000);
+          await button.click()
+          await sleep(500)
+        }
+        let button2 = await driver.findComponent(ON.text('确定'));
+        console.info(TEST_SUITE_NAME + TAG + `button2 is ${JSON.stringify(button2)}`);
+        if (button2 !== null) {
+          console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button2)}`);
+          await sleep(1000);
+          await button2.click()
+          await sleep(500)
+        }
+        let notificationRequest: notificationManager.NotificationRequest = {
+          id: getRandomNumber(1, 1000),
+          notificationFlags: {
+            soundEnabled: 0,
+            vibrationEnabled: 1,
+            bannerEnabled: 2,
+            lockScreenEnabled: 0,
+          } as notificationManager.NotificationFlags,
+          notificationSlotType: notificationManager.SlotType.SOCIAL_COMMUNICATION,
+          content: {
+            notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
+            normal: {
+              title: 'SOCIAL_COMMUNICATION',
+              text: 'SUB_Notification_Ans_Reduce_alerts_1500',
+            }
+          }
+        };
+        try {
+          await notificationManager.publish(notificationRequest).then(async () => {
+            console.info(TEST_SUITE_NAME + TAG + ' publish success');
+            await sleep(500)
+            await notificationManager.getActiveNotifications()
+              .then((data: Array<notificationManager.NotificationRequest>) => {
+                console.info(TEST_SUITE_NAME + TAG +
+                  ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
+                expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(2)
+                done()
+              })
+              .catch((err: BusinessError) => {
+                console.error(TEST_SUITE_NAME + TAG +
+                  `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
+                expect(false).assertTrue();
+                done()
+              });
+          }).catch((err: BusinessError) => {
+            console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
+            expect(false).assertTrue();
+            done()
+          });
+        } catch (err) {
+          console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
+          expect(false).assertTrue();
+          done()
+        }
       }).catch((err: BusinessError) => {
         console.error(TEST_SUITE_NAME + TAG + `openNotificationSettings err: ${JSON.stringify(err.code)}`);
         if (err?.code === 801) {
@@ -1054,72 +1117,9 @@ export default function ActsNotificationAnsReduceAlertsTest() {
           done();
         }else{
           expect().assertFail();
-         done();
+          done();
         }
       })
-      let driver: Driver = Driver.create();
-      await sleep(1500)
-      await driver.assertComponentExist(ON.text('通知管理'));
-      let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('静默通知')));
-      console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button)}`);
-      if (button !== null) {
-        console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button)}`);
-        await sleep(1000);
-        await button.click()
-        await sleep(500)
-      }
-      let button2 = await driver.findComponent(ON.text('确定'));
-      console.info(TEST_SUITE_NAME + TAG + `button2 is ${JSON.stringify(button2)}`);
-      if (button2 !== null) {
-        console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button2)}`);
-        await sleep(1000);
-        await button2.click()
-        await sleep(500)
-      }
-      let notificationRequest: notificationManager.NotificationRequest = {
-        id: getRandomNumber(1, 1000),
-        notificationFlags: {
-          soundEnabled: 0,
-          vibrationEnabled: 1,
-          bannerEnabled: 2,
-          lockScreenEnabled: 0,
-        } as notificationManager.NotificationFlags,
-        notificationSlotType: notificationManager.SlotType.SOCIAL_COMMUNICATION,
-        content: {
-          notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
-          normal: {
-            title: 'SOCIAL_COMMUNICATION',
-            text: 'SUB_Notification_Ans_Reduce_alerts_1500',
-          }
-        }
-      };
-      try {
-        await notificationManager.publish(notificationRequest).then(async () => {
-          console.info(TEST_SUITE_NAME + TAG + ' publish success');
-          await sleep(500)
-          await notificationManager.getActiveNotifications()
-            .then((data: Array<notificationManager.NotificationRequest>) => {
-              console.info(TEST_SUITE_NAME + TAG +
-                ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
-              expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(2)
-              done()
-            })
-            .catch((err: BusinessError) => {
-              console.error(TEST_SUITE_NAME + TAG +
-                `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-              expect(false).assertTrue();
-              done()
-            });
-        }).catch((err: BusinessError) => {
-          console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-          expect(false).assertTrue();
-          done()
-        });
-      } catch (err) {
-        console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
-        done()
-      }
     })
 
     /**
@@ -1178,8 +1178,27 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         done()
       }
       let context: common.UIAbilityContext = getContext(la) as common.UIAbilityContext;
-      await notificationManager.openNotificationSettings(context).then(() => {
+      await notificationManager.openNotificationSettings(context).then(async () => {
         console.info(TEST_SUITE_NAME + TAG + `openNotificationSettings succeeded`);
+        let driver: Driver = Driver.create();
+        await driver.assertComponentExist(ON.text('通知管理'));
+        let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('静默通知')));
+        console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button)}`);
+        if (button !== null) {
+          console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button)}`);
+          await sleep(1000);
+          await button.click()
+          await sleep(500)
+        }
+        let button2 = await driver.findComponent(ON.text('确定'));
+        console.info(TEST_SUITE_NAME + TAG + `button2 is ${JSON.stringify(button2)}`);
+        if (button2 !== null) {
+          console.info(TEST_SUITE_NAME + TAG + `button2 is ${JSON.stringify(button2)}`);
+          await sleep(1000);
+          await button2.click()
+          await sleep(500)
+          done()
+        }
       }).catch((err: BusinessError) => {
         console.error(TEST_SUITE_NAME + TAG + `openNotificationSettings err: ${JSON.stringify(err.code)}`);
         if (err?.code === 801) {
@@ -1187,28 +1206,9 @@ export default function ActsNotificationAnsReduceAlertsTest() {
           done();
         }else{
           expect().assertFail();
-         done();
+          done();
         }
       })
-      let driver: Driver = Driver.create();
-      await driver.assertComponentExist(ON.text('通知管理'));
-      let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('静默通知')));
-      console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button)}`);
-      if (button !== null) {
-        console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button)}`);
-        await sleep(1000);
-        await button.click()
-        await sleep(500)
-      }
-      let button2 = await driver.findComponent(ON.text('确定'));
-      console.info(TEST_SUITE_NAME + TAG + `button2 is ${JSON.stringify(button2)}`);
-      if (button2 !== null) {
-        console.info(TEST_SUITE_NAME + TAG + `button2 is ${JSON.stringify(button2)}`);
-        await sleep(1000);
-        await button2.click()
-        await sleep(500)
-        done()
-      }
     })
 
     /**
@@ -1224,8 +1224,74 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       await notificationManager.cancelAll()
       await sleep(1000)
       let context: common.UIAbilityContext = getContext(la) as common.UIAbilityContext;
-      await notificationManager.openNotificationSettings(context).then(() => {
+      await notificationManager.openNotificationSettings(context).then(async () => {
         console.info(TEST_SUITE_NAME + TAG + `openNotificationSettings succeeded`);
+        let driver: Driver = Driver.create();
+        await sleep(1500)
+        await driver.assertComponentExist(ON.text('通知管理'));
+        let button2 = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('静默通知')));
+        console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button2)}`);
+        if (button2 !== null) {
+          console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button2)}`);
+          await sleep(1000);
+          await button2.click()
+          await sleep(500)
+        }
+        let button6 = await driver.findComponent(ON.text('确定'));
+        console.info(TEST_SUITE_NAME + TAG + `button6 is ${JSON.stringify(button6)}`);
+        if (button6 !== null) {
+          console.info(TEST_SUITE_NAME + TAG + `button6 is ${JSON.stringify(button6)}`);
+          await sleep(1000);
+          await button6.click()
+          await sleep(500)
+        }
+        let notificationRequest: notificationManager.NotificationRequest = {
+          id: getRandomNumber(1, 1000),
+          notificationFlags: {
+            soundEnabled: 0,
+            vibrationEnabled: 0,
+            bannerEnabled: 0,
+            lockScreenEnabled: 0,
+          } as notificationManager.NotificationFlags,
+          notificationSlotType: notificationManager.SlotType.SOCIAL_COMMUNICATION,
+          content: {
+            notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
+            normal: {
+              title: 'SOCIAL_COMMUNICATION',
+              text: 'SUB_Notification_Ans_Reduce_alerts_1700',
+            }
+          }
+        };
+        try {
+          await notificationManager.publish(notificationRequest).then(async () => {
+            console.info(TEST_SUITE_NAME + TAG + ' publish success');
+            await sleep(500)
+            await notificationManager.getActiveNotifications()
+              .then((data: Array<notificationManager.NotificationRequest>) => {
+                console.info(TEST_SUITE_NAME + TAG +
+                  ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
+                expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(2)
+                expect(data?.[0]?.notificationFlags?.vibrationEnabled).assertEqual(2)
+                expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(2)
+                expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(2)
+                done()
+              })
+              .catch((err: BusinessError) => {
+                console.error(TEST_SUITE_NAME + TAG +
+                  `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
+                expect(false).assertTrue();
+                done()
+              });
+          }).catch((err: BusinessError) => {
+            console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
+            expect(false).assertTrue();
+            done()
+          });
+        } catch (err) {
+          console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
+          expect(false).assertTrue();
+          done()
+        }
       }).catch((err: BusinessError) => {
         console.error(TEST_SUITE_NAME + TAG + `openNotificationSettings err: ${JSON.stringify(err.code)}`);
         if (err?.code === 801) {
@@ -1233,75 +1299,9 @@ export default function ActsNotificationAnsReduceAlertsTest() {
           done();
         }else{
           expect().assertFail();
-         done();
+          done();
         }
       })
-      let driver: Driver = Driver.create();
-      await sleep(1500)
-      await driver.assertComponentExist(ON.text('通知管理'));
-      let button2 = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('静默通知')));
-      console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button2)}`);
-      if (button2 !== null) {
-        console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button2)}`);
-        await sleep(1000);
-        await button2.click()
-        await sleep(500)
-      }
-      let button6 = await driver.findComponent(ON.text('确定'));
-      console.info(TEST_SUITE_NAME + TAG + `button6 is ${JSON.stringify(button6)}`);
-      if (button6 !== null) {
-        console.info(TEST_SUITE_NAME + TAG + `button6 is ${JSON.stringify(button6)}`);
-        await sleep(1000);
-        await button6.click()
-        await sleep(500)
-      }
-      let notificationRequest: notificationManager.NotificationRequest = {
-        id: getRandomNumber(1, 1000),
-        notificationFlags: {
-          soundEnabled: 0,
-          vibrationEnabled: 0,
-          bannerEnabled: 0,
-          lockScreenEnabled: 0,
-        } as notificationManager.NotificationFlags,
-        notificationSlotType: notificationManager.SlotType.SOCIAL_COMMUNICATION,
-        content: {
-          notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
-          normal: {
-            title: 'SOCIAL_COMMUNICATION',
-            text: 'SUB_Notification_Ans_Reduce_alerts_1700',
-          }
-        }
-      };
-      try {
-        await notificationManager.publish(notificationRequest).then(async () => {
-          console.info(TEST_SUITE_NAME + TAG + ' publish success');
-          await sleep(500)
-          await notificationManager.getActiveNotifications()
-            .then((data: Array<notificationManager.NotificationRequest>) => {
-              console.info(TEST_SUITE_NAME + TAG +
-                ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
-              expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.vibrationEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(2)
-              done()
-            })
-            .catch((err: BusinessError) => {
-              console.error(TEST_SUITE_NAME + TAG +
-                `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-              expect(false).assertTrue();
-              done()
-            });
-        }).catch((err: BusinessError) => {
-          console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-          expect(false).assertTrue();
-          done()
-        });
-      } catch (err) {
-        console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
-        done()
-      }
     })
 
     /**
@@ -1596,8 +1596,6 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         expect(false).assertTrue();
         done()
       }
-
     })
-
   })
 }

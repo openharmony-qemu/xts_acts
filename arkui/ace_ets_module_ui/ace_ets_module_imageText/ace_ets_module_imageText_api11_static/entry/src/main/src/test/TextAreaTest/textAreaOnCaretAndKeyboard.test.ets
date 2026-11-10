@@ -15,7 +15,7 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-static/src/main/indexStatic"
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import {  Driver, ON } from '@ohos.UiTest';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -32,13 +32,14 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
+let displayID: Int = 0;
+
 export default function textAreaOnCaretAndKeyboardTest() {
   describe('textAreaOnCaretAndKeyboardTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("textAreaOnCaretAndKeyboardTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
-
     });
 
     beforeEach(async (): Promise<void> => {
@@ -58,9 +59,10 @@ export default function textAreaOnCaretAndKeyboardTest() {
           // console.info("push textAreaOnCaretAndKeyboardTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push textAreaOnCaretAndKeyboardTest page error:" + err);
+        console.log("push textAreaOnCaretAndKeyboardTest page error:" + err);
       }
       console.info("textAreaOnCaretAndKeyboardTest beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
 
@@ -82,7 +84,11 @@ export default function textAreaOnCaretAndKeyboardTest() {
       let textAreaComponent = await driver.findComponent(ON.id('textAreaOnCaretAndKeyboard'));
       await (textAreaComponent?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let buttonComponent = await driver.findComponent(ON.id('textAreaOnCaretAndKeyboard' + '_button'));
       await (buttonComponent?.click() as Promise<void>);
@@ -95,9 +101,17 @@ export default function textAreaOnCaretAndKeyboardTest() {
       expect(obj.getElement('$attrs').getString('caretPosition')).assertEqual('5');
 
       await (textAreaComponent?.inputText('hello world') as Promise<void>);
-      await driver.triggerKey(2047)
+      try {
+        await driver.triggerKey(2047, displayID)
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       await (buttonComponent?.click() as Promise<void>);
       await CommonFunc.sleep(500);
@@ -122,7 +136,11 @@ export default function textAreaOnCaretAndKeyboardTest() {
       let textAreaComponent = await driver.findComponent(ON.id('textAreaOnCaretAndKeyboard'));
       await (textAreaComponent?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let buttonComponent = await driver.findComponent(ON.id('button_1'));
       await (buttonComponent?.click() as Promise<void>);

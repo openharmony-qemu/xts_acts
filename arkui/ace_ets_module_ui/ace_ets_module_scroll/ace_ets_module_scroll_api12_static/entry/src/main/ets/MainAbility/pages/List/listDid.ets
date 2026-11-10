@@ -93,6 +93,8 @@ struct listDidExample {
       })
 
     }
+    .padding(10)
+    .margin(10)
     .width('100%')
     .height('100%')
     .backgroundColor(0xDCDCDC)

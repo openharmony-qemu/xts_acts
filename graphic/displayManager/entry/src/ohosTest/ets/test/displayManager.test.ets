@@ -209,6 +209,12 @@ export default function displayTest() {
       console.log(caseName + 'begin');
       let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
       console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let displays = await display.getAllDisplays();
+      for (let i = 0; i < displays.length; i++) {
+      if (displays[i].id >= 1000) {
+      display.destroyVirtualScreen(displays[i].id);
+        }
+      }
       let windowClass = windowStage.getMainWindowSync();
       try {
         if (isSupportRotate) {

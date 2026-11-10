@@ -69,6 +69,8 @@ struct SearchPage {
           .key(SearchKeys.searchWithTheme)
       }
     }
+    .padding(10)
+    .margin(10)
     .width('100%')
   }
 }

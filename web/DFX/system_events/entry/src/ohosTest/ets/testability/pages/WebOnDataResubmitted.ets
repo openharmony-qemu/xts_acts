@@ -145,15 +145,18 @@ struct WebOnDataResubmitted {
               break;
             }
             case 'emitDataResubmissionHandlerConstructor001': {
-              Utils.emitEvent(true, 127040);
+              let handler: DataResubmissionHandler = new DataResubmissionHandler();
+              Utils.emitEvent(handler != null, 127040);
               break;
             }
             case 'emitDataResubmissionHandlerConstructorReturn001': {
-              Utils.emitEvent(true, 127041);
+              let handler: DataResubmissionHandler = new DataResubmissionHandler();
+              Utils.emitEvent(handler instanceof DataResubmissionHandler, 127041);
               break;
             }
             case 'emitDataResubmissionHandlerClass001': {
-              Utils.emitEvent(true, 127042);
+              let handler: DataResubmissionHandler = new DataResubmissionHandler();
+              Utils.emitEvent(handler instanceof DataResubmissionHandler, 127042);
               break;
             }
           }

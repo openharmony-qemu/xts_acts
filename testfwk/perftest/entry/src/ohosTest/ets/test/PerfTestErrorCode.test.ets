@@ -133,7 +133,7 @@ export default function perfTestErrorTest() {
         expect(e.code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, test_PerfTest_create_32400003 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_PerfTest_create_32400007
@@ -240,7 +240,7 @@ export default function perfTestErrorTest() {
         expect(e.code).assertEqual(CollectErrorCode);
       }
       console.log(`${TestTag}, test_PerfTest_run_32400005_bundleName end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_PerfTest_run_32400004_actionCode
@@ -499,7 +499,7 @@ export default function perfTestErrorTest() {
         expect(e.code).assertEqual(AsyncErrorCode);
       }
       console.log(`${TestTag}, test_PerfTest_run_32400002_afterDestroy end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_PerfTest_getMeasureResult_32400007
@@ -571,7 +571,7 @@ export default function perfTestErrorTest() {
         expect(e.code).assertEqual(ObtainErrorCode);
       }
       console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400006_noRun end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_PerfTest_getMeasureResult_32400003

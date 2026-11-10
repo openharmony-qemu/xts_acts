@@ -20,6 +20,7 @@ export const getGraphicMemSummaryC: (interval: number, undefineTest?: boolean) =
 export const addthread: (a: number) => void;
 export const clearthreads: () => void;
 export const start: (f: number, d: number) => number;
+export const Start_Errcode: (f: number, d: number) => number;
 export const starterrstack: () => number;
 export const starterrconfig: () => number;
 export const starterrconfigtid: () => number;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { afterAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium-static/src/main/indexStatic'
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';

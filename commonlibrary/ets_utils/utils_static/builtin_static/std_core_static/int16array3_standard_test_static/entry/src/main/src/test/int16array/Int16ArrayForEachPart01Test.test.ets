@@ -26,7 +26,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 let gTrackedValueForEachPart01Test004: number = 0;

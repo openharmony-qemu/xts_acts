@@ -276,7 +276,7 @@ export default function scrollerNullUndefined() {
 
       let scrollComp = await driver.findComponent(ON.id('scroller_nullUndefined'))
       let scroll = await scrollComp.getBounds()
-      let scrollItem1Comp = await driver.findComponent(ON.id('scroller_nullUndefined_20'))
+      let scrollItem1Comp = await driver.findComponent(ON.id('scroller_nullUndefined_10'))
       let scrollItem1 = await scrollItem1Comp.getBounds()
       console.info(`[scrollEdgeNullUndefined_0300] scroll.bottom = ${scroll.bottom}`);
       console.info(`[scrollEdgeNullUndefined_0300] scrollItem1.bottom = ${scrollItem1.bottom}`);

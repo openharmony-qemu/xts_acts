@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import { Driver, ON, Component } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -206,10 +206,10 @@ export default function composeListItemV2IconTypeTest() {
       console.info('[composeListItemV2IconType_static_0700] START');
       try {
         let driver = Driver.create();
-        await driver.delayMs(2000);
-        let scrollBar = await driver.findComponent(ON.type('Scroll'));
-        let searchText = await (scrollBar?.scrollSearch(ON.text('Vertical Icon')) as Promise<Component>);
         await driver.delayMs(1000);
+        let scrollBar = await driver.findComponent(ON.type('Scroll'));
+        let searchText = await (scrollBar?.scrollSearch(ON.text('Longitudinal Icon')) as Promise<Component>);
+        await driver.delayMs(2000);
         let longitudinalText = await driver.findComponent(ON.text('Longitudinal Icon'));
         expect(longitudinalText !== null).assertTrue();
         await driver.delayMs(1000);
@@ -232,6 +232,9 @@ export default function composeListItemV2IconTypeTest() {
       console.info('[composeListItemV2IconType_static_0800] START');
       try {
         let driver = Driver.create();
+        await driver.delayMs(1000);
+        let scrollBar = await driver.findComponent(ON.type('Scroll'));
+        await scrollBar!.scrollToBottom();
         await driver.delayMs(2000);
         let verticalText = await driver.findComponent(ON.text('Vertical Icon'));
         expect(verticalText !== null).assertTrue();

@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import hilog from '@ohos.hilog';
 
 function returnAbc(): string {
@@ -1296,7 +1296,6 @@ export default function taskTimeoutTest() {
           e = e as Error;
           expect(e.message).assertEqual('taskpool:: task has been executed');
         }
-        taskpool.cancel(task);
         console.info(`${TAG} test end`);
         done();
       });

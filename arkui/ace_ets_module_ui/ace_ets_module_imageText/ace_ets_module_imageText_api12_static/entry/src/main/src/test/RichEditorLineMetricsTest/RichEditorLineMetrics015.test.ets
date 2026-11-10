@@ -15,7 +15,7 @@
  */
 
 
- import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -35,6 +35,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function RichEditorLineMetrics015() {
   describe('RichEditorLineMetrics015', () => {
     beforeAll(async (): Promise<void> => {
@@ -58,9 +59,10 @@ export default function RichEditorLineMetrics015() {
           console.info("push RichEditorLineMetrics015 success");
         }
       } catch (err) {
-        console.error("push RichEditorLineMetrics015 page error: " + err);
+        console.log("push RichEditorLineMetrics015 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
@@ -75,7 +77,11 @@ export default function RichEditorLineMetrics015() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorLineMetrics015')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.click error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let getFirst = await (driver.findComponent(ON.id('getFirst')) as Promise<Component>);

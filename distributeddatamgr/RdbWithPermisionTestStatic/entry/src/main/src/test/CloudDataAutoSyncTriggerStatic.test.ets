@@ -25,7 +25,7 @@ import {
   beforeEach,
   afterEach,
   afterAll
-} from "../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 import cloudData from '@ohos.data.cloudData';
 
 export default function CloudDataAutoSyncTrigger(): void {

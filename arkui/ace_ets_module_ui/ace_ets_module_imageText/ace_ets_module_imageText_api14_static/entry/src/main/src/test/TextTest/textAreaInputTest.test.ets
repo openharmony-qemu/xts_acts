@@ -15,7 +15,7 @@
  */
 
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-static/src/main/indexStatic"
 import { Driver, ON, Component} from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
@@ -34,6 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 
 
+let displayID: Int = 0;
 export default function textAreaInputTest() {
   describe('textAreaInputTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -59,9 +60,10 @@ export default function textAreaInputTest() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push textAreaInputTest page error:" + err);
+        console.log("push textAreaInputTest page error:" + err);
       }
       console.info("textAreaInputTest beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     
     afterEach(async () => {
@@ -95,7 +97,11 @@ export default function textAreaInputTest() {
           await button?.click();
           await CommonFunc.sleep(1000);
         }
-        await driver.triggerKey(2070);
+        try {
+          await driver.triggerKey(2070, displayID);
+        } catch (err) {
+          console.log('driver.triggerKey error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
         let button1 = await driver.findComponent(ON.text('下一步'));
         await CommonFunc.sleep(500);

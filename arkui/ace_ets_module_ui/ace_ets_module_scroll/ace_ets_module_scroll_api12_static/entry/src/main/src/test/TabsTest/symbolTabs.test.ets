@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -21,6 +21,7 @@ import events_emitter from '@ohos.events.emitter';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function symbolTabs() {
   describe('symbolTabs', () => {
     beforeEach(async (): Promise<void> => {
@@ -66,8 +67,7 @@ it('symbolTabs_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
       let width = right - left;
       let driver = Driver.create()
       await CommonFunc.sleep(500);
-      await driver.drag((Math.round(left + width * 0.8)).toInt(), (Math.round(top + height / 2)).toInt(),
-        (Math.round(left + width * 0.2)).toInt(), (Math.round(top + height / 2)).toInt());
+      await driver.dragBetween({ x: (Math.round(left + width * 0.8)).toInt(), y: (Math.round(top + height / 2)).toInt(), displayId: displayID.toInt() }, { x: (Math.round(left + width * 0.2)).toInt(), y: (Math.round(top + height / 2)).toInt(), displayId: displayID.toInt() });
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('tabs_symbol_mess');
       console.info("[symbolTabs_static_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));

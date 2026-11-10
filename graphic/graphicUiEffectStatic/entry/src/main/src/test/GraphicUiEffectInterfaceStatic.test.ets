@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '@ohos/hypium-static/src/main/indexStatic';
 import hilog from '@ohos.hilog';
 import uiEffect from '@ohos.graphics.uiEffect';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -154,7 +154,7 @@ export default function GraphicUiEffectInterfaceStatic() {
           done()
         }
       })
-
+      
     /**
      * @tc.name   testHdrBrightnessRatio_static_permissions
      * @tc.number SUB_GRAPHIC_UIEFFECT_FILTER_0200

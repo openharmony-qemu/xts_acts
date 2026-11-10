@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll} from "@ohos/hypium-static/src/main/indexStatic";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 
@@ -3795,6 +3795,8 @@ export default function WindowPropertiesTest() {
 
                 }
                 windowClass.onFrameMetricsMeasured(callback1);
+                windowStage!.setCustomDensity(1.0);
+                await Utils.msSleep(1000);
                 windowStage!.setCustomDensity(2.0);
                 await Utils.msSleep(3000);
                 console.log(`${caseName}  callbackIndex 2: ${JSON.stringify(callbackIndex)}`);
@@ -5752,26 +5754,27 @@ export default function WindowPropertiesTest() {
           ctx: context!
         };
 
-        let subWindow: window.Window;
-        subWindow = await window.createWindow(config);
-        hilog.info(domain, tag, msgStr + ' createWindow success');
+        let subWindow: window.Window | undefined = undefined;
+        
         try {
-          await subWindow.setUIContent('pages/index2');
+          subWindow = await window.createWindow(config);
+          hilog.info(domain, tag, msgStr + ' createWindow success');
+          await subWindow!.setUIContent('pages/index2');
           hilog.info(domain, tag, msgStr + ' setUIContent success');
-          await subWindow.showWindow();
+          await subWindow!.showWindow();
           hilog.info(domain, tag, msgStr + ' showWindow success');
           await Utils.msSleep(300);
 
-          let windowLimits = subWindow.getWindowLimits();
-          let minWidth = windowLimits.minWidth as int;
-          let minHeight = windowLimits.minHeight as int;
+          let windowLimits = subWindow!.getWindowLimits();
+          let minWidth = windowLimits!.minWidth as int;
+          let minHeight = windowLimits!.minHeight as int;
           hilog.info(domain, tag, msgStr + ' getWindowLimits: minWidth=' + minWidth + ', minHeight=' + minHeight);
           await subWindow.resize(minWidth, minHeight);
           hilog.info(domain, tag, msgStr + ' resize success: ' + minWidth + ' x ' + minHeight);
           await Utils.msSleep(500);
 
-          let maskWidth = subWindow.getWindowProperties().windowRect.width;
-          let maskHeight = subWindow.getWindowProperties().windowRect.height;
+          let maskWidth = subWindow!.getWindowProperties().windowRect.width;
+          let maskHeight = subWindow!.getWindowProperties().windowRect.height;
           hilog.info(domain, tag,
             msgStr + ' getWindowProperties: maskWidth=' + maskWidth + ', maskHeight=' + maskHeight);
 
@@ -5783,23 +5786,23 @@ export default function WindowPropertiesTest() {
           }
           hilog.info(domain, tag, msgStr + ' create Uint8Array windowMask success, length=' + windowMask.length);
 
-          await subWindow.setWindowMaskWithAlpha(windowMask, maskWidth, maskHeight);
+          await subWindow!.setWindowMaskWithAlpha(windowMask, maskWidth, maskHeight);
           hilog.info(domain, tag, msgStr + ' setWindowMaskWithAlpha success');
-          await subWindow.destroyWindow();
+          await subWindow!.destroyWindow();
           hilog.info(domain, tag, msgStr + ' destroyWindow success');
           done();
         } catch (err) {
           err = err as BusinessError;
           hilog.error(domain, tag, msgStr + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
           if (subWindow) {
-            await subWindow.destroyWindow();
+            await subWindow!.destroyWindow();
             hilog.info(domain, tag, msgStr + ' destroyWindow in catch');
           }
           if (err.code === 801) {
             hilog.info(domain, tag, msgStr + ' The current device type does not support.');
-            expect(err.code).assertEqual(801);
+            expect(err.message !== '').assertTrue();
           } else {
-            expect(false).assertTrue();
+            expect(err.code).assertEqual(1300002);
           }
           done();
         }

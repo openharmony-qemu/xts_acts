@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import { sleep } from "../Util.test"
 class ValidationError extends Error {
   constructor(message: string) {
@@ -517,7 +517,7 @@ export default function promiseCombTest(){
     it('PromiseAsyncAwaitTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let level5 = async (n: number): Promise<number> => {
         return new Promise<number>((resolve) => {
-          resolve(n <= 1 ? 1 : n * (n - 1));
+          resolve(n <= 1 ? 1.0 : n * (n - 1));
         });
       }
 

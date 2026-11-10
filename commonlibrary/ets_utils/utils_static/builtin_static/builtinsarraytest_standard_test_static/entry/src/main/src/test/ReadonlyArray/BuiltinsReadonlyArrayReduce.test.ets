@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 interface myObject {
@@ -128,7 +128,7 @@ export default function builtinsReadonlyArrayReduceTest(): void {
     it('BuiltinsReadonlyArrayReduceTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done:() => void) => {
       const numbers: readonly (number | undefined)[] = [1, undefined, 3];
       const result = numbers.reduce<number | undefined>((accumulator, currentValue) => {
-        return (accumulator !== undefined ? accumulator : 0) + (currentValue !== undefined ? currentValue : 0)
+        return (accumulator !== undefined ? accumulator : 0.0) + (currentValue !== undefined ? currentValue : 0.0)
       }, 0);
       console.log(`${result}`);
       expect(4).assertEqual(result);
@@ -162,7 +162,7 @@ export default function builtinsReadonlyArrayReduceTest(): void {
     it('BuiltinsReadonlyArrayReduceTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done:() => void) => {
       const numbers: readonly (number | undefined)[] = [undefined,];
       const result = numbers.reduce<number | undefined>((accumulator, currentValue) => {
-        return (accumulator !== undefined ? accumulator : 0) + (currentValue !== undefined ? currentValue : 0);
+        return (accumulator !== undefined ? accumulator : 0.0) + (currentValue !== undefined ? currentValue : 0.0);
       }, 0);
       console.log(`${result}`);
       expect(0).assertEqual(result);

@@ -12,6 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { NodeContent, UIContext } from "@kit.ArkUI";
+
+export const UIAgentGetPageTextErrorCodeTest002: (content: Object) => number
+
 export const RegisterCommonAreaApproximateChangeEventTest: (a: string) => void;
 
 export const UnregisterCommonAreaApproximateChangeEventTest: (a: string) => void;
@@ -33,3 +37,7 @@ export const ArcSwiperEventCallbackTest: (a: string) => void;
 export const ArcAlphabetIndexerEventCallbackTest: (a: string) => void;
 
 export const DragEventSummaryTest: (a: string) => void;
+
+export const ImageCollectionTakeItemByNodeIdTest001: (content: Object) => void;
+
+export const UIContentChangeEventGetTest001: (content: Object) => void;

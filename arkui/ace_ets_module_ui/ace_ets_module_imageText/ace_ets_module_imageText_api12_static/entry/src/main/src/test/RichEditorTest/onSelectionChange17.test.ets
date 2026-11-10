@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -33,6 +33,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function onSelectionChange17() {
   describe('onSelectionChange17', () => {
     beforeAll(async (): Promise<void> => {
@@ -56,9 +57,10 @@ export default function onSelectionChange17() {
           console.info("push onSelectionChange17 page result");
         }
       } catch (err) {
-        console.error("push onSelectionChange17 page error:" + err);
+        console.log("push onSelectionChange17 page error:" + err);
       }
       console.info("onSelectionChange17 beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
@@ -78,7 +80,11 @@ export default function onSelectionChange17() {
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2049);
+      try {
+        await driver.triggerKey(2049, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let text1_1 = inspector.getInspectorByKey('onSelectionChange17' + '_text1');
       let Obj1_1 = JSON.parseJsonElement(text1_1);
@@ -90,9 +96,21 @@ export default function onSelectionChange17() {
       let Obj3_1 = JSON.parseJsonElement(text3_1);
       expect(Obj3_1.getElement('$attrs').getString('content')).assertEqual('3');
 
-      await driver.triggerKey(2015);
-      await driver.triggerKey(2015);
-      await driver.triggerKey(2015);
+      try {
+        await driver.triggerKey(2015, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
+      try {
+        await driver.triggerKey(2015, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
+      try {
+        await driver.triggerKey(2015, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let text2_2 = inspector.getInspectorByKey('onSelectionChange17' + '_text2');
       let Obj2_2 = JSON.parseJsonElement(text2_2);

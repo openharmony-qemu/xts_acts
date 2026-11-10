@@ -736,5 +736,416 @@ export default function CameraPickerPickTest() {
         done();
       }
     })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PICKER_ISC2PASIGNATURESUPPORTED_RETURN_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PICKER_ISC2PASIGNATURESUPPORTED_RETURN_0100
+     * @tc.desc   cameraPicker isC2PASignatureSupported returns boolean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PICKER_ISC2PASIGNATURESUPPORTED_RETURN_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PICKER_ISC2PASIGNATURESUPPORTED_RETURN_0100';
+      try {
+        let isSupported: boolean = cameraPicker.isC2PASignatureSupported();
+        console.info(TAG, testName, ' isC2PASignatureSupported result: ' + isSupported);
+        expect(typeof isSupported === 'boolean').assertTrue();
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      } finally {
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0100
+     * @tc.desc   cameraPicker pick with enableC2PA=true and full c2PASignatureConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0100';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        } else {
+          let isSupported: boolean = cameraPicker.isC2PASignatureSupported();
+          console.info(TAG, testName, ' isC2PASignatureSupported: ' + isSupported);
+          let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+          let c2paConfig: cameraPicker.C2PASignatureConfig = {
+            authorID: 'testAuthorID_012',
+            authorName: 'testAuthorName_012'
+          };
+          let pickerProfile: cameraPicker.PickerProfile = {
+            cameraPosition: camera.CameraPosition.CAMERA_POSITION_UNSPECIFIED,
+            enableC2PA: true,
+            c2PASignatureConfig: c2paConfig
+          };
+          cameraPicker.pick(context, [cameraPicker.PickerMediaType.PHOTO], pickerProfile)
+            .then((pickerResult: cameraPicker.PickerResult) => {
+              console.info(TAG, testName, ' pick result: ' + JSON.stringify(pickerResult));
+              expect(pickerResult.resultUri).not().assertUndefined();
+            })
+            .catch((error: BusinessError) => {
+              console.error(TAG, testName + ' pick failed. err: ' + error.code + ', msg: ' + error.message);
+              expect().assertFail();
+            })
+          await sleep(3000);
+          let dr = await Driver.create()
+          let power = await dr.waitForComponent(ON.id('COMPONENT_ID_THIRDPARTYCALL_BACK_1'), COMMON_WAIT_DURATION);
+          let powerB = await dr.waitForComponent(ON.id('EnhanceCloseBtn'), COMMON_WAIT_DURATION);
+          if (power) {
+            let newId = await power.getId();
+            if (newId == 'COMPONENT_ID_THIRDPARTYCALL_BACK_1') {
+              await power.click();
+            }
+          }
+          if (powerB) {
+            let newIdB = await powerB.getId();
+            if (newIdB == 'EnhanceCloseBtn') {
+              await powerB.click();
+            }
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      } finally {
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0200
+     * @tc.desc   cameraPicker pick with enableC2PA=false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0200';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        } else {
+          let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+          let pickerProfile: cameraPicker.PickerProfile = {
+            cameraPosition: camera.CameraPosition.CAMERA_POSITION_UNSPECIFIED,
+            enableC2PA: false
+          };
+          cameraPicker.pick(context, [cameraPicker.PickerMediaType.PHOTO], pickerProfile)
+            .then((pickerResult: cameraPicker.PickerResult) => {
+              console.info(TAG, testName, ' pick result: ' + JSON.stringify(pickerResult));
+              expect(pickerResult.resultUri).not().assertUndefined();
+            })
+            .catch((error: BusinessError) => {
+              console.error(TAG, testName + ' pick failed. err: ' + error.code + ', msg: ' + error.message);
+              expect().assertFail();
+            })
+          await sleep(3000);
+          let dr = await Driver.create()
+          let power = await dr.waitForComponent(ON.id('COMPONENT_ID_THIRDPARTYCALL_BACK_1'), COMMON_WAIT_DURATION);
+          let powerB = await dr.waitForComponent(ON.id('EnhanceCloseBtn'), COMMON_WAIT_DURATION);
+          if (power) {
+            let newId = await power.getId();
+            if (newId == 'COMPONENT_ID_THIRDPARTYCALL_BACK_1') {
+              await power.click();
+            }
+          }
+          if (powerB) {
+            let newIdB = await powerB.getId();
+            if (newIdB == 'EnhanceCloseBtn') {
+              await powerB.click();
+            }
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      } finally {
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0300
+     * @tc.desc   cameraPicker pick with enableC2PA=true and c2PASignatureConfig containing only authorID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0300', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0300';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        } else {
+          let isSupported: boolean = cameraPicker.isC2PASignatureSupported();
+          console.info(TAG, testName, ' isC2PASignatureSupported: ' + isSupported);
+          let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+          let c2paConfig: cameraPicker.C2PASignatureConfig = {
+            authorID: 'authorID_only_014'
+          };
+          let pickerProfile: cameraPicker.PickerProfile = {
+            cameraPosition: camera.CameraPosition.CAMERA_POSITION_UNSPECIFIED,
+            enableC2PA: true,
+            c2PASignatureConfig: c2paConfig
+          };
+          cameraPicker.pick(context, [cameraPicker.PickerMediaType.PHOTO], pickerProfile)
+            .then((pickerResult: cameraPicker.PickerResult) => {
+              console.info(TAG, testName, ' pick result: ' + JSON.stringify(pickerResult));
+              expect(pickerResult.resultUri).not().assertUndefined();
+            })
+            .catch((error: BusinessError) => {
+              console.error(TAG, testName + ' pick failed. err: ' + error.code + ', msg: ' + error.message);
+              expect().assertFail();
+            })
+          await sleep(3000);
+          let dr = await Driver.create()
+          let power = await dr.waitForComponent(ON.id('COMPONENT_ID_THIRDPARTYCALL_BACK_1'), COMMON_WAIT_DURATION);
+          let powerB = await dr.waitForComponent(ON.id('EnhanceCloseBtn'), COMMON_WAIT_DURATION);
+          if (power) {
+            let newId = await power.getId();
+            if (newId == 'COMPONENT_ID_THIRDPARTYCALL_BACK_1') {
+              await power.click();
+            }
+          }
+          if (powerB) {
+            let newIdB = await powerB.getId();
+            if (newIdB == 'EnhanceCloseBtn') {
+              await powerB.click();
+            }
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      } finally {
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0400
+     * @tc.desc   cameraPicker pick with enableC2PA=true and c2PASignatureConfig containing only authorName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0400', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0400';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        } else {
+          let isSupported: boolean = cameraPicker.isC2PASignatureSupported();
+          console.info(TAG, testName, ' isC2PASignatureSupported: ' + isSupported);
+          let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+          let c2paConfig: cameraPicker.C2PASignatureConfig = {
+            authorName: 'authorName_only_015'
+          };
+          let pickerProfile: cameraPicker.PickerProfile = {
+            cameraPosition: camera.CameraPosition.CAMERA_POSITION_UNSPECIFIED,
+            enableC2PA: true,
+            c2PASignatureConfig: c2paConfig
+          };
+          cameraPicker.pick(context, [cameraPicker.PickerMediaType.PHOTO], pickerProfile)
+            .then((pickerResult: cameraPicker.PickerResult) => {
+              console.info(TAG, testName, ' pick result: ' + JSON.stringify(pickerResult));
+              expect(pickerResult.resultUri).not().assertUndefined();
+            })
+            .catch((error: BusinessError) => {
+              console.error(TAG, testName + ' pick failed. err: ' + error.code + ', msg: ' + error.message);
+              expect().assertFail();
+            })
+          await sleep(3000);
+          let dr = await Driver.create()
+          let power = await dr.waitForComponent(ON.id('COMPONENT_ID_THIRDPARTYCALL_BACK_1'), COMMON_WAIT_DURATION);
+          let powerB = await dr.waitForComponent(ON.id('EnhanceCloseBtn'), COMMON_WAIT_DURATION);
+          if (power) {
+            let newId = await power.getId();
+            if (newId == 'COMPONENT_ID_THIRDPARTYCALL_BACK_1') {
+              await power.click();
+            }
+          }
+          if (powerB) {
+            let newIdB = await powerB.getId();
+            if (newIdB == 'EnhanceCloseBtn') {
+              await powerB.click();
+            }
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      } finally {
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0500
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0500
+     * @tc.desc   cameraPicker pick with enableC2PA=true and empty c2PASignatureConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0500', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0500';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        } else {
+          let isSupported: boolean = cameraPicker.isC2PASignatureSupported();
+          console.info(TAG, testName, ' isC2PASignatureSupported: ' + isSupported);
+          let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+          let c2paConfig: cameraPicker.C2PASignatureConfig = {};
+          let pickerProfile: cameraPicker.PickerProfile = {
+            cameraPosition: camera.CameraPosition.CAMERA_POSITION_UNSPECIFIED,
+            enableC2PA: true,
+            c2PASignatureConfig: c2paConfig
+          };
+          cameraPicker.pick(context, [cameraPicker.PickerMediaType.PHOTO], pickerProfile)
+            .then((pickerResult: cameraPicker.PickerResult) => {
+              console.info(TAG, testName, ' pick result: ' + JSON.stringify(pickerResult));
+              expect(pickerResult.resultUri).not().assertUndefined();
+            })
+            .catch((error: BusinessError) => {
+              console.error(TAG, testName + ' pick failed. err: ' + error.code + ', msg: ' + error.message);
+              expect().assertFail();
+            })
+          await sleep(3000);
+          let dr = await Driver.create()
+          let power = await dr.waitForComponent(ON.id('COMPONENT_ID_THIRDPARTYCALL_BACK_1'), COMMON_WAIT_DURATION);
+          let powerB = await dr.waitForComponent(ON.id('EnhanceCloseBtn'), COMMON_WAIT_DURATION);
+          if (power) {
+            let newId = await power.getId();
+            if (newId == 'COMPONENT_ID_THIRDPARTYCALL_BACK_1') {
+              await power.click();
+            }
+          }
+          if (powerB) {
+            let newIdB = await powerB.getId();
+            if (newIdB == 'EnhanceCloseBtn') {
+              await powerB.click();
+            }
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      } finally {
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0600
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0600
+     * @tc.desc   cameraPicker pick with enableC2PA=true and c2PASignatureConfig undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0600', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0600';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        } else {
+          let isSupported: boolean = cameraPicker.isC2PASignatureSupported();
+          console.info(TAG, testName, ' isC2PASignatureSupported: ' + isSupported);
+          let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+          let pickerProfile: cameraPicker.PickerProfile = {
+            cameraPosition: camera.CameraPosition.CAMERA_POSITION_UNSPECIFIED,
+            enableC2PA: true,
+            c2PASignatureConfig: undefined
+          };
+          cameraPicker.pick(context, [cameraPicker.PickerMediaType.PHOTO], pickerProfile)
+            .then((pickerResult: cameraPicker.PickerResult) => {
+              console.info(TAG, testName, ' pick result: ' + JSON.stringify(pickerResult));
+              expect(pickerResult.resultUri).not().assertUndefined();
+            })
+            .catch((error: BusinessError) => {
+              console.error(TAG, testName + ' pick failed. err: ' + error.code + ', msg: ' + error.message);
+              expect().assertFail();
+            })
+          await sleep(3000);
+          let dr = await Driver.create()
+          let power = await dr.waitForComponent(ON.id('COMPONENT_ID_THIRDPARTYCALL_BACK_1'), COMMON_WAIT_DURATION);
+          let powerB = await dr.waitForComponent(ON.id('EnhanceCloseBtn'), COMMON_WAIT_DURATION);
+          if (power) {
+            let newId = await power.getId();
+            if (newId == 'COMPONENT_ID_THIRDPARTYCALL_BACK_1') {
+              await power.click();
+            }
+          }
+          if (powerB) {
+            let newIdB = await powerB.getId();
+            if (newIdB == 'EnhanceCloseBtn') {
+              await powerB.click();
+            }
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      } finally {
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0700
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0700
+     * @tc.desc   cameraPicker pick with enableC2PA undefined (omitted)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0700', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PICKER_PICK_PARAM_0700';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        } else {
+          let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+          let pickerProfile: cameraPicker.PickerProfile = {
+            cameraPosition: camera.CameraPosition.CAMERA_POSITION_UNSPECIFIED,
+            enableC2PA: undefined
+          };
+          cameraPicker.pick(context, [cameraPicker.PickerMediaType.PHOTO], pickerProfile)
+            .then((pickerResult: cameraPicker.PickerResult) => {
+              console.info(TAG, testName, ' pick result: ' + JSON.stringify(pickerResult));
+              expect(pickerResult.resultUri).not().assertUndefined();
+            })
+            .catch((error: BusinessError) => {
+              console.error(TAG, testName + ' pick failed. err: ' + error.code + ', msg: ' + error.message);
+              expect().assertFail();
+            })
+          await sleep(3000);
+          let dr = await Driver.create()
+          let power = await dr.waitForComponent(ON.id('COMPONENT_ID_THIRDPARTYCALL_BACK_1'), COMMON_WAIT_DURATION);
+          let powerB = await dr.waitForComponent(ON.id('EnhanceCloseBtn'), COMMON_WAIT_DURATION);
+          if (power) {
+            let newId = await power.getId();
+            if (newId == 'COMPONENT_ID_THIRDPARTYCALL_BACK_1') {
+              await power.click();
+            }
+          }
+          if (powerB) {
+            let newIdB = await powerB.getId();
+            if (newIdB == 'EnhanceCloseBtn') {
+              await powerB.click();
+            }
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      } finally {
+        done();
+      }
+    })
   })
 }

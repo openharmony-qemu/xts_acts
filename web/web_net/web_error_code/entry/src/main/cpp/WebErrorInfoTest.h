@@ -19,6 +19,7 @@
 #include <vector>
 #include "napi/native_api.h"
 
+void AddErrorInfoFunctionsEx(std::vector<napi_property_descriptor> &descVector);
 void AddErrorInfoFunctions(std::vector<napi_property_descriptor> &descVector);
 
 #endif

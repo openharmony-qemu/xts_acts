@@ -161,6 +161,9 @@ struct SwiperMinSize {
             this.swiperController.showPrevious()
           })
       }.margin(5)
-    }.width('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%')
   }
 }

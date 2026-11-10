@@ -16,7 +16,7 @@
 
 import accessibility from '@ohos.accessibility';
 import componentUtils from '@ohos.arkui.componentUtils';
-import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON, Rect } from '@ohos.UiTest';

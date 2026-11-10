@@ -26,6 +26,7 @@ const waitUiReadyMs: number = 1000;
 const TestTag = 'UiTest_API16';
 const DeviceErrorCode = 17000005;
 const ErrorCode = 401;
+const defaultUserId = '100';
 
 async function startAbility(bundleName: string, abilityName: string) {
   let cmd = `aa start -b ${bundleName} -a ${abilityName}`;
@@ -41,7 +42,12 @@ async function startAbility(bundleName: string, abilityName: string) {
 }
 
 async function stopApplication(bundleName: string) {
-  await delegator.executeShellCommand(`aa force-stop ${bundleName} `).then(result => {
+  let cmd = `aa force-stop ${bundleName}`;
+  let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+  if(user !== undefined){
+      cmd += ' -u ' + user;
+  }
+  await delegator.executeShellCommand(cmd).then(result => {
     console.info(`UiTestCase, stop application finished: ${result}`)
   }).catch((err: BusinessError) => {
     console.error(`UiTestCase,stop application failed: ${err}`)
@@ -850,8 +856,11 @@ export default function UiTest() {
 
   describe('UiTest_API10', () => {
     let driver: Driver
+    let user = defaultUserId;
     beforeAll(async (done: Function) => {
       driver = Driver.create()
+      user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      console.log(`${TestTag}, UiTest_API10 user is: ${JSON.stringify(user)}`);
       await driver.delayMs(1000)
       await getInputMethodPermission()
       done()
@@ -874,47 +883,52 @@ export default function UiTest() {
      * @tc.level  LEVEL3
      */
     it('testFling', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
-      let allDisplayIds = await display.getAllDisplay()
-      for (let d of allDisplayIds) {
-        if (d.id == 999) {
-          console.info('Can not create full screen application scene')
-          return
+      if (user == undefined || user == defaultUserId) { // 此用例不支持车机副屏执行
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let allDisplayIds = await display.getAllDisplay()
+        for (let d of allDisplayIds) {
+          if (d.id == 999) {
+            console.info('Can not create full screen application scene')
+            return
+          }
         }
+        let d = await display.getDefaultDisplaySync()
+        let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        try {
+          await window.maximize()
+          await driver.delayMs(500)
+        } catch (error) {
+          console.info('It is already a Fullscreen window')
+        }
+        await driver.fling(UiDirection.DOWN, 39000)
+        await driver.delayMs(waitUiReadyMs)
+        let button = await driver.findComponents(ON.text('next page'))
+        expect(button).assertNull()
+        await driver.fling(UiDirection.LEFT, 39000)
+        await driver.delayMs(waitUiReadyMs)
+        let text = await driver.findComponents(ON.text('next page'))
+        expect(text).assertNull()
+        await driver.fling(UiDirection.RIGHT, 39000)
+        await driver.delayMs(waitUiReadyMs)
+        let text2 = await driver.findComponents(ON.text('next page'))
+        expect(text2).assertNull()
+        await driver.fling(UiDirection.UP, 39000)
+        await driver.delayMs(2000)
+        let button2 = await driver.findComponents(ON.text('bottom'))
+        expect(button2 == null).assertTrue()
+        await stopApplication('com.uitestScene.acts');
       }
-      let d = await display.getDefaultDisplaySync()
-      let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
-      try {
-        await window.maximize()
-        await driver.delayMs(500)
-      } catch (error) {
-        console.info('It is already a Fullscreen window')
-      }
-      await driver.fling(UiDirection.DOWN, 39000)
-      await driver.delayMs(waitUiReadyMs)
-      let button = await driver.findComponents(ON.text('next page'))
-      expect(button).assertNull()
-      await driver.fling(UiDirection.LEFT, 39000)
-      await driver.delayMs(waitUiReadyMs)
-      let text = await driver.findComponents(ON.text('next page'))
-      expect(text).assertNull()
-      await driver.fling(UiDirection.RIGHT, 39000)
-      await driver.delayMs(waitUiReadyMs)
-      let text2 = await driver.findComponents(ON.text('next page'))
-      expect(text2).assertNull()
-      await driver.fling(UiDirection.UP, 39000)
-      await driver.delayMs(2000)
-      let button2 = await driver.findComponents(ON.text('bottom'))
-      expect(button2 == null).assertTrue()
-      await stopApplication('com.uitestScene.acts');
-    })
+    }, undefined, 'emulator')
   })
 
   describe('UiTest_API9', () => {
     let driver: Driver
+    let user = defaultUserId;
     beforeAll(async (done: Function) => {
       driver = Driver.create()
+      user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      console.log(`${TestTag}, UiTest_API9 user is: ${JSON.stringify(user)}`);
       await driver.delayMs(1000)
       await getInputMethodPermission()
       done()
@@ -937,42 +951,44 @@ export default function UiTest() {
      * @tc.level  LEVEL3
      */
     it('testTriggerCombineKeys', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(2000)
-      let text = await driver.findComponent(ON.type('TextInput'))
-      if (text == null) {
-        let scorll = await driver.findComponent(ON.type('Scroll'))
-        text = await scorll.scrollSearch(ON.type('TextInput'))
+      if (user == undefined || user == defaultUserId) { // 此用例不支持车机副屏执行
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(2000)
+        let text = await driver.findComponent(ON.type('TextInput'))
+        if (text == null) {
+          let scorll = await driver.findComponent(ON.type('Scroll'))
+          text = await scorll.scrollSearch(ON.type('TextInput'))
+        }
+        let center = await text.getBoundsCenter()
+        // set pasteBoard data
+        await text.inputText('123')
+        await driver.delayMs(2000)
+        await exitInputMethod()
+        await driver.delayMs(2000)
+        let text1 = await driver.findComponent(ON.type('TextInput'))
+        if (text1 == null) {
+          let scorll = await driver.findComponent(ON.type('Scroll'))
+          text1 = await scorll.scrollSearch(ON.type('TextInput'))
+        }
+        let center1 = await text1.getBoundsCenter()
+        await driver.click(center1.x, center1.y)
+        await driver.delayMs(waitUiReadyMs)
+        await driver.triggerCombineKeys(2072, 2017)
+        await driver.delayMs(waitUiReadyMs)
+        await driver.triggerCombineKeys(2072, 2019)
+        await driver.delayMs(waitUiReadyMs)
+        // clear and paste
+        let text2 = await driver.findComponent(ON.type('TextInput'))
+        await text2.clearText()
+        await driver.delayMs(waitUiReadyMs)
+        await driver.triggerCombineKeys(2072, 2038)
+        await driver.delayMs(2000)
+        await exitInputMethod()
+        await driver.delayMs(4000)
+        let text3 = await driver.findComponent(ON.type('TextInput'))
+        expect(await text3.getText() == '123').assertTrue()
+        await stopApplication('com.uitestScene.acts')
       }
-      let center = await text.getBoundsCenter()
-      // set pasteBoard data
-      await text.inputText('123')
-      await driver.delayMs(2000)
-      await exitInputMethod()
-      await driver.delayMs(2000)
-      let text1 = await driver.findComponent(ON.type('TextInput'))
-      if (text1 == null) {
-        let scorll = await driver.findComponent(ON.type('Scroll'))
-        text1 = await scorll.scrollSearch(ON.type('TextInput'))
-      }
-      let center1 = await text1.getBoundsCenter()
-      await driver.click(center1.x, center1.y)
-      await driver.delayMs(waitUiReadyMs)
-      await driver.triggerCombineKeys(2072, 2017)
-      await driver.delayMs(waitUiReadyMs)
-      await driver.triggerCombineKeys(2072, 2019)
-      await driver.delayMs(waitUiReadyMs)
-      // clear and paste
-      let text2 = await driver.findComponent(ON.type('TextInput'))
-      await text2.clearText()
-      await driver.delayMs(waitUiReadyMs)
-      await driver.triggerCombineKeys(2072, 2038)
-      await driver.delayMs(2000)
-      await exitInputMethod()
-      await driver.delayMs(4000)
-      let text3 = await driver.findComponent(ON.type('TextInput'))
-      expect(await text3.getText() == '123').assertTrue()
-      await stopApplication('com.uitestScene.acts')
     })
 
     /**
@@ -984,52 +1000,56 @@ export default function UiTest() {
      * @tc.level  LEVEL3
      */
     it('testDisplayRotation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
-      await driver.setDisplayRotationEnabled(true)
-      await driver.delayMs(waitUiReadyMs)
-      await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
-      await driver.delayMs(waitUiReadyMs)
-      let rotation = await driver.getDisplayRotation()
-      if (rotation == DisplayRotation.ROTATION_90) {
-        console.info('The device is displayed in horizontal on default')
-        await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+      let carSupported = canIUse("SystemCapability.Sensors.MiscDevice")
+      console.log(`${TestTag}, testDisplayRotation carSupported is: ${JSON.stringify(carSupported)}`);
+      if (carSupported) { // 此用例不支持车机执行
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
         await driver.delayMs(waitUiReadyMs)
-        let rotation1 = await driver.getDisplayRotation()
-        expect(rotation1 == DisplayRotation.ROTATION_0).assertTrue();
-
-        await driver.setDisplayRotation(DisplayRotation.ROTATION_180)
+        await driver.setDisplayRotationEnabled(true)
         await driver.delayMs(waitUiReadyMs)
-        let rotation2 = await driver.getDisplayRotation()
-        expect(rotation2 == DisplayRotation.ROTATION_270).assertTrue();
-
-        await driver.setDisplayRotation(DisplayRotation.ROTATION_270)
-        await driver.delayMs(waitUiReadyMs)
-        let rotation3 = await driver.getDisplayRotation()
-        expect(rotation3 == DisplayRotation.ROTATION_180).assertTrue();
-
-        await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
-      } else if (rotation == DisplayRotation.ROTATION_0) {
-        console.info('The device is displayed in vertical on default')
-        await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
-        await driver.delayMs(waitUiReadyMs)
-        let rotation1 = await driver.getDisplayRotation()
-        expect(rotation1 == DisplayRotation.ROTATION_90).assertTrue();
-
-        await driver.setDisplayRotation(DisplayRotation.ROTATION_180)
-        await driver.delayMs(waitUiReadyMs)
-        let rotation2 = await driver.getDisplayRotation()
-        expect(rotation2 == DisplayRotation.ROTATION_180).assertTrue();
-
-        await driver.setDisplayRotation(DisplayRotation.ROTATION_270)
-        await driver.delayMs(waitUiReadyMs)
-        let rotation3 = await driver.getDisplayRotation()
-        expect(rotation3 == DisplayRotation.ROTATION_270).assertTrue();
-
         await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
         await driver.delayMs(waitUiReadyMs)
+        let rotation = await driver.getDisplayRotation()
+        if (rotation == DisplayRotation.ROTATION_90) {
+          console.info('The device is displayed in horizontal on default')
+          await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+          await driver.delayMs(waitUiReadyMs)
+          let rotation1 = await driver.getDisplayRotation()
+          expect(rotation1 == DisplayRotation.ROTATION_0).assertTrue();
+
+          await driver.setDisplayRotation(DisplayRotation.ROTATION_180)
+          await driver.delayMs(waitUiReadyMs)
+          let rotation2 = await driver.getDisplayRotation()
+          expect(rotation2 == DisplayRotation.ROTATION_270).assertTrue();
+
+          await driver.setDisplayRotation(DisplayRotation.ROTATION_270)
+          await driver.delayMs(waitUiReadyMs)
+          let rotation3 = await driver.getDisplayRotation()
+          expect(rotation3 == DisplayRotation.ROTATION_180).assertTrue();
+
+          await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+        } else if (rotation == DisplayRotation.ROTATION_0) {
+          console.info('The device is displayed in vertical on default')
+          await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+          await driver.delayMs(waitUiReadyMs)
+          let rotation1 = await driver.getDisplayRotation()
+          expect(rotation1 == DisplayRotation.ROTATION_90).assertTrue();
+
+          await driver.setDisplayRotation(DisplayRotation.ROTATION_180)
+          await driver.delayMs(waitUiReadyMs)
+          let rotation2 = await driver.getDisplayRotation()
+          expect(rotation2 == DisplayRotation.ROTATION_180).assertTrue();
+
+          await driver.setDisplayRotation(DisplayRotation.ROTATION_270)
+          await driver.delayMs(waitUiReadyMs)
+          let rotation3 = await driver.getDisplayRotation()
+          expect(rotation3 == DisplayRotation.ROTATION_270).assertTrue();
+
+          await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
+          await driver.delayMs(waitUiReadyMs)
+        }
+        await stopApplication('com.uitestScene.acts')
       }
-      await stopApplication('com.uitestScene.acts')
     })
 
     /**
@@ -1041,56 +1061,60 @@ export default function UiTest() {
      * @tc.level  LEVEL3
      */
     it('testGetDisplayRotationWithId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.log(TestTag, 'testGetDisplayRotationWithId start');
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
-      let disPlay = display.getDefaultDisplaySync();
-      console.log(`${TestTag}, testGetDisplayRotationWithId disPlay is: ${JSON.stringify(disPlay)}`);
-      await driver.setDisplayRotationEnabled(true)
-      await driver.delayMs(waitUiReadyMs)
-      await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
-      await driver.delayMs(waitUiReadyMs)
-      let rotation = await driver.getDisplayRotation(disPlay.id)
-      if (rotation == DisplayRotation.ROTATION_90) {
-        console.info('The device is displayed in horizontal on default')
-        await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+      let carSupported = canIUse("SystemCapability.Sensors.MiscDevice")
+      console.log(`${TestTag}, testGetDisplayRotationWithId carSupported is: ${JSON.stringify(carSupported)}`);
+      if (carSupported) { // 此用例不支持车机执行
+        console.log(TestTag, 'testGetDisplayRotationWithId start');
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
         await driver.delayMs(waitUiReadyMs)
-        let rotation1 = await driver.getDisplayRotation(disPlay.id)
-        expect(rotation1 == DisplayRotation.ROTATION_0).assertTrue();
-
-        await driver.setDisplayRotation(DisplayRotation.ROTATION_180)
+        let disPlay = display.getDefaultDisplaySync();
+        console.log(`${TestTag}, testGetDisplayRotationWithId disPlay is: ${JSON.stringify(disPlay)}`);
+        await driver.setDisplayRotationEnabled(true)
         await driver.delayMs(waitUiReadyMs)
-        let rotation2 = await driver.getDisplayRotation(disPlay.id)
-        expect(rotation2 == DisplayRotation.ROTATION_270).assertTrue();
-
-        await driver.setDisplayRotation(DisplayRotation.ROTATION_270)
-        await driver.delayMs(waitUiReadyMs)
-        let rotation3 = await driver.getDisplayRotation(disPlay.id)
-        expect(rotation3 == DisplayRotation.ROTATION_180).assertTrue();
-
-        await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
-      } else if (rotation == DisplayRotation.ROTATION_0) {
-        console.info('The device is displayed in vertical on default')
-        await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
-        await driver.delayMs(waitUiReadyMs)
-        let rotation1 = await driver.getDisplayRotation(disPlay.id)
-        expect(rotation1 == DisplayRotation.ROTATION_90).assertTrue();
-
-        await driver.setDisplayRotation(DisplayRotation.ROTATION_180)
-        await driver.delayMs(waitUiReadyMs)
-        let rotation2 = await driver.getDisplayRotation(disPlay.id)
-        expect(rotation2 == DisplayRotation.ROTATION_180).assertTrue();
-
-        await driver.setDisplayRotation(DisplayRotation.ROTATION_270)
-        await driver.delayMs(waitUiReadyMs)
-        let rotation3 = await driver.getDisplayRotation(disPlay.id)
-        expect(rotation3 == DisplayRotation.ROTATION_270).assertTrue();
-
         await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
         await driver.delayMs(waitUiReadyMs)
+        let rotation = await driver.getDisplayRotation(disPlay.id)
+        if (rotation == DisplayRotation.ROTATION_90) {
+          console.info('The device is displayed in horizontal on default')
+          await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+          await driver.delayMs(waitUiReadyMs)
+          let rotation1 = await driver.getDisplayRotation(disPlay.id)
+          expect(rotation1 == DisplayRotation.ROTATION_0).assertTrue();
+
+          await driver.setDisplayRotation(DisplayRotation.ROTATION_180)
+          await driver.delayMs(waitUiReadyMs)
+          let rotation2 = await driver.getDisplayRotation(disPlay.id)
+          expect(rotation2 == DisplayRotation.ROTATION_270).assertTrue();
+
+          await driver.setDisplayRotation(DisplayRotation.ROTATION_270)
+          await driver.delayMs(waitUiReadyMs)
+          let rotation3 = await driver.getDisplayRotation(disPlay.id)
+          expect(rotation3 == DisplayRotation.ROTATION_180).assertTrue();
+
+          await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+        } else if (rotation == DisplayRotation.ROTATION_0) {
+          console.info('The device is displayed in vertical on default')
+          await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+          await driver.delayMs(waitUiReadyMs)
+          let rotation1 = await driver.getDisplayRotation(disPlay.id)
+          expect(rotation1 == DisplayRotation.ROTATION_90).assertTrue();
+
+          await driver.setDisplayRotation(DisplayRotation.ROTATION_180)
+          await driver.delayMs(waitUiReadyMs)
+          let rotation2 = await driver.getDisplayRotation(disPlay.id)
+          expect(rotation2 == DisplayRotation.ROTATION_180).assertTrue();
+
+          await driver.setDisplayRotation(DisplayRotation.ROTATION_270)
+          await driver.delayMs(waitUiReadyMs)
+          let rotation3 = await driver.getDisplayRotation(disPlay.id)
+          expect(rotation3 == DisplayRotation.ROTATION_270).assertTrue();
+
+          await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
+          await driver.delayMs(waitUiReadyMs)
+        }
+        await stopApplication('com.uitestScene.acts')
+        console.log(TestTag, 'testGetDisplayRotationWithId over');
       }
-      await stopApplication('com.uitestScene.acts')
-      console.log(TestTag, 'testGetDisplayRotationWithId over');
     })
 
     /**
@@ -1102,13 +1126,15 @@ export default function UiTest() {
      * @tc.level  LEVEL3
      */
     it('testPressHome', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
-      await driver.pressHome()
-      await driver.delayMs(1000)
-      let button = await driver.findComponent(ON.text('next page'))
-      expect(button == null).assertTrue()
-      await stopApplication('com.uitestScene.acts')
+      if (user == undefined || user == defaultUserId) { // 此用例不支持车机副屏执行
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        await driver.pressHome()
+        await driver.delayMs(1000)
+        let button = await driver.findComponent(ON.text('next page'))
+        expect(button == null).assertTrue()
+        await stopApplication('com.uitestScene.acts')
+      }
     })
 
     /**
@@ -1120,20 +1146,22 @@ export default function UiTest() {
      * @tc.level  LEVEL3
      */
     it('testDrag', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
-      let button = await driver.findComponent(ON.id('jump'))
-      await button.longClick()
-      await driver.delayMs(waitUiReadyMs)
-      let text1 = await driver.findComponent(ON.text('one'))
-      let text2 = await driver.findComponent(ON.text('two'))
-      let point1 = await text1.getBoundsCenter()
-      let point2 = await text2.getBoundsCenter()
-      await driver.drag(point1.x, point1.y, point2.x, point2.y)
-      await driver.delayMs(waitUiReadyMs)
-      let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
-      expect(text == null).assertTrue()
-      await stopApplication('com.uitestScene.acts')
+      if (user == undefined || user == defaultUserId) { // 此用例不支持车机副屏执行
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(waitUiReadyMs)
+        let button = await driver.findComponent(ON.id('jump'))
+        await button.longClick()
+        await driver.delayMs(waitUiReadyMs)
+        let text1 = await driver.findComponent(ON.text('one'))
+        let text2 = await driver.findComponent(ON.text('two'))
+        let point1 = await text1.getBoundsCenter()
+        let point2 = await text2.getBoundsCenter()
+        await driver.drag(point1.x, point1.y, point2.x, point2.y)
+        await driver.delayMs(waitUiReadyMs)
+        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+        expect(text == null).assertTrue()
+        await stopApplication('com.uitestScene.acts')
+      }
     })
 
     /**
@@ -1145,23 +1173,25 @@ export default function UiTest() {
      * @tc.level  LEVEL3
      */
     it('testDragSpeed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      try {
-        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-        await driver.delayMs(waitUiReadyMs)
-        let button = await driver.findComponent(ON.id('jump'))
-        await button.longClick()
-        await driver.delayMs(waitUiReadyMs)
-        let text1 = await driver.findComponent(ON.text('one'))
-        let text2 = await driver.findComponent(ON.text('two'))
-        let point1 = await text1.getBoundsCenter()
-        let point2 = await text2.getBoundsCenter()
-        await driver.drag(point1.x, point1.y, point2.x, point2.y, 800)
-        await driver.delayMs(waitUiReadyMs)
-        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
-        expect(text == null).assertTrue()
-        await stopApplication('com.uitestScene.acts')
-      } catch (error) {
-        expect().assertFail();
+      if (user == undefined || user == defaultUserId) { // 此用例不支持车机副屏执行
+        try {
+          await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+          await driver.delayMs(waitUiReadyMs)
+          let button = await driver.findComponent(ON.id('jump'))
+          await button.longClick()
+          await driver.delayMs(waitUiReadyMs)
+          let text1 = await driver.findComponent(ON.text('one'))
+          let text2 = await driver.findComponent(ON.text('two'))
+          let point1 = await text1.getBoundsCenter()
+          let point2 = await text2.getBoundsCenter()
+          await driver.drag(point1.x, point1.y, point2.x, point2.y, 800)
+          await driver.delayMs(waitUiReadyMs)
+          let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+          expect(text == null).assertTrue()
+          await stopApplication('com.uitestScene.acts')
+        } catch (error) {
+          expect().assertFail();
+        }
       }
       done()
     })
@@ -1175,23 +1205,25 @@ export default function UiTest() {
      * @tc.level  LEVEL3
      */
     it('testDragSpeedNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      try {
-        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-        await driver.delayMs(waitUiReadyMs)
-        let button = await driver.findComponent(ON.id('jump'))
-        await button.longClick()
-        await driver.delayMs(waitUiReadyMs)
-        let text1 = await driver.findComponent(ON.text('one'))
-        let text2 = await driver.findComponent(ON.text('two'))
-        let point1 = await text1.getBoundsCenter()
-        let point2 = await text2.getBoundsCenter()
-        await driver.drag(point1.x, point1.y, point2.x, point2.y, null)
-        await driver.delayMs(waitUiReadyMs)
-        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
-        expect(text == null).assertTrue()
-        await stopApplication('com.uitestScene.acts')
-      } catch (error) {
-        expect().assertFail();
+      if (user == undefined || user == defaultUserId) { // 此用例不支持车机副屏执行
+        try {
+          await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+          await driver.delayMs(waitUiReadyMs)
+          let button = await driver.findComponent(ON.id('jump'))
+          await button.longClick()
+          await driver.delayMs(waitUiReadyMs)
+          let text1 = await driver.findComponent(ON.text('one'))
+          let text2 = await driver.findComponent(ON.text('two'))
+          let point1 = await text1.getBoundsCenter()
+          let point2 = await text2.getBoundsCenter()
+          await driver.drag(point1.x, point1.y, point2.x, point2.y, null)
+          await driver.delayMs(waitUiReadyMs)
+          let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+          expect(text == null).assertTrue()
+          await stopApplication('com.uitestScene.acts')
+        } catch (error) {
+          expect().assertFail();
+        }
       }
       done()
     })
@@ -1205,23 +1237,25 @@ export default function UiTest() {
      * @tc.level  LEVEL3
      */
     it('testDragSpeedUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      try {
-        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-        await driver.delayMs(waitUiReadyMs)
-        let button = await driver.findComponent(ON.id('jump'))
-        await button.longClick()
-        await driver.delayMs(waitUiReadyMs)
-        let text1 = await driver.findComponent(ON.text('one'))
-        let text2 = await driver.findComponent(ON.text('two'))
-        let point1 = await text1.getBoundsCenter()
-        let point2 = await text2.getBoundsCenter()
-        await driver.drag(point1.x, point1.y, point2.x, point2.y, undefined)
-        await driver.delayMs(waitUiReadyMs)
-        let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
-        expect(text == null).assertTrue()
-        await stopApplication('com.uitestScene.acts')
-      } catch (error) {
-        expect().assertFail();
+      if (user == undefined || user == defaultUserId) { // 此用例不支持车机副屏执行
+        try {
+          await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+          await driver.delayMs(waitUiReadyMs)
+          let button = await driver.findComponent(ON.id('jump'))
+          await button.longClick()
+          await driver.delayMs(waitUiReadyMs)
+          let text1 = await driver.findComponent(ON.text('one'))
+          let text2 = await driver.findComponent(ON.text('two'))
+          let point1 = await text1.getBoundsCenter()
+          let point2 = await text2.getBoundsCenter()
+          await driver.drag(point1.x, point1.y, point2.x, point2.y, undefined)
+          await driver.delayMs(waitUiReadyMs)
+          let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
+          expect(text == null).assertTrue()
+          await stopApplication('com.uitestScene.acts')
+        } catch (error) {
+          expect().assertFail();
+        }
       }
       done()
     })

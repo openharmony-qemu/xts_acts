@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, describe, expect, it, Level } from '../../../hypium/index';
+import { afterEach, beforeAll, describe, expect, it, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import childProcessManager from '@ohos.app.ability.childProcessManager';
 import { ChildProcessArgs } from '@ohos.app.ability.ChildProcessArgs';
 import { ChildProcessOptions } from '@ohos.app.ability.ChildProcessOptions';

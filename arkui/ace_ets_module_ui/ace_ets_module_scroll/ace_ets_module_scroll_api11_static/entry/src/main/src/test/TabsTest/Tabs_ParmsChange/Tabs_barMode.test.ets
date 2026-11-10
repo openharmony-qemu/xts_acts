@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import inspector from '@ohos.arkui.inspector';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
@@ -25,6 +25,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BarMode } from '@ohos.arkui.component';
 
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function Tabs_barMode() {
   describe('Tabs_barMode', () => {
     beforeEach(async (): Promise<void> => {
@@ -91,19 +92,13 @@ it('testTabsBarModeFixed_static_01', Level.LEVEL0, async (done: () => void): Pro
         let Tabs_barMode_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_011');
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
-        await driver.swipe((Math.round(Tabs_barMode_011.right -
-          ((Tabs_barMode_011.right - Tabs_barMode_011.left) / 6))).toInt(),
-          (Math.round(Tabs_barMode_011.top + ((Tabs_barMode_011.bottom - Tabs_barMode_011.top) / 2))).toInt(),
-          (Math.round(Tabs_barMode_011.left + ((Tabs_barMode_011.right - Tabs_barMode_011.left) / 6))).toInt(),
-          (Math.round(Tabs_barMode_011.top + ((Tabs_barMode_011.bottom - Tabs_barMode_011.top) / 2))).toInt());
+        await driver.swipeBetween({ x: (Math.round(Tabs_barMode_011.right -
+          ((Tabs_barMode_011.right - Tabs_barMode_011.left) / 6))).toInt(), y: (Math.round(Tabs_barMode_011.top + ((Tabs_barMode_011.bottom - Tabs_barMode_011.top) / 2))).toInt(), displayId: displayID.toInt() }, { x: (Math.round(Tabs_barMode_011.left + ((Tabs_barMode_011.right - Tabs_barMode_011.left) / 6))).toInt(), y: (Math.round(Tabs_barMode_011.top + ((Tabs_barMode_011.bottom - Tabs_barMode_011.top) / 2))).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(1000);
         let Tabs_barMode_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_002');
         let Tabs_barMode_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_012');
-        await driver.swipe((Math.round(Tabs_barMode_012.right -
-          ((Tabs_barMode_012.right - Tabs_barMode_012.left) / 6))).toInt(),
-          (Math.round(Tabs_barMode_012.top + ((Tabs_barMode_012.bottom - Tabs_barMode_012.top) / 2))).toInt(),
-          (Math.round(Tabs_barMode_012.left + ((Tabs_barMode_012.right - Tabs_barMode_012.left) / 6))).toInt(),
-          (Math.round(Tabs_barMode_012.top + ((Tabs_barMode_012.bottom - Tabs_barMode_012.top) / 2))).toInt());
+        await driver.swipeBetween({ x: (Math.round(Tabs_barMode_012.right -
+          ((Tabs_barMode_012.right - Tabs_barMode_012.left) / 6))).toInt(), y: (Math.round(Tabs_barMode_012.top + ((Tabs_barMode_012.bottom - Tabs_barMode_012.top) / 2))).toInt(), displayId: displayID.toInt() }, { x: (Math.round(Tabs_barMode_012.left + ((Tabs_barMode_012.right - Tabs_barMode_012.left) / 6))).toInt(), y: (Math.round(Tabs_barMode_012.top + ((Tabs_barMode_012.bottom - Tabs_barMode_012.top) / 2))).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(1000);
         let Tabs_barMode_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_003');
         let Tabs_barMode_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_013');

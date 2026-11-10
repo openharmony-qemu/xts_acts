@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /**
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium-static/src/main/indexStatic";
 import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
@@ -21,23 +21,33 @@ import http from '@ohos.net.http';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'HttpTestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
+
 let httpRequest = http.createHttp();
+
+class Header {
+  public contentType: string;
+
+  constructor(contentType: string) {
+    this.contentType = contentType;
+  }
+}
 
 const ExpectFail = () => {
   try {
     expect().assertFail();
   } catch (err) {
-    console.info("expectInfo", `test failed`);
+    hilog.info(domain, tag, "expectInfo", `test failed`);
   }
 }
 const ExpectTrue = (n: boolean) => {
   try {
     expect(n).assertTrue();
   } catch (err) {
-    console.info("expectInfo", `test sucess`);
+    hilog.info(domain, tag, "expectInfo", `test sucess`);
   }
 }
-export default function httpNoPTest() {
+
+export default function httpNoPTest(): void {
 
   describe("HttpNoPTest", (): void => {
 
@@ -153,30 +163,146 @@ export default function httpNoPTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("testNetMgrHttpRequestNop_static__0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let caseName: string = 'testNetMgrHttpRequestNop_static__0400';
-      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-      try{
-        httpRequest.request("xxx").then((data:http.HttpResponse) => {
-          hilog.info(domain, tag, '%{public}s', caseName +' request success ');
-          ExpectFail();
-          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-          done();
-        }).catch((error: Error) => {
-          let err = error as BusinessError;
-          hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+    it("testNetMgrHttpRequestNop_static__0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetMgrHttpRequestNop_static__0400';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          httpRequest.request("xxx").then((data: http.HttpResponse) => {
+            hilog.info(domain, tag, '%{public}s', caseName + ' request success ');
+            ExpectFail();
+            hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+            done();
+          }).catch((error: Error) => {
+            let err = error as BusinessError;
+            hilog.info(domain, tag, '%{public}s', caseName + '  get error is ' + JSON.stringify(err));
+            ExpectTrue(err.code === 201);
+            hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+            done();
+          });
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, '%{public}s', caseName + ' catch error in ' + JSON.stringify(err))
           ExpectTrue(err.code === 201);
-          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+          hilog.info(domain, tag, '%{public}s', caseName + '--test end');
           done();
-        });
-      }catch (err) {
-        err = err as BusinessError;
-        hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-        ExpectTrue(err.code === 201);
-        hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
-        done();
-      }
-    })
+        }
+      })
 
+    /**
+     * @tc.name   SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Promise_static_0100
+     * @tc.number SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Promise_0100
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Promise_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, 'httpTag', '%{public}s',
+          'SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Promise_static_0100 begin');
+        try {
+          let promise = httpRequest.requestInStream("EXAMPLE_URL", {
+            method: http.RequestMethod.GET,
+            connectTimeout: 60000,
+            readTimeout: 60000,
+            header: new Header('application/json')
+          });
+          promise.then((data: int) => {
+            hilog.info(0x0000, 'httpTag', '%{public}s',
+              'SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Promise_static_0100 success');
+            expect().assertFail();
+            done();
+          }).catch((error) => {
+            const err = error as BusinessError;
+            hilog.error(0x0000, 'httpTag', '%{public}s',
+              'SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Promise_static_0100 ' +
+                JSON.stringify(err));
+            expect(err?.code).assertEqual(201);
+            done();
+          });
+        } catch (error) {
+          hilog.error(0x0000, 'httpTag', '%{public}s',
+            'SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Promise_static_0100 failed ' +
+              JSON.stringify(error));
+          ExpectTrue(error.code === 201);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Callback_static_0200
+     * @tc.number SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Callback_0200
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Callback_static_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, 'httpTag', '%{public}s',
+          'SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Callback_static_0200 begin');
+        try {
+          httpRequest.requestInStream("EXAMPLE_URL", {
+            method: http.RequestMethod.GET,
+            connectTimeout: 60000,
+            readTimeout: 60000,
+            header: new Header('application/json')
+          }, (err: BusinessError<void> | null, data: int | undefined) => {
+            if (err?.code != 0) {
+              hilog.error(0x0000, 'httpTag', '%{public}s',
+                'SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Callback_static_0200 failed ' +
+                  JSON.stringify(err));
+              expect(err?.code).assertEqual(201);
+              done();
+            } else {
+              hilog.info(0x0000, 'httpTag', '%{public}s',
+                'SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Callback_static_0200 success');
+              expect().assertFail();
+              done();
+            }
+          })
+        } catch (error) {
+          hilog.error(0x0000, 'httpTag', '%{public}s',
+            'SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Callback_static_0200 failed ' +
+              JSON.stringify(error));
+          ExpectTrue(error?.code === 201);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_Communication_NetStack_Http_RequestInStream_Callback_static_0300
+     * @tc.number SUB_Communication_NetStack_Http_RequestInStream_Callback_0300
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Communication_NetStack_Http_RequestInStream_Callback_static_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, 'httpTag', '%{public}s',
+          'SUB_Communication_NetStack_Http_RequestInStream_Callback_static_0300 begin');
+        try {
+          httpRequest.requestInStream("EXAMPLE_URL", (err: BusinessError<void> | null, data: int | undefined) => {
+            if (err?.code != 0) {
+              hilog.error(0x0000, 'httpTag', '%{public}s',
+                'SUB_Communication_NetStack_Http_RequestInStream_Callback_static_0300 failed ' + JSON.stringify(err));
+              expect(err?.code).assertEqual(201);
+              done();
+            } else {
+              hilog.info(0x0000, 'httpTag', '%{public}s',
+                'SUB_Communication_NetStack_Http_RequestInStream_Callback_static_0300 success');
+              expect().assertFail();
+              done();
+            }
+          })
+        } catch (error) {
+          hilog.error(0x0000, 'httpTag', '%{public}s',
+            'SUB_Communication_NetStack_Http_RequestInStream_Callback_static_0300 failed ' + JSON.stringify(error));
+          ExpectTrue(error?.code === 201);
+          done();
+        }
+      });
   })
 }

@@ -34,7 +34,6 @@ import arcSwiperEffectMode from './ArcSwiperTest/arcSwiperEffectMode.test'
 import gridEnableEditMode from './Grid/gridEnableEditMode.test'
 import gridEditModeChange from './Grid/gridEditModeChange.test'
 import gridEditModeOptions from './Grid/gridEditModeOptions.test'
-import GridScrollSnapStrategyTest from './Grid/GridScrollSnapStrategy.test'
 import listEnableEditMode from './List/listEnableEditMode.test'
 import listEditModeChange from './List/listEditModeChange.test'
 import LazyColumnLayoutProperties from './LazyColumnLayout/LazyColumnLayoutProperties.test'
@@ -49,6 +48,8 @@ import ColumnsTemplateItemFillPolicy from './LazyVGridLayout/ColumnsTemplateItem
 import ScrollScrollBarHeight from './Scroll/scrollScrollBarHeight.test'
 import ScrollGetScrollStateTest from './Scroll/ScrollGetScrollState.test'
 import ScrollWithMouseTest from './Scroll/ScrollWithMouse.test'
+import scrollKeyboardTest from './Scroll/ScrollKeyboard.test'
+import scrollKeyboardModifierTest from './Scroll/ScrollKeyboardModifier.test'
 import customListLayoutTest from './LazyDynamicLayout/customListLayoutTest.test';
 
 export default function testsuite() {
@@ -72,7 +73,6 @@ export default function testsuite() {
   gridEnableEditMode();
   gridEditModeChange();
   gridEditModeOptions();
-  GridScrollSnapStrategyTest();
   listEnableEditMode();
   listEditModeChange();
   headerFooterStickyGrid();
@@ -81,5 +81,7 @@ export default function testsuite() {
   ScrollScrollBarHeight();
   ScrollGetScrollStateTest();
   ScrollWithMouseTest();
+  scrollKeyboardTest();
+  scrollKeyboardModifierTest();
   customListLayoutTest();
 }

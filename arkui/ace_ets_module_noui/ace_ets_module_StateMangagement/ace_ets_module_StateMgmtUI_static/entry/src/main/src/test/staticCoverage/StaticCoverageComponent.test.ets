@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, Level } from '../../../../hypium/index';
+import { describe, expect, it, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import {
   BaseCustomComponent, BaseCustomDialog, Bindable, BuilderParameterCallback,
   CommonMethod, CustomBuilder, CustomComponent, CustomComponentInvokeOptions,

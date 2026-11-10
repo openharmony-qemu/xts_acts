@@ -68,6 +68,8 @@ import ColumnsTemplateItemFillPolicyModifier from './LazyVGridLayout/ColumnsTemp
 import gridEnableEditMode from './gridOptions/gridEnableEditMode.test';
 import gridEditModeOptions from './gridOptions/gridEditModeOptions.test';
 import gridEditModeChange from './gridOptions/gridEditModeChange.test';
+import gridKeyboardScrollVertical from './gridOptions/GridKeyboardScrollVertical.test';
+import gridKeyboardScrollHorizontal from './gridOptions/GridKeyboardScrollHorizontal.test';
 import gridScrollSnapStrategy from './gridOptions/GridScrollSnapStrategy.test';
 import gridSnapStrategyModifier from './gridOptions/GridSnapStrategyModifier.test';
 
@@ -127,6 +129,8 @@ export default function testsuite() {
   gridEnableEditMode()
   gridEditModeOptions()
   gridEditModeChange()
+  gridKeyboardScrollVertical()
+  gridKeyboardScrollHorizontal()
   gridScrollSnapStrategy()
   gridSnapStrategyModifier()
 }

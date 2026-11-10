@@ -13,10 +13,11 @@
  * limitations under the License.
  */
 
+import PresetTest from './Preset.test';
 import popupKeyboardAvoidMode from './popup/popupKeyboardAvoidMode.test'
 import detentSelection from './bindSheet/detentSelection.test'
 
 export default function testsuite() {
-  popupKeyboardAvoidMode()
+  PresetTest();
   detentSelection()
 }

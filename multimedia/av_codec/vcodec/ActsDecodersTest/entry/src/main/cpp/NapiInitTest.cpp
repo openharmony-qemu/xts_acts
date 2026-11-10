@@ -177,6 +177,10 @@ static void InitPush1(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("VideoMsvideo1DecCapApi0010", VideoMsvideo1DecCapApi0010));
     desc.push_back(XL("VideoMsvideo1DecCapApi0011", VideoMsvideo1DecCapApi0011));
     desc.push_back(XL("VideoMsvideo1DecCapApi0012", VideoMsvideo1DecCapApi0012));
+    desc.push_back(XL("VideoWmv1DecCapApi0001", VideoWmv1DecCapApi0001));
+    desc.push_back(XL("VideoWmv1DecCapApi0002", VideoWmv1DecCapApi0002));
+    desc.push_back(XL("VideoWmv1DecCapApi0003", VideoWmv1DecCapApi0003));
+    desc.push_back(XL("VideoWmv1DecCapApi0004", VideoWmv1DecCapApi0004));
     desc.push_back(XL("VideoVp8DecCapApi0001", VideoVp8DecCapApi0001));
     desc.push_back(XL("VideoVp9DecCapApi0001", VideoVp9DecCapApi0001));
     desc.push_back(XL("VideoAv1DecCapApi0001", VideoAv1DecCapApi0001));
@@ -231,6 +235,8 @@ static void InitPush2(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("VideoVp9DecFunction0020", VideoVp9DecFunction0020));
     desc.push_back(XL("VideoVp8DecFunction0021", VideoVp8DecFunction0021));
     desc.push_back(XL("VideoCinepakDecFunction0022", VideoCinepakDecFunction0022));
+    desc.push_back(XL("VideoWmv1DecFunction0023", VideoWmv1DecFunction0023));
+    desc.push_back(XL("VideoWmv1DecFunction0024", VideoWmv1DecFunction0024));
 }
 
 static napi_value Init(napi_env env, napi_value exports)

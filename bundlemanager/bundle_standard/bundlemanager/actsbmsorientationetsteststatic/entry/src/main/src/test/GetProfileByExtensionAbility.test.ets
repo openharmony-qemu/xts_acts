@@ -17,7 +17,7 @@
 import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 import manager from '@ohos.bundle.bundleManager';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium-static/src/main/indexStatic";
 
 const MODULE_NAME: string = "entry";
 const MODULE_NAME_TEST: string = "entry1";

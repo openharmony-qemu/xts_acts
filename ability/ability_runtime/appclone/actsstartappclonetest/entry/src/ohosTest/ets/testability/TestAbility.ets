@@ -28,6 +28,15 @@ export default class TestAbility extends UIAbility {
         hilog.info(0x0000, 'testTag', '%{public}s', 'want param:' + JSON.stringify(want) ?? '');
         hilog.info(0x0000, 'testTag', '%{public}s', 'launchParam:'+ JSON.stringify(launchParam) ?? '');
         AppStorage.setOrCreate<common.UIAbilityContext>("testAbilityContext", this.context);
+        try {
+            this.context.getApplicationContext().getCurrentAppCloneIndex();
+            AppStorage.setOrCreate<boolean>('appCloneSupport', true);
+        } catch (err) {
+            console.info(`testTag error, errorCode: ${err?.code}`);
+            if (err.code == 16000071) {
+                AppStorage.setOrCreate<boolean>('appCloneSupport', false);
+            }
+        }
         let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator;
         abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
         let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 interface GeneratedObjectLiteralInterface_1 {
@@ -1903,7 +1903,7 @@ export default function typeArrayInt16ArrayTest(): void {
           let sum: number = 0;
           for (let j = 0; j < kernelSize; j++) {
             const index = (i + j - halfKernel).toInt();
-            const value = index >= 0 && index < data.length ? data[index] : 0;
+            const value = index >= 0 && index < data.length ? data[index] : 0.0;
             sum += value * kernel[j];
           }
           result[i] = Math.round(sum);
@@ -2539,7 +2539,7 @@ export default function typeArrayInt16ArrayTest(): void {
         const mask = 1 << (bits - 1);
         value = value & ((1 << bits) - 1);
 
-        return (value & mask) ? value | (0xFFFF ^ ((1 << bits) - 1)) : value;
+        return (value & mask) ? Long.toDouble(value | (0xFFFF ^ ((1 << bits) - 1))) : value;
       };
 
 

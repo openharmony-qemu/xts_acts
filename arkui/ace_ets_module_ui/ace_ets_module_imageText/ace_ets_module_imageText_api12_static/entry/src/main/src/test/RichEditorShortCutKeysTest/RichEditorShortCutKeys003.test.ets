@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -34,6 +34,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function RichEditorShortCutKeys003() {
   describe('RichEditorShortCutKeys003', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,9 +58,10 @@ export default function RichEditorShortCutKeys003() {
           console.info("push RichEditorShortCutKeys003 success");
         }
       } catch (err) {
-        console.error("push RichEditorShortCutKeys003 page error: " + err);
+        console.log("push RichEditorShortCutKeys003 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
@@ -74,10 +76,18 @@ export default function RichEditorShortCutKeys003() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorShortCutKeys003')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
-      driver.triggerKey(KeyCode.KEYCODE_MOVE_HOME);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_MOVE_HOME, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let get_position = await (driver.findComponent(ON.id('get_position')) as Promise<Component>);
@@ -89,28 +99,44 @@ export default function RichEditorShortCutKeys003() {
       await CommonFunc.sleep(500);
       expect(positionNumText).assertEqual('positionNum:0');
 
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await get_position.click();
       await CommonFunc.sleep(500);
       positionNumText = await positionNum.getText();
       await CommonFunc.sleep(500);
       expect(positionNumText).assertEqual('positionNum:1');
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await get_position.click();
       await CommonFunc.sleep(500);
       positionNumText = await positionNum.getText();
       await CommonFunc.sleep(500);
       expect(positionNumText).assertEqual('positionNum:2');
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await get_position.click();
       await CommonFunc.sleep(500);
       positionNumText = await positionNum.getText();
       await CommonFunc.sleep(500);
       expect(positionNumText).assertEqual('positionNum:4');
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await get_position.click();
       await CommonFunc.sleep(500);
@@ -140,28 +166,44 @@ export default function RichEditorShortCutKeys003() {
       await CommonFunc.sleep(500);
       expect(positionNumText).assertEqual('positionNum:5');
 
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await get_position.click();
       await CommonFunc.sleep(500);
       positionNumText = await positionNum.getText();
       await CommonFunc.sleep(500);
       expect(positionNumText).assertEqual('positionNum:4');
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await get_position.click();
       await CommonFunc.sleep(500);
       positionNumText = await positionNum.getText();
       await CommonFunc.sleep(500);
       expect(positionNumText).assertEqual('positionNum:2');
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await get_position.click();
       await CommonFunc.sleep(500);
       positionNumText = await positionNum.getText();
       await CommonFunc.sleep(500);
       expect(positionNumText).assertEqual('positionNum:1');
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await get_position.click();
       await CommonFunc.sleep(500);

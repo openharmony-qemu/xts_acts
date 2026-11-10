@@ -27,7 +27,7 @@ import {
   Level,
   TestType,
   Size
-} from "../../../../hypium/index"
+} from "@ohos/hypium-static/src/main/indexStatic"
 import {
   Driver,
   Component,
@@ -57,12 +57,12 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 
+let displayID: Int = 0;
 export default function RelativeChain4() {
   describe('RelativeChain4', () => {
     beforeAll(async () => {
       
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.other.static", "EntryAbility")
-      
     });
 
     beforeEach(async (): Promise<void> => {
@@ -81,9 +81,10 @@ export default function RelativeChain4() {
         }
 
       } catch (err) {
-        console.error("push RelativeChain4 page error:" + err);
+        console.log("push RelativeChain4 page error:" + err);
       }
       console.info("RelativeChain4 foreEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
 
     });
     afterEach(async () => {
@@ -106,8 +107,12 @@ it('RelativeChain4_static_001', Level.LEVEL3, async (done: () => void): Promise<
       await CommonFunc.sleep(1000);
       let rel = CommonFunc.getComponentRect('RelativeChain4');
       let driver: Driver = Driver.create();
-      await driver.mouseClick({ x: Math.round(rel.left + UIContext.resolveUIContext()!.vp2px(50)).toInt(), y: Math.round(rel.top + UIContext.resolveUIContext()!.vp2px(80)).toInt() },
-        MouseButton.MOUSE_BUTTON_LEFT);
+      try {
+        await driver.mouseClick({ x: Math.round(rel.left + UIContext.resolveUIContext()!.vp2px(50)).toInt(), y: Math.round(rel.top + UIContext.resolveUIContext()!.vp2px(80)).toInt(), displayId: displayID },
+          MouseButton.MOUSE_BUTTON_LEFT);
+      } catch (err) {
+        console.log('driver.mouseClick error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('RelativeChainText');
       await CommonFunc.sleep(200);
@@ -135,8 +140,12 @@ it('RelativeChain4_static_002', Level.LEVEL3, async (done: () => void): Promise<
       await CommonFunc.sleep(1000);
       let rel = CommonFunc.getComponentRect('RelativeChain42');
       let driver: Driver = Driver.create();
-      await driver.mouseClick({ x: Math.round(rel.left + UIContext.resolveUIContext()!.vp2px(50)).toInt(), y: Math.round(rel.top + UIContext.resolveUIContext()!.vp2px(80)).toInt() },
-        MouseButton.MOUSE_BUTTON_LEFT);
+      try {
+        await driver.mouseClick({ x: Math.round(rel.left + UIContext.resolveUIContext()!.vp2px(50)).toInt(), y: Math.round(rel.top + UIContext.resolveUIContext()!.vp2px(80)).toInt(), displayId: displayID },
+          MouseButton.MOUSE_BUTTON_LEFT);
+      } catch (err) {
+        console.log('driver.mouseClick error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('RelativeChainText');
       await CommonFunc.sleep(200);

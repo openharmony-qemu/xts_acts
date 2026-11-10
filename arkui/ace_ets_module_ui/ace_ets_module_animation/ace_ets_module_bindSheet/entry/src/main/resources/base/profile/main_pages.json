@@ -17,6 +17,7 @@
     "MainAbility/pages/bindSheet/scrollBarState",
     "MainAbility/pages/bindSheet/titleBarBackgroundBlur",
     "MainAbility/pages/bindSheet/titleBarHoverMode",
+    "MainAbility/pages/bindSheet/safeAreaPadding",
     "MainAbility/pages/Panel/Panel",
     "MainAbility/pages/Panel/Index",
     "MainAbility/pages/Panel/PanelUI",

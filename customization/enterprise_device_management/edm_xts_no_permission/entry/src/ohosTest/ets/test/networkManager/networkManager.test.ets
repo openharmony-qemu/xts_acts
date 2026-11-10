@@ -184,6 +184,8 @@ export default function networkManagerTest() {
     testQueryApn();
 
     testSetEthernetConfig();
+
+    testGetSharedList();
   })
 }
 
@@ -873,6 +875,34 @@ function testSetEthernetConfig() {
         expect(Number(error.code) === 801).assertTrue();
       } else {
         expect(Number(error.code) === 201).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetSharedList() {
+  /**
+   * @tc.name   test_get_shared_list_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_SHARED_LIST_JS_0001
+   * @tc.desc   test networkManager getSharedList with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_shared_list_0001", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      networkManager.getSharedList();
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_get_shared_list_0001 error 201 or 801 is expected, actually catch: ' + error.code);
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(201);
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);

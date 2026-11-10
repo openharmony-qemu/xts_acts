@@ -1,0 +1,8 @@
+{
+  "name": "acts-inputmethod-inapp-proxy",
+  "version": "1.0.0",
+  "modelVersion": "26.0.0",
+  "devDependencies": {
+    "@ohos/hypium-dynamic": "file:../../../tools/hypium_prepare/hypium-dynamic.har"
+  }
+}

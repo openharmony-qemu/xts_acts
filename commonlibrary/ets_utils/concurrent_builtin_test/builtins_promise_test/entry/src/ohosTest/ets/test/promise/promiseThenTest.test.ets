@@ -2473,5 +2473,31 @@ export default function promiseThenTest() {
         'chain-2', 'nested-1', 'nested-2', 'chain-3'
       ]);
     });
+
+    /**
+     * @tc.number SUB_BUILTINS_PROMISE_THEN_MICROTASK_TEST_0100
+     * @tc.name testPromiseThen0101
+     * @tc.desc Test then callback runs as a microtask after the synchronous stack
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testPromiseThen0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const log: string[] = [];
+      const promise = Promise.resolve(1);
+      promise.then(() => {
+        log.push('micro');
+      }).catch((err: Error) => {
+        console.info(`testPromiseThen0101 then chain error: ${err}`);
+      });
+      log.push('sync');
+      expect(log.length).assertEqual(1);
+      expect(log[0]).assertEqual('sync');
+
+      await sleep(10);
+      expect(log.length).assertEqual(2);
+      expect(log[1]).assertEqual('micro');
+      done();
+    });
   })
 }

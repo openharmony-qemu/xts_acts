@@ -21,7 +21,7 @@ struct ExceptionPromptV2Example {
   build() {
     Column() {
       Scroll() {
-        Column({ space: 12 }) {
+        Column() {
           Text('测试5: 动态更新属性')
             .fontSize(16)
             .fontWeight(FontWeight.Medium)
@@ -47,7 +47,7 @@ struct DynamicUpdateTest {
       ExceptionPromptV2({
         options: new PromptOptionsV2({
           marginType: MarginTypeV2.DEFAULT_MARGIN,
-          marginTop: 160,
+          marginTop: 100,
           tip: this.dynamicTip,
           isShown: this.dynamicIsShown
         })

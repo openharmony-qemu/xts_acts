@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Point} from '@ohos.UiTest';
 import hilog from '@ohos.hilog'
@@ -28,6 +28,7 @@ import CommonFunc from "../../../ets/MainAbility/common/Common";
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function RichEditor1() {
   describe('RichEditor1', () => {
     beforeAll(async (): Promise<void> => {
@@ -35,7 +36,6 @@ export default function RichEditor1() {
 
       ;
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api12.static", "EntryAbility");
-      ;
     });
     beforeEach(async (): Promise<void> => {
       console.info("RichEditor1 beforeEach start");
@@ -56,9 +56,10 @@ export default function RichEditor1() {
           // console.info("push RichEditor1 page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push RichEditor1 page error:" + err);
+        console.log("push RichEditor1 page error:" + err);
       }
       console.info("RichEditor1 beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     afterEach(async (): Promise<void> => {
       let driver = Driver.create();
@@ -89,7 +90,11 @@ export default function RichEditor1() {
         await CommonFunc.sleep(500);
         const caretColorPoint = await (RichEditor_caretColor?.getBoundsCenter() as Promise<Point>)
         await CommonFunc.sleep(500);
-        await driver.drag(textPoint.x,textPoint.y,caretColorPoint.x,caretColorPoint.y);
+        try {
+          await driver.dragBetween({ x: textPoint.x, y: textPoint.y, displayId: displayID }, { x: caretColorPoint.x, y: caretColorPoint.y, displayId: displayID });
+        } catch (err) {
+          console.log('driver.dragBetween error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(500);
         let text = await (RichEditor_caretColor?.getText() as Promise<String>);
         await CommonFunc.sleep(500);

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import bundle from '@ohos.bundle.bundleManager';
-import { describe, it, expect, TestType, Size, Level } from '../../../hypium/index';
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-static/src/main/indexStatic';
 
 const BUNDLE_NAME = 'ohos.acts.getbundleinstallstatus.static.enterprise';
 const TAG = 'testTag';

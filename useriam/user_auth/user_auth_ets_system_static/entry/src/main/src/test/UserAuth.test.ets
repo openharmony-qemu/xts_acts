@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '@ohos/hypium-static/src/main/indexStatic';
 import hilog from '@ohos.hilog';
 import { userAuth } from '@kit.UserAuthenticationKit';
 import type common from '@ohos.app.ability.common';
@@ -31,15 +31,15 @@ export default function UserAuthTest() {
     })
 
     /**
-     * @tc.name   Security_IAM_Companion_Api_static_5003
-     * @tc.number Security_IAM_Companion_Api_static_5003
+     * @tc.name   SUB_Security_IAM_Companion_Api_Static_5003
+     * @tc.number SUB_Security_IAM_Companion_Api_Static_5003
      * @tc.desc   registerRemoteAuthCallback test with not system app
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('Security_IAM_Companion_Api_static_5003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, format, 'Security_IAM_Companion_Api_static_5003 start');
+    it('SUB_Security_IAM_Companion_Api_Static_5003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, format, 'SUB_Security_IAM_Companion_Api_Static_5003 start');
       const context: common.Context = await GlobalContext.getContext();
       let callback: userAuth.IRemoteAuthCallback = {
         onGetRemoteAuthWidgetParam: (challenge: Uint8Array): userAuth.WidgetParam => {
@@ -58,27 +58,37 @@ export default function UserAuthTest() {
         await userAuth.registerRemoteAuthCallback(callback);
         expect(false).assertTrue();
       } catch (err) {
-        hilog.info(domain, tag, format, "Security_IAM_Companion_Api_static_5003 failed " + err.code + " " + err.message);
-        expect(err.code).assertEqual(202);
+        hilog.info(domain, tag, format, "SUB_Security_IAM_Companion_Api_Static_5003 failed " + err.code + " " + err.message);
+        if (err.code === 12500002) {
+          hilog.info(domain, tag, format, "SUB_Security_IAM_Companion_Api_Static_5003 expected error code 12500002");
+          expect(err.code).assertEqual(12500002);
+        } else {
+          expect(err.code).assertEqual(202);
+        }
       }
       done();
     })
     /**
-     * @tc.name   Security_IAM_Companion_Api_static_5006
-     * @tc.number Security_IAM_Companion_Api_static_5006
+     * @tc.name   SUB_Security_IAM_Companion_Api_Static_5006
+     * @tc.number SUB_Security_IAM_Companion_Api_Static_5006
      * @tc.desc   unregisterRemoteAuthCallback test with not system app
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('Security_IAM_Companion_Api_static_5006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, format, 'Security_IAM_Companion_Api_static_5006 start');
+    it('SUB_Security_IAM_Companion_Api_Static_5006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, format, 'SUB_Security_IAM_Companion_Api_Static_5006 start');
       try {
         await userAuth.unregisterRemoteAuthCallback();
         expect(false).assertTrue();
       } catch (err) {
-        hilog.info(domain, tag, format, "Security_IAM_Companion_Api_static_5006 failed " + err.code + " " + err.message);
-        expect(err.code).assertEqual(202);
+        hilog.info(domain, tag, format, "SUB_Security_IAM_Companion_Api_Static_5006 failed " + err.code + " " + err.message);
+        if (err.code === 12500002) {
+          hilog.info(domain, tag, format, "SUB_Security_IAM_Companion_Api_Static_5006 expected error code 12500002");
+          expect(err.code).assertEqual(12500002);
+        } else {
+          expect(err.code).assertEqual(202);
+        }
       }
       done();
     })

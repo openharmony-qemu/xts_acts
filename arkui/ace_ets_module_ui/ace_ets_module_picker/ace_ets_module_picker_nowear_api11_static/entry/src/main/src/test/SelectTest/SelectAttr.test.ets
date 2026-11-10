@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from "../../../ets/MainAbility/common/Utils";
 import { Driver, ON, MouseButton } from '@ohos.UiTest';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
@@ -85,9 +85,18 @@ it('SelectAttr_static_001', Level.LEVEL1, async (done: () => void): Promise<void
 
         let obj2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
         await Utils.sleep(1000);
-        console.info("[SelectAttr_static_001] obj2 is: " + JSON.stringify(obj2));
-        expect(obj2.getArray("$children")[1].getArray("$children")[0].getElement('$attrs').getString("width"))
-          .assertEqual(obj1.getElement('$attrs').getString("width"));
+                // Inspector tree 与 byKey 两侧 width 字符串可能因浮点精度存在 0.01vp 差异
+        // (如 "199.99vp" vs "200.00vp")，解析为数值并取整后比较，避免精度误差导致的断言失败
+        let treeWidthStr = obj2.getArray("$children")[1].getArray("$children")[0].getElement('$attrs').getString("width");
+        let keyWidthStr = obj1.getElement('$attrs').getString("width");
+        let treeWidthVp = treeWidthStr.endsWith('px')
+          ? Math.round(UIContext.resolveUIContext()!.px2vp(parseFloat(treeWidthStr.replace('px', ''))))
+          : Math.round(parseFloat(treeWidthStr.replace('vp', '')));
+        let keyWidthVp = keyWidthStr.endsWith('px')
+          ? Math.round(UIContext.resolveUIContext()!.px2vp(parseFloat(keyWidthStr.replace('px', ''))))
+          : Math.round(parseFloat(keyWidthStr.replace('vp', '')));
+        console.info("[SelectAttr_static_001] treeWidthVp=" + treeWidthVp + ", keyWidthVp=" + keyWidthVp);
+        expect(treeWidthVp).assertEqual(keyWidthVp);
 
         console.info('[SelectAttr_static_001] END');
         done();

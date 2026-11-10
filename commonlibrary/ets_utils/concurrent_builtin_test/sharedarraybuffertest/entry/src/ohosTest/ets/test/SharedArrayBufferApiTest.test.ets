@@ -505,5 +505,23 @@ export default function SharedArrayBufferApiTest() {
       Done();
     });
 
+    /**
+     * @tc.name   testSharedArrayBufferToStringTag1400
+     * @tc.number SUB_MODULE_SHAREDARRAYBUFFER_API_TEST_1400
+     * @tc.desc   Verify SharedArrayBuffer toString returns [object SharedArrayBuffer]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSharedArrayBufferToStringTag1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (Done: Function) => {
+        const caseName = 'testSharedArrayBufferToStringTag1400';
+        console.info(`${caseName} test start`);
+        const sab = new SharedArrayBuffer(8);
+        expect(sab.toString()).assertEqual('[object SharedArrayBuffer]');
+        console.info(`${caseName} test end`);
+        Done();
+      });
+
   });
 }

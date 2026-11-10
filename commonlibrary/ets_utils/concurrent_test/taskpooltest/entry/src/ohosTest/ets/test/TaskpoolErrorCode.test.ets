@@ -12,14 +12,21 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { describe, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import {beforeAll, describe, it, expect, TestType, Level, Size} from '@ohos/hypium';
 import { ArkTSUtils, collections, HashMap, JSON, lang, taskpool } from '@kit.ArkTS';
 import { BusinessError } from '@ohos.base';
 import { delay, getTaskStateByTaskName } from '../utils/taskPoolCommon';
-import { inspectStatus, additionDelay, printArgs } from '../utils/taskPoolTask';
-
-import { testTransfer, Concurrent } from '../utils/taskPool';
+import { inspectStatus, additionDelay, printArgs } from '../utils/taskPoolTask';import { testTransfer, Concurrent } from '../utils/taskPool';
 import { Sleep } from '../utils/utils';
+
+
+function sleep(time: number): Promise<void> {
+  return new Promise<void>((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, time);
+  });
+}
 
 declare class ArkTools {
   static forceFullGC(): void;
@@ -138,8 +145,11 @@ function printTask(args: taskpool.Task): taskpool.Task {
 
 export default function TaskPoolErrorCodeTest() {
   describe('TaskPoolErrorCodeTest', () => {
+    beforeAll(async () => {
+      await sleep(200);
+    })
 
-    /**
+        /**
      * @tc.name   testTaskErrorCode0003
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_ERROR_CODE_0300
      * @tc.desc   Task sendData 10200006
@@ -1782,6 +1792,29 @@ export default function TaskPoolErrorCodeTest() {
       done();
     });
 
+    /**
+     * @tc.name   testTaskErrorCode0068
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_ERROR_CODE_6800
+     * @tc.desc   taskpool execute/SequenceRunner.execute normal path; 10200003 worker initialization failure is
+     *            system-level and cannot be triggered by an application, this case fixes the contract evidence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testTaskErrorCode0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const caseName = 'testTaskErrorCode0068';
+      console.info(`${caseName} test start`);
+      const task: taskpool.Task = new taskpool.Task(printArgs, 100);
+      const result = await taskpool.execute(task);
+      expect(result as number).assertEqual(100);
+
+      const runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
+      const sequenceTask: taskpool.Task = new taskpool.Task(printArgs, 200);
+      const sequenceResult = await runner.execute(sequenceTask);
+      expect(sequenceResult as number).assertEqual(200);
+      console.info(`${caseName} test end`);
+      done();
+    });
 
   });
 }

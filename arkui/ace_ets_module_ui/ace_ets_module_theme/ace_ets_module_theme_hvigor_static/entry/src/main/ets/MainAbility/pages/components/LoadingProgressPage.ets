@@ -58,6 +58,8 @@ struct LoadingProgressPage {
           .key(LoadingProgressKeys.loadingProgressWithTheme)
       }
     }
+    .padding(10)
+    .margin(10)
     .width('100%')
   }
 }

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-
-import { expect, Level, Size, TestType, beforeAll, beforeEach, afterEach, describe, it } from '../../../hypium/index';
+import { canIUse } from '@internal.full.global'
+import { expect, Level, Size, TestType, beforeAll, beforeEach, afterEach, describe, it } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Utils, startAbility, stopApplication } from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -88,38 +88,43 @@ export default function webOnPermissionRequest() {
      * @tc.level  LEVEL0
      */
     it('testPermissionRequestDenyGroupStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let driver = Driver.create();
-      await startAbility(bundleName, 'EntryAbility');
-      await Utils.msSleep(1000);
-      console.info('Finish startAbility')
-
-      let denyBtn = await driver.findComponent(ON.id('Deny'));
-      expect(denyBtn != null).assertTrue();
-      if (denyBtn != null) {
-        await denyBtn.click();
-        console.info('Finish denyBtn.click')
+      if(canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+        let driver = Driver.create();
+        await startAbility(bundleName, 'EntryAbility');
         await Utils.msSleep(1000);
-      }
+        console.info('Finish startAbility')
 
-      let openCameraBtn = await driver.findComponent(ON.text('开启摄像头'));
-      if (openCameraBtn != null) {
-        await openCameraBtn.click();
-        console.info('Finish openCameraBtn.click')
-        await Utils.msSleep(1000);
-      } else {
-        openCameraBtn = await driver.findComponent(ON.text('开启摄像头'));
+        let denyBtn = await driver.findComponent(ON.id('Deny'));
+        expect(denyBtn != null).assertTrue();
+        if (denyBtn != null) {
+          await denyBtn.click();
+          console.info('Finish denyBtn.click')
+          await Utils.msSleep(1000);
+        }
+
+        let openCameraBtn = await driver.findComponent(ON.text('开启摄像头'));
         if (openCameraBtn != null) {
           await openCameraBtn.click();
           console.info('Finish openCameraBtn.click')
           await Utils.msSleep(1000);
+        } else {
+          openCameraBtn = await driver.findComponent(ON.text('开启摄像头'));
+          if (openCameraBtn != null) {
+            await openCameraBtn.click();
+            console.info('Finish openCameraBtn.click')
+            await Utils.msSleep(1000);
+          }
         }
-      }
 
-      let denyText = await driver.findComponent(ON.id('deny_result'));
+        let denyText = await driver.findComponent(ON.id('deny_result'));
 
-      if (denyText != null) {
-        let text = await denyText.getText();
-        expect(text == 'deny').assertTrue();
+        if (denyText != null) {
+          let text = await denyText.getText();
+          expect(text == 'deny').assertTrue();
+        }
+      } else {
+        let flag = true;
+        expect(flag).assertTrue();
       }
 
       await Utils.msSleep(2000);
@@ -135,38 +140,43 @@ export default function webOnPermissionRequest() {
      * @tc.level  LEVEL1
      */
     it('testPermissionRequestGrantGroupStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let driver = Driver.create();
-      await startAbility(bundleName, 'EntryAbility');
-      await Utils.msSleep(1000);
-      console.info('Finish startAbility')
-
-      let grantBtn = await driver.findComponent(ON.id('Grant'));
-      expect(grantBtn != null).assertTrue();
-      if (grantBtn != null) {
-        await grantBtn.click();
-        console.info('Finish grantBtn.click')
-        await Utils.msSleep(1000);
-      }
-
-      let openCameraBtn = await driver.findComponent(ON.text('开启摄像头'));
-      if (openCameraBtn != null) {
-        await openCameraBtn.click();
-        console.info('Finish openCameraBtn.click')
-        await Utils.msSleep(1000);
-      } else {
-        openCameraBtn = await driver.findComponent(ON.text('开启摄像头'));
-        if (openCameraBtn != null) {
-          await openCameraBtn.click();
-          console.info('Finish openCameraBtn.click')
+      if(canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+          let driver = Driver.create();
+          await startAbility(bundleName, 'EntryAbility');
           await Utils.msSleep(1000);
-        }
-      }
+          console.info('Finish startAbility')
 
-      let grantText = await driver.findComponent(ON.id('grant_result'));
+          let grantBtn = await driver.findComponent(ON.id('Grant'));
+          expect(grantBtn != null).assertTrue();
+          if (grantBtn != null) {
+            await grantBtn.click();
+            console.info('Finish grantBtn.click')
+            await Utils.msSleep(1000);
+          }
 
-      if (grantText != null) {
-        let text = await grantText.getText();
-        expect(text == 'grant').assertTrue();
+          let openCameraBtn = await driver.findComponent(ON.text('开启摄像头'));
+          if (openCameraBtn != null) {
+            await openCameraBtn.click();
+            console.info('Finish openCameraBtn.click')
+            await Utils.msSleep(1000);
+          } else {
+            openCameraBtn = await driver.findComponent(ON.text('开启摄像头'));
+            if (openCameraBtn != null) {
+              await openCameraBtn.click();
+              console.info('Finish openCameraBtn.click')
+              await Utils.msSleep(1000);
+            }
+          }
+
+          let grantText = await driver.findComponent(ON.id('grant_result'));
+
+          if (grantText != null) {
+            let text = await grantText.getText();
+            expect(text == 'grant').assertTrue();
+          }
+        } else {
+          let flag = true;
+          expect(flag).assertTrue();
       }
 
       await Utils.msSleep(2000);

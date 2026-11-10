@@ -21,7 +21,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog';
 
-import { Hypium } from '../../../hypium/index';
+import { Hypium } from '@ohos/hypium-static/src/main/indexStatic';
 import testsuite from '../test/List.test';
 
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index'
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic'
 import router from '@ohos.router';
 import {  Driver,  ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -49,41 +49,47 @@ export default function CommonOffsetModifierUndefinedTest() {
     });
 
     /**
-     * @tc.number   CommonOffsetModifierUndefinedTest_static_0100
-     * @tc.name     CommonOffsetModifierUndefinedTest_static_0100
-     * @tc.desc     CommonOffsetModifierUndefinedTest_static_0100
+     * @tc.number   SUB_ARKUI_API_CommonOffsetModifierUndefinedTest_static_0100
+     * @tc.name     SUB_ARKUI_API_CommonOffsetModifierUndefinedTest_static_0100
+     * @tc.desc     SUB_ARKUI_API_CommonOffsetModifierUndefinedTest_static_0100
      * @tc.level    Level.LEVEL1
      */
-    it('CommonOffsetModifierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[CommonOffsetModifierUndefinedTest_static_0100] START');
-      let driver: Driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('MyText1');
-      await CommonFunc.sleep(1000);
+    it('SUB_ARKUI_API_CommonOffsetModifierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('[SUB_ARKUI_API_CommonOffsetModifierUndefinedTest_static_0100] START');
+        let driver: Driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('MyText1');
+        await CommonFunc.sleep(1000);
 
-      console.info('[CommonOffsetModifierUndefinedTest_static_0100] $attrs: ' +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      console.info('[CommonOffsetModifierUndefinedTest_static_0100] offset: ' +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('offset')));
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getElement('offset')))
-        .assertEqual('{"x":"15.00vp","y":"30.00vp"}');
+        console.info('[SUB_ARKUI_API_CommonOffsetModifierUndefinedTest_static_0100] $attrs: ' +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
+        console.info('[SUB_ARKUI_API_CommonOffsetModifierUndefinedTest_static_0100] offset: ' +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('offset')));
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getElement('offset')))
+          .assertEqual('{"x":"15.00vp","y":"30.00vp"}');
 
-      let changeBtn = await driver.findComponent(ON.id('Common_Offset'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      console.info('[CommonOffsetModifierUndefinedTest_static_0100] click Common_Offset');
-      strJson = inspector.getInspectorByKey('MyText1');
-      await CommonFunc.sleep(1000);
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getElement('offset')))
-        .assertEqual('{"x":"0.00px","y":"0.00px"}');
-      await CommonFunc.sleep(1000);
-      await (changeBtn?.click() as Promise<void>);
-      console.info('[CommonOffsetModifierUndefinedTest_static_0100] END');
-      done();
+        let changeBtn = await driver.findComponent(ON.id('Common_Offset'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        console.info('[SUB_ARKUI_API_CommonOffsetModifierUndefinedTest_static_0100] click Common_Offset');
+        strJson = inspector.getInspectorByKey('MyText1');
+        await CommonFunc.sleep(1000);
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getElement('offset')))
+          .assertEqual('{"x":"0.00px","y":"0.00px"}');
+        await CommonFunc.sleep(1000);
+        await (changeBtn?.click() as Promise<void>);
+        console.info('[SUB_ARKUI_API_CommonOffsetModifierUndefinedTest_static_0100] END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_CommonOffsetModifierUndefinedTest_static_0100] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
   })

@@ -26,7 +26,7 @@ import {
   Level,
   Size,
   TestType,
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils, { BoxManager } from '../Util.test';
 
 function setBoxValue(box: BooleanBox, val: boolean): boolean {

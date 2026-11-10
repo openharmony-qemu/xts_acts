@@ -80,6 +80,10 @@ import ChipGroupV2AbnormalItemStyleTest from './ChipGroupV2Test/ChipGroupV2Abnor
 import ChipGroupV2AbnormalSpacePaddingTest from './ChipGroupV2Test/ChipGroupV2AbnormalSpacePaddingTest.test';
 import ChipGroupV2AbnormalSuffixTest from './ChipGroupV2Test/ChipGroupV2AbnormalSuffixTest.test';
 import ChipGroupV2AbnormalComboTest from './ChipGroupV2Test/ChipGroupV2AbnormalComboTest.test';
+import ChipGroupOnItemsChangeTest from './ChipGroupTest/ChipGroupOnItemsChangeTest.test';
+import ChipGroupOnItemsChangeAbnormalTest from './ChipGroupTest/ChipGroupOnItemsChangeAbnormalTest.test';
+import ChipGroupV2OnItemsChangeTest from './ChipGroupV2Test/ChipGroupV2OnItemsChangeTest.test';
+import ChipGroupV2OnItemsChangeAbnormalTest from './ChipGroupV2Test/ChipGroupV2OnItemsChangeAbnormalTest.test';
 
 export default function testsuite(): void {
   ChipGroupItemOptionsPage2Test();
@@ -148,4 +152,9 @@ export default function testsuite(): void {
   ChipGroupV2AbnormalSpacePaddingTest();
   ChipGroupV2AbnormalSuffixTest();
   ChipGroupV2AbnormalComboTest();
+  
+  ChipGroupOnItemsChangeTest();
+  ChipGroupOnItemsChangeAbnormalTest();
+  ChipGroupV2OnItemsChangeTest();
+  ChipGroupV2OnItemsChangeAbnormalTest();
 }

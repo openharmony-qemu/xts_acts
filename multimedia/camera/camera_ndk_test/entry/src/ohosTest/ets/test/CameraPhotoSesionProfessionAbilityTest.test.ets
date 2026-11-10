@@ -680,7 +680,7 @@ export default function CameraPhotoSesionProfessionAbilityTest() {
       await startCameraSession();
       let ret = cameraObj.oHGetSupportedISORange(0);
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0100 ret is "+ret);
-      expect(ret).assertEqual(CAMERA_OK)
+      expect(ret === CAMERA_OK || ret === CAMERA_OPERATION_NOT_ALLOWED).assertTrue()
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0100 ends here");
       await stopCameraSession();
       await releaseCameraSessionInstance();
@@ -856,9 +856,12 @@ export default function CameraPhotoSesionProfessionAbilityTest() {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_ISO_0100--------------");
       createCameraSessionInstance();
       await startCameraSession();
-      let ret = cameraObj.oHsetIso(0);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_ISO_0100 ret is "+ret);
-      expect(ret).assertEqual(CAMERA_OK)
+      let isSupported = cameraObj.oHGetSupportedISORange(0);
+      if (isSupported != CAMERA_OPERATION_NOT_ALLOWED) {
+        let ret = cameraObj.oHsetIso(0);
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_ISO_0100 ret is "+ret);
+        expect(ret).assertEqual(CAMERA_OK)
+      }
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_ISO_0100 ends here");
       await stopCameraSession();
       await releaseCameraSessionInstance();

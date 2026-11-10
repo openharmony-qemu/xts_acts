@@ -17,7 +17,7 @@
 import { Entry, Text, Column, Component, Button, ClickEvent, Flex,
   FlexAlign,ItemAlign, Select, Color, Row, Font, SymbolEffectStrategy,
   SymbolGlyph, $r, Navigation, List, TextInput, ColumnSplit, TextAlign,
-  ColumnSplitDividerStyle, ConstraintSizeOptions } from '@ohos.arkui.component'
+  ColumnSplitDividerStyle, ConstraintSizeOptions, HorizontalAlign } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
@@ -44,5 +44,6 @@ struct Index {
           .constraintSize(this.isUndefined ? undefined : { maxWidth: 200 } as ConstraintSizeOptions)
       }
     }
+    .alignItems(HorizontalAlign.Center)
   }
 }

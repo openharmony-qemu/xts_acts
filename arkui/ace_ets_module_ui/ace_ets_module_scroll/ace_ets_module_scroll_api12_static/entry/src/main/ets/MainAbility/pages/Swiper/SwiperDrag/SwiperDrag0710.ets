@@ -61,5 +61,7 @@ struct SwiperDrag0710 {
 
       Text(this.indexstr).key('swiper_drag_0710')
     }
+    .padding(10)
+    .margin(10)
   }
 }

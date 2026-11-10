@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterEach, beforeEach, describe, expect, it, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router'
 import { Component, Driver, ON } from '@kit.TestKit'
 import events_emitter from '@ohos.events.emitter';

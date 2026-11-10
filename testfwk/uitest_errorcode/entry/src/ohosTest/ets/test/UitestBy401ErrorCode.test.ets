@@ -47,7 +47,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(OldErrorCode);
       }
       console.log(`${TestTag}, testApi8_BY_text_5 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi8_BY_key_5
@@ -74,7 +74,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(OldErrorCode);
       }
       console.log(`${TestTag}, testApi8_BY_text_5 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi8_BY_id_5
@@ -105,7 +105,7 @@ export default function uitestEnumTest() {
         expect().assertFail();
       }
       console.log(`${TestTag}, testApi8_BY_id_5 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi8_BY_type_5
@@ -132,7 +132,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(OldErrorCode);
       }
       console.log(`${TestTag}, testApi8_BY_type_5 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi8_BY_isBefore_5
@@ -159,7 +159,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(OldErrorCode);
       }
       console.log(`${TestTag}, testApi8_BY_isBefore_5 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi8_BY_isAfter_5
@@ -186,7 +186,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(OldErrorCode);
       }
       console.log(`${TestTag}, testApi8_BY_isAfter_5 END`);
-    })
+    }, undefined, 'emulator')
 
   })
 }

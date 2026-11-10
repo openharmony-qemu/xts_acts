@@ -48,6 +48,8 @@ struct SwiperAttribute_1 {
         Text('6')
       }.width(350).height(350).backgroundColor(0xD2B48C).id('swiperAttributeColumn_106')
     }
+    .padding(10)
+    .margin(10)
     .id('swiperAttribute_1')
     .loop(true)
     .displayCount(1)

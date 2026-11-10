@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index'
+import { describe, beforeEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic'
 import router from '@ohos.router';
 import {
   Component,
@@ -49,39 +49,45 @@ export default function heightModifierUndefinedTest() {
     });
 
     /**
-     * @tc.number    heightModifierUndefinedTest_0100
-     * @tc.name      heightModifierUndefinedTest_0100
-     * @tc.desc      heightModifierUndefinedTest_0100
+     * @tc.number    SUB_ARKUI_API_heightModifierUndefinedTest_0100
+     * @tc.name      SUB_ARKUI_API_heightModifierUndefinedTest_0100
+     * @tc.desc      SUB_ARKUI_API_heightModifierUndefinedTest_0100
      * @tc.level     0
      */
-    it('heightModifierUndefinedTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('heightModifierUndefinedTest_0100 START');
-      await CommonFunc.sleep(500);
-      let strJson = inspector.getInspectorByKey('Common_heightModifier');
-      let obj = JSON.parseJsonElement(strJson);
-      await CommonFunc.sleep(500);
-      console.info('Test component obj.height is: ' + obj.getElement('$attrs').getString('height'));
-      expect(obj.getElement('$attrs').getString('height')).assertEqual('50.00vp');
+    it('SUB_ARKUI_API_heightModifierUndefinedTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        console.info('SUB_ARKUI_API_heightModifierUndefinedTest_0100 START');
+        await CommonFunc.sleep(500);
+        let strJson = inspector.getInspectorByKey('Common_heightModifier');
+        let obj = JSON.parseJsonElement(strJson);
+        await CommonFunc.sleep(500);
+        console.info('Test component obj.height is: ' + obj.getElement('$attrs').getString('height'));
+        expect(obj.getElement('$attrs').getString('height')).assertEqual('50.00vp');
 
-      let driver = Driver.create();
-      let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
-      await (btn_true?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        let driver = Driver.create();
+        let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+        await (btn_true?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      let strJson1 = inspector.getInspectorByKey('Common_heightModifier');
-      let obj1 = JSON.parseJsonElement(strJson1);
-      await CommonFunc.sleep(500);
-      console.info('Test component obj.height is: ' + obj1.getElement('$attrs').getString('height'));
+        let strJson1 = inspector.getInspectorByKey('Common_heightModifier');
+        let obj1 = JSON.parseJsonElement(strJson1);
+        await CommonFunc.sleep(500);
+        console.info('Test component obj.height is: ' + obj1.getElement('$attrs').getString('height'));
 
-      let strJsonBase = inspector.getInspectorByKey('Common_height_base');
-      let objBase = JSON.parseJsonElement(strJsonBase);
-      await CommonFunc.sleep(500);
-      console.info('Test component obj.height is: ' + objBase.getElement('$attrs').getString('height'));
+        let strJsonBase = inspector.getInspectorByKey('Common_height_base');
+        let objBase = JSON.parseJsonElement(strJsonBase);
+        await CommonFunc.sleep(500);
+        console.info('Test component obj.height is: ' + objBase.getElement('$attrs').getString('height'));
 
-      expect(obj1.getElement('$attrs').getString('height')).assertEqual(objBase.getElement('$attrs').getString('height'));
+        expect(obj1.getElement('$attrs').getString('height')).assertEqual(objBase.getElement('$attrs').getString('height'));
 
-      console.info('[heightModifierUndefinedTest_0100] END');
-      done();
+        console.info('[SUB_ARKUI_API_heightModifierUndefinedTest_0100] END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_heightModifierUndefinedTest_0100] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

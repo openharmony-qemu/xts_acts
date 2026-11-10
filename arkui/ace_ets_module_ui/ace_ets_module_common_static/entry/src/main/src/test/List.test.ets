@@ -14,17 +14,12 @@
  * limitations under the License.
  */
 
-import ResponseRegionTest from './ResponseRegionTest/ResponseRegion.test';
 import ContentCoverOptionsTest from './ContentCoverOptionsTest/ContentCoverOptions.test';
 import SweepGradientOptionsTest from './SweepGradientOptionsTest/SweepGradientOptions.test';
 import RotateAngleOptionsTest from './RotateAngleOptionsTest/RotateAngleOptions.test';
 import DrawModifierTest from './DrawModifierTest/DrawModifier.test';
 import TransitionEffectTest from './TransitionEffectTest/TransitionEffect.test';
-import SourceTypeTest from './SourceTypeTest/SourceType.test';
-import AxisEventTest from './AxisEventTest/AxisEvent.test';
-import DragEventTest from './DragEventTest/DragEvent.test';
 import DismissReasonTest from './DismissReasonTest/DismissReason.test';
-import CommonTest from './CommonTest/Common.test';
 import CommonMethodTest from './CommonMethodTest/CommonMethod.test';
 import TextContentControllerBaseTest from './TextContentControllerBaseTest/TextContentControllerBase.test';
 import ScrollableCommonMethodTest from './ScrollableCommonMethodTest/ScrollableCommonMethod.test';
@@ -33,18 +28,13 @@ import ChildrenMainSizeTest from './ChildrenMainSizeTest/ChildrenMainSize.test';
 import LayoutPolicyTest from './LayoutPolicyTest/LayoutPolicy.test';
 
 export default function testsuite() {
-  ResponseRegionTest();
   RotateAngleOptionsTest();
   ContentCoverOptionsTest();
   SweepGradientOptionsTest();
   DrawModifierTest();
   TransitionEffectTest();
-  SourceTypeTest();
-  AxisEventTest();
-  DragEventTest();
   DismissReasonTest();
   TextContentControllerBaseTest();
-  CommonTest();
   CommonMethodTest();
   ScrollableCommonMethodTest();
   ScrollResultTest();

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -34,6 +34,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function RichEditorShortCutKeys023() {
   describe('RichEditorShortCutKeys023', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,9 +58,10 @@ export default function RichEditorShortCutKeys023() {
           console.info("push RichEditorShortCutKeys023 success");
         }
       } catch (err) {
-        console.error("push RichEditorShortCutKeys023 page error: " + err);
+        console.log("push RichEditorShortCutKeys023 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
@@ -74,12 +76,20 @@ export default function RichEditorShortCutKeys023() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorShortCutKeys023')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let builder = await (driver.findComponent(ON.id('builder')) as Promise<Component>);
       await builder.click();
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_DPAD_UP);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_DPAD_UP, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let getPosition = await (driver.findComponent(ON.id('getPosition')) as Promise<Component>);
       await getPosition.click();
@@ -88,7 +98,11 @@ export default function RichEditorShortCutKeys023() {
       let carePositionText = await carePosition.getText();
       await CommonFunc.sleep(500);
       expect(carePositionText).assertContain('carePosition:8');
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_DPAD_UP);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_DPAD_UP, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await getPosition.click();
       await CommonFunc.sleep(500);
@@ -109,7 +123,11 @@ export default function RichEditorShortCutKeys023() {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDIT0R_SHORTCUTKEYS_static_0036 START');
       let driver = Driver.create();
 
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_DPAD_DOWN);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_DPAD_DOWN, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let getPosition = await (driver.findComponent(ON.id('getPosition')) as Promise<Component>);
       await getPosition.click();
@@ -118,7 +136,11 @@ export default function RichEditorShortCutKeys023() {
       let carePositionText = await carePosition.getText();
       await CommonFunc.sleep(500);
       expect(carePositionText).assertContain('carePosition:7');
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_DPAD_DOWN);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_DPAD_DOWN, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await getPosition.click();
       await CommonFunc.sleep(500);

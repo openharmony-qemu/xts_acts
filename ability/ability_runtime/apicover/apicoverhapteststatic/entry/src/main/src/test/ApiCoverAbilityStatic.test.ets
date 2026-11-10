@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '@ohos/hypium-static/src/main/indexStatic';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
@@ -66,7 +66,7 @@ let context: common.UIAbilityContext | undefined;
 let array: string[] = new Array<string>();
 let dir: string = "";
 
-export default function ApiCoverStaticTest() {
+export default function ApiCoverStaticTest(): void {
   describe('ApiCoverStaticTestTest', () => {
     const BUNDLE_NAME = 'com.example.apicoverhaptest.static';
 

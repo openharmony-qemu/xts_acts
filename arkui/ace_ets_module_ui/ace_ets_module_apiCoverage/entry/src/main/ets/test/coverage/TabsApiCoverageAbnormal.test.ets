@@ -50,8 +50,7 @@ export default function tabsApiCoverageAbnormalTest() {
       await CommonFunc.sleep(500);
       let defNode = getInspectorByKey('tabs_barStyle_default');
       let abnNode = getInspectorByKey('tabs_barStyle_undefined');
-      expect(JSON.parse(defNode).$attrs !== undefined).assertTrue();
-      expect(JSON.parse(abnNode).$attrs !== undefined).assertTrue();
+      expect(JSON.parse(abnNode).$attrs.barStyle).assertEqual(JSON.parse(defNode).$attrs.barStyle);
       done();
     });
     /**
@@ -66,8 +65,7 @@ export default function tabsApiCoverageAbnormalTest() {
       await CommonFunc.sleep(500);
       let defNode = getInspectorByKey('tabs_barStyle_default');
       let abnNode = getInspectorByKey('tabs_barStyle_null');
-      expect(JSON.parse(defNode).$attrs !== undefined).assertTrue();
-      expect(JSON.parse(abnNode).$attrs !== undefined).assertTrue();
+      expect(JSON.parse(abnNode).$attrs.barStyle).assertEqual(JSON.parse(defNode).$attrs.barStyle);
       done();
     });
     /**
@@ -82,8 +80,8 @@ export default function tabsApiCoverageAbnormalTest() {
       await CommonFunc.sleep(500);
       let defNode = getInspectorByKey('tabs_sidebarPosition_default');
       let abnNode = getInspectorByKey('tabs_sidebarPosition_undefined');
-      expect(JSON.parse(defNode).$attrs !== undefined).assertTrue();
-      expect(JSON.parse(abnNode).$attrs !== undefined).assertTrue();
+      expect(JSON.parse(abnNode).$attrs.sidebarPosition)
+        .assertEqual(JSON.parse(defNode).$attrs.sidebarPosition);
       done();
     });
     /**
@@ -98,8 +96,8 @@ export default function tabsApiCoverageAbnormalTest() {
       await CommonFunc.sleep(500);
       let defNode = getInspectorByKey('tabs_sidebarPosition_default');
       let abnNode = getInspectorByKey('tabs_sidebarPosition_null');
-      expect(JSON.parse(defNode).$attrs !== undefined).assertTrue();
-      expect(JSON.parse(abnNode).$attrs !== undefined).assertTrue();
+      expect(JSON.parse(abnNode).$attrs.sidebarPosition)
+        .assertEqual(JSON.parse(defNode).$attrs.sidebarPosition);
       done();
     });
     /**
@@ -114,8 +112,8 @@ export default function tabsApiCoverageAbnormalTest() {
       await CommonFunc.sleep(500);
       let defNode = getInspectorByKey('tabs_sidebarHeader_default');
       let abnNode = getInspectorByKey('tabs_sidebarHeader_undefined');
-      expect(JSON.parse(defNode).$attrs !== undefined).assertTrue();
-      expect(JSON.parse(abnNode).$attrs !== undefined).assertTrue();
+      expect(JSON.stringify(JSON.parse(abnNode).$attrs.sidebarHeader))
+        .assertEqual(JSON.stringify(JSON.parse(defNode).$attrs.sidebarHeader));
       done();
     });
     /**
@@ -130,8 +128,8 @@ export default function tabsApiCoverageAbnormalTest() {
       await CommonFunc.sleep(500);
       let defNode = getInspectorByKey('tabs_sidebarHeader_default');
       let abnNode = getInspectorByKey('tabs_sidebarHeader_null');
-      expect(JSON.parse(defNode).$attrs !== undefined).assertTrue();
-      expect(JSON.parse(abnNode).$attrs !== undefined).assertTrue();
+      expect(JSON.stringify(JSON.parse(abnNode).$attrs.sidebarHeader))
+        .assertEqual(JSON.stringify(JSON.parse(defNode).$attrs.sidebarHeader));
       done();
     });
     /**
@@ -146,8 +144,8 @@ export default function tabsApiCoverageAbnormalTest() {
       await CommonFunc.sleep(500);
       let defNode = getInspectorByKey('tabs_sidebarSearchable_default');
       let abnNode = getInspectorByKey('tabs_sidebarSearchable_undefined');
-      expect(JSON.parse(defNode).$attrs !== undefined).assertTrue();
-      expect(JSON.parse(abnNode).$attrs !== undefined).assertTrue();
+      expect(JSON.stringify(JSON.parse(abnNode).$attrs.sidebarSearchable))
+        .assertEqual(JSON.stringify(JSON.parse(defNode).$attrs.sidebarSearchable));
       done();
     });
     /**
@@ -162,8 +160,8 @@ export default function tabsApiCoverageAbnormalTest() {
       await CommonFunc.sleep(500);
       let defNode = getInspectorByKey('tabs_sidebarSearchable_default');
       let abnNode = getInspectorByKey('tabs_sidebarSearchable_null');
-      expect(JSON.parse(defNode).$attrs !== undefined).assertTrue();
-      expect(JSON.parse(abnNode).$attrs !== undefined).assertTrue();
+      expect(JSON.stringify(JSON.parse(abnNode).$attrs.sidebarSearchable))
+        .assertEqual(JSON.stringify(JSON.parse(defNode).$attrs.sidebarSearchable));
       done();
     });
     /**
@@ -178,8 +176,8 @@ export default function tabsApiCoverageAbnormalTest() {
       await CommonFunc.sleep(500);
       let defNode = getInspectorByKey('tabs_barDisplayModeBreakpoint_default');
       let abnNode = getInspectorByKey('tabs_barDisplayModeBreakpoint_undefined');
-      expect(JSON.parse(defNode).$attrs !== undefined).assertTrue();
-      expect(JSON.parse(abnNode).$attrs !== undefined).assertTrue();
+      expect(JSON.stringify(JSON.parse(abnNode).$attrs.barDisplayModeBreakpoint))
+        .assertEqual(JSON.stringify(JSON.parse(defNode).$attrs.barDisplayModeBreakpoint));
       done();
     });
     /**
@@ -194,8 +192,8 @@ export default function tabsApiCoverageAbnormalTest() {
       await CommonFunc.sleep(500);
       let defNode = getInspectorByKey('tabs_barDisplayModeBreakpoint_default');
       let abnNode = getInspectorByKey('tabs_barDisplayModeBreakpoint_null');
-      expect(JSON.parse(defNode).$attrs !== undefined).assertTrue();
-      expect(JSON.parse(abnNode).$attrs !== undefined).assertTrue();
+      expect(JSON.stringify(JSON.parse(abnNode).$attrs.barDisplayModeBreakpoint))
+        .assertEqual(JSON.stringify(JSON.parse(defNode).$attrs.barDisplayModeBreakpoint));
       done();
     });
     /**
@@ -210,8 +208,7 @@ export default function tabsApiCoverageAbnormalTest() {
       await CommonFunc.sleep(500);
       let defNode = getInspectorByKey('tabs_onBarDisplayModeChange_default');
       let abnNode = getInspectorByKey('tabs_onBarDisplayModeChange_undefined');
-      expect(JSON.parse(defNode).$attrs !== undefined).assertTrue();
-      expect(JSON.parse(abnNode).$attrs !== undefined).assertTrue();
+      expect(JSON.parse(abnNode).$attrs.barStyle).assertEqual(JSON.parse(defNode).$attrs.barStyle);
       done();
     });
     /**
@@ -226,8 +223,7 @@ export default function tabsApiCoverageAbnormalTest() {
       await CommonFunc.sleep(500);
       let defNode = getInspectorByKey('tabs_onBarDisplayModeChange_default');
       let abnNode = getInspectorByKey('tabs_onBarDisplayModeChange_null');
-      expect(JSON.parse(defNode).$attrs !== undefined).assertTrue();
-      expect(JSON.parse(abnNode).$attrs !== undefined).assertTrue();
+      expect(JSON.parse(abnNode).$attrs.barStyle).assertEqual(JSON.parse(defNode).$attrs.barStyle);
       done();
     });
     /**
@@ -240,8 +236,12 @@ export default function tabsApiCoverageAbnormalTest() {
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_ABN_SELICON_1300', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
+      let defNode = getInspectorByKey('tabs_sidebarSelectedIconColor_default');
       let node = getInspectorByKey('tabs_sidebarSelectedIconColor_undefined');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let abnVal = `${JSON.parse(node).$attrs.sidebarSelectedIconColor}`;
+      let defVal = `${JSON.parse(defNode).$attrs.sidebarSelectedIconColor}`;
+      expect(abnVal === 'null' || abnVal === 'undefined' || abnVal !== defVal).assertTrue();
+      expect(node.length > 2).assertTrue();
       done();
     });
 
@@ -255,8 +255,12 @@ export default function tabsApiCoverageAbnormalTest() {
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_ABN_SELICON_1400', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
+      let defNode = getInspectorByKey('tabs_sidebarSelectedIconColor_default');
       let node = getInspectorByKey('tabs_sidebarSelectedIconColor_null');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let abnVal = `${JSON.parse(node).$attrs.sidebarSelectedIconColor}`;
+      let defVal = `${JSON.parse(defNode).$attrs.sidebarSelectedIconColor}`;
+      expect(abnVal === 'null' || abnVal === 'undefined' || abnVal !== defVal).assertTrue();
+      expect(node.length > 2).assertTrue();
       done();
     });
 
@@ -270,8 +274,12 @@ export default function tabsApiCoverageAbnormalTest() {
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_ABN_SELTEXT_1500', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
+      let defNode = getInspectorByKey('tabs_sidebarSelectedTextColor_default');
       let node = getInspectorByKey('tabs_sidebarSelectedTextColor_undefined');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let abnVal = `${JSON.parse(node).$attrs.sidebarSelectedTextColor}`;
+      let defVal = `${JSON.parse(defNode).$attrs.sidebarSelectedTextColor}`;
+      expect(abnVal === 'null' || abnVal === 'undefined' || abnVal !== defVal).assertTrue();
+      expect(node.length > 2).assertTrue();
       done();
     });
 
@@ -285,8 +293,12 @@ export default function tabsApiCoverageAbnormalTest() {
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_ABN_SELTEXT_1600', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
+      let defNode = getInspectorByKey('tabs_sidebarSelectedTextColor_default');
       let node = getInspectorByKey('tabs_sidebarSelectedTextColor_null');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let abnVal = `${JSON.parse(node).$attrs.sidebarSelectedTextColor}`;
+      let defVal = `${JSON.parse(defNode).$attrs.sidebarSelectedTextColor}`;
+      expect(abnVal === 'null' || abnVal === 'undefined' || abnVal !== defVal).assertTrue();
+      expect(node.length > 2).assertTrue();
       done();
     });
 
@@ -300,8 +312,12 @@ export default function tabsApiCoverageAbnormalTest() {
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_ABN_UNSELICON_1700', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
+      let defNode = getInspectorByKey('tabs_sidebarUnselectedIconColor_default');
       let node = getInspectorByKey('tabs_sidebarUnselectedIconColor_undefined');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let abnVal = `${JSON.parse(node).$attrs.sidebarUnselectedIconColor}`;
+      let defVal = `${JSON.parse(defNode).$attrs.sidebarUnselectedIconColor}`;
+      expect(abnVal === 'null' || abnVal === 'undefined' || abnVal !== defVal).assertTrue();
+      expect(node.length > 2).assertTrue();
       done();
     });
 
@@ -315,8 +331,12 @@ export default function tabsApiCoverageAbnormalTest() {
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_ABN_UNSELICON_1800', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
+      let defNode = getInspectorByKey('tabs_sidebarUnselectedIconColor_default');
       let node = getInspectorByKey('tabs_sidebarUnselectedIconColor_null');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let abnVal = `${JSON.parse(node).$attrs.sidebarUnselectedIconColor}`;
+      let defVal = `${JSON.parse(defNode).$attrs.sidebarUnselectedIconColor}`;
+      expect(abnVal === 'null' || abnVal === 'undefined' || abnVal !== defVal).assertTrue();
+      expect(node.length > 2).assertTrue();
       done();
     });
 
@@ -330,8 +350,12 @@ export default function tabsApiCoverageAbnormalTest() {
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_ABN_UNSELTEXT_1900', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
+      let defNode = getInspectorByKey('tabs_sidebarUnselectedTextColor_default');
       let node = getInspectorByKey('tabs_sidebarUnselectedTextColor_undefined');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let abnVal = `${JSON.parse(node).$attrs.sidebarUnselectedTextColor}`;
+      let defVal = `${JSON.parse(defNode).$attrs.sidebarUnselectedTextColor}`;
+      expect(abnVal === 'null' || abnVal === 'undefined' || abnVal !== defVal).assertTrue();
+      expect(node.length > 2).assertTrue();
       done();
     });
 
@@ -345,8 +369,12 @@ export default function tabsApiCoverageAbnormalTest() {
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_ABN_UNSELTEXT_2000', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
+      let defNode = getInspectorByKey('tabs_sidebarUnselectedTextColor_default');
       let node = getInspectorByKey('tabs_sidebarUnselectedTextColor_null');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let abnVal = `${JSON.parse(node).$attrs.sidebarUnselectedTextColor}`;
+      let defVal = `${JSON.parse(defNode).$attrs.sidebarUnselectedTextColor}`;
+      expect(abnVal === 'null' || abnVal === 'undefined' || abnVal !== defVal).assertTrue();
+      expect(node.length > 2).assertTrue();
       done();
     });
 
@@ -360,8 +388,12 @@ export default function tabsApiCoverageAbnormalTest() {
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_ABN_SELBOARD_2100', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
+      let defNode = getInspectorByKey('tabs_sidebarSelectedBoardColor_default');
       let node = getInspectorByKey('tabs_sidebarSelectedBoardColor_undefined');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let abnVal = `${JSON.parse(node).$attrs.sidebarSelectedBoardColor}`;
+      let defVal = `${JSON.parse(defNode).$attrs.sidebarSelectedBoardColor}`;
+      expect(abnVal === 'null' || abnVal === 'undefined' || abnVal !== defVal).assertTrue();
+      expect(node.length > 2).assertTrue();
       done();
     });
 
@@ -375,8 +407,12 @@ export default function tabsApiCoverageAbnormalTest() {
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_ABN_SELBOARD_2200', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
+      let defNode = getInspectorByKey('tabs_sidebarSelectedBoardColor_default');
       let node = getInspectorByKey('tabs_sidebarSelectedBoardColor_null');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let abnVal = `${JSON.parse(node).$attrs.sidebarSelectedBoardColor}`;
+      let defVal = `${JSON.parse(defNode).$attrs.sidebarSelectedBoardColor}`;
+      expect(abnVal === 'null' || abnVal === 'undefined' || abnVal !== defVal).assertTrue();
+      expect(node.length > 2).assertTrue();
       done();
     });
 
@@ -392,8 +428,8 @@ export default function tabsApiCoverageAbnormalTest() {
       await CommonFunc.sleep(500);
       let defNode = getInspectorByKey('tabVis_default');
       let abnNode = getInspectorByKey('tabVis_undefined');
-      expect(JSON.parse(defNode).$attrs !== undefined).assertTrue();
-      expect(JSON.parse(abnNode).$attrs !== undefined).assertTrue();
+      expect(JSON.stringify(JSON.parse(abnNode).$attrs.tabBarVisibility))
+        .assertEqual(JSON.stringify(JSON.parse(defNode).$attrs.tabBarVisibility));
       done();
     });
     /**
@@ -408,8 +444,8 @@ export default function tabsApiCoverageAbnormalTest() {
       await CommonFunc.sleep(500);
       let defNode = getInspectorByKey('tabVis_default');
       let abnNode = getInspectorByKey('tabVis_null');
-      expect(JSON.parse(defNode).$attrs !== undefined).assertTrue();
-      expect(JSON.parse(abnNode).$attrs !== undefined).assertTrue();
+      expect(JSON.stringify(JSON.parse(abnNode).$attrs.tabBarVisibility))
+        .assertEqual(JSON.stringify(JSON.parse(defNode).$attrs.tabBarVisibility));
       done();
     });
   });

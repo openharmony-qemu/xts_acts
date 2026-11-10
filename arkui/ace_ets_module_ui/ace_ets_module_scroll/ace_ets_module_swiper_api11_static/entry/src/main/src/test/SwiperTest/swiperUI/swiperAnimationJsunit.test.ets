@@ -22,7 +22,7 @@ import {
   it,
   expect,
   Level
-} from '../../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import {
@@ -62,6 +62,7 @@ export interface Data2 {
   data3: number[]
 }
 
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function swiperAnimationJsunit() {
   describe('swiperAnimationJsunit', () => {
     beforeAll(async (): Promise<void> => {
@@ -149,8 +150,7 @@ it('swiperAnimationJsunit_static_0024', Level.LEVEL0, async (done: () => void): 
       // to swiper
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      await driver.swipe(Math.round(right - width * 0.4).toInt(), Math.round(bottom + height / 2).toInt(), 0,
-        Math.round(bottom + height / 2).toInt());
+      await driver.swipeBetween({ x: Math.round(right - width * 0.4).toInt(), y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() }, { x: 0, y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() });
       await CommonFunc.sleep(1000);
       // check the onAnimation triggers
       let strJson = inspector.getInspectorByKey('animationEnd');
@@ -360,14 +360,12 @@ it('swiperAnimationJsunit_static_0019', Level.LEVEL0, async (done: () => void): 
       //  to press screen
       let driver = Driver.create();
       await CommonFunc.sleep(200);
-      await driver.longClick(Math.round(right / 2).toInt(), Math.round(bottom + height / 2).toInt());
+      await driver.longClickAt({ x: Math.round(right / 2).toInt(), y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() });
       await CommonFunc.sleep(500);
       // to swipe for duration
-      await driver.swipe(Math.round(right - width * 0.4).toInt(), Math.round(bottom + height / 2).toInt(), 0,
-        Math.round(bottom + height / 2).toInt());
+      await driver.swipeBetween({ x: Math.round(right - width * 0.4).toInt(), y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() }, { x: 0, y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() });
       await CommonFunc.sleep(500);
-      await driver.swipe(Math.round(right - width * 0.4).toInt(), Math.round(bottom + height / 2).toInt(), 0,
-        Math.round(bottom + height / 2).toInt());
+      await driver.swipeBetween({ x: Math.round(right - width * 0.4).toInt(), y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() }, { x: 0, y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() });
       await CommonFunc.sleep(500);
 
       // check the onAnimation triggers
@@ -650,8 +648,7 @@ it('swiperAnimationJsunit_static_0028', Level.LEVEL0, async (done: () => void): 
       await CommonFunc.sleep(1000);
 
       // press screen to swipe
-      await driver.swipe(Math.round(right - width * 0.4).toInt(), Math.round(bottom + height / 2).toInt(), 0,
-        Math.round(bottom + height / 2).toInt());
+      await driver.swipeBetween({ x: Math.round(right - width * 0.4).toInt(), y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() }, { x: 0, y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() });
       await CommonFunc.sleep(500);
 
 
@@ -731,11 +728,9 @@ it('swiperAnimationJsunit_static_0020', Level.LEVEL0, async (done: () => void): 
       await CommonFunc.sleep(1000);
 
       // press screen to swipe
-      await driver.swipe(Math.round(right - width * 0.4).toInt(), Math.round(bottom + height / 2).toInt(), 0,
-        Math.round(bottom + height / 2).toInt());
+      await driver.swipeBetween({ x: Math.round(right - width * 0.4).toInt(), y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() }, { x: 0, y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() });
       await CommonFunc.sleep(3000);
-      await driver.swipe(Math.round(left + width * 0.4).toInt(), Math.round(bottom + height / 2).toInt(),
-        Math.round(left + width * 0.4).toInt(), Math.round(bottom + height / 2).toInt());
+      await driver.swipeBetween({ x: Math.round(left + width * 0.4).toInt(), y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() }, { x: Math.round(left + width * 0.4).toInt(), y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() });
 
       await CommonFunc.sleep(500);
 
@@ -804,8 +799,7 @@ it('swiperAnimationGestureJsunit_static_0016', Level.LEVEL0, async (done: () => 
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       // getComponentRectOnScreen
-      await driver.swipe(Math.round(right - width * 0.4).toInt(), Math.round(bottom + height / 2).toInt(), 0,
-        Math.round(bottom + height / 2).toInt());
+      await driver.swipeBetween({ x: Math.round(right - width * 0.4).toInt(), y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() }, { x: 0, y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() });
 
       await CommonFunc.sleep(1000);
       // check the onAnimation triggers
@@ -869,8 +863,7 @@ it('swiperAnimationGestureJsunit_static_0017', Level.LEVEL0, async (done: () => 
       // to swiper
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      await driver.swipe(Math.round(right - width * 0.4).toInt(), Math.round(bottom + height / 2).toInt(), 0,
-        Math.round(bottom + height / 2).toInt());
+      await driver.swipeBetween({ x: Math.round(right - width * 0.4).toInt(), y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() }, { x: 0, y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() });
       await CommonFunc.sleep(500);
       // check the onAnimation triggers
       let strJson = inspector.getInspectorByKey('GestureSwipe');
@@ -878,8 +871,7 @@ it('swiperAnimationGestureJsunit_static_0017', Level.LEVEL0, async (done: () => 
       console.info("[swiperAnimationJsunit_static_0017'] component obj2 is: " +
       obj.getElement('$attrs').getString('content'));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('GestureSwipe index: 1');
-      await driver.swipe(Math.round(left + width * 0.4).toInt(), Math.round(bottom + height / 2).toInt(),
-        Math.round(left + width * 0.4).toInt(), Math.round(bottom + height / 2).toInt());
+      await driver.swipeBetween({ x: Math.round(left + width * 0.4).toInt(), y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() }, { x: Math.round(left + width * 0.4).toInt(), y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() });
       await CommonFunc.sleep(500);
       let strJson2 = inspector.getInspectorByKey('GestureSwipe');
       let obj2 = JSON.parseJsonElement(strJson2);
@@ -948,8 +940,7 @@ it('swiperAnimationGestureJsunit_static_0019', Level.LEVEL0, async (done: () => 
       // to swiper
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      await driver.swipe(Math.round(right - width * 0.4).toInt(), Math.round(bottom + height / 2).toInt(), 0,
-        Math.round(bottom + height / 2).toInt());
+      await driver.swipeBetween({ x: Math.round(right - width * 0.4).toInt(), y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() }, { x: 0, y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() });
       await CommonFunc.sleep(500);
       // check the onAnimation triggers
       let strJson = inspector.getInspectorByKey('GestureSwipe');
@@ -957,8 +948,7 @@ it('swiperAnimationGestureJsunit_static_0019', Level.LEVEL0, async (done: () => 
       console.info("[swiperAnimationJsunit_static_0019'] component obj2 is: " +
       obj.getElement('$attrs').getString('content'));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('GestureSwipe index: 1');
-      await driver.swipe(Math.round(left + width * 0.4).toInt(), Math.round(bottom + height / 2).toInt(),
-        Math.round(left + width * 0.4).toInt(), Math.round(bottom + height / 2).toInt());
+      await driver.swipeBetween({ x: Math.round(left + width * 0.4).toInt(), y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() }, { x: Math.round(left + width * 0.4).toInt(), y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() });
       await CommonFunc.sleep(500);
       let strJson2 = inspector.getInspectorByKey('GestureSwipe');
       let obj2 = JSON.parseJsonElement(strJson2);
@@ -1032,8 +1022,7 @@ it('swiperAnimationGestureJsunit_static_0020', Level.LEVEL0, async (done: () => 
       await CommonFunc.sleep(1000);
 
       // to swiper
-      await driver.swipe(Math.round(right - width * 0.4).toInt(), Math.round(bottom + height / 2).toInt(), 0,
-        Math.round(bottom + height / 2).toInt());
+      await driver.swipeBetween({ x: Math.round(right - width * 0.4).toInt(), y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() }, { x: 0, y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() });
       await CommonFunc.sleep(3000);
       //check the onAnimation triggers
       let strJson = inspector.getInspectorByKey('GestureSwipe');
@@ -1041,8 +1030,7 @@ it('swiperAnimationGestureJsunit_static_0020', Level.LEVEL0, async (done: () => 
       console.info("[swiperAnimationJsunit_static_0020'] component obj2 is: " +
       obj.getElement('$attrs').getString('content'));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('GestureSwipe index: 2');
-      await driver.swipe(Math.round(left + width * 0.4).toInt(), Math.round(bottom + height / 2).toInt(),
-        Math.round(left + width * 0.4).toInt(), Math.round(bottom + height / 2).toInt());
+      await driver.swipeBetween({ x: Math.round(left + width * 0.4).toInt(), y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() }, { x: Math.round(left + width * 0.4).toInt(), y: Math.round(bottom + height / 2).toInt(), displayId: displayID.toInt() });
       await CommonFunc.sleep(500);
       let strJson2 = inspector.getInspectorByKey('GestureSwipe');
       let obj2 = JSON.parseJsonElement(strJson2);

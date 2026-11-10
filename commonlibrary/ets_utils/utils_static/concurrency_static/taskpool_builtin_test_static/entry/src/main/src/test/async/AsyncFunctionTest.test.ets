@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, afterAll, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterEach, afterAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils, { sleep } from '../Utils.test';
 
 // ===== Top-level types (inlined from async.ts) =====
@@ -2857,7 +2857,7 @@ export default function asyncFunctionTest(): void {
       const fetchInitialData = async (value?: number): Promise<number> => {
         try {
           await sleep(100);
-          return value ? value : 15;
+          return value ? value : 15.0;
         } catch (e) {
           console.info(`asyncFunctionTest065 catch error: ${JSON.stringify(e)}`);
           throw e;

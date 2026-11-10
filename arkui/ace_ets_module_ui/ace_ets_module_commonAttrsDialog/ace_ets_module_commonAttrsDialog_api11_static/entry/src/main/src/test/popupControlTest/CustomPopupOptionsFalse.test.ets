@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -31,6 +31,7 @@ import { UtilsTest } from '../Util.test';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0;
 
 export default function CustomPopupOptionsFalse() {
   describe('CustomPopupOptionsFalse', () => {
@@ -87,7 +88,7 @@ it('CustomPopupOptionsFalse_static_0100', Level.LEVEL0, async (done: () => void)
       expect(properties.type).assertEqual(1) //1表示系统告警窗口TYPE_SYSTEM_ALERT
 
       await CommonFunc.sleep(1000);
-       driver?.click(2, 2);
+        driver?.clickAt({x: 2, y: 2, displayId: displayID});
       await CommonFunc.sleep(1000);
       console.info('[CustomPopupOptionsFalse_0100] END');
       done();

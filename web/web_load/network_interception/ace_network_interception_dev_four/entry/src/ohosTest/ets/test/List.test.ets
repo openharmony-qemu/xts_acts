@@ -24,6 +24,7 @@ import WebNetError from './WebNetError.test';
 import webViewGetRequestResourceType from './WebViewGetRequestResourceType.test';
 import WebResourceType from './WebResourceType.test';
 import WebCustomErrorCode from './WebCustomErrorCode.test';
+import WebCustomErrorCodeCoverageDirect from './WebCustomErrorCodeCoverageDirect.test';
 
 
 export default function testsuite() {
@@ -39,4 +40,5 @@ export default function testsuite() {
        customizeSchemes()
        WebNetError()
        WebCustomErrorCode()
+       WebCustomErrorCodeCoverageDirect()
 }

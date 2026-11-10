@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Hypium, Level } from '../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Hypium, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext'
 import { AppStorage } from '@ohos.arkui.stateManagement'
@@ -68,6 +68,7 @@ import inspector from '@ohos.arkui.inspector'
 import Context from 'application.Context';
 import { canIUse } from '@internal.full.global'
 import { BusinessError } from '@kit.BasicServicesKit';
+import display from '@ohos.display'
 import { RouterOptionsParams, RouterRecentPhotoOptions, RouterSelectOptionsParams } from '../../ets/MainAbility/common/Common'
 import { AsyncCallback, RecordData } from '@ohos.base';
 
@@ -290,12 +291,13 @@ export default function TextPicker(): void {
 
     let clickBigPicture = async (driver: Driver): Promise<void> => {
       console.info('clickBigPicture enter');
-      let btn = await driver.findComponent(ON.type('Image'));
-      if (btn === null) {
+      let disPlayId = display.getDefaultDisplaySync().id.toInt()
+      let btn = await driver.findComponents(ON.belongingDisplay(disPlayId).type('Image').inWindow('com.example.myapplication.static'));
+      if (btn === null || btn.length <= 0) {
         console.info('no Image');
         return;
       }
-      await btn.click();
+      await btn[0]!.click();
       console.info('testPicker btn click finish');
       await Utils.msSleep(1000);
     }
@@ -443,7 +445,7 @@ export default function TextPicker(): void {
 
     let mountNewPickerOptions = async (
       pickerOptions: PickerOptions,
-      eventId: long = EventType.PHOTO_PICKER_INFO,
+      eventId: long = EventType.PHOTO_PICKER_INFO.valueOf().toLong(),
       isOnItemClickedNotifySet: boolean = false
     ): Promise<void> => {
       let options: router.RouterOptions = {
@@ -1263,8 +1265,9 @@ export default function TextPicker(): void {
       await Utils.msSleep(500);
       await clickPhotoPickerComponent(driver);
       await Utils.msSleep(1000);
-
-      let checkBoxs: Array<Component> | null = await driver.findComponents(ON.type('Checkbox'));
+    
+      let disPlayId = display.getDefaultDisplaySync().id.toInt()
+      let checkBoxs: Array<Component> | null = await driver.findComponents(ON.belongingDisplay(disPlayId).type('Checkbox'));
       if (checkBoxs === null || checkBoxs.length <= 0) {
         console.info('SUB_PHOTO_PICKER_TEST_0015 findComponent checkbox fail');
       } else {

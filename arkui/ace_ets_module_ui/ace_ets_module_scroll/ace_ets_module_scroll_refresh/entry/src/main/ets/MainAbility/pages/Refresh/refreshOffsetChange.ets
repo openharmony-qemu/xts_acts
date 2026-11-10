@@ -60,9 +60,9 @@ struct RefreshOffsetOffsetExample {
     Column() {
       Row() {
         Column() {
-          Text(this.message1).id('refresh_mess1_1')
-          Text(this.message2).id('refresh_mess1_2')
-          Text(this.message3).id('refresh_mess1_3')
+          Text(this.message1).id('refresh_mess1_1').fontSize(10)
+          Text(this.message2).id('refresh_mess1_2').fontSize(10)
+          Text(this.message3).id('refresh_mess1_3').fontSize(10)
           Refresh({ refreshing: $$this.isRefreshing3 }) {
             Scroll() {
               Column() {
@@ -108,7 +108,7 @@ struct RefreshOffsetOffsetExample {
         }
 
         Column() {
-          Text(this.message4).id('refresh_mess2')
+          Text(this.message4).id('refresh_mess2').fontSize(10)
           Refresh({ refreshing: $$this.isRefreshing2 }) {
             List() {
               ForEach(this.arr, (item: string) => {
@@ -154,7 +154,7 @@ struct RefreshOffsetOffsetExample {
         }
 
         Column() {
-          Text(this.message5).id('refresh_mess3')
+          Text(this.message5).id('refresh_mess3').fontSize(10)
           Refresh({ refreshing: $$this.isRefreshing, builder: this.customRefreshComponent() }) {
             Swiper() {
               ForEach(this.arr, (item: string) => {

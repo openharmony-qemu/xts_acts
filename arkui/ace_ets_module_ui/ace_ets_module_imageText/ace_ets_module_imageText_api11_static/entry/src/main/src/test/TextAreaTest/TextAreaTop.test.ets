@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-static/src/main/indexStatic"
 import router from '@ohos.router';
 import {Component,  Driver, UiWindow, ON,MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -32,13 +32,14 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
+let displayID: Int = 0;
+
 export default function textArea_top() {
   describe('textArea_top', () => {
     beforeAll(async (): Promise<void> => {
       console.info("textArea_top beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
-
     });
 
     beforeEach(async (): Promise<void> => {
@@ -53,16 +54,17 @@ export default function textArea_top() {
         console.info("get textArea_top state pages:" + JSON.stringify(pages));
         if (!("textArea_top" == pages.name)) {
           console.info("get textArea_top pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // await router 有已知问题，先注释使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push textArea_top page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push textArea_top page error:" + err);
+        console.log("push textArea_top page error:" + err);
       }
       console.info("textArea_top beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
@@ -90,10 +92,11 @@ export default function textArea_top() {
         console.log('column_01.top' + column_01.top)
 
         let driver = Driver.create();
-        await driver.click(
-          // vp2px(100),vp2px(10)
-          Math.round((textArea_01.left + (textArea_01.right - textArea_01.left) /2)).toInt(),Math.round((textArea_01.top + (textArea_01.bottom - textArea_01.top) /45)).toInt()
-        );
+        try {
+          await driver.clickAt({ x: Math.round((textArea_01.left + (textArea_01.right - textArea_01.left) /2)).toInt(), y: Math.round((textArea_01.top + (textArea_01.bottom - textArea_01.top) /45)).toInt(), displayId: displayID });
+        } catch (err) {
+          console.log('driver.clickAt error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
 
         expect(textArea_01.top).assertEqual(column_01.top);
@@ -128,10 +131,11 @@ export default function textArea_top() {
         console.log('column_01.top' + column_01.top)
         const uiContext = AppStorage.get<UIContext>('uiContext');
         let driver = Driver.create();
-        await driver.click(
-          Math.round(uiContext!.vp2px(100)).toInt(),Math.round(uiContext!.vp2px(200)).toInt()
-          // (textArea_01.left + (textArea_01.right - textArea_01.left) /2),(textArea_01.top + (textArea_01.bottom - textArea_01.top) /2)
-        );
+        try {
+          await driver.clickAt({ x: Math.round(uiContext!.vp2px(100)).toInt(), y: Math.round(uiContext!.vp2px(200)).toInt(), displayId: displayID });
+        } catch (err) {
+          console.log('driver.clickAt error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
 
         expect(textArea_01.top).assertEqual(column_01.top);
@@ -168,9 +172,11 @@ export default function textArea_top() {
 
         let driver = Driver.create();
         await CommonFunc.sleep(500);
-        await driver.click(
-          Math.round((textArea_01.left + (textArea_01.right - textArea_01.left) /2)).toInt(),Math.round((textArea_01.top + (textArea_01.bottom - textArea_01.top) /45 * 44)).toInt()
-        );
+        try {
+          await driver.clickAt({ x: Math.round((textArea_01.left + (textArea_01.right - textArea_01.left) /2)).toInt(), y: Math.round((textArea_01.top + (textArea_01.bottom - textArea_01.top) /45 * 44)).toInt(), displayId: displayID });
+        } catch (err) {
+          console.log('driver.clickAt error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
 
         let text_02 = CommonFunc.getComponentRect('textArea_top_text_02');

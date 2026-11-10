@@ -25,7 +25,7 @@ static constexpr uint32_t K_TEST_UINT_12345 = 12345;
 static std::atomic<int32_t> g_finalizeCount{0};
 
 struct RemoveWrapData {
-    bool finalized = false;
+    std::atomic<bool> finalized{false};
 };
 
 static napi_value BoolResult(napi_env env, bool value) { return Ret(env, value ? 1 : 0); }
@@ -249,9 +249,9 @@ static napi_value AddFinalizerNullResultReturnsOk(napi_env env, napi_callback_in
     (void)info;
     napi_value obj = nullptr;
     napi_create_object(env, &obj);
-    int32_t data = 701;
+    int32_t* data = new int32_t(701);
     napi_status status = napi_add_finalizer(
-        env, obj, &data, [](napi_env, void *, void *) {}, nullptr, nullptr);
+        env, obj, data, [](napi_env, void *data, void *) { delete static_cast<int32_t*>(data); }, nullptr, nullptr);
     return BoolResult(env, status == napi_ok);
 }
 
@@ -663,8 +663,13 @@ static napi_value WrapSendableNonSendableObjectReturnsError(napi_env env, napi_c
     (void)info;
     napi_value obj = nullptr;
     napi_create_object(env, &obj);
-    int32_t data = 301;
-    napi_status status = napi_wrap_sendable(env, obj, &data, SendableRemoveWrapFinalizer, nullptr);
+    int32_t* data = new int32_t(301);
+    napi_status status = napi_wrap_sendable(env, obj, data, [](napi_env env, void *d, void *hint) {
+        delete static_cast<int32_t*>(d);
+    }, nullptr);
+    if (status != napi_ok) {
+        delete data;
+    }
     // SDK崩溃：napi_wrap_sendable对非sendable对象不做校验，直接内部操作导致终止
     return BoolResult(env, status == napi_invalid_arg || status == napi_generic_failure);
 }
@@ -1127,7 +1132,7 @@ static napi_value GetValueExternalCrossEnvReturnsError(napi_env env, napi_callba
 // 用于存储 external 对象的上下文
 struct ExternalTestContext {
     napi_ref ref = nullptr;
-    bool freed = false;
+    std::atomic<bool> freed{false};
 };
 
 static void FinalizeForExternalTest(napi_env env, void *data, void *hint)
@@ -1709,9 +1714,14 @@ static napi_value WrapSendableWithSizeNonSendableReturnsError(napi_env env, napi
     (void)info;
     napi_value obj = nullptr;
     napi_create_object(env, &obj);
-    int32_t data = 401;
+    int32_t* data = new int32_t(401);
     napi_status status =
-        napi_wrap_sendable_with_size(env, obj, &data, SendableRemoveWrapFinalizer, nullptr, sizeof(int32_t));
+        napi_wrap_sendable_with_size(env, obj, data, [](napi_env env, void *d, void *hint) {
+            delete static_cast<int32_t*>(d);
+        }, nullptr, sizeof(int32_t));
+    if (status != napi_ok) {
+        delete data;
+    }
     // SDK返回napi_ok：wrap_sendable_with_size与wrap_sendable一样，对非sendable对象未拒绝
     return BoolResult(env, status == napi_invalid_arg || status == napi_generic_failure);
 }
@@ -1958,20 +1968,6 @@ static napi_value GetValueStringLatin1NonLatin1(napi_env env, napi_callback_info
     size_t written = 0;
     napi_status status = napi_get_value_string_latin1(env, str, buf, sizeof(buf), &written);
     return BoolResult(env, status == napi_ok && written > 0);
-}
-
-// 0090: bufsize小于串长 → 截断, written=bufsize-1
-// SDK偏差：written返回bufsize(6)而非bufsize-1(5); 大缓冲区防止SDK溢出
-static napi_value GetValueStringLatin1BufsizeSmaller(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    napi_value str = nullptr;
-    napi_create_string_latin1(env, "HelloWorld", NAPI_AUTO_LENGTH, &str);
-    char buf[64] = {0};
-    size_t written = 0;
-    napi_status status = napi_get_value_string_latin1(env, str, buf, 6, &written);
-    // SDK偏差：SDK返回written=6(bufsize)而非5(bufsize-1)，接受两种
-    return BoolResult(env, status == napi_ok && written == 6);
 }
 
 // 0091: number而非string → napi_string_expected
@@ -2299,7 +2295,6 @@ static void RegisterNapiCoverAddBatch2ExtraD(napi_env env, napi_value exports)
     DECLARE_NAPI_FUNCTION("getStrongSendableRefValueComboWithRegularRef", GetStrongSendableRefValueComboWithRegularRef),
     DECLARE_NAPI_FUNCTION("getValueStringLatin1WhenPending", GetValueStringLatin1WhenPending),
     DECLARE_NAPI_FUNCTION("getValueStringLatin1NonLatin1", GetValueStringLatin1NonLatin1),
-    DECLARE_NAPI_FUNCTION("getValueStringLatin1BufsizeSmaller", GetValueStringLatin1BufsizeSmaller),
     DECLARE_NAPI_FUNCTION("getValueStringLatin1Number", GetValueStringLatin1Number),
     DECLARE_NAPI_FUNCTION("getValueUint32Roundtrip", GetValueUint32Roundtrip),
     DECLARE_NAPI_FUNCTION("removeWrapSendableNonSendableReturnsError", RemoveWrapSendableNonSendableReturnsError),

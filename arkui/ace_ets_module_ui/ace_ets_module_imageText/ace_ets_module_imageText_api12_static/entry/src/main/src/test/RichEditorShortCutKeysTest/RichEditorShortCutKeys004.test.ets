@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -34,6 +34,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function RichEditorShortCutKeys004() {
   describe('RichEditorShortCutKeys004', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,9 +58,10 @@ export default function RichEditorShortCutKeys004() {
           console.info("push RichEditorShortCutKeys004 success");
         }
       } catch (err) {
-        console.error("push RichEditorShortCutKeys004 page error: " + err);
+        console.log("push RichEditorShortCutKeys004 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
@@ -74,13 +76,29 @@ export default function RichEditorShortCutKeys004() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorShortCutKeys004')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_LEFT);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_LEFT, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_LEFT);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_LEFT, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_UP);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_UP, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let selection = await (driver.findComponent(ON.id('selection')) as Promise<Component>);
       let selectionText = await selection.getText();
@@ -90,19 +108,39 @@ export default function RichEditorShortCutKeys004() {
       let set_position = await (driver.findComponent(ON.id('set_position')) as Promise<Component>);
       await set_position.click();
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_RIGHT);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_RIGHT, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_RIGHT);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_RIGHT, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_DOWN);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_DOWN, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       selectionText = await selection.getText();
       await CommonFunc.sleep(500);
       expect(selectionText).assertContain('"start"');
       expect(selectionText).assertContain('"end"');
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_UP);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_DPAD_UP, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_UP);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_UP, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let get_position = await (driver.findComponent(ON.id('get_position')) as Promise<Component>);
       await get_position.click();
@@ -111,9 +149,17 @@ export default function RichEditorShortCutKeys004() {
       let positionNumText = await positionNum.getText();
       await CommonFunc.sleep(500);
       expect(positionNumText).assertEqual('positionNum:0');
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_DOWN);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_DPAD_DOWN, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_DOWN);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_DOWN, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await get_position.click();
       await CommonFunc.sleep(500);

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { beforeEach, describe, expect, it, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -45,34 +45,40 @@ export default function RowAlignItemsUndefinedTest() {
     });
 
     /**
-     * @tc.number    RowAlignItemsUndefinedTest_static_0100
-     * @tc.name      RowAlignItemsUndefinedTest_static_0100
-     * @tc.desc      RowAlignItemsUndefinedTest_static_0100
+     * @tc.number    SUB_ARKUI_API_RowAlignItemsUndefinedTest_static_0100
+     * @tc.name      SUB_ARKUI_API_RowAlignItemsUndefinedTest_static_0100
+     * @tc.desc      SUB_ARKUI_API_RowAlignItemsUndefinedTest_static_0100
      * @tc.level     Level.LEVEL1
      */
-    it('RowAlignItemsUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('RowAlignItemsUndefinedTest_static_0100 START');
-      await CommonFunc.sleep(500);
-      let strJson = inspector.getInspectorByKey('Row_AlignItems');
-      let obj = JSON.parseJsonElement(strJson);
-      await CommonFunc.sleep(1000);
-      console.info('Test component obj is: ' + obj.getElement('$attrs'));
-      console.info('Test component obj.alignItems is: ' + obj.getElement('$attrs').getString('alignItems'));
-      expect(obj.getElement('$attrs').getString('alignItems')).assertEqual('VerticalAlign.Bottom');
+    it('SUB_ARKUI_API_RowAlignItemsUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('SUB_ARKUI_API_RowAlignItemsUndefinedTest_static_0100 START');
+        await CommonFunc.sleep(500);
+        let strJson = inspector.getInspectorByKey('Row_AlignItems');
+        let obj = JSON.parseJsonElement(strJson);
+        await CommonFunc.sleep(1000);
+        console.info('Test component obj is: ' + obj.getElement('$attrs'));
+        console.info('Test component obj.alignItems is: ' + obj.getElement('$attrs').getString('alignItems'));
+        expect(obj.getElement('$attrs').getString('alignItems')).assertEqual('VerticalAlign.Bottom');
 
-      let driver = Driver.create();
-      let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
-      await btn_true.click();
-      await CommonFunc.sleep(1000);
+        let driver = Driver.create();
+        let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+        await btn_true.click();
+        await CommonFunc.sleep(1000);
 
-      let strJson1 = inspector.getInspectorByKey('Row_AlignItems');
-      let obj1 = JSON.parseJsonElement(strJson1);
-      await CommonFunc.sleep(1000);
-      console.info('Test component obj is: ' + obj1.getElement('$attrs'));
-      console.info('Test component obj.alignItems is: ' + obj1.getElement('$attrs').getString('alignItems'));
-      expect(obj1.getElement('$attrs').getString('alignItems')).assertEqual('VerticalAlign.Center');
-      console.info('RowAlignItemsUndefinedTest_static_0100 END');
-      done();
+        let strJson1 = inspector.getInspectorByKey('Row_AlignItems');
+        let obj1 = JSON.parseJsonElement(strJson1);
+        await CommonFunc.sleep(1000);
+        console.info('Test component obj is: ' + obj1.getElement('$attrs'));
+        console.info('Test component obj.alignItems is: ' + obj1.getElement('$attrs').getString('alignItems'));
+        expect(obj1.getElement('$attrs').getString('alignItems')).assertEqual('VerticalAlign.Center');
+        console.info('SUB_ARKUI_API_RowAlignItemsUndefinedTest_static_0100 END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_RowAlignItemsUndefinedTest_static_0100] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

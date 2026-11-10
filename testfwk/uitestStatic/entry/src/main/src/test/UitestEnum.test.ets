@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeAll, describe, it, expect,TestType, Size, Level } from "../../../hypium/index"
+import { beforeAll, describe, it, expect,TestType, Size, Level } from "@ohos/hypium-static/src/main/indexStatic"
 import { Component, Driver, ON, On, MatchPattern, MouseButton,ResizeDirection, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@kit.TestKit'
 import  hilog  from '@ohos.hilog'
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
@@ -21,14 +21,6 @@ let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runn
 const waitUiReadyMs : int = 1000;
 const DeviceErrorCode = 17000005;
 
-
-async function exitInputMethod() {
-  let driver = Driver.create()
-  let softKeyBoard = await driver.findComponent(ON.type('Canvas'))
-  if (softKeyBoard != null) {
-    await driver.pressBack()
-  }
-}
 
 function sleep(numberMillis: int) {
   const exitTime = new Date().getTime() + numberMillis;

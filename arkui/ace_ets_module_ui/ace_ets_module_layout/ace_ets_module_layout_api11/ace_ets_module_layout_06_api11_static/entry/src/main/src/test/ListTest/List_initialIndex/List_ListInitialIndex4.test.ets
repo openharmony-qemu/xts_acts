@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect,Level } from '@ohos/hypium-static/src/main/indexStatic';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../ets/MainAbility/common/Rect';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
@@ -82,7 +82,7 @@ it('testListInitialIndexToTwelveWithOneLane_static', Level.LEVEL0, async (done: 
 
       expect(JSON.parseJsonElement(listContainerStrJson).getString('$type')).assertEqual('List');
 
-      expect(Math.abs(firstListItem.top - firstListItem.top) <= 1).assertTrue();
+      expect(Math.abs(firstListItem.top - listContainer.top) <= 1).assertTrue();
       expect(Math.abs(firstListItem.left - listContainer.left) <= 1).assertTrue();
       expect(Math.abs(Math.round(firstListItem.right - firstListItem.left) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
       expect(Math.abs(Math.round(firstListItem.bottom - firstListItem.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
@@ -129,10 +129,16 @@ it('testListInitialIndexToTwelveWithOneLane_static', Level.LEVEL0, async (done: 
       expect(Math.round(twelfthListItem.bottom - twelfthListItem.top)).assertEqual(UIContext.resolveUIContext()!.vp2px(0));
 
       let driver = Driver.create();
-      await (driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + fourthListItem.left + ((fourthListItem.right - fourthListItem.left) / 2))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + fourthListItem.bottom)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + firstListItem.left + (firstListItem.right - firstListItem.left) / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + firstListItem.bottom)).toInt()) as Promise<void>)
+      await CommonFunc.sleep(500);
+      let swipeComp = await driver.findComponent(ON.id('List_ListInitialIndex4_Container01'));
+      let swipeRect = await swipeComp!.getBounds();
+      let displayId = await swipeComp!.getDisplayId();
+      let swipeX = (Math.round(swipeRect.left + (swipeRect.right - swipeRect.left) / 2)).toInt();
+      let swipeY1 = (Math.round(swipeRect.top + (swipeRect.bottom - swipeRect.top) * 0.8)).toInt();
+      let swipeY2 = (Math.round(swipeRect.top + (swipeRect.bottom - swipeRect.top) * 0.2)).toInt();
+      await driver.swipeBetween(
+        { x: swipeX, y: swipeY1, displayId: displayId },
+        { x: swipeX, y: swipeY2, displayId: displayId });
       await CommonFunc.sleep(2000);
 
       let scrollColumn = await driver!.findComponent(ON.type('Scroll'));

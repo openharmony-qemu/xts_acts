@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 class ReduceRightTwoItem024 {
@@ -1501,7 +1501,7 @@ export default function ArrayReduceRight2Test(): void {
         if (acc >= 0) {
           return acc;
         }
-        return cur % 2 === 0 ? index : acc;
+        return cur % 2 === 0 ? Int.toDouble(index) : acc;
       }, -1);
       expect(result).assertEqual(5);
       expect(visited).assertEqual('654321');

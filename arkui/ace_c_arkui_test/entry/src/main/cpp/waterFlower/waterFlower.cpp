@@ -44,7 +44,8 @@ static napi_value testWaterFlower_003(napi_env env, napi_callback_info info)
 }
 static napi_value testWaterFlower_004(napi_env env, napi_callback_info info)
 {
-    auto option = OH_ArkUI_WaterFlowSectionOption_Create();
+    ArkUI_WaterFlowSectionOption* option = OH_ArkUI_WaterFlowSectionOption_Create();
+    ASSERT_NOTNULL(option);
     OH_ArkUI_WaterFlowSectionOption_SetMargin(option,0,0,0,0,0);
     auto result = OH_ArkUI_WaterFlowSectionOption_GetMargin(option,0);
     OH_ArkUI_WaterFlowSectionOption_SetRowGap(option,0,5);

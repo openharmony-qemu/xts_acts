@@ -17,6 +17,7 @@ import webInitTest from './WebInitTest.test'
 import webViewSharedRenderProcessToken from './webViewSharedRenderProcessToken.test'
 import WebViewSetWebDestroyMode from './WebViewSetWebDestroyMode.test'
 import webInterfaceConstructorCoverageDirect from './WebInterfaceConstructorCoverageDirect.test'
+import webComponentConstructorCoverageDirect from './WebComponentConstructorCoverageDirect.test'
 
 
 export default function testsuite() {
@@ -25,4 +26,5 @@ export default function testsuite() {
   webViewSharedRenderProcessToken()
   WebViewSetWebDestroyMode()
   webInterfaceConstructorCoverageDirect()
+  webComponentConstructorCoverageDirect()
 }

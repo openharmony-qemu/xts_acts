@@ -15,7 +15,7 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-static/src/main/indexStatic"
 import { Driver, ON, MouseButton, Point } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { Router,UIContext } from '@ohos.arkui.UIContext';
@@ -32,6 +32,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
+let displayID: Int = 0;
 export default function SelectionMenuOptions() {
   describe('SelectionMenuOptions', () => {
     beforeAll(async (): Promise<void> => {
@@ -56,9 +57,10 @@ export default function SelectionMenuOptions() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push SelectionMenuOptions page error:" + err);
+        console.log("push SelectionMenuOptions page error:" + err);
       }
       console.info("SelectionMenuOptions beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     afterEach(async () => {
@@ -86,9 +88,9 @@ export default function SelectionMenuOptions() {
         let point: Point = await (richEditor?.getBoundsCenter() as Promise<Point>);
         await CommonFunc.sleep(500);
         await driver.mouseDrag({
-          x: Math.round(point.x - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))).toInt(), y: Math.round(point.y).toInt()
+          x: Math.round(point.x - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))).toInt(), y: Math.round(point.y).toInt(), displayId: displayID
         }, {
-          x: Math.round(point.x + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))).toInt(), y: Math.round(point.y).toInt()
+          x: Math.round(point.x + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))).toInt(), y: Math.round(point.y).toInt(), displayId: displayID
         }, 600);
         await CommonFunc.sleep(2000);
         try{
@@ -122,9 +124,9 @@ export default function SelectionMenuOptions() {
         let point: Point = await (image?.getBoundsCenter() as Promise<Point>);
         await CommonFunc.sleep(500);
         await driver.mouseDrag({
-          x: Math.round(point.x + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(24))).toInt(), y: Math.round(point.y).toInt()
+          x: Math.round(point.x + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(24))).toInt(), y: Math.round(point.y).toInt(), displayId: displayID
         }, {
-          x: Math.round(point.x - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(26))).toInt(), y: Math.round(point.y).toInt()
+          x: Math.round(point.x - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(26))).toInt(), y: Math.round(point.y).toInt(), displayId: displayID
         }, 600);
         await CommonFunc.sleep(2000);
         try{
@@ -158,9 +160,9 @@ export default function SelectionMenuOptions() {
       let point: Point = await (mixed?.getBoundsCenter() as Promise<Point>);
       await CommonFunc.sleep(500);
       await driver.mouseDrag({
-        x: Math.round(point.x - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))).toInt(), y: Math.round(point.y).toInt()
+        x: Math.round(point.x - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))).toInt(), y: Math.round(point.y).toInt(), displayId: displayID
       }, {
-        x: Math.round(point.x + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))).toInt(), y: Math.round(point.y).toInt()
+        x: Math.round(point.x + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))).toInt(), y: Math.round(point.y).toInt(), displayId: displayID
       }, 600);
       await CommonFunc.sleep(2000);
 

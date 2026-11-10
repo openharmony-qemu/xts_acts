@@ -21,14 +21,29 @@ import IDataSourcePrefetchingMethods from './Prefetcher/IDataSourcePrefetchingMe
 import ReuseObjectRawTest from './ReuseObject/ReuseObjectRawTest.test';
 import LazyForEachReleaseStrategyTest from './LazyForeach/LazyForEachReleaseStrategy.test';
 import LazyForEachCustomComponentFreezeModeStaticTest from './LazyForeach/LazyForEachCustomComponentFreezeModeStaticTest.test';
- 
- 
+import RepeatAllowReuseInAnimationGridTest from './repeat/RepeatAllowReuseInAnimationGridTest.test';
+import RepeatAllowReuseInAnimationWaterFlowTest from './repeat/RepeatAllowReuseInAnimationWaterFlowTest.test';
+import RepeatAllowReuseInAnimationNullUndefinedTest from './repeat/RepeatAllowReuseInAnimationNullUndefinedTest.test';
+import ClearCacheLazyForEachReusableStaticTest from './LazyForeach/ClearCacheLazyForEachReusableStatic.test';
+import ClearCacheLazyForEachReusableV2StaticTest from './LazyForeach/ClearCacheLazyForEachReusableV2Static.test';
+import IDefaultReusePoolClearCacheNullUndefinedStaticTest from './LazyForeach/IDefaultReusePoolClearCacheNullUndefinedStatic.test';
+import ClearCacheRepeatReusableStaticTest from './repeat/ClearCacheRepeatReusableStatic.test';
+import ClearCacheRepeatReusableV2StaticTest from './repeat/ClearCacheRepeatReusableV2Static.test';
+
 export default function testsuite() {
-  //RepeatCloseReuseTest0110(); 
-  //RepeatLazyTest0150();  
+  //RepeatCloseReuseTest0110();
+  //RepeatLazyTest0150();
   BasicPrefetcherMethods();
   IDataSourcePrefetchingMethods();
-  //ReuseObjectRawTest(); 
+  //ReuseObjectRawTest();
   LazyForEachReleaseStrategyTest();
   LazyForEachCustomComponentFreezeModeStaticTest();
+  RepeatAllowReuseInAnimationGridTest();
+  RepeatAllowReuseInAnimationWaterFlowTest();
+  RepeatAllowReuseInAnimationNullUndefinedTest();
+  ClearCacheLazyForEachReusableStaticTest();
+  ClearCacheLazyForEachReusableV2StaticTest();
+  IDefaultReusePoolClearCacheNullUndefinedStaticTest();
+  ClearCacheRepeatReusableStaticTest();
+  ClearCacheRepeatReusableV2StaticTest();
 }

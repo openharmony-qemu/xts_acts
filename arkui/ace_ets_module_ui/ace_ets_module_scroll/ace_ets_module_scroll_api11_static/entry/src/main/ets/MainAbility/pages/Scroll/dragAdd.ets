@@ -216,6 +216,8 @@ struct Index {
       .height('100%')
       .margin({ left: '5%' } as Margin)
     }
+    .padding(10)
+    .margin(10)
     .height('100%')
   }
 }

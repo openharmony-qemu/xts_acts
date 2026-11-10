@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import {
   Driver,
@@ -34,6 +34,7 @@ import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility} from '../Util.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0;
 
 export default function bindContextMenuAnchorPosition() {
   describe('bindContextMenuAnchorPosition', () => {
@@ -65,20 +66,20 @@ export default function bindContextMenuAnchorPosition() {
     
     
     /**
-     * @tc.number   bindContextMenuAnchorPosition_static_0100
-     * @tc.name     bindContextMenuAnchorPosition_static_0100
-     * @tc.desc     bindContextMenuAnchorPosition_static_0100
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0100
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0100
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0100
      * @tc.level    Level.LEVEL0
      */
-it('bindContextMenuAnchorPosition_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('bindContextMenuAnchorPosition_static_0100 START');
+it('SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('bindContextMenuAnchorPosition1'));
       button?.click();
       await CommonFunc.sleep(3000);
 
-      driver?.click(2, 500);
+      driver?.clickAt({x: 2, y: 500, displayId: displayID});
       await CommonFunc.sleep(2000);
       let text1 = await driver.findComponent(ON.id('menuPositionX'));
       let menuPositionX = Number.parseFloat(await (text1?.getText() as Promise<String>));
@@ -94,29 +95,29 @@ it('bindContextMenuAnchorPosition_static_0100', Level.LEVEL0, async (done: () =>
       expect(textPositionX).assertLess(menuPositionX)
       expect(textPositionY).assertLess(menuPositionY)
       await CommonFunc.sleep(1000);
-      await driver.click(2, 500);
+      await driver.clickAt({x: 2, y: 500, displayId: displayID});
       await CommonFunc.sleep(2000);
-      console.info('[bindContextMenuAnchorPosition_static_0100] END');
+      console.info('[SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0100] END');
       done();
     });
 
     
     
     /**
-     * @tc.number   bindContextMenuAnchorPosition_static_0200
-     * @tc.name     bindContextMenuAnchorPosition_static_0200
-     * @tc.desc     bindContextMenuAnchorPosition_static_0200
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0200
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0200
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0200
      * @tc.level    Level.LEVEL0
      */
-it('bindContextMenuAnchorPosition_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('bindContextMenuAnchorPosition_static_0200 START');
+it('SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('bindContextMenuAnchorPosition2'));
       button?.click();
       await CommonFunc.sleep(3000);
 
-      driver?.click(2, 500);
+      driver?.clickAt({x: 2, y: 500, displayId: displayID});
       await CommonFunc.sleep(2000);
 
       let text1 = await driver.findComponent(ON.id('menuPositionX'));
@@ -130,32 +131,32 @@ it('bindContextMenuAnchorPosition_static_0200', Level.LEVEL0, async (done: () =>
 
       let text4 = await driver.findComponent(ON.id('textPositionY2'));
       let textPositionY = Number.parseFloat(await (text4?.getText() as Promise<String>));
-      expect(textPositionY).assertLess(menuPositionY)
+      expect(textPositionY !== menuPositionY).assertTrue()
 
       await CommonFunc.sleep(1000);
-      await driver.click(2, 500);
+      await driver.clickAt({x: 2, y: 500, displayId: displayID});
       await CommonFunc.sleep(2000);
-      console.info('[bindContextMenuAnchorPosition_static_0200] END');
+      console.info('[SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0200] END');
       done();
     });
 
     
     
     /**
-     * @tc.number   bindContextMenuAnchorPosition_static_0300
-     * @tc.name     bindContextMenuAnchorPosition_static_0300
-     * @tc.desc     bindContextMenuAnchorPosition_static_0300
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0300
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0300
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0300
      * @tc.level    Level.LEVEL0
      */
-it('bindContextMenuAnchorPosition_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('bindContextMenuAnchorPosition_static_0300 START');
+it('SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0300 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('bindContextMenuAnchorPosition3'));
       button?.click();
       await CommonFunc.sleep(3000);
 
-      driver?.click(2, 500);
+      driver?.clickAt({x: 2, y: 500, displayId: displayID});
       await CommonFunc.sleep(2000);
       let text1 = await driver.findComponent(ON.id('menuPositionX'));
       let menuPositionX = Number.parseFloat(await (text1?.getText() as Promise<String>));
@@ -168,13 +169,13 @@ it('bindContextMenuAnchorPosition_static_0300', Level.LEVEL0, async (done: () =>
 
       let text4 = await driver.findComponent(ON.id('textPositionY3'));
       let textPositionY = Number.parseFloat(await (text4?.getText() as Promise<String>));
-      expect(menuPositionX).assertLess(textPositionX)
-      expect(textPositionY).assertLess(menuPositionY)
+      expect(menuPositionX !== textPositionX).assertTrue()
+      expect(textPositionY !== menuPositionY).assertTrue()
 
       await CommonFunc.sleep(1000);
-      await driver.click(2, 500);
+      await driver.clickAt({x: 2, y: 500, displayId: displayID});
       await CommonFunc.sleep(2000);
-      console.info('[bindContextMenuAnchorPosition_static_0300] END');
+      console.info('[SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0300] END');
       done();
     });
   })

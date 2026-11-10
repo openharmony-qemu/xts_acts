@@ -16,7 +16,7 @@
 
 import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
-import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';

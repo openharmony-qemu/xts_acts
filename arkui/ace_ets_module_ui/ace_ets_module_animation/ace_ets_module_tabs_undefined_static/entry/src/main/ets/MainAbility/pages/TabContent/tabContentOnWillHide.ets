@@ -71,7 +71,10 @@ struct tabContentOnWillHidePage {
         .onClick((event: ClickEvent) => {
           this.isState = !this.isState
         })
-    }.width(300)
+    }
+    .padding(10)
+    .margin(10)
+    .width(300)
     .height(300)
   }
 }

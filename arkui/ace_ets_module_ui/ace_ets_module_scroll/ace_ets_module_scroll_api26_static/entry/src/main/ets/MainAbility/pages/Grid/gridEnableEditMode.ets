@@ -108,6 +108,8 @@ struct GridEnableEditMode {
       .enableEditMode(undefined)
       .id('grid_enableEditMode_undefined')
     }
+    .padding(10)
+    .margin(10)
     .width('100%')
     .height('100%')
     .backgroundColor('#F5F5F5')

@@ -19,7 +19,7 @@ import { TestRunner } from '@kit.TestKit';
 
 import hilog from '@ohos.hilog';
 
-import { Hypium } from '../../../hypium/index';
+import { Hypium } from '@ohos/hypium-static/src/main/indexStatic';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import testsuite from '../test/List.test';
 
@@ -33,11 +33,15 @@ export class OpenHarmonyTestRunner implements TestRunner {
   constructor() {
   }
 
-  public onPrepare: () => void = () => {
-    hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner OnPrepare');
-    abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+  public get onPrepare(): () => void {
+    return () => {
+      hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner OnPrepare');
+      abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+    }
   }
-  public onRun: () => void = () => {
+  public set onPrepare(_: () => void) {}
+  public get onRun(): () => void {
+    return () => {
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun');
 
     abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
@@ -61,4 +65,6 @@ export class OpenHarmonyTestRunner implements TestRunner {
       hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun end');
     }, 4000)
   }
+    }
+  public set onRun(_: () => void) {}
 }

@@ -16,7 +16,7 @@
 import {Color,$r} from '@ohos.arkui.component'
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest from '../common/CommonTest';
-import { describe, expect } from '../../../../hypium/index';
+import { describe, expect } from '@ohos/hypium-static/src/main/indexStatic';
 import { UIContext } from '@ohos.arkui.UIContext';
 /**
  * Test of common attribute: width

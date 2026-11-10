@@ -59,5 +59,7 @@ struct SwiperImplicitanimation0050 {
       Text(this.onAnimationStart).key('implicitanimation_0050')
 
     }
+    .padding(10)
+    .margin(10)
   }
 }

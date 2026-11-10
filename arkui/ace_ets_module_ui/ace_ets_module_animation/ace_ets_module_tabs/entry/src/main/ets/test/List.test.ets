@@ -105,6 +105,11 @@ import tabBarNullUndefined from './TabContentNullUndefinedTest/tabBarNullUndefin
 import animationCurveNullUndefinedTest from './animationCurveNullUndefinedTest/animationCurveNullUndefined.test';
 import TabsSidebarStyleTest from './TabsTest/TabsSidebarStyle.test';
 import TabBarOptionsCoverageTest from './TabContentTest/TabBarOptionsCoverage.test';
+import TopFloatingBarStyleTest from './TabsTest/TopFloatingBarStyle.test';
+import TopFloatingBarInvalidTest from './TabsTest/TopFloatingBarInvalid.test';
+import TopFloatingBarLegacyTest from './TabsTest/TopFloatingBarLegacy.test';
+import TabsTopOffsetMaxWidthTest from './TabsTest/TabsTopOffsetMaxWidth.test';
+import TabsBottomOffsetMaxWidthTest from './TabsTest/TabsBottomOffsetMaxWidth.test';
 
 export default function testsuite() {
   TabsSidebarStyleTest();
@@ -181,4 +186,9 @@ export default function testsuite() {
   TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest();
   tabBarNullUndefined();
   animationCurveNullUndefinedTest();
+  TopFloatingBarStyleTest();
+  TopFloatingBarInvalidTest();
+  TopFloatingBarLegacyTest();
+  TabsTopOffsetMaxWidthTest();
+  TabsBottomOffsetMaxWidthTest();
 } 

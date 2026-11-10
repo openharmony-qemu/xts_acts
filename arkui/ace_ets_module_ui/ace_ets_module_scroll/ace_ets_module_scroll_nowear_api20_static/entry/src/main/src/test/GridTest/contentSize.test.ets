@@ -1,7 +1,7 @@
 'use static';
 
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import { UIAbility, Want } from '@kit.AbilityKit';
 import { abilityDelegatorRegistry, Driver, ON, MouseButton, MatchPattern, UiDirection } from '@kit.TestKit';
 import inspector from '@ohos.arkui.inspector';
@@ -51,6 +51,7 @@ export default function contentSizeTest() {
     it('test_ContentSize', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('normal'));
       await (btn1?.click() as Promise<void>);
       await Utils.sleep(1000);

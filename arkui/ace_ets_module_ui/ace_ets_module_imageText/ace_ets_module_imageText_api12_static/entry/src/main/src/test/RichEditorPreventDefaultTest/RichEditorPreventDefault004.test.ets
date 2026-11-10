@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -34,6 +34,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function RichEditorPreventDefault004() {
   describe('RichEditorPreventDefault004', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,9 +58,10 @@ export default function RichEditorPreventDefault004() {
           console.info("push RichEditorPreventDefault004 success");
         }
       } catch (err) {
-        console.error("push RichEditorPreventDefault004 page error: " + err);
+        console.log("push RichEditorPreventDefault004 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
@@ -76,7 +78,11 @@ export default function RichEditorPreventDefault004() {
       let getBounds = await rich.getBounds();
       await CommonFunc.sleep(100);
 
-      await driver.longClick(getBounds.left + 30, getBounds.top + 30);
+      try {
+        await driver.longClickAt({ x: getBounds.left + 30, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.longClick error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
 
       let callClick = await (driver.findComponent(ON.id('callClick')) as Promise<Component>);
@@ -88,24 +94,56 @@ export default function RichEditorPreventDefault004() {
       let callLongPressText = await callLongPress.getText();
       await CommonFunc.sleep(100);
       expect(callLongPressText).assertContain('callLongPress');
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.longClick(getBounds.left + 30, getBounds.top + 30);
+      try {
+        await driver.longClickAt({ x: getBounds.left + 30, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.longClick error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let boundsCenter = await rich.getBoundsCenter();
       await CommonFunc.sleep(100);
-      await driver.longClick(boundsCenter.x, boundsCenter.y);
+      try {
+        await driver.longClickAt({ x: boundsCenter.x, y: boundsCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.longClick error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       done();
     });

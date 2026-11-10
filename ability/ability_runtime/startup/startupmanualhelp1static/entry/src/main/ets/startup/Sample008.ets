@@ -29,7 +29,7 @@ export default class Sample008 extends StartupTask {
     return Promise.resolve('Sample008');
   }
 
-  onDependencyCompleted(dependence: string, result: Object): void {
+  onDependencyCompleted(dependence: string, result: Any): void {
     console.info('StartupTest Sample008 onDependencyCompleted dependence=' + dependence);
     console.info('StartupTest Sample008 onDependencyCompleted result=' + JSON.stringify(result));
     PersistentStorage.persistProp('Sample008_onDependencyCompleted', 1);

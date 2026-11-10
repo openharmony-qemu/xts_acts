@@ -15,7 +15,7 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level, beforeAll } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level, beforeAll } from '@ohos/hypium-static/src/main/indexStatic';
 import { Driver, ON, Component, UiWindow, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -28,6 +28,8 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Utils.test';
 import inspector from '@ohos.arkui.inspector';
 let domain: Int = 0x0000;
+
+let displayID: Int = 0;
 
 export default function textAreaInputTest() {
   describe('textAreaInputTest', () => {
@@ -52,8 +54,9 @@ export default function textAreaInputTest() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push textAreaInputTest page error: " + err);
+        console.log("push textAreaInputTest page error: " + err);
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     afterEach(async () => {
@@ -84,7 +87,11 @@ export default function textAreaInputTest() {
           await button?.click();
           await CommonFunc.sleep(1000);
         }
-        await driver.triggerKey(2070);
+        try {
+          await driver.triggerKey(2070, displayID);
+        } catch (err) {
+          console.log('driver.triggerKey error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
         let button1 = await driver.findComponent(ON.text('下一步'));
         await CommonFunc.sleep(500);

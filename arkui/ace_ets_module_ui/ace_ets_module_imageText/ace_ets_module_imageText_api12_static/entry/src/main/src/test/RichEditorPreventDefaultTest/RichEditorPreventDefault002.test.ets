@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -34,6 +34,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function RichEditorPreventDefault002() {
   describe('RichEditorPreventDefault002', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,9 +58,10 @@ export default function RichEditorPreventDefault002() {
           console.info("push RichEditorPreventDefault002 success");
         }
       } catch (err) {
-        console.error("push RichEditorPreventDefault002 page error: " + err);
+        console.log("push RichEditorPreventDefault002 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
@@ -75,9 +77,17 @@ export default function RichEditorPreventDefault002() {
       let rich = await (driver.findComponent(ON.id('RichEditorPreventDefault002')) as Promise<Component>);
       let getBounds = await rich.getBounds();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 30, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 30, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.click error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 30, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 30, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.click error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
       let callNum = await (driver.findComponent(ON.id('callNum')) as Promise<Component>);
       let callNumText = await callNum.getText();

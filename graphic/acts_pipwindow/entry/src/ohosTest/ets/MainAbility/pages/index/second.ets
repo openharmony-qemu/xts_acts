@@ -377,7 +377,6 @@ struct Second {
 
       }
       .width('100%')
-      .position({bottom:'0%'})
 
     }
     .height('100%')

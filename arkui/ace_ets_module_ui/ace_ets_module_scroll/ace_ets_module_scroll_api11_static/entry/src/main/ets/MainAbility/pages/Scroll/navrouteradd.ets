@@ -99,6 +99,9 @@ struct NavRouterExample {
       .hideTitleBar(true)
       .key('addOne')
       .hideToolBar(true)
-    }.height('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .height('100%')
   }
 }

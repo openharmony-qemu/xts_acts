@@ -22,6 +22,7 @@ import hilog from '@ohos.hilog';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from "@ohos.app.ability.common";
 import { UIContext } from '@ohos.arkui.UIContext';
+import { display } from '@kit.ArkUI';
 
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
@@ -34,6 +35,9 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
+    let displayInfo: display.Display = display.getDefaultDisplaySync();
+    console.info('当前屏幕ID' + displayInfo.id);
+    AppStorage.setOrCreate<number>('displayID', displayInfo.id);
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
     AppStorage.setOrCreate<window.WindowStage>('windowStage', windowStage);
@@ -46,7 +50,7 @@ export default class EntryAbility extends UIAbility {
       let windowClass: window.Window | undefined = undefined;
       windowStage.getMainWindow((err: BusinessError | null, data) => {
         if (err?.code) {
-          console.error('Failed to obtain the main window. Cause: ' + JSON.stringify(err));
+          console.log('Failed to obtain the main window. Cause: ' + JSON.stringify(err));
           return;
         }
         windowClass = data;

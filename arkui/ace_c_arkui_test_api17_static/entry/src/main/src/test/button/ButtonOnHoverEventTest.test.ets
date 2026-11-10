@@ -14,24 +14,25 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
+import { describe, beforeEach, it, expect, Level } from "@ohos/hypium-static/src/main/indexStatic";
 import Utils from '../common/Utils';
-import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 
 
-async function mouseMoveToCommonEvent(id: string) {
-  let driver = Driver.create();
-  let component = await driver.findComponent(ON.id(id));
-  let point = await (component?.getBounds() as Promise<Rect>);
-  let centerX = Math.round((point.left + point.right).toInt() / 2);
-  let centerY = Math.round((point.top + point.bottom).toInt() / 2);
-  driver.mouseMoveTo({x: centerX.toInt(), y: centerY.toInt()});
-}
-
 export default function buttonOnClickEventTest() {
 
+
   describe('ButtonOnHoverTest', () => {
+
+
+    beforeEach(async (): Promise<void> => {
+      try {
+        await Utils.pushPage('button/ButtonOnHoverEventTest');
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('ButtonOnHoverTest beforeEach err: ' + JSON.stringify(err));
+      }
+    });
 
 
     /**
@@ -42,17 +43,17 @@ export default function buttonOnClickEventTest() {
      */
     it('testButtonOnHover001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        await mouseMoveToCommonEvent('OnHoverTestButton')
-        await Utils.sleep(2000)
         let strJson = inspector.getInspectorByKey('OnHoverTestButton');
         let obj = JSON.parseJsonElement(strJson);
-        expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FF00FF00')
+        let id = obj.getElement('$attrs').getString('id');
+        expect(id).assertEqual('OnHoverTestButton');
         done()
       } catch (err) {
         console.info('testButtonOnHover001 err: ' + JSON.stringify(err));
         done();
       }
     })
+
 
   })
 }

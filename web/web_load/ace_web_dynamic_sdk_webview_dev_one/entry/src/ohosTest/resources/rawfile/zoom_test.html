@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Zoom Factor Piercing</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+          margin: 0;
+          padding: 20px;
+          color: #182230;
+          background: #f4f7fb;
+          font-family: sans-serif;
+        }
+        .status {
+          position: sticky;
+          top: 0;
+          z-index: 1;
+          margin-bottom: 16px;
+          padding: 14px;
+          border: 2px solid #246bfd;
+          border-radius: 12px;
+          background: #ffffff;
+        }
+        .status strong { color: #1554c0; }
+        .long-text {
+          margin: 16px 0;
+          padding: 16px;
+          border-radius: 12px;
+          background: #ffffff;
+          line-height: 1.7;
+        }
+        .cards {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 12px;
+        }
+        .card {
+          min-height: 90px;
+          padding: 14px;
+          border-radius: 12px;
+          color: #ffffff;
+          background: #246bfd;
+        }
+        .mode-wide { display: inline; }
+        .mode-narrow { display: none; }
+        @media (max-width: 520px) {
+          body { background: #fff4e8; }
+          .cards { grid-template-columns: 1fr; }
+          .card { background: #d45d00; }
+          .mode-wide { display: none; }
+          .mode-narrow { display: inline; }
+        }
+    </style>
+</head>
+<body>
+<section class="status">
+    <div>window.innerWidth：<strong id="inner-width">-</strong></div>
+    <div>resize次数：<strong id="resize-count">0</strong></div>
+    <div>媒体查询：<strong class="mode-wide">宽屏三列</strong><strong class="mode-narrow">窄屏单列</strong></div>
+</section>
+
+<section class="long-text">
+    这是一段用于观察页面重新布局的长文本。修改Page Zoom后，可用CSS像素宽度应发生变化，文本换行位置也应随之改变；如果页面只是像图片一样整体放大而这里的换行、innerWidth和媒体查询都不变化，则不能判定布局缩放穿刺成功。
+</section>
+
+<section class="cards">
+    <article class="card">卡片 A<br>观察列数变化</article>
+    <article class="card">卡片 B<br>观察宽度变化</article>
+    <article class="card">卡片 C<br>观察媒体查询</article>
+</section>
+
+<script>
+    let resizeCount = 0;
+    const widthElement = document.getElementById('inner-width');
+    const countElement = document.getElementById('resize-count');
+
+    function updateViewport() {
+      widthElement.textContent = String(window.innerWidth);
+      countElement.textContent = String(resizeCount);
+    }
+
+    window.addEventListener('resize', () => {
+      resizeCount += 1;
+      updateViewport();
+    });
+    updateViewport();
+</script>
+</body>
+</html>

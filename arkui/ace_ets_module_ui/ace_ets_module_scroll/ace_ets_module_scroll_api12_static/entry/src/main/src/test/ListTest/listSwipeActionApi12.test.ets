@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Driver, Component, ON, Rect } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -64,10 +64,10 @@ it('listSwipeActionApi12Test_static_001', Level.LEVEL1, async (done: () => void)
       await driver.swipeBetween(
         { x: (Math.round(rect.left + uiContext.vp2px(50))).toInt(),
           y: (Math.round((rect.top + rect.bottom) / 2)).toInt(),
-          displayId: displayId },
+          displayId: displayId.toInt() },
         { x: (Math.round(rect.left + uiContext.vp2px(200))).toInt(),
           y: (Math.round((rect.top + rect.bottom) / 2)).toInt(),
-          displayId: displayId });
+          displayId: displayId.toInt() });
       console.info('listSwipeActionApi12Test_static_003 START');
       await CommonFunc.sleep(5000);
       let strJson1 = inspector.getInspectorByKey('ListTestApi12_2');

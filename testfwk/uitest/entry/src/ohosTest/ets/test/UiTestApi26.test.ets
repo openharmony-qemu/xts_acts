@@ -895,7 +895,7 @@ export default function uitestApi26Test() {
       let savePath = '/data/storage/el2/base/cache/dump_layout_001.json'
       const result: boolean = await driver.dumpLayout(savePath);
       expect(result).assertTrue();
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverDumpLayoutWithDisplayId
@@ -910,7 +910,7 @@ export default function uitestApi26Test() {
       const displayId: number = (await display.getDefaultDisplay()).id;
       const result: boolean = await driver.dumpLayout(savePath, displayId);
       expect(result).assertTrue();
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverDumpLayoutVerifyJsonContent
@@ -937,7 +937,7 @@ export default function uitestApi26Test() {
 
       await fileIO.unlink(savePath);
       console.info(`${TestTag}, testDriverDumpLayoutVerifyJsonContent end`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverDumpLayoutZeroDisplayId
@@ -953,7 +953,7 @@ export default function uitestApi26Test() {
       const result: boolean = await driver.dumpLayout(savePath, 0);
       expect(result).assertTrue();
       console.info(`${TestTag}, testDriverDumpLayoutZeroDisplayId end`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverDumpLayoutDisplayIdNull
@@ -971,7 +971,7 @@ export default function uitestApi26Test() {
       expect(result).assertTrue();
 
       console.info(`${TestTag}, testDriverDumpLayoutDisplayIdNull end`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverDumpLayoutDisplayIdUndefined
@@ -987,7 +987,7 @@ export default function uitestApi26Test() {
       const result: boolean = await driver.dumpLayout(savePath, undefined);
       expect(result).assertTrue();
       console.info(`${TestTag}, testDriverDumpLayoutDisplayIdUndefined end`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverTriggerPenKeyHandwritingClick
@@ -1007,7 +1007,7 @@ export default function uitestApi26Test() {
         expect(error.code).assertEqual(DeviceErrorCode)
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingClick over');
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverTriggerPenKeySmartClick
@@ -1027,7 +1027,7 @@ export default function uitestApi26Test() {
         expect(error.code).assertEqual(DeviceErrorCode)
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeySmartClick over');
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverTriggerPenKeySmartPointClick
@@ -1058,7 +1058,7 @@ export default function uitestApi26Test() {
       }
       await stopApplication('com.uitestScene.acts');
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeySmartPointClick over');
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverTriggerPenKeyHandwritingDoubleClick
@@ -1078,7 +1078,7 @@ export default function uitestApi26Test() {
         expect(error.code).assertEqual(DeviceErrorCode);
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingDoubleClick over');
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverTriggerPenKeyHandwritingWithPointDoubleClick
@@ -1171,6 +1171,6 @@ export default function uitestApi26Test() {
       }
       await stopApplication('com.uitestScene.acts');
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseDoubleClick over');
-    });
+    }, undefined, 'emulator');
   })
 }

@@ -54,6 +54,7 @@
         "MainAbility/pages/scrollDefault/scrollEventNullUndefined",
         "MainAbility/pages/scrollDefault/scrollerNullUndefined",
         "MainAbility/pages/ScrollScrollBarWidth",
+        "MainAbility/pages/Scroll/scrollBarWidthMin",
         "MainAbility/pages/scrollDefault/scrollDefault1",
         "MainAbility/pages/scrollDefault/scrollDefault2",
         "MainAbility/pages/scrollDefault/scrollDefault3",
@@ -63,6 +64,9 @@
         "MainAbility/pages/ScrollScrollBarHeight",
         "MainAbility/pages/ScrollBarHeightModifier",
         "MainAbility/pages/Scroll/scrollGetScrollState",
-        "MainAbility/pages/Scroll/scrollWithMouse"
+        "MainAbility/pages/Scroll/scrollWithMouse",
+        "MainAbility/pages/scrollAnimation/ScrollKeyboardVertical",
+        "MainAbility/pages/scrollAnimation/ScrollKeyboardHorizontal",
+        "MainAbility/pages/scrollAnimation/ScrollKeyboardModifier"
     ]
 }

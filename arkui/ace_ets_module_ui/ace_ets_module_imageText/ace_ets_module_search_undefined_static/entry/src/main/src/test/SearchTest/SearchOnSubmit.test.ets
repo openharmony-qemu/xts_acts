@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "@ohos/hypium-static/src/main/indexStatic";
 import router from '@ohos.router';
 import {
   Component,
@@ -36,6 +36,8 @@ import { BusinessError } from '@ohos.base';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, Component } from '@kit.TestKit';
 
+
+let displayID: Int = 0;
 
 export default function SearchOnSubmitTest() {
   describe('SearchOnSubmitTest', () => {
@@ -62,9 +64,10 @@ export default function SearchOnSubmitTest() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push SearchOnSubmitTest page error: " + err);
+        console.log("push SearchOnSubmitTest page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
 
@@ -82,7 +85,11 @@ export default function SearchOnSubmitTest() {
       await CommonFunc.sleep(1000);
       await search.longClick();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2054)
+      try {
+        await driver.triggerKey(2054, displayID)
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('Text_SearchOnSubmit');
       let obj = JSON.parseJsonElement(strJson);
@@ -102,7 +109,11 @@ export default function SearchOnSubmitTest() {
       await search.longClick();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2054)
+      try {
+        await driver.triggerKey(2054, displayID)
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       strJson = inspector.getInspectorByKey('Text_SearchOnSubmit');
       obj = JSON.parseJsonElement(strJson);
@@ -118,7 +129,11 @@ export default function SearchOnSubmitTest() {
       await search.longClick();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2054);
+      try {
+        await driver.triggerKey(2054, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       strJson = inspector.getInspectorByKey('Text_SearchOnSubmit');
       obj = JSON.parseJsonElement(strJson);

@@ -16,7 +16,7 @@
 
 import events_emitter from '@ohos.events.emitter';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Hypium } from '../../../../../hypium/index';
+import { Hypium } from '@ohos/hypium-static/src/main/indexStatic';
 import hilog from '@ohos.hilog';
 import {
   Entry,
@@ -864,5 +864,7 @@ struct TabsExampleThird {
         .key("subTabBarDefaultTestLeftJudge")
 
     }
+    .padding(10)
+    .margin(10)
   }
 }

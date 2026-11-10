@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-static/src/main/indexStatic"
 import router from '@ohos.router';
 import {
   Component,
@@ -37,6 +37,7 @@ import events_emitter from '@ohos.events.emitter';
 // import accessibility from '@ohos.accessibility';
 
 
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function ListDeleteTest() {
 
   const SUITE: string = 'ListDelete'
@@ -96,8 +97,7 @@ it('ArkUI_List_Delete_static_0100', Level.LEVEL1, async (done: () => void): Prom
         const winLeft: number = AppStorage.get<number>("winLeft") as number
         const winTop: number = AppStorage.get<number>("winTop") as number
         console.info("windowRect Left: " + winLeft + ',' + "windowRect Top: " + winTop);
-        await driver.swipe((Math.round(rectCenter[0] + winLeft)).toInt(), (Math.round(rectCenter[1] + winTop)).toInt(),
-          0, (Math.round(rectCenter[1]) + winTop).toInt())
+        await driver.swipeBetween({ x: (Math.round(rectCenter[0] + winLeft)).toInt(), y: (Math.round(rectCenter[1] + winTop)).toInt(), displayId: displayID.toInt() }, { x: 0, y: (Math.round(rectCenter[1]) + winTop).toInt(), displayId: displayID.toInt() })
         await sleep(3000);
         let strJsonButtonDel: string = inspector.getInspectorByKey(baseKey + '_Button_Del');
 
@@ -148,10 +148,7 @@ it('ArkUI_List_Delete_static_0200', Level.LEVEL1, async (done: () => void): Prom
         const winLeft: number = AppStorage.get<number>("winLeft") as number
         const winTop: number = AppStorage.get<number>("winTop") as number
         console.info("windowRect Left: " + winLeft + ',' + "windowRect Top: " + winTop);
-        await driver.swipe((Math.round(winLeft + rectCenter[0] - (rectCenter[3] - rectCenter[2]) / 4)).toInt(),
-          (Math.round(rectCenter[1] + winTop)).toInt(),
-          (Math.round(winLeft + rectCenter[0] + (rectCenter[3] - rectCenter[2]) / 4)).toInt(),
-          (Math.round(rectCenter[1] + winTop)).toInt())
+        await driver.swipeBetween({ x: (Math.round(winLeft + rectCenter[0] - (rectCenter[3] - rectCenter[2]) / 4)).toInt(), y: (Math.round(rectCenter[1] + winTop)).toInt(), displayId: displayID.toInt() }, { x: (Math.round(winLeft + rectCenter[0] + (rectCenter[3] - rectCenter[2]) / 4)).toInt(), y: (Math.round(rectCenter[1] + winTop)).toInt(), displayId: displayID.toInt() })
         await sleep(3000);
         let strJsonButtonDel: string = inspector.getInspectorByKey(baseKey + '_Button_Del');
         expect(JSON.parseJsonElement(strJsonButtonDel).getElement('$attrs').getString('visibility'))
@@ -188,7 +185,7 @@ it('ArkUI_List_Delete_static_0500', Level.LEVEL1, async (done: () => void): Prom
       console.info(`${SUITE} ${CASE} START`);
 
       let driver: Driver = Driver.create()
-      await driver.delayMs(1000)
+      await CommonFunc.sleep(1000)
       let baseKey: string = 'MyList5_ListItem0'
       let strJson: string = inspector.getInspectorByKey(baseKey);
 
@@ -203,7 +200,8 @@ it('ArkUI_List_Delete_static_0500', Level.LEVEL1, async (done: () => void): Prom
       await driver.swipeBetween(
         { x: (Math.round(rect.right - (rect.right - rect.left) / 6)).toInt(),
           y: (Math.round(rect.top + (rect.bottom - rect.top) / 2)).toInt(), displayId: displayId },
-        { x: rect.left, y: (Math.round(rect.top + (rect.bottom - rect.top) / 2)).toInt(), displayId: displayId }
+        { x: (Math.round(rect.left)).toInt(),
+          y: (Math.round(rect.top + (rect.bottom - rect.top) / 2)).toInt(), displayId: displayId }
       );
       await sleep(3000);
       let strJson2: string = inspector.getInspectorByKey('MyList5ListItemOnDeleteH');

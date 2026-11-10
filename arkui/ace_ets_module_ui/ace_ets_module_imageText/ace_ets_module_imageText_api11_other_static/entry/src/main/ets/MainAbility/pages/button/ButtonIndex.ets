@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { Hypium } from '../../../../../hypium/index';
+import { Hypium } from '@ohos/hypium-static/src/main/indexStatic';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog';

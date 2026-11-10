@@ -56,6 +56,8 @@
         "MainAbility/pages/gridOptions/gridEnableEditMode",
         "MainAbility/pages/gridOptions/gridEditModeOptions",
         "MainAbility/pages/gridOptions/gridEditModeChange",
+        "MainAbility/pages/gridOptions/gridKeyboardScrollVertical",
+        "MainAbility/pages/gridOptions/gridKeyboardScrollHorizontal",
         "MainAbility/pages/gridOptions/GridScrollSnapStrategy",
         "MainAbility/pages/gridOptions/GridSnapStrategyModifier"
     ]

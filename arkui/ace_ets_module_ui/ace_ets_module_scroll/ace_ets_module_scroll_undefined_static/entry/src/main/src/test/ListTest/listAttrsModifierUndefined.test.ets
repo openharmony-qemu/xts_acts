@@ -15,7 +15,7 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Point } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -692,18 +692,22 @@ export default function ListAttrsModifierUndefinedTest() {
       await CommonFunc.sleep(1000);
       console.info("[ListAttrsModifierUndefinedTest_static_1700] click List_onScrollStart");
       await (changeBtn_top?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       expect(await (text?.getText() as Promise<String>)).assertEqual('onScrollStart');
       await CommonFunc.sleep(1000);
+
+      // 先关闭 onScrollStart，避免 flingBottom 时 onScrollStart 覆盖 onScrollStop
+      await (changeBtn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      console.info("[ListAttrsModifierUndefinedTest_static_1700] close List_onScrollStart");
 
       let changeBtn_end = await driver.findComponent(ON.id('List_onScrollStop'));
       await (changeBtn_end?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       console.info("[ListAttrsModifierUndefinedTest_static_1700] click List_onScrollStop");
       await (changeBtn_bottom?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(3000);
       expect(await (text?.getText() as Promise<String>)).assertEqual('onScrollStop');
-      await (changeBtn?.click() as Promise<void>);
       await (changeBtn_end?.click() as Promise<void>);
       console.info('[ListAttrsModifierUndefinedTest_static_1700] END');
       done();
@@ -729,7 +733,7 @@ export default function ListAttrsModifierUndefinedTest() {
       let changeBtn_bottom = await driver.findComponent(ON.id('List_flingBottom'));
       let changeBtn_top = await driver.findComponent(ON.id('List_flingTop'));
       await (changeBtn_bottom?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       let text = await driver.findComponent(ON.id('List_text'));
       await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<String>)).assertEqual('Hello World');
@@ -740,7 +744,7 @@ export default function ListAttrsModifierUndefinedTest() {
       await CommonFunc.sleep(1000);
       console.info("[ListAttrsModifierUndefinedTest_static_1800] click List_onScrollVisibleContentChange");
       await (changeBtn_top?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       expect(await (text?.getText() as Promise<String>)).assertEqual('onScrollVisibleContentChange');
       await (changeBtn?.click() as Promise<void>);
       console.info('[ListAttrsModifierUndefinedTest_static_1800] END');
@@ -807,6 +811,9 @@ export default function ListAttrsModifierUndefinedTest() {
         .getElement('sticky')))
         .assertEqual('\"StickyStyle.Header\"');
 
+      let scrollColumn = await driver.findComponent(ON.id('listAttrsModifierUndefined_btn'));
+      await scrollColumn!.scrollSearch(ON.id('List_sticky'));
+      await CommonFunc.sleep(2000);
       let changeBtn = await driver.findComponent(ON.id('List_sticky'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -833,6 +840,9 @@ export default function ListAttrsModifierUndefinedTest() {
       console.info('[ListAttrsModifierUndefinedTest_static_2100] START');
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(1000);
+      let scrollColumn = await driver.findComponent(ON.id('listAttrsModifierUndefined_btn'));
+      await scrollColumn!.scrollSearch(ON.id('List_sticky'));
+      await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('MyListAttrsModifier');
       await CommonFunc.sleep(1000);
       let changeBtn_top = await driver.findComponent(ON.id('List_toTop'));

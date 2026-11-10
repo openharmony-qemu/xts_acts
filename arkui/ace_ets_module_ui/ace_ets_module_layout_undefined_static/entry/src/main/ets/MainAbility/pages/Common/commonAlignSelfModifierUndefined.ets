@@ -35,7 +35,7 @@ struct FlexExample {
 
   build() {
     Column() {
-      Text('alignSelf').fontSize(20).fontColor('#ffcccccc').width('90%')
+      Text('alignSelf').fontSize(20).fontColor('#ffcccccc').width('80%')
       // alignSelf会覆盖Flex布局容器中的alignItems设置
       Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) {
         Text('undefined')
@@ -47,7 +47,7 @@ struct FlexExample {
           .id('common_alignSelf_undefined')
           // .backgroundColor(0xD2B48C)
           .textAlign(TextAlign.Center)
-      }.width('90%').height(120).padding(10)
+      }.width('80%').height(120).padding(10)
       .borderColor('#ffAFEEEE')
       .borderWidth(2)
 
@@ -57,6 +57,7 @@ struct FlexExample {
             this.modifier.flag = !this.modifier.flag;
           })
       }
-    }.width('100%').margin(5)
+    }.width('80%').margin(5)
+    .alignItems(HorizontalAlign.Center)
   }
 }

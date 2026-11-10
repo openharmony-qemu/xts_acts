@@ -15,7 +15,7 @@
  */
 
 
- import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -35,6 +35,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function RichEditorLineMetrics022() {
   describe('RichEditorLineMetrics022', () => {
     beforeAll(async (): Promise<void> => {
@@ -58,9 +59,10 @@ export default function RichEditorLineMetrics022() {
           console.info("push RichEditorLineMetrics022 success");
         }
       } catch (err) {
-        console.error("push RichEditorLineMetrics022 page error: " + err);
+        console.log("push RichEditorLineMetrics022 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
@@ -76,14 +78,30 @@ it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0027', Level.LEVEL0,
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorLineMetrics022')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.click error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
-      driver.triggerKey(KeyCode.KEYCODE_A);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_A, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_A);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_A, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_A);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_A, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let lineMetricsImeInput = await (driver.findComponent(ON.id('lineMetricsImeInput')) as Promise<Component>);
@@ -91,7 +109,11 @@ it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0027', Level.LEVEL0,
       await CommonFunc.sleep(500);
       expect(lineMetricsImeInputText).assertContain('"startIndex":0');
       expect(lineMetricsImeInputText).assertContain('"endIndex":2');
-      driver.triggerKey(KeyCode.KEYCODE_DEL);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_DEL, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let lineMetricsOnDelete = await (driver.findComponent(ON.id('lineMetricsOnDelete')) as Promise<Component>);

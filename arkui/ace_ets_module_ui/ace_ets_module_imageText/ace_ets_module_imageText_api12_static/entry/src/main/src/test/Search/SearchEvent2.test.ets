@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Component, Driver, MouseButton, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
@@ -30,6 +30,7 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
+let displayID: Int = 0;
 export default function SearchEvent2() {
   describe('SearchEvent2', (): void => {
     beforeAll(async (): Promise<void> => {
@@ -54,9 +55,10 @@ export default function SearchEvent2() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push FontSettingOptions page error:" + err);
+        console.log("push FontSettingOptions page error:" + err);
       }
       console.info("FontSettingOptions beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     afterEach(async () : Promise<void> => {
@@ -79,11 +81,19 @@ export default function SearchEvent2() {
       let text = await (driver.findComponent(ON.id('Search2Event')) as Promise<Component>);
       await text.inputText('1');
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       await text.clearText();
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SearchEvent2Text')
       let strJson2 = inspector.getInspectorByKey('SearchEvent2Text2');
@@ -115,11 +125,19 @@ export default function SearchEvent2() {
       let text = await (driver.findComponent(ON.id('Search2Event2')) as Promise<Component>);
       await text.inputText('1');
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       await text.clearText();
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SearchEvent2Text')
       let strJson2 = inspector.getInspectorByKey('SearchEvent2Text2');
@@ -150,11 +168,19 @@ export default function SearchEvent2() {
       let text = await (driver.findComponent(ON.id('Search2Event3')) as Promise<Component>);
       await text.inputText('1');
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       await text.clearText();
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SearchEvent2Text3')
       let strJson2 = inspector.getInspectorByKey('SearchEvent2Text4');
@@ -184,11 +210,19 @@ export default function SearchEvent2() {
       let text = await (driver.findComponent(ON.id('Search2Event4')) as Promise<Component>);
       await text.inputText('1');
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       await text.clearText();
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SearchEvent2Text3')
       let strJson2 = inspector.getInspectorByKey('SearchEvent2Text4');
@@ -222,11 +256,19 @@ export default function SearchEvent2() {
       await CommonFunc.sleep(1000);
       await text.inputText('1');
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       await text.clearText();
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SearchEvent2Text5')
       await CommonFunc.sleep(200);
@@ -256,11 +298,19 @@ export default function SearchEvent2() {
       await CommonFunc.sleep(1000);
       await text.inputText('1');
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       await text.clearText();
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SearchEvent2Text5')
       await CommonFunc.sleep(200);
@@ -289,11 +339,19 @@ export default function SearchEvent2() {
       let text = await (driver.findComponent(ON.id('Search2Event6')) as Promise<Component>);
       await text.inputText('1');
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       await text.clearText();
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SearchEvent2Text5')
       await CommonFunc.sleep(200);

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -33,6 +33,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function onSelectionChange2() {
   describe('onSelectionChange2', () => {
     beforeAll(async (): Promise<void> => {
@@ -56,9 +57,10 @@ export default function onSelectionChange2() {
           console.info("push onSelectionChange2 page result");
         }
       } catch (err) {
-        console.error("push onSelectionChange2 page error:" + err);
+        console.log("push onSelectionChange2 page error:" + err);
       }
       console.info("onSelectionChange2 beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
@@ -82,7 +84,11 @@ export default function onSelectionChange2() {
       await richEditor.click();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2017);
+      try {
+        await driver.triggerKey(2017, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let text1 = inspector.getInspectorByKey('onSelectionChange2' + '_text1');
       let Obj1 = JSON.parseJsonElement(text1);

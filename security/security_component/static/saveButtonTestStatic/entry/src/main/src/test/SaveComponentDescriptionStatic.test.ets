@@ -14,11 +14,11 @@
  * limitations under the License.
  */
  
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium-static/src/main/indexStatic";
 import router from '@ohos.router';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import events_emitter from '@ohos.events.emitter';
-import { Driver, ON } from '@ohos.UiTest'
+import { Driver, ON, Component, Point } from '@ohos.UiTest'
 import { UtilsTest } from './Util.test';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { BusinessError, RecordData } from '@ohos.base';
@@ -64,48 +64,37 @@ export default function saveComponentDescriptionStaticTest() {
 
     let clickBtn = async (testname: string, driver: Driver) => {
       console.info(`====>${testname} clickBtn function Start====`);
-      try {
-        let userBtn = await driver.findComponent(ON.text('允许'));
+      const findRetry: int = 5;
+      let userBtn: Component | null = null;
+      for (let retry: int = 0; retry < findRetry; retry++) {
+        userBtn = await driver.findComponent(ON.text('允许'));
+        await UtilsTest.msSleep(3000);
         console.info(`====>${testname} userBtn is:` + JSON.stringify(userBtn));
-        if(userBtn !== null) {
+        if (userBtn !== null) {
           console.info(`====>${testname} userBtnClick START====`);
-          await (userBtn?.click() as Promise<void>);
+          await userBtn.click();
           console.info(`====>${testname} reClick====`);
-        } else {
-          let startX: int = 0;
-          let startY: int = 0;
-          let endX: int = 0;
-          let endY: int = 0;
-          display.getAllDisplays((err: BusinessError | null, data: Array<display.Display> | undefined) => {
-            if (err?.code) {
-              console.info(`====>${testname} failed to obtain all the display objects. Code: ${err?.code}, message: ${err?.message}`);
-              expect(false).assertTrue();
-            }
-            if (data && data.length > 0) {
-              console.info(`====>${testname} the window data[0].width: ` + data[0].width);
-              console.info(`====>${testname} the window data[0].height: ` + data[0].height);
-              startX = endX = Math.floor(data[0].width * (1/2)).toInt();
-              startY = Math.floor(data[0].height * (4/5)).toInt();
-              endY = Math.floor(data[0].height * (1/5)).toInt();
-            } else {
-              console.info(`====>${testname} failed to obtain all the display objects data is Null`);
-              expect(false).assertTrue();
-            }
-          });
-          for(let i = 0; i < 5; i++){
-            await driver.swipe(startX, startY, endX, endY);
-            await UtilsTest.msSleep(100);
-          }
-          let userBtn = await driver.findComponent(ON.text('允许'));
-          console.info(`====>${testname} userBtn is:` + JSON.stringify(userBtn));
-          console.info(`====>${testname} userBtnClick START====`);
-          await (userBtn?.click() as Promise<void>);
-          console.info(`====>${testname} reClick====`);
+          break;
         }
-      } catch (err) {
-        err = err as BusinessError;
-        console.error(`====>${testname} clickBtn err : ` + JSON.stringify(err));
+        console.info(`====>${testname} userBtn is null, retry ${retry + 1}/${findRetry}`);
+        await UtilsTest.msSleep(500);
+      }
+      if (userBtn === null) {
+        let defaultDisplay: display.Display = display.getDefaultDisplaySync();
+        console.info(`====>${testname} screen width: ` + defaultDisplay.width + `, height: ` + defaultDisplay.height);
+        let btnX: int = Math.floor(defaultDisplay.width * 0.4).toInt();
+        let btnY: int = Math.floor(defaultDisplay.height * 0.857).toInt();
+        let clickPoint: Point = { x: btnX, y: btnY };
+        console.info(`====>${testname} clickAt fallback point: (` + btnX + `, ` + btnY + `)`);
+        await driver.clickAt(clickPoint);
+        await UtilsTest.msSleep(1000);
+      }
+      if (userBtn === null) {
+        for (let i = 0; i < 25 && !authorized; i++) {
+          await UtilsTest.msSleep(200);
+        }
         if (!authorized) {
+          console.error(`====>${testname} clickBtn cannot find button: 允许`);
           expect(false).assertTrue();
         }
       }
@@ -114,41 +103,57 @@ export default function saveComponentDescriptionStaticTest() {
 
     let clickSecComponent = async (testname: string, driver: Driver) => {
       console.info(`====>${testname} clickSecComponent function Start====`);
-      try {
-        let button = await driver.findComponent(ON.type('SaveButton'));
+      const findRetry: int = 5;
+      let button: Component | null = null;
+      for (let retry: int = 0; retry < findRetry; retry++) {
+        button = await driver.findComponent(ON.type('SaveButton'));
         await UtilsTest.msSleep(500);
         console.info(`====>${testname} button is:` + JSON.stringify(button));
-        await (button?.click() as Promise<void>);
-        await UtilsTest.msSleep(2000);
-        let titleTx = await driver.findComponent(ON.text('安全保存图片和视频'));
-        console.info(`====>${testname} titleTx is:` + JSON.stringify(titleTx));
-        if (titleTx !== null) {
-          await clickBtn(testname, driver);
+        if (button !== null) {
+          await button.click();
+          break;
         }
-      } catch (err) {
-        err = err as BusinessError;
-        console.error(`====>${testname} clickSecComponent err : ` + JSON.stringify(err));
+        console.info(`====>${testname} SaveButton is null, retry ${retry + 1}/${findRetry}`);
+        await UtilsTest.msSleep(1000);
+      }
+      if (button === null) {
+        console.error(`====>${testname} SaveButton cannot be found`);
         if (!authorized) {
           expect(false).assertTrue();
         }
+        return;
+      }
+      await UtilsTest.msSleep(2000);
+      let titleTx = await driver.findComponent(ON.text('安全保存图片和视频'));
+      console.info(`====>${testname} titleTx is:` + JSON.stringify(titleTx));
+      if (titleTx !== null) {
+        await clickBtn(testname, driver);
       }
       console.info(`====>${testname} clickSecComponent function End====`);
     }
 
     let clickSwitchButton = async (testname: string, driver: Driver) => {
       console.info(`====>${testname} clickSwitchButton function Start====`);
-      try {
-        let switchButton = await driver.findComponent(ON.id('switchButton'));
+      const findRetry: int = 5;
+      let switchButton: Component | null = null;
+      for (let retry: int = 0; retry < findRetry; retry++) {
+        switchButton = await driver.findComponent(ON.id('switchButton'));
         await UtilsTest.msSleep(500);
         console.info(`====>${testname} switchButton is:` + JSON.stringify(switchButton));
-        await (switchButton?.click() as Promise<void>);
+        if (switchButton !== null) {
+          await switchButton.click();
+          await UtilsTest.msSleep(1000);
+          break;
+        }
+        console.info(`====>${testname} switchButton is null, retry ${retry + 1}/${findRetry}`);
         await UtilsTest.msSleep(1000);
-      } catch (err) {
-        err = err as BusinessError;
-        console.error(`====>${testname} clickSwitchButton err : ` + JSON.stringify(err));
+      }
+      if (switchButton === null) {
+        console.error(`====>${testname} switchButton cannot be found`);
         if (!authorized) {
           expect(false).assertTrue();
         }
+        return;
       }
       console.info(`====>${testname} clickSwitchButton function End====`);
     }
@@ -159,6 +164,7 @@ export default function saveComponentDescriptionStaticTest() {
         eventId: 2,
         priority: events_emitter.EventPriority.LOW
       }
+      events_emitter.off(clickEvent.eventId);
       let clickCallback = (clickData:events_emitter.EventData) => {
         try {
           if(clickData.data != undefined){
@@ -180,7 +186,6 @@ export default function saveComponentDescriptionStaticTest() {
             console.info(`====>${testname} END====`);
           }
         } catch (err) {
-          err = err as BusinessError;
           console.error(`====>${testname} once clickEvent err : ` + JSON.stringify(err));
           authorized = false;
         }

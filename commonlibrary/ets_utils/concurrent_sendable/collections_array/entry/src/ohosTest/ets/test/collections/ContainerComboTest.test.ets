@@ -123,7 +123,9 @@ function processChunkFunc(arr: collections.Array<number>, start: number, end: nu
 
 export default function ContainerComboTest(): void {
   describe('ContainerComboTest', (): void => {
-    beforeAll((): void => {})
+    beforeAll(async (): Promise<void> => {
+    await sleep(200);
+  })
     beforeEach((): void => {})
     afterEach((): void => {})
     afterAll(async (): Promise<void> => {

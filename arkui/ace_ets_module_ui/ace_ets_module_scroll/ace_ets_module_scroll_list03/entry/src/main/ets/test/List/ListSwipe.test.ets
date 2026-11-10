@@ -63,7 +63,7 @@ export default function ListSwipeTest() {
       let width = baseRect.right - baseRect.left
       let centerY = Math.round(baseRect.top + (baseRect.bottom - baseRect.top) / 2)
       await driver.swipeBetween(
-        { x: Math.round(baseRect.left + width / 4), y: centerY, displayId: displayId },
+        { x: Math.round(baseRect.left + width * 0.75), y: centerY, displayId: displayId },
         { x: 0, y: centerY, displayId: displayId })
 
       await sleep(3000) // wait for ui update

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { authorization } from '@kit.BasicServicesKit'
-import { describe, it, expect, beforeEach, beforeAll, TestType, Size, Level } from "../../../hypium/index";
+import { describe, it, expect, beforeEach, beforeAll, TestType, Size, Level } from "@ohos/hypium-static/src/main/indexStatic";
 import common from '@ohos.app.ability.common';
 import { Driver, ON, Component, Rect } from '@ohos.UiTest';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -592,6 +592,244 @@ export default function ActsOsAccountAuthorizationTestStatic(): void {
         done();
       } catch (err) {
         hilog.info(0x0000, tag, "====>AuthorizationResultStructReturn_001 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AuthorizationPrivilegeReturn_002
+     * @tc.number SUB_Account_OsAccount_PrivReturnStatic_0002
+     * @tc.desc   Verify Privilege enum PRIVILEGE_MONITOR_RAW_USB_PACKETS value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('AuthorizationPrivilegeReturn_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, tag, "====>AuthorizationPrivilegeReturn_002 start====");
+      try {
+        let value: string = authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS;
+        hilog.info(0x0000, tag, "====>AuthorizationPrivilegeReturn_002 value: " + value);
+        expect(value).assertEqual('ohos.privilege.monitor_raw_usb_packets');
+        hilog.info(0x0000, tag, "====>AuthorizationPrivilegeReturn_002 end====");
+        done();
+      } catch (err) {
+        hilog.info(0x0000, tag, "====>AuthorizationPrivilegeReturn_002 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AuthorizationHasParam_002
+     * @tc.number SUB_Account_OsAccount_HasParamStatic_0002
+     * @tc.desc   Verify hasAuthorization with PRIVILEGE_MONITOR_RAW_USB_PACKETS returns a boolean.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('AuthorizationHasParam_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, tag, "====>AuthorizationHasParam_002 start====");
+      try {
+        let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+        let has: boolean = await manager.hasAuthorization(
+          authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS);
+        hilog.info(0x0000, tag, "====>AuthorizationHasParam_002 has: " + has);
+        expect(has == true || has == false).assertTrue();
+        hilog.info(0x0000, tag, "====>AuthorizationHasParam_002 end====");
+        done();
+      } catch (err) {
+        hilog.info(0x0000, tag, "====>AuthorizationHasParam_002 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AuthorizationReqParam_003
+     * @tc.number SUB_Account_OsAccount_ReqParamStatic_0003
+     * @tc.desc   Verify requestAuthorization with PRIVILEGE_MONITOR_RAW_USB_PACKETS clicking cancel returns CANCELED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('AuthorizationReqParam_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, tag, "====>AuthorizationReqParam_003 start====");
+      let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+      let context: common.UIAbilityContext | undefined = await getForegroundContext();
+      if (!context) {
+        hilog.error(0x0000, tag, "====>AuthorizationReqParam_003 context is undefined, cannot test====");
+        expect().assertFail();
+        done();
+        return;
+      }
+      let has: boolean = await manager.hasAuthorization(
+          authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS);
+      if (has) {
+        hilog.info(0x0000, tag, "====>AuthorizationReqParam_003 already authorized, skip cancel test====");
+        done();
+      } else {
+        try {
+          let result: authorization.AuthorizationResult = await requestAuthAndClick(
+            manager,
+            authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS,
+            context,
+            ["取消", "Cancel"]
+          );
+          hilog.info(0x0000, tag, "====>AuthorizationReqParam_003 result: " + JSON.stringify(result));
+          if (result != null) {
+            expect(result.resultCode == authorization.AuthorizationResultCode.AUTHORIZATION_CANCELED ||
+              result.resultCode == authorization.AuthorizationResultCode.AUTHORIZATION_NOT_SUPPORTED).assertTrue();
+          }
+        } catch (err) {
+          hilog.info(0x0000, tag, "====>AuthorizationReqParam_003 catch err: " + JSON.stringify(err));
+          let code: number = err.code;
+          if (code !== 12300001 && code !== 12300304) {
+            expect().assertFail();
+          } else {
+            hilog.info(0x0000, tag, "====>AuthorizationReqParam_003 dialog force-stopped, UI automation limitation, skip====");
+          }
+        }
+        try {
+          let hasAfter: boolean = await manager.hasAuthorization(
+            authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS);
+          expect(hasAfter).assertFalse();
+        } catch (err) {
+          hilog.error(0x0000, tag, "====>AuthorizationReqParam_003 has catch err: " + JSON.stringify(err));
+          expect().assertFail();
+        }
+        hilog.info(0x0000, tag, "====>AuthorizationReqParam_003 end====");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AuthorizationReqParam_004
+     * @tc.number SUB_Account_OsAccount_ReqParamStatic_0004
+     * @tc.desc   Verify requestAuthorization with PRIVILEGE_MONITOR_RAW_USB_PACKETS clicking confirm returns GRANTED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('AuthorizationReqParam_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, tag, "====>AuthorizationReqParam_004 start====");
+      let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+      let context: common.UIAbilityContext | undefined = await getForegroundContext();
+      hilog.info(0x0000, tag, "====>AuthorizationReqParam_004 context obtained");
+      if (!context) {
+        hilog.error(0x0000, tag, "====>AuthorizationReqParam_004 context is undefined, cannot test====");
+        expect().assertFail();
+        done();
+        return;
+      }
+      let has: boolean = await manager.hasAuthorization(
+          authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS);
+      if (has) {
+        try {
+          let auth_result: authorization.AuthorizationResult = await manager.requestAuthorization(
+            authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS, context);
+          hilog.info(0x0000, tag, "====>AuthorizationReqParam_004 auth_result: " + JSON.stringify(auth_result));
+          expect(auth_result.resultCode).assertEqual(authorization.AuthorizationResultCode.AUTHORIZATION_GRANTED);
+        } catch (err) {
+          hilog.info(0x0000, tag, "AuthorizationReqParam_004 authorization err: " + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      } else {
+        try {
+          let result: authorization.AuthorizationResult = await requestAuthAndClick(
+            manager,
+            authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS,
+            context,
+            ["确定", "OK"]
+          );
+          hilog.info(0x0000, tag, "====>AuthorizationReqParam_004 result: " + JSON.stringify(result));
+          expect(result != null).assertTrue();
+          if (result != null) {
+            if (result.resultCode === authorization.AuthorizationResultCode.AUTHORIZATION_NOT_SUPPORTED) {
+              hilog.info(0x0000, tag,
+                "====>AuthorizationReqParam_004 interface not enabled on this device====");
+              expect(result.resultCode)
+                .assertEqual(authorization.AuthorizationResultCode.AUTHORIZATION_NOT_SUPPORTED);
+              done();
+              return;
+            }
+            expect(result.resultCode)
+              .assertEqual(authorization.AuthorizationResultCode.AUTHORIZATION_GRANTED);
+            expect(result.privilege).assertEqual('ohos.privilege.monitor_raw_usb_packets');
+          }
+          let auth_result: authorization.AuthorizationResult = await manager.requestAuthorization(
+            authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS, context);
+          hilog.info(0x0000, tag, "====>AuthorizationReqParam_004 auth_result: " + JSON.stringify(auth_result));
+          expect(auth_result.resultCode).assertEqual(authorization.AuthorizationResultCode.AUTHORIZATION_GRANTED);
+        } catch (err) {
+          hilog.info(0x0000, tag, "====>AuthorizationReqParam_004 catch err: " + JSON.stringify(err));
+          expect().assertFail();
+        }
+        try {
+          let hasAfter: boolean = await manager.hasAuthorization(
+            authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS);
+          expect(hasAfter).assertTrue();
+        } catch (err) {
+          hilog.error(0x0000, tag, "====>AuthorizationReqParam_004 has catch err: " + JSON.stringify(err));
+          expect().assertFail();
+        }
+        hilog.info(0x0000, tag, "====>AuthorizationReqParam_004 end====");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AuthorizationResultStructReturn_002
+     * @tc.number SUB_Account_OsAccount_ResultStructStatic_0002
+     * @tc.desc   Verify AuthorizationResult structure with PRIVILEGE_MONITOR_RAW_USB_PACKETS exposes resultCode and privilege.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('AuthorizationResultStructReturn_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, tag, "====>AuthorizationResultStructReturn_002 start====");
+      let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+      let context: common.UIAbilityContext | undefined = await getForegroundContext();
+      let has: boolean = await manager.hasAuthorization(
+          authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS);
+      try {
+        if (!context) {
+          hilog.error(0x0000, tag, "====>AuthorizationResultStructReturn_002 context is undefined, cannot test====");
+          expect().assertFail();
+          done();
+          return;
+        }
+        let result: authorization.AuthorizationResult;
+        if (!has) {
+          result = await requestAuthAndClick(
+            manager,
+            authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS,
+            context,
+            ["确定", "OK"]
+          );
+        } else {
+          result = await manager.requestAuthorization(
+            authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS, context);
+        }
+        hilog.info(0x0000, tag, "====>AuthorizationResultStructReturn_002 result: " + JSON.stringify(result));
+        expect(result != null).assertTrue();
+        if (result != null) {
+          expect(result.privilege != null).assertTrue();
+          expect(result.privilege).assertEqual(authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS);
+          let code: number = result.resultCode;
+          hilog.info(0x0000, tag, "====>AuthorizationResultStructReturn_002 resultCode: " + code);
+          expect(code >= 0).assertTrue();
+        }
+        hilog.info(0x0000, tag, "====>AuthorizationResultStructReturn_002 end====");
+        done();
+      } catch (err) {
+        hilog.info(0x0000, tag, "====>AuthorizationResultStructReturn_002 catch err: " + JSON.stringify(err));
         expect().assertFail();
         done();
       }

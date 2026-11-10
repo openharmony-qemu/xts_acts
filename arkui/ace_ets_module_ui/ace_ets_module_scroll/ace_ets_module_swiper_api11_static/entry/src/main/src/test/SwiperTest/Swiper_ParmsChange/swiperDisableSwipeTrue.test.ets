@@ -23,7 +23,7 @@ import {
   it,
   expect,
   Level
-} from '../../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import {
@@ -53,6 +53,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function swiperDisableSwipeTrue() {
   describe('swiperDisableSwipeTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -116,8 +117,7 @@ it('testSwiperDisableSwipeTrue_static', Level.LEVEL0, async (done: () => void): 
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       const uiContext = new UIContext();
-      await driver.swipe(Math.round(UIContext.resolveUIContext()!.vp2px(150)).toInt(), Math.round(UIContext.resolveUIContext()!.vp2px(100)).toInt(),
-        Math.round(UIContext.resolveUIContext()!.vp2px(100)).toInt(), Math.round(UIContext.resolveUIContext()!.vp2px(100)).toInt());
+      await driver.swipeBetween({ x: Math.round(UIContext.resolveUIContext()!.vp2px(150)).toInt(), y: Math.round(UIContext.resolveUIContext()!.vp2px(100)).toInt(), displayId: displayID.toInt() }, { x: Math.round(UIContext.resolveUIContext()!.vp2px(100)).toInt(), y: Math.round(UIContext.resolveUIContext()!.vp2px(100)).toInt(), displayId: displayID.toInt() });
       //  await driver.swipe(250, 230, 200, 230);
       await CommonFunc.sleep(1000);
       disableTrue01 = CommonFunc.getComponentRectOnScreen('disableTrue01');

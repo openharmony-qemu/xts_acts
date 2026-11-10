@@ -30,10 +30,14 @@ const driver: Driver = Driver.create();
 const abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 let isAppSelectorExist = true;
 let selectorName = "wei.hmsapp.appgallery";
+let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
 
 async function checkAppSelectorExist() {
   try {
     let cmd = 'bm dump -n com.hua' + selectorName;
+    if(user !==undefined) {
+      cmd += ' -u ' + user;
+    }
     await abilityDelegator.executeShellCommand(cmd)
       .then((data) => {
         console.info('executeShellCommand success ' + JSON.stringify(data));
@@ -54,7 +58,11 @@ async function checkAppSelectorExist() {
 }
 
 const judgeDialog = async (done: Function) => {
-  await abilityDelegator.executeShellCommand('aa dump -a').then((data) => {
+  let cmd = 'aa dump -a';
+  if(user !==undefined) {
+    cmd += ' -u ' + user;
+  }
+  await abilityDelegator.executeShellCommand(cmd).then((data) => {
     console.info('====>aa dump : data : ' + JSON.stringify(data.stdResult));
     if (data.stdResult.includes("/uiextension/AppSelectorExtensionAbility")) {
       let firstString = data.stdResult.split("/uiextension/AppSelectorExtensionAbility");
@@ -112,6 +120,9 @@ export default function flagstartwithouttipstest() {
 
     afterEach(async () => {
       let cmd = 'aa force-stop ' + selectorBundleName;
+      if(user !==undefined) {
+        cmd += ' -u ' + user;
+      }
       selectorBundleName && await abilityDelegator.executeShellCommand(cmd).catch((error: BusinessError) => {
         console.log("====>aa force stop executeShellCommand error : " + JSON.stringify(error));
         selectorBundleName = '';

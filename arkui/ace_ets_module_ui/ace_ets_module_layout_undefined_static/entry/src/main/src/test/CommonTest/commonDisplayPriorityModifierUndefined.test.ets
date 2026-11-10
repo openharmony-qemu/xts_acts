@@ -15,7 +15,7 @@
  */
 
 
-import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Driver,  ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -51,39 +51,45 @@ export default function CommonDisplayPriorityModifierUndefinedTest() {
     });
 
     /**
-     * @tc.number   CommonDisplayPriorityModifierUndefinedTest_static_0001
-     * @tc.name     CommonDisplayPriorityModifierUndefinedTest_static_0001
+     * @tc.number   SUB_ARKUI_API_CommonDisplayPriorityModifierUndefinedTest_static_0001
+     * @tc.name     SUB_ARKUI_API_CommonDisplayPriorityModifierUndefinedTest_static_0001
      * @tc.desc     test displayPriority
      * @tc.level    Level.LEVEL1
      */
-    it('CommonDisplayPriorityModifierUndefinedTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[CommonDisplayPriorityModifierUndefinedTest_static_0001] START');
-      let driver: Driver = Driver.create();
+    it('SUB_ARKUI_API_CommonDisplayPriorityModifierUndefinedTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('[SUB_ARKUI_API_CommonDisplayPriorityModifierUndefinedTest_static_0001] START');
+        let driver: Driver = Driver.create();
 
-      let strJson = inspector.getInspectorByKey('LayoutConstraintsM_1');
-      console.info('[CommonDisplayPriorityModifierUndefinedTest_static_0001] displayPriority: ' +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('displayPriority'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('displayPriority'))
-        .assertEqual(1);
+        let strJson = inspector.getInspectorByKey('LayoutConstraintsM_1');
+        console.info('[SUB_ARKUI_API_CommonDisplayPriorityModifierUndefinedTest_static_0001] displayPriority: ' +
+        JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('displayPriority'));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('displayPriority'))
+          .assertEqual(1);
 
-      let changeBtn = await driver.findComponent(ON.id('LayoutConstraintsM_btn1'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        let changeBtn = await driver.findComponent(ON.id('LayoutConstraintsM_btn1'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('LayoutConstraintsM_1');
-      console.info('[CommonDisplayPriorityModifierUndefinedTest_static_0001] displayPriority: ' +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('displayPriority'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('displayPriority'))
-        .assertEqual(2);
+        strJson = inspector.getInspectorByKey('LayoutConstraintsM_1');
+        console.info('[SUB_ARKUI_API_CommonDisplayPriorityModifierUndefinedTest_static_0001] displayPriority: ' +
+        JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('displayPriority'));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('displayPriority'))
+          .assertEqual(2);
 
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('LayoutConstraintsM_1');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('displayPriority'))
-        .assertEqual(1);
-      console.info('[CommonDisplayPriorityModifierUndefinedTest_static_0001] END');
-      done();
+        strJson = inspector.getInspectorByKey('LayoutConstraintsM_1');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('displayPriority'))
+          .assertEqual(1);
+        console.info('[SUB_ARKUI_API_CommonDisplayPriorityModifierUndefinedTest_static_0001] END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_CommonDisplayPriorityModifierUndefinedTest_static_0001] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

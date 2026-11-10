@@ -16,7 +16,7 @@
 
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import Utils from '../common/Utils';
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-static/src/main/indexStatic";
 import inspector from '@ohos.arkui.inspector';
 
 export default function PostOnIdleTest(){

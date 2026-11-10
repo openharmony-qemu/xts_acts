@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
+import { afterEach, beforeEach, describe, expect, it, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import { Component, Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
@@ -22,7 +22,6 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
-let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function FocusScopeId7() {
   describe('FocusScopeId7', () => {
     beforeEach(async (): Promise<void> => {
@@ -60,6 +59,7 @@ export default function FocusScopeId7() {
      * @tc.level Level 2
      */
     it('FocusScopeId7_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
       console.info('[FocusScopeId7_static_0100] START');
       try {
         await CommonFunc.sleep(1000);

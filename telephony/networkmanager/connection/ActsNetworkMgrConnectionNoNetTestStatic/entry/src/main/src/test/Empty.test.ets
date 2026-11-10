@@ -1,5 +1,5 @@
 'use static';
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium-static/src/main/indexStatic";
 import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
@@ -15,7 +15,7 @@ const ExpectTrue = (n: boolean) => {
   }
 }
 
-export default function EmptyTest() {
+export default function EmptyTest(): void {
 
   describe("EmptyTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');

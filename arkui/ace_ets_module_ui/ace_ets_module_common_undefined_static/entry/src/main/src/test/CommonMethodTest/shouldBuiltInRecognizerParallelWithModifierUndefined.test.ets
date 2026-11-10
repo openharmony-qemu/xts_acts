@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, it, expect, Level } from "@ohos/hypium-static/src/main/indexStatic"
 import router from '@ohos.router';
 import {
   Component,
@@ -26,7 +26,8 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 export default function shouldBuiltInRecognizerParallelWithModifierUndefinedTest() {
-  describe('shouldBuiltInRecognizerParallelWithModifierUndefinedTest', () => {
+  describe('shouldBuiltInRecognizerParallelWithModifierUndefinedTest', () => {
+
 
     beforeEach(async (): Promise<void> => {
       console.info("shouldBuiltInRecognizerParallelWithModifierUndefinedTest beforeEach start");

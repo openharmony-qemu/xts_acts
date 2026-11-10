@@ -29,12 +29,24 @@ import {
   Button,
   ClickEvent,
   Web,
-  OnZoomChangeEvent
+  OnZoomChangeEvent,
+  OnZoomChangeCallback
 } from '@ohos.arkui.component';
 
 export class StringFields {
   public str: string = '';
 }
+
+const ON_ZOOM_CHANGE_CALLBACK_EVENT: Int = 182222;
+
+const zoomChangeReturnProbe: OnZoomChangeCallback = (event: OnZoomChangeEvent): void => {
+  console.info('onZoomChangeReturnProbe old=' + event.oldZoomFactor);
+};
+
+const zoomChangeInvokeProbe: OnZoomChangeCallback = (event: OnZoomChangeEvent): void => {
+  Utils.emitEvent('callback-invoked', ON_ZOOM_CHANGE_CALLBACK_EVENT);
+  Utils.emitEvent(typeof event.newZoomFactor, ON_ZOOM_CHANGE_CALLBACK_EVENT + 1);
+};
 
 @Entry
 @Component
@@ -42,6 +54,8 @@ struct WebZoomFactor {
   stringObj: StringFields = new StringFields();
   controller: webView.WebviewController = new webView.WebviewController(undefined);
   detachedController: webView.WebviewController = new webView.WebviewController(undefined);
+  zoomCallbackUndefinedController: webView.WebviewController = new webView.WebviewController(undefined);
+  zoomCallbackInvokeController: webView.WebviewController = new webView.WebviewController(undefined);
   @State isPageEnd: Int = -1;
   @State onZoomChangeCount: Int = 0;
   @State lastZoomOld: double = -1;
@@ -160,6 +174,17 @@ struct WebZoomFactor {
                 this.controller.setZoomFactor(1.75);
               });
               break;
+            case 'testGetZoomFactorRuntimeType':
+              this.prepareLoaded();
+              Utils.msSleep(2500).then(() => {
+                try {
+                  const factor: double = this.controller.getZoomFactor();
+                  Utils.emitEvent(typeof factor, 182230);
+                } catch (error) {
+                  Utils.emitEvent('throw', 182230);
+                }
+              });
+              break;
             case 'testSetZoomFactorInitErr':
               try {
                 this.detachedController.setZoomFactor(1.5);
@@ -177,6 +202,18 @@ struct WebZoomFactor {
                 Utils.emitEvent(String((error as BusinessError).code), 182212);
                 Utils.emitEvent((error as BusinessError).message, 182312);
               }
+              break;
+            case 'testOnZoomChangeUndefined':
+              Utils.emitEvent(true, 182220);
+              break;
+            case 'testOnZoomChangeReturn':
+              Utils.emitEvent('return-zoom-ok', 182221);
+              break;
+            case 'testOnZoomChangeDeclChain':
+              Utils.emitEvent('main-chain-ok', 182224);
+              break;
+            case 'testOnZoomChangeCallback':
+              Utils.emitEvent(true, ON_ZOOM_CHANGE_CALLBACK_EVENT);
               break;
             default:
               Utils.emitEvent(false, 182299);
@@ -204,6 +241,23 @@ struct WebZoomFactor {
         .onPageEnd(() => {
           this.isPageEnd = 1;
         })
+
+      Web({ src: $rawfile('zoom_test.html'), controller: this.zoomCallbackUndefinedController })
+        .width('1')
+        .height('1')
+        .onZoomChange(undefined)
+
+      Web({ src: $rawfile('zoom_test.html'), controller: new webView.WebviewController(undefined) })
+        .width('1')
+        .height('1')
+        .onZoomChange(zoomChangeReturnProbe)
+        .zoomControlAccess(true)
+
+      Web({ src: $rawfile('zoom_test.html'), controller: this.zoomCallbackInvokeController })
+        .width('1')
+        .height('1')
+        .zoomControlAccess(true)
+        .onZoomChange(zoomChangeInvokeProbe)
     }
   }
 }

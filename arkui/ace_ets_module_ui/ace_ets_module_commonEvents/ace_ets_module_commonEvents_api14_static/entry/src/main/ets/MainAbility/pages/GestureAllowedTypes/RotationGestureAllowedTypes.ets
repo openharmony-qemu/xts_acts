@@ -30,7 +30,7 @@ struct RotationGestureAllowedTypes {
         Text('RotationGesture').fontSize(20)
       }
       .rotate({ angle: this.angle })
-      .width(160).height(160)
+      .width('90%').height('50%')
       .backgroundColor(Color.Yellow).key('RotationGestureAllowedTypes_Text')
       .gesture(
         RotationGesture()
@@ -45,23 +45,23 @@ struct RotationGestureAllowedTypes {
           })
       )
 
-      Text(this.result).key('RotationGestureAllowedTypes_result')
+      Text(this.result).key('RotationGestureAllowedTypes_result').height('10%')
 
       Button('Mouse').id('Mouse_Type')
         .onClick((e: ClickEvent) => {
           this.result = 'allowed types default';
           this.types = [SourceTool.MOUSE];
-        })
+        }).height('10%')
       Button('Finger').id('Finger_Type')
         .onClick((e: ClickEvent) => {
           this.result = 'allowed types default';
           this.types = [SourceTool.Finger];
-        })
+        }).height('10%')
       Button('Invalid').id('Invalid_type')
           .onClick((e: ClickEvent) => {
             this.result = 'allowed types default';
             // this.types = [null, undefined];
-          })
+          }).height('10%')
     }.padding({top: 10, left:40 } as Padding).alignItems(HorizontalAlign.Start).width('100%').height('100%').backgroundColor('#ffbebaba').key('RotationGestureAllowedTypes_Father')
   }
 }

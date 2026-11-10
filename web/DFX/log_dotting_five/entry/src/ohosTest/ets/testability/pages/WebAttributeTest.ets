@@ -106,8 +106,9 @@ struct WebAttributeTest {
           .userAgent('Mozilla/5.0 (Windows NT 10.0; WOW64)')
           .onConsole((event) => {
             if (event) {
-              if (this.testConsole) {
-                Utils.emitEvent(event.message.getMessage(), 119070)
+              let msg = event.message.getMessage();
+              if (this.testConsole && msg === 'console test') {
+                Utils.emitEvent(msg, 119070)
                 Utils.emitEvent(event.message.getLineNumber(), 119080)
                 Utils.emitEvent(event.message.getSourceId(), 119090)
                 Utils.emitEvent(event.message.getMessageLevel(), 119100)

@@ -94,6 +94,8 @@ struct CustomListLayoutTest {
       .layoutWeight(1)
       .height('40%')
     }
+    .padding(10)
+    .margin(10)
     .height('100%')
     .width('100%')
   }

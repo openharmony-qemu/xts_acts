@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll} from '../../../hypium/index';
+import { describe, it, expect, TestType, Size, Level, beforeAll} from '@ohos/hypium-static/src/main/indexStatic';
 import { Driver, ON, PointerMatrix } from '@ohos.UiTest';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import Want from '@ohos.app.ability.Want';

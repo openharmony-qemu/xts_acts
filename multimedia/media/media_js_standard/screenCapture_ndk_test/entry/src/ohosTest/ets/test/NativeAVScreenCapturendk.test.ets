@@ -1492,6 +1492,109 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_MIC_AEC_0200
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_MIC_AEC_0200
+     * @tc.desc   OH_AVScreenCapture_StrategyForMicAEC-False
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_MIC_AEC_0200', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForMicAECFalse();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_MIC_AEC_0300
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_MIC_AEC_0300
+     * @tc.desc   OH_AVScreenCapture_StrategyForMicAEC-InvalidVal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_MIC_AEC_0300', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForMicAECVal();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_CONTENT_AUTO_PAUSE_SCENES_0100
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_CONTENT_AUTO_PAUSE_SCENES_0100
+     * @tc.desc   OH_AVScreenCapture_StrategyForContentAutoPauseScenes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_CONTENT_AUTO_PAUSE_SCENES_0100', Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForContentAutoPauseScenes();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_CONTENT_AUTO_PAUSE_SCENES_0200
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_CONTENT_AUTO_PAUSE_SCENES_0200
+     * @tc.desc   OH_CAPTURE_AUTO_PAUSE_SCENE_SCREEN_FOLD_STATE_CHANGE and OH_CAPTURE_AUTO_PAUSE_SCENE_SCREEN_NONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_CONTENT_AUTO_PAUSE_SCENES_0200', Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = myScreenCaptureNdk.avScreenCaptureAutoPauseScene0100();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_HDR_CAPTURE_0100
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_HDR_CAPTURE_0100
+     * @tc.desc   OH_AVScreenCapture_StrategyForHDRCapture-True
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_HDR_CAPTURE_0100', Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForHDRCapture();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_HDR_CAPTURE_0200
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_HDR_CAPTURE_0200
+     * @tc.desc   OH_AVScreenCapture_StrategyForHDRCapture-False
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_HDR_CAPTURE_0200', Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForHDRCaptureFalse();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_HDR_CAPTURE_0300
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_HDR_CAPTURE_0300
+     * @tc.desc   OH_AVScreenCapture_StrategyForHDRCapture-InvalidVal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_HDR_CAPTURE_0300', Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForHDRCaptureVal();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_PAUSE_RESUME_0100
      * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_PAUSE_RESUME_0100
      * @tc.desc   OH_AVScreenCapture_PauseScreenCapture and OH_AVScreenCapture_ResumeScreenCapture

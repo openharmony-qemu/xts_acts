@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -63,7 +63,7 @@ export default function fadingEdgeModifierUndefinedTest() {
 
       let driver = Driver.create();
       let btn1: Component | null = await driver.findComponent(ON.id('changeButton'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
 
       let strJson1 = inspector.getInspectorByKey('common_fadingEdgeModifier');

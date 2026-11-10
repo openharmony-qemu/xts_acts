@@ -92,6 +92,9 @@ struct TabsAnimationModeExample {
       .height('40%')
       .backgroundColor('#F1F3F5')
       .scrollable(true)
-    }.width('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%')
   }
 }

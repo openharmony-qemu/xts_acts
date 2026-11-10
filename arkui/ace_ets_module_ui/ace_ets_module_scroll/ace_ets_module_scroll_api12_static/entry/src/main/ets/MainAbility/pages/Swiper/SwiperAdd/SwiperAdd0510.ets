@@ -60,5 +60,7 @@ struct SwiperAdd0510 {
       Text(this.onAnimationStart).key('swiper_add_0510')
 
     }
+    .padding(10)
+    .margin(10)
   }
 }

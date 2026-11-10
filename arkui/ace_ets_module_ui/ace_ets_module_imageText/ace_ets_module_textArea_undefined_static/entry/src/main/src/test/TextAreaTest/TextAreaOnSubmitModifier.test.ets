@@ -1,6 +1,6 @@
 'use static';
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "@ohos/hypium-static/src/main/indexStatic";
 import router from '@ohos.router';
 import {
   Component,
@@ -21,6 +21,8 @@ import events_emitter from '@ohos.events.emitter'
 import { BusinessError } from '@ohos.base';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, Component } from '@kit.TestKit';
+
+let displayID: Int = 0;
 
 export default function TextAreaOnSubmitModifierTest() {
   describe('TextAreaOnSubmitModifierTest', () => {
@@ -47,9 +49,10 @@ export default function TextAreaOnSubmitModifierTest() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push TextAreaOnSubmitModifierTest page error: " + err);
+        console.log("push TextAreaOnSubmitModifierTest page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     /**
          * @tc.number   TextAreaOnSubmitModifierTest_static_0010
@@ -65,7 +68,11 @@ export default function TextAreaOnSubmitModifierTest() {
       await CommonFunc.sleep(1000);
       await textArea.longClick();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2054)
+      try {
+        await driver.triggerKey(2054, displayID)
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('Text');
       let obj = JSON.parseJsonElement(strJson);
@@ -85,7 +92,11 @@ export default function TextAreaOnSubmitModifierTest() {
       await textArea.longClick();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2054)
+      try {
+        await driver.triggerKey(2054, displayID)
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       strJson = inspector.getInspectorByKey('Text');
       obj = JSON.parseJsonElement(strJson);
@@ -102,7 +113,11 @@ export default function TextAreaOnSubmitModifierTest() {
       await textArea.longClick();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2054)
+      try {
+        await driver.triggerKey(2054, displayID)
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       strJson = inspector.getInspectorByKey('Text');
       obj = JSON.parseJsonElement(strJson);

@@ -64,7 +64,11 @@ export default function focus() {
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2049, displayID);
+      try {
+        await driver.triggerKey(2049, displayID);
+      } catch (e) {
+        console.error('driver call failed: ' + e);
+      }
       await CommonFunc.sleep(1000);
 
       let btn1 = await driver.findComponent(ON.id('focus1_btn1'));
@@ -72,7 +76,11 @@ export default function focus() {
       expect(btn1_isFocusedValue).assertEqual(true);
       console.info('[focus_0100] btn1 isFocused');
 
-      await driver.triggerKey(2049, displayID);
+      try {
+        await driver.triggerKey(2049, displayID);
+      } catch (e) {
+        console.error('driver call failed: ' + e);
+      }
       await CommonFunc.sleep(1000);
 
       let btn2 = await driver.findComponent(ON.id('focus1_btn2'));
@@ -84,7 +92,11 @@ export default function focus() {
       await CommonFunc.sleep(2000);
       console.info('[focus_0100] btn2 click');
 
-      await driver.triggerKey(2049, displayID);
+      try {
+        await driver.triggerKey(2049, displayID);
+      } catch (e) {
+        console.error('driver call failed: ' + e);
+      }
       await CommonFunc.sleep(1000);
 
       let btn3 = await driver.findComponent(ON.id('focus01_btn1'));

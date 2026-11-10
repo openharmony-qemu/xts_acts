@@ -129,5 +129,7 @@ struct SwiperMargin {
         .key('SwiperMargin_Swiper4')
       }
     }
+    .padding(10)
+    .margin(10)
   }
 }

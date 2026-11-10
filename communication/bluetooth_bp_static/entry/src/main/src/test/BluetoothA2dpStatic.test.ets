@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, Hypium, beforeEach } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, Hypium, beforeEach } from "@ohos/hypium-static/src/main/indexStatic";
 import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
@@ -309,6 +309,96 @@ export default function bluetoothA2dpTest(): void {
           } else {
             expect(err.code).assertEqual(401);
           }
+        }
+        done();
+      })
+
+    /**
+     * @tc.number  SUB_COMMUNICATION_BLUETOOTHACCESS_CODECBITRATETEST_0100
+     * @tc.name    CodecBitRateTest
+     * @tc.desc    Test CodecBitRateTest API functionality
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("CodecBitRateTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let CODEC_BIT_RATE_96000: a2dp.CodecBitRate = a2dp.CodecBitRate.CODEC_BIT_RATE_96000;
+          hilog.info(domain, tag, "CODEC_BIT_RATE_96000:" + CODEC_BIT_RATE_96000);
+          expect(true).assertEqual(CODEC_BIT_RATE_96000 === 0);
+
+          let CODEC_BIT_RATE_128000: a2dp.CodecBitRate = a2dp.CodecBitRate.CODEC_BIT_RATE_128000;
+          hilog.info(domain, tag, "CODEC_BIT_RATE_128000:" + CODEC_BIT_RATE_128000);
+          expect(true).assertEqual(CODEC_BIT_RATE_128000 === 1);
+
+          let CODEC_BIT_RATE_192000: a2dp.CodecBitRate = a2dp.CodecBitRate.CODEC_BIT_RATE_192000;
+          hilog.info(domain, tag, "CODEC_BIT_RATE_192000:" + CODEC_BIT_RATE_192000);
+          expect(true).assertEqual(CODEC_BIT_RATE_192000 === 2);
+
+          let CODEC_BIT_RATE_256000: a2dp.CodecBitRate = a2dp.CodecBitRate.CODEC_BIT_RATE_256000;
+          hilog.info(domain, tag, "CODEC_BIT_RATE_256000:" + CODEC_BIT_RATE_256000);
+          expect(true).assertEqual(CODEC_BIT_RATE_256000 === 3);
+
+          let CODEC_BIT_RATE_320000: a2dp.CodecBitRate = a2dp.CodecBitRate.CODEC_BIT_RATE_320000;
+          hilog.info(domain, tag, "CODEC_BIT_RATE_320000:" + CODEC_BIT_RATE_320000);
+          expect(true).assertEqual(CODEC_BIT_RATE_320000 === 4);
+
+          let CODEC_BIT_RATE_480000: a2dp.CodecBitRate = a2dp.CodecBitRate.CODEC_BIT_RATE_480000;
+          hilog.info(domain, tag, "CODEC_BIT_RATE_480000:" + CODEC_BIT_RATE_480000);
+          expect(true).assertEqual(CODEC_BIT_RATE_480000 === 5);
+
+          let CODEC_BIT_RATE_640000: a2dp.CodecBitRate = a2dp.CodecBitRate.CODEC_BIT_RATE_640000;
+          hilog.info(domain, tag, "CODEC_BIT_RATE_640000:" + CODEC_BIT_RATE_640000);
+          expect(true).assertEqual(CODEC_BIT_RATE_640000 === 6);
+
+          let CODEC_BIT_RATE_960000: a2dp.CodecBitRate = a2dp.CodecBitRate.CODEC_BIT_RATE_960000;
+          hilog.info(domain, tag, "CODEC_BIT_RATE_960000:" + CODEC_BIT_RATE_960000);
+          expect(true).assertEqual(CODEC_BIT_RATE_960000 === 7);
+
+          let CODEC_BIT_RATE_ABR: a2dp.CodecBitRate = a2dp.CodecBitRate.CODEC_BIT_RATE_ABR;
+          hilog.info(domain, tag, "CODEC_BIT_RATE_ABR:" + CODEC_BIT_RATE_ABR);
+          expect(true).assertEqual(CODEC_BIT_RATE_ABR === 8);
+
+          let CODEC_BIT_RATE_1500000: a2dp.CodecBitRate = a2dp.CodecBitRate.CODEC_BIT_RATE_1500000;
+          hilog.info(domain, tag, "CODEC_BIT_RATE_1500000:" + CODEC_BIT_RATE_1500000);
+          expect(true).assertEqual(CODEC_BIT_RATE_1500000 === 9);
+
+          let CODEC_BIT_RATE_2300000: a2dp.CodecBitRate = a2dp.CodecBitRate.CODEC_BIT_RATE_2300000;
+          hilog.info(domain, tag, "CODEC_BIT_RATE_2300000:" + CODEC_BIT_RATE_2300000);
+          expect(true).assertEqual(CODEC_BIT_RATE_2300000 === 10);
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "CodecBitRate get errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.number  SUB_COMMUNICATION_BLUETOOTHACCESS_CODECFRAMELENGTHTEST_0100
+     * @tc.name    CodecFrameLengthTest
+     * @tc.desc    Test CodecFrameLengthTest API functionality
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("CodecFrameLengthTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let CODEC_FRAME_LENGTH_5MS: a2dp.CodecFrameLength = a2dp.CodecFrameLength.CODEC_FRAME_LENGTH_5MS;
+          hilog.info(domain, tag, "CODEC_FRAME_LENGTH_5MS:" + CODEC_FRAME_LENGTH_5MS);
+          expect(true).assertEqual(CODEC_FRAME_LENGTH_5MS === 0);
+
+          let CODEC_FRAME_LENGTH_10MS: a2dp.CodecFrameLength = a2dp.CodecFrameLength.CODEC_FRAME_LENGTH_10MS;
+          hilog.info(domain, tag, "CODEC_FRAME_LENGTH_10MS:" + CODEC_FRAME_LENGTH_10MS);
+          expect(true).assertEqual(CODEC_FRAME_LENGTH_10MS === 1);
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "CodecFrameLength get errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
         }
         done();
       })

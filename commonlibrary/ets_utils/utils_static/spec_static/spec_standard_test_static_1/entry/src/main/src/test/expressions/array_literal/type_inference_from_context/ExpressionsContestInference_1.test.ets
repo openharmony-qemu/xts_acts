@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 
 let u_21: undefined = undefined;
 let n_21: null = null;

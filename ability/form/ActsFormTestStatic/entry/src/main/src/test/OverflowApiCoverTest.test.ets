@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from '../../../hypium/index';
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterEach } from '@ohos/hypium-static/src/main/indexStatic';
 import formProvider from '@ohos.app.form.formProvider';
 import formInfo from '@ohos.app.form.formInfo';
 import FormEditExtensionAbility from '@ohos.app.form.FormEditExtensionAbility';
@@ -23,6 +23,9 @@ import FormExtensionAbility from '@ohos.app.form.FormExtensionAbility';
 import { UIExtensionContentSession } from '@kit.AbilityKit';
 import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import commonEventManager from '@ohos.commonEventManager';
+import { BusinessError } from '@kit.BasicServicesKit';
 const CODE_OK = 0;
 const ERROR_CODE1 = 401;
 const ERROR_CODE2 = 16500050;
@@ -34,8 +37,26 @@ const ERROR_CODE11 = 16000121;
 const ERROR_CODE12 = 16000130;
 const ERROR_CODE13 = 801;
 const ERROR_CODE14 = 16501011;
+const ERROR_CODE15 = 16501026;
+
+const DELEGATOR: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+const FINISH_EVENT: string = 'FMS_FormEditSetBgColorFinish_Static_commonEvent';
+let formEditSubscriber: commonEventManager.CommonEventSubscriber | undefined = undefined;
 export default function OverflowApiCoverTest() {
   describe('OverflowApiCoverTest', () => {
+
+    beforeAll(async (): Promise<void> => {
+      let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: [FINISH_EVENT],
+      };
+      formEditSubscriber = await commonEventManager.createSubscriber(subscribeInfo);
+    });
+
+    afterEach((): void => {
+      if (formEditSubscriber) {
+        commonEventManager.unsubscribe(formEditSubscriber!);
+      }
+    });
 
     /**
      * @tc.name   RequestOverflow_Cover_Static_0100
@@ -305,6 +326,328 @@ export default function OverflowApiCoverTest() {
       }
       done();
       console.info(`${name} end`);
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0100
+     * @tc.desc   setWindowBackgroundColor with empty string (length check)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0100';
+      console.info(`${name} start`);
+      let callBack = (_: BusinessError | null, data: commonEventManager.CommonEventData | undefined): void => {
+        console.info(`${name} data: ${JSON.stringify(data)}`);
+        if (data?.parameters?.['action'] === name) {
+          let code: number = data?.code ?? -1;
+          if (code === ERROR_CODE15) {
+            expect(code).assertEqual(ERROR_CODE15);
+          } else {
+            console.info(`${name} unexpected error code: ${code}`);
+            expect().assertFail();
+          }
+          commonEventManager.unsubscribe(formEditSubscriber!, (): void => { done(); });
+        }
+      };
+      commonEventManager.subscribe(formEditSubscriber!, callBack);
+      DELEGATOR.startAbility({
+        bundleName: 'com.example.formsystemhost',
+        abilityName: 'EntryAbility',
+        parameters: {
+          'isFormEditStatic': true,
+          'formEditAction': name,
+          'color': '',
+        }
+      }).catch((err: Error): void => {
+        console.info(`${name} startAbility error: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        commonEventManager.unsubscribe(formEditSubscriber!, (): void => { done(); });
+      });
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0200
+     * @tc.number SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0200
+     * @tc.desc   setWindowBackgroundColor without # prefix
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0200';
+      console.info(`${name} start`);
+      let callBack = (_: BusinessError | null, data: commonEventManager.CommonEventData | undefined): void => {
+        console.info(`${name} data: ${JSON.stringify(data)}`);
+        if (data?.parameters?.['action'] === name) {
+          let code: number = data?.code ?? -1;
+          if (code === ERROR_CODE15) {
+            expect(code).assertEqual(ERROR_CODE15);
+          } else {
+            console.info(`${name} unexpected error code: ${code}`);
+            expect().assertFail();
+          }
+          commonEventManager.unsubscribe(formEditSubscriber!, (): void => { done(); });
+        }
+      };
+      commonEventManager.subscribe(formEditSubscriber!, callBack);
+      DELEGATOR.startAbility({
+        bundleName: 'com.example.formsystemhost',
+        abilityName: 'EntryAbility',
+        parameters: {
+          'isFormEditStatic': true,
+          'formEditAction': name,
+          'color': 'FF0000',
+        }
+      }).catch((err: Error): void => {
+        console.info(`${name} startAbility error: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        commonEventManager.unsubscribe(formEditSubscriber!, (): void => { done(); });
+      });
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0300
+     * @tc.number SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0300
+     * @tc.desc   setWindowBackgroundColor with non-hex characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0300';
+      console.info(`${name} start`);
+      let callBack = (_: BusinessError | null, data: commonEventManager.CommonEventData | undefined): void => {
+        console.info(`${name} data: ${JSON.stringify(data)}`);
+        if (data?.parameters?.['action'] === name) {
+          let code: number = data?.code ?? -1;
+          if (code === ERROR_CODE15) {
+            expect(code).assertEqual(ERROR_CODE15);
+          } else {
+            console.info(`${name} unexpected error code: ${code}`);
+            expect().assertFail();
+          }
+          commonEventManager.unsubscribe(formEditSubscriber!, (): void => { done(); });
+        }
+      };
+      commonEventManager.subscribe(formEditSubscriber!, callBack);
+      DELEGATOR.startAbility({
+        bundleName: 'com.example.formsystemhost',
+        abilityName: 'EntryAbility',
+        parameters: {
+          'isFormEditStatic': true,
+          'formEditAction': name,
+          'color': '#GGGGGG',
+        }
+      }).catch((err: Error): void => {
+        console.info(`${name} startAbility error: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        commonEventManager.unsubscribe(formEditSubscriber!, (): void => { done(); });
+      });
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0400
+     * @tc.number SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0400
+     * @tc.desc   setWindowBackgroundColor with wrong length (length check)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0400';
+      console.info(`${name} start`);
+      let callBack = (_: BusinessError | null, data: commonEventManager.CommonEventData | undefined): void => {
+        console.info(`${name} data: ${JSON.stringify(data)}`);
+        if (data?.parameters?.['action'] === name) {
+          let code: number = data?.code ?? -1;
+          if (code === ERROR_CODE15) {
+            expect(code).assertEqual(ERROR_CODE15);
+          } else {
+            console.info(`${name} unexpected error code: ${code}`);
+            expect().assertFail();
+          }
+          commonEventManager.unsubscribe(formEditSubscriber!, (): void => { done(); });
+        }
+      };
+      commonEventManager.subscribe(formEditSubscriber!, callBack);
+      DELEGATOR.startAbility({
+        bundleName: 'com.example.formsystemhost',
+        abilityName: 'EntryAbility',
+        parameters: {
+          'isFormEditStatic': true,
+          'formEditAction': name,
+          'color': '#FF00',
+        }
+      }).catch((err: Error): void => {
+        console.info(`${name} startAbility error: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        commonEventManager.unsubscribe(formEditSubscriber!, (): void => { done(); });
+      });
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0500
+     * @tc.number SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0500
+     * @tc.desc   setWindowBackgroundColor with valid RGB without loadContent (IPC error path)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0500';
+      console.info(`${name} start`);
+      let callBack = (_: BusinessError | null, data: commonEventManager.CommonEventData | undefined): void => {
+        console.info(`${name} data: ${JSON.stringify(data)}`);
+        if (data?.parameters?.['action'] === name) {
+          let code: number = data?.code ?? -1;
+          if (code === ERROR_CODE2) {
+            expect(code).assertEqual(ERROR_CODE2);
+          } else {
+            console.info(`${name} unexpected error code: ${code}`);
+            expect().assertFail();
+          }
+          commonEventManager.unsubscribe(formEditSubscriber!, (): void => { done(); });
+        }
+      };
+      commonEventManager.subscribe(formEditSubscriber!, callBack);
+      DELEGATOR.startAbility({
+        bundleName: 'com.example.formsystemhost',
+        abilityName: 'EntryAbility',
+        parameters: {
+          'isFormEditStatic': true,
+          'formEditAction': name,
+          'color': '#AABBCC',
+        }
+      }).catch((err: Error): void => {
+        console.info(`${name} startAbility error: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        commonEventManager.unsubscribe(formEditSubscriber!, (): void => { done(); });
+      });
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0600
+     * @tc.number SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0600
+     * @tc.desc   setWindowBackgroundColor with valid ARGB without loadContent (IPC error path)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0600';
+      console.info(`${name} start`);
+      let callBack = (_: BusinessError | null, data: commonEventManager.CommonEventData | undefined): void => {
+        console.info(`${name} data: ${JSON.stringify(data)}`);
+        if (data?.parameters?.['action'] === name) {
+          let code: number = data?.code ?? -1;
+          if (code === ERROR_CODE2) {
+            expect(code).assertEqual(ERROR_CODE2);
+          } else {
+            console.info(`${name} unexpected error code: ${code}`);
+            expect().assertFail();
+          }
+          commonEventManager.unsubscribe(formEditSubscriber!, (): void => { done(); });
+        }
+      };
+      commonEventManager.subscribe(formEditSubscriber!, callBack);
+      DELEGATOR.startAbility({
+        bundleName: 'com.example.formsystemhost',
+        abilityName: 'EntryAbility',
+        parameters: {
+          'isFormEditStatic': true,
+          'formEditAction': name,
+          'color': '#FFAABBCC',
+        }
+      }).catch((err: Error): void => {
+        console.info(`${name} startAbility error: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        commonEventManager.unsubscribe(formEditSubscriber!, (): void => { done(); });
+      });
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0700
+     * @tc.number SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0700
+     * @tc.desc   setWindowBackgroundColor with valid RGB with loadContent (success path)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0700';
+      console.info(`${name} start`);
+      let callBack = (_: BusinessError | null, data: commonEventManager.CommonEventData | undefined): void => {
+        console.info(`${name} data: ${JSON.stringify(data)}`);
+        if (data?.parameters?.['action'] === name) {
+          let code: number = data?.code ?? -1;
+          if (code === CODE_OK) {
+            expect(code).assertEqual(CODE_OK);
+          } else {
+            console.info(`${name} unexpected error code: ${code}`);
+            expect().assertFail();
+          }
+          commonEventManager.unsubscribe(formEditSubscriber!, (): void => { done(); });
+        }
+      };
+      commonEventManager.subscribe(formEditSubscriber!, callBack);
+      DELEGATOR.startAbility({
+        bundleName: 'com.example.formsystemhost',
+        abilityName: 'EntryAbility',
+        parameters: {
+          'isFormEditStatic': true,
+          'formEditAction': name,
+          'color': '#AABBCC',
+          'needLoadContent': true,
+        }
+      }).catch((err: Error): void => {
+        console.info(`${name} startAbility error: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        commonEventManager.unsubscribe(formEditSubscriber!, (): void => { done(); });
+      });
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0800
+     * @tc.number SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0800
+     * @tc.desc   setWindowBackgroundColor with valid ARGB with loadContent (success path)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0800';
+      console.info(`${name} start`);
+      let callBack = (_: BusinessError | null, data: commonEventManager.CommonEventData | undefined): void => {
+        console.info(`${name} data: ${JSON.stringify(data)}`);
+        if (data?.parameters?.['action'] === name) {
+          let code: number = data?.code ?? -1;
+          if (code === CODE_OK) {
+            expect(code).assertEqual(CODE_OK);
+          } else {
+            console.info(`${name} unexpected error code: ${code}`);
+            expect().assertFail();
+          }
+          commonEventManager.unsubscribe(formEditSubscriber!, (): void => { done(); });
+        }
+      };
+      commonEventManager.subscribe(formEditSubscriber!, callBack);
+      DELEGATOR.startAbility({
+        bundleName: 'com.example.formsystemhost',
+        abilityName: 'EntryAbility',
+        parameters: {
+          'isFormEditStatic': true,
+          'formEditAction': name,
+          'color': '#FFAABBCC',
+          'needLoadContent': true,
+        }
+      }).catch((err: Error): void => {
+        console.info(`${name} startAbility error: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        commonEventManager.unsubscribe(formEditSubscriber!, (): void => { done(); });
+      });
     });
   })
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level, beforeAll } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, beforeAll } from '@ohos/hypium-static/src/main/indexStatic';
 import inspector from '@ohos.arkui.inspector'
 import { Driver, ON, Component } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -32,12 +32,12 @@ let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
+let displayID: Int = 0;
 export default function monitorInvisibleAreaTest() {
   describe('monitorInvisibleAreaTest', () => {
     beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api18.static", "EntryAbility")
-
     });
     beforeEach(async (): Promise<void> => {
       console.info("monitorInvisibleAreaTest beforeEach start");
@@ -55,9 +55,10 @@ export default function monitorInvisibleAreaTest() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push monitorInvisibleAreaTest page error: " + err);
+        console.log("push monitorInvisibleAreaTest page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
 
@@ -83,12 +84,14 @@ it('monitorInvisibleAreaTest_static_001', Level.LEVEL1, async (done: () => void)
       let right = rect.right;
       let bottom = rect.bottom;
 
-      await driver.swipe(
-        (Math.round(left + (right - left) * 0.5)).toInt(),
-        (Math.round(top + (bottom - top) * 0.75)).toInt(),
-        (Math.round(left + (right - left) * 0.5)).toInt(),
-        (Math.round(top + (bottom - top) * 0.25)).toInt()
-      );
+      try {
+        await driver.swipeBetween(
+          { x: (Math.round(left + (right - left) * 0.5)).toInt(), y: (Math.round(top + (bottom - top) * 0.75)).toInt(), displayId: displayID },
+          { x: (Math.round(left + (right - left) * 0.5)).toInt(), y: (Math.round(top + (bottom - top) * 0.25)).toInt(), displayId: displayID }
+        );
+      } catch (err) {
+        console.log('driver.swipeBetween error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('ImageAnimatorFlag');
@@ -126,23 +129,27 @@ it('monitorInvisibleAreaTest_static_002', Level.LEVEL1, async (done: () => void)
       let right = rect.right;
       let bottom = rect.bottom;
 
-      await driver.swipe(
-        (Math.round(left + (right - left) * 0.5)).toInt(),
-        (Math.round(top + (bottom - top) * 0.25)).toInt(),
-        (Math.round(left + (right - left) * 0.5)).toInt(),
-        (Math.round(top + (bottom - top) * 0.75)).toInt()
-      );
+      try {
+        await driver.swipeBetween(
+          { x: (Math.round(left + (right - left) * 0.5)).toInt(), y: (Math.round(top + (bottom - top) * 0.25)).toInt(), displayId: displayID },
+          { x: (Math.round(left + (right - left) * 0.5)).toInt(), y: (Math.round(top + (bottom - top) * 0.75)).toInt(), displayId: displayID }
+        );
+      } catch (err) {
+        console.log('driver.swipeBetween error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(6000);
 
       let btnFalse: Component = await driver.findComponent(ON.id('falseFlag')) as Component;
       await btnFalse.click()
       await CommonFunc.sleep(2000);
-      await driver.swipe(
-        (Math.round(left + (right - left) * 0.5)).toInt(),
-        (Math.round(top + (bottom - top) * 0.75)).toInt(),
-        (Math.round(left + (right - left) * 0.5)).toInt(),
-        (Math.round(top + (bottom - top) * 0.25)).toInt()
-      );
+      try {
+        await driver.swipeBetween(
+          { x: (Math.round(left + (right - left) * 0.5)).toInt(), y: (Math.round(top + (bottom - top) * 0.75)).toInt(), displayId: displayID },
+          { x: (Math.round(left + (right - left) * 0.5)).toInt(), y: (Math.round(top + (bottom - top) * 0.25)).toInt(), displayId: displayID }
+        );
+      } catch (err) {
+        console.log('driver.swipeBetween error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(6000);
 
       let strJson = inspector.getInspectorByKey('ImageAnimatorFlag');
@@ -177,23 +184,27 @@ it('monitorInvisibleAreaTest_static_003', Level.LEVEL1, async (done: () => void)
       let right = rect.right;
       let bottom = rect.bottom;
 
-      await driver.swipe(
-        (Math.round(left + (right - left) * 0.5)).toInt(),
-        (Math.round(top + (bottom - top) * 0.25)).toInt(),
-        (Math.round(left + (right - left) * 0.5)).toInt(),
-        (Math.round(top + (bottom - top) * 0.75)).toInt()
-      );
+      try {
+        await driver.swipeBetween(
+          { x: (Math.round(left + (right - left) * 0.5)).toInt(), y: (Math.round(top + (bottom - top) * 0.25)).toInt(), displayId: displayID },
+          { x: (Math.round(left + (right - left) * 0.5)).toInt(), y: (Math.round(top + (bottom - top) * 0.75)).toInt(), displayId: displayID }
+        );
+      } catch (err) {
+        console.log('driver.swipeBetween error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(6000);
 
       let btnUndefined: Component = await driver.findComponent(ON.id('undefinedFlag')) as Component;
       await btnUndefined.click()
       await CommonFunc.sleep(2000);
-      await driver.swipe(
-        (Math.round(left + (right - left) * 0.5)).toInt(),
-        (Math.round(top + (bottom - top) * 0.75)).toInt(),
-        (Math.round(left + (right - left) * 0.5)).toInt(),
-        (Math.round(top + (bottom - top) * 0.25)).toInt()
-      );
+      try {
+        await driver.swipeBetween(
+          { x: (Math.round(left + (right - left) * 0.5)).toInt(), y: (Math.round(top + (bottom - top) * 0.75)).toInt(), displayId: displayID },
+          { x: (Math.round(left + (right - left) * 0.5)).toInt(), y: (Math.round(top + (bottom - top) * 0.25)).toInt(), displayId: displayID }
+        );
+      } catch (err) {
+        console.log('driver.swipeBetween error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(6000);
       let strJson = inspector.getInspectorByKey('ImageAnimatorFlag');
       let obj = JSON.parseJsonElement(strJson);
@@ -228,23 +239,27 @@ it('monitorInvisibleAreaTest_static_004', Level.LEVEL1, async (done: () => void)
       let bottom = rect.bottom;
       let middle = (top + bottom) / 2
 
-      await driver.swipe(
-        (Math.round(left + (right - left) * 0.5)).toInt(),
-        (Math.round(top + (bottom - top) * 0.25)).toInt(),
-        (Math.round(left + (right - left) * 0.5)).toInt(),
-        (Math.round(top + (bottom - top) * 0.75)).toInt()
-      );
+      try {
+        await driver.swipeBetween(
+          { x: (Math.round(left + (right - left) * 0.5)).toInt(), y: (Math.round(top + (bottom - top) * 0.25)).toInt(), displayId: displayID },
+          { x: (Math.round(left + (right - left) * 0.5)).toInt(), y: (Math.round(top + (bottom - top) * 0.75)).toInt(), displayId: displayID }
+        );
+      } catch (err) {
+        console.log('driver.swipeBetween error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(6000);
 
       let btnNull: Component = await driver.findComponent(ON.id('nullFlag')) as Component;
       await btnNull.click()
       await CommonFunc.sleep(2000);
-      await driver.swipe(
-        (Math.round(left + (right - left) * 0.5)).toInt(),
-        (Math.round(top + (bottom - top) * 0.75)).toInt(),
-        (Math.round(left + (right - left) * 0.5)).toInt(),
-        (Math.round(top + (bottom - top) * 0.25)).toInt()
-      );
+      try {
+        await driver.swipeBetween(
+          { x: (Math.round(left + (right - left) * 0.5)).toInt(), y: (Math.round(top + (bottom - top) * 0.75)).toInt(), displayId: displayID },
+          { x: (Math.round(left + (right - left) * 0.5)).toInt(), y: (Math.round(top + (bottom - top) * 0.25)).toInt(), displayId: displayID }
+        );
+      } catch (err) {
+        console.log('driver.swipeBetween error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(6000);
       let strJson = inspector.getInspectorByKey('ImageAnimatorFlag');
       let obj = JSON.parseJsonElement(strJson);

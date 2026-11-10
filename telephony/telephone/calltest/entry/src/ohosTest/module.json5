@@ -60,6 +60,16 @@
       },
       {
         "name": "ohos.permission.ANSWER_CALL"
+      },
+      {
+        "name": "ohos.permission.DIRECT_CALL",
+        "reason": "$string:direct_call_permission_reason",
+        "usedScene": {
+          "abilities": [
+            "TestAbility"
+          ],
+          "when": "inuse"
+        }
       }
     ]
   }

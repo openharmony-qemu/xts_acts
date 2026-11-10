@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, Level } from '../../../../hypium/index';
+import { describe, expect, it, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import {
-  Binding, CustomComponentContext, DecoratorInfo, ElementInfo, IMonitor,
+  Binding, DecoratorInfo, ElementInfo, IMonitor,
   IReusePool, MonitorBaseOptions, MonitorCallback, MonitorOptions, MonitorValueInfo,
   MutableBinding, ObservedArray, ObservedDate, ObservedMap, ObservedResult,
   ObservedSet, UIUtils
 } from '@kit.ArkUI';
 import {
-  CoverageComponentContext, CoverageOwner, CoverageRecord, CoverageReusePool
+  CoverageOwner, CoverageRecord, CoverageReusePool
 } from '../../../ets/staticCoverage/StaticCoverageSupport';
 
 export default function StaticCoverageUtilsTest(): void {
@@ -1045,40 +1045,6 @@ export default function StaticCoverageUtilsTest(): void {
         console.info('[ARKUI_NEW] static coverage execute');
         const pool: IReusePool = new CoverageReusePool();
         expect(pool.preRender !== undefined).assertTrue();
-      }
-    );
-    /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_GLOBAL_CUSTOMCOMPONENTCONTEXT_0100
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_GLOBAL_CUSTOMCOMPONENTCONTEXT_0100
-     * @tc.desc   Verify static Interface coverage for utils.global.CustomComponentContext
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it(
-      'SUB_ARKUI_STCOV_UTILS_GLOBAL_CUSTOMCOMPONENTCONTEXT_0100',
-      Level.LEVEL1,
-      (): void => {
-        console.info('[ARKUI_NEW] static coverage execute');
-        const context: CustomComponentContext = new CoverageComponentContext();
-        expect(context.getReusePool() !== undefined).assertTrue();
-      }
-    );
-    /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_CUSTOMCOMPONENTCONTEXT_GETREUSEPOOL_0100
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_CUSTOMCOMPONENTCONTEXT_GETREUSEPOOL_0100
-     * @tc.desc   Verify static Method coverage for utils.CustomComponentContext.getReusePool
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it(
-      'SUB_ARKUI_STCOV_UTILS_CUSTOMCOMPONENTCONTEXT_GETREUSEPOOL_0100',
-      Level.LEVEL1,
-      (): void => {
-        console.info('[ARKUI_NEW] static coverage execute');
-        const context: CustomComponentContext = new CoverageComponentContext();
-        expect(context.getReusePool() !== undefined).assertTrue();
       }
     );
     /**

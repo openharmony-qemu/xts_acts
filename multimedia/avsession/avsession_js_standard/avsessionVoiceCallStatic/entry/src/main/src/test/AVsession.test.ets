@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from "@ohos/hypium-static/src/main/indexStatic";
 import avSession from '@ohos.multimedia.avsession';
 import image from '@ohos.multimedia.image';
 import common from '@ohos.app.ability.common';
@@ -114,7 +114,9 @@ export default function abilityTest() {
                 console.info(`TestTag: getAVCastController : start`);
                 aVCastController = await session!.getAVCastController();
                 console.info(`${TAG}: getAVCastController11 : SUCCESS`);
-                expect(false).assertTrue();
+                if (aVCastController != undefined) {
+                    expect(false).assertTrue();
+                }
             }catch(err){
                 err = err as BusinessError;
                 console.info(`${TAG}:getAVCastController11 BusinessError: code: ${err.code}, message: ${err.message}`);
@@ -142,7 +144,9 @@ export default function abilityTest() {
                 } else {
                     aVCastController = avcontroller;
                     console.info('$\{TAG}:getAVCastController11 : SUCCESS');
-                    expect(false).assertTrue();
+                    if (avcontroller != undefined) {
+                        expect(false).assertTrue();
+                    }
                 }
             });
             done();

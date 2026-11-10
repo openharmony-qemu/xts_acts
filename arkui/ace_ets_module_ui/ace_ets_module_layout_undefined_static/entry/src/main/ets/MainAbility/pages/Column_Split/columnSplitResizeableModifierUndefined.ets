@@ -17,7 +17,7 @@
 import { Entry, Text, Column, Component, Button, ClickEvent, Flex,
   FlexAlign,ItemAlign, Select, Color, Row, Font, SymbolEffectStrategy,
   SymbolGlyph, $r, Navigation, List, TextInput, AttributeModifier,
-  ColumnSplitAttribute, ColumnSplit, ColumnSplitDividerStyle, TextAlign} from '@ohos.arkui.component'
+  ColumnSplitAttribute, ColumnSplit, ColumnSplitDividerStyle, TextAlign, HorizontalAlign } from '@ohos.arkui.component'
 import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
@@ -56,18 +56,19 @@ struct Index {
       Row() {
         Column() {
           ColumnSplit() {
-            Text('1').width('100%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
-            Text('2').width('100%').height(50).backgroundColor(0xD2B48C).textAlign(TextAlign.Center)
-            Text('3').width('100%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
-            Text('4').width('100%').height(50).backgroundColor(0xD2B48C).textAlign(TextAlign.Center)
-            Text('5').width('100%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
+            Text('1').width('80%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
+            Text('2').width('80%').height(50).backgroundColor(0xD2B48C).textAlign(TextAlign.Center)
+            Text('3').width('80%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
+            Text('4').width('80%').height(50).backgroundColor(0xD2B48C).textAlign(TextAlign.Center)
+            Text('5').width('80%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
           }
           .attributeModifier(this.modifier)
           .id('columnSplit_resizeable_modifier')
           .borderWidth(1)
-          .width('90%').height('60%')
+          .width('80%').height('60%')
         }
       }
     }
+    .alignItems(HorizontalAlign.Center)
   }
 }

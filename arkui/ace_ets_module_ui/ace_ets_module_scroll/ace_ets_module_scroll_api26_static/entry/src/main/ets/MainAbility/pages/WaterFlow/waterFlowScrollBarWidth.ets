@@ -209,5 +209,7 @@ struct WaterFlowIndex {
       .height(200)
       .backgroundColor(0xFFF8F0)
     }
+    .padding(10)
+    .margin(10)
   }
 }

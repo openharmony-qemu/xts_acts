@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import { Driver, ON, Component, MouseButton, PointerMatrix } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -50,8 +50,8 @@ export default function RotationGestureAllowedTypesTest() {
     });
 
 
-    
-    
+
+
 /**
      * @tc.number   RotationGestureAllowedTypesTest_static_0010
      * @tc.name     RotationGestureAllowedTypesTest_static_0010
@@ -65,7 +65,7 @@ it('RotationGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () 
       let windowOffsetX:number = AppStorage.get<number>("winLeft") as number
       let windowOffsetY:number = AppStorage.get<number>("winTop") as number
       console.log('RotationGestureAllowedTypesTest_static_0010 windowOffsetX and windowOffsetY',windowOffsetX, windowOffsetY)
-      let areaObj1 = CommonFunc.getComponentRectOnScreen('RotationGestureAllowedTypes' + '_Text');
+      let areaObj1 = CommonFunc.getComponentRectOnScreen('RotationGestureAllowedTypes_Text');
       let areaHeight1 = areaObj1.bottom - areaObj1.top
       let areaWidth1 = areaObj1.right - areaObj1.left
       console.log('RotationGestureAllowedTypesTest_static_0010 areaObj1 start',areaObj1.left,areaObj1.top,areaObj1.right,areaObj1.bottom)
@@ -76,14 +76,14 @@ it('RotationGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let pointers: PointerMatrix = PointerMatrix.create(2,2);
-      pointers.setPoint(0,0,{x: Math.round(areaObj1.left).toInt(),y: Math.round(areaObj1.top).toInt(), displayId: displayID });
-      pointers.setPoint(0,1,{x: Math.round(areaObj1.right).toInt(),y: Math.round(areaObj1.top).toInt(), displayId: displayID });
-      pointers.setPoint(1,0,{x: Math.round(areaObj1.right).toInt(),y: Math.round(areaObj1.bottom).toInt(), displayId: displayID });
-      pointers.setPoint(1,1,{x: Math.round(areaObj1.left).toInt(),y: Math.round(areaObj1.bottom).toInt(), displayId: displayID });
+      pointers.setPoint(0,0,{x: Math.round(areaObj1.left + areaWidth1/2).toInt(),y: Math.round(areaObj1.top).toInt(), displayId: displayID });
+      pointers.setPoint(0,1,{x: Math.round(areaObj1.left + areaWidth1/2).toInt(),y: Math.round(areaObj1.bottom).toInt(), displayId: displayID });
+      pointers.setPoint(1,0,{x: Math.round(areaObj1.left + areaWidth1/2).toInt(),y: Math.round(areaObj1.bottom).toInt(), displayId: displayID });
+      pointers.setPoint(1,1,{x: Math.round(areaObj1.left + areaWidth1/2).toInt(),y: Math.round(areaObj1.top).toInt(), displayId: displayID });
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);
 
-      let text1 = inspector.getInspectorByKey('RotationGestureAllowedTypes' + '_result');
+      let text1 = inspector.getInspectorByKey('RotationGestureAllowedTypes_result');
       let obj1 = JSON.parseJsonElement(text1);
       console.log('RotationGestureAllowedTypesTest_static_0010 obj1 $attrs content',obj1.getElement('$attrs').getString('content'),obj1)
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('allowed types success');
@@ -92,7 +92,7 @@ it('RotationGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () 
       let button1 = await (driver.findComponent(ON.id('Mouse_Type')) as Promise<Component>);
       await button1.click();
       await CommonFunc.sleep(3000);
-      let text2 = inspector.getInspectorByKey('RotationGestureAllowedTypes' + '_result');
+      let text2 = inspector.getInspectorByKey('RotationGestureAllowedTypes_result');
       let obj2 = JSON.parseJsonElement(text2);
       console.log('RotationGestureAllowedTypesTest_static_0010 obj2 $attrs content',obj2.getElement('$attrs').getString('content'),obj2)
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('allowed types default');
@@ -101,7 +101,7 @@ it('RotationGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () 
       await CommonFunc.sleep(1000);
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);
-      let text3 = inspector.getInspectorByKey('RotationGestureAllowedTypes' + '_result');
+      let text3 = inspector.getInspectorByKey('RotationGestureAllowedTypes_result');
       let obj3 = JSON.parseJsonElement(text3);
       console.log('RotationGestureAllowedTypesTest_static_0010 obj3 $attrs content',obj3.getElement('$attrs').getString('content'),obj3)
       expect(obj3.getElement('$attrs').getString('content')).assertEqual('allowed types default');
@@ -111,7 +111,7 @@ it('RotationGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () 
       let button3 = await (driver.findComponent(ON.id('Invalid_type')) as Promise<Component>);
       await button3.click();
       await CommonFunc.sleep(3000);
-      let text9 = inspector.getInspectorByKey('RotationGestureAllowedTypes' + '_result');
+      let text9 = inspector.getInspectorByKey('RotationGestureAllowedTypes_result');
       let obj9 = JSON.parseJsonElement(text9);
       console.log('RotationGestureAllowedTypesTest_static_0010 obj9 $attrs content',obj9.getElement('$attrs').getString('content'),obj9)
       expect(obj9.getElement('$attrs').getString('content')).assertEqual('allowed types default');
@@ -124,5 +124,3 @@ it('RotationGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () 
     });
   })
 }
-
-

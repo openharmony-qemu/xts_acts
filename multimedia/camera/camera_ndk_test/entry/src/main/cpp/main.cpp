@@ -3071,6 +3071,22 @@ static napi_value SessionEnableAutoDeviceSwitch(napi_env env, napi_callback_info
     napi_create_int32(env, code, &result);
     return result;
 }
+
+static napi_value OHCaptureSessionEnableAutoDeviceSwitch(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_value result;
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    bool isEnable;
+    napi_get_value_bool(env, args[1], &isEnable);
+    Camera_ErrorCode code = ndkCamera_->EnableAutoDeviceSwitch(useCaseCode, isEnable);
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
 static napi_value SessionRegisterAutoDeviceSwitchStatusChange(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -4310,6 +4326,123 @@ static napi_value GetWhiteBalance(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value OHPhotoOutputIsC2PASignatureSupported(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+
+    Camera_ErrorCode code = ndkCamera_->IsC2PASignatureSupported(useCaseCode);
+
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value jsValue = nullptr;
+
+    napi_get_boolean(env, ndkCamera_->isC2PASignatureSupported_, &jsValue);
+    napi_set_named_property(env, obj, "isC2PASignatureSupported", jsValue);
+
+    napi_create_int32(env, code, &jsValue);
+    napi_set_named_property(env, obj, "errorCode", jsValue);
+
+    return obj;
+}
+
+static napi_value OHCameraC2PASignatureConfigCreate(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+
+    Camera_ErrorCode code = ndkCamera_->OHCameraC2PASignatureConfigCreate(useCaseCode);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCameraC2PASignatureConfigDestroy(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+
+    Camera_ErrorCode code = ndkCamera_->OHCameraC2PASignatureConfigDestroy(useCaseCode);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCameraC2PASignatureConfigSetAuthorName(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+
+    char* authorName = nullptr;
+    size_t len = 0;
+    napi_get_value_string_utf8(env, args[1], nullptr, 0, &len);
+    authorName = new char[len + 1];
+    napi_get_value_string_utf8(env, args[1], authorName, len + 1, &len);
+
+    Camera_ErrorCode code = ndkCamera_->OHCameraC2PASignatureConfigSetAuthorName(useCaseCode, authorName);
+    delete[] authorName;
+
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCameraC2PASignatureConfigSetAuthorID(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+
+    char* authorID = nullptr;
+    size_t len = 0;
+    napi_get_value_string_utf8(env, args[1], nullptr, 0, &len);
+    authorID = new char[len + 1];
+    napi_get_value_string_utf8(env, args[1], authorID, len + 1, &len);
+
+    Camera_ErrorCode code = ndkCamera_->OHCameraC2PASignatureConfigSetAuthorID(useCaseCode, authorID);
+    delete[] authorID;
+
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHPhotoOutputConfigureC2PASignature(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    bool enableC2PA;
+    napi_get_value_bool(env, args[1], &enableC2PA);
+
+    Camera_ErrorCode code = ndkCamera_->ConfigureC2PASignature(useCaseCode, enableC2PA);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -4471,6 +4604,8 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr },
         { "sessionEnableAutoDeviceSwitch", nullptr, SessionEnableAutoDeviceSwitch, nullptr, nullptr, nullptr,
             napi_default, nullptr },
+        { "oHCaptureSessionEnableAutoDeviceSwitch", nullptr, OHCaptureSessionEnableAutoDeviceSwitch, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
         { "sessionRegisterAutoDeviceSwitchStatusChange", nullptr, SessionRegisterAutoDeviceSwitchStatusChange,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "sessionUnregisterAutoDeviceSwitchStatusChange", nullptr, SessionUnregisterAutoDeviceSwitchStatusChange,
@@ -4831,6 +4966,18 @@ static napi_value Init(napi_env env, napi_value exports)
         {"isAutoExtendedGainmapDeliverySupported", nullptr,
             IsAutoExtendedGainmapDeliverySupported, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"enableAutoExtendedGainmapDelivery", nullptr, EnableAutoExtendedGainmapDelivery,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHPhotoOutputIsC2PASignatureSupported", nullptr, OHPhotoOutputIsC2PASignatureSupported,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHCameraC2PASignatureConfigCreate", nullptr, OHCameraC2PASignatureConfigCreate,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHCameraC2PASignatureConfigDestroy", nullptr, OHCameraC2PASignatureConfigDestroy,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHCameraC2PASignatureConfigSetAuthorName", nullptr, OHCameraC2PASignatureConfigSetAuthorName,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHCameraC2PASignatureConfigSetAuthorID", nullptr, OHCameraC2PASignatureConfigSetAuthorID,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHPhotoOutputConfigureC2PASignature", nullptr, OHPhotoOutputConfigureC2PASignature,
             nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     size_t mergedLength = sizeof(desc) / sizeof(desc[0]) +

@@ -66,7 +66,7 @@ function buildButton1(config: ButtonConfiguration) {
       .gesture(
         TapGesture({ count: 1 }).onAction((event: GestureEvent) => {
           config.triggerClick(event.fingerList[0].localX, event.fingerList[0].localY)
-        })).opacity(config.enabled ? 1 : 0.1)
+        })).opacity(config.enabled ? 1.0 : 0.1)
   }
 }
 

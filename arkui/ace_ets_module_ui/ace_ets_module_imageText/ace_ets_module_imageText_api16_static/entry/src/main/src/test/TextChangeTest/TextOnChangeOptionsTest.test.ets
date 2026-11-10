@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import {
   Driver,
@@ -44,6 +44,8 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
+let displayID: Int = 0;
+
 export default function TextOnChangeOptionsTest() {
   describe('TextOnChangeOptionsTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -69,8 +71,9 @@ export default function TextOnChangeOptionsTest() {
           // console.info("push TextOnChangeOptionsTest page success " + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push TextOnChangeOptionsTest page error: " + err);
+        console.log("push TextOnChangeOptionsTest page error: " + err);
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     afterEach(async (): Promise<void> => {
@@ -95,7 +98,11 @@ it('TextOnChangeOptionsTest_static_0001', Level.LEVEL1, async (done: () => void)
       await CommonFunc.sleep(500);
       let point = await search!.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await (driver.inputText(point, '3') as Promise<void>)
+      try {
+        await (driver.inputText({ x: point.x, y: point.y, displayId: displayID }, '3') as Promise<void>)
+      } catch (err) {
+        console.log('driver.inputText error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let oldContent = inspector.getInspectorByKey('oldContent');
@@ -163,7 +170,11 @@ it('TextOnChangeOptionsTest_static_0002', Level.LEVEL1, async (done: () => void)
       await CommonFunc.sleep(500);
       await (search?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2055);
+      try {
+        await driver.triggerKey(2055, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let oldContent = inspector.getInspectorByKey('oldContent');
@@ -231,7 +242,11 @@ it('TextOnChangeOptionsTest_static_0003', Level.LEVEL1, async (done: () => void)
       await CommonFunc.sleep(500);
       let point = await textArea!.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await (driver.inputText(point, '3') as Promise<void>)
+      try {
+        await (driver.inputText({ x: point.x, y: point.y, displayId: displayID }, '3') as Promise<void>)
+      } catch (err) {
+        console.log('driver.inputText error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let oldContent = inspector.getInspectorByKey('oldContent');
@@ -299,7 +314,11 @@ it('TextOnChangeOptionsTest_static_0004', Level.LEVEL1, async (done: () => void)
       await CommonFunc.sleep(500);
       await (textArea?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2055);
+      try {
+        await driver.triggerKey(2055, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let oldContent = inspector.getInspectorByKey('oldContent');
@@ -367,7 +386,11 @@ it('TextOnChangeOptionsTest_static_0005', Level.LEVEL1, async (done: () => void)
       await CommonFunc.sleep(500);
       let point = await textInput!.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await (driver.inputText(point, '3') as Promise<void>)
+      try {
+        await (driver.inputText({ x: point.x, y: point.y, displayId: displayID }, '3') as Promise<void>)
+      } catch (err) {
+        console.log('driver.inputText error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let oldContent = inspector.getInspectorByKey('oldContent');
@@ -435,7 +458,11 @@ it('TextOnChangeOptionsTest_static_0006', Level.LEVEL1, async (done: () => void)
       await CommonFunc.sleep(500);
       await (textInput?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2055);
+      try {
+        await driver.triggerKey(2055, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let oldContent = inspector.getInspectorByKey('oldContent');

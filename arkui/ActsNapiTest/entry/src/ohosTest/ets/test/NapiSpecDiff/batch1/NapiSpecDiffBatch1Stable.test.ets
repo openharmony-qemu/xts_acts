@@ -392,7 +392,7 @@ export default function napiSpecDiffBatch1StableTest() {
             callbackEntered = true;
             throw new Error('resolve deferred throw without catch probe');
           });
-        await Promise.resolve();
+        await new Promise<void>(resolve => setTimeout(resolve, 50));
         expect(callbackEntered).assertTrue();
         expect(unhandledPromise !== undefined).assertTrue();
       });
@@ -435,7 +435,7 @@ export default function napiSpecDiffBatch1StableTest() {
             callbackEntered = true;
             throw new Error('reject deferred throw without catch probe');
           });
-        await Promise.resolve();
+        await new Promise<void>(resolve => setTimeout(resolve, 50));
         expect(callbackEntered).assertTrue();
         expect(unhandledPromise !== undefined).assertTrue();
       });

@@ -17,6 +17,8 @@ import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function tabsPageMode() {
   describe('tabsPageMode', () => {
     beforeEach(async (done: Function) => {
@@ -78,7 +80,11 @@ export default function tabsPageMode() {
       let width = right - left;
       let height = bottom - top;
       console.info("swiperPageMode_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      await driver.mouseScroll({x:Math.round(left + width/2), y: Math.round(top + height/2)}, true, 1)
+      try {
+        await driver.mouseScroll({x:Math.round(left + width/2), y: Math.round(top + height/2), displayId: displayID}, true, 1)
+      } catch (e) {
+        console.error('driver call failed: ' + e);
+      }
       await CommonFunc.sleep(1000);
 
       let strJson2 = getInspectorByKey('tabs_PageMode_onChange');
@@ -119,7 +125,11 @@ export default function tabsPageMode() {
       let width = right - left;
       let height = bottom - top;
       console.info("swiperPageMode_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      await driver.mouseScroll({x:Math.round(left + width/2), y: Math.round(top + height/2)}, true, 3)
+      try {
+        await driver.mouseScroll({x:Math.round(left + width/2), y: Math.round(top + height/2), displayId: displayID}, true, 3)
+      } catch (e) {
+        console.error('driver call failed: ' + e);
+      }
       await CommonFunc.sleep(2000);
 
       let strJson2 = getInspectorByKey('tabs_PageMode_onChange');

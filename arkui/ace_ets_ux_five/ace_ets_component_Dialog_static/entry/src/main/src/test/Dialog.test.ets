@@ -15,7 +15,7 @@
  */
 
 import router from '@ohos.router';
-import { beforeEach, describe, expect, it, Level } from '../../../hypium/index';
+import { beforeEach, describe, expect, it, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import inspector from '@ohos.arkui.inspector'
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';

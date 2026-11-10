@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
@@ -23,6 +23,7 @@ import { UtilsTest } from '../Util.test';
 import { Driver, ON } from '@ohos.UiTest';
 import { inputMethod } from '@kit.IMEKit';
 
+let displayID: Int = 0;
 export default function SearchOnWillCopyTest() {
   describe('SearchOnWillCopyTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -47,9 +48,10 @@ export default function SearchOnWillCopyTest() {
           console.info("push SearchOnWillCopy success ");
         }
       } catch (err) {
-        console.error("push SearchOnWillCopy page error: " + err);
+        console.log("push SearchOnWillCopy page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     afterAll(async (): Promise<void> => {
@@ -73,9 +75,17 @@ export default function SearchOnWillCopyTest() {
       await CommonFunc.sleep(500);
       await (Search?.longClick() as Promise<void>);
       await CommonFunc.sleep(500);
-      await driver.triggerCombineKeys(2072,2017);
+      try {
+        await driver.triggerCombineKeys(2072,2017, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.triggerCombineKeys(2072,2019);
+      try {
+        await driver.triggerCombineKeys(2072,2019, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await inputMethod.getController().stopInputSession();
       await CommonFunc.sleep(500);
@@ -99,9 +109,17 @@ export default function SearchOnWillCopyTest() {
       await CommonFunc.sleep(500);
       await (Search?.longClick() as Promise<void>);
       await CommonFunc.sleep(500);
-      await driver.triggerCombineKeys(2072,2017);
+      try {
+        await driver.triggerCombineKeys(2072,2017, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.triggerCombineKeys(2072,2019);
+      try {
+        await driver.triggerCombineKeys(2072,2019, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await inputMethod.getController().stopInputSession();
       await CommonFunc.sleep(500);

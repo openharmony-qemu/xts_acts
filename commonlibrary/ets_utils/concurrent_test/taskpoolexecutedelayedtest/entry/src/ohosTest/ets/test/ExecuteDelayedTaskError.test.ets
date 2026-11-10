@@ -1177,5 +1177,29 @@ export default function executeDelayedTaskErrorTest() {
       done();
       console.info(`${caseName} test end`);
     })
+
+    /**
+     * @tc.name   testExecuteDelayedNegativeDelay3500
+     * @tc.number SUB_EXECUTE_DELAYED_TASK_ERROR_TEST_3500
+     * @tc.desc   executeDelayed with negative delay throws 10200028
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExecuteDelayedNegativeDelay3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        const caseName = 'testExecuteDelayedNegativeDelay3500';
+        let code = 0;
+        const task = new taskpool.Task(normalTask, 'negative');
+        try {
+          taskpool.executeDelayed(-1, task);
+        } catch (err) {
+          code = err.code;
+          console.info(`${caseName} error code: ${code}, message: ${err.message}`);
+        }
+        expect(code).assertEqual(10200028);
+        console.info(`${caseName} test end`);
+        done();
+      })
   })
 }

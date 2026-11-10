@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, Hypium, beforeEach } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, Hypium, beforeEach } from "@ohos/hypium-static/src/main/indexStatic";
 import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
@@ -71,7 +71,6 @@ export default function pasteBoardTest() {
                 expect(text).assertEqual('');
                 done();
             } catch (err) {
-                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err === null).assertTrue();
             }
@@ -124,7 +123,6 @@ export default function pasteBoardTest() {
                     done();
                 });
             } catch (err) {
-                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err === null).assertTrue();
             }
@@ -163,7 +161,6 @@ export default function pasteBoardTest() {
                 expect(data != null).assertTrue();
                 done();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
                 expect(err === null).assertTrue();
                 done();
@@ -204,7 +201,6 @@ export default function pasteBoardTest() {
                 expect(result2).assertEqual(result1 + 1);
                 done();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
                 expect(err === null).assertTrue();
                 done();
@@ -227,7 +223,6 @@ export default function pasteBoardTest() {
                 systemPasteboard.setAppShareOptions(pasteboard.ShareOption.INAPP);
                 hilog.info(domain, tag, "setAppShareOptions setAppShareOptions inApp success");
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "setAppShareOptions setAppShareOptions inApp fail " + err.message);
                 hilog.info(domain, tag, "err.code " + err.code);
                 expect(err.code).assertEqual(201);
@@ -251,7 +246,6 @@ export default function pasteBoardTest() {
                 systemPasteboard.removeAppShareOptions();
                 hilog.info(domain, tag, "setAppShareOptions removeAppShareOptions success");
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "setAppShareOptions removeAppShareOptions fail" + err.message);
                 hilog.info(domain, tag, "err.code " + err.code);
                 expect(err.code).assertEqual(201);
@@ -283,7 +277,6 @@ export default function pasteBoardTest() {
                 hilog.info(domain, tag, "getDataWithProgress success");
                 done();
             } catch (err) {
-                err = err as BusinessError;
                 //涉及到权限问题，权限不足就会报错误码12900010
                 hilog.info(domain, tag, "Remove specified record fail,error code is: " + err.message + err.code)
                 expect(err.code).assertEqual(12900010);
@@ -316,7 +309,6 @@ export default function pasteBoardTest() {
                 await systemPasteboard.getDataWithProgress(params);
                 expect().assertFail();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "Remove specified record fail,error code is: " + err.message + err.code)
                 expect(err.code).assertEqual(12900010);
                 done();

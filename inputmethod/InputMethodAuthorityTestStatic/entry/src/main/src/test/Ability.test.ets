@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll} from "@ohos/hypium-static/src/main/indexStatic";
 import inputMethod from '@ohos.inputMethod';
 import inputMethodSubtype from '@ohos.InputMethodSubtype';
 import hilog from '@ohos.hilog'
@@ -29,6 +29,7 @@ import InputMethodMethod from '@ohos.InputMethodSubtype';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let testAbilityContext:common.UIAbilityContext | undefined = undefined;
+let userId: string = '100';
 export default function inputMethodAuthorityJSUnit() {
 
     describe("inputMethodAuthorityJSUnit", (): void => {
@@ -55,6 +56,7 @@ export default function inputMethodAuthorityJSUnit() {
             let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
             if(user !== undefined){
                 cmd += ' -u ' + user;
+                userId = user;
             }
             abilityDelegator.executeShellCommand(cmd)
             await Utils.msSleep(2000)
@@ -127,7 +129,14 @@ export default function inputMethodAuthorityJSUnit() {
          */
         it('inputmethodNomal_test_hideSoftKeyboard_static_001', Level.LEVEL2, async (done: () => void)  => {
             hilog.info(domain, tag, "====>*********inputmethodNomal_test_hideSoftKeyboard_static_001 start************");
-            let inputMethodCtrl = inputMethod.getController()
+            let inputMethodCtrl = inputMethod.getController();
+            //多前台用户非主用户场景下跳过此用例
+            hilog.info(domain, tag, `====>inputmethodNomal_test_hideSoftKeyboard_static_001 success, userId: ${userId}`);
+            if (userId !== '100') {
+                hilog.info(domain, tag, `====>inputmethodNomal_test_hideSoftKeyboard_static_001 ignore`);
+                done();
+                return;
+            };
             const ATTRIBUTE: inputMethod.TextConfig = {
                 inputAttribute: {
                     textInputType: inputMethod.TextInputType.TEXT,
@@ -171,7 +180,14 @@ export default function inputMethodAuthorityJSUnit() {
          */
         it('inputmethodNomal_test_hideSoftKeyboard_static_002', Level.LEVEL0, async (done: () => void)  => {
             hilog.info(domain, tag, "====>*********inputmethodNomal_test_hideSoftKeyboard_static_002 start************");
-            let inputMethodCtrl = inputMethod.getController()
+            let inputMethodCtrl = inputMethod.getController();
+            //多前台用户非主用户场景下跳过此用例
+            hilog.info(domain, tag, `====>inputmethodNomal_test_hideSoftKeyboard_static_002 success, userId: ${userId}`);
+            if (userId !== '100') {
+                hilog.info(domain, tag, `====>inputmethodNomal_test_hideSoftKeyboard_static_002 ignore`);
+                done();
+                return;
+            };
             try {
                 const ATTRIBUTE: inputMethod.TextConfig = {
                     inputAttribute: {
@@ -284,7 +300,14 @@ export default function inputMethodAuthorityJSUnit() {
         it('inputmethodNomal_test_showSoftKeyboard_static_003', Level.LEVEL0, async (done: () => void) => {
             const CASE_NAME: string = 'inputmethodNomal_test_showSoftKeyboard_static_003';
             console.info(`${CASE_NAME} start`);
-            let inputMethodCtrl = inputMethod.getController()
+            let inputMethodCtrl = inputMethod.getController();
+            //多前台用户非主用户场景下跳过此用例
+            hilog.info(domain, tag, `====>inputmethodNomal_test_showSoftKeyboard_static_003 success, userId: ${userId}`);
+            if (userId !== '100') {
+                hilog.info(domain, tag, `====>inputmethodNomal_test_showSoftKeyboard_static_003 ignore`);
+                done();
+                return;
+            };
             inputMethodCtrl.showSoftKeyboard((err, data) => {
                 try {
                     if (err) {
@@ -315,6 +338,13 @@ export default function inputMethodAuthorityJSUnit() {
             const CASE_NAME: string = 'inputmethodNomal_test_showSoftKeyboard_static_004';
             console.info(`${CASE_NAME} start`);
             let inputMethodCtrl = inputMethod.getController();
+            //多前台用户非主用户场景下跳过此用例
+            hilog.info(domain, tag, `====>inputmethodNomal_test_showSoftKeyboard_static_004 success, userId: ${userId}`);
+            if (userId !== '100') {
+                hilog.info(domain, tag, `====>inputmethodNomal_test_showSoftKeyboard_static_004 ignore`);
+                done();
+                return;
+            };
             try {
                 await inputMethodCtrl.showSoftKeyboard();
                 console.info(`${CASE_NAME} execution success`);

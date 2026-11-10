@@ -23,7 +23,7 @@ import {
   it,
   expect,
   Level
-} from '../../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import {
@@ -53,6 +53,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function swiperLoopFalse() {
   describe('swiperLoopTestAdapt001', () => {
     beforeAll(async (): Promise<void> => {
@@ -103,12 +104,7 @@ it('testSwiperSetLoopFalse_static', Level.LEVEL0, async (done: () => void): Prom
       //   await driver.swipe(250, 230, 200, 230);
       let driver = Driver.create()
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('loopFalse')
-      await driver.swipe(
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`).toInt(),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(),
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.1 + gridRect.left}`).toInt(),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(),
-        1000);
+      await driver.swipeBetween({ x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`).toInt(), y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(), displayId: displayID.toInt() }, { x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.1 + gridRect.left}`).toInt(), y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(), displayId: displayID.toInt() }, 1000);
       await CommonFunc.sleep(3000);
       let loopFalse = CommonFunc.getComponentRect('loopFalse');
       let strJson = inspector.getInspectorByKey('loopFalse');

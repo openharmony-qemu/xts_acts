@@ -22,7 +22,7 @@ import {
   it,
   expect,
   Level
-} from '../../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import {
@@ -50,6 +50,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function swiperGroupTest() {
   describe('swiperGroupTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -109,10 +110,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0040', Level.LEVEL0, async (don
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
-      await driver.swipe(Math.round(winLeft + Math.round(btRight) - Math.round(UIContext.resolveUIContext()!.vp2px(20))).toInt(),
-        Math.round(winTop + Math.round(btBottom / 2)).toInt(),
-        Math.round(winLeft + Math.round(btLeft).toInt() + Math.round(UIContext.resolveUIContext()!.vp2px(10))).toInt(),
-        Math.round(winTop + Math.round(btBottom / 2)).toInt());
+      await driver.swipeBetween({ x: Math.round(winLeft + Math.round(btRight) - Math.round(UIContext.resolveUIContext()!.vp2px(20))).toInt(), y: Math.round(winTop + Math.round(btBottom / 2)).toInt(), displayId: displayID.toInt() }, { x: Math.round(winLeft + Math.round(btLeft).toInt() + Math.round(UIContext.resolveUIContext()!.vp2px(10))).toInt(), y: Math.round(winTop + Math.round(btBottom / 2)).toInt(), displayId: displayID.toInt() });
       await CommonFunc.sleep(4800);
       // get the component of text_6
       let text3: Component = await driver.findComponent(ON.text('6')) as Component;

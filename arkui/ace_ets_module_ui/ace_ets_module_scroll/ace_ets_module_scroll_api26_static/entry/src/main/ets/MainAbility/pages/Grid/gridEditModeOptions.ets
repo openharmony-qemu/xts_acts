@@ -156,6 +156,8 @@ struct GridEditModeOptions {
       .height('25%')
       .backgroundColor(0xFAEEE0)
     }
+    .padding(10)
+    .margin(10)
     .width('100%')
     .width('100%')
     .backgroundColor('#F5F5F5')

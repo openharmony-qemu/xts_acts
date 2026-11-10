@@ -16,7 +16,7 @@
 import fs from '@ohos.file.fs';
 import image from '@ohos.multimedia.image';
 import common from '@ohos.app.ability.common';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect,Hypium, it, Level,Size, TestType} from '../../../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect,Hypium, it, Level,Size, TestType} from '@ohos/hypium-static/src/main/indexStatic';
 
 
 const TAG = 'xtsStatic_cloneStatic';

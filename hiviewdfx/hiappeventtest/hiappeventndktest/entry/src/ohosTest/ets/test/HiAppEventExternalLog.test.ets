@@ -84,21 +84,33 @@ export default function HiAppEventExternalLog() {
 
             // 获取所有日志文件路径
             let allFiles: Set<string> = container.getAllLogFiles();
+            expect(allFiles != null).assertTrue();
             hilog.info(0x0000, 'hiAppEvent', `hiappevent [MyLogManager]  所有日志文件: ${JSON.stringify(Array.from(allFiles))}`);
 
             // 获取所有日志详情
             let allLogs: Set<hiAppEvent.ExternalLogWrapper> = container.getAllLogs();
+            expect(allLogs != null).assertTrue();
+
             for (const log of Array.from(allLogs)) {
+              const getFilePath = log.getSysEvent();
+              const getGenerationTime = log.getSysEvent();
+              const getSizeInKb = log.getSysEvent();
+              const getSysEvent = log.getSysEvent();
               hilog.info(0x0000, 'hiAppEvent', `hiappevent [MyLogManager] 所有日志文件详情: ${log.getFilePath()}, ` +
                 `时间: ${log.getGenerationTime()}, ` +
                 `大小: ${log.getSizeInKb()}KB, ` +
                 `事件: ${log.getSysEvent()}`);
               expect(log.getSizeInKb()).assertLargerOrEqual(0);
+              expect(getFilePath != null).assertTrue();
+              expect(getGenerationTime != null).assertTrue();
+              expect(getSizeInKb != null).assertTrue();
+              expect(getSysEvent != null).assertTrue();
               hilog.error(0x0000, 'hiAppEvent', `hiappevent [MyLogManager]1 registerExternalLogManager successful`);
             }
 
             // 按事件类型过滤 — 只清理 APP_CRASH 的日志
             let crashFiles: Set<string> = container.getLogFilesOfSysEvent('APP_CRASH');
+            expect(crashFiles != null).assertTrue();
             hilog.info(0x0000, 'hiAppEvent', `hiappevent [MyLogManager] APP_CRASH 日志: ${JSON.stringify(Array.from(crashFiles))}`);
             try{
               let crashFiles1: Set<string> = container.getLogFilesOfSysEvent(null);
@@ -118,10 +130,20 @@ export default function HiAppEventExternalLog() {
               expect(err.code === '401').assertTrue();
               done();
             }
+            try{
+              let crashFiles1: Set<string> = container.getLogFilesOfSysEvent("");
+              hilog.error(0x0000, 'hiAppEvent', `hiappevent [MyLogManager]2 registerExternalLogManager successful`);
+              done();
+            } catch (err) {
+              hilog.error(0x0000, 'hiAppEvent', `hiappevent [MyLogManager] registerExternalLogManager failed, err code: ${err.code}, err msg: ${err.message}`);
+              expect(err.code === '401').assertTrue();
+              done();
+            }
 
             // // 按时间过滤 — 删除1小时前的日志
             let oneHourAgo = Date.now() - 3600 * 1000;
             let oldFiles: Set<string> = container.getLogFilesGeneratedBefore(oneHourAgo);
+            expect(oldFiles != null).assertTrue();
             hilog.info(0x0000, 'hiAppEvent', `hiappevent [MyLogManager] 1小时前[${oneHourAgo}]的日志: ${JSON.stringify(Array.from(oldFiles))}`);
 
             try{
@@ -143,10 +165,30 @@ export default function HiAppEventExternalLog() {
 
             // // 按时间过滤 — 删除1小时内的日志
             oldFiles = container.getLogFilesGeneratedAfter(oneHourAgo);
+            expect(oldFiles != null).assertTrue();
             hilog.info(0x0000, 'hiAppEvent', `hiappevent [MyLogManager] 1小时内[${oneHourAgo}]的日志: ${JSON.stringify(Array.from(oldFiles))}`);
+
+            try{
+              oldFiles = container.getLogFilesGeneratedAfter(null);
+              done();
+            } catch (err) {
+              hilog.error(0x0000, 'hiAppEvent', `hiappevent [MyLogManager] registerExternalLogManager failed, err code: ${err.code}, err msg: ${err.message}`);
+              expect(err.code === '401').assertTrue();
+              done();
+            }
+
+            try{
+              oldFiles = container.getLogFilesGeneratedAfter(undefined);
+              done();
+            } catch (err) {
+              hilog.error(0x0000, 'hiAppEvent', `hiappevent [MyLogManager] registerExternalLogManager failed, err code: ${err.code}, err msg: ${err.message}`);
+              expect(err.code === '401').assertTrue();
+              done();
+            }
 
             // 按大小过滤 — 删除大于100KB的日志
             let largeFiles: Set<string> = container.getLogFilesLargerThan(100);
+            expect(largeFiles != null).assertTrue();
             hilog.info(0x0000, 'hiAppEvent', `hiappevent [MyLogManager] 大于100KB的日志: ${JSON.stringify(Array.from(largeFiles))}`);
             try{
               let largeFiles1: Set<string> = container.getLogFilesLargerThan(null);
@@ -166,6 +208,7 @@ export default function HiAppEventExternalLog() {
             }
             // // 按大小过滤 — 删除小于100KB的日志
             let smallFiles: Set<string> = container.getLogFilesSmallerThan(100);
+            expect(smallFiles != null).assertTrue();
             hilog.info(0x0000, 'hiAppEvent', `hiappevent [MyLogManager] 小于100KB的日志: ${JSON.stringify(Array.from(smallFiles))}`);
             try{
               let smallFiles1: Set<string> = container.getLogFilesSmallerThan(null);
@@ -186,6 +229,7 @@ export default function HiAppEventExternalLog() {
 
             // // 获取最早生成的6个日志文件，优先删除
             let oldestFiles: Set<string> = container.getFirstGeneratedLogFiles(6);
+            expect(oldestFiles != null).assertTrue();
             hilog.info(0x0000, 'hiAppEvent', `hiappevent [MyLogManager] 最早的6个日志: ${JSON.stringify(Array.from(oldestFiles))}`);
             try{
               let oldestFiles1: Set<string> = container.getFirstGeneratedLogFiles(null);
@@ -208,7 +252,7 @@ export default function HiAppEventExternalLog() {
             hilog.error(0x0000, 'hiAppEvent', 'hiappevent [MyLogManager] getLogNumber test failed: %{public}s', JSON.stringify(err));
             expect(false).assertTrue();
             done();
-        }
+          }
           hiAppEvent.removeWatcher(watcher);
           done();
         }

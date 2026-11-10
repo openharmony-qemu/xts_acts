@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-static/src/main/indexStatic"
 import inspector from '@ohos.arkui.inspector'
 import {
   Entry,
@@ -47,6 +47,8 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 
+let displayID: Int = 0;
+
 export default function search_center() {
   describe('search_center', () => {
     beforeAll(async (): Promise<void> => {
@@ -74,9 +76,10 @@ export default function search_center() {
         }
       } catch (err) {
         expect(false).assertEqual(true);
-        console.error("push search_center page error:" + err);
+        console.log("push search_center page error:" + err);
       }
       console.info("search_center beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     
     /**
@@ -97,10 +100,15 @@ export default function search_center() {
 
         let driver = Driver.create();
         await CommonFunc.sleep(500);
-        driver.click(
-          (Math.round(search_01.left + (search_01.right - search_01.left) / 2).toInt()),
-          (Math.round(search_01.top + (search_01.bottom - search_01.top) / 2).toInt())
-        );
+        try {
+          driver.clickAt({
+            x: (Math.round(search_01.left + (search_01.right - search_01.left) / 2).toInt()),
+            y: (Math.round(search_01.top + (search_01.bottom - search_01.top) / 2).toInt()),
+            displayId: displayID
+          });
+        } catch (err) {
+          console.log('driver.clickAt error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
         let search_02 = CommonFunc.getComponentRect('search_center' + '_search_01');
         let y2 = search_02.top

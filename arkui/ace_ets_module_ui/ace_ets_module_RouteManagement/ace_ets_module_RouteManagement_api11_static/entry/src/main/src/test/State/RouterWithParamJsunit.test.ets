@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -190,12 +190,12 @@ export default function RouterWithParamJsunit() {
 it('RouterWithParamJsunit_static_006', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[RouterWithParamJsunit_static_006] START');
       let driver = Driver.create();
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let scrollBar = await driver.findComponent(ON.type('Scroll'));
       let btn = await (scrollBar?.scrollSearch(ON.id('turn_RouterPushUrlOne_string_number_push')) as Promise<Component | null>);;
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       await (btn?.click() as Promise<void>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let strJson = inspector.getInspectorByKey('Text_RouterPushThree_Params');
 
       console.info("[RouterWithParamJsunit_static_006] JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));

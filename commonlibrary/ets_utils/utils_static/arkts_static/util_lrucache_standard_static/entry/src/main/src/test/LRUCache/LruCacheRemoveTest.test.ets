@@ -17,7 +17,7 @@
 
 import {
   beforeAll, afterEach, beforeEach, afterAll, describe, it, expect, TestType, Size, Level
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import util from '@ohos.util';
 import Utils from './../Util.test';
 

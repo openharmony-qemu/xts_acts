@@ -32,6 +32,8 @@ struct SwiperMargin_1 {
         Text('2')
       }.width(350).height(350).backgroundColor(0xD2B48C).id('swiperMargin_1Column02')
     }
+    .padding(10)
+    .margin(10)
     .id('swiperMargin_1')
     .displayMode(SwiperDisplayMode.STRETCH)
     .loop(false)

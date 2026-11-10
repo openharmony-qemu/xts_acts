@@ -17,7 +17,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import window from '@ohos.window';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
@@ -83,7 +83,7 @@ class EntryAbility extends UIAbility {
     return false;
   }
 
-  onCollaborate(wantParam: Record<string, Object>): AbilityConstant.CollaborateResult {
+  onCollaborate(wantParam: Record<string, RecordData>): AbilityConstant.CollaborateResult {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCollaborate');
     return AbilityConstant.CollaborateResult.ACCEPT;
   }

@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 
@@ -875,7 +875,7 @@ export default function uint8ClampedArrayMapOneTest(): void {
      */
     it('testUint8ClampedArrayMapOne054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([10, 20, 30]);
-      const r = arr.map((v: number, i: int, a: Uint8ClampedArray) => i === 0 ? 100 : v);
+      const r = arr.map((v: number, i: int, a: Uint8ClampedArray) => i === 0 ? 100.0 : v);
       expect(r.length).assertEqual(3);
       expect(r[0]).assertEqual(100);
       expect(r[1]).assertEqual(20);
@@ -892,7 +892,7 @@ export default function uint8ClampedArrayMapOneTest(): void {
      */
     it('testUint8ClampedArrayMapOne055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([10, 20, 30]);
-      const r = arr.map((v: number, i: int, a: Uint8ClampedArray) => i === 2 ? 99 : v);
+      const r = arr.map((v: number, i: int, a: Uint8ClampedArray) => i === 2 ? 99.0 : v);
       expect(r.length).assertEqual(3);
       expect(r[2]).assertEqual(99);
       expect(r[0]).assertEqual(10);

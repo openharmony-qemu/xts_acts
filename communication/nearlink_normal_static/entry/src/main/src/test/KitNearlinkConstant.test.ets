@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-static/src/main/indexStatic';
 import nearlinkConstant from '@ohos.nearlink.constant';
 import Utils from './Util.test';
 import hilog from '@ohos.hilog';
@@ -313,6 +313,33 @@ export default function constantTest(): void {
           expect(DEVICE_VEHICLE_LOCK).assertEqual(0x001004);
         } catch (error) {
           hilog.info(0x0000, 'testTag', '%{public}s DeviceClass error.code %{public}s,errMessage: %{public}s', caseName, JSON.stringify(error.code), JSON.stringify(error.message));
+          expect().assertFail();
+        }
+        hilog.info(0x0000, 'testTag', '%{public}s test end', caseName);
+        done();
+      })
+
+    /**
+     * @tc.number SUB_Communication_XTS_NearLink_Constant_Enum_0500
+     * @tc.name SUB_Communication_XTS_NearLink_Constant_Enum_static_0500
+     * @tc.desc FrameType enum values test.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('SUB_Communication_XTS_NearLink_Constant_Enum_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'SUB_Communication_XTS_NearLink_Constant_Enum_static_0500';
+        hilog.info(0x0000, 'testTag', '%{public}s test start', caseName);
+        try {
+          let FRAME_TYPE_1: nearlinkConstant.FrameType = nearlinkConstant.FrameType.FRAME_TYPE_1;
+          hilog.info(0x0000, 'testTag', '%{public}s FRAME_TYPE_1 result: %{public}d', caseName, FRAME_TYPE_1);
+          expect(FRAME_TYPE_1).assertEqual(1);
+          let FRAME_TYPE_4: nearlinkConstant.FrameType = nearlinkConstant.FrameType.FRAME_TYPE_4;
+          hilog.info(0x0000, 'testTag', '%{public}s FRAME_TYPE_4 result: %{public}d', caseName, FRAME_TYPE_4);
+          expect(FRAME_TYPE_4).assertEqual(4);
+        } catch (error) {
+          hilog.info(0x0000, 'testTag', '%{public}s FrameType error.code %{public}s,errMessage: %{public}s', caseName, JSON.stringify(error.code), JSON.stringify(error.message));
           expect().assertFail();
         }
         hilog.info(0x0000, 'testTag', '%{public}s test end', caseName);

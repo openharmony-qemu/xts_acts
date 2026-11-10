@@ -12,14 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ 
 import { typeNode, NodeController, FrameNode, ComponentContent } from '@ohos.arkui.node';
 
 @Builder
 function buildText() {
   Column() {
     Text('hello')
-      .width(50)
-      .height(50)
+      .height(15)
       .backgroundColor(Color.Yellow)
   }
 }
@@ -29,17 +29,17 @@ class MyNodeController extends NodeController {
   public node: FrameNode | null = null;
   makeNode(uiContext: UIContext): FrameNode | null {
     this.node = new FrameNode(uiContext)
-    this.node.commonAttribute.width(300).height(300).backgroundColor(Color.Red)
+    this.node.commonAttribute.width(220).height(200).backgroundColor(Color.Red)
     let col = typeNode.createNode(uiContext, "Flex")
     col.attribute.width(200)
-      .height(200)
+      .height(180)
       .borderWidth(1)
       .borderColor(Color.Black)
       .backgroundColor(0xAFEEEE)
     this.node.appendChild(col)
     let row4 = typeNode.createNode(uiContext, "Progress")
     row4.attribute.width(100)
-      .height(100)
+      .height(80)
       .borderWidth(1)
       .borderColor(Color.Black)
       .backgroundColor(Color.Green)
@@ -55,8 +55,6 @@ class MyNodeController extends NodeController {
     return JSON.stringify(inspectorInfo)
   }
 
-
-
 }
 
 @Entry
@@ -68,17 +66,17 @@ struct createNodeFlexTest {
   @State type: string = "getNodeType"
 
   build() {
-    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
+    Column({space:3}) {
       Column(){
         Row() {
           NodeContainer(this.myNodeController);
-        }
-        Text(this.type).margin(30).id("createNodeFlexText")
+        }.height(150)
+        Text(this.type).id("createNodeFlexText").height(15)
         Button("getInspectorInfo").id("createNodeFlexType").onClick(() => {
           this.type = this.myNodeController?.getNodeType()
         })
+        .height(15)
       }
-    }
-
+    }.width('100%').height('100%')
   }
 }

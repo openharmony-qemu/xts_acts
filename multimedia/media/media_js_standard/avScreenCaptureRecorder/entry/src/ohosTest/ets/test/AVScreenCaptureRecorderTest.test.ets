@@ -769,6 +769,258 @@ export default function AVScreenCaptureRecorderTest() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0200
+     * @tc.desc   AVScreenCaptureRecorder with strategy.contentAutoPauseScenes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0200', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0200 start')
+
+      let mySteps = new Array(
+        // create
+        mediaTestBase.CREATE_EVENT,
+        // init
+        mediaTestBase.INIT_EVENT,
+        mediaTestBase.SETONCALLBACK_EVENT,
+        // start recorder
+        mediaTestBase.STARTRECORDER_EVENT,
+        // skip PrivacyMode
+        mediaTestBase.SKIPPRIVACYMODE_EVENT,
+        // stop recorder
+        mediaTestBase.STOPRECORDER_EVENT,
+        // end
+        mediaTestBase.END_EVENT);
+
+      mediaTestBase.outputName = mediaTestBase.resourceName();
+      mediaTestBase.outputFdObject = mediaTestBase.getFd(mediaTestBase.outputName);
+
+      let avConfig: media.AVScreenCaptureRecordConfig = {
+        fd: mediaTestBase.outputFdObject.fd,
+        frameWidth: 640,
+        frameHeight: 480,
+        videoBitrate: 10000000,
+        audioSampleRate: 48000,
+        audioChannelCount: 1,
+        audioBitrate: 96000,
+        preset: media.AVScreenCaptureRecordPreset.SCREEN_RECORD_PRESET_H264_AAC_MP4,
+        strategy: {
+          contentAutoPauseScenes: [media.AVScreenCaptureAutoPauseCaptureScene.SCENE_SCREEN_FOLD_STATE_CHANGE],
+        }
+      }
+
+      await mediaTestBase.toNextStep(mediaTestBase.avScreenCaptureRecorder, avConfig, 3000, mySteps, done)
+      expect(mediaTestBase.isTestSucceeded()).assertTrue();
+      if (avConfig?.strategy) {
+        expect(avConfig.strategy.contentAutoPauseScenes !== undefined).assertTrue()
+      } else {
+        expect(false).assertTrue()
+      }
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0200 end')
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0300
+     * @tc.desc   AVScreenCaptureRecorder with strategy.contentAutoPauseScenes SCENE_NONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0300', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0300 start')
+
+      let mySteps = new Array(
+        // create
+        mediaTestBase.CREATE_EVENT,
+        // init
+        mediaTestBase.INIT_EVENT,
+        mediaTestBase.SETONCALLBACK_EVENT,
+        // start recorder
+        mediaTestBase.STARTRECORDER_EVENT,
+        // skip PrivacyMode
+        mediaTestBase.SKIPPRIVACYMODE_EVENT,
+        // stop recorder
+        mediaTestBase.STOPRECORDER_EVENT,
+        // end
+        mediaTestBase.END_EVENT);
+
+      mediaTestBase.outputName = mediaTestBase.resourceName();
+      mediaTestBase.outputFdObject = mediaTestBase.getFd(mediaTestBase.outputName);
+
+      let avConfig: media.AVScreenCaptureRecordConfig = {
+        fd: mediaTestBase.outputFdObject.fd,
+        frameWidth: 640,
+        frameHeight: 480,
+        videoBitrate: 10000000,
+        audioSampleRate: 48000,
+        audioChannelCount: 1,
+        audioBitrate: 96000,
+        preset: media.AVScreenCaptureRecordPreset.SCREEN_RECORD_PRESET_H264_AAC_MP4,
+        strategy: {
+          contentAutoPauseScenes: [media.AVScreenCaptureAutoPauseCaptureScene.SCENE_NONE],
+        }
+      }
+
+      await mediaTestBase.toNextStep(mediaTestBase.avScreenCaptureRecorder, avConfig, 3000, mySteps, done)
+      expect(mediaTestBase.isTestSucceeded()).assertTrue();
+      if (avConfig?.strategy) {
+        expect(avConfig.strategy.contentAutoPauseScenes !== undefined).assertTrue()
+      } else {
+        expect(false).assertTrue()
+      }
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0300 end')
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0400
+     * @tc.desc   AVScreenCaptureRecorder with strategy.enableHDR true to output HDR vivid video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0400', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0400 start')
+      let isSupportAddTrackH265: number = myScreenCaptureNdk.OHAVMuxerByAddTrackH265();
+      console.info('isSupportAddTrackH265:', isSupportAddTrackH265)
+      let isSupportH265Decoder: number = myScreenCaptureNdk.OHAvCapabilityByCategoryH265();
+      console.info('isSupportH265Decoder:', isSupportH265Decoder)
+      let isSupportH265Encoder: number = myScreenCaptureNdk.OHAvCapabilityByCategoryH265Encoder();
+      console.info('isSupportEncoder:', isSupportH265Encoder)
+      let isSupportH265 = (isSupportAddTrackH265 != 0 || isSupportH265Decoder != 0 || isSupportH265Encoder != 0)? -1 : 0;
+      if (isSupportH265 != 0) {
+        console.info('Failed to obtain the default videoProfiles object.Not support AddTrackH265');
+        expect(isSupportH265).not().assertEqual(0);
+        done();
+        return;
+      }
+
+      let mySteps = new Array(
+        // create
+        mediaTestBase.CREATE_EVENT,
+        // init
+        mediaTestBase.INIT_EVENT,
+        mediaTestBase.SETONCALLBACK_EVENT,
+        // start recorder
+        mediaTestBase.STARTRECORDER_EVENT,
+        // skip PrivacyMode
+        mediaTestBase.SKIPPRIVACYMODE_EVENT,
+        // stop recorder
+        mediaTestBase.STOPRECORDER_EVENT,
+        // end
+        mediaTestBase.END_EVENT);
+
+      mediaTestBase.outputName = mediaTestBase.resourceName();
+      mediaTestBase.outputFdObject = mediaTestBase.getFd(mediaTestBase.outputName);
+
+      let avConfig: media.AVScreenCaptureRecordConfig = {
+        fd: mediaTestBase.outputFdObject.fd,
+        frameWidth: 640,
+        frameHeight: 480,
+        videoBitrate: 10000000,
+        audioSampleRate: 48000,
+        audioChannelCount: 1,
+        audioBitrate: 96000,
+        preset: media.AVScreenCaptureRecordPreset.SCREEN_RECORD_PRESET_H265_AAC_MP4,
+        strategy: {
+          enableHDR: true,
+        }
+      }
+
+      await mediaTestBase.toNextStep(mediaTestBase.avScreenCaptureRecorder, avConfig, 3000, mySteps, done)
+      expect(mediaTestBase.isTestSucceeded()).assertTrue();
+      if (avConfig?.strategy) {
+        expect(avConfig.strategy.enableHDR).assertTrue()
+      } else {
+        expect(false).assertTrue()
+      }
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0400 end')
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0500
+     * @tc.desc   AVScreenCaptureRecorder with strategy.enableHDR false to output SDR video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0500', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0500 start')
+      let isSupportAddTrackH265: number = myScreenCaptureNdk.OHAVMuxerByAddTrackH265();
+      console.info('isSupportAddTrackH265:', isSupportAddTrackH265)
+      let isSupportH265Decoder: number = myScreenCaptureNdk.OHAvCapabilityByCategoryH265();
+      console.info('isSupportH265Decoder:', isSupportH265Decoder)
+      let isSupportH265Encoder: number = myScreenCaptureNdk.OHAvCapabilityByCategoryH265Encoder();
+      console.info('isSupportEncoder:', isSupportH265Encoder)
+      let isSupportH265 = (isSupportAddTrackH265 != 0 || isSupportH265Decoder != 0 || isSupportH265Encoder != 0)? -1 : 0;
+      if (isSupportH265 != 0) {
+        console.info('Failed to obtain the default videoProfiles object.Not support AddTrackH265');
+        expect(isSupportH265).not().assertEqual(0);
+        done();
+        return;
+      }
+
+      let mySteps = new Array(
+        // create
+        mediaTestBase.CREATE_EVENT,
+        // init
+        mediaTestBase.INIT_EVENT,
+        mediaTestBase.SETONCALLBACK_EVENT,
+        // start recorder
+        mediaTestBase.STARTRECORDER_EVENT,
+        // skip PrivacyMode
+        mediaTestBase.SKIPPRIVACYMODE_EVENT,
+        // stop recorder
+        mediaTestBase.STOPRECORDER_EVENT,
+        // end
+        mediaTestBase.END_EVENT);
+
+      mediaTestBase.outputName = mediaTestBase.resourceName();
+      mediaTestBase.outputFdObject = mediaTestBase.getFd(mediaTestBase.outputName);
+
+      let avConfig: media.AVScreenCaptureRecordConfig = {
+        fd: mediaTestBase.outputFdObject.fd,
+        frameWidth: 640,
+        frameHeight: 480,
+        videoBitrate: 10000000,
+        audioSampleRate: 48000,
+        audioChannelCount: 1,
+        audioBitrate: 96000,
+        preset: media.AVScreenCaptureRecordPreset.SCREEN_RECORD_PRESET_H265_AAC_MP4,
+        strategy: {
+          enableHDR: false,
+        }
+      }
+
+      await mediaTestBase.toNextStep(mediaTestBase.avScreenCaptureRecorder, avConfig, 3000, mySteps, done)
+      expect(mediaTestBase.isTestSucceeded()).assertTrue();
+      if (avConfig?.strategy) {
+        expect(avConfig.strategy.enableHDR).assertFalse()
+      } else {
+        expect(false).assertTrue()
+      }
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_STRATEGY_0500 end')
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURE_AUTOPAUSESCENE_ENUM_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURE_AUTOPAUSESCENE_ENUM_0100
+     * @tc.desc   AVScreenCaptureRecorder Enumeration test - AVScreenCaptureAutoPauseCaptureScene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURE_AUTOPAUSESCENE_ENUM_0100', Level.LEVEL0, async (done: Function) => {
+      expect(media.AVScreenCaptureAutoPauseCaptureScene.SCENE_NONE).assertEqual(0);
+      expect(media.AVScreenCaptureAutoPauseCaptureScene.SCENE_SCREEN_FOLD_STATE_CHANGE).assertEqual(1);
+      done();
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ERR_INPUT_INIT
      * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ERR_INPUT_INIT
      * @tc.desc   AvScreenCaptureRecorder
@@ -1880,6 +2132,410 @@ export default function AVScreenCaptureRecorderTest() {
       }
       await captureRecorder.release();
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_OFF_ERROR_0100 end');
+      done();
+    })
+
+   /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0100
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0100
+    * @tc.desc   setCaptureArea with valid area before startRecording
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0100', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0100 start');
+      let captureRecorder: media.AVScreenCaptureRecorder | undefined;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if (captureRecorder == null) {
+        expect().assertFail();
+      }
+      try {
+        let area: media.RectangleRegion = {
+          left: 0,
+          top: 0,
+          width: 320,
+          height: 240
+        };
+        await captureRecorder!.setCaptureArea(0, area);
+        console.info('avScreenCaptureRecorder setCaptureArea success');
+      } catch (err) {
+        console.error('avScreenCaptureRecorder setCaptureArea catch error: ' + (err as BusinessError).message);
+        expect().assertFail();
+      }
+      await captureRecorder!.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0100 end');
+      done();
+    })
+
+   /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0200
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0200
+    * @tc.desc   setCaptureArea with negative left - 5400108
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0200', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0200 start');
+      let captureRecorder: media.AVScreenCaptureRecorder | undefined;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if (captureRecorder == null) {
+        expect().assertFail();
+      }
+      try {
+        let area: media.RectangleRegion = {
+          left: -1,
+          top: 0,
+          width: 320,
+          height: 240
+        };
+        await captureRecorder!.setCaptureArea(0, area);
+        console.error('setCaptureArea should fail for negative left');
+        expect().assertFail();
+      } catch (err) {
+        console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code +
+          ', message: ' + (err as BusinessError).message);
+        expect((err as BusinessError).code).assertEqual(5400108);
+      }
+      await captureRecorder!.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0200 end');
+      done();
+    })
+
+   /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0300
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0300
+    * @tc.desc   setCaptureArea with negative top - 5400108
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0300', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0300 start');
+      let captureRecorder: media.AVScreenCaptureRecorder | undefined;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if (captureRecorder == null) {
+        expect().assertFail();
+      }
+      try {
+        let area: media.RectangleRegion = {
+          left: 0,
+          top: -1,
+          width: 320,
+          height: 240
+        };
+        await captureRecorder!.setCaptureArea(0, area);
+        console.error('setCaptureArea should fail for negative top');
+        expect().assertFail();
+      } catch (err) {
+        console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code +
+          ', message: ' + (err as BusinessError).message);
+        expect((err as BusinessError).code).assertEqual(5400108);
+      }
+      await captureRecorder!.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0300 end');
+      done();
+    })
+
+   /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0400
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0400
+    * @tc.desc   setCaptureArea with negative width - 5400108
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0400', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0400 start');
+      let captureRecorder: media.AVScreenCaptureRecorder | undefined;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if (captureRecorder == null) {
+        expect().assertFail();
+      }
+      try {
+        let area: media.RectangleRegion = {
+          left: 0,
+          top: 0,
+          width: -100,
+          height: 240
+        };
+        await captureRecorder!.setCaptureArea(0, area);
+        console.error('setCaptureArea should fail for negative width');
+        expect().assertFail();
+      } catch (err) {
+        console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code +
+          ', message: ' + (err as BusinessError).message);
+        expect((err as BusinessError).code).assertEqual(5400108);
+      }
+      await captureRecorder!.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0400 end');
+      done();
+    })
+
+   /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0500
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0500
+    * @tc.desc   setCaptureArea with negative height - 5400108
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0500', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0500 start');
+      let captureRecorder: media.AVScreenCaptureRecorder | undefined;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if (captureRecorder == null) {
+        expect().assertFail();
+      }
+      try {
+        let area: media.RectangleRegion = {
+          left: 0,
+          top: 0,
+          width: 320,
+          height: -100
+        };
+        await captureRecorder!.setCaptureArea(0, area);
+        console.error('setCaptureArea should fail for negative height');
+        expect().assertFail();
+      } catch (err) {
+        console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code +
+          ', message: ' + (err as BusinessError).message);
+        expect((err as BusinessError).code).assertEqual(5400108);
+      }
+      await captureRecorder!.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0500 end');
+      done();
+    })
+
+   /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0600
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0600
+    * @tc.desc   setCaptureArea with negative top and height - 5400108
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0600', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0600 start');
+      let captureRecorder: media.AVScreenCaptureRecorder | undefined;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if (captureRecorder == null) {
+        expect().assertFail();
+      }
+      try {
+        let area: media.RectangleRegion = {
+          left: 0,
+          top: -1,
+          width: 320,
+          height: -100
+        };
+        await captureRecorder!.setCaptureArea(0, area);
+        console.error('setCaptureArea should fail for negative top and height');
+        expect().assertFail();
+      } catch (err) {
+        console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code +
+          ', message: ' + (err as BusinessError).message);
+        expect((err as BusinessError).code).assertEqual(5400108);
+      }
+      await captureRecorder!.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0600 end');
+      done();
+    })
+
+   /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0700
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0700
+    * @tc.desc   setCaptureArea with area out of screen range - 5400108
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0700', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0700 start');
+      let captureRecorder: media.AVScreenCaptureRecorder | undefined;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if (captureRecorder == null) {
+        expect().assertFail();
+      }
+      try {
+        let area: media.RectangleRegion = {
+          left: 2147483647,
+          top: 2147483647,
+          width: 720,
+          height: 1280
+        };
+        await captureRecorder!.setCaptureArea(0, area);
+        console.error('setCaptureArea should fail for out-of-range area');
+        expect().assertFail();
+      } catch (err) {
+        console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code +
+          ', message: ' + (err as BusinessError).message);
+        expect((err as BusinessError).code).assertEqual(5400108);
+      }
+      await captureRecorder!.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0700 end');
+      done();
+    })
+
+   /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0800
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0800
+    * @tc.desc   setCaptureArea after release - 5400102
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0800', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0800 start');
+      let captureRecorder: media.AVScreenCaptureRecorder | undefined;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if (captureRecorder == null) {
+        expect().assertFail();
+      }
+      await captureRecorder!.release();
+      try {
+        let area: media.RectangleRegion = {
+          left: 0,
+          top: 0,
+          width: 320,
+          height: 240
+        };
+        await captureRecorder!.setCaptureArea(0, area);
+        console.error('setCaptureArea should fail after release');
+        expect().assertFail();
+      } catch (err) {
+        console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code +
+          ', message: ' + (err as BusinessError).message);
+        expect((err as BusinessError).code).assertEqual(5400102);
+      }
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0800 end');
+      done();
+    })
+
+   /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0900
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0900
+    * @tc.desc   setCaptureArea with valid area during recording
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0900', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0900 start');
+      let captureRecorder: media.AVScreenCaptureRecorder | undefined;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if (captureRecorder == null) {
+        expect().assertFail();
+      }
+      let avConfig: media.AVScreenCaptureRecordConfig = {
+        fd: mediaTestBase.getFd(mediaTestBase.resourceName()).fd,
+        frameWidth: 640,
+        frameHeight: 480,
+        videoBitrate: 10000000,
+        audioSampleRate: 48000,
+        audioChannelCount: 1,
+        audioBitrate: 96000,
+        preset: media.AVScreenCaptureRecordPreset.SCREEN_RECORD_PRESET_H264_AAC_MP4,
+      };
+      try {
+        await captureRecorder!.init(avConfig);
+        console.info('avScreenCaptureRecorder init success');
+        let area: media.RectangleRegion = {
+          left: 0,
+          top: 0,
+          width: 320,
+          height: 240
+        };
+        await captureRecorder!.setCaptureArea(0, area);
+        console.info('avScreenCaptureRecorder setCaptureArea success during recording');
+      } catch (err) {
+        console.error('avScreenCaptureRecorder setCaptureArea catch error: ' + (err as BusinessError).message);
+        expect().assertFail();
+      }
+      await captureRecorder!.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0900 end');
+      done();
+    })
+
+   /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1000
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1000
+    * @tc.desc   setCaptureArea with negative displayId - 5400108
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1000', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1000 start');
+      let captureRecorder: media.AVScreenCaptureRecorder | undefined;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if (captureRecorder == null) {
+        expect().assertFail();
+      }
+      try {
+        let area: media.RectangleRegion = {
+          left: 0,
+          top: 0,
+          width: 320,
+          height: 240
+        };
+        await captureRecorder!.setCaptureArea(-1, area);
+        console.error('setCaptureArea should fail for negative displayId');
+        expect().assertFail();
+      } catch (err) {
+        console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code +
+          ', message: ' + (err as BusinessError).message);
+        expect((err as BusinessError).code).assertEqual(5400108);
+      }
+      await captureRecorder!.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1000 end');
+      done();
+    })
+
+   /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1100
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1100
+    * @tc.desc   setCaptureArea with non-existent displayId - 5400108
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1100', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1100 start');
+      let captureRecorder: media.AVScreenCaptureRecorder | undefined;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if (captureRecorder == null) {
+        expect().assertFail();
+      }
+      try {
+        let area: media.RectangleRegion = {
+          left: 0,
+          top: 0,
+          width: 320,
+          height: 240
+        };
+        await captureRecorder!.setCaptureArea(9999, area);
+        console.error('setCaptureArea should fail for non-existent displayId');
+        expect().assertFail();
+      } catch (err) {
+        console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code +
+          ', message: ' + (err as BusinessError).message);
+        expect((err as BusinessError).code).assertEqual(5400108);
+      }
+      await captureRecorder!.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1100 end');
       done();
     })
   })

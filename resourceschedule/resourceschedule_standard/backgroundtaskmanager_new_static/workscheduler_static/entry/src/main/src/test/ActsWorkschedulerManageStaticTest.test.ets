@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll} from "@ohos/hypium-static/src/main/indexStatic";
 import hilog from '@ohos.hilog'
 import workScheduler from '@ohos.resourceschedule.workScheduler'
 import { BusinessError } from "@ohos.base"
@@ -1108,5 +1108,153 @@ export default function WorkSchedulerJsTest() {
           done();
         }
       })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_0330
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_0330
+     * @tc.desc   startWork with isPerformanceSensitive true and periodic task repeatCycleTime 24h
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_0330", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_0330 begin---');
+      workScheduler.stopAndClearWorks();
+      let workInfo: workScheduler.WorkInfo = {
+        workId: 10 as int,
+        bundleName: "com.acts.actsworkschedulertest.static",
+        abilityName: "EntryAbility",
+        networkType: workScheduler.NetworkType.NETWORK_TYPE_ANY,
+        isCharging: true,
+        isDeepIdle: true,
+        isPerformanceSensitive: true,
+        isRepeat: true,
+        repeatCycleTime: 86400000 as int,
+        repeatCount: 100 as int
+      }
+      let callbackFlag: int = 0;
+      try {
+        workScheduler.startWork(workInfo);
+        hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_0330---startWork success---');
+        callbackFlag = 1;
+        expect(callbackFlag).assertEqual(1);
+        done();
+      } catch (err) {
+        let e: BusinessError = err as BusinessError;
+        console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_033 failed. code is ${e.code} message is ${e.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_0340
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_0340
+     * @tc.desc   startWork with isPerformanceSensitive false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_0340", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_0340 begin---');
+      workScheduler.stopAndClearWorks();
+      let workInfo: workScheduler.WorkInfo = {
+        workId: 11 as int,
+        bundleName: "com.acts.actsworkschedulertest.static",
+        abilityName: "EntryAbility",
+        networkType: workScheduler.NetworkType.NETWORK_TYPE_ANY,
+        isPerformanceSensitive: false
+      }
+      let callbackFlag: int = 0;
+      try {
+        workScheduler.startWork(workInfo);
+        hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_0340---startWork success---');
+        callbackFlag = 1;
+        expect(callbackFlag).assertEqual(1);
+        done();
+      } catch (err) {
+        let e: BusinessError = err as BusinessError;
+        console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_0340 failed. code is ${e.code} message is ${e.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_0350
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_0350
+     * @tc.desc   stopWork with isPerformanceSensitive true and periodic task repeatCycleTime 24h
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_0350", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_035 begin---');
+      workScheduler.stopAndClearWorks();
+      let workInfo: workScheduler.WorkInfo = {
+        workId: 12 as int,
+        bundleName: "com.acts.actsworkschedulertest.static",
+        abilityName: "EntryAbility",
+        networkType: workScheduler.NetworkType.NETWORK_TYPE_ANY,
+        isCharging: true,
+        isDeepIdle: true,
+        isPerformanceSensitive: true,
+        isRepeat: true,
+        repeatCycleTime: 86400000 as int,
+        repeatCount: 100 as int
+      }
+      let callbackFlag: int = 0;
+      try {
+        workScheduler.startWork(workInfo);
+        hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_0350---startWork success---');
+        callbackFlag = 1;
+        workScheduler.stopWork(workInfo, false);
+        hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_0350---stopWork success---');
+        callbackFlag = 2;
+        expect(callbackFlag).assertEqual(2);
+        done();
+      } catch (err) {
+        let e: BusinessError = err as BusinessError;
+        console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_0350 failed. code is ${e.code} message is ${e.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_0360
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_0360
+     * @tc.desc   stopWork with isPerformanceSensitive false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_0360", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_036 begin---');
+      workScheduler.stopAndClearWorks();
+      let workInfo: workScheduler.WorkInfo = {
+        workId: 13 as int,
+        bundleName: "com.acts.actsworkschedulertest.static",
+        abilityName: "EntryAbility",
+        networkType: workScheduler.NetworkType.NETWORK_TYPE_ANY,
+        isPerformanceSensitive: false
+      }
+      let callbackFlag: int = 0;
+      try {
+        workScheduler.startWork(workInfo);
+        hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_0360---startWork success---');
+        callbackFlag = 1;
+        workScheduler.stopWork(workInfo, false);
+        hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_0360---stopWork success---');
+        callbackFlag = 2;
+        expect(callbackFlag).assertEqual(2);
+        done();
+      } catch (err) {
+        let e: BusinessError = err as BusinessError;
+        console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_0360 failed. code is ${e.code} message is ${e.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
 
   })}

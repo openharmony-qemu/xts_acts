@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-static/src/main/indexStatic"
 import router from '@ohos.router';
 import {
   Component,
@@ -90,7 +90,7 @@ it('ArkUI_List_Scroll_static_0100', Level.LEVEL1, async (done: () => void): Prom
       }
       events_emitter.on(event, callback);
       let driver = Driver.create()
-      await driver.delayMs(waitUiReadyMs)
+      await CommonFunc.sleep(waitUiReadyMs)
       inspector.sendEventByKey('ListScroll_Button_To_14', 10, "")
       console.info(`${SUITE} ${CASE} END`)
     });
@@ -123,7 +123,7 @@ it('ArkUI_List_Scroll_static_0200', Level.LEVEL1, async (done: () => void): Prom
       }
       events_emitter.on(event, callback);
       let driver = Driver.create()
-      await driver.delayMs(waitUiReadyMs)
+      await CommonFunc.sleep(waitUiReadyMs)
       inspector.sendEventByKey('ListScroll_Button_To_15', 10, "")
       console.info(`${SUITE} ${CASE} END`)
     });
@@ -156,7 +156,7 @@ it('ArkUI_List_Scroll_static_0300', Level.LEVEL1, async (done: () => void): Prom
       }
       events_emitter.on(event, callback);
       let driver = Driver.create()
-      await driver.delayMs(waitUiReadyMs)
+      await CommonFunc.sleep(waitUiReadyMs)
       inspector.sendEventByKey('ListScroll_Button_To_0', 10, "")
       console.info(`${SUITE} ${CASE} END`)
     });
@@ -189,7 +189,7 @@ it('ArkUI_List_Scroll_static_0400', Level.LEVEL1, async (done: () => void): Prom
       }
       events_emitter.on(event, callback);
       let driver: Driver = Driver.create()
-      await driver.delayMs(waitUiReadyMs)
+      await CommonFunc.sleep(waitUiReadyMs)
       inspector.sendEventByKey('ListScroll_Button_To_max', 10, "")
       console.info(`${SUITE} ${CASE} END`)
     });

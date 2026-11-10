@@ -165,6 +165,8 @@ public:
     bool isMacroSupported_;
     bool isEnableMacro_;
     OH_Camera_PhotoCaptureSettingExt* PhotoCaptureSettingExt_;
+    bool isC2PASignatureSupported_;
+    OH_Camera_C2PASignatureConfig* c2paConfig_;
 
     //callback
     static CameraCallbackCode cameraCallbackCode_;
@@ -414,6 +416,7 @@ public:
 
     Camera_ErrorCode IsAutoDeviceSwitchSupported(bool* isSupported);
     Camera_ErrorCode EnableAutoDeviceSwitch(bool isEnable);
+    Camera_ErrorCode EnableAutoDeviceSwitch(int useCaseCode, bool isEnable);
     Camera_ErrorCode RegisterAutoDeviceSwitchStatusCallback(int useCaseCode);
     Camera_ErrorCode UnegisterAutoDeviceSwitchStatusCallback(int useCaseCode);
     Camera_ErrorCode RegisterSystemPressureLevel(int useCaseCode);
@@ -528,6 +531,12 @@ public:
     Camera_ErrorCode OHgetExposureDuration(int useCaseCode);
     Camera_ErrorCode GetWhiteBalanceRange(int useCaseCode);
     Camera_ErrorCode GetWhiteBalance(int useCaseCode);
+    Camera_ErrorCode IsC2PASignatureSupported(int useCaseCode);
+    Camera_ErrorCode OHCameraC2PASignatureConfigCreate(int useCaseCode);
+    Camera_ErrorCode OHCameraC2PASignatureConfigDestroy(int useCaseCode);
+    Camera_ErrorCode OHCameraC2PASignatureConfigSetAuthorName(int useCaseCode, const char* authorName);
+    Camera_ErrorCode OHCameraC2PASignatureConfigSetAuthorID(int useCaseCode, const char* authorID);
+    Camera_ErrorCode ConfigureC2PASignature(int useCaseCode, bool enableC2PA);
 
 private:
     NDKCamera(const NDKCamera&) = delete;

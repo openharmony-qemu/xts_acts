@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { Level, Size, TestType, beforeAll, describe, it, expect } from '../../../hypium/index';
+import { Level, Size, TestType, beforeAll, describe, it, expect } from '@ohos/hypium-static/src/main/indexStatic';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils.test';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -139,6 +139,32 @@ export default function WebCustomErrorCode() {
         Utils.emitEvent("testDidFailCustomErrorCodeStatic001", 10)
         await Utils.msSleep(2000)
         Utils.registerBaseEvent("testDidFailCustomErrorCodeStatic001", CUSTOM_ERROR_CODE, 8822, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+            const data = backData?.data as Record<string, Object>;
+            expect(data['ACTION']).assertEqual(expected);
+          });
+        await Utils.msSleep(2000)
+        inspector.sendEventByKey('WebCustomErrorCode', 10, '');
+      })
+
+    /**
+     * @tc.name        testDidFail3CompleteFalseStatic001
+     * @tc.number      SUB_WEB_CUSTOMERRORCODE_STATIC_0250
+     * @tc.desc        test WebResourceHandler didFail 3-param completeIfNoResponse false
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testDidFail3CompleteFalseStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000)
+        Utils.emitEvent('SwitchNextPageStaticWebCustomErrorCode', 10)
+        await Utils.msSleep(2000)
+        inspector.sendEventByKey('WebSchemeHandlerResponse2', 10, '');
+        await Utils.msSleep(4000)
+        Utils.emitEvent('testDidFail3CompleteFalseStatic001', 10)
+        await Utils.msSleep(2000)
+        Utils.registerBaseEvent('testDidFail3CompleteFalseStatic001', 'success', 8825, done,
           (backData: events_emitter.EventData, expected: Object) => {
             const data = backData?.data as Record<string, Object>;
             expect(data['ACTION']).assertEqual(expected);

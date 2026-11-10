@@ -39,6 +39,7 @@
         "MainAbility/pages/List/ListFillPolicy",
         "MainAbility/pages/List/ListContentSize",
         "MainAbility/pages/List/listNoMakeObserved",
+        "MainAbility/pages/List/spliceDeleteMin",
         "MainAbility/pages/List/listCacheCount",
         "MainAbility/pages/emptyBranch/listLazyTrue",
         "MainAbility/pages/emptyBranch/listLazyFalse",
@@ -54,6 +55,8 @@
         "MainAbility/pages/ListItemGroup/headerFooterStyle",
         "MainAbility/pages/listOptions/listEnableEditMode",
         "MainAbility/pages/listOptions/listEditModeChange",
-        "MainAbility/pages/List/listWithMouse"
+        "MainAbility/pages/List/listWithMouse",
+        "MainAbility/pages/listOptions/listKeyboardScrollVertical",
+        "MainAbility/pages/listOptions/listKeyboardScrollHorizontal"
     ]
 }

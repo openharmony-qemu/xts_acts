@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -148,7 +148,7 @@ struct ExecuteAIPageCommandCheckTest {
         if (res && res.includes('code')) { break; }
       } catch (error) {
         console.error(msg + ' error: ' + error.code + ' message ' + error.message);
-        errorCode = expectedError !== undefined ? expectedError : error.code; res = '';
+        if (expectedError !== undefined) { errorCode = expectedError; } else { errorCode = error.code; } res = '';
       }
       if (i < 4) { await this.sleep(500); }
     }

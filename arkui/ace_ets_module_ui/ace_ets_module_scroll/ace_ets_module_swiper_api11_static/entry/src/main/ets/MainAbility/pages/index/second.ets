@@ -53,6 +53,8 @@ struct Second {
         this.getUIContext().getRouter().back()
       })
     }
+    .padding(10)
+    .margin(10)
     .width('100%')
     .height('100%')
   }

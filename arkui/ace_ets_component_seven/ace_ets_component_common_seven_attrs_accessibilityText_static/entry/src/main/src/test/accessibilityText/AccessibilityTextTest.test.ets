@@ -16,7 +16,7 @@
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import { BasePageConfig, PageConfig, TestValue, SetV } from '../../../ets/MainAbility/common/Utils';
 import CommonTest from '../common/CommonTest';
-import { describe, expect } from '../../../../hypium/index';
+import { describe, expect } from '@ohos/hypium-static/src/main/indexStatic';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function AccessibilityTextTest() {

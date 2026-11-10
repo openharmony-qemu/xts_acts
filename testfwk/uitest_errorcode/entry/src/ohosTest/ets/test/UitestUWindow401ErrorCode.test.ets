@@ -69,7 +69,7 @@ export default function uitestEnumTest() {
       }
       await stopApplication('com.uitestScene.acts')
       console.log(`${TestTag}, testApi9_UiWindow_moveTo_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_UiWindow_resize_401
@@ -118,7 +118,7 @@ export default function uitestEnumTest() {
       }
       await stopApplication('com.uitestScene.acts')
       console.log(`${TestTag}, testApi9_UiWindow_resize_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_PointerMatrix_create_401
@@ -159,7 +159,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi9_PointerMatrix_create_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_PointerMatrix_setPoint_401
@@ -220,7 +220,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi9_PointerMatrix_setPoint_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_UiWindow_False
@@ -245,7 +245,7 @@ export default function uitestEnumTest() {
       }
       await stopApplication('com.uitestScene.acts')
       console.log(`${TestTag}, testApi9_UiWindow_False END`);
-    })
+    }, undefined, 'emulator')
 
   })
 }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Rect } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -29,6 +29,8 @@ function sleep(time: int):Promise<int> {
   })
 }
 
+
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 
 export default function RatingUIJsunit() {
   describe('RatingUIJsunit', () => {
@@ -133,7 +135,7 @@ it('RatingUIJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promise
       console.info(`rating ` + JSON.stringify(rating))
       let rect = await (rating?.getBounds() as Promise<Rect>);
       console.info(`rect is: ` + JSON.stringify(rect))
-      await driver.click(rect.left.toInt()+Math.round((rect.right-rect.left)/2).toInt()-1,Math.round((rect.top+rect.bottom)/2).toInt())
+      await driver.clickAt({x: rect.left.toInt()+Math.round((rect.right-rect.left)/2).toInt()-1, y: Math.round((rect.top+rect.bottom)/2).toInt(), displayId: displayID})
       console.info(`click is: `,rect.left+Math.round((rect.right-rect.left)/2)-1,Math.round((rect.top+rect.bottom)/2))
       await CommonFunc.sleep(1000);
       // Verify the rating value of the Rating component

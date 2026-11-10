@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 const myNull = null;
@@ -122,7 +122,7 @@ export default function builtinsArrayReduceRightTest(): void {
      */
     it('builtinsArrayReduceRightTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:() => void) => {
       let array: Array<number | undefined> = [1, undefined, 3];
-      let reducedRightValue = array.reduceRight((acc, curr) => acc! + (curr !== undefined ? curr : 0), 0.);
+      let reducedRightValue = array.reduceRight((acc, curr) => acc! + (curr !== undefined ? curr : 0.0), 0.);
       expect(4).assertEqual(reducedRightValue);
       done();
     })
@@ -152,7 +152,7 @@ export default function builtinsArrayReduceRightTest(): void {
      */
     it('builtinsArrayReduceRightTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:() => void) => {
       let array: Array<number | undefined> = [undefined,];
-      let reducedRightValue = array.reduceRight((acc, curr) => acc! + (curr !== undefined ? curr : 0), 0.);
+      let reducedRightValue = array.reduceRight((acc, curr) => acc! + (curr !== undefined ? curr : 0.0), 0.);
       expect(0).assertEqual(reducedRightValue);
       done();
     })

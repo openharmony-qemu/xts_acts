@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, beforeEach, afterAll, Level } from '../../../../hypium/index';
+import { describe, it, expect, beforeAll, beforeEach, afterAll, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';

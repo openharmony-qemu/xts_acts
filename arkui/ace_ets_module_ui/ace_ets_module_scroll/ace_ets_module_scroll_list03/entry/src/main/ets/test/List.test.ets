@@ -51,6 +51,7 @@ import listScrollbarColor from './ListItemGroup/listScrollbarColor.test';
 import ListContentSize from './List/ListContentSize.test';
 import ListFillPolicy from './List/ListFillPolicy.test';
 import listNoMakeObserved from './List/listNoMakeObserved.test';
+import spliceDeleteMin from './List/SpliceDeleteMin.test';
 import listCacheCount from './List/listCacheCount.test';
 import listLazyTrue from './emptyBranch/listLazyTrue.test';
 import listLazyFalse from './emptyBranch/listLazyFalse.test';
@@ -67,6 +68,8 @@ import headerFooterStyle from './ListItemGroup/headerFooterStyle.test';
 import listEnableEditMode from './listOptions/listEnableEditMode.test';
 import listEditModeChange from './listOptions/listEditModeChange.test';
 import listWithMouse from './List/ListWithMouse.test';
+import listKeyboardScrollVertical from './listOptions/ListKeyboardScrollVertical.test';
+import listKeyboardScrollHorizontal from './listOptions/ListKeyboardScrollHorizontal.test';
 
 export default function testsuite() {
   headerListJsunit()
@@ -107,6 +110,7 @@ export default function testsuite() {
   ListContentSize()
   ListFillPolicy()
   listNoMakeObserved()
+  spliceDeleteMin()
   listCacheCount()
   listLazyTrue()
   listLazyFalse()
@@ -123,4 +127,6 @@ export default function testsuite() {
   listEnableEditMode()
   listEditModeChange()
   listWithMouse()
+  listKeyboardScrollVertical()
+  listKeyboardScrollHorizontal()
 }

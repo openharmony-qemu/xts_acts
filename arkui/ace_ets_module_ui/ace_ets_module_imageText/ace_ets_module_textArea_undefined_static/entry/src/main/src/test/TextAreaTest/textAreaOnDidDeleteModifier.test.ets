@@ -1,6 +1,6 @@
 'use static';
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -16,6 +16,8 @@ import { BusinessError } from '@ohos.base';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+
+let displayID: Int = 0;
 
 export default function TextAreaOnDidDeleteModifier() {
   describe('TextAreaOnDidDeleteModifier', () => {
@@ -43,9 +45,10 @@ export default function TextAreaOnDidDeleteModifier() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push TextAreaOnDidDeleteModifier page error:" + err);
+        console.log("push TextAreaOnDidDeleteModifier page error:" + err);
       }
       console.info("TextAreaOnDidDeleteModifier beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
 
@@ -69,7 +72,11 @@ export default function TextAreaOnDidDeleteModifier() {
       let btn_true = await driver.findComponent(ON.id('TextAreaOnDidDeleteModifierButton')) as Component;
       await text.inputText('1');
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2055);
+      try {
+        await driver.triggerKey(2055, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let strJsonNew = inspector.getInspectorByKey('TextAreaOnDidDeleteModifier');
@@ -81,7 +88,11 @@ export default function TextAreaOnDidDeleteModifier() {
       await btn_true.click();
       await CommonFunc.sleep(1000);
       await text.inputText('6');
-      await driver.triggerKey(2055);
+      try {
+        await driver.triggerKey(2055, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let strJsonNew1 = inspector.getInspectorByKey('TextAreaOnDidDeleteModifier');

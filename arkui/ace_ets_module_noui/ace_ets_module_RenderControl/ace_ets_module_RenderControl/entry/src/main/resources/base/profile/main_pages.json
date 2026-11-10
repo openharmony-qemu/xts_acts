@@ -74,6 +74,14 @@
     "MainAbility/pages/LazyForEach/LazyForEachCustomComponentFreezeMode",
     "MainAbility/pages/Repeat/RepeatReusableMemOptStrategy",
     "MainAbility/pages/LazyForEach/LazyForEachReusableMemOptStrategy",
-    "MainAbility/pages/LazyForEach/LazyForEachDataReload"
+    "MainAbility/pages/LazyForEach/LazyForEachDataReload",
+    "MainAbility/pages/Repeat/RepeatAllowReuseInAnimationGrid",
+    "MainAbility/pages/Repeat/RepeatAllowReuseInAnimationWaterFlow",
+    "MainAbility/pages/Repeat/RepeatAllowReuseInAnimationNullUndefined",
+    "MainAbility/pages/LazyForEach/ClearCacheLazyForEachReusable",
+    "MainAbility/pages/LazyForEach/ClearCacheLazyForEachReusableV2",
+    "MainAbility/pages/LazyForEach/IDefaultReusePoolClearCacheNullUndefined",
+    "MainAbility/pages/Repeat/ClearCacheRepeatReusable",
+    "MainAbility/pages/Repeat/ClearCacheRepeatReusableV2"
   ]
 }

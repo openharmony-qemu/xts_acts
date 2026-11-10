@@ -580,13 +580,13 @@ export default function CameraOISQueryTest() {
         mPhotoSession!.getSupportedOISBiasStep(null);
         console.error(TAG, testName + ' should throw error.');
         expect().assertFail();
-        done();
       } catch (error) {
         let err = error as BusinessError;
         console.info(TAG, testName + ' err: ' + err.code + ', msg: ' + err.message);
         expect(Number(err.code)).assertEqual(7400102);
-        done();
       }
+      await releasePhotoSession();
+      done();
     })
 
     /**
@@ -606,13 +606,13 @@ export default function CameraOISQueryTest() {
         mPhotoSession!.getSupportedOISBiasStep(undefined);
         console.error(TAG, testName + ' should throw error.');
         expect().assertFail();
-        done();
       } catch (error) {
         let err = error as BusinessError;
         console.info(TAG, testName + ' err: ' + err.code + ', msg: ' + err.message);
         expect(Number(err.code)).assertEqual(7400102);
-        done();
       }
+      await releasePhotoSession();
+      done();
     })
 
     /**
@@ -632,13 +632,13 @@ export default function CameraOISQueryTest() {
         mPhotoSession!.getSupportedOISBiasStep(-1);
         console.error(TAG, testName + ' should throw error.');
         expect().assertFail();
-        done();
       } catch (error) {
         let err = error as BusinessError;
         console.info(TAG, testName + ' err: ' + err.code + ', msg: ' + err.message);
         expect(Number(err.code)).assertEqual(7400102);
-        done();
       }
+      await releasePhotoSession();
+      done();
     })
 
     /**
@@ -832,13 +832,13 @@ export default function CameraOISQueryTest() {
         mPhotoSession!.getCurrentCustomOISBias(null);
         console.error(TAG, testName + ' should throw error.');
         expect().assertFail();
-        done();
       } catch (error) {
         let err = error as BusinessError;
         console.info(TAG, testName + ' err: ' + err.code + ', msg: ' + err.message);
         expect(Number(err.code)).assertEqual(7400102);
-        done();
       }
+      await releasePhotoSession();
+      done();
     })
 
     /**
@@ -858,13 +858,13 @@ export default function CameraOISQueryTest() {
         mPhotoSession!.getCurrentCustomOISBias(undefined);
         console.error(TAG, testName + ' should throw error.');
         expect().assertFail();
-        done();
       } catch (error) {
         let err = error as BusinessError;
         console.info(TAG, testName + ' err: ' + err.code + ', msg: ' + err.message);
         expect(Number(err.code)).assertEqual(7400102);
-        done();
       }
+      await releasePhotoSession();
+      done();
     })
 
     /**
@@ -884,13 +884,13 @@ export default function CameraOISQueryTest() {
         mPhotoSession!.getCurrentCustomOISBias(-1);
         console.error(TAG, testName + ' should throw error.');
         expect().assertFail();
-        done();
       } catch (error) {
         let err = error as BusinessError;
         console.info(TAG, testName + ' err: ' + err.code + ', msg: ' + err.message);
         expect(Number(err.code)).assertEqual(7400102);
-        done();
       }
+      await releasePhotoSession();
+      done();
     })
 
     /**

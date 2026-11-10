@@ -222,55 +222,5 @@ export default function arrayListBigIntTest() {
       expect(list.length).assertEqual(4);
       expect(list[3]).assertEqual(400n);
     });
-
-    /**
-     * @tc.name   testArrayListBigIntTest0600
-     * @tc.number SUB_ARKTS_ARRAY_LIST_BIGINT_0600
-     * @tc.desc   Verify ArrayList bigint boundary access, out-of-range removeByIndex and insert, clear and empty iterator
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArrayListBigIntTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const list: ArrayList<bigint> = new ArrayList<bigint>();
-      list.add(1n);
-      list.add(2n);
-      let accessThrew: boolean = false;
-      try {
-        const beyond: bigint = list[2];
-        expect(beyond).assertUndefined();
-      } catch (e) {
-        accessThrew = true;
-        expect((e as Error).name === 'BusinessError' || (e as Error).name === 'RangeError').assertTrue();
-      }
-      expect(accessThrew || list.length === 2).assertTrue();
-      expect(list.length).assertEqual(2);
-
-      let removeThrew: boolean = false;
-      try {
-        list.removeByIndex(9);
-      } catch (e) {
-        removeThrew = true;
-        expect(((e as Error).name).length > 0).assertTrue();
-      }
-      expect(removeThrew).assertTrue();
-      expect(list.length).assertEqual(2);
-
-      let insertThrew: boolean = false;
-      try {
-        list.insert(9n, 50);
-      } catch (e) {
-        insertThrew = true;
-        expect((e as Error).name === 'BusinessError' || (e as Error).name === 'RangeError').assertTrue();
-      }
-      expect(insertThrew).assertTrue();
-      expect(list.length).assertEqual(2);
-
-      list.clear();
-      expect(list.length).assertEqual(0);
-      expect(list.isEmpty()).assertTrue();
-      const emptyIter = list[Symbol.iterator]();
-      expect(emptyIter.next().done).assertTrue();
-    });
   });
 }

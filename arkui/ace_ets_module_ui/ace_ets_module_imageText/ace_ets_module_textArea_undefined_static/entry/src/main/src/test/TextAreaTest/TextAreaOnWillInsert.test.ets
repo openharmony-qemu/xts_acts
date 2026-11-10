@@ -1,6 +1,6 @@
 'use static';
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Component, Driver, MouseButton, UiWindow, ON, MatchPattern, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
@@ -16,6 +16,8 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+
+let displayID: Int = 0;
 
 export default function TextAreaOnWillInsert() {
   describe('TextAreaOnWillInsert', () => {
@@ -42,8 +44,9 @@ export default function TextAreaOnWillInsert() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push TextAreaOnWillInsert page error: " + err);
+        console.log("push TextAreaOnWillInsert page error: " + err);
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     afterEach(async () => {
@@ -67,11 +70,19 @@ it('TextAreaOnWillInsert_static_001', Level.LEVEL0, async (done: () => void): Pr
       let button = await driver.findComponent(ON.id('change')) as Component;
       await text.inputText('9');
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await text2.inputText('9');
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(200);
       let strJson = inspector.getInspectorByKey('TextAreaText')
       let obj = JSON.parseJsonElement(strJson);
@@ -80,11 +91,19 @@ it('TextAreaOnWillInsert_static_001', Level.LEVEL0, async (done: () => void): Pr
       await button.click();
       await text.inputText('9');
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await text2.inputText('6');
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(200);
       let strJson2 = inspector.getInspectorByKey('TextAreaText')
       let obj2 = JSON.parseJsonElement(strJson2);
@@ -92,11 +111,19 @@ it('TextAreaOnWillInsert_static_001', Level.LEVEL0, async (done: () => void): Pr
       await button.click();
       await text.inputText('7');
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await text2.inputText('7');
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(200);
       let strJson3 = inspector.getInspectorByKey('TextAreaText')
       await CommonFunc.sleep(200);

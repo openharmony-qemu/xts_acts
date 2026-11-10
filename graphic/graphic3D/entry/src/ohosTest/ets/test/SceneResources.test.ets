@@ -2452,7 +2452,7 @@ export default function sceneResourcesTest() {
         console.info(msg + " invalidValue: " + JSON.stringify(invalidValue));
         expect(invalidValue).assertNull();
         console.info(msg + " non-existent property returns null as expected");
-
+ 
         // Test 4: Get undefined property value (should return undefined)
         let undefinedValue = effect.getPropertyValue(undefined);
         console.info(msg + " undefinedValue: " + JSON.stringify(undefinedValue));

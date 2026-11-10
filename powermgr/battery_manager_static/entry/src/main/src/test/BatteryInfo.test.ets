@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll } from "@ohos/hypium-static/src/main/indexStatic";
 import hilog from '@ohos.hilog'
 import batteryInfo from '@ohos.batteryInfo'
 import { BusinessError } from '@ohos.base'
@@ -1134,7 +1134,7 @@ export default function BatteryInfoTest() {
           let sceneValue: string = '1';
           let result: int = batteryInfo.setBatteryConfig(sceneName, sceneValue);
         } catch (e) {
-          e = e as BusinessError;
+         
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -1157,7 +1157,7 @@ export default function BatteryInfoTest() {
           let sceneName: string = 'batteryInfo';
           let result: string = batteryInfo.getBatteryConfig(sceneName);
         } catch (e) {
-          e = e as BusinessError;
+         
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -1180,7 +1180,7 @@ export default function BatteryInfoTest() {
           let sceneName: string = 'batteryInfo';
           let result: boolean = batteryInfo.isBatteryConfigSupported(sceneName);
         } catch (e) {
-          e = e as BusinessError;
+         
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();

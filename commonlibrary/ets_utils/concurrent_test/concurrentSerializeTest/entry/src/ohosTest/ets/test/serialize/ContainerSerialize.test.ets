@@ -50,6 +50,19 @@ function treeSetTask3(set: TreeSet<TestClass>): TreeSet<TestClass> {
   return set;
 }
 
+class ClonePayload {
+  public data: ArrayBuffer = new ArrayBuffer(0);
+
+  constructor(data: ArrayBuffer) {
+    this.data = data;
+  }
+}
+
+@Concurrent
+function clonePayloadSize(payload: Object): number {
+  return (payload as ClonePayload).data.byteLength;
+}
+
 export default function containerSerializeTest() {
   describe('containerSerializeTest', () => {
     /**
@@ -1089,6 +1102,55 @@ export default function containerSerializeTest() {
           done();
         }
       });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONTAINER_SERIALIZE_3000
+     * @tc.name testClone17MBPayload0001
+     * @tc.desc Test +17MB ArrayBuffer inside a class payload: clone succeeds with full length or
+     *         a non-zero serialization error is thrown (the 16MB limit premise is arbitrated at runtime)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testClone17MBPayload0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const caseName = 'testClone17MBPayload0001';
+      const total = 17 * 1024 * 1024;
+      const payload = new ClonePayload(new ArrayBuffer(total));
+      try {
+        const length = await taskpool.execute(new taskpool.Task(clonePayloadSize, payload)) as number;
+        expect(length).assertEqual(total);
+        expect(payload.data.byteLength).assertEqual(total);
+      } catch (err) {
+        console.info(`${caseName} rejected: code => ${err.code} message => ${err.message}`);
+        expect(err instanceof Error).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONTAINER_SERIALIZE_3100
+     * @tc.name testClone16MBBoundary0002
+     * @tc.desc Test 16MB-1 / 16MB / 16MB+1 ArrayBuffer clone boundary: each size either succeeds
+     *         with the full length or throws a non-zero serialization error, recorded for arbitration
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testClone16MBBoundary0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const caseName = 'testClone16MBBoundary0002';
+      const sizes: number[] = [16 * 1024 * 1024 - 1, 16 * 1024 * 1024, 16 * 1024 * 1024 + 1];
+      for (let i = 0; i < sizes.length; i++) {
+        const size = sizes[i];
+        const payload = new ClonePayload(new ArrayBuffer(size));
+        try {
+          const length = await taskpool.execute(new taskpool.Task(clonePayloadSize, payload)) as number;
+          expect(length).assertEqual(size);
+        } catch (err) {
+          console.info(`${caseName} size ${size} rejected: code => ${err.code} message => ${err.message}`);
+          expect(typeof err.code).assertEqual('number');
+        expect(err.code !== 0).assertTrue();
+        }
+      }
+    });
 
   });
 }

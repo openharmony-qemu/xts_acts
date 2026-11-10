@@ -1,5 +1,5 @@
 'use static';
-import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium/index';
+import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-static/src/main/indexStatic';
 
 import sleep  from './Util.test';
 
@@ -452,7 +452,7 @@ export default function atomicsSubTest() {
       // Lock-free subtract with underflow check
       Atomics.sub(ia, 0, 8); // 6 - 8 = -2
       const current = Atomics.load(ia, 0);
-      const corrected = Atomics.compareExchange(ia, 0, current, current < min ? min : current);
+      const corrected = Atomics.compareExchange(ia, 0, current, current < min ? min.toLong() : current);
 
       expect(corrected).assertEqual(-2);
       expect(Atomics.load(ia, 0)).assertEqual(0);

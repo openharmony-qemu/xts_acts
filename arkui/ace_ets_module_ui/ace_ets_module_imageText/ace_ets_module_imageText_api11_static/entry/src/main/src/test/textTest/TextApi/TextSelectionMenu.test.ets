@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it,expect, Level } from "../../../../../hypium/index"
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it,expect, Level } from "@ohos/hypium-static/src/main/indexStatic"
 import {  Driver, ON ,MouseButton} from '@ohos.UiTest';
 import CommonFunc from "../../../../ets/MainAbility/common/Common";
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -30,13 +30,14 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
+let displayID: Int = 0;
+
 export default function TextSelectionMenu() {
   describe('TextSelectionMenu', ()  => {
     beforeAll(async (): Promise<void> => {
       console.info("TextSelectionMenu beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
-
     });
 
     beforeEach(async (): Promise<void> => {
@@ -51,16 +52,17 @@ export default function TextSelectionMenu() {
         console.info("get TextSelectionMenu state pages:" + JSON.stringify(pages));
         if (!("TextSelectionMenu" == pages.name)) {
           console.info("get TextSelectionMenu pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // await router 有已知问题，先注释使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push TextSelectionMenu page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push TextSelectionMenu page error:" + err);
+        console.log("push TextSelectionMenu page error:" + err);
       }
       console.info("TextSelectionMenu beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
 
@@ -80,7 +82,11 @@ export default function TextSelectionMenu() {
       let text3 = CommonFunc.getComponentRectOnScreen('Text_bindSelectionMenu_test')
       let x: int = Math.floor(((text3.right-text3.left)*0.5+text3.left)).toInt()
       let y: int = Math.floor(((text3.bottom-text3.top)*0.5+text3.top)).toInt()
-      await driver.mouseClick({ x: x, y: y}, MouseButton.MOUSE_BUTTON_RIGHT)
+      try {
+        await driver.mouseClick({ x: x, y: y, displayId: displayID}, MouseButton.MOUSE_BUTTON_RIGHT)
+      } catch (err) {
+        console.log('driver.mouseClick error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('textApi_text1_test');
@@ -110,7 +116,11 @@ export default function TextSelectionMenu() {
       let test4 = CommonFunc.getComponentRectOnScreen('text_TextResponseType')
       let x: int = Math.floor((test4.right-test4.left)*0.2+test4.left).toInt()
       let y: int = Math.floor((test4.bottom-test4.top)*0.5+test4.top).toInt()
-      await driver.longClick(x, y)
+      try {
+        await driver.longClickAt({ x: x, y: y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.longClickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(2000);
 
       let strJson = inspector.getInspectorByKey('textApi_text2');

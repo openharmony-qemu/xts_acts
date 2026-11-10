@@ -29,6 +29,8 @@ struct routerParams_1 {
     Column({ space: 5 } as ColumnOptions) {
       Text(this.str).id('text_Params1').margin({ top: 50 } as Margin)
     }
+    .padding(10)
+    .margin(10)
     .width('100%')
     .height('100%')
   }

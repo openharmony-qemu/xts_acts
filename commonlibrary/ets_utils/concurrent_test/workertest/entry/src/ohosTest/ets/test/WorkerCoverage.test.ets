@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import {beforeAll, describe, expect, it, Level, Size, TestType} from '@ohos/hypium';
 import { worker } from '@kit.ArkTS';
 import { Sleep } from '../utils/utils';
 import { TestObj } from '../utils/workerCommon';
@@ -24,8 +24,11 @@ export function sleep(time: number) {
 }
 export default function workerCoverageEtsTest() {
   describe('WorkerCoverageEtsTest', () => {
+    beforeAll(async () => {
+      await sleep(200);
+    })
 
-    /**
+        /**
      * @tc.name   testWorkerPostMessageWithEmptyTransfer
      * @tc.number SUB_RUNTIME_WORKER_POSTMESSAGE_PARAM_0300
      * @tc.desc   Test Worker.postMessage with empty transfer array.

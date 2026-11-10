@@ -15,7 +15,7 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector'
@@ -71,12 +71,18 @@ it('back6_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> =>
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
 
+      let displayId: undefined | Int = 0;
       let btn = await driver.findComponent(ON.id('back6_btn'));
+      await CommonFunc.sleep(1000);
+      displayId = await btn?.getDisplayId();
+      await CommonFunc.sleep(1000);
       await btn!.click()
       await CommonFunc.sleep(2000);
       console.info('[back6_static_0100] btn click');
 
-      await driver.pressBack()
+      if (displayId != undefined) {
+        await driver.pressBack(displayId as Int);
+      }
       await CommonFunc.sleep(2000);
       console.info('[back6_static_0100] pressBack');
 

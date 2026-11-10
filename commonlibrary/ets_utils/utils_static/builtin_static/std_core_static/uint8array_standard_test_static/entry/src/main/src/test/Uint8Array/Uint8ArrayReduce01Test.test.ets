@@ -26,7 +26,7 @@ import {
   TestType,
   Size,
   Level
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 export default function Uint8ArrayReduce01Test(): void {
@@ -317,7 +317,7 @@ export default function Uint8ArrayReduce01Test(): void {
      */
     it('testUint8ArrayReduce019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Uint8Array.of(10, 20, 30);
-      const result = arr.reduce<number>((prev, curr) => prev + (curr > 15 ? curr : 0), 0);
+      const result = arr.reduce<number>((prev, curr) => prev + (curr > 15 ? curr : 0.0), 0);
       expect(result).assertEqual(50);
     });
 

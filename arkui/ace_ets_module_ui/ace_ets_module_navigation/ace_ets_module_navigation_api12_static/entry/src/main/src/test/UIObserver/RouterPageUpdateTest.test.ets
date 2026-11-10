@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, beforeAll, afterEach, it, expect, Level} from "../../../../hypium/index"
+import { describe, beforeEach, beforeAll, afterEach, it, expect, Level} from "@ohos/hypium-static/src/main/indexStatic"
 import router from '@ohos.router';
 import { Driver, Component, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -27,6 +27,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 import {SharedTransitionEffectType,Color} from '@ohos.arkui.component';
 import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+let displayId: undefined | Int = 0;
 export default function RouterPageUpdateTest() {
   describe('RouterPageUpdateTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -83,7 +84,9 @@ it('RouterPageUpdateTest_static_0100', Level.LEVEL2, async (done: () => void): P
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      await driver.pressBack();
+      if (displayId != undefined) {
+        await driver.pressBack(displayId as Int);
+      };
       await CommonFunc.sleep(1000);
 
       expect(AppStorage.get<int>('RouterPageUpdatePage_callBackFuncOnCount')).assertEqual(1);

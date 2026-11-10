@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import { stream } from '@kit.ArkTS';
 import Utils from '../Util.test';
 
@@ -34,12 +34,12 @@ class TestDuplex07_01 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writevCalled = true;
     expect(chunks.length).assertEqual(2);
-    expect(typeof chunks[0]).assertEqual('string');
-    expect(chunks[0]).assertEqual('data1');
-    expect(chunks[1]).assertEqual('data2');
+    expect(typeof (chunks as string[])[0]).assertEqual('string');
+    expect((chunks as string[])[0]).assertEqual('data1');
+    expect((chunks as string[])[1]).assertEqual('data2');
     invokeCb(callback);
   }
 }
@@ -54,13 +54,13 @@ class TestDuplex07_02 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writevCalled = true;
     expect(chunks.length).assertEqual(2);
-    expect(chunks[0] instanceof Uint8Array).assertTrue();
-    expect(chunks[1] instanceof Uint8Array).assertTrue();
-    let arr1 = chunks[0] as Uint8Array;
-    let arr2 = chunks[1] as Uint8Array;
+    expect((chunks as Uint8Array[])[0] instanceof Uint8Array).assertTrue();
+    expect((chunks as Uint8Array[])[1] instanceof Uint8Array).assertTrue();
+    let arr1 = (chunks as Uint8Array[])[0];
+    let arr2 = (chunks as Uint8Array[])[1];
     expect(arr1[0]).assertEqual(72);
     expect(arr1[1]).assertEqual(101);
     invokeCb(callback);
@@ -77,7 +77,7 @@ class TestDuplex07_03 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writevCalled = true;
     expect(chunks.length).assertEqual(0);
     invokeCb(callback);
@@ -94,7 +94,7 @@ class TestDuplex07_04 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.doWritevCalled = true;
     expect(chunks.length).assertLargerOrEqual(1);
     invokeCb(callback);
@@ -111,10 +111,10 @@ class TestDuplex07_05 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writevCalled = true;
     expect(chunks.length).assertEqual(1);
-    expect(chunks[0]).assertEqual('!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~');
+    expect((chunks as string[])[0]).assertEqual('!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~');
     invokeCb(callback);
   }
 }
@@ -129,10 +129,10 @@ class TestDuplex07_06 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writevCalled = true;
     expect(chunks.length).assertEqual(1);
-    let str = chunks[0] as string;
+    let str = (chunks as string[])[0];
     expect(str.charCodeAt(0)).assertEqual(7);
     expect(str.charCodeAt(1)).assertEqual(8);
     expect(str.charCodeAt(2)).assertEqual(12);
@@ -154,12 +154,12 @@ class TestDuplex07_07 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writevCalled = true;
     expect(chunks.length).assertEqual(3);
-    expect(chunks[0]).assertEqual('\uD83D\uDC46');
-    expect(chunks[1]).assertEqual('\uD83D\uDC7F');
-    expect(chunks[2]).assertEqual('\uD83D\uDC40');
+    expect((chunks as string[])[0]).assertEqual('\uD83D\uDC46');
+    expect((chunks as string[])[1]).assertEqual('\uD83D\uDC7F');
+    expect((chunks as string[])[2]).assertEqual('\uD83D\uDC40');
     invokeCb(callback);
   }
 }
@@ -174,7 +174,7 @@ class TestDuplex07_08 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writeCount += chunks.length;
     invokeCb(callback);
   }
@@ -190,13 +190,13 @@ class TestDuplex07_09 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writevCalled = true;
     expect(chunks.length).assertEqual(4);
-    let arr1 = chunks[0] as Uint8Array;
-    let arr2 = chunks[1] as Uint8Array;
-    let arr3 = chunks[2] as Uint8Array;
-    let arr4 = chunks[3] as Uint8Array;
+    let arr1 = (chunks as Uint8Array[])[0];
+    let arr2 = (chunks as Uint8Array[])[1];
+    let arr3 = (chunks as Uint8Array[])[2];
+    let arr4 = (chunks as Uint8Array[])[3];
     expect(arr1[0]).assertEqual(0);
     expect(arr2[0]).assertEqual(255);
     invokeCb(callback);
@@ -213,11 +213,11 @@ class TestDuplex07_10 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writevCalled = true;
     expect(chunks.length).assertEqual(2);
-    let arr1 = chunks[0] as Uint8Array;
-    let arr2 = chunks[1] as Uint8Array;
+    let arr1 = (chunks as Uint8Array[])[0];
+    let arr2 = (chunks as Uint8Array[])[1];
     expect(arr1.length).assertEqual(4);
     expect(arr2.length).assertEqual(4);
     invokeCb(callback);
@@ -234,7 +234,7 @@ class TestDuplex07_11 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writevCalled = true;
     expect(chunks.length).assertEqual(3);
     invokeCb(callback);
@@ -251,7 +251,7 @@ class TestDuplex07_12 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writevCalled = true;
     expect(chunks.length).assertEqual(2);
     invokeCb(callback);
@@ -268,7 +268,7 @@ class TestDuplex07_13 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writevCalled = true;
     expect(chunks.length).assertEqual(2);
     invokeCb(callback);
@@ -285,7 +285,7 @@ class TestDuplex07_14 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     expect(chunks.length).assertEqual(4);
     for (let chunk of chunks) {
       if (chunk instanceof Uint8Array) {
@@ -306,7 +306,7 @@ class TestDuplex07_15 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     for (let chunk of chunks) {
       if (chunk instanceof Uint8Array) {
         this.totalBytes += chunk.length;
@@ -328,7 +328,7 @@ class TestDuplex07_16 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     for (let chunk of chunks) {
       if (chunk instanceof Uint8Array) {
         for (let i = 0; i < chunk.length; i++) {
@@ -352,12 +352,12 @@ class TestDuplex07_17 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writevCalled = true;
     expect(chunks.length).assertEqual(3);
-    expect(chunks[0]).assertEqual('0');
-    expect(chunks[1]).assertEqual('NaN');
-    expect(chunks[2]).assertEqual('Infinity');
+    expect((chunks as string[])[0]).assertEqual('0');
+    expect((chunks as string[])[1]).assertEqual('NaN');
+    expect((chunks as string[])[2]).assertEqual('Infinity');
     invokeCb(callback);
   }
 }
@@ -372,12 +372,12 @@ class TestDuplex07_18 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writevCalled = true;
     expect(chunks.length).assertEqual(1);
     const asciiStr =
       '!"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
-    expect(chunks[0]).assertEqual(asciiStr);
+    expect((chunks as string[])[0]).assertEqual(asciiStr);
     invokeCb(callback);
   }
 }
@@ -392,11 +392,11 @@ class TestDuplex07_19 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writevCalled = true;
     expect(chunks.length).assertEqual(1);
     const escapeStr = '\x00\x07\x08\x0C\x0A\x0D\x09\x0B\\\'\"?';
-    expect(chunks[0]).assertEqual(escapeStr);
+    expect((chunks as string[])[0]).assertEqual(escapeStr);
     invokeCb(callback);
   }
 }
@@ -411,7 +411,7 @@ class TestDuplex07_20 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     for (let chunk of chunks) {
       if (typeof chunk === 'string') {
         this.chunkTypes.push('string');
@@ -434,7 +434,7 @@ class TestDuplex07_21 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.nanCount = chunks.length;
     invokeCb(callback);
   }
@@ -450,7 +450,7 @@ class TestDuplex07_22 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.chunkCount += chunks.length;
     invokeCb(callback);
   }
@@ -466,14 +466,14 @@ class TestDuplex07_23 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writevCalled = true;
     expect(chunks.length).assertEqual(5);
-    expect(chunks[0]).assertEqual('\uD83D\uDC46');
-    expect(chunks[1]).assertEqual('\uD83D\uDC7F');
-    expect(chunks[2]).assertEqual('\uD83D\uDC40');
-    expect(chunks[3]).assertEqual('\uD83D\uDCAF');
-    expect(chunks[4]).assertEqual('\uD83C\uDF85');
+    expect((chunks as string[])[0]).assertEqual('\uD83D\uDC46');
+    expect((chunks as string[])[1]).assertEqual('\uD83D\uDC7F');
+    expect((chunks as string[])[2]).assertEqual('\uD83D\uDC40');
+    expect((chunks as string[])[3]).assertEqual('\uD83D\uDCAF');
+    expect((chunks as string[])[4]).assertEqual('\uD83C\uDF85');
     invokeCb(callback);
   }
 }
@@ -488,7 +488,7 @@ class TestDuplex07_24 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     for (let chunk of chunks) {
       if (chunk instanceof Uint8Array) {
         this.totalLength += chunk.length;
@@ -508,7 +508,7 @@ class TestDuplex07_25 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     for (let chunk of chunks) {
       if (chunk instanceof Uint8Array && chunk.length === 0) {
         this.emptyCount++;
@@ -528,11 +528,11 @@ class TestDuplex07_26 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writevCalled = true;
     expect(chunks.length).assertEqual(1);
     const repeatedStr = '!!""##$$%%&&\'\'(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~';
-    expect(chunks[0]).assertEqual(repeatedStr);
+    expect((chunks as string[])[0]).assertEqual(repeatedStr);
     invokeCb(callback);
   }
 }
@@ -547,7 +547,7 @@ class TestDuplex07_27 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.totalLength = 0;
     for (let chunk of chunks) {
       if (chunk instanceof Uint8Array) {
@@ -570,11 +570,11 @@ class TestDuplex07_28 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writevCalled = true;
     expect(chunks.length).assertEqual(2);
-    expect(chunks[0]).assertEqual('true');
-    expect(chunks[1]).assertEqual('false');
+    expect((chunks as string[])[0]).assertEqual('true');
+    expect((chunks as string[])[1]).assertEqual('false');
     invokeCb(callback);
   }
 }
@@ -589,11 +589,11 @@ class TestDuplex07_29 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writevCalled = true;
     expect(chunks.length).assertEqual(2);
-    expect(chunks[0]).assertEqual('undefined');
-    expect(chunks[1]).assertEqual('null');
+    expect((chunks as string[])[0]).assertEqual('undefined');
+    expect((chunks as string[])[1]).assertEqual('null');
     invokeCb(callback);
   }
 }
@@ -608,7 +608,7 @@ class TestDuplex07_30 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writevCalled = true;
     expect(chunks.length).assertEqual(3);
     invokeCb(callback);
@@ -625,14 +625,14 @@ class TestDuplex07_31 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writevCalled = true;
     expect(chunks.length).assertEqual(5);
-    expect(chunks[0]).assertEqual('0x0102');
-    expect(chunks[1]).assertEqual('0o377');
-    expect(chunks[2]).assertEqual('1e3');
-    expect(chunks[3]).assertEqual('2.5e-2');
-    expect(chunks[4]).assertEqual('8');
+    expect((chunks as string[])[0]).assertEqual('0x0102');
+    expect((chunks as string[])[1]).assertEqual('0o377');
+    expect((chunks as string[])[2]).assertEqual('1e3');
+    expect((chunks as string[])[3]).assertEqual('2.5e-2');
+    expect((chunks as string[])[4]).assertEqual('8');
     invokeCb(callback);
   }
 }
@@ -647,11 +647,11 @@ class TestDuplex07_32 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writevCalled = true;
     expect(chunks.length).assertEqual(2);
-    let arr1 = chunks[0] as Uint8Array;
-    let arr2 = chunks[1] as Uint8Array;
+    let arr1 = (chunks as Uint8Array[])[0];
+    let arr2 = (chunks as Uint8Array[])[1];
     expect(arr1.length > 0).assertTrue();
     expect(arr2.length > 0).assertTrue();
     invokeCb(callback);
@@ -668,10 +668,10 @@ class TestDuplex07_33 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writevCalled = true;
     expect(chunks.length).assertEqual(1);
-    let arr = chunks[0] as Uint8Array;
+    let arr = (chunks as Uint8Array[])[0];
     expect(arr.length).assertEqual(0);
     invokeCb(callback);
   }
@@ -687,9 +687,9 @@ class TestDuplex07_34 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     expect(chunks.length).assertEqual(1);
-    let arr = chunks[0] as Uint8Array;
+    let arr = (chunks as Uint8Array[])[0];
     for (let i = 0; i < arr.length; i++) {
       this.clampedValues.push(arr[i]);
     }
@@ -707,7 +707,7 @@ class TestDuplex07_35 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writevCalled = true;
     expect(chunks.length).assertEqual(4);
     invokeCb(callback);
@@ -724,7 +724,7 @@ class TestDuplex07_36 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.specialValueCount = chunks.length;
     invokeCb(callback);
   }
@@ -740,7 +740,7 @@ class TestDuplex07_37 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writevCalled = true;
     expect(chunks.length).assertEqual(6);
     invokeCb(callback);
@@ -757,7 +757,7 @@ class TestDuplex07_38 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     for (let chunk of chunks) {
       if (chunk instanceof Uint8Array) {
         for (let i = 0; i < chunk.length; i++) {
@@ -779,15 +779,15 @@ class TestDuplex07_39 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writevCalled = true;
     expect(chunks.length).assertEqual(6);
-    expect(chunks[0]).assertEqual('\uD83D\uDCAF');
-    expect(chunks[1]).assertEqual('\uD83C\uDF85');
-    expect(chunks[2]).assertEqual('\uD83D\uDC3C');
-    expect(chunks[3]).assertEqual('\uD83D\uDD27');
-    expect(chunks[4]).assertEqual('\uD83D\uDC87');
-    expect(chunks[5]).assertEqual('\uD83D\uDEA2');
+    expect((chunks as string[])[0]).assertEqual('\uD83D\uDCAF');
+    expect((chunks as string[])[1]).assertEqual('\uD83C\uDF85');
+    expect((chunks as string[])[2]).assertEqual('\uD83D\uDC3C');
+    expect((chunks as string[])[3]).assertEqual('\uD83D\uDD27');
+    expect((chunks as string[])[4]).assertEqual('\uD83D\uDC87');
+    expect((chunks as string[])[5]).assertEqual('\uD83D\uDEA2');
     invokeCb(callback);
   }
 }
@@ -802,13 +802,13 @@ class TestDuplex07_40 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.writevCalled = true;
     expect(chunks.length).assertEqual(2);
     let testStr1 = "Line1\nLine2\r\nLine3\tTabbed";
     let testStr2 = "Null\0Bell\x07Backspace\x08";
-    expect(chunks[0]).assertEqual(testStr1);
-    expect(chunks[1]).assertEqual(testStr2);
+    expect((chunks as string[])[0]).assertEqual(testStr1);
+    expect((chunks as string[])[1]).assertEqual(testStr2);
     invokeCb(callback);
   }
 }
@@ -823,7 +823,7 @@ class TestDuplex07_41 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.receivedChunks = chunks.length;
     invokeCb(callback);
   }

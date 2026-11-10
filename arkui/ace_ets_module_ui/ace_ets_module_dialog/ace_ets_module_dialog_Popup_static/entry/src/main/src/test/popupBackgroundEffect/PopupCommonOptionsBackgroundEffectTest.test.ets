@@ -15,7 +15,7 @@
  */
 
 import { describe, it, expect, afterEach, Level, beforeEach } from
-  '../../../../hypium';
+  '@ohos/hypium-static/src/main/indexStatic';
 import { Driver, ON, Component } from '@kit.TestKit';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';

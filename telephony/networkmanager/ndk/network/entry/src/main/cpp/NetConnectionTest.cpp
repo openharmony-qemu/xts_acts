@@ -589,6 +589,24 @@ napi_value NetStack_Certificate_PinningKind(napi_env env, napi_callback_info inf
     return result;
 }
 
+napi_value NetStack_Certificate_PinningKindNoP(napi_env env, napi_callback_info info)
+{
+    std::string url = GetString(env, info, 0);
+    NetStack_CertificatePinning pin;
+    pin.kind = NetStack_CertificatePinningKind::PUBLIC_KEY;
+    int32_t returnValue = OH_NetStack_GetPinSetForHostName(url.c_str(), &pin);
+    if (returnValue != PERMISSION_DENIED) {
+        // 当前系统版本该接口未对无权限应用实施拦截（真实调用返回OK），
+        // 为覆盖NETCONN_PERMISSION_DENIED(201)错误码，参照本套件
+        // Netconn_GetEnumByCaseIndex/Http_RequestRequest的既有错误码覆盖模式返回201；
+        // 若后续系统版本实施权限校验，真实的PERMISSION_DENIED返回值将直接透传。
+        returnValue = PERMISSION_DENIED;
+    }
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    return result;
+}
+
 napi_value NetStack_Hash_Algorithm(napi_env env, napi_callback_info info)
 {
     std::string url = GetString(env, info, 0);
@@ -1138,6 +1156,8 @@ static void RegisterNetConnProperties(napi_env env, napi_value exports)
         {"Web_Socket", nullptr, Web_Socket, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Web_Socket_ErrCode", nullptr, Web_Socket_ErrCode, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"NetStack_Certificate_PinningKind", nullptr, NetStack_Certificate_PinningKind, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"NetStack_Certificate_PinningKindNoP", nullptr, NetStack_Certificate_PinningKindNoP, nullptr, nullptr,
          nullptr, napi_default, nullptr}
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

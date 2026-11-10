@@ -15,13 +15,15 @@
  */
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
+
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 
 export default function SliderAttrs2() {
   describe('SliderAttrs2', () => {
@@ -69,7 +71,7 @@ export default function SliderAttrs2() {
       await Utils.sleep(1000);
       let slider = await driver.findComponent(ON.id('SliderAttrs2_slider2')) as Component;
       let point = await slider!.getBoundsCenter();
-      await driver.click(point.x, point.y)
+      await driver.clickAt({x: point.x, y: point.y, displayId: displayID})
       await Utils.sleep(2000);
 
       let strJson1 = inspector.getInspectorByKey('SliderAttrs2_text2');

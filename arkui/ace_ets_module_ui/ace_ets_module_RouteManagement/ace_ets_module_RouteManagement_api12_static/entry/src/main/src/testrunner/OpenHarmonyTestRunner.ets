@@ -19,7 +19,7 @@ import { TestRunner } from '@kit.TestKit';
 
 import hilog from '@ohos.hilog';
 
-import { Hypium } from '../../../hypium/index';
+import { Hypium } from '@ohos/hypium-static/src/main/indexStatic';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import testsuite from '../test/List.test';
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
@@ -31,18 +31,23 @@ let tag: string = 'testTag';
 export class OpenHarmonyTestRunner implements TestRunner {
   constructor() {}
 
-  public onPrepare: () => void = () => {
-    hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner OnPrepare');
-    abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+  public get onPrepare(): () => void {
+    return () => {
+      hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner OnPrepare');
+      abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+    }
   }
+  public set onPrepare(_: () => void) {}
+  public get onRun(): () => void {
+    return () => {
+      hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun');
 
-  public onRun: () => void = () => {
-    hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun');
-
-    abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
-    abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-    hilog.info(domain, tag, '%{public}s', 'start run testcase!!!');
-    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
-    hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun end');
+      abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
+      abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+      hilog.info(domain, tag, '%{public}s', 'start run testcase!!!');
+      Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
+      hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun end');
+    }
   }
+  public set onRun(_: () => void) {}
 }

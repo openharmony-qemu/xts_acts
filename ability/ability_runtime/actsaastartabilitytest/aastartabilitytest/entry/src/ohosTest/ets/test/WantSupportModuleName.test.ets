@@ -33,21 +33,19 @@ let launcher: Want = {
 }
 let startAbilityMainCmd = `aa start -b ${bundleName} -a ${mainActivity} -m ${mainModuleName}`;
 let user = abilityDelegatorRegistry.getArguments().parameters['-u'];
-if(user !== undefined){
-    startAbilityMainCmd += ' -u ' + user;
-}
 let startAbilityFeatureCmd = `aa start -b ${bundleName} -a ${mainActivity} -m ${featureModuleName}`;
-if(user !== undefined){
-    startAbilityFeatureCmd += ' -u ' + user;
-}
 let startAbilityNoModuleNameCmd = `aa start -b ${bundleName} -a ${mainActivity}`;
-if(user !== undefined){
-    startAbilityNoModuleNameCmd += ' -u ' + user;
-}
 let onForegroundEvent_main = '10000-onForegroundEvent_entry';
 let onForegroundEvent_feature = '10000-onForegroundEvent_feature';
 let installFeatureHapCmd = 'bm install -p data/ActsAbilityFeature.hap';
 let forcestop = 'aa force-stop com.example.myapplication';
+if(user !== undefined){
+  startAbilityMainCmd += ' -u ' + user;
+  startAbilityFeatureCmd += ' -u ' + user;
+  startAbilityNoModuleNameCmd += ' -u ' + user;
+  installFeatureHapCmd += ' -u ' + user;
+  forcestop += ' -u ' + user;
+}
 let subscriber: commonEventManager.CommonEventSubscriber;
 let standard: Array<string> = ['onCreate->', 'onWindowStageCreate->', 'onForeground'];
 
@@ -234,6 +232,9 @@ export default function wantSupportModuleNameTest() {
         await sleep(2000)
           .then(async () => {
             let backToLauncherCommand = `aa start -b ${launcher.bundleName} -a ${launcher.abilityName}`;
+            if(user !== undefined){
+              backToLauncherCommand += ' -u ' + user;
+            }
             await executeShellCmd(backToLauncherCommand);
           })
 

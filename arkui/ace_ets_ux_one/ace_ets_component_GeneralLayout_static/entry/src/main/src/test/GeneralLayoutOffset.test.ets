@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { beforeEach, describe, expect, it, Level } from '../../../hypium/index';
+import { beforeEach, describe, expect, it, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import { i18n } from '@kit.LocalizationKit';
 import display from '@ohos.display';
 import CommonFunc from '../../ets/MainAbility/common/Common';

@@ -135,6 +135,9 @@ struct Index {
         .onClick((e: ClickEvent) => {
           this.scroller.scrollPage({ next: true })
         })
-    }.width('100%').height('100%').backgroundColor(0xDCDCDC)
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%').height('100%').backgroundColor(0xDCDCDC)
   }
 }

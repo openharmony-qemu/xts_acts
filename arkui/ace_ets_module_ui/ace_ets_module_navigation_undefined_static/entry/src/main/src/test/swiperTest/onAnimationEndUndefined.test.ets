@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -22,6 +22,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { UtilsTest } from '../Util.test';
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function onAnimationEndUndefinedTest() {
   describe('onAnimationEndUndefinedTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -79,13 +80,7 @@ export default function onAnimationEndUndefinedTest() {
       let width = bounds.right - bounds.left;
       let height = bounds.bottom - bounds.top;
 
-      await driver.swipe(
-        (bounds.left + width - 50).toInt(),
-        (bounds.top + height / 2).toInt(),
-        (bounds.left + 50).toInt(),
-        (bounds.top + height / 2).toInt(),
-        3000
-      );
+      await driver.swipeBetween({ x: (bounds.left + width - 50).toInt(), y: (bounds.top + height / 2).toInt(), displayId: displayID.toInt() }, { x: (bounds.left + 50).toInt(), y: (bounds.top + height / 2).toInt(), displayId: displayID.toInt() }, 3000);
       await CommonFunc.sleep(2000);
 
       let strJson2 = inspector.getInspectorByKey('swiper_onAnimationEnd');
@@ -111,13 +106,7 @@ export default function onAnimationEndUndefinedTest() {
       let width2 = bounds2.right - bounds2.left;
       let height2 = bounds2.bottom - bounds2.top;
 
-      await driver.swipe(
-        (bounds2.left + width2 - 50).toInt(),
-        (bounds2.top + height2 / 2).toInt(),
-        (bounds2.left + 50).toInt(),
-        (bounds2.top + height2 / 2).toInt(),
-        3000
-      );
+      await driver.swipeBetween({ x: (bounds2.left + width2 - 50).toInt(), y: (bounds2.top + height2 / 2).toInt(), displayId: displayID.toInt() }, { x: (bounds2.left + 50).toInt(), y: (bounds2.top + height2 / 2).toInt(), displayId: displayID.toInt() }, 3000);
       await CommonFunc.sleep(2000);
 
       let strJson4 = inspector.getInspectorByKey('swiper_onAnimationEnd');

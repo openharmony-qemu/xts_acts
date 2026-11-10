@@ -19,16 +19,17 @@ import securityManagerTest from './securityManager/securityManager.test';
 import deviceSettingsTest from './deviceSettings/deviceSettings.test';
 import deviceInfoTest from './deviceInfo/deviceInfo.test';
 import accountManagerTest from './accountManager/accountManager.test.ets'
-import adminManagerTest from './adminManager/adminManager.test.ets'
+import adminManagerTest from './adminManager/AdminManager.test.ets'
 import applicationManagerTest from './applicationManager/applicationManager.test.ets'
-import bundleManagerTest from './bundleManager/bundleManager.test.ets'
+import bundleManagerTest from './bundleManager/BundleManager.test.ets'
 import restrictionsTest from './restrictions/restrictions.test';
 import systemManagerTest from './systemManager/systemManager.test';
 import wifiManagerTest from './wifiManager/wifiManager.test';
 import deviceControlTest from './deviceControl/deviceControl.test.ets';
 import locationManagerTest from './locationManager/locationManager.test.ets';
+import networkManagerTest from './networkManager/networkManager.test.ets';
 import usbManagerTest from './usbManager/usbManager.test.ets';
-import telephonyManagerTest from './telephonyManager/telephonyManager.test.ets';
+import telephonyManagerTest from './telephonyManager/TelephonyManager.test.ets';
 import beforeAllTest from './beforeAll/BeforeAll.test.ets';
 
 export default function testsuite() {
@@ -38,6 +39,7 @@ export default function testsuite() {
   wifiManagerTest();
   deviceControlTest();
   locationManagerTest();
+  networkManagerTest();
   usbManagerTest();
   browserManagerTest();
   bluetoothManagerTest();

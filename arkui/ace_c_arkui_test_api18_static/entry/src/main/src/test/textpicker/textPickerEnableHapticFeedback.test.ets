@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from "../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from "@ohos/hypium-static/src/main/indexStatic";
 import Utils from '../common/Utils';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';

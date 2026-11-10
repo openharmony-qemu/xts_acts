@@ -46,5 +46,30 @@ export default function deviceInfoTest() {
       }
       done();
     });
+
+    /**
+     * @tc.name   test_get_patch_info_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_GET_PATCH_INFO_JS_0100
+     * @tc.desc   test deviceInfo getPatchInfo with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_get_patch_info_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      try {
+        await deviceInfo.getPatchInfo();
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(201);
+        }
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
   })
 }

@@ -25,7 +25,7 @@ import {
   TestType,
   Level,
   Size
-} from '../../../hypium'
+} from '@ohos/hypium-static/src/main/indexStatic'
 import {
   Component,
   Driver,
@@ -315,6 +315,31 @@ export default function btBaseProfileTest(): void {
           } else {
             expect().assertFail();
           }
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_PANROLE_static_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_PANROLE_0100
+     * @tc.desc   Test PanRole enum api26.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_PANROLE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        try {
+          let ROLE_PANNAP = bluetooth.PanRole.ROLE_PANNAP;
+          hilog.info(domain, tag, 'PanRole ROLE_PANNAP: ' + ROLE_PANNAP);
+          expect(ROLE_PANNAP).assertEqual(0);
+
+          let ROLE_PANU = bluetooth.PanRole.ROLE_PANU;
+          hilog.info(domain, tag, 'PanRole ROLE_PANU: ' + ROLE_PANU);
+          expect(ROLE_PANU).assertEqual(1);
+        } catch (err) {
+          hilog.error(domain, tag, "bluetooth PanRole errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
         }
         done();
       })

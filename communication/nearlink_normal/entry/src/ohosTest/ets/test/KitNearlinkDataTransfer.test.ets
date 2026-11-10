@@ -23,6 +23,7 @@ import { openNearLink } from './OpenNearLink';
 export default function dataTransferTest() {
   describe('dataTransferTest', () => {
     let return_boolean: boolean;
+    let isFrameType4Supported: boolean;
     let TIME_SLEEP: number = 2000;
     let ADDRESS = "11:22:33:44:55:66";
     let ADDRESS_Invailable1 = "11:22:33:44:55:6";
@@ -45,6 +46,7 @@ export default function dataTransferTest() {
       await sleep(TIME_SLEEP);
       await clickRequestPermission();
       return_boolean = manager.isNearLinkSupported();
+      isFrameType4Supported = manager.isFrameType4Supported();
       console.info('[Nearlink Test] beforeAll end');
       done();
     });
@@ -2064,6 +2066,114 @@ export default function dataTransferTest() {
         } else {
           expect(err.code).assertEqual(36100043);
         }
+      }
+      done();
+    });
+    /**
+     * @tc.name SUB_Communication_XTS_NearLinkPub_DataTransfer_5900
+     * @tc.number SUB_Communication_XTS_NearLinkPub_DataTransfer_5900
+     * @tc.desc dataTransfer connect with frameType FRAME_TYPE_1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('SUB_Communication_XTS_NearLinkPub_DataTransfer_5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:Function) => {
+      let params: dataTransfer.ConnectionParams = {
+        address:ADDRESS,
+        uuid:UUID,
+        frameType:constant.FrameType.FRAME_TYPE_1
+      }
+      try {
+        console.info('[Nearlink Test] call connect start');
+        await dataTransfer.connect(params);
+      }catch (err) {
+        console.info('[nearLink_test]dataTransfer connect fail '+JSON.stringify(err));
+        if (err.code === 801) {
+          console.info('api is not support');
+          expect(err.code).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
+
+      try {
+        console.info('[Nearlink Test] call disconnect start');
+        await dataTransfer.disconnect(params);
+      }catch (err) {
+        console.info('[nearLink_test]dataTransfer disconnect fail '+JSON.stringify(err));
+        if (err.code === 801) {
+          console.info('api is not support');
+          expect(err.code).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+    });
+    /**
+     * @tc.name SUB_Communication_XTS_NearLinkPub_DataTransfer_6000
+     * @tc.number SUB_Communication_XTS_NearLinkPub_DataTransfer_6000
+     * @tc.desc dataTransfer connect with frameType FRAME_TYPE_4
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('SUB_Communication_XTS_NearLinkPub_DataTransfer_6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:Function) => {
+      let params: dataTransfer.ConnectionParams = {
+        address:ADDRESS,
+        uuid:UUID,
+        frameType:constant.FrameType.FRAME_TYPE_4
+      }
+      try {
+        console.info('[Nearlink Test] call connect start');
+        await dataTransfer.connect(params);
+        expect(isFrameType4Supported === true).assertTrue();
+      }catch (err) {
+        console.info('[nearLink_test]dataTransfer connect fail '+JSON.stringify(err));
+        if (err.code === 801) {
+          console.info('api is not support');
+          expect(err.code).assertEqual(801);
+          expect(isFrameType4Supported === false).assertTrue();
+        } else {
+          expect().assertFail();
+        }
+      }
+
+      try {
+        console.info('[Nearlink Test] call disconnect start');
+        await dataTransfer.disconnect(params);
+      }catch (err) {
+        console.info('[nearLink_test]dataTransfer disconnect fail '+JSON.stringify(err));
+        if (err.code === 801) {
+          console.info('api is not support');
+          expect(err.code).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+    });
+    /**
+     * @tc.name SUB_Communication_XTS_NearLinkPub_DataTransfer_6100
+     * @tc.number SUB_Communication_XTS_NearLinkPub_DataTransfer_6100
+     * @tc.desc dataTransfer connect with invalid frameType -1 return error 401
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('SUB_Communication_XTS_NearLinkPub_DataTransfer_6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:Function) => {
+      let params: dataTransfer.ConnectionParams = {
+        address:ADDRESS,
+        uuid:UUID,
+        frameType:-1
+      }
+      try {
+        console.info('[Nearlink Test] call connect start');
+        await dataTransfer.connect(params);
+        expect().assertFail();
+      }catch (err) {
+        console.info('[nearLink_test]dataTransfer connect fail '+JSON.stringify(err));
+        expect(err.code).assertEqual(401);
       }
       done();
     });

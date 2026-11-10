@@ -1,0 +1,455 @@
+- collections.Map 测试设计
+	- 说明：基于 collections_map_testpoint.md §1 接口维度脑图生成，覆盖 17 接口×7 测试逻辑分类（缺项类按 §1 树跳过）
+	- 1. 接口测试（Functional）
+		- constructor
+			- 入参范围覆盖
+				- entries 数组、Iterable 对象、null、undefined、空数组
+				- 全类型键值矩阵：number(普通/科学记数/MAX_SAFE/NaN)、string(普通/特殊字符/emoji/空串)、boolean、undefined、null
+				- Sendable 对象/空对象、ComplexIndexSignature、collections.Array(空/sparse)
+				- SendableNormalFn/ArrowFn/AsyncFn/AddFn、SendableClassBasic/Complex/Extended、const enum
+				- AsyncLock、ConditionVariable、SendableLruCache
+				- 嵌套 Map/Set/Array、large object/array、深嵌套、循环引用
+			- 边界值测试
+				- 空 Map、单元素、1000/10250 元素
+				- 1023/1024/1025 扩容边界
+			- 异常与非法输入
+				- 参数类型非法→401
+				- 构造失败→10200012
+				- 非 Sendable 泛型→编译/运行错误
+			- 返回值与类型验证
+				- instanceof collections.Map
+				- 空构造 size=0
+				- 元素正确写入
+			- 组合场景
+				- 从另一 Map 构造
+				- 子类 super 传参
+				- 重复键去重
+			- 重复调用/幂等性
+				- 相同 entries 多次构造结果一致
+			- 并发跨线程
+				- 子类构造体跨 TaskPool
+				- Worker 接收 Map 构造
+		- size
+			- 入参范围覆盖
+				- 随 number/string/boolean/null/undefined/Sendable 等全类型键的增删变化
+			- 边界值测试
+				- 空 Map size=0、单元素
+				- 1000/10250/500000 大容量
+				- 1024 扩容前后
+			- 返回值与类型验证
+				- number 类型
+				- 增删后正确衰减/递增
+				- clear 后归零
+			- 组合场景
+				- put→delete→clear 链中持续校验 size
+				- forEach 次数==size
+			- 重复调用/幂等性
+				- 重复 put 同键 size 不变
+				- 重复 delete 不再衰减
+			- 并发跨线程
+				- TaskPool 多写者下 size 一致性
+				- 子类 size 继承正确
+		- set
+			- 入参范围覆盖
+				- 36 种键值类型存入（同 constructor 矩阵）
+			- 边界值测试
+				- 空 Map first set
+				- 1023/1024/1025 跨边界
+				- 大对象/大数组 value
+			- 异常与非法输入
+				- set 自身 bind 异常（NonOrthogonal 间接覆盖）
+			- 返回值与类型验证
+				- 返回 Map 实例可链式
+				- 存后 get 命中
+			- 组合场景
+				- set→delete→clear
+				- set 覆盖旧值
+				- set 后 has/get 一致
+			- 重复调用/幂等性
+				- 同键多次 set 保留最后值
+				- size 不膨胀
+			- 并发跨线程
+				- AsyncLock 保护并发 set
+				- TaskPool/Worker 跨线程 set
+		- get
+			- 入参范围覆盖
+				- number/string/boolean/null/undefined/NaN/Sendable 实例/BigInt/Unicode/超长串 键取值
+			- 边界值测试
+				- 空 Map、单元素
+				- 1000/10250/大 Map
+				- 缺失键
+			- 异常与非法输入
+				- detached 方法→10200011（get 同 bind 契约）
+			- 返回值与类型验证
+				- 命中返回值
+				- 缺失返回 undefined
+				- 能区分 null/undefined 键
+				- BigInt≠Number
+			- 组合场景
+				- set→get
+				- delete 后 get→undefined
+				- clear 后 get→undefined
+				- copy 后 get
+			- 重复调用/幂等性
+				- 同键多次 get 一致
+				- 同键多次 set 后 get 取最新
+			- 并发跨线程
+				- 跨 TaskPool 传递后 get
+				- Worker 接收后 get
+		- has
+			- 入参范围覆盖
+				- number/string/boolean/null/undefined/Infinity/-Infinity/BigInt/Unicode/超长串/多行串/Sendable 实例 键
+			- 边界值测试
+				- 空 Map→false、单元素
+				- 大数量键
+				- 性能版（大数量键）
+			- 异常与非法输入
+				- detached→10200011（同 bind 契约，间接）
+			- 返回值与类型验证
+				- true/false boolean
+				- SameValueZero(NaN)
+				- +0≠-0 区分
+				- null≠undefined
+			- 组合场景
+				- set 后 has→true
+				- delete/clear 后 has→false
+				- 重加后 has→true
+			- 重复调用/幂等性
+				- 同键多次 has 一致
+				- 变量重赋值后仍命中
+			- 并发跨线程
+				- 跨线程引用 has
+				- 子类继承 has
+		- delete
+			- 入参范围覆盖
+				- number/string/boolean/null/undefined/NaN/Infinity/BigInt/class 实例 键删除
+			- 边界值测试
+				- 空 Map 删→false、单元素
+				- 首/末元素
+				- 1000/大 Map
+				- 删全后空
+			- 异常与非法输入
+				- forEach 内 delete→10200201 并发修改
+				- detached→10200011
+			- 返回值与类型验证
+				- boolean（存在 true / 不存在 false）
+				- 不影响其余键
+			- 组合场景
+				- delete→has/get 联动
+				- delete→clear
+				- delete→重加
+				- set 覆盖后 delete
+			- 重复调用/幂等性
+				- delete 两次第二次 false
+				- 循环删除
+				- clear 后 delete→false
+			- 并发跨线程
+				- 并发删除竞态
+				- 跨线程删除
+		- clear
+			- 入参范围覆盖
+				- number/string/boolean/null/undefined/Unicode/Infinity/NaN/Map 值 等全类型键 clear
+			- 边界值测试
+				- 空 Map clear 无副作用
+				- 单元素
+				- 1000 元素
+				- 大整数键
+			- 异常与非法输入
+				- detached/uninitialized→10200011
+				- forEach 内 clear→10200201
+			- 返回值与类型验证
+				- void
+				- size→0
+				- entries/keys/values 迭代器变空
+				- JSON.stringify 空
+			- 组合场景
+				- clear→has→false/get→undefined
+				- clear 后再 set 再 clear
+				- 原型方法仍可用
+			- 重复调用/幂等性
+				- 连续多次 clear
+				- clear 后 delete 无效
+			- 并发跨线程
+				- 跨线程 clear
+				- 子类继承 clear
+		- keys
+			- 入参范围覆盖
+				- 全 36 类型键返回（同 constructor 矩阵）
+			- 边界值测试
+				- 空 Map→空迭代器 done=true
+				- 单对
+				- 100/1000/10250 元素
+				- NaN/+0/-0 区分键
+			- 异常与非法输入
+				- non-sendable bind→10200011
+				- forEach 内调用→10200201 并发修改
+			- 返回值与类型验证
+				- IterableIterator 类型
+				- 插入序
+				- 每次返回新迭代器
+				- 含 next() 方法
+			- 组合场景
+				- 与 get/forEach 一致性
+				- Array.from/展开
+				- set/delete 后迭代器反映
+				- for...of
+			- 重复调用/幂等性
+				- 多次 keys() 各得新迭代器
+				- 可重复遍历
+			- 并发跨线程
+				- TaskPool 多任务并发迭代
+				- Worker 接收后迭代
+		- values
+			- 入参范围覆盖
+				- 全 36 类型值返回
+			- 边界值测试
+				- 空 Map→空迭代器 done=true
+				- 单对
+				- 100/1000/10250 元素
+				- NaN/+0/-0 区分键
+			- 异常与非法输入
+				- non-sendable bind→10200011
+				- forEach 内调用→10200201 并发修改
+			- 返回值与类型验证
+				- IterableIterator 类型
+				- 插入序
+				- 每次返回新迭代器
+				- 含 next() 方法
+			- 组合场景
+				- 与 get/forEach 一致性
+				- Array.from/展开
+				- set/delete 后迭代器反映
+				- for...of
+			- 重复调用/幂等性
+				- 多次 values() 各得新迭代器
+				- 可重复遍历
+			- 并发跨线程
+				- TaskPool 多任务并发迭代
+				- Worker 接收后迭代
+		- entries
+			- 入参范围覆盖
+				- 全 36 类型键值对返回
+			- 边界值测试
+				- 空 Map→空迭代器 done=true
+				- 单对
+				- 100/1000/10250 元素
+				- NaN/+0/-0 区分键
+			- 异常与非法输入
+				- non-sendable bind→10200011
+				- forEach 内调用→10200201 并发修改
+			- 返回值与类型验证
+				- IterableIterator 类型
+				- 插入序
+				- 每次返回新迭代器
+				- 含 next() 方法
+			- 组合场景
+				- 与 get/forEach 一致性
+				- Array.from/展开
+				- set/delete 后迭代器反映
+				- for...of
+				- @@iterator(for...of) 与 entries() 序列等价性
+				- delete 后 re-add 同键 → 重排至迭代序末尾
+			- 重复调用/幂等性
+				- 多次 entries() 各得新迭代器
+				- 可重复遍历
+			- 并发跨线程
+				- TaskPool 多任务并发迭代
+				- Worker 接收后迭代
+		- forEach
+			- 入参范围覆盖
+				- 全 36 类型键值遍历
+				- 各类型 value（NaN/Infinity/BigInt/Unicode/多行串/TestClass）
+			- 边界值测试
+				- 空 Map 不执行回调
+				- 单元素
+				- 10/100/1000/10000 元素
+				- 1024 边界后
+			- 异常与非法输入
+				- 回调非函数→401
+				- forEach 内 delete/clear→10200201
+				- 回调抛 CustomError
+				- detached→10200011
+			- 返回值与类型验证
+				- value/key/map 三参顺序（value 先 key 后）
+				- 插入序
+				- 回调返回值被忽略
+			- 组合场景
+				- forEach+entries 过滤
+				- 闭包修改
+				- 模板字面量
+				- nullish 合并
+				- 不遍历原型
+				- thisArg 上下文绑定（@Sendable MapContext 闭包访问 tag + ESObject 方法 call 绑定）
+			- 重复调用/幂等性
+				- 重复键(覆盖)只遍历最新
+				- 删后不遍历
+				- 空回调
+			- 并发跨线程
+				- 3 TaskPool 并发 forEach
+				- Promise.all 等待
+				- sendData 上报
+				- 嵌套 Map 结构
+		- put
+			- 入参范围覆盖
+				- NewApiType 46 例全类型（number/string/boolean/null/undefined/各 Sendable 类/嵌套/大对象/循环引用）
+			- 边界值测试
+				- 1023/1024/1025 跨边界
+				- 10250 元素新增/覆盖
+				- 大对象
+			- 异常与非法输入
+				- detached put→10200011 bind 错误
+			- 返回值与类型验证
+				- 新键→undefined
+				- 覆盖→旧值
+				- NaN/+0/-0 SameValueZero 返回旧值
+				- Sendable 引用相等返回旧值
+				- 返回类型显式 string|undefined 捕获
+			- 组合场景
+				- 连续 put 同键返回连续旧值并保留最新
+				- TaskPool 传递后 put
+				- instanceof 校验
+			- 重复调用/幂等性
+				- 重复 put 同键 size 不增
+				- 返回旧值序列
+			- 并发跨线程
+				- AsyncLock 多线程并发写不同键
+				- Worker 接收 Map 调 put
+		- remove
+			- 入参范围覆盖
+				- NewApiType 46 例全类型键移除
+			- 边界值测试
+				- 1023/1024/1025 边界
+				- 10250 元素删中位/删空/删不存在
+				- 3 元素跨线程
+			- 异常与非法输入
+				- detached remove→10200011 bind 错误
+				- >16MB 跨线程错误
+			- 返回值与类型验证
+				- 存在→返回旧值并 size--
+				- 缺失→undefined 不变 size
+				- 旧值为 undefined 时仍 undefined
+				- NaN/+0/-0 SameValueZero
+				- Sendable 引用相等
+				- 显式 string|undefined 类型捕获
+			- 组合场景
+				- instanceof 校验
+				- 跨 TaskPool 传递后 remove
+			- 重复调用/幂等性
+				- 重复 remove 同键 先旧值后 undefined
+			- 并发跨线程
+				- AsyncLock 多线程并发 remove
+				- Worker 调 remove 触发 >16MB 跨线程错误
+		- containsValue
+			- 入参范围覆盖
+				- NewApiType 46 例全类型值匹配
+			- 边界值测试
+				- 空 Map→false
+				- 1023/1024/1025 边界
+				- 10250 元素存在/不存在/连续重复值
+			- 异常与非法输入
+				- detached→10200011 bind 错误
+				- 竞态下 10200201 报文含 'Concurrent modification exception'
+			- 返回值与类型验证
+				- true/false
+				- SameValueZero 匹配 NaN
+				- +0/-0
+				- Sendable 引用相等
+				- 多键同值均命中
+			- 组合场景
+				- put 写 + containsValue 读（AsyncLock 保护）
+				- 四新 API 联动
+			- 重复调用/幂等性
+				- 连续重复值命中一致
+			- 并发跨线程
+				- AsyncLock 多线程读写
+				- TaskPool 传递后调用
+				- Worker 调 containsValue
+		- putAll
+			- 入参范围覆盖
+				- collections.Map 源
+				- 内置 ReadonlyMap(BuiltinMap) 源
+				- 子类源
+				- 全类型值（NewApiType 46 例）
+			- 边界值测试
+				- 空源 no-op
+				- 1023/1024/1025 边界
+				- 1000 批写
+				- 10250 批写
+				- self 作源 no-op
+			- 异常与非法输入
+				- receiver.entries() 内调→10200201
+				- detached putAll→10200011
+				- forEach 内调→10200201
+			- 返回值与类型验证
+				- void
+				- 覆盖既有键
+				- 连续重复键保留最后值
+			- 组合场景
+				- Map 源 + 内置源两重载对比
+				- 子类源
+				- TaskPool/Worker 子线程构造源
+			- 重复调用/幂等性
+				- 空源多次 no-op
+			- 并发跨线程
+				- Worker/TaskPool 子线程构造源再 putAll
+		- [Symbol.iterator]
+			- 入参范围覆盖
+				- 间接：通过 entries/keys/values 迭代器覆盖
+			- 边界值测试
+				- 空 Map 迭代器
+				- 大 Map 迭代
+			- 返回值与类型验证
+				- IterableIterator of [K,V]
+				- for...of 可消费
+			- 组合场景
+				- Array.from/展开运算符转数组
+			- 重复调用/幂等性
+				- 每次返回新迭代器
+			- 并发跨线程
+				- 跨线程迭代器
+		- capacity/expand
+			- 入参范围覆盖
+				- number/string/emoji/超长串/对象引用/Sendable 实例 键跨边界
+			- 边界值测试
+				- 1023→1024→1025 跨边界保留
+				- 删 100 键
+				- 跨边界后值读取一致
+				- NaN/+0/-0 跨边界语义
+				- 零宽空格区分
+			- 返回值与类型验证
+				- 跨边界后 size/forEach 一致
+				- TaskPool 传递后 API 可用
+			- 组合场景
+				- 跨边界删后重建
+				- 并发读者/写者容错
+			- 重复调用/幂等性
+				- 重复键跨边界保持唯一
+			- 并发跨线程
+				- 3 并发 TaskPool 写者容错
+				- 读者+写者容错
+				- TaskPool 插入进度上报
+	- 2. 稳定性（Stability）
+		- 超大规模创建/销毁/传递稳定性（1000 次循环创建销毁、500000 超大 Map、100000 传递 TaskPool）
+		- 大对象/深嵌套/循环引用承载（Constructor/KeysValues 6500~7200 段）
+		- 1024 扩容稳定性（Expand1024 大容量边界）
+	- 3. 性能（Performance）
+		- 大规模 forEach 吞吐（100×10000 forEach 性能）
+		- 大数量键 has 性能（HasTest 3400 段）
+		- 超大 value 内存占用（ValuesTest 4200 段、1000 元素 2800 段）
+	- 4. 并发安全（Concurrency Safety）
+		- TaskPool/Worker 跨线程引用传递
+		- AsyncLock/ConditionVariable 同步
+		- 10200201 并发修改错误（forEach 内 delete/clear）
+		- 并发读写容错（读者+写者、3 并发 TaskPool 写者）
+	- 5. 兼容性与继承
+		- 子类化（instanceof/原型链、无参/带参/super 构造）
+		- @Sendable 继承跨线程
+		- 方法覆写/自定义（覆写 set/forEach、sumValues/average/doubleAll）
+		- 二级继承链
+		- 多 TaskPool 共享子类实例
+	- 6. 资料与文档符合性
+		- @Sendable 装饰验证
+		- import 可用性
+		- 泛型必须 Sendable 约束（非 Sendable 报错）
+		- instanceof 校验
+		- 新 API（put/remove/containsValue/putAll）方法可用性

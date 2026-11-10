@@ -15,7 +15,7 @@
  */
 
 
- import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -35,6 +35,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function RichEditorStyledStringTest2() {
   describe('RichEditorStyledStringTest2', () => {
     beforeAll(async (): Promise<void> => {
@@ -58,9 +59,10 @@ export default function RichEditorStyledStringTest2() {
           console.info("push RichEditorStyledStringTest2 page result");
         }
       } catch (err) {
-        console.error("push RichEditorStyledStringTest2 page error:" + err);
+        console.log("push RichEditorStyledStringTest2 page error:" + err);
       }
       console.info("RichEditorStyledStringTest2 beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     afterEach(async (): Promise<void> => {
@@ -82,7 +84,11 @@ export default function RichEditorStyledStringTest2() {
 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2001);
+      try {
+        await driver.triggerKey(2001, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(2000);
 
       let strJson1 = inspector.getInspectorByKey('RichEditorStyledStringTest2_text');

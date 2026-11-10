@@ -22,6 +22,8 @@ import formProviderTest from './FormProvider.test'
 import abilityContextTest from './AbilityContext.test'
 import contextTest from './Context.test'
 import RequestModalUIExtension from './RequestModalUIExtension.test'
+import CliManagerTest from './CliManagerTest.test'
+import CliToolEventTest from './CliToolEventTest.test'
 
 export default function testsuite() {
   abilityManagerTest();
@@ -33,4 +35,6 @@ export default function testsuite() {
   abilityContextTest();
   contextTest();
   RequestModalUIExtension();
+  CliManagerTest();
+  CliToolEventTest();
 }

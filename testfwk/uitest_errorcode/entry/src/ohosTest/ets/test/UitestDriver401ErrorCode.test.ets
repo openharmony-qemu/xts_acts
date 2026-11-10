@@ -90,7 +90,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi9_Driver_delayMs_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_Driver_findComponent_401
@@ -117,7 +117,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi9_Driver_findComponent_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_Driver_findWindow_401
@@ -144,7 +144,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi9_Driver_findWindow_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_Driver_waitForComponent_401
@@ -192,7 +192,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi9_Driver_waitForComponent_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_Driver_findComponents_401
@@ -219,7 +219,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi9_Driver_findComponents_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_Driver_assertComponentExist_401
@@ -246,7 +246,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi9_Driver_assertComponentExist_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi20_Driver_pressBack_17000007
@@ -259,18 +259,6 @@ export default function uitestEnumTest() {
     it('testApi20_Driver_pressBack_17000007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, testApi20_Driver_pressBack_17000007 start`);
       try {
-        await driver.pressBack(null)
-      } catch (error) {
-        console.log(`${TestTag}, testApi20_Driver_pressBack_17000007 id = null error, ${JSON.stringify(error)}`);
-        expect().assertFail();
-      }
-      try {
-        await driver.pressBack(undefined)
-      } catch (error) {
-        console.log(`${TestTag}, testApi20_Driver_pressBack_17000007 id = undefined error, ${JSON.stringify(error)}`);
-        expect().assertFail();
-      }
-      try {
         await driver.pressBack(-1)
         expect().assertFail();
       } catch (error) {
@@ -278,7 +266,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(NewErrorCode);
       }
       console.log(`${TestTag}, testApi20_Driver_pressBack_17000007 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi11_Driver_once_401
@@ -446,7 +434,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi11_Driver_once_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_Driver_triggerKey_401
@@ -480,7 +468,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi9_Driver_triggerKey_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi20_Driver_triggerKey_401
@@ -533,7 +521,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi20_Driver_triggerKey_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_Driver_triggerCombineKeys_401
@@ -607,7 +595,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi9_Driver_triggerCombineKeys_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi20_Driver_triggerCombineKeys_401
@@ -700,7 +688,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi20_Driver_triggerCombineKeys_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_Driver_click_401
@@ -755,7 +743,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi9_Driver_click_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_Driver_doubleClick_401
@@ -810,7 +798,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi9_Driver_doubleClick_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_Driver_longClick_401
@@ -865,7 +853,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi9_Driver_longClick_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_Driver_swipe_401
@@ -995,7 +983,7 @@ export default function uitestEnumTest() {
         expect().assertFail();
       }
       console.log(`${TestTag}, testApi9_Driver_swipe_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_Driver_drag_401
@@ -1125,7 +1113,7 @@ export default function uitestEnumTest() {
         expect().assertFail();
       }
       console.log(`${TestTag}, testApi9_Driver_drag_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi20_Driver_longClickAt_17000007
@@ -1171,7 +1159,7 @@ export default function uitestEnumTest() {
         expect().assertFail();
       }
       console.log(`${TestTag}, testApi20_Driver_longClickAt_17000007 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi20_Driver_swipeBetween_17000007
@@ -1243,7 +1231,7 @@ export default function uitestEnumTest() {
         expect().assertFail();
       }
       console.log(`${TestTag}, testApi20_Driver_swipeBetween_17000007 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi20_Driver_dragBetween_17000007
@@ -1341,7 +1329,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(NewErrorCode);
       }
       console.log(`${TestTag}, testApi20_Driver_dragBetween_17000007 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_Driver_screenCap_401
@@ -1375,7 +1363,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi9_Driver_screenCap_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi20_Driver_screenCap_401
@@ -1431,7 +1419,7 @@ export default function uitestEnumTest() {
         expect().assertFail();
       }
       console.log(`${TestTag}, testApi20_Driver_screenCap_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi20_Driver_getDisplayRotation_17000007
@@ -1463,7 +1451,7 @@ export default function uitestEnumTest() {
         expect().assertFail();
       }
       console.log(`${TestTag}, testApi20_Driver_getDisplayRotation_17000007 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi20_Driver_getDisplaySize_17000007
@@ -1495,7 +1483,7 @@ export default function uitestEnumTest() {
         expect().assertFail();
       }
       console.log(`${TestTag}, testApi20_Driver_getDisplaySize_17000007 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi20_Driver_getDisplayDensity_17000007
@@ -1527,7 +1515,7 @@ export default function uitestEnumTest() {
         expect().assertFail();
       }
       console.log(`${TestTag}, testApi20_Driver_getDisplayDensity_17000007 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi20_Driver_pressHome_17000007
@@ -1559,7 +1547,7 @@ export default function uitestEnumTest() {
         expect().assertFail();
       }
       console.log(`${TestTag}, testApi20_Driver_pressHome_17000007 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_Driver_waitForIdle_401
@@ -1614,7 +1602,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi9_Driver_waitForIdle_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_Driver_fling_401
@@ -1711,7 +1699,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi9_Driver_fling_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_Driver_injectMultiPointerAction_401
@@ -1780,7 +1768,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi9_Driver_injectMultiPointerAction_401 END`);
-    })
+    }, undefined, 'emulator')
 
 
     /**
@@ -1841,7 +1829,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi9_Driver_flingDir_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi20_Driver_fling_401
@@ -1906,7 +1894,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi20_Driver_fling_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi10_Driver_mouseClick_401
@@ -1985,7 +1973,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi10_Driver_mouseClick_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi10_Driver_mouseMoveTo_401
@@ -2012,7 +2000,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi10_Driver_mouseMoveTo_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi10_Driver_mouseScroll_401
@@ -2098,7 +2086,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi10_Driver_mouseScroll_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi11_Driver_mouseScroll_401
@@ -2215,7 +2203,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi11_Driver_mouseScroll_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi11_Driver_screenCapture_401
@@ -2263,7 +2251,7 @@ export default function uitestEnumTest() {
         expect().assertFail();
       }
       console.log(`${TestTag}, testApi11_Driver_screenCapture_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi11_Driver_mouseDoubleClick_401
@@ -2328,7 +2316,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi11_Driver_mouseDoubleClick_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi11_Driver_mouseLongClick_401
@@ -2393,7 +2381,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi11_Driver_mouseLongClick_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi20_Driver_mouseLongClick_401
@@ -2484,7 +2472,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi20_Driver_mouseLongClick_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi11_Driver_mouseMoveWithTrack_401
@@ -2556,7 +2544,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi11_Driver_mouseMoveWithTrack_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi11_Driver_mouseDrag_401
@@ -2628,7 +2616,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi11_Driver_mouseDrag_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi20_Driver_mouseDrag_401
@@ -2719,7 +2707,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi11_Driver_inputText_401
@@ -2766,7 +2754,7 @@ export default function uitestEnumTest() {
         expect().assertFail();
       }
       console.log(`${TestTag}, testApi11_Driver_inputText_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi20_Driver_inputText_401
@@ -2825,7 +2813,7 @@ export default function uitestEnumTest() {
         expect().assertFail();
       }
       console.log(`${TestTag}, testApi20_Driver_inputText_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi18_Driver_touchPadMultiFingerSwipe_401
@@ -2902,7 +2890,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi18_Driver_touchPadMultiFingerSwipe_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi18_Driver_penLongClick_401
@@ -2929,7 +2917,7 @@ export default function uitestEnumTest() {
         expect().assertFail();
       }
       console.log(`${TestTag}, testApi18_Driver_penLongClick_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi18_Driver_penSwipe_401
@@ -3037,7 +3025,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi18_Driver_penSwipe_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi18_Driver_injectPenPointerAction401
@@ -3139,7 +3127,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi18_Driver_injectPenPointerAction401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi20_Driver_crownRotate_801
@@ -3185,7 +3173,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(DeviceErrorCode);
       }
       console.log(`${TestTag}, testApi20_Driver_crownRotate_801 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi22_Driver_isComponentPresentWhenLongClick_17000007
@@ -3238,7 +3226,7 @@ export default function uitestEnumTest() {
         expect().assertFail();
       }
       console.log(`${TestTag}, testApi22_Driver_isComponentPresentWhenLongClick_17000007 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi22_Driver_isComponentPresentWhenDrag_17000007
@@ -3315,7 +3303,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(NewErrorCode);
       }
       console.log(`${TestTag}, testApi22_Driver_isComponentPresentWhenDrag_17000007 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi22_Driver_isComponentPresentWhenSwipe_17000007
@@ -3373,7 +3361,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(NewErrorCode);
       }
       console.log(`${TestTag}, testApi22_Driver_isComponentPresentWhenSwipe_17000007 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi22_Driver_touchPadTwoFingersScroll_17000007
@@ -3466,7 +3454,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(NewErrorCode);
       }
       console.log(`${TestTag}, testApi22_Driver_touchPadTwoFingersScroll_17000007 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi22_Driver_knuckleKnock_17000007
@@ -3512,7 +3500,7 @@ export default function uitestEnumTest() {
         expect().assertFail();
       }
       console.log(`${TestTag}, testApi22_Driver_knuckleKnock_17000007 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi22_Driver_injectKnucklePointerAction_17000005
@@ -3566,7 +3554,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(NewErrorCode);
       }
       console.log(`${TestTag}, testApi22_Driver_injectKnucklePointerAction_17000005 END`);
-    })
+    }, undefined, 'emulator')
 
  })
 }

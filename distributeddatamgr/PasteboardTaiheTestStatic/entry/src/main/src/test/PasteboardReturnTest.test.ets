@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level} from "@ohos/hypium-static/src/main/indexStatic";
 import hilog from '@ohos.hilog';
 import pasteboard from '@ohos.pasteboard';
 import image from "@ohos.multimedia.image";
-import { BusinessError, RecordData } from "@ohos.base"
+import { RecordData } from "@ohos.base"
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -177,7 +177,7 @@ export default function pasteboardReturnTest() {
         expect(prop != null).assertTrue();
         expect(prop.additions != null).assertTrue();
         let additionsLength: number = Object.keys(prop.additions).length;
-        expect(additionsLength !== 0).assertTrue();
+        expect(additionsLength === 0).assertTrue();
       } catch (err) {
         hilog.info(domain, tag, "SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         expect().assertFail();
@@ -234,7 +234,6 @@ export default function pasteboardReturnTest() {
         pasteData.getRecord(-1);
         expect().assertFail();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, "SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         catchFlag = true;
         expect(err.code === 12900001).assertTrue();
@@ -262,7 +261,6 @@ export default function pasteboardReturnTest() {
         pasteData.getRecord(9999);
         expect().assertFail();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, "SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         catchFlag = true;
         expect(err.code === 12900001).assertTrue();

@@ -19,6 +19,7 @@ group("codeparsingtest") {
     deps = [
       "actscodeparsingtest:ActsCodeParsingTest",
       "decimallibtest:ActsDecimalLibTest",
+      "decimal2libtest:ActsDecimal2LibTest",
       "specialchartest:ActsSpecialCharTest",
       "annotationtest:ActsAnnotationTest",
       "buffer_standard_test:ActsBufferLibTest",
@@ -32,6 +33,7 @@ group("codeparsingtest") {
       "uri_standard_test:ActsUriLibTest",
       "url_standard_test:ActsUrlLibTest",
       "util_standard_test:ActsUtilLibTest",
+      "util_arktsvm_test:ActsUtilArkTSVMTest",
       "xml_standard_test:ActsXmlLibTest",
     ]
   }

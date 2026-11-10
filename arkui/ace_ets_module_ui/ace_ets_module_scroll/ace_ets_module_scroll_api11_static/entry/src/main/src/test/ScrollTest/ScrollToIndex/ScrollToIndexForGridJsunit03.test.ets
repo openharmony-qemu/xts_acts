@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Point } from '@ohos.UiTest';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
@@ -57,18 +57,18 @@ it('ScrollToIndexForGridJsunit03_static_0100', Level.LEVEL0, async (done: () => 
       console.info('[ScrollToIndexForGridJsunit03_static_0100] START');
 
       let driver = Driver.create();
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
 
       let ItemButton = await driver.findComponent(ON.text("22-false-center"));
       await (ItemButton?.click() as Promise<void>);
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       let gridItem = await driver.findComponent(ON.id("gridIndex03_22"));
       let gridItemID = await (gridItem?.getId() as Promise<string>);
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
 
       let bounds = await (gridItem?.getBoundsCenter() as Promise<Point>);
       let distanceTop = bounds.y;
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       let GridCom = await driver.findComponent(ON.id("GridID_Grid03"));
       let boundsCenter = await (GridCom?.getBoundsCenter() as Promise<Point>);
       let centerDistanceTop = boundsCenter.y;
@@ -90,20 +90,20 @@ it('ScrollToIndexForGridJsunit03_static_0100', Level.LEVEL0, async (done: () => 
 it('ScrollToIndexForGridJsunit03_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ScrollToIndexForGridJsunit03_static_0200] START');
       let driver = Driver.create();
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
 
       let ItemButton = await driver.findComponent(ON.text("98-true-Start"));
       await (ItemButton?.click() as Promise<void>);
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
       let gridItem = await driver.findComponent(ON.id("gridIndex03_98"));
       let gridItemID = await (gridItem?.getId() as Promise<string>);
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       let smoothTextObj = await driver.findComponent(ON.id("isHaveSmooth_Grid03"));
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
 
       let bounds = await (gridItem?.getBoundsCenter() as Promise<Point>);
       let distanceTop = bounds.y;
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       let GridCom = await driver.findComponent(ON.id("GridID_Grid03")) as Component;
       let boundsCenter = await GridCom.getBoundsCenter();
       let centerDistanceTop = boundsCenter.y;
@@ -128,20 +128,20 @@ it('ScrollToIndexForGridJsunit03_static_0200', Level.LEVEL0, async (done: () => 
 it('ScrollToIndexForGridJsunit03_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ScrollToIndexForGridJsunit03_static_0300] START');
       let driver = Driver.create();
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
 
       let ItemButton = await driver.findComponent(ON.text("128-true-end"));
       await (ItemButton?.click() as Promise<void>);
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       let gridItem = await driver.findComponent(ON.id("gridIndex03_128"));
       let gridItemID = await (gridItem?.getId() as Promise<string>);
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       let smoothTextObj = await driver.findComponent(ON.id("isHaveSmooth_Grid03"));
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
 
       let bounds = await (gridItem?.getBoundsCenter() as Promise<Point>);
       let distanceTop = bounds.y;
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       let GridCom = await driver.findComponent(ON.id("GridID_Grid03"));
       let boundsCenter = await (GridCom?.getBoundsCenter() as Promise<Point>);
       let centerDistanceTop = boundsCenter.y;
@@ -164,21 +164,21 @@ it('ScrollToIndexForGridJsunit03_static_0300', Level.LEVEL0, async (done: () => 
 it('ScrollToIndexForGridJsunit03_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ScrollToIndexForGridJsunit03_static_0400] START');
       let driver = Driver.create();
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
 
       let ItemButton = await driver.findComponent(ON.text("10-true-end"));
       await (ItemButton?.click() as Promise<void>);
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       let gridItem = await driver.findComponent(ON.id("gridIndex03_10"));
       let gridItemID = await (gridItem?.getId() as Promise<string>);
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       let smoothTextObj = await driver.findComponent(ON.id("isHaveSmooth_Grid03"));
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
 
       // 当前GridItem元素距离顶部的距离
       let bounds = await (gridItem?.getBoundsCenter() as Promise<Point>);
       let distanceTop = bounds.y;
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       let GridCom = await driver.findComponent(ON.id("GridID_Grid03"));
       // Grid中心距离顶部的距离
       let boundsCenter = await (GridCom?.getBoundsCenter() as Promise<Point>);

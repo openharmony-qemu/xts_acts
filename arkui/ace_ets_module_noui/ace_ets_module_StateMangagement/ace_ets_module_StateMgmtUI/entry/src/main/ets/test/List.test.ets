@@ -18,6 +18,7 @@ import BuilderParam001 from './BuilderParam/BuilderParam001.test';
 import Builder0080TestJsunit from './builder/Builder0080TestJsunit.test';
 import Builder0070TestJsunit from './builder/Builder0070TestJsunit.test';
 import Builder0050TestJsunit from './builder/Builder0050TestJsunit.test';
+import Builder0060TestJsunit from './builder/Builder0060TestJsunit.test';
 import Builder0120TestJsunit from './builder/Builder0120TestJsunit.test';
 import Extend0010TestJsunit from './Extend/Extend0010TestJsunit.test';
 import Local1Jsunit from './ComponentV2Test/Local1Jsunit.test';
@@ -39,6 +40,7 @@ import LifeCycle0050TestJsunit from './lifecycle/LifeCycle0050TestJsunit.test';
 import LocalBuilder0040TestJsunit from './local_builder/LocalBuilder0040TestJsunit.test';
 import WrapBuilder0010TestJsunit from './wrap_builder/WrapBuilder0010TestJsunit.test';
 import WrapBuilder0020Test from './wrap_builder/WrapBuilder0020Test.test';
+import WrapBuilder0030Test from './wrap_builder/WrapBuilder0030Test.test';
 import EntryParamsTest from './entryTest/EntryParamsTest.test';
 import EntryParams2Test from './entryTest/EntryParams2Test.test';
 import EntryParamsUndefinedTest from './entryTest/EntryParamsUndefinedTest.test';
@@ -60,6 +62,10 @@ import ReusableChildState2Test from './Reusable/ReusableChildState2Test.test';
 import ReusableChildState3Test from './Reusable/ReusableChildState3Test.test';
 import ReusableChildState4Test from './Reusable/ReusableChildState4Test.test';
 import ExtendableComponentApiTest from './ExtendableComponent/ExtendableComponentApi.test';
+import IsPlaceholder0060Test from './builder/IsPlaceholder0060Test.test';
+import IsPlaceholder0070Test from './builder/IsPlaceholder0070Test.test';
+import IsPlaceholder0080Test from './builder/IsPlaceholder0080Test.test';
+import IsPlaceholder0430Test from './builder/IsPlaceholder0430Test.test';
 
 export default function testsuite() {
     MutableBuilder001();
@@ -67,7 +73,12 @@ export default function testsuite() {
     Builder0080TestJsunit();
     Builder0120TestJsunit();
     Builder0050TestJsunit();
+    Builder0060TestJsunit();
     Builder0070TestJsunit();
+    IsPlaceholder0060Test();
+    IsPlaceholder0070Test();
+    IsPlaceholder0080Test();
+    IsPlaceholder0430Test();
     Extend0010TestJsunit();
     Local1Jsunit();
     Local2Jsunit();
@@ -88,6 +99,7 @@ export default function testsuite() {
     LocalBuilder0040TestJsunit();
     WrapBuilder0010TestJsunit();
     WrapBuilder0020Test();
+    WrapBuilder0030Test();
     EntryParamsTest();
     EntryParams2Test();
     EntryParamsUndefinedTest();

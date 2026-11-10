@@ -19,7 +19,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { Driver, ON, Rect } from '@ohos.UiTest';
 import router from '@ohos.router';
 
-import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterEach, beforeEach, describe, expect, it, Level } from '@ohos/hypium-static/src/main/indexStatic';
 
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';

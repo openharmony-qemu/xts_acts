@@ -88,6 +88,9 @@ struct TabsUIExample {
         console.info('onChange index: '+ index)
         this.index1 = index
       })
-    }.width('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%')
   }
 }

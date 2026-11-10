@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -34,6 +34,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function RichEditorUxConFormance005() {
   describe('RichEditorUxConFormance005', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,9 +58,10 @@ export default function RichEditorUxConFormance005() {
           console.info("push RichEditorUxConFormance005 success");
         }
       } catch (err) {
-        console.error("push RichEditorUxConFormance005 page error: " + err);
+        console.log("push RichEditorUxConFormance005 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
@@ -74,7 +76,11 @@ export default function RichEditorUxConFormance005() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorUxConFormance005')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let get_spans = await (driver.findComponent(ON.id('get_spans')) as Promise<Component>);
@@ -100,7 +106,11 @@ export default function RichEditorUxConFormance005() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorUxConFormance005')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let updateSpanStyle = await (driver.findComponent(ON.id('updateSpanStyle')) as Promise<Component>);

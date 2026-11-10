@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Point} from '@ohos.UiTest';
@@ -29,6 +29,7 @@ import { UtilsTest } from '../Util.test'
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function onSelectionChange7() {
   describe('onSelectionChange7', () => {
     beforeAll(async (): Promise<void> => {
@@ -36,7 +37,6 @@ export default function onSelectionChange7() {
 
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api12.static", "EntryAbility")
-
     });
     beforeEach(async () => {
       console.info("onSelectionChange7 beforeEach start");
@@ -56,9 +56,10 @@ export default function onSelectionChange7() {
           // console.info("push onSelectionChange7 page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push onSelectionChange7 page error:" + err);
+        console.log("push onSelectionChange7 page error:" + err);
       }
       console.info("onSelectionChange7 beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);
@@ -97,7 +98,11 @@ export default function onSelectionChange7() {
         let Obj3_0=JSON.parseJsonElement(text3_0);
         expect(Obj3_0.getElement('$attrs').getString('content')).assertEqual('83');
 
-        await driver.triggerKey(2015);
+        try {
+          await driver.triggerKey(2015, displayID);
+        } catch (err) {
+          console.log('driver.triggerKey error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
         let text1_1 = inspector.getInspectorByKey('onSelectionChange7_text1');
         let Obj1_1=JSON.parseJsonElement(text1_1);
@@ -109,7 +114,11 @@ export default function onSelectionChange7() {
         let Obj3_1=JSON.parseJsonElement(text3_1);
         expect(Obj3_1.getElement('$attrs').getString('content')).assertEqual('83');
 
-        await driver.triggerKey(2013);
+        try {
+          await driver.triggerKey(2013, displayID);
+        } catch (err) {
+          console.log('driver.triggerKey error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
         let text1_2 = inspector.getInspectorByKey('onSelectionChange7_text1');
         let Obj1_2=JSON.parseJsonElement(text1_2);
@@ -121,7 +130,11 @@ export default function onSelectionChange7() {
         let Obj3_2=JSON.parseJsonElement(text3_2);
         expect(Obj3_2.getElement('$attrs').getString('content')).assertEqual('83');
 
-        await driver.triggerKey(2014);
+        try {
+          await driver.triggerKey(2014, displayID);
+        } catch (err) {
+          console.log('driver.triggerKey error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
         let text1_3 = inspector.getInspectorByKey('onSelectionChange7_text1');
         let Obj1_3=JSON.parseJsonElement(text1_3);
@@ -133,7 +146,11 @@ export default function onSelectionChange7() {
         let Obj3_3=JSON.parseJsonElement(text3_3);
         expect(Obj3_3.getElement('$attrs').getString('content')).assertEqual('82');
 
-        await driver.triggerKey(2015);
+        try {
+          await driver.triggerKey(2015, displayID);
+        } catch (err) {
+          console.log('driver.triggerKey error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
         let text1_4 = inspector.getInspectorByKey('onSelectionChange7_text1');
         let Obj1_4=JSON.parseJsonElement(text1_4);
@@ -145,13 +162,21 @@ export default function onSelectionChange7() {
         let Obj3_4=JSON.parseJsonElement(text3_4);
         expect(Obj3_4.getElement('$attrs').getString('content')).assertEqual('83');
 
-        await driver.triggerKey(2012);
+        try {
+          await driver.triggerKey(2012, displayID);
+        } catch (err) {
+          console.log('driver.triggerKey error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
         let text1_5 = inspector.getInspectorByKey('onSelectionChange7_text1');
         let Obj1_5=JSON.parseJsonElement(text1_5);
         expect(Obj1_5.getElement('$attrs').getString('content')).assertEqual('5');
 
-        await driver.triggerKey(2013);
+        try {
+          await driver.triggerKey(2013, displayID);
+        } catch (err) {
+          console.log('driver.triggerKey error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
         let text1_6 = inspector.getInspectorByKey('onSelectionChange7_text1');
         let Obj1_6=JSON.parseJsonElement(text1_6);
@@ -170,7 +195,11 @@ export default function onSelectionChange7() {
         let Obj3_7=JSON.parseJsonElement(text3_7);
         expect(Obj3_7.getElement('$attrs').getString('content')).assertEqual('0');
 
-        await driver.triggerKey(2012);
+        try {
+          await driver.triggerKey(2012, displayID);
+        } catch (err) {
+          console.log('driver.triggerKey error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
         let text1_8 = inspector.getInspectorByKey('onSelectionChange7_text1');
         let Obj1_8=JSON.parseJsonElement(text1_8);
@@ -182,7 +211,11 @@ export default function onSelectionChange7() {
         let Obj3_8=JSON.parseJsonElement(text3_8);
         expect(Obj3_8.getElement('$attrs').getString('content')).assertEqual('0');
 
-        await driver.triggerKey(2014);
+        try {
+          await driver.triggerKey(2014, displayID);
+        } catch (err) {
+          console.log('driver.triggerKey error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
         let text1_9 = inspector.getInspectorByKey('onSelectionChange7_text1');
         let Obj1_9= JSON.parseJsonElement(text1_9);

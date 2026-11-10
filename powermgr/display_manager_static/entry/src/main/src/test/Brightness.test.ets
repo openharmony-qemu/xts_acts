@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll } from "@ohos/hypium-static/src/main/indexStatic";
 import { BusinessError } from '@ohos.base'
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
@@ -44,7 +44,7 @@ export default function BrightnessTest() {
           let value: int = 200;
           brightness.setValue(value);
         } catch (e) {
-          e = e as BusinessError;
+         
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -67,7 +67,7 @@ export default function BrightnessTest() {
           let value: int = 30;
           brightness.setValue(value, true);
         } catch (e) {
-          e = e as BusinessError;
+         
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -90,7 +90,7 @@ export default function BrightnessTest() {
           let value: int = 255;
           brightness.setValue(value, false);
         } catch (e) {
-          e = e as BusinessError;
+         
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();

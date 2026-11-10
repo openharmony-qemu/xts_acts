@@ -1961,5 +1961,29 @@ export default function TaskTypeTest(): void {
       expect(results[0] as number).assertEqual(0)
       expect(results[taskCount - 1] as number).assertEqual(taskCount - 1)
     })
+
+    /**
+     * @tc.name   testTaskType8600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_8600
+     * @tc.desc   Verify the same LongTask instance cannot be executed twice without terminateTask
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTaskType8600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let longTask: taskpool.LongTask = new taskpool.LongTask(resultReturnTask)
+      let firstResult = await taskpool.execute(longTask)
+      expect(firstResult as number).assertEqual(200)
+
+      let caught = false
+      try {
+        await taskpool.execute(longTask)
+      } catch (e) {
+        caught = true
+        console.info(`testTaskType8600 second execute error: code => ${e.code} message => ${e.message}`)
+      }
+      expect(caught).assertTrue()
+      taskpool.terminateTask(longTask)
+    })
   })
 }

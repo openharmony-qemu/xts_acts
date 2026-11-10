@@ -1364,5 +1364,488 @@ export default function PhotoOutputTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_ISC2PASIGNATURESUPPORTED_RETURN_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_ISC2PASIGNATURESUPPORTED_RETURN_0100
+     * @tc.desc   Check isC2PASignatureSupported returns boolean in normal session
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_ISC2PASIGNATURESUPPORTED_RETURN_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_ISC2PASIGNATURESUPPORTED_RETURN_0100';
+      console.info(TAG, testName + ' begin.');
+      try {
+        if (isEmpty(mCameraManager) && isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName + ' cameraManager is null.');
+          expect().assertFail();
+        } else {
+          mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
+          mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
+          await getPhotoSession(testName, mPreviewOutput, mPhotoOutput);
+          let isSupported: boolean = mPhotoOutput.isC2PASignatureSupported();
+          console.info(TAG, testName + ' isC2PASignatureSupported result: ' + isSupported);
+          expect(typeof isSupported === 'boolean').assertTrue();
+          await releasePhotoSession();
+          console.info(TAG, testName + ' end.');
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        await releasePhotoSession();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_ISC2PASIGNATURESUPPORTED_RETURN_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_ISC2PASIGNATURESUPPORTED_RETURN_0200
+     * @tc.desc   Check isC2PASignatureSupported when no session is running
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_ISC2PASIGNATURESUPPORTED_RETURN_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_ISC2PASIGNATURESUPPORTED_RETURN_0200';
+      console.info(TAG, testName + ' begin.');
+      try {
+        if (isEmpty(mCameraManager) && isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName + ' cameraManager is null.');
+          expect().assertFail();
+        } else {
+          mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
+          await mCameraInput.open();
+          let isSupported: boolean = mPhotoOutput.isC2PASignatureSupported();
+          console.info(TAG, testName + ' isC2PASignatureSupported result without session: ' + isSupported);
+          expect(typeof isSupported === 'boolean').assertTrue();
+          await mPhotoOutput.release();
+          console.info(TAG, testName + ' end.');
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_PARAM_0100
+     * @tc.desc   Configure C2PA signature with enable=true and config in normal session
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_PARAM_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_PARAM_0100';
+      console.info(TAG, testName + ' begin.');
+      try {
+        if (isEmpty(mCameraManager) && isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName + ' cameraManager is null.');
+          expect().assertFail();
+        } else {
+          mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
+          mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
+          await getPhotoSession(testName, mPreviewOutput, mPhotoOutput);
+          let isSupported: boolean = mPhotoOutput.isC2PASignatureSupported();
+          console.info(TAG, testName + ' isC2PASignatureSupported: ' + isSupported);
+          let config: camera.C2PASignatureConfig = {
+            authorID: 'testAuthorID_001',
+            authorName: 'testAuthorName_001'
+          };
+          if (isSupported) {
+            mPhotoOutput.configureC2PASignature(true, config);
+            console.info(TAG, testName + ' configureC2PASignature(true, config) passed.');
+          } else {
+            try {
+              mPhotoOutput.configureC2PASignature(true, config);
+              console.info(TAG, testName + ' configureC2PASignature(true, config) called on unsupported device.');
+              expect().assertFail();
+            } catch (error) {
+              console.info(TAG, testName + ' configureC2PASignature threw as expected on unsupported device. err: ' + error.code + ', msg: ' + error.message);
+              expect(error.code).assertEqual(801);
+            }
+          }
+          await releasePhotoSession();
+          console.info(TAG, testName + ' end.');
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        await releasePhotoSession();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_PARAM_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_PARAM_0200
+     * @tc.desc   Configure C2PA signature with enable=false in normal session
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_PARAM_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_PARAM_0200';
+      console.info(TAG, testName + ' begin.');
+      try {
+        if (isEmpty(mCameraManager) && isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName + ' cameraManager is null.');
+          expect().assertFail();
+        } else {
+          mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
+          mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
+          await getPhotoSession(testName, mPreviewOutput, mPhotoOutput);
+          let isSupported: boolean = mPhotoOutput.isC2PASignatureSupported();
+          console.info(TAG, testName + ' isC2PASignatureSupported: ' + isSupported);
+          if (isSupported) {
+            mPhotoOutput.configureC2PASignature(false);
+            console.info(TAG, testName + ' configureC2PASignature(false) passed.');
+          } else {
+            try {
+              mPhotoOutput.configureC2PASignature(false);
+              console.info(TAG, testName + ' configureC2PASignature(false) called on unsupported device.');
+              expect().assertFail();
+            } catch (error) {
+              console.info(TAG, testName + ' configureC2PASignature(false) threw as expected on unsupported device. err: ' + error.code + ', msg: ' + error.message);
+              expect(error.code).assertEqual(801);
+            }
+          }
+          await releasePhotoSession();
+          console.info(TAG, testName + ' end.');
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        await releasePhotoSession();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_PARAM_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_PARAM_0300
+     * @tc.desc   Configure C2PA signature with config containing only authorID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_PARAM_0300', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_PARAM_0300';
+      console.info(TAG, testName + ' begin.');
+      try {
+        if (isEmpty(mCameraManager) && isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName + ' cameraManager is null.');
+          expect().assertFail();
+        } else {
+          mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
+          mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
+          await getPhotoSession(testName, mPreviewOutput, mPhotoOutput);
+          let config: camera.C2PASignatureConfig = {
+            authorID: 'authorID_only_003'
+          };
+          try {
+            mPhotoOutput.configureC2PASignature(true, config);
+            console.info(TAG, testName + ' configureC2PASignature(true, {authorID}) did not throw.');
+            expect().assertFail();
+          } catch (error) {
+            console.info(TAG, testName + ' configureC2PASignature threw as expected. err: ' + error.code + ', msg: ' + error.message);
+            expect(error.code).assertEqual(7400101);
+          }
+          await releasePhotoSession();
+          console.info(TAG, testName + ' end.');
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        await releasePhotoSession();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_PARAM_0400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_PARAM_0400
+     * @tc.desc   Configure C2PA signature with config containing only authorName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_PARAM_0400', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_PARAM_0400';
+      console.info(TAG, testName + ' begin.');
+      try {
+        if (isEmpty(mCameraManager) && isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName + ' cameraManager is null.');
+          expect().assertFail();
+        } else {
+          mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
+          mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
+          await getPhotoSession(testName, mPreviewOutput, mPhotoOutput);
+          let config: camera.C2PASignatureConfig = {
+            authorName: 'authorName_only_004'
+          };
+          try {
+            mPhotoOutput.configureC2PASignature(true, config);
+            console.info(TAG, testName + ' configureC2PASignature(true, {authorName}) did not throw.');
+            expect().assertFail();
+          } catch (error) {
+            console.info(TAG, testName + ' configureC2PASignature threw as expected. err: ' + error.code + ', msg: ' + error.message);
+            expect(error.code).assertEqual(7400101);
+          }
+          await releasePhotoSession();
+          console.info(TAG, testName + ' end.');
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        await releasePhotoSession();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_PARAM_0500
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_PARAM_0500
+     * @tc.desc   Configure C2PA signature with empty config object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_PARAM_0500', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_PARAM_0500';
+      console.info(TAG, testName + ' begin.');
+      try {
+        if (isEmpty(mCameraManager) && isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName + ' cameraManager is null.');
+          expect().assertFail();
+        } else {
+          mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
+          mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
+          await getPhotoSession(testName, mPreviewOutput, mPhotoOutput);
+          let config: camera.C2PASignatureConfig = {};
+          try {
+            mPhotoOutput.configureC2PASignature(true, config);
+            console.info(TAG, testName + ' configureC2PASignature(true, {}) did not throw.');
+            expect().assertFail();
+          } catch (error) {
+            console.info(TAG, testName + ' configureC2PASignature threw as expected. err: ' + error.code + ', msg: ' + error.message);
+            expect(error.code).assertEqual(7400101);
+          }
+          await releasePhotoSession();
+          console.info(TAG, testName + ' end.');
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        await releasePhotoSession();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_ERROR_0100
+     * @tc.desc   Configure C2PA signature without session -> error_code: 7400201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_ERROR_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_ERROR_0100';
+      console.info(TAG, testName + ' begin.');
+      try {
+        if (isEmpty(mCameraManager) && isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName + ' cameraManager is null.');
+          expect().assertFail();
+        } else {
+          mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
+          await mCameraInput.open();
+          try {
+            mPhotoOutput.configureC2PASignature(true);
+            console.info(TAG, testName + ' configureC2PASignature(true) did not throw without session.');
+            expect().assertFail();
+          } catch (error) {
+            console.error(TAG, testName + ' configureC2PASignature threw, err: ' + error.code + ', msg: ' + error.message);
+            expect(error.code).assertEqual(7400201);
+          }
+          await mPhotoOutput.release();
+          console.info(TAG, testName + ' end.');
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_ERROR_0200
+     * @tc.desc   Configure C2PA signature with enableC2PA=null -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_ERROR_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_ERROR_0200';
+      console.info(TAG, testName + ' begin.');
+      try {
+        if (isEmpty(mCameraManager) && isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName + ' cameraManager is null.');
+          expect().assertFail();
+        } else {
+          mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
+          mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
+          await getPhotoSession(testName, mPreviewOutput, mPhotoOutput);
+          let enableC2PA: boolean | null = null;
+          try {
+            mPhotoOutput.configureC2PASignature(enableC2PA);
+            console.info(TAG, testName + ' configureC2PASignature(null) did not throw.');
+            expect().assertFail();
+          } catch (error) {
+            console.error(TAG, testName + ' configureC2PASignature(null) threw, err: ' + error.code);
+            expect(error.code === 7400101).assertTrue();
+          }
+          await releasePhotoSession();
+          console.info(TAG, testName + ' end.');
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        await releasePhotoSession();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_ERROR_0300
+     * @tc.desc   Configure C2PA signature with enableC2PA=undefined -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_ERROR_0300', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_ERROR_0300';
+      console.info(TAG, testName + ' begin.');
+      try {
+        if (isEmpty(mCameraManager) && isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName + ' cameraManager is null.');
+          expect().assertFail();
+        } else {
+          mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
+          mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
+          await getPhotoSession(testName, mPreviewOutput, mPhotoOutput);
+          let enableC2PA: boolean | undefined = undefined;
+          try {
+            mPhotoOutput.configureC2PASignature(enableC2PA);
+            console.info(TAG, testName + ' configureC2PASignature(undefined) did not throw.');
+            expect().assertFail();
+          } catch (error) {
+            console.error(TAG, testName + ' configureC2PASignature(undefined) threw, err: ' + error.code);
+            expect(error.code === 7400101).assertTrue();
+          }
+          await releasePhotoSession();
+          console.info(TAG, testName + ' end.');
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        await releasePhotoSession();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_ERROR_0400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_ERROR_0400
+     * @tc.desc   Configure C2PA signature with config=null -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_ERROR_0400', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_ERROR_0400';
+      console.info(TAG, testName + ' begin.');
+      try {
+        if (isEmpty(mCameraManager) && isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName + ' cameraManager is null.');
+          expect().assertFail();
+        } else {
+          mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
+          mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
+          await getPhotoSession(testName, mPreviewOutput, mPhotoOutput);
+          let config: camera.C2PASignatureConfig | null = null;
+          try {
+            mPhotoOutput.configureC2PASignature(true, config);
+            console.info(TAG, testName + ' configureC2PASignature(true, null) did not throw.');
+            expect().assertFail();
+          } catch (error) {
+            console.error(TAG, testName + ' configureC2PASignature(true, null) threw, err: ' + error.code);
+            expect(error.code === 7400101).assertTrue();
+          }
+          await releasePhotoSession();
+          console.info(TAG, testName + ' end.');
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        await releasePhotoSession();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_ERROR_0500
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_ERROR_0500
+     * @tc.desc   Configure C2PA signature with config=undefined -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_ERROR_0500', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_CONFIGUREC2PASIGNATURE_ERROR_0500';
+      console.info(TAG, testName + ' begin.');
+      try {
+        if (isEmpty(mCameraManager) && isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName + ' cameraManager is null.');
+          expect().assertFail();
+        } else {
+          mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
+          mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
+          await getPhotoSession(testName, mPreviewOutput, mPhotoOutput);
+          let config: camera.C2PASignatureConfig | undefined = undefined;
+          try {
+            mPhotoOutput.configureC2PASignature(true, config);
+            console.info(TAG, testName + ' configureC2PASignature(true, undefined) did not throw.');
+            expect().assertFail();
+          } catch (error) {
+            console.error(TAG, testName + ' configureC2PASignature(true, undefined) threw, err: ' + error.code);
+            expect(error.code === 7400101).assertTrue();
+          }
+          await releasePhotoSession();
+          console.info(TAG, testName + ' end.');
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        await releasePhotoSession();
+        done();
+      }
+    })
   })
 }

@@ -15,12 +15,12 @@
  */
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from "@ohos/hypium-static/src/main/indexStatic";
 import { commonEventManager } from '@kit.BasicServicesKit';
 import subtype from '@ohos.InputMethodSubtype';
 import inputMethod from '@ohos.inputMethod';
 import display from '@ohos.display';
-import { Driver, ON, MatchPattern, Component, Rect } from '@ohos.UiTest';
+import { Driver, ON, MatchPattern, Component, Rect, Point } from '@ohos.UiTest';
 import { BusinessError } from '@ohos.base';
 import util from '@ohos.util';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -35,13 +35,15 @@ export default function inputMethodEngineStatic() {
         let driver = Driver.create();
         let textArea: Component|null;
         let rectInfo: Rect;
+        let id: int = 0;
         let runCmd = async (data:Rect) => {
             let a = data.left + 20 + Math.floor(Math.random() * (data.right - data.left) * 0.7);
             let b = data.top + 20 + Math.floor(Math.random() * (data.bottom - data.top) * 0.7);
             let cursor_x: int = a.toInt();
             let cursor_y: int = b.toInt();
-            console.info(`====>start click x: ${cursor_x}  y: ${cursor_y}`);
-            driver.click(cursor_x, cursor_y);
+            let point: Point = {x: cursor_x, y: cursor_y, displayId: id};
+            console.info(`====>start click x: ${cursor_x}  y: ${cursor_y} displayId: ${id}`);
+            driver.clickAt(point);
         };
 
         let testTemplate: (testName: string, code: int, done: () => void) => Promise<void> =
@@ -111,14 +113,23 @@ export default function inputMethodEngineStatic() {
               }
               abilityDelegator.executeShellCommand(cmd);
               await Utils.msSleep(1000);
-              await abilityDelegator.executeShellCommand('ime -e com.acts.inputmethodwidmanage.test.static -f');
-              await abilityDelegator.executeShellCommand('ime -s com.acts.inputmethodwidmanage.test.static');
+              let enableCmd = 'ime -e com.acts.inputmethodwidmanage.test.static -f';
+              let setCmd = 'ime -s com.acts.inputmethodwidmanage.test.static';
+              if(user !== undefined){
+                  enableCmd = `ime -u ${user} -e com.acts.inputmethodwidmanage.test.static -f`;
+                  setCmd = `ime -u ${user} -s com.acts.inputmethodwidmanage.test.static`;
+              }
+              console.info(`====>beforeAll enableCmd:${enableCmd} ,setCmd:${setCmd}`);
+              await abilityDelegator.executeShellCommand(enableCmd);
+              await abilityDelegator.executeShellCommand(setCmd);
               console.info('====>beforeAll inputMethod_enable success');
               await Utils.msSleep(500);
               textArea = await driver.findComponent(ON.type('TextArea'));
               console.info('====>beforeAll inputMethodSwitch window textArea:' + JSON.stringify(textArea));
               rectInfo = await textArea!.getBounds();
               console.info('====>beforeAll inputMethodSwitch textArea rectInfo:' + JSON.stringify(rectInfo));
+              id = await textArea!.getDisplayId();
+              console.info(`====>beforeAll DisplayId:${id}`);
               await Utils.msSleep(500);
               await runCmd(rectInfo);
               await Utils.msSleep(500);

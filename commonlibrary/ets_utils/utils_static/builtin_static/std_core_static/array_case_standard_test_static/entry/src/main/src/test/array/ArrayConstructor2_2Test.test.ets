@@ -1,4 +1,4 @@
-﻿'use static'
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 class Calc049 {

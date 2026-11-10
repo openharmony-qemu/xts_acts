@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import inspector from '@ohos.arkui.inspector'
 import { Driver, ON, Component } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -23,6 +23,8 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import window from '@ohos.window';
 
+
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 
 export default function ActionSheet3() {
   describe('ActionSheet3', () => {
@@ -66,7 +68,7 @@ it('ActionSheet3_static_0100', Level.LEVEL2, async (done: () => void): Promise<v
       await Column.click();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2070);
+      await driver.triggerKey(2070, displayID);
       await CommonFunc.sleep(1000);
 
   let context = AppStorage.get<common.UIAbilityContext>('abilityContext');
@@ -100,7 +102,7 @@ it('ActionSheet3_static_0200', Level.LEVEL2, async (done: () => void): Promise<v
       await Column.click();
       await CommonFunc.sleep(1000);
 
-      await driver.click((Math.round((AppStorage.get<number>('winLeft') as number)+20)).toInt(), (Math.round((AppStorage.get<number>('winTop') as number)+200)).toInt());
+      await driver.clickAt({x: (Math.round((AppStorage.get<number>('winLeft') as number)+20)).toInt(), y: (Math.round((AppStorage.get<number>('winTop') as number)+200)).toInt(), displayId: displayID});
       await CommonFunc.sleep(1000);
 
   let context = AppStorage.get<common.UIAbilityContext>('abilityContext');

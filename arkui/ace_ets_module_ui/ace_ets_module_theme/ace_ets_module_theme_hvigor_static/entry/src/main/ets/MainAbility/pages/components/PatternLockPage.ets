@@ -61,6 +61,8 @@ struct PatternLockPage {
           .key(PatternLockKeys.patternLockWithTheme)
       }
     }
+    .padding(10)
+    .margin(10)
     .width('100%')
   }
 }

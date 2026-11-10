@@ -1,0 +1,681 @@
+- collections.Array 测试设计
+	- 说明：基于 collections_array_testpoint.md §1 接口维度脑图生成，覆盖 44 成员×7 测试逻辑分类（缺项类按 §1 树跳过/标注）。@Sendable class Array<T> implements ConcatArray<T>，since 12，T 须 Sendable。
+	- 1. 接口测试（Functional）
+		- 构造与属性
+			- constructor（×3 重载：()/(first,...left)/(...items)）
+				- 入参范围覆盖
+					- 空构造 / 单元素 / 多元素 / ...items 展开
+					- 全类型元素矩阵：number(普通/科学记数/MAX_SAFE/NaN)、string(普通/特殊字符/emoji/空串)、boolean、undefined、null、BigInt、Sendable 对象/类
+					- 子类 super 传参
+				- 边界值测试
+					- 空数组 length=0、单元素、1000/1024/10250 大容量
+				- 异常与非法输入
+					- 构造失败→10200012（内部不可达守卫，仅 ArrayComplete_132 取证）
+					- 非 Sendable 泛型→运行错误
+					- 401 参数类型非法（SUP_ARRAY_CTOR_401_001）
+				- 返回值与类型验证
+					- instanceof collections.Array
+					- 空构造 length=0、元素正确写入
+				- 组合场景
+					- from→constructor、展开/解构、子类 super
+				- 重复调用/幂等性
+					- 相同 items 多次构造一致
+				- 并发跨线程
+					- 子类构造体跨 TaskPool/Worker（Inheritance 6 + Normal/TaskPool 各 61）
+			- length（readonly）
+				- 入参范围覆盖
+					- 随 number/string/boolean/null/undefined/Sendable 等全类型元素增删变化
+				- 边界值测试
+					- 空 length=0、单元素、1000/1024/10250 大容量
+				- 异常与非法输入
+					- 只读属性，无 @throws（无异常契约）
+				- 返回值与类型验证
+					- number 类型、增删后正确衰减/递增
+				- 组合场景
+					- push→pop→shift 链中持续校验 length
+				- 重复调用/幂等性
+					- 重复 push 同值 length 递增、重复 pop 不再衰减
+				- 并发跨线程
+					- TaskPool 多写者下 length 一致性
+			- [index: number]（@throws 10200001）
+				- 入参范围覆盖
+					- 正索引取值、全类型元素
+				- 边界值测试
+					- 0/末尾、负索引、越界
+				- 异常与非法输入
+					- 越界→10200001（ArrayBasic 2 段 + IndexAccess 取证）
+				- 返回值与类型验证
+					- T 元素正确
+				- 组合场景
+					- 索引赋值/读取联动
+				- 重复调用/幂等性
+					- 重复读取同值
+				- 并发跨线程
+					- 跨线程索引读取
+		- 静态方法
+			- create<T>(arrayLength, initialValue)
+				- 入参范围覆盖
+					- 全类型 initialValue、长度 0/N
+				- 边界值测试
+					- 0 长度、负长度→Parameter error.Invalid array length.
+				- 异常与非法输入
+					- 10200011 bind 专用、401 参数非法
+				- 返回值与类型验证
+					- Array<T> 实例、各元素=initialValue
+				- 组合场景
+					- create→fill→at 联动
+				- 重复调用/幂等性
+					- 相同参数多次构造一致
+				- 并发跨线程
+					- ConcurrentCreateFrom 跨线程构造
+			- from(arrayLike|iterable[, mapFn])（×4 重载）
+				- 入参范围覆盖
+					- Array/Iterable/Map.values/Set 源、null/空源、mapFn 映射（18+ 类型变换）
+				- 边界值测试
+					- 空源、单元素、超大
+				- 异常与非法输入
+					- 非 Sendable→Only accept sendable value、10200011 bind、401
+				- 返回值与类型验证
+					- 新 Array<T>、mapFn 映射结果
+				- 组合场景
+					- from→constructor、from(mapFn) 类型变换
+				- 重复调用/幂等性
+					- 相同源多次 from 一致
+				- 并发跨线程
+					- ConcurrentCreateFrom 跨线程 from
+			- isArray(value)
+				- 入参范围覆盖
+					- Object/undefined/null/Array/非Array 全类型
+				- 边界值测试
+					- null/undefined 输入
+				- 异常与非法输入
+					- 无 @throws（无异常契约）
+				- 返回值与类型验证
+					- boolean、true/false 正确性
+				- 组合场景
+					- from→isArray 联动
+				- 重复调用/幂等性
+					- 同输入多次一致
+				- 并发跨线程
+					- 跨线程判定
+			- of<T>(...items)（🔴 几近未测，仅 1 例）
+				- 入参范围覆盖
+					- 变参构造、空参→空数组（SUP_ARRAY_OF_BASIC_001/002）
+				- 边界值测试
+					- 空参、单元素、多元素
+				- 异常与非法输入
+					- 401 参数非法（SUP_ARRAY_OF_401_001）
+				- 返回值与类型验证
+					- 新 Array<T>（SUP_ARRAY_OF_BASIC_003）
+				- 组合场景
+					- of→isArray/isArray(of(...))
+				- 重复调用/幂等性
+					- 相同 items 多次一致
+				- 并发跨线程
+					- 跨线程 of
+		- 原地变更 mutators
+			- push(...items)→number
+				- 入参范围覆盖
+					- 全类型元素、多元素批量 push
+				- 边界值测试
+					- 空数组first push、1024 扩容、超大批量
+				- 异常与非法输入
+					- 10200201 并发修改、10200011 detached（SUP_ARRAY_PUSH_BIND_001）、401
+				- 返回值与类型验证
+					- 新 length number
+				- 组合场景
+					- push→pop→shift→unshift 链
+				- 重复调用/幂等性
+					- 重复 push 同值 length 递增
+				- 并发跨线程
+					- TaskPool 并发 push
+			- pop()→T|undefined
+				- 入参范围覆盖
+					- 全类型元素末尾移除
+				- 边界值测试
+					- 空数组→undefined、单元素
+				- 异常与非法输入
+					- 10200011 detached（SUP_ARRAY_POP_BIND_001）、10200201、401
+				- 返回值与类型验证
+					- T|undefined
+				- 组合场景
+					- push→pop 配对
+				- 重复调用/幂等性
+					- 重复 pop 至空后 undefined
+				- 并发跨线程
+					- 并发 pop
+			- shift()→T|undefined
+				- 入参范围覆盖
+					- 全类型元素首部移除
+				- 边界值测试
+					- 空→undefined、单元素
+				- 异常与非法输入
+					- 10200011 专用、10200201、401
+				- 返回值与类型验证
+					- T|undefined
+				- 组合场景
+					- unshift→shift 配对
+				- 重复调用/幂等性
+					- 重复 shift 至空
+				- 并发跨线程
+					- 并发 shift
+			- unshift(...items)→number
+				- 入参范围覆盖
+					- 全类型元素首部添加
+				- 边界值测试
+					- 空数组first、1024 扩容
+				- 异常与非法输入
+					- 10200011 detached（SUP_ARRAY_UNSHIFT_BIND_001）、10200201、401
+				- 返回值与类型验证
+					- 新 length
+				- 组合场景
+					- unshift→shift 配对
+				- 重复调用/幂等性
+					- 重复 unshift length 递增
+				- 并发跨线程
+					- 并发 unshift
+			- splice(start[, deleteCount, ...items])→Array<T>（×2 重载）
+				- 入参范围覆盖
+					- 全类型元素删/插、deleteCount 变化
+				- 边界值测试
+					- 负 start、deleteCount 越界、start 超长、纯删/纯插/删+插
+				- 异常与非法输入
+					- 10200011 专用、10200201、401
+				- 返回值与类型验证
+					- 被删元素新数组（内容断言 SplicesTest_0100）、被删独立性（SUP_ARRAY_SPLICE_RETURN_INDEP_001）
+				- 组合场景
+					- splice→push→splice、原地替换
+				- 重复调用/幂等性
+					- splice(0,0) 无变化
+				- 并发跨线程
+					- ConcurrentSplice
+			- fill(value, start?, end?)→Array<T>
+				- 入参范围覆盖
+					- 全类型 value、范围/全填
+				- 边界值测试
+					- 负 start/end、空数组、1024
+				- 异常与非法输入
+					- 10200011 专用、10200201、401
+				- 返回值与类型验证
+					- 填充后数组、同引用 in-place（SUP_ARRAY_FILL_SAMEREF_001）
+				- 组合场景
+					- fill→at 校验、fill+copyWithin
+				- 重复调用/幂等性
+					- 重复 fill 覆盖一致
+				- 并发跨线程
+					- ConcurrentFillCopyWithin
+			- copyWithin(target, start, end?)→Array<T>
+				- 入参范围覆盖
+					- 全类型元素区间复制
+				- 边界值测试
+					- 负 target/start/end、重叠区间
+				- 异常与非法输入
+					- 10200011 detached（SUP_ARRAY_COPYWITHIN_BIND_001）、10200201、401
+				- 返回值与类型验证
+					- 修改后数组、同引用 in-place（SUP_ARRAY_COPYWITHIN_SAMEREF_001）
+				- 组合场景
+					- copyWithin→at 校验
+				- 重复调用/幂等性
+					- 重复复制幂等
+				- 并发跨线程
+					- ConcurrentFillCopyWithin
+			- reverse()→Array<T>（同引用）
+				- 入参范围覆盖
+					- 全类型元素反转
+				- 边界值测试
+					- 空/单元素/已序
+				- 异常与非法输入
+					- 10200011 detached（SUP_ARRAY_REVERSE_BIND_001 补）、10200201、401
+				- 返回值与类型验证
+					- 反转数组、同引用 result===arr（SUP_ARRAY_REVERSE_SAMEREF_001）
+				- 组合场景
+					- reverse→forEach/at
+				- 重复调用/幂等性
+					- 两次 reverse 复原
+				- 并发跨线程
+					- ConcurrentSortReverse
+			- sort(compareFn?)→Array<T>（新数组）
+				- 入参范围覆盖
+					- 全类型元素、默认升序、自定义 comparator
+				- 边界值测试
+					- 空/单元素/已序/逆序
+				- 异常与非法输入
+					- 10200011 专用、10200201、401
+				- 返回值与类型验证
+					- 新数组（≠原引用 / 原不变，SUP_ARRAY_SORT_NEWARRAY_001）
+				- 组合场景
+					- sort→at/indexOf、slice().sort()
+				- 重复调用/幂等性
+					- 重复 sort 一致
+				- 并发跨线程
+					- ConcurrentSortReverse
+			- shrinkTo(arrayLength)→void
+				- 入参范围覆盖
+					- 各长度收缩
+				- 边界值测试
+					- 0/当前长度/超大
+				- 异常与非法输入
+					- 10200011 detached（补）、10200201、401 专用
+				- 返回值与类型验证
+					- void、length 正确收缩
+				- 组合场景
+					- extendTo→shrinkTo 往返
+				- 重复调用/幂等性
+					- 重复 shrinkTo 幂等
+				- 并发跨线程
+					- 并发 shrinkTo
+			- extendTo(arrayLength, initialValue)→void
+				- 入参范围覆盖
+					- 各长度扩展、全类型 initialValue
+				- 边界值测试
+					- 0/当前长度/超大
+				- 异常与非法输入
+					- 10200011 detached（补）、10200201、401 专用
+				- 返回值与类型验证
+					- void、length 正确扩展、新元素=initialValue
+				- 组合场景
+					- shrinkTo→extendTo 往返
+				- 重复调用/幂等性
+					- 重复 extendTo 幂等
+				- 并发跨线程
+					- 并发 extendTo
+			- retainAll(Array<T>|readonly T[]|predicate)→boolean（×3 重载 since 26.0.1）
+				- 入参范围覆盖
+					- Array 源/builtin 源/predicate 三重载、全类型元素
+				- 边界值测试
+					- 空源/全保留/全移除/1024/10250
+				- 异常与非法输入
+					- 10200011 专用、10200201 报文取证、401
+				- 返回值与类型验证
+					- boolean（有移除→true）、保留序（RetainAll ⑥ 段 "preserves receiver order"）
+				- 组合场景
+					- retainAll→containsAll 联动
+				- 重复调用/幂等性
+					- 重复 retainAll 至无移除→false
+				- 并发跨线程
+					- 并发 retainAll（🔴 弱断言，SUP_ARRAY_CONC_DISTINCT_KEYS_001/SAME_KEY_001）
+		- 访问器 accessors
+			- at(index)→T|undefined
+				- 入参范围覆盖
+					- 全类型元素、正/负索引
+				- 边界值测试
+					- 越界→undefined、at(-1)
+				- 异常与非法输入
+					- 10200011 专用、10200201、401
+				- 返回值与类型验证
+					- T|undefined
+				- 组合场景
+					- at↔[index] 对比
+				- 重复调用/幂等性
+					- 重复 at 同值
+				- 并发跨线程
+					- 跨线程 at
+			- indexOf(searchElement, fromIndex?)→number
+				- 入参范围覆盖
+					- 全类型元素、fromIndex 变化
+				- 边界值测试
+					- 未命中→-1、fromIndex 边界、NaN→-1（Combination1Test_1568）
+				- 异常与非法输入
+					- 10200011 detached（SUP_ARRAY_INDEXOF_BIND_001）、10200201、401
+				- 返回值与类型验证
+					- number、-1 未命中
+				- 组合场景
+					- indexOf→splice、find↔indexOf
+				- 重复调用/幂等性
+					- 重复 indexOf 同值
+				- 并发跨线程
+					- ConcurrentQueryIndexOf
+			- lastIndexOf(searchElement, fromIndex?)→number
+				- 入参范围覆盖
+					- 全类型元素、fromIndex 变化
+				- 边界值测试
+					- 未命中→-1、重复元素末命中
+				- 异常与非法输入
+					- 10200011 detached（补）、10200201、401
+				- 返回值与类型验证
+					- number、-1
+				- 组合场景
+					- indexOf↔lastIndexOf 对比
+				- 重复调用/幂等性
+					- 重复 lastIndexOf 同值
+				- 并发跨线程
+					- 跨线程 lastIndexOf
+			- includes(searchElement, fromIndex?)→boolean
+				- 入参范围覆盖
+					- 全类型元素、fromIndex 变化
+				- 边界值测试
+					- 未命中→false、NaN→true（SameValueZero，Combination1Test_1567）、±0
+				- 异常与非法输入
+					- 10200011 专用、10200201、401
+				- 返回值与类型验证
+					- boolean
+				- 组合场景
+					- includes↔indexOf（NaN 语义差异）
+				- 重复调用/幂等性
+					- 重复 includes 同值
+				- 并发跨线程
+					- 跨线程 includes
+			- containsAll(Array<T>|readonly T[])→boolean（×2 重载 since 26.0.1）
+				- 入参范围覆盖
+					- Array 源/builtin 源、全类型元素
+				- 边界值测试
+					- 空源/部分命中/全命中/全不命中
+				- 异常与非法输入
+					- 10200011 专用、10200201 报文取证、401
+				- 返回值与类型验证
+					- boolean
+				- 组合场景
+					- containsAll→retainAll 联动
+				- 重复调用/幂等性
+					- 重复 containsAll 同值
+				- 并发跨线程
+					- 并发 containsAll（🔴 弱断言）
+			- find(predicate)→T|undefined
+				- 入参范围覆盖
+					- 全类型元素、predicate 三参
+				- 边界值测试
+					- 空→undefined、无命中→undefined
+				- 异常与非法输入
+					- 10200011 专用、10200201、401
+				- 返回值与类型验证
+					- T|undefined、首命中停止
+				- 组合场景
+					- find→findIndex
+				- 重复调用/幂等性
+					- 重复 find 同值
+				- 并发跨线程
+					- 跨线程 find
+			- findIndex(predicate)→number
+				- 入参范围覆盖
+					- 全类型元素、predicate 三参
+				- 边界值测试
+					- 空→-1、无命中→-1
+				- 异常与非法输入
+					- 10200011 专用、10200201、401
+				- 返回值与类型验证
+					- number、首命中索引
+				- 组合场景
+					- findIndex→splice
+				- 重复调用/幂等性
+					- 重复 findIndex 同值
+				- 并发跨线程
+					- 跨线程 findIndex
+			- every(predicate)→boolean
+				- 入参范围覆盖
+					- 全类型元素、predicate
+				- 边界值测试
+					- 空→true、全 true/部分 false
+				- 异常与非法输入
+					- 10200011 专用、10200201、401
+				- 返回值与类型验证
+					- boolean、短路停止
+				- 组合场景
+					- every↔some 互补
+				- 重复调用/幂等性
+					- 重复 every 同值
+				- 并发跨线程
+					- 跨线程 every
+			- some(predicate)→boolean
+				- 入参范围覆盖
+					- 全类型元素、predicate
+				- 边界值测试
+					- 空→false、全 false/部分 true
+				- 异常与非法输入
+					- 10200011 detached（SUP_ARRAY_SOME_BIND_001）、10200201、401
+				- 返回值与类型验证
+					- boolean、短路停止
+				- 组合场景
+					- some↔every 互补
+				- 重复调用/幂等性
+					- 重复 some 同值
+				- 并发跨线程
+					- 跨线程 some
+			- join(separator?)→string
+				- 入参范围覆盖
+					- 全类型元素、自定义分隔符
+				- 边界值测试
+					- 空→空串、单元素、默认逗号
+				- 异常与非法输入
+					- 10200011 专用、10200201、401
+				- 返回值与类型验证
+					- string
+				- 组合场景
+					- join↔toString
+				- 重复调用/幂等性
+					- 重复 join 同值
+				- 并发跨线程
+					- 跨线程 join
+			- toString()→string
+				- 入参范围覆盖
+					- 全类型元素
+				- 边界值测试
+					- 空→空串、单元素
+				- 异常与非法输入
+					- 10200011 专用、10200201、401
+				- 返回值与类型验证
+					- string（逗号分隔）
+				- 组合场景
+					- toString↔join(',')
+				- 重复调用/幂等性
+					- 重复 toString 同值
+				- 并发跨线程
+					- 跨线程 toString
+			- toLocaleString()→string
+				- 入参范围覆盖
+					- 全类型元素、locale 文化转换
+				- 边界值测试
+					- 空→空串、单元素
+				- 异常与非法输入
+					- 10200011 专用、10200201、401
+				- 返回值与类型验证
+					- string（逗号分隔）
+				- 组合场景
+					- toLocaleString↔toString
+				- 重复调用/幂等性
+					- 重复 toLocaleString 同值
+				- 并发跨线程
+					- 跨线程 toLocaleString
+		- 返回新数组 return-new
+			- slice(start?, end?)→Array<T>
+				- 入参范围覆盖
+					- 全类型元素、start/end 变化
+				- 边界值测试
+					- 负 start/end、NaN、稀疏[1,,3]、空/单元素
+				- 异常与非法输入
+					- 10200011 专用、10200201、401
+				- 返回值与类型验证
+					- 新 Array<T>、独立性 ≠原引用/改原不影响结果（SUP_ARRAY_SLICE_INDEP_001）
+				- 组合场景
+					- slice().sort().reverse() 链
+				- 重复调用/幂等性
+					- 重复 slice 同结果
+				- 并发跨线程
+					- 跨线程 slice
+			- concat(...items: ConcatArray<T>[])→Array<T>
+				- 入参范围覆盖
+					- 多源（Array/ConcatArray/空）、全类型
+				- 边界值测试
+					- 空源、多源拼接、超大
+				- 异常与非法输入
+					- 10200011 专用、10200201、401 专用
+				- 返回值与类型验证
+					- 新 Array<T>、独立性（SUP_ARRAY_CONCAT_INDEP_001）
+				- 组合场景
+					- concat→forEach、多源拼接
+				- 重复调用/幂等性
+					- 重复 concat 同结果
+				- 并发跨线程
+					- 跨线程 concat
+		- 迭代器 iterators
+			- [Symbol.iterator]()→IterableIterator<T>
+				- 入参范围覆盖
+					- 全类型元素、for...of 消费
+				- 边界值测试
+					- 空数组迭代器
+				- 异常与非法输入
+					- 10200011 detached（SUP_ARRAY_SYMBOL_ITER_BIND_001）；无 10200201 声明
+				- 返回值与类型验证
+					- IterableIterator<T>、与 entries 一致
+				- 组合场景
+					- Array.from/展开运算符消费
+				- 重复调用/幂等性
+					- 每次返回新迭代器
+				- 并发跨线程
+					- 跨线程迭代
+			- keys()→IterableIterator<number>
+				- 入参范围覆盖
+					- 全类型元素索引序列
+				- 边界值测试
+					- 空→空迭代器
+				- 异常与非法输入
+					- 10200011 专用、10200201
+				- 返回值与类型验证
+					- IterableIterator<number>
+				- 组合场景
+					- keys→at 联动
+				- 重复调用/幂等性
+					- 每次返回新迭代器
+				- 并发跨线程
+					- 跨线程 keys
+			- values()→IterableIterator<T>
+				- 入参范围覆盖
+					- 全类型元素值序列
+				- 边界值测试
+					- 空→空迭代器
+				- 异常与非法输入
+					- 10200011 专用、10200201
+				- 返回值与类型验证
+					- IterableIterator<T>
+				- 组合场景
+					- values↔[Symbol.iterator]
+				- 重复调用/幂等性
+					- 每次返回新迭代器
+				- 并发跨线程
+					- 跨线程 values
+			- entries()→IterableIterator<[number,T]>
+				- 入参范围覆盖
+					- 全类型元素键值对
+				- 边界值测试
+					- 空→空迭代器、新迭代器可重复遍历
+				- 异常与非法输入
+					- 10200011 专用、10200201
+				- 返回值与类型验证
+					- IterableIterator<[number,T]>、每次新迭代器（⑥ 段取证）
+				- 组合场景
+					- entries→Map 构造
+				- 重复调用/幂等性
+					- 每次返回新迭代器
+				- 并发跨线程
+					- 跨线程 entries
+			- forEach(callbackFn)→void
+				- 入参范围覆盖
+					- 全类型元素、回调三参(value,index,array)
+				- 边界值测试
+					- 空→不执行、单元素、10000 大规模
+				- 异常与非法输入
+					- 10200011 专用 + 接收者类型检查（ReceiverTypeCheckTest：plain object/builtin Array/SendableMap 接收者→10200011）
+					- 401（非函数回调，ErrorPathTest_048）
+					- 10200201 严格断言（ConcurrentStrictTest：跨线程 forEach+push 必报 + 回调内 push 必报 + 异常后容器仍可用）
+					- 回调抛 Error 传播 + 异常后数组仍可用（ForEachEdgeTest/ReduceEdgeTest）
+				- 返回值与类型验证
+					- void、遍历顺序、三参正确
+				- 组合场景
+					- forEach→push 副作用、forEach 内 mutator 10200201
+					- thisArg 上下文绑定（ThisArgTest：@Sendable TagHolder 闭包访问 tag）
+				- 重复调用/幂等性
+					- 重复 forEach 同遍历
+				- 并发跨线程
+					- ConcurrentForEachModify + ConcurrentStrictTest 严格断言
+			- map<U>(callbackFn)→Array<U>
+				- 入参范围覆盖
+					- 全类型元素、类型变换 T→U、回调三参
+				- 边界值测试
+					- 空→空数组、单元素
+				- 异常与非法输入
+					- 10200011 专用、10200201
+					- 401（回调返回 non-Sendable→401 ErrorPathTest_011 + non-callable→401 ErrorPathTest_048）
+					- 回调抛 TypeError 传播 + 原数组不变（ReduceEdgeTest_0012）
+				- 返回值与类型验证
+					- 新 Array<U>、独立性（SUP_ARRAY_MAP_INDEP_001）
+				- 组合场景
+					- map→filter 管道
+					- thisArg 上下文绑定（ThisArgTest：@Sendable MultiplierHolder 闭包访问）
+				- 重复调用/幂等性
+					- 重复 map 同结果
+					- 100 轮 10000 元素 map 结果不漂移（StabilityTest_070）
+				- 并发跨线程
+					- 跨线程 map
+			- filter(predicate)→Array<T>
+				- 入参范围覆盖
+					- 全类型元素、predicate 三参
+				- 边界值测试
+					- 空→空、稀疏、全保留/全过滤
+				- 异常与非法输入
+					- 10200011 专用、10200201
+					- 401（non-callable→401 ErrorPathTest_048）
+				- 返回值与类型验证
+					- 新 Array<T>、独立性（SUP_ARRAY_FILTER_INDEP_001）
+				- 组合场景
+					- filter→map 管道
+					- thisArg 上下文绑定（ThisArgTest：@Sendable ThresholdHolder 闭包访问）
+				- 重复调用/幂等性
+					- 重复 filter 同结果
+					- 100 轮 10000 元素 filter 结果不漂移（StabilityTest_071）
+				- 并发跨线程
+					- 跨线程 filter
+			- reduce(callbackFn)→T / reduce<U>(callbackFn, initialValue)→U（×2 重载）
+				- 入参范围覆盖
+					- 全类型元素、回调四参、无初值/带初值
+				- 边界值测试
+					- 空→无初值 TypeError/401（ReduceEdgeTest_0020，已补）、单元素无初值回调不调用（ReduceEdgeTest_0019）、稀疏
+				- 异常与非法输入
+					- 10200011 专用、10200201
+					- 401（non-callable→401 ErrorPathTest_048）
+				- 返回值与类型验证
+					- T/U 累加值、无初值首元素为初值
+				- 组合场景
+					- reduce→sum/product
+				- 重复调用/幂等性
+					- 重复 reduce 同结果
+				- 并发跨线程
+					- 跨线程 reduce
+			- reduceRight(callbackFn)→T / reduceRight<U>(callbackFn, initialValue)→U（×2 重载）
+				- 入参范围覆盖
+					- 全类型元素、逆向累加、无初值/带初值
+				- 边界值测试
+					- 空→（无初值 TypeError）、单元素、稀疏（[1,,3] 覆盖）
+				- 异常与非法输入
+					- 10200011 detached（SUP_ARRAY_REDUCERIGHT_BIND_001）、10200201、401
+				- 返回值与类型验证
+					- T/U 逆向累加值
+				- 组合场景
+					- reduceRight↔reduce 对比
+				- 重复调用/幂等性
+					- 重复 reduceRight 同结果
+				- 并发跨线程
+					- 跨线程 reduceRight
+	- 2. 稳定性（Stability）
+		- 大容量创建/销毁/传递稳定性（1000 级循环、1024 扩容边界、10250 大数组）
+		- 超大 value/深嵌套/循环引用承载（ContainerCombo/RealWorldCombo）
+		- 1024 扩容稳定性（Expand1024 跨边界保留/删后重建）
+		- 多轮确定性（StabilityTest：10000 元素 map/filter 各 100 轮与第 1 轮 spot check 一致，无崩溃）
+	- 3. 性能（Performance）
+		- 大规模 forEach/map/sort/concat 吞吐（10000 级循环，Normal/TaskPool）
+		- 大数量查询性能（IndexOf/LastIndexOf 大数组）
+		- 50 任务并发吞吐（StressStabilityCombo）
+	- 4. 并发安全（Concurrency Safety）
+		- TaskPool/Worker 跨线程引用传递（Normal↔TaskPool 对位）
+		- 10200201 并发修改（forEach 内 mutator、ArrayConcurrent* 7 专用套件）
+		- 严格并发修改断言（ConcurrentStrictTest：跨线程 forEach+push 必报 10200201/10200001 + 回调内 push 必报 + 异常后容器仍可用 forEach+includes）
+		- retainAll/containsAll/fill/copyWithin/splice 并发（🔴 弱断言需强化）
+		- 多写者写写数据一致性（SUP_ARRAY_CONC_DISTINCT_KEYS/SAME_KEY_001）
+	- 5. 兼容性与继承
+		- 子类化（instanceof/原型链、无参/带参/super 构造）
+		- @Sendable 继承跨线程、extends collections.Array<T>
+		- 方法覆写/自定义（覆写 push/forEach/toString、sumValues/average/doubleAll）
+		- 二级继承链、多 TaskPool 共享子类实例
+	- 6. 资料与文档符合性
+		- @Sendable 装饰验证（ArrayAnnotation）
+		- import 可用性（@kit.ArkTS）
+		- 泛型 Sendable 约束（from 非 Sendable→Only accept sendable value）
+		- 未声明方法测试越界（toReversed/toSorted/with/flat/flatMap，🔴 资料一致性）

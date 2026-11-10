@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, Level } from "../../../../../hypium/index"
+import { describe, beforeEach, afterEach, it, expect, Level } from "@ohos/hypium-static/src/main/indexStatic"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
@@ -60,10 +60,19 @@ it('tabsOnContentWillChangeJsunitTest_static_0110', Level.LEVEL1, async (done: (
 
       // simulate the "tab"
       let driver = Driver.create();
-      await driver.triggerKey(2049);
+      let displayId: undefined | Int = 0;
+      let comp = await driver.findComponent(ON.id('currentIndex11x'));
+      await CommonFunc.sleep(1000);
+      displayId = await comp?.getDisplayId();
+      await CommonFunc.sleep(1000);
+      if (displayId != undefined) {
+        await driver.triggerKey(2049, displayId as Int);
+      }
       await CommonFunc.sleep(1000);
       // -> 2015
-      await driver.triggerKey(2015);
+      if (displayId != undefined) {
+        await driver.triggerKey(2015, displayId as Int);
+      }
       await CommonFunc.sleep(1000);
 
       let strJson1 = inspector.getInspectorByKey('currentIndex11x');
@@ -72,7 +81,9 @@ it('tabsOnContentWillChangeJsunitTest_static_0110', Level.LEVEL1, async (done: (
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('1');
 
       // -> 2015
-      await driver.triggerKey(2015);
+      if (displayId != undefined) {
+        await driver.triggerKey(2015, displayId as Int);
+      }
       await CommonFunc.sleep(1000);
 
       let strJson2 = inspector.getInspectorByKey('currentIndex11x');
@@ -83,7 +94,9 @@ it('tabsOnContentWillChangeJsunitTest_static_0110', Level.LEVEL1, async (done: (
       // it can not response when ->
 
       // -> 2015
-      await driver.triggerKey(2015);
+      if (displayId != undefined) {
+        await driver.triggerKey(2015, displayId as Int);
+      }
       await CommonFunc.sleep(1000);
 
       let strJson3 = inspector.getInspectorByKey('currentIndex11x');

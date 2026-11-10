@@ -973,7 +973,15 @@ struct WebComponent {
             isPlaying = false
             isError = false
             videoTime = 0
-            readyState = 0
+            readyState = 0;
+            networkState=0;
+            seekList=[];
+            networkStateList=[];
+            readyStateList=[];
+            durationList=[];
+            timeUpdateList=[];
+            rateList=[];
+            handleRateList=[];
             this.isShouldOverlay = true
             this.isCallback = false
             if (Utils.isPC(this.controller) ) {
@@ -1260,9 +1268,12 @@ struct WebComponent {
                 })
                 await waitForExist(() => str, this.emitKey, '"play"');
                 await this.retryPlayingGen(this.emitKey)()
-                await waitForExist(() => (timeUpdateList.length > 0) ? 1 : 0, this.emitKey, 1);
+                await waitForExist(() => (timeUpdateList.length > 0) ? 1 : 0, this.emitKey, 1,3000,20,3000);
                 if (timeUpdateList.length > 0) {
                   Utils.emitEvent(true, 132910)
+                }else{
+                    console.error('[TimeUpdate] timeUpdateList empty, isError:'+isError+',isPlaying:'+isPlaying +
+                        ',mediaErrorState:'+mediaErrorState);
                 }
                 console.log('video is playing:' + isPlaying)
                 break;
@@ -1351,7 +1362,7 @@ struct WebComponent {
                   console.log(`The buttonPlay() return value is: ${result}`);
                   str = result;
                 })
-                await waitForExist(() => str, this.emitKey, '"play"');
+                await waitForExist(() => str, this.emitKey, '"play"',3000,20,30000);
                 await this.retryPlayingGen(this.emitKey)()
                 console.info('Loading networkStateList.indexOf(2) is: ' + networkStateList.indexOf(2))
                 console.log('video is playing:' + isPlaying)
@@ -1359,6 +1370,8 @@ struct WebComponent {
                 if (networkStateList.indexOf(2) > -1){
                   Utils.emitEvent(true, 132960)
                 }else {
+                    console.error('[NetworkStateLoading] indexOf(2) not found,isError:'+isError +
+                      ',isPlaying:'+isPlaying+',networkStateList:'+networkStateList)
                   Utils.emitEvent(false, 132960)
                 }
                 break;
@@ -1448,11 +1461,13 @@ struct WebComponent {
                 })
                 await waitForExist(() => str, this.emitKey, '"play"');
                 await this.retryPlayingGen(this.emitKey)()
-                await waitForExist(() => (readyStateList.indexOf(1) > -1) ? 1 : 0, this.emitKey, 1);
+                await waitForExist(() => (readyStateList.indexOf(1) > -1) ? 1 : 0, this.emitKey, 1,3000,20,30000);
                 console.log('emitWebViewNativeMediaPlayerReadyState_1 video is playing:' + isPlaying)
                 if (readyStateList.indexOf(1) > -1){
                   Utils.emitEvent(true, 132994)
                 }else {
+                    console.error('[ReadyState_1] indexOf(1) not found, isError:'+isError+
+                    ', isPlaying:'+isPlaying+',readyStateList:'+readyStateList);
                   Utils.emitEvent(false, 132994)
                 }
                 break;
@@ -1470,10 +1485,12 @@ struct WebComponent {
                 })
                 await waitForExist(() => str, this.emitKey, '"play"');
                 await this.retryPlayingGen(this.emitKey)()
-                await waitForExist(() => (readyStateList.indexOf(2) > -1) ? 1 : 0, this.emitKey, 1);
+                await waitForExist(() => (readyStateList.indexOf(2) > -1) ? 1 : 0, this.emitKey, 1,3000,20,30000);
                 if (readyStateList.indexOf(2) > -1){
                   Utils.emitEvent(true, 132980)
                 }else {
+                    console.error('[ReadyState_2] indexOf(2) not found, isError:'+isError+
+                        ', isPlaying:'+isPlaying+',readyStateList:'+readyStateList);
                   Utils.emitEvent(false, 132980)
                 }
                 break;
@@ -1491,10 +1508,12 @@ struct WebComponent {
                 })
                 await waitForExist(() => str, this.emitKey, '"play"');
                 await this.retryPlayingGen(this.emitKey)()
-                await waitForExist(() => (readyStateList.indexOf(3) > -1) ? 1 : 0, this.emitKey, 1);
+                await waitForExist(() => (readyStateList.indexOf(3) > -1) ? 1 : 0, this.emitKey, 1,3000,20,30000);
                 if (readyStateList.indexOf(3) > -1){
                   Utils.emitEvent(true, 132990)
                 }else {
+                    console.error('[ReadyState_3] indexOf(3) not found, isError:'+isError+
+                        ', isPlaying:'+isPlaying+',readyStateList:'+readyStateList);
                   Utils.emitEvent(false, 132990)
                 }
                 break;
@@ -1512,11 +1531,13 @@ struct WebComponent {
                 })
                 await waitForExist(() => str, this.emitKey, '"play"');
                 await this.retryPlayingGen(this.emitKey)()
-                await waitForExist(() => (readyStateList.indexOf(4) > -1) ? 1 : 0, this.emitKey, 1);
+                await waitForExist(() => (readyStateList.indexOf(4) > -1) ? 1 : 0, this.emitKey, 1,3000,20,30000);
                 console.log(`The readyStateList.indexOf(4) is: ${readyStateList.indexOf(4)}`);
                 if (readyStateList.indexOf(4) > -1){
                   Utils.emitEvent(true, 132992)
                 }else {
+                    console.error('[ReadyState_4] indexOf(4) not found, isError:'+isError+
+                        ', isPlaying:'+isPlaying+',readyStateList:'+readyStateList);
                   Utils.emitEvent(false, 132992)
                 }
                 break;
@@ -1598,7 +1619,7 @@ struct WebComponent {
               }
               this.controller.pauseAllMedia();
               console.error('exit onPageBegin');
-            })  
+            })
             .onPageEnd(async (event) => {
                 console.log(this.emitKey + ' web pageEnd==>' + event.url);
                 this.isPageEnd = 0;

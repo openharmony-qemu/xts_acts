@@ -134,8 +134,11 @@ export default function ActsDisplayNdkApi14Test() {
       
       await getPermision();
       await sleep(300);
-      await ClickButtonDriver();
-      await sleep(200);
+      if(deviceType !== 'car'){
+       await ClickButtonDriver();
+       await sleep(200); 
+      }
+      
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
@@ -177,7 +180,7 @@ export default function ActsDisplayNdkApi14Test() {
             expect(displayInfo.orientation).assertEqual(Number(orientation[rotation]));
             done();
           }
-          expect(displayInfo.id).assertEqual(0);
+          expect(displayInfo.id).assertEqual(displayClass.id);
           expect(displayInfo.alive).assertEqual(1);
           expect(displayInfo.width).assertLarger(0);
           expect(displayInfo.height).assertLarger(0);
@@ -571,7 +574,7 @@ export default function ActsDisplayNdkApi14Test() {
       try{
         let displayInfo = display.getDefaultDisplaySync();
         console.log(caseName + ' displayInfo:'+ JSON.stringify(displayInfo));
-        expect(displayInfo.id).assertEqual(0);
+        expect(displayInfo.id).assertEqual(displayClass.id);
         expect(displayInfo.name != null).assertTrue();
         expect(displayInfo.alive).assertEqual(true);
         expect(displayInfo.width).assertLarger(0);
@@ -614,7 +617,7 @@ export default function ActsDisplayNdkApi14Test() {
       try{
         let displayInfo = display.getPrimaryDisplaySync();
         console.log(caseName + ' displayInfo:'+ JSON.stringify(displayInfo));
-        expect(displayInfo.id).assertEqual(0);
+        expect(displayInfo.id).assertEqual(displayClass.id);
         expect(displayInfo.name != null).assertTrue();
         expect(displayInfo.alive).assertEqual(true);
         expect(displayInfo.width).assertLarger(0);

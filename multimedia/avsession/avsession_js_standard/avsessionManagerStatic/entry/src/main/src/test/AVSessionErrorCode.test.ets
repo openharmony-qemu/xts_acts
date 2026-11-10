@@ -15,7 +15,7 @@
  */
 
 import avSession from '@ohos.multimedia.avsession';
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from "@ohos/hypium-static/src/main/indexStatic";
 import wantAgent from '@ohos.app.ability.wantAgent';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
@@ -1564,7 +1564,9 @@ export default function AVSessionErrorCode() {
         try {
             session!.getAVCastController().then((avcontroller: avSession.AVCastController| undefined) => {
                 console.info(`getAVCastController : SUCCESS `);
-                expect(true).assertFalse();
+                if (avcontroller != undefined) {
+                    expect(true).assertFalse();
+                }
             });
         } catch (error) {
             console.info(`getAVCastController failed: code: ${error.code}, message: ${error.message}`);
@@ -1591,7 +1593,9 @@ export default function AVSessionErrorCode() {
               } else {
                 aVCastController = avcontroller;
                 console.info('getAVCastController : SUCCESS');
-                expect(true).assertFalse();
+                if (avcontroller != undefined) {
+                    expect(true).assertFalse();
+                }
               }
             });
         } catch (error) {

@@ -23,7 +23,7 @@ import {
   it,
   expect,
   Level
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import {
   Component,
   Driver,

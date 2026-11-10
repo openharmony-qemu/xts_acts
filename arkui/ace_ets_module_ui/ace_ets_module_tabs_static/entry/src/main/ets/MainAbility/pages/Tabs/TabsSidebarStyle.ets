@@ -15,14 +15,29 @@
  */
 import {
   Entry, Component, Column, Text, Scroll, Tabs, TabContent,
-  TabBarStyle, BarPosition, Color, BlurStyle
+  TabBarStyle, BarPosition, Color, BlurStyle, wrapBuilder
 } from '@ohos.arkui.component';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { ComponentContent } from '@ohos.arkui.node';
+
+@Builder
+function footerBuilder() {
+  Text('FooterContent').id('sidebar_footer_text').fontSize(12)
+}
+
+@Builder
+function bottomBarBuilder() {
+  Text('BottomBarContent').id('sidebar_bottombar_text').fontSize(12)
+}
 
 @Entry
 @Component
 struct TabsSidebarStyle {
+  footerContent: ComponentContent<undefined> =
+    new ComponentContent<undefined>(this.getUIContext(), wrapBuilder(footerBuilder));
+  bottomBarContent: ComponentContent<undefined> =
+    new ComponentContent<undefined>(this.getUIContext(), wrapBuilder(bottomBarBuilder));
   aboutToAppear(): void {
     try {
       const routerInst: Router = this.getUIContext().getRouter();
@@ -50,10 +65,14 @@ struct TabsSidebarStyle {
         this.sidebarUnselectedIconColorBlocks()
         this.sidebarUnselectedTextColorBlocks()
         this.sidebarSelectedBoardColorBlocks()
+        this.sidebarFooterBlocks()
+        this.sidebarBottomBarBlocks()
       }
       .width('100%')
       .padding(8)
     }
+    .padding(10)
+    .margin(10)
     .width('100%')
     .height('100%')
   }
@@ -516,6 +535,72 @@ struct TabsSidebarStyle {
         .height(120)
         .barStyle(TabBarStyle.SIDEBAR)
         .sidebarSelectedBoardColor(undefined)
+  }
+
+  @Builder
+  sidebarFooterBlocks() {
+        Text('sidebarFooter normal').fontSize(12)
+        Tabs({ barPosition: BarPosition.Start }) {
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Blue)
+          }.tabBar('A')
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Green)
+          }.tabBar('B')
+        }
+        .id('tabs_sidebarFooter_normal')
+        .width('100%')
+        .height(120)
+        .barStyle(TabBarStyle.SIDEBAR)
+        .sidebarFooter(this.footerContent)
+
+        Text('sidebarFooter undefined').fontSize(12)
+        Tabs({ barPosition: BarPosition.Start }) {
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Blue)
+          }.tabBar('A')
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Green)
+          }.tabBar('B')
+        }
+        .id('tabs_sidebarFooter_undefined')
+        .width('100%')
+        .height(120)
+        .barStyle(TabBarStyle.SIDEBAR)
+        .sidebarFooter(undefined)
+  }
+
+  @Builder
+  sidebarBottomBarBlocks() {
+        Text('sidebarBottomBar normal').fontSize(12)
+        Tabs({ barPosition: BarPosition.Start }) {
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Blue)
+          }.tabBar('A')
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Green)
+          }.tabBar('B')
+        }
+        .id('tabs_sidebarBottomBar_normal')
+        .width('100%')
+        .height(120)
+        .barStyle(TabBarStyle.SIDEBAR)
+        .sidebarBottomBar(this.bottomBarContent)
+
+        Text('sidebarBottomBar undefined').fontSize(12)
+        Tabs({ barPosition: BarPosition.Start }) {
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Blue)
+          }.tabBar('A')
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Green)
+          }.tabBar('B')
+        }
+        .id('tabs_sidebarBottomBar_undefined')
+        .width('100%')
+        .height(120)
+        .barStyle(TabBarStyle.SIDEBAR)
+        .sidebarBottomBar(undefined)
   }
 
 }

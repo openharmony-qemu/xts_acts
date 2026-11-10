@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeEach, describe, expect, it, Level,afterAll } from '../../../../hypium/index';
+import { afterEach, beforeEach, describe, expect, it, Level,afterAll } from '@ohos/hypium-static/src/main/indexStatic';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';

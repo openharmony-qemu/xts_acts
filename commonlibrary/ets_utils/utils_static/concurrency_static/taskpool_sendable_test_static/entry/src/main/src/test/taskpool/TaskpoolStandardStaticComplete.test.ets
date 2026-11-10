@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-static/src/main/indexStatic'
 import { currentFun, transferArrayBuffer, transferAtomics, setCloneListTest, setTransferListTest,
   testString, testTime, testNumber, testTaskPool, promiseCase, asyncSum,
   printArgsFunc, Sum, delaySum, Add, funcStrCat, arraySum, objectSum, Multi, AdditionDelay, WaitforRunner,
@@ -1299,7 +1299,7 @@ export default function TaskPoolTest(): void {
         finalString += 'a';
       expect().assertFail();
     } catch(e) {
-        expect(e.code).assertEqual(10200091);
+        expect(e.code).assertEqual(10200025);
       }
       done();
     })
@@ -1447,7 +1447,7 @@ export default function TaskPoolTest(): void {
         task2.removeDependency(task3);
       expect().assertFail();
     } catch(e) {
-        expect(e.code).assertEqual(10200071);
+        expect(e.code).assertEqual(10200027);
       }
       done();
     })
@@ -2078,7 +2078,7 @@ export default function TaskPoolTest(): void {
           taskpool.cancel(task1);
           expect().assertFail();
         } catch (error) {
-          expect(error.code).assertEqual(10200085);
+          expect(error.code).assertEqual(10200057);
         }
       } catch (error) {
         console.error("testTaskPoolClassStatic074 failed");
@@ -2106,7 +2106,7 @@ export default function TaskPoolTest(): void {
           taskpool.cancel(task3);
           expect().assertFail();
         } catch (error) {
-          expect(error.code).assertEqual(10200088);
+          expect(error.code).assertEqual(10200015);
         }
         await promise1;
         await promise2;
@@ -2145,13 +2145,13 @@ export default function TaskPoolTest(): void {
           taskpool.cancel(task3);
           expect().assertFail();
         } catch (error) {
-          expect(error.code).assertEqual(10200088);
+          expect(error.code).assertEqual(10200015);
         }
         try {
           taskpool.cancel(task3);
           expect().assertFail();
         } catch (error) {
-          expect(error.code).assertEqual(10200088);
+          expect(error.code).assertEqual(10200015);
         }
       } catch (error) {
         console.error("testTaskPoolClassStatic076 failed");
@@ -2193,7 +2193,7 @@ export default function TaskPoolTest(): void {
           taskpool.cancel(task2);
         expect().assertFail();
       } catch(e) {
-          expect(e.code).assertEqual(10200085);
+          expect(e.code).assertEqual(10200057);
         }
         try { await p1; } catch (error) { console.info(`gate-catch: ${JSON.stringify(error)}`); }
         try { await p2; } catch (error) { console.info(`gate-catch: ${JSON.stringify(error)}`); }
@@ -2307,7 +2307,7 @@ export default function TaskPoolTest(): void {
         taskpool.cancel(taskGroup);
       expect().assertFail();
     } catch(e) {
-        expect(e.code).assertEqual(10200089);
+        expect(e.code).assertEqual(10200018);
       }
       done();
     })
@@ -2343,7 +2343,7 @@ export default function TaskPoolTest(): void {
           taskpool.cancel(taskGroup1);
           expect().assertFail();
         } catch(e) {
-          expect(e.code).assertEqual(10200089);
+          expect(e.code).assertEqual(10200018);
         }
       } catch (error) {
         console.error(`testTaskPoolClassStatic081 failed`);
@@ -2480,7 +2480,7 @@ export default function TaskPoolTest(): void {
         taskGroup.addTask(task1);
       expect().assertFail();
     } catch(e) {
-        expect(e.code).assertEqual(10200091);
+        expect(e.code).assertEqual(10200025);
       }
       done();
     })
@@ -2549,7 +2549,7 @@ export default function TaskPoolTest(): void {
         await runner.execute(task);
         expect().assertFail();
       } catch(e) {
-        expect(e.code).assertEqual(10200078);
+        expect(e.code).assertEqual(10200057);
       }
       try { await executePromise; } catch (error) { console.info(`gate-catch: ${JSON.stringify(error)}`); }
       done();
@@ -2571,7 +2571,7 @@ export default function TaskPoolTest(): void {
         await runner.execute(task);
         expect().assertFail();
       } catch(e) {
-        expect(e.code).assertEqual(10200078);
+        expect(e.code).assertEqual(10200057);
       }
       try { taskpool.cancel(task); } catch (error) { console.info(`gate-catch: ${JSON.stringify(error)}`); }
       try { await delayedPromise; } catch (error) { console.info(`gate-catch: ${JSON.stringify(error)}`); }
@@ -2595,7 +2595,7 @@ export default function TaskPoolTest(): void {
         await runner.execute(task1);
       expect().assertFail();
     } catch(e) {
-        expect(e.code).assertEqual(10200091);
+        expect(e.code).assertEqual(10200025);
       }
       done();
     })
@@ -2617,7 +2617,7 @@ export default function TaskPoolTest(): void {
         await runner2.execute(task);
       expect().assertFail();
     } catch(e) {
-        expect(e.code).assertEqual(10200078);
+        expect(e.code).assertEqual(10200057);
       }
       done();
     })
@@ -2639,7 +2639,7 @@ export default function TaskPoolTest(): void {
         task.addDependency(task1);
       expect().assertFail();
     } catch(e) {
-        expect(e.code).assertEqual(10200073);
+        expect(e.code).assertEqual(10200057);
       }
       done();
     })
@@ -2682,7 +2682,7 @@ export default function TaskPoolTest(): void {
         task1.addDependency(task2);
       expect().assertFail();
     } catch(e) {
-        expect(e.code).assertEqual(10200079);
+        expect(e.code).assertEqual(10200056);
       }
       done();
     })
@@ -2703,7 +2703,7 @@ export default function TaskPoolTest(): void {
         task1.addDependency(task2);
         expect().assertFail();
       } catch(e) {
-        expect(e.code).assertEqual(10200079);
+        expect(e.code).assertEqual(10200056);
       }
       try { taskpool.cancel(task2); } catch (error) { console.info(`gate-catch: ${JSON.stringify(error)}`); }
       try { await delayedPromise; } catch (error) { console.info(`gate-catch: ${JSON.stringify(error)}`); }
@@ -2726,7 +2726,7 @@ export default function TaskPoolTest(): void {
         task1.addDependency(task2);
       expect().assertFail();
     } catch(e) {
-        expect(e.code).assertEqual(10200070);
+        expect(e.code).assertEqual(10200025);
       }
       done();
     })
@@ -2747,7 +2747,7 @@ export default function TaskPoolTest(): void {
         task1.addDependency(task2);
       expect().assertFail();
     } catch(e) {
-        expect(e.code).assertEqual(10200070);
+        expect(e.code).assertEqual(10200025);
       }
       done();
     })
@@ -2769,7 +2769,7 @@ export default function TaskPoolTest(): void {
         task1.addDependency(task2);
       expect().assertFail();
     } catch(e) {
-        expect(e.code).assertEqual(10200079);
+        expect(e.code).assertEqual(10200056);
       }
       done();
     })
@@ -2791,7 +2791,7 @@ export default function TaskPoolTest(): void {
         task1.addDependency(task2);
       expect().assertFail();
     } catch(e) {
-        expect(e.code).assertEqual(10200070);
+        expect(e.code).assertEqual(10200025);
       }
       done();
     })
@@ -2835,7 +2835,7 @@ export default function TaskPoolTest(): void {
         task.addDependency(task1);
       expect().assertFail();
     } catch(e) {
-        expect(e.code).assertEqual(10200073);
+        expect(e.code).assertEqual(10200057);
       }
       done();
     })
@@ -2898,7 +2898,7 @@ export default function TaskPoolTest(): void {
         taskpool.executeDelayed(100, task1);
       expect().assertFail();
     } catch(e) {
-        expect(e.code).assertEqual(10200081);
+        expect(e.code).assertEqual(10200057);
       }
       done();
     })
@@ -2919,7 +2919,7 @@ export default function TaskPoolTest(): void {
         taskpool.executeDelayed(100, task)
       expect().assertFail();
     } catch(e) {
-        expect(e.code).assertEqual(10200076);
+        expect(e.code).assertEqual(10200059);
       }
       done();
     })
@@ -2927,7 +2927,7 @@ export default function TaskPoolTest(): void {
     /**
      * @tc.name   testTaskPoolClassStatic108
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTANDARD_1170
-     * @tc.desc   cancel the executeDelay task
+     * @tc.desc   cancel an executeDelayed task after it has finished
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -2947,9 +2947,9 @@ export default function TaskPoolTest(): void {
         taskpool.cancel(task);
       } catch (e) {
         caught = true;
-        expect(e.code).assertEqual(10200085);
+        expect(e.code).assertEqual(10200057);
       }
-      expect(caught).assertFalse();
+      expect(caught).assertTrue();
       expect(result).assertEqual(100);
       done();
     })
@@ -2973,7 +2973,7 @@ export default function TaskPoolTest(): void {
           await taskpool.execute(task1);
           expect().assertFail();
         } catch(e) {
-          expect(e.code).assertEqual(10200072);
+          expect(e.code).assertEqual(10200057);
         }
       } catch (error) {
         console.error("testTaskPoolClassStatic109 failed");
@@ -3112,7 +3112,7 @@ export default function TaskPoolTest(): void {
      * @tc.level  LEVEL0
      */
     it('testTaskPoolClassStatic116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      // 前半段（cancel 未提交任务→10200088，与 075 同点）按 reconcile 删除；保留并差异化后半段
+      // 前半段（cancel 未提交任务→10200015，与 075 同点）按 reconcile 删除；保留并差异化后半段
       let isTerminate1: boolean = false;
       let task2: taskpool.Task = new taskpool.Task(testCancelDelayed);
       let executePromise: Promise<Any> = taskpool.executeDelayed(500, task2);
@@ -3228,7 +3228,7 @@ export default function TaskPoolTest(): void {
         finalString += 'a';
       expect().assertFail();
     } catch (e) {
-        expect(e.code).assertEqual(10200091);
+        expect(e.code).assertEqual(10200025);
         expect(finalString).assertEqual('');
         // 依赖任务被 runner 拒绝、从未执行，时长应保持初始值（对齐上游 121/124 差异点）
         expect(task1.totalDuration < 5).assertTrue();
@@ -3635,7 +3635,7 @@ export default function TaskPoolTest(): void {
           taskpool.execute(task)
         expect().assertFail();
       } catch (e) {
-          expect(e.code).assertEqual(10200087);
+          expect(e.code).assertEqual(10200057);
         }
       } catch (error) {
         console.error(`testTaskPoolClassStatic135 failed`);
@@ -3806,7 +3806,7 @@ export default function TaskPoolTest(): void {
         task1.removeDependency(task2);
         expect().assertFail();
       } catch (error) {
-        expect(error.code).assertEqual(10200071);
+        expect(error.code).assertEqual(10200027);
       }
       try { await promise1; } catch (error) { console.info(`gate-catch: ${JSON.stringify(error)}`); }
       try { await promise2; } catch (error) { console.info(`gate-catch: ${JSON.stringify(error)}`); }
@@ -3840,7 +3840,7 @@ export default function TaskPoolTest(): void {
           task2.removeDependency(task3);
         expect().assertFail();
       } catch(e) {
-          expect(e.code).assertEqual(10200071);
+          expect(e.code).assertEqual(10200027);
         }
       } catch (error) {
         console.error(`testTaskPoolClassStatic143 failed`);
@@ -3865,7 +3865,7 @@ export default function TaskPoolTest(): void {
         task1.addDependency(task2);
         expect().assertFail();
       } catch(e) {
-        expect(e.code).assertEqual(10200070);
+        expect(e.code).assertEqual(10200025);
       }
       try { taskpool.cancel(task1); } catch (error) { console.info(`gate-catch: ${JSON.stringify(error)}`); }
       try { await delayedPromise; } catch (error) { console.info(`gate-catch: ${JSON.stringify(error)}`); }
@@ -3910,7 +3910,7 @@ export default function TaskPoolTest(): void {
         taskpool.executeDelayed(100, task, taskpool.Priority.IDLE);
         expect().assertFail();
       } catch(e) {
-        expect(e.code).assertEqual(10200081);
+        expect(e.code).assertEqual(10200057);
       }
       try { await executePromise; } catch (error) { console.info(`gate-catch: ${JSON.stringify(error)}`); }
       done();
@@ -3933,7 +3933,7 @@ export default function TaskPoolTest(): void {
         runner.execute(task1);
       expect().assertFail();
     } catch(e) {
-        expect(e.code).assertEqual(10200091);
+        expect(e.code).assertEqual(10200025);
       }
       done();
     })
@@ -4072,7 +4072,7 @@ export default function TaskPoolTest(): void {
         taskpool.cancel(taskGroup1);
         expect().assertFail();
       } catch(e) {
-        expect(e.code).assertEqual(10200089);
+        expect(e.code).assertEqual(10200018);
       }
       done();
     })
@@ -4179,7 +4179,7 @@ export default function TaskPoolTest(): void {
         runner2.execute(task);
       expect().assertFail();
     } catch(e) {
-        expect(e.code).assertEqual(10200078);
+        expect(e.code).assertEqual(10200057);
       }
 
       done();
@@ -4225,7 +4225,7 @@ export default function TaskPoolTest(): void {
         runner.execute(task1);
       expect().assertFail();
     } catch(e) {
-        expect(e.code).assertEqual(10200091);
+        expect(e.code).assertEqual(10200025);
       }
 
       done();
@@ -4247,7 +4247,7 @@ export default function TaskPoolTest(): void {
         taskpool.executeDelayed(100, task);
       expect().assertFail();
     } catch(e) {
-        expect(e.code).assertEqual(10200081);
+        expect(e.code).assertEqual(10200057);
       }
 
       done();
@@ -4269,7 +4269,7 @@ export default function TaskPoolTest(): void {
         await runner.execute(task);
       expect().assertFail();
     } catch(e) {
-        expect(e.code).assertEqual(10200078);
+        expect(e.code).assertEqual(10200057);
       }
 
       done();
@@ -4291,7 +4291,7 @@ export default function TaskPoolTest(): void {
         await runner.execute(task);
       expect().assertFail();
     } catch(e) {
-        expect(e.code).assertEqual(10200078);
+        expect(e.code).assertEqual(10200057);
       }
 
       done();
@@ -4314,7 +4314,7 @@ export default function TaskPoolTest(): void {
         await runner2.execute(task);
       expect().assertFail();
     } catch(e) {
-        expect(e.code).assertEqual(10200078);
+        expect(e.code).assertEqual(10200057);
       }
 
       done();
@@ -4423,7 +4423,7 @@ export default function TaskPoolTest(): void {
         taskpool.execute(task)
       expect().assertFail();
     } catch (e) {
-        expect(e.code).assertEqual(10200093);
+        expect(e.code).assertEqual(10200051);
       }
       taskpool.cancel(task);
       done();
@@ -4444,7 +4444,7 @@ export default function TaskPoolTest(): void {
         taskpool.executeDelayed(100, task)
       expect().assertFail();
     } catch (e) {
-        expect(e.code).assertEqual(10200092);
+        expect(e.code).assertEqual(10200051);
       }
       taskpool.cancel(task);
       done();
@@ -4466,7 +4466,7 @@ export default function TaskPoolTest(): void {
         task.addDependency(task1);
       expect().assertFail();
     } catch (e) {
-        expect(e.code).assertEqual(10200113);
+        expect(e.code).assertEqual(10200052);
       }
       taskpool.cancel(task);
       done();
@@ -4488,7 +4488,7 @@ export default function TaskPoolTest(): void {
         task1.addDependency(task);
       expect().assertFail();
     } catch (e) {
-        expect(e.code).assertEqual(10200113);
+        expect(e.code).assertEqual(10200052);
       }
       taskpool.cancel(task);
       done();
@@ -4532,7 +4532,7 @@ export default function TaskPoolTest(): void {
         runner.execute(task)
       expect().assertFail();
     } catch (e) {
-        expect(e.code).assertEqual(10200078);
+        expect(e.code).assertEqual(10200057);
       }
       taskpool.cancel(task);
       done();
@@ -4554,7 +4554,7 @@ export default function TaskPoolTest(): void {
         runner.execute(task)
       expect().assertFail();
     } catch (e) {
-        expect(e.code).assertEqual(10200078);
+        expect(e.code).assertEqual(10200057);
       }
       try {
         // 拒绝入 runner 不影响周期调度：轮询至首轮执行完成（totalDuration > 0）
@@ -4586,7 +4586,7 @@ export default function TaskPoolTest(): void {
         taskpool.executePeriodically(1000, task)
       expect().assertFail();
     } catch (e) {
-        expect(e.code).assertEqual(10200086);
+        expect(e.code).assertEqual(10200050);
       }
 
       taskpool.cancel(task)
@@ -4600,7 +4600,7 @@ export default function TaskPoolTest(): void {
         taskpool.executePeriodically(1000, task)
       expect().assertFail();
     } catch (e) {
-        expect(e.code).assertEqual(10200086);
+        expect(e.code).assertEqual(10200050);
       }
       done();
     })
@@ -4620,7 +4620,7 @@ export default function TaskPoolTest(): void {
         taskpool.executePeriodically(100, task)
       expect().assertFail();
     } catch (e) {
-        expect(e.code).assertEqual(10200086);
+        expect(e.code).assertEqual(10200050);
       }
 
       let task1 = new taskpool.Task(dependend, 200.0);
@@ -4630,7 +4630,7 @@ export default function TaskPoolTest(): void {
         taskpool.executePeriodically(100, task1)
       expect().assertFail();
     } catch (e) {
-        expect(e.code).assertEqual(10200086);
+        expect(e.code).assertEqual(10200050);
       }
 
       let task2 = new taskpool.Task(dependend, 200.0);
@@ -4640,7 +4640,7 @@ export default function TaskPoolTest(): void {
         taskpool.executePeriodically(100, task2)
       expect().assertFail();
     } catch (e) {
-        expect(e.code).assertEqual(10200086);
+        expect(e.code).assertEqual(10200050);
       }
 
       let task3 = new taskpool.Task(dependend, 200.0);
@@ -4650,13 +4650,13 @@ export default function TaskPoolTest(): void {
         taskpool.executePeriodically(100, task3)
       expect().assertFail();
     } catch (e) {
-        expect(e.code).assertEqual(10200090);
+        expect(e.code).assertEqual(10200052);
       }
       try {
         taskpool.executePeriodically(100, task4)
       expect().assertFail();
     } catch (e) {
-        expect(e.code).assertEqual(10200090);
+        expect(e.code).assertEqual(10200052);
       }
 
       let task5 = new taskpool.Task(dependend, 200.0);
@@ -4665,7 +4665,7 @@ export default function TaskPoolTest(): void {
         taskpool.executePeriodically(100, task5)
       expect().assertFail();
     } catch (e) {
-        expect(e.code).assertEqual(10200086);
+        expect(e.code).assertEqual(10200050);
       }
       taskpool.cancel(task5);
       try { await delayedPromise; } catch (error) { console.info(`gate-catch: ${JSON.stringify(error)}`); }
@@ -4832,7 +4832,7 @@ export default function TaskPoolTest(): void {
         taskpool.executePeriodically(-10, task, taskpool.Priority.HIGH)
       expect().assertFail();
     } catch (e) {
-        expect(e.code).assertEqual(10200096);
+        expect(e.code).assertEqual(10200028);
       }
       done();
     })
@@ -5414,7 +5414,7 @@ export default function TaskPoolTest(): void {
           taskpool.cancel(task);
         expect().assertFail();
       } catch (e) {
-          expect(e.code).assertEqual(10200082);
+          expect(e.code).assertEqual(10200057);
         }
       } catch (error) {
         console.error(`testTaskPoolClassStatic203 failed`);

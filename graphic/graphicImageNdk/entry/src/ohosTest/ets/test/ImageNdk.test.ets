@@ -27,6 +27,7 @@ const IMAGE_UNSUPPORTED_DATA_FORMAT = 7600207;
 const IMAGE_INVALID_REGION = 7600204;
 const IMAGE_ALLOC_FAILED = 7600301;
 const IMAGE_DATA_CONVERSION_FAILED = 7600306;
+const IMAGE_UNSUPPORTED_CONVERSION = 7600203;
 
 export default function imageNdkTest() {
   describe('ImageNdkTest', () => {

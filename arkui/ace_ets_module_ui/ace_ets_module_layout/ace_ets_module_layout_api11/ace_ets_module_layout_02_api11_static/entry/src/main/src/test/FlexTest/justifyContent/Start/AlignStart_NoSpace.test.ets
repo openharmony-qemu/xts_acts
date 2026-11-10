@@ -15,7 +15,7 @@
  */
 
 import { MessageManager, Callback } from '../../../../../ets/MainAbility/common/MessageManager';
-import { describe, beforeEach, it, expect, Level, afterEach } from '../../../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, afterEach } from '@ohos/hypium-static/src/main/indexStatic';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';

@@ -29,6 +29,7 @@ import VideoUndefinedModifierTest from './VideoTest/videoUndefinedModifier.test'
 import CircleFillStrokeTest from './Circle/CircleFillStrokeTest.test';
 
 export default function testsuite() {
+  CircleFillStrokeTest()
   XComponentModifierUndefinedTest()
   XComponentUndefinedTest()
   RectModifierUndefinedTest()
@@ -42,5 +43,4 @@ export default function testsuite() {
   PointsUndefinedModifierTest()
   VideoUndefinedTest()
   VideoUndefinedModifierTest()
-  CircleFillStrokeTest()
 }

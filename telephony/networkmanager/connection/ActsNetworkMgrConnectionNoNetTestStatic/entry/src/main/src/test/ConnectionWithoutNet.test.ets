@@ -1,5 +1,5 @@
 'use static';
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium-static/src/main/indexStatic";
 import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
@@ -23,7 +23,7 @@ const ExpectTrue = (n: boolean) => {
   }
 }
 
-export default function ConnectionWithoutNetTest() {
+export default function ConnectionWithoutNetTest(): void {
 
   describe("ConnectionWithoutNetTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
@@ -42,13 +42,13 @@ export default function ConnectionWithoutNetTest() {
       try {
         connection.getDefaultNet((err: BusinessError<void> |null, data: connection.NetHandle| undefined) => {
           console.info(`${caseName} getDefaultNet callback: err->${JSON.stringify(err)} data->${JSON.stringify(data)}`);
-          if (err?.code != 0) {
+          if (err?.code !== 0) {
             hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
             ExpectFail();
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
           } else {
-            ExpectTrue(data?.netId == 0);
+            ExpectTrue(data?.netId === 0);
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
           }
@@ -73,18 +73,19 @@ export default function ConnectionWithoutNetTest() {
       const caseName: string = "testNetConnectionGetDefaultNetPromise_static_0200";
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
-        connection.getDefaultNet().then((data: connection.NetHandle) => {
+        try {
+          let data = await connection.getDefaultNet();
           hilog.info(domain, tag, '%{public}s', caseName +': getDefaultNet data ->'+JSON.stringify(data));
-          ExpectTrue(data.netId == 0);
+          ExpectTrue(data.netId === 0);
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
-        }).catch((error: Error) => {
+        } catch (error) {
           let err = error as BusinessError;
           hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
           ExpectFail();
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
-        });
+        }
       } catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName +'  catcherror is '+JSON.stringify(err));
         ExpectFail();
@@ -106,7 +107,7 @@ export default function ConnectionWithoutNetTest() {
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
         let netHandle: connection.NetHandle = connection.getDefaultNetSync();
-        ExpectTrue(netHandle.netId == 0);
+        ExpectTrue(netHandle.netId === 0);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       } catch (err) {

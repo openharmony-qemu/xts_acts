@@ -7,6 +7,14 @@
     "MainAbility/pages/Prefetcher/IDataSourcePrefetchingMethods",
     "MainAbility/pages/ReuseObject/ReuseObjectRaw",
     "MainAbility/pages/LazyForeach/LazyForEachReleaseStrategy",
-    "MainAbility/pages/LazyForeach/LazyForEachCustomComponentFreezeModeStatic"
+    "MainAbility/pages/LazyForeach/LazyForEachCustomComponentFreezeModeStatic",
+    "MainAbility/pages/repeat/RepeatAllowReuseInAnimationGrid",
+    "MainAbility/pages/repeat/RepeatAllowReuseInAnimationWaterFlow",
+    "MainAbility/pages/repeat/RepeatAllowReuseInAnimationNullUndefined",
+    "MainAbility/pages/LazyForeach/ClearCacheLazyForEachReusableStatic",
+    "MainAbility/pages/LazyForeach/ClearCacheLazyForEachReusableV2Static",
+    "MainAbility/pages/LazyForeach/IDefaultReusePoolClearCacheNullUndefinedStatic",
+    "MainAbility/pages/repeat/ClearCacheRepeatReusableStatic",
+    "MainAbility/pages/repeat/ClearCacheRepeatReusableV2Static"
   ]
 }

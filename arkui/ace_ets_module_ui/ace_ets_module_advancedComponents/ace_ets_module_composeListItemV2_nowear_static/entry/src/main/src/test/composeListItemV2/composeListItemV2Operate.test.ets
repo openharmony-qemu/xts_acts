@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import { Driver, ON, Component } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -206,6 +206,9 @@ export default function composeListItemV2OperateTest() {
       console.info('[composeListItemV2Operate_static_0700] START');
       try {
         let driver = Driver.create();
+        await driver.delayMs(1000);
+        let scrollBar = await driver.findComponent(ON.type('Scroll'));
+        let searchText = await (scrollBar?.scrollSearch(ON.text('Operate Text')) as Promise<Component>);
         await driver.delayMs(2000);
         let operateText = await driver.findComponent(ON.text('Operate Text'));
         expect(operateText !== null).assertTrue();
@@ -229,10 +232,10 @@ export default function composeListItemV2OperateTest() {
       console.info('[composeListItemV2Operate_static_0800] START');
       try {
         let driver = Driver.create();
-        await driver.delayMs(2000);
-        let scrollBar = await driver.findComponent(ON.type('Scroll'));
-        let searchText = await (scrollBar?.scrollSearch(ON.text('Operate image')) as Promise<Component>);
         await driver.delayMs(1000);
+        let scrollBar = await driver.findComponent(ON.type('Scroll'));
+        await scrollBar!.scrollToBottom();
+        await driver.delayMs(2000);
         let operateText = await driver.findComponent(ON.text('Operate image'));
         expect(operateText !== null).assertTrue();
         await driver.delayMs(1000);

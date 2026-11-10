@@ -16,7 +16,7 @@
 
 import { BusinessError } from '@ohos.base';
 import sim from '@ohos.telephony.sim';
-import { describe, it, expect, beforeAll, Level, TestType, Size } from '../../../hypium/index';
+import { describe, it, expect, beforeAll, Level, TestType, Size } from '@ohos/hypium-static/src/main/indexStatic';
 import bundleManager from '@ohos.bundle.bundleManager';
 import account from '@ohos.account.osAccount';
 import hilog from '@ohos.hilog';
@@ -56,7 +56,7 @@ export default function Sim3Public() {
       let caseName: string = 'testTelephonySimGetMaxSimCount0100';
       console.info(`${caseName} test start `);
       let maxSimCount: number = sim.getMaxSimCount();
-      ExpectTrue(maxSimCount >= 0);
+      ExpectTrue(maxSimCount >= 0 && maxSimCount <= 3);
       console.info(`${caseName} test end `);
       done();
     });

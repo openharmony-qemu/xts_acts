@@ -17,6 +17,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
 import { AbilityConstant, Want } from '@kit.AbilityKit';
+import { BusinessError } from '@ohos.base';
 
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
@@ -38,6 +39,25 @@ export default class EntryAbility extends UIAbility {
       }
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
     });
+    let windowClass: window.Window | undefined = undefined;
+    windowStage.getMainWindow((err: BusinessError, data) => {
+      let errCode: number = err.code;
+      if (errCode) {
+        console.error('Failed to obtain the main window. Cause: ' + JSON.stringify(err));
+        return;
+      }
+      windowClass = data;
+      hilog.info(0x0000, 'testTag', 'Succeeded in obtaining the main window. Data: ' + JSON.stringify(data));
+      try {
+        let properties: window.WindowProperties = windowClass.getWindowProperties();
+        let wRect: window.Rect = properties.windowRect;
+        globalThis.winLeft = wRect.left;
+        globalThis.winTop = wRect.top;
+        hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + globalThis.winLeft + ',winTop:' + globalThis.winTop);
+      } catch (exception) {
+        hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
+      }
+    })
   }
 
   onWindowStageDestroy() {

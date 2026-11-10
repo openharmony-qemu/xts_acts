@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import { Driver, ON, Component, MouseButton, PointerMatrix } from '@kit.TestKit';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -50,8 +50,8 @@ export default function SwipeGestureAllowedTypesTest() {
     });
 
 
-    
-    
+
+
 /**
      * @tc.number   SwipeGestureAllowedTypesTest_static_0010
      * @tc.name     SwipeGestureAllowedTypesTest_static_0010
@@ -65,7 +65,7 @@ it('SwipeGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () => 
       let windowOffsetX:number = AppStorage.get<number>("winLeft") as number
       let windowOffsetY:number = AppStorage.get<number>("winTop") as number
       console.log('SwipeGestureAllowedTypesTest_static_0010 windowOffsetX and windowOffsetY',windowOffsetX, windowOffsetY)
-      let areaObj1 = CommonFunc.getComponentRectOnScreen('SwipeGestureAllowedTypes' + '_Text');
+      let areaObj1 = CommonFunc.getComponentRectOnScreen('SwipeGestureAllowedTypes_Text');
       let areaHeight1 = areaObj1.bottom - areaObj1.top
       let areaWidth1 = areaObj1.right - areaObj1.left
       console.log('SwipeGestureAllowedTypesTest_static_0010 areaObj1',areaObj1.left,areaObj1.top,areaObj1.right,areaObj1.bottom)
@@ -76,45 +76,45 @@ it('SwipeGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () => 
       let driver = Driver.create();
       let speed = (Math.floor(areaWidth1 * 0.6 / 0.016 / 1000) * 1000).toInt()
       await CommonFunc.sleep(1000);
-      await driver.swipeBetween({x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID}, {x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID}, speed)
+      await driver.swipeBetween({x: Math.round(areaObj1.left + areaWidth1/2).toInt(), y: Math.round(areaObj1.top + areaHeight1 * 0.7).toInt(), displayId: displayID}, {x: Math.round(areaObj1.left + areaWidth1/2).toInt(), y: Math.round(areaObj1.top + areaHeight1 * 0.3).toInt(), displayId: displayID}, speed)
       await CommonFunc.sleep(3000);
-      let text1 = inspector.getInspectorByKey('SwipeGestureAllowedTypes' + '_result');
+      let text1 = inspector.getInspectorByKey('SwipeGestureAllowedTypes_result');
       let obj1 = JSON.parseJsonElement(text1);
       console.log('SwipeGestureAllowedTypesTest_static_0010 obj1 $attrs content',obj1.getElement('$attrs').getString('content'),obj1)
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('allowed types success');
 
       // click button to change types to [SourceTool.MOUSE]
-      let button1 = await (driver.findComponent(ON.id('SwipeGestureAllowedTypes' + '_Mouse_Type')) as Promise<Component>);
+      let button1 = await (driver.findComponent(ON.id('Mouse_Type')) as Promise<Component>);
       await button1.click();
       await CommonFunc.sleep(3000);
-      let text2 = inspector.getInspectorByKey('SwipeGestureAllowedTypes' + '_result');
+      let text2 = inspector.getInspectorByKey('SwipeGestureAllowedTypes_result');
       let obj2 = JSON.parseJsonElement(text2);
       console.log('SwipeGestureAllowedTypesTest_static_0010 obj2 $attrs content',obj2.getElement('$attrs').getString('content'),obj2)
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('allowed types default');
 
       // trigger gesture again with finger
       await CommonFunc.sleep(1000);
-      await driver.swipeBetween({x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID}, {x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID}, speed)
+      await driver.swipeBetween({x: Math.round(areaObj1.left + areaWidth1/2).toInt(), y: Math.round(areaObj1.top + areaHeight1 * 0.7).toInt(), displayId: displayID}, {x: Math.round(areaObj1.left + areaWidth1/2).toInt(), y: Math.round(areaObj1.top + areaHeight1 * 0.3).toInt(), displayId: displayID}, speed)
       await CommonFunc.sleep(3000);
-      let text3 = inspector.getInspectorByKey('SwipeGestureAllowedTypes' + '_result');
+      let text3 = inspector.getInspectorByKey('SwipeGestureAllowedTypes_result');
       let obj3 = JSON.parseJsonElement(text3);
       console.log('SwipeGestureAllowedTypesTest_static_0010 obj3 $attrs content',obj3.getElement('$attrs').getString('content'),obj3)
       expect(obj3.getElement('$attrs').getString('content')).assertEqual('allowed types default');
 
       // click button to change types to [SourceTool.Finger]
-      let button2 = await (driver.findComponent(ON.id('SwipeGestureAllowedTypes' + '_Finger_Type')) as Promise<Component>);
+      let button2 = await (driver.findComponent(ON.id('Finger_Type')) as Promise<Component>);
       await button2.click();
       await CommonFunc.sleep(3000);
-      let text4 = inspector.getInspectorByKey('SwipeGestureAllowedTypes' + '_result');
+      let text4 = inspector.getInspectorByKey('SwipeGestureAllowedTypes_result');
       let obj4 = JSON.parseJsonElement(text4);
       console.log('SwipeGestureAllowedTypesTest_static_0010 obj4 $attrs content',obj4.getElement('$attrs').getString('content'),obj4)
       expect(obj4.getElement('$attrs').getString('content')).assertEqual('allowed types default');
 
       // trigger gesture again with finger
       await CommonFunc.sleep(1000);
-      await driver.swipeBetween({x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID}, {x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID}, speed)
+      await driver.swipeBetween({x: Math.round(areaObj1.left + areaWidth1/2).toInt(), y: Math.round(areaObj1.top + areaHeight1 * 0.7).toInt(), displayId: displayID}, {x: Math.round(areaObj1.left + areaWidth1/2).toInt(), y: Math.round(areaObj1.top + areaHeight1 * 0.3).toInt(), displayId: displayID}, speed)
       await CommonFunc.sleep(3000);
-      let text5 = inspector.getInspectorByKey('SwipeGestureAllowedTypes' + '_result');
+      let text5 = inspector.getInspectorByKey('SwipeGestureAllowedTypes_result');
       let obj5 = JSON.parseJsonElement(text5);
       console.log('SwipeGestureAllowedTypesTest_static_0010 obj5 $attrs content',obj5.getElement('$attrs').getString('content'),obj5)
       expect(obj5.getElement('$attrs').getString('content')).assertEqual('allowed types success');
@@ -124,7 +124,7 @@ it('SwipeGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () => 
       let button3 = await (driver.findComponent(ON.id('Invalid_type')) as Promise<Component>);
       await button3.click();
       await CommonFunc.sleep(3000);
-      let text9 = inspector.getInspectorByKey('SwipeGestureAllowedTypes' + '_result');
+      let text9 = inspector.getInspectorByKey('SwipeGestureAllowedTypes_result');
       let obj9 = JSON.parseJsonElement(text9);
       console.log('SwipeGestureAllowedTypesTest_static_0010 obj9 $attrs content',obj9.getElement('$attrs').getString('content'),obj9)
       expect(obj9.getElement('$attrs').getString('content')).assertEqual('allowed types default');

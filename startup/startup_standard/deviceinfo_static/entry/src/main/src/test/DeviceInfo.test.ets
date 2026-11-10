@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll} from "@ohos/hypium-static/src/main/indexStatic";
 import { BusinessError } from '@ohos.base'
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
@@ -965,32 +965,6 @@ export default function DeviceInfoTest() {
     })
 
     /**
-     * @tc.name   deviceinfo_test_static_4000
-     * @tc.number SUB_STARTUP_JS_DEVCEINFO_4000
-     * @tc.desc   Get the hardwareProfile
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('deviceinfo_test_static_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('deviceinfo_test_static_4000 start');
-      let hardwareProfile = deviceinfo.hardwareProfile;
-      console.info('the value of the hardwareProfile is :' + hardwareProfile);
-      
-      if (hardwareProfile != "" && hardwareProfile != null && hardwareProfile != undefined) {
-        console.info('the value of the hardwareProfile is :' + hardwareProfile);
-        expect(hardwareProfile).assertInstanceOf('String');
-        done();
-      }
-      else {
-        console.info('the return value hardwareProfile is null or incorrect.');
-        expect().assertFail();
-        done();
-      }
-      console.info('deviceinfo_test_static_4000 : end');
-    })
-
-    /**
      * @tc.name   deviceinfo_test_static_4100
      * @tc.number SUB_STARTUP_JS_DEVCEINFO_4100
      * @tc.desc   Get the PerformanceClassLevel.CLASS_LEVEL_HIGH
@@ -1257,6 +1231,92 @@ export default function DeviceInfoTest() {
         done();
       }
       console.info('deviceinfo_test_static_5000 : end');
+    })
+
+    /**
+     * @tc.name   deviceinfo_test_static_5100
+     * @tc.number SUB_STARTUP_JS_DEVCEINFO_5100
+     * @tc.desc   Get the installTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('deviceinfo_test_static_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('deviceinfo_test_static_5100 start');
+      let installTimeInfo = deviceinfo.installTime;
+
+      if (installTimeInfo != "" && installTimeInfo != null && installTimeInfo != undefined) {
+        console.info('the value of the installTime is :' + installTimeInfo);
+        expect(installTimeInfo).assertInstanceOf('String');
+        done();
+      }
+      else {
+        console.info('the return value installTime is null or incorrect.');
+        expect().assertFail();
+        done();
+      }
+      console.info('deviceinfo_test_static_5100 : end');
+    })
+
+    /**
+     * @tc.name   deviceinfo_test_static_5200
+     * @tc.number SUB_STARTUP_JS_DEVCEINFO_5200
+     * @tc.desc   Get the installTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('deviceinfo_test_static_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('deviceinfo_test_static_5200 start');
+      let installTimeInfo = deviceinfo.installTime;
+      console.info('the value of the installTime is :' + installTimeInfo);
+
+      if (installTimeInfo != "" && installTimeInfo != null && installTimeInfo != undefined) {
+        let charArray: string[] = installTimeInfo.split('');
+        let bufferstr: string = '';
+        let isAllDigit: boolean = true;
+        for (let i = 0; i < charArray.length; i++) {
+          console.info('the value of the char[' + i + '] is :' + charArray[i]);
+          let charCode: int = charArray[i].charCodeAt(0);
+          if (charCode < 48 || charCode > 57) {
+            isAllDigit = false;
+            console.info('the char[' + i + '] is not a digit.');
+            break;
+          }
+          bufferstr += charArray[i];
+        }
+        console.info('the value of the bufferstr is :' + bufferstr);
+        expect(installTimeInfo).assertEqual(bufferstr);
+        console.info('the isAllDigit is :' + isAllDigit);
+        expect(isAllDigit).assertTrue();
+        done();
+      }
+      else {
+        console.info('the return value installTime is null or incorrect.');
+        expect().assertFail();
+        done();
+      }
+      console.info('deviceinfo_test_static_5200 : end');
+    })
+
+    /**
+     * @tc.name   deviceinfo_test_static_5300
+     * @tc.number SUB_STARTUP_JS_DEVCEINFO_5300
+     * @tc.desc   Get the installTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('deviceinfo_test_static_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('deviceinfo_test_static_5300 start');
+      let installTimeInfo = deviceinfo.installTime;
+      console.info('the value of the installTime is :' + installTimeInfo);
+
+      let len: int = installTimeInfo.length;
+      console.info('the value of the installTime characters is :' + len);
+      expect(len).assertLarger(0);
+      done();
+      console.info('deviceinfo_test_static_5300 : end');
     })
   })
 }

@@ -15,7 +15,7 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeEach,beforeAll, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach,beforeAll, afterEach, it, expect, Level } from "@ohos/hypium-static/src/main/indexStatic"
 import { Driver, ON, MouseButton } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import inspector from '@ohos.arkui.inspector'
@@ -30,6 +30,7 @@ import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function OnTextSelectionChangeTest() {
   describe('OnTextSelectionChangeTest', () : void=> {
     beforeAll(async (): Promise<void> => {
@@ -54,9 +55,10 @@ export default function OnTextSelectionChangeTest() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push OnTextSelectionChangeTest page error:" + err);
+        console.log("push OnTextSelectionChangeTest page error:" + err);
       }
       console.info("OnTextSelectionChangeTest beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);
@@ -78,11 +80,19 @@ it('OnTextSelectionChangeTest_static_0010', Level.LEVEL2, async (done: ()=> void
         let clickX2 = Math.round(textRect.right - 2).toInt()
         let clickX3 = Math.round(textRect.right + 10).toInt()
         let clickY = Math.round((textRect.bottom + textRect.top)/2).toInt()
-        await driver.mouseDrag({ x: clickX1, y: clickY },{ x: clickX2, y: clickY }, 600);
+        try {
+          await driver.mouseDrag({ x: clickX1, y: clickY, displayId: displayID },{ x: clickX2, y: clickY, displayId: displayID }, 600);
+        } catch (err) {
+          console.log('driver.mouseDrag error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
         console.info('[OnTextSelectionChangeTest_0010] get1: ' + AppStorage.get<string>('OnTextSelectionChange'));
         expect(AppStorage.get<string>('OnTextSelectionChange')).assertEqual('start:0,end:11');
-        await driver.mouseClick({ x: clickX3, y: clickY }, MouseButton.MOUSE_BUTTON_LEFT);
+        try {
+          await driver.mouseClick({ x: clickX3, y: clickY, displayId: displayID }, MouseButton.MOUSE_BUTTON_LEFT);
+        } catch (err) {
+          console.log('driver.mouseClick error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
         console.info('[OnTextSelectionChangeTest_0010] get2: ' + AppStorage.get<string>('OnTextSelectionChange'));
         expect(AppStorage.get<string>('OnTextSelectionChange')).assertEqual('start:-1,end:-1');
@@ -100,13 +110,33 @@ it('OnTextSelectionChangeTest_static_0020', Level.LEVEL2, async (done: ()=> void
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       // 点击tab键(2049),Text控件获焦
-      await driver.triggerKey(2049);
+      try {
+        await driver.triggerKey(2049, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       // 点击shift键(2047)+向右方向键(2015)
-      await driver.triggerCombineKeys(2047, 2015);
-      await driver.triggerCombineKeys(2047, 2015);
-      await driver.triggerCombineKeys(2047, 2015);
-      await driver.triggerCombineKeys(2047, 2015);
+      try {
+        await driver.triggerCombineKeys(2047, 2015, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
+      try {
+        await driver.triggerCombineKeys(2047, 2015, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
+      try {
+        await driver.triggerCombineKeys(2047, 2015, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
+      try {
+        await driver.triggerCombineKeys(2047, 2015, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       console.info('[OnTextSelectionChangeTest_0020] get1: ' + AppStorage.get<string>('OnTextSelectionChange'));
 
@@ -115,7 +145,11 @@ it('OnTextSelectionChangeTest_static_0020', Level.LEVEL2, async (done: ()=> void
         let clickX = Math.round((textRect.left + textRect.right)/2).toInt()
         let clickY = Math.round(textRect.bottom - 10).toInt()
         // 鼠标左键点击文本外，文本取消选中
-        await driver.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_LEFT);
+        try {
+          await driver.mouseClick({ x: clickX, y: clickY, displayId: displayID }, MouseButton.MOUSE_BUTTON_LEFT);
+        } catch (err) {
+          console.log('driver.mouseClick error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
         console.info('[OnTextSelectionChangeTest_0020] get2: ' + AppStorage.get<string>('OnTextSelectionChange'));
         expect(AppStorage.get<string>('OnTextSelectionChange')).assertEqual('start:-1,end:-1');
@@ -138,7 +172,11 @@ it('OnTextSelectionChangeTest_static_0030', Level.LEVEL2, async (done: ()=>void)
         let textRect = CommonFunc.getComponentRectOnScreen('OnTextSelectionChange_text');
         let clickX = Math.round(textRect.right + 10).toInt()
         let clickY = Math.round((textRect.bottom + textRect.top)/2).toInt()
-        await driver.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_LEFT);
+        try {
+          await driver.mouseClick({ x: clickX, y: clickY, displayId: displayID }, MouseButton.MOUSE_BUTTON_LEFT);
+        } catch (err) {
+          console.log('driver.mouseClick error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
         console.info('[OnTextSelectionChangeTest_0030] get2: ' +
         AppStorage.get<string>('OnTextSelectionChange'));

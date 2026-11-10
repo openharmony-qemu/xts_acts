@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,7 +15,7 @@
 import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
-import { BusinessError } from '@kit.BasicServicesKit';
+import { BusinessError, RecordData } from '@kit.BasicServicesKit';
 
 let terminateSelf = false;
 export default class EntryAbility extends UIAbility {
@@ -44,7 +44,7 @@ export default class EntryAbility extends UIAbility {
     });
   }
 
-  onCollaborate(wantParam: Record<string, Object>): AbilityConstant.CollaborateResult {
+  onCollaborate(wantParam: Record<string, RecordData>): AbilityConstant.CollaborateResult {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCollaborate');
 		return 0;
 	}

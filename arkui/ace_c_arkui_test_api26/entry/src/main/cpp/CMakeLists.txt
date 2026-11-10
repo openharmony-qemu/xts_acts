@@ -32,6 +32,9 @@ add_library(nativerender SHARED
     arcSwiper/ArcSwiperEventCallbackTest.cpp
     arcAlphabetIndexer/ArcAlphabetIndexerEventCallbackTest.cpp
     dragEventSummary/DragEventSummaryTest.cpp
+    node/ImageCollectionTakeItemByNodeId.cpp
+    node/UIAgentGetPageTextErrorCodeTest.cpp
+    node/UIContentChangeEventGetTest.cpp
 )
 
  add_library(nativeNode SHARED 
@@ -42,7 +45,9 @@ add_library(nativerender SHARED
 
 add_library(nativefunc SHARED
     NapiFuncInitTest.cpp
-    hovered/HoveredTest.cpp
+    collection/CollectionEnumTest.cpp
+    hovered/HoveredTest.cpp    
+    node/BufferQueueSizeTest.cpp
 )
 
 add_library(nativeanim SHARED

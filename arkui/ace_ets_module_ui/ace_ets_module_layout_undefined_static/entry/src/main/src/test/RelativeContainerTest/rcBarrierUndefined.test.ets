@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -45,59 +45,71 @@ export default function ContainerBarrierUndefinedTest() {
     });
 
     /**
-     * @tc.number    ContainerBarrierUndefinedTest_static_0100
-     * @tc.name      ContainerBarrierUndefinedTest_static_0100
-     * @tc.desc      ContainerBarrierUndefinedTest_static_0100
+     * @tc.number    SUB_ARKUI_API_ContainerBarrierUndefinedTest_static_0100
+     * @tc.name      SUB_ARKUI_API_ContainerBarrierUndefinedTest_static_0100
+     * @tc.desc      SUB_ARKUI_API_ContainerBarrierUndefinedTest_static_0100
      * @tc.level     Level.LEVEL1
      */
-    it('ContainerBarrierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('ContainerBarrierUndefinedTest_static_0100 START');
-      await CommonFunc.sleep(500);
-      let driver: Driver = Driver.create();
-      let container = await driver.findComponent(ON.id('row4')) as Component;
-      let target = await container.getBounds();
-      let row = await driver.findComponent(ON.id('row1')) as Component;
-      let bounds = await row.getBounds();
-      expect(Math.abs(Math.round(bounds.left - target.left)) <= 1).assertTrue();
+    it('SUB_ARKUI_API_ContainerBarrierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('SUB_ARKUI_API_ContainerBarrierUndefinedTest_static_0100 START');
+        await CommonFunc.sleep(500);
+        let driver: Driver = Driver.create();
+        let container = await driver.findComponent(ON.id('row4')) as Component;
+        let target = await container.getBounds();
+        let row = await driver.findComponent(ON.id('row1')) as Component;
+        let bounds = await row.getBounds();
+        expect(Math.abs(Math.round(bounds.left - target.left)) <= 1).assertTrue();
 
-      let changeBtn = await driver.findComponent(ON.id('changeButton1'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        let changeBtn = await driver.findComponent(ON.id('changeButton1'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      container = await driver.findComponent(ON.id('row4')) as Component;
-      target = await container.getBounds();
-      row = await driver.findComponent(ON.id('row1')) as Component;
-      bounds = await row.getBounds();
-      expect(Math.abs(Math.round(bounds.left - target.left)) == 0).assertTrue();
-      console.info('ContainerBarrierUndefinedTest_static_0100 END');
-      done();
+        container = await driver.findComponent(ON.id('row4')) as Component;
+        target = await container.getBounds();
+        row = await driver.findComponent(ON.id('row1')) as Component;
+        bounds = await row.getBounds();
+        expect(Math.abs(Math.round(bounds.left - target.left)) == 0).assertTrue();
+        console.info('SUB_ARKUI_API_ContainerBarrierUndefinedTest_static_0100 END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_ContainerBarrierUndefinedTest_static_0100] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
-     * @tc.number    ContainerBarrierUndefinedTest_static_0200
-     * @tc.name      ContainerBarrierUndefinedTest_static_0200
-     * @tc.desc      ContainerBarrierUndefinedTest_static_0200
+     * @tc.number    SUB_ARKUI_API_ContainerBarrierUndefinedTest_static_0200
+     * @tc.name      SUB_ARKUI_API_ContainerBarrierUndefinedTest_static_0200
+     * @tc.desc      SUB_ARKUI_API_ContainerBarrierUndefinedTest_static_0200
      * @tc.level     Level.LEVEL1
      */
-    it('ContainerBarrierUndefinedTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('ContainerBarrierUndefinedTest_static_0200 START');
-      await CommonFunc.sleep(500);
-      let driver: Driver = Driver.create();
-      let container = await driver.findComponent(ON.id('row14')) as Component;
-      let target = await container.getBounds();
-      let row = await driver.findComponent(ON.id('row11')) as Component;
-      let bounds = await row.getBounds();
-      expect(Math.abs(Math.round(bounds.left - target.left)) <= 1).assertTrue();
-      let changeBtn = await driver.findComponent(ON.id('changeButton2'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      container = await driver.findComponent(ON.id('row14')) as Component;
-      target = await container.getBounds();
-      row = await driver.findComponent(ON.id('row11')) as Component;
-      bounds = await row.getBounds();
-      expect(Math.abs(Math.round(bounds.left - target.left)) == 0).assertTrue();
-      console.info('ContainerBarrierUndefinedTest_static_0200 END');
-      done();
+    it('SUB_ARKUI_API_ContainerBarrierUndefinedTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('SUB_ARKUI_API_ContainerBarrierUndefinedTest_static_0200 START');
+        await CommonFunc.sleep(500);
+        let driver: Driver = Driver.create();
+        let container = await driver.findComponent(ON.id('row14')) as Component;
+        let target = await container.getBounds();
+        let row = await driver.findComponent(ON.id('row11')) as Component;
+        let bounds = await row.getBounds();
+        expect(Math.abs(Math.round(bounds.left - target.left)) <= 1).assertTrue();
+        let changeBtn = await driver.findComponent(ON.id('changeButton2'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        container = await driver.findComponent(ON.id('row14')) as Component;
+        target = await container.getBounds();
+        row = await driver.findComponent(ON.id('row11')) as Component;
+        bounds = await row.getBounds();
+        expect(Math.abs(Math.round(bounds.left - target.left)) == 0).assertTrue();
+        console.info('SUB_ARKUI_API_ContainerBarrierUndefinedTest_static_0200 END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_ContainerBarrierUndefinedTest_static_0200] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

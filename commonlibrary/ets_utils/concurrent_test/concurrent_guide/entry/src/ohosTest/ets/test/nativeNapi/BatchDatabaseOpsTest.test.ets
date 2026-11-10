@@ -17,6 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import { taskpool, collections } from '@kit.ArkTS';
 import { relationalStore } from '@kit.ArkData';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 interface IValueBucket {
   id: number
@@ -677,6 +678,45 @@ export default function BatchDatabaseOpsTest(): void {
       }
       completed = true
       expect(completed).assertTrue()
+    })
+
+    /**
+     * @tc.name   testBatchDatabaseOps2600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_DATABASE_OPS_TEST_2600
+     * @tc.desc   Verify concurrent TaskPool batch inserts into the same table keep the row count consistent;
+     *            write conflicts are recorded with their error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testBatchDatabaseOps2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let taskCount: number = 8
+      let rowsPerTask: number = 5
+      let successRows: number = 0
+      let conflictCode: number = 0
+      let settled: Promise<void>[] = []
+      for (let t: number = 0; t < taskCount; t++) {
+        let names: string[] = []
+        let ages: number[] = []
+        let salaries: number[] = []
+        for (let i: number = 0; i < rowsPerTask; i++) {
+          names.push('race_' + t.toString() + '_' + i.toString())
+          ages.push(20 + i)
+          salaries.push(1000.0 + i)
+        }
+        let task = new taskpool.Task(insertInTaskPool, context, DB_NAME, TABLE_NAME, names, ages, salaries)
+        settled.push(taskpool.execute(task).then((value) => {
+          successRows += value as number
+        }).catch((err: BusinessError) => {
+          conflictCode = err.code
+          console.info(`testBatchDatabaseOps2600 insert conflict: code => ${conflictCode} message => ${err.message}`)
+        }))
+      }
+      await Promise.all(settled)
+      let count = await taskpool.execute(new taskpool.Task(queryCountInTaskPool, context, DB_NAME, TABLE_NAME)) as number
+      expect(count).assertEqual(successRows)
+      console.info(`testBatchDatabaseOps2600 successRows: ${successRows}, count: ${count}, conflictCode: ${conflictCode}`)
+      done()
     })
   })
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -69,6 +69,7 @@ export default function onScrollStopModifierUndefinedTest() {
       expect(onScrollStopValue1.asString()).assertEqual('Count2');
 
       let driver2 = Driver.create();
+      await CommonFunc.sleep(500);
       let btn1 = await driver2.findComponent(ON.id('changeButton')) as Component;
       await btn1.click();
       await CommonFunc.sleep(500);

@@ -21,7 +21,7 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter'
@@ -76,17 +76,17 @@ it('RouterBackAlert_static_0100', Level.LEVEL0, async (done: () => void): Promis
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
-      await driver.delayMs(500);
+      await CommonFunc.sleep(1000);
 
       let btn1 = await driver.findComponent(ON.id('push1Id'));
       await (btn1?.click() as Promise<void>)
       console.info('[RouterBackAlert_0100] btn1 click');
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
 
       let btn2 = await driver.findComponent(ON.id('enableId'));
       await (btn2?.click() as Promise<void>)
       console.info('[RouterBackAlert_0100] btn2 click');
-      await driver.delayMs(3000);
+      await CommonFunc.sleep(3000);
 
       // await driver.assertComponentExist(ON.type('Dialog'));
 
@@ -95,7 +95,7 @@ it('RouterBackAlert_static_0100', Level.LEVEL0, async (done: () => void): Promis
       
       // await (buttonList![2]?.click() as Promise<void>);
       console.info('[RouterBackAlert_0100] btn3 click');
-      await driver.delayMs(3000);
+      await CommonFunc.sleep(3000);
 
       // let enableSuccess:number = AppStorage.get('enableSuccess')! as number
       // let enableComplete:number = AppStorage.get('enableComplete')! as number
@@ -109,12 +109,12 @@ it('RouterBackAlert_static_0100', Level.LEVEL0, async (done: () => void): Promis
       let btn4 = await driver.findComponent(ON.id('push1Id'));
       await (btn4?.click() as Promise<void>)
       console.info('[RouterBackAlert_0100] btn4 click');
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
 
       let btn5 = await driver.findComponent(ON.id('enableId'));
       await (btn5?.click() as Promise<void>)
       console.info('[RouterBackAlert_0100] btn5 click');
-      await driver.delayMs(3000);
+      await CommonFunc.sleep(3000);
 
       // await driver.assertComponentExist(ON.type('Dialog'));
 
@@ -123,7 +123,7 @@ it('RouterBackAlert_static_0100', Level.LEVEL0, async (done: () => void): Promis
       
       await (buttonList2![1]?.click() as Promise<void>);
       console.info('[RouterBackAlert_0100] btn6 click');
-      await driver.delayMs(3000);
+      await CommonFunc.sleep(3000);
 
       // let enableCancel:number = AppStorage.get('enableCancel')! as number
       // let enableComplete2:number = AppStorage.get('enableComplete')! as number
@@ -155,17 +155,17 @@ it('RouterBackAlert_0200', Level.LEVEL2, async (done: () => void): Promise<void>
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
-      await driver.delayMs(500);
+      await CommonFunc.sleep(1000);
 
       let btn1 = await driver.findComponent(ON.id('push2Id'));
       await (btn1?.click() as Promise<void>)
       console.info('[RouterBackAlert_0200] btn1 click');
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
 
       let btn2 = await driver.findComponent(ON.id('disableId'));
       await (btn2?.click() as Promise<void>)
       console.info('[RouterBackAlert_0200] btn2 click');
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
 
       // let disableSuccess:number = AppStorage.get('disableSuccess')! as number
       // let disableComplete:number = AppStorage.get('disableComplete')! as number

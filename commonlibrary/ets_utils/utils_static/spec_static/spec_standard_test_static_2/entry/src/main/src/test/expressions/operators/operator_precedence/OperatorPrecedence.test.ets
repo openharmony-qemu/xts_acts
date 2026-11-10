@@ -1,4 +1,4 @@
-﻿'use static'
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,7 +25,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 import Utils from '../../../Util.test'
 // 类、接口、函数定义
 interface Foo_7 {
@@ -446,7 +446,7 @@ export default function OperatorPrecedenceTest(): void {
       expect(res).assertEqual(3)
       res = t255 ^ t258.toByte()
       expect(res).assertEqual(253)
-      res = t3 <= t4 ? t257 : t258.toByte()
+      res = t3 <= t4 ? t257 : t258
       expect(res).assertEqual(257)
       res = t258 += t257.toByte()
       expect(res).assertEqual(259)

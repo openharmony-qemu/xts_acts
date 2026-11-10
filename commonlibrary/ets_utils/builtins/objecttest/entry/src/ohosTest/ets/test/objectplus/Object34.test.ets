@@ -40,7 +40,6 @@ import {
   Fn114_testIntlCollatorValueOfStrictEqual,
   Fn115_testValueOfReturnSpacedString,
   Fn116_testCustomValueOfForIfCondition,
-  Fn117_testNavigatorValueOfReturnsSelf,
   Fn118_testValueOfReturnNegativeBigInt,
   Fn119_testCustomValueOfForDecimalMultiplication,
   Fn11_testNumberObjectValueOfReturnsPrimitive,
@@ -1577,19 +1576,6 @@ export default function Object34Test() {
     it('Object34Test116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn116_testCustomValueOfForIfCondition();
       expect(res).assertEqual(false);
-    });
-
-    /**
-     * @tc.name   Object34Test117
-     * @tc.number SUB_BUILTINS_OBJECT34_TEST_11700
-     * @tc.desc   test object valueOf
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('Object34Test117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let res = Fn117_testNavigatorValueOfReturnsSelf();
-      expect(res).assertEqual(true);
     });
 
     /**

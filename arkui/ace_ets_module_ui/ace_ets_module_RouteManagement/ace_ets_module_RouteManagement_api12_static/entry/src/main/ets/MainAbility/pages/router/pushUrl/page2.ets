@@ -25,5 +25,7 @@ struct page2 {
     Column() {
       Text('page2').id('page2_text')
     }
+    .padding(10)
+    .margin(10)
   }
 }

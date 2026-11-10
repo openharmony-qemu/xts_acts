@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index'
+import { describe, beforeEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic'
 import router from '@ohos.router';
 import {  Component, Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -46,33 +46,39 @@ export default function CommonChainModeModifierUndefinedTest() {
     });
 
     /**
-     * @tc.number    CommonChainModeModifierUndefinedTest_static_0100
-     * @tc.name      CommonChainModeModifierUndefinedTest_static_0100
-     * @tc.desc      CommonChainModeModifierUndefinedTest_static_0100
+     * @tc.number    SUB_ARKUI_API_CommonChainModeModifierUndefinedTest_static_0100
+     * @tc.name      SUB_ARKUI_API_CommonChainModeModifierUndefinedTest_static_0100
+     * @tc.desc      SUB_ARKUI_API_CommonChainModeModifierUndefinedTest_static_0100
      * @tc.level     Level.LEVEL1
      */
-    it('CommonChainModeModifierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('CommonChainModeModifierUndefinedTest_static_0100 START');
-      await CommonFunc.sleep(500);
+    it('SUB_ARKUI_API_CommonChainModeModifierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('SUB_ARKUI_API_CommonChainModeModifierUndefinedTest_static_0100 START');
+        await CommonFunc.sleep(500);
 
-      let strJson = inspector.getInspectorByKey('row4');
-      let obj = JSON.parseJsonElement(strJson);
-      await CommonFunc.sleep(1000);
-      console.info('Test component obj is: ' + obj.getElement('$attrs'));
-      console.info('Test component obj.chainMode is: ' + obj.getElement('$attrs').tryGetElement('chainMode'));
+        let strJson = inspector.getInspectorByKey('row4');
+        let obj = JSON.parseJsonElement(strJson);
+        await CommonFunc.sleep(1000);
+        console.info('Test component obj is: ' + obj.getElement('$attrs'));
+        console.info('Test component obj.chainMode is: ' + obj.getElement('$attrs').tryGetElement('chainMode'));
 
-      let driver = Driver.create();
-      let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
-      await btn_true.click();
-      await CommonFunc.sleep(2000);
+        let driver = Driver.create();
+        let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+        await btn_true.click();
+        await CommonFunc.sleep(2000);
 
-      let strJson1 = inspector.getInspectorByKey('row4');
-      let obj1 = JSON.parseJsonElement(strJson1);
-      await CommonFunc.sleep(1000);
-      console.info('Test component obj is: ' + obj1.getElement('$attrs'));
-      expect(obj1.getElement('$attrs').tryGetElement('chainMode') === undefined).assertTrue();
-      console.info('CommonChainModeModifierUndefinedTest_static_0100 END');
-      done();
+        let strJson1 = inspector.getInspectorByKey('row4');
+        let obj1 = JSON.parseJsonElement(strJson1);
+        await CommonFunc.sleep(1000);
+        console.info('Test component obj is: ' + obj1.getElement('$attrs'));
+        expect(obj1.getElement('$attrs').tryGetElement('chainMode') === undefined).assertTrue();
+        console.info('SUB_ARKUI_API_CommonChainModeModifierUndefinedTest_static_0100 END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_CommonChainModeModifierUndefinedTest_static_0100] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

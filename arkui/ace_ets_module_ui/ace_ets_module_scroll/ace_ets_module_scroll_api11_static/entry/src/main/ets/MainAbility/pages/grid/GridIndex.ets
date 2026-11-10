@@ -16,7 +16,7 @@
 
 import hilog from '@ohos.hilog';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Hypium } from '../../../../../hypium/index'
+import { Hypium } from '@ohos/hypium-static/src/main/indexStatic'
 import { Entry, Component, Row, Column, Text, FontWeight } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -40,6 +40,8 @@ struct Index {
       }
       .width('100%')
     }
+    .padding(10)
+    .margin(10)
     .height('100%')
   }
 }

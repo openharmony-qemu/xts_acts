@@ -72,11 +72,13 @@ export function buildElement(
 }
 
 /**
- * Check whether the current device uses the open-source software path without privacyComputation.
+ * Probe whether the device runs the open-source (software) privacyComputation implementation.
  *
- * genPrivacyTarget is used as the capability probe. On a capable device, a valid call succeeds
- * and CheckSoftware returns false. On the open-source device, the capability gate rejects the
- * call before the computation library is loaded, so CheckSoftware returns true.
+ * NOTE: this is an async probe and must NOT be awaited from List.test.ets testsuite();
+ * the entry function has to stay synchronous. Use it only inside a describe/beforeAll
+ * (or an individual test case) when an API-probe based detection is really needed.
+ *
+ * @returns true when the capability is unavailable (probe throws), false otherwise
  */
 export async function CheckSoftware(): Promise<boolean> {
   try {

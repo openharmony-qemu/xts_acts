@@ -15,7 +15,7 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index'
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic'
 import router from '@ohos.router';
 import {
   Component,
@@ -254,6 +254,9 @@ export default function NavDestinationUndefinedTest() {
       let driver: Driver = await Driver.create()
       await CommonFunc.sleep(500);
       let BtnPop = await driver.findComponent(ON.id('NavDestination2_pop'));
+      let displayId: undefined | Int = 0;
+      await CommonFunc.sleep(1000);
+      displayId = await BtnPop?.getDisplayId();
       await CommonFunc.sleep(1000);
       let changeBtn = await driver.findComponent(ON.id('NavDestination_isBackAndReady'));
       await (changeBtn?.click() as Promise<void>);
@@ -263,7 +266,9 @@ export default function NavDestinationUndefinedTest() {
       await (Btn_page2?.click() as Promise<void>);
       console.info('[NavDestinationUndefinedTest_static_0500] POP2');
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2);
+      if (displayId != undefined) {
+        await driver.triggerKey(2, displayId as Int);
+      }
       await CommonFunc.sleep(1000);
       BtnPop = await driver.findComponent(ON.id('NavDestination2_pop'));
       await CommonFunc.sleep(2000);

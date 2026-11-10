@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import {  Component,  Driver,  ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -45,32 +45,38 @@ export default function ColumnReverseUndefinedTest() {
     });
 
     /**
-     * @tc.number    ColumnReverseModifierUndefinedTest_static_0100
-     * @tc.name      ColumnReverseModifierUndefinedTest_static_0100
-     * @tc.desc      ColumnReverseModifierUndefinedTest_static_0100
+     * @tc.number    SUB_ARKUI_API_ColumnReverseModifierUndefinedTest_static_0100
+     * @tc.name      SUB_ARKUI_API_ColumnReverseModifierUndefinedTest_static_0100
+     * @tc.desc      SUB_ARKUI_API_ColumnReverseModifierUndefinedTest_static_0100
      * @tc.level     Level.LEVEL1
      */
-    it('ColumnReverseModifierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('ColumnReverseModifierUndefinedTest_static_0100 START');
-      await CommonFunc.sleep(500);
-      let driver: Driver = Driver.create();
-      let container = await driver.findComponent(ON.id('column2')) as Component;
-      let column2 = await container.getBounds();
-      let target = await driver.findComponent(ON.id('column1')) as Component;
-      let column1 = await target.getBounds();
-      expect(Math.abs(Math.round(column1.left - column2.right)) > 1).assertTrue();
+    it('SUB_ARKUI_API_ColumnReverseModifierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('SUB_ARKUI_API_ColumnReverseModifierUndefinedTest_static_0100 START');
+        await CommonFunc.sleep(500);
+        let driver: Driver = Driver.create();
+        let container = await driver.findComponent(ON.id('column2')) as Component;
+        let column2 = await container.getBounds();
+        let target = await driver.findComponent(ON.id('column1')) as Component;
+        let column1 = await target.getBounds();
+        expect(Math.abs(Math.round(column1.left - column2.right)) > 1).assertTrue();
 
-      let changeBtn = await driver.findComponent(ON.id('changeButton'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        let changeBtn = await driver.findComponent(ON.id('changeButton'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      container = await driver.findComponent(ON.id('column2')) as Component;
-      column2 = await container.getBounds();
-      target = await driver.findComponent(ON.id('column1')) as Component;
-      column1 = await target.getBounds();
-      expect(Math.abs(Math.round(column2.right - column1.left)) > 1).assertTrue();
-      console.info('ColumnReverseModifierUndefinedTest_static_0100 END');
-      done();
+        container = await driver.findComponent(ON.id('column2')) as Component;
+        column2 = await container.getBounds();
+        target = await driver.findComponent(ON.id('column1')) as Component;
+        column1 = await target.getBounds();
+        expect(Math.abs(Math.round(column2.right - column1.left)) > 1).assertTrue();
+        console.info('SUB_ARKUI_API_ColumnReverseModifierUndefinedTest_static_0100 END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_ColumnReverseModifierUndefinedTest_static_0100] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -74,10 +74,10 @@ it('ListScrollTest1_0100', Level.LEVEL0, async (done: () => void): Promise<void>
       await driver.swipeBetween(
         { x: (Number.parseInt(`${(Math.round(left + width*0.2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(bottom - height/4)).toInt()}`)).toInt(),
-          displayId: displayId },
+          displayId: displayId.toInt() },
         { x: (Number.parseInt(`${(Math.round(left + width*0.2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(bottom - height/2)).toInt()}`)).toInt(),
-          displayId: displayId });
+          displayId: displayId.toInt() });
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('listScroll_1');
       let strJson1 = inspector.getInspectorByKey('listScroll_2');

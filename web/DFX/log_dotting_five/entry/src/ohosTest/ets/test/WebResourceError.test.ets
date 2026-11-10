@@ -69,11 +69,13 @@ export default function webResourceError() {
           expect().message("======> WLAN Network error").assertFail(); //方式一
           //throw new Error("======> WLAN Network error");//方式二
           done();
+          return;
         }
         if (data.chload >= 900 || data.rssi <= -80) {
           expect().message("======> WLAN Network error").assertFail();//方式一
           //throw new Error("======> WLAN Network error");//方式二
           done();
+          return;
         } else if (data.chload >= 500) {
           console.info("======> The internet connection is poor. ");
         }
@@ -82,6 +84,7 @@ export default function webResourceError() {
         console.info("======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
         throw (err as Error);
         done();
+        return;
       }
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
@@ -106,6 +109,34 @@ export default function webResourceError() {
       let component = await driver.findComponent(ON.id("WebResourceErrorButton"));
       await component.click();
     })
+  })
+
+  describe('webResourceErrorCustomErrorCodeTestSuite', () => {
+    beforeAll(async (done: Function) => {
+      let options: router.RouterOptions = {
+        url: 'testability/pages/webResourceError',
+      }
+      try {
+        router.clear();
+        let pages = router.getState();
+        if (!('webResourceError' == pages.name)) {
+          await router.pushUrl(options);
+        }
+      } catch (err) {
+        console.error('push webResourceError page error: ' + err);
+      }
+      await waitForComponent('WebResourceErrorButton');
+      done();
+    });
+
+    beforeEach(async (done: Function) => {
+      config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+        console.info('enable success');
+      }).catch((err: object) => {
+        console.error(`failed to enable, ${err}`);
+      });
+      done();
+    });
 
     /**
      * @tc.name   testGetCustomErrorCode001
@@ -116,12 +147,12 @@ export default function webResourceError() {
      * @tc.level  LEVEL1
      */
     it('testGetCustomErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGetCustomErrorCode001", 120010)
-      Utils.registerBaseEvent("testGetCustomErrorCode001", 32159, 120025, done,
+      Utils.emitEvent('testGetCustomErrorCode001', 120010)
+      Utils.registerBaseEvent('testGetCustomErrorCode001', 32159, 120025, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      let component = await driver.findComponent(ON.id("WebResourceErrorButton"));
+      let component = await driver.findComponent(ON.id('WebResourceErrorButton'));
       await component.click();
     })
   })

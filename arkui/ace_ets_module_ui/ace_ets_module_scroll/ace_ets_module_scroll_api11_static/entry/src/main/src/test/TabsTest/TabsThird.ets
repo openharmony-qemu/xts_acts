@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { Resource, BarMode, LayoutStyle, VerticalAlign, LayoutMode, TextOverflow, TextHeightAdaptivePolicy, FontWeight, FontStyle, Color, $r } from '@ohos.arkui.component';
-import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import router from '@ohos.router';

@@ -16,8 +16,10 @@
 #include "onAreaChange/AreaChangeErrorCodeTest.cpp"
 #include "gestureIntercept/GestureErrorCodeTest.cpp"
 #include "scroll/scrollWithMouseTest.cpp"
+#include "scroll/scrollWithKeyboardTest.cpp"
 #include "scroll/autoAdjustMarginTest.cpp"
 #include "scroll/scrollBarHeightTest.cpp"
+#include "scroll/scrollStateTest.cpp"
 #include "list/listBackBehaviorTest.cpp"
 #include "list/listEnableEditModeTest.cpp"
 #include "list/listEditModeOptionsTest.cpp"
@@ -50,9 +52,16 @@
 #include "node/SetUiDvsyncSwitchTest.cpp"
 #include "nativeModule/RuntimeCheckModeTest.cpp"
 #include "node/UIAgentGetPageTextTest.cpp"
+#include "node/UIAgentTreeRequestCreateTest.cpp"
+#include "node/UIAgentTreeRequestSetFilterTest.cpp"
 #include "node/GetImagesByNodeIdAsyncTest.cpp"
+#include "node/ContentChangeEventTest.cpp"
 #include "image/ImageAnimatorInterpolationTest.cpp"
 #include "calendarPicker/CalendarPickerFirstDayOfWeekTest.cpp"
+#include "accessibilityBindExportTree/AccessibilityBindExportTreeTest.cpp"
+#include "collection/CollectionEnumTest.cpp"
+#include "uiEventInjection/UIEventInjectionTest.cpp"
+#include "node/BufferQueueSizeTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -79,6 +88,16 @@ static napi_value Init(napi_env env, napi_value exports)
          napi_default, nullptr},
         {"ScrollWithMouseTest_004", nullptr, ScrollWithMouseTest_004, nullptr, nullptr, nullptr,
          napi_default, nullptr},
+        {"ScrollWithKeyboardTest_001", nullptr, ScrollWithKeyboardTest_001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ScrollWithKeyboardTest_002", nullptr, ScrollWithKeyboardTest_002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ScrollWithKeyboardTest_003", nullptr, ScrollWithKeyboardTest_003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ScrollWithKeyboardTest_004", nullptr, ScrollWithKeyboardTest_004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ScrollWithKeyboardTest_005", nullptr, ScrollWithKeyboardTest_005, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
         {"AutoAdjustMarginTest_001", nullptr, AutoAdjustMarginTest_001, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"AutoAdjustMarginTest_002", nullptr, AutoAdjustMarginTest_002, nullptr, nullptr, nullptr,
@@ -94,6 +113,12 @@ static napi_value Init(napi_env env, napi_value exports)
         {"ScrollBarHeightTest_003", nullptr, ScrollBarHeightTest_003, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"ScrollBarHeightTest_004", nullptr, ScrollBarHeightTest_004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ScrollStateTest_001", nullptr, ScrollStateTest_001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ScrollStateTest_002", nullptr, ScrollStateTest_002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ScrollStateTest_003", nullptr, ScrollStateTest_003, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"ScrollAlignmentStartTest_001", nullptr, ScrollAlignmentStartTest_001, nullptr, nullptr, nullptr,
          napi_default, nullptr},
@@ -305,6 +330,35 @@ static napi_value Init(napi_env env, napi_value exports)
         {"UIAgentGetPageTextTest004", nullptr, UIAgentGetPageTextTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UIAgentGetPageTextTest005", nullptr, UIAgentGetPageTextTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
 
+        {"UIAgentTreeRequestCreateTest001", nullptr, UIAgentTreeRequestCreateTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestCreateTest002", nullptr, UIAgentTreeRequestCreateTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestCreateTest003", nullptr, UIAgentTreeRequestCreateTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestCreateTest004", nullptr, UIAgentTreeRequestCreateTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestCreateTest005", nullptr, UIAgentTreeRequestCreateTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestCreateTest006", nullptr, UIAgentTreeRequestCreateTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestCreateTest007", nullptr, UIAgentTreeRequestCreateTest007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestCreateTest008", nullptr, UIAgentTreeRequestCreateTest008, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"UIAgentTreeRequestSetFilterTest001", nullptr, UIAgentTreeRequestSetFilterTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestSetFilterTest002", nullptr, UIAgentTreeRequestSetFilterTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestSetFilterTest003", nullptr, UIAgentTreeRequestSetFilterTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"UIAgentTreeRequestSetInteractionInfoTest001", nullptr, UIAgentTreeRequestSetInteractionInfoTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestSetInteractionInfoTest002", nullptr, UIAgentTreeRequestSetInteractionInfoTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestSetInteractionInfoTest003", nullptr, UIAgentTreeRequestSetInteractionInfoTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"UIAgentTreeRequestSetAccessibilityInfoTest001", nullptr, UIAgentTreeRequestSetAccessibilityInfoTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestSetAccessibilityInfoTest002", nullptr, UIAgentTreeRequestSetAccessibilityInfoTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestSetAccessibilityInfoTest003", nullptr, UIAgentTreeRequestSetAccessibilityInfoTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"UIAgentTreeRequestSetCollectVisualPropertiesTest001", nullptr, UIAgentTreeRequestSetCollectVisualPropertiesTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestSetCollectVisualPropertiesTest002", nullptr, UIAgentTreeRequestSetCollectVisualPropertiesTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestSetCollectVisualPropertiesTest003", nullptr, UIAgentTreeRequestSetCollectVisualPropertiesTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"UIAgentTreeRequestSetCollectFunctionalPropertiesTest001", nullptr, UIAgentTreeRequestSetCollectFunctionalPropertiesTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestSetCollectFunctionalPropertiesTest002", nullptr, UIAgentTreeRequestSetCollectFunctionalPropertiesTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentTreeRequestSetCollectFunctionalPropertiesTest003", nullptr, UIAgentTreeRequestSetCollectFunctionalPropertiesTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+
         {"GetImagesByNodeIdAsyncTest001", nullptr, GetImagesByNodeIdAsyncTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetImagesByNodeIdAsyncTest002", nullptr, GetImagesByNodeIdAsyncTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetImagesByNodeIdAsyncTest003", nullptr, GetImagesByNodeIdAsyncTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -313,7 +367,32 @@ static napi_value Init(napi_env env, napi_value exports)
         {"GetImagesByNodeIdAsyncTest006", nullptr, GetImagesByNodeIdAsyncTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetImagesByNodeIdAsyncTest007", nullptr, GetImagesByNodeIdAsyncTest007, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetImagesByNodeIdAsyncTest008", nullptr, GetImagesByNodeIdAsyncTest008, nullptr, nullptr, nullptr, napi_default, nullptr},
-		
+
+        {"ContentChangeEventTest001", nullptr, ContentChangeEventTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest002", nullptr, ContentChangeEventTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest003", nullptr, ContentChangeEventTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest004", nullptr, ContentChangeEventTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest005", nullptr, ContentChangeEventTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest006", nullptr, ContentChangeEventTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest007", nullptr, ContentChangeEventTest007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest008", nullptr, ContentChangeEventTest008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest009", nullptr, ContentChangeEventTest009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest010", nullptr, ContentChangeEventTest010, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest011", nullptr, ContentChangeEventTest011, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest012", nullptr, ContentChangeEventTest012, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest013", nullptr, ContentChangeEventTest013, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest014", nullptr, ContentChangeEventTest014, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest015", nullptr, ContentChangeEventTest015, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest016", nullptr, ContentChangeEventTest016, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest017", nullptr, ContentChangeEventTest017, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest018", nullptr, ContentChangeEventTest018, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest019", nullptr, ContentChangeEventTest019, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest020", nullptr, ContentChangeEventTest020, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest021", nullptr, ContentChangeEventTest021, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest022", nullptr, ContentChangeEventTest022, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest023", nullptr, ContentChangeEventTest023, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest024", nullptr, ContentChangeEventTest024, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest025", nullptr, ContentChangeEventTest025, nullptr, nullptr, nullptr, napi_default, nullptr},
 		{"testImageAnimatorInterpolation001", nullptr, TestImageAnimatorInterpolation001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testImageAnimatorInterpolation002", nullptr, TestImageAnimatorInterpolation002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testImageAnimatorInterpolation003", nullptr, TestImageAnimatorInterpolation003, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -330,6 +409,114 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testCalendarPickerFirstDayOfWeek006", nullptr, TestCalendarPickerFirstDayOfWeek006, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testCalendarPickerFirstDayOfWeek007", nullptr, TestCalendarPickerFirstDayOfWeek007, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testCalendarPickerFirstDayOfWeek008", nullptr, TestCalendarPickerFirstDayOfWeek008, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"BindExportTreeTest001", nullptr, BindExportTreeTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BindExportTreeTest002", nullptr, BindExportTreeTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BindExportTreeTest003", nullptr, BindExportTreeTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BindExportTreeTest004", nullptr, BindExportTreeTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BindExportTreeTest005", nullptr, BindExportTreeTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BindExportTreeTest006", nullptr, BindExportTreeTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BindExportTreeTest007", nullptr, BindExportTreeTest007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BindExportTreeTest008", nullptr, BindExportTreeTest008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BindExportTreeTest009", nullptr, BindExportTreeTest009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BindExportTreeTest010", nullptr, BindExportTreeTest010, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"UnbindExportTreeTest001", nullptr, UnbindExportTreeTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnbindExportTreeTest002", nullptr, UnbindExportTreeTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnbindExportTreeTest003", nullptr, UnbindExportTreeTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnbindExportTreeTest004", nullptr, UnbindExportTreeTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnbindExportTreeTest005", nullptr, UnbindExportTreeTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnbindExportTreeTest006", nullptr, UnbindExportTreeTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnbindExportTreeTest007", nullptr, UnbindExportTreeTest007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnbindExportTreeTest008", nullptr, UnbindExportTreeTest008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnbindExportTreeTest009", nullptr, UnbindExportTreeTest009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnbindExportTreeTest010", nullptr, UnbindExportTreeTest010, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"CollectionEnumTest_001", nullptr, CollectionEnumTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_002", nullptr, CollectionEnumTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_003", nullptr, CollectionEnumTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_004", nullptr, CollectionEnumTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_005", nullptr, CollectionEnumTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_006", nullptr, CollectionEnumTest_006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_007", nullptr, CollectionEnumTest_007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_008", nullptr, CollectionEnumTest_008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_009", nullptr, CollectionEnumTest_009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_010", nullptr, CollectionEnumTest_010, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_011", nullptr, CollectionEnumTest_011, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_012", nullptr, CollectionEnumTest_012, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_013", nullptr, CollectionEnumTest_013, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_014", nullptr, CollectionEnumTest_014, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_015", nullptr, CollectionEnumTest_015, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_016", nullptr, CollectionEnumTest_016, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_017", nullptr, CollectionEnumTest_017, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_018", nullptr, CollectionEnumTest_018, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_019", nullptr, CollectionEnumTest_019, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_020", nullptr, CollectionEnumTest_020, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_021", nullptr, CollectionEnumTest_021, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_022", nullptr, CollectionEnumTest_022, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_023", nullptr, CollectionEnumTest_023, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_024", nullptr, CollectionEnumTest_024, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_025", nullptr, CollectionEnumTest_025, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_026", nullptr, CollectionEnumTest_026, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_027", nullptr, CollectionEnumTest_027, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_028", nullptr, CollectionEnumTest_028, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_029", nullptr, CollectionEnumTest_029, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_030", nullptr, CollectionEnumTest_030, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_031", nullptr, CollectionEnumTest_031, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_032", nullptr, CollectionEnumTest_032, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_033", nullptr, CollectionEnumTest_033, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_034", nullptr, CollectionEnumTest_034, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_035", nullptr, CollectionEnumTest_035, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_036", nullptr, CollectionEnumTest_036, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_037", nullptr, CollectionEnumTest_037, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_038", nullptr, CollectionEnumTest_038, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_039", nullptr, CollectionEnumTest_039, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_040", nullptr, CollectionEnumTest_040, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_041", nullptr, CollectionEnumTest_041, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_042", nullptr, CollectionEnumTest_042, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_043", nullptr, CollectionEnumTest_043, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_044", nullptr, CollectionEnumTest_044, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_045", nullptr, CollectionEnumTest_045, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_046", nullptr, CollectionEnumTest_046, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_047", nullptr, CollectionEnumTest_047, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_048", nullptr, CollectionEnumTest_048, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CollectionEnumTest_049", nullptr, CollectionEnumTest_049, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"UIEventInjectionResultCodeTest001", nullptr, UIEventInjectionResultCodeTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectionResultCodeTest002", nullptr, UIEventInjectionResultCodeTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectionResultCodeTest003", nullptr, UIEventInjectionResultCodeTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectionResultCodeTest004", nullptr, UIEventInjectionResultCodeTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectCompositeCommandTest001", nullptr, UIEventInjectCompositeCommandTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectCompositeCommandTest002", nullptr, UIEventInjectCompositeCommandTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectCompositeCommandTest003", nullptr, UIEventInjectCompositeCommandTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectCompositeCommandTest004", nullptr, UIEventInjectCompositeCommandTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectCompositeCommandTest005", nullptr, UIEventInjectCompositeCommandTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectCompositeCommandTest006", nullptr, UIEventInjectCompositeCommandTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectCompositeCommandTest007", nullptr, UIEventInjectCompositeCommandTest007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectCompositeCommandTest008", nullptr, UIEventInjectCompositeCommandTest008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectCompositeCommandTest009", nullptr, UIEventInjectCompositeCommandTest009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectCompositeCommandTest010", nullptr, UIEventInjectCompositeCommandTest010, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectCompositeCommandTest011", nullptr, UIEventInjectCompositeCommandTest011, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectionCallbackTest001", nullptr, UIEventInjectionCallbackTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectionCallbackTest002", nullptr, UIEventInjectionCallbackTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"BufferQueueSizeTest001", nullptr, BufferQueueSizeTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest002", nullptr, BufferQueueSizeTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest003", nullptr, BufferQueueSizeTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest004", nullptr, BufferQueueSizeTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest005", nullptr, BufferQueueSizeTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest006", nullptr, BufferQueueSizeTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest007", nullptr, BufferQueueSizeTest007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest008", nullptr, BufferQueueSizeTest008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest009", nullptr, BufferQueueSizeTest009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest010", nullptr, BufferQueueSizeTest010, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest011", nullptr, BufferQueueSizeTest011, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest012", nullptr, BufferQueueSizeTest012, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest013", nullptr, BufferQueueSizeTest013, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest014", nullptr, BufferQueueSizeTest014, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest015", nullptr, BufferQueueSizeTest015, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest016", nullptr, BufferQueueSizeTest016, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest017", nullptr, BufferQueueSizeTest017, nullptr, nullptr, nullptr, napi_default, nullptr},
         };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

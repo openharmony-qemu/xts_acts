@@ -48,7 +48,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(OldErrorCode);
       }
       console.log(`${TestTag}, testApi8_UiDriver_findComponent_5 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi8_UiDriver_findComponents_5
@@ -76,7 +76,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(OldErrorCode);
       }
       console.log(`${TestTag}, testApi8_UiDriver_findComponents_5 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi8_UiDriver_assertComponentExist_5
@@ -104,7 +104,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(OldErrorCode);
       }
       console.log(`${TestTag}, testApi8_UiDriver_assertComponentExist_5 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi8_UiDriver_triggerKey_5
@@ -132,7 +132,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(OldErrorCode);
       }
       console.log(`${TestTag}, testApi8_UiDriver_triggerKey_5 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi8_UiDriver_click_5
@@ -174,7 +174,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(OldErrorCode);
       }
       console.log(`${TestTag}, testApi8_UiDriver_click_5 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi8_UiDriver_doubleClick_5
@@ -216,7 +216,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(OldErrorCode);
       }
       console.log(`${TestTag}, testApi8_UiDriver_doubleClick_5 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi8_UiDriver_longClick_5
@@ -258,7 +258,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(OldErrorCode);
       }
       console.log(`${TestTag}, testApi8_UiDriver_longClick_5 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi8_UiDriver_swipe_5
@@ -328,7 +328,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(OldErrorCode);
       }
       console.log(`${TestTag}, testApi8_UiDriver_swipe_5 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi8_UiDriver_screenCap_401
@@ -363,7 +363,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi8_UiDriver_screenCap_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi8_UiDriver_delayMs_5
@@ -391,7 +391,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(OldErrorCode);
       }
       console.log(`${TestTag}, testApi8_UiDriver_delayMs_5 END`);
-    })
+    }, undefined, 'emulator')
 
   })
 }

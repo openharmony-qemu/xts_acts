@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, afterEach, describe, it, TestType, Size, Level, expect } from '../../../hypium/index';
+import { beforeAll, beforeEach, afterEach, describe, it, TestType, Size, Level, expect } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../../src/test/Util.test';
 import inspector from '@ohos.arkui.inspector';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -93,7 +93,7 @@ export default function CertChainDataTest(): void {
         Utils.registerEvent("onErrorReceive",true,2024120992,done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('certChainDataWeb',10,'');
-        await Utils.msSleep(5000);
+        await Utils.msSleep(10000);
         done();
       })
 

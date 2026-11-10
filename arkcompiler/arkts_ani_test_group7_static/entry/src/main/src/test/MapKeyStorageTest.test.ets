@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index.ets";
+import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium-static/src/main/indexStatic";
 import {
   NativeKeyMapManager,
   NativeKeyBasicMapManager

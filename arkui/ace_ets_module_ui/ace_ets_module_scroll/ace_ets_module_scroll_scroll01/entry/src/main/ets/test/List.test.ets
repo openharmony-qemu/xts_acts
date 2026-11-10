@@ -66,6 +66,7 @@ import scrollBarNullUndefined from './ScrollBar/scrollBarNullUndefined.test';
 import scrollEventNullUndefined from './scrollDefault/scrollEventNullUndefined.test';
 import scrollerNullUndefined from './scrollDefault/scrollerNullUndefined.test';
 import ScrollScrollBarWidthTest from './ScrollScrollBarWidth.test.ets';
+import scrollBarWidthMin from './Scroll/ScrollBarWidthMin.test';
 import scrollDefaultTest1 from './scrollDefault/scrollDefault1.test';
 import scrollDefaultTest2 from './scrollDefault/scrollDefault2.test';
 import scrollDefaultTest3 from './scrollDefault/scrollDefault3.test';
@@ -76,9 +77,13 @@ import ScrollScrollBarHeight from './ScrollScrollBarHeight.test.ets';
 import ScrollBarHeightModifier from './ScrollBarHeightModifier.test.ets';
 import scrollGetScrollState from './Scroll/ScrollGetScrollState.test';
 import scrollWithMouse from './Scroll/ScrollWithMouse.test';
+import scrollKeyboardVertical from './scrollAnimation/ScrollKeyboardVertical.test';
+import scrollKeyboardHorizontal from './scrollAnimation/ScrollKeyboardHorizontal.test';
+import scrollKeyboardModifier from './scrollAnimation/ScrollKeyboardModifier.test';
 
 export default function testsuite() {
   ScrollScrollBarWidthTest()
+  scrollBarWidthMin()
   OnScrollBeginJsunit()
   ScrollAddJsunit()
   APIScrollflingSpeedLimitJsunit()
@@ -141,4 +146,7 @@ export default function testsuite() {
   ScrollBarHeightModifier()
   scrollGetScrollState()
   scrollWithMouse()
+  scrollKeyboardVertical()
+  scrollKeyboardHorizontal()
+  scrollKeyboardModifier()
 }

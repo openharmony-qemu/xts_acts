@@ -11,6 +11,10 @@
     {
       "name": "EntryAbility_label",
       "value": "label"
+    },
+    {
+      "name": "direct_call_permission_reason",
+      "value": "测试直接拨打电话权限"
     }
   ]
 }

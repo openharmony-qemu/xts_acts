@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, it, expect, Level, TestType, Size } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level, TestType, Size } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -22,6 +22,8 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import common from '@ohos.app.ability.common';
 import window from '@ohos.window';
+
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 
 export default function CustomDialog3() {
   describe('CustomDialog3', () => {
@@ -65,7 +67,7 @@ it('CustomDialog3_static_0100', Level.LEVEL2, async (done: () => void): Promise<
       await Column.click();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2070);
+      await driver.triggerKey(2070, displayID);
       await CommonFunc.sleep(1000);
 
   let context = AppStorage.get<common.UIAbilityContext>('abilityContext');
@@ -99,7 +101,7 @@ it('CustomDialog3_static_0200', Level.LEVEL2, async (done: () => void): Promise<
       await button.click();
       await CommonFunc.sleep(1000);
 
-      await driver.click((Math.round((AppStorage.get<number>('winLeft') as number)+20)).toInt(), (Math.round((AppStorage.get<number>('winTop') as number)+200)).toInt());
+      await driver.clickAt({x: (Math.round((AppStorage.get<number>('winLeft') as number)+20)).toInt(), y: (Math.round((AppStorage.get<number>('winTop') as number)+200)).toInt(), displayId: displayID});
       await CommonFunc.sleep(1000);
 
   let context = AppStorage.get<common.UIAbilityContext>('abilityContext');

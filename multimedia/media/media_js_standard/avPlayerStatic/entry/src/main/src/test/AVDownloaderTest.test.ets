@@ -15,7 +15,7 @@
  */
 
 import media from '@ohos.multimedia.media'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium-static/src/main/indexStatic";
 
 const TAG = 'AVDownloaderTest';
 const TEST_URL = 'http://1.95.223.57/vod/www/faststart/720p_2m.mp4';
@@ -780,6 +780,385 @@ export default function AVDownloaderTest() {
       expect('paused' === 'paused').assertTrue();
       expect('removing' === 'removing').assertTrue();
       expect('error' === 'error').assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_SETTRACKSELECTIONFILTER_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_SETTRACKSELECTIONFILTER_static_0100
+     * @tc.desc   Set TrackSelectionFilter with all fields populated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_SETTRACKSELECTIONFILTER_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: setTrackSelectionFilter_001 start`);
+      let mediaSource: media.MediaSource | undefined = media.createMediaSourceWithUrl(TEST_URL);
+      expect(mediaSource != undefined).assertTrue();
+      if (mediaSource != undefined) {
+        let filter: media.TrackSelectionFilter = {
+          maxVideoBitrate: 5000000,
+          minVideoBitrate: 500000,
+          maxVideoFrameRate: 30,
+          minVideoFrameRate: 24,
+          maxVideoResolution: { width: 1920, height: 1080 },
+          minVideoResolution: { width: 640, height: 480 },
+          preferredVideoMimeTypes: ['video/mp4', 'video/avc'],
+          maxAudioBitrate: 320000,
+          minAudioBitrate: 128000,
+          maxAudioChannels: 2,
+          preferredAudioMimeTypes: ['audio/mp4a-latm'],
+          preferredAudioLanguages: ['zh-CN', 'en-US'],
+          preferredSubtitleLanguages: ['zh-CN']
+        };
+        mediaSource.setTrackSelectionFilter(filter);
+        console.info(`${TAG}: setTrackSelectionFilter_001 success`);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_SETTRACKSELECTIONFILTER_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_SETTRACKSELECTIONFILTER_static_0200
+     * @tc.desc   Set TrackSelectionFilter with partial fields populated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_SETTRACKSELECTIONFILTER_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: setTrackSelectionFilter_002 start`);
+      let mediaSource: media.MediaSource | undefined = media.createMediaSourceWithUrl(TEST_URL);
+      expect(mediaSource != undefined).assertTrue();
+      if (mediaSource != undefined) {
+        let filter: media.TrackSelectionFilter = {
+          maxVideoBitrate: 3000000,
+          preferredAudioLanguages: ['en-US']
+        };
+        mediaSource.setTrackSelectionFilter(filter);
+        console.info(`${TAG}: setTrackSelectionFilter_002 success`);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_static_0100
+     * @tc.desc   Get TrackSelectionFilter without setting, expect undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: getTrackSelectionFilter_001 start`);
+      let mediaSource: media.MediaSource | undefined = media.createMediaSourceWithUrl(TEST_URL);
+      expect(mediaSource != undefined).assertTrue();
+      if (mediaSource != undefined) {
+        let filter: media.TrackSelectionFilter | undefined = mediaSource.getTrackSelectionFilter();
+        console.info(`${TAG}: getTrackSelectionFilter_001 filter: ${JSON.stringify(filter)}`);
+        expect(filter == undefined).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_static_0200
+     * @tc.desc   Set full TrackSelectionFilter then get, verify all fields match
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: getTrackSelectionFilter_002 start`);
+      let mediaSource: media.MediaSource | undefined = media.createMediaSourceWithUrl(TEST_URL);
+      expect(mediaSource != undefined).assertTrue();
+      if (mediaSource != undefined) {
+        let filter: media.TrackSelectionFilter = {
+          maxVideoBitrate: 5000000,
+          minVideoBitrate: 500000,
+          maxVideoFrameRate: 30,
+          minVideoFrameRate: 24,
+          maxVideoResolution: { width: 1920, height: 1080 },
+          minVideoResolution: { width: 640, height: 480 },
+          preferredVideoMimeTypes: ['video/mp4', 'video/avc'],
+          maxAudioBitrate: 320000,
+          minAudioBitrate: 128000,
+          maxAudioChannels: 2,
+          preferredAudioMimeTypes: ['audio/mp4a-latm'],
+          preferredAudioLanguages: ['zh-CN', 'en-US'],
+          preferredSubtitleLanguages: ['zh-CN']
+        };
+        mediaSource.setTrackSelectionFilter(filter);
+        let retrieved: media.TrackSelectionFilter | undefined = mediaSource.getTrackSelectionFilter();
+        console.info(`${TAG}: getTrackSelectionFilter_002 retrieved: ${JSON.stringify(retrieved)}`);
+        expect(retrieved != undefined).assertTrue();
+        expect(retrieved!.maxVideoBitrate == 5000000).assertTrue();
+        expect(retrieved!.minVideoBitrate == 500000).assertTrue();
+        expect(retrieved!.maxVideoFrameRate == 30).assertTrue();
+        expect(retrieved!.minVideoFrameRate == 24).assertTrue();
+        expect(retrieved!.maxVideoResolution != undefined).assertTrue();
+        expect(retrieved!.maxVideoResolution!.width == 1920).assertTrue();
+        expect(retrieved!.maxVideoResolution!.height == 1080).assertTrue();
+        expect(retrieved!.minVideoResolution != undefined).assertTrue();
+        expect(retrieved!.minVideoResolution!.width == 640).assertTrue();
+        expect(retrieved!.minVideoResolution!.height == 480).assertTrue();
+        expect(retrieved!.preferredVideoMimeTypes != undefined).assertTrue();
+        expect(retrieved!.preferredVideoMimeTypes!.length == 2).assertTrue();
+        expect(retrieved!.preferredVideoMimeTypes![0] == 'video/mp4').assertTrue();
+        expect(retrieved!.preferredVideoMimeTypes![1] == 'video/avc').assertTrue();
+        expect(retrieved!.maxAudioBitrate == 320000).assertTrue();
+        expect(retrieved!.minAudioBitrate == 128000).assertTrue();
+        expect(retrieved!.maxAudioChannels == 2).assertTrue();
+        expect(retrieved!.preferredAudioMimeTypes != undefined).assertTrue();
+        expect(retrieved!.preferredAudioMimeTypes![0] == 'audio/mp4a-latm').assertTrue();
+        expect(retrieved!.preferredAudioLanguages != undefined).assertTrue();
+        expect(retrieved!.preferredAudioLanguages!.length == 2).assertTrue();
+        expect(retrieved!.preferredAudioLanguages![0] == 'zh-CN').assertTrue();
+        expect(retrieved!.preferredAudioLanguages![1] == 'en-US').assertTrue();
+        expect(retrieved!.preferredSubtitleLanguages != undefined).assertTrue();
+        expect(retrieved!.preferredSubtitleLanguages![0] == 'zh-CN').assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_static_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_static_0300
+     * @tc.desc   Set partial TrackSelectionFilter then get, verify set fields match and unset fields are undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: getTrackSelectionFilter_003 start`);
+      let mediaSource: media.MediaSource | undefined = media.createMediaSourceWithUrl(TEST_URL);
+      expect(mediaSource != undefined).assertTrue();
+      if (mediaSource != undefined) {
+        let filter: media.TrackSelectionFilter = {
+          maxVideoBitrate: 3000000,
+          preferredAudioLanguages: ['en-US']
+        };
+        mediaSource.setTrackSelectionFilter(filter);
+        let retrieved: media.TrackSelectionFilter | undefined = mediaSource.getTrackSelectionFilter();
+        console.info(`${TAG}: getTrackSelectionFilter_003 retrieved: ${JSON.stringify(retrieved)}`);
+        expect(retrieved != undefined).assertTrue();
+        expect(retrieved!.maxVideoBitrate == 3000000).assertTrue();
+        expect(retrieved!.preferredAudioLanguages != undefined).assertTrue();
+        expect(retrieved!.preferredAudioLanguages!.length == 1).assertTrue();
+        expect(retrieved!.preferredAudioLanguages![0] == 'en-US').assertTrue();
+        expect(retrieved!.minVideoBitrate == undefined).assertTrue();
+        expect(retrieved!.maxVideoFrameRate == undefined).assertTrue();
+        expect(retrieved!.minVideoFrameRate == undefined).assertTrue();
+        expect(retrieved!.maxVideoResolution == undefined).assertTrue();
+        expect(retrieved!.minVideoResolution == undefined).assertTrue();
+        expect(retrieved!.preferredVideoMimeTypes == undefined).assertTrue();
+        expect(retrieved!.maxAudioBitrate == undefined).assertTrue();
+        expect(retrieved!.minAudioBitrate == undefined).assertTrue();
+        expect(retrieved!.maxAudioChannels == undefined).assertTrue();
+        expect(retrieved!.preferredAudioMimeTypes == undefined).assertTrue();
+        expect(retrieved!.preferredSubtitleLanguages == undefined).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_EMPTYARRAY_static_0004
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_EMPTYARRAY_static_0004
+     * @tc.desc   Set full TrackSelectionFilter with empty array [] for each preferred field, expect no exception
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_EMPTYARRAY_static_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_EMPTYARRAY_static_0004 start`);
+      try {
+        let mediaSource: media.MediaSource | undefined = media.createMediaSourceWithUrl(TEST_URL);
+        expect(mediaSource != null).assertTrue();
+        if (mediaSource != null) {
+          let ferredEmptyVideoMimeArr: media.TrackSelectionFilter = {
+            preferredVideoMimeTypes: []
+          };
+          mediaSource.setTrackSelectionFilter(ferredEmptyVideoMimeArr);
+          let ret1: media.TrackSelectionFilter | undefined = mediaSource.getTrackSelectionFilter();
+          console.info(`${TAG}: preferredVideoMimeTypes empty array: ${JSON.stringify(ret1)}`);
+          if (ret1 != undefined && ret1.preferredVideoMimeTypes != undefined) {
+            expect(ret1!.preferredVideoMimeTypes!.length == 0).assertTrue();
+          } else {
+            console.info(`${TAG}: preferredVideoMimeTypes empty array ignored by native, got undefined`);
+          }
+          let ferredEmptyAudiMimeArr: media.TrackSelectionFilter = {
+            preferredAudioMimeTypes: []
+          };
+          mediaSource.setTrackSelectionFilter(ferredEmptyAudiMimeArr);
+          let ret3: media.TrackSelectionFilter | undefined = mediaSource.getTrackSelectionFilter();
+          console.info(`${TAG}: preferredAudioMimeTypes empty array: ${JSON.stringify(ret3)}`);
+          if (ret3 != undefined && ret3.preferredAudioMimeTypes != undefined) {
+            expect(ret3!.preferredAudioMimeTypes!.length == 0).assertTrue();
+          } else {
+            console.info(`${TAG}: preferredAudioMimeTypes empty array ignored by native, got undefined`);
+          }
+          let ferredEmptyAudiLangArr: media.TrackSelectionFilter = {
+            preferredAudioLanguages: []
+          };
+          mediaSource.setTrackSelectionFilter(ferredEmptyAudiLangArr);
+          let ret5: media.TrackSelectionFilter | undefined = mediaSource.getTrackSelectionFilter();
+          console.info(`${TAG}: preferredAudioLanguages empty array: ${JSON.stringify(ret5)}`);
+          if (ret5 != undefined && ret5.preferredAudioLanguages != undefined) {
+            expect(ret5!.preferredAudioLanguages!.length == 0).assertTrue();
+          } else {
+            console.info(`${TAG}: preferredAudioLanguages empty array ignored by native, got undefined`);
+          }
+          let ferredEmptyAudiSubLangArr: media.TrackSelectionFilter = {
+            preferredSubtitleLanguages: []
+          };
+          mediaSource.setTrackSelectionFilter(ferredEmptyAudiSubLangArr);
+          let ret7: media.TrackSelectionFilter | undefined = mediaSource.getTrackSelectionFilter();
+          console.info(`${TAG}: preferredSubtitleLanguages empty array: ${JSON.stringify(ret7)}`);
+          if (ret7 != undefined && ret7.preferredSubtitleLanguages != undefined) {
+            expect(ret7!.preferredSubtitleLanguages!.length == 0).assertTrue();
+          } else {
+            console.info(`${TAG}: preferredSubtitleLanguages empty array ignored by native, got undefined`);
+          }
+        console.error(`${TAG}: SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_EMPTYARRAY_static_0004 success`);
+        }
+        done();
+      } catch (err) {
+        console.error(`${TAG}: SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_EMPTYARRAY_static_0004 failed, err: ${err}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_EMPTYSTRING_static_0005
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_EMPTYSTRING_static_0005
+     * @tc.desc   Set full TrackSelectionFilter with empty string "" for each preferred field
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_EMPTYSTRING_static_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) =>  {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_EMPTYSTRING_static_0005 start`);
+      try {
+        let mediaSource: media.MediaSource | undefined = media.createMediaSourceWithUrl(TEST_URL);
+        expect(mediaSource != null).assertTrue();
+        if (mediaSource != null) {
+          let ferredEmptyVideoMimeStr: media.TrackSelectionFilter = {
+            preferredVideoMimeTypes: [''] as Array<string>
+          };
+          mediaSource.setTrackSelectionFilter(ferredEmptyVideoMimeStr);
+          let ret2: media.TrackSelectionFilter | undefined = mediaSource.getTrackSelectionFilter();
+          console.info(`${TAG}: preferredVideoMimeTypes empty array: ${JSON.stringify(ret2)}`);
+          expect(ret2 != undefined).assertTrue();
+          expect(ret2!.preferredVideoMimeTypes!.length == 1).assertTrue();
+          expect(ret2!.preferredVideoMimeTypes != undefined).assertTrue();
+          let ret2Arr: Array<string> = ret2!.preferredVideoMimeTypes!;
+          expect(ret2Arr[0] == '').assertTrue();
+          let ferredEmptyAudiMimeStr: media.TrackSelectionFilter = {
+            preferredAudioMimeTypes: [''] as Array<string>
+          };
+          mediaSource.setTrackSelectionFilter(ferredEmptyAudiMimeStr);
+          let ret4: media.TrackSelectionFilter | undefined = mediaSource.getTrackSelectionFilter();
+          console.info(`${TAG}: preferredAudioMimeTypes empty array: ${JSON.stringify(ret4)}`);
+          expect(ret4 != undefined).assertTrue();
+          expect(ret4!.preferredAudioMimeTypes!.length == 1).assertTrue();
+          expect(ret4!.preferredAudioMimeTypes != undefined).assertTrue();
+          let ret4Arr: Array<string> = ret4!.preferredAudioMimeTypes!;
+          expect(ret4Arr[0] == '').assertTrue();
+          let ferredEmptyAudiLangStr: media.TrackSelectionFilter = {
+            preferredAudioLanguages: [''] as Array<string>
+          };
+          mediaSource.setTrackSelectionFilter(ferredEmptyAudiLangStr);
+          let ret6: media.TrackSelectionFilter | undefined = mediaSource.getTrackSelectionFilter();
+          console.info(`${TAG}: preferredAudioLanguages empty array: ${JSON.stringify(ret6)}`);
+          expect(ret6 != undefined).assertTrue();
+          expect(ret6!.preferredAudioLanguages!.length == 1).assertTrue();
+          expect(ret6!.preferredAudioLanguages != undefined).assertTrue();
+          let ret6Arr: Array<string> = ret6!.preferredAudioLanguages!;
+          expect(ret6Arr[0] == '').assertTrue();
+          let ferredEmptyAudiSubLangStr: media.TrackSelectionFilter = {
+            preferredSubtitleLanguages: [''] as Array<string>
+          };
+          mediaSource.setTrackSelectionFilter(ferredEmptyAudiSubLangStr);
+          let ret8: media.TrackSelectionFilter | undefined = mediaSource.getTrackSelectionFilter();
+          console.info(`${TAG}: preferredSubtitleLanguages empty array: ${JSON.stringify(ret8)}`);
+          expect(ret8 != undefined).assertTrue();
+          expect(ret8!.preferredSubtitleLanguages!.length == 1).assertTrue();
+          expect(ret8!.preferredSubtitleLanguages != undefined).assertTrue();
+          let ret8Arr: Array<string> = ret8!.preferredSubtitleLanguages!;
+          expect(ret8Arr[0] == '').assertTrue();
+        console.error(`${TAG}: SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_EMPTYSTRING_static_0005 success`);
+        }
+        done();
+      } catch (err) {
+        console.error(`${TAG}: SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_EMPTYSTRING_static_0005 failed, err: ${err}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_UNDEFINED_static_0006
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_UNDEFINED_static_0006
+     * @tc.desc   Set full TrackSelectionFilter return undefined coverage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_UNDEFINED_static_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_UNDEFINED_static_0006 start`);
+      try {
+        let mediaSource: media.MediaSource | undefined = media.createMediaSourceWithUrl(TEST_URL);
+        expect(mediaSource != null).assertTrue();
+        if (mediaSource != undefined) {
+          let filterDefault: media.TrackSelectionFilter | undefined = mediaSource.getTrackSelectionFilter();
+          console.info(`${TAG}: preferredVideoMimeTypes empty array: ${JSON.stringify(filterDefault)}`);
+          expect(filterDefault == undefined).assertTrue();
+          console.error(`${TAG}: SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_UNDEFINED_static_0006 success`);
+        }
+        done();
+      } catch (err) {
+        console.error(`${TAG}: SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_GETTRACKSELECTIONFILTER_UNDEFINED_static_0006 failed, err: ${err}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_SETRETRIEVEKEY_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_SETRETRIEVEKEY_static_0100
+     * @tc.desc   Set retrieve key with a valid string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_SETRETRIEVEKEY_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: setRetrieveKey_001 start`);
+      let mediaSource: media.MediaSource | undefined = media.createMediaSourceWithUrl(TEST_URL);
+      expect(mediaSource != undefined).assertTrue();
+      if (mediaSource != undefined) {
+        mediaSource.setRetrieveKey('myRetrieveKey123');
+        console.info(`${TAG}: setRetrieveKey_001 success`);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_SETRETRIEVEKEY_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_SETRETRIEVEKEY_static_0200
+     * @tc.desc   Set retrieve key with an empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVDOWNLOADER_SETRETRIEVEKEY_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: setRetrieveKey_002 start`);
+      let mediaSource: media.MediaSource | undefined = media.createMediaSourceWithUrl(TEST_URL);
+      expect(mediaSource != undefined).assertTrue();
+      if (mediaSource != undefined) {
+        mediaSource.setRetrieveKey('');
+        console.info(`${TAG}: setRetrieveKey_002 success`);
+      }
       done();
     })
   })

@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from './../Util.test';
 
 const UINT64_MODULUS_VALUE: bigint = 18446744073709551616n;

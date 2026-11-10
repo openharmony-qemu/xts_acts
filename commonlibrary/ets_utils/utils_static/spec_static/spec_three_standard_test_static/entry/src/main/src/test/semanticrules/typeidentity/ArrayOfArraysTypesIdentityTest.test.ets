@@ -15,7 +15,7 @@
  */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, it, Level, Size, TestType, expect }
-  from '../../../../../hypium/index';
+  from '@ohos/hypium-static/src/main/indexStatic';
 
 namespace testNS1_1 {
   export function runTest(): boolean {

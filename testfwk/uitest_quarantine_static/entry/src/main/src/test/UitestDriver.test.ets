@@ -13,8 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeAll, beforeEach, describe, it, expect,TestType, Size, Level } from "../../../hypium/index"
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { beforeAll, beforeEach, describe, it, expect,TestType, Size, Level } from "@ohos/hypium-static/src/main/indexStatic"
 import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation, UiWindow } from '@kit.TestKit'
+import { canIUse } from '@internal.full.global';
 import  hilog  from '@ohos.hilog'
 import display from '@ohos.display';
 import { Utils, startAbility, stopApplication } from './Util.test';
@@ -22,6 +24,8 @@ import { BusinessError } from '@ohos.base';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 const waitUiReadyMs: int = 1000;
+const defaultUserId: string = '100';
+const abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
 
 async function maxUiWindow(driver: Driver, window: UiWindow | null): Promise<boolean> {
   if (window != null) {
@@ -49,12 +53,15 @@ export default function uitestDriverTest(): void {
     let driver: Driver | undefined;
     let displayId: int = 0;
     let primaryId: int = 0;
+    let user:String|undefined = defaultUserId;
     beforeAll(async () : Promise<void> => {
       hilog.info(domain, tag, "uitestDriverTest loadup start!!!!!")
       driver = Driver.create();
       displayId = display.getDefaultDisplaySync().id.toInt();
       primaryId = display.getPrimaryDisplaySync().id.toInt();
       hilog.info(domain, tag, `uitestDriverTest displayId: ${displayId}, primaryId: ${primaryId}`);
+      user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      hilog.info(domain, tag, `uitestDriverTest user: ${displayId}, primaryId: ${user}`);
       await Utils.msSleep(2000)
       hilog.info(domain, tag, "uitestDriverTest loadup over!!!!!")
     })
@@ -64,7 +71,7 @@ export default function uitestDriverTest(): void {
 
     /**
      * @tc.name   testMouseDrag_static
-     * @tc.number uitestDriverTest_0001
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_0100
      * @tc.desc   drag on the screen between the specified points by mouse.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -109,14 +116,14 @@ export default function uitestDriverTest(): void {
 
     /**
      * @tc.name   testFling_static
-     * @tc.number uitestDriverTest_0002
+     * @tc.number SUB_testfwk_UITEST_FLING_0100
      * @tc.desc   inject fling on the device display.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('testFling_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      if (displayId === primaryId) { // 不支持车机副屏执行
+      if (user == undefined || user == defaultUserId) { // 不支持车机副屏执行
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver!.delayMs(waitUiReadyMs);
         let window = await driver!.findWindow({bundleName: 'com.uitestScene.acts'});
@@ -144,14 +151,14 @@ export default function uitestDriverTest(): void {
 
     /**
      * @tc.name   testTriggerCombineKeys_static
-     * @tc.number uitestDriverTest_0048
+     * @tc.number SUB_testfwk_UITEST_TRIGGERCOMBINEKEYS_0100
      * @tc.desc   press the specified key.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('testTriggerCombineKeys_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      if (displayId === primaryId) { // 不支持车机副屏执行
+      if (user == undefined || user == defaultUserId) { // 不支持车机副屏执行
         hilog.info(domain, tag, "testTriggerCombineKeys_static start !!!!")
         try {
           await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
@@ -207,63 +214,67 @@ export default function uitestDriverTest(): void {
 
     /**
      * @tc.name   testDisplayRotation_static
-     * @tc.number uiTest_9049
+     * @tc.number SUB_testfwk_UITEST_DISPLAYROTATION_0100
      * @tc.desc   get the rotation of the device display and set it.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDisplayRotation_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver!.delayMs(waitUiReadyMs)
-      await driver!.setDisplayRotation(DisplayRotation.ROTATION_0)
-      await driver!.delayMs(waitUiReadyMs)
-      let rotation = await driver!.getDisplayRotation()
-      expect(rotation instanceof DisplayRotation).assertTrue();		  
-      if (rotation == DisplayRotation.ROTATION_90) {
-        console.info('The device is displayed in horizontal on default')
-        await driver!.setDisplayRotation(DisplayRotation.ROTATION_90)
+    it('testDisplayRotation_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      let carSupported = canIUse("SystemCapability.Sensors.MiscDevice")
+      hilog.info(domain, tag, `testDisplayRotation_static carSupported, ${ JSON.stringify(carSupported) }`);
+      if (carSupported) { // 此用例不支持在多屏上执行
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
         await driver!.delayMs(waitUiReadyMs)
-        let rotation1 = await driver!.getDisplayRotation()
-        expect(rotation1 == DisplayRotation.ROTATION_0)
-
-        await driver!.setDisplayRotation(DisplayRotation.ROTATION_180)
-        await driver!.delayMs(waitUiReadyMs)
-        let rotation2 = await driver!.getDisplayRotation()
-        expect(rotation2 == DisplayRotation.ROTATION_270)
-
-        await driver!.setDisplayRotation(DisplayRotation.ROTATION_270)
-        await driver!.delayMs(waitUiReadyMs)
-        let rotation3 = await driver!.getDisplayRotation()
-        expect(rotation3 == DisplayRotation.ROTATION_180)
-
-        await driver!.setDisplayRotation(DisplayRotation.ROTATION_90)
-      } else if (rotation == DisplayRotation.ROTATION_0) {
-        console.info('The device is displayed in vertical on default')
-        await driver!.setDisplayRotation(DisplayRotation.ROTATION_90)
-        await driver!.delayMs(waitUiReadyMs)
-        let rotation1 = await driver!.getDisplayRotation()
-        expect(rotation1 == DisplayRotation.ROTATION_90)
-
-        await driver!.setDisplayRotation(DisplayRotation.ROTATION_180)
-        await driver!.delayMs(waitUiReadyMs)
-        let rotation2 = await driver!.getDisplayRotation()
-        expect(rotation2 == DisplayRotation.ROTATION_180)
-
-        await driver!.setDisplayRotation(DisplayRotation.ROTATION_270)
-        await driver!.delayMs(waitUiReadyMs)
-        let rotation3 = await driver!.getDisplayRotation()
-        expect(rotation3 == DisplayRotation.ROTATION_270)
-
         await driver!.setDisplayRotation(DisplayRotation.ROTATION_0)
         await driver!.delayMs(waitUiReadyMs)
+        let rotation = await driver!.getDisplayRotation()
+        expect(rotation instanceof DisplayRotation).assertTrue();
+        if (rotation == DisplayRotation.ROTATION_90) {
+          console.info('The device is displayed in horizontal on default')
+          await driver!.setDisplayRotation(DisplayRotation.ROTATION_90)
+          await driver!.delayMs(waitUiReadyMs)
+          let rotation1 = await driver!.getDisplayRotation()
+          expect(rotation1 == DisplayRotation.ROTATION_0)
+
+          await driver!.setDisplayRotation(DisplayRotation.ROTATION_180)
+          await driver!.delayMs(waitUiReadyMs)
+          let rotation2 = await driver!.getDisplayRotation()
+          expect(rotation2 == DisplayRotation.ROTATION_270)
+
+          await driver!.setDisplayRotation(DisplayRotation.ROTATION_270)
+          await driver!.delayMs(waitUiReadyMs)
+          let rotation3 = await driver!.getDisplayRotation()
+          expect(rotation3 == DisplayRotation.ROTATION_180)
+
+          await driver!.setDisplayRotation(DisplayRotation.ROTATION_90)
+        } else if (rotation == DisplayRotation.ROTATION_0) {
+          console.info('The device is displayed in vertical on default')
+          await driver!.setDisplayRotation(DisplayRotation.ROTATION_90)
+          await driver!.delayMs(waitUiReadyMs)
+          let rotation1 = await driver!.getDisplayRotation()
+          expect(rotation1 == DisplayRotation.ROTATION_90)
+
+          await driver!.setDisplayRotation(DisplayRotation.ROTATION_180)
+          await driver!.delayMs(waitUiReadyMs)
+          let rotation2 = await driver!.getDisplayRotation()
+          expect(rotation2 == DisplayRotation.ROTATION_180)
+
+          await driver!.setDisplayRotation(DisplayRotation.ROTATION_270)
+          await driver!.delayMs(waitUiReadyMs)
+          let rotation3 = await driver!.getDisplayRotation()
+          expect(rotation3 == DisplayRotation.ROTATION_270)
+
+          await driver!.setDisplayRotation(DisplayRotation.ROTATION_0)
+          await driver!.delayMs(waitUiReadyMs)
+        }
+        await stopApplication('com.uitestScene.acts')
       }
-      await stopApplication('com.uitestScene.acts')
     })
 
     /**
      * @tc.name   testSetDisplayRotationEnabled_static
-     * @tc.number uitestDriverTest_0053
+     * @tc.number SUB_testfwk_UITEST_SETDISPLAYROTATIONENABLED_0100
      * @tc.desc   setDisplayRotationEnabled test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -297,14 +308,14 @@ export default function uitestDriverTest(): void {
 
     /**
      * @tc.name   testPressHome_static
-     * @tc.number uitestDriverTest_0004
+     * @tc.number SUB_testfwk_UITEST_PRESSHOME_0100
      * @tc.desc   Press the BACK key.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('testPressHome_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      if (displayId === primaryId) { // 不支持车机副屏执行
+      if (user == undefined || user == defaultUserId) { // 不支持车机副屏执行
         hilog.info(domain, tag, "testPressHome_static Start!!!");
         try {
           await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
@@ -325,14 +336,14 @@ export default function uitestDriverTest(): void {
 
     /**
      * @tc.name   testDrag_static
-     * @tc.number uitestDriverTest_0034
+     * @tc.number SUB_testfwk_UITEST_DRAG_0100
      * @tc.desc   drag on the screen between the specified points.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('testDrag_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      if (displayId === primaryId) { // 不支持车机副屏执行
+      if (user == undefined || user == defaultUserId) { // 不支持车机副屏执行
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver!.delayMs(waitUiReadyMs)
         let button = await driver!.findComponent(ON.id('jump'))
@@ -359,14 +370,14 @@ export default function uitestDriverTest(): void {
 
     /**
      * @tc.name   testDrag_speed_static
-     * @tc.number uitestDriverTest_0036
+     * @tc.number SUB_testfwk_UITEST_DRAG_0200
      * @tc.desc   drag on the screen between the specified points.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('testDrag_speed_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      if (displayId === primaryId) { // 不支持车机副屏执行
+      if (user == undefined || user == defaultUserId) { // 不支持车机副屏执行
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver!.delayMs(waitUiReadyMs)
         let button = await driver!.findComponent(ON.id('jump'))
@@ -393,7 +404,7 @@ export default function uitestDriverTest(): void {
 
     /**
      * @tc.name   testPressHomeWithId_static
-     * @tc.number uitestDriverTest_0037
+     * @tc.number SUB_testfwk_UITEST_PRESSHOME_0200
      * @tc.desc   pressHome test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Driver, Component, ON, Rect } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -68,12 +68,12 @@ it('listDidJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<
       await driver.fling({
         x: (Number.parseInt(`${(listRect.right - listRect.left) * 0.5 + listRect.left}`)).toInt(),
         y: (Number.parseInt(`${(listRect.bottom - listRect.top) * 0.6 + listRect.top}`)).toInt(),
-        displayId: displayId
+        displayId: displayId.toInt()
       },
         {
           x: (Number.parseInt(`${(listRect.right - listRect.left) * 0.5 + listRect.left}`)).toInt(),
           y: (Number.parseInt(`${(listRect.bottom - listRect.top) * 0.2 + listRect.top}`)).toInt(),
-          displayId: displayId
+          displayId: displayId.toInt()
         }, 5, 1000);
       await CommonFunc.sleep(2000);
 

@@ -18,7 +18,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
 import hilog from '@ohos.hilog';
 import { BusinessError } from "@ohos.base";
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium-static/src/main/indexStatic";
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -848,6 +848,7 @@ export default function MultimodalKeyCodeTest() {
         expect(KeyCode.KEYCODE_PTZ_SHUTTER_RIGHT == 3241).assertTrue();
         expect(KeyCode.KEYCODE_PTZ_APERTURE_LEFT == 3242).assertTrue();
         expect(KeyCode.KEYCODE_PTZ_APERTURE_RIGHT == 3243).assertTrue();
+        expect(KeyCode.KEYCODE_DESKTOP == 3245).assertTrue();
         done();
       } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);

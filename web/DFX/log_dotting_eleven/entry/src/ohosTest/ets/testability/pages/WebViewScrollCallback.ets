@@ -81,11 +81,14 @@ struct Index {
             switch (this.str) {
               case 'emitWebViewScrollCallback001': {
                 try {
-
+                  // Register callback before page end, then scroll (early register path).
+                  this.scrollResult = false;
                   this.isPageEnd = -1;
-                  this.controller.loadUrl('https://www.baidu.com')
+                  this.controller.loadUrl($rawfile('keyboardAvoid.html'));
                   testNapi.setScrollCallback(this.scrollCallback);
                   await Utils.waitForExist(() => this.isPageEnd, this.str, 1, 500);
+                  this.controller.scrollTo(0, 0);
+                  await Utils.sleep(500);
                   this.controller.scrollTo(0, 1000);
                   setTimeout(() => {
                     Utils.emitEvent(this.scrollResult, 20251222);
@@ -97,21 +100,22 @@ struct Index {
                 break;
               }
 
-
-
               case 'emitWebViewScrollCallback002': {
                 try {
+                  // Wait page end first, then register callback and scroll (late register path).
                   this.scrollResult = false;
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile('keyboardAvoid.html'));
                   await Utils.waitForExist(() => this.isPageEnd, this.str, 1, 500);
                   testNapi.setScrollCallback(this.scrollCallback);
-                  this.controller.scrollTo(0, 1000)
+                  this.controller.scrollTo(0, 0);
+                  await Utils.sleep(500);
+                  this.controller.scrollTo(0, 1000);
                   setTimeout(() => {
                     Utils.emitEvent(this.scrollResult, 20251223);
-                  },3000)
+                  }, 3000)
                 } catch (error) {
-                  let e:business_error.BusinessError = error as business_error.BusinessError;
+                  let e: business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 }
                 break;
@@ -161,7 +165,7 @@ struct Index {
             .fileAccess(true)
             .borderRadius(10)
             .onPageEnd(() => {
-              this.isPageEnd = 0
+              this.isPageEnd = 1
             })
         }.height('20%')
       }

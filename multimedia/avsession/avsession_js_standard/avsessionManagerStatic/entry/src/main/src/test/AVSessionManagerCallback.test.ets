@@ -15,7 +15,7 @@
  */
 
 import avSession from '@ohos.multimedia.avsession';
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from "@ohos/hypium-static/src/main/indexStatic";
 import Utils from './Util.test';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
@@ -70,7 +70,7 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 }
             });
-            await Utils.msSleep(500);
+            await Utils.msSleep(1500);
             try{
                 console.info('TestLog: Session 1');
                 await session!.destroy()

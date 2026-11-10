@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import {  Component,  Driver,  ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -45,35 +45,41 @@ export default function StackAlignContentUndefinedTest() {
     });
 
     /**
-     * @tc.number    StackAlignContentUndefinedTest_static_0100
-     * @tc.name      StackAlignContentUndefinedTest_static_0100
-     * @tc.desc      StackAlignContentUndefinedTest_static_0100
+     * @tc.number    SUB_ARKUI_API_StackAlignContentUndefinedTest_static_0100
+     * @tc.name      SUB_ARKUI_API_StackAlignContentUndefinedTest_static_0100
+     * @tc.desc      SUB_ARKUI_API_StackAlignContentUndefinedTest_static_0100
      * @tc.level     LEVEL1
      */
-    it('StackAlignContentUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('StackAlignContentUndefinedTest_static_0100 START');
-      await CommonFunc.sleep(500);
+    it('SUB_ARKUI_API_StackAlignContentUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('SUB_ARKUI_API_StackAlignContentUndefinedTest_static_0100 START');
+        await CommonFunc.sleep(500);
 
-      let strJson = inspector.getInspectorByKey('Stack_AlignContent');
-      let obj = JSON.parseJsonElement(strJson);
-      await CommonFunc.sleep(1000);
-      console.info('Test component obj is: ' + obj.getElement('$attrs'));
-      console.info('Test component obj.alignContent is: ' + obj.getElement('$attrs').getString('alignContent'));
-      expect(obj.getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Start');
+        let strJson = inspector.getInspectorByKey('Stack_AlignContent');
+        let obj = JSON.parseJsonElement(strJson);
+        await CommonFunc.sleep(1000);
+        console.info('Test component obj is: ' + obj.getElement('$attrs'));
+        console.info('Test component obj.alignContent is: ' + obj.getElement('$attrs').getString('alignContent'));
+        expect(obj.getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Start');
 
-      let driver = Driver.create();
-      let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
-      await btn_true.click();
-      await CommonFunc.sleep(1000);
+        let driver = Driver.create();
+        let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+        await btn_true.click();
+        await CommonFunc.sleep(1000);
 
-      let strJson1 = inspector.getInspectorByKey('Stack_AlignContent');
-      let obj1 = JSON.parseJsonElement(strJson1);
-      await CommonFunc.sleep(1000);
-      console.info('Test component obj is: ' + obj1.getElement('$attrs'));
-      console.info('Test component obj.alignContent is: ' + obj1.getElement('$attrs').getString('alignContent'));
-      expect(obj1.getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Center');
-      console.info('StackAlignContentUndefinedTest_static_0100 END');
-      done();
+        let strJson1 = inspector.getInspectorByKey('Stack_AlignContent');
+        let obj1 = JSON.parseJsonElement(strJson1);
+        await CommonFunc.sleep(1000);
+        console.info('Test component obj is: ' + obj1.getElement('$attrs'));
+        console.info('Test component obj.alignContent is: ' + obj1.getElement('$attrs').getString('alignContent'));
+        expect(obj1.getElement('$attrs').getString('alignContent')).assertEqual('Alignment.Center');
+        console.info('SUB_ARKUI_API_StackAlignContentUndefinedTest_static_0100 END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_StackAlignContentUndefinedTest_static_0100] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

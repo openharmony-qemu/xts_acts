@@ -15,7 +15,7 @@
  */
 
 import router from '@ohos.router';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium-static/src/main/indexStatic'
 import { Component, Driver, MouseButton, ON, Point } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -31,13 +31,13 @@ let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
+let displayID: Int = 0;
 export default function HapticFeedbackModeTest() {
   describe('HapticFeedbackModeTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("HapticFeedbackModeTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api18.static", "EntryAbility")
-
     });
 
     beforeEach(async (): Promise<void> => {
@@ -56,9 +56,10 @@ export default function HapticFeedbackModeTest() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push ImageSpanVisibility page error:" + err);
+        console.log("push ImageSpanVisibility page error:" + err);
       }
       console.info("ImageSpanVisibility beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     afterEach(async () => {
@@ -86,7 +87,7 @@ export default function HapticFeedbackModeTest() {
         await CommonFunc.sleep(500);
         let point = await (richEditor?.getBoundsCenter() as Promise<Point>);
         await CommonFunc.sleep(500);
-        await (driver?.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT) as Promise<void>);
+        await (driver?.mouseClick({ x: point.x, y: point.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT) as Promise<void>);
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('HapticFeedbackMode'));
         console.info("[HapticFeedbackModeTest0001] end");
@@ -144,7 +145,7 @@ export default function HapticFeedbackModeTest() {
         await CommonFunc.sleep(500);
         let point = await image.getBoundsCenter();
         await CommonFunc.sleep(500);
-        await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
+        await driver.mouseClick({ x: point.x, y: point.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT);
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('HapticFeedbackMode'));
         console.info("[HapticFeedbackModeTest0003] end");

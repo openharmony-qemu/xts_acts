@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,7 +19,7 @@ import connection from '@ohos.net.connection';
 
 let netHandle = connection.getDefaultNetSync();
 
-export default function testsuite() {
+export default function testsuite(): void {
     if(netHandle.netId !=0 &&  netHandle.netId > 100){
         statisticsHasNetTest();
     }else{

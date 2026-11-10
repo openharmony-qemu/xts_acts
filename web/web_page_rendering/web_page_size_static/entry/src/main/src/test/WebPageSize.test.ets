@@ -14,37 +14,66 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach } from "@ohos/hypium-static/src/main/indexStatic";
 import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@ohos.UiTest'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import  hilog  from '@ohos.hilog'
+import { BusinessError } from '@ohos.base';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
 import { Utils, startAbility, stopApplication } from './Util.test';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let bundleName: string = 'com.example.webpagesize.static';
-
-export default function webPageSizeTest() {
+let testAbilityContext: common.UIAbilityContext;
+export default function webPageSizeTest():void {
 
     describe("WebPageSizeTest", (): void => {
-        beforeAll(async () : Promise<void> => {
-            hilog.info(domain, tag, "WebPageSizeTest loadup start!!!!!");
-            await Utils.msSleep(2000)
-            hilog.info(domain, tag, "WebPageSizeTest loadup over!!!!!");
-        })
+        beforeAll(async ():Promise<void> =>{
+            try {
+                console.log(' App start')
+                let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
+                abilityDelegator.addAbilityMonitor({
+                    abilityName: 'EntryAbility',
+                    moduleName:'entry',
+                    onAbilityCreate: (abilitys : UIAbility) : void => {
+                        testAbilityContext = abilitys.context
+                        console.log('onAbilityCreate end')
+                    },
+                }, (err : BusinessError|null) : void => {
+                    if (err != null ) {
+                        console.log('-----' + err.code)
+                    }
+                    console.log('BusinessError  end')
+                });
+                await Utils.msSleep(2000)
+                let cmd = 'aa start -a EntryAbility -b com.example.webpagesize.static';
+                let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+                if(user !== undefined){
+                    cmd += ' -u ' + user;
+                }
+                abilityDelegator.executeShellCommand(cmd)
+                await Utils.msSleep(2000)
+                console.log('beforeAll end,%s', "Succeed!")
+            } catch(error) {
+                console.info(`beforeAll error: ${JSON.stringify(error)}`)
+            }
+        });
 
         /**
-         * @tc.name   testGetPageHeight001
-         * @tc.number SUB_WEB_WEBVIEWCONTROLLER_GETPAGEHEIGHT_0100
-         * @tc.desc   test getPageHeight
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
-         */
+         * @tc.number     SUB_WEB_WEBVIEWCONTROLLER_GETPAGEHEIGHT_0100
+         * @tc.name       testGetPageHeight001
+         * @tc.desc       test getPageHeight
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 1
+        */
         it("testGetPageHeight001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (): Promise<void> => {
             hilog.info(domain, tag, 'testGetPageHeight001 start!!!');
             try {
                 let driver = Driver.create();
-                await startAbility(bundleName, 'EntryAbility');
-                hilog.info(domain, tag, 'testGetPageHeight001 startAbility');
+                // await startAbility(bundleName, 'EntryAbility');
+                // hilog.info(domain, tag, 'testGetPageHeight001 startAbility');
                 await driver.delayMs(1000);
                 hilog.info(domain, tag, 'testGetPageHeight001 delayMs');
 

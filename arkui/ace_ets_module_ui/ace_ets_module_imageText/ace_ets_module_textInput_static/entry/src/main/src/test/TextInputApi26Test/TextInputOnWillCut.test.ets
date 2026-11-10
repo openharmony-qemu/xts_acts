@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -21,6 +21,9 @@ import { UtilsTest } from '../Util.test';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 import { inputMethod } from '@kit.IMEKit';
+
+let displayID: Int = 0;
+
 export default function TextInputOnWillCutTest() {
   describe('TextInputOnWillCutTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -45,9 +48,10 @@ export default function TextInputOnWillCutTest() {
           console.info("push TextInputOnWillCut success ");
         }
       } catch (err) {
-        console.error("push TextInputOnWillCut page error: " + err);
+        console.log("push TextInputOnWillCut page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     })
     afterAll(async (): Promise<void> => {
       AppStorage.delete('TextInputAllowCutResult')
@@ -70,9 +74,17 @@ export default function TextInputOnWillCutTest() {
       await CommonFunc.sleep(500);
       await (TextInput?.longClick() as Promise<void>);
       await CommonFunc.sleep(500);
-      await driver.triggerCombineKeys(2072,2017);
+      try {
+        await driver.triggerCombineKeys(2072,2017, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.triggerCombineKeys(2072,2040);
+      try {
+        await driver.triggerCombineKeys(2072,2040, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await inputMethod.getController().stopInputSession();
       await CommonFunc.sleep(500);
@@ -96,9 +108,17 @@ export default function TextInputOnWillCutTest() {
       await CommonFunc.sleep(500);
       await (TextInput?.longClick() as Promise<void>);
       await CommonFunc.sleep(500);
-      await driver.triggerCombineKeys(2072,2017);
+      try {
+        await driver.triggerCombineKeys(2072,2017, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.triggerCombineKeys(2072,2040);
+      try {
+        await driver.triggerCombineKeys(2072,2040, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await inputMethod.getController().stopInputSession();
       await CommonFunc.sleep(500);

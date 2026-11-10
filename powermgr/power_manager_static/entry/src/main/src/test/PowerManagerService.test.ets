@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll } from "@ohos/hypium-static/src/main/indexStatic";
 import { BusinessError } from '@ohos.base'
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
@@ -46,7 +46,7 @@ export default function powerManagerTest() {
           });
           expect().assertFail();
         } catch (error) {
-          error = error as BusinessError;
+         
           hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
           expect(error.code).assertEqual(4900101);
         } finally {
@@ -73,7 +73,7 @@ export default function powerManagerTest() {
           });
           expect().assertFail();
         } catch (error) {
-          error = error as BusinessError;
+         
           hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
           expect(error.code).assertEqual(4900101);
         } finally {

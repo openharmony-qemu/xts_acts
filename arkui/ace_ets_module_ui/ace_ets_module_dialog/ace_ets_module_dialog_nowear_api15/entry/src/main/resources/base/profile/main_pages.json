@@ -1,6 +1,7 @@
 {
   "src": [
     "MainAbility/pages/index/index",
+    "MainAbility/pages/Preset",
     "MainAbility/pages/popup/popupKeyboardAvoidMode",
     "MainAbility/pages/bindSheet/detentSelection"
   ]

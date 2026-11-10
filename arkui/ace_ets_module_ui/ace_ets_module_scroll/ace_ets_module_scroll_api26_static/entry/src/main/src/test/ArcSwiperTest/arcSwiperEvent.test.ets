@@ -20,7 +20,7 @@ import {
   Level,
   beforeEach,
   afterEach
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, Component, UiWindow, ON, Rect } from '@ohos.UiTest';
@@ -28,6 +28,7 @@ import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function arcSwiperEvent() {
   describe('arcSwiperEvent', () => {
     beforeEach(async (): Promise<void> => {
@@ -73,8 +74,7 @@ export default function arcSwiperEvent() {
         let bottom = swipeTabs.bottom;
         let height = bottom - top;
         let width = right - left;
-        await driver.drag(Math.round(left + width * 0.8).toInt(), Math.round(top + height / 2).toInt(),
-          Math.round(left + width * 0.2).toInt(), Math.round(top + height / 2).toInt());
+        await driver.dragBetween({ x: Math.round(left + width * 0.8).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID.toInt() }, { x: Math.round(left + width * 0.2).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(2000);
         let strJson = inspector.getInspectorByKey('arcSwiper_onChange');
         console.info('[arcSwiperEvent_0100] content: ' +
@@ -128,8 +128,7 @@ export default function arcSwiperEvent() {
       let bottom = swipeTabs.bottom;
       let height = bottom - top;
       let width = right - left;
-      await driver.drag(Math.round(left + width * 0.8).toInt(), Math.round(top + height / 2).toInt(),
-        Math.round(left + width * 0.2).toInt(), Math.round(top + height / 2).toInt());
+      await driver.dragBetween({ x: Math.round(left + width * 0.8).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID.toInt() }, { x: Math.round(left + width * 0.2).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID.toInt() });
       await CommonFunc.sleep(2000);
       let strJson1 = inspector.getInspectorByKey('arcSwiper_onGestureSwipe');
       console.info('[arcSwiperEvent_0200] component obj1 is: ' + JSON.stringify(JSON.parseJsonElement(strJson1)));

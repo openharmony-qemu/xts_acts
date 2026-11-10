@@ -13,13 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function tabsTransition() {
   describe('tabsTransition', () => {
     beforeEach(async (): Promise<void> => {
@@ -69,8 +70,7 @@ it('tabsTransition_static_0100', Level.LEVEL0, async (done: () => void): Promise
       let width = right - left;
       let driver = Driver.create()
       await CommonFunc.sleep(500);
-      await driver.swipe((Math.round(left + width * 0.9)).toInt(), (Math.round(bottom - height / 2)).toInt(),
-        (Math.round(left + width * 0.1)).toInt(), (Math.round(bottom - height / 2)).toInt());
+      await driver.swipeBetween({ x: (Math.round(left + width * 0.9)).toInt(), y: (Math.round(bottom - height / 2)).toInt(), displayId: displayID.toInt() }, { x: (Math.round(left + width * 0.1)).toInt(), y: (Math.round(bottom - height / 2)).toInt(), displayId: displayID.toInt() });
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('tabs_callback_tran');
       console.info("[tabsTransition_static_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));

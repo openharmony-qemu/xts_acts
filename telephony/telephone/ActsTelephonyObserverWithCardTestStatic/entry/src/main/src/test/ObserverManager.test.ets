@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../hypium/index'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium-static/src/main/indexStatic'
 import observer from '@ohos.telephony.observer';
 import data from '@ohos.telephony.data';
 import sim from '@ohos.telephony.sim';
@@ -177,7 +177,7 @@ export default function ObserverManagerTest() {
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
         let options: observer.ObserverOptions = {
-          slotId: 3
+          slotId: 100
         };
         observer.onCellularDataConnectionStateChange(options, (data: observer.DataConnectionStateInfo) => {
           hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
@@ -359,7 +359,7 @@ export default function ObserverManagerTest() {
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
         let options: observer.ObserverOptions = {
-          slotId: 3
+          slotId: 100
         };
         observer.onCellularDataFlowChange(options, (data: observer.DataFlowType) => {
           hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-static/src/main/indexStatic';
 import { stream, util } from '@kit.ArkTS';
 import Utils from '../Util.test';
 
@@ -39,7 +39,7 @@ class TestDuplex extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function): void {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function): void {
     invokeCb(callback);
   }
 }
@@ -70,9 +70,9 @@ class TestDataDuplex extends stream.Duplex {
     }
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function): void {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function): void {
     for (let i = 0; i < chunks.length; i++) {
-      let chunk = chunks[i];
+      let chunk = (chunks as (string | Uint8Array)[])[i];
       if (typeof chunk !== 'string') {
         this.dataWritten += util.TextDecoder.create('utf-8').decodeToString(chunk as Uint8Array);
       } else {
@@ -109,9 +109,9 @@ class TestDataArrayDuplex extends stream.Duplex {
     }
     invokeCb(callback);
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: Function): void {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function): void {
     for (let i = 0; i < chunks.length; i++) {
-      let chunk = chunks[i];
+      let chunk = (chunks as (string | Uint8Array)[])[i];
       if (chunk instanceof Uint8Array) {
         this.dataWritten.push(chunk);
       } else {

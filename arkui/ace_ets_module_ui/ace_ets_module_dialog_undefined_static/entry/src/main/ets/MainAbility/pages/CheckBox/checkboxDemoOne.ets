@@ -29,14 +29,14 @@ class MyCheckboxStyleContent implements ContentModifier<CheckBoxConfiguration> {
           config.triggerChange(true)
           console.log('config.triggerChange: ' + config.triggerChange)
         }
-      }).opacity(config.enabled ? 1 : 0.1)
+      }).opacity(config.enabled ? 1.0 : 0.1)
       Path().width(10).height(10).commands('M50 0 L100 100 L0 100 Z')
         .id('ContentModifierMessage')
         .visibility(config.selected ? Visibility.Hidden : Visibility.Hidden)
         .fill(config.selected ? (config.contentModifier as MyCheckboxStyleContent).selectedColor : Color.Black)
         .stroke((config.contentModifier as MyCheckboxStyleContent).selectedColor)
         .margin({left:11,top:10} as Margin)
-        .opacity(config.enabled ? 1 : 0.1)
+        .opacity(config.enabled ? 1.0 : 0.1)
     }
     .width(300)
     .height(200)

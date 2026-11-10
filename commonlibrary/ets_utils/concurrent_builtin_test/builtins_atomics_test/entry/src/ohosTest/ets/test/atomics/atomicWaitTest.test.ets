@@ -925,5 +925,62 @@ export default function atomicsWaitTest() {
       expect(int32[0]).assertEqual(21);
     });
 
+    /**
+     * @tc.name   testAtomicsWaitNotifyError0024
+     * @tc.number SUB_BUILTINS_ATOMICS_WAIT_TEST_0100
+     * @tc.desc   Test Atomics.notify typedArray/index validation error paths
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAtomicsWaitNotifyError0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const sab = new SharedArrayBuffer(16);
+      const ia = new Int32Array(sab);
+
+      let typeErrorCount = 0;
+      try {
+        Atomics.notify(new Int8Array(new ArrayBuffer(8)) as Object as Int32Array, 0);
+      } catch (e) {
+        if (e instanceof TypeError) {
+          typeErrorCount++;
+        }
+      }
+      try {
+        Atomics.notify(new Uint32Array(sab) as Object as Int32Array, 0);
+      } catch (e) {
+        if (e instanceof TypeError) {
+          typeErrorCount++;
+        }
+      }
+      expect(typeErrorCount).assertEqual(2);
+
+      let rangeErrorCount = 0;
+      try {
+        Atomics.notify(ia, -1);
+      } catch (e) {
+        if (e instanceof RangeError) {
+          rangeErrorCount++;
+        }
+      }
+      expect(rangeErrorCount).assertEqual(1);
+
+      expect(Atomics.notify(ia, 0, -1)).assertEqual(0);
+
+      let outOfBoundsErrorCount = 0;
+      let outOfBoundsResult = -1;
+      try {
+        outOfBoundsResult = Atomics.notify(ia, ia.length);
+      } catch (e) {
+        if (e instanceof RangeError) {
+          outOfBoundsErrorCount++;
+        }
+      }
+      if (outOfBoundsErrorCount !== 0) {
+        expect(outOfBoundsErrorCount).assertEqual(1);
+      } else {
+        expect(outOfBoundsResult).assertEqual(0);
+      }
+    });
+
   })
 }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeEach} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeEach } from "@ohos/hypium-static/src/main/indexStatic";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import connection from '@ohos.net.connection';
@@ -22,7 +22,7 @@ import { BusinessError } from '@ohos.base';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
-let ListenTimes : number = 0;
+let ListenTimes: number = 0;
 const NetBearTypeBEARER_CELLULAR = connection.NetBearType.BEARER_CELLULAR;
 const NetBearTypeBEARER_WIFI = connection.NetBearType.BEARER_WIFI;
 const NetBearTypeBEARER_BLUETOOTH = connection.NetBearType.BEARER_BLUETOOTH;
@@ -36,38 +36,38 @@ const NetCapNET_NET_CAPABILITY_VALIDATED = connection.NetCap.NET_CAPABILITY_VALI
 const NetCapNET_CAPABILITY_PORTAL = connection.NetCap.NET_CAPABILITY_PORTAL;
 const NetCapNET_CAPABILITY_CHECKING_CONNECTIVITY = connection.NetCap.NET_CAPABILITY_CHECKING_CONNECTIVITY;
 
-let netConnOnEvent6 = async (caseName: string,netConn: connection.NetConnection) =>{
-    hilog.info(domain, tag, '%{public}s', caseName+ ' : ==  Subscribing to Events start  === ');
-    netConn.onNetLost((value) => {
-        ListenTimes+=100;
-        hilog.info(domain, tag, '%{public}s', caseName+ " ===on netLost" + JSON.stringify(value));
-    });
-    netConn.onNetUnavailable((value) => {
-        ListenTimes+=1000;
-        hilog.info(domain, tag, '%{public}s', caseName+ " ===on netUnavailable " + JSON.stringify(value));
-    });
-    netConn.onNetBlockStatusChange((value) => {
-        ListenTimes+=10000;
-        hilog.info(domain, tag, '%{public}s', caseName+ " ===on netBlockStatusChange " + JSON.stringify(value));
-    });
-    hilog.info(domain, tag, '%{public}s', caseName+ ": ==  Subscribing to Events end  === ");
+let netConnOnEvent6 = async (caseName: string, netConn: connection.NetConnection) => {
+  hilog.info(domain, tag, '%{public}s', caseName + ' : ==  Subscribing to Events start  === ');
+  netConn.onNetLost((value) => {
+    ListenTimes += 100;
+    hilog.info(domain, tag, '%{public}s', caseName + " ===on netLost" + JSON.stringify(value));
+  });
+  netConn.onNetUnavailable((value) => {
+    ListenTimes += 1000;
+    hilog.info(domain, tag, '%{public}s', caseName + " ===on netUnavailable " + JSON.stringify(value));
+  });
+  netConn.onNetBlockStatusChange((value) => {
+    ListenTimes += 10000;
+    hilog.info(domain, tag, '%{public}s', caseName + " ===on netBlockStatusChange " + JSON.stringify(value));
+  });
+  hilog.info(domain, tag, '%{public}s', caseName + ": ==  Subscribing to Events end  === ");
 }
-let netConnOnEvent4 =async (caseName: string,netConn: connection.NetConnection) =>{
-    hilog.info(domain, tag, '%{public}s', caseName+ ' : ==  Subscribing to Events start  === ');
-    netConn.onNetLost((value) => {
-        ListenTimes+=100;
-        hilog.info(domain, tag, '%{public}s', caseName+ " ===on netLost" + JSON.stringify(value));
-    });
-    hilog.info(domain, tag, '%{public}s', caseName+ ": ==  Subscribing to Events end  === ");
+let netConnOnEvent4 = async (caseName: string, netConn: connection.NetConnection) => {
+  hilog.info(domain, tag, '%{public}s', caseName + ' : ==  Subscribing to Events start  === ');
+  netConn.onNetLost((value) => {
+    ListenTimes += 100;
+    hilog.info(domain, tag, '%{public}s', caseName + " ===on netLost" + JSON.stringify(value));
+  });
+  hilog.info(domain, tag, '%{public}s', caseName + ": ==  Subscribing to Events end  === ");
 }
 
-let netConnOnEvent3 =async (caseName: string,netConn: connection.NetConnection) =>{
-    hilog.info(domain, tag, '%{public}s', caseName+ ": ==  Subscribing to Events start  === ");
-    netConn.onNetLost((value) => {
-        ListenTimes+=100;
-        hilog.info(domain, tag, '%{public}s', caseName+ " ===on netLost" + JSON.stringify(value));
-    });
-    hilog.info(domain, tag, '%{public}s', caseName+  ": ==  Subscribing to Events end  === ");
+let netConnOnEvent3 = async (caseName: string, netConn: connection.NetConnection) => {
+  hilog.info(domain, tag, '%{public}s', caseName + ": ==  Subscribing to Events start  === ");
+  netConn.onNetLost((value) => {
+    ListenTimes += 100;
+    hilog.info(domain, tag, '%{public}s', caseName + " ===on netLost" + JSON.stringify(value));
+  });
+  hilog.info(domain, tag, '%{public}s', caseName + ": ==  Subscribing to Events end  === ");
 }
 
 const ExpectFail = () => {
@@ -84,306 +84,1211 @@ const ExpectTrue = (n: boolean) => {
     hilog.info(domain, tag, '%{public}s', 'test failed');
   }
 }
-export default function ConnectionRegisterTest() {
 
-    describe("ConnectionRegisterTest", (): void => {
-        hilog.info(domain, tag, '%{public}s', 'describe start');
-        beforeEach(() => {
-            ListenTimes = 0;
-        })
-        const TIMEOUT = 1000;
+export default function ConnectionRegisterTest(): void {
 
-        /**
-         * @tc.name testNetworkManagerRegisterAsync_static_0100
-         * @tc.number SUB_NetworkManager_Register_Async_0100
-         * @tc.desc activate the default network, and see if the callback information is generated
-         * @tc.type Function
-         * @tc.size SmallTest
-         * @tc.level Level0
-         */
-        it('testNetworkManagerRegisterAsync_static_0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = 'testNetworkManagerRegisterAsync_static_0100';
-            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try {
-                let netConn = connection.createNetConnection();
-                hilog.info(domain, tag, '%{public}s', caseName+ ' register start');
-                await netConnOnEvent4(caseName, netConn);
-                netConn.register((error: BusinessError<void>|null) => {
-                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(error));
-                    if (error?.code != 0) {
-                        ExpectFail();
-                        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                        done();
-                    } else {
-                        hilog.info(domain, tag, '%{public}s', caseName +' register success ');
-                    }
-                });
-                await Utils.msSleep(3000);
-                hilog.info(domain, tag, '%{public}s', caseName+" unregister start" );
-                netConn.unregister((error: BusinessError<void>|null) => {
-                    if (error?.code != 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName + "unregister fail: " + JSON.stringify(error));
-                        ExpectFail();
-                    } else {
-                        hilog.info(domain, tag, '%{public}s', caseName + " unregister success " );
-                        hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" +ListenTimes);
-                        ExpectTrue( ListenTimes == 11 || ListenTimes == 0);
-                    }
-                    hilog.info(domain, tag, '%{public}s', caseName + " ---End");
-                    done();
-                });
-            } catch (err) {
-                hilog.info(domain, tag, '%{public}s', caseName + " catch err is :  "+JSON.stringify(err) );
-                ExpectFail();
-                hilog.info(domain, tag, '%{public}s', caseName +  "  --test end ");
-                done();
-            }
-        });
-
-        /**
-         * @tc.name testNetworkManagerRegisterAsync_static_0200
-         * @tc.number SUB_NetworkManager_Register_Async_0200
-         * @tc.desc activate the default network, and see if the callback information is generated
-         * @tc.type Function
-         * @tc.size SmallTest
-         * @tc.level Level0
-         */
-        it('testNetworkManagerRegisterAsync_static_0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = 'testNetworkManagerRegisterAsync_static_0200';
-            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try {
-                let netSpecifier: connection.NetSpecifier = {
-                    netCapabilities: {
-                        bearerTypes: [NetBearTypeBEARER_WIFI,NetBearTypeBEARER_CELLULAR],
-                    }
-                }
-                let netConn = connection.createNetConnection(netSpecifier, TIMEOUT);
-                hilog.info(domain, tag, '%{public}s', caseName+ ' register start');
-                await netConnOnEvent6(caseName, netConn)
-                netConn.register((error: BusinessError<void>|null) => {
-                    if (error?.code != 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName +'  register fail: '+JSON.stringify(error));
-                        ExpectFail();
-                        hilog.info(domain, tag, '%{public}s', caseName + " ---End");
-                        done();
-                    }else{
-                        hilog.info(domain, tag, '%{public}s', caseName+ '  register success');
-                    }
-                });
-                await Utils.msSleep(3000);
-                hilog.info(domain, tag, '%{public}s', caseName+" unregister start" );
-                netConn.unregister((error: BusinessError<void>|null) => {
-                    if (error?.code != 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName +  " unregister fail: " + JSON.stringify(error));
-                        ExpectFail();
-                    } else {
-                        hilog.info(domain, tag, '%{public}s', caseName + " unregister success " );
-                        hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" +ListenTimes);
-                        ExpectTrue( ListenTimes == 11 || ListenTimes == 0);
-                    }
-                    hilog.info(domain, tag, '%{public}s', caseName + " ---End");
-                    done();
-                });
-            } catch (err) {
-                hilog.info(domain, tag, '%{public}s', caseName + " catch err is :  "+JSON.stringify(err) );
-                ExpectFail();
-                hilog.info(domain, tag, '%{public}s', caseName +  "  --test end ");
-                done();
-            }
-        });
-
-
-        /**
-         * @tc.name testNetworkManagerRegisterAsync_static_2300
-         * @tc.number SUB_NetworkManager_Register_Async_2300
-         * @tc.desc  activate the default network ,and see if the callback information is generated
-         * @tc.type Function
-         * @tc.size SmallTest
-         * @tc.level Level0
-         */
-        it('testNetworkManagerRegisterAsync_static_2300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName = 'testNetworkManagerRegisterAsync_static_2300';
-            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try{
-                let netConn = connection.createNetConnection();
-                hilog.info(domain, tag, '%{public}s', caseName+ ' register start');
-                await netConnOnEvent6(caseName, netConn)
-                netConn.register((error: BusinessError<void>|null) => {
-                    if (error?.code != 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName +'  register fail: '+JSON.stringify(error));
-                        ExpectFail();
-                        hilog.info(domain, tag, '%{public}s', caseName + " ---End");
-                        done();
-                    }else{
-                        hilog.info(domain, tag, '%{public}s', caseName+ '  register success');
-                    }
-                });
-                await Utils.msSleep(3000);
-                hilog.info(domain, tag, '%{public}s', caseName+" unregister start" );
-                netConn.unregister((error: BusinessError<void>|null) => {
-                    if (error?.code != 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName +  " unregister fail: " + JSON.stringify(error));
-                        ExpectFail();
-                    } else {
-                        hilog.info(domain, tag, '%{public}s', caseName + " unregister success " );
-                        hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" +ListenTimes);
-                        ExpectTrue( ListenTimes == 11 || ListenTimes == 0);
-                    }
-                    hilog.info(domain, tag, '%{public}s', caseName + " ---End");
-                    done();
-                });
-            }catch (err){
-                hilog.info(domain, tag, '%{public}s', caseName +  "  catch err is: "+JSON.stringify(err));
-                ExpectFail();
-                hilog.info(domain, tag, '%{public}s', caseName +  "  --test end ");
-                done();
-            }
-        });
-
-        /**
-         * @tc.name testNetworkManagerRegisterAsync_static_2500
-         * @tc.number SUB_NetworkManager_Register_Async_2500
-         * @tc.desc activate the default network, and see if the callback information is generated
-         * @tc.type Function
-         * @tc.size SmallTest
-         * @tc.level Level0
-         */
-        it('testNetworkManagerRegisterAsync_static_2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = 'testNetworkManagerRegisterAsync_static_2500';
-            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try {
-                let netConn = connection.createNetConnection();
-                hilog.info(domain, tag, '%{public}s', caseName+ ' register start');
-                await netConnOnEvent3(caseName, netConn);
-                netConn.register((error: BusinessError<void>|null) => {
-                    if (error?.code != 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName +'  register fail: '+JSON.stringify(error));
-                        ExpectFail();
-                        hilog.info(domain, tag, '%{public}s', caseName + " ---End");
-                        done();
-                    }else{
-                        hilog.info(domain, tag, '%{public}s', caseName+ '  register success');
-                    }
-                });
-                await Utils.msSleep(3000);
-                hilog.info(domain, tag, '%{public}s', caseName+" unregister start" );
-                netConn.unregister((error: BusinessError<void>|null) => {
-                    if (error?.code != 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName + "unregister fail: " + JSON.stringify(error));
-                        ExpectFail();
-                    } else {
-                        hilog.info(domain, tag, '%{public}s', caseName + " unregister success " );
-                        hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" +ListenTimes);
-                        ExpectTrue( ListenTimes == 11 || ListenTimes == 0);
-                    }
-                    hilog.info(domain, tag, '%{public}s', caseName + " ---End");
-                    done();
-                });
-            } catch (err) {
-                hilog.info(domain, tag, '%{public}s', caseName + " catch err is :  "+JSON.stringify(err) );
-                ExpectFail();
-                hilog.info(domain, tag, '%{public}s', caseName +  "  --test end ");
-                done();
-            }
-        });
-
-        /**
-         * @tc.name testNetworkManagerRegisterAsync_static_2600
-         * @tc.number SUB_NetworkManager_Register_Async_2600
-         * @tc.desc activate the default network, and see if the callback information is generated
-         * @tc.type Function
-         * @tc.size SmallTest
-         * @tc.level Level0
-         */
-        it('testNetworkManagerRegisterAsync_static_2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let caseName = 'testNetworkManagerRegisterAsync_static_2600';
-            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try {
-                let netSpecifier: connection.NetSpecifier = {
-                    netCapabilities: {
-                        bearerTypes: [NetBearTypeBEARER_WIFI,NetBearTypeBEARER_CELLULAR],
-                    }
-                }
-                let netConn = connection.createNetConnection(netSpecifier, TIMEOUT);
-                hilog.info(domain, tag, '%{public}s', caseName+ ' register start');
-                await netConnOnEvent3(caseName, netConn)
-                netConn.register((error: BusinessError<void>|null) => {
-                    if (error?.code != 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName +'  register fail: '+JSON.stringify(error));
-                        ExpectFail();
-                        hilog.info(domain, tag, '%{public}s', caseName + " ---End");
-                        done();
-                    }else{
-                        hilog.info(domain, tag, '%{public}s', caseName+ '  register success');
-                    }
-                });
-                await Utils.msSleep(2000);
-                hilog.info(domain, tag, '%{public}s', caseName+" unregister start" );
-                netConn.unregister((error: BusinessError<void>|null) => {
-                    if (error?.code != 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName +  " unregister fail: " + JSON.stringify(error));
-                        ExpectFail();
-                    } else {
-                        hilog.info(domain, tag, '%{public}s', caseName + " unregister success " );
-                        hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" +ListenTimes);
-                        ExpectTrue( ListenTimes == 11 || ListenTimes == 0);
-                    }
-                    hilog.info(domain, tag, '%{public}s', caseName + " ---End");
-                    done();
-                });
-            } catch (err) {
-                hilog.info(domain, tag, '%{public}s', caseName + " catch err is :  "+JSON.stringify(err) );
-                ExpectFail();
-                hilog.info(domain, tag, '%{public}s', caseName +  "  --test end ");
-                done();
-            }
-        });
-
-        /**
-         * @tc.name testNetworkManagerRegisterAsync_static_2700
-         * @tc.number SUB_NetworkManager_Register_Async_2700
-         * @tc.desc  activate the default network ,and see if the callback information is generated
-         * @tc.type Function
-         * @tc.size SmallTest
-         * @tc.level Level0
-         */
-        it('testNetworkManagerRegisterAsync_static_2700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName = 'testNetworkManagerRegisterAsync_static_2700';
-            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try{
-                let netConn = connection.createNetConnection();
-                hilog.info(domain, tag, '%{public}s', caseName+ ' register start');
-                await netConnOnEvent3(caseName, netConn)
-                netConn.register((error: BusinessError<void>|null) => {
-                    if (error?.code != 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName +'  register fail: '+JSON.stringify(error));
-                        ExpectFail();
-                        hilog.info(domain, tag, '%{public}s', caseName + " ---End");
-                        done();
-                    }else{
-                        hilog.info(domain, tag, '%{public}s', caseName+ '  register success');
-                    }
-                });
-                await Utils.msSleep(2000);
-                hilog.info(domain, tag, '%{public}s', caseName+" unregister start" );
-                netConn.unregister((error: BusinessError<void>|null) => {
-                    if (error?.code != 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName +  " unregister fail: " + JSON.stringify(error));
-                        ExpectFail();
-                    } else {
-                        hilog.info(domain, tag, '%{public}s', caseName + " unregister success " );
-                        hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" +ListenTimes);
-                        ExpectTrue( ListenTimes == 11 || ListenTimes == 0);
-                    }
-                    hilog.info(domain, tag, '%{public}s', caseName + " ---End");
-                    done();
-                });
-            }catch (err){
-                hilog.info(domain, tag, '%{public}s', caseName +  "  catch err is: "+JSON.stringify(err));
-                ExpectFail();
-                hilog.info(domain, tag, '%{public}s', caseName +  "  --test end ");
-                done();
-            }
-        });
+  describe("ConnectionRegisterTest", (): void => {
+    hilog.info(domain, tag, '%{public}s', 'describe start');
+    beforeEach(() => {
+      ListenTimes = 0;
     })
+    const TIMEOUT = 1000;
+
+    /**
+     * @tc.name testNetworkManagerRegisterAsync_static_0100
+     * @tc.number SUB_NetworkManager_Register_Async_0100
+     * @tc.desc activate the default network, and see if the callback information is generated
+     * @tc.type Function
+     * @tc.size SmallTest
+     * @tc.level Level0
+     */
+    it('testNetworkManagerRegisterAsync_static_0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'testNetworkManagerRegisterAsync_static_0100';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let netConn = connection.createNetConnection();
+          hilog.info(domain, tag, '%{public}s', caseName + ' register start');
+          await netConnOnEvent4(caseName, netConn);
+          netConn.register((error: BusinessError<void> | null) => {
+            hilog.info(domain, tag, '%{public}s', caseName + '  get error is ' + JSON.stringify(error));
+            if (error?.code !== 0) {
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + ' register success ');
+            }
+          });
+          await Utils.msSleep(3000);
+          hilog.info(domain, tag, '%{public}s', caseName + " unregister start");
+          netConn.unregister((error: BusinessError<void> | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + "unregister fail: " + JSON.stringify(error));
+              ExpectFail();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister success ");
+              hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" + ListenTimes);
+              ExpectTrue(ListenTimes === 11 || ListenTimes === 0);
+            }
+            hilog.info(domain, tag, '%{public}s', caseName + " ---End");
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + " catch err is :  " + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName + "  --test end ");
+          done();
+        }
+      });
+
+    /**
+     * @tc.name testNetworkManagerRegisterAsync_static_0200
+     * @tc.number SUB_NetworkManager_Register_Async_0200
+     * @tc.desc activate the default network, and see if the callback information is generated
+     * @tc.type Function
+     * @tc.size SmallTest
+     * @tc.level Level0
+     */
+    it('testNetworkManagerRegisterAsync_static_0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'testNetworkManagerRegisterAsync_static_0200';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let netSpecifier: connection.NetSpecifier = {
+            netCapabilities: {
+              bearerTypes: [NetBearTypeBEARER_WIFI, NetBearTypeBEARER_CELLULAR],
+            }
+          }
+          let netConn = connection.createNetConnection(netSpecifier, TIMEOUT);
+          hilog.info(domain, tag, '%{public}s', caseName + ' register start');
+          await netConnOnEvent6(caseName, netConn)
+          netConn.register((error: BusinessError<void> | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + '  register fail: ' + JSON.stringify(error));
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName + " ---End");
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + '  register success');
+            }
+          });
+          await Utils.msSleep(3000);
+          hilog.info(domain, tag, '%{public}s', caseName + " unregister start");
+          netConn.unregister((error: BusinessError<void> | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister fail: " + JSON.stringify(error));
+              ExpectFail();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister success ");
+              hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" + ListenTimes);
+              ExpectTrue(ListenTimes === 11 || ListenTimes === 0);
+            }
+            hilog.info(domain, tag, '%{public}s', caseName + " ---End");
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + " catch err is :  " + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName + "  --test end ");
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testNetworkManagerRegisterAsync_static_0300
+     * @tc.number SUB_NetworkManager_Register_Async_0300
+     * @tc.desc   activate the default network,and see if the callback information is generated
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkManagerRegisterAsync_static_0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'testNetworkManagerRegisterAsync_static_0300';
+        hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
+        try {
+          let netSpecifier: connection.NetSpecifier = {
+            netCapabilities: {
+              linkUpBandwidthKbps: 0,
+              linkDownBandwidthKbps: 0,
+              bearerTypes: [NetBearTypeBEARER_CELLULAR],
+              networkCap: [NetCapNET_CAPABILITY_NOT_METERED],
+            }, bearerPrivateIdentifier: '123'
+          }
+          let netConn = connection.createNetConnection(netSpecifier, TIMEOUT);
+          hilog.info(domain, tag, '%{public}s', caseName + " register start");
+          netConn.register((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " register fail: " + JSON.stringify(error));
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " register success");
+            }
+          });
+          await netConnOnEvent6(caseName, netConn)
+          await Utils.msSleep(500);
+          hilog.info(domain, tag, '%{public}s', caseName + " unregister start");
+          netConn.unregister((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister fail: " + JSON.stringify(error));
+              ExpectFail();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister success ");
+              hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" + ListenTimes);
+              ExpectTrue(ListenTimes === 0);
+            }
+            hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} catch err is ` + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', `${caseName} --test end`);
+          done();
+        }
+      });
+    /**
+     * @tc.name   testNetworkManagerRegisterAsync_static_0400
+     * @tc.number SUB_NetworkManager_Register_Async_0400
+     * @tc.desc   activate the default network,and see if the callback information is generated
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkManagerRegisterAsync_static_0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'testNetworkManagerRegisterAsync_static_0400';
+        hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
+        try {
+          let netSpecifier: connection.NetSpecifier = {
+            netCapabilities: {
+              linkUpBandwidthKbps: 0,
+              linkDownBandwidthKbps: 0,
+              bearerTypes: [NetBearTypeBEARER_CELLULAR],
+              networkCap: [NetCapNET_CAPABILITY_INTERNET],
+            }, bearerPrivateIdentifier: '123'
+          }
+          let netConn = connection.createNetConnection(netSpecifier, TIMEOUT);
+          hilog.info(domain, tag, '%{public}s', caseName + " register start");
+          netConn.register((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " register fail: " + JSON.stringify(error));
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " register success");
+            }
+          });
+          await netConnOnEvent6(caseName, netConn)
+          await Utils.msSleep(500);
+          hilog.info(domain, tag, '%{public}s', caseName + " unregister start");
+          netConn.unregister((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister fail: " + JSON.stringify(error));
+              ExpectFail();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister success ");
+              hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" + ListenTimes);
+              ExpectTrue(ListenTimes === 0);
+            }
+            hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} catch err is ` + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', `${caseName} --test end`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testNetworkManagerRegisterAsync_static_0500
+     * @tc.number SUB_NetworkManager_Register_Async_0500
+     * @tc.desc   activate the default network,and see if the callback information is generated
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkManagerRegisterAsync_static_0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'testNetworkManagerRegisterAsync_static_0500';
+        hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
+        try {
+          let netSpecifier: connection.NetSpecifier = {
+            netCapabilities: {
+              linkUpBandwidthKbps: 0,
+              linkDownBandwidthKbps: 0,
+              bearerTypes: [NetBearTypeBEARER_CELLULAR],
+              networkCap: [NetCapNET_CAPABILITY_NOT_VPN],
+            }, bearerPrivateIdentifier: '123'
+          }
+          let netConn = connection.createNetConnection(netSpecifier, TIMEOUT);
+          hilog.info(domain, tag, '%{public}s', caseName + " register start");
+          netConn.register((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " register fail: " + JSON.stringify(error));
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " register success");
+            }
+          });
+          await netConnOnEvent6(caseName, netConn)
+          await Utils.msSleep(500);
+          hilog.info(domain, tag, '%{public}s', caseName + " unregister start");
+          netConn.unregister((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister fail: " + JSON.stringify(error));
+              ExpectFail();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister success ");
+              hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" + ListenTimes);
+              ExpectTrue(ListenTimes === 0);
+            }
+            hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} catch err is ` + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', `${caseName} --test end`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testNetworkManagerRegisterAsync_static_0600
+     * @tc.number SUB_NetworkManager_Register_Async_0600
+     * @tc.desc   activate the default network,and see if the callback information is generated
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkManagerRegisterAsync_static_0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'testNetworkManagerRegisterAsync_static_0600';
+        hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
+        try {
+          let netSpecifier: connection.NetSpecifier = {
+            netCapabilities: {
+              linkUpBandwidthKbps: 0,
+              linkDownBandwidthKbps: 0,
+              bearerTypes: [NetBearTypeBEARER_CELLULAR],
+              networkCap: [NetCapNET_NET_CAPABILITY_VALIDATED],
+            }, bearerPrivateIdentifier: '123'
+          }
+          let netConn = connection.createNetConnection(netSpecifier, TIMEOUT);
+          hilog.info(domain, tag, '%{public}s', caseName + " register start");
+          netConn.register((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " register fail: " + JSON.stringify(error));
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " register success");
+            }
+          });
+          await netConnOnEvent6(caseName, netConn)
+          await Utils.msSleep(500);
+          hilog.info(domain, tag, '%{public}s', caseName + " unregister start");
+          netConn.unregister((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister fail: " + JSON.stringify(error));
+              ExpectFail();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister success ");
+              hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" + ListenTimes);
+              ExpectTrue(ListenTimes === 0);
+            }
+            hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} catch err is ` + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', `${caseName} --test end`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testNetworkManagerRegisterAsync_static_0700
+     * @tc.number SUB_NetworkManager_Register_Async_0700
+     * @tc.desc   activate the default network,and see if the callback information is generated
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkManagerRegisterAsync_static_0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'testNetworkManagerRegisterAsync_static_0700';
+        hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
+        try {
+          let netSpecifier: connection.NetSpecifier = {
+            netCapabilities: {
+              linkUpBandwidthKbps: 0,
+              linkDownBandwidthKbps: 0,
+              bearerTypes: [NetBearTypeBEARER_CELLULAR],
+              networkCap: [NetCapNET_CAPABILITY_PORTAL],
+            }, bearerPrivateIdentifier: '123'
+          }
+          let netConn = connection.createNetConnection(netSpecifier, TIMEOUT);
+          hilog.info(domain, tag, '%{public}s', caseName + " register start");
+          netConn.register((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " register fail: " + JSON.stringify(error));
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " register success");
+            }
+          });
+          await netConnOnEvent6(caseName, netConn)
+          await Utils.msSleep(500);
+          hilog.info(domain, tag, '%{public}s', caseName + " unregister start");
+          netConn.unregister((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister fail: " + JSON.stringify(error));
+              ExpectFail();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister success ");
+              hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" + ListenTimes);
+              ExpectTrue(ListenTimes === 0);
+            }
+            hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} catch err is ` + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', `${caseName} --test end`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testNetworkManagerRegisterAsync_static_0800
+     * @tc.number SUB_NetworkManager_Register_Async_0800
+     * @tc.desc   activate the default network,and see if the callback information is generated
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkManagerRegisterAsync_static_0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'testNetworkManagerRegisterAsync_static_0800';
+        hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
+        try {
+          let netSpecifier: connection.NetSpecifier = {
+            netCapabilities: {
+              linkUpBandwidthKbps: 0,
+              linkDownBandwidthKbps: 0,
+              bearerTypes: [NetBearTypeBEARER_WIFI],
+              networkCap: [NetCapNET_CAPABILITY_MMS],
+            }, bearerPrivateIdentifier: '123'
+          }
+          let netConn = connection.createNetConnection(netSpecifier, TIMEOUT);
+          hilog.info(domain, tag, '%{public}s', caseName + " register start");
+          netConn.register((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " register fail: " + JSON.stringify(error));
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " register success");
+            }
+          });
+          await netConnOnEvent6(caseName, netConn)
+          await Utils.msSleep(500);
+          hilog.info(domain, tag, '%{public}s', caseName + " unregister start");
+          netConn.unregister((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister fail: " + JSON.stringify(error));
+              ExpectFail();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister success ");
+              hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" + ListenTimes);
+              ExpectTrue(ListenTimes === 0);
+            }
+            hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} catch err is ` + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', `${caseName} --test end`);
+          done();
+        }
+      });
+    /**
+     * @tc.name   testNetworkManagerRegisterAsync_static_0900
+     * @tc.number SUB_NetworkManager_Register_Async_0900
+     * @tc.desc   activate the default network,and see if the callback information is generated
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkManagerRegisterAsync_static_0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'testNetworkManagerRegisterAsync_static_0900';
+        hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
+        try {
+          let netSpecifier: connection.NetSpecifier = {
+            netCapabilities: {
+              linkUpBandwidthKbps: 0,
+              linkDownBandwidthKbps: 0,
+              bearerTypes: [NetBearTypeBEARER_WIFI],
+              networkCap: [NetCapNET_CAPABILITY_INTERNET],
+            }, bearerPrivateIdentifier: '123'
+          }
+          let netConn = connection.createNetConnection(netSpecifier, TIMEOUT);
+          hilog.info(domain, tag, '%{public}s', caseName + " register start");
+          netConn.register((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " register fail: " + JSON.stringify(error));
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " register success");
+            }
+          });
+          await netConnOnEvent6(caseName, netConn)
+          await Utils.msSleep(500);
+          hilog.info(domain, tag, '%{public}s', caseName + " unregister start");
+          netConn.unregister((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister fail: " + JSON.stringify(error));
+              ExpectFail();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister success ");
+              hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" + ListenTimes);
+              ExpectTrue(ListenTimes === 0);
+            }
+            hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} catch err is ` + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', `${caseName} --test end`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testNetworkManagerRegisterAsync_static_1000
+     * @tc.number SUB_NetworkManager_Register_Async_1000
+     * @tc.desc   activate the default network,and see if the callback information is generated
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkManagerRegisterAsync_static_1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'testNetworkManagerRegisterAsync_static_1000';
+        hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
+        try {
+          let netSpecifier: connection.NetSpecifier = {
+            netCapabilities: {
+              linkUpBandwidthKbps: 0,
+              linkDownBandwidthKbps: 0,
+              bearerTypes: [NetBearTypeBEARER_WIFI],
+              networkCap: [NetCapNET_CAPABILITY_INTERNET],
+            }, bearerPrivateIdentifier: '123'
+          }
+          let netConn = connection.createNetConnection(netSpecifier, TIMEOUT);
+          hilog.info(domain, tag, '%{public}s', caseName + " register start");
+          netConn.register((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " register fail: " + JSON.stringify(error));
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " register success");
+            }
+          });
+          await netConnOnEvent6(caseName, netConn)
+          await Utils.msSleep(500);
+          hilog.info(domain, tag, '%{public}s', caseName + " unregister start");
+          netConn.unregister((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister fail: " + JSON.stringify(error));
+              ExpectFail();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister success ");
+              hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" + ListenTimes);
+              ExpectTrue(ListenTimes === 0);
+            }
+            hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} catch err is ` + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', `${caseName} --test end`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testNetworkManagerRegisterAsync_static_1100
+     * @tc.number SUB_NetworkManager_Register_Async_1100
+     * @tc.desc   activate the default network ,and see if the callback information is generated
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkManagerRegisterAsync_static_1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'testNetworkManagerRegisterAsync_static_1100';
+        hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
+        try {
+          let netSpecifier: connection.NetSpecifier = {
+            netCapabilities: {
+              linkUpBandwidthKbps: 0,
+              linkDownBandwidthKbps: 0,
+              bearerTypes: [NetBearTypeBEARER_WIFI],
+              networkCap: [NetCapNET_CAPABILITY_NOT_VPN],
+            }, bearerPrivateIdentifier: '123'
+          }
+          let netConn = connection.createNetConnection(netSpecifier, TIMEOUT);
+          hilog.info(domain, tag, '%{public}s', caseName + " register start");
+          netConn.register((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " register fail: " + JSON.stringify(error));
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " register success");
+            }
+          });
+          await netConnOnEvent6(caseName, netConn)
+          await Utils.msSleep(500);
+          hilog.info(domain, tag, '%{public}s', caseName + " unregister start");
+          netConn.unregister((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister fail: " + JSON.stringify(error));
+              ExpectFail();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister success ");
+              hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" + ListenTimes);
+              ExpectTrue(ListenTimes === 0);
+            }
+            hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} catch err is ` + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', `${caseName} --test end`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testNetworkManagerRegisterAsync_static_1200
+     * @tc.number SUB_NetworkManager_Register_Async_1200
+     * @tc.desc   activate the default network ,and see if the callback information is generated
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkManagerRegisterAsync_static_1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'testNetworkManagerRegisterAsync_static_1200';
+        hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
+        try {
+          let netSpecifier: connection.NetSpecifier = {
+            netCapabilities: {
+              linkUpBandwidthKbps: 0,
+              linkDownBandwidthKbps: 0,
+              bearerTypes: [NetBearTypeBEARER_WIFI],
+              networkCap: [NetCapNET_NET_CAPABILITY_VALIDATED],
+            }, bearerPrivateIdentifier: '123'
+          }
+          let netConn = connection.createNetConnection(netSpecifier, TIMEOUT);
+          hilog.info(domain, tag, '%{public}s', caseName + " register start");
+          netConn.register((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " register fail: " + JSON.stringify(error));
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " register success");
+            }
+          });
+          await netConnOnEvent6(caseName, netConn)
+          await Utils.msSleep(500);
+          hilog.info(domain, tag, '%{public}s', caseName + " unregister start");
+          netConn.unregister((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister fail: " + JSON.stringify(error));
+              ExpectFail();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister success ");
+              hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" + ListenTimes);
+              ExpectTrue(ListenTimes === 0);
+            }
+            hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} catch err is ` + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', `${caseName} --test end`);
+          done();
+        }
+      });
+
+
+    /**
+     * @tc.name   testNetworkManagerRegisterAsync_static_1300
+     * @tc.number SUB_NetworkManager_Register_Async_1300
+     * @tc.desc   activate the default network ,and see if the callback information is generated
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkManagerRegisterAsync_static_1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'testNetworkManagerRegisterAsync_static_1300';
+        hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
+        try {
+          let netSpecifier: connection.NetSpecifier = {
+            netCapabilities: {
+              linkUpBandwidthKbps: 0,
+              linkDownBandwidthKbps: 0,
+              bearerTypes: [NetBearTypeBEARER_WIFI],
+              networkCap: [NetCapNET_CAPABILITY_PORTAL],
+            }, bearerPrivateIdentifier: '123'
+          }
+          let netConn = connection.createNetConnection(netSpecifier, TIMEOUT);
+          hilog.info(domain, tag, '%{public}s', caseName + " register start");
+          netConn.register((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " register fail: " + JSON.stringify(error));
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " register success");
+            }
+          });
+          await netConnOnEvent6(caseName, netConn)
+          await Utils.msSleep(500);
+          hilog.info(domain, tag, '%{public}s', caseName + " unregister start");
+          netConn.unregister((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister fail: " + JSON.stringify(error));
+              ExpectFail();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister success ");
+              hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" + ListenTimes);
+              ExpectTrue(ListenTimes === 0);
+            }
+            hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} catch err is ` + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', `${caseName} --test end`);
+          done();
+        }
+      });
+
+
+    /**
+     * @tc.name   testNetworkManagerRegisterAsync_static_1400
+     * @tc.number SUB_NetworkManager_Register_Async_1400
+     * @tc.desc   activate the default network ,and see if the callback information is generated
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkManagerRegisterAsync_static_1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'testNetworkManagerRegisterAsync_static_1400';
+        hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
+        try {
+          let netSpecifier: connection.NetSpecifier = {
+            netCapabilities: {
+              linkUpBandwidthKbps: 0,
+              linkDownBandwidthKbps: 0,
+              bearerTypes: [NetBearTypeBEARER_BLUETOOTH],
+              networkCap: [NetCapNET_CAPABILITY_INTERNET],
+            }, bearerPrivateIdentifier: '123'
+          }
+          let netConn = connection.createNetConnection(netSpecifier, TIMEOUT);
+          hilog.info(domain, tag, '%{public}s', caseName + " register start");
+          netConn.register((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " register fail: " + JSON.stringify(error));
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " register success");
+            }
+          });
+          await netConnOnEvent6(caseName, netConn)
+          await Utils.msSleep(500);
+          hilog.info(domain, tag, '%{public}s', caseName + " unregister start");
+          netConn.unregister((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister fail: " + JSON.stringify(error));
+              ExpectFail();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister success ");
+              hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" + ListenTimes);
+              ExpectTrue(ListenTimes === 0);
+            }
+            hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} catch err is ` + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', `${caseName} --test end`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testNetworkManagerRegisterAsync_static_1500
+     * @tc.number SUB_NetworkManager_Register_Async_1500
+     * @tc.desc   activate the default network ,and see if the callback information is generated
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkManagerRegisterAsync_static_1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'testNetworkManagerRegisterAsync_static_1500';
+        hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
+        try {
+          let netSpecifier: connection.NetSpecifier = {
+            netCapabilities: {
+              linkUpBandwidthKbps: 0,
+              linkDownBandwidthKbps: 0,
+              bearerTypes: [NetBearTypeBEARER_ETHERNET],
+              networkCap: [NetCapNET_CAPABILITY_INTERNET],
+            }, bearerPrivateIdentifier: '123'
+          }
+          let netConn = connection.createNetConnection(netSpecifier, TIMEOUT);
+          hilog.info(domain, tag, '%{public}s', caseName + " register start");
+          netConn.register((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " register fail: " + JSON.stringify(error));
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " register success");
+            }
+          });
+          await netConnOnEvent6(caseName, netConn)
+          await Utils.msSleep(500);
+          hilog.info(domain, tag, '%{public}s', caseName + " unregister start");
+          netConn.unregister((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister fail: " + JSON.stringify(error));
+              ExpectFail();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister success ");
+              hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" + ListenTimes);
+              ExpectTrue(ListenTimes === 0);
+            }
+            hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} catch err is ` + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', `${caseName} --test end`);
+          done();
+        }
+      });
+
+
+    /**
+     * @tc.name   testNetworkManagerRegisterAsync_static_1600
+     * @tc.number SUB_NetworkManager_Register_Async_1600
+     * @tc.desc   activate the default network ,and see if the callback information is generated
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkManagerRegisterAsync_static_1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'testNetworkManagerRegisterAsync_static_1600';
+        hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
+        try {
+          let netSpecifier: connection.NetSpecifier = {
+            netCapabilities: {
+              linkUpBandwidthKbps: 0,
+              linkDownBandwidthKbps: 0,
+              bearerTypes: [NetBearTypeBEARER_VPN],
+              networkCap: [NetCapNET_CAPABILITY_INTERNET],
+            }, bearerPrivateIdentifier: '123'
+          }
+          let netConn = connection.createNetConnection(netSpecifier, TIMEOUT);
+          hilog.info(domain, tag, '%{public}s', caseName + " register start");
+          netConn.register((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " register fail: " + JSON.stringify(error));
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " register success");
+            }
+          });
+          await netConnOnEvent6(caseName, netConn)
+          await Utils.msSleep(500);
+          hilog.info(domain, tag, '%{public}s', caseName + " unregister start");
+          netConn.unregister((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister fail: " + JSON.stringify(error));
+              ExpectFail();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister success ");
+              hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" + ListenTimes);
+              ExpectTrue(ListenTimes === 0);
+            }
+            hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} catch err is ` + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', `${caseName} --test end`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testNetworkManagerRegisterAsync_static_2000
+     * @tc.number SUB_NetworkManager_Register_Async_2000
+     * @tc.desc   activate the default network ,and see if the callback information is generated
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkManagerRegisterAsync_static_2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'testNetworkManagerRegisterAsync_static_2000';
+        hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
+        try {
+          let netSpecifier: connection.NetSpecifier = {
+            netCapabilities: {
+              linkUpBandwidthKbps: 0,
+              linkDownBandwidthKbps: 0,
+              bearerTypes: [NetBearTypeBEARER_CELLULAR],
+              networkCap: [NetCapNET_CAPABILITY_MMS],
+            }, bearerPrivateIdentifier: '123'
+          }
+          let netConn = connection.createNetConnection(netSpecifier, TIMEOUT);
+          hilog.info(domain, tag, '%{public}s', caseName + " register start");
+          netConn.register((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " register fail: " + JSON.stringify(error));
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " register success");
+            }
+          });
+
+          await netConnOnEvent6(caseName, netConn)
+          await Utils.msSleep(500);
+          hilog.info(domain, tag, '%{public}s', caseName + " unregister start");
+          netConn.unregister((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister fail: " + JSON.stringify(error));
+              ExpectFail();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister success ");
+              hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" + ListenTimes);
+              ExpectTrue(ListenTimes === 0);
+            }
+            hilog.info(domain, tag, '%{public}s', `${caseName}---End`);
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} catch err is ` + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', `${caseName} --test end`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name testNetworkManagerRegisterAsync_static_2300
+     * @tc.number SUB_NetworkManager_Register_Async_2300
+     * @tc.desc  activate the default network ,and see if the callback information is generated
+     * @tc.type Function
+     * @tc.size SmallTest
+     * @tc.level Level0
+     */
+    it('testNetworkManagerRegisterAsync_static_2300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'testNetworkManagerRegisterAsync_static_2300';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let netConn = connection.createNetConnection();
+          hilog.info(domain, tag, '%{public}s', caseName + ' register start');
+          await netConnOnEvent6(caseName, netConn)
+          netConn.register((error: BusinessError<void> | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + '  register fail: ' + JSON.stringify(error));
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName + " ---End");
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + '  register success');
+            }
+          });
+          await Utils.msSleep(3000);
+          hilog.info(domain, tag, '%{public}s', caseName + " unregister start");
+          netConn.unregister((error: BusinessError<void> | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister fail: " + JSON.stringify(error));
+              ExpectFail();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister success ");
+              hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" + ListenTimes);
+              ExpectTrue(ListenTimes === 11 || ListenTimes === 0);
+            }
+            hilog.info(domain, tag, '%{public}s', caseName + " ---End");
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + "  catch err is: " + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName + "  --test end ");
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testNetworkManagerRegisterAsync_static_2400
+     * @tc.number SUB_NetworkManager_register_Async_2400
+     * @tc.desc   activate the default network ,and see if the callback information is generated
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkManagerRegisterAsync_static_2400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'testNetworkManagerRegisterAsync_static_2400';
+        hilog.info(domain, tag, `${caseName}---Start`);
+        try {
+          let netSpecifier: connection.NetSpecifier = {
+            netCapabilities: {
+              linkUpBandwidthKbps: 0,
+              linkDownBandwidthKbps: 0,
+              bearerTypes: [NetBearTypeBEARER_CELLULAR],
+              networkCap: [NetCapNET_CAPABILITY_MMS],
+            }, bearerPrivateIdentifier: '123'
+          }
+          let netConn = connection.createNetConnection(netSpecifier, TIMEOUT);
+          hilog.info(domain, tag, caseName + " register start");
+          netConn.register((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, caseName + " register fail: " + JSON.stringify(error));
+              ExpectFail();
+              hilog.info(domain, tag, `${caseName}---End`);
+              done();
+            } else {
+              hilog.info(domain, tag, caseName + " register success");
+            }
+          });
+          await netConnOnEvent6(caseName, netConn)
+          await Utils.msSleep(500);
+          hilog.info(domain, tag, caseName + " unregister start");
+          netConn.unregister((error: BusinessError | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, caseName + " unregister fail: " + JSON.stringify(error));
+              ExpectFail();
+            } else {
+              hilog.info(domain, tag, caseName + " unregister success ");
+              hilog.info(domain, tag, caseName + " ListenTimes is :" + ListenTimes);
+              ExpectTrue(ListenTimes === 0);
+            }
+            hilog.info(domain, tag, `${caseName}---End`);
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, `${caseName} catch err is ` + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, `${caseName} --test end`);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name testNetworkManagerRegisterAsync_static_2500
+     * @tc.number SUB_NetworkManager_Register_Async_2500
+     * @tc.desc activate the default network, and see if the callback information is generated
+     * @tc.type Function
+     * @tc.size SmallTest
+     * @tc.level Level0
+     */
+    it('testNetworkManagerRegisterAsync_static_2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'testNetworkManagerRegisterAsync_static_2500';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let netConn = connection.createNetConnection();
+          hilog.info(domain, tag, '%{public}s', caseName + ' register start');
+          await netConnOnEvent3(caseName, netConn);
+          netConn.register((error: BusinessError<void> | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + '  register fail: ' + JSON.stringify(error));
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName + " ---End");
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + '  register success');
+            }
+          });
+          await Utils.msSleep(3000);
+          hilog.info(domain, tag, '%{public}s', caseName + " unregister start");
+          netConn.unregister((error: BusinessError<void> | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + "unregister fail: " + JSON.stringify(error));
+              ExpectFail();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister success ");
+              hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" + ListenTimes);
+              ExpectTrue(ListenTimes === 11 || ListenTimes === 0);
+            }
+            hilog.info(domain, tag, '%{public}s', caseName + " ---End");
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + " catch err is :  " + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName + "  --test end ");
+          done();
+        }
+      });
+
+    /**
+     * @tc.name testNetworkManagerRegisterAsync_static_2600
+     * @tc.number SUB_NetworkManager_Register_Async_2600
+     * @tc.desc activate the default network, and see if the callback information is generated
+     * @tc.type Function
+     * @tc.size SmallTest
+     * @tc.level Level0
+     */
+    it('testNetworkManagerRegisterAsync_static_2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'testNetworkManagerRegisterAsync_static_2600';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let netSpecifier: connection.NetSpecifier = {
+            netCapabilities: {
+              bearerTypes: [NetBearTypeBEARER_WIFI, NetBearTypeBEARER_CELLULAR],
+            }
+          }
+          let netConn = connection.createNetConnection(netSpecifier, TIMEOUT);
+          hilog.info(domain, tag, '%{public}s', caseName + ' register start');
+          await netConnOnEvent3(caseName, netConn)
+          netConn.register((error: BusinessError<void> | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + '  register fail: ' + JSON.stringify(error));
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName + " ---End");
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + '  register success');
+            }
+          });
+          await Utils.msSleep(2000);
+          hilog.info(domain, tag, '%{public}s', caseName + " unregister start");
+          netConn.unregister((error: BusinessError<void> | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister fail: " + JSON.stringify(error));
+              ExpectFail();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister success ");
+              hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" + ListenTimes);
+              ExpectTrue(ListenTimes === 11 || ListenTimes === 0);
+            }
+            hilog.info(domain, tag, '%{public}s', caseName + " ---End");
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + " catch err is :  " + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName + "  --test end ");
+          done();
+        }
+      });
+
+    /**
+     * @tc.name testNetworkManagerRegisterAsync_static_2700
+     * @tc.number SUB_NetworkManager_Register_Async_2700
+     * @tc.desc  activate the default network ,and see if the callback information is generated
+     * @tc.type Function
+     * @tc.size SmallTest
+     * @tc.level Level0
+     */
+    it('testNetworkManagerRegisterAsync_static_2700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'testNetworkManagerRegisterAsync_static_2700';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let netConn = connection.createNetConnection();
+          hilog.info(domain, tag, '%{public}s', caseName + ' register start');
+          await netConnOnEvent3(caseName, netConn)
+          netConn.register((error: BusinessError<void> | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + '  register fail: ' + JSON.stringify(error));
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName + " ---End");
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + '  register success');
+            }
+          });
+          await Utils.msSleep(2000);
+          hilog.info(domain, tag, '%{public}s', caseName + " unregister start");
+          netConn.unregister((error: BusinessError<void> | null) => {
+            if (error?.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister fail: " + JSON.stringify(error));
+              ExpectFail();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + " unregister success ");
+              hilog.info(domain, tag, '%{public}s', caseName + " ListenTimes is :" + ListenTimes);
+              ExpectTrue(ListenTimes === 11 || ListenTimes === 0);
+            }
+            hilog.info(domain, tag, '%{public}s', caseName + " ---End");
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + "  catch err is: " + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName + "  --test end ");
+          done();
+        }
+      });
+  })
 }

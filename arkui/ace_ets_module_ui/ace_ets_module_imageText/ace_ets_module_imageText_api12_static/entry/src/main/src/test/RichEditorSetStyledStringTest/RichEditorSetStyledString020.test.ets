@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -34,6 +34,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function RichEditorSetStyledString020() {
   describe('RichEditorSetStyledString020', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,9 +58,10 @@ export default function RichEditorSetStyledString020() {
           console.info("push RichEditorSetStyledString020 success");
         }
       } catch (err) {
-        console.error("push RichEditorSetStyledString020 page error: " + err);
+        console.log("push RichEditorSetStyledString020 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
@@ -75,14 +77,22 @@ export default function RichEditorSetStyledString020() {
       let rich = await (driver.findComponent(ON.id('RichEditorSetStyledString020')) as Promise<Component>);
       let getBounds = await rich.getBounds();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 200, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 200, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let imageTop = await (driver.findComponent(ON.id('imageTop')) as Promise<Component>);
       await imageTop.click();
       await CommonFunc.sleep(500);
       await imageTop.click();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 210, getBounds.top + 40);
+      try {
+        await driver.clickAt({ x: getBounds.left + 210, y: getBounds.top + 40, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let onClickFlag = await (driver.findComponent(ON.id('onClickFlag')) as Promise<Component>);
       let onClickFlagText = await onClickFlag.getText();
@@ -104,7 +114,11 @@ export default function RichEditorSetStyledString020() {
       let rich = await (driver.findComponent(ON.id('RichEditorSetStyledString020')) as Promise<Component>);
       let getBounds = await rich.getBounds();
       await CommonFunc.sleep(500);
-      await driver.longClick(getBounds.left + 180, getBounds.top + 40);
+      try {
+        await driver.longClickAt({ x: getBounds.left + 180, y: getBounds.top + 40, displayId: displayID });
+      } catch (err) {
+        console.log('driver.longClickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
       let onLongPressFlag = await (driver.findComponent(ON.id('onLongPressFlag')) as Promise<Component>);
       let onLongPressFlagText = await onLongPressFlag.getText();

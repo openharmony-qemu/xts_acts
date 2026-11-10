@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, beforeEach, afterEach, Level } from '../../../../hypium/index';
+import { describe, it, expect, beforeEach, afterEach, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Driver, ON, Rect } from '@ohos.UiTest';
 import { Router } from '@ohos.arkui.UIContext';
@@ -99,12 +99,12 @@ export default function ScrollWithMouseTest() {
       await driver.mouseDrag({
         x: (Math.round(left + width * 0.7)).toInt(),
         y: (Math.round(top + height / 2)).toInt(),
-        displayId: displayId
+        displayId: displayId.toInt()
       },
         {
           x: (Math.round(left + width * 0.3)).toInt(),
           y: (Math.round(top + height / 2)).toInt(),
-          displayId: displayId
+          displayId: displayId.toInt()
         })
       await Utils.sleep(2000);
 
@@ -154,12 +154,12 @@ export default function ScrollWithMouseTest() {
       await driver.mouseDrag({
         x: (Math.round(left + width * 0.7)).toInt(),
         y: (Math.round(top + height / 2)).toInt(),
-        displayId: displayId
+        displayId: displayId.toInt()
       },
         {
           x: (Math.round(left + width * 0.3)).toInt(),
           y: (Math.round(top + height / 2)).toInt(),
-          displayId: displayId
+          displayId: displayId.toInt()
         })
       await Utils.sleep(2000);
 
@@ -209,12 +209,12 @@ export default function ScrollWithMouseTest() {
       await driver.mouseDrag({
         x: (Math.round(left + width * 0.7)).toInt(),
         y: (Math.round(top + height / 2)).toInt(),
-        displayId: displayId
+        displayId: displayId.toInt()
       },
         {
           x: (Math.round(left + width * 0.3)).toInt(),
           y: (Math.round(top + height / 2)).toInt(),
-          displayId: displayId
+          displayId: displayId.toInt()
         })
       await Utils.sleep(2000);
       let strJson2: string = inspector.getInspectorByKey('H_SCROLL_OFFSET');

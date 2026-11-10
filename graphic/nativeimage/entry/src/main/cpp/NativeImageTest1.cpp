@@ -229,7 +229,6 @@ napi_value OHNativeImageAttachContext(napi_env env, napi_callback_info info)
     OH_NativeImage_GetTimestamp(image);
     float matrix[16];
     OH_NativeImage_GetTransformMatrix(image, matrix);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
     OH_NativeImage_DetachContext(image);
     GLuint textureId2;
     glGenTextures(PARAM_1, &textureId2);
@@ -286,7 +285,6 @@ napi_value OHNativeImageDetachContext(napi_env env, napi_callback_info info)
     OH_NativeImage_GetTimestamp(image);
     float matrix[16];
     OH_NativeImage_GetTransformMatrix(image, matrix);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
     backInfo = OH_NativeImage_DetachContext(image);
     GLuint textureId2;
     glGenTextures(PARAM_1, &textureId2);
@@ -339,7 +337,6 @@ napi_value OHNativeImageUpdateSurfaceImage(napi_env env, napi_callback_info info
     OH_NativeImage_GetTimestamp(image);
     float matrix[16];
     OH_NativeImage_GetTransformMatrix(image, matrix);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
     OH_NativeImage_DetachContext(image);
     GLuint textureId2;
     glGenTextures(PARAM_1, &textureId2);
@@ -381,7 +378,6 @@ napi_value OHNativeImageUpdateSurfaceImageBoundary(napi_env env, napi_callback_i
     OH_NativeImage_GetTimestamp(image);
     float matrix[16];
     OH_NativeImage_GetTransformMatrix(image, matrix);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
     OH_NativeImage_DetachContext(image);
     GLuint textureId2;
     glGenTextures(PARAM_1, &textureId2);

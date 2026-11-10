@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Driver } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -34,7 +34,7 @@ export default function CircleFillStrokeTest() {
         router.clear();
         let pages = router.getState();
         console.info('get CircleFillStroke state pages:' + JSON.stringify(pages));
-        if (!('pointsUndefined' == pages.name)) {
+        if (!('CircleFillStroke' == pages.name)) {
           console.info('get CircleFillStroke pages.name:' + JSON.stringify(pages.name));
           await router.pushUrl(options);
           await CommonFunc.sleep(2000);

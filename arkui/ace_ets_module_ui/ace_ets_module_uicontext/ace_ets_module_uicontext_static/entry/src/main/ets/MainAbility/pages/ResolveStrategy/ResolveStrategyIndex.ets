@@ -46,6 +46,8 @@ struct ResolveStrategyIndex {
       Text(this.lastForeground).key('resolveStrategyLastForeground').height('5%');
       Text(this.undefinedValue).key('resolveStrategyUndefined').height('5%');
     }
+    .padding(10)
+    .margin(10)
     .width('100%')
     .height('100%');
   }

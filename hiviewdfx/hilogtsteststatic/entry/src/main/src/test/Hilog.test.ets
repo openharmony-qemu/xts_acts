@@ -13,8 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll} from "@ohos/hypium-static/src/main/indexStatic";
 import hilog from '@ohos.hilog'
+import { RecordData } from '@ohos.base';  
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'HILOG_ANI_TEST'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
@@ -440,6 +441,37 @@ export default function HilogTsTest() {
     })
     
     /**
+    * @tc.name   testHilogTsApiStatic22
+    * @tc.number SUB_DFX_DFT_Hiview_Libhilog_Hilog_Static_2200
+    * @tc.desc   hilog error interface test - 4th parameter (args) coverage: empty array and non-empty array.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('testHilogTsApiStatic22', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      hilog.info(domain, tag, 'testHilogTsApiStatic22 start');
+      // hilog.error 为 @ohos.hilog 顶层函数声明，无 this 绑定，提取引用安全
+      const logError: (domain: int, tag: string, format: string, ...args: RecordData[]) => void = hilog.error;
+      try {
+        // 第4参数传入空数组（Array<RecordData>，length==0）
+        let emptyArgs: Array<RecordData> = [];
+        logError(domain, tag, "%{public}s", emptyArgs);
+
+        // 第4参数传入非空数组（同构 string 元素）
+        let nonEmptyArgs: Array<RecordData> = ['hilogError', 'coverage', 'array'];
+        logError(domain, tag, "%{public}s", nonEmptyArgs);
+
+        // 第4参数传入非空数组（混合类型元素，覆盖 Object / Array 嵌套成员）
+        let mixedArgs: Array<RecordData> = ['id', 100, [1, 2, 3]];
+        logError(domain, tag, "%{public}s", mixedArgs);
+      } catch (error) {
+        logError(domain, tag, `testHilogTsApiStatic22 got an error: ${JSON.stringify(error)}`)
+        expect().assertFail()
+      }
+      hilog.info(domain, tag, 'testHilogTsApiStatic22 end');
+    })
+
+    /**
      * @tc.name   SUB_DFX_DFT_DefaultLevel_Static_0100
      * @tc.number SUB_DFX_DFT_DefaultLevel_Static_0100
      * @tc.desc   hilog begin interface test.
@@ -715,7 +747,9 @@ export default function HilogTsTest() {
         let lastType = hilog.setOutputType(hilog.OutputType.CONSOLE_ONLY);
         hilog.info(0x3200, "testTag", 'console only log');
         expect(lastType >= 0 && lastType <= 4).assertTrue();
-        expect(hilog.OutputType.CONSOLE_ONLY).assertEqual(0);
+        // 验证设置后再次获取的类型与设置值一致（运行时行为，非恒真）
+        let currentType = hilog.getOutputType();
+        expect(currentType).assertEqual(hilog.OutputType.CONSOLE_ONLY);
       } catch (err) {
         console.error(`====> testHilogSetOutputType0600 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();

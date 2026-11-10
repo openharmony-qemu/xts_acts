@@ -13,12 +13,19 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import {beforeAll, describe, it, expect, TestType, Size, Level} from '@ohos/hypium';
 import { ArkTSUtils, collections, taskpool } from '@kit.ArkTS';
 import { MAP_CFG } from './MapExpandCfg';
-import Utils from './Util.test';
+import Utils from './Util.test';const MAP_BOUNDARY_CAPACITY: number = MAP_CFG.BOUND;
 
-const MAP_BOUNDARY_CAPACITY: number = MAP_CFG.BOUND;
+
+function sleep(time: number): Promise<void> {
+  return new Promise<void>((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, time);
+  });
+}
 
 @Sendable
 class SendableMapObjectKey {
@@ -245,7 +252,11 @@ function verifyCompleteNumberMapOnWorker(end: number): boolean {
 
 export default function CollectionsMapExpand1024Test(): void {
   describe('CollectionsMapExpand1024Test', () => {
-    /**
+    beforeAll(async () => {
+      await sleep(200);
+    })
+
+        /**
      * @tc.number SUB_COMMONLIBRARY_COLLECTIONS_MAP_EXPANSION_1024_0100
      * @tc.name   collectionsMapExpand1024Test0001
      * @tc.desc   EXP_MAP_001: Fill a Map with 1023 numeric keys before the boundary.

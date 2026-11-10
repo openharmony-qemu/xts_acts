@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from './../Util.test';
 import { BusinessError } from '@ohos.base';
 
@@ -602,7 +602,7 @@ export default function ArrayReduceTest(): void {
      */
     it('ArrayReduceTest031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr: Array<number> = [1, NaN, 3, NaN, 5];
-      const callback = (acc: number, curr: number) => acc + (isNaN(curr) ? 0 : curr);
+      const callback = (acc: number, curr: number) => acc + (isNaN(curr) ? 0.0 : curr);
       const result = arr.reduce(callback, 0);
 
       expect(result).assertEqual(9);

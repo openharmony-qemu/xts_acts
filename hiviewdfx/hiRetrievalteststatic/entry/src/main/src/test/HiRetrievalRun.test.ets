@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll} from "@ohos/hypium-static/src/main/indexStatic";
 import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 import { hiAppEvent,hiRetrieval } from "@kit.PerformanceAnalysisKit";
@@ -65,7 +65,7 @@ export default function abilityTest() {
                 expect().assertFail();
             } catch (err) {
                 hilog.info(0x0000, 'testTag', 'error code: %{public}d', err.code);
-                let res:number = (typeof err.code === 'number') ? err.code : Number(err.code) 
+                let res:number = err.code 
                 expect(res === 36000001).assertTrue();
             }
             hilog.info(0x0000, 'testTag', '*********** testHiRetrievalRun_0200 Test end***********');

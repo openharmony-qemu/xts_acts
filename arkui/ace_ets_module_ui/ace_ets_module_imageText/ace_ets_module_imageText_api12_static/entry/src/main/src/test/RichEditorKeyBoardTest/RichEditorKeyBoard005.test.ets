@@ -15,7 +15,7 @@
  */
 
 
- import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -35,6 +35,8 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
+
 export default function RichEditorKeyBoard005() {
   describe('RichEditorKeyBoard005', () => {
     beforeAll(async (): Promise<void> => {
@@ -58,9 +60,10 @@ export default function RichEditorKeyBoard005() {
           console.info("push RichEditorKeyBoard005 success");
         }
       } catch (err) {
-        console.error("push RichEditorKeyBoard005 page error: " + err);
+        console.log("push RichEditorKeyBoard005 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
@@ -75,10 +78,18 @@ export default function RichEditorKeyBoard005() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorKeyBoard005')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
-      driver.triggerKey(KeyCode.KEYCODE_ENTER);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_ENTER, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let isEditingFlag = await (driver.findComponent(ON.id('isEditingFlag')) as Promise<Component>);

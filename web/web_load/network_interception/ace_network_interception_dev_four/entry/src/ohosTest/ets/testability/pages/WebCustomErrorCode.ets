@@ -53,6 +53,77 @@ struct WebCustomErrorCode {
     }
   }
 
+  private async runDidFail3SuccessCase(caseName: string, eventId: number): Promise<void> {
+    try {
+      this.customErrorCode = -1;
+      let completeIfNoResponse: boolean = caseName === 'testDidFail3CompleteFalse001' ? false : true;
+      let customErrorCode: number = caseName === 'testDidFail3CustomErrorCodeZero001' ? 0 : CUSTOM_ERROR_CODE;
+      let didFailResult = 'pending';
+      this.schemeHandler = new web_webview.WebSchemeHandler();
+      this.schemeHandler.onRequestStart((
+        request: web_webview.WebSchemeHandlerRequest,
+        resourceHandler: web_webview.WebResourceHandler) => {
+        try {
+          if (caseName === 'testDidFail3CompleteFalse001') {
+            let response = new web_webview.WebSchemeHandlerResponse();
+            response.setUrl(EXAMPLE_HTTP_URL);
+            response.setStatus(200);
+            response.setStatusText('OK');
+            response.setMimeType('text/html');
+            response.setEncoding('utf-8');
+            resourceHandler.didReceiveResponse(response);
+          }
+          resourceHandler.didFail(WebNetErrorList.ERR_FAILED, completeIfNoResponse, customErrorCode);
+          didFailResult = 'success';
+        } catch (error) {
+          didFailResult = String((error as BusinessError).code);
+          console.error(`didFail ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
+        }
+        if (caseName === 'testDidFail3CompleteFalse001') {
+          Utils.emitEvent(didFailResult, eventId);
+        }
+        return true;
+      });
+      this.controller.clearWebSchemeHandler();
+      this.controller.setWebSchemeHandler('https', this.schemeHandler);
+      this.controller.loadUrl(`${TEST_URL}?t=${Date.now()}`);
+      if (caseName === 'testDidFail3CompleteFalse001') {
+        await Utils.waitForExist(() => didFailResult, caseName, 'success', 1000, 10);
+        return;
+      }
+      await Utils.waitForExist(() => this.customErrorCode, caseName, customErrorCode, 1000, 10);
+      Utils.emitEvent(this.customErrorCode, eventId);
+    } catch (error) {
+      console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
+    }
+  }
+
+  private async runDidFail3ErrorCase(
+    invokeDidFail: (handler: web_webview.WebResourceHandler) => void,
+    eventId: number,
+    expectedCode: string): Promise<void> {
+    try {
+      let errorCode = '';
+      this.schemeHandler = new web_webview.WebSchemeHandler();
+      this.schemeHandler.onRequestStart((
+        request: web_webview.WebSchemeHandlerRequest,
+        resourceHandler: web_webview.WebResourceHandler) => {
+        try {
+          invokeDidFail(resourceHandler);
+        } catch (error) {
+          errorCode = String((error as BusinessError).code);
+        }
+        Utils.emitEvent(errorCode, eventId);
+        return true;
+      });
+      this.controller.clearWebSchemeHandler();
+      this.controller.setWebSchemeHandler('https', this.schemeHandler);
+      this.controller.loadUrl(`${TEST_URL}?t=${Date.now()}`);
+    } catch (error) {
+      console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
+    }
+  }
+
   build() {
     Column() {
       Row() {
@@ -124,6 +195,50 @@ struct WebCustomErrorCode {
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
               }
+              break;
+            }
+            case 'testDidFail3CompleteFalse001': {
+              await this.runDidFail3SuccessCase(this.str, 203111);
+              break;
+            }
+            case 'testDidFail3CustomErrorCodeZero001': {
+              await this.runDidFail3SuccessCase(this.str, 203112);
+              break;
+            }
+            case 'testDidFail3CodeNull001': {
+              await this.runDidFail3ErrorCase((handler) => {
+                handler.didFail(null, true, CUSTOM_ERROR_CODE);
+              }, 203120, '17100101');
+              break;
+            }
+            case 'testDidFail3CodeUndefined001': {
+              await this.runDidFail3ErrorCase((handler) => {
+                handler.didFail(undefined, true, CUSTOM_ERROR_CODE);
+              }, 203130, '17100101');
+              break;
+            }
+            case 'testDidFail3CompleteIfNoResponseNull001': {
+              await this.runDidFail3ErrorCase((handler) => {
+                handler.didFail(WebNetErrorList.ERR_FAILED, null, CUSTOM_ERROR_CODE);
+              }, 203140, '17100101');
+              break;
+            }
+            case 'testDidFail3CompleteIfNoResponseUndefined001': {
+              await this.runDidFail3ErrorCase((handler) => {
+                handler.didFail(WebNetErrorList.ERR_FAILED, undefined, CUSTOM_ERROR_CODE);
+              }, 203150, '17100101');
+              break;
+            }
+            case 'testDidFail3CustomErrorCodeNull001': {
+              await this.runDidFail3ErrorCase((handler) => {
+                handler.didFail(WebNetErrorList.ERR_FAILED, true, null);
+              }, 203160, '17100101');
+              break;
+            }
+            case 'testDidFail3CustomErrorCodeUndefined001': {
+              await this.runDidFail3ErrorCase((handler) => {
+                handler.didFail(WebNetErrorList.ERR_FAILED, true, undefined);
+              }, 203170, '17100101');
               break;
             }
           }

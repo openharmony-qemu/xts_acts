@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -45,125 +45,149 @@ export default function DividerModifierUndefinedTest() {
     });
 
     /**
-     * @tc.number    DividerModifierUndefinedTest_static_0100
-     * @tc.name      DividerModifierUndefinedTest_static_0100
-     * @tc.desc      DividerModifierUndefinedTest_static_0100
+     * @tc.number    SUB_ARKUI_API_DividerModifierUndefinedTest_static_0100
+     * @tc.name      SUB_ARKUI_API_DividerModifierUndefinedTest_static_0100
+     * @tc.desc      SUB_ARKUI_API_DividerModifierUndefinedTest_static_0100
      * @tc.level     Level.LEVEL1
      */
-    it('DividerModifierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[DividerModifierUndefinedTest_static_0100] START.');
-      await CommonFunc.sleep(500);
+    it('SUB_ARKUI_API_DividerModifierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('[SUB_ARKUI_API_DividerModifierUndefinedTest_static_0100] START.');
+        await CommonFunc.sleep(500);
 
-      let strJson = inspector.getInspectorByKey('divider');
-      let typeValue = JSON.parseJsonElement(strJson).getString('$type');
-      expect(typeValue).assertEqual('Divider');
+        let strJson = inspector.getInspectorByKey('divider');
+        let typeValue = JSON.parseJsonElement(strJson).getString('$type');
+        expect(typeValue).assertEqual('Divider');
 
-      let driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('dividerModifier_color2')) as Component;
-      await btn.click();
-      await CommonFunc.sleep(2000);
+        let driver = Driver.create();
+        let btn = await driver.findComponent(ON.id('dividerModifier_color2')) as Component;
+        await btn.click();
+        await CommonFunc.sleep(2000);
 
-      let strJson1 = inspector.getInspectorByKey('dividerModifier');
-      let colorValue1 = JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('color');
-      console.info('$colorModifier: ' +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('color')));
-      expect(colorValue1.asString()).assertEqual('#FFFF7777');
+        let strJson1 = inspector.getInspectorByKey('dividerModifier');
+        let colorValue1 = JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('color');
+        console.info('$colorModifier: ' +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('color')));
+        expect(colorValue1.asString()).assertEqual('#FFFF7777');
 
-      console.info('[DividerModifierUndefinedTest_static_0100] END');
-      done();
+        console.info('[SUB_ARKUI_API_DividerModifierUndefinedTest_static_0100] END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_DividerModifierUndefinedTest_static_0100] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
-     * @tc.number    dividerModifierUndefinedTest_static_0200
-     * @tc.name      dividerModifierUndefinedTest_static_0200
-     * @tc.desc      dividerModifierUndefinedTest_static_0200
+     * @tc.number    SUB_ARKUI_API_dividerModifierUndefinedTest_static_0200
+     * @tc.name      SUB_ARKUI_API_dividerModifierUndefinedTest_static_0200
+     * @tc.desc      SUB_ARKUI_API_dividerModifierUndefinedTest_static_0200
      * @tc.level     Level.LEVEL1
      */
-    it('dividerModifierUndefinedTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[dividerModifierUndefinedTest_static_0200] START.');
-      await CommonFunc.sleep(500);
+    it('SUB_ARKUI_API_dividerModifierUndefinedTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('[SUB_ARKUI_API_dividerModifierUndefinedTest_static_0200] START.');
+        await CommonFunc.sleep(500);
 
-      let strJson = inspector.getInspectorByKey('dividerModifier');
-      let strokeWidthValue = JSON.parseJsonElement(strJson).getElement('$attrs').getElement('strokeWidth');
-      console.info('$strokeWidthModifier: ' +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('strokeWidth')));
-      expect(strokeWidthValue.asString()).assertEqual('1.00px');
+        let strJson = inspector.getInspectorByKey('dividerModifier');
+        let strokeWidthValue = JSON.parseJsonElement(strJson).getElement('$attrs').getElement('strokeWidth');
+        console.info('$strokeWidthModifier: ' +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('strokeWidth')));
+        expect(strokeWidthValue.asString()).assertEqual('1.00px');
 
-      let driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('dividerModifier_strokeWidth2')) as Component;
-      await btn.click();
-      await CommonFunc.sleep(2000);
+        let driver = Driver.create();
+        let btn = await driver.findComponent(ON.id('dividerModifier_strokeWidth2')) as Component;
+        await btn.click();
+        await CommonFunc.sleep(2000);
 
-      let strJson1 = inspector.getInspectorByKey('dividerModifier');
-      let strokeWidthValue1 = JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('strokeWidth');
-      console.info('$strokeWidthModifier: ' +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('strokeWidth')));
-      expect(strokeWidthValue1.asString()).assertEqual('10.00vp');
+        let strJson1 = inspector.getInspectorByKey('dividerModifier');
+        let strokeWidthValue1 = JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('strokeWidth');
+        console.info('$strokeWidthModifier: ' +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('strokeWidth')));
+        expect(strokeWidthValue1.asString()).assertEqual('10.00vp');
 
-      console.info('[dividerModifierUndefinedTest_static_0200] END');
-      done();
+        console.info('[SUB_ARKUI_API_dividerModifierUndefinedTest_static_0200] END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_dividerModifierUndefinedTest_static_0200] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
-     * @tc.number    dividerModifierUndefinedTest_static_0300
-     * @tc.name      dividerModifierUndefinedTest_static_0300
-     * @tc.desc      dividerModifierUndefinedTest_static_0300
+     * @tc.number    SUB_ARKUI_API_dividerModifierUndefinedTest_static_0300
+     * @tc.name      SUB_ARKUI_API_dividerModifierUndefinedTest_static_0300
+     * @tc.desc      SUB_ARKUI_API_dividerModifierUndefinedTest_static_0300
      * @tc.level     Level.LEVEL1
      */
-    it('dividerModifierUndefinedTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[dividerModifierUndefinedTest_static_0300] START.');
-      await CommonFunc.sleep(500);
+    it('SUB_ARKUI_API_dividerModifierUndefinedTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('[SUB_ARKUI_API_dividerModifierUndefinedTest_static_0300] START.');
+        await CommonFunc.sleep(500);
 
-      let strJson = inspector.getInspectorByKey('dividerModifier');
-      let lineCapValue = JSON.parseJsonElement(strJson).getElement('$attrs').getElement('lineCap');
-      console.info('$lineCapModifier: ' +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('lineCap')));
-      expect(lineCapValue.asString()).assertEqual('BUTT');
+        let strJson = inspector.getInspectorByKey('dividerModifier');
+        let lineCapValue = JSON.parseJsonElement(strJson).getElement('$attrs').getElement('lineCap');
+        console.info('$lineCapModifier: ' +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('lineCap')));
+        expect(lineCapValue.asString()).assertEqual('BUTT');
 
-      let driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('dividerModifier_lineCap2')) as Component;
-      await btn.click();
-      await CommonFunc.sleep(2000);
+        let driver = Driver.create();
+        let btn = await driver.findComponent(ON.id('dividerModifier_lineCap2')) as Component;
+        await btn.click();
+        await CommonFunc.sleep(2000);
 
-      let strJson1 = inspector.getInspectorByKey('dividerModifier');
-      let lineCapValue1 = JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('lineCap');
-      console.info('$lineCapModifier: ' +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('lineCap')));
-      expect(lineCapValue1.asString()).assertEqual('ROUND');
+        let strJson1 = inspector.getInspectorByKey('dividerModifier');
+        let lineCapValue1 = JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('lineCap');
+        console.info('$lineCapModifier: ' +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('lineCap')));
+        expect(lineCapValue1.asString()).assertEqual('ROUND');
 
-      console.info('[dividerModifierUndefinedTest_static_0300] END');
-      done();
+        console.info('[SUB_ARKUI_API_dividerModifierUndefinedTest_static_0300] END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_dividerModifierUndefinedTest_static_0300] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
-     * @tc.number    dividerModifierUndefinedTest_static_0400
-     * @tc.name      dividerModifierUndefinedTest_static_0400
-     * @tc.desc      dividerModifierUndefinedTest_static_0400
+     * @tc.number    SUB_ARKUI_API_dividerModifierUndefinedTest_static_0400
+     * @tc.name      SUB_ARKUI_API_dividerModifierUndefinedTest_static_0400
+     * @tc.desc      SUB_ARKUI_API_dividerModifierUndefinedTest_static_0400
      * @tc.level     Level.LEVEL1
      */
-    it('dividerModifierUndefinedTest_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[dividerModifierUndefinedTest_static_0400] START.');
-      await CommonFunc.sleep(500);
+    it('SUB_ARKUI_API_dividerModifierUndefinedTest_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('[SUB_ARKUI_API_dividerModifierUndefinedTest_static_0400] START.');
+        await CommonFunc.sleep(500);
 
-      let strJson = inspector.getInspectorByKey('dividerModifier');
-      let verticalValue = JSON.parseJsonElement(strJson).getElement('$attrs').getElement('vertical');
-      console.info('$verticalModifier: ' +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('vertical')));
-      expect(verticalValue.asString()).assertEqual('false');
+        let strJson = inspector.getInspectorByKey('dividerModifier');
+        let verticalValue = JSON.parseJsonElement(strJson).getElement('$attrs').getElement('vertical');
+        console.info('$verticalModifier: ' +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('vertical')));
+        expect(verticalValue.asString()).assertEqual('false');
 
-      let driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('dividerModifier_vertical2')) as Component;
-      await btn.click();
-      await CommonFunc.sleep(2000);
+        let driver = Driver.create();
+        let btn = await driver.findComponent(ON.id('dividerModifier_vertical2')) as Component;
+        await btn.click();
+        await CommonFunc.sleep(2000);
 
-      let strJson1 = inspector.getInspectorByKey('dividerModifier');
-      let verticalValue1 = JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('vertical');
-      console.info('$verticalModifier: ' +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('vertical')));
-      expect(verticalValue1.asString()).assertEqual('true');
+        let strJson1 = inspector.getInspectorByKey('dividerModifier');
+        let verticalValue1 = JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('vertical');
+        console.info('$verticalModifier: ' +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('vertical')));
+        expect(verticalValue1.asString()).assertEqual('true');
 
-      console.info('[dividerModifierUndefinedTest_static_0400] END');
-      done();
+        console.info('[SUB_ARKUI_API_dividerModifierUndefinedTest_static_0400] END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_dividerModifierUndefinedTest_static_0400] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

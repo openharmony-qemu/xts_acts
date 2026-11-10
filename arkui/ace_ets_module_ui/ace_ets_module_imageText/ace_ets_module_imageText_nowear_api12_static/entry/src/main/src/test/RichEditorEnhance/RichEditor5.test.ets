@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import hilog from '@ohos.hilog'
@@ -30,6 +30,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 
+let displayID: Int = 0;
 export default function RichEditor5() {
   describe('RichEditor5', () => {
     beforeAll(async (): Promise<void> => {
@@ -37,7 +38,6 @@ export default function RichEditor5() {
 
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api12.static", "EntryAbility");
-
     });
     beforeEach(async (): Promise<void> => {
       console.info("RichEditor5 beforeEach start");
@@ -58,9 +58,10 @@ export default function RichEditor5() {
           // console.info("push RichEditor5 page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push RichEditor5 page error:" + err);
+        console.log("push RichEditor5 page error:" + err);
       }
       console.info("RichEditor5 beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     afterEach(async (): Promise<void> => {
       let driver = Driver.create();
@@ -84,7 +85,11 @@ export default function RichEditor5() {
       await CommonFunc.sleep(500)
       await (RichEditor_change?.inputText("A") as Promise<void>)
       await CommonFunc.sleep(500)
-      await driver.triggerKey(2047)
+      try {
+        await driver.triggerKey(2047, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500)
       await driver.delayMs(1000)
       await CommonFunc.sleep(500)

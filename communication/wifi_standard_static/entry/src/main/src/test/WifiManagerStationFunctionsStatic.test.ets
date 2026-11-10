@@ -13,11 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterAll} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterAll} from "@ohos/hypium-static/src/main/indexStatic";
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import CallbackMethods from './CallbackMethod.test';
 import wifiManager from '@ohos.wifiManager';
+import systemDateTime from '@ohos.systemDateTime';
 import {abilityDelegatorRegistry} from '@kit.TestKit';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
@@ -1154,6 +1155,12 @@ export default function actsWifiManagerFunctionsTest() {
         } else {
           expect().assertFail();
         }
+      }
+      try{
+        await Utils.clickText("连接");
+        hilog.info(domain, tag, `弹出弹框 点击连接  success`);
+      } catch (err) {
+        hilog.error(domain, tag, `弹出弹框 点击连接   errCode:` + err.code + `,errMessage:` + err.message);
       }
       done();
     });
@@ -3289,22 +3296,11 @@ export default function actsWifiManagerFunctionsTest() {
         hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
         expect(typeof networkId === 'int').assertTrue();
         expect(networkId >= 0).assertTrue();
-        wifiManager.connectToCandidateConfigWithUserAction(networkId).then(async(result: void) => {
-          hilog.info(domain, tag, `${caseName} connectToCandidateConfigWithUserAction success`);
-          done();
-        }).catch(async(err: Error) => {
-          hilog.error(domain, tag, `${caseName} connectToCandidateConfigWithUserAction fail, result: ` + JSON.stringify(err));
-          if (err.code === 801) {
-            console.info(`${caseName} api is not support`);
-            expect(err.code).assertEqual(801);
-          } else {
-            expect().assertFail();
-          }
-          done();
-        });
+        const connectPromise = wifiManager.connectToCandidateConfigWithUserAction(networkId);
         hilog.info(domain, tag, `${caseName} connectToCandidateConfigWithUserAction success`);
         await Utils.clickText("连接");
-        await Utils.msSleep(3000);
+        await Utils.msSleep(1000);
+        await connectPromise;
         hilog.info(domain, tag, `${caseName} 点击连接 success`);
       } catch (err) {
         hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
@@ -3314,9 +3310,9 @@ export default function actsWifiManagerFunctionsTest() {
         } else {
           expect().assertFail();
         }
-        done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
+      done();
     });
     /**
      * @tc.number SUB_Communication_WifiManager_StartScan_0077
@@ -3543,22 +3539,11 @@ export default function actsWifiManagerFunctionsTest() {
           userActionTimeout: 15,
           addNetworkToSystem: true
         };
-        wifiManager.connectToCandidateConfig(settings).then(async(result: void) => {
-          hilog.info(domain, tag, `${caseName} connectToCandidateConfig success `);
-          done();
-        }).catch(async(err: Error) => {
-          hilog.error(domain, tag, `${caseName} connectToCandidateConfig success, result: ` + JSON.stringify(err));
-          if (err.code === 801) {
-            console.info(`${caseName} api is not support`);
-            expect(err.code).assertEqual(801);
-          } else {
-            expect().assertFail();
-          }
-          done();
-        });
+        const connectPromise = wifiManager.connectToCandidateConfig(settings);
         hilog.info(domain, tag, `${caseName} connectToCandidateConfig success`);
         await Utils.clickText("连接");
-        await Utils.msSleep(3000);
+        await Utils.msSleep(1000);
+        await connectPromise;
         hilog.info(domain, tag, `${caseName} 点击连接 success`);
       } catch (err) {
         hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
@@ -3568,9 +3553,9 @@ export default function actsWifiManagerFunctionsTest() {
         } else {
           expect().assertFail();
         }
-        done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
+      done();
     });
     /**
      * @tc.number SUB_Communication_WifiManager_connectToCandidateConfig_settings_0085
@@ -3614,6 +3599,12 @@ export default function actsWifiManagerFunctionsTest() {
           expect().assertFail();
         }
       }
+      try{
+        await Utils.clickText("连接");
+        hilog.info(domain, tag, `弹出弹框 点击连接  success`);
+      } catch (err) {
+        hilog.error(domain, tag, `弹出弹框 点击连接   errCode:` + err.code + `,errMessage:` + err.message);
+      }
       hilog.info(domain, tag, `${caseName} test end`);
       done();
     });
@@ -3646,23 +3637,11 @@ export default function actsWifiManagerFunctionsTest() {
           userActionTimeout: 30,
           addNetworkToSystem: false
         };
-        wifiManager.connectToCandidateConfig(settings).then(async(result: void) => {
-          hilog.info(domain, tag, `${caseName} connectToCandidateConfig success, result: ` + result);
-          expect().assertFail();
-          done();
-        }).catch(async(err: Error) => {
-          hilog.error(domain, tag, `${caseName} connectToCandidateConfig success, result: ` + JSON.stringify(err));
-          if (err.code === 801) {
-            console.info(`${caseName} api is not support`);
-            expect(err.code).assertEqual(801);
-          } else {
-            expect(err.code).assertEqual(2501006);
-          }
-          done();
-        });
+        const connectPromise = wifiManager.connectToCandidateConfig(settings);
         hilog.info(domain, tag, `${caseName} connectToCandidateConfig success`);
         await Utils.clickText("取消");
-        await Utils.msSleep(3000);
+        await Utils.msSleep(1000);
+        await connectPromise;
         hilog.info(domain, tag, `${caseName} 点击取消 success`);
       } catch (err) {
         hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
@@ -3672,9 +3651,9 @@ export default function actsWifiManagerFunctionsTest() {
         } else {
           expect(err.code).assertEqual(2501006);
         }
-        done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
+      done();
     });
     /**
      * @tc.number SUB_Communication_WifiManager_connectToCandidateConfig_settings_0087
@@ -3716,6 +3695,12 @@ export default function actsWifiManagerFunctionsTest() {
         } else {
           expect().assertFail();
         }
+      }
+      try{
+        await Utils.clickText("连接");
+        hilog.info(domain, tag, `弹出弹框 点击连接  success`);
+      } catch (err) {
+        hilog.error(domain, tag, `弹出弹框 点击连接   errCode:` + err.code + `,errMessage:` + err.message);
       }
       hilog.info(domain, tag, `${caseName} test end`);
       done();
@@ -3760,6 +3745,12 @@ export default function actsWifiManagerFunctionsTest() {
         } else {
           expect().assertFail();
         }
+      }
+      try{
+        await Utils.clickText("连接");
+        hilog.info(domain, tag, `弹出弹框 点击连接  success`);
+      } catch (err) {
+        hilog.error(domain, tag, `弹出弹框 点击连接   errCode:` + err.code + `,errMessage:` + err.message);
       }
       hilog.info(domain, tag, `${caseName} test end`);
       done();
@@ -3806,12 +3797,6 @@ export default function actsWifiManagerFunctionsTest() {
           expect(err.code).assertEqual(2501005);
         }
       }
-      try{
-        await Utils.clickText("连接");
-        await Utils.msSleep(3000);
-      } catch(err) {
-        hilog.error(domain, tag, `${caseName} clickText 连接fail` );
-      }
       hilog.info(domain, tag, `${caseName} test end`);
       done();
     });
@@ -3838,22 +3823,11 @@ export default function actsWifiManagerFunctionsTest() {
         hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
         expect(typeof networkId === 'int').assertTrue();
         expect(networkId >= 0).assertTrue();
-        wifiManager.connectToCandidateConfigWithUserAction(networkId).then(async(result: void) => {
-          hilog.info(domain, tag, `${caseName} connectToCandidateConfigWithUserAction success`);
-          done();
-        }).catch(async(err: Error) => {
-          hilog.error(domain, tag, `${caseName} connectToCandidateConfigWithUserAction fail, result: ` + JSON.stringify(err.code) + JSON.stringify(err.message));
-          if (err.code === 801) {
-            console.info(`${caseName} api is not support`);
-            expect(err.code).assertEqual(801);
-          } else {
-            expect(err.code).assertEqual(2501006);
-          }
-          done();
-        });
+        const connectPromise = wifiManager.connectToCandidateConfigWithUserAction(networkId);
         hilog.info(domain, tag, `${caseName} connectToCandidateConfigWithUserAction success`);
         await Utils.clickText("取消");
-        await Utils.msSleep(3000);
+        await Utils.msSleep(1000);
+        await connectPromise;
         hilog.info(domain, tag, `${caseName} 点击取消 success`);
       } catch (err) {
         hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
@@ -3930,6 +3904,211 @@ export default function actsWifiManagerFunctionsTest() {
         } else {
           expect(err.code).assertEqual(2501007);
         }
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+    /**
+     * @tc.number SUB_Communication_WifiManager_connectToCandidateConfig_settings_0093
+     * @tc.name SUB_Communication_WifiManager_connectToCandidateConfig_settings_0093
+     * @tc.desc Test connectToCandidateConfig dialog display duration is greater than or equal to 10s
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     */
+    it("SUB_Communication_WifiManager_connectToCandidateConfig_settings_0093", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = "LOG_SUB_Communication_WifiManager_connectToCandidateConfig_settings_0093";
+      hilog.info(domain, tag, `${caseName} test start`);
+      networkId = -1;
+      let startTime: long = 0;
+      try {
+        await Utils.msSleep(3000);
+        let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
+          "ssid": "test_user_action",
+          "preSharedKey": "12345678",
+          "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK,
+          "showNoInternetDialog":true
+        };
+        networkId = await wifiManager.addCandidateConfig(wifiDeviceConfig);
+        hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
+        expect(typeof networkId === 'int').assertTrue();
+        expect(networkId >= 0).assertTrue();
+        let settings: wifiManager.ConnectSettings = {
+          networkId: networkId,
+          withUserAction: true
+        };
+        startTime = systemDateTime.getTime();
+        hilog.info(domain, tag, `${caseName} startTime: ` + startTime);
+        await wifiManager.connectToCandidateConfig(settings);
+        hilog.info(domain, tag, `${caseName} connectToCandidateConfig success`);
+        expect().assertFail();
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+        if (err.code === 801) {
+          hilog.info(domain, tag, `${caseName} api is not support`);
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(2501005);
+          let endTime: long = systemDateTime.getTime();
+          let timeDiff: long = endTime - startTime;
+          hilog.info(domain, tag, `${caseName} endTime: ` + endTime + `, timeDiff: ` + timeDiff);
+          expect(timeDiff >= 10 * 1000).assertTrue();
+        }
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+    /**
+     * @tc.number SUB_Communication_WifiManager_ConnectToCandidateConfigWithUserAction_Promise_0094
+     * @tc.name SUB_Communication_WifiManager_ConnectToCandidateConfigWithUserAction_Promise_0094
+     * @tc.desc Test connectToCandidateConfigWithUserAction dialog display duration is greater than or equal to 10s
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     */
+    it("SUB_Communication_WifiManager_ConnectToCandidateConfigWithUserAction_Promise_0094", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = "LOG_SUB_Communication_WifiManager_ConnectToCandidateConfigWithUserAction_Promise_0094";
+      hilog.info(domain, tag, `${caseName} test start`);
+      networkId = -1;
+      let startTime: long = 0;
+      try {
+        await Utils.msSleep(3000);
+        let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
+          "ssid": "test_user_action",
+          "preSharedKey": "12345678",
+          "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK
+        };
+        networkId = await wifiManager.addCandidateConfig(wifiDeviceConfig);
+        hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
+        expect(typeof networkId === 'int').assertTrue();
+        expect(networkId >= 0).assertTrue();
+        startTime = systemDateTime.getTime();
+        hilog.info(domain, tag, `${caseName} startTime: ` + startTime);
+        await wifiManager.connectToCandidateConfigWithUserAction(networkId);
+        hilog.info(domain, tag, `${caseName} connectToCandidateConfigWithUserAction success`);
+        expect().assertFail();
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+        if (err.code === 801) {
+          hilog.info(domain, tag, `${caseName} api is not support`);
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(2501005);
+          let endTime: long = systemDateTime.getTime();
+          let timeDiff: long = endTime - startTime;
+          hilog.info(domain, tag, `${caseName} endTime: ` + endTime + `, timeDiff: ` + timeDiff);
+          expect(timeDiff >= 10 * 1000).assertTrue();
+        }
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+    /**
+     * @tc.number SUB_Communication_WifiManager_connectToCandidateConfig_settings_0095
+     * @tc.name SUB_Communication_WifiManager_connectToCandidateConfig_settings_0095
+     * @tc.desc Test connectToCandidateConfig dialog display duration is greater than or equal to 15s when userActionTimeout is 15
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     */
+    it("SUB_Communication_WifiManager_connectToCandidateConfig_settings_0095", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = "LOG_SUB_Communication_WifiManager_connectToCandidateConfig_settings_0095";
+      hilog.info(domain, tag, `${caseName} test start`);
+      networkId = -1;
+      let startTime: long = 0;
+      try {
+        await Utils.msSleep(3000);
+        let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
+          "ssid": "test_user_action",
+          "preSharedKey": "12345678",
+          "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK,
+          "showNoInternetDialog":true
+        };
+        networkId = await wifiManager.addCandidateConfig(wifiDeviceConfig);
+        hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
+        expect(typeof networkId === 'int').assertTrue();
+        expect(networkId >= 0).assertTrue();
+        let settings: wifiManager.ConnectSettings = {
+          networkId: networkId,
+          withUserAction: true,
+          userActionTimeout: 15,
+          addNetworkToSystem: true
+        };
+        startTime = systemDateTime.getTime();
+        hilog.info(domain, tag, `${caseName} startTime: ` + startTime);
+        await wifiManager.connectToCandidateConfig(settings);
+        hilog.info(domain, tag, `${caseName} connectToCandidateConfig success`);
+        expect().assertFail();
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+        if (err.code === 801) {
+          hilog.info(domain, tag, `${caseName} api is not support`);
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(2501005);
+          let endTime: long = systemDateTime.getTime();
+          let timeDiff: long = endTime - startTime;
+          hilog.info(domain, tag, `${caseName} endTime: ` + endTime + `, timeDiff: ` + timeDiff);
+          expect(timeDiff >= 15 * 1000).assertTrue();
+        }
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+    /**
+     * @tc.number SUB_Communication_WifiManager_connectToCandidateConfig_settings_0096
+     * @tc.name SUB_Communication_WifiManager_connectToCandidateConfig_settings_0096
+     * @tc.desc Test connectToCandidateConfig dialog display duration is greater than or equal to 5s when userActionTimeout is 5
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     */
+    it("SUB_Communication_WifiManager_connectToCandidateConfig_settings_0096", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = "LOG_SUB_Communication_WifiManager_connectToCandidateConfig_settings_0096";
+      hilog.info(domain, tag, `${caseName} test start`);
+      networkId = -1;
+      let startTime: long = 0;
+      try {
+        await Utils.msSleep(3000);
+        let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
+          "ssid": "test_user_action",
+          "preSharedKey": "12345678",
+          "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK,
+          "showNoInternetDialog":true
+        };
+        networkId = await wifiManager.addCandidateConfig(wifiDeviceConfig);
+        hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
+        expect(typeof networkId === 'int').assertTrue();
+        expect(networkId >= 0).assertTrue();
+        let settings: wifiManager.ConnectSettings = {
+          networkId: networkId,
+          withUserAction: true,
+          userActionTimeout: 5,
+          addNetworkToSystem: true
+        };
+        startTime = systemDateTime.getTime();
+        hilog.info(domain, tag, `${caseName} startTime: ` + startTime);
+        await wifiManager.connectToCandidateConfig(settings);
+        hilog.info(domain, tag, `${caseName} connectToCandidateConfig success`);
+        expect().assertFail();
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+        if (err.code === 801) {
+          hilog.info(domain, tag, `${caseName} api is not support`);
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(2501005);
+          let endTime: long = systemDateTime.getTime();
+          let timeDiff: long = endTime - startTime;
+          hilog.info(domain, tag, `${caseName} endTime: ` + endTime + `, timeDiff: ` + timeDiff);
+          expect(timeDiff >= 5 * 1000).assertTrue();
+        }
+      }
+      try{
+        await Utils.clickText("连接");
+        await Utils.msSleep(3000);
+      } catch(err) {
+        hilog.error(domain, tag, `${caseName} clickText 连接fail` );
       }
       hilog.info(domain, tag, `${caseName} test end`);
       done();

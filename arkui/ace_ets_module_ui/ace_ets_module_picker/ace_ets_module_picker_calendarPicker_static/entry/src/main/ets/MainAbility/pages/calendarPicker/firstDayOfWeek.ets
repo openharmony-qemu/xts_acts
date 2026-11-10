@@ -17,11 +17,19 @@
 import {
   Entry,
   Component,
+  Scroll,
+  Flex,
+  FlexWrap,
+  FlexAlign,
+  ItemAlign,
   Column,
   Text,
-  ColumnOptions,
+  TextAlign,
   CalendarPicker,
-  CalendarFirstDayOfWeek
+  CalendarFirstDayOfWeek,
+  BarState,
+  Alignment,
+  Margin
 } from '@ohos.arkui.component';
 
 @Entry
@@ -30,54 +38,70 @@ struct CalendarPickerFirstDayOfWeek {
   private selectedDate: Date = new Date('2025-01-15');
 
   build() {
-    Column({ space: 10 } as ColumnOptions) {
-      Text('firstDayOfWeek test')
-        .fontSize(16)
-        .margin({ top: 10, bottom: 10 })
+    Scroll() {
+      Flex({
+        wrap: FlexWrap.Wrap,
+        justifyContent: FlexAlign.Center,
+        alignItems: ItemAlign.Center
+      }) {
+        Text('firstDayOfWeek test')
+          .fontSize(16)
+          .margin({ top: 10, bottom: 10 } as Margin)
+          .width('100%')
+          .textAlign(TextAlign.Center)
 
-      CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
-        .firstDayOfWeek(CalendarFirstDayOfWeek.LOCAL)
-        .margin(10)
-        .id('calendarPicker001')
+        CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
+          .firstDayOfWeek(CalendarFirstDayOfWeek.LOCAL)
+          .margin(10)
+          .id('calendarPicker001')
 
-      CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
-        .firstDayOfWeek(CalendarFirstDayOfWeek.MON)
-        .margin(10)
-        .id('calendarPicker002')
+        CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
+          .firstDayOfWeek(CalendarFirstDayOfWeek.MON)
+          .margin(10)
+          .id('calendarPicker002')
 
-      CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
-        .firstDayOfWeek(CalendarFirstDayOfWeek.TUE)
-        .margin(10)
-        .id('calendarPicker003')
+        CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
+          .firstDayOfWeek(CalendarFirstDayOfWeek.TUE)
+          .margin(10)
+          .id('calendarPicker003')
 
-      CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
-        .firstDayOfWeek(CalendarFirstDayOfWeek.WED)
-        .margin(10)
-        .id('calendarPicker004')
+        CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
+          .firstDayOfWeek(CalendarFirstDayOfWeek.WED)
+          .margin(10)
+          .id('calendarPicker004')
 
-      CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
-        .firstDayOfWeek(CalendarFirstDayOfWeek.THU)
-        .margin(10)
-        .id('calendarPicker005')
+        CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
+          .firstDayOfWeek(CalendarFirstDayOfWeek.THU)
+          .margin(10)
+          .id('calendarPicker005')
 
-      CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
-        .firstDayOfWeek(CalendarFirstDayOfWeek.FRI)
-        .margin(10)
-        .id('calendarPicker006')
+        CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
+          .firstDayOfWeek(CalendarFirstDayOfWeek.FRI)
+          .margin(10)
+          .id('calendarPicker006')
 
-      CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
-        .firstDayOfWeek(CalendarFirstDayOfWeek.SAT)
-        .margin(10)
-        .id('calendarPicker007')
+        CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
+          .firstDayOfWeek(CalendarFirstDayOfWeek.SAT)
+          .margin(10)
+          .id('calendarPicker007')
 
-      CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
-        .firstDayOfWeek(CalendarFirstDayOfWeek.SUN)
-        .margin(10)
-        .id('calendarPicker008')
+        CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
+          .firstDayOfWeek(CalendarFirstDayOfWeek.SUN)
+          .margin(10)
+          .id('calendarPicker008')
+
+        CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
+          .firstDayOfWeek(undefined)
+          .margin(10)
+          .id('calendarPicker011')
+      }
+      .width('100%')
+      .padding({ left: 20, right: 20, top: 10, bottom: 10 })
     }
     .width('100%')
     .height('100%')
-    .padding({ left: 20, right: 20, top: 10, bottom: 10 })
+    .scrollBar(BarState.Auto)
+    .align(Alignment.Top)
     .backgroundColor('#F5F5F5')
   }
 }

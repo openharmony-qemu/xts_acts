@@ -40,9 +40,7 @@ struct UkeyAuthIndex {
         .width('60%')
         .backgroundColor('#0D9FFB')
         .onClick(() => {
-          this.context?.terminateSelfWithResult({
-            resultCode: 0
-          })
+          this.context?.terminateSelf()
         })
 
       Button('取消')

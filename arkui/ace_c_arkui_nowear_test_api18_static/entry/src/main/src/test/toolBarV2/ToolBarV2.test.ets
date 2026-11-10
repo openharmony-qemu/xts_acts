@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, afterEach, it, expect, Level } from "../../../../hypium/index";
+import { describe, afterEach, it, expect, Level } from "@ohos/hypium-static/src/main/indexStatic";
 import { ToolBarV2ItemState, ToolBarV2SymbolGlyph, ToolBarV2SymbolGlyphOptions,
   ToolBarV2ItemText, ToolBarV2ItemTextOptions, ToolBarV2ItemIconType,
   ToolBarV2ItemImage, ToolBarV2ItemImageOptions, ToolBarV2Item, ToolBarV2ItemOptions,

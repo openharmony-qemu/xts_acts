@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index'
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic'
 import router from '@ohos.router';
 import {
   Component,
@@ -27,6 +27,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import { UtilsTest } from '../Util.test';
 
+let displayId: undefined | Int = 0;
 export default function getParamByNameModifierUndefined() {
   describe('getParamByNameModifierUndefined', () => {
     beforeAll(async (): Promise<void> => {
@@ -63,7 +64,9 @@ afterEach(async () => {
       try {
         await CommonFunc.sleep(1000);
         let driver: Driver = await Driver.create();
-        await driver.pressBack();
+        if (displayId != undefined) {
+        await driver.pressBack(displayId as Int);
+      };
         await CommonFunc.sleep(500);
       } catch (err) {
         console.error('[getParamByNameModifierUndefined] afterEach cleanup error: ' + err);

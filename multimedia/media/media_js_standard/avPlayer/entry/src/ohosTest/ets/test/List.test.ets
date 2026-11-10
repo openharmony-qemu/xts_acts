@@ -33,6 +33,7 @@ import AVPlayerVideoScaleTypeTest from './AVPlayerVideoScaleTypeTest.test'
 import AVPlayerAudioGetTrackDesTest from './AVPlayerAudioGetTrackDesTest.test'
 import AVPlayerVideoSeekTest from './AVPlayerVideoSeekTest.test'
 import AVPlayerPlayListTest from './AVPlayerPlayListTest.test'
+import AVPlayerCheckSupportPlaybackCommand from './AVPlayerCheckSupportPlaybackCommand.test'
 
 export default function testsuite() {
   // AVPlayerHlsFuncTest()
@@ -56,4 +57,5 @@ export default function testsuite() {
   AVPlayerAudioGetTrackDesTest();
   AVMetadata();
   AVPlayerPlayListTest();
+  AVPlayerCheckSupportPlaybackCommand();
 }

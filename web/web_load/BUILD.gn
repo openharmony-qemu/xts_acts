@@ -17,6 +17,7 @@ group("WebLoad") {
     deps = [
       "ace_web_embed_options_dev_one:ActsWebEmbedOptionsDevOneTest",
       "ace_web_webview_dynamic_dev_one:ActsWebWebviewDynamicDevOneTest",
+      "ace_web_dynamic_sdk_webview_dev_one:ActsWebDynamicSdkWebviewDevOneTest",
       "custom_dns:ActsWebCustomDnsTest",
       "leather_candy_cache:ActsWebLeatherCandyCacheTest",
       "load_metric:ActsWebLoadMetricTest",

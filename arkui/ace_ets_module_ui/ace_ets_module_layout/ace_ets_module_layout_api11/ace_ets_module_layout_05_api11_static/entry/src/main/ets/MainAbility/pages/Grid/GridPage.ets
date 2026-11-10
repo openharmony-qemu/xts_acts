@@ -110,7 +110,7 @@ struct GridPage {
   }
 
   build() {
-    Column({ space: 5 } as ColumnOptions) {
+    Column() {
       Row(){
         Text(this.onItemDragStart).fontSize(10).margin({right:10} as Margin).key('GridPage_onItemDragStart')
         Text(this.onItemDragEnter).fontSize(10).key('GridPage_onItemDragEnter')
@@ -141,7 +141,7 @@ struct GridPage {
       }
       Button(this.buttonName)
         .key('GridPage_button')
-        .height('8%')
+        .height('5%')
         .onClick((e:ClickEvent) => { 
           this.buttonName = 'clicked'
           this.scroller.scrollPage({ next: true })
@@ -163,10 +163,10 @@ struct GridPage {
           ForEach(this.numberData, (day: string) => {
             GridItem() {
               Text(day)
-                .fontSize(16)
+                .fontSize(12)
                 .backgroundColor(0xF9CF93)
-                .width(40)
-                .height(40)
+                .width('100%')
+                .height('20%')
                 .textAlign(TextAlign.Center)
                 .key(day)
             }
@@ -189,7 +189,7 @@ struct GridPage {
       .width('90%')
       .key('GridPage_grid1')
       .backgroundColor(0xFAEEE0)
-      .height(150)
+      .height('30%')
       .edgeEffect(EdgeEffect.Spring)
       .onItemDragStart((event: ItemDragInfo, itemIndex: int): undefined => {
         this.onItemDragStart = 'onItemDragStart:succ'
@@ -223,7 +223,7 @@ struct GridPage {
                 .fontSize(16)
                 .backgroundColor(0xF9CF93)
                 .width('100%')
-                .height(80)
+                .height('20%')
                 .textAlign(TextAlign.Center)
             }
           }, (day: string) => day)

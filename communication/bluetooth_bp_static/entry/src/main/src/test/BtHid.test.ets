@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-static/src/main/indexStatic'
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
 import btAccess from '@ohos.bluetooth.access';
 import common from '@ohos.bluetooth.common';
@@ -368,16 +368,11 @@ function registerHidDeviceAsync3(): Promise<boolean> {
     const timeout = setTimeout(() => {
       reject(new Error("[bluetooth_js]registerHidDeviceAsync timeout"));
     }, 20000);
-    try {
-      hidDevice!.registerHidDevice(sdp3, inqos2, outqos, (data: boolean) => {
-        clearTimeout(timeout)
-        hilog.info(domain, tag, '[bluetooth_js] registerHidDeviceAsync success' + JSON.stringify(data));
-        resolve(data);
-      });
-    } catch (err) {
-      hilog.info(domain, tag, '[bluetooth_js] errcode' + err.code + 'err message' + err.message);
-      reject(new Error("[bluetooth_js]registerHidDeviceAsync err"));
-    }
+    hidDevice!.registerHidDevice(sdp3, inqos2, outqos, (data: boolean) => {
+      clearTimeout(timeout)
+      hilog.info(domain, tag, '[bluetooth_js] registerHidDeviceAsync success' + JSON.stringify(data));
+      resolve(data);
+    });
   });
 }
 
@@ -1310,6 +1305,127 @@ export default function btHidTest(): void {
         done();
       })
 
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_RH_static_0300
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILERH_0300
+     * @tc.desc   Test registerHidDevice outQos.serviceType SERVICE_NO_TRAFFIC api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_RH_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        try {
+          let outqosNoTraffic: hid.HidDeviceQos = {
+            serviceType: hid.ServiceType.SERVICE_NO_TRAFFIC,
+            tokenRate: 0,
+            tokenBucketSize: 0,
+            peakBandwidth: 0,
+            latency: -1,
+            delayVariation: -1,
+          };
+          hidDevice!.registerHidDevice(sdp, inqos, outqosNoTraffic, (data: boolean) => {
+            hilog.info(domain, tag, "[bluetooth_js] registerHidDevice RH 0300 success" + JSON.stringify(data));
+          });
+          hilog.info(domain, tag, "[bluetooth_js]hid registerHidDevice RH 0300 is called ");
+          await sleep(1000);
+        } catch (err) {
+          hilog.error(domain, tag,
+            "[bluetooth_js]hid registerHidDevice is fail , errCode:" + err.code + ",errMessage:" + err.message);
+          if (err.code === 801) {
+            hilog.info(domain, tag, "设备（除手机外） is not support.");
+            expect(err.code).assertEqual(801);
+          } else if (err.code === 401) {
+            hilog.info(domain, tag, "invalid param");
+            expect(err.code).assertEqual(401);
+          } else {
+            expect(err.code).assertEqual(2903051);
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_RH_static_0400
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILERH_0400
+     * @tc.desc   Test registerHidDevice outQos.serviceType SERVICE_BEST_EFFORT api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_RH_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        try {
+          let outqosBestEffort: hid.HidDeviceQos = {
+            serviceType: hid.ServiceType.SERVICE_BEST_EFFORT,
+            tokenRate: 0,
+            tokenBucketSize: 0,
+            peakBandwidth: 0,
+            latency: -1,
+            delayVariation: -1,
+          };
+          hidDevice!.registerHidDevice(sdp, inqos, outqosBestEffort, (data: boolean) => {
+            hilog.info(domain, tag, "[bluetooth_js] registerHidDevice RH 0400 success" + JSON.stringify(data));
+          });
+          hilog.info(domain, tag, "[bluetooth_js]hid registerHidDevice RH 0400 is called ");
+          await sleep(1000);
+        } catch (err) {
+          hilog.error(domain, tag,
+            "[bluetooth_js]hid registerHidDevice is fail , errCode:" + err.code + ",errMessage:" + err.message);
+          if (err.code === 801) {
+            hilog.info(domain, tag, "设备（除手机外） is not support.");
+            expect(err.code).assertEqual(801);
+          } else if (err.code === 401) {
+            hilog.info(domain, tag, "invalid param");
+            expect(err.code).assertEqual(401);
+          } else {
+            expect(err.code).assertEqual(2903051);
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_RH_static_0500
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILERH_0500
+     * @tc.desc   Test registerHidDevice outQos.serviceType SERVICE_GUARANTEED api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_RH_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        try {
+          let outqosGuaranteed: hid.HidDeviceQos = {
+            serviceType: hid.ServiceType.SERVICE_GUARANTEED,
+            tokenRate: 0,
+            tokenBucketSize: 0,
+            peakBandwidth: 0,
+            latency: -1,
+            delayVariation: -1,
+          };
+          hidDevice!.registerHidDevice(sdp, inqos, outqosGuaranteed, (data: boolean) => {
+            hilog.info(domain, tag, "[bluetooth_js] registerHidDevice RH 0500 success" + JSON.stringify(data));
+          });
+          hilog.info(domain, tag, "[bluetooth_js]hid registerHidDevice RH 0500 is called ");
+          await sleep(1000);
+        } catch (err) {
+          hilog.error(domain, tag,
+            "[bluetooth_js]hid registerHidDevice is fail , errCode:" + err.code + ",errMessage:" + err.message);
+          if (err.code === 801) {
+            hilog.info(domain, tag, "设备（除手机外） is not support.");
+            expect(err.code).assertEqual(801);
+          } else if (err.code === 401) {
+            hilog.info(domain, tag, "invalid param");
+            expect(err.code).assertEqual(401);
+          } else {
+            expect(err.code).assertEqual(2903051);
+          }
+        }
+        done();
+      })
+
     /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_HID_CB_static_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEPROFILEHIDCB_0100
@@ -1694,6 +1810,109 @@ export default function btHidTest(): void {
           } else {
             expect(err.code).assertEqual(2903052);
           }
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILE_SUBCLASS_static_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILESUBCLASS_0100
+     * @tc.desc   Test hid Subclass EnumValue api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILE_SUBCLASS_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        try {
+          let SUBCLASS_UNCATEGORIZED = hid.Subclass.SUBCLASS_UNCATEGORIZED;
+          hilog.info(domain, tag, 'hid Subclass SUBCLASS_UNCATEGORIZED: ' + SUBCLASS_UNCATEGORIZED);
+          expect(SUBCLASS_UNCATEGORIZED).assertEqual(0);
+
+          let SUBCLASS_JOYSTICK = hid.Subclass.SUBCLASS_JOYSTICK;
+          hilog.info(domain, tag, 'hid Subclass SUBCLASS_JOYSTICK: ' + SUBCLASS_JOYSTICK);
+          expect(SUBCLASS_JOYSTICK).assertEqual(1);
+
+          let SUBCLASS_GAMEPAD = hid.Subclass.SUBCLASS_GAMEPAD;
+          hilog.info(domain, tag, 'hid Subclass SUBCLASS_GAMEPAD: ' + SUBCLASS_GAMEPAD);
+          expect(SUBCLASS_GAMEPAD).assertEqual(2);
+
+          let SUBCLASS_REMOTE_CONTROL = hid.Subclass.SUBCLASS_REMOTE_CONTROL;
+          hilog.info(domain, tag, 'hid Subclass SUBCLASS_REMOTE_CONTROL: ' + SUBCLASS_REMOTE_CONTROL);
+          expect(SUBCLASS_REMOTE_CONTROL).assertEqual(3);
+
+          let SUBCLASS_SENSING_DEVICE = hid.Subclass.SUBCLASS_SENSING_DEVICE;
+          hilog.info(domain, tag, 'hid Subclass SUBCLASS_SENSING_DEVICE: ' + SUBCLASS_SENSING_DEVICE);
+          expect(SUBCLASS_SENSING_DEVICE).assertEqual(4);
+
+          let SUBCLASS_DIGITIZER_TABLET = hid.Subclass.SUBCLASS_DIGITIZER_TABLET;
+          hilog.info(domain, tag, 'hid Subclass SUBCLASS_DIGITIZER_TABLET: ' + SUBCLASS_DIGITIZER_TABLET);
+          expect(SUBCLASS_DIGITIZER_TABLET).assertEqual(5);
+
+          let SUBCLASS_CARD_READER = hid.Subclass.SUBCLASS_CARD_READER;
+          hilog.info(domain, tag, 'hid Subclass SUBCLASS_CARD_READER: ' + SUBCLASS_CARD_READER);
+          expect(SUBCLASS_CARD_READER).assertEqual(6);
+
+          let SUBCLASS_MOUSE = hid.Subclass.SUBCLASS_MOUSE;
+          hilog.info(domain, tag, 'hid Subclass SUBCLASS_MOUSE: ' + SUBCLASS_MOUSE);
+          expect(SUBCLASS_MOUSE).assertEqual(128);
+
+          let SUBCLASS_COMBO = hid.Subclass.SUBCLASS_COMBO;
+          hilog.info(domain, tag, 'hid Subclass SUBCLASS_COMBO: ' + SUBCLASS_COMBO);
+          expect(SUBCLASS_COMBO).assertEqual(192);
+        } catch (err) {
+          hilog.error(domain, tag, "hid Subclass errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILE_SERVICETYPE_static_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILESERVICETYPE_0100
+     * @tc.desc   Test hid ServiceType EnumValue api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILE_SERVICETYPE_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        try {
+          let SERVICE_NO_TRAFFIC = hid.ServiceType.SERVICE_NO_TRAFFIC;
+          hilog.info(domain, tag, 'hid ServiceType SERVICE_NO_TRAFFIC: ' + SERVICE_NO_TRAFFIC);
+          expect(SERVICE_NO_TRAFFIC).assertEqual(0);
+
+          let SERVICE_GUARANTEED = hid.ServiceType.SERVICE_GUARANTEED;
+          hilog.info(domain, tag, 'hid ServiceType SERVICE_GUARANTEED: ' + SERVICE_GUARANTEED);
+          expect(SERVICE_GUARANTEED).assertEqual(2);
+        } catch (err) {
+          hilog.error(domain, tag, "hid ServiceType errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILE_PROTOCOLTYPE_static_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILEPROTOCOLTYPE_0100
+     * @tc.desc   Test hid ProtocolType EnumValue api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILE_PROTOCOLTYPE_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        try {
+          let PROTOCOL_BOOT_MODE = hid.ProtocolType.PROTOCOL_BOOT_MODE;
+          hilog.info(domain, tag, 'hid ProtocolType PROTOCOL_BOOT_MODE: ' + PROTOCOL_BOOT_MODE);
+          expect(PROTOCOL_BOOT_MODE).assertEqual(0);
+
+          let PROTOCOL_REPORT_MODE = hid.ProtocolType.PROTOCOL_REPORT_MODE;
+          hilog.info(domain, tag, 'hid ProtocolType PROTOCOL_REPORT_MODE: ' + PROTOCOL_REPORT_MODE);
+          expect(PROTOCOL_REPORT_MODE).assertEqual(1);
+        } catch (err) {
+          hilog.error(domain, tag, "hid ProtocolType errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
         }
         done();
       })

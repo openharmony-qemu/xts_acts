@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import hilog from '@ohos.hilog'
@@ -30,6 +30,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 
+let displayID: Int = 0;
 export default function RichEditor6() {
   describe('RichEditor6', () => {
     beforeAll(async (): Promise<void> => {
@@ -37,7 +38,6 @@ export default function RichEditor6() {
 
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api12.static", "EntryAbility");
-
     });
     beforeEach(async (): Promise<void> => {
       console.info("RichEditor6 beforeEach start");
@@ -57,9 +57,10 @@ export default function RichEditor6() {
           // console.info("push RichEditor6 page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push RichEditor6 page error:" + err);
+        console.log("push RichEditor6 page error:" + err);
       }
       console.info("RichEditor6 beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     afterEach(async (): Promise<void> => {
       let driver = Driver.create();
@@ -119,7 +120,11 @@ export default function RichEditor6() {
       await CommonFunc.sleep(500)
       await (RichEditorGetAttribute?.inputText('abc') as Promise<void>)
       await CommonFunc.sleep(500)
-	    await driver.triggerKey(2047)
+      try {
+        await driver.triggerKey(2047, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500)
       let GetStopEditing = await driver.findComponent(ON.id("StopEditing"));
       await CommonFunc.sleep(500)

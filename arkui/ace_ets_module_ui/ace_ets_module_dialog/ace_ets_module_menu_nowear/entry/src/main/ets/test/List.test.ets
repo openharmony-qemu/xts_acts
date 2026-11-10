@@ -13,10 +13,11 @@
  * limitations under the License.
  */
 
+import PresetTest from './Preset.test';
 import MinKeyboardAvoidDistance from './Menu/MinKeyboardAvoidDistance.test';
 import KeyboardAvoidModeNone from './Menu/KeyboardAvoidModeNone.test';
 
 export default function testsuite() {
-  KeyboardAvoidModeNone();
+  PresetTest();
   MinKeyboardAvoidDistance();
 }

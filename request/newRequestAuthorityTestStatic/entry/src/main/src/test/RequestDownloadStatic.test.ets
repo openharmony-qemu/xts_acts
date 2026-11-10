@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach} from "@ohos/hypium-static/src/main/indexStatic";
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';

@@ -255,7 +255,8 @@ export default function beforeAllTest() {
           }
         }
       } catch (error) {
-        expect(false).assertTrue();
+        // 小平板不支持添加6*4卡片
+        expect(error.code === 9201050).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }

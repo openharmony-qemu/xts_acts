@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll, beforeEach, afterEach} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll, beforeEach, afterEach} from "@ohos/hypium-static/src/main/indexStatic";
 import hilog from '@ohos.hilog'
 import { WantAgent as _WantAgent } from '@ohos.app.ability.wantAgent';
 import wantAgent from '@ohos.app.ability.wantAgent';
@@ -863,6 +863,109 @@ export default function ActsLongTimeTaskNopStaticTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_2000 end---');
       })
 
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_2100
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_2100
+     * @tc.desc   Test that the startContinuousTask function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+     * @tc.level  LEVEL3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_2100 begin---');
+
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+              let subModeList: Array<backgroundTaskManager.BackgroundTaskSubmode> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = modeList;
+              continuousTaskRequest.backgroundTaskSubmodes = subModeList;
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_2100 startContinuousTask promise run success.');
+                expect(false).assertTrue();
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_2100 startContinuousTask promise error: %{public}s', JSON.stringify(error));
+                expect(error.code).assertEqual(PERMISSION_DENIED_CODE);
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_2100 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_2100 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_2100 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_2100 end---');
+      })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_2200
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_2200
+     * @tc.desc   Test that the startContinuousTask function with MODE_LOCATION does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+     * @tc.level  LEVEL3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_2200 begin---');
+
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_LOCATION];
+              let subModeList: Array<backgroundTaskManager.BackgroundTaskSubmode> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_NORMAL_NOTIFICATION];
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = modeList;
+              continuousTaskRequest.backgroundTaskSubmodes = subModeList;
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_2200 startContinuousTask promise run success.');
+                expect(false).assertTrue();
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_2200 startContinuousTask promise error: %{public}s', JSON.stringify(error));
+                expect(error.code).assertEqual(PERMISSION_DENIED_CODE);
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_2200 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_2200 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_2200 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_2200 end---');
+      })
+
   })
 }
-

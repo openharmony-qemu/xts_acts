@@ -17,7 +17,7 @@ import udmfType from '@ohos.data.uniformTypeDescriptor';
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, ExpectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect } from '../../../../hypium/index';
+import { describe, expect } from '@ohos/hypium-static/src/main/indexStatic';
 import { AlignRuleOption, VerticalAlign, HorizontalAlign, Position, $r } from '@ohos.arkui.component';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { AppStorage } from '@ohos.arkui.stateManagement';

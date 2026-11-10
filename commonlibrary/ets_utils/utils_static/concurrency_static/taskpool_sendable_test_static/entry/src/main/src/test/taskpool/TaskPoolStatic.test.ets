@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium-static/src/main/indexStatic';
 import collections from '@arkts.collections';
 import Utils from '../utils/Utils';
 import { delay, getTaskStateByTaskName } from '../utils/taskPoolCommon';
@@ -1331,7 +1331,7 @@ export default function TaskPoolStaticTest(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200079);
+        expect(error.code).assertEqual(10200056);
       }
       console.info(`${caseName} test end`);
       done();
@@ -1463,7 +1463,7 @@ export default function TaskPoolStaticTest(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200097);
+        expect(error.code).assertEqual(10200027);
       }
       console.info(`${caseName} test end`);
       done();
@@ -1489,7 +1489,7 @@ export default function TaskPoolStaticTest(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200097);
+        expect(error.code).assertEqual(10200027);
       }
       console.info(`${caseName} test end`);
       done();
@@ -1848,7 +1848,7 @@ export default function TaskPoolStaticTest(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200088);
+        expect(error.code).assertEqual(10200015);
       }
       console.info(`${caseName} test end`);
       done();
@@ -1874,7 +1874,7 @@ export default function TaskPoolStaticTest(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200088);
+        expect(error.code).assertEqual(10200015);
       }
       console.info(`${caseName} test end`);
       done();
@@ -1911,7 +1911,7 @@ export default function TaskPoolStaticTest(): void {
     /**
      * @tc.name   testCancelTaskStatic0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0640
-     * @tc.desc   Testing cancel(task) when task is executing.
+     * @tc.desc   Testing cancel(task) after a delayed task has finished.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -1940,8 +1940,9 @@ export default function TaskPoolStaticTest(): void {
         } catch (e) {
           cancelCaught = true;
           console.info(`${caseName} cancel completed task code => ${e.code} message => ${e.message}`);
+          expect(e.code).assertEqual(10200057);
         }
-        expect(cancelCaught).assertFalse();
+        expect(cancelCaught).assertTrue();
         expect(await p2 as number).assertEqual(201);
         expect(await p3 as number).assertEqual(301);
         expect(await p4 as number).assertEqual(401);
@@ -2020,7 +2021,7 @@ export default function TaskPoolStaticTest(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200085);
+        expect(error.code).assertEqual(10200057);
       }
       console.info(`${caseName} test end`);
       done();
@@ -2043,7 +2044,7 @@ export default function TaskPoolStaticTest(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200088);
+        expect(error.code).assertEqual(10200015);
       }
       console.info(`${caseName} test end`);
       done();
@@ -2139,7 +2140,7 @@ export default function TaskPoolStaticTest(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200089);
+        expect(error.code).assertEqual(10200018);
       }
       console.info(`${caseName} test end`);
       done();
@@ -2165,7 +2166,7 @@ export default function TaskPoolStaticTest(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200089);
+        expect(error.code).assertEqual(10200018);
       }
       console.info(`${caseName} test end`);
       done();
@@ -2223,7 +2224,7 @@ export default function TaskPoolStaticTest(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200089);
+        expect(error.code).assertEqual(10200018);
       }
       console.info(`${caseName} test end`);
       done();
@@ -2279,7 +2280,7 @@ export default function TaskPoolStaticTest(): void {
           taskpool.cancel(task);
           expect().assertFail();
         } catch (error) {
-          expect(error.code).assertEqual(10200085);
+          expect(error.code).assertEqual(10200057);
         }
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
@@ -2709,7 +2710,7 @@ export default function TaskPoolStaticTest(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200096);
+        expect(error.code).assertEqual(10200028);
       }
       console.info(`${caseName} test end`);
       done();
@@ -2760,7 +2761,7 @@ export default function TaskPoolStaticTest(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect(error.code).assertEqual(10200086);
+        expect(error.code).assertEqual(10200050);
       }
       console.info(`${caseName} test end`);
       done();
@@ -2783,7 +2784,7 @@ export default function TaskPoolStaticTest(): void {
           taskpool.executePeriodically(100, task);
           expect().assertFail();
         } catch (error) {
-          expect(error.code).assertEqual(10200086);
+          expect(error.code).assertEqual(10200050);
         }
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
@@ -2889,7 +2890,7 @@ export default function TaskPoolStaticTest(): void {
     /**
      * @tc.name   testTaskStateStatic0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0960
-     * @tc.desc   Create a task, read its state and assert isDone returns false before execution completes.
+     * @tc.desc   Create a delayed task and assert it is hidden from taskpool info and isDone returns false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -2901,8 +2902,14 @@ export default function TaskPoolStaticTest(): void {
         let task: taskpool.Task = new taskpool.Task(caseName, additionDelay, 50.0);
         let executePromise: Promise<Any> = taskpool.executeDelayed(500, task);
         let taskpoolInfo: taskpool.TaskPoolInfo = taskpool.getTaskPoolInfo();
-        let state: number = getTaskStateByTaskName(taskpoolInfo, caseName);
-        expect(state).assertEqual(taskpool.State.DELAYED);
+        let taskInfoFound: boolean = false;
+        for (let taskInfo of Array.from(taskpoolInfo.taskInfos)) {
+          if (taskInfo.name === caseName) {
+            taskInfoFound = true;
+            break;
+          }
+        }
+        expect(taskInfoFound).assertFalse();
         expect(task.isDone()).assertFalse();
         taskpool.cancel(task);
         try {

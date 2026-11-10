@@ -20,11 +20,11 @@ import { common } from '@kit.AbilityKit';
 import { Entry, Text, TextAttribute, Column, Component, Button, ClickEvent,Blank,TouchEvent,Color,HitTestMode,TouchType} from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
 import { AppStorage,State } from '@ohos.arkui.stateManagement'
 
-
+let caseName: string = 'teststartMovingStaticRepeated';
 @Entry
 @Component
 struct StartMoving8 {
-  @State message: string = 'startMoving'
+  @State message: string = 'teststartMovingStaticRepeated'
 
   build() {
     Column() {
@@ -36,24 +36,21 @@ struct StartMoving8 {
         .hitTestBehavior(HitTestMode.Transparent)
         .onTouch((event: TouchEvent) => {
           if (event.type == TouchType.Down) {
-            try {
-              let windowClass = AppStorage.get<window.Window>('windowClass1') as window.Window;
-              windowClass.startMoving().then(async () => {
+          (async () => {
+              try {
+                let windowClass = AppStorage.get<window.Window>('windowClass1') as window.Window;
                 await windowClass.startMoving();
-                this.message = 'startMoving success'
-                console.info('start moving successfully');
-              }).catch((err) => {
+                console.info(`${caseName} first startMoving success`);
+                await windowClass.startMoving();
+                this.message = 'startMoving success';
+                console.info(`${caseName} second startMoving success`);
+              } catch (err) {
                 err = err as BusinessError;
-                if (err.code === 801) {
-                  this.message = 'startMoving 801'
-                } else if (err.code === 1300001) {
-                  this.message = 'startMoving 1300001'
-                }
-                console.error('start moving : ' + err.code + ',message:' + err.message)
-              })
-            } catch (exception) {
-              console.error(`Failed to start drag window. Cause code: ${exception.code}, message: ${exception.message}`)
-            }
+                console.error(`${caseName} startMoving failed: ${err.code}, message: ${err.message}`);
+                this.message = `startMoving ${err.code}`;
+                AppStorage.setOrCreate('teststartMovingStaticRepeated_errorCode', err.code);
+              }
+            })()
           }
         })
     }

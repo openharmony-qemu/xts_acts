@@ -24,7 +24,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index'
+} from '@ohos/hypium-static/src/main/indexStatic'
 import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
 import Utils from '../../../ets/MainAbility/common/Utils';

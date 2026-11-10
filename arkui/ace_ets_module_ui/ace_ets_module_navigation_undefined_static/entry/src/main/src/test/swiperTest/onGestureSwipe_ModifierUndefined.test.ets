@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -22,6 +22,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { UtilsTest } from '../Util.test';
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function onGestureSwipe_ModifierStartUndefinedTest() {
   describe('onGestureSwipe_ModifierUndefinedTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -70,13 +71,7 @@ export default function onGestureSwipe_ModifierStartUndefinedTest() {
       let bounds = await swiperItem.getBounds();
       let width = bounds.right - bounds.left;
       let height = bounds.bottom - bounds.top;
-      await driver.swipe(
-        (bounds.left + width - 50).toInt(),
-        (bounds.top + height / 2).toInt(),
-        (bounds.left + 50).toInt(),
-        (bounds.top + height / 2).toInt(),
-        3000
-      );
+      await driver.swipeBetween({ x: (bounds.left + width - 50).toInt(), y: (bounds.top + height / 2).toInt(), displayId: displayID.toInt() }, { x: (bounds.left + 50).toInt(), y: (bounds.top + height / 2).toInt(), displayId: displayID.toInt() }, 3000);
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('testTextModifier');
@@ -89,13 +84,7 @@ export default function onGestureSwipe_ModifierStartUndefinedTest() {
       await (undefinedBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
 
-      await driver.swipe(
-        (bounds.left + width - 50).toInt(),
-        (bounds.top + height / 2).toInt(),
-        (bounds.left + 50).toInt(),
-        (bounds.top + height / 2).toInt(),
-        3000
-      );
+      await driver.swipeBetween({ x: (bounds.left + width - 50).toInt(), y: (bounds.top + height / 2).toInt(), displayId: displayID.toInt() }, { x: (bounds.left + 50).toInt(), y: (bounds.top + height / 2).toInt(), displayId: displayID.toInt() }, 3000);
       await CommonFunc.sleep(1000);
 
       let strJson2 = inspector.getInspectorByKey('testTextModifier');

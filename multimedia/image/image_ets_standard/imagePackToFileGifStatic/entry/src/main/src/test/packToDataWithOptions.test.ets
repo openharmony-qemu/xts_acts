@@ -15,7 +15,7 @@
  */
 
 import image from "@ohos.multimedia.image";
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-static/src/main/indexStatic";
 
 const TAG = 'PackToDataWithOptions';
 let isSupportTiff: Boolean;

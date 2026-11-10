@@ -44,7 +44,7 @@ struct ScrollToIndexForWaterFlow02 {
   // 计算flow item宽/高
   getSize() {
     let ret = Math.floor(Math.random() * this.maxSize)
-    return (ret > this.minSize ? ret : this.minSize)
+    return (ret > this.minSize ? ret : Int.toDouble(this.minSize))
   }
 
   // 保存flow item宽/高
@@ -179,5 +179,7 @@ struct ScrollToIndexForWaterFlow02 {
           }).margin({ top: 300, left: 10 } as Margin)
       }
     }
+    .padding(10)
+    .margin(10)
   }
 }

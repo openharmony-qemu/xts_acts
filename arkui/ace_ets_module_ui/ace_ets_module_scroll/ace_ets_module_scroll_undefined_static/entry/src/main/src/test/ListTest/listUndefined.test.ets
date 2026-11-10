@@ -15,7 +15,7 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Point } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -809,6 +809,9 @@ export default function ListUndefinedTest() {
         .getElement('sticky')))
         .assertEqual('\"StickyStyle.Header\"');
 
+      let scrollColumn = await driver.findComponent(ON.id('listUndefined_btn'));
+      await scrollColumn!.scrollSearch(ON.id('List_sticky'));
+      await CommonFunc.sleep(2000);
       let changeBtn = await driver.findComponent(ON.id('List_sticky'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -835,6 +838,9 @@ export default function ListUndefinedTest() {
       console.info('[ListUndefinedTest_static_2100] START');
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(1000);
+      let scrollColumn = await driver.findComponent(ON.id('listUndefined_btn'));
+      await scrollColumn!.scrollSearch(ON.id('List_sticky'));
+      await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('MyList');
       await CommonFunc.sleep(1000);
       let changeBtn_top = await driver.findComponent(ON.id('List_toTop'));

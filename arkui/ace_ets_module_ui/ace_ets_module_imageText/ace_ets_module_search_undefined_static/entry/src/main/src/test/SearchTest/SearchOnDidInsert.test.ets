@@ -15,7 +15,7 @@
  */
 
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-static/src/main/indexStatic";
 import router from '@ohos.router';
 import {
   Component,
@@ -38,6 +38,8 @@ import { BusinessError } from '@ohos.base';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, Component } from '@kit.TestKit';
 
+
+let displayID: Int = 0;
 
 export default function SearchOnDidInsert() {
   describe('SearchOnDidInsert', () => {
@@ -64,9 +66,10 @@ export default function SearchOnDidInsert() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push SearchOnDidInsert page error: " + err);
+        console.log("push SearchOnDidInsert page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     /**
          * @tc.number   SearchOnDidInsert_static_0010
@@ -82,7 +85,11 @@ export default function SearchOnDidInsert() {
       let button = await driver.findComponent(ON.id('changeOnDidInsertButton')) as Component;
       await text1.inputText('9');
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('insertValueText')
       await CommonFunc.sleep(200);
@@ -94,7 +101,11 @@ export default function SearchOnDidInsert() {
       await CommonFunc.sleep(1000);
       await text1.inputText('6');
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson2 = inspector.getInspectorByKey('insertValueText')
       await CommonFunc.sleep(200);
@@ -104,7 +115,11 @@ export default function SearchOnDidInsert() {
       await CommonFunc.sleep(1000);
       await text1.inputText('9');
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson3 = inspector.getInspectorByKey('insertValueText')
       await CommonFunc.sleep(200);

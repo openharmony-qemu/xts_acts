@@ -98,15 +98,16 @@ struct WaterFlowFling2 {
         return { offsetRemain: offset } as OnScrollFrameBeginHandlerResult
       })
 
+      Button('scroll fling')
+        .id('fling_scroll_2')
+        .height('5%')
+        .onClick((event: ClickEvent) => {
+          this.scroller.fling(2000)
+        })
       Text('fling: '+ this.onText)
         .id('water_fling_2')
         .width('90%')
         .height('20%')
-      Button('scroll fling')
-        .id('fling_scroll_2')
-        .onClick((event: ClickEvent) => {
-          this.scroller.fling(2000)
-        })
     }
   }
 }

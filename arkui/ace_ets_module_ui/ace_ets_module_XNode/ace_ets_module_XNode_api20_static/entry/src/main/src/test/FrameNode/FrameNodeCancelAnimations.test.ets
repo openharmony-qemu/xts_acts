@@ -23,7 +23,7 @@ import {
   afterAll,
   it,
   Level
-} from '../../../../hypium/index'
+} from '@ohos/hypium-static/src/main/indexStatic'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import router from '@ohos.router';

@@ -15,15 +15,35 @@
  */
 import ConnectionTest from "./Connection.test";
 import ConnectionPublicTest from "./ConnectionPublic.test";
+import ConnectionUnMeteredTest from "./ConnectionUnMetered.test";
+import ConnectionCallbackTest from "./ConnectionCallback.test";
+import ConnectionPromiseTest from "./ConnectionPromise.test";
+import ConnectionErrorCodeTest from "./ConnectionErrorCode.test";
+import ConnectionHandleTest from "./ConnectionHandle.test";
+import ConnectionUnicodeTest from "./ConnectionUnicode.test";
+import ConnectionAsciiTest from "./ConnectionAscii.test";
+
 import EmptyTest from './Empty.test';
 import connection from '@ohos.net.connection';
+import RefreshGlobalHttpProxy from './RefreshGlobalHttpProxy.test';
 
 let isDefaultNet: boolean = connection.hasDefaultNetSync();
+let isDefaultNetMetered: boolean = connection.isDefaultNetMeteredSync();
 
-export default function testsuite() {
+export default function testsuite(): void {
     if(isDefaultNet){
         ConnectionTest();
+        ConnectionCallbackTest();
+        ConnectionPromiseTest();
+        ConnectionErrorCodeTest();
+        ConnectionHandleTest();
+        ConnectionUnicodeTest();
+        ConnectionAsciiTest();
+        RefreshGlobalHttpProxy();
         ConnectionPublicTest();
+        if(!isDefaultNetMetered){
+            ConnectionUnMeteredTest();
+        }
     }else{
         EmptyTest();
     }

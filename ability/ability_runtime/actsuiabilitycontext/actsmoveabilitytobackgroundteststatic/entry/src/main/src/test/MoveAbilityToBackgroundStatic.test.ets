@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {  afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level  } from '../../../hypium/index';
+import {  afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level  } from '@ohos/hypium-static/src/main/indexStatic';
 import { Driver, MatchPattern, ON, Component } from '@ohos.UiTest';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import CommonEventManager from '@ohos.commonEventManager';

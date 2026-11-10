@@ -15,7 +15,7 @@
  */
 import common from '@ohos.app.ability.common';
 import window from '@ohos.window';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-static/src/main/indexStatic"
 import {
   Entry,
   Component,
@@ -220,6 +220,8 @@ struct RefreshOffsetOffsetExample {
           .width('30%')
         }
       }
+    .padding(10)
+    .margin(10)
       .height('90%')
 
       Button('changeOrientation').id('changeOrientation')
@@ -228,5 +230,7 @@ struct RefreshOffsetOffsetExample {
           this.changeOrientation()
         })
     }
+    .padding(10)
+    .margin(10)
   }
 }

@@ -1,5 +1,5 @@
 'use static';
-import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium/index';
+import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-static/src/main/indexStatic';
 import sleep  from './Util.test';
 
 // Class with static shared SharedArrayBuffer
@@ -2175,7 +2175,7 @@ export default function atomicsExchangeTest() {
           await Promise.all(updated.map((i) => {
             return new Promise<void>((resolve) => {
               setTimeout(() => {
-                Atomics.exchange(ia, i.toInt(), i === 0 ? initialA : initialB.toLong());
+                Atomics.exchange(ia, i.toInt(), i === 0 ? initialA.toLong() : initialB.toLong());
                 resolve(undefined);
               }, 1);
             });

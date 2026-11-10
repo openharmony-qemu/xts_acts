@@ -26,7 +26,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from './../Util.test';
 
 const BIGINT64_NEAR_MAX_FIVE = 9223372036854775805n;

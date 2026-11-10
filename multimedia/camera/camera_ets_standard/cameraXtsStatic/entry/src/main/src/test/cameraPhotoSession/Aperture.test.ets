@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {describe,beforeAll,beforeEach,afterEach,afterAll,it,expect,Level,Hypium,Size,TestType} from '../../../../hypium/index';
+import {describe,beforeAll,beforeEach,afterEach,afterAll,it,expect,Level,Hypium,Size,TestType} from '@ohos/hypium-static/src/main/indexStatic';
 import { camera } from '@kit.CameraKit';
 import { getPermission, sleep } from '../Common.test';
 import { Context } from '@kit.ArkUI';

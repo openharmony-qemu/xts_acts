@@ -150,6 +150,9 @@ struct arcDotIndicator {
         console.info('target offset: ' + event.targetOffset)
         console.info('velocity: ' + event.velocity)
       })
-    }.height('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .height('100%')
   }
 }

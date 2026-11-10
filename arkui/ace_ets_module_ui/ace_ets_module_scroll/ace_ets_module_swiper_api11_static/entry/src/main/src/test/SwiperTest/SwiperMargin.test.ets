@@ -22,7 +22,7 @@ import {
   it,
   expect,
   Level
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {
@@ -99,7 +99,7 @@ it('ArkUI_Swiper_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
       console.info(`${SUITE} ${CASE} START`);
 
       let driver = Driver.create()
-      await (driver.delayMs(waitUiReadyMs) as Promise<void>)
+      await CommonFunc.sleep(waitUiReadyMs)
       let baseKey = 'SwiperMargin_Swiper1'
       let strJson = inspector.getInspectorByKey(baseKey);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('prevMargin')).assertEqual('0.00vp')
@@ -124,7 +124,7 @@ it('ArkUI_Swiper_static_0200', Level.LEVEL0, async (done: () => void): Promise<v
       let CASE = 'ArkUI_Swiper_static_0200'
       console.info(`${SUITE} ${CASE} START`);
       let driver = Driver.create()
-      await (driver.delayMs(waitUiReadyMs) as Promise<void>)
+      await CommonFunc.sleep(waitUiReadyMs)
       let baseKey = 'SwiperMargin_Swiper2'
       let strJson = inspector.getInspectorByKey(baseKey);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('prevMargin')).assertEqual('10.00vp')
@@ -150,7 +150,7 @@ it('ArkUI_Swiper_static_0300', Level.LEVEL0, async (done: () => void): Promise<v
       console.info(`${SUITE} ${CASE} START`);
 
       let driver = Driver.create()
-      await (driver.delayMs(waitUiReadyMs) as  Promise<void>)
+      await CommonFunc.sleep(waitUiReadyMs)
       let baseKey = 'SwiperMargin_Swiper3'
       let strJson = inspector.getInspectorByKey(baseKey);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('prevMargin')).assertEqual('11.00vp')
@@ -170,7 +170,7 @@ it('ArkUI_Swiper_static_0400', Level.LEVEL0, async (done: () => void): Promise<v
       let CASE = 'ArkUI_Swiper_static_0400'
       console.info(`${SUITE} ${CASE} START`);
       let driver = Driver.create()
-      await (driver.delayMs(waitUiReadyMs) as  Promise<void>)
+      await CommonFunc.sleep(waitUiReadyMs)
       let baseKey = 'SwiperMargin_Swiper4'
       let strJson = inspector.getInspectorByKey(baseKey);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('prevMargin')).assertEqual('12.00vp')

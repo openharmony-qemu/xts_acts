@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-static/src/main/indexStatic"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -71,7 +71,11 @@ it('ObserverNavDestinationState_static_0100', Level.LEVEL0, async (done: () => v
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
 
+        let displayId: undefined | Int = 0;
         let btn1 = await driver.findComponent(ON.id('ObserverNavDestinationState_pageOne'));
+        await CommonFunc.sleep(1000);
+        displayId = await btn1?.getDisplayId();
+        await CommonFunc.sleep(1000);
         await (btn1?.click() as Promise<void>)
         console.info("[ObserverNavDestinationState_0100] btn1");
         await CommonFunc.sleep(1000);
@@ -81,7 +85,9 @@ it('ObserverNavDestinationState_static_0100', Level.LEVEL0, async (done: () => v
         console.info("[ObserverNavDestinationState_0100] btn2");
         await CommonFunc.sleep(1000);
 
-        await driver.pressBack()
+        if (displayId != undefined) {
+          await driver.pressBack(displayId as Int);
+        }
         await CommonFunc.sleep(2000);
 
         let btn3 = await driver.findComponent(ON.id('ObserverNavDestinationState_get'));

@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../hypium/index';
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-static/src/main/indexStatic';
 import manager from '@ohos.nearlink.manager';
 import advertising from '@ohos.nearlink.advertising';
+import nearlinkConstant from '@ohos.nearlink.constant';
 import Utils from './Util.test';
 import hilog from '@ohos.hilog';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
@@ -105,6 +106,7 @@ let onReceiveEvent =(changeInfo: advertising.AdvertisingStateChangeInfo) => {
 export default function advertisingTest(): void {
   describe('advertisingTest', () => {
     let return_boolean: boolean;
+    let isFrameType4Supported: boolean;
     beforeAll(async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
@@ -118,8 +120,7 @@ export default function advertisingTest(): void {
       try {
         await abilityDelegator.executeShellCommand(cmd);
       } catch (error) {
-        let e = error as BusinessError;
-        hilog.error(0x0000, 'testTag', 'executeShellCommand failed: %{public}s', e.message);
+        hilog.error(0x0000, 'testTag', 'executeShellCommand failed: %{public}s', error.message);
       }
       await Utils.msSleep(2000);
       g_context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
@@ -142,6 +143,7 @@ export default function advertisingTest(): void {
       await Utils.clickRequestPermission();
       await Utils.msSleep(TIME_SLEEP);
       return_boolean = manager.isNearLinkSupported();
+      isFrameType4Supported = manager.isFrameType4Supported();
       hilog.info(0x0000, 'testTag', '%{public}s', 'beforeAll end');
       done();
     })
@@ -739,6 +741,98 @@ export default function advertisingTest(): void {
           expect(return_boolean === false).assertTrue();
         } else {
           expect(error.code).assertEqual(36100040);
+        }
+      }
+      done();
+    })
+    /**
+     * @tc.number SUB_Communication_XTS_NearLinkPub_Advertising_ADD_1000
+     * @tc.name SUB_Communication_XTS_NearLinkPub_Advertising_ADD_static_1000
+     * @tc.desc startAdvertising with frameType FRAME_TYPE_1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('SUB_Communication_XTS_NearLinkPub_Advertising_ADD_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = 'SUB_Communication_XTS_NearLinkPub_Advertising_ADD_static_1000';
+      hilog.info(0x0000, 'testTag', '%{public}s test start', caseName);
+      let advertisingSettings: advertising.AdvertisingSettings = {
+        interval:INTERVAL_MIN,
+        power:advertising.TxPowerMode.ADV_TX_POWER_MEDIUM,
+        isConnectable:true,
+        frameType:nearlinkConstant.FrameType.FRAME_TYPE_1
+      };
+      let advertisingData: advertising.AdvertisingData = {
+        serviceUuids:[UUID_UPP_Available],
+        manufacturerData:[manufacturerData],
+        serviceData:[serviceData],
+        includeDeviceName:false
+      };
+      let advertisingParams: advertising.AdvertisingParams = {
+        advertisingSettings: advertisingSettings,
+        advertisingData: advertisingData
+      };
+      try {
+        hilog.info(0x0000, 'testTag', '%{public}s', '[Nearlink Test] call startAdvertising start');
+        let outAdvHandle = await advertising.startAdvertising(advertisingParams);
+        hilog.info(0x0000, 'testTag', '[Nearlink Test] startAdvertising promise result out:%{public}s', JSON.stringify(outAdvHandle));
+        expect(typeof outAdvHandle).assertEqual('int');
+        await advertising.stopAdvertising(outAdvHandle);
+        hilog.info(0x0000, 'testTag', '%{public}s', '[Nearlink Test] stopAdvertising promise success');
+      } catch (error) {
+        hilog.info(0x0000, 'testTag', '[Nearlink Test] advertising ADD_1000 errCode:%{public}s,errMessage:%{public}s', error.code, error.message);
+        if (error.code === 801) {
+          hilog.info(0x0000, 'testTag', '%{public}s', 'api is not support');
+          expect(error.code).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+    /**
+     * @tc.number SUB_Communication_XTS_NearLinkPub_Advertising_ADD_1100
+     * @tc.name SUB_Communication_XTS_NearLinkPub_Advertising_ADD_static_1100
+     * @tc.desc startAdvertising with frameType FRAME_TYPE_4
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('SUB_Communication_XTS_NearLinkPub_Advertising_ADD_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = 'SUB_Communication_XTS_NearLinkPub_Advertising_ADD_static_1100';
+      hilog.info(0x0000, 'testTag', '%{public}s test start', caseName);
+      let advertisingSettings: advertising.AdvertisingSettings = {
+        interval:INTERVAL_MIN,
+        power:advertising.TxPowerMode.ADV_TX_POWER_MEDIUM,
+        isConnectable:true,
+        frameType:nearlinkConstant.FrameType.FRAME_TYPE_4
+      };
+      let advertisingData: advertising.AdvertisingData = {
+        serviceUuids:[UUID_UPP_Available],
+        manufacturerData:[manufacturerData],
+        serviceData:[serviceData],
+        includeDeviceName:false
+      };
+      let advertisingParams: advertising.AdvertisingParams = {
+        advertisingSettings: advertisingSettings,
+        advertisingData: advertisingData
+      };
+      try {
+        hilog.info(0x0000, 'testTag', '%{public}s', '[Nearlink Test] call startAdvertising start');
+        let outAdvHandle = await advertising.startAdvertising(advertisingParams);
+        hilog.info(0x0000, 'testTag', '[Nearlink Test] startAdvertising promise result out:%{public}s', JSON.stringify(outAdvHandle));
+        expect(typeof outAdvHandle).assertEqual('int');
+        await advertising.stopAdvertising(outAdvHandle);
+        hilog.info(0x0000, 'testTag', '%{public}s', '[Nearlink Test] stopAdvertising promise success');
+        expect(isFrameType4Supported === true).assertTrue();
+      } catch (error) {
+        hilog.info(0x0000, 'testTag', '[Nearlink Test] advertising ADD_1100 errCode:%{public}s,errMessage:%{public}s', error.code, error.message);
+        if (error.code === 801) {
+          hilog.info(0x0000, 'testTag', '%{public}s', 'api is not support');
+          expect(error.code).assertEqual(801);
+          expect(isFrameType4Supported === false).assertTrue();
+        } else {
+          expect().assertFail();
         }
       }
       done();

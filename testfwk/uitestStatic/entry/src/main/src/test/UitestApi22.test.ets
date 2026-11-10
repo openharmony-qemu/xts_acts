@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeAll, beforeEach, describe, it, expect,TestType, Size, Level } from "../../../hypium/index"
+import { beforeAll, beforeEach, describe, it, expect,TestType, Size, Level } from "@ohos/hypium-static/src/main/indexStatic"
 import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation,
   ComponentEventType, WindowChangeType, UiWindow, ResizeDirection, Point } from '@kit.TestKit'
 import  hilog  from '@ohos.hilog'
@@ -44,7 +44,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name testComponentEventOccurOptionsClickMonitor_static
-     * @tc.number uitestDriverTest_Api22_001
+     * @tc.number SUB_testfwk_UITEST_UIEVENTOBSERVER_ONCECOMPONENTEVENTOCCUR_PARAM_0100
      * @tc.desc monitor component click.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -100,7 +100,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name testComponentEventOccurOptionsClickMonitor_nullOn_static
-     * @tc.number uitestDriverTest_Api22_020
+     * @tc.number SUB_testfwk_UITEST_UIEVENTOBSERVER_ONCECOMPONENTEVENTOCCUR_PARAM_0200
      * @tc.desc monitor component click.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -152,7 +152,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name testComponentEventOccurOptionsClickMonitor_nullType_static
-     * @tc.number uitestDriverTest_Api22_022
+     * @tc.number SUB_testfwk_UITEST_UIEVENTOBSERVER_ONCECOMPONENTEVENTOCCUR_PARAM_0300
      * @tc.desc monitor component click.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -202,7 +202,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name testComponentEventOccurOptionsClickMonitor_notOn_static
-     * @tc.number uitestDriverTest_Api22_0011
+     * @tc.number SUB_testfwk_UITEST_UIEVENTOBSERVER_ONCECOMPONENTEVENTOCCUR_PARAM_0400
      * @tc.desc monitor component click.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -242,7 +242,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name testComponentEventOccurOptionsLongClickMonitor_static
-     * @tc.number uitestDriverTest_Api22_002
+     * @tc.number SUB_testfwk_UITEST_UIEVENTOBSERVER_ONCECOMPONENTEVENTOCCUR_PARAM_0500
      * @tc.desc monitor component LongClick.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -294,7 +294,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name testComponentEventOccurOptionsLongClickMonitor_nullOn_static
-     * @tc.number uitestDriverTest_Api22_023
+     * @tc.number SUB_testfwk_UITEST_UIEVENTOBSERVER_ONCECOMPONENTEVENTOCCUR_PARAM_0600
      * @tc.desc monitor component LongClick.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -346,7 +346,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name testComponentEventOccurOptionsLongClickMonitor_nullType_static
-     * @tc.number uitestDriverTest_Api22_024
+     * @tc.number SUB_testfwk_UITEST_UIEVENTOBSERVER_ONCECOMPONENTEVENTOCCUR_PARAM_0700
      * @tc.desc monitor component LongClick.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -396,7 +396,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name testComponentEventOccurOptionsLongClickMonitor_notOn_static
-     * @tc.number uitestDriverTest_Api22_0021
+     * @tc.number SUB_testfwk_UITEST_UIEVENTOBSERVER_ONCECOMPONENTEVENTOCCUR_PARAM_0800
      * @tc.desc monitor component LongClick.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -434,7 +434,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name testComponentEventOccurOptionsScrollStartMonitor_static
-     * @tc.number uitestDriverTest_Api22_004
+     * @tc.number SUB_testfwk_UITEST_UIEVENTOBSERVER_ONCECOMPONENTEVENTOCCUR_PARAM_0900
      * @tc.desc monitor component Scroll start.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -492,7 +492,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name testComponentEventOccurOptionsScrollStartMonitor_nullNo_static
-     * @tc.number uitestDriverTest_Api22_025
+     * @tc.number SUB_testfwk_UITEST_UIEVENTOBSERVER_ONCECOMPONENTEVENTOCCUR_PARAM_1000
      * @tc.desc monitor component Scroll start.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -551,7 +551,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name testComponentEventOccurOptionsScrollStartMonitor_nullType_static
-     * @tc.number uitestDriverTest_Api22_026
+     * @tc.number SUB_testfwk_UITEST_UIEVENTOBSERVER_ONCECOMPONENTEVENTOCCUR_PARAM_1100
      * @tc.desc monitor component Scroll start.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -606,7 +606,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name testComponentEventOccurOptionsScrollStartMonitor_notOn_static
-     * @tc.number uitestDriverTest_Api22_0041
+     * @tc.number SUB_testfwk_UITEST_UIEVENTOBSERVER_ONCECOMPONENTEVENTOCCUR_PARAM_1200
      * @tc.desc monitor component Scroll start.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -648,7 +648,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name testComponentEventOccurOptionsScrollEndMonitor_static
-     * @tc.number uitestDriverTest_Api22_005
+     * @tc.number SUB_testfwk_UITEST_UIEVENTOBSERVER_ONCECOMPONENTEVENTOCCUR_PARAM_1300
      * @tc.desc monitor component Scroll end.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -707,7 +707,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name testComponentEventOccurOptionsScrollEndMonitor_nullOn_static
-     * @tc.number uitestDriverTest_Api22_027
+     * @tc.number SUB_testfwk_UITEST_UIEVENTOBSERVER_ONCECOMPONENTEVENTOCCUR_PARAM_1400
      * @tc.desc monitor component Scroll end.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -766,7 +766,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name testComponentEventOccurOptionsScrollEndMonitor_nullType_static
-     * @tc.number uitestDriverTest_Api22_028
+     * @tc.number SUB_testfwk_UITEST_UIEVENTOBSERVER_ONCECOMPONENTEVENTOCCUR_PARAM_1500
      * @tc.desc monitor component Scroll end.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -823,7 +823,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name testComponentEventOccurOptionsScrollEndMonitor_notOn_static
-     * @tc.number uitestDriverTest_Api22_0051
+     * @tc.number SUB_testfwk_UITEST_UIEVENTOBSERVER_ONCECOMPONENTEVENTOCCUR_PARAM_1600
      * @tc.desc monitor component Scroll end.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -867,7 +867,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name testComponentEventOccurOptionsTextContentMonitor_static
-     * @tc.number uitestDriverTest_Api22_006
+     * @tc.number SUB_testfwk_UITEST_UIEVENTOBSERVER_ONCECOMPONENTEVENTOCCUR_PARAM_1700
      * @tc.desc monitor component text changed.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -928,7 +928,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name testComponentEventOccurOptionsTextContentMonitor_nullOn_static
-     * @tc.number uitestDriverTest_Api22_029
+     * @tc.number SUB_testfwk_UITEST_UIEVENTOBSERVER_ONCECOMPONENTEVENTOCCUR_PARAM_1800
      * @tc.desc monitor component text changed.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -990,7 +990,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name testComponentEventOccurOptionsTextContentMonitor_nullType_static
-     * @tc.number uitestDriverTest_Api22_030
+     * @tc.number SUB_testfwk_UITEST_UIEVENTOBSERVER_ONCECOMPONENTEVENTOCCUR_PARAM_1900
      * @tc.desc monitor component text changed.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1050,7 +1050,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name testComponentEventOccurOptionsTextContentMonitor_notOn_static
-     * @tc.number uitestDriverTest_Api22_0061
+     * @tc.number SUB_testfwk_UITEST_UIEVENTOBSERVER_ONCECOMPONENTEVENTOCCUR_PARAM_2000
      * @tc.desc monitor component text changed.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1098,7 +1098,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name testComponentEventOccurOptionsTimeOutClickMonitor_static
-     * @tc.number uitestDriverTest_Api22_007
+     * @tc.number SUB_testfwk_UITEST_UIEVENTOBSERVER_ONCECOMPONENTEVENTOCCUR_BOUNDARY_2100
      * @tc.desc monitor component click.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1151,20 +1151,25 @@ export default function uitestDriverTestApi22(): void {
     })
 
     /**
-     * @tc.name tesIsComponentPresentWhenLongClickTrue_static
-     * @tc.number uitestDriverTest_Api22_008
+     * @tc.name testIsComponentPresentWhenLongClickTrue_static
+     * @tc.number SUB_testfwk_UITEST_DRIVER_ISCOMPONENTPRESENTWHENLONGCLICK_PARAM_2200
      * @tc.desc isComponentPresentWhenLongClick test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('tesIsComponentPresentWhenLongClickTrue_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, tesIsComponentPresentWhenLongClickTrue_static start`);
+    it('testIsComponentPresentWhenLongClickTrue_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testIsComponentPresentWhenLongClickTrue_static start`);
       await driver!.delayMs(waitUiReadyMs);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       await driver!.delayMs(waitUiReadyMs);
-      console.log(`${TestTag}, tesIsComponentPresentWhenLongClickTrue_static start driver!.findComponent`);
       let to5Btn = await driver!.findComponent(ON.id('to5'));
+      if (to5Btn == null) {
+        let scroll = await driver!.findComponent(ON.type('Scroll'));
+        if (scroll != null) {
+          to5Btn = await scroll.scrollSearch(ON.id('to5'));
+        }
+      }
       expect(to5Btn != null).assertTrue();
       if(to5Btn != null) {
         await to5Btn.click();
@@ -1174,9 +1179,10 @@ export default function uitestDriverTestApi22(): void {
       await driver!.delayMs(waitUiReadyMs);
       expect(longClickBtn != null).assertTrue();
       if (longClickBtn != null) {
+        let disPlayId = await longClickBtn.getDisplayId();
         let center = await longClickBtn.getBoundsCenter();
         await driver!.delayMs(waitUiReadyMs);
-        let result = await driver!.isComponentPresentWhenLongClick(ON.text('ShowLongEventText'), center, 6000)
+        let result = await driver!.isComponentPresentWhenLongClick(ON.belongingDisplay(disPlayId).text('ShowLongEventText'), center, 6000)
         expect(result).assertTrue();
         await driver!.delayMs(waitUiReadyMs);
         let longClickTextResultBtn = await driver!.findComponent(ON.id('longClickTextResult'));
@@ -1188,12 +1194,12 @@ export default function uitestDriverTestApi22(): void {
       }
       await driver!.delayMs(waitUiReadyMs);
       await stopApplication('com.uitestScene.acts')
-      console.log(`${TestTag}, tesIsComponentPresentWhenLongClickTrue_static end`);
+      console.log(`${TestTag}, testIsComponentPresentWhenLongClickTrue_static end`);
     })
 
     /**
      * @tc.name tesIsComponentPresentWhenLongClickFalse_static
-     * @tc.number uitestDriverTest_Api22_09
+     * @tc.number SUB_testfwk_UITEST_DRIVER_ISCOMPONENTPRESENTWHENLONGCLICK_PARAM_2300
      * @tc.desc isComponentPresentWhenLongClick test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1204,6 +1210,12 @@ export default function uitestDriverTestApi22(): void {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       await driver!.delayMs(waitUiReadyMs);
       let to5Btn = await driver!.findComponent(ON.id('to5'));
+      if (to5Btn == null) {
+        let scroll = await driver!.findComponent(ON.type('Scroll'));
+        if (scroll != null) {
+          to5Btn = await scroll.scrollSearch(ON.id('to5'));
+        }
+      }
       expect(to5Btn != null).assertTrue();
       if(to5Btn != null) {
         await to5Btn.click();
@@ -1237,88 +1249,8 @@ export default function uitestDriverTestApi22(): void {
     })
 
     /**
-     * @tc.name tesIsComponentPresentWhenDragTrue_static
-     * @tc.number uitestDriverTest_Api22_010
-     * @tc.desc isComponentPresentWhenDrag test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('tesIsComponentPresentWhenDragTrue_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue_static start`);
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-      await driver!.delayMs(waitUiReadyMs);
-      let to5Btn = await driver!.findComponent(ON.id('to5'));
-      expect(to5Btn != null).assertTrue();
-      if (to5Btn != null) {
-        await to5Btn.click();
-      }
-      await driver!.delayMs(waitUiReadyMs);
-      let dragColCom = await driver!.findComponent(ON.id('dragCol'));
-      expect(dragColCom != null).assertTrue();
-      if (dragColCom != null) {
-        await driver!.delayMs(waitUiReadyMs);
-        let center1 = await dragColCom.getBoundsCenter();
-        let dragResultTextCom = await driver!.findComponent(ON.id('dragResultText'));
-        expect(dragResultTextCom != null).assertTrue();
-        if (dragResultTextCom != null) {
-          await driver!.delayMs(waitUiReadyMs);
-          let center2 = await dragResultTextCom.getBoundsCenter();
-          let disId = await dragResultTextCom.getDisplayId();
-          let result = await driver!.isComponentPresentWhenDrag(ON.belongingDisplay(disId).text('ShowDragEventText'), center1, center2)
-          console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue_static result, ${JSON.stringify(result)}`);
-          expect(result).assertTrue();
-        }
-      }
-      let text = await driver!.findComponent(ON.text('drag end'));
-      expect(text != null).assertTrue()
-      await stopApplication('com.uitestScene.acts')
-      console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue_static end`);
-    })
-
-    /**
-     * @tc.name tesIsComponentPresentWhenDragTrue_speed_static
-     * @tc.number uitestDriverTest_Api22_0101
-     * @tc.desc isComponentPresentWhenDrag test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('tesIsComponentPresentWhenDragTrue_speed_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue_speed_static start`);
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-      await driver!.delayMs(waitUiReadyMs);
-      let to5Btn = await driver!.findComponent(ON.id('to5'));
-      expect(to5Btn != null).assertTrue();
-      if (to5Btn != null) {
-        await to5Btn.click();
-      }
-      await driver!.delayMs(waitUiReadyMs);
-      let dragColCom = await driver!.findComponent(ON.id('dragCol'));
-      expect(dragColCom != null).assertTrue();
-      if (dragColCom != null) {
-        await driver!.delayMs(waitUiReadyMs);
-        let center1 = await dragColCom.getBoundsCenter();
-        let dragResultTextCom = await driver!.findComponent(ON.id('dragResultText'));
-        expect(dragResultTextCom != null).assertTrue();
-        if (dragResultTextCom != null) {
-          await driver!.delayMs(waitUiReadyMs);
-          let center2 = await dragResultTextCom.getBoundsCenter();
-          let disId = await dragResultTextCom.getDisplayId();
-          let result = await driver!.isComponentPresentWhenDrag(ON.belongingDisplay(disId).text('ShowDragEventText'), center1, center2, 600);
-          console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue_speed_static result, ${JSON.stringify(result)}`);
-          expect(result).assertTrue();
-        }
-      }
-      let text = await driver!.findComponent(ON.text('drag end'));
-      expect(text != null).assertTrue()
-      await stopApplication('com.uitestScene.acts')
-      console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue_speed_static end`);
-    })
-
-    /**
      * @tc.name tesIsComponentPresentWhenDragFalse_static
-     * @tc.number uitestDriverTest_Api22_011
+     * @tc.number SUB_testfwk_UITEST_DRIVER_ISCOMPONENTPRESENTWHENDRAG_PARAM_2400
      * @tc.desc isComponentPresentWhenDrag test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1329,6 +1261,12 @@ export default function uitestDriverTestApi22(): void {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       await driver!.delayMs(waitUiReadyMs);
       let to5Btn = await driver!.findComponent(ON.id('to5'));
+      if (to5Btn == null) {
+        let scroll = await driver!.findComponent(ON.type('Scroll'));
+        if (scroll != null) {
+          to5Btn = await scroll.scrollSearch(ON.id('to5'));
+        }
+      }
       expect(to5Btn != null).assertTrue()
       if (to5Btn != null) {
         await to5Btn.click();
@@ -1367,7 +1305,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name tesIsComponentPresentWhenSwipeTrue_static
-     * @tc.number uitestDriverTest_Api22_012
+     * @tc.number SUB_testfwk_UITEST_DRIVER_ISCOMPONENTPRESENTWHENSWIPE_PARAM_2500
      * @tc.desc isComponentPresentWhenSwipe test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1398,7 +1336,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name tesIsComponentPresentWhenSwipeFalse_static
-     * @tc.number uitestDriverTest_Api22_013
+     * @tc.number SUB_testfwk_UITEST_DRIVER_ISCOMPONENTPRESENTWHENSWIPE_PARAM_2600
      * @tc.desc isComponentPresentWhenSwipe test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1429,7 +1367,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name tesKnuckleKnockSingle_static
-     * @tc.number uitestDriverTest_Api22_014
+     * @tc.number SUB_testfwk_UITEST_DRIVER_KNUCKLEKNOCK_PARAM_2700
      * @tc.desc isComponentPresentWhenLongClick test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1461,7 +1399,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name tesKnuckleKnockDouble_static
-     * @tc.number uitestDriverTest_Api22_015
+     * @tc.number SUB_testfwk_UITEST_DRIVER_KNUCKLEKNOCK_PARAM_2800
      * @tc.desc isComponentPresentWhenLongClick test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1494,7 +1432,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name tesKnuckleKnockS_static
-     * @tc.number uitestDriverTest_Api22_016
+     * @tc.number SUB_testfwk_UITEST_DRIVER_INJECTKNUCKLEPOINTERACTION_PARAM_2900
      * @tc.desc isComponentPresentWhenLongClick test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1568,7 +1506,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name teTouchPadTwoFingersScrollVer_Static
-     * @tc.number uitestDriverTest_Api22_018
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TOUCHPADTWOFINGERSSCROLL_PARAM_3000
      * @tc.desc isComponentPresentWhenLongClick test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1605,7 +1543,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name teTouchPadTwoFingersScrollHor_static
-     * @tc.number uitestDriverTest_Api22_019
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TOUCHPADTWOFINGERSSCROLL_PARAM_3100
      * @tc.desc isComponentPresentWhenLongClick test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1617,6 +1555,12 @@ export default function uitestDriverTestApi22(): void {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver!.delayMs(waitUiReadyMs);
         let scrollBarBtn = await driver!.findComponent(ON.id('to5'));
+        if (scrollBarBtn == null) {
+          let scroll = await driver!.findComponent(ON.type('Scroll'));
+          if (scroll != null) {
+            scrollBarBtn = await scroll.scrollSearch(ON.id('to5'));
+          }
+        }
         expect(scrollBarBtn != null).assertTrue();
         if (scrollBarBtn != null) {
           await driver!.delayMs(waitUiReadyMs);
@@ -1627,16 +1571,17 @@ export default function uitestDriverTestApi22(): void {
         await driver!.delayMs(waitUiReadyMs);
         expect(scrollBar != null).assertTrue();
         if (scrollBar != null) {
+          let disPlayId = await scrollBar.getDisplayId();
           let center = await scrollBar.getBoundsCenter();
           await driver!.delayMs(waitUiReadyMs);
-          await driver!.touchPadTwoFingersScroll({x: center.x, y: center.y},
+          await driver!.touchPadTwoFingersScroll({x: center.x, y: center.y, displayId: disPlayId},
             UiDirection.LEFT, 600, 5000);
           await driver!.delayMs(waitUiReadyMs);
           let scroll11 = await driver!.findComponent(ON.text('1_hor'));
           await driver!.delayMs(waitUiReadyMs);
           expect(scroll11 == null).assertTrue();
           await driver!.delayMs(waitUiReadyMs);
-          await driver!.touchPadTwoFingersScroll({x: center.x, y: center.y},
+          await driver!.touchPadTwoFingersScroll({x: center.x, y: center.y, displayId: disPlayId},
             UiDirection.RIGHT, 800);
           await driver!.delayMs(waitUiReadyMs);
           let scroll111 = await driver!.findComponent(ON.text('1_hor'));

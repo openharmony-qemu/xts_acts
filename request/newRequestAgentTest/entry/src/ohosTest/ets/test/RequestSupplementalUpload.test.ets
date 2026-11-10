@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1673,6 +1673,443 @@ export default function requestSupplementalUploadTest() {
         }, 8000);
       } catch (err) {
         console.info(`====>SUB_Request_upload_Supplemental_3800 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_3900
+     * @tc.number SUB_Request_upload_Supplemental_3900
+     * @tc.desc   Upload with notification.hideStopButton is true, mode BACKGROUND.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_upload_Supplemental_3900', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_upload_Supplemental_3900 is starting-----------------------");
+      let attachments: Array<request.agent.FormItem> = [{
+        name: "uploadTest",
+        value: {
+          path: "./test.txt",
+          filename: "test.txt",
+          mimeType: "application/octet-stream"
+        }
+      }];
+      let config = {
+        action: request.agent.Action.UPLOAD,
+        url: 'http://127.0.0.1:8080',
+        mode: request.agent.Mode.BACKGROUND,
+        method: "POST",
+        data: attachments,
+        notification: {
+          title: 'uploadTest',
+          text: 'hideStopButton true',
+          hideStopButton: true
+        }
+      } as request.agent.Config;
+      try {
+        let task = await request.agent.create(baseContext, config);
+        console.info(`====>SUB_Request_upload_Supplemental_3900 config: ${JSON.stringify(task.config)}`);
+        expect(task.tid !== undefined).assertTrue();
+        let notification = task.config.notification;
+        expect(notification !== undefined).assertTrue();
+        if (notification !== undefined) {
+          let notificationStr = JSON.stringify(notification);
+          expect(notificationStr.includes('"hideStopButton":true')).assertTrue();
+        }
+        let on_completedCallback = (pro: request.agent.Progress) => {
+          try {
+            task.off('completed', on_completedCallback);
+            console.info("====>SUB_Request_upload_Supplemental_3900 pro.state: " + pro.state);
+            expect(pro.state === 64).assertTrue();
+            done();
+          } catch (err) {
+            console.info("====>SUB_Request_upload_Supplemental_3900 completed err: " + JSON.stringify(err));
+            done();
+          }
+        }
+        task.on('completed', on_completedCallback);
+        await task.start();
+      } catch (err) {
+        console.info("====>SUB_Request_upload_Supplemental_3900 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_4000
+     * @tc.number SUB_Request_upload_Supplemental_4000
+     * @tc.desc   Upload with notification.hideStopButton is false, mode BACKGROUND.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_upload_Supplemental_4000', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_upload_Supplemental_4000 is starting-----------------------");
+      let attachments: Array<request.agent.FormItem> = [{
+        name: "uploadTest",
+        value: {
+          path: "./test.txt",
+          filename: "test.txt",
+          mimeType: "application/octet-stream"
+        }
+      }];
+      let config = {
+        action: request.agent.Action.UPLOAD,
+        url: 'http://127.0.0.1:8080',
+        mode: request.agent.Mode.BACKGROUND,
+        method: "POST",
+        data: attachments,
+        notification: {
+          title: 'uploadTest',
+          text: 'hideStopButton false',
+          hideStopButton: false
+        }
+      } as request.agent.Config;
+      try {
+        let task = await request.agent.create(baseContext, config);
+        console.info(`====>SUB_Request_upload_Supplemental_4000 config: ${JSON.stringify(task.config)}`);
+        expect(task.tid !== undefined).assertTrue();
+        let notification = task.config.notification;
+        expect(notification !== undefined).assertTrue();
+        if (notification !== undefined) {
+          let notificationStr = JSON.stringify(notification);
+          expect(notificationStr.includes('"hideStopButton":false')).assertTrue();
+        }
+        let on_completedCallback = (pro: request.agent.Progress) => {
+          try {
+            task.off('completed', on_completedCallback);
+            console.info("====>SUB_Request_upload_Supplemental_4000 pro.state: " + pro.state);
+            expect(pro.state === 64).assertTrue();
+            done();
+          } catch (err) {
+            console.info("====>SUB_Request_upload_Supplemental_4000 completed err: " + JSON.stringify(err));
+            done();
+          }
+        }
+        task.on('completed', on_completedCallback);
+        await task.start();
+      } catch (err) {
+        console.info("====>SUB_Request_upload_Supplemental_4000 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_4100
+     * @tc.number SUB_Request_upload_Supplemental_4100
+     * @tc.desc   Upload with notification.hideStopButton not set (default), mode BACKGROUND.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_upload_Supplemental_4100', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_upload_Supplemental_4100 is starting-----------------------");
+      let attachments: Array<request.agent.FormItem> = [{
+        name: "uploadTest",
+        value: {
+          path: "./test.txt",
+          filename: "test.txt",
+          mimeType: "application/octet-stream"
+        }
+      }];
+      let config = {
+        action: request.agent.Action.UPLOAD,
+        url: 'http://127.0.0.1:8080',
+        mode: request.agent.Mode.BACKGROUND,
+        method: "POST",
+        data: attachments,
+        notification: {
+          title: 'uploadTest',
+          text: 'default value test'
+        }
+      } as request.agent.Config;
+      try {
+        let task = await request.agent.create(baseContext, config);
+        console.info(`====>SUB_Request_upload_Supplemental_4100 config: ${JSON.stringify(task.config)}`);
+        expect(task.tid !== undefined).assertTrue();
+        let notification = task.config.notification;
+        expect(notification !== undefined).assertTrue();
+        if (notification !== undefined) {
+          let notificationStr = JSON.stringify(notification);
+          console.info(`====>SUB_Request_upload_Supplemental_4100 notificationStr: ${notificationStr}`);
+          expect(!notificationStr.includes('"hideStopButton"') ||
+            notificationStr.includes('"hideStopButton":false')).assertTrue();
+        }
+        let on_completedCallback = (pro: request.agent.Progress) => {
+          try {
+            task.off('completed', on_completedCallback);
+            console.info("====>SUB_Request_upload_Supplemental_4100 pro.state: " + pro.state);
+            expect(pro.state === 64).assertTrue();
+            done();
+          } catch (err) {
+            console.info("====>SUB_Request_upload_Supplemental_4100 completed err: " + JSON.stringify(err));
+            done();
+          }
+        }
+        task.on('completed', on_completedCallback);
+        await task.start();
+      } catch (err) {
+        console.info("====>SUB_Request_upload_Supplemental_4100 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_4200
+     * @tc.number SUB_Request_upload_Supplemental_4200
+     * @tc.desc   Upload with notification.hideStopButton is true, mode FOREGROUND.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_upload_Supplemental_4200', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_upload_Supplemental_4200 is starting-----------------------");
+      let attachments: Array<request.agent.FormItem> = [{
+        name: "uploadTest",
+        value: {
+          path: "./test.txt",
+          filename: "test.txt",
+          mimeType: "application/octet-stream"
+        }
+      }];
+      let config = {
+        action: request.agent.Action.UPLOAD,
+        url: 'http://127.0.0.1:8080',
+        mode: request.agent.Mode.FOREGROUND,
+        method: "POST",
+        data: attachments,
+        notification: {
+          title: 'uploadTest',
+          text: 'hideStopButton foreground',
+          hideStopButton: true
+        }
+      } as request.agent.Config;
+      try {
+        let task = await request.agent.create(baseContext, config);
+        console.info(`====>SUB_Request_upload_Supplemental_4200 config: ${JSON.stringify(task.config)}`);
+        expect(task.tid !== undefined).assertTrue();
+        let notification = task.config.notification;
+        expect(notification !== undefined).assertTrue();
+        if (notification !== undefined) {
+          let notificationStr = JSON.stringify(notification);
+          expect(notificationStr.includes('"hideStopButton":true')).assertTrue();
+        }
+        await request.agent.remove(task.tid);
+        console.info("====>SUB_Request_upload_Supplemental_4200 remove success");
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_upload_Supplemental_4200 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_4300
+     * @tc.number SUB_Request_upload_Supplemental_4300
+     * @tc.desc   Upload with notification.hideStopButton is true and full notification fields, mode BACKGROUND.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_upload_Supplemental_4300', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_upload_Supplemental_4300 is starting-----------------------");
+      let attachments: Array<request.agent.FormItem> = [{
+        name: "uploadTest",
+        value: {
+          path: "./test.txt",
+          filename: "test.txt",
+          mimeType: "application/octet-stream"
+        }
+      }];
+      let config = {
+        action: request.agent.Action.UPLOAD,
+        url: 'http://127.0.0.1:8080',
+        mode: request.agent.Mode.BACKGROUND,
+        method: "POST",
+        data: attachments,
+        notification: {
+          title: 'uploadTestNotification',
+          text: 'hideStopButton full notification',
+          hideStopButton: true
+        }
+      } as request.agent.Config;
+      try {
+        let task = await request.agent.create(baseContext, config);
+        console.info(`====>SUB_Request_upload_Supplemental_4300 config: ${JSON.stringify(task.config)}`);
+        expect(task.tid !== undefined).assertTrue();
+        let notification = task.config.notification;
+        expect(notification !== undefined).assertTrue();
+        if (notification !== undefined) {
+          let notificationStr = JSON.stringify(notification);
+          expect(notificationStr.includes('"title":"uploadTestNotification"')).assertTrue();
+          expect(notificationStr.includes('"text":"hideStopButton full notification"')).assertTrue();
+          expect(notificationStr.includes('"hideStopButton":true')).assertTrue();
+        }
+        let on_completedCallback = (pro: request.agent.Progress) => {
+          try {
+            task.off('completed', on_completedCallback);
+            console.info("====>SUB_Request_upload_Supplemental_4300 pro.state: " + pro.state);
+            expect(pro.state === 64).assertTrue();
+            done();
+          } catch (err) {
+            console.info("====>SUB_Request_upload_Supplemental_4300 completed err: " + JSON.stringify(err));
+            done();
+          }
+        }
+        task.on('completed', on_completedCallback);
+        await task.start();
+      } catch (err) {
+        console.info("====>SUB_Request_upload_Supplemental_4300 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_4700
+     * @tc.number SUB_Request_upload_Supplemental_4700
+     * @tc.desc   Upload callback with notification.hideStopButton is true, mode BACKGROUND.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_upload_Supplemental_4700', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_upload_Supplemental_4700 is starting-----------------------");
+      let attachments: Array<request.agent.FormItem> = [{
+        name: "uploadTest",
+        value: {
+          path: "./test.txt",
+          filename: "test.txt",
+          mimeType: "application/octet-stream"
+        }
+      }];
+      let config = {
+        action: request.agent.Action.UPLOAD,
+        url: 'http://127.0.0.1:8080',
+        mode: request.agent.Mode.BACKGROUND,
+        method: "POST",
+        data: attachments,
+        notification: {
+          title: 'uploadTest',
+          text: 'hideStopButton true callback',
+          hideStopButton: true
+        }
+      } as request.agent.Config;
+      try {
+        request.agent.create(baseContext, config, async (err, task) => {
+          let on_completedCallback = (pro: request.agent.Progress) => {
+            try {
+              task.off('completed', on_completedCallback);
+              console.info("====>SUB_Request_upload_Supplemental_4700 pro.state: " + pro.state);
+              expect(pro.state === 64).assertTrue();
+              done();
+            } catch (err) {
+              console.info("====>SUB_Request_upload_Supplemental_4700 completed err: " + JSON.stringify(err));
+              done();
+            }
+          }
+          try {
+            if (err) {
+              console.info("====>SUB_Request_upload_Supplemental_4700 create err: " + JSON.stringify(err));
+              expect().assertFail();
+              done();
+              return;
+            }
+            console.info(`====>SUB_Request_upload_Supplemental_4700 config: ${JSON.stringify(task.config)}`);
+            expect(task.tid !== undefined).assertTrue();
+            let notification = task.config.notification;
+            expect(notification !== undefined).assertTrue();
+            if (notification !== undefined) {
+              let notificationStr = JSON.stringify(notification);
+              expect(notificationStr.includes('"hideStopButton":true')).assertTrue();
+            }
+            task.on('completed', on_completedCallback);
+            await task.start();
+          } catch (err) {
+            console.info("====>SUB_Request_upload_Supplemental_4700 catch err: " + JSON.stringify(err));
+            done();
+          }
+        });
+      } catch (err) {
+        console.info("====>SUB_Request_upload_Supplemental_4700 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_upload_Supplemental_4800
+     * @tc.number SUB_Request_upload_Supplemental_4800
+     * @tc.desc   Upload callback with notification.hideStopButton is false, mode BACKGROUND.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_upload_Supplemental_4800', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_upload_Supplemental_4800 is starting-----------------------");
+      let attachments: Array<request.agent.FormItem> = [{
+        name: "uploadTest",
+        value: {
+          path: "./test.txt",
+          filename: "test.txt",
+          mimeType: "application/octet-stream"
+        }
+      }];
+      let config = {
+        action: request.agent.Action.UPLOAD,
+        url: 'http://127.0.0.1:8080',
+        mode: request.agent.Mode.BACKGROUND,
+        method: "POST",
+        data: attachments,
+        notification: {
+          title: 'uploadTest',
+          text: 'hideStopButton false callback',
+          hideStopButton: false
+        }
+      } as request.agent.Config;
+      try {
+        request.agent.create(baseContext, config, async (err, task) => {
+          let on_completedCallback = (pro: request.agent.Progress) => {
+            try {
+              task.off('completed', on_completedCallback);
+              console.info("====>SUB_Request_upload_Supplemental_4800 pro.state: " + pro.state);
+              expect(pro.state === 64).assertTrue();
+              done();
+            } catch (err) {
+              console.info("====>SUB_Request_upload_Supplemental_4800 completed err: " + JSON.stringify(err));
+              done();
+            }
+          }
+          try {
+            if (err) {
+              console.info("====>SUB_Request_upload_Supplemental_4800 create err: " + JSON.stringify(err));
+              expect().assertFail();
+              done();
+              return;
+            }
+            console.info(`====>SUB_Request_upload_Supplemental_4800 config: ${JSON.stringify(task.config)}`);
+            expect(task.tid !== undefined).assertTrue();
+            let notification = task.config.notification;
+            expect(notification !== undefined).assertTrue();
+            if (notification !== undefined) {
+              let notificationStr = JSON.stringify(notification);
+              expect(notificationStr.includes('"hideStopButton":false')).assertTrue();
+            }
+            task.on('completed', on_completedCallback);
+            await task.start();
+          } catch (err) {
+            console.info("====>SUB_Request_upload_Supplemental_4800 catch err: " + JSON.stringify(err));
+            done();
+          }
+        });
+      } catch (err) {
+        console.info("====>SUB_Request_upload_Supplemental_4800 create catch err: " + JSON.stringify(err));
         expect().assertFail();
         done();
       }

@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 import wifiManagerTest from './WifiManager_Nop.test';
+import wifiManagerApi26NopTest from './WifiManagerApi26Nop.test';
 import wifiManager from '@ohos.wifiManager';
 
 let iswifisupport: boolean = true;
@@ -25,5 +26,6 @@ try {
 export default function testsuite() {
   if(iswifisupport){
     wifiManagerTest();
+    wifiManagerApi26NopTest();
   }
 }

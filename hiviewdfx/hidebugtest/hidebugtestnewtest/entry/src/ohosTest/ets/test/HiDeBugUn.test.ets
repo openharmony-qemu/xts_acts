@@ -105,8 +105,7 @@ export default function HidebugTest() {
     it("HidebugTest_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info("HidebugTest_0002 start");
       try{
-        await hidebug.dumpHeapData(undefined);
-        await asyncSleep(3000);
+        hidebug.dumpHeapData(undefined);
         console.info("====> HidebugTest_0002 dumpHeapData undefined");
         done();
       }catch(err){
@@ -127,8 +126,7 @@ export default function HidebugTest() {
     it("HidebugTest_0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info("HidebugTest_0018 start");
       try{
-        await hidebug.dumpHeapData(null);
-        await asyncSleep(3000);
+        hidebug.dumpHeapData(null);
         console.info("====> HidebugTest_0018 dumpHeapData null end");
         done();
       }catch(err){
@@ -149,8 +147,7 @@ export default function HidebugTest() {
     it("HidebugTest_0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info("HidebugTest_0019 start");
       try{
-        await hidebug.dumpHeapData("");
-        await asyncSleep(3000);
+        hidebug.dumpHeapData("");
         console.info("====> HidebugTest_0019 dumpHeapData empty end");
         done();
       }catch(err){
@@ -966,6 +963,285 @@ export default function HidebugTest() {
       }
     });
 
+    /**
+     * @tc.name   HidebugTest_0042
+     * @tc.number SUB_DFX_DFR_Hidebug_Interface_0042
+     * @tc.desc   startProfiling函数的边界值覆盖,filename长度为1(最小有效长度)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("HidebugTest_0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info("HidebugTest_0042 start");
+      try{
+        hidebug.startProfiling("a");
+        console.info("====> HidebugTest_0042 startProfiling filename length 1 ");
+        hidebug.stopProfiling();
+        console.info("====> HidebugTest_0042 startProfiling filename length 1 end");
+        done();
+      }catch(err){
+        console.error(`====>HidebugTest_0042 startProfiling catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect().assertFail();
+        done();
+      }
+      console.info("HidebugTest_0042 end");
+    });
+    /**
+     * @tc.name   HidebugTest_0043
+     * @tc.number SUB_DFX_DFR_Hidebug_Interface_0043
+     * @tc.desc   startProfiling函数的边界值覆盖,filename长度为127(接近最大长度128)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("HidebugTest_0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info("HidebugTest_0043 start");
+      try{
+        let filename127: string = "a".repeat(127);
+        hidebug.startProfiling(filename127);
+        console.info("====> HidebugTest_0043 startProfiling filename length 127 ");
+        hidebug.stopProfiling();
+        console.info("====> HidebugTest_0043 startProfiling filename length 127 end");
+        done();
+      }catch(err){
+        console.error(`====>HidebugTest_0043 startProfiling catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect().assertFail();
+        done();
+      }
+      console.info("HidebugTest_0043 end");
+    });
+    /**
+     * @tc.name   HidebugTest_0044
+     * @tc.number SUB_DFX_DFR_Hidebug_Interface_0044
+     * @tc.desc   startProfiling函数的边界值覆盖,filename长度为128(最大有效长度)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("HidebugTest_0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info("HidebugTest_0044 start");
+      try{
+        let filename128: string = "a".repeat(128);
+        hidebug.startProfiling(filename128);
+        console.info("====> HidebugTest_0044 startProfiling filename length 128 ");
+        hidebug.stopProfiling();
+        console.info("====> HidebugTest_0044 startProfiling filename length 128 end");
+        done();
+      }catch(err){
+        console.error(`====>HidebugTest_0044 startProfiling catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect().assertFail();
+        done();
+      }
+      console.info("HidebugTest_0044 end");
+    });
+    /**
+     * @tc.name   HidebugTest_0045
+     * @tc.number SUB_DFX_DFR_Hidebug_Interface_0045
+     * @tc.desc   startProfiling函数的边界值覆盖,filename长度为129(超过最大长度128,预期报错或截断)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("HidebugTest_0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info("HidebugTest_0045 start");
+      try{
+        let filename129: string = "a".repeat(129);
+        hidebug.startProfiling(filename129);
+        console.info("====> HidebugTest_0045 startProfiling filename length 129 ");
+        hidebug.stopProfiling();
+        console.info("====> HidebugTest_0045 startProfiling filename length 129 end");
+        done();
+      }catch(err){
+        console.error(`====>HidebugTest_0045 startProfiling catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+      console.info("HidebugTest_0045 end");
+    });
+
+    /**
+     * @tc.name   HidebugTest_0046
+     * @tc.number SUB_DFX_DFR_Hidebug_Interface_0046
+     * @tc.desc   dumpHeapData函数的边界值覆盖,filename长度为1(最小有效长度)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("HidebugTest_0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info("HidebugTest_0046 start");
+      try{
+        hidebug.dumpHeapData("a");
+        console.info("====> HidebugTest_0046 dumpHeapData filename length 1 end");
+        done();
+      }catch(err){
+        console.error(`====>HidebugTest_0046 dumpHeapData catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect().assertFail();
+        done();
+      }
+      console.info("HidebugTest_0046 end");
+    });
+    /**
+     * @tc.name   HidebugTest_0047
+     * @tc.number SUB_DFX_DFR_Hidebug_Interface_0047
+     * @tc.desc   dumpHeapData函数的边界值覆盖,filename长度为127(接近最大长度128)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("HidebugTest_0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info("HidebugTest_0047 start");
+      try{
+        let filename127: string = "a".repeat(127);
+        hidebug.dumpHeapData(filename127);
+        console.info("====> HidebugTest_0047 dumpHeapData filename length 127 end");
+        done();
+      }catch(err){
+        console.error(`====>HidebugTest_0047 dumpHeapData catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect().assertFail();
+        done();
+      }
+      console.info("HidebugTest_0047 end");
+    });
+    /**
+     * @tc.name   HidebugTest_0048
+     * @tc.number SUB_DFX_DFR_Hidebug_Interface_0048
+     * @tc.desc   dumpHeapData函数的边界值覆盖,filename长度为128(最大有效长度)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("HidebugTest_0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info("HidebugTest_0048 start");
+      try{
+        let filename128: string = "a".repeat(128);
+        hidebug.dumpHeapData(filename128);
+        console.info("====> HidebugTest_0048 dumpHeapData filename length 128 end");
+        done();
+      }catch(err){
+        console.error(`====>HidebugTest_0048 dumpHeapData catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect().assertFail();
+        done();
+      }
+      console.info("HidebugTest_0048 end");
+    });
+    /**
+     * @tc.name   HidebugTest_0049
+     * @tc.number SUB_DFX_DFR_Hidebug_Interface_0049
+     * @tc.desc   dumpHeapData函数的边界值覆盖,filename长度为129(超过最大长度128,预期报错或截断)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("HidebugTest_0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info("HidebugTest_0049 start");
+      try{
+        let filename129: string = "a".repeat(129);
+        hidebug.dumpHeapData(filename129);
+        console.info("====> HidebugTest_0049 dumpHeapData filename length 129 end");
+        done();
+      }catch(err){
+        console.error(`====>HidebugTest_0049 dumpHeapData catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+      console.info("HidebugTest_0049 end");
+    });
+
+    /**
+     * @tc.name   HidebugTest_0050
+     * @tc.number SUB_DFX_DFR_Hidebug_Interface__0050
+     * @tc.desc   startJsCpuProfiling函数的边界值覆盖,filename长度为1(最小有效长度)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("HidebugTest_0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info("HidebugTest_0050 start");
+      try{
+        hidebug.startJsCpuProfiling("a");
+        console.info("====> HidebugTest_0050 startJsCpuProfiling filename length 1 ");
+        hidebug.stopJsCpuProfiling();
+        console.info("====> HidebugTest_0050 startJsCpuProfiling filename length 1 end");
+        done();
+      }catch(err){
+        console.error(`====>HidebugTest_0050 startJsCpuProfiling catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect().assertFail();
+        done();
+      }
+      console.info("HidebugTest_0050 end");
+    });
+    /**
+     * @tc.name   HidebugTest_0051
+     * @tc.number SUB_DFX_DFR_Hidebug_Interface__0051
+     * @tc.desc   startJsCpuProfiling函数的边界值覆盖,filename长度为127(接近最大长度128)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("HidebugTest_0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info("HidebugTest_0051 start");
+      try{
+        let filename127: string = "a".repeat(127);
+        hidebug.startJsCpuProfiling(filename127);
+        console.info("====> HidebugTest_0051 startJsCpuProfiling filename length 127 ");
+        hidebug.stopJsCpuProfiling();
+        console.info("====> HidebugTest_0051 startJsCpuProfiling filename length 127 end");
+        done();
+      }catch(err){
+        console.error(`====>HidebugTest_0051 startJsCpuProfiling catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect().assertFail();
+        done();
+      }
+      console.info("HidebugTest_0051 end");
+    });
+    /**
+     * @tc.name   HidebugTest_0052
+     * @tc.number SUB_DFX_DFR_Hidebug_Interface__0052
+     * @tc.desc   startJsCpuProfiling函数的边界值覆盖,filename长度为128(最大有效长度)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("HidebugTest_0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info("HidebugTest_0052 start");
+      try{
+        let filename128: string = "a".repeat(128);
+        hidebug.startJsCpuProfiling(filename128);
+        console.info("====> HidebugTest_0052 startJsCpuProfiling filename length 128 ");
+        hidebug.stopJsCpuProfiling();
+        console.info("====> HidebugTest_0052 startJsCpuProfiling filename length 128 end");
+        done();
+      }catch(err){
+        console.error(`====>HidebugTest_0052 startJsCpuProfiling catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect().assertFail();
+        done();
+      }
+      console.info("HidebugTest_0052 end");
+    });
+    /**
+     * @tc.name   HidebugTest_0053
+     * @tc.number SUB_DFX_DFR_Hidebug_Interface__0053
+     * @tc.desc   startJsCpuProfiling函数的边界值覆盖,filename长度为129(超过最大长度128,预期报错或截断)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("HidebugTest_0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info("HidebugTest_0053 start");
+      try{
+        let filename129: string = "a".repeat(129);
+        hidebug.startJsCpuProfiling(filename129);
+        console.info("====> HidebugTest_0053 startJsCpuProfiling filename length 129 ");
+        hidebug.stopJsCpuProfiling();
+        console.info("====> HidebugTest_0053 startJsCpuProfiling filename length 129 end");
+        done();
+      }catch(err){
+        console.error(`====>HidebugTest_0053 startJsCpuProfiling catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.message).assertContain("Invalid parameter")
+        done();
+      }
+      console.info("HidebugTest_0053 end");
+    });
 
   })
 }

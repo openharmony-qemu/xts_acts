@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, it, expect, Level } from "@ohos/hypium-static/src/main/indexStatic"
 import router from '@ohos.router';
 import {  Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -49,216 +49,252 @@ export default function CommonBorderModifierUndefinedTest() {
     });
 
     /**
-     * @tc.number   CommonBorderModifierUndefinedTest_static_0001
-     * @tc.name     CommonBorderModifierUndefinedTest_static_0001
+     * @tc.number   SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0001
+     * @tc.name     SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0001
      * @tc.desc     test border
      * @tc.level    Level.LEVEL1
      */
-    it('CommonBorderModifierUndefinedTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[CommonBorderModifierUndefinedTest_static_0001] START');
-      let driver: Driver = Driver.create();
+    it('SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('[SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0001] START');
+        let driver: Driver = Driver.create();
 
-      let strJson = inspector.getInspectorByKey('BorderM_1');
-      console.info('[CommonBorderModifierUndefinedTest_static_0001] borderWidth: ' +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'))
-        .assertContain('0.00');
+        let strJson = inspector.getInspectorByKey('BorderM_1');
+        console.info('[SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0001] borderWidth: ' +
+        JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'))
+          .assertContain('0.00');
 
-      let changeBtn = await driver.findComponent(ON.id('BorderM_btn1'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        let changeBtn = await driver.findComponent(ON.id('BorderM_btn1'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('BorderM_1');
-      console.info('[CommonBorderModifierUndefinedTest_static_0001] borderWidth: ' +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'))
-        .assertContain('5.00');
+        strJson = inspector.getInspectorByKey('BorderM_1');
+        console.info('[SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0001] borderWidth: ' +
+        JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'))
+          .assertContain('5.00');
 
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('BorderM_1');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'))
-        .assertContain('0.00');
-      console.info('[CommonBorderModifierUndefinedTest_static_0001] END');
-      done();
+        strJson = inspector.getInspectorByKey('BorderM_1');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'))
+          .assertContain('0.00');
+        console.info('[SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0001] END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0001] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
-     * @tc.number   CommonBorderModifierUndefinedTest_static_0002
-     * @tc.name     CommonBorderModifierUndefinedTest_static_0002
-     * @tc.desc     CommonBorderModifierUndefinedTest_static_0002
+     * @tc.number   SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0002
+     * @tc.name     SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0002
+     * @tc.desc     SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0002
      * @tc.level    Level.LEVEL1
      */
-    it('CommonBorderModifierUndefinedTest_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[borderModifierUndefined_static_0002] START');
-      let driver: Driver = Driver.create();
+    it('SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('[borderModifierUndefined_static_0002] START');
+        let driver: Driver = Driver.create();
 
-      let strJson = inspector.getInspectorByKey('BorderM_2');
-      console.info('[CommonBorderModifierUndefinedTest_static_0002] borderStyle: ' +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderStyle'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderStyle'))
-        .assertEqual('BorderStyle.Solid');
+        let strJson = inspector.getInspectorByKey('BorderM_2');
+        console.info('[SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0002] borderStyle: ' +
+        JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderStyle'));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderStyle'))
+          .assertEqual('BorderStyle.Solid');
 
-      let changeBtn = await driver.findComponent(ON.id('BorderM_btn2'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        let changeBtn = await driver.findComponent(ON.id('BorderM_btn2'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('BorderM_2');
-      console.info('[CommonBorderModifierUndefinedTest_static_0002] borderStyle: ' +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderStyle'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderStyle'))
-        .assertEqual('BorderStyle.Dashed');
+        strJson = inspector.getInspectorByKey('BorderM_2');
+        console.info('[SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0002] borderStyle: ' +
+        JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderStyle'));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderStyle'))
+          .assertEqual('BorderStyle.Dashed');
 
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('BorderM_2');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderStyle'))
-        .assertEqual('BorderStyle.Solid');
-      console.info('[CommonBorderModifierUndefinedTest_static_0002] END');
-      done();
+        strJson = inspector.getInspectorByKey('BorderM_2');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderStyle'))
+          .assertEqual('BorderStyle.Solid');
+        console.info('[SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0002] END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0002] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
-     * @tc.number   CommonBorderModifierUndefinedTest_static_0003
-     * @tc.name     CommonBorderModifierUndefinedTest_static_0003
-     * @tc.desc     CommonBorderModifierUndefinedTest_static_0003
+     * @tc.number   SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0003
+     * @tc.name     SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0003
+     * @tc.desc     SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0003
      * @tc.level    Level.LEVEL1
      */
-    it('CommonBorderModifierUndefinedTest_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[CommonBorderModifierUndefinedTest_static_0003] START');
-      let driver: Driver = Driver.create();
+    it('SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('[SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0003] START');
+        let driver: Driver = Driver.create();
 
-      let strJson = inspector.getInspectorByKey('BorderM_2');
-      console.info('[CommonBorderModifierUndefinedTest_static_0003] borderWidth: ' +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'))
-        .assertContain('0.00');
+        let strJson = inspector.getInspectorByKey('BorderM_2');
+        console.info('[SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0003] borderWidth: ' +
+        JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'))
+          .assertContain('0.00');
 
-      let changeBtn = await driver.findComponent(ON.id('BorderM_btn3'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        let changeBtn = await driver.findComponent(ON.id('BorderM_btn3'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('BorderM_2');
-      console.info('[CommonBorderModifierUndefinedTest_static_0003] borderWidth: ' +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'))
-        .assertContain('3.00');
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        strJson = inspector.getInspectorByKey('BorderM_2');
+        console.info('[SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0003] borderWidth: ' +
+        JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'))
+          .assertContain('3.00');
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('BorderM_2');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'))
-        .assertContain('0.00');
-      console.info('[CommonBorderModifierUndefinedTest_static_0003] END');
-      done();
+        strJson = inspector.getInspectorByKey('BorderM_2');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'))
+          .assertContain('0.00');
+        console.info('[SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0003] END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0003] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
-     * @tc.number   CommonBorderModifierUndefinedTest_static_0004
-     * @tc.name     CommonBorderModifierUndefinedTest_static_0004
-     * @tc.desc    CommonBorderModifierUndefinedTest_static_0004
+     * @tc.number   SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0004
+     * @tc.name     SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0004
+     * @tc.desc    SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0004
      * @tc.level    Level.LEVEL1
      */
-    it('CommonBorderModifierUndefinedTest_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[CommonBorderModifierUndefinedTest_static_0004] START');
-      let driver: Driver = Driver.create();
+    it('SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('[SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0004] START');
+        let driver: Driver = Driver.create();
 
-      let strJson = inspector.getInspectorByKey('BorderM_2');
-      console.info('[CommonBorderModifierUndefinedTest_static_0004] borderColor: ' +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderColor'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderColor'))
-        .assertEqual('#FF000000');
+        let strJson = inspector.getInspectorByKey('BorderM_2');
+        console.info('[SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0004] borderColor: ' +
+        JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderColor'));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderColor'))
+          .assertEqual('#FF000000');
 
-      let changeBtn = await driver.findComponent(ON.id('BorderM_btn4'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        let changeBtn = await driver.findComponent(ON.id('BorderM_btn4'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('BorderM_2');
-      console.info('[CommonBorderModifierUndefinedTest_static_0004] borderColor: ' +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderColor'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderColor'))
-        .assertEqual('#FFFF0000');
+        strJson = inspector.getInspectorByKey('BorderM_2');
+        console.info('[SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0004] borderColor: ' +
+        JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderColor'));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderColor'))
+          .assertEqual('#FFFF0000');
 
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('BorderM_2');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderColor'))
-        .assertEqual('#FF000000');
-      console.info('[CommonBorderModifierUndefinedTest_static_0004] END');
-      done();
+        strJson = inspector.getInspectorByKey('BorderM_2');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderColor'))
+          .assertEqual('#FF000000');
+        console.info('[SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0004] END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0004] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
-     * @tc.number   CommonBorderModifierUndefinedTest_static_0005
-     * @tc.name     CommonBorderModifierUndefinedTest_static_0005
-     * @tc.desc     CommonBorderModifierUndefinedTest_static_0005
+     * @tc.number   SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0005
+     * @tc.name     SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0005
+     * @tc.desc     SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0005
      * @tc.level    Level.LEVEL1
      */
-    it('CommonBorderModifierUndefinedTest_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[CommonBorderModifierUndefinedTest_static_0005] START');
-      let driver: Driver = Driver.create();
+    it('SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('[SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0005] START');
+        let driver: Driver = Driver.create();
 
-      let strJson = inspector.getInspectorByKey('BorderM_2');
-      console.info('[CommonBorderModifierUndefinedTest_static_0005] borderRadius: ' +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderRadius'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderRadius'))
-        .assertContain('0.00');
+        let strJson = inspector.getInspectorByKey('BorderM_2');
+        console.info('[SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0005] borderRadius: ' +
+        JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderRadius'));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderRadius'))
+          .assertContain('0.00');
 
-      let changeBtn = await driver.findComponent(ON.id('BorderM_btn5'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        let changeBtn = await driver.findComponent(ON.id('BorderM_btn5'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('BorderM_2');
-      console.info('[CommonBorderModifierUndefinedTest_static_0005] borderRadius: ' +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderRadius'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderRadius'))
-        .assertContain('5.00');
+        strJson = inspector.getInspectorByKey('BorderM_2');
+        console.info('[SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0005] borderRadius: ' +
+        JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderRadius'));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderRadius'))
+          .assertContain('5.00');
 
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('BorderM_2');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderRadius'))
-        .assertContain('0.00');
-      console.info('[CommonBorderModifierUndefinedTest_static_0005] END');
-      done();
+        strJson = inspector.getInspectorByKey('BorderM_2');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderRadius'))
+          .assertContain('0.00');
+        console.info('[SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0005] END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0005] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
-     * @tc.number   CommonBorderModifierUndefinedTest_static_0006
-     * @tc.name     CommonBorderModifierUndefinedTest_static_0006
-     * @tc.desc     CommonBorderModifierUndefinedTest_static_0006
+     * @tc.number   SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0006
+     * @tc.name     SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0006
+     * @tc.desc     SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0006
      * @tc.level    Level.LEVEL1
      */
-    it('CommonBorderModifierUndefinedTest_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[CommonBorderModifierUndefinedTest_static_0006] START');
-      let driver: Driver = Driver.create();
+    it('SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('[SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0006] START');
+        let driver: Driver = Driver.create();
 
-      let strJson = inspector.getInspectorByKey('BorderM_3');
-      let obj = JSON.parseJsonElement(strJson);
-      await CommonFunc.sleep(1000);
-      console.info('Test component obj is: ' + obj.getElement('$attrs'));
-      console.info('Test component obj.borderImage is: ' + obj.getElement('$attrs').getString('borderImage'));
-      expect(obj.getElement('$attrs').getString('borderImage'))
-        .assertEqual('{\"source\":\"\",\"slice\":\"0.00px\",\"width\":\"0.00px\",\"outset\":\"0.00px\",' +
-          '\"repeat\":\"RepeatMode.Stretch\",\"fill\":\"false\"}');
+        let strJson = inspector.getInspectorByKey('BorderM_3');
+        let obj = JSON.parseJsonElement(strJson);
+        await CommonFunc.sleep(1000);
+        console.info('Test component obj is: ' + obj.getElement('$attrs'));
+        console.info('Test component obj.borderImage is: ' + obj.getElement('$attrs').getString('borderImage'));
+        expect(obj.getElement('$attrs').getString('borderImage'))
+          .assertEqual('{\"source\":\"\",\"slice\":\"0.00px\",\"width\":\"0.00px\",\"outset\":\"0.00px\",' +
+            '\"repeat\":\"RepeatMode.Stretch\",\"fill\":\"false\"}');
 
-      let changeBtn = await driver.findComponent(ON.id('BorderM_btn6'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        let changeBtn = await driver.findComponent(ON.id('BorderM_btn6'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('BorderM_3');
-      obj = JSON.parseJsonElement(strJson);
-      await CommonFunc.sleep(1000);
-      console.info('Test component obj is: ' + obj.getElement('$attrs'));
-      console.info('Test component obj.borderImage is: ' + obj.getElement('$attrs').getString('borderImage'));
-      expect(obj.getElement('$attrs').getString('borderImage'))
-        .assertEqual('{\"source\":\"\",\"slice\":\"10.00px\",\"width\":\"10.00px\",\"outset\":\"0.00px\",' +
-          '\"repeat\":\"RepeatMode.Stretch\",\"fill\":\"false\"}');
-      done();
+        strJson = inspector.getInspectorByKey('BorderM_3');
+        obj = JSON.parseJsonElement(strJson);
+        await CommonFunc.sleep(1000);
+        console.info('Test component obj is: ' + obj.getElement('$attrs'));
+        console.info('Test component obj.borderImage is: ' + obj.getElement('$attrs').getString('borderImage'));
+        expect(obj.getElement('$attrs').getString('borderImage'))
+          .assertEqual('{\"source\":\"\",\"slice\":\"10.00px\",\"width\":\"10.00px\",\"outset\":\"0.00px\",' +
+            '\"repeat\":\"RepeatMode.Stretch\",\"fill\":\"false\"}');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_CommonBorderModifierUndefinedTest_static_0006] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

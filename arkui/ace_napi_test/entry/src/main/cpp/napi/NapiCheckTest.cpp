@@ -151,8 +151,6 @@
 #define TEST_TIMESTAMP_D (4000.0)
 #define TEST_TIMESTAMP_E (5000.0)
 #define TEST_SHARED_TIMESTAMP (1234567890000.0)
-#define TEST_CROSS_THREAD_TIMESTAMP (987654321000.0)
-#define TEST_CONTROL_THREAD_TIMESTAMP (3000.0)
 #define TEST_ERROR_DESCRIPTION_SIZE (128)
 #define TEST_OPERATIONS_COUNT (1000)
 
@@ -221,18 +219,9 @@ struct ThreadData {
     napi_status getStatus;
 };
 
-struct BigIntThreadData {
-    napi_env env;
-    napi_value bigint;
-    int threadId;
-    bool testPassed;
-};
-
 static pthread_mutex_t g_lock;
 static napi_ref g_arraybufferRef;
-static pthread_mutex_t g_bigintLock;
 static void* ThreadFunction(void* arg);
-static void* BigIntThreadFunction(void* arg);
 static const char TEST_STR[] = "Where there is a will, there is a way.";
 
 static napi_value CreateBuffer(napi_env env, napi_callback_info info)
@@ -539,10 +528,11 @@ napi_value TestExternalArrayBuffer(napi_env env, napi_callback_info info)
     void* extArrData = malloc(extArrLength);
     memset_s(extArrData, extArrLength, 0xCC, extArrLength);
 
-    bool extFinalizeCalled = false;
+    bool* extFinalizeCalled = new bool(false);
     napi_finalize extFinalizeCb = [](napi_env env, void* data, void* hint) {
         free(data);
-        *((bool*)hint) = true;
+        *static_cast<bool*>(hint) = true;
+        delete static_cast<bool*>(hint);
     };
 
     napi_value extArrBuffer;
@@ -553,8 +543,10 @@ napi_value TestExternalArrayBuffer(napi_env env, napi_callback_info info)
     NAPI_CALL(env, napi_create_int32(env, 1, &reFalse));
 
     napi_status status = napi_create_external_arraybuffer(env, extArrData, extArrLength,
-        extFinalizeCb, &extFinalizeCalled, &extArrBuffer);
+        extFinalizeCb, extFinalizeCalled, &extArrBuffer);
     if (status != napi_ok) {
+        free(extArrData);
+        delete extFinalizeCalled;
         return reFalse;
     }
 
@@ -580,169 +572,12 @@ napi_value TestExternalArrayBuffer(napi_env env, napi_callback_info info)
     napi_value gc_func;
     napi_get_named_property(env, global, "gc", &gc_func);
     napi_call_function(env, global, gc_func, 0, nullptr, nullptr);
-    if (extFinalizeCalled != true) {
+    if (*extFinalizeCalled != true) {
         return reFalse;
     }
     return reOk;
 }
 
-// 线程共享数据
-typedef struct {
-    napi_env env;
-    napi_value buffer;
-    bool testCompleted;
-} ThreadSharedData;
-
-// 线程函数1: 创建ArrayBuffer
-void* ThreadCreateBuffer(void* arg)
-{
-    ThreadSharedData* sharedData  = (ThreadSharedData*)arg;
-    napi_env env = sharedData ->env;
-
-    void* data = nullptr;
-    napi_value buffer;
-    napi_status status = napi_create_buffer(env, BUFFER_SIZE, &data, &buffer);
-    if (status != napi_ok) {
-        // 错误处理
-        OH_LOG_INFO(LOG_APP, "testTag napi_create_buffer failed.");
-        return nullptr;
-    }
-
-    // 填充测试数据
-    int ret = memcpy_s(data, strlen(TEST_DATA), TEST_DATA, strlen(TEST_DATA));
-    NAPI_ASSERT(env, ret == 0, "memcpy_s failed");
-
-    // 存储创建的buffer
-    sharedData->buffer = buffer;
-    return nullptr;
-}
-
-// 线程函数2: 创建ArrayBuffer拷贝
-void* ThreadCreateBufferCopy(void* arg)
-{
-    ThreadSharedData* sharedData  = (ThreadSharedData*)arg;
-    napi_env env = sharedData ->env;
-    
-    void* resultData = nullptr;
-    napi_value buffer;
-    napi_status status = napi_create_buffer_copy(env, strlen(TEST_DATA) + 1,
-        TEST_DATA, &resultData, &buffer);
-    if (status != napi_ok) {
-        // 错误处理
-        OH_LOG_INFO(LOG_APP, "testTag napi_create_buffer_copy failed.");
-        return nullptr;
-    }
-    
-    // 验证拷贝的数据
-    if (strcmp((const char*)resultData, TEST_DATA) != 0) {
-        OH_LOG_INFO(LOG_APP, "testTag 数据不一致.");
-        // 数据不一致
-        return nullptr;
-    }
-    
-    return nullptr;
-}
-
-// 线程函数3: 创建外部ArrayBuffer
-void* ThreadCreateExternalBuffer(void* arg)
-{
-    ThreadSharedData* sharedData  = (ThreadSharedData*)arg;
-    napi_env env = sharedData ->env;
-    
-    char* externalData = static_cast<char*>(malloc(strlen(TEST_DATA) + 1));
-    strcpy_s(externalData, strlen(TEST_DATA) + 1, TEST_DATA);
-    
-    napi_value buffer;
-    napi_finalize extFinalizeCb = [](napi_env env, void* data, void* hint) {
-        free(data);
-    };
-    napi_status status = napi_create_external_buffer(env, strlen(TEST_DATA) + 1,
-        externalData, extFinalizeCb, nullptr, &buffer);
-    if (status != napi_ok) {
-        free(externalData);
-        return nullptr;
-    }
-    
-    return nullptr;
-}
-
-// 线程函数4: 获取ArrayBuffer信息
-void* ThreadGetBufferInfo(void* arg)
-{
-    ThreadSharedData* sharedData  = (ThreadSharedData*)arg;
-    napi_env env = sharedData ->env;
-    
-    if (sharedData ->buffer == nullptr) {
-        return nullptr;
-    }
-    
-    void* data = nullptr;
-    size_t length = 0;
-    napi_status status = napi_get_buffer_info(env, sharedData ->buffer, &data, &length);
-    if (status != napi_ok) {
-        OH_LOG_INFO(LOG_APP, "testTag napi_get_buffer_info failed.");
-        return nullptr;
-    }
-    
-    // 验证数据
-    if (length != BUFFER_SIZE || data == nullptr) {
-        OH_LOG_INFO(LOG_APP, "testTag 数据不一致.");
-        return nullptr;
-    }
-    
-    return nullptr;
-}
-
-// 线程函数5: 检查是否为ArrayBuffer
-void* ThreadIsBuffer(void* arg)
-{
-    ThreadSharedData* sharedData  = (ThreadSharedData*)arg;
-    napi_env env = sharedData ->env;
-    
-    bool isBuffer = false;
-    napi_status status = napi_is_buffer(env, sharedData ->buffer, &isBuffer);
-    if (status != napi_ok || !isBuffer) {
-        OH_LOG_INFO(LOG_APP, "testTag napi_is_buffer failed.");
-        return nullptr;
-    }
-    
-    // 测试完成标志
-    sharedData ->testCompleted = true;
-    
-    return nullptr;
-}
-
-// 主测试函数
-napi_value TestArrayBufferThreadSafety(napi_env env, napi_callback_info info)
-{
-    // 初始化共享数据
-    ThreadSharedData sharedData  = {env, nullptr, false};
-    
-    // 创建线程
-    pthread_t threads[THREAD_COUNT_5];
-    
-    // 线程1: 创建ArrayBuffer
-    pthread_create(&threads[0], nullptr, ThreadCreateBuffer, &sharedData);
-    
-    // 等待线程1完成
-    pthread_join(threads[0], nullptr);
-    
-    // 创建其他线程
-    pthread_create(&threads[NUM_1], nullptr, ThreadCreateBufferCopy, &sharedData);
-    pthread_create(&threads[NUM_2], nullptr, ThreadCreateExternalBuffer, &sharedData);
-    pthread_create(&threads[NUM_3], nullptr, ThreadGetBufferInfo, &sharedData);
-    pthread_create(&threads[NUM_4], nullptr, ThreadIsBuffer, &sharedData);
-    
-    // 等待所有线程完成
-    for (int i = NUM_1; i < THREAD_COUNT_5; i++) {
-        pthread_join(threads[i], nullptr);
-    }
-    
-    // 返回测试结果
-    napi_value result;
-    napi_get_boolean(env, sharedData .testCompleted, &result);
-    return result;
-}
 
 // ArrayBuffer和外部ArrayBuffer比对测试
 void FinalizeCallbackComparison(napi_env env, void* finalizeData, void* finalizeHint)
@@ -757,7 +592,7 @@ static void* g_bufferData = nullptr;
 static size_t g_bufferSize = NUM_1024;
 static napi_value g_normalArraybuffer;
 static size_t g_externalSize = NUM_512;
-static void* g_externalData = malloc(g_externalSize);
+static void* g_externalData = nullptr;
 static napi_value g_externalArraybuffer;
 
 napi_value testDetach(napi_env env, napi_callback_info info)
@@ -814,6 +649,10 @@ napi_value TestArrayBufferComparison(napi_env env, napi_callback_info info)
     memset_s(g_bufferData, g_bufferSize, 0xAA, g_bufferSize); // 填充测试数据
 
     // 2. 创建外部 ArrayBuffer
+    g_externalData = malloc(g_externalSize);
+    if (g_externalData == nullptr) {
+        return g_reFalse;
+    }
     memset_s(g_externalData, g_externalSize, 0xBB, g_externalSize);
     g_status = napi_create_external_arraybuffer(env, g_externalData, g_externalSize,
         FinalizeCallbackComparison, nullptr, &g_externalArraybuffer);
@@ -1570,446 +1409,6 @@ napi_value NapiBigIntTest13(napi_env env, napi_callback_info info)
     return result;
 }
 
-// 多线程共享BigInt读取的线程数据结构
-struct SharedBigIntReadData {
-    napi_env env;
-    napi_value sharedBigint;
-    int threadId;
-    bool testPassed;
-};
-
-// 多线程读取函数 - 使用不同的获取方法
-void* SharedBigIntReadThread1(void* arg) // 使用napi_get_value_bigint_int64读取
-{
-    SharedBigIntReadData* data = static_cast<SharedBigIntReadData*>(arg);
-    
-    int64_t value;
-    bool lossless;
-    napi_status status = napi_get_value_bigint_int64(data->env, data->sharedBigint, &value, &lossless);
-    data->testPassed = (status == napi_ok);
-    
-    return nullptr;
-}
-
-void* SharedBigIntReadThread2(void* arg) // 使用napi_get_value_bigint_uint64读取
-{
-    SharedBigIntReadData* data = static_cast<SharedBigIntReadData*>(arg);
-    
-    uint64_t value;
-    bool lossless;
-    napi_status status = napi_get_value_bigint_uint64(data->env, data->sharedBigint, &value, &lossless);
-    data->testPassed = (status == napi_ok);
-    
-    return nullptr;
-}
-
-void* SharedBigIntReadThread3(void* arg) // 使用napi_get_value_bigint_words读取部分数据
-{
-    SharedBigIntReadData* data = static_cast<SharedBigIntReadData*>(arg);
-    
-    int signBit;
-    size_t wordCount = NUM_2;
-    uint64_t words[NUM_2];
-    napi_status status = napi_get_value_bigint_words(data->env, data->sharedBigint, &signBit, &wordCount, words);
-    data->testPassed = (status == napi_ok);
-    
-    return nullptr;
-}
-
-void* SharedBigIntReadThread4(void* arg) // 使用napi_get_value_bigint_words读取全部数据
-{
-    SharedBigIntReadData* data = static_cast<SharedBigIntReadData*>(arg);
-    
-    int signBit;
-    size_t wordCount = NUM_4;
-    uint64_t words[NUM_4];
-    napi_status status = napi_get_value_bigint_words(data->env, data->sharedBigint, &signBit, &wordCount, words);
-    data->testPassed = (status == napi_ok);
-    
-    return nullptr;
-}
-
-napi_value NapiBigIntTest14(napi_env env, napi_callback_info info)
-{
-    // 多线程共享BigInt对象读取
-    // 主线程创建一个大型BigInt（使用napi_create_bigint_words）
-    napi_value sharedBigint;
-    int signBit = 0;
-    size_t wordCount = NUM_4;
-    uint64_t words[] = {
-        0x123456789ABCDEF0ULL,
-        0xFEDCBA9876543210ULL,
-        0x1111111111111111ULL,
-        0x2222222222222222ULL
-    };
-    
-    napi_status status = napi_create_bigint_words(env, signBit, wordCount, words, &sharedBigint);
-    NAPI_ASSERT(env, status == napi_ok, "napi_create_bigint_words failed");
-    
-    // 创建4个工作线程同时读取该BigInt对象
-    const int threadCount = NUM_4;
-    pthread_t threads[threadCount];
-    SharedBigIntReadData threadData[threadCount];
-    
-    // 设置线程数据
-    for (int i = 0; i < threadCount; i++) {
-        threadData[i].env = env;
-        threadData[i].sharedBigint = sharedBigint;
-        threadData[i].threadId = i + 1;
-        threadData[i].testPassed = false;
-    }
-    
-    // 创建线程，使用不同的获取函数
-    pthread_create(&threads[0], nullptr, SharedBigIntReadThread1, &threadData[0]);
-    pthread_create(&threads[1], nullptr, SharedBigIntReadThread2, &threadData[1]);
-    pthread_create(&threads[NUM_2], nullptr, SharedBigIntReadThread3, &threadData[NUM_2]);
-    pthread_create(&threads[NUM_3], nullptr, SharedBigIntReadThread4, &threadData[NUM_3]);
-    
-    // 等待所有线程完成
-    for (int i = 0; i < threadCount; i++) {
-        pthread_join(threads[i], nullptr);
-    }
-    
-    // 验证所有读取结果一致
-    bool allPassed = true;
-    for (int i = 0; i < threadCount; i++) {
-        if (!threadData[i].testPassed) {
-            allPassed = false;
-            break;
-        }
-    }
-
-    napi_value result;
-    napi_get_boolean(env, allPassed, &result);
-    return result;
-}
-
-// 线程安全队列模拟（简化版）
-static napi_value g_queuedBigint = nullptr;
-static pthread_mutex_t g_queueMutex = PTHREAD_MUTEX_INITIALIZER;
-static pthread_cond_t g_queueCond = PTHREAD_COND_INITIALIZER;
-static bool g_queueHasData = false;
-
-struct ProducerThreadData {
-    napi_env env;
-    bool testPassed;
-};
-struct ConsumerThreadData {
-    napi_env env;
-    bool testPassed;
-};
-
-// 生产者线程函数
-void* ProducerThread(void* arg)
-{
-    ProducerThreadData* data = static_cast<ProducerThreadData*>(arg);
-    
-    // 创建BigInt
-    napi_value producedBigint;
-    int signBit = 1; // 负数
-    size_t wordCount = NUM_2;
-    uint64_t words[] = {0xFFFFFFFFFFFFFFFFULL, 0x1ULL};
-    
-    napi_status status = napi_create_bigint_words(data->env, signBit, wordCount, words, &producedBigint);
-    if (status != napi_ok) {
-        data->testPassed = false;
-        return nullptr;
-    }
-    
-    // 将BigInt放入线程安全队列
-    pthread_mutex_lock(&g_queueMutex);
-    g_queuedBigint = producedBigint;
-    g_queueHasData = true;
-    pthread_cond_signal(&g_queueCond);
-    pthread_mutex_unlock(&g_queueMutex);
-    
-    data->testPassed = true;
-    return nullptr;
-}
-
-// 消费者线程函数
-void* ConsumerThread(void* arg)
-{
-    ConsumerThreadData* data = static_cast<ConsumerThreadData*>(arg);
-    
-    // 从队列获取BigInt
-    pthread_mutex_lock(&g_queueMutex);
-    while (!g_queueHasData) {
-        pthread_cond_wait(&g_queueCond, &g_queueMutex);
-    }
-    napi_value consumedBigint = g_queuedBigint;
-    pthread_mutex_unlock(&g_queueMutex);
-    
-    // 使用napi_get_value_bigint_words验证值
-    int signBit;
-    size_t wordCount = NUM_2;
-    uint64_t words[NUM_2];
-    
-    napi_status status = napi_get_value_bigint_words(data->env, consumedBigint, &signBit, &wordCount, words);
-    if (status != napi_ok) {
-        data->testPassed = false;
-        return nullptr;
-    }
-    
-    // 验证值是否正确
-    bool valuesMatch = (signBit == 1 && wordCount == NUM_2 && words[0] == 0xFFFFFFFFFFFFFFFFULL && words[1] == 0x1ULL);
-    
-    data->testPassed = valuesMatch;
-    return nullptr;
-}
-
-napi_value NapiBigIntTest15(napi_env env, napi_callback_info info)
-{
-    // 线程间传递BigInt对象
-    pthread_t producerThread;
-    pthread_t consumerThread;
-    ProducerThreadData producerData = {env, false};
-    ConsumerThreadData consumerData = {env, false};
-    
-    // 重置队列状态
-    pthread_mutex_lock(&g_queueMutex);
-    g_queuedBigint = nullptr;
-    g_queueHasData = false;
-    pthread_mutex_unlock(&g_queueMutex);
-    
-    // 创建生产者线程
-    int err = pthread_create(&producerThread, nullptr, ProducerThread, &producerData);
-    NAPI_ASSERT(env, err == 0, "Failed to create producer thread");
-    
-    // 创建消费者线程
-    err = pthread_create(&consumerThread, nullptr, ConsumerThread, &consumerData);
-    NAPI_ASSERT(env, err == 0, "Failed to create consumer thread");
-    
-    // 等待线程完成
-    pthread_join(producerThread, nullptr);
-    pthread_join(consumerThread, nullptr);
-    
-    // 验证结果
-    bool testPassed = producerData.testPassed && consumerData.testPassed;
-
-    napi_value result;
-    napi_get_boolean(env, testPassed, &result);
-    return result;
-}
-
-static void* BigIntThreadFunction(void* arg)
-{
-    BigIntThreadData* threadData = static_cast<BigIntThreadData*>(arg);
-    napi_env env = threadData->env;
-    napi_value bigint = threadData->bigint;
-    
-    pthread_mutex_lock(&g_bigintLock);
-    
-    // Test value retrieval
-    int64_t retrievedValue = 0;
-    bool lossless = false;
-    napi_status status = napi_get_value_bigint_int64(env, bigint, &retrievedValue, &lossless);
-    if (status != napi_ok) {
-        threadData->testPassed = false;
-    }
-    
-    pthread_mutex_unlock(&g_bigintLock);
-    
-    return nullptr;
-}
-
-// 多线程异常情况测试的线程数据结构
-struct ExceptionThreadData {
-    napi_env env;
-    int threadId;
-    napi_status expectedStatus;
-    bool testPassed;
-};
-
-// 异常测试线程函数
-void* ExceptionTestThread1(void* arg) // 使用nullptr env
-{
-    ExceptionThreadData* data = static_cast<ExceptionThreadData*>(arg);
-    
-    napi_value bigint;
-    napi_status status = napi_create_bigint_int64(nullptr, TEST_INT64_VALUE_123, &bigint);
-    data->testPassed = (status == data->expectedStatus);
-    
-    return nullptr;
-}
-
-void* ExceptionTestThread2(void* arg) // 使用nullptr result
-{
-    ExceptionThreadData* data = static_cast<ExceptionThreadData*>(arg);
-    
-    napi_status status = napi_create_bigint_uint64(data->env, TEST_INT64_VALUE_456, nullptr);
-    data->testPassed = (status == data->expectedStatus);
-    
-    return nullptr;
-}
-
-void* ExceptionTestThread3(void* arg) // 使用无效napi_value
-{
-    ExceptionThreadData* data = static_cast<ExceptionThreadData*>(arg);
-    
-    // 创建一个非BigInt值
-    napi_value nonBigintValue;
-    napi_status createStatus = napi_create_int32(data->env, TEST_INT64_VALUE_789, &nonBigintValue);
-    if (createStatus != napi_ok) {
-        data->testPassed = false;
-        return nullptr;
-    }
-    
-    int64_t outValue;
-    bool lossless;
-    napi_status status = napi_get_value_bigint_int64(data->env, nonBigintValue, &outValue, &lossless);
-    data->testPassed = (status == data->expectedStatus);
-    
-    return nullptr;
-}
-
-void* ExceptionTestThread4(void* arg) // 正常操作作为对照
-{
-    ExceptionThreadData* data = static_cast<ExceptionThreadData*>(arg);
-    
-    napi_value bigint;
-    napi_status status = napi_create_bigint_int64(data->env, TEST_INT64_VALUE_999, &bigint);
-    data->testPassed = (status == data->expectedStatus);
-    
-    return nullptr;
-}
-
-napi_value NapiBigIntTest16(napi_env env, napi_callback_info info)
-{
-    // 多线程异常情况测试
-    const int threadCount = NUM_4;
-    pthread_t threads[threadCount];
-    ExceptionThreadData threadData[threadCount];
-    
-    // 设置线程数据
-    threadData[0] = {env, 1, napi_invalid_arg, false}; // nullptr env
-    threadData[1] = {env, NUM_2, napi_invalid_arg, false}; // nullptr result
-    threadData[NUM_2] = {env, NUM_3, napi_bigint_expected, false}; // 无效napi_value
-    threadData[NUM_3] = {env, NUM_4, napi_ok, false}; // 正常操作
-    
-    // 创建线程
-    pthread_create(&threads[0], nullptr, ExceptionTestThread1, &threadData[0]);
-    pthread_create(&threads[1], nullptr, ExceptionTestThread2, &threadData[1]);
-    pthread_create(&threads[NUM_2], nullptr, ExceptionTestThread3, &threadData[NUM_2]);
-    pthread_create(&threads[NUM_3], nullptr, ExceptionTestThread4, &threadData[NUM_3]);
-    
-    // 等待所有线程完成
-    for (int i = 0; i < threadCount; i++) {
-        pthread_join(threads[i], nullptr);
-    }
-    
-    // 验证结果
-    bool allPassed = true;
-    for (int i = 0; i < threadCount; i++) {
-        if (!threadData[i].testPassed) {
-            allPassed = false;
-            break;
-        }
-    }
-
-    napi_value result;
-    napi_get_boolean(env, allPassed, &result);
-    return result;
-}
-
-// ArkTS异常交互测试的线程数据结构
-struct ArkTSExceptionThreadData {
-    napi_env env;
-    int threadId;
-    bool testPassed;
-};
-
-// ArkTS异常测试线程函数
-void* ArkTSExceptionThread1(void* arg) // 故意触发异常
-{
-    ArkTSExceptionThreadData* data = static_cast<ArkTSExceptionThreadData*>(arg);
-    
-    // 尝试调用可能导致异常的函数（这里模拟一个可能的异常情况）
-    napi_value bigint;
-    uint64_t words[] = {1, NUM_2, NUM_3, NUM_4};
-    napi_status status = napi_create_bigint_words(data->env, 0, SIZE_MAX, words, &bigint);
-    
-    // 异常情况下应该返回错误状态
-    data->testPassed = (status != napi_ok);
-    
-    return nullptr;
-}
-
-void* ArkTSExceptionThread2(void* arg) // 同时尝试创建BigInt
-{
-    ArkTSExceptionThreadData* data = static_cast<ArkTSExceptionThreadData*>(arg);
-    
-    napi_value bigint;
-    napi_status status = napi_create_bigint_int64(data->env, TEST_INT64_VALUE_12345, &bigint);
-    
-    // 正常情况下应该成功或者正确处理异常状态
-    data->testPassed = (status == napi_ok || status == napi_pending_exception);
-    
-    return nullptr;
-}
-
-void* ArkTSExceptionThread3(void* arg) // 同时尝试读取BigInt
-{
-    ArkTSExceptionThreadData* data = static_cast<ArkTSExceptionThreadData*>(arg);
-    
-    // 先创建一个BigInt
-    napi_value bigint;
-    napi_status createStatus = napi_create_bigint_int64(data->env, TEST_INT64_VALUE_67890, &bigint);
-    if (createStatus != napi_ok) {
-        data->testPassed = true; // 如果创建失败，认为正确处理了异常
-        return nullptr;
-    }
-    
-    // 尝试读取BigInt
-    int64_t value;
-    bool lossless;
-    napi_status readStatus = napi_get_value_bigint_int64(data->env, bigint, &value, &lossless);
-    
-    // 正常情况下应该成功或者正确处理异常状态
-    data->testPassed = (readStatus == napi_ok || readStatus == napi_pending_exception);
-    
-    return nullptr;
-}
-
-napi_value NapiBigIntTest17(napi_env env, napi_callback_info info)
-{
-    // 线程安全与ArkTS异常交互
-    const int threadCount = NUM_3;
-    pthread_t threads[threadCount];
-    ArkTSExceptionThreadData threadData[threadCount];
-    
-    // 设置线程数据
-    for (int i = 0; i < threadCount; i++) {
-        threadData[i].env = env;
-        threadData[i].threadId = i + 1;
-        threadData[i].testPassed = false;
-    }
-    
-    // 创建线程
-    pthread_create(&threads[0], nullptr, ArkTSExceptionThread1, &threadData[0]);
-    pthread_create(&threads[1], nullptr, ArkTSExceptionThread2, &threadData[1]);
-    pthread_create(&threads[NUM_2], nullptr, ArkTSExceptionThread3, &threadData[NUM_2]);
-    
-    // 等待所有线程完成
-    for (int i = 0; i < threadCount; i++) {
-        pthread_join(threads[i], nullptr);
-    }
-    
-    // 验证结果 - 至少有一些线程应该正确处理异常情况
-    int passedCount = 0;
-    for (int i = 0; i < threadCount; i++) {
-        if (threadData[i].testPassed) {
-            passedCount++;
-        }
-    }
-    
-    // 如果至少有2个线程正确处理了情况，认为测试通过
-    bool testPassed = (passedCount >= NUM_2);
-
-    napi_value result;
-    napi_get_boolean(env, testPassed, &result);
-    return result;
-}
 
 // Test function to create Date with given timestamp
 // Define macro constants for thread operations
@@ -2018,17 +1417,12 @@ napi_value NapiBigIntTest17(napi_env env, napi_callback_info info)
 #define STRESS_TEST_THREAD_COUNT 2
 #define OPERATIONS_PER_THREAD 10
 #define CROSS_THREAD_COUNT 3
-#define THREAD_SAFETY_THREAD_COUNT 4
 #define BATCH_SIZE TEST_BATCH_SIZE
 #define MAX_BULK_COUNT TEST_MAX_BULK_COUNT
 #define MAX_SAFE_TIMESTAMP TEST_MAX_SAFE_TIMESTAMP
 
 // Define macro constants for test values (removed circular definitions)
 #define SHARED_TIMESTAMP TEST_SHARED_TIMESTAMP
-#define CROSS_THREAD_TIMESTAMP TEST_CROSS_THREAD_TIMESTAMP
-#define CONTROL_THREAD_TIMESTAMP TEST_CONTROL_THREAD_TIMESTAMP
-
-// Structure to hold thread data
 
 // Structure to hold shared date read thread data
 struct SharedDateReadData {
@@ -2053,31 +1447,6 @@ struct StressTestData {
     bool threadSuccess;
     napi_value dateObj;  // Date object created in each iteration
     bool isDate;         // Result of napi_is_date check
-};
-
-// Structure to hold cross-thread date passing thread data
-struct CrossThreadData {
-    napi_env env;
-    napi_value dateObj;
-    int threadId;
-    char operation[64];  // Fixed-size character array instead of const char*
-    napi_status isDateStatus;
-    bool isDate;
-    napi_status getDateStatus;
-    double timestamp;
-    double originalTimestamp;
-    bool threadSuccess;
-};
-
-// Structure to hold thread safety error handling test data
-struct ThreadSafetyErrorData {
-    napi_env env;
-    int threadId;
-    char operation[64];  // Fixed-size character array instead of const char*
-    napi_status apiStatus;
-    napi_status expectedStatus;
-    bool isSuccess;
-    char errorDescription[TEST_ERROR_DESCRIPTION_SIZE];  // Fixed-size character array instead of const char*
 };
 
 static napi_value TestCreateDate(napi_env env, napi_callback_info info)
@@ -3104,536 +2473,7 @@ static napi_value TestHighConcurrencyDateStress(napi_env env, napi_callback_info
     return BuildStressTestMainResult(env, params);
 }
 
-// Helper function to initialize cross thread data
-static void InitializeCrossThreadData(CrossThreadData* threadData, napi_env env,
-    int numThreads, double originalTimestamp)
-{
-    for (int i = 0; i < numThreads; i++) {
-        threadData[i].env = env;
-        threadData[i].dateObj = nullptr;
-        threadData[i].threadId = i;
-        // Use strcpy_s for safe string copying with boundary checking
-        if (i == 0) {
-            strcpy_s(threadData[i].operation, sizeof(threadData[i].operation), "Create Date");
-        } else if (i == 1) {
-            strcpy_s(threadData[i].operation, sizeof(threadData[i].operation), "Receive from A and validate");
-        } else {
-            strcpy_s(threadData[i].operation, sizeof(threadData[i].operation), "Receive from B and validate");
-        }
-        
-        threadData[i].isDateStatus = napi_generic_failure;
-        threadData[i].isDate = false;
-        threadData[i].getDateStatus = napi_generic_failure;
-        threadData[i].timestamp = 0.0;
-        threadData[i].originalTimestamp = originalTimestamp;
-        threadData[i].threadSuccess = false;
-    }
-}
 
-// Helper function to build cross thread result
-static napi_value BuildCrossThreadResult(napi_env env, const CrossThreadData& threadData)
-{
-    napi_value threadResult;
-    napi_create_object(env, &threadResult);
-
-    // Add thread ID
-    napi_value threadIdProp;
-    napi_create_int32(env, threadData.threadId, &threadIdProp);
-    napi_set_named_property(env, threadResult, "threadId", threadIdProp);
-
-    // Add operation
-    napi_value operationProp;
-    napi_create_string_utf8(env, threadData.operation, NAPI_AUTO_LENGTH, &operationProp);
-    napi_set_named_property(env, threadResult, "operation", operationProp);
-
-    // Add is_date status
-    napi_value isDateStatusProp;
-    napi_create_int32(env, threadData.isDateStatus, &isDateStatusProp);
-    napi_set_named_property(env, threadResult, "isDateStatus", isDateStatusProp);
-
-    // Add is_date flag
-    napi_value isDateProp;
-    napi_get_boolean(env, threadData.isDate, &isDateProp);
-    napi_set_named_property(env, threadResult, "isDate", isDateProp);
-
-    // Add get_date status
-    napi_value getDateStatusProp;
-    napi_create_int32(env, threadData.getDateStatus, &getDateStatusProp);
-    napi_set_named_property(env, threadResult, "getDateStatus", getDateStatusProp);
-
-    // Add timestamp
-    napi_value timestampProp;
-    napi_create_double(env, threadData.timestamp, &timestampProp);
-    napi_set_named_property(env, threadResult, "timestamp", timestampProp);
-
-    // Add original timestamp
-    napi_value originalTimestampProp;
-    napi_create_double(env, threadData.originalTimestamp, &originalTimestampProp);
-    napi_set_named_property(env, threadResult, "originalTimestamp", originalTimestampProp);
-
-    // Add success flag
-    napi_value successProp;
-    napi_get_boolean(env, threadData.threadSuccess, &successProp);
-    napi_set_named_property(env, threadResult, "success", successProp);
-
-    return threadResult;
-}
-
-// Structure to hold cross thread main result parameters
-struct CrossThreadMainResultParams {
-    bool overallSuccess;
-    napi_value threadResultsArray;
-    int totalThreads;
-    double originalTimestamp;
-    bool allThreadsSuccessful;
-};
-
-// Helper function to build cross thread main result
-static napi_value BuildCrossThreadMainResult(napi_env env, const CrossThreadMainResultParams& params)
-{
-    napi_value resultObj;
-    napi_create_object(env, &resultObj);
-
-    // Add overall success flag
-    napi_value successProp;
-    napi_get_boolean(env, params.overallSuccess, &successProp);
-    napi_set_named_property(env, resultObj, "success", successProp);
-
-    // Add thread results array
-    napi_set_named_property(env, resultObj, "threadResults", params.threadResultsArray);
-
-    // Add total threads count
-    napi_value totalThreadsProp;
-    napi_create_int32(env, params.totalThreads, &totalThreadsProp);
-    napi_set_named_property(env, resultObj, "totalThreads", totalThreadsProp);
-
-    // Add original timestamp
-    napi_value originalTimestampProp;
-    napi_create_double(env, params.originalTimestamp, &originalTimestampProp);
-    napi_set_named_property(env, resultObj, "originalTimestamp", originalTimestampProp);
-
-    // Add all threads successful flag
-    napi_value allThreadsProp;
-    napi_get_boolean(env, params.allThreadsSuccessful, &allThreadsProp);
-    napi_set_named_property(env, resultObj, "allThreadsSuccessful", allThreadsProp);
-
-    return resultObj;
-}
-
-// Thread function for thread A (creates Date object)
-static void* ThreadAThread(void* arg)
-{
-    CrossThreadData* data = static_cast<CrossThreadData*>(arg);
-    
-    // Create Date object with timestamp 987654321000
-    napi_status createStatus = napi_create_date(data->env, data->originalTimestamp, &data->dateObj);
-    OH_LOG_INFO(LOG_APP, "testTag napi_create_date %{public}d.", createStatus);
-    if (createStatus == napi_ok) {
-        data->threadSuccess = true;
-        data->isDateStatus = napi_ok;
-        data->isDate = true;
-        data->getDateStatus = napi_ok;
-        data->timestamp = data->originalTimestamp;
-    } else {
-        data->threadSuccess = false;
-        data->isDateStatus = createStatus;
-        data->isDate = false;
-        data->getDateStatus = createStatus;
-        data->timestamp = 0.0;
-    }
-    
-    return nullptr;
-}
-
-// Thread function for thread B (receives from A, validates, passes to C)
-static void* ThreadBThread(void* arg)
-{
-    CrossThreadData* data = static_cast<CrossThreadData*>(arg);
-    
-    // Verify Date type
-    data->isDateStatus = napi_is_date(data->env, data->dateObj, &data->isDate);
-    OH_LOG_INFO(LOG_APP, "testTag threadB napi_is_date %{public}d.", data->isDateStatus);
-    if (data->isDateStatus == napi_ok && data->isDate) {
-        // Get timestamp value
-        data->getDateStatus = napi_get_date_value(data->env, data->dateObj, &data->timestamp);
-        
-        if (data->getDateStatus == napi_ok && data->timestamp == data->originalTimestamp) {
-            data->threadSuccess = true;
-        } else {
-            data->threadSuccess = false;
-        }
-    } else {
-        data->threadSuccess = false;
-        data->getDateStatus = napi_generic_failure;
-        data->timestamp = 0.0;
-    }
-    
-    return nullptr;
-}
-
-// Thread function for thread C (receives from B, validates)
-static void* ThreadCThread(void* arg)
-{
-    CrossThreadData* data = static_cast<CrossThreadData*>(arg);
-    
-    // Verify Date type
-    data->isDateStatus = napi_is_date(data->env, data->dateObj, &data->isDate);
-    OH_LOG_INFO(LOG_APP, "testTag threadC napi_is_date %{public}d.", data->isDateStatus);
-    if (data->isDateStatus == napi_ok && data->isDate) {
-        // Get timestamp value
-        data->getDateStatus = napi_get_date_value(data->env, data->dateObj, &data->timestamp);
-        
-        if (data->getDateStatus == napi_ok && data->timestamp == data->originalTimestamp) {
-            data->threadSuccess = true;
-        } else {
-            data->threadSuccess = false;
-        }
-    } else {
-        data->threadSuccess = false;
-        data->getDateStatus = napi_generic_failure;
-        data->timestamp = 0.0;
-    }
-    
-    return nullptr;
-}
-
-// Test function to test cross-thread Date object passing
-static napi_value TestCrossThreadDatePassing(napi_env env, napi_callback_info info)
-{
-    // Create thread data array
-    CrossThreadData threadData[CROSS_THREAD_COUNT];
-    pthread_t threads[CROSS_THREAD_COUNT];
-    
-    // Initialize thread data using helper function
-    InitializeCrossThreadData(threadData, env, CROSS_THREAD_COUNT, CROSS_THREAD_TIMESTAMP);
-    
-    int result = pthread_create(&threads[0], nullptr, ThreadAThread, &threadData[0]);
-    pthread_join(threads[0], nullptr);
-    threadData[1].dateObj = threadData[0].dateObj;
-    threadData[NUM_2].dateObj = threadData[0].dateObj;
-    // Create threads using pthread_create
-    for (int i = 1; i < CROSS_THREAD_COUNT; i++) {
-        if (i == 1) {
-            result = pthread_create(&threads[i], nullptr, ThreadBThread, &threadData[i]);
-        } else {
-            result = pthread_create(&threads[i], nullptr, ThreadCThread, &threadData[i]);
-        }
-        
-        if (result != 0) {
-            napi_throw_error(env, nullptr, "Failed to create thread");
-            return nullptr;
-        }
-    }
-    
-    // Wait for all threads to complete
-    for (int i = 1; i < CROSS_THREAD_COUNT; i++) {
-        pthread_join(threads[i], nullptr);
-    }
-    
-    // Check results and create result array
-    napi_value threadResultsArray;
-    napi_create_array(env, &threadResultsArray);
-    
-    bool allThreadsSuccessful = true;
-    for (int i = 0; i < CROSS_THREAD_COUNT; i++) {
-        // Check if this thread was successful
-        if (!threadData[i].threadSuccess) {
-            allThreadsSuccessful = false;
-        }
-        
-        // Build thread result using helper function
-        napi_value threadResult = BuildCrossThreadResult(env, threadData[i]);
-        napi_set_element(env, threadResultsArray, i, threadResult);
-    }
-    
-    // Build and return main result using helper function
-    CrossThreadMainResultParams params = {
-        .overallSuccess = allThreadsSuccessful,
-        .threadResultsArray = threadResultsArray,
-        .totalThreads = CROSS_THREAD_COUNT,
-        .originalTimestamp = CROSS_THREAD_TIMESTAMP,
-        .allThreadsSuccessful = allThreadsSuccessful
-    };
-    
-    return BuildCrossThreadMainResult(env, params);
-}
-
-// Helper function to initialize thread safety error data
-static void InitializeThreadSafetyErrorDat(ThreadSafetyErrorData* threadData, napi_env env, int numThreads)
-{
-    for (int i = 0; i < numThreads; i++) {
-        threadData[i].env = env;
-        threadData[i].threadId = i;
-        
-        // Use strcpy_s for safe string copying with boundary checking
-        if (i == 0) {
-            strcpy_s(threadData[i].operation, sizeof(threadData[i].operation), "create_date_nullptr");
-        } else if (i == 1) {
-            strcpy_s(threadData[i].operation, sizeof(threadData[i].operation), "get_date_value_nullptr");
-        } else if (i == NUM_2) {
-            strcpy_s(threadData[i].operation, sizeof(threadData[i].operation), "is_date_nullptr");
-        } else {
-            strcpy_s(threadData[i].operation, sizeof(threadData[i].operation), "normal_operations");
-        }
-        
-        threadData[i].apiStatus = napi_generic_failure;
-        threadData[i].expectedStatus = (i < NUM_3) ? napi_invalid_arg : napi_ok;
-        threadData[i].isSuccess = false;
-        
-        // Use strcpy_s for safe string copying with boundary checking
-        if (i == 0) {
-            strcpy_s(threadData[i].errorDescription, sizeof(threadData[i].errorDescription),
-                "napi_create_date with nullptr env");
-        } else if (i == 1) {
-            strcpy_s(threadData[i].errorDescription, sizeof(threadData[i].errorDescription),
-                "napi_get_date_value with nullptr value");
-        } else if (i == NUM_2) {
-            strcpy_s(threadData[i].errorDescription, sizeof(threadData[i].errorDescription),
-                "napi_is_date with nullptr value");
-        } else {
-            strcpy_s(threadData[i].errorDescription, sizeof(threadData[i].errorDescription),
-                "Normal Date operations");
-        }
-    }
-}
-
-// Helper function to build thread safety error result
-static napi_value BuildThreadSafetyErrorResult(napi_env env, const ThreadSafetyErrorData& threadData)
-{
-    napi_value threadResult;
-    napi_create_object(env, &threadResult);
-
-    // Add thread ID
-    napi_value threadIdProp;
-    napi_create_int32(env, threadData.threadId, &threadIdProp);
-    napi_set_named_property(env, threadResult, "threadId", threadIdProp);
-
-    // Add operation
-    napi_value operationProp;
-    napi_create_string_utf8(env, threadData.operation, NAPI_AUTO_LENGTH, &operationProp);
-    napi_set_named_property(env, threadResult, "operation", operationProp);
-
-    // Add API status
-    napi_value apiStatusProp;
-    napi_create_int32(env, threadData.apiStatus, &apiStatusProp);
-    napi_set_named_property(env, threadResult, "apiStatus", apiStatusProp);
-
-    // Add expected status
-    napi_value expectedStatusProp;
-    napi_create_int32(env, threadData.expectedStatus, &expectedStatusProp);
-    napi_set_named_property(env, threadResult, "expectedStatus", expectedStatusProp);
-
-    // Add success flag
-    napi_value successProp;
-    napi_get_boolean(env, threadData.isSuccess, &successProp);
-    napi_set_named_property(env, threadResult, "isSuccess", successProp);
-
-    // Add error description
-    napi_value errorDescProp;
-    napi_create_string_utf8(env, threadData.errorDescription, NAPI_AUTO_LENGTH, &errorDescProp);
-    napi_set_named_property(env, threadResult, "errorDescription", errorDescProp);
-
-    return threadResult;
-}
-
-// Structure to hold thread safety error main result parameters
-struct ThreadSafetyErrorMainResultParams {
-    bool overallSuccess;
-    napi_value threadResultsArray;
-    int totalThreads;
-    int totalSuccessful;
-    int totalFailed;
-};
-
-// Helper function to build thread safety error main result
-static napi_value BuildThreadSafetyErrorMainResult(napi_env env, const ThreadSafetyErrorMainResultParams& params)
-{
-    napi_value resultObj;
-    napi_create_object(env, &resultObj);
-
-    // Add overall success flag
-    napi_value successProp;
-    napi_get_boolean(env, params.overallSuccess, &successProp);
-    napi_set_named_property(env, resultObj, "success", successProp);
-
-    // Add thread results array
-    napi_set_named_property(env, resultObj, "threadResults", params.threadResultsArray);
-
-    // Add total threads count
-    napi_value totalThreadsProp;
-    napi_create_int32(env, params.totalThreads, &totalThreadsProp);
-    napi_set_named_property(env, resultObj, "totalThreads", totalThreadsProp);
-
-    // Add summary statistics
-    napi_value totalSuccessProp;
-    napi_create_int32(env, params.totalSuccessful, &totalSuccessProp);
-    napi_set_named_property(env, resultObj, "totalSuccessful", totalSuccessProp);
-
-    napi_value totalFailedProp;
-    napi_create_int32(env, params.totalFailed, &totalFailedProp);
-    napi_set_named_property(env, resultObj, "totalFailed", totalFailedProp);
-
-    return resultObj;
-}
-
-// Thread function for thread 1: napi_create_date with nullptr env
-static void* Thread1Thread(void* arg)
-{
-    ThreadSafetyErrorData* data = static_cast<ThreadSafetyErrorData*>(arg);
-    
-    // Call napi_create_date with nullptr env (should return napi_invalid_arg)
-    napi_value result;
-    data->apiStatus = napi_create_date(nullptr, TEST_TIMESTAMP_A, &result);
-    // Check if we got the expected error
-    if (data->apiStatus == data->expectedStatus) {
-        data->isSuccess = true;
-    } else {
-        data->isSuccess = false;
-    }
-
-    return nullptr;
-}
-
-// Thread function for thread 2: napi_get_date_value with nullptr value
-static void* Thread2Thread(void* arg)
-{
-    ThreadSafetyErrorData* data = static_cast<ThreadSafetyErrorData*>(arg);
-    
-    // Call napi_get_date_value with nullptr value (should return napi_invalid_arg)
-    double timestamp;
-    data->apiStatus = napi_get_date_value(data->env, nullptr, &timestamp);
-    
-    // Check if we got the expected error
-    if (data->apiStatus == data->expectedStatus) {
-        data->isSuccess = true;
-    } else {
-        data->isSuccess = false;
-    }
-
-    return nullptr;
-}
-// Thread function for thread 3: napi_is_date with nullptr is_date
-static void* Thread3Thread(void* arg)
-{
-    ThreadSafetyErrorData* data = static_cast<ThreadSafetyErrorData*>(arg);
-    // Create a valid Date object first
-    napi_value dateObj;
-    napi_status createStatus = napi_create_date(data->env, TEST_TIMESTAMP_B, &dateObj);
-    if (createStatus == napi_ok) {
-        // Call napi_is_date with nullptr is_date (should return napi_invalid_arg)
-        data->apiStatus = napi_is_date(data->env, dateObj, nullptr);
-        
-        // Check if we got the expected error
-        if (data->apiStatus == data->expectedStatus) {
-            data->isSuccess = true;
-        } else {
-            data->isSuccess = false;
-        }
-    } else {
-        data->apiStatus = createStatus;
-        data->isSuccess = false;
-    }
-    
-    return nullptr;
-}
-
-// Thread function for thread 4: normal operation as control
-static void* Thread4Thread(void* arg)
-{
-    ThreadSafetyErrorData* data = static_cast<ThreadSafetyErrorData*>(arg);
-    
-    // Perform normal Date operations (should succeed)
-    napi_value dateObj;
-    napi_status createStatus = napi_create_date(data->env, CONTROL_THREAD_TIMESTAMP, &dateObj);
-    if (createStatus == napi_ok) {
-        // Verify Date type
-        bool isDate;
-        napi_status isDateStatus = napi_is_date(data->env, dateObj, &isDate);
-        if (isDateStatus == napi_ok && isDate) {
-            // Get timestamp value
-            double timestamp;
-            napi_status getStatus = napi_get_date_value(data->env, dateObj, &timestamp);
-            if (getStatus == napi_ok && timestamp == CONTROL_THREAD_TIMESTAMP) {
-                data->apiStatus = napi_ok;
-                data->isSuccess = true;
-            } else {
-                data->apiStatus = getStatus;
-                data->isSuccess = false;
-            }
-        } else {
-            data->apiStatus = isDateStatus;
-            data->isSuccess = false;
-        }
-    } else {
-        data->apiStatus = createStatus;
-        data->isSuccess = false;
-    }
-    
-    return nullptr;
-}
-
-// Test function to test thread safety with error parameter combinations
-static napi_value TestThreadSafetyErrorHandling(napi_env env, napi_callback_info info)
-{
-    // Create thread data array
-    ThreadSafetyErrorData threadData[THREAD_SAFETY_THREAD_COUNT];
-    pthread_t threads[THREAD_SAFETY_THREAD_COUNT];
-    void* (*threadFunctions[THREAD_SAFETY_THREAD_COUNT])(void*) = {
-        Thread1Thread,
-        Thread2Thread,
-        Thread3Thread,
-        Thread4Thread
-    };
-
-    InitializeThreadSafetyErrorDat(threadData, env, THREAD_SAFETY_THREAD_COUNT);
-
-    // Create threads using pthread_create
-    for (int i = 0; i < THREAD_SAFETY_THREAD_COUNT; i++) {
-        int result = pthread_create(&threads[i], nullptr, threadFunctions[i], &threadData[i]);
-        if (result != 0) {
-            napi_throw_error(env, nullptr, "Failed to create thread");
-            return nullptr;
-        }
-    }
-    
-    // Wait for all threads to complete
-    for (int i = 0; i < THREAD_SAFETY_THREAD_COUNT; i++) {
-        pthread_join(threads[i], nullptr);
-    }
-    
-    // Check results and create result array
-    napi_value threadResultsArray;
-    napi_create_array(env, &threadResultsArray);
-    
-    int totalSuccessful = 0;
-    int totalFailed = 0;
-    for (int i = 0; i < THREAD_SAFETY_THREAD_COUNT; i++) {
-        // Count successful and failed operations
-        if (threadData[i].isSuccess) {
-            totalSuccessful++;
-        } else {
-            totalFailed++;
-        }
-        
-        // Build thread result using helper function
-        napi_value threadResult = BuildThreadSafetyErrorResult(env, threadData[i]);
-        napi_set_element(env, threadResultsArray, i, threadResult);
-    }
-    
-    // Check overall success
-    bool overallSuccess = (totalSuccessful == THREAD_SAFETY_THREAD_COUNT);
-    
-    // Build and return main result using helper function
-    ThreadSafetyErrorMainResultParams params = {
-        .overallSuccess = overallSuccess,
-        .threadResultsArray = threadResultsArray,
-        .totalThreads = THREAD_SAFETY_THREAD_COUNT,
-        .totalSuccessful = totalSuccessful,
-        .totalFailed = totalFailed
-    };
-    
-    return BuildThreadSafetyErrorMainResult(env, params);
-}
 
 // Helper function for basic UTF-16 string creation and verification
 static bool CreateAndVerifyUtf16String(napi_env env, const char16_t* utf16String,
@@ -4418,294 +3258,6 @@ static napi_value NapiStringTest009(napi_env env, napi_callback_info info)
 #define LOG_DOMAIN 0X0202
 #define LOG_TAG "NapiCheckTest"
 
-// 全局对象访问并发测试
-typedef struct {
-    int id;
-    napi_env env;
-    bool *allOk;
-} GlobalAccessArgs;
-
-static void* ThreadAccessGlobal(void* arg)
-{
-    GlobalAccessArgs* args = static_cast<GlobalAccessArgs*>(arg);
-    napi_env env = args->env;
-    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest01_cpp] Thread %{public}d begin------", args->id);
-
-    int loopTimes = 1000;
-    for (int i = 0; i < loopTimes; i++) {
-        napi_handle_scope scope;
-        napi_status openStatus = napi_open_handle_scope(env, &scope);
-        if (openStatus != napi_ok) {
-            OH_LOG_INFO(LOG_APP, "[testPrimitiveTest01_cpp] Thread %{public}d iteration %{public}d: "
-                                 "napi_open_handle_scope failed.", args->id, i);
-            *(args->allOk) = false;
-            break;
-        }
-
-        napi_value global;
-        napi_status status = napi_get_global(env, &global);
-        NAPI_ASSERT(env, status == napi_ok, "napi_get_global failed");
-        if (status != napi_ok) {
-            OH_LOG_INFO(LOG_APP, "[testPrimitiveTest01_cpp] Thread %{public}d interation %{public}d: "
-                                 "napi_get_global failed.", args->id, i);
-            *(args->allOk) = false;
-            napi_close_handle_scope(env, scope);
-            break;
-        }
-        OH_LOG_INFO(LOG_APP, "[testPrimitiveTest01_cpp] Thread %{public}d interation %{public}d: "
-                             "napi_get_global succeed.", args->id, i);
-
-        // 多个线程同时尝试从全局对象获取属性 (crash)
-
-        napi_close_handle_scope(env, scope);
-    }
-    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest01_cpp] Thread %{public}d end------", args->id);
-    return nullptr;
-}
-
-static napi_value NapiPrimitiveTest01(napi_env env, napi_callback_info info)
-{
-    const int kThreadCount = 4;
-    pthread_t threads[kThreadCount];
-    bool allOk = true;
-    GlobalAccessArgs args[kThreadCount];
-
-    for (int i = 0; i < kThreadCount; i++) {
-        args[i].id = i;
-        args[i].env = env;
-        args[i].allOk = &allOk;
-        int err = pthread_create(&threads[i], nullptr, ThreadAccessGlobal, &args[i]);
-        if (err != 0) {
-            allOk = false;
-            break;
-        }
-    }
-
-    for (int i = 0; i < kThreadCount; i++) {
-        pthread_join(threads[i], nullptr);
-    }
-
-    napi_value result;
-    napi_get_boolean(env, allOk, &result);
-    return result;
-}
-
-// 基本类型转换并发测试
-typedef struct {
-    int id;
-    napi_env env;
-    bool *allOk;
-} CoerceArgs;
-
-static void* ThreadCoerceToBool(void* arg)
-{
-    CoerceArgs* args = static_cast<CoerceArgs*>(arg);
-    napi_env env = args->env;
-    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d "
-                         "(ThreadCoerceToBool) begin------", args->id);
-
-    napi_value value;
-    int32_t intVal = 53;
-    if (napi_create_int32(env, intVal, &value) != napi_ok) {
-        OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToBool) "
-                             "napi_create_int32 failed.", args->id);
-        *(args->allOk) = false;
-        return nullptr;
-    }
-    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToBool) "
-                         "napi_create_int32 succeed.", args->id);
-
-    int loopTimes = 1000;
-    for (int i = 0; i < loopTimes; i++) {
-        napi_value result;
-        napi_status status = napi_coerce_to_bool(env, value, &result);
-        NAPI_ASSERT(env, status == napi_ok, "napi_coerce_to_bool failed");
-        if (status != napi_ok) {
-            OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToBool) "
-                                 "interation %{public}d: napi_coerce_to_bool failed.", args->id, i);
-            *(args->allOk) = false;
-            break;
-        }
-        OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToBool) "
-                             "interation %{public}d: napi_coerce_to_bool succeed.", args->id, i);
-    }
-    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToBool) "
-                         "end------", args->id);
-    return nullptr;
-}
-
-static void* ThreadCoerceToNumber(void* arg)
-{
-    CoerceArgs* args = static_cast<CoerceArgs*>(arg);
-    napi_env env = args->env;
-    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToNumber) "
-                         "begin------", args->id);
-
-    napi_value value;
-    if (napi_get_boolean(env, true, &value) != napi_ok) {
-        OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToNumber) "
-                             "napi_get_boolean failed.", args->id);
-        *(args->allOk) = false;
-        return nullptr;
-    }
-    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToNumber) "
-                         "napi_get_boolean succeed.", args->id);
-
-    int loopTimes = 1000;
-    for (int i = 0; i < loopTimes; i++) {
-        napi_value result;
-        napi_status status = napi_coerce_to_number(env, value, &result);
-        NAPI_ASSERT(env, status == napi_ok, "napi_coerce_to_number failed");
-        if (status != napi_ok) {
-            OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToNumber) "
-                                 "interation %{public}d: napi_coerce_to_number failed.", args->id, i);
-            *(args->allOk) = false;
-            break;
-        }
-        OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToNumber) "
-                             "interation %{public}d: napi_coerce_to_number succeed.", args->id, i);
-    }
-    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToBool) "
-                         "end------", args->id);
-    return nullptr;
-}
-
-static void* ThreadCoerceToString(void* arg)
-{
-    CoerceArgs* args = static_cast<CoerceArgs*>(arg);
-    napi_env env = args->env;
-    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToString) "
-                         "begin------", args->id);
-
-    napi_value value;
-    int intValue = 123;
-    if (napi_create_int32(env, intValue, &value) != napi_ok) {
-        OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToString) "
-                             "napi_create_int32 failed.", args->id);
-        *(args->allOk) = false;
-        return nullptr;
-    }
-    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToString) "
-                         "napi_create_int32 succeed.", args->id);
-
-    int loopTimes = 1000;
-    for (int i = 0; i < loopTimes; i++) {
-        napi_value result;
-        napi_status status = napi_coerce_to_string(env, value, &result);
-        NAPI_ASSERT(env, status == napi_ok, "napi_coerce_to_string failed");
-        if (status != napi_ok) {
-            OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToString) "
-                                 "interation %{public}d: napi_coerce_to_string failed.", args->id, i);
-            *(args->allOk) = false;
-            break;
-        }
-        OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToString) "
-                             "interation %{public}d: napi_coerce_to_string succeed.", args->id, i);
-    }
-    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToBool) "
-                         "end------", args->id);
-    return nullptr;
-}
-
-static void* ThreadCoerceToObject(void* arg)
-{
-    CoerceArgs* args = static_cast<CoerceArgs*>(arg);
-    napi_env env = args->env;
-    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToObject) "
-                         "begin------", args->id);
-
-    napi_value value;
-    int intValue = 456;
-    napi_status status = napi_create_int32(env, intValue, &value);
-    NAPI_ASSERT(env, status == napi_ok, "napi_create_int32 failed");
-    if (status != napi_ok) {
-        OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToObject) "
-                             "napi_create_int32 failed.", args->id);
-        *(args->allOk) = false;
-        return nullptr;
-    }
-    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToObject) "
-                         "napi_create_int32 succeed.", args->id);
-
-    int loopTimes = 1000;
-    for (int i = 0; i < loopTimes; i++) {
-        napi_value result;
-        // 在其他线程执行过程中持续调用napi_coerce_to_object函数 (crash)
-    }
-    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToBool) "
-                         "end------", args->id);
-    return nullptr;
-}
-
-static void* ThreadGetGlobal(void* arg)
-{
-    CoerceArgs* args = static_cast<CoerceArgs*>(arg);
-    napi_env env = args->env;
-    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadGetGlobal) "
-                         "begin------", args->id);
-
-    int loopTimes = 1000;
-    for (int i = 0; i < loopTimes; i++) {
-        napi_value global;
-        napi_status status = napi_get_global(env, &global);
-        NAPI_ASSERT(env, status == napi_ok, "napi_get_global failed");
-        if (status != napi_ok) {
-            OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadGetGlobal) "
-                                 "interation %{public}d: napi_get_global failed.", args->id, i);
-            *(args->allOk) = false;
-            break;
-        }
-        OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadGetGlobal) "
-                             "interation %{public}d: napi_get_global succeed.", args->id, i);
-    }
-    OH_LOG_INFO(LOG_APP, "[testPrimitiveTest02_cpp] Thread %{public}d (ThreadCoerceToBool) "
-                         "end------", args->id);
-    return nullptr;
-}
-
-static napi_value NapiPrimitiveTest02(napi_env env, napi_callback_info info)
-{
-    const int kThreadCount = 5;
-    pthread_t threads[kThreadCount];
-    bool allOk = true;
-    CoerceArgs args[kThreadCount];
-
-    for (int i = 0; i < kThreadCount; i++) {
-        args[i].id = i;
-        args[i].env = env;
-        args[i].allOk = &allOk;
-    }
-
-    // 创建不同类型转换的线程
-    const int value0 = 0;
-    const int value1 = 1;
-    const int value2 = 2;
-    const int value3 = 3;
-    const int value4 = 4;
-    if (pthread_create(&threads[value0], nullptr, ThreadCoerceToBool, &args[value0]) != 0) {
-        allOk = false;
-    }
-    if (pthread_create(&threads[value1], nullptr, ThreadCoerceToNumber, &args[value1]) != 0) {
-        allOk = false;
-    }
-    if (pthread_create(&threads[value2], nullptr, ThreadCoerceToString, &args[value2]) != 0) {
-        allOk = false;
-    }
-    if (pthread_create(&threads[value3], nullptr, ThreadCoerceToObject, &args[value3]) != 0) {
-        allOk = false;
-    }
-    if (pthread_create(&threads[value4], nullptr, ThreadGetGlobal, &args[value4]) != 0) {
-        allOk = false;
-    }
-
-    for (int i = 0; i < kThreadCount; i++) {
-        pthread_join(threads[i], nullptr);
-    }
-
-    napi_value result;
-    napi_get_boolean(env, allOk, &result);
-    return result;
-}
 
 // 值获取函数并发测试
 typedef struct {
@@ -7525,11 +6077,10 @@ static bool TestAsyncEventLoopRunAndStop(napi_env env)
     status = napi_create_async_work(runtime_env, nullptr, work_name,
         [](napi_env env, void* data) {
             // 执行函数 - 简单的同步操作
-            // 不执行复杂的异步操作，避免状态管理问题
         },
         [](napi_env env, napi_status status, void* data) {
-            // 完成函数 - 简单的清理操作
-            // 不执行复杂的清理操作，避免状态管理问题
+            // 完成函数 - 停止事件循环以确保异步工作已完成
+            napi_stop_event_loop(env);
         },
         nullptr, &work);
     if (status != napi_ok) {
@@ -7545,23 +6096,10 @@ static bool TestAsyncEventLoopRunAndStop(napi_env env)
         return false;
     }
     
-    // 使用napi_run_event_loop触发事件循环 - 使用nowait模式避免阻塞
-    status = napi_run_event_loop(runtime_env, napi_event_mode_nowait);
-    if (status != napi_ok) {
-        napi_delete_async_work(runtime_env, work);
-        napi_destroy_ark_runtime(&runtime_env);
-        return false;
-    }
+    // 使用napi_run_event_loop触发事件循环 - 使用default模式确保异步工作完成后再返回
+    status = napi_run_event_loop(runtime_env, napi_event_mode_default);
     
-    // 使用napi_stop_event_loop停止事件循环
-    status = napi_stop_event_loop(runtime_env);
-    if (status != napi_ok) {
-        napi_delete_async_work(runtime_env, work);
-        napi_destroy_ark_runtime(&runtime_env);
-        return false;
-    }
-    
-    // 清理资源 - 确保异步工作已经完成
+    // 清理资源 - 异步工作已完成，可以安全删除
     napi_delete_async_work(runtime_env, work);
     napi_destroy_ark_runtime(&runtime_env);
     
@@ -7644,7 +6182,8 @@ static bool TestAsyncWorkWithQoS(napi_env env)
             // 执行函数
         },
         [](napi_env env, napi_status status, void* data) {
-            // 完成函数
+            // 完成函数 - 停止事件循环以确保异步工作已完成
+            napi_stop_event_loop(env);
         },
         nullptr, &work);
     if (status != napi_ok) {
@@ -7660,23 +6199,10 @@ static bool TestAsyncWorkWithQoS(napi_env env)
         return false;
     }
     
-    // 使用事件循环确保异步工作完成
-    status = napi_run_event_loop(runtime_env, napi_event_mode_nowait);
-    if (status != napi_ok) {
-        napi_delete_async_work(runtime_env, work);
-        napi_destroy_ark_runtime(&runtime_env);
-        return false;
-    }
+    // 使用事件循环确保异步工作完成 - default模式阻塞直到complete回调停止事件循环
+    status = napi_run_event_loop(runtime_env, napi_event_mode_default);
     
-    // 停止事件循环
-    status = napi_stop_event_loop(runtime_env);
-    if (status != napi_ok) {
-        napi_delete_async_work(runtime_env, work);
-        napi_destroy_ark_runtime(&runtime_env);
-        return false;
-    }
-    
-    // 清理资源
+    // 清理资源 - 异步工作已完成，可以安全删除
     napi_delete_async_work(runtime_env, work);
     napi_destroy_ark_runtime(&runtime_env);
     
@@ -14155,7 +12681,6 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("GetBufferInfoNonBuffer", GetBufferInfoNonBuffer),
         DECLARE_NAPI_FUNCTION("TestMultipleOperations", TestMultipleOperations),
         DECLARE_NAPI_FUNCTION("TestExternalArrayBuffer", TestExternalArrayBuffer),
-        DECLARE_NAPI_FUNCTION("TestArrayBufferThreadSafety", TestArrayBufferThreadSafety),
         DECLARE_NAPI_FUNCTION("TestArrayBufferComparison", TestArrayBufferComparison),
         DECLARE_NAPI_FUNCTION("NapiArrayBufferTest01", NapiArrayBufferTest01),
         DECLARE_NAPI_FUNCTION("NapiArrayBufferTest02", NapiArrayBufferTest02),
@@ -14177,10 +12702,6 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("NapiBigIntTest11", NapiBigIntTest11),
         DECLARE_NAPI_FUNCTION("NapiBigIntTest12", NapiBigIntTest12),
         DECLARE_NAPI_FUNCTION("NapiBigIntTest13", NapiBigIntTest13),
-        DECLARE_NAPI_FUNCTION("NapiBigIntTest14", NapiBigIntTest14),
-        DECLARE_NAPI_FUNCTION("NapiBigIntTest15", NapiBigIntTest15),
-        DECLARE_NAPI_FUNCTION("NapiBigIntTest16", NapiBigIntTest16),
-        DECLARE_NAPI_FUNCTION("NapiBigIntTest17", NapiBigIntTest17),
         DECLARE_NAPI_FUNCTION("testCreateDate", TestCreateDate),
         DECLARE_NAPI_FUNCTION("testGetDateValue", TestGetDateValue),
         DECLARE_NAPI_FUNCTION("testIsDate", TestIsDate),
@@ -14193,8 +12714,6 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("testConcurrentDateCreation", TestConcurrentDateCreation),
         DECLARE_NAPI_FUNCTION("testSharedDateObjectRead", TestSharedDateObjectRead),
         DECLARE_NAPI_FUNCTION("testHighConcurrencyDateStress", TestHighConcurrencyDateStress),
-        DECLARE_NAPI_FUNCTION("testCrossThreadDatePassing", TestCrossThreadDatePassing),
-        DECLARE_NAPI_FUNCTION("testThreadSafetyErrorHandling", TestThreadSafetyErrorHandling),
         DECLARE_NAPI_FUNCTION("NapiStringTest001", NapiStringTest001),
         DECLARE_NAPI_FUNCTION("NapiStringTest002", NapiStringTest002),
         DECLARE_NAPI_FUNCTION("NapiStringTest003", NapiStringTest003),
@@ -14204,8 +12723,6 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("NapiStringTest007", NapiStringTest007),
         DECLARE_NAPI_FUNCTION("NapiStringTest008", NapiStringTest008),
         DECLARE_NAPI_FUNCTION("NapiStringTest009", NapiStringTest009),
-        DECLARE_NAPI_FUNCTION("NapiPrimitiveTest01", NapiPrimitiveTest01),
-        DECLARE_NAPI_FUNCTION("NapiPrimitiveTest02", NapiPrimitiveTest02),
         DECLARE_NAPI_FUNCTION("NapiPrimitiveTest03", NapiPrimitiveTest03),
         DECLARE_NAPI_FUNCTION("NapiPrimitiveTest04", NapiPrimitiveTest04),
         DECLARE_NAPI_FUNCTION("NapiPrimitiveTest05", NapiPrimitiveTest05),

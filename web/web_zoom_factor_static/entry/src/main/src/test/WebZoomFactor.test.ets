@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from './Util.test';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
@@ -25,6 +25,9 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 const BUNDLE = 'com.actswebzoomfactor.test.static';
 const EVENT_SUITE = 182100;
 const INIT_ERR_MSG = 'Init error. The WebviewController must be associated with a Web component';
+/** API 为 double；ArkTS 运行时 typeof 为 number */
+const ZOOM_FACTOR_RUNTIME_TYPE: string = 'number';
+const ON_ZOOM_CHANGE_CALLBACK_EVENT: Int = 182222;
 
 let testAbilityContext: common.UIAbilityContext;
 
@@ -231,6 +234,101 @@ export default function webZoomFactorStaticTest(): void {
     it('testOnZoomChangeNotOnPinchStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         await runPassCase('testOnZoomChangeNotOnPinch', 182210, done);
+      });
+
+    /**
+     * @tc.name   testGetZoomFactorRuntimeTypeStatic
+     * @tc.number SUB_WEB_GETZOOMFACTOR_DOUBLE_TYPE_STATIC_1250
+     * @tc.desc   getZoomFactor return value runtime type is number (double), call without throw
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetZoomFactorRuntimeTypeStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        Utils.registerEvent('testGetZoomFactorRuntimeType', ZOOM_FACTOR_RUNTIME_TYPE, 182230, done);
+        await Utils.emitEvent('testGetZoomFactorRuntimeType', EVENT_SUITE);
+        await Utils.msSleep(300);
+        let driver: Driver = Driver.create();
+        let button = await driver.findComponent(ON.id('WebZoomFactorTestButton'));
+        await button?.click();
+        await Utils.msSleep(8000);
+      });
+
+    /**
+     * @tc.name   testOnZoomChangeCallbackStatic
+     * @tc.number SUB_WEB_ONZOOMCHANGE_CALLBACK_STATIC_1350
+     * @tc.desc   onZoomChange(OnZoomChangeCallback) registered on Web without throw
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOnZoomChangeCallbackStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        Utils.registerEvent('testOnZoomChangeCallback', true, ON_ZOOM_CHANGE_CALLBACK_EVENT, done);
+        await Utils.emitEvent('testOnZoomChangeCallback', EVENT_SUITE);
+        await Utils.msSleep(300);
+        let driver: Driver = Driver.create();
+        let button = await driver.findComponent(ON.id('WebZoomFactorTestButton'));
+        await button?.click();
+        await Utils.msSleep(2000);
+      });
+
+    /**
+     * @tc.name   testOnZoomChangeDeclChainStatic
+     * @tc.number SUB_WEB_ONZOOMCHANGE_DECL_CHAIN_STATIC_1410
+     * @tc.desc   onZoomChange(callback).onPageEnd chain on main Web returns this
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOnZoomChangeDeclChainStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        Utils.registerEvent('testOnZoomChangeDeclChain', 'main-chain-ok', 182224, done);
+        await Utils.emitEvent('testOnZoomChangeDeclChain', EVENT_SUITE);
+        await Utils.msSleep(300);
+        let driver: Driver = Driver.create();
+        let button = await driver.findComponent(ON.id('WebZoomFactorTestButton'));
+        await button?.click();
+        await Utils.msSleep(2000);
+      });
+
+    /**
+     * @tc.name   testOnZoomChangeUndefinedStatic
+     * @tc.number SUB_WEB_ONZOOMCHANGE_UNDEFINED_STATIC_1300
+     * @tc.desc   onZoomChange(undefined) binds OnZoomChangeCallback optional path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOnZoomChangeUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        Utils.registerEvent('testOnZoomChangeUndefined', true, 182220, done);
+        await Utils.emitEvent('testOnZoomChangeUndefined', EVENT_SUITE);
+        await Utils.msSleep(300);
+        let driver: Driver = Driver.create();
+        let button = await driver.findComponent(ON.id('WebZoomFactorTestButton'));
+        await button?.click();
+        await Utils.msSleep(2000);
+      });
+
+    /**
+     * @tc.name   testOnZoomChangeReturnStatic
+     * @tc.number SUB_WEB_ONZOOMCHANGE_RETURN_STATIC_1400
+     * @tc.desc   onZoomChange(OnZoomChangeCallback) chain returns this
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOnZoomChangeReturnStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        Utils.registerEvent('testOnZoomChangeReturn', 'return-zoom-ok', 182221, done);
+        await Utils.emitEvent('testOnZoomChangeReturn', EVENT_SUITE);
+        await Utils.msSleep(300);
+        let driver: Driver = Driver.create();
+        let button = await driver.findComponent(ON.id('WebZoomFactorTestButton'));
+        await button?.click();
+        await Utils.msSleep(2000);
       });
   });
 }

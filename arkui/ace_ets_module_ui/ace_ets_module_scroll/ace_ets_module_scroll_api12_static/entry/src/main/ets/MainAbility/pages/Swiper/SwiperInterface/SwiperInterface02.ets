@@ -102,5 +102,7 @@ struct SwiperInterface02 {
       .autoPlay(true, undefined)
       .curve(curves.stepsCurve(9,true))
     }
+    .padding(10)
+    .margin(10)
   }
 }

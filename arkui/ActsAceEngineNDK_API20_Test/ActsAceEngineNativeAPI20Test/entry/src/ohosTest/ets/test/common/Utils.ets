@@ -136,7 +136,8 @@ export default class Utils {
 
   static async triggerKey(id: number) {
     let driver = Driver.create();
-    await driver.triggerKey(id);
+    let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+    await driver.triggerKey(id, displayID);
   }
 
   static async longClickComponent(id: string) {
@@ -412,13 +413,14 @@ export default class Utils {
     it(name,type,async (done: Function) => {
       try {
         console.info(`====>${name} start<====`);
-        await Utils.driver.triggerKey(key);
+        let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+        await Utils.driver.triggerKey(key, displayID);
         if (key == 16) {
           let com = await Utils.driver.findComponent(ON.id("KeyCodeTest1"));
           await com.click();
           await com.click();
         } else if ((key > 23 && key < 2054) || (key > 23 && key < 2054) || [2626, 2627].includes(key)) {
-          await Utils.driver.triggerKey(1);
+          await Utils.driver.triggerKey(1, displayID);
           let cmd = 'aa start -a MainAbility -b com.acts.keycodeevent';
           let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
           if(user !== undefined){

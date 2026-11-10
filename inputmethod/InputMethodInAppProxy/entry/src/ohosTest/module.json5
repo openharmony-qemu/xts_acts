@@ -1,0 +1,37 @@
+{
+  "module": {
+    "name": "entry_test",
+    "type": "feature",
+    "mainElement": "TestAbility",
+    "deviceTypes": [],
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:test_pages",
+    "abilities": [
+      {
+        "name": "TestAbility",
+        "srcEntry": "./ets/testability/TestAbility.ets",
+        "exported": true,
+        "icon": "$media:app_icon",
+        "label": "$string:app_name",
+        "startWindowIcon": "$media:app_icon",
+        "startWindowBackground": "$color:start_window_background"
+      }
+    ],
+    "extensionAbilities": [
+      {
+        "name": "InputMethodService",
+        "srcEntry": "./ets/extension/InputMethodService.ets",
+        "label": "$string:app_name",
+        "type": "inputMethod",
+        "exported": true,
+        "metadata": [
+          {
+            "name": "ohos.extension.input_method",
+            "resource": "$profile:input_method_config"
+          }
+        ]
+      }
+    ]
+  }
+}

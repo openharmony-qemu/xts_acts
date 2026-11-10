@@ -1,6 +1,6 @@
 'use static';
 
-import { expect } from '../../../../hypium/index';
+import { expect } from '@ohos/hypium-static/src/main/indexStatic';
 import hilog from '@ohos.hilog';
 import { BusinessError, AsyncCallback, Callback, RecordData } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';

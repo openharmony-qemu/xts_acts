@@ -16,7 +16,7 @@
  */
 import { State } from '@ohos.arkui.stateManagement'
 import { Entry,Column,Text,Button,Divider,Component,SafeAreaType, ColumnOptions,
-  SafeAreaEdge} from '@ohos.arkui.component'
+  SafeAreaEdge, HorizontalAlign } from '@ohos.arkui.component'
 
 @Entry
 @Component
@@ -40,6 +40,7 @@ struct CommonExample {
         .id('Common_layoutWeight')
 
       Divider()
-    }.width('100%').height('100%')
+    }.width('80%').height('80%')
+    .alignItems(HorizontalAlign.Center)
   }
 }

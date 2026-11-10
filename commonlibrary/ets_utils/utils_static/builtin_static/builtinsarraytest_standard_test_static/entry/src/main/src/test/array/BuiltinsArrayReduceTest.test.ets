@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 interface person {
@@ -119,7 +119,7 @@ export default function builtinsArrayReduceTest(): void {
      */
     it('builtinsArrayReduceTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:() => void) => {
       let array: Array<number | undefined> = [1, undefined, 3];
-      let reducedValue = array.reduce((acc, curr) => acc! + (curr !== undefined ? curr : 0), 0.);
+      let reducedValue = array.reduce((acc, curr) => acc! + (curr !== undefined ? curr : 0.0), 0.);
       expect(4).assertEqual(reducedValue);
       done();
     })
@@ -149,7 +149,7 @@ export default function builtinsArrayReduceTest(): void {
      */
     it('builtinsArrayReduceTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:() => void) => {
       let array: Array<number | undefined> = [undefined,];
-      let reducedValue = array.reduce((acc, curr) => acc! + (curr !== undefined ? curr : 0), 0.);
+      let reducedValue = array.reduce((acc, curr) => acc! + (curr !== undefined ? curr : 0.0), 0.);
       expect(0).assertEqual(reducedValue);
       done();
     })

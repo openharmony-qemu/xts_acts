@@ -26,7 +26,7 @@ import {
   Level,
   Size,
   TestType,
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils, { FloatBoxWrapper } from '../Util.test';
 
 function addToBox(box: FloatBox, delta: float): float {

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-static/src/main/indexStatic"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON, MouseButton } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector'
@@ -34,6 +34,8 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
+let displayID: Int = 0;
+
 export default function RichEditorApi() {
   describe('RichEditorApi', () => {
     beforeEach(async (): Promise<void> => {
@@ -48,22 +50,22 @@ export default function RichEditorApi() {
         console.info("get RichEditorApi state pages:" + JSON.stringify(pages));
         if (!("RichEditorApi" == pages.name)) {
           console.info("get RichEditorApi pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // await router 有已知问题，先注释使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push RichEditorApi page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push RichEditorApi page error:" + err);
+        console.log("push RichEditorApi page error:" + err);
       }
       console.info("RichEditorApi beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     beforeAll(async (): Promise<void> => {
       console.info("RichEditorApi beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
-
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);
@@ -175,10 +177,15 @@ export default function RichEditorApi() {
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let RichEditor3 = CommonFunc.getComponentRectOnScreen('RichEditorApi_RichEditor3')
-      await driver.mouseClick({
-        x: Math.round((RichEditor3.right - RichEditor3.left) * 0.5 + RichEditor3.left).toInt(),
-        y: Math.round((RichEditor3.bottom - RichEditor3.top) * 0.5 + RichEditor3.top).toInt()
-      }, MouseButton.MOUSE_BUTTON_RIGHT)
+      try {
+        await driver.mouseClick({
+          x: Math.round((RichEditor3.right - RichEditor3.left) * 0.5 + RichEditor3.left).toInt(),
+          y: Math.round((RichEditor3.bottom - RichEditor3.top) * 0.5 + RichEditor3.top).toInt(),
+          displayId: displayID
+        }, MouseButton.MOUSE_BUTTON_RIGHT)
+      } catch (err) {
+        console.log('driver.mouseClick error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('RichEditorApi_text1');
@@ -204,8 +211,11 @@ export default function RichEditorApi() {
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let RichEditor4 = CommonFunc.getComponentRectOnScreen('RichEditorApi_RichEditor4')
-      await driver.longClick(Math.round((RichEditor4.right - RichEditor4.left) * 0.5 + RichEditor4.left) .toInt(),
-        Math.round((RichEditor4.bottom - RichEditor4.top) * 0.5 + RichEditor4.top).toInt())
+      try {
+        await driver.longClickAt({ x: Math.round((RichEditor4.right - RichEditor4.left) * 0.5 + RichEditor4.left) .toInt(), y: Math.round((RichEditor4.bottom - RichEditor4.top) * 0.5 + RichEditor4.top).toInt(), displayId: displayID });
+      } catch (err) {
+        console.log('driver.longClickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(2000);
 
       let strJson = inspector.getInspectorByKey('RichEditorApi_text2');

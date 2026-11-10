@@ -116,6 +116,9 @@ struct preloadItemsErrorTabsExample {
         console.info('onAnimationEnd velocity: ' + event.velocity)
       })
 
-    }.width('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%')
   }
 }

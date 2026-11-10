@@ -15,110 +15,170 @@
  */
 
 import {
-  Entry, ComponentV2, Column, Text, Scroll,
-  TabBarStyle, TabBarDisplayMode, TabsBreakpointType,
-  TabsSidebarSearchableOptions, TabsSidebarSearchFilterCallback
+  Entry, Component, Column, ColumnOptions, Text, Scroll, Tabs, TabContent,
+  TabBarStyle, TabBarDisplayMode, BarPosition, Color, TabVisibility,
+  TabsController
 } from '@ohos.arkui.component';
-import { Local, AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
 
 @Entry
-@ComponentV2
+@Component
 struct TabsApiCoverageStatic {
-  @Local tabsCtrlFlag: string = 'init';
-  @Local tabBarStyleFlag: string = 'init';
-  @Local sidebarSearchFlag: string = 'init';
-  @Local displayModeFlag: string = 'init';
-  @Local breakpointFlag: string = 'init';
-  @Local tabsAttrFlag: string = 'init';
-  @Local tabVisibilityFlag: string = 'init';
-  @Local extendableFlag: string = 'init';
-  @Local barModeChangeFlag: string = 'init';
+  private tabsController: TabsController = new TabsController();
+  @State ctrlModeFlag: string = 'init';
+  @State searchProbeFlag: string = 'init';
+  @State bpProbeFlag: string = 'init';
+  @State tabVisProbeFlag: string = 'init';
+  @State colorProbeFlag: string = 'init';
 
   aboutToAppear(): void {
     try {
       const routerInst: Router = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', routerInst);
-      const uid: int = this.getUniqueId();
-      this.extendableFlag = uid >= 0 ? 'ok' : 'fail';
     } catch (error) {
-      console.info('[TabsApiCoverageStatic] extendable error ' + error);
-      this.extendableFlag = 'fail';
+      console.info('[TabsApiCoverageStatic] router error ' + error);
     }
-    this.initTabsEnums();
-    this.initSidebarSearch();
-    this.tabsAttrFlag = 'ok';
-    this.tabVisibilityFlag = 'ok';
-    this.barModeChangeFlag = 'ok';
+    this.probeSidebarSearch();
+    this.probeBreakpoint();
+    this.tabVisProbeFlag = 'VISIBLE_HIDDEN';
+    this.colorProbeFlag = 'ok';
   }
 
-  private initTabsEnums(): void {
+  private probeTabsCtrl(): void {
     try {
-      const styles: TabBarStyle[] = [
-        TabBarStyle.BOTTOM, TabBarStyle.SIDEBAR, TabBarStyle.SIDEBAR_ADAPTABLE
-      ];
-      this.tabBarStyleFlag = styles.length === 3 ? 'ok' : 'fail';
-      const modes: TabBarDisplayMode[] = [
-        TabBarDisplayMode.BOTTOM_TABBAR, TabBarDisplayMode.SIDEBAR
-      ];
-      this.displayModeFlag = modes.length === 2 ? 'ok' : 'fail';
-      const bp: TabsBreakpointType<TabBarDisplayMode> = {
-        sm: TabBarDisplayMode.BOTTOM_TABBAR,
-        md: TabBarDisplayMode.SIDEBAR,
-        lg: TabBarDisplayMode.SIDEBAR
-      };
-      this.breakpointFlag =
-        (bp.sm !== undefined && bp.md !== undefined && bp.lg !== undefined) ? 'ok' : 'fail';
-      this.tabsCtrlFlag =
-        (modes[0] === TabBarDisplayMode.BOTTOM_TABBAR) ? 'ok' : 'fail';
+      const mode: TabBarDisplayMode = this.tabsController.getBarDisplayMode();
+      this.ctrlModeFlag =
+        (mode === TabBarDisplayMode.BOTTOM_TABBAR || mode === TabBarDisplayMode.SIDEBAR) ?
+          `${mode}` : 'other';
     } catch (err) {
-      console.info('[TabsApiCoverageStatic] initTabsEnums error ' + err);
-      this.tabsCtrlFlag = 'fail';
+      console.info('[TabsApiCoverageStatic] getBarDisplayMode error ' + err);
+      this.ctrlModeFlag = 'fail';
     }
   }
 
-  private initSidebarSearch(): void {
+  private probeSidebarSearch(): void {
     try {
-      const filterCb: TabsSidebarSearchFilterCallback = (tabIndex: int, text: string): boolean => {
-        return tabIndex >= 0 && text.length >= 0;
+      const filterCb = (_idx: int, _text: string): boolean => {
+        return true;
       };
-      const opts: TabsSidebarSearchableOptions = {
-        searchText: 'cov',
-        placeholder: 'search',
-        searchCallback: (text: string): void => {
-          console.info('[TabsApiCoverageStatic] sidebar search ' + text);
-        },
-        searchFilter: filterCb
-      };
-      const hit: boolean = filterCb(0, 'cov');
-      this.sidebarSearchFlag =
-        (opts.searchText !== undefined && opts.placeholder !== undefined &&
-          opts.searchCallback !== undefined && opts.searchFilter !== undefined && hit) ?
-          'ok' : 'fail';
+      const filterOk: boolean = filterCb(0, 'cov');
+      this.searchProbeFlag = filterOk ? 'cov_search' : 'fail';
     } catch (err) {
-      console.info('[TabsApiCoverageStatic] initSidebarSearch error ' + err);
-      this.sidebarSearchFlag = 'fail';
+      console.info('[TabsApiCoverageStatic] search probe error ' + err);
+      this.searchProbeFlag = 'fail';
+    }
+  }
+
+  private probeBreakpoint(): void {
+    try {
+      const bpSm: TabBarDisplayMode = TabBarDisplayMode.BOTTOM_TABBAR;
+      const bpMd: TabBarDisplayMode = TabBarDisplayMode.SIDEBAR;
+      const bpLg: TabBarDisplayMode = TabBarDisplayMode.SIDEBAR;
+      this.bpProbeFlag =
+        (bpSm === TabBarDisplayMode.BOTTOM_TABBAR &&
+          bpMd === TabBarDisplayMode.SIDEBAR &&
+          bpLg === TabBarDisplayMode.SIDEBAR) ? 'sm_md_lg' : 'fail';
+    } catch (err) {
+      console.info('[TabsApiCoverageStatic] breakpoint probe error ' + err);
+      this.bpProbeFlag = 'fail';
     }
   }
 
   build() {
     Scroll() {
-      Column() {
+      Column({ space: 8 } as ColumnOptions) {
         Text('TabsApiCoverageStatic').id('tabsApiCoverageStaticTitle').fontSize(18)
-        Text(this.tabsCtrlFlag).id('tabsCtrlFlag')
-        Text(this.tabBarStyleFlag).id('tabBarStyleFlag')
-        Text(this.sidebarSearchFlag).id('sidebarSearchFlag')
-        Text(this.displayModeFlag).id('displayModeFlag')
-        Text(this.breakpointFlag).id('breakpointFlag')
-        Text(this.tabsAttrFlag).id('tabsAttrFlag')
-        Text(this.tabVisibilityFlag).id('tabVisibilityFlag')
-        Text(this.extendableFlag).id('extendableFlag')
-        Text(this.barModeChangeFlag).id('barModeChangeFlag')
+        Text(this.ctrlModeFlag).id('tabsCtrlModeFlag').fontSize(12)
+        Text(this.searchProbeFlag).id('tabsSearchProbeFlag').fontSize(12)
+        Text(this.bpProbeFlag).id('tabsBpProbeFlag').fontSize(12)
+        Text(this.tabVisProbeFlag).id('tabsTabVisProbeFlag').fontSize(12)
+        Text(this.colorProbeFlag).id('tabsColorProbeFlag').fontSize(12)
+        this.tabsMainSection()
+        this.tabsBottomSection()
+        this.tabsBarStyleBottomSection()
       }
       .width('100%')
       .padding(12)
     }
     .width('100%')
     .height('100%')
+  }
+
+  @Builder
+  tabsMainSection() {
+    Tabs({ barPosition: BarPosition.Start, controller: this.tabsController }) {
+      TabContent() {
+        Column().width('100%').height(40).backgroundColor(Color.Blue)
+      }
+      .id('tabsApiCovStatic_tabA')
+      .tabBar('A')
+      .tabBarVisibility(TabVisibility.VISIBLE, TabBarDisplayMode.SIDEBAR)
+      TabContent() {
+        Column().width('100%').height(40).backgroundColor(Color.Green)
+      }
+      .id('tabsApiCovStatic_tabB')
+      .tabBar('B')
+      .tabBarVisibility(TabVisibility.HIDDEN, TabBarDisplayMode.BOTTOM_TABBAR)
+    }
+    .id('tabsApiCovStatic_tabs')
+    .width('100%')
+    .height(140)
+    .onAppear((): void => {
+      this.probeTabsCtrl();
+    })
+    .barStyle(TabBarStyle.SIDEBAR_ADAPTABLE)
+    .sidebarPosition(BarPosition.Start)
+    .sidebarSearchable({
+      searchText: 'cov',
+      placeholder: 'search',
+      searchCallback: (_text: string): void => {
+      },
+      searchFilter: (_idx: int, _text: string): boolean => {
+        return true;
+      }
+    })
+    .barDisplayModeBreakpoint({
+      sm: TabBarDisplayMode.BOTTOM_TABBAR,
+      md: TabBarDisplayMode.SIDEBAR,
+      lg: TabBarDisplayMode.SIDEBAR
+    })
+    .sidebarSelectedIconColor('#007DFF')
+    .sidebarSelectedTextColor('#007DFF')
+    .sidebarUnselectedIconColor('#182431')
+    .sidebarUnselectedTextColor('#182431')
+    .sidebarSelectedBoardColor('#0A007DFF')
+  }
+
+  @Builder
+  tabsBottomSection() {
+    Tabs({ barPosition: BarPosition.End }) {
+      TabContent() {
+        Column().width('100%').height(30).backgroundColor(Color.Blue)
+      }.tabBar('C')
+      TabContent() {
+        Column().width('100%').height(30).backgroundColor(Color.Green)
+      }.tabBar('D')
+    }
+    .id('tabsApiCovStatic_tabsBottom')
+    .width('100%')
+    .height(100)
+    .barStyle(TabBarStyle.BOTTOM)
+  }
+
+  @Builder
+  tabsBarStyleBottomSection() {
+    Tabs({ barPosition: BarPosition.Start }) {
+      TabContent() {
+        Column().width('100%').height(30).backgroundColor(Color.Blue)
+      }.tabBar('E')
+      TabContent() {
+        Column().width('100%').height(30).backgroundColor(Color.Green)
+      }.tabBar('F')
+    }
+    .id('tabsApiCovStatic_tabsSidebar')
+    .width('100%')
+    .height(100)
+    .barStyle(TabBarStyle.SIDEBAR)
   }
 }

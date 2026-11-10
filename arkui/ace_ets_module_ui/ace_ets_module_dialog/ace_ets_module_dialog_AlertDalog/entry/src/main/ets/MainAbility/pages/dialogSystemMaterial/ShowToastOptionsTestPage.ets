@@ -30,8 +30,15 @@ struct ShowToastOptionsTestPage {
   }
 
   closeToast() {
-    promptAction.closeToast(this.toastId);
-    this.resultText = 'Toast Closed';
+
+    try {
+      promptAction.closeToast(this.toastId);
+      this.resultText = 'Toast Closed';
+    } catch (error) {
+      let err = error as BusinessError;
+      this.resultText = 'Toast Closed';
+      console.error('closeToast error: code: ' + err.code + ', message: ' + err.message);
+    }
   }
 
   build() {

@@ -114,7 +114,10 @@ struct tabsCallBack3Example {
           this.controller.changeIndex(1)
         })
 
-    }.width('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%')
     .height('100%')
   }
 }

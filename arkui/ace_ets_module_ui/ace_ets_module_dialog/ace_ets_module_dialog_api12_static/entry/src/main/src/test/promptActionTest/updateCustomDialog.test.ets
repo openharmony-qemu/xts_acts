@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, it, expect, Level, TestType, Size } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level, TestType, Size } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -21,6 +21,8 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import window from '@ohos.window';
+
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 
 export default function updateCustomDialog() {
   describe('updateCustomDialog', () => {
@@ -58,7 +60,7 @@ it('updateCustomDialog_static_0100', Level.LEVEL2, async (done: () => void): Pro
       let button:Component = await driver.findComponent(ON.id('updateCustomDialogXTS')) as Component;
       await button.click();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070);
+      await driver.triggerKey(2070, displayID);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('updateCustomDialogMessage');
       let obj = JSON.parseJsonElement(strJson);

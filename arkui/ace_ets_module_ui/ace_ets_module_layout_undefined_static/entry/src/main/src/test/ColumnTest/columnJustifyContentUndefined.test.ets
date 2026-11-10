@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import {  Component,  Driver,  ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -45,36 +45,42 @@ export default function ColumnJustifyContentUndefinedTest() {
     });
 
     /**
-     * @tc.number    ColumnJustifyContentUndefinedTest_static_0100
-     * @tc.name      ColumnJustifyContentUndefinedTest_static_0100
-     * @tc.desc      ColumnJustifyContentUndefinedTest_static_0100
+     * @tc.number    SUB_ARKUI_API_ColumnJustifyContentUndefinedTest_static_0100
+     * @tc.name      SUB_ARKUI_API_ColumnJustifyContentUndefinedTest_static_0100
+     * @tc.desc      SUB_ARKUI_API_ColumnJustifyContentUndefinedTest_static_0100
      * @tc.level     Level.LEVEL1
      */
-    it('ColumnJustifyContentUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('ColumnJustifyContentUndefinedTest_static_0100 START');
-      await CommonFunc.sleep(500);
+    it('SUB_ARKUI_API_ColumnJustifyContentUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('SUB_ARKUI_API_ColumnJustifyContentUndefinedTest_static_0100 START');
+        await CommonFunc.sleep(500);
 
-      let strJson = inspector.getInspectorByKey('Column_JustifyContent');
-      let obj = JSON.parseJsonElement(strJson);
-      await CommonFunc.sleep(1000);
-      console.info('Test component obj is: ' + obj.getElement('$attrs'));
-      console.info('Test component obj.justifyContent is: ' + obj.getElement('$attrs').getString('justifyContent'));
-      expect(obj.getElement('$attrs').getString('justifyContent')).assertEqual('FlexAlign.End');
+        let strJson = inspector.getInspectorByKey('Column_JustifyContent');
+        let obj = JSON.parseJsonElement(strJson);
+        await CommonFunc.sleep(1000);
+        console.info('Test component obj is: ' + obj.getElement('$attrs'));
+        console.info('Test component obj.justifyContent is: ' + obj.getElement('$attrs').getString('justifyContent'));
+        expect(obj.getElement('$attrs').getString('justifyContent')).assertEqual('FlexAlign.End');
 
 
-      let driver = Driver.create();
-      let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
-      await btn_true.click();
-      await CommonFunc.sleep(1000);
+        let driver = Driver.create();
+        let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+        await btn_true.click();
+        await CommonFunc.sleep(1000);
 
-      let strJson1 = inspector.getInspectorByKey('Column_JustifyContent');
-      let obj1 = JSON.parseJsonElement(strJson1);
-      await CommonFunc.sleep(1000);
-      console.info('Test component obj is: ' + obj1.getElement('$attrs'));
-      console.info('Test component obj.justifyContent is: ' + obj1.getElement('$attrs').getString('justifyContent'));
-      expect(obj1.getElement('$attrs').getString('justifyContent')).assertEqual('FlexAlign.Start');
-      console.info('ColumnJustifyContentUndefinedTest_static_0100 END');
-      done();
+        let strJson1 = inspector.getInspectorByKey('Column_JustifyContent');
+        let obj1 = JSON.parseJsonElement(strJson1);
+        await CommonFunc.sleep(1000);
+        console.info('Test component obj is: ' + obj1.getElement('$attrs'));
+        console.info('Test component obj.justifyContent is: ' + obj1.getElement('$attrs').getString('justifyContent'));
+        expect(obj1.getElement('$attrs').getString('justifyContent')).assertEqual('FlexAlign.Start');
+        console.info('SUB_ARKUI_API_ColumnJustifyContentUndefinedTest_static_0100 END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_ColumnJustifyContentUndefinedTest_static_0100] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

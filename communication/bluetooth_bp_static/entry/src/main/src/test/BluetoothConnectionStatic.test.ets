@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, Hypium, beforeEach } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, Hypium, beforeEach } from "@ohos/hypium-static/src/main/indexStatic";
 import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import connection from '@ohos.bluetooth.connection';
+import btCommon from '@ohos.bluetooth.common';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import common from '@ohos.app.ability.common';
 import { Permissions } from 'permissions';
@@ -63,6 +64,10 @@ function BondStateParam1(data: connection.BondStateParam) {
   hilog.info(domain, tag, "bondStateChange on:" + JSON.stringify(data)
     + 'bondStateChange deviceId:' + data.deviceId + 'bondStateChange state:' + data.state + 'bondStateChange cause:' +
     data.cause);
+}
+
+function onReceiveEvent_ScanMode(data: connection.ScanMode) {
+  hilog.info(domain, tag, 'bluetooth scanModeChange result:' + JSON.stringify(data));
 }
 
 export default function bluetoothConnectionTest(): void {
@@ -2516,5 +2521,201 @@ export default function bluetoothConnectionTest(): void {
       }
       done();
     });
+
+    /**
+     * @tc.number  SUB_COMMUNICATION_BP_TESTACLSTATE_0100
+     * @tc.name    testAclState
+     * @tc.desc    Test testAclState API functionality
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("testAclState", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let STATE_CONNECTED = connection.AclState.STATE_CONNECTED;
+          hilog.info(domain, tag, "AclState STATE_CONNECTED: " + STATE_CONNECTED);
+          expect(STATE_CONNECTED).assertEqual(0);
+
+          let STATE_DISCONNECTED = connection.AclState.STATE_DISCONNECTED;
+          hilog.info(domain, tag, "AclState STATE_DISCONNECTED: " + STATE_DISCONNECTED);
+          expect(STATE_DISCONNECTED).assertEqual(1);
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "testAclState errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.number  SUB_COMMUNICATION_BP_TESTBLUETOOTHADDRESSTYPE_0100
+     * @tc.name    testBluetoothAddressType
+     * @tc.desc    Test testBluetoothAddressType API functionality
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("testBluetoothAddressType", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let VIRTUAL = btCommon.BluetoothAddressType.VIRTUAL;
+          hilog.info(domain, tag, "BluetoothAddressType VIRTUAL: " + VIRTUAL);
+          expect(VIRTUAL).assertEqual(1);
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "testBluetoothAddressType errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.number  SUB_COMMUNICATION_BP_TESTBLUETOOTHRAWADDRESSTYPE_0100
+     * @tc.name    testBluetoothRawAddressType
+     * @tc.desc    Test testBluetoothRawAddressType API functionality
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("testBluetoothRawAddressType", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let PUBLIC = btCommon.BluetoothRawAddressType.PUBLIC;
+          hilog.info(domain, tag, "BluetoothRawAddressType PUBLIC: " + PUBLIC);
+          expect(PUBLIC).assertEqual(0);
+
+          let RANDOM = btCommon.BluetoothRawAddressType.RANDOM;
+          hilog.info(domain, tag, "BluetoothRawAddressType RANDOM: " + RANDOM);
+          expect(RANDOM).assertEqual(1);
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "testBluetoothRawAddressType errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.number  SUB_COMMUNICATION_BP_OFFSCANMODECHANGE_0100
+     * @tc.name    offScanModeChangeNoParamTest
+     * @tc.desc    Test offScanModeChange without param api23
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("offScanModeChangeNoParamTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          connection.onScanModeChange(onReceiveEvent_ScanMode);
+          connection.offScanModeChange();
+          hilog.info(domain, tag, "[bluetooth_js]connection offScanModeChange without param is success ");
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.error(domain, tag,
+            "offScanModeChange errCode:" + err.code + ",errMessage:" + err.message);
+          if (err.code === 801) {
+            hilog.info(domain, tag, "[bluetooth_js]connection offScanModeChange is not support");
+            expect(err.code).assertEqual(801);
+          } else {
+            expect().assertFail();
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.number  SUB_COMMUNICATION_BP_SETLOCALNAMEEMPTYSTRING_0100
+     * @tc.name    setLocalNameEmptyStringTest
+     * @tc.desc    Test setLocalName with empty string
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("setLocalNameEmptyStringTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          connection.setLocalName("");
+          hilog.info(domain, tag, "setLocalName empty string success");
+          expect().assertFail();
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, "setLocalName errCode:" + err.code + ",errMessage:" + err.message);
+          if (err.code === 801) {
+            hilog.info(domain, tag, 'api is not support');
+            expect(err.code).assertEqual(801);
+          } else if (err.code === 401) {
+            hilog.info(domain, tag, 'invalid param');
+            expect(err.code).assertEqual(401);
+          } else {
+            expect().assertFail();
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.number  SUB_COMMUNICATION_BP_GETREMOTEDEVICETRANSPORTEMPTYSTRING_0100
+     * @tc.name    getRemoteDeviceTransportEmptyStringTest
+     * @tc.desc    Test getRemoteDeviceTransport with empty string deviceId
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("getRemoteDeviceTransportEmptyStringTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let transport: connection.BluetoothTransport = connection.getRemoteDeviceTransport("");
+          hilog.info(domain, tag, "getRemoteDeviceTransport result: " + JSON.stringify(transport));
+          expect().assertFail();
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag,
+            "getRemoteDeviceTransport errCode:" + err.code + ",errMessage:" + err.message);
+          if (err.code === 801) {
+            hilog.info(domain, tag, 'api is not support');
+            expect(err.code).assertEqual(801);
+          } else if (err.code === 401) {
+            hilog.info(domain, tag, 'invalid param');
+            expect(err.code).assertEqual(401);
+          } else {
+            expect().assertFail();
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.number  SUB_COMMUNICATION_BP_GETVIRTUALADDRESSBYHASHEMPTYHASHVALUE_0100
+     * @tc.name    getVirtualAddressByHashEmptyHashValueTest
+     * @tc.desc    Test getVirtualAddressByHash with empty string hashValue
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("getVirtualAddressByHashEmptyHashValueTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let virtualAddress: string = connection.getVirtualAddressByHash(
+            connection.HashAlgorithmType.HASH_ALGORITHM_SHA256, "");
+          hilog.info(domain, tag, "getVirtualAddressByHash result: " + JSON.stringify(virtualAddress));
+          expect().assertFail();
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag,
+            "getVirtualAddressByHash errCode:" + err.code + ",errMessage:" + err.message);
+          if (err.code === 801) {
+            hilog.info(domain, tag, 'api is not support');
+            expect(err.code).assertEqual(801);
+          } else {
+            hilog.info(domain, tag, 'invalid param');
+            expect(err.code).assertEqual(2900015);
+          } 
+        }
+        done();
+      })
   })
 }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll,beforeEach} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll,beforeEach} from "@ohos/hypium-static/src/main/indexStatic";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import { SystemProperties } from '@ohos.arkui.component';
@@ -2480,6 +2480,44 @@ TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Pr
           done();
         }
       });
+
+   /**
+     * @tc.number     SUB_BASIC_WMS_setWindowPosition_Exceed_Max_Array_Static_0100
+     * @tc.name       SUB_BASIC_WMS_setWindowPosition_Exceed_Max_Array_Static_0100
+     * @tc.desc       SUB_BASIC_WMS_setWindowPosition_Exceed_Max_Array_Static_0100
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('SUB_BASIC_WMS_setWindowPosition_Exceed_Max_Array_Static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'SUB_BASIC_WMS_setWindowPosition_Exceed_Max_Array_Static_0100 ';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+        let windowPositionParamsArray: Array<window.WindowPositionParams> = [];
+        try {
+          let mainWindow = windowStage!.getMainWindowSync();
+          let windowId = mainWindow!.getWindowProperties().id;
+          console.info(`${msgStr} windowId: ${windowId}`);
+          await Utils.msSleep(500);
+          let windowPositionParams: window.WindowPositionParams = {
+            windowId: windowId,
+            insertAfter: windowId
+          };
+          for (let i = 0; i < 51; i++) {
+            windowPositionParamsArray.push(windowPositionParams)
+          }
+          await window.setWindowPosition(windowPositionParamsArray);
+          expect(false).assertTrue();
+          done();
+        } catch (exception) {
+          console.error(`${msgStr} Failed. Cause code: ${exception!.code},message: ${exception!.message}`);
+          expect(exception!.code).assertEqual(1300016);
+          expect(exception!.message !== '').assertTrue();
+          done();
+        }
+      });   
 
 })
 

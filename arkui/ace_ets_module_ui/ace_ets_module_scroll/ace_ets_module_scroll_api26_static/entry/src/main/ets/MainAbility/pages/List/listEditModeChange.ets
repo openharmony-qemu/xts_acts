@@ -101,6 +101,8 @@ struct ListEditModeChangeExample {
       .onEditModeChange(undefined)
       .id('list_onEditModeChange_undefined')
     }
+    .padding(10)
+    .margin(10)
     .width('100%')
     .height('100%')
     .backgroundColor('#F5F5F5')

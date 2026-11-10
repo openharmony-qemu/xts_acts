@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, beforeEach, afterEach, Level } from '../../../../hypium/index';
+import { describe, it, expect, beforeEach, afterEach, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Driver, ON, Rect } from '@ohos.UiTest';
 import { Router } from '@ohos.arkui.UIContext';
@@ -101,9 +101,9 @@ export default function ScrollGetScrollStateTest() {
         let endY: number = Math.round(rect.top + (rect.bottom - rect.top) * 0.2);
         await driver.swipeBetween(
           { x: centerX.toInt(),
-            y: startY.toInt(), displayId: displayId },
+            y: startY.toInt(), displayId: displayId.toInt() },
           { x: centerX.toInt(),
-            y: endY.toInt(), displayId: displayId }
+            y: endY.toInt(), displayId: displayId.toInt() }
         );
         await Utils.sleep(2000);
         let record: string = `${AppStorage.get<string>('getScrollState_stateRecord')}`;
@@ -159,9 +159,9 @@ export default function ScrollGetScrollStateTest() {
         let endY: number = Math.round(rect.top + (rect.bottom - rect.top) * 0.2);
         await driver.swipeBetween(
           { x: centerX.toInt(),
-            y: startY.toInt(), displayId: displayId },
+            y: startY.toInt(), displayId: displayId.toInt() },
           { x: centerX.toInt(),
-            y: endY.toInt(), displayId: displayId }
+            y: endY.toInt(), displayId: displayId.toInt() }
         );
         await Utils.sleep(2000);
         let btn = await driver.findComponent(ON.id('getScrollState_default'));

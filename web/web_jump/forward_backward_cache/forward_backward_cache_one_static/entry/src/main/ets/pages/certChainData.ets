@@ -83,11 +83,8 @@ struct Second {
             }
 
             case "onErrorReceive": {
-              this.webviewCtl.refresh();
+              this.onErrorReceive = false;
               this.webviewCtl.loadUrl("https://example.",);
-              setTimeout(() => {
-                Utils.emitEvent(this.onErrorReceive, 2024120992)
-              }, 6000)
               break;
             }
 
@@ -138,6 +135,7 @@ struct Second {
         .onErrorReceive(event => {
           if (event) {
             this.onErrorReceive = true;
+            Utils.emitEvent(this.onErrorReceive, 2024120992);
             console.log('onErrorReceive ==============> ')
             console.log('getErrorInfo:' + event.error.getErrorInfo())
             console.log('getErrorCode:' + event.error.getErrorCode())

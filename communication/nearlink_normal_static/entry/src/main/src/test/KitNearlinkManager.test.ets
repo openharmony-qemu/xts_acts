@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../hypium/index';
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-static/src/main/indexStatic';
 import manager from '@ohos.nearlink.manager';
 import Utils from './Util.test';
 import hilog from '@ohos.hilog';
@@ -226,6 +226,30 @@ export default function nearLinkManagerTest(): void {
         hilog.error(0x0000, 'testTag', '[Nearlink Test]isNearLinkSupported fail %{public}s', JSON.stringify(err));
         expect().assertFail();
       }
+      done();
+    })
+
+    /**
+     * @tc.name SUB_Communication_XTS_NearLink_Manager_ISSUP_static_0300
+     * @tc.number SUB_Communication_XTS_NearLink_Manager_ISSUP_0300
+     * @tc.desc  isFrameType4Supported method test.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('SUB_Communication_XTS_NearLink_Manager_ISSUP_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let caseName = 'SUB_Communication_XTS_NearLink_Manager_ISSUP_static_0300';
+      hilog.info(0x0000, 'testTag', '%{public}s test start', caseName);
+      try {
+        hilog.info(0x0000, 'testTag', '%{public}s', '[Nearlink Test] call isFrameType4Supported start');
+        let isFrameType4Supported: boolean = manager.isFrameType4Supported();
+        hilog.info(0x0000, 'testTag', '[Nearlink Test] isFrameType4Supported result: %{public}s', JSON.stringify(isFrameType4Supported));
+        expect(isFrameType4Supported === true || isFrameType4Supported === false).assertTrue();
+      } catch (err) {
+        hilog.info(0x0000, 'testTag', '[NearLink_test]nearLink isFrameType4Supported fail %{public}s', JSON.stringify(err));
+        expect().assertFail();
+      }
+      hilog.info(0x0000, 'testTag', '%{public}s test end', caseName);
       done();
     })
 

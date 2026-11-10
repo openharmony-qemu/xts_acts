@@ -73,6 +73,8 @@ struct tabsBarBackgroundColorModifierTest {
       }
       .width(300)
     }
+    .padding(10)
+    .margin(10)
     .height(300)
   }
 }

@@ -17,7 +17,7 @@
 import emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '@ohos/hypium-static/src/main/indexStatic'
 import Utils from '../../../ets/MainAbility/common/Utils'
 
 import accessibility from '@ohos.accessibility';

@@ -16,7 +16,7 @@
 import image from '@ohos.multimedia.image';
 import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, Hypium, it, Level } from '../../../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, Hypium, it, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import { BusinessError } from '@ohos.base';
 
 const TAG = 'xtsStatic_imagePackerReleaseStaticTest';

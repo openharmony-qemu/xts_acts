@@ -25,6 +25,7 @@ import CollectionsArrayContainsAllBuiltinTest from './CollectionsArrayContainsAl
 import CollectionsArrayRetainAllSendableTest from './CollectionsArrayRetainAllSendableTest.test';
 import CollectionsArrayRetainAllBuiltinTest from './CollectionsArrayRetainAllBuiltinTest.test';
 import CollectionsArrayRetainAllPredicateTest from './CollectionsArrayRetainAllPredicateTest.test';
+
 import arrayConstructorSuite from './CollectionsArrayBaseTest/ArrayConstructor.test';
 import arrayTraversalSuite from './CollectionsArrayBaseTest/ArrayTraversal.test';
 import arrayQuerySuite from './CollectionsArrayBaseTest/ArrayQuery.test';
@@ -62,6 +63,7 @@ import ArrayConcurrentTest from './ArrayConcurrent.test';
 import ArrayExtendedTest from './ArrayExtended.test';
 import CollectionsArrayAtTestTest from './All/CollectionsArrayAtTest.test';
 import CollectionsArrayCombinationTestErrTest from './All/CollectionsArrayCombinationTestErr.test';
+import CollectionsArrayErrorPathTest from './All/CollectionsArrayErrorPathTest.test';
 import CollectionsArrayConcatTestTest from './All/CollectionsArrayConcatTest.test';
 import CollectionsArrayConstructorTestTest from './All/CollectionsArrayConstructorTest.test';
 import CollectionsArrayCopyWithinTestTest from './All/CollectionsArrayCopyWithinTest.test';
@@ -131,6 +133,12 @@ import ContainerComboTest from './collections/ContainerComboTest.test'
 import ConcurrentFactorComboTest from './collections/ConcurrentFactorComboTest.test'
 import RealWorldComboTest from './collections/RealWorldComboTest.test'
 import StressStabilityComboTest from './collections/StressStabilityComboTest.test'
+import CollectionsArrayConcurrentStrictTest from './All/CollectionsArrayConcurrentStrictTest.test';
+import CollectionsArrayForEachEdgeTest from './All/CollectionsArrayForEachEdgeTest.test';
+import CollectionsArrayReduceEdgeTest from './All/CollectionsArrayReduceEdgeTest.test';
+import CollectionsArrayStabilityTest from './All/CollectionsArrayStabilityTest.test';
+import CollectionsReceiverTypeCheckTest from './All/CollectionsReceiverTypeCheckTest.test';
+import CollectionsArrayThisArgTest from './All/CollectionsArrayThisArgTest.test';
 
 export default function testsuite() {
   CollectionsArrayCombinationTest();
@@ -182,6 +190,7 @@ export default function testsuite() {
   ArrayExtendedTest();
   CollectionsArrayAtTestTest();
   CollectionsArrayCombinationTestErrTest();
+  CollectionsArrayErrorPathTest();
   CollectionsArrayConcatTestTest();
   CollectionsArrayConstructorTestTest();
   CollectionsArrayCopyWithinTestTest();
@@ -249,5 +258,10 @@ export default function testsuite() {
   ContainerComboTest();
   ConcurrentFactorComboTest();
   RealWorldComboTest();
+  CollectionsArrayConcurrentStrictTest();
+  CollectionsArrayForEachEdgeTest();
+  CollectionsArrayReduceEdgeTest();
+  CollectionsArrayStabilityTest();
+  CollectionsReceiverTypeCheckTest();
+  CollectionsArrayThisArgTest();
 };
-

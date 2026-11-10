@@ -57,7 +57,10 @@ struct router_getStateByIndex4 {
           this.str4 = String(this.getUIContext().getRouter().getStateByIndex(3))
         })
 
-    }.width('100%').height('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%').height('100%')
 
   }
 }
