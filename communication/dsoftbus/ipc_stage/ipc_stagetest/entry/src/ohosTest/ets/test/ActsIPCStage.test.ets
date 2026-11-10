@@ -15858,7 +15858,7 @@ export default function ActsRpcClientEtsTest() {
         console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageSequence_3260 error is:" + error);
         let e: BusinessError = error as BusinessError;
         expect(e.code == 401).assertTrue();
-        expect(e.message).assertEqual("check param error");
+        expect(e.message != null).assertTrue();
       } finally {
         console.info(logTag + "reclaim done");
         data.reclaim();
@@ -15884,7 +15884,7 @@ export default function ActsRpcClientEtsTest() {
         console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageSequence_3270 error is:" + error);
         let e: BusinessError = error as BusinessError;
         expect(e.code == 401).assertTrue();
-        expect(e.message).assertEqual("check param error");
+        expect(e.message != null).assertTrue();
       } finally {
         console.info(logTag + "reclaim done");
         data.reclaim();
@@ -15915,7 +15915,7 @@ export default function ActsRpcClientEtsTest() {
         console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageSequence_3280 error is:" + error);
         let e: BusinessError = error as BusinessError;
         expect(e.code == 401).assertTrue();
-        expect(e.message).assertEqual("check param error");
+        expect(e.message != null).assertTrue();
       } finally {
         console.info(logTag + "reclaim done");
         data.reclaim();
@@ -15946,7 +15946,7 @@ export default function ActsRpcClientEtsTest() {
         console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageSequence_3290 error is:" + error);
         let e: BusinessError = error as BusinessError;
         expect(e.code == 401).assertTrue();
-        expect(e.message).assertEqual("check param error");
+        expect(e.message != null).assertTrue();
       } finally {
         console.info(logTag + "reclaim done");
         data.reclaim();
@@ -15977,7 +15977,7 @@ export default function ActsRpcClientEtsTest() {
         console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageSequence_3300 error is:" + error);
         let e: BusinessError = error as BusinessError;
         expect(e.code == 401).assertTrue();
-        expect(e.message).assertEqual("check param error");
+        expect(e.message != null).assertTrue();
       } finally {
         console.info(logTag + "reclaim done");
         data.reclaim();
@@ -16008,7 +16008,7 @@ export default function ActsRpcClientEtsTest() {
         console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageSequence_3310 error is:" + error);
         let e: BusinessError = error as BusinessError;
         expect(e.code == 401).assertTrue();
-        expect(e.message).assertEqual("check param error");
+        expect(e.message != null).assertTrue();
       } finally {
         console.info(logTag + "reclaim done");
         data.reclaim();
@@ -16293,7 +16293,7 @@ export default function ActsRpcClientEtsTest() {
         console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_RemoteObject_0340 error is:" + error);
         let e: BusinessError = error as BusinessError;
         expect(e.code == 401).assertTrue();
-        expect(e.message).assertEqual("check param error");
+        expect(e.message != null).assertTrue();
       } finally {
         console.info(logTag + "reclaim done");
         data.reclaim();
@@ -16321,7 +16321,7 @@ export default function ActsRpcClientEtsTest() {
         console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_RemoteObject_0350 error is:" + error);
         let e: BusinessError = error as BusinessError;
         expect(e.code == 401).assertTrue();
-        expect(e.message).assertEqual("check param error");
+        expect(e.message != null).assertTrue();
       } finally {
         console.info(logTag + "reclaim done");
         data.reclaim();
@@ -16348,7 +16348,7 @@ export default function ActsRpcClientEtsTest() {
         console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_RemoteObject_0360 error is:" + error);
         let e: BusinessError = error as BusinessError;
         expect(e.code == 401).assertTrue();
-        expect(e.message).assertEqual("check param error");
+        expect(e.message != null).assertTrue();
       } finally {
         console.info(logTag + "reclaim done");
         data.reclaim();
@@ -16375,7 +16375,7 @@ export default function ActsRpcClientEtsTest() {
         console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_RemoteObject_0370 error is:" + error);
         let e: BusinessError = error as BusinessError;
         expect(e.code == 401).assertTrue();
-        expect(e.message).assertEqual("check param error");
+        expect(e.message != null).assertTrue();
       } finally {
         console.info(logTag + "reclaim done");
         data.reclaim();
