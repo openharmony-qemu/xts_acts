@@ -15,7 +15,9 @@
  */
 
 import abilityTest from './Ability.test';
+import fileEntityStaticTest from './FileEntity.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
   abilityTest();
+  fileEntityStaticTest();
 }
