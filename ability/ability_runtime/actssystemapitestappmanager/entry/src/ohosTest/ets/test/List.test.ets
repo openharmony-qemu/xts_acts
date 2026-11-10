@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import systemAPITestAppManagerTest from './SystemAPITestAppManager.test'
+import focusedApplicationChangedTest from './FocusedApplicationChanged.test'
 
 export default function testsuite() {
   systemAPITestAppManagerTest()
+  focusedApplicationChangedTest()
 }

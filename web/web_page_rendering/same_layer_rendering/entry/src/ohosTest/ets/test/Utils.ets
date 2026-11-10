@@ -250,14 +250,14 @@ export default class Utils {
   static async waitAndClickComponent(driver: Driver, componentId: string, logFlag: string): Promise<void> {
     let retryTimes: number = 0;
     let retry: boolean = true;
-    while (retry && retryTimes <= 3) {
+    while (retry && retryTimes <= 10) {
       retry = false;
       try {
         const buttonComponent = await driver.waitForComponent(ON.id(componentId), 10000);
         if (!buttonComponent) {
           console.error(`${logFlag} error: buttonConmponent is null.`);
           retry = true;
-          await Utils.sleep(1000);
+          await Utils.sleep(2000);
           retryTimes++;
           console.log(logFlag + ' retryTimes = ' + retryTimes);
         } else {
@@ -269,7 +269,7 @@ export default class Utils {
           `${logFlag} ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
         if (error.code === 17000002) {
           retry = true;
-          await Utils.sleep(1000);
+          await Utils.sleep(2000);
           retryTimes++;
           console.log(logFlag + ' retryTimes = ' + retryTimes);
         }

@@ -19,7 +19,7 @@ import {
   TextAlign, List, ListItem, ListScroller, Builder, ForEach, Row, TransitionType, FlexAlign,
   ColumnOptions,  AttributeModifier, Divider, VerticalAlign
 } from '@ohos.arkui.component'
-import { $r } from '@ohos.arkui.component'
+import { $r, HorizontalAlign } from '@ohos.arkui.component'
 import { State ,Observed} from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
@@ -37,7 +37,7 @@ struct RowExample {
           Text('2')
         }.width('40%').height('80%').backgroundColor(0x00FFFF).id('row2')
       }
-      .width('90%')
+      .width('80%')
       .height('15%')
       .border({ width: 1 })
       .reverse(this.isUndefined ? undefined : false)
@@ -50,6 +50,7 @@ struct RowExample {
         }
         )
         .id('changeButton')
-    }.width('100%')
+    }.width('80%')
+    .alignItems(HorizontalAlign.Center)
   }
 }

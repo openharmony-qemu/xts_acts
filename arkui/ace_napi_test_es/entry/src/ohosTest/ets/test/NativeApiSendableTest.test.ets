@@ -189,8 +189,13 @@ export default function nativeApiSendableJsunit() {
         await Promise.resolve();
         exchange(flag, 2, 0);
       })
-      await Promise.all([p, p0])
-      done();
+      try {
+        await Promise.all([p, p0])
+        done();
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -212,8 +217,13 @@ export default function nativeApiSendableJsunit() {
         }, utils.locks.AsyncLockMode.SHARED);
         exchange(flag, 2, 0);
       }, utils.locks.AsyncLockMode.SHARED);
-      await Promise.all([p]);
-      done();
+      try {
+        await Promise.all([p]);
+        done();
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -233,8 +243,13 @@ export default function nativeApiSendableJsunit() {
       worker0.postMessage('callLockAsyncAfterRunCleanupTest');
       await new Promise<void>(resolve => setTimeout(resolve, 2000));
       let p0 = lock.lockAsync(() => {});
-      await Promise.all([p, p0]);
-      done();
+      try {
+        await Promise.all([p, p0]);
+        done();
+      } catch (err) {
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

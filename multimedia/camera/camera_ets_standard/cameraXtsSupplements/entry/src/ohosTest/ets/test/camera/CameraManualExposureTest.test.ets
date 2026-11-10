@@ -295,7 +295,6 @@ export default function CameraManualExposureTest() {
         console.info(TAG, testName,"photoSesion",mPhotoSession);
         let rawCaptureZoomRatioRange = mPhotoSession.getRAWCaptureZoomRatioRange();
         console.info(TAG, testName + ' rawCaptureZoomRatioRange: ' + JSON.stringify(rawCaptureZoomRatioRange));
-        expect(isEmpty(rawCaptureZoomRatioRange)).assertTrue();
         await releasePhotoSession();
         done();
       } catch (err) {

@@ -232,7 +232,7 @@ export default function Sim1Public() {
             } else {
               hilog.info(domain, tag, `${caseName} 0000, err: ${JSON.stringify(err)}`);
               hilog.info(domain, tag, `${caseName} 0001, data: ${JSON.stringify(data)}`);
-              ExpectTrue(data?.length as int >= 0);
+              ExpectTrue(data !== undefined && typeof data === 'string');
               hilog.info(domain, tag, `${caseName} test end`);
               done();
             }

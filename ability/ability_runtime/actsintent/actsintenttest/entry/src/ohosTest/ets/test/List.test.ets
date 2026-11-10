@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import abilityTest from './Ability.test'
+import fileEntityTest from './FileEntity.test'
 
 export default function testsuite() {
   abilityTest()
+  fileEntityTest()
 }

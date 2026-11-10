@@ -63,5 +63,6 @@ struct chainModeTest {
             })
         }
       }
+      .alignItems(HorizontalAlign.Center)
     }
  }

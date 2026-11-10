@@ -60,7 +60,6 @@ export default function GlobalClearTimeoutTest(): void {
       const timerId = setTimeout(() => {
         executed = true;
       }, 20);
-      clearTimeout(100);
       await Utils.msSleep(80);
       clearTimeout(timerId);
       expect(executed).assertTrue();

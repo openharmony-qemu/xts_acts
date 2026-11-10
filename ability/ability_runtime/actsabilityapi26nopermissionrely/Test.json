@@ -1,0 +1,29 @@
+{
+    "description": "API26 no-permission rely coverage for FocusedApplication/backToCaller 201",
+    "driver": {
+        "type": "OHJSUnitTest",
+        "test-timeout": "180000",
+        "shell-timeout": "180000",
+        "bundle-name": "com.test.actsabilityapi26nopermissionrely",
+        "module-name": "entry_test"
+    },
+    "kits": [
+        {
+            "test-file-name": [
+                "ActsAbilityApi26NoPermissionTest.hap"
+            ],
+            "type": "AppInstallKit",
+            "cleanup-apps": true
+        },
+        {
+            "type": "ShellKit",
+            "run-command": [
+                "power-shell wakeup",
+                "uinput -T -m 300 1279 280 200",
+                "uinput -T -d 300 600 -u 300 100",
+                "power-shell timeout -o 86400000",
+                "power-shell setmode 602"
+            ]
+        }
+    ]
+}

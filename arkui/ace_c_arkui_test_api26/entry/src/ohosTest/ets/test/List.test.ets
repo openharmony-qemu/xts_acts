@@ -63,7 +63,9 @@ import ArcAlphabetIndexerEventCallbackTest from './arcAlphabetIndexer/ArcAlphabe
 import SetUiDvsyncSwitchTest from './node/SetUiDvsyncSwitchTest.test'
 import RuntimeCheckModeTest from './nativeModule/RuntimeCheckModeTest.test'
 import UIAgentGetPageTextTest from './node/UIAgentGetPageTextTest.test'
-import UIAgentGetTreeJsonTest from './node/UIAgentGetTreeJsonTest.test'
+import UIAgentTreeRequestCreateTest from './node/UIAgentTreeRequestCreateTest.test'
+import UIAgentTreeRequestSetFilterTest from './node/UIAgentTreeRequestSetFilterTest.test'
+import UIContentChangeEventGetTest from './node/UIContentChangeEventGetTest.test'
 import GetImagesByNodeIdAsyncTest from './node/GetImagesByNodeIdAsyncTest.test'
 import ContentChangeEventTest from './node/ContentChangeEventTest.test'
 import NativeModuleAnimationTest from './animate/NativeModuleAnimation.test'
@@ -82,6 +84,9 @@ export default function testsuite() {
   SetUiDvsyncSwitchTest() // 此条特殊用例请放在首行，勿动
   UIAgentGetPageTextTest()
   UIAgentGetTreeJsonTest()
+  UIAgentTreeRequestCreateTest()
+  UIAgentTreeRequestSetFilterTest()
+  UIContentChangeEventGetTest()
   GetImagesByNodeIdAsyncTest()
   ContentChangeEventTest()
   RegisterCommonAreaApproximateChangeEventTest();

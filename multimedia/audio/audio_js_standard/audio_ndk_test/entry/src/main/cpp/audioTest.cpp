@@ -7765,6 +7765,535 @@ static napi_value AudioStreamManagerIsFastRecordingSupported_001(napi_env env, n
     return result;
 }
 
+static napi_value SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0100(napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamManager *streamManager;
+    OH_AudioStreamInfo streamInfo;
+    napi_value result;
+    OH_AudioCommon_Result res = OH_AudioManager_GetAudioStreamManager(&streamManager);
+    if (res != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("OH_AudioManager_GetAudioStreamManager FAILED, res is %{public}d", res);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    streamInfo.samplingRate = NORMAL_RATE;
+    streamInfo.channelLayout = (OH_AudioChannelLayout)CHANNEL_LAYOUT;
+    streamInfo.encodingType = (OH_AudioStream_EncodingType)ENCODING_TYPE;
+    streamInfo.sampleFormat = (OH_AudioStream_SampleFormat)g_sampleFormat;
+
+    bool isSupported = false;
+    for (auto usage : VALID_OH_STREAM_USAGES) {
+        OH_AudioCommon_Result queryRes =
+            OH_AudioStreamManager_IsUltraFastPlaybackSupported(streamManager, &streamInfo, usage, &isSupported);
+        if (queryRes != AUDIOCOMMON_RESULT_SUCCESS) {
+            LOG("SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0100:FAIL, queryRes is: %{public}d", queryRes);
+            napi_create_int32(env, TEST_FAIL, &result);
+            return result;
+        }
+        if (isSupported != false && isSupported != true) {
+            LOG("SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0100:"
+                "FAIL, isSupported is: %{public}d", isSupported);
+            napi_create_int32(env, TEST_FAIL, &result);
+            return result;
+        }
+    }
+
+    napi_create_int32(env, TEST_PASS, &result);
+    return result;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0200(napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamManager *streamManager;
+    OH_AudioStreamInfo streamInfo;
+    napi_value result;
+    OH_AudioCommon_Result res = OH_AudioManager_GetAudioStreamManager(&streamManager);
+    if (res != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("OH_AudioManager_GetAudioStreamManager FAILED, res is %{public}d", res);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    streamInfo.samplingRate = NORMAL_RATE;
+    streamInfo.channelLayout = (OH_AudioChannelLayout)CHANNEL_LAYOUT;
+    streamInfo.encodingType = (OH_AudioStream_EncodingType)ENCODING_TYPE;
+    streamInfo.sampleFormat = (OH_AudioStream_SampleFormat)g_sampleFormat;
+
+    bool isSupported = false;
+    OH_AudioCommon_Result queryRes =
+        OH_AudioStreamManager_IsUltraFastPlaybackSupported(nullptr, &streamInfo, AUDIOSTREAM_USAGE_MUSIC, &isSupported);
+    if (queryRes != AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        LOG("SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0200:FAIL, queryRes is: %{public}d", queryRes);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    napi_create_int32(env, TEST_PASS, &result);
+    return result;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0300(napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamManager *streamManager;
+    napi_value result;
+    OH_AudioCommon_Result res = OH_AudioManager_GetAudioStreamManager(&streamManager);
+    if (res != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("OH_AudioManager_GetAudioStreamManager FAILED, res is %{public}d", res);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    bool isSupported = false;
+    OH_AudioCommon_Result queryRes =
+        OH_AudioStreamManager_IsUltraFastPlaybackSupported(streamManager, nullptr, AUDIOSTREAM_USAGE_MUSIC,
+                                                           &isSupported);
+    if (queryRes != AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        LOG("SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0300:FAIL, queryRes is: %{public}d", queryRes);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    napi_create_int32(env, TEST_PASS, &result);
+    return result;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0400(napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamManager *streamManager;
+    OH_AudioStreamInfo streamInfo;
+    napi_value result;
+    OH_AudioCommon_Result res = OH_AudioManager_GetAudioStreamManager(&streamManager);
+    if (res != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("OH_AudioManager_GetAudioStreamManager FAILED, res is %{public}d", res);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    streamInfo.samplingRate = NORMAL_RATE;
+    streamInfo.channelLayout = (OH_AudioChannelLayout)CHANNEL_LAYOUT;
+    streamInfo.encodingType = (OH_AudioStream_EncodingType)ENCODING_TYPE;
+    streamInfo.sampleFormat = (OH_AudioStream_SampleFormat)g_sampleFormat;
+
+    OH_AudioCommon_Result queryRes =
+        OH_AudioStreamManager_IsUltraFastPlaybackSupported(streamManager, &streamInfo, AUDIOSTREAM_USAGE_MUSIC,
+                                                           nullptr);
+    if (queryRes != AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        LOG("SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0400:FAIL, queryRes is: %{public}d", queryRes);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    napi_create_int32(env, TEST_PASS, &result);
+    return result;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0100(napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamManager *streamManager;
+    OH_AudioStreamInfo streamInfo;
+    napi_value result;
+    OH_AudioCommon_Result res = OH_AudioManager_GetAudioStreamManager(&streamManager);
+    if (res != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("OH_AudioManager_GetAudioStreamManager FAILED, res is %{public}d", res);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    streamInfo.samplingRate = NORMAL_RATE;
+    streamInfo.channelLayout = (OH_AudioChannelLayout)CHANNEL_LAYOUT;
+    streamInfo.encodingType = (OH_AudioStream_EncodingType)ENCODING_TYPE;
+    streamInfo.sampleFormat = (OH_AudioStream_SampleFormat)g_sampleFormat;
+
+    bool isSupported = false;
+    for (auto source : VALID_OH_SOURCE_TYPES) {
+        OH_AudioCommon_Result queryRes =
+            OH_AudioStreamManager_IsUltraFastRecordingSupported(streamManager, &streamInfo, source, &isSupported);
+        if (queryRes != AUDIOCOMMON_RESULT_SUCCESS) {
+            LOG("SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0100:FAIL, queryRes is: %{public}d", queryRes);
+            napi_create_int32(env, TEST_FAIL, &result);
+            return result;
+        }
+        if (isSupported != false && isSupported != true) {
+            LOG("SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0100:"
+                "FAIL, isSupported is: %{public}d", isSupported);
+            napi_create_int32(env, TEST_FAIL, &result);
+            return result;
+        }
+    }
+
+    napi_create_int32(env, TEST_PASS, &result);
+    return result;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0200(napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamManager *streamManager;
+    OH_AudioStreamInfo streamInfo;
+    napi_value result;
+    OH_AudioCommon_Result res = OH_AudioManager_GetAudioStreamManager(&streamManager);
+    if (res != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("OH_AudioManager_GetAudioStreamManager FAILED, res is %{public}d", res);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    streamInfo.samplingRate = NORMAL_RATE;
+    streamInfo.channelLayout = (OH_AudioChannelLayout)CHANNEL_LAYOUT;
+    streamInfo.encodingType = (OH_AudioStream_EncodingType)ENCODING_TYPE;
+    streamInfo.sampleFormat = (OH_AudioStream_SampleFormat)g_sampleFormat;
+
+    bool isSupported = false;
+    OH_AudioCommon_Result queryRes =
+        OH_AudioStreamManager_IsUltraFastRecordingSupported(nullptr, &streamInfo,
+                                                            AUDIOSTREAM_SOURCE_TYPE_MIC, &isSupported);
+    if (queryRes != AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        LOG("SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0200:FAIL, queryRes is: %{public}d", queryRes);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    napi_create_int32(env, TEST_PASS, &result);
+    return result;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0300(napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamManager *streamManager;
+    napi_value result;
+    OH_AudioCommon_Result res = OH_AudioManager_GetAudioStreamManager(&streamManager);
+    if (res != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("OH_AudioManager_GetAudioStreamManager FAILED, res is %{public}d", res);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    bool isSupported = false;
+    OH_AudioCommon_Result queryRes =
+        OH_AudioStreamManager_IsUltraFastRecordingSupported(streamManager, nullptr,
+                                                            AUDIOSTREAM_SOURCE_TYPE_MIC, &isSupported);
+    if (queryRes != AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        LOG("SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0300:FAIL, queryRes is: %{public}d", queryRes);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    napi_create_int32(env, TEST_PASS, &result);
+    return result;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0400(napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamManager *streamManager;
+    OH_AudioStreamInfo streamInfo;
+    napi_value result;
+    OH_AudioCommon_Result res = OH_AudioManager_GetAudioStreamManager(&streamManager);
+    if (res != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("OH_AudioManager_GetAudioStreamManager FAILED, res is %{public}d", res);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    streamInfo.samplingRate = NORMAL_RATE;
+    streamInfo.channelLayout = (OH_AudioChannelLayout)CHANNEL_LAYOUT;
+    streamInfo.encodingType = (OH_AudioStream_EncodingType)ENCODING_TYPE;
+    streamInfo.sampleFormat = (OH_AudioStream_SampleFormat)g_sampleFormat;
+
+    OH_AudioCommon_Result queryRes =
+        OH_AudioStreamManager_IsUltraFastRecordingSupported(streamManager, &streamInfo,
+                                                            AUDIOSTREAM_SOURCE_TYPE_MIC, nullptr);
+    if (queryRes != AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        LOG("SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0400:FAIL, queryRes is: %{public}d", queryRes);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    napi_create_int32(env, TEST_PASS, &result);
+    return result;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_SET_ULTRA_FAST_LATENCY_MODE_0100(napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_RENDERER;
+    napi_value result;
+    OH_AudioStream_Result res = OH_AudioStreamBuilder_Create(&builder, type);
+    if (res != AUDIOSTREAM_SUCCESS) {
+        LOG("OH_AudioStreamBuilder_Create FAILED, res is %{public}d", res);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    res = OH_AudioStreamBuilder_SetLatencyMode(builder, AUDIOSTREAM_LATENCY_MODE_ULTRA_FAST);
+    if (res != AUDIOSTREAM_SUCCESS) {
+        LOG("SUB_MULTIMEDIA_AUDIO_SET_ULTRA_FAST_LATENCY_MODE_0100:FAIL, SetLatencyMode res is %{public}d", res);
+        OH_AudioStreamBuilder_Destroy(builder);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    OH_AudioStreamBuilder_Destroy(builder);
+    napi_create_int32(env, TEST_PASS, &result);
+    return result;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_SET_ULTRA_FAST_LATENCY_MODE_0200(napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    napi_value result;
+    OH_AudioStream_Result res = OH_AudioStreamBuilder_Create(&builder, type);
+    if (res != AUDIOSTREAM_SUCCESS) {
+        LOG("OH_AudioStreamBuilder_Create FAILED, res is %{public}d", res);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    res = OH_AudioStreamBuilder_SetLatencyMode(builder, AUDIOSTREAM_LATENCY_MODE_ULTRA_FAST);
+    if (res != AUDIOSTREAM_SUCCESS) {
+        LOG("SUB_MULTIMEDIA_AUDIO_SET_ULTRA_FAST_LATENCY_MODE_0200:FAIL, SetLatencyMode res is %{public}d", res);
+        OH_AudioStreamBuilder_Destroy(builder);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    OH_AudioStreamBuilder_Destroy(builder);
+    napi_create_int32(env, TEST_PASS, &result);
+    return result;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_GENERATE_RENDERER_ULTRA_FAST_0100(napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioRenderer *audioRenderer = nullptr;
+    napi_value result;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_RENDERER;
+    OH_AudioStream_Result res = OH_AudioStreamBuilder_Create(&builder, type);
+    if (res != AUDIOSTREAM_SUCCESS) {
+        LOG("OH_AudioStreamBuilder_Create FAILED, res is %{public}d", res);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    OH_AudioStreamBuilder_SetSamplingRate(builder, NORMAL_RATE);
+    OH_AudioStreamBuilder_SetChannelLayout(builder, (OH_AudioChannelLayout)CHANNEL_LAYOUT);
+    OH_AudioStreamBuilder_SetSampleFormat(builder, (OH_AudioStream_SampleFormat)g_sampleFormat);
+    OH_AudioStreamBuilder_SetEncodingType(builder, (OH_AudioStream_EncodingType)ENCODING_TYPE);
+    OH_AudioStreamBuilder_SetRendererInfo(builder, AUDIOSTREAM_USAGE_MUSIC);
+    OH_AudioStreamBuilder_SetLatencyMode(builder, AUDIOSTREAM_LATENCY_MODE_ULTRA_FAST);
+
+    OH_AudioStream_Result genRes = OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
+    if (genRes != AUDIOSTREAM_SUCCESS && genRes != AUDIOSTREAM_RESULT_ERROR_PERMISSION_DENIED &&
+        genRes != AUDIOSTREAM_ERROR_UNSUPPORTED_ABILITY) {
+        LOG("SUB_MULTIMEDIA_AUDIO_GENERATE_RENDERER_ULTRA_FAST_0100:FAIL, genRes is %{public}d", genRes);
+        OH_AudioStreamBuilder_Destroy(builder);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    if (genRes == AUDIOSTREAM_SUCCESS && audioRenderer != nullptr) {
+        OH_AudioRenderer_Release(audioRenderer);
+    }
+    OH_AudioStreamBuilder_Destroy(builder);
+    napi_create_int32(env, TEST_PASS, &result);
+    return result;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_GENERATE_CAPTURER_ULTRA_FAST_0100(napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioCapturer *audioCapturer = nullptr;
+    napi_value result;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStream_Result res = OH_AudioStreamBuilder_Create(&builder, type);
+    if (res != AUDIOSTREAM_SUCCESS) {
+        LOG("OH_AudioStreamBuilder_Create FAILED, res is %{public}d", res);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    OH_AudioStreamBuilder_SetSamplingRate(builder, NORMAL_RATE);
+    OH_AudioStreamBuilder_SetChannelLayout(builder, (OH_AudioChannelLayout)CHANNEL_LAYOUT);
+    OH_AudioStreamBuilder_SetSampleFormat(builder, (OH_AudioStream_SampleFormat)g_sampleFormat);
+    OH_AudioStreamBuilder_SetEncodingType(builder, (OH_AudioStream_EncodingType)ENCODING_TYPE);
+    OH_AudioStreamBuilder_SetCapturerInfo(builder, AUDIOSTREAM_SOURCE_TYPE_MIC);
+    OH_AudioStreamBuilder_SetLatencyMode(builder, AUDIOSTREAM_LATENCY_MODE_ULTRA_FAST);
+
+    OH_AudioStream_Result genRes = OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    if (genRes != AUDIOSTREAM_SUCCESS && genRes != AUDIOSTREAM_RESULT_ERROR_PERMISSION_DENIED &&
+        genRes != AUDIOSTREAM_ERROR_UNSUPPORTED_ABILITY) {
+        LOG("SUB_MULTIMEDIA_AUDIO_GENERATE_CAPTURER_ULTRA_FAST_0100:FAIL, genRes is %{public}d", genRes);
+        OH_AudioStreamBuilder_Destroy(builder);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    if (genRes == AUDIOSTREAM_SUCCESS && audioCapturer != nullptr) {
+        OH_AudioCapturer_Release(audioCapturer);
+    }
+    OH_AudioStreamBuilder_Destroy(builder);
+    napi_create_int32(env, TEST_PASS, &result);
+    return result;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_RENDERER_GET_ULTRA_FAST_STATUS_0100(napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioRenderer *audioRenderer = nullptr;
+    OH_AudioStream_FastStatus fastStatus;
+    napi_value result;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_RENDERER;
+    OH_AudioStream_Result res = OH_AudioStreamBuilder_Create(&builder, type);
+    if (res != AUDIOSTREAM_SUCCESS) {
+        LOG("OH_AudioStreamBuilder_Create FAILED, res is %{public}d", res);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    OH_AudioStreamBuilder_SetSamplingRate(builder, NORMAL_RATE);
+    OH_AudioStreamBuilder_SetChannelLayout(builder, (OH_AudioChannelLayout)CHANNEL_LAYOUT);
+    OH_AudioStreamBuilder_SetSampleFormat(builder, (OH_AudioStream_SampleFormat)g_sampleFormat);
+    OH_AudioStreamBuilder_SetEncodingType(builder, (OH_AudioStream_EncodingType)ENCODING_TYPE);
+    OH_AudioStreamBuilder_SetRendererInfo(builder, AUDIOSTREAM_USAGE_MUSIC);
+    OH_AudioStreamBuilder_SetLatencyMode(builder, AUDIOSTREAM_LATENCY_MODE_ULTRA_FAST);
+
+    OH_AudioStream_Result genRes = OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
+    if (genRes == AUDIOSTREAM_SUCCESS && audioRenderer != nullptr) {
+        OH_AudioStream_Result statusRes = OH_AudioRenderer_GetFastStatus(audioRenderer, &fastStatus);
+        if (statusRes != AUDIOSTREAM_SUCCESS) {
+            LOG("SUB_MULTIMEDIA_AUDIO_RENDERER_GET_ULTRA_FAST_STATUS_0100:"
+                "FAIL, GetFastStatus res is %{public}d", statusRes);
+            OH_AudioRenderer_Release(audioRenderer);
+            OH_AudioStreamBuilder_Destroy(builder);
+            napi_create_int32(env, TEST_FAIL, &result);
+            return result;
+        }
+        LOG("SUB_MULTIMEDIA_AUDIO_RENDERER_GET_ULTRA_FAST_STATUS_0100: fastStatus is %{public}d", fastStatus);
+        if (fastStatus != AUDIOSTREAM_FASTSTATUS_ULTRA_FAST) {
+            LOG("SUB_MULTIMEDIA_AUDIO_RENDERER_GET_ULTRA_FAST_STATUS_0100:"
+                "FAIL, unexpected fastStatus is %{public}d", fastStatus);
+            OH_AudioRenderer_Release(audioRenderer);
+            OH_AudioStreamBuilder_Destroy(builder);
+            napi_create_int32(env, TEST_FAIL, &result);
+            return result;
+        }
+        OH_AudioRenderer_Release(audioRenderer);
+    }
+
+    OH_AudioStreamBuilder_Destroy(builder);
+    napi_create_int32(env, TEST_PASS, &result);
+    return result;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_ULTRA_FAST_STATUS_0100(napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder *builder = nullptr;
+    OH_AudioCapturer *audioCapturer = nullptr;
+    OH_AudioStream_FastStatus fastStatus;
+    napi_value result;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStream_Result res = OH_AudioStreamBuilder_Create(&builder, type);
+    if (res != AUDIOSTREAM_SUCCESS) {
+        LOG("OH_AudioStreamBuilder_Create FAILED, res is %{public}d", res);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    OH_AudioStreamBuilder_SetSamplingRate(builder, NORMAL_RATE);
+    OH_AudioStreamBuilder_SetChannelLayout(builder, (OH_AudioChannelLayout)CHANNEL_LAYOUT);
+    OH_AudioStreamBuilder_SetSampleFormat(builder, (OH_AudioStream_SampleFormat)g_sampleFormat);
+    OH_AudioStreamBuilder_SetEncodingType(builder, (OH_AudioStream_EncodingType)ENCODING_TYPE);
+    OH_AudioStreamBuilder_SetCapturerInfo(builder, AUDIOSTREAM_SOURCE_TYPE_MIC);
+    OH_AudioStreamBuilder_SetLatencyMode(builder, AUDIOSTREAM_LATENCY_MODE_ULTRA_FAST);
+
+    OH_AudioStream_Result genRes = OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    if (genRes == AUDIOSTREAM_SUCCESS && audioCapturer != nullptr) {
+        OH_AudioStream_Result statusRes = OH_AudioCapturer_GetFastStatus(audioCapturer, &fastStatus);
+        if (statusRes != AUDIOSTREAM_SUCCESS) {
+            LOG("SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_ULTRA_FAST_STATUS_0100:"
+                "FAIL, GetFastStatus res is %{public}d", statusRes);
+            OH_AudioCapturer_Release(audioCapturer);
+            OH_AudioStreamBuilder_Destroy(builder);
+            napi_create_int32(env, TEST_FAIL, &result);
+            return result;
+        }
+        LOG("SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_ULTRA_FAST_STATUS_0100: fastStatus is %{public}d", fastStatus);
+        if (fastStatus != AUDIOSTREAM_FASTSTATUS_ULTRA_FAST) {
+            LOG("SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_ULTRA_FAST_STATUS_0100:"
+                "FAIL, unexpected fastStatus is %{public}d", fastStatus);
+            OH_AudioCapturer_Release(audioCapturer);
+            OH_AudioStreamBuilder_Destroy(builder);
+            napi_create_int32(env, TEST_FAIL, &result);
+            return result;
+        }
+        OH_AudioCapturer_Release(audioCapturer);
+    }
+
+    OH_AudioStreamBuilder_Destroy(builder);
+    napi_create_int32(env, TEST_PASS, &result);
+    return result;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_SET_RENDERER_ULTRA_FAST_STATUS_CHANGE_CALLBACK_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder *builder = nullptr;
+    void *userData = nullptr;
+    napi_value result;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_RENDERER;
+    OH_AudioStream_Result res = OH_AudioStreamBuilder_Create(&builder, type);
+    if (res != AUDIOSTREAM_SUCCESS) {
+        LOG("OH_AudioStreamBuilder_Create FAILED, res is %{public}d", res);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    OH_AudioStreamBuilder_SetLatencyMode(builder, AUDIOSTREAM_LATENCY_MODE_ULTRA_FAST);
+
+    OH_AudioStream_Result cbRes = OH_AudioStreamBuilder_SetRendererFastStatusChangeCallback(builder,
+        MyAudioRendererOnFastStatusChangeCallback, userData);
+    if (cbRes != AUDIOSTREAM_SUCCESS) {
+        LOG("SUB_MULTIMEDIA_AUDIO_SET_RENDERER_ULTRA_FAST_STATUS_CHANGE_CALLBACK_0100:FAIL, cbRes is %{public}d", cbRes);
+        OH_AudioStreamBuilder_Destroy(builder);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    OH_AudioStreamBuilder_Destroy(builder);
+    napi_create_int32(env, TEST_PASS, &result);
+    return result;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_SET_CAPTURER_ULTRA_FAST_STATUS_CHANGE_CALLBACK_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder *builder = nullptr;
+    void *userData = nullptr;
+    napi_value result;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStream_Result res = OH_AudioStreamBuilder_Create(&builder, type);
+    if (res != AUDIOSTREAM_SUCCESS) {
+        LOG("OH_AudioStreamBuilder_Create FAILED, res is %{public}d", res);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    OH_AudioStreamBuilder_SetLatencyMode(builder, AUDIOSTREAM_LATENCY_MODE_ULTRA_FAST);
+
+    OH_AudioStream_Result cbRes = OH_AudioStreamBuilder_SetCapturerFastStatusChangeCallback(builder,
+        MyAudioCapturerOnFastStatusChangeCallback, userData);
+    if (cbRes != AUDIOSTREAM_SUCCESS) {
+        LOG("SUB_MULTIMEDIA_AUDIO_SET_CAPTURER_ULTRA_FAST_STATUS_CHANGE_CALLBACK_0100:FAIL, cbRes is %{public}d", cbRes);
+        OH_AudioStreamBuilder_Destroy(builder);
+        napi_create_int32(env, TEST_FAIL, &result);
+        return result;
+    }
+
+    OH_AudioStreamBuilder_Destroy(builder);
+    napi_create_int32(env, TEST_PASS, &result);
+    return result;
+}
+
 static napi_value AudioStreamManagerIsMultichannelPlaybackSupported_001(napi_env env, napi_callback_info info)
 {
     OH_AudioStreamManager *streamManager;
@@ -14716,8 +15245,254 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_SUCCESS_0100(napi_e
     return res;
 }
 
+static OH_AudioStream_Result CreateStartedRendererWithUsage(OH_AudioStream_Usage usage,
+    OH_AudioRenderer** outRenderer,OH_AudioStreamBuilder** outBuilder)
+{
+    OH_AudioStreamBuilder* builder = nullptr;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_RENDERER;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_Create(&builder,type);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return result;
+    }
+    OH_AudioStreamBuilder_SetRendererInfo(builder,usage);
+    OH_AudioRenderer_Callbacks callbacks;
+
+    callbacks.OH_AudioRenderer_OnWriteData = AudioRendererOnWriteData;
+    callbacks.OH_AudioRenderer_OnInterruptEvent = AudioRendererInterruptEvent;
+
+    OH_AudioStreamBuilder_SetRendererCallback(builder,callbacks,nullptr);
+    OH_AudioRenderer* renderer = nullptr;
+    result = OH_AudioStreamBuilder_GenerateRenderer(builder,&renderer);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        OH_AudioStreamBuilder_Destroy(builder);
+        return result;
+    }
+
+    result = OH_AudioRenderer_Start(renderer);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        OH_AudioRenderer_Release(renderer);
+        OH_AudioStreamBuilder_Destroy(builder);
+        return result;
+    }
+
+    *outRenderer = renderer;
+    *outBuilder = builder;
+    return AUDIOSTREAM_SUCCESS;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioRenderer *renderer = nullptr;
+    OH_AudioStreamBuilder* builder = nullptr;
+    OH_AudioStream_Result result = CreateStartedRendererWithUsage(AUDIOSTREAM_USAGE_MUSIC,&renderer,&builder);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        LOG("SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0100 setup failed: result = %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    result = OH_AudioRenderer_Standby(renderer,true);
+    LOG("SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0100 Standby(true) result = %{public}d", result);
+
+    if (result == AUDIOSTREAM_SUCCESS) {
+        OH_AudioRenderer_Standby(renderer,false);
+        napi_create_int32(env, TEST_PASS, &res);
+    }else{
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+
+    OH_AudioRenderer_Release(renderer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0200(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioRenderer *renderer = nullptr;
+    OH_AudioStreamBuilder* builder = nullptr;
+    OH_AudioStream_Result result = CreateStartedRendererWithUsage(AUDIOSTREAM_USAGE_MUSIC,&renderer,&builder);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    result = OH_AudioRenderer_Standby(renderer,true);
+
+    if (result != AUDIOSTREAM_SUCCESS) {
+        LOG("SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0200 enter standby failed, result = %{public}d", result);
+        OH_AudioRenderer_Release(renderer);
+        OH_AudioStreamBuilder_Destroy(builder);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    result = OH_AudioRenderer_Standby(renderer,false);
+    LOG("SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0200 Standby(false) result = %{public}d", result);
+
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+    }else{
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+
+    OH_AudioRenderer_Release(renderer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0300(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder* builder = CreateRenderBuilder();
+    OH_AudioStream_Usage usage = AUDIOSTREAM_USAGE_MUSIC;
+
+    OH_AudioStreamBuilder_SetRendererInfo(builder,usage);
+    OH_AudioRenderer_Callbacks callbacks;
+    callbacks.OH_AudioRenderer_OnWriteData = AudioRendererOnWriteData;
+    callbacks.OH_AudioRenderer_OnInterruptEvent = AudioRendererInterruptEvent;
+    
+    OH_AudioStreamBuilder_SetRendererCallback(builder,callbacks,nullptr);
+    OH_AudioRenderer *renderer = nullptr;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_GenerateRenderer(builder,&renderer);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        OH_AudioStreamBuilder_Destroy(builder);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    result = OH_AudioRenderer_Standby(renderer,true);
+    LOG("SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0300 Standby(true) in PREPARED result = %{public}d", result);
+
+    if (result == AUDIOSTREAM_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+    }else{
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+
+    OH_AudioRenderer_Release(renderer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0400(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioRenderer *renderer = nullptr;
+    OH_AudioStreamBuilder* builder = nullptr;
+    OH_AudioStream_Result result = CreateStartedRendererWithUsage(AUDIOSTREAM_USAGE_MUSIC,&renderer,&builder);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    result = OH_AudioRenderer_Standby(renderer,false);
+    LOG("SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0400 Standby(false) not-in-standby result = %{public}d", result);
+
+    if (result == AUDIOSTREAM_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+    }else{
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+
+    OH_AudioRenderer_Release(renderer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0500(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioRenderer *renderer = nullptr;
+    OH_AudioStreamBuilder* builder = nullptr;
+    OH_AudioStream_Result result = CreateStartedRendererWithUsage(AUDIOSTREAM_USAGE_MUSIC,&renderer,&builder);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    result = OH_AudioRenderer_Standby(renderer,true);
+
+    if (result != AUDIOSTREAM_SUCCESS) {
+        OH_AudioRenderer_Release(renderer);
+        OH_AudioStreamBuilder_Destroy(builder);
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    result = OH_AudioRenderer_Start(renderer);
+    LOG("SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0500 Start() in standby result = %{public}d", result);
+
+    if (result == AUDIOSTREAM_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+    }else{
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+
+    OH_AudioRenderer_Standby(renderer,false);
+
+    OH_AudioRenderer_Release(renderer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0600(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioRenderer *renderer = nullptr;
+    OH_AudioStreamBuilder* builder = nullptr;
+    OH_AudioStream_Result result = CreateStartedRendererWithUsage(AUDIOSTREAM_USAGE_ALARM,&renderer,&builder);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+
+    result = OH_AudioRenderer_Standby(renderer,true);
+
+    LOG("SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0600 Standby(true) ALARM result = %{public}d", result);
+
+    if (result == AUDIOSTREAM_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+    }else{
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+
+    OH_AudioRenderer_Release(renderer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0700(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStream_Result result = OH_AudioRenderer_Standby(nullptr,true);
+
+    LOG("SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0700 Standby(nullptr) result = %{public}d", result);
+
+    if (result == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    }else{
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+
+    return res;
+}
+
 EXTERN_C_START
 napi_property_descriptor desc1[] = {
+    {"SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0200, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0300", nullptr,
+        SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0300, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0400", nullptr,
+        SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0400, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0500", nullptr,
+        SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0500, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0600", nullptr,
+        SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0600, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0700", nullptr,
+        SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_NDK_0700, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"SUB_MULTIMEDIA_AUDIO_NOISE_REDUCTION_MODE_ENUM_0100", nullptr,
         SUB_MULTIMEDIA_AUDIO_NOISE_REDUCTION_MODE_ENUM_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0100", nullptr,
@@ -15423,6 +16198,40 @@ napi_property_descriptor desc3[] = {
     {"audioStreamManagerIsFastPlaybackSupported_001", nullptr, AudioStreamManagerIsFastPlaybackSupported_001,
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"audioStreamManagerIsFastRecordingSupported_001", nullptr, AudioStreamManagerIsFastRecordingSupported_001,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0200, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0300", nullptr,
+        SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0300, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0400", nullptr,
+        SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_PLAYBACK_SUPPORTED_0400, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0200, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0300", nullptr,
+        SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0300, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0400", nullptr,
+        SUB_MULTIMEDIA_AUDIO_IS_ULTRA_FAST_RECORDING_SUPPORTED_0400, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_SET_ULTRA_FAST_LATENCY_MODE_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_SET_ULTRA_FAST_LATENCY_MODE_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_SET_ULTRA_FAST_LATENCY_MODE_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_SET_ULTRA_FAST_LATENCY_MODE_0200, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_GENERATE_RENDERER_ULTRA_FAST_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_GENERATE_RENDERER_ULTRA_FAST_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_GENERATE_CAPTURER_ULTRA_FAST_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_GENERATE_CAPTURER_ULTRA_FAST_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_RENDERER_GET_ULTRA_FAST_STATUS_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_RENDERER_GET_ULTRA_FAST_STATUS_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_ULTRA_FAST_STATUS_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_ULTRA_FAST_STATUS_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_SET_RENDERER_ULTRA_FAST_STATUS_CHANGE_CALLBACK_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_SET_RENDERER_ULTRA_FAST_STATUS_CHANGE_CALLBACK_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_SET_CAPTURER_ULTRA_FAST_STATUS_CHANGE_CALLBACK_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_SET_CAPTURER_ULTRA_FAST_STATUS_CHANGE_CALLBACK_0100,
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"AudioStreamManagerIsMultichannelPlaybackSupported_001", nullptr,
         AudioStreamManagerIsMultichannelPlaybackSupported_001, nullptr, nullptr, nullptr, napi_default, nullptr},

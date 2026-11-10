@@ -177,5 +177,6 @@ struct ExampleM {
         }
         ).id('changeButton2')
     }
+    .alignItems(HorizontalAlign.Center)
   }
 }

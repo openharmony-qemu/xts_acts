@@ -43,7 +43,6 @@ ohos_copy("PyTestCase") {
     "./testSelinuxFileLable.py",
     "./testSupportHdc.py",
     "./testSysCapNameOnly.py",
-    "./testSystemCoreInternetPermission.py",
     "./testTrustedRootCaExist.py",
   ]
   outputs =

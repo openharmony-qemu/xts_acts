@@ -55,11 +55,14 @@ export default function setWaterFlowEvent() {
 it('setWaterFlowEvent_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[setWaterFlowEvent_static_0100] START');
       let driver = Driver.create()
+      await CommonFunc.sleep(1000)
       let btnEvent = await driver.findComponent(ON.id('WaterFlow_addCommonEvent_04'));
       await (btnEvent?.click() as Promise<void>);
       await CommonFunc.sleep(1500)
 
-      let swipeScroll = CommonFunc.getComponentRectOnScreen('key_WaterFlow_set');
+      let swipeComp = await driver.findComponent(ON.id('key_WaterFlow_set'));
+      let swipeScroll = await swipeComp!.getBounds();
+      let displayId = await swipeComp!.getDisplayId();
       let top = swipeScroll.top;
       let right = swipeScroll.right;
       let left = swipeScroll.left;
@@ -67,7 +70,11 @@ it('setWaterFlowEvent_static_0100', Level.LEVEL0, async (done: () => void): Prom
       console.info("setWaterFlowEvent_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width/2) as int, Math.round(top + height*0.8) as int, Math.round(left + width/2) as int, Math.round(top + height*0.2) as int);
+      await driver.swipeBetween(
+        { x: (Math.round(left + width / 2)).toInt(),
+          y: (Math.round(top + height * 0.8)).toInt(), displayId: displayId },
+        { x: (Math.round(left + width / 2)).toInt(),
+          y: (Math.round(top + height * 0.2)).toInt(), displayId: displayId });
       await CommonFunc.sleep(2000);
       let btn = await driver.findComponent(ON.id('WaterFlow_setOnReach_04'));
       await (btn?.click() as Promise<void>);

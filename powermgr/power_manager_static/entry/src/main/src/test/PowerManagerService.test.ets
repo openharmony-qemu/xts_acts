@@ -46,7 +46,7 @@ export default function powerManagerTest() {
           });
           expect().assertFail();
         } catch (error) {
-          error = error as BusinessError;
+         
           hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
           expect(error.code).assertEqual(4900101);
         } finally {
@@ -73,7 +73,7 @@ export default function powerManagerTest() {
           });
           expect().assertFail();
         } catch (error) {
-          error = error as BusinessError;
+         
           hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
           expect(error.code).assertEqual(4900101);
         } finally {

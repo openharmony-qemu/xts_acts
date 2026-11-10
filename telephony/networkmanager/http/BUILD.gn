@@ -28,7 +28,10 @@ group("http") {
 "ActsNetworkManagerHttpDataOptionsTestStatic:ActsNetworkManagerHttpDataOptionsStaticTest",
 "ActsNetworkManagerHttpRequestTestStatic:ActsNetworkManagerHttpRequestStaticTest",
 "ActsNetworkManagerHttpResponseTestStatic:ActsNetworkManagerHttpResponseStaticTest",
-"ActsNetworkMgrHttpNopTestStatic:ActsNetworkMgrHttpNopStaticTest"
+"ActsNetworkMgrHttpNopTestStatic:ActsNetworkMgrHttpNopStaticTest",
+"ActsNetManagerHttpETSTestStatic:ActsNetManagerHttpETSStaticTest",
+"ActsNetworkManagerHttpBasicTestStatic:ActsNetworkManagerHttpBasicStaticTest",
+"ActsNetworkManagerHttpRequestOnAndOffTestStatic:ActsNetworkManagerHttpRequestOnAndOffStaticTest"
     ]
   }
 }

@@ -6,7 +6,7 @@
         "bundle-name": "com.acts.ability.setabilityinstanceinfo",
         "module-name": "entry_test",
         "shell-timeout": "600000",
-        "testcase-timeout": 15000
+        "testcase-timeout": 60000
     },
     "kits": [
         {

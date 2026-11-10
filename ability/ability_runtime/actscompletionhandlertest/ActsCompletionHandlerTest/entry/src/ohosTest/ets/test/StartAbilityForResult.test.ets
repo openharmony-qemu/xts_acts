@@ -149,10 +149,22 @@ let closeDialog = async (dialogKey: string, done: Function) => {
   let allowed = await driver.waitForComponent(ON.text(dialogKey, MatchPattern.CONTAINS).belongingDisplay(currentDisplayId), DELAY_TIME);
   hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
   if (allowed) {
-    let buttons = await driver.findComponents(ON.type('SymbolGlyph').belongingDisplay(currentDisplayId));
-    if (buttons && buttons.length > 0) {
-      await buttons[0].click();
+    let cancelButtons = await driver.findComponents(ON.text('取消', MatchPattern.CONTAINS).belongingDisplay(currentDisplayId));
+    hilog.info(DOMAIN, LOG_TAG, 'cancelButtons : %{public}s', JSON.stringify(cancelButtons));
+    if (cancelButtons && cancelButtons.length > 0) {
+      hilog.info(DOMAIN, LOG_TAG, 'clicking 取消');
+      await cancelButtons[cancelButtons.length - 1].click();
+      hilog.info(DOMAIN, LOG_TAG, '取消 clicked');
       buttonClicked = true;
+    } else {
+      let buttons = await driver.findComponents(ON.type('SymbolGlyph').belongingDisplay(currentDisplayId));
+      hilog.info(DOMAIN, LOG_TAG, 'symbolGlyphButtons : %{public}s', JSON.stringify(buttons));
+      if (buttons && buttons.length > 0) {
+        hilog.info(DOMAIN, LOG_TAG, 'clicking last SymbolGlyph');
+        await buttons[buttons.length - 1].click();
+        hilog.info(DOMAIN, LOG_TAG, 'last SymbolGlyph clicked');
+        buttonClicked = true;
+      }
     }
   } else {
     allowed = await driver.waitForComponent(ON.text('使用以下方式打开', MatchPattern.CONTAINS).belongingDisplay(currentDisplayId), DELAY_TIME);
@@ -520,7 +532,16 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
       await sleep(500);
       if(isOpen){
         try {
-          await closeDialog('选择打开方式', done);
+          let buttons = await driver.findComponents(ON.type('SymbolGlyph').belongingDisplay(currentDisplayId));
+          hilog.info(DOMAIN, LOG_TAG, 'symbolGlyphButtons : %{public}s', JSON.stringify(buttons));
+          if (buttons && buttons.length > 0) {
+            hilog.info(DOMAIN, LOG_TAG, 'clicking SymbolGlyph');
+            await buttons[0].click();
+            hilog.info(DOMAIN, LOG_TAG, 'SymbolGlyph clicked');
+          } else {
+            hilog.info(DOMAIN, LOG_TAG, 'symbolGlyphButtons not found, fallback closeDialog');
+            await closeDialog('选择打开方式', done);
+          }
         } catch (e) {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0400 closeDialog failed, ${JSON.stringify(e)}`);
           expect().assertFail();
@@ -611,6 +632,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
 
       let handler: CompletionHandler = {
         onRequestSuccess: (element: bundleManager.ElementName, message: string) => {
+          isOpen = false;
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0600 onRequestSuccess called,
             element: ${JSON.stringify(element)}, message: ${message}`);
           expect(element.bundleName).assertEqual('com.example.completionhandlerrely');
@@ -619,6 +641,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
           done();
         },
         onRequestFailure: (element: bundleManager.ElementName, message: string) => {
+          isOpen = false;
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0600 onRequestFailure called,
             element: ${JSON.stringify(element)}, message: ${message}`);
           if(message.indexOf('Failed to call startAbility') != -1){

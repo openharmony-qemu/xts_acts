@@ -69,3 +69,11 @@ export async function Sleep(ms: number) {
     }, ms)
   })
 }
+
+// ===== merged from huksApi12 utils =====
+export function IntToUint8Array(value: number) {
+  const buffer = new ArrayBuffer(4);
+  const view = new DataView(buffer);
+  view.setUint32(0, value, true);
+  return new Uint8Array(buffer);
+}

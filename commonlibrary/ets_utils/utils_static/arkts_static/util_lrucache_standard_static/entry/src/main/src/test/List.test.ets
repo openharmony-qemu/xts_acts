@@ -22,6 +22,9 @@ import lruCacheRemoveTest from './LRUCache/LruCacheRemoveTest.test';
 import lruCacheToStringTest from './LRUCache/LruCacheToStringTest.test';
 import lruCacheUpdateCapacityTest from './LRUCache/LruCacheUpdateCapacityTest.test';
 import lruCacheValuesTest from './LRUCache/LruCacheValuesTest.test';
+import UtilOverviewTest from './LRUCache/UtilOverviewTest.test';
+import UtilParseUuidTest from './LRUCache/UtilParseUuidTest.test';
+import UtilPromisifyTest from './LRUCache/UtilPromisifyTest.test';
 
 export default function testsuite(): void {
   lruCacheAfterRemovalTest();
@@ -46,4 +49,7 @@ export default function testsuite(): void {
   lruCacheToStringTest();
   lruCacheUpdateCapacityTest();
   lruCacheValuesTest();
+  UtilOverviewTest();
+  UtilParseUuidTest();
+  UtilPromisifyTest();
 }

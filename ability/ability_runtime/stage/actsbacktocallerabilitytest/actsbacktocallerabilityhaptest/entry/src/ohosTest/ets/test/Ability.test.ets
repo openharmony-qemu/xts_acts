@@ -24,6 +24,9 @@ import display from '@ohos.display';
 let delegator = abilityDelegatorRegistry.getAbilityDelegator();
 let currentDisplayId = display.getDefaultDisplaySync().id;
 let textsToMatch: Array<string> = ['打开', '允许', '本次允许', "始终允许打开"];
+let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+let cmdDemo = 'aa force-stop com.example.backdemo';
+let cmdDemo1 = 'aa force-stop com.example.backdemo1';
 
 function log(TAG: string, info: string) {
   console.info(`${TAG}::` + info);
@@ -66,17 +69,19 @@ export default function abilityTest() {
       let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
       if(user !== undefined){
           cmd += ' -u ' + user;
+          cmdDemo += ' -u ' + user;
+          cmdDemo1 += ' -u ' + user;
       }
       await delegator.executeShellCommand(cmd);
-      await delegator.executeShellCommand('aa force-stop com.example.backdemo');
-      await delegator.executeShellCommand('aa force-stop com.example.backdemo1');
+      await delegator.executeShellCommand(cmdDemo);
+      await delegator.executeShellCommand(cmdDemo1);
       await sleep(1000)
       log('beforeEach::', '---------------testcase start---------------')
     })
     afterEach(async () => {
       log('afterEach::', 'execute force-stop backdemo')
-      await delegator.executeShellCommand('aa force-stop com.example.backdemo');
-      await delegator.executeShellCommand('aa force-stop com.example.backdemo1');
+      await delegator.executeShellCommand(cmdDemo);
+      await delegator.executeShellCommand(cmdDemo1);
       await sleep(1000)
       log('afterEach::', '---------------testcase end---------------')
     })

@@ -66,7 +66,7 @@ struct Index {
           .attributeModifier(this.modifier)
           .id('MyRow2')
         }
-        .width(300).height(100)
+        .width(200).height(100)
         .margin(50)
         .border({ width: 2, color: '#6699FF' })
 
@@ -77,6 +77,7 @@ struct Index {
           })
       }
     }
-    .height('100%')
+    .height('80%')
+    .alignItems(HorizontalAlign.Center)
   }
 }

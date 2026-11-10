@@ -87,7 +87,7 @@ export default function list_ListInitialIndex4Test() {
 
       expect(JSON.parse(listContainerStrJson).$type).assertEqual('List');
 
-      expect(Math.abs(firstListItem.top - firstListItem.top) <= 1).assertTrue();
+      expect(Math.abs(firstListItem.top - listContainer.top) <= 1).assertTrue();
       expect(Math.abs(firstListItem.left - listContainer.left) <= 1).assertTrue();
       expect(Math.abs(Math.round(firstListItem.right - firstListItem.left) - Math.round(vp2px(100))) <= 1).assertTrue();
       expect(Math.abs(Math.round(firstListItem.bottom - firstListItem.top) - Math.round(vp2px(100))) <= 1).assertTrue();
@@ -134,6 +134,7 @@ export default function list_ListInitialIndex4Test() {
       expect(Math.round(twelfthListItem.bottom - twelfthListItem.top)).assertEqual(vp2px(0));
 
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let swipeComponent = await driver.findComponent(ON.id('List_ListInitialIndex4_Container01'));
       let sizeList = await swipeComponent.getBounds();
       let displayId = await swipeComponent.getDisplayId();

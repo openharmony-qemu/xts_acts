@@ -326,6 +326,47 @@ export default function AvPlayerEnumTest() {
       expect(media.AVMetricsEventType.AV_METRICS_EVENT_AUDIO_ABNORMAL).assertEqual(7);
       done();
     });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1600
+     * @tc.desc   AVPlayer Enumeration test - PlaybackCommand
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1600', Level.LEVEL0, async (done: Function) => {
+      expect(media.PlaybackCommand.PLAYBACK_COMMAND_SEEK).assertEqual(0);
+      expect(media.PlaybackCommand.PLAYBACK_COMMAND_RATE).assertEqual(1);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1700
+     * @tc.desc   AVPlayer Enumeration test - MediaDescriptionKey MD_KEY_TRACK_PLAYABLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1700', Level.LEVEL0, async (done: Function) => {
+      expect(media.MediaDescriptionKey.MD_KEY_TRACK_PLAYABLE).assertEqual("is_playable");
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1800
+     * @tc.desc   AVPlayer Enumeration test - DestHDRMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1800', Level.LEVEL0, async (done: Function) => {
+      expect(media.DestHDRMode.SDR).assertEqual(0);
+      expect(media.DestHDRMode.AUTO_HDR_VIVID).assertEqual(1);
+      done();
+    });
   })
 }
 

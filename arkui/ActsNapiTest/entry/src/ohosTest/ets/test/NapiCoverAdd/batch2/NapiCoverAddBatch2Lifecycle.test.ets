@@ -699,9 +699,7 @@ export default function NapiCoverAddBatch2LifecycleTest() {
       console.info(caseName + ' start');
       let extObj: object | null = napicoveraddbatch2ndktest.createExternalForFinalizeTest() as object | null;
       expect(extObj !== null && extObj !== undefined).assertTrue();
-      if (globalThis.forceFullGC) {
-        globalThis.forceFullGC();
-      }
+      forceFullGC();
       let result: number = napicoveraddbatch2ndktest.getExternalDataAfterFinalize(extObj) as number;
       expect(result).assertEqual(1);
       napicoveraddbatch2ndktest.cleanupExternalForFinalizeTest(extObj);

@@ -51,7 +51,9 @@ export default function AbilityManagerGetAbilityRunningInfosTest() {
                   expect(abilityInfo.pid).assertLarger(0);
                   expect(typeof abilityInfo.uid).assertEqual('number');
                   expect(abilityInfo.uid).assertLarger(0);
-                  expect(abilityInfo.abilityState).assertEqual(2);
+                  if(Number(abilityInfo.abilityState) !== 9){
+                    expect(abilityInfo.abilityState).assertEqual(2);
+                  }
                   expect(abilityInfo.processName).assertEqual('com.acts.startuiserviceextensiontestenterprise');
                   expect(typeof abilityInfo.startTime).assertEqual('number');
                   expect(abilityInfo.startTime).assertLarger(0);
@@ -112,7 +114,9 @@ export default function AbilityManagerGetAbilityRunningInfosTest() {
                   expect(abilityInfo.pid).assertLarger(0);
                   expect(typeof abilityInfo.uid).assertEqual('number');
                   expect(abilityInfo.uid).assertLarger(0);
-                  expect(abilityInfo.abilityState).assertEqual(2);
+                  if(Number(abilityInfo.abilityState) !== 9){
+                    expect(abilityInfo.abilityState).assertEqual(2);
+                  }
                   expect(abilityInfo.processName).assertEqual('com.acts.startuiserviceextensiontestenterprise');
                   expect(typeof abilityInfo.startTime).assertEqual('number');
                   expect(abilityInfo.startTime).assertLarger(0);

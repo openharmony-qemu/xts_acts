@@ -62,9 +62,10 @@ export default function ScrollAddJsunit() {
       console.info('ScrollAddJsunit_0400 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let scrollBar = await driver.findComponent(ON.type('Scroll'));
       await scrollBar.scrollToBottom();
-      await CommonFunc.sleep(100);
+      await CommonFunc.sleep(1000);
       // wether if swipe
       let gridText = await driver.findComponent(ON.id('9'));
       let  text = await gridText.getText();

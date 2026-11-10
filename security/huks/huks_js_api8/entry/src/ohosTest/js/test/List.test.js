@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+import SecurityHuksApiCoverInterfaceParamJsunit from './SecurityHuksApiCoverInterfaceParam.test.js'
+import SecurityHuksApiCoverInterfaceParamCallbackJsunit from './SecurityHuksApiCoverInterfaceParamCallback.test.js'
 import SecurityHuksAccessControlJsunit from './SecurityHuksAccessControlJsunit.test.js'
 import SecurityHuksAgreeDHPromiseJsunit from './SecurityHuksAgreeDHPromiseJsunit.test.js'
 import SecurityHuksAgreeECDHCallbackJsunit from './SecurityHuksAgreeECDHCallbackJsunit.test.js'
@@ -83,4 +85,6 @@ export default function testsuite() {
     SecurityHuksSignVerifyRSAPromiseJsunit()
     SecurityHuksSignVerifySM2CallbackJsunit()
     SecurityHuksSignVerifySM2PromiseJsunit()
+    SecurityHuksApiCoverInterfaceParamJsunit()
+    SecurityHuksApiCoverInterfaceParamCallbackJsunit()
 }

@@ -36,6 +36,7 @@ export default function inputMethodDrawnControlJSUnit() {
     let textArea: Component;
     let rectInfo: Rect;
     let id: number = 0;
+    let userId: string = '100';
     const delegator:AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
     beforeAll(async (done: Function) => {
@@ -45,6 +46,7 @@ export default function inputMethodDrawnControlJSUnit() {
         let setCmd = 'ime -s com.acts.inputmethoddrawncontrol.test';
         let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
         if(user !== undefined){
+          userId = user;
           enableCmd = `ime -u ${user} -e com.acts.inputmethoddrawncontrol.test -f`;
           setCmd = `ime -u ${user} -s com.acts.inputmethoddrawncontrol.test`;
         }
@@ -1440,6 +1442,13 @@ export default function inputMethodDrawnControlJSUnit() {
         }
       }
       console.info("====>SUB_Misc_inputMethod_onSendKeyboardStatus_0230 publishCallback start");
+      //多前台用户非主用户场景下跳过此用例
+      console.info(`====>SUB_Misc_inputMethod_onSendKeyboardStatus_0230 success, userId: ${userId}`);
+      if (userId !== '100') {
+        console.info(`====>SUB_Misc_inputMethod_onSendKeyboardStatus_0230 ignore`);
+        done();
+        return;
+      };
       try {
         await inputMethod.getController().attach(false, ATTRIBUTE);
         console.info("====>SUB_Misc_inputMethod_onSendKeyboardStatus_0230 attach start");
@@ -1478,6 +1487,13 @@ export default function inputMethodDrawnControlJSUnit() {
         }
       }
       let flag = true;
+      //多前台用户非主用户场景下跳过此用例
+      console.info(`====>SUB_Misc_inputMethod_offSendKeyboardStatus_0240 success, userId: ${userId}`);
+      if (userId !== '100') {
+        console.info(`====>SUB_Misc_inputMethod_offSendKeyboardStatus_0240 ignore`);
+        done();
+        return;
+      };
       try {
         await inputMethod.getController().attach(true, ATTRIBUTE);
         console.info("====>SUB_Misc_inputMethod_offSendKeyboardStatus_0240 attach start");
@@ -2082,7 +2098,14 @@ export default function inputMethodDrawnControlJSUnit() {
         inputAttribute: {
           textInputType: 0, enterKeyType: 0
         }
-      }
+      };
+      //多前台用户非主用户场景下跳过此用例
+      console.info(`====>SUB_Misc_inputMethod_on_off_sendKeyboardStatus_Async_0100 success, userId: ${userId}`);
+      if (userId !== '100') {
+        console.info(`====>SUB_Misc_inputMethod_on_off_sendKeyboardStatus_Async_0100 ignore`);
+        done();
+        return;
+      };
       try {
         await inputMethod.getController().attach(true, ATTRIBUTE);
         console.info('====>SUB_Misc_inputMethod_on_off_sendKeyboardStatus_Async_0100 keyBoardStatus start');
@@ -2123,7 +2146,14 @@ export default function inputMethodDrawnControlJSUnit() {
         inputAttribute: {
           textInputType: 0, enterKeyType: 0
         }
-      }
+      };
+      //多前台用户非主用户场景下跳过此用例
+      console.info(`====>SUB_Misc_inputMethod_on_off_sendKeyboardStatus_Async_0200 success, userId: ${userId}`);
+      if (userId !== '100') {
+        console.info(`====>SUB_Misc_inputMethod_on_off_sendKeyboardStatus_Async_0200 ignore`);
+        done();
+        return;
+      };
       try {
         let count = 0;
         await inputMethod.getController().attach(true, ATTRIBUTE);

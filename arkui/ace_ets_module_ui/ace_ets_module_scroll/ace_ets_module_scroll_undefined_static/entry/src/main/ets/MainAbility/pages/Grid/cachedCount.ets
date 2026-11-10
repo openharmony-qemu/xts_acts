@@ -43,14 +43,14 @@ struct GridExample {
               Text(day)
                 .fontSize(16)
                 .width('100%')
-                .height(80)
+                .height('20%')
                 .textAlign(TextAlign.Center)
             }.selectable(false)
           }, (day: string) => day)
         }
         .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
         .cachedCount(this.cachedCount_)
-        .height(300)
+        .height('50%')
         .id('TestGridCachedCount')
 
         Button('Change').onClick(() => {

@@ -22,7 +22,6 @@ import fileUri from "@ohos.file.fileuri";
 import pasteboard from '@ohos.pasteboard';
 import Want from "@ohos.app.ability.Want";
 import image from "@ohos.multimedia.image";
-import { BusinessError } from "@ohos.base"
 
 let domain: int = 0x0000; // The log tag 0x0000 acts as the business ID for the test framework.
 // The log identifier string is used as a tag to identify the test behavior under the current runner class.
@@ -152,7 +151,6 @@ export default function systemPasteBoardTest() {
         hilog.info(domain, tag, '----------Succeeded in getting PasteData.');
         done();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, `catch error ${err.code}`);
         expect(err.code == 12900005).assertTrue();
         done();
@@ -181,7 +179,6 @@ export default function systemPasteBoardTest() {
           hilog.info(domain, tag, '----------Succeeded in getting recordCount.');
           done();
         } catch (err) {
-        err = err as BusinessError;
           hilog.info(domain, tag, `catch error ${err.code}`);
           expect(err.code == 12900005).assertTrue();
           done();
@@ -245,7 +242,6 @@ export default function systemPasteBoardTest() {
         expect(result == 'label').assertTrue();
         done();
       } catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `Failed to getDataSource. Cause: ${err.message + err.code}`);
         expect(err.code == 12900005).assertTrue();
         done();

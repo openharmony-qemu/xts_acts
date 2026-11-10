@@ -21,7 +21,7 @@ import {
   TestType,
   Level,
   Size
-} from "../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 
 class JsvmStackLimitNative {
   native createAndCompile(): int;

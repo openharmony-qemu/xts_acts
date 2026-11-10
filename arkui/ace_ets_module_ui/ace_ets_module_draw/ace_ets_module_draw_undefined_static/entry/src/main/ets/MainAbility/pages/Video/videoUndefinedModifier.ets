@@ -16,7 +16,7 @@
 
 import {
   Entry, Text, Column, Component, Button, ClickEvent, Video, Resource, $rawfile, Row, VideoController,
-  SeekMode, ImageFit, AttributeModifier, VideoAttribute
+  SeekMode, ImageFit, AttributeModifier, VideoAttribute, ColumnOptions
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
@@ -39,8 +39,8 @@ export class MyModifier implements AttributeModifier<VideoAttribute> {
   public isObjectFit: boolean = false;
   applyNormalAttribute(instance: VideoAttribute): void {
     instance
-      .width('80%')
-      .height('30%')
+      .width(210)
+      .height(80)
       .onUpdate(this.isOnUpdate ? () => {
         this.eventValue = 'onUpdateValue';
       } : undefined)
@@ -78,99 +78,104 @@ struct VideoUndefinedModifier1 {
   @State modifier: MyModifier = new MyModifier();
 
   build() {
-    Column() {
-      Text('action Video')
-      Video({
-        src: this.videoSrc,
-        controller: this.controller,
-      })
-        .id('video_action_modifier')
-        .attributeModifier(this.modifier)
-
+    Column({space:2} as ColumnOptions) {
+      Text('action Video').height(15)
+      
       Row() {
         Text(this.modifier.eventValue)
           .id('eventValue_modifier')
-        Button('resetValue').onClick((event: ClickEvent) => {
-          this.modifier.eventValue = 'value';
-        }).margin(5).id('reset_modifier')
+          .height(15)
       }
 
       Row() {
+        Button('resetValue').onClick((event: ClickEvent) => {
+          this.modifier.eventValue = 'value';
+        }).id('reset_modifier').height(15).width(50)
         Button('0').onClick((event: ClickEvent) => {
           this.controller.setCurrentTime(5, SeekMode.Accurate);
           this.controller.reset();
-        }).margin(5).id('onUpdate_modifier')
+        }).id('onUpdate_modifier').height(15).width(50)
         Button('1').onClick((event: ClickEvent) => {
           if (this.videoSrc == 'videoError.mp4') {
             this.videoSrc = $rawfile('videoTest.mp4');
           } else {
             this.videoSrc = 'videoError.mp4';
           }
-        }).id('onPrepared_modifier')
+        }).id('onPrepared_modifier').height(15).width(50)
         Button('2').onClick((event: ClickEvent) => {
           this.controller.requestFullscreen(true);
           this.controller.exitFullscreen();
-        }).margin(5).id('onFullscreenChange_modifier')
+        }).id('onFullscreenChange_modifier').height(15).width(50)
+      }
+
+      Row() {
         Button('3').onClick((event: ClickEvent) => {
           this.controller.setCurrentTime(8, SeekMode.Accurate);
           this.controller.start();
-        }).margin(5).id('onFinish_modifier')
+        }).id('onFinish_modifier').height(15).width(50)
         Button('4').onClick((event: ClickEvent) => {
           this.controller.pause();
-        }).margin(5).id('onPause_modifier')
+        }).id('onPause_modifier').height(15).width(50)
         Button('5').onClick((event: ClickEvent) => {
           this.controller.reset();
           this.controller.start();
-        }).margin(5).id('onStart_modifier')
+        }).id('onStart_modifier').height(15).width(50)
         Button('6').onClick((event: ClickEvent) => {
           this.controller.stop();
-        }).margin(5).id('onStop_modifier')
+        }).id('onStop_modifier').height(15).width(50)
       }
 
       Row() {
         Button('0' + this.modifier.isOnUpdate).onClick((event: ClickEvent) => {
           this.modifier.isOnUpdate = !this.modifier.isOnUpdate;
-        }).margin(5).id('onUpdate_action_modifier')
+        }).id('onUpdate_action_modifier').height(15).width(50)
         Button('1' + this.modifier.isOnPrepared).onClick((event: ClickEvent) => {
           this.modifier.isOnPrepared = !this.modifier.isOnPrepared;
-        }).margin(5).id('onPrepared_action_modifier')
+        }).id('onPrepared_action_modifier').height(15).width(50)
         Button('2' + this.modifier.isOnFullscreenChange).onClick((event: ClickEvent) => {
           this.modifier.isOnFullscreenChange = !this.modifier.isOnFullscreenChange;
-        }).margin(5).id('onFullscreenChange_action_modifier')
+        }).id('onFullscreenChange_action_modifier').height(15).width(50)
         Button('3' + this.modifier.isOnFinish).onClick((event: ClickEvent) => {
           this.modifier.isOnFinish = !this.modifier.isOnFinish;
-        }).margin(5).id('onFinish_action_modifier')
+        }).id('onFinish_action_modifier').height(15).width(50)
       }
 
       Row() {
         Button('4' + this.modifier.isOnPause).onClick((event: ClickEvent) => {
           this.modifier.isOnPause = !this.modifier.isOnPause;
-        }).margin(5).id('onPause_action_modifier')
+        }).id('onPause_action_modifier').height(15).width(50)
         Button('5' + this.modifier.isOnStart).onClick((event: ClickEvent) => {
           this.modifier.isOnStart = !this.modifier.isOnStart;
-        }).margin(5).id('onStart_action_modifier')
+        }).id('onStart_action_modifier').height(15).width(50)
         Button('6' + this.modifier.isOnStop).onClick((event: ClickEvent) => {
           this.modifier.isOnStop = !this.modifier.isOnStop;
-        }).margin(5).id('onStop_action_modifier')
+        }).id('onStop_action_modifier').height(15).width(50)
         Button('7' + this.modifier.isLoop).onClick((event: ClickEvent) => {
           this.modifier.isLoop = !this.modifier.isLoop;
-        }).margin(5).id('loop_action_modifier')
+        }).id('loop_action_modifier').height(15).width(50)
       }
 
       Row() {
         Button('8' + this.modifier.isMuted).onClick((event: ClickEvent) => {
           this.modifier.isMuted = !this.modifier.isMuted;
-        }).margin(5).id('muted_action_modifier')
+        }).id('muted_action_modifier').height(15).width(50)
         Button('9' + this.modifier.isAutoPlay).onClick((event: ClickEvent) => {
           this.modifier.isAutoPlay = !this.modifier.isAutoPlay;
-        }).margin(5).id('autoPlay_action_modifier')
+        }).id('autoPlay_action_modifier').height(15).width(50)
         Button('10' + this.modifier.isControls).onClick((event: ClickEvent) => {
           this.modifier.isControls = !this.modifier.isControls;
-        }).margin(5).id('controls_action_modifier')
+        }).id('controls_action_modifier').height(15).width(50)
         Button('11' + this.modifier.isObjectFit).onClick((event: ClickEvent) => {
           this.modifier.isObjectFit = !this.modifier.isObjectFit;
-        }).margin(5).id('objectFit_action_modifier')
+        }).id('objectFit_action_modifier').height(15).width(50)
       }
+
+      Video({
+        src: this.videoSrc,
+        controller: this.controller,
+      })
+        .id('video_action_modifier')
+        .attributeModifier(this.modifier)
     }
     .width('100%')
     .height('100%')

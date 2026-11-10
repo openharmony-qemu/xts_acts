@@ -17,6 +17,12 @@ import CameraPhotoSessionMetadata from "./cameraPhotoSession/CameraPhotoSessionM
 import ManualFocusQueryTest from "./Camera/ManualFocusQuery.test";
 import { cameraPickerTest } from "./ExposureMeteringMode/CameraPicker.test";
 import ExposureMeteringModeStaticTest from "./ExposureMeteringMode/AutoExposureMeteringMode.test";
+import CameraManagerStaticTest from "./CameraManager/CameraManager.test";
+import CameraStaticTest from "./Camera/Camera.test";
+import PreviewOutputStaticTest from "./PreviewOutput/PreviewOutput.test";
+import SecureSessionStaticTest from "./SecureSession/SecureSession.test";
+import VideoOutputStaticTest from "./VideoOutput/VideoOutput.test";
+import VideoSessionStaticTest from "./VideoSession/VideoSession.test";
 
 export default function testsuite() {
   cameraNoPermissionStaticTest();
@@ -36,4 +42,10 @@ export default function testsuite() {
   ManualFocusQueryTest();
   cameraPickerTest();
   ExposureMeteringModeStaticTest();
+  CameraManagerStaticTest();
+  CameraStaticTest();
+  PreviewOutputStaticTest();
+  SecureSessionStaticTest();
+  VideoOutputStaticTest();
+  VideoSessionStaticTest();
 }

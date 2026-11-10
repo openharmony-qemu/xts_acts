@@ -692,16 +692,25 @@ export default function napiRefTest() {
         const getWorkerCount = (): Promise<number> => {
           return new Promise<number>((resolve, reject) => {
             let resolved = false;
+            const timer = setTimeout(() => {
+              if (!resolved) {
+                ghcWorker!.terminate();
+                reject(new Error(`${TAG}: Worker response timeout`));
+              }
+            }, 10000);
             ghcWorker!.onmessage = (e: MessageEvents) => {
               resolved = true;
+              clearTimeout(timer);
               resolve(e.data as number);
             };
             ghcWorker!.onexit = () => {
               if (!resolved) {
+                clearTimeout(timer);
                 reject(new Error(`${TAG}: Worker exited without sending result`));
               }
             };
             ghcWorker!.onerror = (e) => {
+              clearTimeout(timer);
               ghcWorker!.terminate();
               reject(e);
             };
@@ -742,16 +751,31 @@ export default function napiRefTest() {
     it('napiGetGlobalHandleCountInTaskpool', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let TAG = "napiGetGlobalHandleCountInTaskpool";
       console.info(`${TAG} START`);
+      const MAX_RETRY: number = 3;
+      const executeWithRetry = async (): Promise<number> => {
+        for (let retry = 0; retry < MAX_RETRY; retry++) {
+          try {
+            let result: number = await taskpool.execute(getGhcCountInTaskpool) as number;
+            return result;
+          } catch (err) {
+            console.warn(`${TAG} retry${retry} err: ${JSON.stringify(err)}`);
+            if (retry < MAX_RETRY - 1) {
+              await sleep(100);
+            }
+          }
+        }
+        throw new Error(`${TAG}: taskpool execute failed after ${MAX_RETRY} retries`);
+      };
       try {
         let mainBefore: number = napitestex.getGlobalHandleCountValue();
-        let t1: number = await taskpool.execute(getGhcCountInTaskpool) as number;
+        let t1: number = await executeWithRetry();
         console.info(`${TAG} main before: ${mainBefore}, taskpool count1: ${t1}`);
         let created: boolean = napitestex.createStrongRefGhc();
         expect(created).assertTrue();
         let mainAfter: number = napitestex.getGlobalHandleCountValue();
         console.info(`${TAG} main count after create: ${mainAfter}`);
         expect(mainAfter > mainBefore).assertTrue();
-        let t2: number = await taskpool.execute(getGhcCountInTaskpool) as number;
+        let t2: number = await executeWithRetry();
         console.info(`${TAG} taskpool count2: ${t2}`);
         expect(t1 === t2).assertTrue();
         napitestex.deleteStrongRefGhc();

@@ -46,6 +46,8 @@ import UIContextApplyDefaultImmersiveStrategyNoParamTest from './CustomLayout/UI
 import UIContextApplyDefaultImmersiveStrategyTwoParamTest from './CustomLayout/UIContextApplyDefaultImmersiveStrategyTwoParamTest.test';
 import UIContextApplyDefaultImmersiveStrategyEmptyArrayTest from './CustomLayout/UIContextApplyDefaultImmersiveStrategyEmptyArrayTest.test';
 import UIContextApplyDefaultImmersiveStrategyNonEmptyArrayTest from './CustomLayout/UIContextApplyDefaultImmersiveStrategyNonEmptyArrayTest.test';
+import SafeAreaInsetStaticNormalTest from './safeAreaInset/SafeAreaInsetStaticNormalTest.test';
+import SafeAreaInsetStaticResetTest from './safeAreaInset/SafeAreaInsetStaticResetTest.test';
 
 export default function testsuite() {
   ColumnSpaceResourceTest();
@@ -80,4 +82,6 @@ export default function testsuite() {
   UIContextApplyDefaultImmersiveStrategyTwoParamTest();
   UIContextApplyDefaultImmersiveStrategyEmptyArrayTest();
   UIContextApplyDefaultImmersiveStrategyNonEmptyArrayTest();
+  SafeAreaInsetStaticNormalTest();
+  SafeAreaInsetStaticResetTest();
 }

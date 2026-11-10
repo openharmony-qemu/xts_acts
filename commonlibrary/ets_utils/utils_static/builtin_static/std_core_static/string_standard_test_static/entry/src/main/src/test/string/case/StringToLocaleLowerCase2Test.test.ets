@@ -21,7 +21,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 
 function getUpper(): string {
   return "CHAINED_LOCALE";

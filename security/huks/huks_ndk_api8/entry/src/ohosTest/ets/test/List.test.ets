@@ -14,8 +14,12 @@
  */
 import huksNdkTest from './huksNdk.test';
 import HuksApiTest from './HuksApi.test';
+import huksNapiSuite from './huksNapi/List.test';
+import nativeHuksSuite from './nativehuks/List.test';
 
 export default function testsuite() {
   huksNdkTest();
   HuksApiTest();
+  huksNapiSuite();
+  nativeHuksSuite();
 }

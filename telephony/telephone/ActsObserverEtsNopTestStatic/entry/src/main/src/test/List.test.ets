@@ -15,8 +15,10 @@
  */
 import ObserverNopTest from "./ObserverNopUnit.test";
 import ObserverSimNopTest from "./ObserverSimNopUnit.test";
+import ObserverCallNopTest from "./ObserverCallNop.test";
 
 export default function testsuite() {
     ObserverNopTest();
     ObserverSimNopTest();
+    ObserverCallNopTest();
 }

@@ -69,7 +69,7 @@ class Child_Parent052 extends GrandParent052 {
   public static cVal: number = 3;
 }
 
-
+
 class Container<T> {
   public static defaultSize: number = 10;
 }

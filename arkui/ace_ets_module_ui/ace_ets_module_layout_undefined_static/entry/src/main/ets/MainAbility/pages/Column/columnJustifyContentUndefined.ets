@@ -16,7 +16,7 @@
 
 import { Entry, Text, Column, Component, Button, ClickEvent, Flex,
   FlexAlign,ItemAlign, Select, Color, Row, Font, SymbolEffectStrategy,
-  SymbolGlyph, $r, Navigation, List, TextInput, ColumnSplit, TextAlign } from '@ohos.arkui.component'
+  SymbolGlyph, $r, Navigation, List, TextInput, ColumnSplit, TextAlign, HorizontalAlign } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
@@ -45,17 +45,18 @@ struct Index {
         Column() {
           Column() {
             Text('1').width('200').height(50).backgroundColor(0xF5DEB3)
-            Text('2').width('300').height(50).backgroundColor(0xD2B48C)
+            Text('2').width('200').height(50).backgroundColor(0xD2B48C)
             Text('3').width('100').height(50).backgroundColor(0xF5DEB3)
             Text('4').width('100').height(50).backgroundColor(0xD2B48C)
-            Text('5').width('300').height(50).backgroundColor(0xF5DEB3)
+            Text('5').width('200').height(50).backgroundColor(0xF5DEB3)
           }
           .justifyContent(this.isUndefined ? undefined : FlexAlign.End as FlexAlign)
           .borderWidth(1)
-          .width('90%').height('60%')
+          .width('80%').height('60%')
           .id('Column_JustifyContent')
         }
       }
     }
+    .alignItems(HorizontalAlign.Center)
   }
 }

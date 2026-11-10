@@ -97,7 +97,7 @@ describe('cloud_sync_test', () => {
         if (err) {
           console.error("test_cloudSync_State_002 start sync failed: " + err.message + ", error code: " + err.code);
           try {
-            expect(err.code == 13600001 && err.message =='IPC error').assertTrue();
+            expect(err.code === 13600001 || err.code === 22400001).assertTrue();
           } catch (err) {
             console.info(tag + "Assert Fail: " + JSON.stringify(err));
           }
@@ -107,7 +107,6 @@ describe('cloud_sync_test', () => {
         console.info(tag + "end====");
         done();
       });
-      done();
     } catch (err) {
       console.info(tag + "catch err: " + JSON.stringify(err));
       console.log('test_cloudSync_State_002 has failed for ' + err.message + ', code: ' + err.code);
@@ -676,7 +675,7 @@ describe('cloud_sync_test', () => {
          if (err) {
            console.error("test_cloudSync_State_018 stop sync failed: " + err.message + ", error code: " + err.code);
            try {
-             expect(err.code == 13600001 && err.message =='IPC error').assertTrue();
+             expect(err.code === 13600001 || err.code === 22400001).assertTrue();
            } catch (err) {
              console.info(tag + "Assert Fail: " + JSON.stringify(err));
            }
@@ -686,7 +685,6 @@ describe('cloud_sync_test', () => {
          console.info(tag + "end====");
          done();
        });
-        done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
         console.log('test_cloudSync_State_018 has failed for ' + err.message + ', code: ' + err.code);

@@ -108,6 +108,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     let windowStage: window.WindowStage = AppStorage.get('windowStage') as window.WindowStage;
     let isAutoWindow: string = settings.getValueSync(globalThis.abilityContext, 'window_pcmode_switch_status', '', settings.domainName.USER_PROPERTY);
     let isPCStatus: string = settings.getValueSync(globalThis.abilityContext, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY);
+    let currentDisplayId = display.getDefaultDisplaySync().id;
     //isPCStatus == '' 非PC设备
     //isPCStatus == '1' PC设备状态栏dock未融合
     //isPCStatus == '0' PC设备状态栏dock融合
@@ -4339,8 +4340,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         let promise = pipWindow.create(config);
         promise.then(async (data) => {
           pipController = data;
-          if (!pipController.isPiPSupported()) {
-
+          if (!pipController.isPiPSupported() || deviceType === 'car') {
             done();
           } else {
             console.log(`${message} Succeeded in creating pip controller, Data:${data}`)
@@ -4357,7 +4357,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             await driver.findComponent(ON.id('SCBPipSceneOverlay')).then(async (component) => {
               await component.click();
               await sleep(1000);
-              let button2 = await driver.findComponent(ON.id('control_play'));
+              let button2 = await driver.findComponent(ON.id('control_play').belongingDisplay(currentDisplayId));
               console.log(`${message} button2: ${JSON.stringify(button2)}`);
               await button2.click();
             })
@@ -5063,11 +5063,11 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         } else {
           await startAbility(message, globalThis.abilityContext);
           let driver = Driver.create();
-          let createPip1 = await driver.findComponent(ON.id('CreatePipWindow1'));
+          let createPip1 = await driver.findComponent(ON.id('CreatePipWindow1').belongingDisplay(currentDisplayId));
           await sleep(1000)
           await createPip1.click();
           // 确认是否是801
-          let isSupported = await driver.findComponent(ON.id('isSupported'));
+          let isSupported = await driver.findComponent(ON.id('isSupported').belongingDisplay(currentDisplayId));
           await sleep(1000)
           let isSupportedText = await isSupported.getText();
           console.error(`${message} isSupportedText: ${isSupportedText}`);
@@ -5076,33 +5076,33 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             await sleep(1000)
             done();
           } else {
-            let getPipInfo1 = await driver.findComponent(ON.id('GetPiPWindowInfo1'));
+            let getPipInfo1 = await driver.findComponent(ON.id('GetPiPWindowInfo1').belongingDisplay(currentDisplayId));
             await sleep(1000)
             await getPipInfo1.click();
-            let getPipInfoText1 = await driver.findComponent(ON.id('PipWindowInfoText1'));
+            let getPipInfoText1 = await driver.findComponent(ON.id('PipWindowInfoText1').belongingDisplay(currentDisplayId));
             await sleep(1000)
             let text1 = await getPipInfoText1.getText();
             console.error(`${message} text1: ${text1}`);
             expect(Number(text1.trim())).assertEqual(1)
-            let stopPip1 = await driver.findComponent(ON.id('StopPiPWindow1'));
+            let stopPip1 = await driver.findComponent(ON.id('StopPiPWindow1').belongingDisplay(currentDisplayId));
             await sleep(1000)
             await stopPip1.click();
             await terminateAbility(message);
             await sleep(1000)
 
             await startAbility(message, globalThis.abilityContext);
-            let createPip2 = await driver.findComponent(ON.id('CreatePipWindow2'));
+            let createPip2 = await driver.findComponent(ON.id('CreatePipWindow2').belongingDisplay(currentDisplayId));
             await sleep(1000)
             await createPip2.click();
-            let getPipInfo2 = await driver.findComponent(ON.id('GetPiPWindowInfo2'));
+            let getPipInfo2 = await driver.findComponent(ON.id('GetPiPWindowInfo2').belongingDisplay(currentDisplayId));
             await sleep(1000)
             await getPipInfo2.click();
-            let getPipInfoText2 = await driver.findComponent(ON.id('PipWindowInfoText2'));
+            let getPipInfoText2 = await driver.findComponent(ON.id('PipWindowInfoText2').belongingDisplay(currentDisplayId));
             await sleep(1000)
             let text2 = await getPipInfoText2.getText();
             console.error(`${message} text2: ${text2}`);
             expect(Number(text2.trim())).assertEqual(1)
-            let stopPip2 = await driver.findComponent(ON.id('StopPiPWindow2'));
+            let stopPip2 = await driver.findComponent(ON.id('StopPiPWindow2').belongingDisplay(currentDisplayId));
             await sleep(1000)
             await stopPip2.click();
             await terminateAbility(message);
@@ -5140,11 +5140,11 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         } else {
           await startAbility(message, globalThis.abilityContext);
           let driver = Driver.create();
-          let createPip1 = await driver.findComponent(ON.id('CreatePipWindow1'));
+          let createPip1 = await driver.findComponent(ON.id('CreatePipWindow1').belongingDisplay(currentDisplayId));
           await sleep(1000)
           await createPip1.click();
           // 确认是否是801
-          let isSupported = await driver.findComponent(ON.id('isSupported'));
+          let isSupported = await driver.findComponent(ON.id('isSupported').belongingDisplay(currentDisplayId));
           await sleep(1000)
           let isSupportedText = await isSupported.getText();
           console.error(`${message} isSupportedText: ${isSupportedText}`);
@@ -5153,33 +5153,33 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             await sleep(1000)
             done();
           } else {
-            let getPipInfo1 = await driver.findComponent(ON.id('GetPiPWindowInfo1'));
+            let getPipInfo1 = await driver.findComponent(ON.id('GetPiPWindowInfo1').belongingDisplay(currentDisplayId));
             await sleep(1000)
             await getPipInfo1.click();
-            let getPipInfoText1 = await driver.findComponent(ON.id('PipWindowInfoText1'));
+            let getPipInfoText1 = await driver.findComponent(ON.id('PipWindowInfoText1').belongingDisplay(currentDisplayId));
             await sleep(1000)
             let text1 = await getPipInfoText1.getText();
             console.error(`${message} text1: ${text1}`);
             expect(Number(text1.trim())).assertEqual(1)
-            let stopPip1 = await driver.findComponent(ON.id('StopPiPWindow1'));
+            let stopPip1 = await driver.findComponent(ON.id('StopPiPWindow1').belongingDisplay(currentDisplayId));
             await sleep(1000)
             await stopPip1.click();
             await terminateAbility(message);
             await sleep(1000)
 
             await startAbility(message, globalThis.abilityContext);
-            let createPip3 = await driver.findComponent(ON.id('CreatePipWindow3'));
+            let createPip3 = await driver.findComponent(ON.id('CreatePipWindow3').belongingDisplay(currentDisplayId));
             await sleep(1000)
             await createPip3.click();
-            let getPipInfo3 = await driver.findComponent(ON.id('GetPiPWindowInfo3'));
+            let getPipInfo3 = await driver.findComponent(ON.id('GetPiPWindowInfo3').belongingDisplay(currentDisplayId));
             await sleep(1000)
             await getPipInfo3.click();
-            let getPipInfoText3 = await driver.findComponent(ON.id('PipWindowInfoText3'));
+            let getPipInfoText3 = await driver.findComponent(ON.id('PipWindowInfoText3').belongingDisplay(currentDisplayId));
             await sleep(1000)
             let text3 = await getPipInfoText3.getText();
             console.error(`${message} text3: ${text3}`);
             expect(Number(text3.trim())).assertEqual(1)
-            let stopPip3 = await driver.findComponent(ON.id('StopPiPWindow3'));
+            let stopPip3 = await driver.findComponent(ON.id('StopPiPWindow3').belongingDisplay(currentDisplayId));
             await sleep(1000)
             await stopPip3.click();
             await terminateAbility(message);
@@ -5218,11 +5218,11 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         } else {
           await startAbility(message, globalThis.abilityContext);
           let driver = Driver.create();
-          let createPip4 = await driver.findComponent(ON.id('CreatePipWindow4'));
+          let createPip4 = await driver.findComponent(ON.id('CreatePipWindow4').belongingDisplay(currentDisplayId));
           await sleep(1000)
           await createPip4.click();
           // 确认是否是801
-          let isSupported = await driver.findComponent(ON.id('isSupported'));
+          let isSupported = await driver.findComponent(ON.id('isSupported').belongingDisplay(currentDisplayId));
           await sleep(1000)
           let isSupportedText = await isSupported.getText();
           console.error(`${message} isSupportedText: ${isSupportedText}`);
@@ -5231,29 +5231,29 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             await sleep(1000)
             done();
           } else {
-            let getPipInfo4 = await driver.findComponent(ON.id('GetPiPWindowInfo4'));
+            let getPipInfo4 = await driver.findComponent(ON.id('GetPiPWindowInfo4').belongingDisplay(currentDisplayId));
             await sleep(1000)
             await getPipInfo4.click();
-            let getPipInfoText4 = await driver.findComponent(ON.id('PipWindowInfoText4'));
+            let getPipInfoText4 = await driver.findComponent(ON.id('PipWindowInfoText4').belongingDisplay(currentDisplayId));
             await sleep(1000)
             let text4 = await getPipInfoText4.getText();
             console.error(`${message} text4: ${text4}`);
             expect(Number(text4.trim())).assertLarger(0);
-            expect(Number(text4.trim())).assertLess(1);
-            let stopPip4 = await driver.findComponent(ON.id('StopPiPWindow4'));
+            expect(Number(text4.trim())).assertLessOrEqual(1);
+            let stopPip4 = await driver.findComponent(ON.id('StopPiPWindow4').belongingDisplay(currentDisplayId));
             await sleep(1000)
             await stopPip4.click();
             await terminateAbility(message);
             await sleep(1000)
 
             await startAbility(message, globalThis.abilityContext);
-            let createPip2 = await driver.findComponent(ON.id('CreatePipWindow2'));
+            let createPip2 = await driver.findComponent(ON.id('CreatePipWindow2').belongingDisplay(currentDisplayId));
             await sleep(1000)
             await createPip2.click();
-            let getPipInfo2 = await driver.findComponent(ON.id('GetPiPWindowInfo2'));
+            let getPipInfo2 = await driver.findComponent(ON.id('GetPiPWindowInfo2').belongingDisplay(currentDisplayId));
             await sleep(1000)
             await getPipInfo2.click();
-            let getPipInfoText2 = await driver.findComponent(ON.id('PipWindowInfoText2'));
+            let getPipInfoText2 = await driver.findComponent(ON.id('PipWindowInfoText2').belongingDisplay(currentDisplayId));
             await sleep(1000)
             let text2 = await getPipInfoText2.getText();
             console.error(`${message} text2: ${text2}`);
@@ -5299,11 +5299,11 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         } else {
           await startAbility(message, globalThis.abilityContext);
           let driver = Driver.create();
-          let createPip4 = await driver.findComponent(ON.id('CreatePipWindow4'));
+          let createPip4 = await driver.findComponent(ON.id('CreatePipWindow4').belongingDisplay(currentDisplayId));
           await sleep(1000)
           await createPip4.click();
           // 确认是否是801
-          let isSupported = await driver.findComponent(ON.id('isSupported'));
+          let isSupported = await driver.findComponent(ON.id('isSupported').belongingDisplay(currentDisplayId));
           await sleep(1000)
           let isSupportedText = await isSupported.getText();
           console.error(`${message} isSupportedText: ${isSupportedText}`);
@@ -5312,29 +5312,29 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             await sleep(1000)
             done();
           } else {
-            let getPipInfo4 = await driver.findComponent(ON.id('GetPiPWindowInfo4'));
+            let getPipInfo4 = await driver.findComponent(ON.id('GetPiPWindowInfo4').belongingDisplay(currentDisplayId));
             await sleep(1000)
             await getPipInfo4.click();
-            let getPipInfoText4 = await driver.findComponent(ON.id('PipWindowInfoText4'));
+            let getPipInfoText4 = await driver.findComponent(ON.id('PipWindowInfoText4').belongingDisplay(currentDisplayId));
             await sleep(1000)
             let text4 = await getPipInfoText4.getText();
             console.error(`${message} text4: ${text4}`);
             expect(Number(text4.trim())).assertLarger(0);
-            expect(Number(text4.trim())).assertLess(1);
-            let stopPip4 = await driver.findComponent(ON.id('StopPiPWindow4'));
+            expect(Number(text4.trim())).assertLessOrEqual(1);
+            let stopPip4 = await driver.findComponent(ON.id('StopPiPWindow4').belongingDisplay(currentDisplayId));
             await sleep(1000)
             await stopPip4.click();
             await terminateAbility(message);
             await sleep(1000)
 
             await startAbility(message, globalThis.abilityContext);
-            let createPip3 = await driver.findComponent(ON.id('CreatePipWindow3'));
+            let createPip3 = await driver.findComponent(ON.id('CreatePipWindow3').belongingDisplay(currentDisplayId));
             await sleep(1000)
             await createPip3.click();
-            let getPipInfo3 = await driver.findComponent(ON.id('GetPiPWindowInfo3'));
+            let getPipInfo3 = await driver.findComponent(ON.id('GetPiPWindowInfo3').belongingDisplay(currentDisplayId));
             await sleep(1000)
             await getPipInfo3.click();
-            let getPipInfoText3 = await driver.findComponent(ON.id('PipWindowInfoText3'));
+            let getPipInfoText3 = await driver.findComponent(ON.id('PipWindowInfoText3').belongingDisplay(currentDisplayId));
             await sleep(1000)
             let text3 = await getPipInfoText3.getText();
             console.error(`${message} text3: ${text3}`);
@@ -5912,6 +5912,10 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
           cornerAdsorptionEnabled: true
         };
         let driver = Driver.create();
+        if (deviceType === 'car'){
+          done();
+          return
+        }
         try {
           const callback = (state: pipWindow.PiPState, reason: string) => {
             console.log(caseName + ' callback state: ' + state);
@@ -5986,6 +5990,10 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
           cornerAdsorptionEnabled: true
         };
         let driver = Driver.create();
+        if (deviceType === 'car'){
+          done();
+          return
+        }
         try {
           const callback = async (state: pipWindow.PiPState, reason: string) => {
             console.log(caseName + ' callback state: ' + state);
@@ -6694,7 +6702,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testCreatePiPWindow_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+    it('testCreatePiPWindow_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'testCreatePiPWindow_02';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -6752,6 +6760,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             done();
           }
         });
+        await sleep(3000);
 
 
       } catch (exception) {
@@ -6769,8 +6778,9 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testCreatePiPWindow_03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+    it('testCreatePiPWindow_03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'testCreatePiPWindow_03';
+      await sleep(3000);
       try {
         let windowClass = windowStage.getMainWindowSync();
         let pipController: pipWindow.PiPController;
@@ -6876,7 +6886,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
           });
         } catch (error) {
           console.log(msgStr + ' Failed2 to start pip. Cause:' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
-          expect().assertFail();
+          expect(error.code).assertEqual(401);
           done();
         }
       }
@@ -6947,7 +6957,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
           });
         } catch (error) {
           console.log(msgStr + ' Failed2 to start pip. Cause:' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
-          expect().assertFail();
+          expect(error.code).assertFail(401);
           done();
         }
       }

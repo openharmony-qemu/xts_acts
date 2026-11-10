@@ -1,4 +1,5 @@
 'use static';
+
 import { Builder, Stack, Entry, Component, Column, Row, Alignment, Tabs, BarPosition, TabContent, NestedScrollMode, Refresh, Button, List, RefreshStatus, ForEach, LazyForEach, ListItemAlign, ListItem, ScrollState, Text, Scroller, TextAlign, BarState, Scroll, Edge, ContentClipMode, CrownSensitivity, EdgeEffect, Color, ClickEvent, Margin, ScrollDirection, ScrollSource, LengthMetrics, FadingEdgeOptions, WaterFlow, AttributeModifier, CommonAttribute, WaterFlowAttribute } from '@ohos.arkui.component';
 import { State, Observed, Track } from '@ohos.arkui.stateManagement';
 // ===================== Modifier 定义 =====================
@@ -49,7 +50,6 @@ struct ScrollCommonExample {
             .padding(20)
             .borderRadius(15)
             .backgroundColor(Color.Blue)
-            .margin({ top: 30, bottom: 30 } as Margin)
           })
         }.width('100%').backgroundColor('rgb(213,213,213)')
       }

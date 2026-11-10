@@ -29,7 +29,11 @@ export default function lastExitReasonTest() {
   let event1 = "Acts_OnCreate_LaunchParam_1_Event";
   let event2 = "Acts_OnCreate_LaunchParam_2_Event";
   let event3 = "Acts_OnCreate_LaunchParam_3_Event";
-
+  let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+  let cmd =  'aa force-stop com.acts.lastexitreasonrely1';
+  if(user !== undefined){
+    cmd += ' -u ' + user;
+  }
   describe('ActsLastExitReasonTest', () => {
     beforeAll(async () => {
       let driver = Driver.create();	
@@ -43,13 +47,13 @@ export default function lastExitReasonTest() {
       }
     })
     beforeEach(async () => {
-      await abilityDelegator.executeShellCommand("aa force-stop com.acts.lastexitreasonrely1");
+      await abilityDelegator.executeShellCommand(cmd);
       await sleep(1500);
     });
     afterEach(() => {
     });
     afterAll(async () => {
-      await abilityDelegator.executeShellCommand("aa force-stop com.acts.lastexitreasonrely1");
+      await abilityDelegator.executeShellCommand(cmd);
       await sleep(500);
     });
 
@@ -193,7 +197,7 @@ export default function lastExitReasonTest() {
         }
         CommonEventManager.subscribe(subscriber, subscribeCB);
         await sleep(500);
-        await abilityDelegator.executeShellCommand("aa force-stop com.acts.lastexitreasonrely1");
+        await abilityDelegator.executeShellCommand(cmd);
         await sleep(1000);
         await startRely1();
       } catch (err) {
@@ -328,7 +332,7 @@ export default function lastExitReasonTest() {
         }
         CommonEventManager.subscribe(subscriber, subscribeCB);
         await sleep(500);
-        await abilityDelegator.executeShellCommand("aa force-stop com.acts.lastexitreasonrely1");
+        await abilityDelegator.executeShellCommand(cmd);
         await sleep(1000);
         await startRely1();
       } catch (err) {
@@ -343,12 +347,12 @@ export default function lastExitReasonTest() {
 
 async function startRely1() {
   let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-  let cmd = "aa start -b com.acts.lastexitreasonrely1 -a EntryAbility";
+  let cmd1 = "aa start -b com.acts.lastexitreasonrely1 -a EntryAbility";
   let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
   if(user !== undefined){
-      cmd += ' -u ' + user;
+      cmd1 += ' -u ' + user;
   }
-  await abilityDelegator.executeShellCommand(cmd);
+  await abilityDelegator.executeShellCommand(cmd1);
 }
 
 function unSubscribe(subscriber: CommonEventManager.CommonEventSubscriber, callback: Function) {

@@ -16,11 +16,41 @@
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { describe, it, expect, beforeAll, Level, beforeEach, afterEach, afterAll } from '@ohos/hypium-dynamic'
 import { common } from '@kit.AbilityKit';
-import { driveFn, fetchOption, getPermission, LOG_TAG, photoKeys, checkResourceFile, createResource } from '../../common';
+import { driveFn, fetchOption, getPermission, LOG_TAG, photoKeys, checkResourceFile } from '../../common';
 import { dataSharePredicates } from '@kit.ArkData';
 import { ErrorCode } from '../../CommonErrorCode';
 
 const TAG = LOG_TAG + 'getAssetsTest';
+
+async function createResource(
+  context: common.UIAbilityContext,
+  fileNameList: Array<string>,
+  displayNameList: Array<string>
+) {
+  try {
+    let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
+    for (let i = 0; i < fileNameList.length; i++) {
+      let sourceFileName = fileNameList[i];
+      let displayName = displayNameList[i].substring(0, displayNameList[i].lastIndexOf("."));
+      let fileUri = context.filesDir + '/' + sourceFileName;
+      let ext = sourceFileName.substring(sourceFileName.lastIndexOf(".") + 1);
+      let isVideo = ext === 'mp4';
+      let photoType = isVideo ? photoAccessHelper.PhotoType.VIDEO : photoAccessHelper.PhotoType.IMAGE;
+      let resourceType = isVideo
+        ? photoAccessHelper.ResourceType.VIDEO_RESOURCE
+        : photoAccessHelper.ResourceType.IMAGE_RESOURCE;
+      let options: photoAccessHelper.CreateOptions = { title: displayName };
+      let assetChangeRequest = photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(
+        context, photoType, ext, options
+      );
+      assetChangeRequest.addResource(resourceType, fileUri);
+      await phAccessHelper.applyChanges(assetChangeRequest);
+      console.log(`createResource :: applyChange source=${sourceFileName}, displayName=${displayName} success !`);
+    }
+  } catch (error) {
+    console.log(`createResource :: run failed, message is ${error},code is ${error.code}`);
+  }
+}
 
 async function getAssetsCallbackTest(done: Function, fetchOps: photoAccessHelper.FetchOptions, expectCount: number) {
   let testContext: common.UIAbilityContext =
@@ -115,8 +145,9 @@ async function getAssetsAbnormalPromiseTest(done: Function,
 
 export default function getAssetsTest() {
   describe('getAssetsTest', () => {
-    const imageDisplayName = 'testGetAsset1.jpg';
-    const videoDisplayName = 'testGetAsset1.mp4';
+    const TIMESTAMP = Date.now().toString();
+    const imageDisplayName = `testGetAsset1${TIMESTAMP}.jpg`;
+    const videoDisplayName = `testGetAsset1${TIMESTAMP}.mp4`;
     const abnormalDisplayName = 'text';
 
     beforeAll(async () => {
@@ -124,9 +155,10 @@ export default function getAssetsTest() {
       await getPermission();
       await driveFn();
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      let fileNameList: Array<string> = [ imageDisplayName, videoDisplayName ];
+      let fileNameList: Array<string> = [ "testGetAsset1.jpg", "testGetAsset1.mp4" ];
+      let displayNameList : Array<string> = [ imageDisplayName, videoDisplayName ];
       checkResourceFile(testContext);
-      await createResource(testContext, fileNameList);
+      await createResource(testContext, fileNameList, displayNameList);
     });
 
     beforeEach(() => {

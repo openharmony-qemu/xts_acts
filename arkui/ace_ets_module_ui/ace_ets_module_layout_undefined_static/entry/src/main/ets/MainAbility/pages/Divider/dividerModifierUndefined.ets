@@ -15,7 +15,7 @@
  */
 
 import {  Entry,  Component,  Text,  Button,  Divider,  Column,  Margin,  Padding,  Color,  ResourceColor,
-  ClickEvent,  LineCapStyle,  AttributeModifier,  DividerAttribute } from '@ohos.arkui.component';
+  ClickEvent,  LineCapStyle,  AttributeModifier,  DividerAttribute, HorizontalAlign } from '@ohos.arkui.component';
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
@@ -63,6 +63,7 @@ struct DividerExample {
       Divider()
         .attributeModifier(this.modifier4)
         .id('dividerModifier')
-    }.width('100%').padding({ top: 24 } as Padding)
+    }.width('80%').padding({ top: 24 } as Padding)
+    .alignItems(HorizontalAlign.Center)
   }
 }
