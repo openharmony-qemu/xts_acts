@@ -35,7 +35,7 @@ struct CommonExample {
 
   build() {
     Column() {
-      Text('width-动态切换').fontSize(20).margin(15).width('80%')
+      Text('width-动态切换').fontSize(20).width('80%')
       Button('Button')
         .fontSize(50)
         .attributeModifier(this.modifier4)

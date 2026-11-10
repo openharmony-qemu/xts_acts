@@ -43,27 +43,27 @@ struct DividerExample {
     Column() {
         Button('changeNormal').onClick((e: ClickEvent) => {
         this.modifier4.color = '#FFFF7777';
-      }).margin('20px')
+      })
         .id('dividerModifier_color2')
 
       Button('changeNormal').onClick((e: ClickEvent) => {
         this.modifier4.strokeWidth = 10;
-      }).margin('20px')
+      })
         .id('dividerModifier_strokeWidth2')
 
       Button('changeNormal').onClick((e: ClickEvent) => {
         this.modifier4.lineCap = LineCapStyle.Round;
-      }).margin('20px')
+      })
         .id('dividerModifier_lineCap2')
 
       Button('changeNormal').onClick((e: ClickEvent) => {
         this.modifier4.vertical = true;
-      }).margin('20px')
+      })
         .id('dividerModifier_vertical2')
       Divider()
         .attributeModifier(this.modifier4)
         .id('dividerModifier')
-    }.width('80%').padding({ top: 24 } as Padding)
+    }.width('80%')
     .alignItems(HorizontalAlign.Center)
   }
 }

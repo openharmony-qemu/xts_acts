@@ -38,7 +38,6 @@ struct Align {
         Column() {
           Text('padding-动态切换(undefined/padding(10))')
             .fontSize(20)
-            .margin(15)
             .width('80%')
           Row() {
             Row() {
@@ -50,13 +49,10 @@ struct Align {
             .height(80)
             .id('MyRow1')
             .attributeModifier(this.modifier)
-            .margin(20)
             .backgroundColor(Color.White)
           }.backgroundColor(Color.Blue)
           .width('80%')
-
         }
-
 
         Column() {
           Button('flag is' + this.modifier.flag).fontSize(20).id('Common_Padding')

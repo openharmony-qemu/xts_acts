@@ -28,56 +28,29 @@ struct DividerExample {
 
   build() {
     Column() {
-      Column() {
-        Button('changeUndefined').onClick((e: ClickEvent) => {
-          this.color = undefined;
-        }).margin('20px')
-          .id('divider_color1')
-        Button('changeNormal').onClick((e: ClickEvent) => {
-          this.color = '#FF7777';
-        }).margin('20px')
-          .id('divider_color2')
-      }
+      Button('changeColor').onClick((e: ClickEvent) => {
+        this.color = '#FF7777';
+      }).id('divider_color2')
 
-      Column() {
-        Button('changeUndefined').onClick((e: ClickEvent) => {
-          this.lineCap = undefined;
-        }).margin('20px')
+      Button('changeLineCap').onClick((e: ClickEvent) => {
+        this.lineCap = LineCapStyle.Round;
+      }).id('divider_lineCap2')
 
-        Button('changeNormal').onClick((e: ClickEvent) => {
-          this.lineCap = LineCapStyle.Round;
-        }).margin('20px')
-          .id('divider_lineCap2')
-      }
+      Button('changeStrokeWidth').onClick((e: ClickEvent) => {
+        this.strokeWidth = 10;
+      }).id('divider_strokeWidth2')
 
-      Column() {
-        Button('changeUndefined').onClick((e: ClickEvent) => {
-          this.strokeWidth = undefined;
-        }).margin('20px')
+      Button('changeVertical').onClick((e: ClickEvent) => {
+        this.vertical = true;
+      }).id('divider_vertical2')
 
-        Button('changeNormal').onClick((e: ClickEvent) => {
-          this.strokeWidth = 10;
-        }).margin('20px')
-          .id('divider_strokeWidth2')
-      }
-
-      Column() {
-        Button('changeUndefined').onClick((e: ClickEvent) => {
-          this.vertical = undefined;
-        }).margin('20px')
-
-        Button('changeNormal').onClick((e: ClickEvent) => {
-          this.vertical = true;
-        }).margin('20px')
-          .id('divider_vertical2')
-      }
       Divider()
         .color(this.color)
         .lineCap(this.lineCap)
         .strokeWidth(this.strokeWidth)
         .vertical(this.vertical)
         .id('divider')
-    }.width('80%').padding({ top: 24 } as Padding)
+    }.width('80%')
     .alignItems(HorizontalAlign.Center)
   }
 }

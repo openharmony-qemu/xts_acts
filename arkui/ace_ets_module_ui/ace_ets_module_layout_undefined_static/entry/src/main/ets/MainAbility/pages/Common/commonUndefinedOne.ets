@@ -56,10 +56,9 @@ struct PositionExample2 {
         .height(20)
         .id('Common_PixelRound')
 
-
       Column() {
          Text('offset-动态切换(undefined/offset(15,30))')
-          .fontSize(20).margin(15).width('80%')
+          .fontSize(20).width('80%')
         Row() {
           Text('1')
             .size({ width: '15%', height: 50 })
@@ -93,7 +92,6 @@ struct PositionExample2 {
       Column() {
         Text('padding-动态切换(undefined/padding(10))')
           .fontSize(20)
-          .margin(15)
           .width('80%')
         Row() {
           Row() {
@@ -105,7 +103,6 @@ struct PositionExample2 {
           .height(80)
           .id('MyRow1')
           .padding(this.isPaddingUndefined ? undefined : ({ top: 5, left: 10, bottom: 15, right: 20 } as Padding))
-          .margin(20)
           .backgroundColor(Color.White)
         }.backgroundColor(Color.Blue)
         .width('80%')
@@ -115,7 +112,6 @@ struct PositionExample2 {
       Column() {
         Text('position-动态切换(undefined/position(30,10))')
           .fontSize(20)
-          .margin(15)
           .width('80%')
         Row() {
           Text('1').size({ width: '30%', height: '50' })
@@ -137,7 +133,6 @@ struct PositionExample2 {
       Column() {
         Text(`pixelRound-动态切换(undefined/NO_FORCE_ROUND) 宽度:${this.curWidth.toFixed(1)}px`)
           .fontSize(20)
-          .margin(15)
           .width('80%')
         Row() {
           Row()
@@ -160,8 +155,6 @@ struct PositionExample2 {
       }
     }
     .width('80%')
-    .padding(10)
-    .margin(25)
     .alignItems(HorizontalAlign.Center)
   }
 }

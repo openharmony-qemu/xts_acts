@@ -40,8 +40,6 @@ function columnChildren() {
       .width(60 + 10 * index)
       .height(100)
       .borderWidth(2)
-      .margin({ left:10 } as Margin)
-      .padding(10)
   })
 }
 @CustomLayout
