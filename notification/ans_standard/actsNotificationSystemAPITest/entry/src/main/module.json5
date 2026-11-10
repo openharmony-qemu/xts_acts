@@ -17,14 +17,14 @@
     "name": "entry",
     "type": "entry",
     "description": "$string:phone_entry_dsc",
-    "mainElement": "MainAbility",
+    "mainElement": "EntryAbility",
     "deviceTypes": [],
     "deliveryWithInstall": true,
     "installationFree": false,
     "pages": "$profile:main_pages",
     "abilities": [
       {
-        "name": "com.example.systemAPI.MainAbility",
+        "name": "EntryAbility",
         "srcEntry": "./ets/entryability/EntryAbility.ets",
         "description": "$string:phone_entry_main",
         "icon": "$media:icon",

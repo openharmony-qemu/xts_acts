@@ -28,9 +28,9 @@ let bundle: string = "com.example.actsnotificationansthreepartywatchnosystemnope
 export default function ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTest() {
   describe('ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTest', () => {
     beforeAll(() => {
-      context = AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext
+      context = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext
       notificationManager.setNotificationEnable({
-        bundle: 'com.example.actsnotificationansthreepartywatchnosystemnopermissiontest'
+        bundle: "com.example.actsnotificationansthreepartywatchnosystemnopermissiontest"
       }, true)
     })
     beforeEach(() => {
@@ -91,13 +91,28 @@ export default function ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTe
      */
     it('SUB_Notification_Ans_ThreePartyWatch_Enhanced_0400', Level.LEVEL0, async (done: Function) => {
       let TAG: string = "SUB_Notification_Ans_ThreePartyWatch_Enhanced_0400"
-      await notificationExtensionSubscription.getUserGrantedBundleIcon(bundle).then((data: image.PixelMap) => {
-        console.info(TAG + `getUserGrantedBundleIcon success`);
-        expect(false).assertTrue()
-        done()
-      }).catch((err: BusinessError) => {
+      try{
+        await notificationExtensionSubscription.getUserGrantedBundleIcon(bundle).then((data: image.PixelMap) => {
+          console.info(TAG + `getUserGrantedBundleIcon success`);
+          expect(false).assertTrue()
+          done()
+        }).catch((err: BusinessError) => {
+          console.error(TAG +
+            `getUserGrantedBundleIcon failed, code is ${err.code}, message is ${err.message}`);
+          if (err.code == 801) {
+            expect(err.code).assertEqual(801)
+            done()
+          } else if (err.code == 201) {
+            expect(err.code).assertEqual(201);
+            done()
+          } else {
+            expect().assertFail();
+            done()
+          }
+        });
+      }catch(err){
         console.error(TAG +
-          `getUserGrantedBundleIcon failed, code is ${err.code}, message is ${err.message}`);
+            ` failed, code is ${err.code}, message is ${err.message}`);
         if (err.code == 801) {
           expect(err.code).assertEqual(801)
           done()
@@ -108,7 +123,8 @@ export default function ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTe
           expect().assertFail();
           done()
         }
-      });
+      }
+      
     })
 
     /**
@@ -122,17 +138,32 @@ export default function ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTe
      */
     it('SUB_Notification_Ans_ThreePartyWatch_Enhanced_1400', Level.LEVEL0, async (done: Function) => {
       let TAG: string = "SUB_Notification_Ans_ThreePartyWatch_Enhanced_1400"
-      let info: notificationExtensionSubscription.GrantedBundleInfo = {
-        bundleName: bundle,
-        appIndex: 0
-      }
-      await notificationExtensionSubscription.disableUserGrantedByBundle(info).then(() => {
-        console.info(TAG + "disableUserGrantedByBundle success");
-        expect(false).assertTrue()
-        done()
-      }).catch((err: BusinessError) => {
+      try{
+        let info: notificationExtensionSubscription.GrantedBundleInfo = {
+          bundleName: bundle,
+          appIndex: 0
+        }
+        await notificationExtensionSubscription.disableUserGrantedByBundle(info).then(() => {
+          console.info(TAG + "disableUserGrantedByBundle success");
+          expect(false).assertTrue()
+          done()
+        }).catch((err: BusinessError) => {
+          console.error(TAG +
+            `disableUserGrantedByBundle failed, code is ${err.code}, message is ${err.message}`);
+          if (err.code == 801) {
+            expect(err.code).assertEqual(801)
+            done()
+          } else if (err.code == 201) {
+            expect(err.code).assertEqual(201);
+            done()
+          } else {
+            expect().assertFail();
+            done()
+          }
+        });
+      }catch(err){
         console.error(TAG +
-          `disableUserGrantedByBundle failed, code is ${err.code}, message is ${err.message}`);
+            ` failed, code is ${err.code}, message is ${err.message}`);
         if (err.code == 801) {
           expect(err.code).assertEqual(801)
           done()
@@ -143,7 +174,8 @@ export default function ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTe
           expect().assertFail();
           done()
         }
-      });
+      }
+      
     })
   })
 }

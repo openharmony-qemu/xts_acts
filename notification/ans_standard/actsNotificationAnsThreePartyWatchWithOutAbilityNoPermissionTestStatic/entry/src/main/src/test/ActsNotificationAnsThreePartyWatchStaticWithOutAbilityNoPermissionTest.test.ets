@@ -137,25 +137,42 @@ export default function actsNotificationAnsThreePartyWatchStaticWithOutAbilityNo
     it('SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG: string = "SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_0400"
-        await notificationExtensionSubscription.getUserGrantedBundleIcon(bundleName).then((data: image.PixelMap) => {
-          console.info(TAG + `getUserGrantedBundleIcon success`);
-          expect(false).assertTrue()
-          done()
-        }).catch((error: Error): void => {
-          let err = error as BusinessError;
-          console.error(TAG +
-            `getUserGrantedBundleIcon failed, code is ${err.code}, message is ${err.message}`);
-          if (err.code == 801) {
-            expect(err.code).assertEqual(801)
+        try{
+           await notificationExtensionSubscription.getUserGrantedBundleIcon(bundleName).then((data: image.PixelMap) => {
+            console.info(TAG + `getUserGrantedBundleIcon success`);
+            expect(false).assertTrue()
             done()
-          } else if (err.code == 201) {
-            expect(err.code).assertEqual(201);
-            done()
-          } else {
-            expect().assertFail();
-            done()
-          }
-      });
+           }).catch((e: Error): void => {
+            let err : BusinessError= e as BusinessError;
+            console.error(TAG +
+              `getUserGrantedBundleIcon failed, code is ${err.code}, message is ${err.message}`);
+            if (err.code == 801) {
+              expect(err.code).assertEqual(801)
+              done()
+            } else if (err.code == 201) {
+              expect(err.code).assertEqual(201);
+              done()
+            } else {
+              expect().assertFail();
+              done()
+            }
+          });
+        }catch(e){
+            let err : BusinessError= e as BusinessError;
+            console.error(TAG +
+              ` failed, code is ${err.code}, message is ${err.message}`);
+            if (err.code == 801) {
+              expect(err.code).assertEqual(801)
+              done()
+            } else if (err.code == 201) {
+              expect(err.code).assertEqual(201);
+              done()
+            } else {
+              expect().assertFail();
+              done()
+            }
+        }
+        
     })
 
     /**
@@ -170,29 +187,46 @@ export default function actsNotificationAnsThreePartyWatchStaticWithOutAbilityNo
     it('SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG: string = "SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_1400"
-        let info: notificationExtensionSubscription.GrantedBundleInfo = {
-          bundleName: bundleName,
-          appIndex: 0
+        try{
+            let info: notificationExtensionSubscription.GrantedBundleInfo = {
+              bundleName: bundleName,
+              appIndex: 0
+            }
+            await notificationExtensionSubscription.disableUserGrantedByBundle(info).then(() => {
+              console.info(TAG + "disableUserGrantedByBundle success");
+              expect(false).assertTrue()
+              done()
+            }).catch((e: Error): void => {
+              let err : BusinessError= e as BusinessError;
+              console.error(TAG +
+                `disableUserGrantedByBundle failed, code is ${err.code}, message is ${err.message}`);
+              if (err.code == 801) {
+                expect(err.code).assertEqual(801)
+                done()
+              } else if (err.code == 201) {
+                expect(err.code).assertEqual(201);
+                done()
+              } else {
+                expect().assertFail();
+                done()
+              }
+            });
+        }catch(e){
+            let err : BusinessError= e as BusinessError;
+            console.error(TAG +
+              ` failed, code is ${err.code}, message is ${err.message}`);
+            if (err.code == 801) {
+              expect(err.code).assertEqual(801)
+              done()
+            } else if (err.code == 201) {
+              expect(err.code).assertEqual(201);
+              done()
+            } else {
+              expect().assertFail();
+              done()
+            }
         }
-        await notificationExtensionSubscription.disableUserGrantedByBundle(info).then(() => {
-          console.info(TAG + "disableUserGrantedByBundle success");
-          expect(false).assertTrue()
-          done()
-        }).catch((error: Error): void => {
-          let err = error as BusinessError;
-          console.error(TAG +
-            `disableUserGrantedByBundle failed, code is ${err.code}, message is ${err.message}`);
-          if (err.code == 801) {
-            expect(err.code).assertEqual(801)
-            done()
-          } else if (err.code == 201) {
-            expect(err.code).assertEqual(201);
-            done()
-          } else {
-            expect().assertFail();
-            done()
-          }
-        });
-      })
+        
+    })
   })
 }
