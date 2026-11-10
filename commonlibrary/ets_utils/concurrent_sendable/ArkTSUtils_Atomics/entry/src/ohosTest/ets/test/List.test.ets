@@ -34,28 +34,8 @@ import ArkTSUtilsAtomicsStoreTest from './ArkTSUtilsAtomics/ArkTSUtilsAtomicsSto
 import ArkTSUtilsAtomicsSubTest from './ArkTSUtilsAtomics/ArkTSUtilsAtomicsSubTest.test';
 import ArkTSUtilsAtomicsWaitTest from './ArkTSUtilsAtomics/ArkTSUtilsAtomicsWaitTest.test';
 import ArkTSUtilsAtomicsXorTest from './ArkTSUtilsAtomics/ArkTSUtilsAtomicsXorTest.test';
+import ArkTSUtilsAtomicsSupplementTest from './ArkTSUtilsAtomics/ArkTSUtilsAtomicsSupplementTest.test';
 
 export default function testsuite(): void {
-    ArkTSUtilsAtomicsConcurrentTest();
-    ArkTSUtilsAtomicsEntryTest();
-    ArkTSUtilsAtomicsParameterTest();
-    ArkTSUtilsAtomicsWaitNotifyParameterTest();
-    ArkTSUtilsTypedArrayAtomicsTest();
-    ArkTSUtilsAtomicsAddTest();
-    ArkTSUtilsAtomicsAndTest();
-    ArkTSUtilsAtomicsApiSecondTest();
-    ArkTSUtilsAtomicsApiTest();
-    ArkTSUtilsAtomicsApiThirdlyTest();
-    ArkTSUtilsAtomicsCombTest();
-    ArkTSUtilsAtomicsCompareExchangeTest();
-    ArkTSUtilsAtomicsExchangeTest();
-    ArkTSUtilsAtomicsFunctionTest();
-    ArkTSUtilsAtomicsIsLockFreeTest();
-    ArkTSUtilsAtomicsLoadTest();
-    ArkTSUtilsAtomicsMultithreadTest();
-    ArkTSUtilsAtomicsOrTest();
-    ArkTSUtilsAtomicsStoreTest();
-    ArkTSUtilsAtomicsSubTest();
-    ArkTSUtilsAtomicsWaitTest();
-    ArkTSUtilsAtomicsXorTest();
+    ArkTSUtilsAtomicsSupplementTest();
 }
