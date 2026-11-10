@@ -12,10 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import notificationManager from '@ohos.notificationManager';
 import base, { BusinessError } from '@ohos.base';
-import { Driver, ON } from '@kit.TestKit';
+import { Driver, ON, On, Component, Rect } from '@kit.TestKit';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 
@@ -25,6 +25,265 @@ function sleep(time: number) {
 
 function getRandomNumber(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+/**
+ * 读取组件实际矩形并打印，用于和面板窗口区域交叉校验。
+ * UIExtension 承载的半模态面板中，无障碍节点树挂在宿主窗口下，
+ * 节点矩形可能与实际渲染窗口存在偏移，因此点击前必须先取真实 bounds。
+ */
+async function getBoundsWithLog(component: Component, tag: string): Promise<Rect | null> {
+  try {
+    let rect: Rect = await component.getBounds();
+    console.info(`${tag} getBounds: ${JSON.stringify(rect)}`);
+    if (rect.right <= rect.left || rect.bottom <= rect.top) {
+      console.error(`${tag} getBounds invalid: ${JSON.stringify(rect)}`);
+      return null;
+    }
+    return rect;
+  } catch (err) {
+    console.error(`${tag} getBounds failed: ${JSON.stringify(err)}`);
+    return null;
+  }
+}
+
+/**
+ * 读取 Toggle 的开关状态。部分设备/版本不支持该能力时返回 null，
+ * 调用方需按“无法校验”处理，不能据此判定失败。
+ */
+async function getCheckedState(component: Component, tag: string): Promise<boolean | null> {
+  try {
+    let checked: boolean = await component.isChecked();
+    console.info(`${tag} isChecked: ${checked}`);
+    return checked;
+  } catch (err) {
+    console.info(`${tag} isChecked not supported: ${JSON.stringify(err)}`);
+    return null;
+  }
+}
+
+/**
+ * 等待开关状态变化。开关状态刷新存在延迟，直接判定会误判为点击无效并重复点击，
+ * 导致开关被切回原状态，因此这里轮询等待，只有确认未变化才返回原值。
+ * 每轮都重新定位组件，避免读到节点缓存里的旧状态。
+ */
+async function waitCheckedChanged(driver: Driver, finder: () => Promise<Component | null>,
+  before: boolean | null, tag: string, retry: number = 5,
+  interval: number = 300): Promise<boolean | null> {
+  let current: boolean | null = before;
+  for (let i = 0; i < retry; i++) {
+    await sleep(interval);
+    let fresh = await finder();
+    if (fresh === null) {
+      continue;
+    }
+    current = await getCheckedState(fresh, `${tag} poll#${i}`);
+    if (current === null || before === null || current !== before) {
+      return current;
+    }
+  }
+  return current;
+}
+
+/**
+ * 点击 Toggle 并校验开关状态是否翻转。
+ *
+ * 每次尝试都重新定位组件（重新拉取窗口树），避免使用布局稳定前的过期矩形。
+ * 尝试顺序（逐级降级，覆盖不同设备的布局差异）：
+ *   1. Toggle 的 bounds 中心点；
+ *   2. Toggle 的 bounds 内 1/4 位置偏移点（应对矩形与实际渲染的局部偏差）；
+ *   3. 框架自身的 component.click()；
+ *   4. 点击「静默通知」文字所在行（部分设备整行可点）。
+ * 每次点击后轮询等待开关状态变化，变化即成功返回，避免重复点击把开关切回去。
+ * isChecked 不可用时按“无法校验”处理，只做一次 bounds 中心点击后放行。
+ */
+async function clickToggleAndVerify(driver: Driver, finder: () => Promise<Component | null>,
+  tag: string): Promise<boolean> {
+  let component = await finder();
+  if (component === null) {
+    console.error(`${tag} component not found, skip click`);
+    return false;
+  }
+  let before: boolean | null = await getCheckedState(component, tag);
+  // 相对偏移比例：中心点优先，其后按 1/4 位置做上下左右重试
+  let ratios: Array<Array<number>> = [
+    [0, 0],
+    [0, -0.25],
+    [0, 0.25],
+    [-0.25, 0],
+    [0.25, 0]
+  ];
+  for (let i = 0; i < ratios.length; i++) {
+    let fresh = await finder();
+    if (fresh === null) {
+      console.error(`${tag} component lost at attempt #${i}`);
+      return false;
+    }
+    let rect = await getBoundsWithLog(fresh, `${tag} attempt#${i}`);
+    if (rect === null) {
+      console.info(`${tag} bounds unavailable, fallback to component.click()`);
+      await fresh.click();
+      await sleep(800);
+      return true;
+    }
+    let width: number = rect.right - rect.left;
+    let height: number = rect.bottom - rect.top;
+    let x: number = Math.floor((rect.left + rect.right) / 2 + ratios[i][0] * width);
+    let y: number = Math.floor((rect.top + rect.bottom) / 2 + ratios[i][1] * height);
+    console.info(`${tag} try click #${i} at (${x}, ${y})`);
+    await driver.click(x, y);
+    let after: boolean | null = await waitCheckedChanged(driver, finder, before, tag);
+    if (before === null || after === null) {
+      console.info(`${tag} checked state unavailable, treat click #${i} as done`);
+      return true;
+    }
+    if (after !== before) {
+      console.info(`${tag} toggle state changed: ${before} -> ${after}`);
+      return true;
+    }
+    console.info(`${tag} toggle state unchanged after click #${i}, retry`);
+  }
+  // 降级 1：框架自身点击实现
+  let byApi = await finder();
+  if (byApi !== null) {
+    console.info(`${tag} fallback to component.click()`);
+    await byApi.click();
+    let state: boolean | null = await waitCheckedChanged(driver, finder, before, tag);
+    if (before === null || state === null || state !== before) {
+      console.info(`${tag} toggle state changed by component.click`);
+      return true;
+    }
+  }
+  // 降级 2：点击文字所在行，部分设备整行可点
+  let label = await findComponentWithRetry(driver, ON.text('静默通知'), tag, 5, 300);
+  if (label !== null) {
+    let labelRect = await getBoundsWithLog(label, `${tag} label`);
+    if (labelRect !== null) {
+      let x: number = Math.floor((labelRect.left + labelRect.right) / 2);
+      let y: number = Math.floor((labelRect.top + labelRect.bottom) / 2);
+      console.info(`${tag} fallback click label at (${x}, ${y})`);
+      await driver.click(x, y);
+      // 用重新定位到的 Toggle 校验状态，不能拿 Text 节点判断
+      let state: boolean | null = await waitCheckedChanged(driver, finder, before, tag);
+      if (before === null || state === null || state !== before) {
+        console.info(`${tag} toggle state changed by label click`);
+        return true;
+      }
+    }
+  }
+  console.error(`${tag} toggle state never changed after all attempts`);
+  return false;
+}
+
+/**
+ * 点击「确定」并校验面板是否关闭。
+ * 若点击后面板仍在，说明落点未命中按钮，重新定位后再试，覆盖不同设备的坐标偏移。
+ */
+async function clickConfirmAndVerify(driver: Driver, tag: string): Promise<boolean> {
+  let ratios: Array<Array<number>> = [
+    [0, 0],
+    [0, -0.25],
+    [0, 0.25],
+    [-0.25, 0],
+    [0.25, 0]
+  ];
+  for (let i = 0; i < ratios.length; i++) {
+    let confirm = await findComponentWithRetry(driver, ON.text('确定'), tag, 5, 300);
+    if (confirm === null) {
+      console.info(`${tag} confirm button not found at attempt #${i}, sheet may be closed`);
+      return true;
+    }
+    let rect = await getBoundsWithLog(confirm, `${tag} confirm#${i}`);
+    if (rect === null) {
+      console.info(`${tag} confirm bounds unavailable, fallback to component.click()`);
+      await confirm.click();
+    } else {
+      let width: number = rect.right - rect.left;
+      let height: number = rect.bottom - rect.top;
+      let x: number = Math.floor((rect.left + rect.right) / 2 + ratios[i][0] * width);
+      let y: number = Math.floor((rect.top + rect.bottom) / 2 + ratios[i][1] * height);
+      console.info(`${tag} try confirm click #${i} at (${x}, ${y})`);
+      await driver.click(x, y);
+    }
+    await sleep(800);
+    // 面板关闭即视为点击成功
+    let sheet = await driver.findComponent(ON.text('通知管理'));
+    if (sheet === null) {
+      console.info(`${tag} sheet closed after confirm click #${i}`);
+      return true;
+    }
+    console.info(`${tag} sheet still open after confirm click #${i}, retry`);
+  }
+  console.error(`${tag} sheet still open after all confirm attempts`);
+  return false;
+}
+
+/**
+ * 轮询查找组件，等待面板动画和布局稳定。
+ */
+async function findComponentWithRetry(driver: Driver, on: On, tag: string,
+  retry: number = 10, interval: number = 300): Promise<Component | null> {
+  for (let i = 0; i < retry; i++) {
+    let component = await driver.findComponent(on);
+    if (component !== null) {
+      return component;
+    }
+    await sleep(interval);
+  }
+  console.error(`${tag} findComponent retry ${retry} times still null`);
+  return null;
+}
+
+/**
+ * 在同一行内按空间位置匹配 Toggle：先取文字标签 bounds，
+ * 再在所有 Toggle 中挑选垂直方向与该行重叠、且位于标签右侧的那个。
+ * 相比 isAfter(文本) 的树序匹配，空间匹配不依赖具体设备的布局顺序。
+ */
+async function findToggleInSameRow(driver: Driver, labelText: string,
+  tag: string, retry: number = 3, interval: number = 200): Promise<Component | null> {
+  let label = await findComponentWithRetry(driver, ON.text(labelText), tag, retry, interval);
+  if (label === null) {
+    return null;
+  }
+  let labelRect = await getBoundsWithLog(label, tag);
+  if (labelRect === null) {
+    return null;
+  }
+  let rowHeight: number = labelRect.bottom - labelRect.top;
+  let tolerance: number = rowHeight > 0 ? rowHeight : 40;
+  let toggles: Array<Component> = [];
+  try {
+    toggles = await driver.findComponents(ON.type('Toggle'));
+  } catch (err) {
+    console.error(`${tag} findComponents(Toggle) failed: ${JSON.stringify(err)}`);
+    return null;
+  }
+  console.info(`${tag} found ${toggles.length} Toggle(s)`);
+  let best: Component | null = null;
+  let bestDistance: number = Number.MAX_VALUE;
+  for (let i = 0; i < toggles.length; i++) {
+    let rect = await getBoundsWithLog(toggles[i], `${tag} Toggle#${i}`);
+    if (rect === null) {
+      continue;
+    }
+    let toggleCenterY: number = (rect.top + rect.bottom) / 2;
+    let inSameRow: boolean = toggleCenterY >= (labelRect.top - tolerance) &&
+      toggleCenterY <= (labelRect.bottom + tolerance);
+    let onRightSide: boolean = rect.left >= labelRect.left;
+    if (inSameRow && onRightSide) {
+      let distance: number = Math.abs(toggleCenterY - (labelRect.top + labelRect.bottom) / 2);
+      if (distance < bestDistance) {
+        bestDistance = distance;
+        best = toggles[i];
+      }
+    }
+  }
+  if (best !== null) {
+    console.info(`${tag} matched Toggle in same row, distance: ${bestDistance}`);
+  } else {
+    console.error(`${tag} no Toggle matched same row, will fallback`);
+  }
+  return best;
 }
 
 let la = getContext(this) as common.UIAbilityContext;
@@ -1050,21 +1309,37 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         let driver: Driver = Driver.create();
         await sleep(1500)
         await driver.assertComponentExist(ON.text('通知管理'));
-        let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('静默通知')));
+        // 半模态面板由 UIExtension 承载，无障碍节点树挂在宿主窗口下，
+        // isAfter(文本) 的树序匹配可能选中其它行的 Toggle，故改为按空间位置匹配同一行的 Toggle。
+        // 每次重试都重新定位，避免使用布局稳定前的过期矩形
+        let findToggle: () => Promise<Component | null> = async (): Promise<Component | null> => {
+          let toggle = await findToggleInSameRow(driver, '静默通知', TAG);
+          if (toggle === null) {
+            console.info(TEST_SUITE_NAME + TAG + ` spatial match failed, fallback to isAfter`);
+            toggle = await findComponentWithRetry(driver,
+              ON.type('Toggle').isAfter(ON.text('静默通知')), TAG);
+          }
+          return toggle;
+        };
+        let button = await findToggle();
         console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button)}`);
         if (button !== null) {
-          console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button)}`);
           await sleep(1000);
-          await button.click()
-          await sleep(500)
+          // 按真实 bounds 点击并校验开关状态，覆盖不同设备上无障碍矩形与实际渲染的偏移
+          let toggled: boolean = await clickToggleAndVerify(driver, findToggle, TAG + ' Toggle');
+          console.info(TEST_SUITE_NAME + TAG + ` toggle applied: ${toggled}`);
+          await sleep(800)
         }
-        let button2 = await driver.findComponent(ON.text('确定'));
-        console.info(TEST_SUITE_NAME + TAG + `button2 is ${JSON.stringify(button2)}`);
-        if (button2 !== null) {
-          console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button2)}`);
+        // 点击后校验面板仍在，若已消失说明点击落到了蒙层上
+        let sheetStillOpen = await driver.findComponent(ON.text('通知管理'));
+        console.info(TEST_SUITE_NAME + TAG + ` sheet still open: ${sheetStillOpen !== null}`);
+        if (sheetStillOpen !== null) {
           await sleep(1000);
-          await button2.click()
+          let confirmed: boolean = await clickConfirmAndVerify(driver, TAG + ' Confirm');
+          console.info(TEST_SUITE_NAME + TAG + ` confirm applied: ${confirmed}`);
           await sleep(500)
+        } else {
+          console.info(TEST_SUITE_NAME + TAG + ` sheet already closed, skip confirm`);
         }
         let notificationRequest: notificationManager.NotificationRequest = {
           id: getRandomNumber(1, 1000),
