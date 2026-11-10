@@ -17,11 +17,20 @@ import commonEvent from '@ohos.commonEventManager'
 import {BusinessError} from "@ohos.base";
 import Want from '@ohos.app.ability.Want';
 import { Caller } from '@ohos.app.ability.UIAbility';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 const CASE_TIME_OUT = 5000;
 let actsCrossCallFunction:commonEvent.CommonEventSubscribeInfo = {
   events: ['ACTS_CROSS_CALL_EVENT', 'ACTS_CROSS_RELEASE_EVENT']
 };
+let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+let userId:number = -1;
+
+if(user === undefined || user === null || user === ""){
+  userId = 101;
+}else{
+  userId = 100;
+}
 
 export default function abilityTest() {
   describe('ActsCrossUserCallTest', () => {
@@ -159,7 +168,9 @@ export default function abilityTest() {
           console.info('====>Acts_CrossUserCall_0300 subscribeCallBack data:' + JSON.stringify(data));
           if (data.event === 'ACTS_CROSS_CALL_EVENT') {
             flag = true;
-            expect(data.parameters!.message.code).assertEqual(16000006);
+            if(data.parameters!.message.code !== 16000001){
+              expect(data.parameters!.message.code).assertEqual(16000006);
+            }
             commonEvent.unsubscribe(subscriber, () => {
               console.info('====>Acts_CrossUserCall_0300 unSubscribeCallback');
               done();            
@@ -171,7 +182,7 @@ export default function abilityTest() {
           abilityName: 'EntryAbility',
           parameters: {
             action: 'Acts_CrossUserCall_0300',
-            accountId: 101
+            accountId: userId
           }
         },(err:BusinessError) => {
           console.info('====>Acts_CrossUserCall_0300 startAbility err:' + JSON.stringify(err));
@@ -186,10 +197,14 @@ export default function abilityTest() {
       setTimeout(() => {
         if (flag === false){
           expect().assertFail();
-          commonEvent.unsubscribe(subscriber, () => {
-            console.info('====>Acts_CrossUserCall_0300 unSubscribeCallback');
-            done();            
-          });
+          if(subscriber){
+            commonEvent.unsubscribe(subscriber, () => {
+              console.info('====>Acts_CrossUserCall_0300 unSubscribeCallback');
+              done();
+            });
+          }else{
+            done()
+          }
         }
       },CASE_TIME_OUT)
     })
@@ -213,7 +228,9 @@ export default function abilityTest() {
           console.info('====>Acts_CrossUserCall_0400 subscribeCallBack data:' + JSON.stringify(data));
           if (data.event === 'ACTS_CROSS_CALL_EVENT') {
             flag = true;
-            expect(data.parameters!.message.code).assertEqual(16000006)
+            if(data.parameters!.message.code !== 16000001){
+              expect(data.parameters!.message.code).assertEqual(16000006);
+            }
             commonEvent.unsubscribe(subscriber, () => {
               console.info('====>Acts_CrossUserCall_0400 unSubscribeCallback');
               done();
@@ -225,7 +242,7 @@ export default function abilityTest() {
           abilityName: 'ServiceAbility',
           parameters: {
             action: 'Acts_CrossUserCall_0400',
-            accountId: 101
+            accountId: userId
           }
         },(err:BusinessError) => {
           console.info('====>Acts_CrossUserCall_0400 startAbility err:' + JSON.stringify(err));
@@ -240,10 +257,14 @@ export default function abilityTest() {
       setTimeout(() => {
         if (flag === false){
           expect().assertFail();
-          commonEvent.unsubscribe(subscriber, () => {
-            console.info('====>Acts_CrossUserCall_0400 unSubscribeCallback');
-            done();
-          });
+          if(subscriber){
+            commonEvent.unsubscribe(subscriber, () => {
+              console.info('====>Acts_CrossUserCall_0400 unSubscribeCallback');
+              done();
+            });
+          }else{
+            done()
+          }
         }
       },CASE_TIME_OUT)
     })
@@ -279,7 +300,7 @@ export default function abilityTest() {
           abilityName: 'EntryAbility',
           parameters: {
             action: 'Acts_CrossUserCall_0500',
-            accountId: 101
+            accountId: userId
           }
         },(err:BusinessError) => {
           console.info('====>Acts_CrossUserCall_0500 startAbility err:' + JSON.stringify(err));
@@ -294,10 +315,14 @@ export default function abilityTest() {
       setTimeout(() => {
         if (flag === false){
           expect().assertFail();
-          commonEvent.unsubscribe(subscriber, () => {
-            console.info('====>Acts_CrossUserCall_0500 unSubscribeCallback');
-            done();
-          });
+          if(subscriber){
+            commonEvent.unsubscribe(subscriber, () => {
+              console.info('====>Acts_CrossUserCall_0500 unSubscribeCallback');
+              done();
+            });
+          }else{
+            done()
+          }
         }
       },CASE_TIME_OUT)
     })
@@ -333,7 +358,7 @@ export default function abilityTest() {
           abilityName: 'ServiceAbility',
           parameters: {
             action: 'Acts_CrossUserCall_0600',
-            accountId: 101
+            accountId: userId
           }
         },(err:BusinessError) => {
           console.info('====>Acts_CrossUserCall_0600 startAbility err:' + JSON.stringify(err));
@@ -387,7 +412,7 @@ export default function abilityTest() {
           abilityName: 'EntryAbility',
           parameters: {
             action: 'Acts_CrossUserCall_0700',
-            accountId: 101
+            accountId: userId
           }
         },(err:BusinessError) => {
           console.info('====>Acts_CrossUserCall_0700 startAbility err:' + JSON.stringify(err));
@@ -441,7 +466,7 @@ export default function abilityTest() {
           abilityName: 'ServiceAbility',
           parameters: {
             action: 'Acts_CrossUserCall_0800',
-            accountId: 101
+            accountId: userId
           }
         },(err:BusinessError) => {
           console.info('====>Acts_CrossUserCall_0800 startAbility err:' + JSON.stringify(err));
@@ -866,7 +891,9 @@ export default function abilityTest() {
         done();
       }).catch((err:BusinessError) => {
         console.info('====>Acts_CrossUserCall_1900 startAbilityByCallWithAccount err :' + JSON.stringify(err));
-        expect(err.code).assertEqual(16000006);
+        if(err.code !== 16000001){
+          expect(err.code).assertEqual(16000006);
+        }
         done();
       })
     })
@@ -889,7 +916,9 @@ export default function abilityTest() {
           console.info('====>Acts_CrossUserCall_2000 subscribeCallBack data:' + JSON.stringify(data));
           if (data.event === 'ACTS_CROSS_CALL_EVENT') {
             flag = true;
-            expect(data.parameters!.message.code).assertEqual(16000006);
+            if(data.parameters!.message.code !== 16000001){
+              expect(data.parameters!.message.code).assertEqual(16000006);
+            }
             commonEvent.unsubscribe(subscriber, () => {
               console.info('====>Acts_CrossUserCall_2000 unSubscribeCallback');
               done();

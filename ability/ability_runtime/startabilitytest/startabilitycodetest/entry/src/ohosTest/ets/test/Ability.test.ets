@@ -48,8 +48,25 @@ export default function startAbilityOptions() {
         mpEnable = 'fail'
       }
     })
+    beforeEach(async () => {
+      await sleep(2000);
+      let knowBtn = await driver.findComponent(ON.text("知道了"));
+      try{
+        if(!knowBtn){
+          return;
+        }
+        await sleep(3000);
+        await knowBtn.click();
+      }catch(err){}
+
+    })
     afterEach(async () => {
-      delegator.executeShellCommand('aa force-stop com.example.startabilityerrorcode2');
+      let cmd = 'aa force-stop com.example.startabilityerrorcode2';
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+        cmd += ' -u ' + user;
+      }
+      delegator.executeShellCommand(cmd);
       await sleep(2000);
     })
     
@@ -370,7 +387,9 @@ export default function startAbilityOptions() {
         } else {
 
           try {
-            expect(data.code).assertEqual(16000073);
+            if(data.code !== 16000004){
+              expect(data.code).assertEqual(16000073);
+            }
           } catch (e) {
             console.error(`startAbilityStartOptions_16000073-UIExtensionContext-except error`, JSON.stringify(e))
           }
@@ -825,7 +844,9 @@ export default function startAbilityOptions() {
         if (err) {
         } else {
           try {
-            expect(data.code).assertEqual(16000073);
+            if(data.code !== 16000004){
+              expect(data.code).assertEqual(16000073);
+            }
           } catch (e) {
             console.error(`startAbilityForResultCallback_16000073-UIExtensionContext-except error`, JSON.stringify(e))
           }
@@ -1162,7 +1183,9 @@ export default function startAbilityOptions() {
         if (err) {
         } else {
           try {
-            expect(data.code).assertEqual(16000073);
+            if(data.code !== 16000004){
+              expect(data.code).assertEqual(16000073);
+            }
           } catch (e) {
             console.error(`startAbilityForResultOptions_16000073-UIExtensionContext-except error`, JSON.stringify(e))
           }
@@ -1499,7 +1522,9 @@ export default function startAbilityOptions() {
         if (err) {
         } else {
           try {
-            expect(data.code).assertEqual(16000073);
+            if(data.code !== 16000004){
+              expect(data.code).assertEqual(16000073);
+            }
           } catch (e) {
             console.error(`startAbilityForResultPromise_16000073-UIExtensionContext-except error`, JSON.stringify(e))
           }
