@@ -24,6 +24,9 @@ import taskPoolSequenceRunnerMultipleUITest from './TaskPoolSequenceRunnerMultip
 import TaskPoolSequenceRunnerTest from './TaskPoolSequenceRunnerTest.test';
 import taskPoolSequenceRunnerTwoMultipleTest from './TaskPoolSequenceRunnerTwoMultipleTest.test';
 
+import SequenceRunnerConstructorNamedTest from './sequenceRunner/SequenceRunnerConstructorNamedTest.test';
+import SequenceRunnerConstructorTest from './sequenceRunner/SequenceRunnerConstructorTest.test';
+import SequenceRunnerExecuteTest from './sequenceRunner/SequenceRunnerExecuteTest.test';
 export default function testsuite() {
   taskPoolSequenceRunnerMultipleTest();
   taskPoolSequenceRunnerTwoMultipleTest();
@@ -35,4 +38,7 @@ export default function testsuite() {
   sequenceRunnerAbilityTest()
   sequenceRunnerAbilityTest_2();
   sequenceRunnerTaskTest();
+  SequenceRunnerConstructorNamedTest();
+  SequenceRunnerConstructorTest();
+  SequenceRunnerExecuteTest();
 }

@@ -16,25 +16,38 @@
 
 
 
-import taskpoolTest from './Taskpool.test';
-import taskpoolTestState from './TaskpoolTestState.test';
+import taskpoolTest from './taskpoolCore/Taskpool.test';
+import taskpoolTestState from './taskpoolCore/TaskpoolTestState.test';
 
-import TaskPoolTest1 from './TaskPool1.test';
-import TaskPoolErrorCodeTest from './TaskpoolErrorCode.test';
-import TaskPoolCoverageTest from './TaskPoolCoverage.test';
+import TaskPoolTest1 from './taskpoolCore/TaskPool1.test';
+import TaskPoolErrorCodeTest from './taskpoolCore/TaskpoolErrorCode.test';
+import TaskPoolCoverageTest from './taskpoolCore/TaskPoolCoverage.test';
 
-import TaskPoolTest2 from './TaskPoolTest.test.ets'
+import TaskPoolTest2 from './taskpoolCore/TaskPoolTest.test.ets'
 
-import abilityTest from './Ability.test';
+import abilityTest from './taskpoolCore/Ability.test';
 import cancelTest from './Cancel.test';
 
-import taskPoolTaskDynamicsTest from './TaskPoolTaskGroupDynamicsTest.test';
-import taskPoolTaskGroupShareTest from './TaskPoolTaskGroupShareTest.test';
-import taskpoolTestTask from './TaskpoolTestTask.test';
+import TaskPoolDynamicLoadTest from './taskpoolIntegration/TaskPoolDynamicLoadTest.test';
+import TaskPoolSharedLoadTest from './taskpoolIntegration/TaskPoolSharedLoadTest.test';
+import taskpoolTestTask from './taskpoolCore/TaskpoolTestTask.test';
+import TaskpoolConfigsTest from './taskTimeout/TaskpoolConfigsTest.test';
+import TaskpoolPriorityTest from './taskpoolExecute/TaskpoolPriorityTest.test';
+import ExecuteFuncTest from './taskpoolExecute/ExecuteFuncTest.test';
+import ExecuteGenericsTaskConfigsTest from './taskTimeout/ExecuteGenericsTaskConfigsTest.test';
+import ExecuteTaskConfigsTest from './taskTimeout/ExecuteTaskConfigsTest.test';
+import ExecuteTaskGroupConfigsTest from './taskTimeout/ExecuteTaskGroupConfigsTest.test';
+import ExecuteTaskGroupTest from './taskpoolExecute/ExecuteTaskGroupTest.test';
+import ExecuteTaskTest from './taskpoolExecute/ExecuteTaskTest.test';
+import ExecutePeriodicallyGenericTest from './taskpoolExecute/ExecutePeriodicallyGenericTest.test';
+import ExecutePeriodicallyTaskTest from './taskpoolExecute/ExecutePeriodicallyTaskTest.test';
+
+import TaskTimeoutTest from './taskTimeout/TaskTimeout.test';
+import TaskTimeout2Test from './taskTimeout/TaskTimeout2.test';
+
 
 export default function testsuite() {
 
-  
   taskpoolTestState();
   taskpoolTest();
   TaskPoolTest1();
@@ -46,7 +59,21 @@ export default function testsuite() {
   TaskPoolTest2();
 
   abilityTest();
-  taskPoolTaskDynamicsTest();
-  taskPoolTaskGroupShareTest();
+  TaskPoolDynamicLoadTest();
+  TaskPoolSharedLoadTest();
   taskpoolTestTask();
+  // Migrated taskpool.rar suites (self-cleaning: each periodic suite cancels its own tasks in afterAll).
+  TaskpoolConfigsTest();
+  TaskpoolPriorityTest();
+  ExecuteFuncTest();
+  ExecuteGenericsTaskConfigsTest();
+  ExecuteTaskConfigsTest();
+  ExecuteTaskGroupConfigsTest();
+  ExecuteTaskGroupTest();
+  ExecuteTaskTest();
+  ExecutePeriodicallyGenericTest();
+  ExecutePeriodicallyTaskTest();
+  TaskTimeoutTest();
+  TaskTimeout2Test();
+
 }

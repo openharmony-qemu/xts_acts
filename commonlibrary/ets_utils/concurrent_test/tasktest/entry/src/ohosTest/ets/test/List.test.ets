@@ -14,8 +14,6 @@
  */
 
 
-import taskTimeoutTest from './TaskTimeout.test';
-import taskTimeout2Test from './TaskTimeout2.test';
 import TaskListeningTest from './TaskListening.test';
 
 import TaskGroupTest from './TaskGroupTest.test.ets'
@@ -25,8 +23,6 @@ import TaskQueueCoordTest from './TaskQueueCoordTest.test';
 
 export default function testsuite() {
  
-  taskTimeoutTest();
-  taskTimeout2Test();
   TaskListeningTest();
   TaskGroupTest();
   TaskQueueCoordTest();

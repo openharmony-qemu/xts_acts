@@ -29,13 +29,13 @@ import {
   taskFunction8,
   taskFunction9,
   WorkerSrc,
-} from '../testability/pages/TaskPoolTaskUtils';
+} from '../../testability/pages/TaskPoolTaskUtils';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { WorkerSrc1 } from '../testability/pages/WorkerSrc1';
-import { WorkerSrc2 } from '../testability/pages/WorkerSrc2';
+import { WorkerSrc1 } from '../../testability/pages/WorkerSrc1';
+import { WorkerSrc2 } from '../../testability/pages/WorkerSrc2';
 
-export default function TaskPoolTaskDynamicsTest() {
-  describe('TaskPoolTaskDynamicsTest', () => {
+export default function TaskPoolDynamicLoadTest() {
+  describe('TaskPoolDynamicLoadTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -277,7 +277,7 @@ export default function TaskPoolTaskDynamicsTest() {
           task.onEnqueued(async () => {
             await new Promise<void>((resolve) => setTimeout(resolve, 1000));
             console.log(`Task ${index} waited for 1 second`);
-            const dynamicModule = await import('../testability/pages/TaskPoolMethod');
+            const dynamicModule = await import('../../testability/pages/TaskPoolMethod');
             const dynamicFunction = dynamicModule.calculate;
             const result = await dynamicFunction(index);
             totalCalculated += result;
@@ -321,7 +321,7 @@ export default function TaskPoolTaskDynamicsTest() {
               await new Promise<void>((resolve: () => void) => setTimeout(resolve, 1000));
               totalExpected += index + 1;
               console.log(`Task ${index} waited for 1 second`);
-              const dynamicModule = await import('../testability/pages/TaskPoolMethod');
+              const dynamicModule = await import('../../testability/pages/TaskPoolMethod');
               const dynamicFunction = dynamicModule.asyncCalculate1;
               const result = await dynamicFunction(index);
               totalCalculated += result;
@@ -371,7 +371,7 @@ export default function TaskPoolTaskDynamicsTest() {
             try {
               totalExpected += index + 2;
               await new Promise<void>((resolve) => {
-                import('../testability//pages/TaskPoolMethod')
+                import('../../testability//pages/TaskPoolMethod')
                   .then((module) => {
                     const calculationFunction = module.calculate;
                     const result = calculationFunction(index);
@@ -428,7 +428,7 @@ export default function TaskPoolTaskDynamicsTest() {
                 }, 500);
               });
               await new Promise<void>(async (resolve) => {
-                const calculationModel = await import('../testability/pages/TaskPoolMethod');
+                const calculationModel = await import('../../testability/pages/TaskPoolMethod');
                 const calculationFunction = calculationModel.asyncCalculate1
                 const result = await calculationFunction(index);
                 totalCalculated += result;
@@ -477,7 +477,7 @@ export default function TaskPoolTaskDynamicsTest() {
                 }, 500);
               });
               const promiseToAwait = new Promise<void>((resolve) => {
-                import('../testability//pages/TaskPoolMethod')
+                import('../../testability//pages/TaskPoolMethod')
                   .then(async (module) => {
                     const calculationFunction = module.calculate;
                     const result = await calculationFunction(index);
@@ -531,7 +531,7 @@ export default function TaskPoolTaskDynamicsTest() {
                 }, 1000);
               });
               const promiseToAwait = new Promise<void>((resolve) => {
-                import('../testability/pages/TaskPoolMethod')
+                import('../../testability/pages/TaskPoolMethod')
                   .then(async (module) => {
                     const calculationFunction = module.asyncCalculate1;
                     const result = await calculationFunction(index);
@@ -589,7 +589,7 @@ export default function TaskPoolTaskDynamicsTest() {
               await promiseToAwait
                 .catch(async (error: BusinessError) => {
                   console.error(`Task ${index} caught simulated error:`, error);
-                  import('../testability/pages/TaskPoolMethod')
+                  import('../../testability/pages/TaskPoolMethod')
                     .then(async (module) => {
                       const calculationFunction = module.calculate;
                       const result = await calculationFunction(index);
@@ -644,7 +644,7 @@ export default function TaskPoolTaskDynamicsTest() {
               await promiseToAwait
                 .catch(async (error: BusinessError) => {
                   console.error(`Task ${index} caught simulated error:`, error);
-                  import('../testability/pages/TaskPoolMethod')
+                  import('../../testability/pages/TaskPoolMethod')
                     .then(async (module) => {
                       const calculationFunction = module.asyncCalculate1;
                       const result = await calculationFunction(index);
@@ -699,7 +699,7 @@ export default function TaskPoolTaskDynamicsTest() {
                 });
                 await promiseToAwait
                   .finally(async () => {
-                    const calculationModel = await import('../testability/pages/TaskPoolMethod');
+                    const calculationModel = await import('../../testability/pages/TaskPoolMethod');
                     const calculationFunction = calculationModel.calculate
                     const result = await calculationFunction(index);
                     totalCalculated += result;
@@ -743,7 +743,7 @@ export default function TaskPoolTaskDynamicsTest() {
                 await new Promise<void>((resolve) => {
                   setTimeout(() => {
                     console.log(`Task ${index} waiting in the first promise`);
-                    import('../testability/pages/TaskPoolMethod')
+                    import('../../testability/pages/TaskPoolMethod')
                       .then((module) => {
                         const calculationFunction = module.calculate;
                         const result1 = calculationFunction(index);
@@ -764,7 +764,7 @@ export default function TaskPoolTaskDynamicsTest() {
                   }, 500);
                 });
                 await promiseToAwait.then(() => {
-                  import('../testability/pages/TaskPoolMethod')
+                  import('../../testability/pages/TaskPoolMethod')
                     .then((module) => {
                       const calculationFunction = module.calculate;
                       const result2 = calculationFunction(index);
@@ -820,7 +820,7 @@ export default function TaskPoolTaskDynamicsTest() {
                     resolve();
                   }, 100);
                 }).finally(async () => {
-                  const calculationModel = await import('../testability/pages/TaskPoolMethod');
+                  const calculationModel = await import('../../testability/pages/TaskPoolMethod');
                   const calculationFunction = calculationModel.asyncCalculate1;
                   const result1 = await calculationFunction(index);
                   totalCalculated1 += result1;
@@ -833,7 +833,7 @@ export default function TaskPoolTaskDynamicsTest() {
                   }, 500);
                 });
                 await promiseToAwait.finally(async () => {
-                  const calculationModel = await import('../testability/pages/TaskPoolMethod');
+                  const calculationModel = await import('../../testability/pages/TaskPoolMethod');
                   const calculationFunction = calculationModel.asyncCalculate1;
                   const result2 = await calculationFunction(index);
                   totalCalculated2 += result2;
@@ -881,7 +881,7 @@ export default function TaskPoolTaskDynamicsTest() {
                 totalExpected += index + 1;
                 console.log(`Task ${index} caught an error:`, error.message);
                 await new Promise<void>(async (resolve) => {
-                  const calculationModel = await import('../testability/pages/TaskPoolMethod');
+                  const calculationModel = await import('../../testability/pages/TaskPoolMethod');
                   const calculationFunction = calculationModel.asyncCalculate1;
                   const result = await calculationFunction(index);
                   totalCalculated += result;
@@ -932,7 +932,7 @@ export default function TaskPoolTaskDynamicsTest() {
                     resolve();
                   }, 1000);
                 });
-                const calculationModel = await import('../testability/pages/TaskPoolMethod');
+                const calculationModel = await import('../../testability/pages/TaskPoolMethod');
                 const calculationFunction = calculationModel.asyncCalculate1;
                 const result = await calculationFunction(index);
                 totalCalculated += result;
@@ -970,7 +970,7 @@ export default function TaskPoolTaskDynamicsTest() {
         let totalExpected = 0;
         for (let index = 0; index < 10; index++) {
           console.log('即将发送的 index 值:', index);
-          let work = new worker.ThreadWorker("../testability/pages/workers/Worker");
+          let work = new worker.ThreadWorker("../../testability/pages/workers/Worker");
           work.postMessage(index);
           work.onmessage = (e: MessageEvents): void => {
             const result: number = e.data;
@@ -1004,7 +1004,7 @@ export default function TaskPoolTaskDynamicsTest() {
         let totalExpected = 0;
         for (let index = 0; index < 10; index++) {
           console.log('即将发送的 index 值:', index);
-          let work = new worker.ThreadWorker("../testability/pages/workers/Worker1");
+          let work = new worker.ThreadWorker("../../testability/pages/workers/Worker1");
           work.postMessage(index);
           work.onmessage = (e: MessageEvents): void => {
             const result: number = e.data;
@@ -1038,7 +1038,7 @@ export default function TaskPoolTaskDynamicsTest() {
         let totalExpected = 0;
         for (let index = 0; index < 10; index++) {
           console.log('即将发送的 index 值:', index);
-          let work = new worker.ThreadWorker("../testability/pages/workers/Worker2");
+          let work = new worker.ThreadWorker("../../testability/pages/workers/Worker2");
           work.postMessage(index);
           work.onmessage = (e: MessageEvents): void => {
             const result: number = e.data;

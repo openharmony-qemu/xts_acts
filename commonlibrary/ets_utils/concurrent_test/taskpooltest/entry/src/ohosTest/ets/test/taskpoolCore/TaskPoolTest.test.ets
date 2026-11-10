@@ -14,10 +14,10 @@
  */
 
 import { describe, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
-import { testHappyPath, testTwoTasks, testManyTasks, testTwoTasksChained, testManyTasksChained, testRepeats } from './TaskPoolTest';
-import { skipConditional } from './utils'
+import { testHappyPath, testTwoTasks, testManyTasks, testTwoTasksChained, testManyTasksChained, testRepeats } from '../TaskPoolTest';
+import { skipConditional } from '../utils'
 
-export default function TaskPoolTest() {
+export default function TaskPoolCoreTest() {
   let printLog = 'TaskPoolTest:';
   describe('TaskPoolTest', () => {
 
@@ -27,7 +27,7 @@ export default function TaskPoolTest() {
 
     /**
      * @tc.name   testHappyPath
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_TASK_0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_TASK_0100
      * @tc.desc   checks most basic task pool use
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -41,7 +41,7 @@ export default function TaskPoolTest() {
 
     /**
      * @tc.name   testTwoTasks
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_TASK_0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_TASK_0200
      * @tc.desc   checks task pool with two tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -55,7 +55,7 @@ export default function TaskPoolTest() {
 
     /**
      * @tc.name   testManyTasks
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_TASK_0003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_TASK_0300
      * @tc.desc   checks task pool with many tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -69,7 +69,7 @@ export default function TaskPoolTest() {
 
     /**
      * @tc.name   testTwoTasksChained
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_TASK_0004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_TASK_0400
      * @tc.desc   checks task pool with two tasks chained
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -83,7 +83,7 @@ export default function TaskPoolTest() {
 
     /**
      * @tc.name   testManyTasksChained
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_TASK_0005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_TASK_0500
      * @tc.desc   checks task pool with many tasks chained
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -97,7 +97,7 @@ export default function TaskPoolTest() {
 
     /**
      * @tc.name   testRepeats
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_TASK_0006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_TASK_0600
      * @tc.desc   checks repeated use of task pool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

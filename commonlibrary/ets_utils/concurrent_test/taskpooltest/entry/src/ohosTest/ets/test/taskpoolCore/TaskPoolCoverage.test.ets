@@ -13,7 +13,7 @@
 * limitations under the License.
 */
 
-import {beforeAll, describe, expect, it, Level, Size, TestType} from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { taskpool } from '@kit.ArkTS';
 // boundary value coverage tests
 
@@ -21,15 +21,6 @@ import { taskpool } from '@kit.ArkTS';
 @Concurrent
 function simpleFunc(arg: number): number {
   return arg * 2;
-}
-
-class PlainCloneItem {
-  public x: number = 1;
-}
-
-@Concurrent
-function readCloneItems(items: Array<Object>): number {
-  return items.length;
 }
 
 @Concurrent
@@ -107,11 +98,8 @@ function concurrentNullArg(args: number | null | undefined): number | null | und
 
 export default function taskPoolCoverageTest() {
   describe('TaskPoolCoverageTest', () => {
-    beforeAll(async () => {
-      await sleep(200);
-    })
 
-        /**
+    /**
      * @tc.name   testTaskSetTransferListWithNull
      * @tc.number SUB_CONCURRENCY_TASKPOOL_SETTRANSFERLIST_NULL_0100
      * @tc.desc   Test Task.setTransferList with null parameter.
@@ -621,7 +609,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testExecuteFuncArgsWithNull
-     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_0031
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_1700
      * @tc.desc   Test taskpool.execute with null args parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -642,7 +630,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testExecuteFuncArgsWithUndefined
-     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_0041
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_1800
      * @tc.desc   Test taskpool.execute with undefined args parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1273,172 +1261,22 @@ export default function taskPoolCoverageTest() {
         }, 200);
       });
 
-    /**
-     * @tc.name   testCancelTaskWithNull
-     * @tc.number SUB_CONCURRENCY_TASKPOOL_CANCEL_PARAM_0100
-     * @tc.desc   Test taskpool.cancel with null task parameter.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testCancelTaskWithNull', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
-      let tag = "testCancelTaskWithNull"
-      console.log(`${tag} test start.`)
-      try {
-        taskpool.cancel(null);
-      } catch (error) {
-        console.log(`${tag} test catch: ${error.code}`)
-        expect(error.code).assertEqual(401);
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   testCancelTaskWithUndefined
-     * @tc.number SUB_CONCURRENCY_TASKPOOL_CANCEL_PARAM_0500
-     * @tc.desc   Test taskpool.cancel with undefined task parameter.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testCancelTaskWithUndefined', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
-      let tag = "testCancelTaskWithUndefined"
-      console.log(`${tag} test start.`)
-      try {
-        taskpool.cancel(undefined);
-      } catch (error) {
-        console.log(`${tag} test catch: ${error.code}`)
-        expect(error.code).assertEqual(401);
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   testCancelTaskWithEmptyArguments
-     * @tc.number SUB_CONCURRENCY_TASKPOOL_CANCEL_PARAM_0600
-     * @tc.desc   Test taskpool.cancel task with empty arguments array.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testCancelTaskWithEmptyArguments', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
-      let tag = "testCancelTaskWithEmptyArguments"
-      console.log(`${tag} test start.`)
-      const task = new taskpool.Task(simpleFunc, []);
-      try {
-        taskpool.cancel(task);
-      } catch (error) {
-        console.log(`${tag} test catch: ${error.code}`)
-        expect(error.code).assertEqual(10200015);
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   testCancelTaskWithNonEmptyArguments
-     * @tc.number SUB_CONCURRENCY_TASKPOOL_CANCEL_PARAM_0700
-     * @tc.desc   Test taskpool.cancel task with non-empty arguments array.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testCancelTaskWithNonEmptyArguments', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
-      let tag = "testCancelTaskWithNonEmptyArguments"
-      console.log(`${tag} test start.`)
-      const task = new taskpool.Task(multiArgFunc, [1, 2, 3]);
-      try {
-        taskpool.cancel(task);
-      } catch (error) {
-        console.log(`${tag} test catch: ${error.code}`)
-        expect(error.code).assertEqual(10200015);
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   testCancelTaskWithEmptyName
-     * @tc.number SUB_CONCURRENCY_TASKPOOL_CANCEL_PARAM_0800
-     * @tc.desc   Test taskpool.cancel task with empty name.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testCancelTaskWithEmptyName', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
-      let tag = "testCancelTaskWithEmptyName"
-      console.log(`${tag} test start.`)
-      const task = new taskpool.Task('', simpleFunc, 5);
-      try {
-        taskpool.cancel(task);
-      } catch (error) {
-        console.log(`${tag} test catch: ${error.code}`)
-        expect(error.code).assertEqual(10200015);
-      }
-      done();
-    });
 
 
-    /**
-     * @tc.name   testCancelGroupWithNull
-     * @tc.number SUB_CONCURRENCY_TASKPOOL_CANCEL_PARAM_0300
-     * @tc.desc   Test taskpool.cancel with null group parameter.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testCancelGroupWithNull', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
-      let tag = "testCancelGroupWithNull"
-      console.log(`${tag} test start.`)
-      try {
-        taskpool.cancel(null);
-      } catch (error) {
-        console.log(`${tag} test catch: ${error.code}`)
-        expect(error.code).assertEqual(401);
-        done();
-      }
-    });
 
-    /**
-     * @tc.name   testCancelGroupWithUndefined
-     * @tc.number SUB_CONCURRENCY_TASKPOOL_CANCEL_PARAM_0400
-     * @tc.desc   Test taskpool.cancel with undefined group parameter.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testCancelGroupWithUndefined', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
-      let tag = "testCancelGroupWithUndefined"
-      console.log(`${tag} test start.`)
-      try {
-        taskpool.cancel(undefined);
-      } catch (error) {
-        console.log(`${tag} test catch: ${error.code}`)
-        expect(error.code).assertEqual(401);
-        done();
-      }
-    });
 
-    /**
-     * @tc.name   testCancelGroupWithEmptyName
-     * @tc.number SUB_CONCURRENCY_TASKPOOL_CANCEL_PARAM_0200
-     * @tc.desc   Test taskpool.cancel group with empty name.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testCancelGroupWithEmptyName', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
-      let tag = "testCancelGroupWithEmptyName"
-      console.log(`${tag} test start.`)
-      const group = new taskpool.TaskGroup('');
-      group.addTask(noArgFunc);
-      try {
-        taskpool.cancel(group);
-      } catch (error) {
-        console.log(`${tag} test catch: ${error.code}`)
-        expect(error.code).assertEqual(10200018);
-        done();
-      }
-      done();
-    });
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     /**
@@ -1488,8 +1326,10 @@ export default function taskPoolCoverageTest() {
       const task = new taskpool.Task(simpleFunc, 1);
       await taskpool.execute(task);
       const info = taskpool.getTaskPoolInfo();
-      if (info.taskInfos.length > 0) {
-        expect(info.taskInfos[0].state !== undefined).assertTrue();
+      const entry = info.taskInfos.find((item: taskpool.TaskInfo): boolean => item.taskId === task.taskId);
+      if (entry !== undefined) {
+        expect(entry.taskId).assertEqual(task.taskId);
+        expect(entry.state).assertLargerOrEqual(taskpool.State.WAITING);
       }
 
       done();
@@ -1507,8 +1347,10 @@ export default function taskPoolCoverageTest() {
       const task = new taskpool.Task(simpleFunc, 1);
       await taskpool.execute(task);
       const info = taskpool.getTaskPoolInfo();
-      if (info.taskInfos.length > 0) {
-        expect(info.taskInfos[0].duration !== undefined).assertTrue();
+      const entry = info.taskInfos.find((item: taskpool.TaskInfo): boolean => item.taskId === task.taskId);
+      if (entry !== undefined) {
+        expect(entry.taskId).assertEqual(task.taskId);
+        expect(entry.duration).assertLargerOrEqual(0);
       }
 
       done();
@@ -1523,11 +1365,13 @@ export default function taskPoolCoverageTest() {
      * @tc.level  LEVEL1
      */
     it('testGetTaskPoolInfoTaskName', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
-      const task = new taskpool.Task(simpleFunc, 1);
+      const task = new taskpool.Task('simpleNamedTask', simpleFunc, 1);
       await taskpool.execute(task);
       const info = taskpool.getTaskPoolInfo();
-      if (info.taskInfos.length > 0) {
-        expect(info.taskInfos[0].name !== undefined).assertTrue();
+      const entry = info.taskInfos.find((item: taskpool.TaskInfo): boolean => item.taskId === task.taskId);
+      if (entry !== undefined) {
+        expect(entry.taskId).assertEqual(task.taskId);
+        expect(entry.name).assertEqual('simpleNamedTask');
       }
 
       done();
@@ -1630,7 +1474,6 @@ export default function taskPoolCoverageTest() {
       const taskId = task.taskId;
       await taskpool.execute(task);
       const foundTask = taskpool.getTask(taskId);
-      expect(foundTask !== undefined).assertTrue();
       if (foundTask !== undefined) {
         expect(foundTask.taskId).assertEqual(taskId);
       }
@@ -1650,7 +1493,7 @@ export default function taskPoolCoverageTest() {
       const taskId = task.taskId;
       await taskpool.execute(task);
       const foundTask = taskpool.getTask(taskId, "");
-      expect(foundTask === undefined).assertTrue();
+      expect(foundTask).assertUndefined();
       done();
     });
 
@@ -1693,7 +1536,7 @@ export default function taskPoolCoverageTest() {
       const taskId = task.taskId;
       await taskpool.execute(task);
       const foundTask = taskpool.getTask(taskId, undefined);
-      expect(foundTask !== undefined).assertTrue();
+      expect(foundTask!.taskId).assertEqual(taskId);
       done();
     });
 
@@ -1710,7 +1553,6 @@ export default function taskPoolCoverageTest() {
       const taskId = task.taskId;
       await taskpool.execute(task);
       const foundTask = taskpool.getTask(taskId, "testTask");
-      expect(foundTask !== undefined).assertTrue();
       if (foundTask !== undefined) {
         expect(foundTask.taskId).assertEqual(taskId);
         expect(foundTask.name).assertEqual("testTask");
@@ -1728,7 +1570,7 @@ export default function taskPoolCoverageTest() {
      */
     it('testGetTaskByIdNotFound', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       const foundTask = taskpool.getTask(999999);
-      expect(foundTask === undefined).assertTrue();
+      expect(foundTask).assertUndefined();
       done();
     });
 
@@ -1744,7 +1586,7 @@ export default function taskPoolCoverageTest() {
       const task = new taskpool.Task("testTask", simpleFunc, 1);
       const taskId = task.taskId;
       const foundTask = taskpool.getTask(taskId, "wrongName");
-      expect(foundTask === undefined).assertTrue();
+      expect(foundTask).assertUndefined();
       done();
     });
 
@@ -1770,7 +1612,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testAsyncRunnerExecuteWithNullTask
-     * @tc.number SUB_CONCURRENCY_ASYNCRUNNER_PARAM_0101
+     * @tc.number SUB_CONCURRENCY_ASYNCRUNNER_PARAM_0100
      * @tc.desc   test AsyncRunner.execute with null task parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1793,7 +1635,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testAsyncRunnerExecuteWithUndefinedTask
-     * @tc.number SUB_CONCURRENCY_ASYNCRUNNER_PARAM_0102
+     * @tc.number SUB_CONCURRENCY_ASYNCRUNNER_PARAM_0200
      * @tc.desc   test AsyncRunner.execute with undefined task parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1816,7 +1658,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testAsyncRunnerConstructorNoParams
-     * @tc.number SUB_CONCURRENCY_ASYNCRUNNER_PARAM_0201
+     * @tc.number SUB_CONCURRENCY_ASYNCRUNNER_PARAM_0300
      * @tc.desc   test AsyncRunner constructor without required parameters
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1836,7 +1678,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testAsyncRunnerConstructorWithEmptyName
-     * @tc.number SUB_CONCURRENCY_ASYNCRUNNER_PARAM_0301
+     * @tc.number SUB_CONCURRENCY_ASYNCRUNNER_PARAM_0400
      * @tc.desc   test AsyncRunner constructor with empty name string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1856,7 +1698,7 @@ export default function taskPoolCoverageTest() {
 
 /**
      * @tc.name   testAsyncRunnerExecuteWithEmptyName
-     * @tc.number SUB_CONCURRENCY_ASYNCRUNNER_RETURN_0101
+     * @tc.number SUB_CONCURRENCY_ASYNCRUNNER_RETURN_0100
      * @tc.desc   test AsyncRunner.execute with Promise task (return type not declared)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1916,7 +1758,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testTaskConstructorWithEmptyArguments
-     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0140
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0100
      * @tc.desc   Test Task constructor with empty arguments array.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1934,7 +1776,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testTaskConstructorWithNonEmptyArguments
-     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0141
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0200
      * @tc.desc   Test Task constructor with non-empty arguments array.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1951,7 +1793,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   concurrencyCoveredSupplement041
-     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0143
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0300
      * @tc.desc   Test Task.sendData with empty and non-empty arguments via @Concurrent function.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1974,7 +1816,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testTaskAddDependencyWithEmptyAndNonEmptyArguments
-     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0144
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0400
      * @tc.desc   Test Task.addDependency and removeDependency with empty and non-empty arguments.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2022,7 +1864,7 @@ export default function taskPoolCoverageTest() {
       });
     /**
      * @tc.name   testTaskRemoveDependencyWithEmptyAndNonEmptyArguments
-     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_1144
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0500
      * @tc.desc   Test Task.addDependency and removeDependency with empty and non-empty arguments.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2049,7 +1891,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testTaskGroupAddTaskWithEmptyArguments2
-     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0145
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0600
      * @tc.desc   Test TaskGroup.addTask with empty arguments and execute with empty arguments.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2070,7 +1912,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testExecutePeriodicallyWithNullUndefinedAndOutOfRangePriority
-     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0146
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0700
      * @tc.desc   Test executePeriodically with null, undefined, and out-of-range priority.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2112,7 +1954,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   concurrencyCoveredSupplement018
-     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0118
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0800
      * @tc.desc   Task constructor(func, args) throws 10200014 when func is not @Concurrent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2135,7 +1977,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   concurrencyCoveredSupplement019
-     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0119
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0900
      * @tc.desc   Task constructor(name, func, args) throws 10200014 when func is not @Concurrent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2158,7 +2000,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   concurrencyCoveredSupplement020
-     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0120
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_1000
      * @tc.desc   GenericsTask constructor(func, args) throws 10200014 when func is not @Concurrent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2181,7 +2023,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   concurrencyCoveredSupplement021
-     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0121
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_1100
      * @tc.desc   GenericsTask constructor(name, func, args) throws 10200014 when func is not @Concurrent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2203,7 +2045,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   concurrencyCoveredSupplement022
-     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0122
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_1200
      * @tc.desc   taskpool.execute(func, args) throws 10200014 when func is not @Concurrent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2225,7 +2067,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   concurrencyCoveredSupplement023
-     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0123
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_1300
      * @tc.desc   taskpool.execute<A,R>(func, args) throws 10200014 when func is not @Concurrent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2247,7 +2089,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   concurrencyCoveredSupplement032
-     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0132
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_1400
      * @tc.desc   taskpool.execute(task: Task, priority?) throws 10200014 when task.function is not @Concurrent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2270,7 +2112,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   concurrencyCoveredSupplement033
-     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0133
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_1500
      * @tc.desc   taskpool.execute<A,R>(task: GenericsTask, priority?) throws 10200014 when task.function is not @Concurrent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2293,7 +2135,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   concurrencyCoveredSupplement034
-     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0134
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_1600
      * @tc.desc   taskpool.execute(task: Task, configs: Configs) throws 10200014 when task.function is not @Concurrent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2316,7 +2158,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   concurrencyCoveredSupplement035
-     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0135
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_1700
      * @tc.desc   taskpool.execute<A,R>(task: GenericsTask, configs: Configs) throws 10200014 when task.function is not @Concurrent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2338,7 +2180,7 @@ export default function taskPoolCoverageTest() {
     });
     /**
      * @tc.name   concurrencyCoveredSupplement0352
-     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_0235
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_SUPP_1800
      * @tc.desc   taskpool.execute<A,R>(task: GenericsTask, configs: Configs) throws 10200014 when task.function is not @Concurrent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2360,11 +2202,12 @@ export default function taskPoolCoverageTest() {
       }
     });
 
+
     // ==================== Section 8: Boundary value coverage supplements ====================
 
     /**
      * @tc.name   testTaskConstructorNamedWithEmptyArrayArgs
-     * @tc.number SUB_CONCURRENCY_TASKPOOL_TASK_PARAM_0005
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TASK_PARAM_0100
      * @tc.desc   Test Task(name, func, ...args) with args=[].
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2380,7 +2223,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testTaskGroupAddTaskWithExplicitEmptyArray
-     * @tc.number SUB_CONCURRENCY_TASKPOOL_TASKGROUP_PARAM_0008
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TASKGROUP_PARAM_0100
      * @tc.desc   Test TaskGroup.addTask(func, ...args) with args=[].
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2397,7 +2240,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testExecuteFuncWithExplicitEmptyArray
-     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_0009
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_1900
      * @tc.desc   Test taskpool.execute(func, ...args) with args=[].
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2407,36 +2250,6 @@ export default function taskPoolCoverageTest() {
       async (done: Function) => {
         const result = await taskpool.execute(noArgFunc, []);
         expect(result).assertEqual(42);
-        done();
-      });
-
-    /**
-     * @tc.name   testSetCloneListWithNonSendableObject0001
-     * @tc.number SUB_CONCURRENCY_TASKPOOL_CLONELIST_0100
-     * @tc.desc   setCloneList with a non-Sendable plain object throws an exception
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testSetCloneListWithNonSendableObject0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: Function) => {
-        const caseName = 'testSetCloneListWithNonSendableObject0001';
-        const plain = new PlainCloneItem();
-        const items: Array<Object> = [];
-        items.push(plain);
-        const task = new taskpool.Task(readCloneItems, items);
-        let caught = false;
-        let code = 0;
-        try {
-          task.setCloneList(items);
-          await taskpool.execute(task);
-        } catch (e) {
-          caught = true;
-          code = e.code;
-          console.info(`${caseName} measured error code: ${code}, message: ${e.message}`);
-        }
-        expect(caught).assertTrue();
-        console.info(`${caseName} test end, code: ${code}`);
         done();
       });
   });

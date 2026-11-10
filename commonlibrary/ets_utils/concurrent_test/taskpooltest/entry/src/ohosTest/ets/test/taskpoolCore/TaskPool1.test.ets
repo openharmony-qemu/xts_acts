@@ -12,17 +12,18 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import {beforeAll, describe, it, expect, Level, Size, TestType} from '@ohos/hypium';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
 import { ArkTSUtils, collections, JSON, lang, taskpool } from '@kit.ArkTS';
 import { BusinessError } from '@ohos.base';
-import { delay, getTaskStateByTaskName } from '../utils/taskPoolCommon';
-import {  testFailed,
+import { delay, getTaskStateByTaskName } from '../../utils/taskPoolCommon';
+import {
+  testFailed,
   periodicTask,
   inspectStatus,
   additionDelay,
   waitForRunner,
   printArgs,
-} from '../utils/taskPoolTask';
+} from '../../utils/taskPoolTask';
 
 import {
   funcRetNumber,
@@ -67,7 +68,7 @@ import {
   testSequenceRunner,
   testRunnerNum2Str,
   testRunnerStr2Str
-} from '../utils/taskPool';
+} from '../../utils/taskPool';
 
 import {
   executeDelayed,
@@ -76,7 +77,7 @@ import {
   executeSequenceRunner,
   executeTask,
   executeTaskGroup
-} from '../utils/taskPoolCombineScenes';
+} from '../../utils/taskPoolCombineScenes';
 
 import {
   SendableClass,
@@ -98,16 +99,7 @@ import {
   CustomizeClass,
   ISendableClass,
   shareTypeTask0015,
-} from '../utils/taskPoolExecuteCommon';
-
-
-function sleep(time: number): Promise<void> {
-  return new Promise<void>((resolve) => {
-    setTimeout(() => {
-      resolve();
-    }, time);
-  });
-}
+} from '../../utils/taskPoolExecuteCommon';
 
 declare class ArkTools {
   static forceFullGC(): void;
@@ -361,11 +353,7 @@ function testExecutePeriodically(args: number): void {
 
 export default function TaskPoolTest1() {
   describe('TaskPoolTest1', () => {
-    beforeAll(async () => {
-      await sleep(200);
-    })
-
-        /**
+    /**
      * @tc.name   testExecuteTask0001
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_EXECUTE_TASK_0100
      * @tc.desc   Testing the task->execute with create func, assert return type and value.
@@ -1840,562 +1828,21 @@ export default function TaskPoolTest1() {
       done();
     });
 
-    /**
-     * @tc.name   testCancelTask0001
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_CANCEL_TASK_5200
-     * @tc.desc   Testing cancel(task) when task is canceled directly without added to execute.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testCancelTask0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName: string = 'testCancelTask0001';
-      console.info(`${caseName} test start`);
-      try {
-        let task: taskpool.Task = new taskpool.Task(delay, 10);
-        taskpool.cancel(task);
-        expect().assertFail();
-      } catch (error) {
-        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-      }
-      console.info(`${caseName} test end`);
-      done();
-    });
-
-    /**
-     * @tc.name   testCancelTask0002
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_CANCEL_TASK_5300
-     * @tc.desc   Testing cancel(task) when task is canceled without run.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testCancelTask0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName: string = 'testCancelTask0002';
-      console.info(`${caseName} test start`);
-      try {
-        let task1: taskpool.Task = new taskpool.Task(delay, 10);
-        let task2: taskpool.Task = new taskpool.Task(delay, 10);
-        taskpool.execute(task2).then(() => {
-          console.info("taskPool: execute task success");
-        }).catch((error: Error) => {
-          console.info(`${caseName}: execute catch error: ${error.message}`);
-          expect().assertFail();
-        });
-        taskpool.cancel(task1);
-        expect().assertFail();
-      } catch (error) {
-        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-      }
-      console.info(`${caseName} test end`);
-      done();
-    });
 
     //todo taskpool.Task.isCanceled() 始终为false
-    /**
-     * @tc.name   testCancelTask0003
-     * @tc.number SUB_Runtime_Language_Backend_TaskpoolConcurrency_ONE_5400
-     * @tc.desc   testCancelTask0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testCancelTask0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName: string = 'testCancelTask0003';
-      console.info(`${caseName} test start`);
-      try {
-        let task: taskpool.Task = new taskpool.Task(delay, 100);
-        taskpool.execute(task).then(() => {
-          console.info("taskPool: execute task success");
-          taskpool.cancel(task);
-        }).catch((error: Error) => {
-          console.info(`${caseName}: execute task catch error: ${error.message}`);
-        });
-        await delay(100);
-        // expect(taskpool.Task.isCanceled()).assertEqual(true);
-      } catch (error) {
-        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-      done();
-    });
 
-    /**
-     * @tc.name   testCancelTask0004
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_CANCEL_TASK_5500
-     * @tc.desc   Testing cancel(task) when task is executing.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testCancelTask0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName: string = 'testCancelTask0004';
-      console.info(`${caseName} test start`);
-      try {
-        let task1: taskpool.Task = new taskpool.Task(inspectStatus, 100);
-        let task2: taskpool.Task = new taskpool.Task(inspectStatus, 200);
-        let task3: taskpool.Task = new taskpool.Task(inspectStatus, 300);
-        let task4: taskpool.Task = new taskpool.Task(inspectStatus, 400);
-        let task5: taskpool.Task = new taskpool.Task(inspectStatus, 500);
-        let task6: taskpool.Task = new taskpool.Task(inspectStatus, 600);
-        taskpool.executeDelayed(0, task1).then((res: Object) => {
-          console.info("taskpool test result: " + res);
-        }).catch((error: Error) => {
-          console.info(`${caseName}: execute catch error: ${error.message}`);
-          expect().assertFail();
-        });
-        taskpool.execute(task2);
-        taskpool.execute(task3);
-        taskpool.execute(task4);
-        taskpool.execute(task5);
-        taskpool.execute(task6);
-        setTimeout(() => {
-          try {
-            taskpool.cancel(task1);
-          } catch (e) {
-            console.error(`taskpool: cancel error code: ${e.code}, info: ${e.message}`);
-          }
-        }, 1000);
-      } catch (error) {
-        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-      done();
-    });
 
-    /**
-     * @tc.name   testCancelTask0005
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_CANCEL_TASK_5600
-     * @tc.desc   Testing cancel(task) when task is executing.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testCancelTask0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName: string = 'testCancelTask0005';
-      console.info(`${caseName} test start`);
-      try {
-        let task1: taskpool.Task = new taskpool.Task(inspectStatus, 100);
-        let task2: taskpool.Task = new taskpool.Task(inspectStatus, 200);
-        taskpool.executePeriodically(10, task1);
-        taskpool.execute(task2);
-        setTimeout(() => {
-          try {
-            taskpool.cancel(task1);
-          } catch (e) {
-            console.error(`taskpool: cancel error code: ${e.code}, info: ${e.message}`);
-          }
-        }, 1000);
-      } catch (error) {
-        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-      done();
-    });
 
-    /**
-     * @tc.name   testCancelTask0006
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_CANCEL_TASK_5700
-     * @tc.desc   Testing cancel(task) when task is executed.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testCancelTask0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName: string = 'testCancelTask0006';
-      console.info(`${caseName} test start`);
-      try {
-        let task: taskpool.Task = new taskpool.Task(delay, 100);
-        await taskpool.execute(task).then(() => {
-          console.info("taskPool: execute task success");
-        });
-        await delay(100);
-        taskpool.cancel(task);
-        expect().assertFail();
-      } catch (error) {
-        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-      }
-      console.info(`${caseName} test end`);
-      done();
-    });
 
-    /**
-     * @tc.name   testCancelTask0007
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_CANCEL_TASK_5800
-     * @tc.desc   Testing cancel(task) when task is non-existent.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testCancelTask0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName: string = 'testCancelTask0007';
-      console.info(`${caseName} test start`);
-      try {
-        let task: taskpool.Task = new taskpool.Task(inspectStatus, 100);
-        taskpool.cancel(task);
-        expect().assertFail();
-      } catch (error) {
-        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-      }
-      console.info(`${caseName} test end`);
-      done();
-    });
 
-    /**
-     * @tc.name   testCancelTask0008
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_CANCEL_TASK_5900
-     * @tc.desc   Testing cancel(task) when task is cancellation for SequenceRunner.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testCancelTask0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName: string = 'testCancelTask0008';
-      console.info(`${caseName} test start`);
-      try {
-        let finalString: string = "";
-        let task1: taskpool.Task = new taskpool.Task(additionDelay, 300);
-        let task2: taskpool.Task = new taskpool.Task(additionDelay, 200);
-        let task3: taskpool.Task = new taskpool.Task(additionDelay, 100);
-        let task4: taskpool.Task = new taskpool.Task(waitForRunner, finalString);
-        let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
-        runner.execute(task1).then(() => {
-          finalString += 'a';
-          console.info("seqrunner: task1 done.");
-        }).catch((error: Error) => {
-          console.info(`${caseName}: execute catch error: ${error.message}`);
-          expect().assertFail();
-        });
-        runner.execute(task2).then(() => {
-          finalString += 'b';
-          console.info("seqrunner: task2 done");
-        }).catch((error: Error) => {
-          console.info(`${caseName}: execute catch error: ${error.message}`);
-        });
-        taskpool.cancel(task2);
-        runner.execute(task3).then(() => {
-          finalString += 'c';
-          console.info("seqrunner: task3 done");
-        }).catch((error: Error) => {
-          console.info(`${caseName}: execute catch error: ${error.message}`);
-          expect().assertFail();
-        });
-        await runner.execute(task4);
-        console.info("seqrunner: task4 done, finalString is " + finalString)
-        expect(finalString).assertEqual("ac")
-      } catch (error) {
-        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-      done();
-    });
 
-    /**
-     * @tc.name   testCancelTask0009
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_CANCEL_TASK_6000
-     * @tc.desc   Testing cancel(task) when tasks have a dependency relationship.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testCancelTask0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName: string = 'testCancelTask0009';
-      console.info(`${caseName} test start`);
-      try {
-        let task1: taskpool.Task = new taskpool.Task(delay, 10);
-        let task2: taskpool.Task = new taskpool.Task(delay, 20);
-        let task3: taskpool.Task = new taskpool.Task(delay, 20);
-        console.info("dependency: add dependency start");
-        task1.addDependency(task2);
-        task3.addDependency(task1);
-        console.info("dependency: add dependency end");
-        let tag = false;
-        taskpool.execute(task3).then(() => {
-          console.info("taskPool: execute task success")
-          tag = true;
-        }).catch((error: Error) => {
-          console.info(`${caseName}: execute catch error: ${error.message}`);
-        });
-        taskpool.execute(task1).then(() => {
-          console.info("taskPool: execute task success");
-          tag = true;
-        }).catch((error: Error) => {
-          console.info(`${caseName}: execute catch error: ${error.message}`);
-        });
-        await taskpool.execute(task2).then(() => {
-          console.info("taskPool: execute task success");
-          taskpool.cancel(task1);
-        });
-        await delay(100);
-        expect(tag).assertFalse();
-      } catch (error) {
-        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-      done();
-    });
 
-    /**
-     * @tc.name   testCancelTaskGroup0001
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_CANCEL_TASK_GROUP_6100
-     * @tc.desc   Testing cancel(taskGroup) when task is canceled directly without added to task.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testCancelTaskGroup0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName: string = 'testCancelTaskGroup0001';
-      console.info(`${caseName} test start`);
-      try {
-        let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
-        taskpool.cancel(taskGroup);
-        expect().assertFail();
-      } catch (error) {
-        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-      }
-      console.info(`${caseName} test end`);
-      done();
-    });
 
-    /**
-     * @tc.name   testCancelTaskGroup0002
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_CANCEL_TASK_GROUP_6200
-     * @tc.desc   Testing cancel(taskGroup) when task is canceled directly without added to execute.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testCancelTaskGroup0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName: string = 'testCancelTaskGroup0002';
-      console.info(`${caseName} test start`);
-      try {
-        let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
-        taskGroup.addTask(printArgs, 10);
-        taskGroup.addTask(printArgs, 20);
-        taskGroup.addTask(printArgs, 30);
-        taskpool.cancel(taskGroup);
-        expect().assertFail();
-      } catch (error) {
-        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-      }
-      console.info(`${caseName} test end`);
-      done();
-    });
 
-    /**
-     * @tc.name   testCancelTaskGroup0003
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_CANCEL_TASK_GROUP_6300
-     * @tc.desc   Testing cancel(taskGroup) when task is executing.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testCancelTaskGroup0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName: string = 'testCancelTaskGroup0003';
-      console.info(`${caseName} test start`);
-      try {
-        let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
-        taskGroup.addTask(printArgs, 10);
-        taskGroup.addTask(printArgs, 20);
-        taskGroup.addTask(printArgs, 30);
-        taskpool.execute(taskGroup).then((res: Array<Object>) => {
-          taskpool.cancel(taskGroup);
-          console.info("taskpool execute res is:" + res);
-        }).catch((error: Error) => {
-          console.info(`${caseName}: execute catch error: ${error.message}`);
-        });
-      } catch (error) {
-        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-      done();
-    });
 
-    /**
-     * @tc.name   testCancelTaskGroup0004
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_CANCEL_TASK_GROUP_6400
-     * @tc.desc   Testing cancel(taskGroup) when task is executing.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testCancelTaskGroup0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName: string = 'testCancelTaskGroup0004';
-      console.info(`${caseName} test start`);
-      try {
-        let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
-        taskGroup.addTask(printArgs, 10);
-        taskGroup.addTask(printArgs, 20);
-        taskGroup.addTask(printArgs, 30);
-        await taskpool.execute(taskGroup).then((res: Array<Object>) => {
-          console.info("taskpool execute res is:" + res);
-        });
-        await delay(100);
-        taskpool.cancel(taskGroup);
-        expect().assertFail();
-      } catch (error) {
-        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-      }
-      console.info(`${caseName} test end`);
-      done();
-    });
 
-    /**
-     * @tc.name   testTaskCombineScenes0001
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_COMBINE_SCENES_6500
-     * @tc.desc   执行&取消, Task & cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testTaskCombineScenes0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName: string = 'testTaskCombineScenes0001';
-      console.info(`${caseName} test task start`);
-      try {
-        let task: taskpool.Task = new taskpool.Task(delay, 100);
-        taskpool.execute(task, taskpool.Priority.LOW);
-        taskpool.cancel(task);
-      } catch (error) {
-        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test task end`);
-      done();
-    });
 
-    /**
-     * @tc.name   testTaskCombineScenes0002
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_COMBINE_SCENES_6600
-     * @tc.desc   执行&取消, TaskGroup & cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testTaskCombineScenes0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName: string = 'testTaskCombineScenes0002';
-      console.info(`${caseName} test taskGroup start`);
-      try {
-        let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
-        let task: taskpool.Task = new taskpool.Task(delay, 100);
-        console.info(`${caseName} taskGroup: add task start`);
-        taskGroup.addTask(task);
-        taskpool.execute(taskGroup, taskpool.Priority.LOW);
-        taskpool.cancel(task);
-      } catch (error) {
-        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test taskGroup end`);
-      done();
-    });
 
-    /**
-     * @tc.name   testTaskCombineScenes0003
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_COMBINE_SCENES_6700
-     * @tc.desc   执行&取消, 延时 & cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testTaskCombineScenes0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName: string = 'testTaskCombineScenes0003';
-      console.info(`${caseName} test executeDelayed start`);
-      try {
-        let task: taskpool.Task = new taskpool.Task(delay, 100);
-        taskpool.executeDelayed(100, task, taskpool.Priority.LOW);
-        taskpool.cancel(task);
-      } catch (error) {
-        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test executeDelayed end`);
-      done();
-    });
-
-    /**
-     * @tc.name   testTaskCombineScenes0004
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_COMBINE_SCENES_6800
-     * @tc.desc   执行&取消, 周期 & cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testTaskCombineScenes0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName: string = 'testTaskCombineScenes0004';
-      console.info(`${caseName} test executePeriodically start`);
-      try {
-        let task: taskpool.Task = new taskpool.Task(delay, 100);
-        console.info(`${caseName} taskGroup: add task start`);
-        taskpool.executePeriodically(100, task, taskpool.Priority.LOW);
-        taskpool.cancel(task);
-      } catch (error) {
-        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test executePeriodically end`);
-      done();
-    });
-
-    /**
-     * @tc.name   testTaskCombineScenes0005
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_COMBINE_SCENES_6900
-     * @tc.desc   执行&取消, 串行 & cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testTaskCombineScenes0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName: string = 'testTaskCombineScenes0005';
-      console.info(`${caseName} test sequenceRunner start`);
-      try {
-        let task1: taskpool.Task = new taskpool.Task(additionDelay, 3000);
-        let task2: taskpool.Task = new taskpool.Task(additionDelay, 3000);
-        let task3: taskpool.Task = new taskpool.Task(additionDelay, 3000);
-        let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner(caseName, taskpool.Priority.LOW);
-        console.info(`${caseName} sequenceRunner: execute task start`);
-        runner.execute(task1);
-        runner.execute(task2);
-        runner.execute(task3);
-        console.info(`${caseName} sequenceRunner: execute task end`);
-        taskpool.cancel(task1);
-        taskpool.cancel(task2);
-        taskpool.cancel(task3);
-      } catch (error) {
-        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test sequenceRunner end`);
-      done();
-    });
-
-    /**
-     * @tc.name   testTaskCombineScenes0006
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_COMBINE_SCENES_7000
-     * @tc.desc   执行&取消, 长时 & cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testTaskCombineScenes0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName: string = 'testTaskCombineScenes0006';
-      console.info(`${caseName} test longTask start`);
-      try {
-        let task: taskpool.LongTask = new taskpool.LongTask(delay, 10000);
-        taskpool.execute(task, taskpool.Priority.LOW);
-        taskpool.cancel(task);
-      } catch (error) {
-        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-      }
-      console.info(`${caseName} test longTask end`);
-      done();
-    });
 
 
     /**
@@ -4227,7 +3674,7 @@ export default function TaskPoolTest1() {
         taskpool.execute(funcRetNull, resB).then((res: Object) => {
           console.info(`${caseName}: Execute007 return value: ${JSON.stringify(res)}`);
           isTerminate = true;
-          expect(res == null).assertEqual(true);
+          expect(res).assertNull();
         }).catch((error: Error) => {
           console.info(`${caseName}: execute catch error: ${error.message}`);
           isTerminate = true;
@@ -4981,7 +4428,7 @@ export default function TaskPoolTest1() {
         taskpool.execute(task).then(((res: Object) => {
           console.info(`${caseName}: testTaskpoolTask006 return value: ${JSON.stringify(res)}`);
           isTerminate = true;
-          expect(res == null).assertEqual(true);
+          expect(res).assertNull();
         })).catch((error: Error) => {
           console.info(`${caseName}: execute catch error: ${error.message}`);
         });
@@ -5301,132 +4748,7 @@ export default function TaskPoolTest1() {
     });
 
     //$5.0 isCanceled----cancel(task)结合该方法用例进行判断验证
-    /**
-     * @tc.name   testTaskpoolCancel001
-     * @tc.number SUB_Runtime_Language_Backend_TaskpoolConcurrency_ONE_5000
-     * @tc.desc   Cancel a task from the task pool
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testTaskpoolCancel001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName: string = 'testTaskpoolCancel001';
-      console.info(`${caseName} test start`);
-      try {
-        let isTerminate1: boolean = false;
-        let isTerminate2: boolean = false;
-        let isTerminate3: boolean = false;
-        let result1: number = 0;
-        let result2: number = 0;
-        let result3: number = 0;
-        let taskExecute1: taskpool.Task = new taskpool.Task(mathMore, 8);
-        let taskExecute2: taskpool.Task = new taskpool.Task(mathMore, 16);
-        let taskExecute3: taskpool.Task = new taskpool.Task(mathMore, 9);
-        taskpool.execute(taskExecute1).then((res: Object) => {
-          console.info(`${caseName}: taskExecute1 return value: ${JSON.stringify(res)}`);
-          isTerminate1 = true;
-          result1 = res as number;
-        }).catch((error: Error) => {
-          console.info(`${caseName}: execute catch error: ${error.message}`);
-        });
-        taskpool.execute(taskExecute2).then((res: Object) => {
-          console.info(`${caseName}: taskExecute2 return value: ${res}`);
-          isTerminate2 = true;
-          result2 = res as number;
-        }).catch((error: Error) => {
-          console.info(`${caseName}: execute catch error: ${error.message}`);
-        });
-        taskpool.execute(taskExecute3).then((res: Object) => {
-          console.info(`${caseName}: taskExecute3 return value: ${JSON.stringify(res)}`);
-          isTerminate3 = true;
-          result3 = res as number;
-          taskpool.cancel(taskExecute3);
-          expect(result3).assertEqual(4);
-        }).catch((error: Error) => {
-          console.info(`${caseName}: execute catch error: ${error.message}`);
-        });
-        taskpool.cancel(taskExecute1);
-        taskpool.cancel(taskExecute2);
-        while (!(isTerminate1 && isTerminate2 || isTerminate3)) {
-          await promiseCase();
-        }
-        expect(result1).assertEqual(0);
-        expect(result2).assertEqual(0);
-        expect(taskpool.Task.isCanceled() == true);
-        let result: number[] = [result1, result2, result3];
-        console.info(`${caseName}: result:  ${result}`);
-        expect(result).assertDeepEquals([0, 0, 4]);
-        done();
-      } catch (error) {
-        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
-        expect().assertFail();
-        done();
-      }
-      console.info(`${caseName} test end`);
-    });
 
-    /**
-     * @tc.name   testTaskpoolCancel002
-     * @tc.number SUB_Runtime_Language_Backend_TaskpoolConcurrency_ONE_5100
-     * @tc.desc   Cancel a task group in a task pool
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testTaskpoolCancel002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName: string = 'testTaskpoolCancel002';
-      console.info(`${caseName} test start`);
-      try {
-        let isTerminate1: boolean = false;
-        let isTerminate2: boolean = false;
-        let result1: number[] = [2, 2, 2];
-        let result2: number[] = [1, 1, 1];
-        let taskGroup1 = new taskpool.TaskGroup();
-        taskGroup1.addTask(mathPow, 2, 3);
-        taskGroup1.addTask(mathPow, 4, 2);
-        taskGroup1.addTask(mathPow, 8, 2);
-        let taskGroup2 = new taskpool.TaskGroup();
-        let task1: taskpool.Task = new taskpool.Task(mathSqrt, 9);
-        let task2: taskpool.Task = new taskpool.Task(mathSqrt, 25);
-        let task3: taskpool.Task = new taskpool.Task(mathSqrt, 36);
-        taskGroup2.addTask(task1);
-        taskGroup2.addTask(task2);
-        taskGroup2.addTask(task3);
-        taskpool.execute(taskGroup1).then((res: Object) => {
-          console.info(`${caseName}: taskGroup1 return value: ${JSON.stringify(res)}`);
-          result1 = res as number[];
-          isTerminate1 = true;
-          expect(result1).assertDeepEquals([8, 16, 64]);
-        }).catch((error: BusinessError) => {
-          console.info(`${caseName}: taskGroup1 execute catch error: ${JSON.stringify(error)}`);
-          expect(error).not().assertNull();
-        });
-        taskpool.cancel(taskGroup1);
-        expect(result1).assertDeepEquals([2, 2, 2]);
-        taskpool.execute(taskGroup2).then((res: Object) => {
-          console.info(`${caseName}: taskGroup2 return value: ${JSON.stringify(res)}`);
-          result2 = res as number[];
-          isTerminate2 = true;
-          expect(result2).assertDeepEquals([3, 5, 6]);
-        }).catch((error: BusinessError) => {
-          console.info(`${caseName}: taskGroup2 execute catch error: ${JSON.stringify(error)}`);
-          expect().assertFail();
-          done();
-        });
-        while (!(isTerminate1 || isTerminate2)) {
-          await promiseCase();
-        }
-        expect(taskpool.Task.isCanceled() == true);
-        console.info(`${caseName} test end`);
-        done();
-      } catch (error) {
-        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
-        console.info(`${caseName} test end`);
-        expect().assertFail();
-        done();
-      }
-      done()
-    });
 
     /**
      * @tc.name   testTaskpoolTransfer001
