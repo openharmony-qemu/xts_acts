@@ -80,8 +80,8 @@ export default function ConnectedTagTest() {
             console.info("testSysCaps03 test.syscap.param.001 : " + isAccessToken);
 
             if (!isAccessToken) {
-                console.info("The device does not support active label chips.")
-                expect(isAccessToken).assertFalse()
+                console.info("The device does not support active label chips.");
+                expect(isAccessToken).assertFalse();
                 return;
             }
 
@@ -89,7 +89,7 @@ export default function ConnectedTagTest() {
 
             try {
                 // 异步操作 + 超时保护
-                await new Promise((resolve,reject)=> {
+                await new Promise((resolve, reject) => {
                     // 3秒超时强制结束，绝对不卡死
                     timeoutId = setTimeout(() => {
                         console.error("[NFC_test] readNdefTag timeout !!!");
@@ -171,10 +171,10 @@ export default function ConnectedTagTest() {
             }
             try {
                 let rawData = "010203";
-                const result = await new Promise((resolve,reject) => {
+                const result = await new Promise((resolve, reject) => {
                     connectedTag.writeNdefTag(rawData, (err, result) => {
                         if (err) {
-                            console.info(`[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_0500 writeNdefTag err, code: ${err.code}, msg: ${err.message} ` + err);
+                            console.info(`[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_0500 writeNdefTag err,code: ${err.code}, msg: ${err.message}` + err);
                             reject(err);
                         } else {
                             console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_0500 writeNdefTag success result: " + result);
@@ -183,8 +183,8 @@ export default function ConnectedTagTest() {
                         }
                     });
                 })
-            } catch(error) {
-                console.error(`[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_0500 writeNdefTag failed,code: ${error.code}, msg: ${error.message}`);
+            } catch (error) {
+                console.error(`[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_0500 writeNdefTag failed, code: ${error.code}, msg: ${error.message}`);
                 expect(error.code === 201 || error.code === 3200101).assertTrue();
             }
         });
