@@ -11000,7 +11000,7 @@ export default function applicationManagerTest() {
         applicationManager.addOptimizationBatteryExclusionApps(undefined, DEFAULT_USER_ID);
         expect().assertFail();
       } catch (error) {
-        expect(error.code).assertEqual(9200016);
+        expect(error.code).assertEqual(401);
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -11239,7 +11239,7 @@ export default function applicationManagerTest() {
         applicationManager.removeOptimizationBatteryExclusionApps(undefined, DEFAULT_USER_ID);
         expect().assertFail();
       } catch (error) {
-        expect(error.code).assertEqual(9200016);
+        expect(error.code).assertEqual(401);
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -11427,7 +11427,7 @@ export default function applicationManagerTest() {
         applicationManager.getOptimizationBatteryExclusionApps(undefined, common.QueryPolicy.SELF);
         expect().assertFail();
       } catch (error) {
-        expect(error.code).assertEqual(9200016);
+        expect(error.code).assertEqual(401);
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -11668,7 +11668,7 @@ export default function applicationManagerTest() {
         applicationManager.getOptimizationBatteryExclusionApps(undefined);
         expect().assertFail();
       } catch (error) {
-        expect(error.code).assertEqual(9200016);
+        expect(error.code).assertEqual(401);
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
