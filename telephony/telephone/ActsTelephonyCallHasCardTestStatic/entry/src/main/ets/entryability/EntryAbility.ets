@@ -51,7 +51,7 @@ class EntryAbility extends UIAbility {
     }
     this.hasRequestedPermission = true;
     hilog.info(0x0000, 'testTag EntryAbility', 'requestDirectCallPermission start');
-    let permissionList: Array<Permissions> = ['ohos.permission.DIRECT_CALL'];
+    let permissionList: Permissions[] = ['ohos.permission.DIRECT_CALL'];
     let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
     atManager.requestPermissionsFromUser(this.context, permissionList).then((data: PermissionRequestResult) => {
       hilog.info(0x0000, 'testTag EntryAbility', `requestPermissionsFromUser result ${JSON.stringify(data)}`);
