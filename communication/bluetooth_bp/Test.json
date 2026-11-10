@@ -32,7 +32,7 @@
                 "uitest dumpLayout"
             ],
             "teardown-command": [
-                "param set persist.usb.setting.gadget_conn_prompt true"
+                "param set persist.usb.settings.gadget_conn_prompt true"
             ]
         }
     ]
