@@ -1,3 +1,4 @@
+'use static';
 import UserAuthTest from "./UserAuth.test";
 import PinAuthSystemTest from "./PinAuthSystemTest.test";
 
