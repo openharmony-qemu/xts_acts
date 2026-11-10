@@ -22,6 +22,19 @@ namespace ArkUICapiTest {
 
 static napi_value SetUiDvsyncSwitchTest001(napi_env env, napi_callback_info info)
 {
+    
+    ArkUI_NodeHandle node;
+    ArkUI_NodeHandle child;
+    auto code1 = OH_ArkUI_NativeModule_AdoptChildWithPolicy(node, child, 0);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "OnCollection", "kkk SetUiDvsyncSwitchTest001=%{public}d", code1);
+    ASSERT_EQ(code1, ARKUI_ERROR_CODE_CAPI_INIT_ERROR);
+    ArkUI_NodeHandle adoptedChild;
+    ArkUI_PointF offset = { 0, 0 };
+    ArkUI_Matrix4 *transform;
+    auto code2 = OH_ArkUI_NativeModule_SetAdoptedChildOverlayPositionCompensation(adoptedChild, &offset, transform);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "OnCollection", "kkk SetUiDvsyncSwitchTest001=%{public}d", code2);
+    ASSERT_EQ(code2, ARKUI_ERROR_CODE_CAPI_INIT_ERROR);
+    
     ArkUI_ContextHandle context1;
     auto ret = OH_ArkUI_NodeUtils_SetUiDvsyncSwitch(context1, true);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_CAPI_INIT_ERROR);
