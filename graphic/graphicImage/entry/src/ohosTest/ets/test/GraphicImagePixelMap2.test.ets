@@ -1971,7 +1971,7 @@ export default function graphicImagePixelMap2() {
           done();
         }).catch(async (error: BusinessError) => {
           console.error(msgStr + " Failed to set the metadata.code ", error);
-          expect(Number(error.code)).assertEqual(62980173);
+          expect(error).assertEqual(62980173);
           await pixelMap?.release();
           done();
         })
