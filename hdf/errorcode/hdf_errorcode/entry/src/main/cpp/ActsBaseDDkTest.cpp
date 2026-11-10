@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -63,6 +63,9 @@ const uint32_t THIRTYTWO_BIT = 32;
 const uint32_t BUS_NUM_MASK = 0xFFFF0000;
 const uint32_t DEVICE_NUM_MASK = 0x0000FFFF;
 const uint32_t INVALID_NON_BLOCK = 2;
+const int32_t HID_DDK_NULL_PTR_VALUE = -4;
+const int32_t HID_DDK_INVALID_OPERATION_VALUE = -3;
+const int32_t HID_DDK_FAILURE_VALUE = -1;
 
 void addBaseDDkErrorCodeTest1(std::vector<napi_property_descriptor> &descData)
 {
@@ -450,10 +453,15 @@ napi_value HidDdkErrCodeFailure(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int32_t deviceId = 0;
+    std::vector<int32_t> deviceIds;
     for (int i = 0; i < MAX_DEVICE_NUM; i++) {
         deviceId = CreateTestDeviceFailure(DEVICE_NAME);
+        deviceIds.push_back(deviceId);
     }
-    napi_create_int32(env, deviceId == HID_DDK_FAILURE ? 0 : 1, &result);
+    for (size_t i = 0; i < deviceIds.size(); i++) {
+        OH_Hid_DestroyDevice(deviceIds[i]);
+    }
+    napi_create_int32(env, deviceId == HID_DDK_FAILURE_VALUE ? 0 : 1, &result);
     return result;
 }
 
@@ -703,7 +711,7 @@ napi_value HidEmitEventNullPtr(napi_env env, napi_callback_info info)
     std::vector<Hid_EmitItem> items;
     items.push_back(event);
     int32_t returnValue = OH_Hid_EmitEvent(deviceId, items.data(), (uint16_t)items.size());
-    napi_create_int32(env, returnValue == HID_DDK_NULL_PTR ? 0 : 1, &result);
+    napi_create_int32(env, returnValue == HID_DDK_NULL_PTR_VALUE ? 0 : 1, &result);
     return result;
 }
 
@@ -712,15 +720,14 @@ napi_value HidDestroyDeviceNullPtr(napi_env env, napi_callback_info info)
     napi_value result;
     int32_t devId = -1;
     int32_t returnValue = OH_Hid_DestroyDevice(devId);
-    napi_create_int32(env, returnValue == HID_DDK_NULL_PTR ? 0 : 1, &result);
+    napi_create_int32(env, returnValue == HID_DDK_NULL_PTR_VALUE ? 0 : 1, &result);
     return result;
 }
 
 napi_value HidDestroyDeviceInvalidOperation(napi_env env, napi_callback_info info)
 {
     napi_value result;
-    const int16_t devId = 200;
     int32_t returnValue = OH_Hid_DestroyDevice(NULL);
-    napi_create_int32(env, returnValue == HID_DDK_INVALID_OPERATION ? 0 : 1, &result);
+    napi_create_int32(env, returnValue == HID_DDK_INVALID_OPERATION_VALUE ? 0 : 1, &result);
     return result;
 }
