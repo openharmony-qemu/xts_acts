@@ -234,5 +234,122 @@ export default function createAuxiliaryPictureTest(): void {
         done();
       }
     });
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_STATIC_1000
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_STATIC_1000
+     * @tc.desc   AuxiliaryPicture.writePixelsFromBuffer normal call with valid ArrayBuffer, verify data written successfully
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_STATIC_1000', Level.LEVEL1, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_STATIC_1000';
+      const buffer = new ArrayBuffer(400);
+      const auxSize: image.Size = { width: 10, height: 10 };
+      const auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
+      try {
+        console.info(TAG, testName, `Start`);
+        let auxPictureObj: image.AuxiliaryPicture = image.createAuxiliaryPicture(buffer, auxSize, auxType);
+        expect(auxPictureObj != undefined).assertTrue();
+        let writeBuffer: ArrayBuffer = new ArrayBuffer(400);
+        await auxPictureObj.writePixelsFromBuffer(writeBuffer);
+        console.info(TAG, testName, `Success writePixelsFromBuffer`);
+        auxPictureObj.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `failed; error: ${error},${error?.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_STATIC_1100
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_STATIC_1100
+     * @tc.desc   AuxiliaryPicture.writePixelsFromBuffer cover empty ArrayBuffer(0 bytes), expected error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_STATIC_1100', Level.LEVEL1, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_STATIC_1100';
+      const buffer = new ArrayBuffer(400);
+      const auxSize: image.Size = { width: 10, height: 10 };
+      const auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
+      try {
+        console.info(TAG, testName, `Start`);
+        let auxPictureObj: image.AuxiliaryPicture = image.createAuxiliaryPicture(buffer, auxSize, auxType);
+        expect(auxPictureObj != undefined).assertTrue();
+        try {
+          await auxPictureObj.writePixelsFromBuffer(new ArrayBuffer(0));
+          console.error(TAG, testName, `should throw error but did not`);
+          expect().assertFail();
+        } catch (error) {
+          console.info(TAG, testName, `caught error, code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(401);
+        }
+        auxPictureObj.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `failed; error: ${error},${error?.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_STATIC_1200
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_STATIC_1200
+     * @tc.desc   createAuxiliaryPicture cover AuxiliaryPictureType.OXY_MAP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_STATIC_1200', Level.LEVEL1, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_STATIC_1200';
+      const buffer = new ArrayBuffer(400);
+      const auxSize: image.Size = { width: 10, height: 10 };
+      const auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.OXY_MAP;
+      try {
+        console.info(TAG, testName, `Start`);
+        let result = image.createAuxiliaryPicture(buffer, auxSize, auxType);
+        console.info(TAG, testName, `Success createAuxiliaryPicture`);
+        expect(result != undefined).assertTrue();
+        result.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `failed; error: ${error},${error?.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_STATIC_1300
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_STATIC_1300
+     * @tc.desc   createAuxiliaryPicture cover AuxiliaryPictureType.MEL_MAP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_STATIC_1300', Level.LEVEL1, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_STATIC_1300';
+      const buffer = new ArrayBuffer(400);
+      const auxSize: image.Size = { width: 10, height: 10 };
+      const auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.MEL_MAP;
+      try {
+        console.info(TAG, testName, `Start`);
+        let result = image.createAuxiliaryPicture(buffer, auxSize, auxType);
+        console.info(TAG, testName, `Success createAuxiliaryPicture`);
+        expect(result != undefined).assertTrue();
+        result.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `failed; error: ${error},${error?.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
   })
 }

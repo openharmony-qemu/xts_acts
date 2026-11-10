@@ -95,13 +95,20 @@ export default function getHdrComposedPixelmapStaticSuppTest(): void {
               hdrComposedPixelmap.getImageInfo().then((imageInfo: image.ImageInfo) => {
                 if (imageInfo != null) {
                   console.info(TAG, testName,  'GetMainPixelmap information height:' + imageInfo.size.height + ' width:' + imageInfo.size.width);
+                  if (PictureObj != undefined) {
+                    PictureObj.release();
+                  }
                   done();
                 }
               }).catch((error: Error) => {
                 console.info(TAG, testName, `failed; error: ${error.code},${error.message}`);
                 expect().assertFail()
+                if (PictureObj != undefined) {
+                  PictureObj.release();
+                }
                 done();
               });
+              return;
             } else {
               console.info(TAG, testName, `hdrComposedPixelmap is undefined`);
               expect().assertFail()
@@ -148,13 +155,20 @@ export default function getHdrComposedPixelmapStaticSuppTest(): void {
               hdrComposedPixelmap.getImageInfo().then((imageInfo: image.ImageInfo) => {
                 if (imageInfo != null) {
                   console.info(TAG, testName,  'GetMainPixelmap information height:' + imageInfo.size.height + ' width:' + imageInfo.size.width);
+                  if (PictureObj != undefined) {
+                    PictureObj.release();
+                  }
                   done();
                 }
               }).catch((error: Error) => {
                 console.info(TAG, testName, `failed; error: ${error.code},${error.message}`);
                 expect().assertFail()
+                if (PictureObj != undefined) {
+                  PictureObj.release();
+                }
                 done();
               });
+              return;
             } else {
               console.info(TAG, testName, `hdrComposedPixelmap is undefined`);
               expect().assertFail()
@@ -205,13 +219,20 @@ export default function getHdrComposedPixelmapStaticSuppTest(): void {
               hdrComposedPixelmap.getImageInfo().then((imageInfo: image.ImageInfo) => {
                 if (imageInfo != null) {
                   console.info(TAG, testName, 'GetHdrComposedPixelmapWithOptions  information height:' + imageInfo.size.height + ' width:' + imageInfo.size.width);
+                  if (PictureObj != undefined) {
+                    PictureObj.release();
+                  }
                   done();
                 }
               }).catch((error: Error) => {
                 console.info(TAG, testName, `failed; error: ${error.code},${error.message}`);
                 expect().assertFail()
+                if (PictureObj != undefined) {
+                  PictureObj.release();
+                }
                 done();
               });
+              return;
             } else {
               console.info(TAG, testName, `GetHdrComposedPixelmapWithOptions is undefined`);
               expect().assertFail()
@@ -261,13 +282,20 @@ export default function getHdrComposedPixelmapStaticSuppTest(): void {
               hdrComposedPixelmap.getImageInfo().then((imageInfo: image.ImageInfo) => {
                 if (imageInfo != null) {
                   console.info(TAG, testName, 'GetHdrComposedPixelmapWithOptions  information height:' + imageInfo.size.height + ' width:' + imageInfo.size.width);
+                  if (PictureObj != undefined) {
+                    PictureObj.release();
+                  }
                   done();
                 }
               }).catch((error: Error) => {
                 console.info(TAG, testName, `failed; error: ${error.code},${error.message}`);
                 expect().assertFail()
+                if (PictureObj != undefined) {
+                  PictureObj.release();
+                }
                 done();
               });
+              return;
             } else {
               console.info(TAG, testName, `GetHdrComposedPixelmapWithOptions is undefined`);
               expect().assertFail()
@@ -317,13 +345,20 @@ export default function getHdrComposedPixelmapStaticSuppTest(): void {
               hdrComposedPixelmap.getImageInfo().then((imageInfo: image.ImageInfo) => {
                 if (imageInfo != null) {
                   console.info(TAG, testName, 'GetHdrComposedPixelmapWithOptions  information height:' + imageInfo.size.height + ' width:' + imageInfo.size.width);
+                  if (PictureObj != undefined) {
+                    PictureObj.release();
+                  }
                   done();
                 }
               }).catch((error: Error) => {
                 console.info(TAG, testName, `failed; error: ${error.code},${error.message}`);
                 expect().assertFail()
+                if (PictureObj != undefined) {
+                  PictureObj.release();
+                }
                 done();
               });
+              return;
             } else {
               console.info(TAG, testName, `GetHdrComposedPixelmapWithOptions is undefined`);
               expect().assertFail()
@@ -373,13 +408,20 @@ export default function getHdrComposedPixelmapStaticSuppTest(): void {
               hdrComposedPixelmap.getImageInfo().then((imageInfo: image.ImageInfo) => {
                 if (imageInfo != null) {
                   console.info(TAG, testName, 'GetHdrComposedPixelmapWithOptions  information height:' + imageInfo.size.height + ' width:' + imageInfo.size.width);
+                  if (PictureObj != undefined) {
+                    PictureObj.release();
+                  }
                   done();
                 }
               }).catch((error: Error) => {
                 console.info(TAG, testName, `failed; error: ${error.code},${error.message}`);
                 expect().assertFail()
+                if (PictureObj != undefined) {
+                  PictureObj.release();
+                }
                 done();
               });
+              return;
             } else {
               console.info(TAG, testName, `GetHdrComposedPixelmapWithOptions is undefined`);
               expect().assertFail()
@@ -426,13 +468,20 @@ export default function getHdrComposedPixelmapStaticSuppTest(): void {
               hdrComposedPixelmap.getImageInfo().then((imageInfo: image.ImageInfo) => {
                 if (imageInfo != null) {
                   console.info(TAG, testName, 'GetHdrComposedPixelmapWithOptions  information height:' + imageInfo.size.height + ' width:' + imageInfo.size.width);
+                  if (PictureObj != undefined) {
+                    PictureObj.release();
+                  }
                   done();
                 }
               }).catch((error: Error) => {
                 console.info(TAG, testName, `failed; error: ${error.code},${error.message}`);
                 expect().assertFail()
+                if (PictureObj != undefined) {
+                  PictureObj.release();
+                }
                 done();
               });
+              return;
             } else {
               console.info(TAG, testName, `GetHdrComposedPixelmapWithOptions is undefined`);
               expect().assertFail()

@@ -461,6 +461,42 @@ export default function ImagePictureAuxiliaryPicture(): void {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_HDR_static_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_HDR_static_0500
+     * @tc.desc   1.create auxiliary picture LHDR_GAINMAP
+     *            2.set auxiliary picture to LHDR_GAINMAP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_HDR_static_0500', Level.LEVEL0, async (done: () => void) => {
+      if (!isSupportHdr) {
+        console.info("device does not support hdr");
+        done();
+        return
+      }
+      const testName = 'SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_HDR_static_0500'
+      let result: boolean = false;
+      let fileName = "AllAuxiliaryPictures.jpg";
+      let isSupportDecodeResult = await isSupportDecode(testName, 'image/jpeg');
+      let AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
+      try {
+        if (!isSupportDecodeResult) {
+          expect(isSupportDecodeResult).assertFalse();
+          done();
+        }
+        result = await testHdrComposeToMainPixelMap(testName, fileName, AuxiliaryPictureType);
+        console.info(testName, '.17');
+        expect(result).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${testName} is error, error code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_TYPE_LHDR_GAINMAP_static_0100
      * @tc.number SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_TYPE_LHDR_GAINMAP_static_0100
      * @tc.desc   createAuxiliaryPicture with LHDR_GAINMAP type
@@ -480,6 +516,54 @@ export default function ImagePictureAuxiliaryPicture(): void {
       try {
         result = await testCreateAuxiliaryPictureWithLhdrGainmap(testName, fileName, auxSize, auxType);
         expect(result).assertTrue()
+        done();
+      } catch (error) {
+        console.info(`${testName} is error, error code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_TYPE_LHDR_GAINMAP_static_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_TYPE_LHDR_GAINMAP_static_0200
+     * @tc.desc   getAuxiliaryPicture with LHDR_GAINMAP type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_TYPE_LHDR_GAINMAP_static_0200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_TYPE_LHDR_GAINMAP_static_0200';
+      let result: boolean = false;
+      const fileName = 'LHDR.jpg';
+      let AuxiliaryPictureType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.LHDR_GAINMAP;
+      try {
+        result = await testGetAuxiliaryPictureWithLhdrGainmap(testName, fileName, AuxiliaryPictureType);
+        expect(result).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${testName} is error, error code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_TYPE_LHDR_GAINMAP_static_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_TYPE_LHDR_GAINMAP_static_0300
+     * @tc.desc   setAuxiliaryPicture with LHDR_GAINMAP type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_TYPE_LHDR_GAINMAP_static_0300', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_TYPE_LHDR_GAINMAP_static_0300';
+      const fileName = 'AllAuxiliaryPictures.jpg';
+      let result: boolean = false;
+      let AuxiliaryPictureType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
+      try {
+        result = await testSetAuxiliaryPictureWithLhdrGainmap(testName, fileName, AuxiliaryPictureType);
+        expect(result).assertTrue();
         done();
       } catch (error) {
         console.info(`${testName} is error, error code is ${error.code}, message is ${error.message}`);

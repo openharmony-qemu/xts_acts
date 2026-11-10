@@ -15,6 +15,7 @@ import imagePackerPackToDataFromPixelmapSequenceStaticSuppTest
 import imagePackerPackToFileFromPixelmapSequenceSUppStaticTest
   from "./testStatic/image/ImagePacker/packToFileFromPixelmapSequenceStatic.test";
 import ImagePackerReleaseStaticSuppTest from "./testStatic/image/ImagePacker/releaseStatic.test";
+import ImageMetadataTestStatic from "./testStatic/image/imageSource/ImageMetadata.test";
 import createAuxiliaryPictureTest from "./testStatic/image/image/createAuxiliaryPicture.test";
 import ImageCreateImageCreatorTestSupp from "./testStatic/image/image/createImageCreator.test";
 import createImagePackerTest from "./testStatic/image/image/createImagePacker.test";
@@ -23,10 +24,19 @@ import createImageSourceTest from "./testStatic/image/image/createImageSource.te
 import createIncrementalSourceTest from "./testStatic/image/image/createIncrementalSource.test";
 import createPixelMapTest from "./testStatic/image/image/createPixelMap.test";
 import createPixelMapSyncTest from "./testStatic/image/image/createPixelMapSync.test";
-import ImageMetadataTestStatic from "./testStatic/image/imageSource/ImageMetadata.test";
 import ImageSourceTest from "./testStatic/image/imageSource/ImageSource.test";
 import CreatePixelMapSupp from "./testStatic/image/imageSource/createPixelMap.test";
 import createPremultipliedPixelMapTest from "./testStatic/image/image/createPremultipliedPixelMap.test";
+import ImageSourceGetImagePropertyTest from "./testStatic/image/imageSource/getImageProperty.test";
+import createPictureTest from "./testStatic/image/image/createPicture.test";
+import CreatePictureTestSupp from "./testStatic/image/imageSource/createPicture.test";
+import CreatePixelMapListTest from "./testStatic/image/imageSource/createPixelMapList.test";
+import ImageSourceCreatePixelMapSyncTest from "./testStatic/image/imageSource/createPixelMapSync.test";
+import ImageSourceCreatePixelMapUsingAllocatorTest
+  from "./testStatic/image/imageSource/createPixelMapUsingAllocator.test";
+import ImageSourceCreatePixelMapUsingAllocatorSyncTest
+  from "./testStatic/image/imageSource/createPixelMapUsingAllocatorSync.test";
+import ImageSourceGetDelayTimeListTest from "./testStatic/image/imageSource/getDelayTimeList.test";
 import ImageGetComponentTest from "./testStatic/image/Image_operation/getComponent.test";
 import ImageReleaseTest from "./testStatic/image/Image_operation/release.test";
 import ImageCreatorDequeueImageTest from "./testStatic/image/ImageCreator/dequeueImage.test";
@@ -46,39 +56,19 @@ import ImageGetImagePropertySyncEnumScenePointer from  "./testStatic/image/image
 import ImageGetImagePropertySyncEnumSensitiveType from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumSensitiveType.test"
 import ImageGetImagePropertySyncEnumSensitiveTypeEmpty from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumSensitiveTypeEmpty.test"
 import ImageGetImagePropertySyncEnumSoftware from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumSoftware.test"
-import ImageSourceGetImagePropertyTest from "./testStatic/image/imageSource/getImageProperty.test";
-import createPictureTest from "./testStatic/image/image/createPicture.test";
-import CreatePictureTestSupp from "./testStatic/image/imageSource/createPicture.test";
-import CreatePixelMapListTest from "./testStatic/image/imageSource/createPixelMapList.test";
-import ImageSourceCreatePixelMapSyncTest from "./testStatic/image/imageSource/createPixelMapSync.test";
-import ImageSourceCreatePixelMapUsingAllocatorTest
-  from "./testStatic/image/imageSource/createPixelMapUsingAllocator.test";
-import ImageSourceCreatePixelMapUsingAllocatorSyncTest
-  from "./testStatic/image/imageSource/createPixelMapUsingAllocatorSync.test";
-import ImageSourceGetDelayTimeListTest from "./testStatic/image/imageSource/getDelayTimeList.test";
-import MetaDataSetBlobStaticSuppTest from './testStatic/image/Metadata/MetaDataSetBlobTest.test';
-import imagePackerPackToFileAbnormalStaticSuppTest from './testStatic/image/ImagePacker/packToFileAbnormalStatic.test';
-import imagePackerPackToFileStaticSuppTest from './testStatic/image/ImagePacker/packToFileNormalStatic.test';
-import metaDatagetAllPropertiesStaticTest from './testStatic/image/Metadata/getAllPropertiesStatic.test';
-import metaDataGetPropertiesTestStatic from './testStatic/image/Metadata/getPropertiesStatic.test';
-import setPropertiesStaticSuppTest from './testStatic/image/Metadata/setPropertiesStatic.test';
-import metadataCloneStaticSuppTest from './testStatic/image/Metadata/cloneStatic.test';
-import imagePackerPackToFilePictureStaticSuppTest from './testStatic/image/ImagePacker/packToFilePictureStatic.test';
 import PicturePackingPixMapSuppStatic from './testStatic/image/ImagerPackerSupplement/PicturePackingStatic.test';
 import PicturePackingPixelMapFirTestSupp
   from './testStatic/image/ImagerPackerSupplement/PicturePackToFilePixMapStatic.test';
 import PicturePackToFileSuppImageSourceTestStatic
   from './testStatic/image/ImagerPackerSupplement/PicturePackToFileSuppStatic.test';
-import ImageSourceCreatePixelMapListSuppStatic from './testStatic/image/imageSource/ImageSourceCreatePixelMapListStatic.test';
-import getHdrComposedPixelmapStaticSuppTest from './testStatic/image/Picture/getHdrComposedPixelmapStatic.test';
-import imageGetMetaDataStaticTest from './testStatic/image/Picture/getMetadataStatic.test';
-import PictureGetGainmapPixelmapTest from './testStatic/image/Picture/PictureGetGainmapPixelmap.test';
-import ImageSetAuxiliaryPictureStaticTest from './testStatic/image/Picture/setAuxiliaryPictureStatic.test';
-import imagePackerPackingSuppStaticTest from './testStatic/image/ImagePacker/packingStatic.test';
-import imagePackerPackToDataTestSuppStatic from './testStatic/image/ImagePacker/packToDataStatic.test';
-import setAuxiliaryPictureGetMetadataStaticTest
-  from './testStatic/image/AuxiliaryPicture/setAuxiliaryPictureInfoStatic.test';
-import SetMetadataAxuStaticTest from './testStatic/image/AuxiliaryPicture/setMetadataAxuStatic.test';
+import MetaDataSetBlobStaticSuppTest from './testStatic/image/Metadata/MetaDataSetBlobTest.test';
+import imagePackerPackToFileAbnormalStaticSuppTest from './testStatic/image/ImagePacker/packToFileAbnormalStatic.test';
+import imagePackerPackToFileStaticSuppTest from './testStatic/image/ImagePacker/packToFileNormalStatic.test';
+import imagePackerPackToFilePictureStaticSuppTest from './testStatic/image/ImagePacker/packToFilePictureStatic.test';
+import metaDatagetAllPropertiesStaticTest from './testStatic/image/Metadata/getAllPropertiesStatic.test';
+import metaDataGetPropertiesTestStatic from './testStatic/image/Metadata/getPropertiesStatic.test';
+import setPropertiesStaticSuppTest from './testStatic/image/Metadata/setPropertiesStatic.test';
+import metadataCloneStaticSuppTest from './testStatic/image/Metadata/cloneStatic.test';
 import ImageEnumSupp from './testStatic/image/image/ImageEnum.test';
 import ImageSourceGetDisposalTypeListTest from './testStatic/image/imageSource/getDisposalTypeList.test';
 import ImageSourceGetFrameCountTest from './testStatic/image/imageSource/getFrameCount.test';
@@ -103,8 +93,27 @@ import pixelMapRotateTest from './testStatic/image/pixelMap/rotate.test';
 import pixelMapScaleTest from './testStatic/image/pixelMap/scale.test';
 import pixelMapTranslateTest from './testStatic/image/pixelMap/translate.test';
 import pixelMapWritePixelsTest from './testStatic/image/pixelMap/writePixels.test';
+import getHdrComposedPixelmapStaticSuppTest from './testStatic/image/Picture/getHdrComposedPixelmapStatic.test';
+import imageGetMetaDataStaticTest from './testStatic/image/Picture/getMetadataStatic.test';
+import PictureGetGainmapPixelmapTest from './testStatic/image/Picture/PictureGetGainmapPixelmap.test';
+import ImageSetAuxiliaryPictureStaticTest from './testStatic/image/Picture/setAuxiliaryPictureStatic.test';
+import imagePackerPackingSuppStaticTest from './testStatic/image/ImagePacker/packingStatic.test';
+import imagePackerPackToDataTestSuppStatic from './testStatic/image/ImagePacker/packToDataStatic.test';
+import setAuxiliaryPictureGetMetadataStaticTest
+  from './testStatic/image/AuxiliaryPicture/setAuxiliaryPictureInfoStatic.test';
+import SetMetadataAxuStaticTest from './testStatic/image/AuxiliaryPicture/setMetadataAxuStatic.test';
 import ImagePictureAuxiliaryPicture from './testStatic/image/image/ImagePictureAuxiliaryPicture.test';
 import ImagePropertyKeyArrayTest from  "./testStatic/image/imageSource/ImagePropertyKeyArrayTest.test";
+import ExifMetadataTest from './image/ExifMetadata.test';
+import ImageCreatePixelMapFromSurface from './testStatic/image/image/ImageCreatePixelMapFromSurface.test';
+import ImageCreatePixelMapFromSurfaceTest from './testStatic/image/image/ImageCreatePixelMapFromSurfaceTest.test';
+import imagePicture from './testStatic/image/image/ImagePicture.test';
+import PictureSetMainPixelmapTest from './testStatic/image/Picture/PictureSetMainPixelmap.test';
+import ImageSourceGetDelayTimeListSupp from './testStatic/image/image/ImageSourceGetDelayTimeList.test';
+import getImagePropertiesTest from './testStatic/image/image/ImageSourceGetImagePropertiesTest.test';
+import ImageSourceModifyImagePropertySupp from './testStatic/image/image/ImageModifyImagePropertySupp.test';
+import auxiliaryPictureOxyMelMapStaticTest from './testStatic/image/image/AuxiliaryPictureOxyMelMapStatic.test';
+import DngPropertyKeyTest from "./image/DngPropertyKey.test";
 
 export default function testsuite(): void {
   metaDataStaticTest();
@@ -134,6 +143,13 @@ export default function testsuite(): void {
   ImageSourceTest();
   CreatePixelMapSupp();
   ImageSourceGetImagePropertyTest();
+  createPictureTest();
+  CreatePictureTestSupp();
+  CreatePixelMapListTest();
+  ImageSourceCreatePixelMapSyncTest();
+  ImageSourceCreatePixelMapUsingAllocatorTest();
+  ImageSourceCreatePixelMapUsingAllocatorSyncTest();
+  ImageSourceGetDelayTimeListTest();
   ImageGetComponentTest();
   ImageReleaseTest();
   ImageCreatorDequeueImageTest();
@@ -153,34 +169,17 @@ export default function testsuite(): void {
   ImageGetImagePropertySyncEnumSensitiveType();
   ImageGetImagePropertySyncEnumSensitiveTypeEmpty();
   ImageGetImagePropertySyncEnumSoftware();
-  createPictureTest();
-  CreatePictureTestSupp();
-  CreatePixelMapListTest();
-  ImageSourceCreatePixelMapSyncTest();
-  ImageSourceCreatePixelMapUsingAllocatorTest();
-  ImageSourceCreatePixelMapUsingAllocatorSyncTest();
-  ImageSourceGetDelayTimeListTest();
-  MetaDataSetBlobStaticSuppTest();
-  imagePackerPackToFileAbnormalStaticSuppTest();
-  imagePackerPackToFilePictureStaticSuppTest();
-  setPropertiesStaticSuppTest();
-  MetaDataSetBlobStaticSuppTest();
-  metaDatagetAllPropertiesStaticTest();
-  imagePackerPackToFileStaticSuppTest();
-  metaDataGetPropertiesTestStatic();
-  metadataCloneStaticSuppTest();
   PicturePackingPixMapSuppStatic();
   PicturePackingPixelMapFirTestSupp();
   PicturePackToFileSuppImageSourceTestStatic();
-  ImageSourceCreatePixelMapListSuppStatic();
-  getHdrComposedPixelmapStaticSuppTest();
-  SetMetadataAxuStaticTest();
-  imageGetMetaDataStaticTest();
-  PictureGetGainmapPixelmapTest();
-  ImageSetAuxiliaryPictureStaticTest();
-  imagePackerPackingSuppStaticTest();
-  imagePackerPackToDataTestSuppStatic();
-  setAuxiliaryPictureGetMetadataStaticTest();
+  MetaDataSetBlobStaticSuppTest();
+  imagePackerPackToFileAbnormalStaticSuppTest();
+  imagePackerPackToFileStaticSuppTest();
+  imagePackerPackToFilePictureStaticSuppTest();
+  metaDatagetAllPropertiesStaticTest();
+  metaDataGetPropertiesTestStatic();
+  setPropertiesStaticSuppTest();
+  metadataCloneStaticSuppTest();
   ImageEnumSupp();
   ImageSourceGetDisposalTypeListTest();
   ImageSourceGetFrameCountTest();
@@ -205,7 +204,24 @@ export default function testsuite(): void {
   pixelMapScaleTest();
   pixelMapTranslateTest();
   pixelMapWritePixelsTest();
+  getHdrComposedPixelmapStaticSuppTest();
+  imageGetMetaDataStaticTest();
+  PictureGetGainmapPixelmapTest();
+  ImageSetAuxiliaryPictureStaticTest();
+  imagePackerPackingSuppStaticTest();
+  imagePackerPackToDataTestSuppStatic();
+  setAuxiliaryPictureGetMetadataStaticTest();
+  SetMetadataAxuStaticTest();
   ImagePictureAuxiliaryPicture();
   ImagePropertyKeyArrayTest();
+  ExifMetadataTest();
+  ImageCreatePixelMapFromSurface();
+  ImageCreatePixelMapFromSurfaceTest();
+  imagePicture();
+  PictureSetMainPixelmapTest();
+  ImageSourceGetDelayTimeListSupp();
+  getImagePropertiesTest();
+  ImageSourceModifyImagePropertySupp();
+  auxiliaryPictureOxyMelMapStaticTest();
+  DngPropertyKeyTest();
 }
-

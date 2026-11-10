@@ -37,16 +37,28 @@ async function writePixelsNormalTest(done: () => void, testName: string, pixelMa
     for (let i: int = 0; i < bufferArr.length; i++) {
       bufferArr[i] = i + 1;
     }
-    pixelMap.writePixels(area, (error: BusinessError<void> | null) => {
-      if (error) {
-        console.info(TAG, testName, `Failed; error: ${error} code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-      } else {
-        console.info(TAG, testName, 'RGBA data is ', new Uint8Array(area.pixels));
-        callback(error as BusinessError<void>);
-      }
-      done();
+    await new Promise<boolean>((resolve) => {
+      pixelMap!.writePixels(area, (error: BusinessError<void> | null) => {
+        try {
+          if (error) {
+            console.info(TAG, testName, `Failed; error: ${error} code is ${error.code}, message is ${error.message}`);
+            expect().assertFail();
+          } else {
+            console.info(TAG, testName, 'RGBA data is ', new Uint8Array(area.pixels));
+            try {
+              callback(error as BusinessError<void>);
+            } catch (e) {
+              console.error(TAG, testName, `callback throw error: ${e}`);
+            }
+          }
+        } catch (e) {
+          console.error(TAG, testName, `writePixels callback throw: ${e}`);
+        } finally {
+          resolve(true);
+        }
+      });
     });
+    done();
   } catch (error) {
     console.error(TAG, testName, `failed; error: ${error},${error.code}`, testName);
     expect().assertFail();
@@ -67,16 +79,28 @@ async function writePixelsAbnormalTest(done: () => void, testName: string, pixel
     for (let i: int = 0; i < bufferArr.length; i++) {
       bufferArr[i] = i + 1;
     }
-    pixelMap.writePixels(area, (error) => {
-      if (error) {
-        console.info(TAG, testName, `Failed; error: ${error} code is ${error.code}, message is ${error.message}`);
-        errorCallback(JSON.stringify(error));
-      } else {
-        console.info(TAG, testName, 'RGBA data is ', new Uint8Array(area.pixels));
-        expect().assertFail();
-      }
-      done();
+    await new Promise<boolean>((resolve) => {
+      pixelMap!.writePixels(area, (error) => {
+        try {
+          if (error) {
+            console.info(TAG, testName, `Failed; error: ${error} code is ${error.code}, message is ${error.message}`);
+            try {
+              errorCallback(JSON.stringify(error));
+            } catch (e) {
+              console.error(TAG, testName, `errorCallback throw error: ${e}`);
+            }
+          } else {
+            console.info(TAG, testName, 'RGBA data is ', new Uint8Array(area.pixels));
+            expect().assertFail();
+          }
+        } catch (e) {
+          console.error(TAG, testName, `writePixels callback throw: ${e}`);
+        } finally {
+          resolve(true);
+        }
+      });
     });
+    done();
   } catch (error) {
     console.error(TAG, testName, `failed; error: ${error},${error.code}`, testName);
     expect().assertFail();
@@ -138,7 +162,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsNormalTest(done, testName, pixelMap, area, (data: BusinessError<void>) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -164,7 +187,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsNormalTest(done, testName, pixelMap, area, (data: BusinessError<void>) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -190,7 +212,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsAbnormalTest(done, testName, pixelMap, area, (data: string) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -216,7 +237,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsAbnormalTest(done, testName, pixelMap, area, (data: string) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -242,7 +262,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsAbnormalTest(done, testName, pixelMap, area, (data: string) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -268,7 +287,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsAbnormalTest(done, testName, pixelMap, area, (data: string) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -294,7 +312,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsNormalTest(done, testName, pixelMap, area, (data: BusinessError<void>) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -320,7 +337,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsAbnormalTest(done, testName, pixelMap, area, (data: string) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -346,7 +362,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsAbnormalTest(done, testName, pixelMap, area, (data: string) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -372,7 +387,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsAbnormalTest(done, testName, pixelMap, area, (data: string) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -398,7 +412,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsAbnormalTest(done, testName, pixelMap, area, (data: string) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -424,7 +437,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsAbnormalTest(done, testName, pixelMap, area, (data: string) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -450,7 +462,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsAbnormalTest(done, testName, pixelMap, area, (data: string) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -476,7 +487,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsAbnormalTest(done, testName, pixelMap, area, (data: string) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -502,7 +512,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsAbnormalTest(done, testName, pixelMap, area, (data: string) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -528,7 +537,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsNormalTest(done, testName, pixelMap, area, (data: BusinessError<void>) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -554,7 +562,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsNormalTest(done, testName, pixelMap, area, (data: BusinessError<void>) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -580,7 +587,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsAbnormalTest(done, testName, pixelMap, area, (data: string) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -606,7 +612,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsAbnormalTest(done, testName, pixelMap, area, (data: string) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -632,7 +637,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsNormalTest(done, testName, pixelMap, area, (data: BusinessError<void>) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -658,7 +662,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsNormalTest(done, testName, pixelMap, area, (data: BusinessError<void>) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -684,7 +687,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsNormalTest(done, testName, pixelMap, area, (data: BusinessError<void>) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -710,7 +712,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsNormalTest(done, testName, pixelMap, area, (data: BusinessError<void>) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -736,7 +737,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsAbnormalTest(done, testName, pixelMap, area, (data: string) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -762,7 +762,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsAbnormalTest(done, testName, pixelMap, area, (data: string) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -788,7 +787,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsNormalTest(done, testName, pixelMap, area, (data: BusinessError<void>) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -814,7 +812,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsNormalTest(done, testName, pixelMap, area, (data: BusinessError<void>) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -840,7 +837,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsAbnormalTest(done, testName, pixelMap, area, (data: string) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -866,7 +862,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsAbnormalTest(done, testName, pixelMap, area, (data: string) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -892,7 +887,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsNormalTest(done, testName, pixelMap, area, (data: BusinessError<void>) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -918,7 +912,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsNormalTest(done, testName, pixelMap, area, (data: BusinessError<void>) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -944,7 +937,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsNormalTest(done, testName, pixelMap, area, (data: BusinessError<void>) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -970,7 +962,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsAbnormalTest(done, testName, pixelMap, area, (data: string) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -996,7 +987,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsAbnormalTest(done, testName, pixelMap, area, (data: string) => {
         expect(data).assertUndefined();
       });
-      done();
     })
 
     /**
@@ -1022,7 +1012,6 @@ export default function pixelMapWritePixelsTest(): void {
       await writePixelsNormalTest(done, testName, pixelMap, area, (data: BusinessError<void>) => {
         expect(data).assertUndefined();
       });
-      done();
     })
   })
 }

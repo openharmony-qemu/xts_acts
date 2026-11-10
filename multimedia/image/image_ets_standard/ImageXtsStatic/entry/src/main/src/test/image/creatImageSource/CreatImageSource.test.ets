@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, Hypium, it, Level} from "@ohos/hypium-static/src/main/indexStatic";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, Hypium, it, Level} from '@ohos/hypium-static/src/main/indexStatic';
 import image from '@ohos.multimedia.image';
 import fs from '@ohos.file.fs';
 import resourceManager from "@ohos.resourceManager";
@@ -918,5 +918,121 @@ export default function CrateImageSourceTest(): void {
       done();
     })
 
+    /**
+     * @tc.name   SUB_MEDIA_IAMGE_createPixelMapSync_static_0100
+     * @tc.number SUB_MEDIA_IAMGE_createPixelMapSync_static_0100
+     * @tc.desc   createPixelMapSync return isEditable:true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IAMGE_createPixelMapSync_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const testName = 'SUB_MEDIA_IAMGE_createPixelMapSync_static_0100';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions =
+          { editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
+        let PixelMap = await image.createPixelMapSync(color, opts);
+        console.info(TAG, testName, 'Succeeded in creating pixelmap.', PixelMap);
+        expect(PixelMap.isEditable).assertTrue();
+        await PixelMap.release();
+      } catch (error) {
+        console.error(TAG, testName, `Failed: code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MEDIA_IAMGE_createPixelMapSync_static_0200
+     * @tc.number SUB_MEDIA_IAMGE_createPixelMapSync_static_0200
+     * @tc.desc   createPixelMapSync return isEditable:false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IAMGE_createPixelMapSync_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const testName = 'SUB_MEDIA_IAMGE_createPixelMapSync_static_0200';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions =
+          { editable: false, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
+        let PixelMap = await image.createPixelMapSync(color, opts);
+        console.info(TAG, testName, 'Succeeded in creating pixelmap.', PixelMap);
+        expect(PixelMap.isEditable).assertFalse();
+        await PixelMap.release();
+      } catch (error) {
+        console.error(TAG, testName, `Failed: code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MEDIA_IAMGE_createPixelMapSync_static_0300
+     * @tc.number SUB_MEDIA_IAMGE_createPixelMapSync_static_0300
+     * @tc.desc   createPixelMapSync return isStrideAlignment:false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IAMGE_createPixelMapSync_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const testName = 'SUB_MEDIA_IAMGE_createPixelMapSync_static_0300';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions =
+          { editable: false, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
+        let PixelMap = await image.createPixelMapSync(color, opts);
+        console.info(TAG, testName, 'Succeeded in creating pixelmap.', PixelMap);
+        expect(PixelMap.isStrideAlignment).assertFalse();
+        await PixelMap.release();
+      } catch (error) {
+        console.error(TAG, testName, `Failed: code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_getImageSourceSupportedFormats_static_0100
+     * @tc.number SUB_MEDIA_IMAGE_getImageSourceSupportedFormats_static_0100
+     * @tc.desc   image.getImageSourceSupportedFormats
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MEDIA_IMAGE_getImageSourceSupportedFormats_static_0100', Level.LEVEL1, async (done: () => void)=> {
+      const testName = 'SUB_MEDIA_IMAGE_getImageSourceSupportedFormats_static_0100';
+      try {
+        let formats : string[] = image.getImageSourceSupportedFormats();
+        console.info(TAG,'image.getImageSourceSupportedFormats success:', formats);
+        expect(formats.length > 0).assertTrue();
+      } catch (err) {
+        console.info(TAG,`failed; error: ${err}`, err.code, testName);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_getImagePackerSupportedFormats_static_0100
+     * @tc.number SUB_MEDIA_IMAGE_getImagePackerSupportedFormats_static_0100
+     * @tc.desc   image.getImagePackerSupportedFormats
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MEDIA_IMAGE_getImagePackerSupportedFormats_static_0100', Level.LEVEL1, async (done: () => void)=> {
+      const testName = 'SUB_MEDIA_IMAGE_getImagePackerSupportedFormats_static_0100';
+      try {
+        let formats : string[] = image.getImagePackerSupportedFormats();
+        console.info(TAG,'image.getImagePackerSupportedFormats success:', formats);
+        expect(formats.length > 0).assertTrue();
+      } catch (err) {
+        console.info(TAG,`failed; error: ${err}`, err.code, testName);
+        expect().assertFail();
+      }
+      done();
+    })
   })
 }
