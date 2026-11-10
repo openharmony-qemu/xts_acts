@@ -50,75 +50,87 @@ export default function CommonFlexLayoutModifierUndefinedTest() {
     });
 
     /**
-     * @tc.number   CommonFlexLayoutModifierUndefinedTest_static_0001
-     * @tc.name     CommonFlexLayoutModifierUndefinedTest_static_0001
+     * @tc.number   SUB_ARKUI_API_CommonFlexLayoutModifierUndefinedTest_static_0001
+     * @tc.name     SUB_ARKUI_API_CommonFlexLayoutModifierUndefinedTest_static_0001
      * @tc.desc     test flexBasis
      * @tc.level    Level.LEVEL1
      */
-    it('CommonFlexLayoutModifierUndefinedTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[CommonFlexLayoutModifierUndefinedTest_static_0001] START');
-      let driver: Driver = Driver.create();
+    it('SUB_ARKUI_API_CommonFlexLayoutModifierUndefinedTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('[SUB_ARKUI_API_CommonFlexLayoutModifierUndefinedTest_static_0001] START');
+        let driver: Driver = Driver.create();
 
-      let strJson = inspector.getInspectorByKey('FlexLayoutM_1');
-      console.info('[CommonFlexLayoutModifierUndefinedTest_static_0001] flexBasis: ' +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('flexBasis'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('flexBasis'))
-        .assertEqual('0.00auto');
+        let strJson = inspector.getInspectorByKey('FlexLayoutM_1');
+        console.info('[SUB_ARKUI_API_CommonFlexLayoutModifierUndefinedTest_static_0001] flexBasis: ' +
+        JSON.parseJsonElement(strJson).getElement('$attrs').getString('flexBasis'));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('flexBasis'))
+          .assertEqual('0.00auto');
 
-      let changeBtn = await driver.findComponent(ON.id('FlexLayoutM_btn1'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        let changeBtn = await driver.findComponent(ON.id('FlexLayoutM_btn1'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('FlexLayoutM_1');
-      console.info('[CommonFlexLayoutModifierUndefinedTest_static_0001] flexBasis: ' +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('flexBasis'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('flexBasis'))
-        .assertEqual('100.00vp');
+        strJson = inspector.getInspectorByKey('FlexLayoutM_1');
+        console.info('[SUB_ARKUI_API_CommonFlexLayoutModifierUndefinedTest_static_0001] flexBasis: ' +
+        JSON.parseJsonElement(strJson).getElement('$attrs').getString('flexBasis'));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('flexBasis'))
+          .assertEqual('100.00vp');
 
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('FlexLayoutM_1');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('flexBasis'))
-        .assertEqual('0.00auto');
-      console.info('[CommonFlexLayoutModifierUndefinedTest_static_0001] END');
-      done();
+        strJson = inspector.getInspectorByKey('FlexLayoutM_1');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('flexBasis'))
+          .assertEqual('0.00auto');
+        console.info('[SUB_ARKUI_API_CommonFlexLayoutModifierUndefinedTest_static_0001] END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_CommonFlexLayoutModifierUndefinedTest_static_0001] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
-     * @tc.number   CommonFlexLayoutModifierUndefinedTest_static_0002
-     * @tc.name     CommonFlexLayoutModifierUndefinedTest_static_0002
+     * @tc.number   SUB_ARKUI_API_CommonFlexLayoutModifierUndefinedTest_static_0002
+     * @tc.name     SUB_ARKUI_API_CommonFlexLayoutModifierUndefinedTest_static_0002
      * @tc.desc     test flexGrow
      * @tc.level    Level.LEVEL1
      */
-    it('CommonFlexLayoutModifierUndefinedTest_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[CommonFlexLayoutModifierUndefinedTest_static_0002] START');
-      let driver: Driver = Driver.create();
+    it('SUB_ARKUI_API_CommonFlexLayoutModifierUndefinedTest_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('[SUB_ARKUI_API_CommonFlexLayoutModifierUndefinedTest_static_0002] START');
+        let driver: Driver = Driver.create();
 
-      let strJson = inspector.getInspectorByKey('FlexLayoutM_1');
-      console.info('[CommonFlexLayoutModifierUndefinedTest_static_0002] flexGrow: ' +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('flexGrow'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('flexGrow'))
-        .assertEqual(0);
+        let strJson = inspector.getInspectorByKey('FlexLayoutM_1');
+        console.info('[SUB_ARKUI_API_CommonFlexLayoutModifierUndefinedTest_static_0002] flexGrow: ' +
+        JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('flexGrow'));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('flexGrow'))
+          .assertEqual(0);
 
-      let changeBtn = await driver.findComponent(ON.id('FlexLayoutM_btn2'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        let changeBtn = await driver.findComponent(ON.id('FlexLayoutM_btn2'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('FlexLayoutM_1');
-      console.info('[CommonFlexLayoutModifierUndefinedTest_static_0002] flexGrow: ' +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('flexGrow'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('flexGrow'))
-        .assertEqual(2);
+        strJson = inspector.getInspectorByKey('FlexLayoutM_1');
+        console.info('[SUB_ARKUI_API_CommonFlexLayoutModifierUndefinedTest_static_0002] flexGrow: ' +
+        JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('flexGrow'));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('flexGrow'))
+          .assertEqual(2);
 
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('FlexLayoutM_1');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('flexGrow'))
-        .assertEqual(0);
-      console.info('[CommonFlexLayoutModifierUndefinedTest_static_0002] END');
-      done();
+        strJson = inspector.getInspectorByKey('FlexLayoutM_1');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('flexGrow'))
+          .assertEqual(0);
+        console.info('[SUB_ARKUI_API_CommonFlexLayoutModifierUndefinedTest_static_0002] END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_CommonFlexLayoutModifierUndefinedTest_static_0002] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
   })

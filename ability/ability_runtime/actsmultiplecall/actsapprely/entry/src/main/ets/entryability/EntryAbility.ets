@@ -201,7 +201,11 @@ export default class EntryAbility extends UIAbility {
           data.readParcelable(result);
           console.debug('====>Acts_SingleInstanceCallFunction_0400 callWithResult result:' + JSON.stringify(result));
           let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
           let forcestop = 'aa force-stop com.acts.callapprely';
+          if(user !==undefined) {
+            forcestop += ' -u ' + user;
+          }
           abilityDelegator.executeShellCommand(
             forcestop,
             (err: BusinessError) => {
@@ -386,7 +390,11 @@ export default class EntryAbility extends UIAbility {
                 }
               })
               let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+              let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
               let pkillCmd = 'aa force-stop com.acts.thirdpartyapprely';
+              if(user !== undefined) {
+                pkillCmd += ' -u ' + user;
+              }
               abilityDelegator.executeShellCommand(
                 pkillCmd,
                 (err: BusinessError) => {

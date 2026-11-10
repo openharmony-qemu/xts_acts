@@ -23,7 +23,7 @@ const IMAGE_UNSUPPORTED_OPERATION = 7600201;
 const IMAGE_UNSUPPORTED_CONVERSION = 7600203;
 
 export default function imageNdk2Test() {
-  describe('ImageNdkTest', () => {
+  describe('ImageNdkTest2', () => {
     /**
      * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeWritePixelsWithFmtRGBA8888_0100
      * @tc.name testWritePixelsWithFmtRGBA8888

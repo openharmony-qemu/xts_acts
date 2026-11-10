@@ -19,10 +19,14 @@ import bundleManager from '@ohos.bundle.bundleManager'
 import commonEventManager from '@ohos.commonEventManager';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
+import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 
 let subscriberInfo_MainAbility_ability:commonEventManager.CommonEventSubscribeInfo = {
     events: ["MainAbility_Start_CommonEvent_ability", "SecondAbility_Start_CommonEvent_ability"],
 };
+
+let driver1: Driver = Driver.create();
+let buttonClicked: boolean = false;
 
 export default function abilityTest() {
     describe('ActsStaticInfoMationQueryTest', () => {
@@ -130,6 +134,25 @@ export default function abilityTest() {
                     console.log('ACTS_getAbilityInfo_0200_startMainAbility: ' + JSON.stringify(error))
                 })
             })
+            const DELAY_TIME = 2000;
+            let allowed = await driver1.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELAY_TIME);
+            console.log('ACTS_getAbilityInfo_0200 needAllow:'+JSON.stringify(allowed));
+            if (allowed) {
+                for (const t of ['本次允许', '本次打开', '打开', '始终允许打开']) {
+                    try {
+                        let btn = await driver1.findComponent(ON.text(t, MatchPattern.EQUALS));
+                        if (btn) {
+                            console.log('ACTS_getAbilityInfo_0200 clicking ' + t);
+                            await btn.click();
+                            buttonClicked = true;
+                            break;
+                        }
+                    } catch (e) {
+                        console.log('ACTS_getAbilityInfo_0200 - find button fail' +JSON.stringify(e));
+                    }
+                }
+                console.log('ACTS_getAbilityInfo_0200 - allow button handled');
+            }
             let UnSubscribeCallback = ():void => {
                 console.debug("ACTS_getAbilityInfo_0200====>UnSubscribe CallBack====>");
                 done();

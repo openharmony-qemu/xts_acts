@@ -73,25 +73,16 @@ export default function abilityTest() {
 
   describe('ActsAbilityTest', () => {
     beforeAll(async () => {
+      disPlayId = display.getDefaultDisplaySync().id;
       let driver = await Driver.create();	
       try {
-        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0').belongingDisplay(disPlayId));
         if (allowed) {
           await allowed.click();
         }
       } catch (err) {
         console.error('findComponent failed: ' + JSON.stringify(err));
       }
-      display.getAllDisplays((err: BusinessError, data: Array<display.Display>) => {
-        const errCode: number = err.code;
-        if (errCode) {
-          hilog.error(DOMAIN_NUMBER, TAG, 'Failed to obtain all the display objects. error: %{public}s',
-            JSON.stringify(err));
-        } else {
-          disPlayId = display.getDefaultDisplaySync().id;
-          hilog.info(DOMAIN_NUMBER, TAG, 'displayId: %{public}s', JSON.stringify(disPlayId));
-        }
-      });
       await sleep(1000);
     })
     beforeEach(() => {

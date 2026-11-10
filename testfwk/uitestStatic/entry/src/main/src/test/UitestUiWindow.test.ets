@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -40,14 +40,6 @@ const TestTag = 'uitestUiWindowTest';
 const waitUiReadyMs: int = 1000;
 const DeviceErrorCode = 17000005;
 const WindowsErrorCode = 17000005;
-
-async function exitInputMethod() {
-  let driver = Driver.create()
-  let softKeyBoard = await driver.findComponent(ON.type('Canvas'))
-  if (softKeyBoard != null) {
-    await driver.pressBack()
-  }
-}
 
 function sleep(numberMillis: int) {
   const exitTime = new Date().getTime() + numberMillis;
@@ -221,7 +213,6 @@ export default function uitestUiWindowTest(): void {
     })
     afterAll(async (): Promise<void> => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-      const driver = Driver.create();
       await driver!.delayMs(waitUiReadyMs);
       let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
       await driver!.delayMs(waitUiReadyMs);
@@ -431,7 +422,6 @@ export default function uitestUiWindowTest(): void {
      */
     it('testWindowMoveTo_float_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testWindowMoveTo_float_static start `);
-      const driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver!.delayMs(waitUiReadyMs)
       try {
@@ -440,8 +430,8 @@ export default function uitestUiWindowTest(): void {
         let windowFloat = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
         let bounds1 = await windowFloat!.getBounds()
         await windowFloat!.moveTo(100, 100)
-        await driver.delayMs(waitUiReadyMs)
-        let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        await driver!.delayMs(waitUiReadyMs)
+        let window2 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' })
         let bounds2 = await window2!.getBounds()
         expect(bounds1.left != bounds2.left).assertTrue()
         await window2!.moveTo(bounds1.left, bounds1.top)
@@ -652,7 +642,6 @@ export default function uitestUiWindowTest(): void {
      */
     it('testWindowMinimize_float_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testWindowMinimize_float_static start `);
-      const driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver!.delayMs(waitUiReadyMs)
       let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' })
@@ -690,7 +679,6 @@ export default function uitestUiWindowTest(): void {
      */
     it('testWindowClose_float_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testWindowClose_static start `);
-      const driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver!.delayMs(waitUiReadyMs)
       let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
@@ -728,7 +716,6 @@ export default function uitestUiWindowTest(): void {
      */
     it('testWindowMaximize_float_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testWindowMaximize_static start `);
-      const driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver!.delayMs(waitUiReadyMs)
       let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
@@ -779,7 +766,6 @@ export default function uitestUiWindowTest(): void {
     it('testWindowIsFocused_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testWindowIsFocused start `);
       try {
-        const driver = Driver.create();
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
         await driver!.delayMs(waitUiReadyMs)
         let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts', focused: true });
@@ -792,7 +778,7 @@ export default function uitestUiWindowTest(): void {
           hilog.info(domain, tag, `testWindowIsFocused isFocused, ${JSON.stringify(isFocused)} `);
           expect(isFocused).assertTrue()
         }
-        let focusedWindow1 = await driver.findWindow({focused: false});
+        let focusedWindow1 = await driver!.findWindow({focused: false});
         if (focusedWindow1 != null) {
           let falseFocused1 = await focusedWindow1.isFocused();
           expect(falseFocused1).assertFalse()
@@ -816,7 +802,6 @@ export default function uitestUiWindowTest(): void {
     it('testWindowIsActive_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testWindowIsActive start `);
       try {
-        const driver = Driver.create();
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
         await driver!.delayMs(waitUiReadyMs)
         let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts', focused: true, active: true });
@@ -832,7 +817,7 @@ export default function uitestUiWindowTest(): void {
         let window1 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts', focused: false, active: false });
         hilog.info(domain, tag, `testWindowIsActive window1, ${JSON.stringify(window1)} `);
         expect(window1 == null).assertTrue();
-        let uitestWindow = await driver.findWindow({active: false})
+        let uitestWindow = await driver!.findWindow({active: false})
         if (uitestWindow != null) {
           let isActive1 = await uitestWindow.isActive()
           expect(isActive1).assertFalse();

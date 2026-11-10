@@ -16,7 +16,7 @@
 
 import {  Entry,  Text,  Column,  ColumnOptions,  Component,  Button,  ClickEvent,  Color,  Row,  $r,
   BorderOptions,  BorderStyle,  AttributeModifier,  ButtonAttribute, TextAlign, GradientDirection, RepeatMode,
-  BorderImageOption, TextAttribute } from '@ohos.arkui.component'
+  BorderImageOption, TextAttribute, HorizontalAlign } from '@ohos.arkui.component'
 import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
@@ -112,5 +112,6 @@ struct Index {
           })
       }
     }
+    .alignItems(HorizontalAlign.Center)
   }
 }

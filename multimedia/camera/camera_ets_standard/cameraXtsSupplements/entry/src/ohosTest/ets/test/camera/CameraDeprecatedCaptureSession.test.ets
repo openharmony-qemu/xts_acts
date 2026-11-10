@@ -175,17 +175,11 @@ async function getCreateCaptureSession(previewOutput: camera.PreviewOutput, phot
   mCaptureSession.start();
 }
 
-async function releasePhotoSession() {
-  console.info(TAG, 'releasePhotoSession.');
+async function releaseSession() {
+  console.info(TAG, 'releaseSession.');
   await mPreviewOutput?.release();
   await mPhotoOutput?.release();
   await mPhotoSession?.release();
-}
-
-async function releaseCaptureSession() {
-  console.info(TAG, 'releasePhotoSession.');
-  await mPreviewOutput?.release();
-  await mPhotoOutput?.release();
   await mCaptureSession?.release();
 }
 
@@ -208,11 +202,11 @@ async function captureSessionsetExposureMode(testName: string, exposureMode: cam
     let ExposureMode = mCaptureSession.getExposureMode();
     console.info(TAG, testName, 'getExposureMode', ExposureMode);
     callback(ExposureMode, undefined)
-    await releaseCaptureSession();
+    await releaseSession();
   } catch (err) {
     console.error(TAG, testName, err.message, err.code);
     callback(undefined, err.code)
-    await releasePhotoSession();
+    await releaseSession();
   }
 }
 
@@ -242,7 +236,7 @@ async function getFlashModePhoto(done: Function, testName: string, flashMode: ca
     console.error(TAG, testName, JSON.stringify(error), error.code);
     expect().assertFail();
   } finally {
-    await releasePhotoSession();
+    await releaseSession();
     done();
   }
 }
@@ -273,7 +267,7 @@ async function getFlashModeVideo(done: Function, testName: string, flashMode: ca
     console.error(TAG, testName, JSON.stringify(error), error.code);
     expect().assertFail();
   } finally {
-    await releasePhotoSession();
+    await releaseSession();
     done();
   }
 }
@@ -300,7 +294,7 @@ async function getActiveStabilizationModeVideo(done: Function, testName: string,
     console.error(TAG, testName, JSON.stringify(error), error.code);
     expect().assertFail();
   } finally {
-    await releasePhotoSession();
+    await releaseSession();
     done();
   }
 }
@@ -327,7 +321,7 @@ async function getFocusModeTest(done: Function, testName: string,
     console.error(TAG, testName, JSON.stringify(error), error.code);
     expect().assertFail();
   } finally {
-    await releasePhotoSession();
+    await releaseSession();
     done();
   }
 }
@@ -353,7 +347,7 @@ async function getZoomRatioRangeTest(done: Function, testName: string, callback:
     console.error(TAG, testName, JSON.stringify(error), error.code);
     expect().assertFail();
   } finally {
-    await releasePhotoSession();
+    await releaseSession();
     done();
   }
 }
@@ -410,7 +404,7 @@ export default function CameraDeprecatedCaptureSessionTest() {
         console.error(TAG, testName, JSON.stringify(err), err.code);
         expect().assertFail();
       } finally {
-        await releasePhotoSession();
+        await releaseSession();
         done();
       }
     })
@@ -440,7 +434,7 @@ export default function CameraDeprecatedCaptureSessionTest() {
         console.error(TAG, testName, JSON.stringify(err), err.code);
         expect().assertFail();
       } finally {
-        await releasePhotoSession();
+        await releaseSession();
         done();
       }
     })

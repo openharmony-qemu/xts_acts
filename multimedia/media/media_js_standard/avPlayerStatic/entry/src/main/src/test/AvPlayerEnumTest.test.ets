@@ -366,6 +366,47 @@ export default function AvPlayerEnumTest() {
       expect(string(media.ContainerFormatType.CFT_WAV)).assertEqual('wav');
       done();
     });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVPLAYER_ENUM_static_1010
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_ENUM_static_1010
+     * @tc.desc   AVPlayer Enumeration test - PlaybackCommand
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVPLAYER_ENUM_static_1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      expect(Number(media.PlaybackCommand.PLAYBACK_COMMAND_SEEK)).assertEqual(0);
+      expect(Number(media.PlaybackCommand.PLAYBACK_COMMAND_RATE)).assertEqual(1);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVPLAYER_ENUM_static_1020
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_ENUM_static_1020
+     * @tc.desc   AVPlayer Enumeration test - MediaDescriptionKey MD_KEY_TRACK_PLAYABLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVPLAYER_ENUM_static_1020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      expect(string(media.MediaDescriptionKey.MD_KEY_TRACK_PLAYABLE)).assertEqual('is_playable');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVPLAYER_ENUM_static_1040
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_ENUM_static_1040
+     * @tc.desc   AVPlayer Enumeration test - DestHDRMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVPLAYER_ENUM_static_1040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      expect(Number(media.DestHDRMode.SDR)).assertEqual(0);
+      expect(Number(media.DestHDRMode.AUTO_HDR_VIVID)).assertEqual(1);
+      done();
+    });
   })
 }
 

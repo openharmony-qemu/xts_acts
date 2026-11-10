@@ -17,7 +17,7 @@ import { ArkTSUtils, collections, taskpool } from '@kit.ArkTS';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import {
-  ATOMIC_PARAMETER_ERROR, expectAtomicBusinessError, expectAtomicIndexError
+  ATOMIC_INDEX_ERROR, ATOMIC_PARAMETER_ERROR, expectAtomicBusinessError
 } from './ArkTSUtilsAtomicsErrorAssert';
 
 const WAIT_PARAMETER_TIMEOUT: number = 3000;
@@ -37,8 +37,8 @@ function assertWaitNotifyType(value: Object | null | undefined): void {
 }
 
 function assertWaitNotifyIndex(array: collections.Int32Array, index: number): void {
-  expectAtomicIndexError((): void => { ArkTSUtils.Atomics.wait(array, index, 0, 0); }, index);
-  expectAtomicIndexError((): void => { ArkTSUtils.Atomics.notify(array, index, 0); }, index);
+  expectAtomicBusinessError((): void => { ArkTSUtils.Atomics.wait(array, index, 0, 0); }, ATOMIC_INDEX_ERROR);
+  expectAtomicBusinessError((): void => { ArkTSUtils.Atomics.notify(array, index, 0); }, ATOMIC_INDEX_ERROR);
 }
 
 function waitParameterDelay(): Promise<void> {
@@ -241,7 +241,7 @@ export default function arkTSUtilsAtomicsWaitNotifyParameterTest(): void {
     /**
      * @tc.number    SUB_ARKTSUTILS_ATOMICS_WAIT_NOTIFY_INVALID_INDICES0068_6800
      * @tc.name      testArkTSUtilsAtomicsWaitNotifyInvalidIndices0068
-     * @tc.desc      ToIndex failures throw RangeError; indices beyond the array length throw BusinessError 10200001.
+     * @tc.desc      Invalid numeric indices throw BusinessError 10200001 for both wait and notify.
      * @tc.size      SmallTest
      * @tc.type      Function
      * @tc.level     Level 1

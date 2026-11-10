@@ -30,6 +30,7 @@ import AVPlayerGeTSeekableTimeRangesTest from './AVPlayerGeTSeekableTimeRangesTe
 import AVPlayerTrackFilterTest from './AVPlayerTrackFilterTest.test'
 import AVDownloaderTest from './AVDownloaderTest.test'
 import AVPlayerPlayListTest from './AVPlayerPlayListTest.test'
+import AVPlayerCheckSupportPlaybackCommand from './AVPlayerCheckSupportPlaybackCommand.test'
 
 export default function testsuite() {
   AvPlayerEnumTest();
@@ -48,4 +49,5 @@ export default function testsuite() {
   AVPlayerTrackFilterTest();
   AVDownloaderTest();
   AVPlayerPlayListTest();
+  AVPlayerCheckSupportPlaybackCommand();
 }
