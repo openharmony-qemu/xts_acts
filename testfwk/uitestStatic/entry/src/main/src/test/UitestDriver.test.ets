@@ -186,13 +186,15 @@ export default function uitestDriverTest(): void {
       hilog.info(domain, tag, "testFindComponents_static Start!!!");
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       await driver!.delayMs(waitUiReadyMs);
-      let buttons:Array<Component>|null = await driver!.findComponents(ON.type('Button'));
-      hilog.info(domain, tag, `testFindComponents_static buttons , ${ JSON.stringify(buttons)  }`);
+      let disPlay = display.getDefaultDisplaySync();
+      hilog.info(domain, tag, `testFindComponents_static is: ${JSON.stringify(disPlay)}`);
+      let buttons:Array<Component>|null = await driver!.findComponents(ON.belongingDisplay(disPlay.id.toInt())
+        .type('Button').inWindow('com.uitestScene.acts'));
       expect(buttons != null).assertTrue();
       if (buttons != null) {
         let btn = buttons[0] as Component;
-        let msg = await btn.getText();
-        expect(msg != null).assertTrue();
+        let msg = await btn.getType();
+        expect(msg == 'Button').assertTrue();
       }
       hilog.info(domain, tag, "testFindComponents_static over!!!!!!!!!!!!!");
       await stopApplication('com.uitestScene.acts');
