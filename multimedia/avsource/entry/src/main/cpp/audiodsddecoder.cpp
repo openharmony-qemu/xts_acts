@@ -41,6 +41,8 @@
 #define CHANNEL_MONO (1)
 #define CHANNEL_STEREO (2)
 #define CHANNEL_MAX (6)
+#define CHANNEL_VALID_COUNT (2)
+#define CHANNEL_INVALID_COUNT (2)
 #define CHANNEL_INVALID_ZERO (0)
 #define CHANNEL_INVALID_ABOVE_MAX (7)
 
@@ -184,17 +186,17 @@ static napi_value DsdCodecTypeChannelRangeCheck(napi_env env, napi_callback_info
     }
     int32_t types[DSD_TYPE_COUNT] = {OH_AVCODEC_DSD_CODEC_LSBF_PLANAR, OH_AVCODEC_DSD_CODEC_MSBF_PLANAR,
                                      OH_AVCODEC_DSD_CODEC_MSBF};
-    int32_t validChannels[2] = {CHANNEL_MONO, CHANNEL_MAX};
-    int32_t invalidChannels[2] = {CHANNEL_INVALID_ZERO, CHANNEL_INVALID_ABOVE_MAX};
+    int32_t validChannels[CHANNEL_VALID_COUNT] = {CHANNEL_MONO, CHANNEL_MAX};
+    int32_t invalidChannels[CHANNEL_INVALID_COUNT] = {CHANNEL_INVALID_ZERO, CHANNEL_INVALID_ABOVE_MAX};
     int32_t err = 0;
     for (int32_t i = 0; i < DSD_TYPE_COUNT; i++) {
-        for (int32_t j = 0; j < 2; j++) {
+        for (int32_t j = 0; j < CHANNEL_VALID_COUNT; j++) {
             if (ConfigureDsd(codec, types[i], true, validChannels[j], DSD_SAMPLE_RATE_DSD64) != AV_ERR_OK) {
                 err++;
             }
             OH_AudioCodec_Reset(codec);
         }
-        for (int32_t j = 0; j < 2; j++) {
+        for (int32_t j = 0; j < CHANNEL_INVALID_COUNT; j++) {
             if (ConfigureDsd(codec, types[i], true, invalidChannels[j], DSD_SAMPLE_RATE_DSD64) == AV_ERR_OK) {
                 err++;
             }
@@ -261,7 +263,7 @@ static napi_value DsdCodecTypeOutOfRangeCheck(napi_env env, napi_callback_info i
     int32_t err = 0;
     for (int32_t i = 0; i < DSD_TYPE_INVALID_COUNT; i++) {
         OH_AVErrCode configureRet = ConfigureDsd(codec, invalidTypes[i], true, CHANNEL_STEREO,
-                                                DSD_SAMPLE_RATE_DSD64);
+                                                 DSD_SAMPLE_RATE_DSD64);
         if (configureRet == AV_ERR_OK) {
             /* accepted: the default type was used, the decoder must still be resettable */
             if (OH_AudioCodec_Reset(codec) != AV_ERR_OK) {
