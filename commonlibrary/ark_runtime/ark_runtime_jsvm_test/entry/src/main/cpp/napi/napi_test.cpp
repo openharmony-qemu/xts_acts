@@ -11189,6 +11189,161 @@ static napi_value RunJsVm(napi_env nEnv, napi_callback_info nInfo)
     return result;
 }
 
+[[maybe_unused]] static napi_value SharedArrayBufferCreateTest(napi_env env, napi_callback_info info) {
+    (void)RunTestsWithPrefix("test_shared_array_buffer.cpp/SharedArrayBufferCreate");
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+[[maybe_unused]] static napi_value SharedArrayBufferViewsTest(napi_env env, napi_callback_info info) {
+    (void)RunTestsWithPrefix("test_shared_array_buffer.cpp/SharedArrayBufferViews");
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+[[maybe_unused]] static napi_value SharedArrayBufferBackingStoreTest(napi_env env, napi_callback_info info) {
+    (void)RunTestsWithPrefix("test_shared_array_buffer.cpp/SharedArrayBufferBackingStore");
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+[[maybe_unused]] static napi_value SharedArrayBufferInvalidArgsTest(napi_env env, napi_callback_info info) {
+    (void)RunTestsWithPrefix("test_shared_array_buffer.cpp/SharedArrayBufferInvalidArgs");
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+[[maybe_unused]] static napi_value SharedArrayBufferCrossVMTest(napi_env env, napi_callback_info info) {
+    (void)RunTestsWithPrefix("test_shared_array_buffer.cpp/SharedArrayBufferCrossVM");
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+[[maybe_unused]] static napi_value SharedArrayBufferTypeChecksTest(napi_env env, napi_callback_info info) {
+    (void)RunTestsWithPrefix("test_shared_array_buffer.cpp/SharedArrayBufferTypeChecks");
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+[[maybe_unused]] static napi_value SharedArrayBufferDetachUsabilityTest(napi_env env, napi_callback_info info) {
+    (void)RunTestsWithPrefix("test_shared_array_buffer.cpp/SharedArrayBufferDetachUsability");
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+[[maybe_unused]] static napi_value SharedArrayBufferBoundarySizesTest(napi_env env, napi_callback_info info) {
+    (void)RunTestsWithPrefix("test_shared_array_buffer.cpp/SharedArrayBufferBoundarySizes");
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+[[maybe_unused]] static napi_value SharedArrayBufferInfoOptionsTest(napi_env env, napi_callback_info info) {
+    (void)RunTestsWithPrefix("test_shared_array_buffer.cpp/SharedArrayBufferInfoOptions");
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+[[maybe_unused]] static napi_value SharedArrayBufferMultipleTest(napi_env env, napi_callback_info info) {
+    (void)RunTestsWithPrefix("test_shared_array_buffer.cpp/SharedArrayBufferMultiple");
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+[[maybe_unused]] static napi_value SharedArrayBufferTypedArrayTypesTest(napi_env env, napi_callback_info info) {
+    (void)RunTestsWithPrefix("test_shared_array_buffer.cpp/SharedArrayBufferTypedArrayTypes");
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+[[maybe_unused]] static napi_value SharedArrayBufferNonBufferViewsTest(napi_env env, napi_callback_info info) {
+    (void)RunTestsWithPrefix("test_shared_array_buffer.cpp/SharedArrayBufferNonBufferViews");
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+[[maybe_unused]] static napi_value SharedArrayBufferDataViewEdgeTest(napi_env env, napi_callback_info info) {
+    (void)RunTestsWithPrefix("test_shared_array_buffer.cpp/SharedArrayBufferDataViewEdge");
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+[[maybe_unused]] static napi_value SharedArrayBufferRetainIndependenceTest(napi_env env, napi_callback_info info) {
+    (void)RunTestsWithPrefix("test_shared_array_buffer.cpp/SharedArrayBufferRetainIndependence");
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+[[maybe_unused]] static napi_value SharedArrayBufferRetainStressTest(napi_env env, napi_callback_info info) {
+    (void)RunTestsWithPrefix("test_shared_array_buffer.cpp/SharedArrayBufferRetainStress");
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+[[maybe_unused]] static napi_value SharedArrayBufferGcSurvivalTest(napi_env env, napi_callback_info info) {
+    (void)RunTestsWithPrefix("test_shared_array_buffer.cpp/SharedArrayBufferGcSurvival");
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+[[maybe_unused]] static napi_value SharedArrayBufferSameVMMultiEnvTest(napi_env env, napi_callback_info info) {
+    (void)RunTestsWithPrefix("test_shared_array_buffer.cpp/SharedArrayBufferSameVMMultiEnv");
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+[[maybe_unused]] static napi_value SharedArrayBufferMultiVMTest(napi_env env, napi_callback_info info) {
+    (void)RunTestsWithPrefix("test_shared_array_buffer.cpp/SharedArrayBufferMultiVM");
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+[[maybe_unused]] static napi_value SharedArrayBufferZeroLengthCrossVMTest(napi_env env, napi_callback_info info) {
+    (void)RunTestsWithPrefix("test_shared_array_buffer.cpp/SharedArrayBufferZeroLengthCrossVM");
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+[[maybe_unused]] static napi_value SharedArrayBufferVMTearDownLoopTest(napi_env env, napi_callback_info info) {
+    (void)RunTestsWithPrefix("test_shared_array_buffer.cpp/SharedArrayBufferVMTearDownLoop");
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+[[maybe_unused]] static napi_value SharedArrayBufferCrossEnvValueIsolationTest(napi_env env,
+                                                                               napi_callback_info info) {
+    (void)RunTestsWithPrefix("test_shared_array_buffer.cpp/SharedArrayBufferCrossEnvValueIsolation");
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+[[maybe_unused]] static napi_value SharedArrayBufferConcurrentMemoryTest(napi_env env, napi_callback_info info) {
+    (void)RunTestsWithPrefix("test_shared_array_buffer.cpp/SharedArrayBufferConcurrentMemory");
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
 EXTERN_C_START
 
 static napi_value Init(napi_env env, napi_value exports)
@@ -11267,6 +11422,29 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("arrayBufferBackingStoreTest", ArrayBufferBackingStoreTest),
         DECLARE_NAPI_FUNCTION("testSetDebugOption", testSetDebugOption),
         DECLARE_NAPI_FUNCTION("testThreshold", ThresholdTest),
+        DECLARE_NAPI_FUNCTION("sharedArrayBufferCreateTest", SharedArrayBufferCreateTest),
+        DECLARE_NAPI_FUNCTION("sharedArrayBufferViewsTest", SharedArrayBufferViewsTest),
+        DECLARE_NAPI_FUNCTION("sharedArrayBufferBackingStoreTest", SharedArrayBufferBackingStoreTest),
+        DECLARE_NAPI_FUNCTION("sharedArrayBufferInvalidArgsTest", SharedArrayBufferInvalidArgsTest),
+        DECLARE_NAPI_FUNCTION("sharedArrayBufferCrossVMTest", SharedArrayBufferCrossVMTest),
+        DECLARE_NAPI_FUNCTION("sharedArrayBufferTypeChecksTest", SharedArrayBufferTypeChecksTest),
+        DECLARE_NAPI_FUNCTION("sharedArrayBufferDetachUsabilityTest", SharedArrayBufferDetachUsabilityTest),
+        DECLARE_NAPI_FUNCTION("sharedArrayBufferBoundarySizesTest", SharedArrayBufferBoundarySizesTest),
+        DECLARE_NAPI_FUNCTION("sharedArrayBufferInfoOptionsTest", SharedArrayBufferInfoOptionsTest),
+        DECLARE_NAPI_FUNCTION("sharedArrayBufferMultipleTest", SharedArrayBufferMultipleTest),
+        DECLARE_NAPI_FUNCTION("sharedArrayBufferTypedArrayTypesTest", SharedArrayBufferTypedArrayTypesTest),
+        DECLARE_NAPI_FUNCTION("sharedArrayBufferNonBufferViewsTest", SharedArrayBufferNonBufferViewsTest),
+        DECLARE_NAPI_FUNCTION("sharedArrayBufferDataViewEdgeTest", SharedArrayBufferDataViewEdgeTest),
+        DECLARE_NAPI_FUNCTION("sharedArrayBufferRetainIndependenceTest", SharedArrayBufferRetainIndependenceTest),
+        DECLARE_NAPI_FUNCTION("sharedArrayBufferRetainStressTest", SharedArrayBufferRetainStressTest),
+        DECLARE_NAPI_FUNCTION("sharedArrayBufferGcSurvivalTest", SharedArrayBufferGcSurvivalTest),
+        DECLARE_NAPI_FUNCTION("sharedArrayBufferSameVMMultiEnvTest", SharedArrayBufferSameVMMultiEnvTest),
+        DECLARE_NAPI_FUNCTION("sharedArrayBufferMultiVMTest", SharedArrayBufferMultiVMTest),
+        DECLARE_NAPI_FUNCTION("sharedArrayBufferZeroLengthCrossVMTest", SharedArrayBufferZeroLengthCrossVMTest),
+        DECLARE_NAPI_FUNCTION("sharedArrayBufferVMTearDownLoopTest", SharedArrayBufferVMTearDownLoopTest),
+        DECLARE_NAPI_FUNCTION("sharedArrayBufferCrossEnvValueIsolationTest",
+                              SharedArrayBufferCrossEnvValueIsolationTest),
+        DECLARE_NAPI_FUNCTION("sharedArrayBufferConcurrentMemoryTest", SharedArrayBufferConcurrentMemoryTest),
     };
     NAPI_CALL(env, napi_define_properties(env, exports, sizeof(properties) / sizeof(properties[0]), properties));
     return exports;
