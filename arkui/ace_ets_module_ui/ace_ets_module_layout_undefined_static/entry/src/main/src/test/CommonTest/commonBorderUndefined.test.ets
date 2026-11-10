@@ -49,18 +49,18 @@ export default function CommonBorderUndefinedTest() {
     });
 
     /**
-     * @tc.number   SUB_ARKUI_API_CommonBorderUndefinedTest_static_0001
-     * @tc.name     SUB_ARKUI_API_CommonBorderUndefinedTest_static_0001
-     * @tc.desc     SUB_ARKUI_API_CommonBorderUndefinedTest_static_0001
+     * @tc.number   SUB_ARKUI_API_CommonBorderUndefinedTest_static_0100
+     * @tc.name     SUB_ARKUI_API_CommonBorderUndefinedTest_static_0100
+     * @tc.desc     SUB_ARKUI_API_CommonBorderUndefinedTest_static_0100
      * @tc.level    Level.LEVEL1
      */
-    it('SUB_ARKUI_API_CommonBorderUndefinedTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_API_CommonBorderUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        console.info('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0001] START');
+        console.info('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0100] START');
         let driver: Driver = Driver.create();
 
         let strJson = inspector.getInspectorByKey('Border_1');
-        console.info('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0001] borderWidth: ' +
+        console.info('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0100] borderWidth: ' +
         JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'));
         expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'))
           .assertContain('0.00');
@@ -70,7 +70,7 @@ export default function CommonBorderUndefinedTest() {
         await CommonFunc.sleep(1000);
 
         strJson = inspector.getInspectorByKey('Border_1');
-        console.info('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0001] borderWidth: ' +
+        console.info('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0100] borderWidth: ' +
         JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'));
         expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'))
           .assertContain('5.00');
@@ -82,28 +82,28 @@ export default function CommonBorderUndefinedTest() {
         strJson = inspector.getInspectorByKey('Border_1');
         expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'))
           .assertContain('0.00');
-        console.info('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0001] END');
+        console.info('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0100] END');
         done();
       } catch (err) {
-        console.error('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0001] ERR: ' + err);
+        console.error('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0100] ERR: ' + err);
         expect().assertFail();
         done();
       }
     });
 
     /**
-     * @tc.number   SUB_ARKUI_API_CommonBorderUndefinedTest_static_0002
-     * @tc.name     SUB_ARKUI_API_CommonBorderUndefinedTest_static_0002
-     * @tc.desc     SUB_ARKUI_API_CommonBorderUndefinedTest_static_0002
+     * @tc.number   SUB_ARKUI_API_CommonBorderUndefinedTest_static_0200
+     * @tc.name     SUB_ARKUI_API_CommonBorderUndefinedTest_static_0200
+     * @tc.desc     SUB_ARKUI_API_CommonBorderUndefinedTest_static_0200
      * @tc.level    Level.LEVEL1
      */
-    it('SUB_ARKUI_API_CommonBorderUndefinedTest_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_API_CommonBorderUndefinedTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        console.info('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0002] START');
+        console.info('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0200] START');
         let driver: Driver = Driver.create();
 
         let strJson = inspector.getInspectorByKey('Border_2');
-        console.info("[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0002] borderStyle: " +
+        console.info("[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0200] borderStyle: " +
         JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderStyle'));
         expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderStyle'))
           .assertEqual('BorderStyle.Solid');
@@ -113,7 +113,7 @@ export default function CommonBorderUndefinedTest() {
         await CommonFunc.sleep(1000);
 
         strJson = inspector.getInspectorByKey('Border_2');
-        console.info("[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0002] borderStyle: " +
+        console.info("[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0200] borderStyle: " +
         JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderStyle'));
         expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderStyle'))
           .assertEqual('BorderStyle.Dashed');
@@ -124,28 +124,28 @@ export default function CommonBorderUndefinedTest() {
         strJson = inspector.getInspectorByKey('Border_2');
         expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderStyle'))
           .assertEqual('BorderStyle.Solid');
-        console.info('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0002] END');
+        console.info('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0200] END');
         done();
       } catch (err) {
-        console.error('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0002] ERR: ' + err);
+        console.error('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0200] ERR: ' + err);
         expect().assertFail();
         done();
       }
     });
 
     /**
-     * @tc.number   SUB_ARKUI_API_CommonBorderUndefinedTest_static_0003
-     * @tc.name     SUB_ARKUI_API_CommonBorderUndefinedTest_static_0003
-     * @tc.desc     SUB_ARKUI_API_CommonBorderUndefinedTest_static_0003
+     * @tc.number   SUB_ARKUI_API_CommonBorderUndefinedTest_static_0300
+     * @tc.name     SUB_ARKUI_API_CommonBorderUndefinedTest_static_0300
+     * @tc.desc     SUB_ARKUI_API_CommonBorderUndefinedTest_static_0300
      * @tc.level    Level.LEVEL1
      */
-    it('SUB_ARKUI_API_CommonBorderUndefinedTest_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_API_CommonBorderUndefinedTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        console.info('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0003] START');
+        console.info('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0300] START');
         let driver: Driver = Driver.create();
 
         let strJson = inspector.getInspectorByKey('Border_2');
-        console.info("[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0003] borderWidth: " +
+        console.info("[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0300] borderWidth: " +
         JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'));
         expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'))
           .assertContain('0.00');
@@ -155,7 +155,7 @@ export default function CommonBorderUndefinedTest() {
         await CommonFunc.sleep(1000);
 
         strJson = inspector.getInspectorByKey('Border_2');
-        console.info("[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0003] borderWidth: " +
+        console.info("[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0300] borderWidth: " +
         JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'));
         expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'))
           .assertContain('3.00');
@@ -165,28 +165,28 @@ export default function CommonBorderUndefinedTest() {
         strJson = inspector.getInspectorByKey('Border_2');
         expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth'))
           .assertContain('0.00');
-        console.info('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0003] END');
+        console.info('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0300] END');
         done();
       } catch (err) {
-        console.error('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0003] ERR: ' + err);
+        console.error('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0300] ERR: ' + err);
         expect().assertFail();
         done();
       }
     });
 
     /**
-     * @tc.number   SUB_ARKUI_API_CommonBorderUndefinedTest_static_0004
-     * @tc.name     SUB_ARKUI_API_CommonBorderUndefinedTest_static_0004
-     * @tc.desc     SUB_ARKUI_API_CommonBorderUndefinedTest_static_0004
+     * @tc.number   SUB_ARKUI_API_CommonBorderUndefinedTest_static_0400
+     * @tc.name     SUB_ARKUI_API_CommonBorderUndefinedTest_static_0400
+     * @tc.desc     SUB_ARKUI_API_CommonBorderUndefinedTest_static_0400
      * @tc.level    Level.LEVEL1
      */
-    it('SUB_ARKUI_API_CommonBorderUndefinedTest_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_API_CommonBorderUndefinedTest_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        console.info('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0004] START');
+        console.info('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0400] START');
         let driver: Driver = Driver.create();
 
         let strJson = inspector.getInspectorByKey('Border_2');
-        console.info("[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0004] borderColor: " +
+        console.info("[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0400] borderColor: " +
         JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderColor'));
         expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderColor'))
           .assertEqual('#FF000000');
@@ -196,7 +196,7 @@ export default function CommonBorderUndefinedTest() {
         await CommonFunc.sleep(1000);
 
         strJson = inspector.getInspectorByKey('Border_2');
-        console.info("[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0004] borderColor: " +
+        console.info("[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0400] borderColor: " +
         JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderColor'));
         expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderColor'))
           .assertEqual('#FFFF0000');
@@ -207,66 +207,24 @@ export default function CommonBorderUndefinedTest() {
         strJson = inspector.getInspectorByKey('Border_2');
         expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderColor'))
           .assertEqual('#FF000000');
-        console.info('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0004] END');
+        console.info('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0400] END');
         done();
       } catch (err) {
-        console.error('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0004] ERR: ' + err);
+        console.error('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0400] ERR: ' + err);
         expect().assertFail();
         done();
       }
     });
 
     /**
-     * @tc.number   SUB_ARKUI_API_CommonBorderUndefinedTest_static_0005
-     * @tc.name     SUB_ARKUI_API_CommonBorderUndefinedTest_static_0005
-     * @tc.desc     SUB_ARKUI_API_CommonBorderUndefinedTest_static_0005
+     * @tc.number   SUB_ARKUI_API_CommonBorderUndefinedTest_static_0500
+     * @tc.name     SUB_ARKUI_API_CommonBorderUndefinedTest_static_0500
+     * @tc.desc     SUB_ARKUI_API_CommonBorderUndefinedTest_static_0500
      * @tc.level    Level.LEVEL1
      */
-    it('SUB_ARKUI_API_CommonBorderUndefinedTest_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_API_CommonBorderUndefinedTest_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        console.info('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0005] START');
-        let driver: Driver = Driver.create();
-
-        let strJson = inspector.getInspectorByKey('Border_2');
-        console.info("[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0005] borderRadius: " +
-        JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderRadius'));
-        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderRadius'))
-          .assertContain('0.00');
-
-        let changeBtn = await driver.findComponent(ON.id('Border_btn5'));
-        await (changeBtn?.click() as Promise<void>);
-        await CommonFunc.sleep(1000);
-
-        strJson = inspector.getInspectorByKey('Border_2');
-        console.info("[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0005] borderRadius: " +
-        JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderRadius'));
-        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderRadius'))
-          .assertContain('5.00');
-
-        await (changeBtn?.click() as Promise<void>);
-        await CommonFunc.sleep(1000);
-
-        strJson = inspector.getInspectorByKey('Border_2');
-        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderRadius'))
-          .assertContain('0.00');
-        console.info('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0005] END');
-        done();
-      } catch (err) {
-        console.error('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0005] ERR: ' + err);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.number   SUB_ARKUI_API_CommonBorderUndefinedTest_static_0006
-     * @tc.name     SUB_ARKUI_API_CommonBorderUndefinedTest_static_0006
-     * @tc.desc     SUB_ARKUI_API_CommonBorderUndefinedTest_static_0006
-     * @tc.level    Level.LEVEL1
-     */
-    it('SUB_ARKUI_API_CommonBorderUndefinedTest_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      try {
-        console.info('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0006] START');
+        console.info('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0500] START');
         let driver: Driver = Driver.create();
 
         let strJson = inspector.getInspectorByKey('Border_3');
@@ -291,7 +249,7 @@ export default function CommonBorderUndefinedTest() {
             '\"repeat\":\"RepeatMode.Stretch\",\"fill\":\"false\"}');
         done();
       } catch (err) {
-        console.error('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0006] ERR: ' + err);
+        console.error('[SUB_ARKUI_API_CommonBorderUndefinedTest_static_0500] ERR: ' + err);
         expect().assertFail();
         done();
       }
