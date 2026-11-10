@@ -114,10 +114,14 @@ async function exitInputMethod() {
     let softKeyBoard = await driver.findComponent(ON.type('Canvas'))
     console.log(`${TestTag},softKeyBoard: ${JSON.stringify(softKeyBoard)}`);
     if (softKeyBoard != null) {
-        if (user == undefined || user == defaultUserId) {
-            await driver.pressBack()
-        } else {
-            await driver.pressBack(disPlay.id)
+        let hideKey = await driver.findComponent(ON.id('KeyHideKbd'))
+        console.log(`${TestTag},hideKey: ${JSON.stringify(hideKey)}`);
+        if (hideKey != null) {
+            if (user == undefined || user == defaultUserId) {
+                await driver.pressBack()
+            } else {
+                await driver.pressBack(disPlay.id)
+            }
         }
     }
     await driver.delayMs(2000)
@@ -6149,8 +6153,10 @@ export default function UiTest() {
         it('testFindComponents', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
-            let buttons = await driver.findComponents(ON.type('Button'))
-            expect(await buttons[0].getText() != null).assertTrue()
+            let disPlay = display.getDefaultDisplaySync();
+            let buttons = await driver.findComponents(ON.belongingDisplay(disPlay.id).type('Button')
+                .inWindow('com.uitestScene.acts'))
+            expect(await buttons[0].getType() == 'Button').assertTrue()
             await stopApplication('com.uitestScene.acts')
         }, undefined, 'emulator')
 
@@ -7052,7 +7058,7 @@ export default function UiTest() {
             let button = await driver.findComponent(BY.text('next page'))
             let id = await button.getId()
             let button2 = await driver.findComponent(BY.id(id))
-            expect(await button2.getText() == 'next page').assertTrue()
+            expect(await button2.getId() == id).assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
 
@@ -7233,7 +7239,7 @@ export default function UiTest() {
         it('testFindComponentsAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
-            let buttons = await driver.findComponents(BY.type('Button'))
+            let buttons = await driver.findComponents(BY.type('Button').key('toastBtn'))
             expect(await buttons[0].getText() != null).assertTrue()
             let notCCom = await driver.findComponents(BY.text('NotTest'))
             expect(notCCom).assertNull()

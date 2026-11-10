@@ -22,6 +22,7 @@ import display from '@ohos.display';
 const abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
+const defaultUserId: string = '100';
 
 class Utils{
 
@@ -139,18 +140,23 @@ async function exitInputMethod() {
   let driver = Driver.create()
   let displayId = display.getDefaultDisplaySync().id.toInt();
   let primaryId = display.getPrimaryDisplaySync().id.toInt();
+  let user:String|undefined = abilityDelegatorRegistry.getArguments().parameters["-u"];;
   let softKeyBoard = await driver.findComponent(ON.type('Canvas'))
   if (softKeyBoard != null) {
-    if (displayId === primaryId) {
-      await driver.pressBack()
-    } else {
-      await driver.pressBack(displayId)
+    let hideKey = await driver.findComponent(ON.id('KeyHideKbd'))
+    console.log(`${tag}, hideKey,${JSON.stringify(hideKey)}`);
+    if (hideKey != null) {
+      if (user == undefined || user == defaultUserId) {
+        await driver.pressBack()
+      } else {
+        await driver.pressBack(displayId)
+      }
     }
   }
   await driver.delayMs(2000)
   let keyCanvasKeyboard = await driver.findComponent(ON.id('KeyCanvasKeyboard'))
   if (keyCanvasKeyboard != null) {
-    if (displayId === primaryId) {
+    if (user == undefined || user == defaultUserId) {
       await driver.pressBack()
     } else {
       await driver.pressBack(displayId)
