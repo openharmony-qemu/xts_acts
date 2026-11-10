@@ -1170,10 +1170,15 @@ export default function AVTransCoderNdkTest() {
       let dstFd = await getFileFd('testOhAvTransCodeConfigSetDstFileType0003_output_video.m4a');
       let ret: avTransCoderNdk.AvTransCoderResult = avTransCoderNdk.AvTransCodeConfigSetDstFileTypeError(avFd.fd, avFd.offset, avFd.length, dstFd.fd, AV_OUTPUT_FORMAT_M4A);
       console.log('case testOhAvTransCodeConfigSetDstFileType0003 ret ' + ret.result);
-      let retCode: number = avTransCoderNdk.CheckAvTransCoderCallBackError(ret.userData);
-      while(retCode == FAIL) {
-        await sleep(500);
+      let retCode: number = FAIL;
+      if (ret.result == OH_AVErrCode.AV_ERR_OK) {
         retCode = avTransCoderNdk.CheckAvTransCoderCallBackError(ret.userData);
+        while (retCode == FAIL) {
+          await sleep(500);
+        retCode = avTransCoderNdk.CheckAvTransCoderCallBackError(ret.userData);
+        }
+      } else {
+        retCode = ret.result;
       }
       await closeRawFd(VIDEO_AVC_AUDIO_AAC);
       await closeFileFd(dstFd.fd);
@@ -2030,19 +2035,7 @@ export default function AVTransCoderNdkTest() {
         console.log('case testOhAvTransCoderNdk240Resolution0001 ret ' + JSON.stringify(ret));
         await closeRawFd(VIDEO_FEWER_238_RESOLUTION);
         await closeFileFd(dstFd.fd);
-        let isSupport: number = await myavcapability.AVCapabilityIsVideoSizeSupported(238, 238);
-        console.info('isSupport:', isSupport)
-        let isSupportHardware: number = await myavcapability.AVCapabilityIsSupportedHEVCHardware();
-        console.info('isSupportHardware:', isSupportHardware)
-        let isSupportEncoder: number = await myavcapability.AVCapabilityIsVideoSizeSupportedEncoder(240, 240);
-        console.info('isSupportEncoder:', isSupportEncoder)
-        if ((isSupport == -1) || (isSupportEncoder == -1) || (isSupportHardware == -1)) {
-          console.info(`AVCapabilityIsVideoSizeSupported or AVCapabilityIsVideoSizeSupportedEncoder Failed`);
-          expect(ret).assertEqual(OH_AVErrCode.AV_ERR_IO);
-        } else {
-          console.info(`AVCapabilityIsVideoSizeSupported and AVCapabilityIsVideoSizeSupportedEncoder Success`);
-          expect(ret).assertEqual(OH_AVErrCode.AV_ERR_INVALID_VAL);
-        }
+        expect(ret).assertEqual(OH_AVErrCode.AV_ERR_INVALID_VAL);
         done();
       } catch (err) {
         console.error('testOhAvTransCoderNdk240Resolution0001 failed with error:', JSON.stringify(err));
