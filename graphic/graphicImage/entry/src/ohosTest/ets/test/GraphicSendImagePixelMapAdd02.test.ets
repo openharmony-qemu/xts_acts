@@ -1258,8 +1258,7 @@ export default function GraphicSendImagePixelMapAdd02() {
           const color: ArrayBuffer = new ArrayBuffer(96);
           let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 4, width: 6 } }
           let pixelMap : image.PixelMap = image.createPixelMapSync(color, opts);
-          console.info('www data sendableImagePixelMapAdd02_0304 success ', pixelMap.isEditable,
-            pixelMap.isStrideAlignment);
+          console.info('www data sendableImagePixelMapAdd02_0304 success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
           let sendablePixelMap : sendableImage.PixelMap = sendableImage.convertFromPixelMap(pixelMap);
@@ -1325,8 +1324,7 @@ export default function GraphicSendImagePixelMapAdd02() {
           const color: ArrayBuffer = new ArrayBuffer(96);
           let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 4, width: 6 } }
           let pixelMap : sendableImage.PixelMap = sendableImage.createPixelMapSync(color, opts);
-          console.info('www data sendableImagePixelMapAdd02_0305 ', pixelMap.isEditable,
-            pixelMap.isStrideAlignment);
+          console.info('www data sendableImagePixelMapAdd02_0306 ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
           let sendablePixelMap : image.PixelMap = sendableImage.convertToPixelMap(pixelMap);
@@ -1358,8 +1356,7 @@ export default function GraphicSendImagePixelMapAdd02() {
           const color: ArrayBuffer = new ArrayBuffer(96);
           let opts: image.InitializationOptions = { editable: false, pixelFormat: 3, size: { height: 4, width: 6 } }
           let pixelMap : sendableImage.PixelMap = sendableImage.createPixelMapSync(color, opts);
-          console.info('www data sendableImagePixelMapAdd02_0305 ', pixelMap.isEditable,
-            pixelMap.isStrideAlignment);
+          console.info('www data sendableImagePixelMapAdd02_0307 ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
           let sendablePixelMap: image.PixelMap = sendableImage.convertToPixelMap(pixelMap);
