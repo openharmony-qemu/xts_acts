@@ -24,13 +24,12 @@ import { BusinessError } from '@ohos.base';
 function sleep(time: number): Promise<number> {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
-function getDumpCmd(): string {
-  let cmd = 'aa dump -a';
-  let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
-  if (user !== undefined) {
-    cmd += ' -u ' + user;
-  }
-  return cmd;
+let cmd = 'aa dump -a';
+let cmd1 = 'aa force-stop com.example.actsactionextensionabilityrely';
+let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+if(user !== undefined) {
+  cmd += ' -u ' + user;
+  cmd1 += ' -u ' + user;
 }
 let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 let ACTS_CallFunction: commonEvent.CommonEventSubscribeInfo = {
@@ -78,7 +77,6 @@ export default function abilityTest() {
         console.log('====>Acts_ActionExtensionAbility_0100 subscribeCallBack :' + JSON.stringify(data));
         if (data.event == 'ACTS_TEST_FOREGROUND') {
           expect(data.parameters?.count).assertEqual(3);
-          let cmd = getDumpCmd();
           await abilityDelegator.executeShellCommand(cmd).then((data) => {
             console.info('====>Acts_ActionExtensionAbility_0100 : data : ' + JSON.stringify(data.stdResult));
             let firstString = data.stdResult.split('entry/ActsActionExtensionAbility');
@@ -143,7 +141,6 @@ export default function abilityTest() {
         console.log('====>Acts_ActionExtensionAbility_0200 subscribeCallBack :' + JSON.stringify(data));
         if (data.event == 'ACTS_TEST_FOREGROUND') {
           expect(data.parameters?.count).assertEqual(3);
-          let cmd = getDumpCmd();
           await abilityDelegator.executeShellCommand(cmd).then((data) => {
             console.info('====>Acts_ActionExtensionAbility_0200 : data : ' + JSON.stringify(data.stdResult));
             let firstString = data.stdResult.split('entry/ActsActionExtensionAbility');
@@ -215,7 +212,6 @@ export default function abilityTest() {
         console.log('====>Acts_ActionExtensionAbility_0300 subscribeCallBack :' + JSON.stringify(data));
         if (data.event == 'ACTS_TEST_FOREGROUND') {
           expect(data.parameters?.count).assertEqual(3);
-          let cmd = getDumpCmd();
           await abilityDelegator.executeShellCommand(cmd).then((data) => {
             console.info('====>Acts_ActionExtensionAbility_0300 : data : ' + JSON.stringify(data.stdResult));
             let firstString = data.stdResult.split('entry_assist/ActsActionExtensionAbility');
@@ -255,8 +251,7 @@ export default function abilityTest() {
         setTimeout(async () => {
           console.info(`====>Acts_ActionExtensionAbility_0300 unSubscribeCallback`);
           await globalThis.terminate('Acts_ActionExtensionAbility_0300');
-          let cmd = 'aa force-stop com.example.actsactionextensionabilityrely';
-          await abilityDelegator.executeShellCommand(cmd).catch((error: BusinessError) => {
+          await abilityDelegator.executeShellCommand(cmd1).catch((error: BusinessError) => {
             console.log('====>Acts_ActionExtensionAbility_0300 executeShellCommand error : ' + JSON.stringify(error));
           });
           await sleep(1000);
@@ -877,7 +872,6 @@ export default function abilityTest() {
         expect(err.code).assertEqual(0);
       });
       await sleep(1000);
-      let cmd = getDumpCmd();
       await abilityDelegator.executeShellCommand(cmd).then((data) => {
         console.info('====>Acts_ActionExtensionAbility_1700 : data : ' + JSON.stringify(data.stdResult));
         try {
@@ -921,7 +915,6 @@ export default function abilityTest() {
         commonEvent.subscribe(subscriber, async (err, data) => {
           console.log('SubscribeInfoCallback : ' + JSON.stringify(data));
           if (data.event == 'ACTS_CALL_EVENT') {
-            let cmd = getDumpCmd();
             await abilityDelegator.executeShellCommand(cmd).then((data) => {
               console.info('====>Acts_ActionExtensionAbility_1800 : data : ' + JSON.stringify(data.stdResult));
               try {

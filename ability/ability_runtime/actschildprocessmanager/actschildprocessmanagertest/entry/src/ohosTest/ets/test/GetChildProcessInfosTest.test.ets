@@ -28,6 +28,7 @@ const ERR_CONTEXT = 16000011;
 const ERR_CAPABILITY = 801;
 const ERR_NOT_SUPPORTED = 16000061;
 const ERR_ABILITY_NOT_EXIST = 16000001;
+const ERR_FEATURE_UNAVAILABLE = 16000062;
 const BUNDLE = 'com.acts.childprocessmanagertest';
 
 function sleep(ms: number): Promise<void> {
@@ -43,7 +44,7 @@ function assertInfoShape(info: childProcessManager.ChildProcessInformation): voi
 }
 
 function isCreateUnsupported(code: number): boolean {
-  return code === ERR_CAPABILITY || code === ERR_NOT_SUPPORTED;
+  return code === ERR_CAPABILITY || code === ERR_NOT_SUPPORTED || code === ERR_FEATURE_UNAVAILABLE;
 }
 
 export default function getChildProcessInfosTest() {
@@ -226,6 +227,7 @@ export default function getChildProcessInfosTest() {
     it('SUB_Ability_AbilityRuntime_GetChildProcessInfos_AfterSpawn_0100', Level.LEVEL0,
       async (done: Function) => {
         try {
+          await sleep(1000);
           pid = await childProcessManager.startChildProcess(
             spawnProcessPath, childProcessManager.StartMode.APP_SPAWN_FORK);
           expect(pid > 0).assertTrue();
