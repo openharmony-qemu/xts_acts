@@ -1355,7 +1355,7 @@ export default function WorkSchedulerMgrNewTest() {
                 done();
             }catch(error){
                 console.info("testStartWorkNEW039 ----------------error: " + error.code + " message: " + error.message);
-                expect(error.code).assertEqual("9700004");
+                expect(Number(error.code)).assertEqual(9700004);
                 done();
             }
         })
@@ -1389,7 +1389,7 @@ export default function WorkSchedulerMgrNewTest() {
                 done();
             }catch(error){
                 console.info("testStartWorkNEW040 ----------------error: " + error.code + " message: " + error.message);
-                expect(error.code).assertEqual("9700004");
+                expect(Number(error.code)).assertEqual(9700004);
                 done();
             }
         })
@@ -1423,7 +1423,7 @@ export default function WorkSchedulerMgrNewTest() {
                 done();
             }catch(error){
                 console.info("testStartWorkNEW041 ----------------error: " + error.code + " message: " + error.message);
-                expect(error.code).assertEqual("9700004");
+                expect(Number(error.code)).assertEqual(9700004);
                 done();
             }
         })
@@ -1457,7 +1457,7 @@ export default function WorkSchedulerMgrNewTest() {
                 done();
             }catch(error){
                 console.info("testStartWorkNEW042 ----------------error: " + error.code + " message: " + error.message);
-                expect(error.code).assertEqual("9700004");
+                expect(Number(error.code)).assertEqual(9700004);
                 done();
             }
         })
