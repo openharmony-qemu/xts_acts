@@ -124,6 +124,7 @@ group("ability_runtime") {
       "actssystemapitest:ActsSystemAPITest",
       "actssystemapitestappmanager:ActsSystemApiAppManagerTest",
       "actssystemapiteststatic:ActsSystemAPIStaticTest",
+      "actsclimananagernopermtest:ActsCliManagerNoPermTest",
       "actsturipermisssiontest:actsturipermisssiontest",
       "actsuiabilitycontext:actsuiabilitycontext",
       "actsuiextensionexitreason:actsuiextensionexitreason",
