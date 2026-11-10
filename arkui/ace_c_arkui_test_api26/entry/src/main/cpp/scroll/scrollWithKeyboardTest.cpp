@@ -81,14 +81,14 @@ static napi_value ScrollWithKeyboardTest_005(napi_env env, napi_callback_info in
 {
     NAPI_START(scroll, ARKUI_NODE_SCROLL);
 
-    ArkUI_NumberValue value[] = {{.i32 = false}};
+    ArkUI_NumberValue value[] = {{.i32 = true}};
     ArkUI_AttributeItem value_item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(scroll, NODE_SCROLL_ENABLE_SCROLL_WITH_KEYBOARD, &value_item);
     ASSERT_EQ(ret, SUCCESS);
     auto ret1 = nodeAPI->resetAttribute(scroll, NODE_SCROLL_ENABLE_SCROLL_WITH_KEYBOARD);
     ASSERT_EQ(ret1, SUCCESS);
     auto ret2 = nodeAPI->getAttribute(scroll, NODE_SCROLL_ENABLE_SCROLL_WITH_KEYBOARD)->value[PARAM_0].i32;
-    ASSERT_EQ(ret2, true);
+    ASSERT_EQ(ret2, false);
     NAPI_END;
 }
 }
