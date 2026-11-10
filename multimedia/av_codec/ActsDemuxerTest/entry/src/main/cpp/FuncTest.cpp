@@ -852,7 +852,7 @@ int DemuxerFunction1600()
 
 int DemuxerFunction1700()
 {
-    const char *file = "/data/storage/el2/base/files/media/ts_video.ts";
+    const char *file = "/data/storage/el2/base/files/media/ts_video.m2ts";
     int fd = open(file, O_RDONLY);
     bool audioIsEnd = false;
     bool videoIsEnd = false;
@@ -1126,7 +1126,7 @@ int DemuxerFunction2300()
 
 int DemuxerFunction2400()
 {
-    const char *file1 = "/data/storage/el2/base/files/media/ts_video.ts";
+    const char *file1 = "/data/storage/el2/base/files/media/ts_video.m2ts";
     const char *file = "/data/storage/el2/base/files/media/test_video_avcc_10sec.bin";
     int fd = open(file, O_RDONLY);
     int64_t size1 = GET_FILE_SIZE(file1);
