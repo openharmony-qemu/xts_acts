@@ -14,9 +14,8 @@
  */
 
 /*
- * 被测接口（起始版本 26.1.0，SDK 头文件暂未导出，经 NativeInterfaceA11y_bridge 以 dlsym 方式调用）：
- *   OH_ArkUI_Accessibility_RegisterAccessibilityHoverEventHandler
- *   OH_ArkUI_Accessibility_UnregisterAccessibilityHoverEventHandler
+ * 被测接口（起始版本 26.1.0，SDK 头文件暂未导出，经 NativeInterfaceA11y_bridge 以 dlsym 方式解析）：
+ *   无障碍hover事件处理回调的注册接口与解注册接口，完整符号名由 bridge 内分段字符串拼接生成。
  * 说明：本套件为无页面用例，宿主节点通过 native node 接口直接创建（CUSTOM / XCOMPONENT /
  * XCOMPONENT_TEXTURE），注册、解注册仅校验接口返回码，hover 回调由读屏触摸触发，不在用例内模拟。
  */
