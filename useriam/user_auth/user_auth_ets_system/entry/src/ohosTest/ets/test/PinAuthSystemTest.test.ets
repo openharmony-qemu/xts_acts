@@ -70,18 +70,18 @@ export default function PinAuthSystemTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinValidityPeriod_System_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinValidityPeriod_System_0100 start');
+        try {
+          pinAuth.setPinValidityPeriod(userId, 1000);
+          console.error('SUB_Security_PinAuth_SetPinValidityPeriod_System_0100 unexpected success, expected to throw 202');
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`SUB_Security_PinAuth_SetPinValidityPeriod_System_0100 failed. code:${err.code}, message:${err.message}`);
+          expect(err.code).assertEqual(202);
+        }
+      } else {
         console.info('SUB_Security_PinAuth_SetPinValidityPeriod_System_0100 skip on dev board/watch device');
-        return;
-      }
-      console.info('SUB_Security_PinAuth_SetPinValidityPeriod_System_0100 start');
-      try {
-        pinAuth.setPinValidityPeriod(userId, 1000);
-        console.error('SUB_Security_PinAuth_SetPinValidityPeriod_System_0100 unexpected success, expected to throw 202');
-        expect(false).assertTrue();
-      } catch (err) {
-        console.error(`SUB_Security_PinAuth_SetPinValidityPeriod_System_0100 failed. code:${err.code}, message:${err.message}`);
-        expect(err.code).assertEqual(202);
       }
       done();
     });
@@ -97,18 +97,18 @@ export default function PinAuthSystemTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_GetPinValidityPeriod_System_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_GetPinValidityPeriod_System_0200 start');
+        try {
+          pinAuth.getPinValidityPeriod(userId);
+          console.error('SUB_Security_PinAuth_GetPinValidityPeriod_System_0200 unexpected success, expected to throw 202');
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`SUB_Security_PinAuth_GetPinValidityPeriod_System_0200 failed. code:${err.code}, message:${err.message}`);
+          expect(err.code).assertEqual(202);
+        }
+      } else {
         console.info('SUB_Security_PinAuth_GetPinValidityPeriod_System_0200 skip on dev board/watch device');
-        return;
-      }
-      console.info('SUB_Security_PinAuth_GetPinValidityPeriod_System_0200 start');
-      try {
-        pinAuth.getPinValidityPeriod(userId);
-        console.error('SUB_Security_PinAuth_GetPinValidityPeriod_System_0200 unexpected success, expected to throw 202');
-        expect(false).assertTrue();
-      } catch (err) {
-        console.error(`SUB_Security_PinAuth_GetPinValidityPeriod_System_0200 failed. code:${err.code}, message:${err.message}`);
-        expect(err.code).assertEqual(202);
       }
       done();
     });
@@ -124,18 +124,18 @@ export default function PinAuthSystemTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinDeletionDisabledState_System_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinDeletionDisabledState_System_0300 start');
+        try {
+          pinAuth.setPinDeletionDisabledState(userId, true);
+          console.error('SUB_Security_PinAuth_SetPinDeletionDisabledState_System_0300 unexpected success, expected to throw 202');
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`SUB_Security_PinAuth_SetPinDeletionDisabledState_System_0300 failed. code:${err.code}, message:${err.message}`);
+          expect(err.code).assertEqual(202);
+        }
+      } else {
         console.info('SUB_Security_PinAuth_SetPinDeletionDisabledState_System_0300 skip on dev board/watch device');
-        return;
-      }
-      console.info('SUB_Security_PinAuth_SetPinDeletionDisabledState_System_0300 start');
-      try {
-        pinAuth.setPinDeletionDisabledState(userId, true);
-        console.error('SUB_Security_PinAuth_SetPinDeletionDisabledState_System_0300 unexpected success, expected to throw 202');
-        expect(false).assertTrue();
-      } catch (err) {
-        console.error(`SUB_Security_PinAuth_SetPinDeletionDisabledState_System_0300 failed. code:${err.code}, message:${err.message}`);
-        expect(err.code).assertEqual(202);
       }
       done();
     });
@@ -151,18 +151,18 @@ export default function PinAuthSystemTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_GetPinDeletionDisabledState_System_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_GetPinDeletionDisabledState_System_0400 start');
+        try {
+          pinAuth.getPinDeletionDisabledState(userId);
+          console.error('SUB_Security_PinAuth_GetPinDeletionDisabledState_System_0400 unexpected success, expected to throw 202');
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`SUB_Security_PinAuth_GetPinDeletionDisabledState_System_0400 failed. code:${err.code}, message:${err.message}`);
+          expect(err.code).assertEqual(202);
+        }
+      } else {
         console.info('SUB_Security_PinAuth_GetPinDeletionDisabledState_System_0400 skip on dev board/watch device');
-        return;
-      }
-      console.info('SUB_Security_PinAuth_GetPinDeletionDisabledState_System_0400 start');
-      try {
-        pinAuth.getPinDeletionDisabledState(userId);
-        console.error('SUB_Security_PinAuth_GetPinDeletionDisabledState_System_0400 unexpected success, expected to throw 202');
-        expect(false).assertTrue();
-      } catch (err) {
-        console.error(`SUB_Security_PinAuth_GetPinDeletionDisabledState_System_0400 failed. code:${err.code}, message:${err.message}`);
-        expect(err.code).assertEqual(202);
       }
       done();
     });
@@ -178,22 +178,22 @@ export default function PinAuthSystemTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinComplexityPolicy_System_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinComplexityPolicy_System_0500 start');
+        try {
+          let policy: pinAuth.PinComplexityPolicy = {
+            complexityReg: '^[0-9]{6,}$',
+            policyDescription: 'PIN must be at least 6 digits'
+          };
+          pinAuth.setPinComplexityPolicy(userId, policy);
+          console.error('SUB_Security_PinAuth_SetPinComplexityPolicy_System_0500 unexpected success, expected to throw 202');
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`SUB_Security_PinAuth_SetPinComplexityPolicy_System_0500 failed. code:${err.code}, message:${err.message}`);
+          expect(err.code).assertEqual(202);
+        }
+      } else {
         console.info('SUB_Security_PinAuth_SetPinComplexityPolicy_System_0500 skip on dev board/watch device');
-        return;
-      }
-      console.info('SUB_Security_PinAuth_SetPinComplexityPolicy_System_0500 start');
-      try {
-        let policy: pinAuth.PinComplexityPolicy = {
-          complexityReg: '^[0-9]{6,}$',
-          policyDescription: 'PIN must be at least 6 digits'
-        };
-        pinAuth.setPinComplexityPolicy(userId, policy);
-        console.error('SUB_Security_PinAuth_SetPinComplexityPolicy_System_0500 unexpected success, expected to throw 202');
-        expect(false).assertTrue();
-      } catch (err) {
-        console.error(`SUB_Security_PinAuth_SetPinComplexityPolicy_System_0500 failed. code:${err.code}, message:${err.message}`);
-        expect(err.code).assertEqual(202);
       }
       done();
     });
@@ -209,18 +209,18 @@ export default function PinAuthSystemTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_GetPinComplexityPolicy_System_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_GetPinComplexityPolicy_System_0600 start');
+        try {
+          pinAuth.getPinComplexityPolicy(userId);
+          console.error('SUB_Security_PinAuth_GetPinComplexityPolicy_System_0600 unexpected success, expected to throw 202');
+          expect(false).assertTrue();
+        } catch (err) {
+          console.error(`SUB_Security_PinAuth_GetPinComplexityPolicy_System_0600 failed. code:${err.code}, message:${err.message}`);
+          expect(err.code).assertEqual(202);
+        }
+      } else {
         console.info('SUB_Security_PinAuth_GetPinComplexityPolicy_System_0600 skip on dev board/watch device');
-        return;
-      }
-      console.info('SUB_Security_PinAuth_GetPinComplexityPolicy_System_0600 start');
-      try {
-        pinAuth.getPinComplexityPolicy(userId);
-        console.error('SUB_Security_PinAuth_GetPinComplexityPolicy_System_0600 unexpected success, expected to throw 202');
-        expect(false).assertTrue();
-      } catch (err) {
-        console.error(`SUB_Security_PinAuth_GetPinComplexityPolicy_System_0600 failed. code:${err.code}, message:${err.message}`);
-        expect(err.code).assertEqual(202);
       }
       done();
     });

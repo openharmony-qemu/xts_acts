@@ -70,20 +70,20 @@ export default function PinAuthReturnTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinValidityPeriod_Return_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Return_Static_0100 start');
+        try {
+          let validityPeriod: long = Double.toLong(1000);
+          pinAuth.setPinValidityPeriod(userId, validityPeriod);
+          let result = pinAuth.getPinValidityPeriod(userId);
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Return_Static_0100 result: ' + JSON.stringify(result));
+          expect(result).assertEqual(Double.toLong(1000));
+        } catch (err) {
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Return_Static_0100 failed ' + err.code + ' ' + err.message);
+          expect(false).assertTrue();
+        }
+      } else {
         hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Return_Static_0100 skip on dev board/watch device');
-        return;
-      }
-      hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Return_Static_0100 start');
-      try {
-        let validityPeriod: long = Double.toLong(1000);
-        pinAuth.setPinValidityPeriod(userId, validityPeriod);
-        let result = pinAuth.getPinValidityPeriod(userId);
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Return_Static_0100 result: ' + JSON.stringify(result));
-        expect(result).assertEqual(Double.toLong(1000));
-      } catch (err) {
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Return_Static_0100 failed ' + err.code + ' ' + err.message);
-        expect(false).assertTrue();
       }
       done();
     });
@@ -97,20 +97,20 @@ export default function PinAuthReturnTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinValidityPeriod_Return_Static_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Return_Static_0110 start');
+        try {
+          let validityPeriod: long = Double.toLong(0);
+          pinAuth.setPinValidityPeriod(userId, validityPeriod);
+          let result = pinAuth.getPinValidityPeriod(userId);
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Return_Static_0110 result: ' + JSON.stringify(result));
+          expect(result).assertUndefined();
+        } catch (err) {
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Return_Static_0110 failed ' + err.code + ' ' + err.message);
+          expect(false).assertTrue();
+        }
+      } else {
         hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Return_Static_0110 skip on dev board/watch device');
-        return;
-      }
-      hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Return_Static_0110 start');
-      try {
-        let validityPeriod: long = Double.toLong(0);
-        pinAuth.setPinValidityPeriod(userId, validityPeriod);
-        let result = pinAuth.getPinValidityPeriod(userId);
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Return_Static_0110 result: ' + JSON.stringify(result));
-        expect(result).assertUndefined();
-      } catch (err) {
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Return_Static_0110 failed ' + err.code + ' ' + err.message);
-        expect(false).assertTrue();
       }
       done();
     });
@@ -124,20 +124,20 @@ export default function PinAuthReturnTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinValidityPeriod_Return_Static_0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Return_Static_0120 start');
+        try {
+          let validityPeriod: long = Double.toLong(Math.pow(2, 50) - 1);
+          pinAuth.setPinValidityPeriod(userId, validityPeriod);
+          let result = pinAuth.getPinValidityPeriod(userId);
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Return_Static_0120 result: ' + JSON.stringify(result));
+          expect(result).assertEqual(Double.toLong(Math.pow(2, 50) - 1));
+        } catch (err) {
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Return_Static_0120 failed ' + err.code + ' ' + err.message);
+          expect(false).assertTrue();
+        }
+      } else {
         hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Return_Static_0120 skip on dev board/watch device');
-        return;
-      }
-      hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Return_Static_0120 start');
-      try {
-        let validityPeriod: long = Double.toLong(Math.pow(2, 50) - 1);
-        pinAuth.setPinValidityPeriod(userId, validityPeriod);
-        let result = pinAuth.getPinValidityPeriod(userId);
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Return_Static_0120 result: ' + JSON.stringify(result));
-        expect(result).assertEqual(Double.toLong(Math.pow(2, 50) - 1));
-      } catch (err) {
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Return_Static_0120 failed ' + err.code + ' ' + err.message);
-        expect(false).assertTrue();
       }
       done();
     });
@@ -153,19 +153,19 @@ export default function PinAuthReturnTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_Static_0300 start');
+        try {
+          pinAuth.setPinDeletionDisabledState(userId, true);
+          let result = pinAuth.getPinDeletionDisabledState(userId);
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_Static_0300 result: ' + JSON.stringify(result));
+          expect(result).assertTrue();
+        } catch (err) {
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_Static_0300 failed ' + err.code + ' ' + err.message);
+          expect(false).assertTrue();
+        }
+      } else {
         hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_Static_0300 skip on dev board/watch device');
-        return;
-      }
-      hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_Static_0300 start');
-      try {
-        pinAuth.setPinDeletionDisabledState(userId, true);
-        let result = pinAuth.getPinDeletionDisabledState(userId);
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_Static_0300 result: ' + JSON.stringify(result));
-        expect(result).assertTrue();
-      } catch (err) {
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_Static_0300 failed ' + err.code + ' ' + err.message);
-        expect(false).assertTrue();
       }
       done();
     });
@@ -179,19 +179,19 @@ export default function PinAuthReturnTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_Static_0310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_Static_0310 start');
+        try {
+          pinAuth.setPinDeletionDisabledState(userId, false);
+          let result = pinAuth.getPinDeletionDisabledState(userId);
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_Static_0310 result: ' + JSON.stringify(result));
+          expect(result).assertFalse();
+        } catch (err) {
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_Static_0310 failed ' + err.code + ' ' + err.message);
+          expect(false).assertTrue();
+        }
+      } else {
         hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_Static_0310 skip on dev board/watch device');
-        return;
-      }
-      hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_Static_0310 start');
-      try {
-        pinAuth.setPinDeletionDisabledState(userId, false);
-        let result = pinAuth.getPinDeletionDisabledState(userId);
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_Static_0310 result: ' + JSON.stringify(result));
-        expect(result).assertFalse();
-      } catch (err) {
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_Static_0310 failed ' + err.code + ' ' + err.message);
-        expect(false).assertTrue();
       }
       done();
     });
@@ -207,25 +207,25 @@ export default function PinAuthReturnTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinComplexityPolicy_Return_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Return_Static_0500 start');
+        try {
+          let policy: pinAuth.PinComplexityPolicy = {
+            complexityReg: '^[0-9]{6,}$',
+            policyDescription: 'PIN must be at least 6 digits'
+          };
+          pinAuth.setPinComplexityPolicy(userId, policy);
+          let result = pinAuth.getPinComplexityPolicy(userId);
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Return_Static_0500 result: ' + JSON.stringify(result));
+          expect(result).not().assertNull();
+          expect(result!.complexityReg).assertEqual('^[0-9]{6,}$');
+          expect(result!.policyDescription).assertEqual('PIN must be at least 6 digits');
+        } catch (err) {
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Return_Static_0500 failed ' + err.code + ' ' + err.message);
+          expect(false).assertTrue();
+        }
+      } else {
         hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Return_Static_0500 skip on dev board/watch device');
-        return;
-      }
-      hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Return_Static_0500 start');
-      try {
-        let policy: pinAuth.PinComplexityPolicy = {
-          complexityReg: '^[0-9]{6,}$',
-          policyDescription: 'PIN must be at least 6 digits'
-        };
-        pinAuth.setPinComplexityPolicy(userId, policy);
-        let result = pinAuth.getPinComplexityPolicy(userId);
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Return_Static_0500 result: ' + JSON.stringify(result));
-        expect(result).not().assertNull();
-        expect(result!.complexityReg).assertEqual('^[0-9]{6,}$');
-        expect(result!.policyDescription).assertEqual('PIN must be at least 6 digits');
-      } catch (err) {
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Return_Static_0500 failed ' + err.code + ' ' + err.message);
-        expect(false).assertTrue();
       }
       done();
     });
@@ -239,23 +239,23 @@ export default function PinAuthReturnTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinComplexityPolicy_Return_Static_0510', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Return_Static_0510 start');
+        try {
+          let policy: pinAuth.PinComplexityPolicy = {
+            complexityReg: '',
+            policyDescription: ''
+          };
+          pinAuth.setPinComplexityPolicy(userId, policy);
+          let result = pinAuth.getPinComplexityPolicy(userId);
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Return_Static_0510 result: ' + JSON.stringify(result));
+          expect(result).assertUndefined();
+        } catch (err) {
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Return_Static_0510 failed ' + err.code + ' ' + err.message);
+          expect(false).assertTrue();
+        }
+      } else {
         hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Return_Static_0510 skip on dev board/watch device');
-        return;
-      }
-      hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Return_Static_0510 start');
-      try {
-        let policy: pinAuth.PinComplexityPolicy = {
-          complexityReg: '',
-          policyDescription: ''
-        };
-        pinAuth.setPinComplexityPolicy(userId, policy);
-        let result = pinAuth.getPinComplexityPolicy(userId);
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Return_Static_0510 result: ' + JSON.stringify(result));
-        expect(result).assertUndefined();
-      } catch (err) {
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Return_Static_0510 failed ' + err.code + ' ' + err.message);
-        expect(false).assertTrue();
       }
       done();
     });

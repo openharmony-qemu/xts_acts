@@ -70,19 +70,19 @@ export default function PinAuthPermissionTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinValidityPeriod_Permission_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Permission_Static_0100 start');
+        try {
+          let validityPeriod: long = Double.toLong(1000);
+          pinAuth.setPinValidityPeriod(userId, validityPeriod);
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Permission_Static_0100 unexpected success, expected to throw 201');
+          expect(false).assertTrue();
+        } catch (err) {
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Permission_Static_0100 failed ' + err.code + ' ' + err.message);
+          expect(err.code).assertEqual(201);
+        }
+      } else {
         hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Permission_Static_0100 skip on dev board/watch device');
-        return;
-      }
-      hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Permission_Static_0100 start');
-      try {
-        let validityPeriod: long = Double.toLong(1000);
-        pinAuth.setPinValidityPeriod(userId, validityPeriod);
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Permission_Static_0100 unexpected success, expected to throw 201');
-        expect(false).assertTrue();
-      } catch (err) {
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_Permission_Static_0100 failed ' + err.code + ' ' + err.message);
-        expect(err.code).assertEqual(201);
       }
       done();
     });
@@ -98,18 +98,18 @@ export default function PinAuthPermissionTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_GetPinValidityPeriod_Permission_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinValidityPeriod_Permission_Static_0200 start');
+        try {
+          pinAuth.getPinValidityPeriod(userId);
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinValidityPeriod_Permission_Static_0200 unexpected success, expected to throw 201');
+          expect(false).assertTrue();
+        } catch (err) {
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinValidityPeriod_Permission_Static_0200 failed ' + err.code + ' ' + err.message);
+          expect(err.code).assertEqual(201);
+        }
+      } else {
         hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinValidityPeriod_Permission_Static_0200 skip on dev board/watch device');
-        return;
-      }
-      hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinValidityPeriod_Permission_Static_0200 start');
-      try {
-        pinAuth.getPinValidityPeriod(userId);
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinValidityPeriod_Permission_Static_0200 unexpected success, expected to throw 201');
-        expect(false).assertTrue();
-      } catch (err) {
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinValidityPeriod_Permission_Static_0200 failed ' + err.code + ' ' + err.message);
-        expect(err.code).assertEqual(201);
       }
       done();
     });
@@ -125,18 +125,18 @@ export default function PinAuthPermissionTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinDeletionDisabledState_Permission_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Permission_Static_0300 start');
+        try {
+          pinAuth.setPinDeletionDisabledState(userId, true);
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Permission_Static_0300 unexpected success, expected to throw 201');
+          expect(false).assertTrue();
+        } catch (err) {
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Permission_Static_0300 failed ' + err.code + ' ' + err.message);
+          expect(err.code).assertEqual(201);
+        }
+      } else {
         hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Permission_Static_0300 skip on dev board/watch device');
-        return;
-      }
-      hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Permission_Static_0300 start');
-      try {
-        pinAuth.setPinDeletionDisabledState(userId, true);
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Permission_Static_0300 unexpected success, expected to throw 201');
-        expect(false).assertTrue();
-      } catch (err) {
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinDeletionDisabledState_Permission_Static_0300 failed ' + err.code + ' ' + err.message);
-        expect(err.code).assertEqual(201);
       }
       done();
     });
@@ -152,18 +152,18 @@ export default function PinAuthPermissionTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_GetPinDeletionDisabledState_Permission_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinDeletionDisabledState_Permission_Static_0400 start');
+        try {
+          pinAuth.getPinDeletionDisabledState(userId);
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinDeletionDisabledState_Permission_Static_0400 unexpected success, expected to throw 201');
+          expect(false).assertTrue();
+        } catch (err) {
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinDeletionDisabledState_Permission_Static_0400 failed ' + err.code + ' ' + err.message);
+          expect(err.code).assertEqual(201);
+        }
+      } else {
         hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinDeletionDisabledState_Permission_Static_0400 skip on dev board/watch device');
-        return;
-      }
-      hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinDeletionDisabledState_Permission_Static_0400 start');
-      try {
-        pinAuth.getPinDeletionDisabledState(userId);
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinDeletionDisabledState_Permission_Static_0400 unexpected success, expected to throw 201');
-        expect(false).assertTrue();
-      } catch (err) {
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinDeletionDisabledState_Permission_Static_0400 failed ' + err.code + ' ' + err.message);
-        expect(err.code).assertEqual(201);
       }
       done();
     });
@@ -179,22 +179,22 @@ export default function PinAuthPermissionTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinComplexityPolicy_Permission_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Permission_Static_0500 start');
+        try {
+          let policy: pinAuth.PinComplexityPolicy = {
+            complexityReg: '^[0-9]{6,}$',
+            policyDescription: 'PIN must be at least 6 digits'
+          };
+          pinAuth.setPinComplexityPolicy(userId, policy);
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Permission_Static_0500 unexpected success, expected to throw 201');
+          expect(false).assertTrue();
+        } catch (err) {
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Permission_Static_0500 failed ' + err.code + ' ' + err.message);
+          expect(err.code).assertEqual(201);
+        }
+      } else {
         hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Permission_Static_0500 skip on dev board/watch device');
-        return;
-      }
-      hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Permission_Static_0500 start');
-      try {
-        let policy: pinAuth.PinComplexityPolicy = {
-          complexityReg: '^[0-9]{6,}$',
-          policyDescription: 'PIN must be at least 6 digits'
-        };
-        pinAuth.setPinComplexityPolicy(userId, policy);
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Permission_Static_0500 unexpected success, expected to throw 201');
-        expect(false).assertTrue();
-      } catch (err) {
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_Permission_Static_0500 failed ' + err.code + ' ' + err.message);
-        expect(err.code).assertEqual(201);
       }
       done();
     });
@@ -210,18 +210,18 @@ export default function PinAuthPermissionTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_GetPinComplexityPolicy_Permission_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinComplexityPolicy_Permission_Static_0600 start');
+        try {
+          pinAuth.getPinComplexityPolicy(userId);
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinComplexityPolicy_Permission_Static_0600 unexpected success, expected to throw 201');
+          expect(false).assertTrue();
+        } catch (err) {
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinComplexityPolicy_Permission_Static_0600 failed ' + err.code + ' ' + err.message);
+          expect(err.code).assertEqual(201);
+        }
+      } else {
         hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinComplexityPolicy_Permission_Static_0600 skip on dev board/watch device');
-        return;
-      }
-      hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinComplexityPolicy_Permission_Static_0600 start');
-      try {
-        pinAuth.getPinComplexityPolicy(userId);
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinComplexityPolicy_Permission_Static_0600 unexpected success, expected to throw 201');
-        expect(false).assertTrue();
-      } catch (err) {
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_GetPinComplexityPolicy_Permission_Static_0600 failed ' + err.code + ' ' + err.message);
-        expect(err.code).assertEqual(201);
       }
       done();
     });

@@ -70,19 +70,19 @@ export default function PinAuthReturnTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0100 start');
+        try {
+          pinAuth.setPinValidityPeriod(userId, 1000);
+          let result = pinAuth.getPinValidityPeriod(userId);
+          console.info('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0100 result: ' + JSON.stringify(result));
+          expect(result).assertEqual(1000);
+        } catch (err) {
+          console.error(`SUB_Security_PinAuth_SetPinValidityPeriod_Return_0100 failed. code:${err.code}, message:${err.message}`);
+          expect(false).assertTrue();
+        }
+      } else {
         console.info('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0100 skip on dev board/watch device');
-        return;
-      }
-      console.info('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0100 start');
-      try {
-        pinAuth.setPinValidityPeriod(userId, 1000);
-        let result = pinAuth.getPinValidityPeriod(userId);
-        console.info('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0100 result: ' + JSON.stringify(result));
-        expect(result).assertEqual(1000);
-      } catch (err) {
-        console.error(`SUB_Security_PinAuth_SetPinValidityPeriod_Return_0100 failed. code:${err.code}, message:${err.message}`);
-        expect(false).assertTrue();
       }
       done();
     });
@@ -96,19 +96,19 @@ export default function PinAuthReturnTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0110 start');
+        try {
+          pinAuth.setPinValidityPeriod(userId, 0);
+          let result = pinAuth.getPinValidityPeriod(userId);
+          console.info('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0110 result: ' + JSON.stringify(result));
+          expect(result).assertUndefined();
+        } catch (err) {
+          console.error(`SUB_Security_PinAuth_SetPinValidityPeriod_Return_0110 failed. code:${err.code}, message:${err.message}`);
+          expect(false).assertTrue();
+        }
+      } else {
         console.info('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0110 skip on dev board/watch device');
-        return;
-      }
-      console.info('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0110 start');
-      try {
-        pinAuth.setPinValidityPeriod(userId, 0);
-        let result = pinAuth.getPinValidityPeriod(userId);
-        console.info('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0110 result: ' + JSON.stringify(result));
-        expect(result).assertUndefined();
-      } catch (err) {
-        console.error(`SUB_Security_PinAuth_SetPinValidityPeriod_Return_0110 failed. code:${err.code}, message:${err.message}`);
-        expect(false).assertTrue();
       }
       done();
     });
@@ -122,19 +122,19 @@ export default function PinAuthReturnTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0120 start');
+        try {
+          pinAuth.setPinValidityPeriod(userId, Math.pow(2, 50) - 1);
+          let result = pinAuth.getPinValidityPeriod(userId);
+          console.info('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0120 result: ' + JSON.stringify(result));
+          expect(result).assertEqual(Math.pow(2, 50) - 1);
+        } catch (err) {
+          console.error(`SUB_Security_PinAuth_SetPinValidityPeriod_Return_0120 failed. code:${err.code}, message:${err.message}`);
+          expect(false).assertTrue();
+        }
+      } else {
         console.info('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0120 skip on dev board/watch device');
-        return;
-      }
-      console.info('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0120 start');
-      try {
-        pinAuth.setPinValidityPeriod(userId, Math.pow(2, 50) - 1);
-        let result = pinAuth.getPinValidityPeriod(userId);
-        console.info('SUB_Security_PinAuth_SetPinValidityPeriod_Return_0120 result: ' + JSON.stringify(result));
-        expect(result).assertEqual(Math.pow(2, 50) - 1);
-      } catch (err) {
-        console.error(`SUB_Security_PinAuth_SetPinValidityPeriod_Return_0120 failed. code:${err.code}, message:${err.message}`);
-        expect(false).assertTrue();
       }
       done();
     });
@@ -150,19 +150,19 @@ export default function PinAuthReturnTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_0300 start');
+        try {
+          pinAuth.setPinDeletionDisabledState(userId, true);
+          let result = pinAuth.getPinDeletionDisabledState(userId);
+          console.info('SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_0300 result: ' + JSON.stringify(result));
+          expect(result).assertTrue();
+        } catch (err) {
+          console.error(`SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_0300 failed. code:${err.code}, message:${err.message}`);
+          expect(false).assertTrue();
+        }
+      } else {
         console.info('SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_0300 skip on dev board/watch device');
-        return;
-      }
-      console.info('SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_0300 start');
-      try {
-        pinAuth.setPinDeletionDisabledState(userId, true);
-        let result = pinAuth.getPinDeletionDisabledState(userId);
-        console.info('SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_0300 result: ' + JSON.stringify(result));
-        expect(result).assertTrue();
-      } catch (err) {
-        console.error(`SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_0300 failed. code:${err.code}, message:${err.message}`);
-        expect(false).assertTrue();
       }
       done();
     });
@@ -176,19 +176,19 @@ export default function PinAuthReturnTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_0310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_0310 start');
+        try {
+          pinAuth.setPinDeletionDisabledState(userId, false);
+          let result = pinAuth.getPinDeletionDisabledState(userId);
+          console.info('SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_0310 result: ' + JSON.stringify(result));
+          expect(result).assertFalse();
+        } catch (err) {
+          console.error(`SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_0310 failed. code:${err.code}, message:${err.message}`);
+          expect(false).assertTrue();
+        }
+      } else {
         console.info('SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_0310 skip on dev board/watch device');
-        return;
-      }
-      console.info('SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_0310 start');
-      try {
-        pinAuth.setPinDeletionDisabledState(userId, false);
-        let result = pinAuth.getPinDeletionDisabledState(userId);
-        console.info('SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_0310 result: ' + JSON.stringify(result));
-        expect(result).assertFalse();
-      } catch (err) {
-        console.error(`SUB_Security_PinAuth_SetPinDeletionDisabledState_Return_0310 failed. code:${err.code}, message:${err.message}`);
-        expect(false).assertTrue();
       }
       done();
     });
@@ -204,25 +204,25 @@ export default function PinAuthReturnTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinComplexityPolicy_Return_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinComplexityPolicy_Return_0500 start');
+        try {
+          let policy: pinAuth.PinComplexityPolicy = {
+            complexityReg: '^[0-9]{6,}$',
+            policyDescription: 'PIN must be at least 6 digits'
+          };
+          pinAuth.setPinComplexityPolicy(userId, policy);
+          let result = pinAuth.getPinComplexityPolicy(userId);
+          console.info('SUB_Security_PinAuth_SetPinComplexityPolicy_Return_0500 result: ' + JSON.stringify(result));
+          expect(result).not().assertNull();
+          expect(result!.complexityReg).assertEqual('^[0-9]{6,}$');
+          expect(result!.policyDescription).assertEqual('PIN must be at least 6 digits');
+        } catch (err) {
+          console.error(`SUB_Security_PinAuth_SetPinComplexityPolicy_Return_0500 failed. code:${err.code}, message:${err.message}`);
+          expect(false).assertTrue();
+        }
+      } else {
         console.info('SUB_Security_PinAuth_SetPinComplexityPolicy_Return_0500 skip on dev board/watch device');
-        return;
-      }
-      console.info('SUB_Security_PinAuth_SetPinComplexityPolicy_Return_0500 start');
-      try {
-        let policy: pinAuth.PinComplexityPolicy = {
-          complexityReg: '^[0-9]{6,}$',
-          policyDescription: 'PIN must be at least 6 digits'
-        };
-        pinAuth.setPinComplexityPolicy(userId, policy);
-        let result = pinAuth.getPinComplexityPolicy(userId);
-        console.info('SUB_Security_PinAuth_SetPinComplexityPolicy_Return_0500 result: ' + JSON.stringify(result));
-        expect(result).not().assertNull();
-        expect(result!.complexityReg).assertEqual('^[0-9]{6,}$');
-        expect(result!.policyDescription).assertEqual('PIN must be at least 6 digits');
-      } catch (err) {
-        console.error(`SUB_Security_PinAuth_SetPinComplexityPolicy_Return_0500 failed. code:${err.code}, message:${err.message}`);
-        expect(false).assertTrue();
       }
       done();
     });
@@ -236,23 +236,23 @@ export default function PinAuthReturnTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinComplexityPolicy_Return_0510', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        console.info('SUB_Security_PinAuth_SetPinComplexityPolicy_Return_0510 start');
+        try {
+          let policy: pinAuth.PinComplexityPolicy = {
+            complexityReg: '',
+            policyDescription: ''
+          };
+          pinAuth.setPinComplexityPolicy(userId, policy);
+          let result = pinAuth.getPinComplexityPolicy(userId);
+          console.info('SUB_Security_PinAuth_SetPinComplexityPolicy_Return_0510 result: ' + JSON.stringify(result));
+          expect(result).assertUndefined();
+        } catch (err) {
+          console.error(`SUB_Security_PinAuth_SetPinComplexityPolicy_Return_0510 failed. code:${err.code}, message:${err.message}`);
+          expect(false).assertTrue();
+        }
+      } else {
         console.info('SUB_Security_PinAuth_SetPinComplexityPolicy_Return_0510 skip on dev board/watch device');
-        return;
-      }
-      console.info('SUB_Security_PinAuth_SetPinComplexityPolicy_Return_0510 start');
-      try {
-        let policy: pinAuth.PinComplexityPolicy = {
-          complexityReg: '',
-          policyDescription: ''
-        };
-        pinAuth.setPinComplexityPolicy(userId, policy);
-        let result = pinAuth.getPinComplexityPolicy(userId);
-        console.info('SUB_Security_PinAuth_SetPinComplexityPolicy_Return_0510 result: ' + JSON.stringify(result));
-        expect(result).assertUndefined();
-      } catch (err) {
-        console.error(`SUB_Security_PinAuth_SetPinComplexityPolicy_Return_0510 failed. code:${err.code}, message:${err.message}`);
-        expect(false).assertTrue();
       }
       done();
     });

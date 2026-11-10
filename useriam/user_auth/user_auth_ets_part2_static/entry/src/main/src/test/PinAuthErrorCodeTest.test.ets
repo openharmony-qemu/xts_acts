@@ -70,19 +70,19 @@ export default function PinAuthErrorCodeTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_Static_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_Static_0110 start');
+        try {
+          let validityPeriod: long = Double.toLong(Math.pow(2, 50));
+          pinAuth.setPinValidityPeriod(userId, validityPeriod);
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_Static_0110 unexpected success, expected to throw 12500008');
+          expect(false).assertTrue();
+        } catch (err) {
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_Static_0110 failed ' + err.code + ' ' + err.message);
+          expect(err.code).assertEqual(12500008);
+        }
+      } else {
         hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_Static_0110 skip on dev board/watch device');
-        return;
-      }
-      hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_Static_0110 start');
-      try {
-        let validityPeriod: long = Double.toLong(Math.pow(2, 50));
-        pinAuth.setPinValidityPeriod(userId, validityPeriod);
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_Static_0110 unexpected success, expected to throw 12500008');
-        expect(false).assertTrue();
-      } catch (err) {
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_Static_0110 failed ' + err.code + ' ' + err.message);
-        expect(err.code).assertEqual(12500008);
       }
       done();
     });
@@ -96,19 +96,19 @@ export default function PinAuthErrorCodeTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_Static_0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_Static_0120 start');
+        try {
+          let validityPeriod: long = Double.toLong(-1);
+          pinAuth.setPinValidityPeriod(userId, validityPeriod);
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_Static_0120 unexpected success, expected to throw 12500008');
+          expect(false).assertTrue();
+        } catch (err) {
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_Static_0120 failed ' + err.code + ' ' + err.message);
+          expect(err.code).assertEqual(12500008);
+        }
+      } else {
         hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_Static_0120 skip on dev board/watch device');
-        return;
-      }
-      hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_Static_0120 start');
-      try {
-        let validityPeriod: long = Double.toLong(-1);
-        pinAuth.setPinValidityPeriod(userId, validityPeriod);
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_Static_0120 unexpected success, expected to throw 12500008');
-        expect(false).assertTrue();
-      } catch (err) {
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinValidityPeriod_ErrorCode_Static_0120 failed ' + err.code + ' ' + err.message);
-        expect(err.code).assertEqual(12500008);
       }
       done();
     });
@@ -124,22 +124,22 @@ export default function PinAuthErrorCodeTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_Static_0550', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_Static_0550 start');
+        try {
+          let policy: pinAuth.PinComplexityPolicy = {
+            complexityReg: '',
+            policyDescription: 'PIN complexity description'
+          };
+          pinAuth.setPinComplexityPolicy(userId, policy);
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_Static_0550 unexpected success, expected to throw 12500008');
+          expect(false).assertTrue();
+        } catch (err) {
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_Static_0550 failed ' + err.code + ' ' + err.message);
+          expect(err.code).assertEqual(12500008);
+        }
+      } else {
         hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_Static_0550 skip on dev board/watch device');
-        return;
-      }
-      hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_Static_0550 start');
-      try {
-        let policy: pinAuth.PinComplexityPolicy = {
-          complexityReg: '',
-          policyDescription: 'PIN complexity description'
-        };
-        pinAuth.setPinComplexityPolicy(userId, policy);
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_Static_0550 unexpected success, expected to throw 12500008');
-        expect(false).assertTrue();
-      } catch (err) {
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_Static_0550 failed ' + err.code + ' ' + err.message);
-        expect(err.code).assertEqual(12500008);
       }
       done();
     });
@@ -153,22 +153,22 @@ export default function PinAuthErrorCodeTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_Static_0560', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      if (checkDeviceIsDevBoard() || checkDeviceIsWatch()) {
+      if (!checkDeviceIsDevBoard() && !checkDeviceIsWatch()) {
+        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_Static_0560 start');
+        try {
+          let policy: pinAuth.PinComplexityPolicy = {
+            complexityReg: '^[0-9]{6,}$',
+            policyDescription: ''
+          };
+          pinAuth.setPinComplexityPolicy(userId, policy);
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_Static_0560 unexpected success, expected to throw 12500008');
+          expect(false).assertTrue();
+        } catch (err) {
+          hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_Static_0560 failed ' + err.code + ' ' + err.message);
+          expect(err.code).assertEqual(12500008);
+        }
+      } else {
         hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_Static_0560 skip on dev board/watch device');
-        return;
-      }
-      hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_Static_0560 start');
-      try {
-        let policy: pinAuth.PinComplexityPolicy = {
-          complexityReg: '^[0-9]{6,}$',
-          policyDescription: ''
-        };
-        pinAuth.setPinComplexityPolicy(userId, policy);
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_Static_0560 unexpected success, expected to throw 12500008');
-        expect(false).assertTrue();
-      } catch (err) {
-        hilog.info(domain, tag, format, 'SUB_Security_PinAuth_SetPinComplexityPolicy_ErrorCode_Static_0560 failed ' + err.code + ' ' + err.message);
-        expect(err.code).assertEqual(12500008);
       }
       done();
     });
