@@ -1163,6 +1163,8 @@ export default function WorkSchedulerJsTest() {
         bundleName: "com.acts.actsworkschedulertest.static",
         abilityName: "EntryAbility",
         networkType: workScheduler.NetworkType.NETWORK_TYPE_ANY,
+        isCharging: true,
+        isDeepIdle: true,
         isPerformanceSensitive: false
       }
       let callbackFlag: int = 0;
@@ -1237,6 +1239,8 @@ export default function WorkSchedulerJsTest() {
         bundleName: "com.acts.actsworkschedulertest.static",
         abilityName: "EntryAbility",
         networkType: workScheduler.NetworkType.NETWORK_TYPE_ANY,
+        isCharging: true,
+        isDeepIdle: true,
         isPerformanceSensitive: false
       }
       let callbackFlag: int = 0;
