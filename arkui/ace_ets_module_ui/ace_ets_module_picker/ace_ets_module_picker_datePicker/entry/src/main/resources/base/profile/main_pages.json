@@ -27,6 +27,7 @@
     "MainAbility/pages/datePickerComponent/DatePickerComponentUseMilitaryTime",
     "MainAbility/pages/datePickerComponent/DatePickerComponentOnChange",
     "MainAbility/pages/datePickerComponent/DatePickerComponentOnScrollStop",
-    "MainAbility/pages/datePickerComponent/DatePickerComponentHideYear"
+    "MainAbility/pages/datePickerComponent/DatePickerComponentHideYear",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentExtendSelected"
   ]
 }
