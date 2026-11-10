@@ -271,7 +271,7 @@ static napi_value HidDestroyDeviceTwo(napi_env env, napi_callback_info info)
 
 static napi_value HidDestroyDeviceThree(napi_env env, napi_callback_info info)
 {
-    const int16_t devId = 200;
+    const int16_t devId = 300;
     int32_t returnValue = OH_Hid_DestroyDevice(devId);
     napi_value result = nullptr;
     napi_create_int32(env, returnValue, &result);

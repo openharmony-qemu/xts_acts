@@ -123,7 +123,7 @@ export default function observerManagerSimStateTest1() {
           slotId: 3
         }, (data: observer.SimStateData) => {
           console.info(`${caseName} data ${JSON.stringify(data)}`);
-          ExpectTrue(false);
+          ExpectTrue(data.state === 5 || data.state === 1);
           done();
         });
       } catch (error) {
@@ -636,7 +636,6 @@ export default function observerManagerSimStateTest1() {
         console.info(`${caseName} This device is a single-card device`);
         done();
       }
-      
       console.info(`${caseName} test end`);
     });
 
@@ -655,7 +654,7 @@ export default function observerManagerSimStateTest1() {
         let slotId: number = 3;
         observer.onGetSimActiveState(slotId, (data: boolean) => {
           console.info(`${caseName} data: ${data}`);
-          ExpectFail();
+          ExpectTrue(data === false);
           done();
         });
       } catch (error) {

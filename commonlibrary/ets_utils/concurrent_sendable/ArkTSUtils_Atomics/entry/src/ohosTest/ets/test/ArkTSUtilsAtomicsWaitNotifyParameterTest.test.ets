@@ -14,36 +14,31 @@
  */
 
 import { ArkTSUtils, collections, taskpool } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import {
+  ATOMIC_INDEX_ERROR, ATOMIC_PARAMETER_ERROR, expectAtomicBusinessError
+} from './ArkTSUtilsAtomicsErrorAssert';
 
 const WAIT_PARAMETER_TIMEOUT: number = 3000;
 const WAIT_PARAMETER_POLL: number = 5;
 
-function assertWaitParameterError(operation: () => void, rangeError: boolean): void {
+function assertWaitParameterError(operation: () => void): void {
   const valid: collections.Int32Array = collections.Int32Array.of(1);
   expect(ArkTSUtils.Atomics.wait(valid, 0, 0, 0)).assertEqual('not-equal');
   expect(ArkTSUtils.Atomics.notify(valid, 0, 0)).assertEqual(0);
-  let didThrow: boolean = false;
-  let expectedError: boolean = false;
-  try {
-    operation();
-  } catch (error) {
-    didThrow = true;
-    expectedError = rangeError ? error instanceof RangeError : error instanceof TypeError;
-  }
-  expect(didThrow).assertTrue();
-  expect(expectedError).assertTrue();
+  expectAtomicBusinessError(operation, ATOMIC_PARAMETER_ERROR);
 }
 
 function assertWaitNotifyType(value: Object | null | undefined): void {
   const array: collections.Int32Array = value as collections.Int32Array;
-  assertWaitParameterError((): void => { ArkTSUtils.Atomics.wait(array, 0, 0, 0); }, false);
-  assertWaitParameterError((): void => { ArkTSUtils.Atomics.notify(array, 0, 0); }, false);
+  assertWaitParameterError((): void => { ArkTSUtils.Atomics.wait(array, 0, 0, 0); });
+  assertWaitParameterError((): void => { ArkTSUtils.Atomics.notify(array, 0, 0); });
 }
 
 function assertWaitNotifyIndex(array: collections.Int32Array, index: number): void {
-  assertWaitParameterError((): void => { ArkTSUtils.Atomics.wait(array, index, 0, 0); }, true);
-  assertWaitParameterError((): void => { ArkTSUtils.Atomics.notify(array, index, 0); }, true);
+  expectAtomicBusinessError((): void => { ArkTSUtils.Atomics.wait(array, index, 0, 0); }, ATOMIC_INDEX_ERROR);
+  expectAtomicBusinessError((): void => { ArkTSUtils.Atomics.notify(array, index, 0); }, ATOMIC_INDEX_ERROR);
 }
 
 function waitParameterDelay(): Promise<void> {
@@ -168,7 +163,7 @@ export default function arkTSUtilsAtomicsWaitNotifyParameterTest(): void {
     /**
      * @tc.number    SUB_ARKTSUTILS_ATOMICS_WAIT_NOTIFY_REJECT_SENDABLE_TYPES0065_6500
      * @tc.name      testArkTSUtilsAtomicsWaitNotifyRejectSendableTypes0065
-     * @tc.desc      Other collections integer, floating-point and clamped arrays throw TypeError.
+     * @tc.desc      Other collections integer, floating-point and clamped arrays throw BusinessError with code 401.
      * @tc.size      SmallTest
      * @tc.type      Function
      * @tc.level     Level 1
@@ -184,7 +179,7 @@ export default function arkTSUtilsAtomicsWaitNotifyParameterTest(): void {
     /**
      * @tc.number    SUB_ARKTSUTILS_ATOMICS_WAIT_NOTIFY_REJECT_NATIVE_TYPES0066_6600
      * @tc.name      testArkTSUtilsAtomicsWaitNotifyRejectNativeTypes0066
-     * @tc.desc      All ordinary typed arrays throw TypeError for wait and notify.
+     * @tc.desc      All ordinary typed arrays throw BusinessError with code 401 for wait and notify.
      * @tc.size      SmallTest
      * @tc.type      Function
      * @tc.level     Level 1
@@ -199,7 +194,7 @@ export default function arkTSUtilsAtomicsWaitNotifyParameterTest(): void {
     /**
      * @tc.number    SUB_ARKTSUTILS_ATOMICS_WAIT_NOTIFY_REJECT_NON_ARRAYS0067_6700
      * @tc.name      testArkTSUtilsAtomicsWaitNotifyRejectNonArrays0067
-     * @tc.desc      Null, undefined, numbers, strings, plain objects and buffers throw TypeError.
+     * @tc.desc      Null, undefined, numbers, strings, plain objects and buffers throw BusinessError with code 401.
      * @tc.size      SmallTest
      * @tc.type      Function
      * @tc.level     Level 1
@@ -209,12 +204,44 @@ export default function arkTSUtilsAtomicsWaitNotifyParameterTest(): void {
         const values: (Object | null | undefined)[] = [null, undefined, 0, 'array', new Object(),
           new collections.ArrayBuffer(4)];
         values.forEach((value: Object | null | undefined): void => { assertWaitNotifyType(value); });
+
+        // Explicit null/undefined calls keep the API name and argument positions visible.
+        expectAtomicBusinessError((): void => {
+          ArkTSUtils.Atomics.wait(
+            null!,
+            0,
+            0,
+            0
+          );
+        }, ATOMIC_PARAMETER_ERROR);
+        expectAtomicBusinessError((): void => {
+          ArkTSUtils.Atomics.notify(
+            null!,
+            0,
+            0
+          );
+        }, ATOMIC_PARAMETER_ERROR);
+        expectAtomicBusinessError((): void => {
+          ArkTSUtils.Atomics.wait(
+            undefined!,
+            0,
+            0,
+            0
+          );
+        }, ATOMIC_PARAMETER_ERROR);
+        expectAtomicBusinessError((): void => {
+          ArkTSUtils.Atomics.notify(
+            undefined!,
+            0,
+            0
+          );
+        }, ATOMIC_PARAMETER_ERROR);
       });
 
     /**
      * @tc.number    SUB_ARKTSUTILS_ATOMICS_WAIT_NOTIFY_INVALID_INDICES0068_6800
      * @tc.name      testArkTSUtilsAtomicsWaitNotifyInvalidIndices0068
-     * @tc.desc      Negative, length, infinite and unsafe indices throw RangeError.
+     * @tc.desc      Invalid numeric indices throw BusinessError 10200001 for both wait and notify.
      * @tc.size      SmallTest
      * @tc.type      Function
      * @tc.level     Level 1
@@ -225,6 +252,24 @@ export default function arkTSUtilsAtomicsWaitNotifyParameterTest(): void {
         const indices: number[] = [-1, 2, Infinity, -Infinity, Number.MAX_SAFE_INTEGER];
         indices.forEach((index: number): void => { assertWaitNotifyIndex(array, index); });
         assertWaitNotifyIndex(new collections.Int32Array(0), 0);
+        let waitErrorThrown: boolean = false;
+        try {
+          ArkTSUtils.Atomics.wait(array, array.length, 0, 0);
+        } catch (error) {
+          waitErrorThrown = true;
+          const businessError: BusinessError = error as BusinessError;
+          expect(businessError.code).assertEqual(10200001);
+        }
+        expect(waitErrorThrown).assertTrue();
+        let notifyErrorThrown: boolean = false;
+        try {
+          ArkTSUtils.Atomics.notify(array, array.length, 0);
+        } catch (error) {
+          notifyErrorThrown = true;
+          const businessError: BusinessError = error as BusinessError;
+          expect(businessError.code).assertEqual(10200001);
+        }
+        expect(notifyErrorThrown).assertTrue();
       });
 
     /**
@@ -245,6 +290,38 @@ export default function arkTSUtilsAtomicsWaitNotifyParameterTest(): void {
         });
         expect(ArkTSUtils.Atomics.wait(array, 1.9, 7, 0)).assertEqual('timed-out');
         expect(ArkTSUtils.Atomics.notify(array, 1.9)).assertEqual(0);
+
+        // Explicit null/undefined calls keep the API name and argument positions visible.
+        expectAtomicBusinessError((): void => {
+          ArkTSUtils.Atomics.wait(
+            array,
+            (null as number | null) as number,
+            3,
+            0
+          );
+        }, ATOMIC_PARAMETER_ERROR);
+        expectAtomicBusinessError((): void => {
+          ArkTSUtils.Atomics.notify(
+            array,
+            (null as number | null) as number,
+            0
+          );
+        }, ATOMIC_PARAMETER_ERROR);
+        expectAtomicBusinessError((): void => {
+          ArkTSUtils.Atomics.wait(
+            array,
+            (undefined as number | undefined) as number,
+            3,
+            0
+          );
+        }, ATOMIC_PARAMETER_ERROR);
+        expectAtomicBusinessError((): void => {
+          ArkTSUtils.Atomics.notify(
+            array,
+            (undefined as number | undefined) as number,
+            0
+          );
+        }, ATOMIC_PARAMETER_ERROR);
       });
 
     /**
@@ -267,6 +344,24 @@ export default function arkTSUtilsAtomicsWaitNotifyParameterTest(): void {
         expect(ArkTSUtils.Atomics.wait(array, 1, -4294967295, 0)).assertEqual('timed-out');
         expect(ArkTSUtils.Atomics.wait(array, 2, 2147483648, 0)).assertEqual('timed-out');
         expect(ArkTSUtils.Atomics.wait(array, 1, 0.9, 0)).assertEqual('not-equal');
+
+        // Explicit null/undefined calls keep the API name and argument positions visible.
+        expectAtomicBusinessError((): void => {
+          ArkTSUtils.Atomics.wait(
+            array,
+            0,
+            (null as number | null) as number,
+            0
+          );
+        }, ATOMIC_PARAMETER_ERROR);
+        expectAtomicBusinessError((): void => {
+          ArkTSUtils.Atomics.wait(
+            array,
+            0,
+            (undefined as number | undefined) as number,
+            0
+          );
+        }, ATOMIC_PARAMETER_ERROR);
       });
 
     /**
@@ -284,6 +379,16 @@ export default function arkTSUtilsAtomicsWaitNotifyParameterTest(): void {
         timeouts.forEach((timeout: number): void => {
           expect(ArkTSUtils.Atomics.wait(array, 0, 0, timeout)).assertEqual('timed-out');
         });
+
+        // Explicit null/undefined calls keep the API name and argument positions visible.
+        expectAtomicBusinessError((): void => {
+          ArkTSUtils.Atomics.wait(
+            array,
+            0,
+            0,
+            (null as number | null) as number
+          );
+        }, ATOMIC_PARAMETER_ERROR);
       });
 
     /**
@@ -364,7 +469,7 @@ export default function arkTSUtilsAtomicsWaitNotifyParameterTest(): void {
     /**
      * @tc.number    SUB_ARKTSUTILS_ATOMICS_WAIT_NOTIFY_COERCIBLE_PARAMETERS0077_7700
      * @tc.name      testArkTSUtilsAtomicsWaitNotifyCoercibleParameters0077
-     * @tc.desc      Primitive numeric conversions apply to index, expected value, timeout and notify count.
+     * @tc.desc      Reject non-number index, expected value, timeout and notify count with code 401.
      * @tc.size      SmallTest
      * @tc.type      Function
      * @tc.level     Level 1
@@ -374,21 +479,45 @@ export default function arkTSUtilsAtomicsWaitNotifyParameterTest(): void {
         const array: collections.Int32Array = new collections.Int32Array(2);
         const indices: (Object | null | undefined)[] = [undefined, null, false, true, '0', '1'];
         indices.forEach((index: Object | null | undefined): void => {
-          expect(ArkTSUtils.Atomics.wait(array, index as number, 0, 0)).assertEqual('timed-out');
-          expect(ArkTSUtils.Atomics.notify(array, index as number, 0)).assertEqual(0);
+          expectAtomicBusinessError((): void => {
+            ArkTSUtils.Atomics.wait(array, index as number, 0, 0);
+          }, ATOMIC_PARAMETER_ERROR);
+          expectAtomicBusinessError((): void => {
+            ArkTSUtils.Atomics.notify(array, index as number, 0);
+          }, ATOMIC_PARAMETER_ERROR);
         });
         const zeroValues: (Object | null | undefined)[] = [undefined, null, false, '0', 'invalid'];
         zeroValues.forEach((value: Object | null | undefined): void => {
-          expect(ArkTSUtils.Atomics.wait(array, 0, value as number, 0)).assertEqual('timed-out');
+          expectAtomicBusinessError((): void => {
+            ArkTSUtils.Atomics.wait(array, 0, value as number, 0);
+          }, ATOMIC_PARAMETER_ERROR);
         });
         const zeroTimeouts: (Object | null)[] = [null, false, '0', '-1'];
         zeroTimeouts.forEach((timeout: Object | null): void => {
-          expect(ArkTSUtils.Atomics.wait(array, 0, 0, timeout as number)).assertEqual('timed-out');
+          expectAtomicBusinessError((): void => {
+            ArkTSUtils.Atomics.wait(array, 0, 0, timeout as number);
+          }, ATOMIC_PARAMETER_ERROR);
         });
         const zeroCounts: (Object | null)[] = [null, false, '0', 'invalid'];
         zeroCounts.forEach((count: Object | null): void => {
-          expect(ArkTSUtils.Atomics.notify(array, 0, count as number)).assertEqual(0);
+          expectAtomicBusinessError((): void => {
+            ArkTSUtils.Atomics.notify(array, 0, count as number);
+          }, ATOMIC_PARAMETER_ERROR);
         });
+
+        // Explicit null/undefined calls keep the API name and argument positions visible.
+        expectAtomicBusinessError((): void => {
+          ArkTSUtils.Atomics.notify(
+            array,
+            0,
+            (null as number | null) as number
+          );
+        }, ATOMIC_PARAMETER_ERROR);
+        expect(ArkTSUtils.Atomics.notify(
+          array,
+          0,
+          (undefined as number | undefined) as number
+        )).assertEqual(0);
       });
   });
 }

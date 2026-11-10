@@ -45,40 +45,46 @@ export default function ColumnSplitDividerUndefinedTest() {
     });
 
     /**
-     * @tc.number    ColumnSplitDividerUndefinedTest_0100
-     * @tc.name      ColumnSplitDividerUndefinedTest_0100
-     * @tc.desc      ColumnSplitDividerUndefinedTest_0100
+     * @tc.number    SUB_ARKUI_API_ColumnSplitDividerUndefinedTest_0100
+     * @tc.name      SUB_ARKUI_API_ColumnSplitDividerUndefinedTest_0100
+     * @tc.desc      SUB_ARKUI_API_ColumnSplitDividerUndefinedTest_0100
      * @tc.level     Level.LEVEL1
      */
-    it('ColumnSplitDividerUndefinedTest_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('ColumnSplitDividerUndefinedTest_0100 START');
-      await CommonFunc.sleep(500);
+    it('SUB_ARKUI_API_ColumnSplitDividerUndefinedTest_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('SUB_ARKUI_API_ColumnSplitDividerUndefinedTest_0100 START');
+        await CommonFunc.sleep(500);
 
-      let strJson = inspector.getInspectorByKey('ColumnSplit_Divider');
-      let obj = JSON.parseJsonElement(strJson);
-      await CommonFunc.sleep(1000);
-      console.info('Test component obj is: ' + obj.getElement('$attrs'));
-      console.info('Test component obj.divider is: ' + obj.getElement('$attrs').getElement('divider'));
-      let divider = obj.getElement('$attrs').getElement('divider');
-      expect(divider.getString('startMargin')).assertEqual('10.00vp');
-      expect(divider.getString('endMargin')).assertEqual('20.00vp');
+        let strJson = inspector.getInspectorByKey('ColumnSplit_Divider');
+        let obj = JSON.parseJsonElement(strJson);
+        await CommonFunc.sleep(1000);
+        console.info('Test component obj is: ' + obj.getElement('$attrs'));
+        console.info('Test component obj.divider is: ' + obj.getElement('$attrs').getElement('divider'));
+        let divider = obj.getElement('$attrs').getElement('divider');
+        expect(divider.getString('startMargin')).assertEqual('10.00vp');
+        expect(divider.getString('endMargin')).assertEqual('20.00vp');
 
 
-      let driver = Driver.create();
-      let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
-      await btn_true.click();
-      await CommonFunc.sleep(1000);
+        let driver = Driver.create();
+        let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+        await btn_true.click();
+        await CommonFunc.sleep(1000);
 
-      let strJson1 = inspector.getInspectorByKey('ColumnSplit_Divider');
-      let obj1 = JSON.parseJsonElement(strJson1);
-      await CommonFunc.sleep(1000);
-      console.info('Test component obj is: ' + obj1.getElement('$attrs'));
-      console.info('Test component obj.divider is: ' + obj1.getElement('$attrs').getElement('divider'));
-      let divider1 = obj1.getElement('$attrs').getElement('divider');
-      expect(divider1.getString('startMargin')).assertEqual('0.00vp');
-      expect(divider1.getString('endMargin')).assertEqual('0.00vp');
-      console.info('ColumnSplitDividerUndefinedTest_0100 END');
-      done();
+        let strJson1 = inspector.getInspectorByKey('ColumnSplit_Divider');
+        let obj1 = JSON.parseJsonElement(strJson1);
+        await CommonFunc.sleep(1000);
+        console.info('Test component obj is: ' + obj1.getElement('$attrs'));
+        console.info('Test component obj.divider is: ' + obj1.getElement('$attrs').getElement('divider'));
+        let divider1 = obj1.getElement('$attrs').getElement('divider');
+        expect(divider1.getString('startMargin')).assertEqual('0.00vp');
+        expect(divider1.getString('endMargin')).assertEqual('0.00vp');
+        console.info('SUB_ARKUI_API_ColumnSplitDividerUndefinedTest_0100 END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_ColumnSplitDividerUndefinedTest_0100] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

@@ -385,6 +385,7 @@ export default function hardwareTest() {
         }
         let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(audioCapturerOptions)
         expect(audioCapturer != undefined).assertTrue()
+        await audioCapturer.start()
         let currentInputDevices = audioCapturer.getCurrentInputDevices()
         expect(currentInputDevices.length).assertLarger(0)
         let supportedDeviceList = new List<audio.DeviceType>()
@@ -398,6 +399,8 @@ export default function hardwareTest() {
           }
         }
         expect(hasMicDevice).assertTrue()
+        await audioCapturer.stop()
+        await audioCapturer.release()
       }
       done()
     })

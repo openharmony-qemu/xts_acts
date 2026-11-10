@@ -44,6 +44,7 @@ import SetNormalTest from './Normal/SetNormal.test';
 import SetTaskPoolTest from './TaskPool/SetTaskPool.test';
 
 import SetInheritanceTest from './collections/SetInheritanceTest.test';
+import CollectionsSetThisArgTest from './CollectionsSetThisArgTest.test';
 
 export default function testsuite() {
   SetBasicTest();
@@ -78,5 +79,6 @@ export default function testsuite() {
   collectionsSetSendableFunctionTest();
   
   SetInheritanceTest();
+  CollectionsSetThisArgTest();
 }
 

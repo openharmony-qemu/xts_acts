@@ -19,12 +19,27 @@ import { Driver,ON, Component } from '@ohos.UiTest';
 import Utils from './Util.test';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { checkSupportOrNot } from './utils/commonFunc';
-import userAuth from '@ohos.userIAM.userAuth'
+import userAuth from '@ohos.userIAM.userAuth';
+import display from '@ohos.display';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let format: string = '%{public}s';
 let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+
+function checkDeviceIsWatch() {
+  try {
+    const d = display.getDefaultDisplaySync();
+    if (d.width < 500 || d.height < 500) {
+      return true;
+    } else {
+      return false;
+    }
+  } catch (error) {
+    console.error(`checkDeviceIsWatch fail, message: ${error.message}`);
+    return false;
+  }
+}
 
 export default function UserAuthIcon() {
   describe('UserAuthIcon', (): void => {
@@ -40,17 +55,6 @@ export default function UserAuthIcon() {
       abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000);
       hilog.info(domain, tag, 'beforeAll end');
-	  let driver = Driver.create();
-	  //去除充电框影响
-      let button1 = await driver.findComponent(ON.text("确定")) ?? undefined;
-      if (button1 !== undefined) {
-        await button1.click();
-      }
-	  //去除添加桌面影响
-      let button2 = await driver.findComponent(ON.text("添加")) ?? undefined;
-      if (button2 !== undefined) {
-        await button2.click();
-      }
     })
 
     /**
@@ -64,7 +68,7 @@ export default function UserAuthIcon() {
     it('SUB_Security_IAM_authWidget_Func_Static_0330', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 	    hilog.info(domain, tag, format, 'SUB_Security_IAM_authWidget_Func_Static_0330 start');
       let checkFace = checkSupportOrNot(userAuth.UserAuthType.FACE);
-      if (checkFace == 0 ) {
+      if (checkFace === 0 && checkDeviceIsWatch() === false) {
         let driver = Driver.create()
         await Utils.msSleep(2000);
         let select = await driver.findComponent(ON.type("SymbolGlyph"));

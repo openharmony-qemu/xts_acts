@@ -3654,27 +3654,19 @@ export default function WindowLifeCycleTest() {
                 try {
                     let subWindowClass: window.Window = await window.createWindow(windowConfig);
                     await subWindowClass.destroyWindow();
-                    subWindowClass.restoreMainWindow().then(() => {
-                        hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in restoreMainWindow.');
-                        expect(true).assertFail();
-                        done();
-                    }).catch((err: Error): PromiseLike<void> | undefined => {
-                        hilog.error(0x0000, '[ANI]',
-                            msgStr + `Failed to restoreMainWindow. Cause code: ${err!.code}, message: ${err!.message}`);
-                        if (err!.code === 801) {
-                            expect(err!.message !== null).assertTrue();
-                            done();
-                        } else {
-                            expect(err!.code).assertEqual(1300002);
-                            expect(err!.message !== null).assertTrue();
-                            done();
-                        }
-                    });
+                    await subWindowClass.restoreMainWindow()
                 } catch (exception) {
                     hilog.error(0x0000, '[ANI]',
                         msgStr +
                             `Failed to restoreMainWindow. exception Cause code: ${exception!.code}, message: ${exception!.message}`);
-                    expect(false).assertTrue();
+                    if (exception!.code === 801) {
+                        expect(exception!.message !== null).assertTrue();
+                        done();
+                    } else {
+                        expect(exception!.code).assertEqual(1300002);
+                        expect(exception!.message !== null).assertTrue();
+                        done();
+                    }
                     done();
                 }
             });

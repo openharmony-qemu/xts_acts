@@ -59,6 +59,7 @@ import ManualFocusQueryTest from './camera/ManualFocusQuery.test';
 import CameraOISQueryTest from './camera/CameraOISQuery.test';
 import CameraManualExposureTest from './camera/CameraManualExposureTest.test';
 import CameraPhotoOutputSuppTest from './camera/CameraPhotoOutputSuppTest.test';
+import AutoExposureMeteringModeTest from './camera/AutoExposureMeteringMode.test';
 
 let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
 const cameraManager = camera.getCameraManager(testContext);
@@ -137,5 +138,6 @@ export default function testsuite() {
     CameraOISQueryTest();
     CameraManualExposureTest();
     CameraPhotoOutputSuppTest();
+    AutoExposureMeteringModeTest();
   }
 }

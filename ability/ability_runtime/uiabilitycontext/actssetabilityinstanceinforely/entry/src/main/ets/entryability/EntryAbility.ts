@@ -32,9 +32,12 @@ let opts: image.InitializationOptions = {editable: true, pixelFormat: image.Pixe
 let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
 
 export default class EntryAbility extends UIAbility {
+  private withGroupId: boolean = false;
+
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate');
+    this.withGroupId = want?.parameters?.withGroupId === true;
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate withGroupId=' + this.withGroupId);
   }
 
   onDestroy(): void {
@@ -64,13 +67,17 @@ export default class EntryAbility extends UIAbility {
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onForeground');
     setTimeout(() => {
       hilog.info(DOMAIN, 'testTag', '%{public}s', 'EntryAbility hideAbility');
-      this.context.setAbilityInstanceInfo('111111', pixelMap).then(() => {
+      let callPromise: Promise<void> = this.withGroupId
+        ? this.context.setAbilityInstanceInfo('111111', pixelMap, 'group_perm')
+        : this.context.setAbilityInstanceInfo('111111', pixelMap);
+      callPromise.then(() => {
         commonEventManager.publish('setAbilityInstanceInfo_success', () => {});
-      }).catch((err: BusinessError) => {
-        hilog.info(DOMAIN, 'testTag', "setAbilityInstanceInfo failed: " + JSON.stringify(err))
-        commonEventManager.publish('setAbilityInstanceInfo_fail', {code: err?.code}, () => {});
+      }, (err: BusinessError) => {
+        hilog.info(DOMAIN, 'testTag', 'setAbilityInstanceInfo failed: ' + JSON.stringify(err));
+        commonEventManager.publish('setAbilityInstanceInfo_fail', { code: err.code }, () => {});
+      }).then(() => {
+        this.context.terminateSelf();
       });
-      this.context.terminateSelf();
     }, 300);
   }
 

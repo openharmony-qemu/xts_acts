@@ -46,6 +46,8 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
+let displayID: Int = 0;
+
 export default function bindSelectionMenuTest() {
   describe('bindSelectionMenuTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -71,8 +73,9 @@ export default function bindSelectionMenuTest() {
           // console.info("push bindSelectionMenuTest page success " + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push bindSelectionMenuTest page error: " + err);
+        console.log("push bindSelectionMenuTest page error: " + err);
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     afterEach(async (): Promise<void> => {
@@ -97,7 +100,7 @@ it('bindSelectionMenuTest_static_0001', Level.LEVEL1, async (done: () => void): 
           await CommonFunc.sleep(500);
           let point = await (Text?.getBoundsCenter() as Promise<Point>);
           await CommonFunc.sleep(500);
-          await (driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT) as Promise<void>);
+          await (driver.mouseClick({ x: point.x, y: point.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT) as Promise<void>);
           await CommonFunc.sleep(500);
           driver.assertComponentExist(ON.text('自定义菜单'));
           console.info("[bindSelectionMenuTest0001] end");
@@ -152,8 +155,9 @@ it('bindSelectionMenuTest_static_0003', Level.LEVEL1, async (done: () => void): 
           await CommonFunc.sleep(500);
           await driver.mouseDrag({
             x: Math.round(point.x - UIContext.resolveUIContext()!.vp2px(20)).toInt(),
-            y: Math.round(point.y).toInt()
-          }, { x: Math.round(point.x + UIContext.resolveUIContext()!.vp2px(20)).toInt(), y: Math.round(point.y).toInt() },
+            y: Math.round(point.y).toInt(),
+            displayId: displayID
+          }, { x: Math.round(point.x + UIContext.resolveUIContext()!.vp2px(20)).toInt(), y: Math.round(point.y).toInt(), displayId: displayID },
             600);
           await CommonFunc.sleep(500);
           driver.assertComponentExist(ON.text('自定义菜单'));
@@ -181,7 +185,7 @@ it('bindSelectionMenuTest_static_0004', Level.LEVEL1, async (done: () => void): 
           await CommonFunc.sleep(500);
           let point = await image!.getBoundsCenter();
           await CommonFunc.sleep(500);
-          await (driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT) as Promise<void>);
+          await (driver.mouseClick({ x: point.x, y: point.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT) as Promise<void>);
           await CommonFunc.sleep(500);
           driver.assertComponentExist(ON.text('自定义菜单'));
           console.info("[bindSelectionMenuTest0004] end");
@@ -235,8 +239,9 @@ it('bindSelectionMenuTest_static_0006', Level.LEVEL1, async (done: () => void): 
           await CommonFunc.sleep(500);
           await driver.mouseDrag({
             x: Math.round(point.x - UIContext.resolveUIContext()!.vp2px(24)).toInt(),
-            y: Math.round(point.y).toInt()
-          }, { x: Math.round(point.x + UIContext.resolveUIContext()!.vp2px(24)).toInt(), y: Math.round(point.y).toInt() },
+            y: Math.round(point.y).toInt(),
+            displayId: displayID
+          }, { x: Math.round(point.x + UIContext.resolveUIContext()!.vp2px(24)).toInt(), y: Math.round(point.y).toInt(), displayId: displayID },
             600);
           await CommonFunc.sleep(500);
           driver.assertComponentExist(ON.text('自定义菜单'));
@@ -264,7 +269,7 @@ it('bindSelectionMenuTest_static_0007', Level.LEVEL1, async (done: () => void): 
           await CommonFunc.sleep(500);
           let point = await mixed!.getBoundsCenter();
           await CommonFunc.sleep(500);
-          await (driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT) as Promise<void>);
+          await (driver.mouseClick({ x: point.x, y: point.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT) as Promise<void>);
           await CommonFunc.sleep(500);
           driver.assertComponentExist(ON.text('自定义菜单'));
           console.info("[bindSelectionMenuTest0007] end");
@@ -320,8 +325,9 @@ it('bindSelectionMenuTest_static_0009', Level.LEVEL1, async (done: () => void): 
           await CommonFunc.sleep(500);
           await driver.mouseDrag({
             x: Math.round(point.x - UIContext.resolveUIContext()!.vp2px(20)).toInt(),
-            y: Math.round(point.y).toInt()
-          }, { x: Math.round(point.x + UIContext.resolveUIContext()!.vp2px(50)).toInt(), y: Math.round(point.y).toInt() },
+            y: Math.round(point.y).toInt(),
+            displayId: displayID
+          }, { x: Math.round(point.x + UIContext.resolveUIContext()!.vp2px(50)).toInt(), y: Math.round(point.y).toInt(), displayId: displayID },
             600);
           await CommonFunc.sleep(500);
           driver.assertComponentExist(ON.text('自定义菜单'));

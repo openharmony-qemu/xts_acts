@@ -19,6 +19,7 @@ import ability from '@ohos.ability.ability';
 import base from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 import { Driver, ON } from '@ohos.UiTest';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 function sleep(time:number):Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, time))
@@ -26,7 +27,23 @@ function sleep(time:number):Promise<void> {
 
 export default function StartAbilityForResult() {
   let TAG = "";
-
+  let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+  let cmd = "bm install -p data/test/MockService.hap";
+  let cmd1 = "mkdir /data/app/el2/100/base/com.ohos.hag.famanager/haps/entry";
+  let cmd2 = "mkdir /data/app/el2/100/base/com.ohos.hag.famanager/haps/entry/files";
+  let cmd3 ="cp data/test/AtomizationResultStageEntry.hap /data/app/el2/100/base/com.ohos.hag.famanager/haps/entry/files";
+  let cmd4 = "bm uninstall -n com.example.qianyiyingyong.hmservice";
+  let cmd5 = "bm uninstall -n com.ohos.hag.famanager";
+  let cmd6 = "bm install -p data/test/AtomizationResultStageEntry.hap";
+  if(user !== undefined){
+    cmd += ' -u ' + user;
+    cmd1 += ' -u ' + user;
+    cmd2 += ' -u ' + user;
+    cmd3 += ' -u ' + user;
+    cmd4 += ' -u ' + user;
+    cmd5 += ' -u ' + user;
+    cmd6 += ' -u ' + user;
+  }
   describe('StartAbilityForResult', ()=> {
     beforeAll(async (done:Function) => {
       let driver = Driver.create();	
@@ -39,20 +56,16 @@ export default function StartAbilityForResult() {
         console.error('findComponent failed: ' + JSON.stringify(err));
       }
       console.info("StartAbilityForResult before all called");
-      let cmd = "bm install -p data/test/MockService.hap";
       console.info("cmd : "+cmd)
       globalThis.delegator.executeShellCommand(cmd, (err: base.BusinessError, d: ESObject) => {
         console.info("executeShellCommand : err : " + JSON.stringify(err)," data : " + JSON.stringify(d));})
       await sleep(500);
-      let cmd1 = "mkdir /data/app/el2/100/base/com.ohos.hag.famanager/haps/entry";
       globalThis.delegator.executeShellCommand(cmd1, (err: base.BusinessError, d: ESObject) => {
         console.info("executeShellCommand1 : err : " + JSON.stringify(err)," data : " + JSON.stringify(d));})
       await sleep(500);
-      let cmd2 = "mkdir /data/app/el2/100/base/com.ohos.hag.famanager/haps/entry/files";
       globalThis.delegator.executeShellCommand(cmd2, (err: base.BusinessError, d: ESObject) => {
         console.info("executeShellCommand2 : err : " + JSON.stringify(err)," data : " + JSON.stringify(d));})
       await sleep(500);
-      let cmd3 ="cp data/test/AtomizationResultStageEntry.hap /data/app/el2/100/base/com.ohos.hag.famanager/haps/entry/files";
       globalThis.delegator.executeShellCommand(cmd3, (err: base.BusinessError, d: ESObject) => {
         console.info("executeShellCommand3 : err : " + JSON.stringify(err)," data : " + JSON.stringify(d));
         done();
@@ -62,13 +75,11 @@ export default function StartAbilityForResult() {
     afterEach(async (done:Function) => {
       console.info("StartAbilityForResult after each called");
       if ("FreeInstall_Stage_StartAbilityForResult_2500") {
-        let cmd4 = "bm uninstall -n com.example.qianyiyingyong.hmservice";
         globalThis.delegator.executeShellCommand(cmd4, (err: base.BusinessError, d: ESObject) => {
           console.info("executeShellCommand4 : err : " + JSON.stringify(err), " data : " + JSON.stringify(d));
         })
         await sleep(500);
       }
-      let cmd5 = "bm uninstall -n com.ohos.hag.famanager";
       globalThis.delegator.executeShellCommand(cmd5, (err: base.BusinessError, d: ESObject) => {
         console.info("executeShellCommand5 : err : " + JSON.stringify(err), " data : " + JSON.stringify(d));
       })
@@ -87,7 +98,6 @@ export default function StartAbilityForResult() {
     it("FreeInstall_Stage_StartAbilityForResult_2500", Level.LEVEL0, async (done:Function) => {
       console.log("------------start FreeInstall_Stage_StartAbilityForResult_2500-------------");
       TAG = "FreeInstall_Stage_StartAbilityForResult_2500";
-      let cmd6 = "bm install -p data/test/AtomizationResultStageEntry.hap";
       globalThis.delegator.executeShellCommand(cmd6, (err: base.BusinessError, d: ESObject) => {
         console.info("executeShellCommand6: err : " + JSON.stringify(err), " data : " + JSON.stringify(d));
       })

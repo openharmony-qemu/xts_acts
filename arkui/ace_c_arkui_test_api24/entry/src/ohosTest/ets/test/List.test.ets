@@ -28,8 +28,10 @@ import PointerEventGetCurrentLocalTest from './pointerEventGetCurrentLocal/Point
 import TextGetCharacterTest from './TextGetCharacter/TextGetCharacterTest.test'
 import CrossLanguageOptionsSupportFiveMethodsTest from './FrameNode/CrossLanguageOptionsSupportFiveMethodsTest.test'
 import NodeTransform3DTest from './NodeTransform3D/NodeTransform3DTest.test'
+import nodeAdoptChildWithPolicyTest from './nodeAdopt/NodeAdoptChildWithPolicyTest.test'
 
 export default function testsuite() {
+  nodeAdoptChildWithPolicyTest(); // 此条特殊用例请放在首行，勿动（含CAPI_INIT_ERROR用例）
   matrix4Test();
   errorCodeTest();
   EnableClickSoundEffectTest();

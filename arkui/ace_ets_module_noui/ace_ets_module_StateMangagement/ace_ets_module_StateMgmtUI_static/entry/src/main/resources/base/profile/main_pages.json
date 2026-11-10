@@ -37,7 +37,12 @@
     "MainAbility/pages/uiutils/GlobalReusePool004",
     "MainAbility/pages/builder/IsPlaceholder0060",
     "MainAbility/pages/builder/IsPlaceholder0070",
+    "MainAbility/pages/builder/IsPlaceholder0080",
+    "MainAbility/pages/builder/IsPlaceholder0430",
     "MainAbility/pages/builder/BuilderAnnotationTargets01",
-    "MainAbility/pages/builder/BuilderAnnotationTargets02"
+    "MainAbility/pages/builder/BuilderAnnotationTargets02",
+    "MainAbility/pages/builder/Builder0060",
+    "MainAbility/pages/wrap_builder/WrapBuilder0030",
+    "MainAbility/pages/wrap_builder/WrapBuilder0040"
   ]
 }

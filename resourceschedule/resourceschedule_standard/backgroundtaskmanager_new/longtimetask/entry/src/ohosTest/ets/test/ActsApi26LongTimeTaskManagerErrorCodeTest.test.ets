@@ -692,5 +692,829 @@ export default function ActsApi26LongTimeTaskManagerErrorCodeTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1200 end---');
       })
 
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1300
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1300
+     * @tc.desc   Test startContinuousTask with context null returns error 9800006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1300 begin---');
+        try {
+          let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+          continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+          continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+          try {
+            let res = await backgroundTaskManager.startContinuousTask(null, continuousTaskRequest);
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1300 startContinuousTask unexpected success, res: %{public}s', `${res}`);
+            done();
+            expect(false).assertTrue();
+          } catch (error) {
+            let e: BusinessError = error as BusinessError;
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1300 startContinuousTask error: %{public}s', JSON.stringify(error));
+            done();
+            expect(e.code).assertEqual(9800005);
+          }
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1300 error: %{public}s', JSON.stringify(error));
+          done();
+          expect(false).assertTrue();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1300 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400
+     * @tc.desc   Test startContinuousTask with context undefined returns error 9800006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400 begin---');
+        try {
+          let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+          continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+          continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+          try {
+            let res = await backgroundTaskManager.startContinuousTask(undefined, continuousTaskRequest);
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400 startContinuousTask unexpected success, res: %{public}s', `${res}`);
+            done();
+            expect(false).assertTrue();
+          } catch (error) {
+            let e: BusinessError = error as BusinessError;
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400 startContinuousTask error: %{public}s', JSON.stringify(error));
+            done();
+            expect(e.code).assertEqual(9800005);
+          }
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400 error: %{public}s', JSON.stringify(error));
+          done();
+          expect(false).assertTrue();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1400 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1500
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1500
+     * @tc.desc   Test startContinuousTask with request null returns error 9800006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1500 begin---');
+        try {
+          let want: WantAgent = await wantAgent.getWantAgent(wantAgentInfo);
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          let ability: UIAbility = await delegator.getCurrentTopAbility();
+          try {
+            let res = await backgroundTaskManager.startContinuousTask(ability.context, null);
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1500 startContinuousTask unexpected success, res: %{public}s', `${res}`);
+            done();
+            expect(false).assertTrue();
+          } catch (error) {
+            let e: BusinessError = error as BusinessError;
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1500 startContinuousTask error: %{public}s', JSON.stringify(error));
+            done();
+            expect(e.code).assertEqual(9800005);
+          }
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1500 error: %{public}s', JSON.stringify(error));
+          done();
+          expect(false).assertTrue();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1500 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1600
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1600
+     * @tc.desc   Test startContinuousTask with request undefined returns error 9800006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1600 begin---');
+        try {
+          let want: WantAgent = await wantAgent.getWantAgent(wantAgentInfo);
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          let ability: UIAbility = await delegator.getCurrentTopAbility();
+          try {
+            let res = await backgroundTaskManager.startContinuousTask(ability.context, undefined);
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1600 startContinuousTask unexpected success, res: %{public}s', `${res}`);
+            done();
+            expect(false).assertTrue();
+          } catch (error) {
+            let e: BusinessError = error as BusinessError;
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1600 startContinuousTask error: %{public}s', JSON.stringify(error));
+            done();
+            expect(e.code).assertEqual(9800005);
+          }
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1600 error: %{public}s', JSON.stringify(error));
+          done();
+          expect(false).assertTrue();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1600 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1700
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1700
+     * @tc.desc   Test startContinuousTask with empty backgroundTaskModes returns error 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1700 begin---');
+        try {
+          let want: WantAgent = await wantAgent.getWantAgent(wantAgentInfo);
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          let ability: UIAbility = await delegator.getCurrentTopAbility();
+          let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+          continuousTaskRequest.backgroundTaskModes = [];
+          continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+          continuousTaskRequest.wantAgent = want;
+          try {
+            let res = await backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest);
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1700 startContinuousTask unexpected success, res: %{public}s', `${res}`);
+            done();
+            expect(false).assertTrue();
+          } catch (error) {
+            let e: BusinessError = error as BusinessError;
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1700 startContinuousTask error: %{public}s', JSON.stringify(error));
+            done();
+            expect(e.code).assertEqual(9800005);
+          }
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1700 error: %{public}s', JSON.stringify(error));
+          done();
+          expect(false).assertTrue();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1700 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1800
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1800
+     * @tc.desc   Test startContinuousTask with empty backgroundTaskSubmodes returns error 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1800 begin---');
+        try {
+          let want: WantAgent = await wantAgent.getWantAgent(wantAgentInfo);
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          let ability: UIAbility = await delegator.getCurrentTopAbility();
+          let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+          continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+          continuousTaskRequest.backgroundTaskSubmodes = [];
+          continuousTaskRequest.wantAgent = want;
+          try {
+            let res = await backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest);
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1800 startContinuousTask unexpected success, res: %{public}s', `${res}`);
+            done();
+            expect(false).assertTrue();
+          } catch (error) {
+            let e: BusinessError = error as BusinessError;
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1800 startContinuousTask error: %{public}s', JSON.stringify(error));
+            done();
+            expect(e.code).assertEqual(9800005);
+          }
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1800 error: %{public}s', JSON.stringify(error));
+          done();
+          expect(false).assertTrue();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1800 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1900
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1900
+     * @tc.desc   Test startContinuousTask with mode and submode mismatch returns error 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1900 begin---');
+        try {
+          let want: WantAgent = await wantAgent.getWantAgent(wantAgentInfo);
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          let ability: UIAbility = await delegator.getCurrentTopAbility();
+          let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+          continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+          continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_NORMAL_NOTIFICATION];
+          continuousTaskRequest.wantAgent = want;
+          try {
+            let res = await backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest);
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1900 startContinuousTask unexpected success, res: %{public}s', `${res}`);
+            backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+            done();
+            expect(false).assertTrue();
+          } catch (error) {
+            let e: BusinessError = error as BusinessError;
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1900 startContinuousTask error: %{public}s', JSON.stringify(error));
+            done();
+            expect(e.code).assertEqual(9800005);
+          }
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1900 error: %{public}s', JSON.stringify(error));
+          done();
+          expect(false).assertTrue();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_1900 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2000
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2000
+     * @tc.desc   Test startContinuousTask with invalid backgroundTaskModes value returns error 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2000 begin---');
+        try {
+          let want: WantAgent = await wantAgent.getWantAgent(wantAgentInfo);
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          let ability: UIAbility = await delegator.getCurrentTopAbility();
+          let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+          continuousTaskRequest.backgroundTaskModes = [999];
+          continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+          continuousTaskRequest.wantAgent = want;
+          try {
+            let res = await backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest);
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2000 startContinuousTask unexpected success, res: %{public}s', `${res}`);
+            backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+            done();
+            expect(false).assertTrue();
+          } catch (error) {
+            let e: BusinessError = error as BusinessError;
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2000 startContinuousTask error: %{public}s', JSON.stringify(error));
+            done();
+            expect(e.code).assertEqual(9800005);
+          }
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2000 error: %{public}s', JSON.stringify(error));
+          done();
+          expect(false).assertTrue();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2000 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2100
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2100
+     * @tc.desc   Test startContinuousTask with invalid backgroundTaskSubmodes value returns error 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2100 begin---');
+        try {
+          let want: WantAgent = await wantAgent.getWantAgent(wantAgentInfo);
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          let ability: UIAbility = await delegator.getCurrentTopAbility();
+          let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+          continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+          continuousTaskRequest.backgroundTaskSubmodes = [999];
+          continuousTaskRequest.wantAgent = want;
+          try {
+            let res = await backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest);
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2100 startContinuousTask unexpected success, res: %{public}s', `${res}`);
+            backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+            done();
+            expect(false).assertTrue();
+          } catch (error) {
+            let e: BusinessError = error as BusinessError;
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2100 startContinuousTask error: %{public}s', JSON.stringify(error));
+            done();
+            expect(e.code).assertEqual(9800005);
+          }
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2100 error: %{public}s', JSON.stringify(error));
+          done();
+          expect(false).assertTrue();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2100 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2200
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2200
+     * @tc.desc   Test startContinuousTask with wantAgent not set returns error 9800006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2200 begin---');
+        try {
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          let ability: UIAbility = await delegator.getCurrentTopAbility();
+          let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+          continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+          continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+          try {
+            let res = await backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest);
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2200 startContinuousTask unexpected success, res: %{public}s', `${res}`);
+            backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+            done();
+            expect(false).assertTrue();
+          } catch (error) {
+            let e: BusinessError = error as BusinessError;
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2200 startContinuousTask error: %{public}s', JSON.stringify(error));
+            done();
+            expect(e.code).assertEqual(9800005);
+          }
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2200 error: %{public}s', JSON.stringify(error));
+          done();
+          expect(false).assertTrue();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2200 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2300
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2300
+     * @tc.desc   Test startContinuousTask with combinedTaskNotification true and continuousTaskId -1 returns error 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2300 begin---');
+        try {
+          let want: WantAgent = await wantAgent.getWantAgent(wantAgentInfo);
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          let ability: UIAbility = await delegator.getCurrentTopAbility();
+          let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+          continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+          continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+          continuousTaskRequest.wantAgent = want;
+          continuousTaskRequest.combinedTaskNotification = true;
+          continuousTaskRequest.continuousTaskId = -1;
+          try {
+            let res = await backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest);
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2300 startContinuousTask unexpected success, res: %{public}s', `${res}`);
+            backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+            done();
+            expect(false).assertTrue();
+          } catch (error) {
+            let e: BusinessError = error as BusinessError;
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2300 startContinuousTask error: %{public}s', JSON.stringify(error));
+            done();
+            expect(e.code).assertEqual(9800005);
+          }
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2300 error: %{public}s', JSON.stringify(error));
+          done();
+          expect(false).assertTrue();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2300 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2400
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2400
+     * @tc.desc   Test startContinuousTask with combinedTaskNotification true and non-existent continuousTaskId returns error 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2400 begin---');
+        try {
+          let want: WantAgent = await wantAgent.getWantAgent(wantAgentInfo);
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          let ability: UIAbility = await delegator.getCurrentTopAbility();
+          let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+          continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+          continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+          continuousTaskRequest.wantAgent = want;
+          continuousTaskRequest.combinedTaskNotification = true;
+          continuousTaskRequest.continuousTaskId = 99999;
+          try {
+            let res = await backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest);
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2400 startContinuousTask unexpected success, res: %{public}s', `${res}`);
+            backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+            done();
+            expect(false).assertTrue();
+          } catch (error) {
+            let e: BusinessError = error as BusinessError;
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2400 startContinuousTask error: %{public}s', JSON.stringify(error));
+            done();
+            expect(e.code).assertEqual(9800005);
+          }
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2400 error: %{public}s', JSON.stringify(error));
+          done();
+          expect(false).assertTrue();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2400 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2500
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2500
+     * @tc.desc   Test startContinuousTask with ProgressInfo missing title returns error 9800006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2500 begin---');
+        try {
+          let want: WantAgent = await wantAgent.getWantAgent(wantAgentInfo);
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          let ability: UIAbility = await delegator.getCurrentTopAbility();
+          let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+          continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+          continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+          continuousTaskRequest.wantAgent = want;
+          let progress = {
+            fileName: 'notitle.dat',
+            progressValue: 50,
+          } as backgroundTaskManager.ProgressInfo;
+          continuousTaskRequest.progressInfo = progress;
+          try {
+            let res = await backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest);
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2500 startContinuousTask unexpected success, res: %{public}s', `${res}`);
+            backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+            done();
+            expect(false).assertTrue();
+          } catch (error) {
+            let e: BusinessError = error as BusinessError;
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2500 startContinuousTask error: %{public}s', JSON.stringify(error));
+            done();
+            expect(e.code).assertEqual(9800005);
+          }
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2500 error: %{public}s', JSON.stringify(error));
+          done();
+          expect(false).assertTrue();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2500 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2600
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2600
+     * @tc.desc   Test startContinuousTask with ProgressInfo missing fileName returns error 9800006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2600 begin---');
+        try {
+          let want: WantAgent = await wantAgent.getWantAgent(wantAgentInfo);
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          let ability: UIAbility = await delegator.getCurrentTopAbility();
+          let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+          continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+          continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+          continuousTaskRequest.wantAgent = want;
+          let progress = {
+            title: 'NoFileName',
+            progressValue: 50,
+          } as backgroundTaskManager.ProgressInfo;
+          continuousTaskRequest.progressInfo = progress;
+          try {
+            let res = await backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest);
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2600 startContinuousTask unexpected success, res: %{public}s', `${res}`);
+            backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+            done();
+            expect(false).assertTrue();
+          } catch (error) {
+            let e: BusinessError = error as BusinessError;
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2600 startContinuousTask error: %{public}s', JSON.stringify(error));
+            done();
+            expect(e.code).assertEqual(9800005);
+          }
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2600 error: %{public}s', JSON.stringify(error));
+          done();
+          expect(false).assertTrue();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2600 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2700
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2700
+     * @tc.desc   Test startContinuousTask with progressValue exceeding 100 returns error 9800006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2700 begin---');
+        try {
+          let want: WantAgent = await wantAgent.getWantAgent(wantAgentInfo);
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          let ability: UIAbility = await delegator.getCurrentTopAbility();
+          let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+          continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+          continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+          continuousTaskRequest.wantAgent = want;
+          let progress: backgroundTaskManager.ProgressInfo = {
+            title: 'OverProgress',
+            fileName: 'over.pkg',
+            progressValue: 101,
+          };
+          continuousTaskRequest.progressInfo = progress;
+          try {
+            let res = await backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest);
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2700 startContinuousTask unexpected success, res: %{public}s', `${res}`);
+            backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+            done();
+            expect(false).assertTrue();
+          } catch (error) {
+            let e: BusinessError = error as BusinessError;
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2700 startContinuousTask error: %{public}s', JSON.stringify(error));
+            done();
+            expect(e.code).assertEqual(9800006);
+          }
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2700 error: %{public}s', JSON.stringify(error));
+          done();
+          expect(false).assertTrue();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2700 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2800
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2800
+     * @tc.desc   Test startContinuousTask with negative progressValue returns error 9800006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2800 begin---');
+        try {
+          let want: WantAgent = await wantAgent.getWantAgent(wantAgentInfo);
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          let ability: UIAbility = await delegator.getCurrentTopAbility();
+          let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+          continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+          continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+          continuousTaskRequest.wantAgent = want;
+          let progress: backgroundTaskManager.ProgressInfo = {
+            title: 'NegProgress',
+            fileName: 'neg.dat',
+            progressValue: -1,
+          };
+          continuousTaskRequest.progressInfo = progress;
+          try {
+            let res = await backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest);
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2800 startContinuousTask unexpected success, res: %{public}s', `${res}`);
+            backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+            done();
+            expect(false).assertTrue();
+          } catch (error) {
+            let e: BusinessError = error as BusinessError;
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2800 startContinuousTask error: %{public}s', JSON.stringify(error));
+            done();
+            expect(e.code).assertEqual(9800006);
+          }
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2800 error: %{public}s', JSON.stringify(error));
+          done();
+          expect(false).assertTrue();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2800 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2900
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2900
+     * @tc.desc   Test startContinuousTask with very large progressValue returns error 9800006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2900 begin---');
+        try {
+          let want: WantAgent = await wantAgent.getWantAgent(wantAgentInfo);
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          let ability: UIAbility = await delegator.getCurrentTopAbility();
+          let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+          continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+          continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+          continuousTaskRequest.wantAgent = want;
+          let progress: backgroundTaskManager.ProgressInfo = {
+            title: 'MaxProgress',
+            fileName: 'max.dat',
+            progressValue: Number.MAX_SAFE_INTEGER,
+          };
+          continuousTaskRequest.progressInfo = progress;
+          try {
+            let res = await backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest);
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2900 startContinuousTask unexpected success, res: %{public}s', `${res}`);
+            backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+            done();
+            expect(false).assertTrue();
+          } catch (error) {
+            let e: BusinessError = error as BusinessError;
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2900 startContinuousTask error: %{public}s', JSON.stringify(error));
+            done();
+            expect(e.code).assertEqual(9800006);
+          }
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2900 error: %{public}s', JSON.stringify(error));
+          done();
+          expect(false).assertTrue();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_2900 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3000
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3000
+     * @tc.desc   Test startContinuousTask with both context and request null returns error 9800006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3000 begin---');
+        try {
+          try {
+            let res = await backgroundTaskManager.startContinuousTask(null, null);
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3000 startContinuousTask unexpected success, res: %{public}s', `${res}`);
+            done();
+            expect(false).assertTrue();
+          } catch (error) {
+            let e: BusinessError = error as BusinessError;
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3000 startContinuousTask error: %{public}s', JSON.stringify(error));
+            done();
+            expect(e.code).assertEqual(9800005);
+          }
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3000 error: %{public}s', JSON.stringify(error));
+          done();
+          expect(false).assertTrue();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3000 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3200
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3200
+     * @tc.desc   Test startContinuousTask with progressInfo undefined and MODE_DATA_TRANSFER returns error 9800006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3200 begin---');
+        try {
+          let want: WantAgent = await wantAgent.getWantAgent(wantAgentInfo);
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          let ability: UIAbility = await delegator.getCurrentTopAbility();
+          let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+          continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+          continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+          continuousTaskRequest.wantAgent = want;
+          continuousTaskRequest.progressInfo = undefined;
+          try {
+            let res = await backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest);
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3200 startContinuousTask unexpected success, res: %{public}s', `${res}`);
+            backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+            done();
+            expect(false).assertTrue();
+          } catch (error) {
+            let e: BusinessError = error as BusinessError;
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3200 startContinuousTask error: %{public}s', JSON.stringify(error));
+            done();
+            expect(e.code).assertEqual(9800005);
+          }
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3200 error: %{public}s', JSON.stringify(error));
+          done();
+          expect(false).assertTrue();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3200 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3300
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3300
+     * @tc.desc   Test startContinuousTask exceeding 10 task limit with MODE_DATA_TRANSFER returns error 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3300 begin---');
+        try {
+          let want: WantAgent = await wantAgent.getWantAgent(wantAgentInfo);
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          let ability: UIAbility = await delegator.getCurrentTopAbility();
+          let allStartSuccess: boolean = true;
+          for (let i = 0; i < 10; i++) {
+            let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+            continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+            continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+            continuousTaskRequest.wantAgent = want;
+            continuousTaskRequest.combinedTaskNotification = false;
+            let progress: backgroundTaskManager.ProgressInfo = {
+              title: 'Task' + `${i}`,
+              fileName: 'task' + `${i}` + '.dat',
+              progressValue: 10 * (i + 1),
+              isMute: false,
+            };
+            continuousTaskRequest.progressInfo = progress;
+            try {
+              let res: number = await backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest);
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3300 task %{public}s success, res: %{public}s', `${i}`, `${res}`);
+              if (res <= 0) {
+                allStartSuccess = false;
+              }
+            } catch (error) {
+              let e: BusinessError = error as BusinessError;
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3300 task %{public}s error: %{public}s', `${i}`, JSON.stringify(error));
+              allStartSuccess = false;
+              break;
+            }
+          }
+          if (!allStartSuccess) {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3300 setup failed, not all 10 tasks started');
+            backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+            done();
+            expect(false).assertTrue();
+          } else {
+            let request11 = new backgroundTaskManager.ContinuousTaskRequest();
+            request11.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+            request11.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+            request11.wantAgent = want;
+            request11.combinedTaskNotification = false;
+            request11.progressInfo = {
+              title: 'Task11',
+              fileName: 'task11.dat',
+              progressValue: 50,
+              isMute: false,
+            };
+            try {
+              let res: number = await backgroundTaskManager.startContinuousTask(ability.context, request11);
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3300 11th task unexpected success, res: %{public}s', `${res}`);
+              backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+              done();
+              expect(false).assertTrue();
+            } catch (error) {
+              let e: BusinessError = error as BusinessError;
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3300 11th task error: %{public}s', JSON.stringify(error));
+              done();
+              expect(e.code).assertEqual(9800005);
+              backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+            }
+          }
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3300 error: %{public}s', JSON.stringify(error));
+          done();
+          expect(false).assertTrue();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_ERROR_3300 end---');
+      })
+
   })
 }

@@ -58,25 +58,29 @@ export default function LongTimeTaskManagerTest() {
       };
     })
 
-    afterAll(() => {
+    afterAll(async () => {
       hilog.info(DOMAIN, TAG, '%{public}s', 'afterAll called');
       try {
-        wantAgent.getWantAgent(wantAgentInfo).then((want: WantAgent) => {
-          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-          delegator.getCurrentTopAbility().then((ability: UIAbility) => {
-
-            backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
-              console.info("ActsLongTimeTaskManagerTest afterAll stopBackgroundRunning promise run success");
-            }).catch((error: BusinessError) => {
-              console.error(`ActsLongTimeTaskManagerTest afterAll Operation stopBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
-            });
-
-          }).catch((error: BusinessError) => {
-            hilog.info(DOMAIN, TAG, 'ActsLongTimeTaskManagerTest afterAll getCurrentTopAbility error: %{public}s', JSON.stringify(error));
-          });
-        }).catch((error: BusinessError) => {
+        let want: WantAgent;
+        try {
+          want = await wantAgent.getWantAgent(wantAgentInfo);
+        } catch (error) {
           hilog.info(DOMAIN, TAG, 'ActsLongTimeTaskManagerTest afterAll getWantAgent error: %{public}s', JSON.stringify(error));
-        })
+          return;
+        }
+        let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+        let ability: UIAbility;
+        try {
+          ability = await delegator.getCurrentTopAbility();
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'ActsLongTimeTaskManagerTest afterAll getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+          return;
+        }
+        await backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+          console.info("ActsLongTimeTaskManagerTest afterAll stopBackgroundRunning promise run success");
+        }).catch((error: BusinessError) => {
+          console.error(`ActsLongTimeTaskManagerTest afterAll Operation stopBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+        });
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'ActsLongTimeTaskManagerTest afterAll aa error: %{public}s', JSON.stringify(error));
@@ -87,26 +91,29 @@ export default function LongTimeTaskManagerTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', 'beforeEach called');
     })
 
-    afterEach(() => {
+    afterEach(async () => {
       hilog.info(DOMAIN, TAG, '%{public}s', 'afterEach called');
-
       try {
-        wantAgent.getWantAgent(wantAgentInfo).then((want: WantAgent) => {
-          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-          delegator.getCurrentTopAbility().then((ability: UIAbility) => {
-
-            backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
-              console.info("ActsLongTimeTaskManagerTest afterEach stopBackgroundRunning promise run success");
-            }).catch((error: BusinessError) => {
-              console.error(`ActsLongTimeTaskManagerTest afterEach Operation stopBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
-            });
-
-          }).catch((error: BusinessError) => {
-            hilog.info(DOMAIN, TAG, 'ActsLongTimeTaskManagerTest afterEach getCurrentTopAbility error: %{public}s', JSON.stringify(error));
-          });
-        }).catch((error: BusinessError) => {
+        let want: WantAgent;
+        try {
+          want = await wantAgent.getWantAgent(wantAgentInfo);
+        } catch (error) {
           hilog.info(DOMAIN, TAG, 'ActsLongTimeTaskManagerTest afterEach getWantAgent error: %{public}s', JSON.stringify(error));
-        })
+          return;
+        }
+        let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+        let ability: UIAbility;
+        try {
+          ability = await delegator.getCurrentTopAbility();
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'ActsLongTimeTaskManagerTest afterEach getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+          return;
+        }
+        await backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
+          console.info("ActsLongTimeTaskManagerTest afterEach stopBackgroundRunning promise run success");
+        }).catch((error: BusinessError) => {
+          console.error(`ActsLongTimeTaskManagerTest afterEach Operation stopBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+        });
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'ActsLongTimeTaskManagerTest afterEach aa error: %{public}s', JSON.stringify(error));

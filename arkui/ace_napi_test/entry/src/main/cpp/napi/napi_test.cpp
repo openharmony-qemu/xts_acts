@@ -25,6 +25,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <thread>
+#include <atomic>
 #include <unistd.h>
 #include <memory.h>
 #include <uv.h>
@@ -55,7 +56,7 @@ static int g_delCount = 0;
 static int g_cleanupHookCount = 0;
 static napi_env g_sharedEnv = nullptr;
 static napi_deferred g_deferred = nullptr;
-static bool g_isTaskFinished = false;
+static std::atomic<bool> g_isTaskFinished(false);
 const int NAPI_ERROR_LENGTH = 11;
 const int NAPI_STRING_LENGTH = 3;
 const int NAPI_UTF8_LENGTH = 256;
@@ -559,19 +560,21 @@ static napi_value createExternal(napi_env env, napi_callback_info info)
 
 static napi_value createExternalArraybuffer(napi_env env, napi_callback_info info)
 {
-    int* testInt = (int*)malloc(sizeof(int));
+    size_t arrayBufferSize = 1024;
+    int* testInt = (int*)malloc(arrayBufferSize);
+    if (testInt == nullptr) {
+        napi_throw_error(env, nullptr, "malloc failed");
+        return nullptr;
+    }
     *testInt = TAG_NUMBER;
     napi_value external = nullptr;
-    size_t arrayBufferSize = 1024;
 
     napi_create_external_arraybuffer(
         env, (void*)testInt, arrayBufferSize,
         [](napi_env env, void* data, void* hint) {
-            int* temp = static_cast<int*>(data);
-            free(temp);
-            temp = nullptr;
+            free(data);
         },
-        (void*)testInt, &external);
+        nullptr, &external);
     
     return external;
 }
@@ -2644,6 +2647,7 @@ static napi_value ThreadSafeTest(napi_env env, napi_callback_info info) {
     NAPI_CALL(env, napi_ref_threadsafe_function(env, tsfn));
     NAPI_CALL(env, napi_unref_threadsafe_function(env, tsfn));
     NAPI_CALL(env, napi_release_threadsafe_function(tsfn, napi_tsfn_release));
+    napi_release_threadsafe_function(tsfn, napi_tsfn_release);
     napi_value _value;
     NAPI_CALL(env, napi_create_int32(env, 1, &_value));
     return _value;
@@ -3002,6 +3006,10 @@ static napi_value External(napi_env env, napi_callback_info info)
 {
     const uint8_t parraySize  = 3;
     void* externalData = malloc(parraySize  * sizeof(int8_t));
+    if (externalData == nullptr) {
+        napi_throw_error(env, nullptr, "malloc failed");
+        return nullptr;
+    }
 
     //Sets the three elements of the array that are used to create an ArrayBuffer object
     ((int8_t*)externalData)[0] = 0; // 0 means that the first value of the created array is 0
@@ -3016,6 +3024,7 @@ static napi_value External(napi_env env, napi_callback_info info)
                                                           nullptr,  // finalizeHint
                                                           &outputBuffer);
     if (status != napi_ok) {
+        free(externalData);
         napi_throw_error(env, nullptr, "Failed to create external arraybuffer");
         return nullptr;
     }
@@ -3289,9 +3298,12 @@ static void AsyncWorkCbExecute([[maybe_unused]] napi_env env, [[maybe_unused]] v
 
 static void AsyncWorkCbComplete(napi_env env,
                                 [[maybe_unused]] napi_status status,
-                                [[maybe_unused]] void* data)
+                                void* data)
 {
     CallCbAndDeleteRef(env, nullptr);
+    napi_async_work* workPtr = static_cast<napi_async_work*>(data);
+    napi_delete_async_work(env, *workPtr);
+    delete workPtr;
 }
 
 static void DeleteAddonData(napi_env env, void* rawData, void* hint)
@@ -3335,7 +3347,7 @@ static napi_value AsyncWorkCallback(napi_env env, napi_callback_info info)
 {
     if (EstablishCallbackRef(env, info)) {
         napi_value resourceName;
-        napi_async_work work;
+        napi_async_work* workPtr = new napi_async_work(nullptr);
 
         NAPI_CALL(env,
             napi_create_string_utf8(
@@ -3343,8 +3355,8 @@ static napi_value AsyncWorkCallback(napi_env env, napi_callback_info info)
         NAPI_CALL(env,
             napi_create_async_work(
                 env, nullptr, resourceName, AsyncWorkCbExecute, AsyncWorkCbComplete,
-                nullptr, &work));
-        NAPI_CALL(env, napi_queue_async_work(env, work));
+                workPtr, workPtr));
+        NAPI_CALL(env, napi_queue_async_work(env, *workPtr));
     }
 
     return nullptr;
@@ -3789,6 +3801,7 @@ static void completeCb(napi_env env, napi_status status, void *data)
     g_isTaskFinished = true;
     AsyncContext *callbackData = reinterpret_cast<AsyncContext *>(data);
     napi_delete_async_work(env, callbackData->asyncWork);
+    delete callbackData;
 }
 
 static napi_value AsyncCallTest(napi_env env, napi_callback_info info)
@@ -3878,6 +3891,16 @@ static void *NewThreadFunc(void *arg)
     return objectUtils;
 }
 
+static void CreateTestThread(pthread_t *tid, char **name, const char *label)
+{
+    if (strcpy_s(*name, THREAD_NAME_LENGTH, label) != 0) {
+        return;
+    }
+    pthread_create(tid, nullptr, NewThreadFunc, *name);
+    pthread_detach(*tid);
+    *name = nullptr;
+}
+
 static napi_value RunEventLoop(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -3911,21 +3934,13 @@ static napi_value RunEventLoop(napi_env env, napi_callback_info info)
         free(testCaseName);
         return resultValue;
     } else if (value == RUN_NAPI_LOOP_WITH_NOWAIT) {
-        strcpy_s(testCaseName, THREAD_NAME_LENGTH, "NewThread1");
-        pthread_create(&tid, nullptr, NewThreadFunc, testCaseName);
-        pthread_detach(tid);
+        CreateTestThread(&tid, &testCaseName, "NewThread1");
     } else if (value == RUN_NAPI_LOOP_WITH_DEFAULT) {
-        strcpy_s(testCaseName, THREAD_NAME_LENGTH, "NewThread2");
-        pthread_create(&tid, nullptr, NewThreadFunc, testCaseName);
-        pthread_detach(tid);
+        CreateTestThread(&tid, &testCaseName, "NewThread2");
     } else if (value == RUN_NAPI_LOOP_AFTER_RUN_FINISH) {
-        strcpy_s(testCaseName, THREAD_NAME_LENGTH, "NewThread3");
-        pthread_create(&tid, nullptr, NewThreadFunc, testCaseName);
-        pthread_detach(tid);
+        CreateTestThread(&tid, &testCaseName, "NewThread3");
     } else if (value == WITHOUT_RUN_NAPI_LOOP) {
-        strcpy_s(testCaseName, THREAD_NAME_LENGTH, "NewThread4");
-        pthread_create(&tid, nullptr, NewThreadFunc, testCaseName);
-        pthread_detach(tid);
+        CreateTestThread(&tid, &testCaseName, "NewThread4");
     }
     free(testCaseName);
     napi_value _value = 0;
@@ -3994,13 +4009,11 @@ static napi_value StopEventLoop(napi_env env, napi_callback_info info)
         NAPI_ASSERT(env, status == napi_generic_failure, "stop event loop successfully");
     } else if (value == STOP_LOOP_BEFORE_RUN) {
         pthread_t tid;
-        napi_value result = nullptr;
-        pthread_create(&tid, nullptr, CallBeforeRunningFunc, &result);
+        pthread_create(&tid, nullptr, CallBeforeRunningFunc, nullptr);
         pthread_detach(tid);
     } else if (value == STOP_LOOP_AFTER_RUN) {
         pthread_t tid;
-        napi_value result;
-        pthread_create(&tid, nullptr, CallAfterRunFunc, &result);
+        pthread_create(&tid, nullptr, CallAfterRunFunc, nullptr);
         pthread_detach(tid);
     }
 
@@ -4650,22 +4663,31 @@ static void WorkComplete(napi_env env, napi_status status, void *data)
     CallbackData *callbackData = reinterpret_cast<CallbackData *>(data);
     napi_release_threadsafe_function(callbackData->tsfn, napi_tsfn_release);
     napi_delete_async_work(env, callbackData->work);
-    callbackData->work = nullptr;
-    callbackData->tsfn = nullptr;
+    delete callbackData;
 }
 
 static napi_value ThreadSafePriority(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value jsCb = nullptr;
-    CallbackData *callbackData = nullptr;
-    napi_get_cb_info(env, info, &argc, &jsCb, nullptr, reinterpret_cast<void **>(&callbackData));
+    CallbackData *sharedData = nullptr;
+    napi_get_cb_info(env, info, &argc, &jsCb, nullptr, reinterpret_cast<void **>(&sharedData));
+    CallbackData *data = new CallbackData();
     napi_value resourceName = nullptr;
     napi_create_string_utf8(env, "Thread-safe Function Demo", NAPI_AUTO_LENGTH, &resourceName);
-    napi_create_threadsafe_function(env, jsCb, nullptr, resourceName, 0, 1, callbackData, nullptr, callbackData,
-                                    CallJsFunc, &callbackData->tsfn);
-    napi_create_async_work(env, nullptr, resourceName, ExecuteWork, WorkComplete, callbackData, &callbackData->work);
-    napi_queue_async_work(env, callbackData->work);
+    napi_status status = napi_create_threadsafe_function(env, jsCb, nullptr, resourceName, 0, 1, data, nullptr, data,
+                                    CallJsFunc, &data->tsfn);
+    if (status != napi_ok) {
+        delete data;
+        NAPI_ASSERT(env, false, "napi_create_threadsafe_function failed");
+    }
+    status = napi_create_async_work(env, nullptr, resourceName, ExecuteWork, WorkComplete, data, &data->work);
+    if (status != napi_ok) {
+        napi_release_threadsafe_function(data->tsfn, napi_tsfn_release);
+        delete data;
+        NAPI_ASSERT(env, false, "napi_create_async_work failed");
+    }
+    napi_queue_async_work(env, data->work);
 
     napi_value value = 0;
     NAPI_CALL(env, napi_create_int32(env, 0, &value));
@@ -5437,11 +5459,10 @@ static napi_value createExternalArraybufferDataNull(napi_env env, napi_callback_
     napi_status status = napi_create_external_arraybuffer(
         env, nullptr, arrayBufferSize,
         [](napi_env env, void* data, void* hint) {
-            int* temp = static_cast<int*>(data);
-            free(temp);
-            temp = nullptr;
+            free(data);
         },
         nullptr, &external);
+    free(testInt);
     bool bRet = (status == napi_invalid_arg);
     napi_value retValue;
     napi_create_int32(env, bRet, &retValue);
@@ -7601,6 +7622,8 @@ static napi_value queueAsyncWorkNull(napi_env env, napi_callback_info info)
     napi_create_async_work(env, nullptr, resource, [](napi_env env, void *data) {}, completeCb,
         context, &context->asyncWork);
     napi_status status = napi_queue_async_work(env, nullptr);
+    napi_delete_async_work(env, context->asyncWork);
+    delete context;
     bool bRet = (status == napi_invalid_arg);
     napi_value retValue;
     napi_create_int32(env, bRet, &retValue);
@@ -9207,8 +9230,7 @@ static napi_value createAsyncResourceCbNull(napi_env env, napi_callback_info inf
 
 static napi_value asyncWorkWithQosEnvNull(napi_env env, napi_callback_info info)
 {
-    AddonData* addonData = reinterpret_cast<AddonData*>(malloc(sizeof(AddonData)));
-    napi_status status = napi_queue_async_work_with_qos(nullptr, addonData->asyncWork, napi_qos_default);
+    napi_status status = napi_queue_async_work_with_qos(nullptr, nullptr, napi_qos_default);
     bool bRet = (status == napi_invalid_arg);
     napi_value retValue;
     napi_create_int32(env, bRet, &retValue);
@@ -17295,10 +17317,11 @@ static napi_value NapiWrapEnhanceTest(napi_env env, napi_callback_info info)
     napi_value obj = nullptr;
     status = napi_new_instance(env, testClass, 0, nullptr, &obj);
     NAPI_ASSERT(env, status == napi_ok, "result is null, napi_new_instance failed.");
-    const char testStr[5] = "test";
+    const char* testStr = "test";
     napi_ref wrappedRef = nullptr;
-    status = napi_wrap_enhance(env, obj, (void*)testStr, [](napi_env env, void* data, void* hint) {}, false, nullptr, sizeof(testStr), &wrappedRef);
+    status = napi_wrap_enhance(env, obj, (void*)testStr, [](napi_env env, void* data, void* hint) {}, false, nullptr, sizeof(char*), &wrappedRef);
     NAPI_ASSERT(env, status == napi_ok, "result is null, napi_wrap_enhance failed.");
+    napi_delete_reference(env, wrappedRef);
     
     napi_value rst;
     napi_create_int32(env, 1, &rst);
@@ -17496,11 +17519,12 @@ static napi_value NapiWrapEnhanceTest1(napi_env env, napi_callback_info info)
     napi_new_instance(env, testClass, 0, nullptr, &obj);
     const char* testStr = "test";
     napi_ref wrappedRef = nullptr;
-    void* finalizeHint;
+    void* finalizeHint = nullptr;
     size_t testStrSize = sizeof(char) * (strlen(testStr) + 1);
     napi_status status = napi_wrap_enhance(env, obj, (void*)testStr, 
                       [](napi_env env, void* data, void* hint) {}, false, finalizeHint, testStrSize, &wrappedRef);
     NAPI_ASSERT(env, status == napi_ok, "napi_wrap_enhance is normal, return status napi_ok.");
+    napi_delete_reference(env, wrappedRef);
 
     napi_value rst;
     bool bRet = true;
@@ -17534,13 +17558,14 @@ static napi_value NapiWrapEnhanceTest3(napi_env env, napi_callback_info info)
     napi_value jsObject = nullptr;
     napi_create_object(env, &jsObject);
     napi_property_descriptor descClass[] = {DECLARE_NAPI_FUNCTION("sayHello", SayHello)};
-    napi_value myClass;
-    void *data;
-    napi_define_class(env, "myClass", NAPI_AUTO_LENGTH, MyConstructor, data,
+    napi_value myClass = nullptr;
+    napi_status defineStatus = napi_define_class(env, "myClass", NAPI_AUTO_LENGTH, MyConstructor, nullptr,
                       sizeof(descClass) / sizeof(descClass[0]), descClass, &myClass);
+    NAPI_ASSERT(env, defineStatus == napi_ok, "napi_define_class failed.");
+    int* number = new int(42);
     napi_status status = napi_wrap_enhance(
-        env, jsObject, myClass,
-        [](napi_env env, void* data, void* hint){}, true, nullptr, sizeof(myClass), nullptr);
+        env, jsObject, number,
+        [](napi_env env, void* data, void* hint){ delete static_cast<int*>(data); }, true, nullptr, sizeof(int), nullptr);
     NAPI_ASSERT(env, status == napi_ok, "napi_wrap_enhance is normal, return status napi_ok.");     
 
     napi_value rst;
@@ -17629,15 +17654,16 @@ static napi_value NapiWrapEnhanceTest6(napi_env env, napi_callback_info info)
 {
     napi_value jsObject = nullptr;
     napi_create_object(env, &jsObject);
-    bool callbackCalled = false;
+    bool* callbackCalled = new bool(false);
     int* number = new int(42);
     napi_status status = napi_wrap_enhance(
          env, jsObject, number,
          [](napi_env env, void* data, void* hint) {
              *static_cast<bool*>(hint) = true;
+             delete static_cast<bool*>(hint);
              delete static_cast<int*>(data);
          },
-         false, &callbackCalled, sizeof(int), nullptr);
+         false, callbackCalled, sizeof(int), nullptr);
     NAPI_ASSERT(env, status == napi_ok, "parameter is normal, napi_wrap_enhance ok.");
     
     napi_value rst;
@@ -17651,18 +17677,18 @@ static napi_value NapiWrapEnhanceTest7(napi_env env, napi_callback_info info)
 {
     napi_value jsObject = nullptr;
     napi_create_object(env, &jsObject);
-    std::atomic<bool> callbackCalled(false);
-    napi_property_descriptor descClass[] = {DECLARE_NAPI_FUNCTION("sayHello", SayHello)};
-    napi_value myClass;
-    void *data;
+    auto* callbackCalled = new std::atomic<bool>(false);
+    int* number = new int(42);
 
     napi_status status = napi_wrap_enhance(
-         env, jsObject, myClass,
+         env, jsObject, number,
          [](napi_env env, void* data, void* hint) {
              auto* flag = static_cast<std::atomic<bool>*>(hint);
              flag->store(true);
+             delete flag;
+             delete static_cast<int*>(data);
          },
-         true, &callbackCalled, sizeof(myClass), nullptr);
+         true, callbackCalled, sizeof(int), nullptr);
     NAPI_ASSERT(env, status == napi_ok, "parameter is normal, napi_wrap_enhance ok.");
 
     napi_value rst;
@@ -17708,8 +17734,10 @@ static napi_value NapiWrapEnhanceTest9(napi_env env, napi_callback_info info)
 
     napi_value jsObject = nullptr;
     napi_create_object(env, &jsObject);
-    int number = 42;
-    napi_status status = napi_wrap_enhance(env, jsObject, &number, nullptr, false, nullptr, sizeof(int), nullptr);
+    int* number = new int(42);
+    napi_status status = napi_wrap_enhance(env, jsObject, number,
+        [](napi_env env, void* data, void* hint) { delete static_cast<int*>(data); },
+        false, nullptr, sizeof(int), nullptr);
     NAPI_ASSERT(env, status == napi_ok, "exist abnormal, napi_wrap_enhance return napi_pending_exception.");
 
     napi_value rst;
@@ -17723,10 +17751,11 @@ static napi_value NapiWrapEnhanceTest10(napi_env env, napi_callback_info info)
 {
     napi_value jsObject = nullptr;
     napi_create_object(env, &jsObject);
-    int number = 42;
+    int* number = new int(42);
     napi_status status = napi_wrap_enhance(
-        env, jsObject, &number,
-        nullptr, false, nullptr, 0, nullptr);
+        env, jsObject, number,
+        [](napi_env env, void* data, void* hint) { delete static_cast<int*>(data); },
+        false, nullptr, sizeof(int), nullptr);
     NAPI_ASSERT(env, status == napi_ok, "parameter is size 0, napi_wrap_enhance return napi_ok.");
 
     napi_value rst;

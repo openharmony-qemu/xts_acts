@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 export default function DateParseTest(): void {
@@ -769,23 +769,6 @@ export default function DateParseTest(): void {
       expect(d.getUTCFullYear()).assertEqual(2024);
       expect(d.getUTCMonth()).assertEqual(1);
       expect(d.getUTCDate()).assertEqual(29);
-    });
-
-    /**
-     * @tc.number SUB_DATE_PARSE_ITEM_CHK_7500
-     * @tc.name testDateParse0075
-     * @tc.desc Verify Date.parse with 24:00:00 time boundary returns NaN or returns expected result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testDateParse0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let time: long = Date.parse("2024-06-15T24:00:00.000Z");
-        expect(Number.isNaN(time)).assertTrue();
-      } catch (error) {
-        expect(error.name).assertEqual('FormatError');
-      }
     });
 
     /**

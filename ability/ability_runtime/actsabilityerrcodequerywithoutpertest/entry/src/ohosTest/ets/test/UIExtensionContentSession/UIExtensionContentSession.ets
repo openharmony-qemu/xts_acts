@@ -195,56 +195,43 @@ export default class UIExtensionProvider extends UIExtensionAbility {
       }
     }
     if (want.action == 'Sub_UIExtensionContentSession_errorCode_1300') {
-      try {
-        let windowProxy = session.getUIExtensionWindowProxy();
-        console.info(caseTag + `Successed in getting UIExtension Window proxy: ${JSON.stringify(windowProxy)}`);
-        
-        if (windowProxy && windowProxy.properties) {
-          try {
+      const publishRect = (left: number, top: number, width: number, height: number) => {
+        commonEventManager.publish('ACTS_TEST_DESTROY', {
+          parameters: {
+            'result': 0,
+            'left': left,
+            'top': top,
+            'width': width,
+            'height': height
+          }
+        }, () => {
+          console.info(caseTag + `${caseTag} publish ACTS_TEST_DESTROY with rect values`);
+        });
+      };
+      const publishFail = (result: number) => {
+        commonEventManager.publish('ACTS_TEST_DESTROY', {
+          parameters: {
+            'result': result
+          }
+        }, () => {
+          console.info(caseTag + `${caseTag} publish ACTS_TEST_DESTROY`);
+        });
+      };
+      const queryRect = (retryCount: number) => {
+        try {
+          let windowProxy = session.getUIExtensionWindowProxy();
+          if (windowProxy && windowProxy.properties && windowProxy.properties.uiExtensionHostWindowProxyRect) {
             let rect = windowProxy.properties.uiExtensionHostWindowProxyRect;
             console.info(caseTag + `Window rect: left=${rect.left}, top=${rect.top}, width=${rect.width}, height=${rect.height}`);
-            
-            // Publish rect values via commonEventManager
-            commonEventManager.publish('ACTS_TEST_DESTROY', { 
-              parameters: {
-                'result': 0,
-                'left': rect.left,
-                'top': rect.top,
-                'width': rect.width,
-                'height': rect.height
-              }
-            }, () => {
-              console.info(caseTag + `${caseTag} publish ACTS_TEST_DESTROY with rect values`);
-            });
-          } catch (rectError) {
-            console.error(caseTag + `Failed to get window rect, error: ${JSON.stringify(rectError)}`);
-            commonEventManager.publish('ACTS_TEST_DESTROY', { 
-              parameters: {
-                'result': rectError.code
-              }
-            }, () => {
-              console.info(caseTag + `${caseTag} publish ACTS_TEST_DESTROY`);
-            });
+            if (rect.left > 0 && rect.top > 0 && rect.width > 0 && rect.height > 0) {
+              publishRect(rect.left, rect.top, rect.width, rect.height);
+              return;
+            }
           }
-        } else {
-          console.error(caseTag + `Window proxy or properties is null or undefined`);
-          commonEventManager.publish('ACTS_TEST_DESTROY', { 
-            parameters: {
-              'result': -1
-            }
-          }, () => {
-            console.info(caseTag + `${caseTag} publish ACTS_TEST_DESTROY`);
-          });
-        }
-      } catch (error) {
-        console.error(caseTag + `session.getUIExtensionWindowProxy fail, error: ${JSON.stringify(error)}`);
-        if (error.code == 16000050) {
-          commonEventManager.publish('ACTS_TEST_DESTROY', { 
-            parameters: {
-              'result': error.code
-            }
-          }, () => {
-            console.info(caseTag + `${caseTag} publish ACTS_TEST_DESTROY`);
+        } catch (error) {
+          console.error(caseTag + `session.getUIExtensionWindowProxy fail, error: ${JSON.stringify(error)}`);
+          if (error.code == 16000050) {
+            publishFail(error.code);
             setTimeout(() => {
               session?.terminateSelf((err: BusinessError) => {
                 if (err) {
@@ -253,18 +240,20 @@ export default class UIExtensionProvider extends UIExtensionAbility {
                 }
                 console.info(caseTag + `Successed in terminating self.`);
               });
-            },500)
-          });
-        } else {
-          commonEventManager.publish('ACTS_TEST_DESTROY', { 
-            parameters: {
-              'result': error.code
-            }
-          }, () => {
-            console.info(caseTag + `${caseTag} publish ACTS_TEST_DESTROY`);
-          });
+            }, 500)
+            return;
+          }
         }
-      }
+        if (retryCount < 30) {
+          setTimeout(() => {
+            queryRect(retryCount + 1);
+          }, 100);
+        } else {
+          console.error(caseTag + `Window rect is not ready after waiting, publish fail`);
+          publishFail(-1);
+        }
+      };
+      queryRect(0);
     }
   }
 

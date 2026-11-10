@@ -7,7 +7,7 @@ set(NATIVERENDER_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(${NATIVERENDER_ROOT_PATH}
                     ${NATIVERENDER_ROOT_PATH}/include)
 
-add_library(ImageNdk SHARED ImageNdkTest.cpp)
+add_library(ImageNdk SHARED ImageNdkTest.cpp ImageNapiTest2.cpp ImageNapiDesc.cpp)
 
 find_library(
     # Sets the name of the path variable.

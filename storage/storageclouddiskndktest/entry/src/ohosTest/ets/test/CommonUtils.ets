@@ -30,31 +30,57 @@ export async function grantDocumentFolderAccess(done: Function): Promise<void> {
     let documentSelectOptions = new picker.DocumentSelectOptions();
     documentSelectOptions.selectMode = picker.DocumentSelectMode.FOLDER;
     documentSelectOptions.maxSelectNumber = 1;
+    documentSelectOptions.defaultFilePathUri = "/storage/Users/currentUser/Documents/";
     let documentPicker = new picker.DocumentViewPicker();
     console.info("====>beforeAll documentPicker.select start");
     let selectPromise = documentPicker.select(documentSelectOptions);
     let driver = await Driver.create();
     await driver.delayMs(3000);
-    let inputComp: Component = await driver.findComponent(ON.text("文档"));
-    if (inputComp == null || inputComp == undefined) {
+    let docComp: Component = await driver.findComponent(ON.text("文档"));
+    if (docComp == null || docComp == undefined) {
+      console.error("====>beforeAll docComp not found, start find TextInput");
       await driver.delayMs(1000);
-      inputComp = await driver.findComponent(ON.text("文档"));
+      let moreComp = await driver.findComponents(ON.type("Image"));
+      if (moreComp.length < 1) {
+        done();
+        return;
+      }
+      await driver.delayMs(1000);
+      await moreComp[0].click();
+      docComp = await driver.findComponent(ON.text("文档"));
+      await driver.delayMs(1000);
+
+      if (docComp == null || docComp == undefined) {
+        console.error("====>beforeAll docComp button not found, press back to cancel picker");
+        await driver.pressBack();
+        done();
+        return;
+      } else {
+        await docComp.click();
+        let moreComp = await driver.findComponents(ON.type("Image"));
+        if (moreComp.length < 1) {
+          done();
+          return;
+        }
+        await driver.delayMs(1000);
+        await moreComp[0].click();
+      }
+    } else {
+      await docComp.click();
     }
-    if (inputComp == null || inputComp == undefined) {
-      console.error("====>beforeAll input box not found, press back to cancel picker");
-      await driver.pressBack();
-      done();
-      return;
-    }
-    await inputComp.click();
     await driver.delayMs(1000);
     let selectBtn: Component = await driver.findComponent(ON.text("选择"));
     if (selectBtn == null || selectBtn == undefined) {
-      console.error("====>beforeAll select button not found, press back to cancel picker");
-      await driver.pressBack();
-      done();
-      return;
+      console.error("====>beforeAll select button not found");
+      await driver.delayMs(1000);
+      let imageComps = await driver.findComponents(ON.type("SymbolGlyph"));
+      if (imageComps.length < 2) {
+        done();
+        return;
+      }
+      selectBtn = imageComps[1];
     }
+    await driver.delayMs(1000);
     await selectBtn.click();
     let selectResult = await selectPromise;
     console.info("====>beforeAll selectResult: " + JSON.stringify(selectResult));

@@ -2051,4 +2051,179 @@ describe("VibratorJsTest_misc_7", function () {
             done();
         }
     })
-})}
+
+    /**
+     * @tc.name SUB_SensorSystem_Vibrator_JsTest_1380
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1380
+     * @tc.desc Verification results of the incorrect parameters of the test interface.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it("SUB_SensorSystem_Vibrator_JsTest_1380", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        TAG = "SUB_SensorSystem_Vibrator_JsTest_1380"
+        console.info(TAG + ' isAvailable ' + isAvailable);
+        if (isAvailable) {
+            try {
+                let ret = vibrator.isSupportEffectSync(vibrator.HapticFeedback.EFFECT_IME_STRENGTH1);
+                console.info(TAG + " isSupportEffectSync ret: " + ret);
+                expect(typeof(ret)).assertEqual("boolean");
+                done()
+            } catch (error) {
+                console.info(TAG + " isSupportEffectSync error: " + JSON.stringify(error));
+                expect(false).assertTrue();
+                done()
+            }
+            console.info(TAG + " end");
+        } else {
+            console.log(TAG + ' is not supported on this device.');
+            done();
+        }
+    })
+
+    /**
+     * @tc.name SUB_SensorSystem_Vibrator_JsTest_1390
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1390
+     * @tc.desc Verification results of the incorrect parameters of the test interface.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it("SUB_SensorSystem_Vibrator_JsTest_1390", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        TAG = "SUB_SensorSystem_Vibrator_JsTest_1390"
+        console.info(TAG + ' isAvailable ' + isAvailable);
+        if (isAvailable) {
+            try {
+                let ret = vibrator.isSupportEffectSync(vibrator.HapticFeedback.EFFECT_IME_STRENGTH2);
+                console.info(TAG + " isSupportEffectSync ret: " + ret);
+                expect(typeof(ret)).assertEqual("boolean");
+                done()
+            } catch (error) {
+                console.info(TAG + " isSupportEffectSync error: " + JSON.stringify(error));
+                expect(false).assertTrue();
+                done()
+            }
+            console.info(TAG + " end");
+        } else {
+            console.log(TAG + ' is not supported on this device.');
+            done();
+        }
+    })
+
+    /**
+     * @tc.name SUB_SensorSystem_Vibrator_JsTest_1400
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1400
+     * @tc.desc Verification results of the incorrect parameters of the test interface.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it("SUB_SensorSystem_Vibrator_JsTest_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        TAG = "SUB_SensorSystem_Vibrator_JsTest_1400"
+        console.info(TAG + ' isAvailable ' + isAvailable);
+        if (isAvailable) {
+            try {
+                let ret = vibrator.isSupportEffectSync(vibrator.HapticFeedback.EFFECT_IME_STRENGTH3);
+                console.info(TAG + " isSupportEffectSync ret: " + ret);
+                expect(typeof(ret)).assertEqual("boolean");
+                done()
+            } catch (error) {
+                console.info(TAG + " isSupportEffectSync error: " + JSON.stringify(error));
+                expect(false).assertTrue();
+                done()
+            }
+            console.info(TAG + " end");
+        } else {
+            console.log(TAG + ' is not supported on this device.');
+            done();
+        }
+    })
+
+    /**
+     * @tc.name SUB_SensorSystem_Vibrator_JsTest_1410
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1410
+     * @tc.desc Verification results of the incorrect parameters of the test interface.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it("SUB_SensorSystem_Vibrator_JsTest_1410", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        TAG = "SUB_SensorSystem_Vibrator_JsTest_1410"
+        console.info(TAG + ' isAvailable ' + isAvailable);
+        if (isAvailable) {
+            try {
+                let ret = vibrator.isSupportEffectSync(vibrator.HapticFeedback.EFFECT_IME_STRENGTH4);
+                console.info(TAG + " isSupportEffectSync ret: " + ret);
+                expect(typeof(ret)).assertEqual("boolean");
+                done()
+            } catch (error) {
+                console.info(TAG + " isSupportEffectSync error: " + JSON.stringify(error));
+                expect(false).assertTrue();
+                done()
+            }
+            console.info(TAG + " end");
+        } else {
+            console.log(TAG + ' is not supported on this device.');
+            done();
+        }
+    })
+
+    /**
+     * @tc.name SUB_SensorSystem_Vibrator_JsTest_1420
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1420
+     * @tc.desc Verification results of the incorrect parameters of the test interface.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it("SUB_SensorSystem_Vibrator_JsTest_1420", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        TAG = "SUB_SensorSystem_Vibrator_JsTest_1420"
+        console.info(TAG + ' isAvailable ' + isAvailable);
+        if (isAvailable) {
+            try {
+                let ret = vibrator.isSupportEffectSync(vibrator.HapticFeedback.EFFECT_IME_STRENGTH5);
+                console.info(TAG + " isSupportEffectSync ret: " + ret);
+                expect(typeof(ret)).assertEqual("boolean");
+                done()
+            } catch (error) {
+                console.info(TAG + " isSupportEffectSync error: " + JSON.stringify(error));
+                expect(false).assertTrue();
+                done()
+            }
+            console.info(TAG + " end");
+        } else {
+            console.log(TAG + ' is not supported on this device.');
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_SensorSystem_Vibrator_JsTest_1330
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1330
+     * @tc.desc   Test for getting the vibrator list.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_SensorSystem_Vibrator_JsTest_1330", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        TAG = "SUB_SensorSystem_Vibrator_JsTest_1330"
+        console.info(TAG + ' isAvailable ' + isAvailable);
+        if (isAvailable) {
+            try {
+                const vibrators = vibrator.getVibratorInfoSync();
+                console.info(TAG + " getVibratorInfoSync isSupportIntensity:" + vibrators[0].isSupportIntensity);
+                expect(typeof(vibrators[0].isSupportIntensity)).assertEqual('boolean');
+                done();
+            } catch (error) {
+                console.info(TAG + " getVibratorInfoSync error: " + JSON.stringify(error));
+                expect(false).assertEqual(true);
+                done();
+            }
+            console.info(TAG + " end");
+        } else {
+            console.log(TAG + ' is not supported on this device.');
+            done();
+        }
+    })
+
+    })}

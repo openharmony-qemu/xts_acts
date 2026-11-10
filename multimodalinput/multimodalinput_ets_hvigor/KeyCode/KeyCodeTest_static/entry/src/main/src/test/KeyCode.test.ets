@@ -848,6 +848,7 @@ export default function MultimodalKeyCodeTest() {
         expect(KeyCode.KEYCODE_PTZ_SHUTTER_RIGHT == 3241).assertTrue();
         expect(KeyCode.KEYCODE_PTZ_APERTURE_LEFT == 3242).assertTrue();
         expect(KeyCode.KEYCODE_PTZ_APERTURE_RIGHT == 3243).assertTrue();
+        expect(KeyCode.KEYCODE_DESKTOP == 3245).assertTrue();
         done();
       } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);

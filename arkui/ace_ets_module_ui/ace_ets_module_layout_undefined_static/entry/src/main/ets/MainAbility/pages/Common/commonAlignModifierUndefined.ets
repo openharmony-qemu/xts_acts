@@ -36,21 +36,18 @@ struct Align {
   build() {
     Column() {
       Column() {
-        Text('align').fontSize(9).fontColor('#ffcccccc').width('90%')
+        Text('align').fontSize(9).fontColor('#ffcccccc').width('80%')
         Stack() {
           Text('First show in bottom end')
           // .backgroundColor(0xD2B48C)
         }
-        .width('90%')
+        .width('80%')
         .height(50)
-        .margin(5)
         .borderColor('#FFFFE4C4')
         .borderWidth(2)
         // .backgroundColor(0xFFE4C4)
         .id('common_align_undefined')
         .attributeModifier(this.modifier)
-
-
 
         Column() {
           Button('flag is' + this.modifier.flag).fontSize(20).id('changeButton')
@@ -60,5 +57,6 @@ struct Align {
         }
       }
     }
+    .alignItems(HorizontalAlign.Center)
   }
 }

@@ -37,7 +37,7 @@ struct Align {
         }
         .id('MyStack')
         .width('80%')
-        .height(50)
+        .height(20)
         .borderColor('#FFFFE4C4')
         .borderWidth(2)
         .align(this.isAlignUndefined ? Alignment.BottomEnd : undefined)
@@ -48,8 +48,8 @@ struct Align {
           Text('row1').height(15)
         }
         .justifyContent(FlexAlign.Center)
-        .width(100)
-        .height(100)
+        .width(70)
+        .height(30)
         .borderColor('#ffa3cf62')
         .borderWidth(2)
         .backgroundColor('#a3cf62')
@@ -63,8 +63,8 @@ struct Align {
           Text('row2').height(15)
         }
         .justifyContent(FlexAlign.Center)
-        .width(100)
-        .height(100)
+        .width(70)
+        .height(30)
         .borderColor('#ff00ae9d')
         .borderWidth(2)
         .backgroundColor('#00ae9d')
@@ -74,47 +74,45 @@ struct Align {
         } as AlignRuleOption : undefined)
         .id('MyRow2')
       }
-      .width(200).height(70)
+      .width(150).height(30)
       .border({ width: 2, color: '#6699FF' })
 
       Column({space:2} as ColumnOptions) {
-        Text('alignSelf').fontSize(15).fontColor('#ffcccccc').width('80%')
+        Text('alignSelf').fontSize(10).fontColor('#ffcccccc').width('80%')
         Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) {
           Text('alignSelf ItemAlign.Baseline')
             .id('MyText')
             .alignSelf(this.isAlignSelfUndefined ? ItemAlign.Baseline : undefined)
             .width('33%')
-            .height(50)
+            .height(30)
             .borderColor('#ffD2B48C')
             .borderWidth(2)
             .backgroundColor(0xD2B48C)
             .textAlign(TextAlign.Center)
-        }.width('80%').height(100)
+        }.width('80%').height(40)
         .borderColor('#ffAFEEEE')
         .borderWidth(2)
         .backgroundColor(0xAFEEEE)
-      }.width('100%')
+      }.width('80%')
 
       Column({space:2} as ColumnOptions) {
-        Button('isAlignUndefined = ' + this.isAlignUndefined)
+        Button('isAlignUndefined = ' + this.isAlignUndefined).fontSize(10).height(15)
           .onClick(() => {
             this.isAlignUndefined = !this.isAlignUndefined;
           })
-          .height(15)
           .id('Common_Align')
-        Button('isAlignRulesUndefined = ' + this.isAlignRulesUndefined)
+        Button('isAlignRulesUndefined = ' + this.isAlignRulesUndefined).fontSize(10).height(15)
           .onClick(() => {
             this.isAlignRulesUndefined = !this.isAlignRulesUndefined;
           })
-          .height(15)
           .id('Common_AlignRules')
-        Button('isAlignSelfUndefined = ' + this.isAlignSelfUndefined)
+        Button('isAlignSelfUndefined = ' + this.isAlignSelfUndefined).fontSize(10).height(15)
           .onClick(() => {
             this.isAlignSelfUndefined = !this.isAlignSelfUndefined;
           })
-          .height(15)
           .id('Common_AlignSelf')
       }
-    }.width('100%').height('100%')
+    }.width('80%')
+    .alignItems(HorizontalAlign.Center)
   }
 }

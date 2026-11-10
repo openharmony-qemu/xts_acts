@@ -105,3 +105,37 @@ export const testNativeImageDataConversionFailedErrorCode: () => number;
 export const testGetAlphaTypeNullPtr: () => number;
 export const testImageInfoGetWidthNullPtr: () => number;
 export const testImageInfoGetHeightNullPtr: () => number;
+export const testWritePixelsWithFmtRGBA8888: (pixelMap: image.PixelMap, source: ArrayBuffer) => number;
+export const testWritePixelsWithFmtRGB888: (pixelMap: image.PixelMap, source: ArrayBuffer) => number;
+export const testWritePixelsWithFmtRGB565: (pixelMap: image.PixelMap, source: ArrayBuffer) => number;
+export const testWritePixelsWithFmtRGBAF16: (pixelMap: image.PixelMap, source: ArrayBuffer) => number;
+export const testWritePixelsWithFmtNullPixelmap: (source: ArrayBuffer) => number;
+export const testWritePixelsWithFmtNullSource: (pixelMap: image.PixelMap) => number;
+export const testWritePixelsWithFmtUnsupportedFmt: (pixelMap: image.PixelMap, source: ArrayBuffer) => number;
+export const testWritePixelsToAreaWithFmtRGBA8888: (pixelMap: image.PixelMap, x: number, y: number,
+  width: number, height: number, pixels: ArrayBuffer) => number;
+export const testWritePixelsToAreaWithFmtRGB888: (pixelMap: image.PixelMap, x: number, y: number,
+  width: number, height: number, pixels: ArrayBuffer) => number;
+export const testWritePixelsToAreaWithFmtRGB565: (pixelMap: image.PixelMap, x: number, y: number,
+  width: number, height: number, pixels: ArrayBuffer) => number;
+export const testWritePixelsToAreaWithFmtRGBAF16: (pixelMap: image.PixelMap, x: number, y: number,
+  width: number, height: number, pixels: ArrayBuffer) => number;
+export const testWritePixelsToAreaWithFmtNullPixelmap: (pixelMap: image.PixelMap, x: number, y: number,
+  width: number, height: number, pixels: ArrayBuffer) => number;
+export const testWritePixelsToAreaWithFmtNullArea: (pixelMap: image.PixelMap) => number;
+export const testWritePixelsToAreaWithFmtUnsupportedFmt: (pixelMap: image.PixelMap, x: number, y: number,
+  width: number, height: number, pixels: ArrayBuffer) => number;
+export const testWritePixelsWithFmtLocked: (pixelMap: image.PixelMap, source: ArrayBuffer) => number;
+export const testWritePixelsWithFmtAllocFailed: () => number;
+export const testWritePixelsWithFmtUnsupportedConversion: () => number;
+export const testWritePixelsWithFmtInsufficientBuffer: (pixelMap: image.PixelMap, source: ArrayBuffer) => number;
+export const testWritePixelsToAreaWithFmtLocked: (pixelMap: image.PixelMap, x: number, y: number,
+  width: number, height: number, pixels: ArrayBuffer) => number;
+export const testWritePixelsToAreaWithFmtAllocFailed: () => number;
+export const testWritePixelsToAreaWithFmtUnsupportedConversion: () => number;
+export const testWritePixelsToAreaWithFmtInsufficientBuffer: (pixelMap: image.PixelMap, x: number, y: number,
+  width: number, height: number, pixels: ArrayBuffer) => number;
+export const testWritePixelsWithFmtCopyFailed: () => number;
+export const testWritePixelsToAreaWithFmtCopyFailed: () => number;
+export const testWritePixelsWithFmtByFormat: (format: number) => number;
+export const testWritePixelsToAreaWithFmtByFormat: (format: number) => number;

@@ -367,6 +367,9 @@ export default function WaterFlowUndefinedTest() {
         expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('nestedScroll')))
           .assertEqual('{"scrollForward":"NestedScrollMode.SELF_FIRST","scrollBackward":"NestedScrollMode.SELF_FIRST"}');
 
+        let scrollColumn = await driver.findComponent(ON.id('waterFlowUndefined_btn'));
+        await scrollColumn!.scrollSearch(ON.id('WaterFlow_nestedScrollValue'));
+        await CommonFunc.sleep(2000);
         let changeBtn = await driver.findComponent(ON.id('WaterFlow_nestedScrollValue'));
         await (changeBtn?.click() as Promise<void>);
         await CommonFunc.sleep(1000);
@@ -404,6 +407,9 @@ export default function WaterFlowUndefinedTest() {
         expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('cachedCount')))
           .assertEqual('2');
 
+        let scrollColumn = await driver.findComponent(ON.id('waterFlowUndefined_btn'));
+        await scrollColumn!.scrollSearch(ON.id('WaterFlow_cachedCountValue'));
+        await CommonFunc.sleep(2000);
         let changeBtn = await driver.findComponent(ON.id('WaterFlow_cachedCountValue'));
         await (changeBtn?.click() as Promise<void>);
         await CommonFunc.sleep(1000);

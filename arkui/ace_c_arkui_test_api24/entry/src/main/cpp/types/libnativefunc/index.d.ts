@@ -12,6 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { UIContext } from '@kit.ArkUI';
+
 export const TestErrorCode001: () => number;
 export const TestErrorCode002: () => number;
 export const TestErrorCode003: () => number;
@@ -24,3 +26,15 @@ export const TestErrorCode009: () => number;
 export const TestErrorCode010: () => number;
 export const TestErrorCode011: () => number;
 export const TestErrorCode012: () => number;
+
+export const TestNodeAdoptChildWithPolicy001: () => number;
+export const TestNodeAdoptChildWithPolicy002: () => number;
+export const TestNodeAdoptChildWithPolicy003: (uiContext: UIContext) => number;
+export const TestNodeAdoptChildWithPolicy004: (uiContext: UIContext) => number;
+export const TestNodeAdoptChildWithPolicy005: () => number;
+export const TestSetAdoptedChildOverlayPositionCompensation001: () => number;
+export const TestSetAdoptedChildOverlayPositionCompensation002: () => number;
+export const TestSetAdoptedChildOverlayPositionCompensation003: () => number;
+export const TestSetAdoptedChildOverlayPositionCompensation004: () => number;
+export const TestSetAdoptedChildOverlayPositionCompensation005: () => number;
+export const TestSetAdoptedChildOverlayPositionCompensation006: () => number;

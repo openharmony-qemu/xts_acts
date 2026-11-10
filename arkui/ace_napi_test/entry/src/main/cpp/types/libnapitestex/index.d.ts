@@ -27,7 +27,6 @@ export const CreateInt32Test: () => object;
 export const GetBufferInfoNonBuffer: (object) => object;
 export const TestMultipleOperations: () => object;
 export const TestExternalArrayBuffer: () => object;
-export const TestArrayBufferThreadSafety: () => boolean;
 export const TestArrayBufferComparison: () => number;
 export const NapiArrayBufferTest01: () => boolean;
 export const NapiArrayBufferTest02: () => boolean;
@@ -49,10 +48,6 @@ export const NapiBigIntTest10: () => boolean;
 export const NapiBigIntTest11: () => boolean;
 export const NapiBigIntTest12: () => boolean;
 export const NapiBigIntTest13: () => boolean;
-export const NapiBigIntTest14: () => boolean;
-export const NapiBigIntTest15: () => boolean;
-export const NapiBigIntTest16: () => boolean;
-export const NapiBigIntTest17: () => boolean;
 // Date test functions
 export const testCreateDate: (timestamp: number) => Date;
 export const testGetDateValue: (dateValue: Date) => number;
@@ -190,48 +185,6 @@ export interface HighConcurrencyDateStressResult {
 // High concurrency date stress test
 export const testHighConcurrencyDateStress: () => HighConcurrencyDateStressResult;
 
-// Interface for individual thread result in cross-thread date passing test
-export interface CrossThreadDatePassingThreadResult {
-  threadId: number;
-  operation: string;
-  isDateStatus: number;
-  isDate: boolean;
-  getDateStatus: number;
-  timestamp: number;
-  originalTimestamp: number;
-}
-
-// Interface for cross-thread date passing test result
-export interface CrossThreadDatePassingResult {
-  success: boolean;
-  threadResults: Array<CrossThreadDatePassingThreadResult>;
-  totalThreads: number;
-  originalTimestamp: number;
-}
-
-// Interface for individual thread result in thread safety error handling test
-export interface ThreadSafetyErrorHandlingThreadResult {
-  threadId: number;
-  operation: string;
-  apiStatus: number;
-  expectedStatus: number;
-  isSuccess: boolean;
-  errorDescription: string;
-}
-
-// Interface for thread safety error handling test result
-export interface ThreadSafetyErrorHandlingResult {
-  success: boolean;
-  threadResults: Array<ThreadSafetyErrorHandlingThreadResult>;
-  totalThreads: number;
-  overallSuccess: boolean;
-}
-
-// Cross-thread date passing test
-export const testCrossThreadDatePassing: () => CrossThreadDatePassingResult;
-
-// Thread safety error handling test
-export const testThreadSafetyErrorHandling: () => ThreadSafetyErrorHandlingResult;
 export const NapiStringTest001: () => boolean;
 export const NapiStringTest002: () => boolean;
 export const NapiStringTest003: () => boolean;
@@ -241,8 +194,6 @@ export const NapiStringTest006: () => boolean;
 export const NapiStringTest007: () => boolean;
 export const NapiStringTest008: () => boolean;
 export const NapiStringTest009: () => boolean;
-export const NapiPrimitiveTest01: () => boolean;
-export const NapiPrimitiveTest02: () => boolean;
 export const NapiPrimitiveTest03: () => boolean;
 export const NapiPrimitiveTest04: () => boolean;
 export const NapiPrimitiveTest05: () => boolean;

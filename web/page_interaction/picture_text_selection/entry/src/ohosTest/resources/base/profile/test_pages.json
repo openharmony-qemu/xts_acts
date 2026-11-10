@@ -5,7 +5,8 @@
     "testability/pages/webViewMenuInputFieldType",
     "testability/pages/WebViewControllerHitTest",
     "testability/pages/WebControllerHitTest",
-    "testability/pages/WebEnableDataDetector"
+    "testability/pages/WebEnableDataDetector",
+    "testability/pages/WebCaretColor"
   ]
 }
 

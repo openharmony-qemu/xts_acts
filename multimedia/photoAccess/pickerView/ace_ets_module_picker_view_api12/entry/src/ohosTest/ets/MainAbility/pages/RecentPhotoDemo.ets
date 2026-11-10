@@ -1,4 +1,4 @@
-import { BaseItemInfo } from '@ohos.file.PhotoPickerComponent';
+import { BaseItemInfo, PickerError } from '@ohos.file.PhotoPickerComponent';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import {
   RecentPhotoOptions,
@@ -13,6 +13,19 @@ import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import { EventType } from '../common/Common';
 
+// Shared with the XTS cases directly, preserving NaN, Infinity and undefined.
+export interface RecentPhotoTestState {
+  options: RecentPhotoOptions;
+  checkResultCount: number;
+  checkInfoCount: number;
+  exists: boolean;
+  info: RecentPhotoInfo;
+  clicks: BaseItemInfo[];
+  errors: PickerError[];
+}
+
+const RECENT_PHOTO_TEST_STATE_KEY: string = 'xts.recentPhoto.requirement.state';
+
 @Entry
 @Component
 struct RecentPhotoDemo {
@@ -24,6 +37,7 @@ struct RecentPhotoDemo {
   private checkInfoCallback: RecentPhotoCheckInfoCallback = (recentPhotoExists: boolean,
     info: RecentPhotoInfo): void => this.onCheckInfoCallback(recentPhotoExists, info);
   private eventId: number = 0;
+  private requirementState?: RecentPhotoTestState;
 
   sendEvent(message: Object, eventId: number) {
     let eventData: events_emitter.EventData = {
@@ -41,6 +55,15 @@ struct RecentPhotoDemo {
 
   aboutToAppear() {
     let parameter: object = router.getParams();
+    if (parameter['recentPhotoRequirement'] === true) {
+      const state = AppStorage.get<RecentPhotoTestState>(RECENT_PHOTO_TEST_STATE_KEY);
+      if (state === undefined) {
+        throw new Error('RecentPhotoDemo: requirement test state is missing');
+      }
+      this.requirementState = state;
+      this.recentPhotoOptions = state.options;
+      return;
+    }
     if (parameter['eventId'] != undefined) {
       this.eventId = parameter['eventId'];
     }
@@ -51,16 +74,29 @@ struct RecentPhotoDemo {
   }
 
   private onRecentPhotoCheckResult(recentPhotoExists: boolean): void {
+    if (this.requirementState !== undefined) {
+      this.requirementState.exists = recentPhotoExists;
+      this.requirementState.checkResultCount++;
+    }
     console.info('Check photo, recentPhotoExists = ' + recentPhotoExists);
   }
 
   private onRecentPhotoClick(recentPhotoInfo: BaseItemInfo): boolean {
-    this.sendEvent(recentPhotoInfo, EventType.RECENT_PHOTO_INFO);
+    if (this.requirementState !== undefined) {
+      this.requirementState.clicks.push(recentPhotoInfo);
+    } else {
+      this.sendEvent(recentPhotoInfo, EventType.RECENT_PHOTO_INFO);
+    }
     console.info('onRecentPhotoClick  recentPhotoInfo = ' + JSON.stringify(recentPhotoInfo));
     return true;
   }
 
   private onCheckInfoCallback(recentPhotoExists: boolean, info: RecentPhotoInfo): void {
+    if (this.requirementState !== undefined) {
+      this.requirementState.exists = recentPhotoExists;
+      this.requirementState.info = info;
+      this.requirementState.checkInfoCount++;
+    }
     console.info('onCheckInfoCallback recentPhotoInfo dateToken ' + info.dateTaken);
     console.info('onCheckInfoCallback recentPhotoInfo identifier ' + info.identifier);
   }
@@ -72,7 +108,13 @@ struct RecentPhotoDemo {
         onRecentPhotoCheckResult: this.checkResultCallback,
         onRecentPhotoClick: this.recentPhotoClickCallback,
         onRecentPhotoCheckInfo: this.checkInfoCallback,
-      }).height('50vp').width('50vp').id('recentPhoto')
+        onError: this.requirementState !== undefined ? (error: PickerError): void => {
+          this.requirementState?.errors.push(error);
+        } : undefined,
+      })
+        .height(this.requirementState === undefined ? '50vp' : 240)
+        .width(this.requirementState === undefined ? '50vp' : 240)
+        .id('recentPhoto')
     }.height('100%').width('100%')
     .justifyContent(FlexAlign.Center)
     .alignItems(HorizontalAlign.Center)

@@ -1,4 +1,5 @@
 'use static';
+
 import { Scroll, Scroller, ContentModifier, FontWeight, Gauge, TextAlign, TextOverflow, ForEach, wrapBuilder, Circle, Builder, Row, LoadingProgress, List, ListItem, WrappedBuilder, LoadingProgressConfiguration, ResourceColor, Color, QRCode, Entry, Text, Column, Component, Button, ClickEvent } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import hilog from '@ohos.hilog';
@@ -15,13 +16,14 @@ struct LoadingProgressExample {
     Column() {
       LoadingProgress()
         .color(this.color_)
-        .layoutWeight(1)
+        .width(100)
+        .height(100)
         .id('TestLoading_progressColor')
 
       Button('Change').onClick(() => {
         this.color_ = undefined;
       })
         .id('changeButton')
-    }.width('100%')
+    }.width('100%').height('100%')
   }
 }

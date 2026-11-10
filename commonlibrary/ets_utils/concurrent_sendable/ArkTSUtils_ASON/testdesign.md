@@ -1,0 +1,158 @@
+- ASON 测试设计
+	- 说明：基于 arktsutils_ason_testpoint.md §1 接口维度脑图生成，覆盖 ASON 命名空间 7 接口×7 测试逻辑分类（缺项类保留为缺口标注）。本测试目录还包含 JSON.parseSendable（B 族，619 例，与 ASON.parse 对位的 JSON 命名空间并行 API）和 ArkTSUtils.isSendable/内置 JSON（C 族，69 例）覆盖，详见 testpoint.md §1.8-1.9。
+	- 1. 接口测试（Functional）
+		- parse
+			- 入参范围覆盖
+				- JSON 全值类型：bigint/number(科学记数)/string(Unicode/emoji/空串)/array/true/false/object/SendableMap
+				- 嵌套对象/数组、大整数 112233445566778899
+			- 边界值测试
+				- 空串 ""、空对象 "{}"、空数组 "[]"
+				- 2^53=9007199254740992 BigInt 阈值
+				- 超大 JSON、深嵌套、循环引用承载
+			- 异常与非法输入
+				- 畸形 JSON（'{'、'{"error"}'、'[1,,2]'、'{"num":1e-}'）→ SyntaxError（断言 instanceof SyntaxError）
+				- MAP 模式畸形 → "Unexpected MAP Prop/MAP in JSON"
+				- OBJECT 模式畸形 → "Unexpected Object Prop/Object in JSON"
+				- ❌ 非 undefined reviver 文档"忽略/无效"行为未测
+				- ❌ 非法 text 类型 401 未测（需 as unknown as string 注入）
+			- 返回值与类型验证
+				- ISendable 返回、typeof==='object'
+				- isSendable()===true
+				- collections.Map<string,bigint> / collections.Array<number> 显式转型
+				- ❌ parse(null)→null 文档语义未测
+			- 组合场景
+				- parse→stringify 往返一致性（RoundTrip）
+				- parse(MAP)→stringify(Map) 互转
+				- parse 后 (obj as object)?.["key"] 属性访问
+			- 重复调用/幂等性
+				- ❌ 同 text 二次 parse 结果一致（无显式断言，仅往返隐式）
+			- 并发跨线程
+				- ❌ ISendable/SendableMap 跨 TaskPool/Worker 传递（ASON 声明用途，零覆盖）
+		- stringify
+			- 入参范围覆盖
+				- null/undefined/number/boolean/string
+				- SendableMap（MAP parse 产物）、内置 Map/Set、collections.Map/Set
+				- HashMap/HashSet、SendableTestClass/NormalTestClass、嵌套对象/数组
+			- 边界值测试
+				- 空 Map/Set、含 undefined 值的 Map/Set
+				- null/undefined 入参
+			- 异常与非法输入
+				- 2 处 try/catch（无错误码断言）
+				- ❌ 非 Object 类型 401 未测
+			- 返回值与类型验证
+				- string 返回类型
+				- 精确串相等断言（'{"k":"v"}'/'[1,2,3]'/'{}'/'null'）
+			- 组合场景
+				- parse(MAP)→stringify 往返
+				- HashMap/HashSet（hashCode 序不确定）→ 串
+				- Set→数组串
+			- 重复调用/幂等性
+				- ❌ 同对象二次 stringify 一致（无显式断言）
+			- 并发跨线程
+				- ❌ 跨线程调用 stringify（零覆盖）
+		- BigIntMode
+			- 入参范围覆盖
+				- DEFAULT(0)/PARSE_AS_BIGINT(1)/ALWAYS_PARSE_AS_BIGINT(2) 三枚举值
+			- 边界值测试
+				- 2^53 阈值（PARSE_AS_BIGINT→bigint）
+				- 大整数 112233445566778899
+			- 异常与非法输入
+				- DEFAULT 模式含 'n' 字面非法串 → 期望失败
+			- 返回值与类型验证
+				- PARSE_AS_BIGINT/ALWAYS_PARSE_AS_BIGINT→typeof==='bigint'
+				- DEFAULT→number/object
+			- 组合场景
+				- 与 ParseReturnType.OBJECT 组合（BigIntMode×OBJECT 矩阵）
+			- 重复调用/幂等性
+				- 隐式（无显式断言）
+			- 并发跨线程
+				- ❌ 零覆盖
+		- ParseReturnType
+			- 入参范围覆盖
+				- OBJECT(0) 默认 + MAP(1)@since13 两值
+			- 边界值测试
+				- 空 JSON "{}"/"[]" 在两模式下返回
+			- 异常与非法输入
+				- MAP 模式畸形 → "Unexpected MAP Prop/MAP in JSON"
+				- OBJECT 模式畸形 → "Unexpected Object Prop/Object in JSON"
+			- 返回值与类型验证
+				- OBJECT→ISendable 对象
+				- MAP→collections.Map<string,bigint>（可 .get() 取值）
+			- 组合场景
+				- MAP parse→stringify 往返
+				- MAP 嵌套对象
+			- 重复调用/幂等性
+				- 隐式
+			- 并发跨线程
+				- ❌ 零覆盖
+		- ParseOptions
+			- 入参范围覆盖
+				- bigIntMode + parseReturnType 两字段组合矩阵
+				- undefined（默认）、undefined reviver
+			- 边界值测试
+				- 随 parse 边界
+			- 异常与非法输入
+				- ❌ 缺字段/非法枚举值 401 未测（需 as unknown 注入）
+			- 返回值与类型验证
+				- options 传 undefined → 默认行为
+				- 两字段赋值 → 对应模式生效
+			- 组合场景
+				- options 作为 parse 第三参与 reviver(undefined) 组合
+			- 重复调用/幂等性
+				- 隐式
+			- 并发跨线程
+				- ❌ 零覆盖
+		- Transformer
+			- 入参范围覆盖
+				- ❌ reviver 恒传 undefined，从未传真实 (this,key,value)=>ISendable 函数
+			- 边界值测试
+				- ❌ 无
+			- 异常与非法输入
+				- ❌ 非 undefined reviver 文档"忽略/无效"行为未测
+			- 返回值与类型验证
+				- ❌ 转换结果修改语义未验证
+			- 组合场景
+				- ❌ 无
+			- 重复调用/幂等性
+				- ❌ 无
+			- 并发跨线程
+				- ❌ 无
+		- ISendable
+			- 入参范围覆盖
+				- 间接：parse 返回值 as ISendable 转型遍布全部 parse 用例
+			- 边界值测试
+				- ❌ 无
+			- 异常与非法输入
+				- ❌ 无
+			- 返回值与类型验证
+				- isSendable(parseResult)===true
+				- typeof==='object'
+			- 组合场景
+				- parse 结果 (obj as object)?.["key"] 属性访问
+			- 重复调用/幂等性
+				- ❌ 无
+			- 并发跨线程
+				- ❌ 无
+	- 2. 稳定性（Stability）
+		- 超大/深嵌套 JSON 解析稳定性（RoundTrip/Transform 多结构）
+		- 大整数/嵌套 Map/Array 承载
+		- ❌ 循环创建销毁/超大批量（10万次）稳定性基准未测
+	- 3. 性能（Performance）
+		- ❌ parse/stringify 单接口吞吐基线未测
+		- ❌ 大 JSON 解析耗时基准未测
+	- 4. 并发安全（Concurrency Safety）
+		- ❌ ASON 结果 ISendable/SendableMap 跨 TaskPool/Worker 传递可见性（声明用途，零覆盖）
+		- ❌ 跨线程 stringify 调用未测
+		- ❌ 多 Worker 并发 parse 数据一致性未测
+	- 5. 兼容性与继承（Compatibility & Inheritance）
+		- Sendable 类 + 普通类 stringify 兼容（SendableTestClass/NormalTestClass）
+		- 多结构对象兼容（RoundTrip/Transform）
+		- ❌ @since 18 stringify 参数 Object 宽化版本边界无独立验证
+		- ASON 为 namespace，无继承/子类化场景
+	- 6. 资料与文档符合性（Doc Conformance）
+		- @since 12 smoke、BigIntMode/ParseReturnType 枚举符合性
+		- isSendable、参数默认值、返回类型符合性
+		- 🔴 ArkTSUtilsASON 5400 @tc.desc 误标"Transformer"（实为 parse options）
+		- 🔴 ArkTSUtilsASON 5500~5800 @tc.desc 误标"LockAsyncParseOptions"（实为 BigIntMode/ParseOptions，无 AsyncLock）
+		- ⚠️ .d.ets 对 parse/stringify 未声明 @throws，但产品对畸形 JSON 抛 SyntaxError（文档缺错误码/异常表）
+		- ⚠️ 文档"reviver 仅 undefined 生效"行为无符合性用例

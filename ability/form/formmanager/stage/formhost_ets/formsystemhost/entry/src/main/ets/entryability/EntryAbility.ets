@@ -24,6 +24,9 @@ export default class EntryAbility extends UIAbility {
     events: ["FMS_FormTestFinish_commonEvent"],
   };
   private isLiveFormPage: boolean = false;
+  private isFormEditPage: boolean = false;
+  private isFormEditStaticPage: boolean = false;
+  private windowStage: window.WindowStage | null = null;
 
   private finishCallBack: (err:BusinessError, data:CommonEventManager.CommonEventData) => void = 
     (err:BusinessError, data:CommonEventManager.CommonEventData) => {
@@ -37,6 +40,8 @@ export default class EntryAbility extends UIAbility {
     console.info('Ability onCreate');
     AppStorage.setOrCreate('want', want);
     this.isLiveFormPage = want.parameters?.['isLiveForm'] as boolean;
+    this.isFormEditPage = want.parameters?.['isFormEdit'] as boolean;
+    this.isFormEditStaticPage = want.parameters?.['isFormEditStatic'] as boolean;
 
     CommonEventManager.createSubscriber(this.subscriberTestFinishEvent).then(async (data) => {
       console.info(`formsystemhost Subscriber FormFinish data:`, JSON.stringify(data));
@@ -52,18 +57,38 @@ export default class EntryAbility extends UIAbility {
   public onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     console.info('Ability onNewWant');
     AppStorage.setOrCreate('want', want);
+    this.isLiveFormPage = want.parameters?.['isLiveForm'] as boolean;
+    this.isFormEditPage = want.parameters?.['isFormEdit'] as boolean;
+    this.isFormEditStaticPage = want.parameters?.['isFormEditStatic'] as boolean;
+    this.loadFormPage();
   }
 
   public onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability
     console.info('Ability onWindowStageCreate');
+    this.windowStage = windowStage;
+    this.loadFormPage();
+  }
 
+  private loadFormPage(): void {
+    if (!this.windowStage) {
+      console.error('windowStage is null, cannot load page');
+      return;
+    }
     let page: string = 'pages/Index';
     if (this.isLiveFormPage) {
-        console.info('onWindowStageCreate live form');
+        console.info('loadFormPage live form');
         page = 'pages/LiveForm';
     }
-    windowStage.loadContent(page, (err) => {
+    if (this.isFormEditPage) {
+        console.info('loadFormPage form edit');
+        page = 'pages/FormEdit';
+    }
+    if (this.isFormEditStaticPage) {
+        console.info('loadFormPage form edit static');
+        page = 'pages/FormEditStatic';
+    }
+    this.windowStage.loadContent(page, (err) => {
       if (err.code) {
         console.error(`Failed to load the content. Cause: %{public}s`, JSON.stringify(err));
         return;

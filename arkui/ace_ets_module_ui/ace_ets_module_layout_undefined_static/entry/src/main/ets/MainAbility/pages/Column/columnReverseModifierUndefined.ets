@@ -17,7 +17,7 @@
 import { Entry, Text, Column, Component, Button, ClickEvent, Flex,
   FlexAlign,ItemAlign, Select, Color, Row, Font, SymbolEffectStrategy,
   SymbolGlyph, $r, Navigation, List, TextInput, AttributeModifier,
-  ColumnAttribute} from '@ohos.arkui.component'
+  ColumnAttribute, HorizontalAlign } from '@ohos.arkui.component'
 import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
@@ -61,17 +61,18 @@ struct Index {
         Column() {
           Column() {
             Text('1').width('200').height(50).backgroundColor(0xF5DEB3).id('column1')
-            Text('2').width('300').height(50).backgroundColor(0xD2B48C).id('column2')
+            Text('2').width('200').height(50).backgroundColor(0xD2B48C).id('column2')
             Text('3').width('100').height(50).backgroundColor(0xF5DEB3).id('column3')
             Text('4').width('100').height(50).backgroundColor(0xD2B48C).id('column4')
-            Text('5').width('300').height(50).backgroundColor(0xF5DEB3).id('column5')
+            Text('5').width('200').height(50).backgroundColor(0xF5DEB3).id('column5')
           }
           .id('Column_Reverse_Modifier')
           .attributeModifier(this.modifier)
           .borderWidth(1)
-          .width('90%').height('60%')
+          .width('80%').height('60%')
         }
       }
     }
+    .alignItems(HorizontalAlign.Center)
   }
 }

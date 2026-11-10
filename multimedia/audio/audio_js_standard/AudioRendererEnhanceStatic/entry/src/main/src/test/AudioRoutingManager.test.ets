@@ -720,5 +720,368 @@ export default function AudioRoutingManagerTest() {
         }
         done();
     })
+
+    /**
+ 	   * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_STATIC_0100
+ 	   * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_STATIC_0100
+ 	   * @tc.desc   running+music,standby(true) enter standby normally,state remains STATE_RUNNING
+ 	   * @tc.type   FUNCTION
+ 	   * @tc.size   MEDIUMTEST
+ 	   * @tc.level  LEVEL0
+ 	   */
+ 	   it('SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let TAG_STANDBY = 'SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_STATIC_0100';
+        console.info(`${TAG_STANDBY}: start`);
+        let audioRendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+          rendererFlags: 0
+        }
+        let audioStreamInfo: audio.AudioStreamInfo = {
+          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+          channels: audio.AudioChannel.CHANNEL_2,
+          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        }
+        let audioRendererOptions: audio.AudioRendererOptions = {
+          streamInfo: audioStreamInfo,
+          rendererInfo: audioRendererInfo
+        }
+
+        let renderer: audio.AudioRenderer | null = null;
+ 	      try {
+          renderer = await audio.createAudioRenderer(audioRendererOptions);
+          expect(renderer != null).assertTrue();
+          await renderer!.start();
+
+          expect(renderer!.state).assertEqual(audio.AudioState.STATE_RUNNING);
+          console.info(`${TAG_STANDBY}: renderer started,state=${renderer!.state}`);
+
+          await renderer!.standby(true);
+          console.info(`${TAG_STANDBY}: standby(true) succeeded`);
+
+          expect(renderer!.state).assertEqual(audio.AudioState.STATE_RUNNING);
+          await renderer!.standby(false);
+          await renderer!.stop();
+          done();
+ 	     } catch (err) {
+          console.error(`${TAG_STANDBY}: failed,code=${err.code},message=${err.message}`);
+          expect(false).assertTrue();
+          done();
+ 	     }finally{
+          try{
+            if(renderer){
+              await renderer.release();
+            };
+          }catch(e){
+            console.info(`${TAG_STANDBY}: release ignore:${e.message}`);
+          }
+        }
+ 	   })
+
+    /**
+ 	   * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_STATIC_0200
+ 	   * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_STATIC_0200
+ 	   * @tc.desc   after entering standby,standby(false) exit standby normally,state remains STATE_RUNNING
+ 	   * @tc.type   FUNCTION
+ 	   * @tc.size   MEDIUMTEST
+ 	   * @tc.level  LEVEL0
+ 	   */
+ 	   it('SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let TAG_STANDBY = 'SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_STATIC_0200';
+        console.info(`${TAG_STANDBY}: start`);
+        let audioRendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+          rendererFlags: 0
+        }
+        let audioStreamInfo: audio.AudioStreamInfo = {
+          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+          channels: audio.AudioChannel.CHANNEL_2,
+          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        }
+        let audioRendererOptions: audio.AudioRendererOptions = {
+          streamInfo: audioStreamInfo,
+          rendererInfo: audioRendererInfo
+        }
+
+        let renderer: audio.AudioRenderer | null = null;
+ 	      try {
+          renderer = await audio.createAudioRenderer(audioRendererOptions);
+          expect(renderer != null).assertTrue();
+          await renderer!.start();
+
+          await renderer!.standby(true);
+          console.info(`${TAG_STANDBY}: entered standby`);
+
+          await renderer!.standby(false);
+          console.info(`${TAG_STANDBY}: standby(false) succeeded - exited standby`);
+
+          expect(renderer!.state).assertEqual(audio.AudioState.STATE_RUNNING);
+
+          await renderer!.stop();
+          done();
+ 	     } catch (err) {
+          console.error(`${TAG_STANDBY}: failed,code=${err.code},message=${err.message}`);
+          expect(false).assertTrue();
+          done();
+ 	     }finally{
+          try{
+            if(renderer){
+              await renderer.release();
+            };
+          }catch(e){
+            console.info(`${TAG_STANDBY}: release ignore:${e.message}`);
+          }
+        }
+ 	   })
+
+    /**
+ 	   * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_STATIC_0300
+ 	   * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_STATIC_0300
+ 	   * @tc.desc   not started(STATE_PREPARED),standby(true) should return error 6800103
+ 	   * @tc.type   FUNCTION
+ 	   * @tc.size   MEDIUMTEST
+ 	   * @tc.level  LEVEL1
+ 	   */
+ 	   it('SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let TAG_STANDBY = 'SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_STATIC_0300';
+        console.info(`${TAG_STANDBY}: start`);
+        let audioRendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+          rendererFlags: 0
+        }
+        let audioStreamInfo: audio.AudioStreamInfo = {
+          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+          channels: audio.AudioChannel.CHANNEL_2,
+          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        }
+        let audioRendererOptions: audio.AudioRendererOptions = {
+          streamInfo: audioStreamInfo,
+          rendererInfo: audioRendererInfo
+        }
+
+        let renderer: audio.AudioRenderer | null = null;
+ 	      try {
+          renderer = await audio.createAudioRenderer(audioRendererOptions);
+          expect(renderer != null).assertTrue();
+
+          expect(renderer!.state).assertEqual(audio.AudioState.STATE_PREPARED);
+          console.info(`${TAG_STANDBY}: renderer in state=${renderer!.state}`);
+          try{
+            await renderer!.standby(true);
+            console.error(`${TAG_STANDBY}: standby(true) should fail in STATE_PREPARED`);
+            expect(false).assertTrue();
+            done();
+          }catch(err){
+            console.info(`${TAG_STANDBY}: standby(true) failed as expected,code=${err.code},message=${err.message}`);
+            expect(err.code).assertEqual(6800103);
+            done();
+          }
+ 	     } catch (err) {
+          console.error(`${TAG_STANDBY}: unexpected failure,code=${err.code},message=${err.message}`);
+          expect(false).assertTrue();
+          done();
+ 	     }finally{
+          try{
+            if(renderer){
+              await renderer.release();
+            };
+          }catch(e){
+            console.info(`${TAG_STANDBY}: release ignore:${e.message}`);
+          }
+        }
+ 	   })
+
+    /**
+ 	   * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_STATIC_0400
+ 	   * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_STATIC_0400
+ 	   * @tc.desc   not in standby(STATE_RUNNING),standby(false) should return error 6800103
+ 	   * @tc.type   FUNCTION
+ 	   * @tc.size   MEDIUMTEST
+ 	   * @tc.level  LEVEL1
+ 	   */
+ 	   it('SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let TAG_STANDBY = 'SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_STATIC_0400';
+        console.info(`${TAG_STANDBY}: start`);
+        let audioRendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+          rendererFlags: 0
+        }
+        let audioStreamInfo: audio.AudioStreamInfo = {
+          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+          channels: audio.AudioChannel.CHANNEL_2,
+          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        }
+        let audioRendererOptions: audio.AudioRendererOptions = {
+          streamInfo: audioStreamInfo,
+          rendererInfo: audioRendererInfo
+        }
+
+        let renderer: audio.AudioRenderer | null = null;
+ 	      try {
+          renderer = await audio.createAudioRenderer(audioRendererOptions);
+          expect(renderer != null).assertTrue();
+          await renderer!.start();
+
+          expect(renderer!.state).assertEqual(audio.AudioState.STATE_RUNNING);
+          console.info(`${TAG_STANDBY}: renderer running,never entered standby`);
+          try{
+            await renderer!.standby(false);
+            console.error(`${TAG_STANDBY}:  standby(false) should fail when not in standby`);
+            expect(false).assertTrue();
+            done();
+          }catch(err){
+            console.info(`${TAG_STANDBY}: standby(false) failed as expected,code=${err.code},message=${err.message}`);
+            expect(err.code).assertEqual(6800103);
+            done();
+          }
+ 	     } catch (err) {
+          console.error(`${TAG_STANDBY}: unexpected failure,code=${err.code},message=${err.message}`);
+          expect(false).assertTrue();
+          done();
+ 	     }finally{
+          try{
+            if(renderer){
+              await renderer.stop();
+            };
+          }catch(e){
+            console.info(`${TAG_STANDBY}: stop ignore:${e.message}`);
+          }
+          try{
+            if(renderer){
+              await renderer.release();
+            };
+          }catch(e){
+            console.info(`${TAG_STANDBY}: release ignore:${e.message}`);
+          }
+        }
+ 	   })
+
+    /**
+ 	   * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_STATIC_0500
+ 	   * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_STATIC_0500
+ 	   * @tc.desc   in standby state,start() should return error 6800301
+ 	   * @tc.type   FUNCTION
+ 	   * @tc.size   MEDIUMTEST
+ 	   * @tc.level  LEVEL1
+ 	   */
+ 	   it('SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let TAG_STANDBY = 'SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_STATIC_0500';
+        console.info(`${TAG_STANDBY}: start`);
+        let audioRendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+          rendererFlags: 0
+        }
+        let audioStreamInfo: audio.AudioStreamInfo = {
+          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+          channels: audio.AudioChannel.CHANNEL_2,
+          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        }
+        let audioRendererOptions: audio.AudioRendererOptions = {
+          streamInfo: audioStreamInfo,
+          rendererInfo: audioRendererInfo
+        }
+
+        let renderer: audio.AudioRenderer | null = null;
+ 	      try {
+          renderer = await audio.createAudioRenderer(audioRendererOptions);
+          expect(renderer != null).assertTrue();
+          await renderer!.start();
+          await renderer!.standby(true);
+          console.info(`${TAG_STANDBY}: entered standby`);
+
+          try{
+            await renderer!.start();
+            console.error(`${TAG_STANDBY}: start() should fail in standby state`);
+            expect(false).assertTrue();
+            done();
+          }catch(err){
+            console.info(`${TAG_STANDBY}: start() failed as expected,code=${err.code},message=${err.message}`);
+            expect(err.code).assertEqual(6800301);
+            done();
+          }
+          await renderer!.standby(false);
+          await renderer!.stop();
+ 	     } catch (err) {
+          console.error(`${TAG_STANDBY}: unexpected failure,code=${err.code},message=${err.message}`);
+          expect(false).assertTrue();
+          done();
+ 	     }finally{
+          try{
+            if(renderer){
+              await renderer.release();
+            };
+          }catch(e){
+            console.info(`${TAG_STANDBY}: release ignore:${e.message}`);
+          }
+        }
+ 	   })
+
+    /**
+ 	   * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_STATIC_0600
+ 	   * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_STATIC_0600
+ 	   * @tc.desc   STREAM_USAGE_ALARM(unsupported),standby(true) should return error 6800103
+ 	   * @tc.type   FUNCTION
+ 	   * @tc.size   MEDIUMTEST
+ 	   * @tc.level  LEVEL1
+ 	   */
+ 	   it('SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let TAG_STANDBY = 'SUB_MULTIMEDIA_AUDIO_RENDERER_STANDBY_STATIC_0600';
+        console.info(`${TAG_STANDBY}: start`);
+        let audioRendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_ALARM,
+          rendererFlags: 0
+        }
+        let audioStreamInfo: audio.AudioStreamInfo = {
+          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+          channels: audio.AudioChannel.CHANNEL_2,
+          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        }
+        let audioRendererOptions: audio.AudioRendererOptions = {
+          streamInfo: audioStreamInfo,
+          rendererInfo: audioRendererInfo
+        }
+
+        let renderer: audio.AudioRenderer | null = null;
+ 	      try {
+          renderer = await audio.createAudioRenderer(audioRendererOptions);
+          expect(renderer != null).assertTrue();
+          await renderer!.start();
+          console.info(`${TAG_STANDBY}: renderer started with STREAM_USAGE_ALARM`);
+          try{
+            await renderer!.standby(true);
+            console.error(`${TAG_STANDBY}: standby(true) should fail for STREAM_USAGE_ALARM`);
+            expect(false).assertTrue();
+            done();
+          }catch(err){
+            console.info(`${TAG_STANDBY}: standby(true) failed as expected,code=${err.code},message=${err.message}`);
+            expect(err.code).assertEqual(6800103);
+            done();
+          }
+ 	     } catch (err) {
+          console.error(`${TAG_STANDBY}: unexpected failure,code=${err.code},message=${err.message}`);
+          expect(false).assertTrue();
+          done();
+ 	     }finally{
+          try{
+            if(renderer){
+              await renderer.stop();
+            };
+          }catch(e){
+            console.info(`${TAG_STANDBY}: stop ignore:${e.message}`);
+          }
+          try{
+            if(renderer){
+              await renderer.release();
+            };
+          }catch(e){
+            console.info(`${TAG_STANDBY}: release ignore:${e.message}`);
+          }
+        }
+ 	   })
   })
 }

@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from "../../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 import Utils from "../Util.test";
 import {Pair,BoxInt,ExtArrB,ExtArrC,ExtCmpB,ExtCmpC,ExtCmpE,ExtLenC,MapPair,EmptyCls,LevelSub,WrapBool,ExtChainD,ExtChainE,LevelBase,StrIntCls,TcTwoPubA,TwoIntCls,TwoStrCls,BoolStrCls,BoxGeneric,BranchCtor,FourMixCls,GenericBox,TwoCtorCls,ArrParamCls,EnumUserCls,FiveCtorCls,FourCtorCls,InitThisCls,IntFieldCls,LevelSubSub,LoopCtorCls,MixThreeCls,StrFieldCls,ThreeIntCls,ThrowInCtor,TwoCtorCls3,TwoCtorCls4,BoolFieldCls,BoolParamCls,ByteFieldCls,ByteParamCls,CreateInCtor,CtorMapParam,CtorSetParam,FiveParamCls,LongFieldCls,LongParamCls,LoopBodyCtor,MultiInitCls,PubLongParam,ThreeCtorCls,WrongArgCtor,ClassParamCls,CompactIntCls,Ctor5IntParam,Ctor5StrParam,EqOverloadCls,FloatFieldCls,FloatParamCls,InitMethodCls,MultiFieldCls,ParamCountCls,ShortFieldCls,ShortParamCls,ThreeCtorCls2,Ctor3BoolParam,Ctor_MapStrInt,DoubleFieldCls,ThrowParamCtor,Ctor6MixedParam,CtorCustomParam,CtorStrArrParam,FltDblIntStrCls,ProtectFieldCls,ByteShortLongCls,Ctor4DoubleParam,CtorBoolArrParam,CtorArrayIntParam,CtorArrayStrParam,CtorDoubleArrParam,CtorFloatCharParam,OverloadMiddleCtor,CtorFixedArrStrParam,CtorMultiDimArrParam,ImplInterfaceCtorCls,Ctor_ConstructorParam,StringFieldWithMethod,CtorAllPrimitivesParam,CtorCombineArraysParam,CtorNestedGenericParam,CtorCombineComplexParam,CtorComplexGenericParam,CtorDoubleExtremesParam,CtorCombineCollectionsParam,} from "../Util.test";
 export default function ConstructorGetReturnTypeTest2Part1(): void {

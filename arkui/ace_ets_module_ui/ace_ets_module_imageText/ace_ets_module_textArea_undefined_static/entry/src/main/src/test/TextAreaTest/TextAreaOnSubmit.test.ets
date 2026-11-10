@@ -22,6 +22,8 @@ import { BusinessError } from '@ohos.base';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, Component } from '@kit.TestKit';
 
+let displayID: Int = 0;
+
 export default function TextAreaOnSubmitTest() {
   describe('TextAreaOnSubmitTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -47,9 +49,10 @@ export default function TextAreaOnSubmitTest() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push TextAreaOnSubmitTest page error: " + err);
+        console.log("push TextAreaOnSubmitTest page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
 
@@ -75,7 +78,11 @@ export default function TextAreaOnSubmitTest() {
       let button1 = await driver.findComponent(ON.id('changeIsOnSubmitValid')) as Component;
       await button1.click();
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2054)
+      try {
+        await driver.triggerKey(2054, displayID)
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson2 = inspector.getInspectorByKey('enterKeyType');
       let obj2 = JSON.parseJsonElement(strJson2);
@@ -87,7 +94,11 @@ export default function TextAreaOnSubmitTest() {
       let button2 = await driver.findComponent(ON.id('changeIsOnSubmitValid')) as Component;
       await button2.click();
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2054)
+      try {
+        await driver.triggerKey(2054, displayID)
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson3 = inspector.getInspectorByKey('enterKeyType');
       let obj3 = JSON.parseJsonElement(strJson3);

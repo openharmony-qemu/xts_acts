@@ -67,7 +67,7 @@ export default function webViewControllerPart2() {
     it('testNativeEmbedStatus001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testNativeEmbedStatus001", 153610)
       Utils.registerEvent("testNativeEmbedStatus001", 3, 153620, done);
-      waitAndClickComponent("WebViewControllerPart2Button",driver);
+      await waitAndClickComponent("WebViewControllerPart2Button",driver);
     })
 
     /**
@@ -81,7 +81,7 @@ export default function webViewControllerPart2() {
     it('testNativeEmbedStatus002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testNativeEmbedStatus002", 153610)
       Utils.registerEvent("testNativeEmbedStatus002", 4, 153630, done);
-      waitAndClickComponent("WebViewControllerPart2Button",driver);
+      await waitAndClickComponent("WebViewControllerPart2Button",driver);
 
     })
   })

@@ -30,6 +30,8 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
+let displayID: Int = 0;
+
 export default function textInputApi1() {
   describe('textInputApi1', () => {
 
@@ -37,7 +39,6 @@ export default function textInputApi1() {
       console.info("textInputApi1 beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
-
     });
 
     beforeEach(async (): Promise<void> => {
@@ -52,16 +53,17 @@ export default function textInputApi1() {
         console.info("get textInputApi1 state pages:" + JSON.stringify(pages));
         if (!("textInputApi1" == pages.name)) {
           console.info("get textInputApi1 pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // await router 有已知问题，先注释使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push textInputApi1 page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push textInputApi1 page error:" + err);
+        console.log("push textInputApi1 page error:" + err);
       }
       console.info("textInputApi1 beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
 
@@ -87,7 +89,11 @@ export default function textInputApi1() {
       await (text?.inputText('9') as Promise<void>);
       await CommonFunc.sleep(1000);
       //回车点击
-      await driver.triggerKey(2054);
+      try {
+        await driver.triggerKey(2054, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('textInputApi1' + '_text');
       await CommonFunc.sleep(200);

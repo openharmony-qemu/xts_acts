@@ -26,7 +26,7 @@ import {
   Level,
   Size,
   TestType,
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../Util.test';
 
 class StrField {
@@ -69,7 +69,7 @@ class Child_Parent052 extends GrandParent052 {
   public static cVal: number = 3;
 }
 
-
+
 class Container<T> {
   public static defaultSize: number = 10;
 }

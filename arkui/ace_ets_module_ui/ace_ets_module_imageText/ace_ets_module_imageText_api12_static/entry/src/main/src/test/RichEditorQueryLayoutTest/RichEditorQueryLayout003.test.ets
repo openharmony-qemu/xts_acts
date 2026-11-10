@@ -34,6 +34,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function RichEditorQueryLayout003() {
   describe('RichEditorQueryLayout003', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,9 +58,10 @@ export default function RichEditorQueryLayout003() {
           console.info("push RichEditorQueryLayout003 success");
         }
       } catch (err) {
-        console.error("push RichEditorQueryLayout003 page error: " + err);
+        console.log("push RichEditorQueryLayout003 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
@@ -75,7 +77,7 @@ export default function RichEditorQueryLayout003() {
         let driver = Driver.create();
         let rich = await (driver.findComponent(ON.id('rich_struct')) as Promise<Component>);
         let pointCenter = await rich.getBoundsCenter();
-        await driver.click(pointCenter.x, pointCenter.y);
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
         await CommonFunc.sleep(1000);
 
         let get_content = await (driver.findComponent(ON.id('get_content')) as Promise<Component>);

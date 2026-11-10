@@ -11,6 +11,10 @@
     {
       "name": "TestAbility_label",
       "value": "label"
+    },
+    {
+      "name": "direct_call_permission_reason",
+      "value": "direct call permission for test"
     }
   ]
 }

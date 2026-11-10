@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, afterAll, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterEach, afterAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils, { sleep } from '../Utils.test';
 class ApiConfig {
   verbose: boolean = false;

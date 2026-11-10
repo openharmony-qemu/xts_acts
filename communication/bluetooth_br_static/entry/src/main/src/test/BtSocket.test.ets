@@ -454,6 +454,41 @@ export default function btSocketTest(): void {
       })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_OFFNOPARAM_static_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPOFFNOPARAM_0100
+     * @tc.desc   Test offSppRead without optional callback param api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_OFFNOPARAM_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let SppOption: bluetooth.SppOptions = {
+          uuid: '00001810-0000-1000-8000-00805F9B34FB',
+          secure: false, type: bluetooth.SppType.SPP_RFCOMM
+        };
+        let serverNumber = -1;
+        let clientNumber = -1;
+        try {
+          bluetooth.sppListen('server_off', SppOption, serverSocket);
+          bluetooth.sppAccept(serverNumber, acceptClientSocket);
+          bluetooth.onSppRead(clientNumber, dataRead);
+          bluetooth.offSppRead(clientNumber);
+          hilog.info(domain, tag, '[bluetooth_js]offSppRead without callback param is success');
+        } catch (err) {
+          hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+          if (err.code === 801) {
+            hilog.info(domain, tag, '[bluetooth_js]offSppRead is not support');
+            expect(err.code).assertEqual(801);
+          } else {
+            expect(true).assertEqual(err.code === 401 || err.code === 2900099);
+          }
+        }
+        done();
+      })
+
+    /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_static_1100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1100
      * @tc.desc   Test sppWriteAsync api18
@@ -786,6 +821,7 @@ export default function btSocketTest(): void {
         done();
       })
 
+
     /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_static_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPCONNECTADD_0100
@@ -901,6 +937,7 @@ export default function btSocketTest(): void {
         }
         done();
       })
+
 
     /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_ReceiveDataSize_static_0100

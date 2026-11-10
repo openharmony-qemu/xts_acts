@@ -35,6 +35,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function RichEditorThreeStrikes006() {
   describe('RichEditorThreeStrikes006', () => {
     beforeAll(async (): Promise<void> => {
@@ -58,9 +59,10 @@ export default function RichEditorThreeStrikes006() {
           console.info("push RichEditorThreeStrikes006 success");
         }
       } catch (err) {
-        console.error("push RichEditorThreeStrikes006 page error: " + err);
+        console.log("push RichEditorThreeStrikes006 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
@@ -76,13 +78,29 @@ export default function RichEditorThreeStrikes006() {
       let rich = await (driver.findComponent(ON.id('RichEditorThreeStrikes006')) as Promise<Component>);
       let getBounds = await rich.getBounds();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 50, getBounds.top + 20);
+      try {
+        await driver.clickAt({ x: getBounds.left + 50, y: getBounds.top + 20, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 110, getBounds.top + 20);
+      try {
+        await driver.clickAt({ x: getBounds.left + 110, y: getBounds.top + 20, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 110, getBounds.top + 20);
+      try {
+        await driver.clickAt({ x: getBounds.left + 110, y: getBounds.top + 20, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 110, getBounds.top + 20);
+      try {
+        await driver.clickAt({ x: getBounds.left + 110, y: getBounds.top + 20, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
       try{
         let copy = await (driver.findComponent(ON.text('复制')) as Promise<Component>);

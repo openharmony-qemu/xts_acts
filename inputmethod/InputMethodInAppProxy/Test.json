@@ -1,0 +1,41 @@
+{
+  "description": "Input method in-app proxy API tests",
+  "driver": {
+    "type": "OHJSUnitTest",
+    "test-timeout": "1200000",
+    "shell-timeout": "1200000",
+    "bundle-name": "com.acts.inputmethod.inappproxy",
+    "module-name": "entry_test",
+    "testcase-timeout": "300000"
+  },
+  "kits": [
+    {
+      "type": "AppInstallKit",
+      "test-file-name": [
+        "ActsInputMethodInAppProxyTest.hap"
+      ],
+      "cleanup-apps": true
+    },
+    {
+      "type": "ShellKit",
+      "run-command": [
+        "mount -o rw,remount /",
+        "target mount",
+        "param set persist.usb.setting.gadget_conn_prompt false",
+        "param set persist.skip_scb_charging 1",
+        "power-shell wakeup",
+        "param set persist.sys.abilityms.support.ecologicalrulemgrservice false",
+        "param set skip_scb_charging 1",
+        "power-shell timeout -o 2147483647",
+        "uinput -T -m 300 720 300 360 200",
+        "uinput -T -m 650 2500 650 1380 200",
+        "uinput -T -m 650 2760 650 1380 200",
+        "power-shell setmode 602",
+        "power-shell wakeup",
+        "power-shell timeout -o 2147483647",
+        "uinput -T -d 1070 1070 -u 1070 1070",
+        "power-shell setmode 602"
+      ]
+    }
+  ]
+}

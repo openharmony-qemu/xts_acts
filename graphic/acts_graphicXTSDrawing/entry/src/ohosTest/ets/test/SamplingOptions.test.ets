@@ -173,6 +173,32 @@ export default function samplingOptionsTest() {
       }
     });
     /**
+     * @tc.name   testSamplingOptionsConstructorOutOfRangeValue
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_SAMPLINGOPTIONS_0800
+     * @tc.desc   test SamplingOptions constructor with out of range value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSamplingOptionsConstructorOutOfRangeValue', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testSamplingOptionsConstructorOutOfRangeValue';
+      try {
+        new drawing.SamplingOptions(2);
+        console.info(msg + ' SamplingOptions with 2 succeeded');
+      } catch (e) {
+        console.info(msg + ` SamplingOptions errorCode: ${e.code}, errorMsg: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        new drawing.SamplingOptions(100);
+        console.info(msg + ' SamplingOptions with 100 succeeded');
+      } catch (e) {
+        console.info(msg + ` SamplingOptions errorCode: ${e.code}, errorMsg: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
      * @tc.name   testSamplingOptionsConstructorMinValue
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_SAMPLINGOPTIONS_1000
      * @tc.desc   test SamplingOptions constructor with min value. error code 401 test.

@@ -25,11 +25,10 @@ import {
   TestType,
   Level,
   Size
-} from "../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import {quitErrorMsg} from './Util.test';
-
 
 type Literal = 'success' | 'failure' | 'pending';
 
@@ -264,7 +263,7 @@ export default function EAWorkerTest() {
         const worker = new EAWorker();
         worker.start()
         try {
-          await worker.run<void>(ThrowExceptionWorkerTest);
+          worker.run<void>(ThrowExceptionWorkerTest).Await();
           expect(EAWorkerTest001).assertTrue();
         } catch (err) {
           err = err as Error;
@@ -292,7 +291,7 @@ export default function EAWorkerTest() {
         let worker = new EAWorker();
         worker.start()
         try {
-          let worker1 = await worker.run<undefined>(EAWorkerTestUn);
+          let worker1 = worker.run<undefined>(EAWorkerTestUn).Await();
           expect(worker1).assertEqual(undefined);
         } catch (err) {
           err = err as Error;
@@ -321,7 +320,7 @@ export default function EAWorkerTest() {
         let worker = new EAWorker()
         worker.start()
         try {
-          await worker.run<void>(EAWorkerTestWithNull, null);
+          worker.run<void>(EAWorkerTestWithNull, null).Await();
           expect(EAWorkerTest003).assertTrue();
         } catch (err) {
           err = err as Error;
@@ -352,7 +351,7 @@ export default function EAWorkerTest() {
         const worker = new EAWorker();
         worker.start()
         try {
-          const result = await worker.run<int>(EAWorkerTestWithLong, INITIAL_VALUE);
+          const result = worker.run<int>(EAWorkerTestWithLong, INITIAL_VALUE).Await();
           expect(result).assertEqual(EXPECTED_VALUE);
         } catch (err) {
           err = err as Error;
@@ -382,13 +381,13 @@ export default function EAWorkerTest() {
         const worker = new EAWorker();
         worker.start()
         try {
-          await worker.run<void>(
+          worker.run<void>(
             EAWorkerTestWithClass,
             (initialValue: int) => new TestClass(initialValue),
             INITIAL_VALUE, (instance: TestClass) => {
             expect(instance.getValue()).assertEqual(EXPECTED_VALUE);
           }
-          );
+          ).Await();
 
         } catch (err) {
           err = err as Error;
@@ -420,7 +419,7 @@ export default function EAWorkerTest() {
             return Promise.reject(new Error("Intentional error"));
           };
           let job = worker.run<Promise<never>>(failingTask);
-          await job;
+          await job.Await();
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
@@ -461,7 +460,7 @@ export default function EAWorkerTest() {
               return taskStr;
             },
             task
-          );
+          ).Await();
 
           expect(result).assertEqual('222');
         } catch (err) {
@@ -492,7 +491,7 @@ export default function EAWorkerTest() {
         try {
           expect(worker != null).assertTrue();
           expect(worker instanceof EAWorker).assertTrue();
-          const result = await worker.run<number>(() => 42.0);
+          const result = worker.run<number>(() => 42.0).Await();
           expect(result).assertEqual(42.0);
         } catch (err) {
           err = err as Error;
@@ -523,10 +522,10 @@ export default function EAWorkerTest() {
           expect(worker != null).assertTrue();
           expect(worker instanceof EAWorker).assertTrue();
           const testInput = 21.0;
-          const result = await worker.run<number>(
+          const result = worker.run<number>(
             (param: number) => param * 2,
             testInput
-          );
+          ).Await();
           expect(result).assertEqual(42.0);
         } catch (err) {
           err = err as Error;
@@ -555,7 +554,7 @@ export default function EAWorkerTest() {
         const worker = new EAWorker();
         worker.start()
         try {
-          await worker.run<void>(TestUtils.voidStaticTask);
+          worker.run<void>(TestUtils.voidStaticTask).Await();
           expect(EAWorkerTest010).assertTrue();
         } catch (err) {
           err = err as Error;
@@ -587,9 +586,9 @@ export default function EAWorkerTest() {
         const worker = new EAWorker();
         worker.start()
         try {
-          const result = await worker.run<number>(() => {
+          const result = worker.run<number>(() => {
             return MathUtils.add(TEST_PARAM_A, TEST_PARAM_B);
-          });
+          }).Await();
           expect(result).assertEqual(EXPECTED_RESULT);
           expect(typeof result).assertEqual('number');
         } catch (err) {
@@ -618,10 +617,10 @@ export default function EAWorkerTest() {
         const worker = new EAWorker();
         worker.start()
         try {
-          await worker.run<void>(() => {
+          worker.run<void>(() => {
             const instance = new MyClass();
             instance.throwError();
-          });
+          }).Await();
           expect(false).assertFail();
         } catch (err) {
           err = err as Error;
@@ -653,10 +652,10 @@ export default function EAWorkerTest() {
         const worker = new EAWorker();
         worker.start()
         try {
-          const result = await worker.run<number>(() => {
+          const result = worker.run<number>(() => {
             const calculator = new Calculator();
             return calculator.add(TEST_PARAM_A, TEST_PARAM_B);
-          });
+          }).Await();
           expect(result).assertEqual(EXPECTED_RESULT);
           expect(typeof result).assertEqual('number');
         } catch (err) {
@@ -686,9 +685,9 @@ export default function EAWorkerTest() {
         const worker = new EAWorker();
         worker.start()
         try {
-          await worker.run<string>(() => {
+          worker.run<string>(() => {
             return processData(INVALID_INPUT);
-          });
+          }).Await();
           expect(false).assertFail();
         } catch (err) {
           err = err as Error;
@@ -716,7 +715,7 @@ export default function EAWorkerTest() {
         const worker = new EAWorker();
         worker.start()
         try {
-          await worker.run<void>(SafeContainerOperation);
+          worker.run<void>(SafeContainerOperation).Await();
           expect(EAWorkerTest015).assertTrue();
         } catch (err) {
           err = err as Error;
@@ -745,7 +744,7 @@ export default function EAWorkerTest() {
         const worker = new EAWorker();
         worker.start()
         try {
-          await worker.run<Promise<void>>(promiseThrowException).Await();
+          worker.run<Promise<void>>(promiseThrowException).Await();
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
@@ -774,7 +773,7 @@ export default function EAWorkerTest() {
         const worker = new EAWorker();
         worker.start()
         try {
-          await worker.run<Promise<void>>(() => {
+          worker.run<Promise<void>>(() => {
             return new Promise<void>((resolve, reject) => {
               processDataAsync(TEST_INPUT)
                 .then((result: string) => {
@@ -872,7 +871,7 @@ export default function EAWorkerTest() {
                 }
               });
             });
-          });
+          }).Await();
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
@@ -916,7 +915,7 @@ export default function EAWorkerTest() {
                 }
               });
             });
-          });
+          }).Await();
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
@@ -960,7 +959,7 @@ export default function EAWorkerTest() {
                 reject(new Error(err.message));
               });
             });
-          });
+          }).Await();
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
@@ -991,7 +990,7 @@ export default function EAWorkerTest() {
           const result = await worker.run<Promise<string>>(async (): Promise<string> => {
             await Promise.resolve();
             return SUCCESS_RESULT;
-          });
+          }).Await();
           expect(result).assertEqual(SUCCESS_RESULT);
         } catch (err) {
           err = err as Error;
@@ -1023,7 +1022,7 @@ export default function EAWorkerTest() {
           await worker.run<Promise<string>>(async (): Promise<string> => {
             await Promise.resolve();
             throw new Error(ERROR_MESSAGE);
-          });
+          }).Await();
           expect(false).assertFail();
         } catch (err) {
           err = err as Error;
@@ -1055,7 +1054,7 @@ export default function EAWorkerTest() {
           const result = await worker.run<Promise<string>>(async (): Promise<string> => {
             await Promise.resolve();
             return SUCCESS_RESULT;
-          });
+          }).Await();
           expect(result).assertEqual(SUCCESS_RESULT);
         } catch (err) {
           err = err as Error;
@@ -1087,7 +1086,7 @@ export default function EAWorkerTest() {
           const result = await worker.run<Promise<string>>(async (): Promise<string> => {
             await Promise.resolve();
             throw new Error(ERROR_MESSAGE);
-          });
+          }).Await();
           expect(false).assertFail();
         } catch (err) {
           err = err as Error;
@@ -1125,7 +1124,7 @@ export default function EAWorkerTest() {
                 resolve(SUCCESS_RESULT);
               }, DELAY_MS);
             });
-          });
+          }).Await();
           expect(result).assertEqual(SUCCESS_RESULT);
         } catch (err) {
           err = err as Error;
@@ -1154,13 +1153,13 @@ export default function EAWorkerTest() {
         const worker = new EAWorker();
         worker.start()
         try {
-          await worker.run<Promise<string>>((): Promise<string> => {
+          worker.run<Promise<string>>((): Promise<string> => {
             return new Promise<string>((resolve, reject) => {
               setTimeout(() => {
                 reject(new Error(ERROR_MESSAGE))
               }, 50);
             });
-          });
+          }).Await();
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
@@ -1196,7 +1195,7 @@ export default function EAWorkerTest() {
               const result = await worker.run<Promise<string>>(async (): Promise<string> => {
                 await Promise.resolve();
                 return `${SUCCESS_RESULT}_${i}`;
-              });
+              }).Await();
               expect(result).assertEqual(`${SUCCESS_RESULT}_${i}`);
               successCount++;
             } catch (err) {
@@ -1445,7 +1444,7 @@ export default function EAWorkerTest() {
         let worker = new EAWorker();
         worker.start()
         try {
-          let worker1 = await worker.run<undefined>(EAWorkerTest);
+          let worker1 = worker.run<undefined>(EAWorkerTest).Await();
           expect(worker1).assertEqual(undefined);
         } catch (err) {
           err = err as Error;
@@ -1478,7 +1477,7 @@ export default function EAWorkerTest() {
             await Promise.resolve();
             joinCalledInTask = true;
             return "SUCCESS_RESULT";
-          });
+          }).Await();
           expect(joinCalledInTask).assertTrue();
         } catch (err) {
           err = err as Error;
@@ -1516,7 +1515,7 @@ export default function EAWorkerTest() {
             await Promise.resolve();
             joinCalledInTask = true;
             return "SUCCESS_RESULT";
-          });
+          }).Await();
           expect(joinCalledInTask).assertTrue();
         } catch (err) {
           err = err as Error;
@@ -1549,7 +1548,7 @@ export default function EAWorkerTest() {
             const result = await worker.run<Promise<string>>(async (): Promise<string> => {
               await Promise.resolve();
               return `TASK_${i}_SUCCESS`;
-            });
+            }).Await();
             successCount++;
           }
           worker.join();
@@ -1559,7 +1558,7 @@ export default function EAWorkerTest() {
           const finalResult = await worker.run<Promise<string>>(async (): Promise<string> => {
             await Promise.resolve();
             return `FINAL_TASK_SUCCESS`;
-          });
+          }).Await();
           successCount++;
           expect(successCount).assertEqual(RUN_TIMES + 1);
         } catch (err) {
@@ -1591,7 +1590,7 @@ export default function EAWorkerTest() {
         try {
           let worker = new EAWorker();
           worker.start()
-          let worker1 = await worker.run<undefined>(EAWorkerTest);
+          let worker1 = worker.run<undefined>(EAWorkerTest).Await();
           worker.join();
           worker.join();
           expect(worker1).assertEqual(undefined);
@@ -1623,10 +1622,10 @@ export default function EAWorkerTest() {
           worker.start()
           let workerThreadId: number = 0;
           const mainThreadId = StdProcess.tid();
-          let worker1 = await worker.run<undefined>((): undefined => {
+          let worker1 = worker.run<undefined>((): undefined => {
             workerThreadId = StdProcess.tid().toDouble();
             return undefined;
-          });
+          }).Await();
           expect(worker1).assertEqual(undefined);
           expect(workerThreadId != mainThreadId).assertTrue();
           worker.join();
@@ -1659,7 +1658,7 @@ export default function EAWorkerTest() {
         try {
           let worker1ThreadId: number;
           let worker2ThreadId: number;
-          const task = worker.run<number>(async (): Promise<number> => {
+          const task = worker.run<number>((): number => {
             worker1ThreadId = StdProcess.tid().toDouble();
             executedFlag = true;
             const nestedTask = work2.run<number>((): number => {
@@ -1667,10 +1666,10 @@ export default function EAWorkerTest() {
               executedFlag = true;
               return worker2ThreadId;
             });
-            await nestedTask;
+            nestedTask.Await();
             return worker1ThreadId;
           });
-          await task;
+          task.Await();
           expect(worker1ThreadId != worker2ThreadId).assertTrue();
         } catch (err) {
           err = err as Error;
@@ -1807,9 +1806,9 @@ export default function EAWorkerTest() {
         const worker = new EAWorker();
         worker.start()
         try {
-          const result = await worker.run<String>((): String => {
+          const result = worker.run<String>((): String => {
             return String(0)
-          });
+          }).Await();
           expect(result).assertEqual('0');
         } catch (err) {
           err = err as Error;
@@ -1838,9 +1837,9 @@ export default function EAWorkerTest() {
         worker.start()
         let inputPerson = new Person(23);
         try {
-          const result = await worker.run<Promise<void>>((input: Person): void => {
+          const result = worker.run<Promise<void>>((input: Person): void => {
             throw new Error('Custom worker error')
-          }, inputPerson);
+          }, inputPerson).Await();
           worker.join()
         } catch (err) {
           err = err as Error;
@@ -1869,9 +1868,9 @@ export default function EAWorkerTest() {
         worker.start()
         let inputNum: int = 0;
         try {
-          const result = await worker.run<int>((input: int) => {
+          const result = worker.run<int>((input: int) => {
             return input + 2;
-          }, inputNum);
+          }, inputNum).Await();
           expect(result).assertEqual(2);
           worker.join()
         } catch (err) {
@@ -1947,24 +1946,25 @@ export default function EAWorkerTest() {
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
         worker.start()
-        const inputFunction = (): Promise<int> => {
-          return new Promise<int>((resolve) => {
+        const inputFunction = async (): Promise<number> => {
+          return new Promise<number>((resolve) => {
             resolve(5);
           });
         };
 
         try {
-          const workerPromise = new Promise<() => Promise<int>>((resolve, reject) => {
-            worker.run<void>(async (input: () => Promise<int>) => {
-              await input().then((value: int): void => {
-                Promise.resolve(10).then((additionalValue: int): void => {
-                  resolve((): Promise<int> => Promise.resolve(value + additionalValue));
-                }).catch((err: Error): void => {
+          const workerPromise = new Promise<() => Promise<number>>((resolve, reject) => {
+            worker.run<void>((input: () => Promise<number>) => {
+              waitForCompletion(async () => {
+                try {
+                  const value = await input();
+                  const additionalValue = await Promise.resolve(10);
+                  resolve((): Promise<number> => Promise.resolve(value + additionalValue))
+                } catch (err) {
+                  err = err as Error;
                   reject(err);
-                });
-              }).catch((err: Error): void => {
-                reject(err);
-              });
+                }
+              })
             }, inputFunction);
           });
           const resultFunc = await workerPromise;
@@ -2044,10 +2044,10 @@ export default function EAWorkerTest() {
             const startTime = Date.now();
             const worker = new EAWorker();
             worker.start()
-            await worker.run<boolean>((): boolean => {
+            worker.run<boolean>((): boolean => {
               const result = Math.sqrt(16);
               return result > 0;
-            });
+            }).Await();
             worker.join();
             const endTime = Date.now();
             timeTotal += (endTime - startTime);

@@ -67,6 +67,14 @@
             "resource": "$profile:form_config"
           }
         ]
+      },
+      {
+        "name": "FormEditExtAbility",
+        "srcEntry": "./ets/testformeditability/FormEditExtAbility.ets",
+        "type": "formEdit",
+        "exported": true,
+        "label": "$string:TestAbility_label",
+        "description": "$string:TestAbility_desc"
       }
     ]
   }

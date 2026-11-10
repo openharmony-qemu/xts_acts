@@ -24,7 +24,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import type { BusinessError } from '@ohos.base';
 import {
   testArrayConcat1,

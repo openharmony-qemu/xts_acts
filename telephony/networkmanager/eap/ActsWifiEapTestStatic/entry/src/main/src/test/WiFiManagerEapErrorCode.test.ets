@@ -122,28 +122,8 @@ export default function wifiEapErrorTest(): void {
         } catch (error) {
           hilog.info(domain, tag,
             `SUB_Communication_Netmanager_Eap_ErrorCode_0100 regCustomEapHandler failed,code is ${error.code}, message is ${error.message}`);
-          if (error.code === 201) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0100 eap register permission denied`);
-            expect(true).assertTrue();
-          } else if (error.code === 33200006) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0100 eap register invalid NetType`);
-            expect(true).assertTrue();
-          } else if (error.code === 33200007) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0100 eap register invalid EapCode`);
-            expect().assertFail();
-          } else if (error.code === 33200008) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0100 eap register invalid EapType`);
-            expect().assertFail();
-          } else if (error.code === 33200009) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0100 eap register netmanager stop`);
-            expect(true).assertTrue();
-          } else if (error.code === 33200099) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0100 eap register internal error`);
-            expect(true).assertTrue();
-          } else {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0100 eap register undefined errorcode`);
-            expect().assertFail();
-          }
+          expect(error.code === 33200006 || error.code === 201 || error.code === 33200009 ||
+            error.code === 33200099).assertTrue();
           done();
         }
       })
@@ -209,28 +189,8 @@ export default function wifiEapErrorTest(): void {
         } catch (error) {
           hilog.info(domain, tag,
             `SUB_Communication_Netmanager_Eap_ErrorCode_0200 regCustomEapHandler failed,code is ${error.code}, message is ${error.message}`);
-          if (error.code === 201) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0200 eap register permission denied`);
-            expect(true).assertTrue();
-          } else if (error.code === 33200006) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0200 eap register invalid NetType`);
-            expect().assertFail();
-          } else if (error.code === 33200007) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0200 eap register invalid EapCode`);
-            expect(true).assertTrue();
-          } else if (error.code === 33200008) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0200 eap register invalid EapType`);
-            expect().assertFail();
-          } else if (error.code === 33200009) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0200 eap register netmanager stop`);
-            expect(true).assertTrue();
-          } else if (error.code === 33200099) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0200 eap register internal error`);
-            expect(true).assertTrue();
-          } else {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0200 eap register undefined errorcode`);
-            expect().assertFail();
-          }
+          expect(error.code === 33200007 || error.code === 201 || error.code === 33200009 ||
+            error.code === 33200099).assertTrue();
         } finally {
           done();
         }
@@ -297,28 +257,8 @@ export default function wifiEapErrorTest(): void {
         } catch (error) {
           hilog.info(domain, tag,
             `SUB_Communication_Netmanager_Eap_ErrorCode_0300 regCustomEapHandler failed,code is ${error.code}, message is ${error.message}`);
-          if (error.code === 201) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0300 eap register permission denied`);
-            expect(true).assertTrue();
-          } else if (error.code === 33200006) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0300 eap register invalid NetType`);
-            expect().assertFail();
-          } else if (error.code === 33200007) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0300 eap register invalid EapCode`);
-            expect().assertFail();
-          } else if (error.code === 33200008) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0300 eap register invalid EapType`);
-            expect(true).assertTrue();
-          } else if (error.code === 33200009) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0300 eap register netmanager stop`);
-            expect(true).assertTrue();
-          } else if (error.code === 33200099) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0300 eap register internal error`);
-            expect(true).assertTrue();
-          } else {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0300 eap register undefined errorcode`);
-            expect().assertFail();
-          }
+          expect(error.code === 33200008 || error.code === 201 || error.code === 33200009 ||
+            error.code === 33200099).assertTrue();
         } finally {
           done();
         }
@@ -359,29 +299,8 @@ export default function wifiEapErrorTest(): void {
         } catch (error) {
           hilog.info(domain, tag,
             `SUB_Communication_Netmanager_Eap_ErrorCode_0400 unregCustomEapHandler failed,code is ${error.code}, message is ${error.message}`);
-          if (error.code === 201) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0400 eap unregister permission denied`);
-            expect(true).assertTrue();
-          } else if (error.code === 33200006) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0400 eap unregister invalid NetType`);
-            expect(true).assertTrue();
-          } else if (error.code === 33200007) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0400 eap unregister invalid EapCode`);
-            expect().assertFail();
-          } else if (error.code === 33200008) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0400 eap unregister invalid EapType`);
-            expect().assertFail();
-          } else if (error.code === 33200009) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0400 eap unregister netmanager stop`);
-            expect(true).assertTrue();
-          } else if (error.code === 33200099) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0400 eap unregister internal error`);
-            expect(true).assertTrue();
-          } else {
-            hilog.info(domain, tag,
-              `SUB_Communication_Netmanager_Eap_ErrorCode_0400 eap unregister undefined errorcode`);
-            expect().assertFail();
-          }
+          expect(error.code === 33200006 || error.code === 201 || error.code === 33200009 ||
+            error.code === 33200099).assertTrue();
         } finally {
           done();
         }
@@ -421,29 +340,8 @@ export default function wifiEapErrorTest(): void {
         } catch (error) {
           hilog.info(domain, tag,
             `SUB_Communication_Netmanager_Eap_ErrorCode_0500 unregCustomEapHandler failed,code is ${error.code}, message is ${error.message}`);
-          if (error.code === 201) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0500 eap unregister permission denied`);
-            expect(true).assertTrue();
-          } else if (error.code === 33200006) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0500 eap unregister invalid NetType`);
-            expect().assertFail();
-          } else if (error.code === 33200007) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0500 eap unregister invalid EapCode`);
-            expect(true).assertTrue();
-          } else if (error.code === 33200008) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0500 eap unregister invalid EapType`);
-            expect().assertFail();
-          } else if (error.code === 33200009) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0500 eap unregister netmanager stop`);
-            expect(true).assertTrue();
-          } else if (error.code === 33200099) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0500 eap unregister internal error`);
-            expect(true).assertTrue();
-          } else {
-            hilog.info(domain, tag,
-              `SUB_Communication_Netmanager_Eap_ErrorCode_0500 eap unregister undefined errorcode`);
-            expect().assertFail();
-          }
+          expect(error.code === 33200007 || error.code === 201 || error.code === 33200009 ||
+            error.code === 33200099).assertTrue();
         } finally {
           done();
         }
@@ -484,29 +382,8 @@ export default function wifiEapErrorTest(): void {
         } catch (error) {
           hilog.info(domain, tag,
             `SUB_Communication_Netmanager_Eap_ErrorCode_0600 unregCustomEapHandler failed,code is ${error.code}, message is ${error.message}`);
-          if (error.code === 201) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0600 eap unregister permission denied`);
-            expect(true).assertTrue();
-          } else if (error.code === 33200006) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0600 eap unregister invalid NetType`);
-            expect().assertFail();
-          } else if (error.code === 33200007) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0600 eap unregister invalid EapCode`);
-            expect().assertFail();
-          } else if (error.code === 33200008) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0600 eap unregister invalid EapType`);
-            expect(true).assertTrue();
-          } else if (error.code === 33200009) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0600 eap unregister netmanager stop`);
-            expect(true).assertTrue();
-          } else if (error.code === 33200099) {
-            hilog.info(domain, tag, `SUB_Communication_Netmanager_Eap_ErrorCode_0600 eap unregister internal error`);
-            expect(true).assertTrue();
-          } else {
-            hilog.info(domain, tag,
-              `SUB_Communication_Netmanager_Eap_ErrorCode_0600 eap unregister undefined errorcode`);
-            expect().assertFail();
-          }
+          expect(error.code === 33200008 || error.code === 201 || error.code === 33200009 ||
+            error.code === 33200099).assertTrue();
         } finally {
           done();
         }

@@ -1,6 +1,7 @@
 {
   "src": [
     "testability/pages/Index",
-    "testformability/pages/Index"
+    "testformability/pages/Index",
+    "testformeditability/pages/Index"
   ]
 }

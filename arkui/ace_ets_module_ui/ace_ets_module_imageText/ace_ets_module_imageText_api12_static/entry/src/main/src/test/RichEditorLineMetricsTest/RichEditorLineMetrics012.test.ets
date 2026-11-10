@@ -35,6 +35,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function RichEditorLineMetrics012() {
   describe('RichEditorLineMetrics012', () => {
     beforeAll(async (): Promise<void> => {
@@ -58,9 +59,10 @@ export default function RichEditorLineMetrics012() {
           console.info("push RichEditorLineMetrics012 success");
         }
       } catch (err) {
-        console.error("push RichEditorLineMetrics012 page error: " + err);
+        console.log("push RichEditorLineMetrics012 page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
@@ -76,11 +78,23 @@ it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0017', Level.LEVEL0,
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorLineMetrics012')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.longClick(pointCenter.x, pointCenter.y);
+      try {
+        await driver.longClickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.longClick error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let getFirst = await (driver.findComponent(ON.id('getFirst')) as Promise<Component>);
       await getFirst.click();
@@ -94,9 +108,17 @@ it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0017', Level.LEVEL0,
       await CommonFunc.sleep(500);
       expect(lineMetrics2Text).assertEqual('lineMetrics(1):undefined');
       let pointCenter1 = await rich.getBoundsCenter();
-      await driver.longClick(pointCenter1.x, pointCenter1.y);
+      try {
+        await driver.longClickAt({ x: pointCenter1.x, y: pointCenter1.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.longClick error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await getFirst.click();
       await CommonFunc.sleep(500);

@@ -46,15 +46,14 @@ struct Align {
           })
       }
       Column() {
-        List() {
+        Column() {
           Text(`pixelRound-动态切换(undefined/NO_FORCE_ROUND) 宽度:${this.curWidth.toFixed(1)}px`)
             .fontSize(20)
-            .margin(15)
-            .width('90%')
+            .width('80%')
           Row() {
             Row()
-              .width('100%')
-              .height('100%')
+              .width('80%')
+              .height('80%')
               .backgroundColor('rgb(255, 255, 0)')
               .attributeModifier(this.modifier)
           }
@@ -65,9 +64,9 @@ struct Align {
           .attributeModifier(this.modifier)
         }
       }
-      .width('100%')
-      .padding(10)
-      .margin(25)
+      .width('80%')
+
     }
+    .alignItems(HorizontalAlign.Center)
   }
 }

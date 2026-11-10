@@ -49,39 +49,45 @@ export default function CommonDisplayPriorityUndefinedTest() {
     });
 
     /**
-     * @tc.number   CommonDisplayPriorityUndefinedTest_static_0001
-     * @tc.name     CommonDisplayPriorityUndefinedTest_static_0001
+     * @tc.number   SUB_ARKUI_API_CommonDisplayPriorityUndefinedTest_static_0001
+     * @tc.name     SUB_ARKUI_API_CommonDisplayPriorityUndefinedTest_static_0001
      * @tc.desc     test displayPriority
      * @tc.level    Level.LEVEL1
      */
-    it('CommonDisplayPriorityUndefinedTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[CommonDisplayPriorityUndefinedTest_static_0001] START');
-      let driver: Driver = Driver.create();
+    it('SUB_ARKUI_API_CommonDisplayPriorityUndefinedTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('[SUB_ARKUI_API_CommonDisplayPriorityUndefinedTest_static_0001] START');
+        let driver: Driver = Driver.create();
 
-      let strJson = inspector.getInspectorByKey('LayoutConstraints_1');
-      console.info('[CommonDisplayPriorityUndefinedTest_static_0001] displayPriority: ' +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('displayPriority'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('displayPriority'))
-        .assertEqual(1);
+        let strJson = inspector.getInspectorByKey('LayoutConstraints_1');
+        console.info('[SUB_ARKUI_API_CommonDisplayPriorityUndefinedTest_static_0001] displayPriority: ' +
+        JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('displayPriority'));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('displayPriority'))
+          .assertEqual(1);
 
-      let changeBtn = await driver.findComponent(ON.id('LayoutConstraints_btn1'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        let changeBtn = await driver.findComponent(ON.id('LayoutConstraints_btn1'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('LayoutConstraints_1');
-      console.info('[CommonDisplayPriorityUndefinedTest_static_0001] displayPriority: ' +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('displayPriority'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('displayPriority'))
-        .assertEqual(2);
+        strJson = inspector.getInspectorByKey('LayoutConstraints_1');
+        console.info('[SUB_ARKUI_API_CommonDisplayPriorityUndefinedTest_static_0001] displayPriority: ' +
+        JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('displayPriority'));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('displayPriority'))
+          .assertEqual(2);
 
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      strJson = inspector.getInspectorByKey('LayoutConstraints_1');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('displayPriority'))
-        .assertEqual(1);
-      console.info('[CommonDisplayPriorityUndefinedTest_static_0001] END');
-      done();
+        strJson = inspector.getInspectorByKey('LayoutConstraints_1');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('displayPriority'))
+          .assertEqual(1);
+        console.info('[SUB_ARKUI_API_CommonDisplayPriorityUndefinedTest_static_0001] END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_CommonDisplayPriorityUndefinedTest_static_0001] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

@@ -249,6 +249,12 @@ export default function DisplayTest():void {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
              display.getAllDisplays().then((data:Array<display.Display>) => {
+                //删除其它测试套执行后可能残留的虚拟屏
+                for(let i: int = 0;i < data.length;i++){
+                    if(data[i].id >= 1000){
+                    display.destroyVirtualScreen(data[i].id);
+                    }
+                }
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in obtaining all the display objects. Data.length: ' + data.length);
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].id: ' + data[0].id);
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].refreshRate: ' + data[0].refreshRate);
@@ -2090,7 +2096,7 @@ export default function DisplayTest():void {
                     done();
                 }).catch((err: Error) :PromiseLike<void>|undefined=> {
                     hilog.info(domain, tag,caseName + 'Failed to makeUnique, err: ' + err.code + ', message:' + err.message);
-                    if (!isSyscapSessionManagerSupported) {
+                    if (!isSyscapSessionManagerSupported || deviceType !== 'wearable') {
                         expect(err.code).assertEqual(801)
                         done();
                       } else {

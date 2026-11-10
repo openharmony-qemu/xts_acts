@@ -23,6 +23,8 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 import { inputMethod } from '@kit.IMEKit';
 
+let displayID: Int = 0;
+
 export default function TextAreaOnWillCutTest() {
   describe('TextAreaOnWillCutTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -47,9 +49,10 @@ export default function TextAreaOnWillCutTest() {
           console.info("push TextAreaOnWillCut success");
         }
       } catch (err) {
-        console.error("push TextAreaOnWillCut page error: " + err);
+        console.log("push TextAreaOnWillCut page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     })
 
     afterAll(async (): Promise<void> => {
@@ -73,9 +76,17 @@ export default function TextAreaOnWillCutTest() {
       await CommonFunc.sleep(500);
       await (TextArea?.longClick() as Promise<void>);
       await CommonFunc.sleep(500);
-      await driver.triggerCombineKeys(2072,2017);
+      try {
+        await driver.triggerCombineKeys(2072,2017, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.triggerCombineKeys(2072,2040);
+      try {
+        await driver.triggerCombineKeys(2072,2040, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await inputMethod.getController().stopInputSession();
       await CommonFunc.sleep(500);
@@ -99,9 +110,17 @@ export default function TextAreaOnWillCutTest() {
       await CommonFunc.sleep(500);
       await (TextArea?.longClick() as Promise<void>);
       await CommonFunc.sleep(500);
-      await driver.triggerCombineKeys(2072,2017);
+      try {
+        await driver.triggerCombineKeys(2072,2017, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.triggerCombineKeys(2072,2040);
+      try {
+        await driver.triggerCombineKeys(2072,2040, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await inputMethod.getController().stopInputSession();
       await CommonFunc.sleep(500);

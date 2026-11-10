@@ -74,16 +74,17 @@ export default function NapiCoverAddBatch1StablePart1Test() {
       const caseName = 'testResolveDeferredThenThrowCanBeCaught0026';
       console.info(caseName + ' start');
       let caught: boolean = false;
+      let doneCalled: boolean = false;
       napicoveraddbatch1ndktest.createResolvedPromiseWithDeferred()
         .then(() => {
-          done();
+          if (!doneCalled) { doneCalled = true; done(); }
           throw new Error('resolve deferred throw probe');
         })
         .catch(() => {
           caught = true;
           expect(caught).assertTrue();
           console.info(caseName + ' end');
-          done();
+          if (!doneCalled) { doneCalled = true; done(); }
         });
     });
 
@@ -101,17 +102,18 @@ export default function NapiCoverAddBatch1StablePart1Test() {
         const caseName = 'testResolveDeferredThenThrowWithoutCatchContinues0027';
         console.info(caseName + ' start');
         let callbackEntered: boolean = false;
+        let doneCalled: boolean = false;
         const unhandledPromise: Promise<number> = napicoveraddbatch1ndktest.createResolvedPromiseWithDeferred()
           .then(() => {
             callbackEntered = true;
             expect(callbackEntered).assertTrue();
             console.info(caseName + ' end');
-            done();
+            if (!doneCalled) { doneCalled = true; done(); }
             throw new Error('resolve deferred throw without catch probe');
           })
           .catch(() => {
             console.info(caseName + ' probe throw handled');
-            done();
+            if (!doneCalled) { doneCalled = true; done(); }
           });
         expect(unhandledPromise !== undefined).assertTrue();
       });
@@ -129,16 +131,17 @@ export default function NapiCoverAddBatch1StablePart1Test() {
       const caseName = 'testRejectDeferredCatchThrowCanBeCaught0028';
       console.info(caseName + ' start');
       let caught: boolean = false;
+      let doneCalled: boolean = false;
       napicoveraddbatch1ndktest.createRejectedPromiseWithDeferred()
         .catch(() => {
-          done();
+          if (!doneCalled) { doneCalled = true; done(); }
           throw new Error('reject deferred throw probe');
         })
         .catch(() => {
           caught = true;
           expect(caught).assertTrue();
           console.info(caseName + ' end');
-          done();
+          if (!doneCalled) { doneCalled = true; done(); }
         });
     });
 
@@ -156,17 +159,18 @@ export default function NapiCoverAddBatch1StablePart1Test() {
         const caseName = 'testRejectDeferredCatchThrowWithoutCatchContinues0029';
         console.info(caseName + ' start');
         let callbackEntered: boolean = false;
+        let doneCalled: boolean = false;
         const unhandledPromise: Promise<number> = napicoveraddbatch1ndktest.createRejectedPromiseWithDeferred()
           .catch(() => {
             callbackEntered = true;
             expect(callbackEntered).assertTrue();
             console.info(caseName + ' end');
-            done();
+            if (!doneCalled) { doneCalled = true; done(); }
             throw new Error('reject deferred throw without catch probe');
           })
           .catch(() => {
             console.info(caseName + ' probe throw handled');
-            done();
+            if (!doneCalled) { doneCalled = true; done(); }
           });
         expect(unhandledPromise !== undefined).assertTrue();
       });

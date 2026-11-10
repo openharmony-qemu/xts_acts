@@ -3296,22 +3296,11 @@ export default function actsWifiManagerFunctionsTest() {
         hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
         expect(typeof networkId === 'int').assertTrue();
         expect(networkId >= 0).assertTrue();
-        wifiManager.connectToCandidateConfigWithUserAction(networkId).then(async(result: void) => {
-          hilog.info(domain, tag, `${caseName} connectToCandidateConfigWithUserAction success`);
-          done();
-        }).catch(async(err: Error) => {
-          hilog.error(domain, tag, `${caseName} connectToCandidateConfigWithUserAction fail, result: ` + JSON.stringify(err));
-          if (err.code === 801) {
-            console.info(`${caseName} api is not support`);
-            expect(err.code).assertEqual(801);
-          } else {
-            expect().assertFail();
-          }
-          done();
-        });
+        const connectPromise = wifiManager.connectToCandidateConfigWithUserAction(networkId);
         hilog.info(domain, tag, `${caseName} connectToCandidateConfigWithUserAction success`);
         await Utils.clickText("连接");
-        await Utils.msSleep(3000);
+        await Utils.msSleep(1000);
+        await connectPromise;
         hilog.info(domain, tag, `${caseName} 点击连接 success`);
       } catch (err) {
         hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
@@ -3321,9 +3310,9 @@ export default function actsWifiManagerFunctionsTest() {
         } else {
           expect().assertFail();
         }
-        done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
+      done();
     });
     /**
      * @tc.number SUB_Communication_WifiManager_StartScan_0077
@@ -3550,22 +3539,11 @@ export default function actsWifiManagerFunctionsTest() {
           userActionTimeout: 15,
           addNetworkToSystem: true
         };
-        wifiManager.connectToCandidateConfig(settings).then(async(result: void) => {
-          hilog.info(domain, tag, `${caseName} connectToCandidateConfig success `);
-          done();
-        }).catch(async(err: Error) => {
-          hilog.error(domain, tag, `${caseName} connectToCandidateConfig success, result: ` + JSON.stringify(err));
-          if (err.code === 801) {
-            console.info(`${caseName} api is not support`);
-            expect(err.code).assertEqual(801);
-          } else {
-            expect().assertFail();
-          }
-          done();
-        });
+        const connectPromise = wifiManager.connectToCandidateConfig(settings);
         hilog.info(domain, tag, `${caseName} connectToCandidateConfig success`);
         await Utils.clickText("连接");
-        await Utils.msSleep(3000);
+        await Utils.msSleep(1000);
+        await connectPromise;
         hilog.info(domain, tag, `${caseName} 点击连接 success`);
       } catch (err) {
         hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
@@ -3575,9 +3553,9 @@ export default function actsWifiManagerFunctionsTest() {
         } else {
           expect().assertFail();
         }
-        done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
+      done();
     });
     /**
      * @tc.number SUB_Communication_WifiManager_connectToCandidateConfig_settings_0085
@@ -3659,23 +3637,11 @@ export default function actsWifiManagerFunctionsTest() {
           userActionTimeout: 30,
           addNetworkToSystem: false
         };
-        wifiManager.connectToCandidateConfig(settings).then(async(result: void) => {
-          hilog.info(domain, tag, `${caseName} connectToCandidateConfig success, result: ` + result);
-          expect().assertFail();
-          done();
-        }).catch(async(err: Error) => {
-          hilog.error(domain, tag, `${caseName} connectToCandidateConfig success, result: ` + JSON.stringify(err));
-          if (err.code === 801) {
-            console.info(`${caseName} api is not support`);
-            expect(err.code).assertEqual(801);
-          } else {
-            expect(err.code).assertEqual(2501006);
-          }
-          done();
-        });
+        const connectPromise = wifiManager.connectToCandidateConfig(settings);
         hilog.info(domain, tag, `${caseName} connectToCandidateConfig success`);
         await Utils.clickText("取消");
-        await Utils.msSleep(3000);
+        await Utils.msSleep(1000);
+        await connectPromise;
         hilog.info(domain, tag, `${caseName} 点击取消 success`);
       } catch (err) {
         hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
@@ -3685,9 +3651,9 @@ export default function actsWifiManagerFunctionsTest() {
         } else {
           expect(err.code).assertEqual(2501006);
         }
-        done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
+      done();
     });
     /**
      * @tc.number SUB_Communication_WifiManager_connectToCandidateConfig_settings_0087
@@ -3857,22 +3823,11 @@ export default function actsWifiManagerFunctionsTest() {
         hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
         expect(typeof networkId === 'int').assertTrue();
         expect(networkId >= 0).assertTrue();
-        wifiManager.connectToCandidateConfigWithUserAction(networkId).then(async(result: void) => {
-          hilog.info(domain, tag, `${caseName} connectToCandidateConfigWithUserAction success`);
-          done();
-        }).catch(async(err: Error) => {
-          hilog.error(domain, tag, `${caseName} connectToCandidateConfigWithUserAction fail, result: ` + JSON.stringify(err.code) + JSON.stringify(err.message));
-          if (err.code === 801) {
-            console.info(`${caseName} api is not support`);
-            expect(err.code).assertEqual(801);
-          } else {
-            expect(err.code).assertEqual(2501006);
-          }
-          done();
-        });
+        const connectPromise = wifiManager.connectToCandidateConfigWithUserAction(networkId);
         hilog.info(domain, tag, `${caseName} connectToCandidateConfigWithUserAction success`);
         await Utils.clickText("取消");
-        await Utils.msSleep(3000);
+        await Utils.msSleep(1000);
+        await connectPromise;
         hilog.info(domain, tag, `${caseName} 点击取消 success`);
       } catch (err) {
         hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);

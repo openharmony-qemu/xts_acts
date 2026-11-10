@@ -20,7 +20,7 @@ import { commonEventManager } from '@kit.BasicServicesKit';
 import subtype from '@ohos.InputMethodSubtype';
 import inputMethod from '@ohos.inputMethod';
 import display from '@ohos.display';
-import { Driver, ON, MatchPattern, Component, Rect } from '@ohos.UiTest';
+import { Driver, ON, MatchPattern, Component, Rect, Point } from '@ohos.UiTest';
 import { BusinessError } from '@ohos.base';
 import util from '@ohos.util';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -35,13 +35,15 @@ export default function inputMethodEngineStatic() {
         let driver = Driver.create();
         let textArea: Component|null;
         let rectInfo: Rect;
+        let id: int = 0;
         let runCmd = async (data:Rect) => {
             let a = data.left + 20 + Math.floor(Math.random() * (data.right - data.left) * 0.7);
             let b = data.top + 20 + Math.floor(Math.random() * (data.bottom - data.top) * 0.7);
             let cursor_x: int = a.toInt();
             let cursor_y: int = b.toInt();
-            console.info(`====>start click x: ${cursor_x}  y: ${cursor_y}`);
-            driver.click(cursor_x, cursor_y);
+            let point: Point = {x: cursor_x, y: cursor_y, displayId: id};
+            console.info(`====>start click x: ${cursor_x}  y: ${cursor_y} displayId: ${id}`);
+            driver.clickAt(point);
         };
 
         let newArrayBuffer = (str:string|undefined): ArrayBuffer => {
@@ -132,14 +134,23 @@ export default function inputMethodEngineStatic() {
               }
               abilityDelegator.executeShellCommand(cmd);
               await Utils.msSleep(1000);
-              await abilityDelegator.executeShellCommand('ime -e com.acts.inputmethodEngine.test.static -f');
-              await abilityDelegator.executeShellCommand('ime -s com.acts.inputmethodEngine.test.static');
+              let enableCmd = 'ime -e com.acts.inputmethodEngine.test.static -f';
+              let setCmd = 'ime -s com.acts.inputmethodEngine.test.static';
+              if(user !== undefined){
+                  enableCmd = `ime -u ${user} -e com.acts.inputmethodEngine.test.static -f`;
+                  setCmd = `ime -u ${user} -s com.acts.inputmethodEngine.test.static`;
+              }
+              console.info(`====>beforeAll enableCmd:${enableCmd} ,setCmd:${setCmd}`);
+              await abilityDelegator.executeShellCommand(enableCmd);
+              await abilityDelegator.executeShellCommand(setCmd);
               console.info('====>beforeAll inputMethod_enable success');
               await Utils.msSleep(500);
               textArea = await driver.findComponent(ON.type('TextArea'));
               console.info('====>beforeAll inputMethodSwitch window textArea:' + JSON.stringify(textArea));
               rectInfo = await textArea!.getBounds();
               console.info('====>beforeAll inputMethodSwitch textArea rectInfo:' + JSON.stringify(rectInfo));
+              id = await textArea!.getDisplayId();
+              console.info(`====>beforeAll DisplayId:${id}`);
               await Utils.msSleep(500);
               await runCmd(rectInfo);
               await Utils.msSleep(500);
@@ -908,14 +919,22 @@ export default function inputMethodEngineStatic() {
         it('Sub_InputMethod_IME_InputMethodState_static_0901', Level.LEVEL3, async (done: () => void) => {
             try {
                 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-                await abilityDelegator.executeShellCommand('ime -e com.acts.inputmethodEngine.test.static -b');
+                let enableBasicCmd = 'ime -e com.acts.inputmethodEngine.test.static -b';
+                let enableForceCmd = 'ime -e com.acts.inputmethodEngine.test.static -f';
+                let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+                if(user !== undefined){
+                    enableBasicCmd = `ime -u ${user} -e com.acts.inputmethodEngine.test.static -b`;
+                    enableForceCmd = `ime -u ${user} -e com.acts.inputmethodEngine.test.static -f`;
+                }
+                console.info(`====>beforeAll enableForceCmd:${enableForceCmd} ,enableBasicCmd:${enableBasicCmd}`);
+                await abilityDelegator.executeShellCommand(enableBasicCmd);
                 console.info('====>Sub_InputMethod_IME_InputMethodState_static_0901 executeShellCommand ime -b success');
                 let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting();
                 console.info('====>Sub_InputMethod_IME_InputMethodState_static_0901 getSetting success');
                 let state =  await inputMethodSetting.getInputMethodState();
                 console.info(`====>Sub_InputMethod_IME_InputMethodState_static_0901 state is: ${state}`);
                 await Utils.msSleep(1000);
-                await abilityDelegator.executeShellCommand('ime -e com.acts.inputmethodEngine.test.static -f');
+                await abilityDelegator.executeShellCommand(enableForceCmd);
                 console.info('====>Sub_InputMethod_IME_InputMethodState_static_0901 executeShellCommand ime -f success');
                 await Utils.msSleep(1000);
                 expect(state).assertEqual(inputMethod.EnabledState.BASIC_MODE);
@@ -938,17 +957,27 @@ export default function inputMethodEngineStatic() {
         it('Sub_InputMethod_IME_InputMethodState_static_0902', Level.LEVEL3, async (done: () => void) => {
             try {
                 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-                await abilityDelegator.executeShellCommand('ime -d com.acts.inputmethodEngine.test.static');
+                let enableCmd = 'ime -e com.acts.inputmethodEngine.test.static -f';
+                let disableCmd = 'ime -d com.acts.inputmethodEngine.test.static';
+                let setCmd = 'ime -s com.acts.inputmethodEngine.test.static';
+                let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+                if(user !== undefined){
+                    enableCmd = `ime -u ${user} -e com.acts.inputmethodEngine.test.static -f`;
+                    disableCmd = `ime -u ${user} -d com.acts.inputmethodEngine.test.static`;
+                    setCmd = `ime -u ${user} -s com.acts.inputmethodEngine.test.static`;
+                }
+                console.info(`====>beforeAll enableCmd:${enableCmd} ,disableCmd:${disableCmd},setCmd:${setCmd}`);
+                await abilityDelegator.executeShellCommand(disableCmd);
                 console.info('====>Sub_InputMethod_IME_InputMethodState_static_0902 executeShellCommand ime -d success');
                 await Utils.msSleep(1000);
                 let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting();
                 console.info('====>Sub_InputMethod_IME_InputMethodState_static_0902 getSetting success');
                 let state =  await inputMethodSetting.getInputMethodState();
                 console.info(`====>Sub_InputMethod_IME_InputMethodState_static_0902 state is: ${state}`);
-                await abilityDelegator.executeShellCommand('ime -e com.acts.inputmethodEngine.test.static -f');
+                await abilityDelegator.executeShellCommand(enableCmd);
                 console.info('====>Sub_InputMethod_IME_InputMethodState_static_0902 executeShellCommand ime -f success');
                 await Utils.msSleep(1000);
-                await abilityDelegator.executeShellCommand('ime -s com.acts.inputmethodEngine.test.static');
+                await abilityDelegator.executeShellCommand(setCmd);
                 console.info('====>Sub_InputMethod_IME_InputMethodState_static_0902 executeShellCommand ime -s success');
                 await Utils.msSleep(1000);
                 expect(state).assertEqual(inputMethod.EnabledState.DISABLED);

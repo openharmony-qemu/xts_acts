@@ -17,6 +17,24 @@ import ArkTSUtilsAtomicsEntryTest from './ArkTSUtilsAtomicsEntryTest.test';
 import ArkTSUtilsAtomicsParameterTest from './ArkTSUtilsAtomicsParameterTest.test';
 import ArkTSUtilsAtomicsWaitNotifyParameterTest from './ArkTSUtilsAtomicsWaitNotifyParameterTest.test';
 import ArkTSUtilsTypedArrayAtomicsTest from './ArkTSUtilsTypedArrayAtomicsTest.test';
+import ArkTSUtilsAtomicsAddTest from './ArkTSUtilsAtomics/ArkTSUtilsAtomicsAddTest.test';
+import ArkTSUtilsAtomicsAndTest from './ArkTSUtilsAtomics/ArkTSUtilsAtomicsAndTest.test';
+import ArkTSUtilsAtomicsApiSecondTest from './ArkTSUtilsAtomics/ArkTSUtilsAtomicsApiSecondTest.test';
+import ArkTSUtilsAtomicsApiTest from './ArkTSUtilsAtomics/ArkTSUtilsAtomicsApiTest.test';
+import ArkTSUtilsAtomicsApiThirdlyTest from './ArkTSUtilsAtomics/ArkTSUtilsAtomicsApiThirdlyTest.test';
+import ArkTSUtilsAtomicsCombTest from './ArkTSUtilsAtomics/ArkTSUtilsAtomicsCombTest.test';
+import ArkTSUtilsAtomicsCompareExchangeTest from './ArkTSUtilsAtomics/ArkTSUtilsAtomicsCompareExchangeTest.test';
+import ArkTSUtilsAtomicsExchangeTest from './ArkTSUtilsAtomics/ArkTSUtilsAtomicsExchangeTest.test';
+import ArkTSUtilsAtomicsFunctionTest from './ArkTSUtilsAtomics/ArkTSUtilsAtomicsFunctionTest.test';
+import ArkTSUtilsAtomicsIsLockFreeTest from './ArkTSUtilsAtomics/ArkTSUtilsAtomicsIsLockFreeTest.test';
+import ArkTSUtilsAtomicsLoadTest from './ArkTSUtilsAtomics/ArkTSUtilsAtomicsLoadTest.test';
+import ArkTSUtilsAtomicsMultithreadTest from './ArkTSUtilsAtomics/ArkTSUtilsAtomicsMultithreadTest.test';
+import ArkTSUtilsAtomicsOrTest from './ArkTSUtilsAtomics/ArkTSUtilsAtomicsOrTest.test';
+import ArkTSUtilsAtomicsStoreTest from './ArkTSUtilsAtomics/ArkTSUtilsAtomicsStoreTest.test';
+import ArkTSUtilsAtomicsSubTest from './ArkTSUtilsAtomics/ArkTSUtilsAtomicsSubTest.test';
+import ArkTSUtilsAtomicsWaitTest from './ArkTSUtilsAtomics/ArkTSUtilsAtomicsWaitTest.test';
+import ArkTSUtilsAtomicsXorTest from './ArkTSUtilsAtomics/ArkTSUtilsAtomicsXorTest.test';
+import ArkTSUtilsAtomicsSupplementTest from './ArkTSUtilsAtomics/ArkTSUtilsAtomicsSupplementTest.test';
 
 export default function testsuite(): void {
     ArkTSUtilsAtomicsConcurrentTest();
@@ -24,4 +42,22 @@ export default function testsuite(): void {
     ArkTSUtilsAtomicsParameterTest();
     ArkTSUtilsAtomicsWaitNotifyParameterTest();
     ArkTSUtilsTypedArrayAtomicsTest();
+    ArkTSUtilsAtomicsAddTest();
+    ArkTSUtilsAtomicsAndTest();
+    ArkTSUtilsAtomicsApiSecondTest();
+    ArkTSUtilsAtomicsApiTest();
+    ArkTSUtilsAtomicsApiThirdlyTest();
+    ArkTSUtilsAtomicsCombTest();
+    ArkTSUtilsAtomicsCompareExchangeTest();
+    ArkTSUtilsAtomicsExchangeTest();
+    ArkTSUtilsAtomicsFunctionTest();
+    ArkTSUtilsAtomicsIsLockFreeTest();
+    ArkTSUtilsAtomicsLoadTest();
+    ArkTSUtilsAtomicsMultithreadTest();
+    ArkTSUtilsAtomicsOrTest();
+    ArkTSUtilsAtomicsStoreTest();
+    ArkTSUtilsAtomicsSubTest();
+    ArkTSUtilsAtomicsWaitTest();
+    ArkTSUtilsAtomicsXorTest();
+    ArkTSUtilsAtomicsSupplementTest();
 }

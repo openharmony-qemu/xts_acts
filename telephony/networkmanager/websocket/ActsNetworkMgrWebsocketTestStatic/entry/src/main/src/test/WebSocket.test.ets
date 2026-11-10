@@ -503,6 +503,279 @@ export default function WebSocketTest() {
             });
 
         /**
+         * @tc.name   testNetworkMgrWebSocketWebSocketRequestOptions_static_0200
+         * @tc.number SUB_NetworkMgr_WebSocket_WebSocketRequestOptions_0200
+         * @tc.desc   Establish a WebSocket connection with minSupportTlsProtocol TLS_V_1_2 by callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrWebSocketWebSocketRequestOptions_static_0200',
+            TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+            async (done: () => void): Promise<void> => {
+                let caseName: string = 'testNetworkMgrWebSocketWebSocketRequestOptions_static_0200';
+                hilog.info(domain, tag, '%{public}s', caseName + ' start');
+                try {
+                    let ws: webSocket.WebSocket = webSocket.createWebSocket();
+                    let options: webSocket.WebSocketRequestOptions = {
+                        header: {
+                            'Content-Type': 'application/json'
+                        }
+                    };
+                    options.minSupportTlsProtocol = webSocket.TlsProtocol.TLS_V_1_2;
+                    ws.connect(availableWebSocketAddress, options,
+                        (err: BusinessError<void> | null, value: boolean | undefined) => {
+                            if (err && err.code != 0) {
+                                hilog.info(domain, tag, '%{public}s', caseName + ' connect fail error is ' + JSON.stringify(err));
+                                ExpectFail();
+                                ws.close();
+                                done();
+                                hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                            } else {
+                                hilog.info(domain, tag, '%{public}s', caseName + ' options minSupportTlsProtocol is ' + options.minSupportTlsProtocol);
+                                ExpectTrue(options.minSupportTlsProtocol !== undefined);
+                                ExpectTrue(options.minSupportTlsProtocol == webSocket.TlsProtocol.TLS_V_1_2);
+                                hilog.info(domain, tag, '%{public}s', caseName + ' connect success and value is ' + value);
+                                ExpectTrue(value!);
+                                done();
+                                hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                            }
+                        });
+                } catch (err) {
+                    hilog.info(domain, tag, '%{public}s', caseName + ' catch error is ' + JSON.stringify(err));
+                    ExpectTrue(false);
+                    done();
+                    hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                }
+            });
+
+        /**
+         * @tc.name   testNetworkMgrWebSocketWebSocketRequestOptions_static_0300
+         * @tc.number SUB_NetworkMgr_WebSocket_WebSocketRequestOptions_0300
+         * @tc.desc   Establish a WebSocket connection with minSupportTlsProtocol TLS_V_1_2 by promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrWebSocketWebSocketRequestOptions_static_0300',
+            TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+            async (done: () => void): Promise<void> => {
+                let caseName: string = 'testNetworkMgrWebSocketWebSocketRequestOptions_static_0300';
+                hilog.info(domain, tag, '%{public}s', caseName + ' start');
+                try {
+                    let ws: webSocket.WebSocket = webSocket.createWebSocket();
+                    let options: webSocket.WebSocketRequestOptions = {
+                        header: {
+                            'Content-Type': 'application/json'
+                        }
+                    };
+                    options.minSupportTlsProtocol = webSocket.TlsProtocol.TLS_V_1_2;
+                    ws.connect(availableWebSocketAddress, options).then(async (value: boolean) => {
+                        hilog.info(domain, tag, '%{public}s', caseName + ' options minSupportTlsProtocol is ' + options.minSupportTlsProtocol);
+                        ExpectTrue(options.minSupportTlsProtocol !== undefined);
+                        ExpectTrue(options.minSupportTlsProtocol == webSocket.TlsProtocol.TLS_V_1_2);
+                        hilog.info(domain, tag, '%{public}s', caseName + ' connect success and value is ' + value);
+                        ExpectTrue(value);
+                        done();
+                        hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                    }).catch((error: Error) => {
+                        let err = error as BusinessError;
+                        hilog.info(domain, tag, '%{public}s', caseName + ' connect fail error is ' + JSON.stringify(err));
+                        ExpectFail();
+                        done();
+                        hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                    })
+                } catch (err) {
+                    hilog.info(domain, tag, '%{public}s', caseName + ' catch error is ' + JSON.stringify(err));
+                    ExpectTrue(false);
+                    done();
+                    hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                }
+            });
+
+        /**
+         * @tc.name   testNetworkMgrWebSocketWebSocketRequestOptions_static_0400
+         * @tc.number SUB_NetworkMgr_WebSocket_WebSocketRequestOptions_0400
+         * @tc.desc   Establish a WebSocket connection with supportOriginPort true by callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrWebSocketWebSocketRequestOptions_static_0400',
+            TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+            async (done: () => void): Promise<void> => {
+                let caseName: string = 'testNetworkMgrWebSocketWebSocketRequestOptions_static_0400';
+                hilog.info(domain, tag, '%{public}s', caseName + ' start');
+                try {
+                    let ws: webSocket.WebSocket = webSocket.createWebSocket();
+                    let options: webSocket.WebSocketRequestOptions = {
+                        header: {
+                            'Content-Type': 'application/json'
+                        },
+                        supportOriginPort: true
+                    };
+                    ws.connect(availableWebSocketAddress, options,
+                        (err: BusinessError<void> | null, value: boolean | undefined) => {
+                            if (err && err.code != 0) {
+                                hilog.info(domain, tag, '%{public}s', caseName + ' connect fail error is ' + JSON.stringify(err));
+                                ExpectFail();
+                                ws.close();
+                                done();
+                                hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                            } else {
+                                hilog.info(domain, tag, '%{public}s', caseName + ' options supportOriginPort is ' + options.supportOriginPort);
+                                ExpectTrue(options.supportOriginPort !== undefined);
+                                ExpectTrue(options.supportOriginPort == true);
+                                hilog.info(domain, tag, '%{public}s', caseName + ' connect success and value is ' + value);
+                                ExpectTrue(value!);
+                                done();
+                                hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                            }
+                        });
+                } catch (err) {
+                    hilog.info(domain, tag, '%{public}s', caseName + ' catch error is ' + JSON.stringify(err));
+                    ExpectTrue(false);
+                    done();
+                    hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                }
+            });
+
+        /**
+         * @tc.name   testNetworkMgrWebSocketWebSocketRequestOptions_static_0500
+         * @tc.number SUB_NetworkMgr_WebSocket_WebSocketRequestOptions_0500
+         * @tc.desc   Establish a WebSocket connection with supportOriginPort true by promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrWebSocketWebSocketRequestOptions_static_0500',
+            TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+            async (done: () => void): Promise<void> => {
+                let caseName: string = 'testNetworkMgrWebSocketWebSocketRequestOptions_static_0500';
+                hilog.info(domain, tag, '%{public}s', caseName + ' start');
+                try {
+                    let ws: webSocket.WebSocket = webSocket.createWebSocket();
+                    let options: webSocket.WebSocketRequestOptions = {
+                        header: {
+                            'Content-Type': 'application/json'
+                        },
+                        supportOriginPort: true
+                    };
+                    ws.connect(availableWebSocketAddress, options).then(async (value: boolean) => {
+                        hilog.info(domain, tag, '%{public}s', caseName + ' options supportOriginPort is ' + options.supportOriginPort);
+                        ExpectTrue(options.supportOriginPort !== undefined);
+                        ExpectTrue(options.supportOriginPort == true);
+                        hilog.info(domain, tag, '%{public}s', caseName + ' connect success and value is ' + value);
+                        ExpectTrue(value);
+                        done();
+                        hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                    }).catch((error: Error) => {
+                        let err = error as BusinessError;
+                        hilog.info(domain, tag, '%{public}s', caseName + ' connect fail error is ' + JSON.stringify(err));
+                        ExpectFail();
+                        done();
+                        hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                    })
+                } catch (err) {
+                    hilog.info(domain, tag, '%{public}s', caseName + ' catch error is ' + JSON.stringify(err));
+                    ExpectTrue(false);
+                    done();
+                    hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                }
+            });
+
+        /**
+         * @tc.name   testNetworkMgrWebSocketWebSocketRequestOptions_static_0600
+         * @tc.number SUB_NetworkMgr_WebSocket_WebSocketRequestOptions_0600
+         * @tc.desc   Establish a WebSocket connection with supportOriginPort false by callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrWebSocketWebSocketRequestOptions_static_0600',
+            TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+            async (done: () => void): Promise<void> => {
+                let caseName: string = 'testNetworkMgrWebSocketWebSocketRequestOptions_static_0600';
+                hilog.info(domain, tag, '%{public}s', caseName + ' start');
+                try {
+                    let ws: webSocket.WebSocket = webSocket.createWebSocket();
+                    let options: webSocket.WebSocketRequestOptions = {
+                        header: {
+                            'Content-Type': 'application/json'
+                        },
+                        supportOriginPort: false
+                    };
+                    ws.connect(availableWebSocketAddress, options,
+                        (err: BusinessError<void> | null, value: boolean | undefined) => {
+                            if (err && err.code != 0) {
+                                hilog.info(domain, tag, '%{public}s', caseName + ' connect fail error is ' + JSON.stringify(err));
+                                ExpectFail();
+                                ws.close();
+                                done();
+                                hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                            } else {
+                                hilog.info(domain, tag, '%{public}s', caseName + ' options supportOriginPort is ' + options.supportOriginPort);
+                                ExpectTrue(options.supportOriginPort !== undefined);
+                                ExpectTrue(options.supportOriginPort == false);
+                                hilog.info(domain, tag, '%{public}s', caseName + ' connect success and value is ' + value);
+                                ExpectTrue(value!);
+                                done();
+                                hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                            }
+                        });
+                } catch (err) {
+                    hilog.info(domain, tag, '%{public}s', caseName + ' catch error is ' + JSON.stringify(err));
+                    ExpectTrue(false);
+                    done();
+                    hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                }
+            });
+
+        /**
+         * @tc.name   testNetworkMgrWebSocketWebSocketRequestOptions_static_0700
+         * @tc.number SUB_NetworkMgr_WebSocket_WebSocketRequestOptions_0700
+         * @tc.desc   Establish a WebSocket connection with supportOriginPort false by promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrWebSocketWebSocketRequestOptions_static_0700',
+            TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+            async (done: () => void): Promise<void> => {
+                let caseName: string = 'testNetworkMgrWebSocketWebSocketRequestOptions_static_0700';
+                hilog.info(domain, tag, '%{public}s', caseName + ' start');
+                try {
+                    let ws: webSocket.WebSocket = webSocket.createWebSocket();
+                    let options: webSocket.WebSocketRequestOptions = {
+                        header: {
+                            'Content-Type': 'application/json'
+                        },
+                        supportOriginPort: false
+                    };
+                    ws.connect(availableWebSocketAddress, options).then(async (value: boolean) => {
+                        hilog.info(domain, tag, '%{public}s', caseName + ' options supportOriginPort is ' + options.supportOriginPort);
+                        ExpectTrue(options.supportOriginPort !== undefined);
+                        ExpectTrue(options.supportOriginPort == false);
+                        hilog.info(domain, tag, '%{public}s', caseName + ' connect success and value is ' + value);
+                        ExpectTrue(value);
+                        done();
+                        hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                    }).catch((error: Error) => {
+                        let err = error as BusinessError;
+                        hilog.info(domain, tag, '%{public}s', caseName + ' connect fail error is ' + JSON.stringify(err));
+                        ExpectFail();
+                        done();
+                        hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                    })
+                } catch (err) {
+                    hilog.info(domain, tag, '%{public}s', caseName + ' catch error is ' + JSON.stringify(err));
+                    ExpectTrue(false);
+                    done();
+                    hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+                }
+            });
+
+        /**
          * @tc.name   testNetworkMgrWebSocketOpenResult_static_0100
          * @tc.number SUB_NetworkMgr_WebSocket_OpenResult_0100
          * @tc.desc   Establish a WebSocket connection based on the URL address and header(correct url,options is {},callback)

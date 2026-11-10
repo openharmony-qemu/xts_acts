@@ -36,7 +36,7 @@ struct MarkAnchor {
   build() {
     Column() {
       Column() {
-        Text('markAnchor-动态切换').fontSize(20).margin(15).width('90%')
+        Text('markAnchor-动态切换').fontSize(20).width('80%')
         Button('Button')
           .fontSize(50)
           .attributeModifier(this.modifier)
@@ -48,5 +48,6 @@ struct MarkAnchor {
           })
       }
     }
+    .alignItems(HorizontalAlign.Center)
   }
 }

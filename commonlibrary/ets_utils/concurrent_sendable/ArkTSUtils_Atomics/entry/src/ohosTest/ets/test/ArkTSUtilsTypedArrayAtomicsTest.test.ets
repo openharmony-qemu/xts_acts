@@ -14,7 +14,9 @@
  */
 
 import { ArkTSUtils, collections, taskpool } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { ATOMIC_INDEX_ERROR, ATOMIC_PARAMETER_ERROR, expectAtomicBusinessError } from './ArkTSUtilsAtomicsErrorAssert';
 
 type AtomicArkTSUtilsArray = collections.Int8Array | collections.Uint8Array |
   collections.Int16Array | collections.Uint16Array | collections.Int32Array |
@@ -68,26 +70,6 @@ function verifyAtomicOperations(array: AtomicArkTSUtilsArray): void {
   expect(ArkTSUtils.Atomics.compareExchange(array, TEST_INDEX, MISMATCH_VALUE, STORED_VALUE))
     .assertEqual(REPLACEMENT_VALUE);
   expect(ArkTSUtils.Atomics.load(array, TEST_INDEX)).assertEqual(REPLACEMENT_VALUE);
-}
-
-function verifyTypeError(operation: () => void): void {
-  let typeErrorThrown: boolean = false;
-  try {
-    operation();
-  } catch (error) {
-    typeErrorThrown = error instanceof TypeError;
-  }
-  expect(typeErrorThrown).assertTrue();
-}
-
-function verifyRangeError(operation: () => void): void {
-  let rangeErrorThrown: boolean = false;
-  try {
-    operation();
-  } catch (error) {
-    rangeErrorThrown = error instanceof RangeError;
-  }
-  expect(rangeErrorThrown).assertTrue();
 }
 
 @Concurrent
@@ -232,7 +214,7 @@ export default function arkTSUtilsTypedArrayAtomicsTest(): void {
     /**
      * @tc.number    SUB_ARKTSUTILS_ATOMICS_TYPED_ARRAY_INVALID_TYPE0008_0800
      * @tc.name      testArkTSUtilsTypedArrayInvalidType0008
-     * @tc.desc      Verify unsupported collections typed arrays throw TypeError.
+     * @tc.desc      Verify unsupported collections typed arrays throw BusinessError with code 401.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 1
@@ -242,27 +224,39 @@ export default function arkTSUtilsTypedArrayAtomicsTest(): void {
         collections.Int32Array;
       const clampedArray: collections.Int32Array = new collections.Uint8ClampedArray(ARRAY_LENGTH) as Object as
         collections.Int32Array;
-      verifyTypeError((): void => {
+      let parameterErrorThrown: boolean = false;
+      try {
         ArkTSUtils.Atomics.add(floatArray, TEST_INDEX, ONE);
-      });
-      verifyTypeError((): void => {
+      } catch (error) {
+        parameterErrorThrown = true;
+        const businessError: BusinessError = error as BusinessError;
+        expect(businessError.code).assertEqual(ATOMIC_PARAMETER_ERROR);
+      }
+      expect(parameterErrorThrown).assertTrue();
+      expectAtomicBusinessError((): void => {
         ArkTSUtils.Atomics.load(clampedArray, TEST_INDEX);
-      });
+      }, ATOMIC_PARAMETER_ERROR);
     });
 
     /**
      * @tc.number    SUB_ARKTSUTILS_ATOMICS_TYPED_ARRAY_INVALID_INDEX0009_0900
      * @tc.name      testArkTSUtilsTypedArrayInvalidIndex0009
-     * @tc.desc      Verify an out-of-range atomic index throws RangeError.
+     * @tc.desc      Verify an out-of-range atomic index throws BusinessError with code 10200001.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 1
      */
     it('testArkTSUtilsTypedArrayInvalidIndex0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const array: collections.Int32Array = new collections.Int32Array(ARRAY_LENGTH);
-      verifyRangeError((): void => {
+      let indexErrorThrown: boolean = false;
+      try {
         ArkTSUtils.Atomics.load(array, ARRAY_LENGTH);
-      });
+      } catch (error) {
+        indexErrorThrown = true;
+        const businessError: BusinessError = error as BusinessError;
+        expect(businessError.code).assertEqual(ATOMIC_INDEX_ERROR);
+      }
+      expect(indexErrorThrown).assertTrue();
     });
 
     /**

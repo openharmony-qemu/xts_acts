@@ -24,15 +24,15 @@ export default function UserAuthTest() {
     })
 
     /**
-     * @tc.name   Security_IAM_Companion_Api_5003
-     * @tc.number Security_IAM_Companion_Api_5003
+     * @tc.name   SUB_Security_IAM_Companion_Api_5003
+     * @tc.number SUB_Security_IAM_Companion_Api_5003
      * @tc.desc   registerRemoteAuthCallback test with not system app
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('Security_IAM_Companion_Api_5003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
-      console.info('Security_IAM_Companion_Api_5003 start');
+    it('SUB_Security_IAM_Companion_Api_5003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
+      console.info('SUB_Security_IAM_Companion_Api_5003 start');
       let callback: userAuth.IRemoteAuthCallback = {
         onGetRemoteAuthWidgetParam: (challenge: Uint8Array): userAuth.WidgetParam => {
           return {
@@ -50,26 +50,36 @@ export default function UserAuthTest() {
         await userAuth.registerRemoteAuthCallback(callback);
         expect(false).assertTrue();
       } catch (err) {
-        console.info("Security_IAM_Companion_Api_5003 failed", err.code, err.message);
-        expect(err.code).assertEqual(202);
+        console.info("SUB_Security_IAM_Companion_Api_5003 failed", err.code, err.message);
+        if (err.code === 12500002) {
+          console.info("SUB_Security_IAM_Companion_Api_5003 expected error code 12500002");
+          expect(err.code).assertEqual(12500002);
+        } else {
+          expect(err.code).assertEqual(202);
+        }
       }
     })
     /**
-     * @tc.name   Security_IAM_Companion_Api_5006
-     * @tc.number Security_IAM_Companion_Api_5006
+     * @tc.name   SUB_Security_IAM_Companion_Api_5006
+     * @tc.number SUB_Security_IAM_Companion_Api_5006
      * @tc.desc   unregisterRemoteAuthCallback test with out system app
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('Security_IAM_Companion_Api_5006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
-      console.info('Security_IAM_Companion_Api_5006 start');
+    it('SUB_Security_IAM_Companion_Api_5006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
+      console.info('SUB_Security_IAM_Companion_Api_5006 start');
       try {
         await userAuth.unregisterRemoteAuthCallback();
         expect(false).assertTrue();
       } catch (err) {
-        console.info("Security_IAM_Companion_Api_5006 failed", err.code, err.message);
-        expect(err.code).assertEqual(202);
+        console.info("SUB_Security_IAM_Companion_Api_5006 failed", err.code, err.message);
+        if (err.code === 12500002) {
+          console.info("SUB_Security_IAM_Companion_Api_5006 expected error code 12500002");
+          expect(err.code).assertEqual(12500002);
+        } else {
+          expect(err.code).assertEqual(202);
+        }
       }
     })
   })

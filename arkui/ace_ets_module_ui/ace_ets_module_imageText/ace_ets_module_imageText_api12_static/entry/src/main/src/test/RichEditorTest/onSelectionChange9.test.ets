@@ -33,6 +33,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function onSelectionChange9() {
   describe('onSelectionChange9', () => {
     beforeAll(async (): Promise<void> => {
@@ -56,9 +57,10 @@ export default function onSelectionChange9() {
           console.info("push onSelectionChange9 page result");
         }
       } catch (err) {
-        console.error("push onSelectionChange9 page error:" + err);
+        console.log("push onSelectionChange9 page error:" + err);
       }
       console.info("onSelectionChange9 beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
@@ -86,7 +88,11 @@ export default function onSelectionChange9() {
       let Obj0 = JSON.parseJsonElement(text0);
       expect(Obj0.getElement('$attrs').getString('content')).assertEqual('1');
 
-      await driver.triggerKey(2049);
+      try {
+        await driver.triggerKey(2049, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let text1 = inspector.getInspectorByKey('onSelectionChange9' + '_text1');
       let Obj1 = JSON.parseJsonElement(text1);

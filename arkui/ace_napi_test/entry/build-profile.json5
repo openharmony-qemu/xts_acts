@@ -29,6 +29,7 @@
         "./src/main/ets/workers/WorkerGC.ets",
         "./src/main/ets/workers/NumberWorker.ets",
         "./src/main/ets/workers/GlobalHandleWorker.ets",
+        "./src/main/ets/workers/SharedModuleWorker.ets",
       ]
     }
   },

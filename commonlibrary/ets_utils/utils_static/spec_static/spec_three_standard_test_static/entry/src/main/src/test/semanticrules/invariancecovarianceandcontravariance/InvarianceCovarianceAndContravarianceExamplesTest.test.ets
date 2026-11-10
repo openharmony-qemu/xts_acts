@@ -15,7 +15,7 @@
  */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
-  from '../../../../../hypium/index';
+  from '@ohos/hypium-static/src/main/indexStatic';
 
 class Base1 {
   methodThree1(p: Base1): Base1 {

@@ -59,123 +59,123 @@ struct ExampleM {
   @State modifier1:BarrierLocalizedModifierTest = new BarrierLocalizedModifierTest()
   build() {
     Column() {
-      Text('barrier:').fontSize(20)
-      RelativeContainer() {
-        Row() {
-        }
-        .justifyContent(FlexAlign.Center)
-        .width(50)
-        .height(50)
-        .backgroundColor('#a3cf62')
-        .id('row1')
+      Row() {
+        RelativeContainer() {
+          Row() {
+          }
+          .justifyContent(FlexAlign.Center)
+          .width(25)
+          .height(25)
+          .backgroundColor('#a3cf62')
+          .id('row1')
 
-        Row() {
-        }
-        .justifyContent(FlexAlign.Center)
-        .width(50)
-        .height(50)
-        .backgroundColor('#00ae9d')
-        .alignRules({
-          middle: { anchor: 'row1', align: HorizontalAlign.End },
-          top: { anchor: 'row1', align: VerticalAlign.Bottom }
-        } as AlignRuleOption)
-        .id('row2')
+          Row() {
+          }
+          .justifyContent(FlexAlign.Center)
+          .width(25)
+          .height(25)
+          .backgroundColor('#00ae9d')
+          .alignRules({
+            middle: { anchor: 'row1', align: HorizontalAlign.End },
+            top: { anchor: 'row1', align: VerticalAlign.Bottom }
+          } as AlignRuleOption)
+          .id('row2')
 
-        Row() {
-        }
-        .justifyContent(FlexAlign.Center)
-        .width(50)
-        .height(50)
-        .backgroundColor('#0a59f7')
-        .alignRules({
-          left: { anchor: 'barrier1', align: HorizontalAlign.End },
-          top: { anchor: 'row1', align: VerticalAlign.Top }
-        } as AlignRuleOption)
-        .id('row3')
+          Row() {
+          }
+          .justifyContent(FlexAlign.Center)
+          .width(25)
+          .height(25)
+          .backgroundColor('#0a59f7')
+          .alignRules({
+            left: { anchor: 'barrier1', align: HorizontalAlign.End },
+            top: { anchor: 'row1', align: VerticalAlign.Top }
+          } as AlignRuleOption)
+          .id('row3')
 
-        Row() {
+          Row() {
+          }
+          .justifyContent(FlexAlign.Center)
+          .width(12)
+          .height(12)
+          .backgroundColor('#da2ce0')
+          .alignRules({
+            left: { anchor: 'row1', align: HorizontalAlign.Start },
+            top: { anchor: 'barrier2', align: VerticalAlign.Bottom }
+          } as AlignRuleOption)
+          .id('row4')
         }
-        .justifyContent(FlexAlign.Center)
-        .width(25)
-        .height(25)
-        .backgroundColor('#da2ce0')
-        .alignRules({
-          left: { anchor: 'row1', align: HorizontalAlign.Start },
-          top: { anchor: 'barrier2', align: VerticalAlign.Bottom }
-        } as AlignRuleOption)
-        .id('row4')
+        .width(75)
+        .height(62)
+        .border({ width: 2, color: '#6699FF' })
+        .attributeModifier(this.modifier0)
+        .id('relativeContainer_barrier')
+
+        RelativeContainer() {
+          Row() {
+          }
+          .justifyContent(FlexAlign.Center)
+          .width(25)
+          .height(25)
+          .backgroundColor('#a3cf62')
+          .id('row11')
+
+          Row() {
+          }
+          .justifyContent(FlexAlign.Center)
+          .width(25)
+          .height(25)
+          .backgroundColor('#00ae9d')
+          .alignRules({
+            middle: { anchor: 'row11', align: HorizontalAlign.End },
+            top: { anchor: 'row11', align: VerticalAlign.Bottom }
+          } as AlignRuleOption)
+          .id('row12')
+
+          Row() {
+          }
+          .justifyContent(FlexAlign.Center)
+          .width(25)
+          .height(25)
+          .backgroundColor('#0a59f7')
+          .alignRules({
+            left: { anchor: 'barrier11', align: HorizontalAlign.End },
+            top: { anchor: 'row11', align: VerticalAlign.Top }
+          } as AlignRuleOption)
+          .id('row13')
+
+          Row() {
+          }
+          .justifyContent(FlexAlign.Center)
+          .width(12)
+          .height(12)
+          .backgroundColor('#da2ce0')
+          .alignRules({
+            left: { anchor: 'row11', align: HorizontalAlign.Start },
+            top: { anchor: 'barrier12', align: VerticalAlign.Bottom }
+          } as AlignRuleOption)
+          .id('row14')
+        }
+        .width(75)
+        .height(62)
+        .border({ width: 2, color: '#6699FF' })
+        .attributeModifier(this.modifier1)
+        .id('relativeContainer_barrier_localized')
       }
-      .width(150)
-      .height(150)
-      .border({ width: 2, color: '#6699FF' })
-      .attributeModifier(this.modifier0)
-      .id('relativeContainer_barrier')
 
-      Divider()
-      Button(this.modifier0.isUndefined ? 'barrier isUndefined = true' : 'isUndefined = false')
-        .onClick(() => {
-          this.modifier0.isUndefined= !this.modifier0.isUndefined
-        }
-        ).id('changeButton1')
-
-      Text('barrier_localized:').fontSize(20)
-      RelativeContainer() {
-        Row() {
-        }
-        .justifyContent(FlexAlign.Center)
-        .width(50)
-        .height(50)
-        .backgroundColor('#a3cf62')
-        .id('row11')
-
-        Row() {
-        }
-        .justifyContent(FlexAlign.Center)
-        .width(50)
-        .height(50)
-        .backgroundColor('#00ae9d')
-        .alignRules({
-          middle: { anchor: 'row11', align: HorizontalAlign.End },
-          top: { anchor: 'row11', align: VerticalAlign.Bottom }
-        } as AlignRuleOption)
-        .id('row12')
-
-        Row() {
-        }
-        .justifyContent(FlexAlign.Center)
-        .width(50)
-        .height(50)
-        .backgroundColor('#0a59f7')
-        .alignRules({
-          left: { anchor: 'barrier11', align: HorizontalAlign.End },
-          top: { anchor: 'row11', align: VerticalAlign.Top }
-        } as AlignRuleOption)
-        .id('row13')
-
-        Row() {
-        }
-        .justifyContent(FlexAlign.Center)
-        .width(25)
-        .height(25)
-        .backgroundColor('#da2ce0')
-        .alignRules({
-          left: { anchor: 'row11', align: HorizontalAlign.Start },
-          top: { anchor: 'barrier12', align: VerticalAlign.Bottom }
-        } as AlignRuleOption)
-        .id('row14')
+      Row() {
+        Button(this.modifier0.isUndefined ? 'b1=T' : 'b1=F')
+          .onClick(() => {
+            this.modifier0.isUndefined= !this.modifier0.isUndefined
+          }
+          ).id('changeButton1')
+        Button(this.modifier1.isUndefined ? 'b2=T' : 'b2=F')
+          .onClick(() => {
+            this.modifier1.isUndefined = !this.modifier1.isUndefined
+          }
+          ).id('changeButton2')
       }
-      .width(150)
-      .height(150)
-      .border({ width: 2, color: '#6699FF' })
-      .attributeModifier(this.modifier1)
-      .id('relativeContainer_barrier_localized')
-
-      Divider()
-      Button(this.modifier1.isUndefined ? 'barrier isUndefined = true' : 'isUndefined = false')
-        .onClick(() => {
-          this.modifier1.isUndefined = !this.modifier1.isUndefined
-        }
-        ).id('changeButton2')
-    }
+    }.width('80%')
+    .alignItems(HorizontalAlign.Center)
   }
 }

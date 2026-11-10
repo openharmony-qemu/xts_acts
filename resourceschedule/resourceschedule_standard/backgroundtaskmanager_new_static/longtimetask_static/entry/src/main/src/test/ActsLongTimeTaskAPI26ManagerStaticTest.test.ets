@@ -1750,5 +1750,1839 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3600 end---');
     })
 
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3700
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3700
+     * @tc.desc   Test startContinuousTask with MODE_DATA_TRANSFER and full progressInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3700 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+              let subModeList: Array<backgroundTaskManager.BackgroundTaskSubmode> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+              let progress: backgroundTaskManager.ProgressInfo = {
+                title: 'DataTransfer',
+                fileName: 'transfer.dat',
+                progressValue: 50,
+                isMute: false,
+              };
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = modeList;
+              continuousTaskRequest.backgroundTaskSubmodes = subModeList;
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              continuousTaskRequest.progressInfo = progress;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3700 startContinuousTask success, res: %{public}s', `${res}`);
+                expect(res).assertLarger(0);
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3700 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3700 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3700 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3700 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3700 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3800
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3800
+     * @tc.desc   Test startContinuousTask with MODE_DATA_TRANSFER and progressValue 0 boundary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3800 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+              let subModeList: Array<backgroundTaskManager.BackgroundTaskSubmode> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+              let progress: backgroundTaskManager.ProgressInfo = {
+                title: 'StartBound',
+                fileName: 'start.dat',
+                progressValue: 0,
+                isMute: false,
+              };
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = modeList;
+              continuousTaskRequest.backgroundTaskSubmodes = subModeList;
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              continuousTaskRequest.progressInfo = progress;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3800 startContinuousTask success, res: %{public}s', `${res}`);
+                expect(res).assertLarger(0);
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3800 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3800 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3800 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3800 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3800 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3900
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3900
+     * @tc.desc   Test startContinuousTask with MODE_DATA_TRANSFER and progressValue 100 isMute false boundary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3900 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+              let subModeList: Array<backgroundTaskManager.BackgroundTaskSubmode> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+              let progress: backgroundTaskManager.ProgressInfo = {
+                title: 'EndRing',
+                fileName: 'endring.pkg',
+                progressValue: 100,
+                isMute: false,
+              };
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = modeList;
+              continuousTaskRequest.backgroundTaskSubmodes = subModeList;
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              continuousTaskRequest.progressInfo = progress;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3900 startContinuousTask success, res: %{public}s', `${res}`);
+                expect(res).assertLarger(0);
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3900 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3900 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3900 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3900 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3900 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4000
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4000
+     * @tc.desc   Test startContinuousTask with MODE_DATA_TRANSFER and progressValue 100 isMute true boundary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4000 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+              let subModeList: Array<backgroundTaskManager.BackgroundTaskSubmode> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+              let progress: backgroundTaskManager.ProgressInfo = {
+                title: 'EndMute',
+                fileName: 'endmute.rar',
+                progressValue: 100,
+                isMute: true,
+              };
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = modeList;
+              continuousTaskRequest.backgroundTaskSubmodes = subModeList;
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              continuousTaskRequest.progressInfo = progress;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4000 startContinuousTask success, res: %{public}s', `${res}`);
+                expect(res).assertLarger(0);
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4000 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4000 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4000 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4000 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4000 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4100
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4100
+     * @tc.desc   Test startContinuousTask with MODE_DATA_TRANSFER and progressInfo without progressValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4100 begin---');
+        await Utils.msSleep(1500);
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+              let subModeList: Array<backgroundTaskManager.BackgroundTaskSubmode> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+              let progress: backgroundTaskManager.ProgressInfo = {
+                title: 'NoProgressValue',
+                fileName: 'noring.dat',
+              };
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = modeList;
+              continuousTaskRequest.backgroundTaskSubmodes = subModeList;
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              continuousTaskRequest.progressInfo = progress;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4100 startContinuousTask success, res: %{public}s', `${res}`);
+                expect(res).assertLarger(0);
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4100 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4100 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4100 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4100 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4100 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4200
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4200
+     * @tc.desc   Test startContinuousTask with MODE_DATA_TRANSFER and progressInfo without isMute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4200 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+              let subModeList: Array<backgroundTaskManager.BackgroundTaskSubmode> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+              let progress: backgroundTaskManager.ProgressInfo = {
+                title: 'NoIsMute',
+                fileName: 'nomute.dat',
+                progressValue: 60,
+              };
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = modeList;
+              continuousTaskRequest.backgroundTaskSubmodes = subModeList;
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              continuousTaskRequest.progressInfo = progress;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4200 startContinuousTask success, res: %{public}s', `${res}`);
+                expect(res).assertLarger(0);
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4200 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4200 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4200 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4200 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4200 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4300
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4300
+     * @tc.desc   Test startContinuousTask with MODE_AUDIO_PLAYBACK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4300 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_AUDIO_PLAYBACK];
+              continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_NORMAL_NOTIFICATION];
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4300 startContinuousTask success, res: %{public}s', `${res}`);
+                expect(res).assertLarger(0);
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4300 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4300 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4300 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4300 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4300 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4400
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4400
+     * @tc.desc   Test startContinuousTask with MODE_AUDIO_RECORDING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4400 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_AUDIO_RECORDING];
+              continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_NORMAL_NOTIFICATION];
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4400 startContinuousTask success, res: %{public}s', `${res}`);
+                expect(res).assertLarger(0);
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4400 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4400 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4400 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4400 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4400 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4500
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4500
+     * @tc.desc   Test startContinuousTask with MODE_LOCATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4500 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_LOCATION];
+              continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_NORMAL_NOTIFICATION];
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4500 startContinuousTask success, res: %{public}s', `${res}`);
+                expect(res).assertLarger(0);
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4500 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4500 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4500 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4500 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4500 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4600
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4600
+     * @tc.desc   Test startContinuousTask with MODE_BLUETOOTH_INTERACTION and SUBMODE_NORMAL_NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4600 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_BLUETOOTH_INTERACTION];
+              continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_NORMAL_NOTIFICATION];
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4600 startContinuousTask success, res: %{public}s', `${res}`);
+                expect(res).assertLarger(0);
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4600 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4600 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4600 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4600 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4600 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4700
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4700
+     * @tc.desc   Test startContinuousTask with MODE_BLUETOOTH_INTERACTION and SUBMODE_CAR_KEY_NORMAL_NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4700 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_BLUETOOTH_INTERACTION];
+              continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_CAR_KEY_NORMAL_NOTIFICATION];
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4700 startContinuousTask success, res: %{public}s', `${res}`);
+                expect(res).assertLarger(0);
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4700 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4700 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4700 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4700 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4700 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4800
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4800
+     * @tc.desc   Test startContinuousTask with MODE_MULTI_DEVICE_CONNECTION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4800 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_MULTI_DEVICE_CONNECTION];
+              continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_NORMAL_NOTIFICATION];
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4800 startContinuousTask success, res: %{public}s', `${res}`);
+                expect(res).assertLarger(0);
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4800 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4800 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4800 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4800 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4800 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4900
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4900
+     * @tc.desc   Test startContinuousTask with MODE_VOIP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4900 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_VOIP];
+              continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_NORMAL_NOTIFICATION];
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4900 startContinuousTask success, res: %{public}s', `${res}`);
+                expect(res).assertLarger(0);
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4900 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4900 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4900 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4900 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_4900 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5000
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5000
+     * @tc.desc   Test startContinuousTask with MODE_AV_PLAYBACK_AND_RECORD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5000 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_AV_PLAYBACK_AND_RECORD];
+              continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_AUDIO_PLAYBACK_NORMAL_NOTIFICATION];
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5000 startContinuousTask success, res: %{public}s', `${res}`);
+                expect(res).assertLarger(0);
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5000 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5000 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5000 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5000 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5000 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5100
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5100
+     * @tc.desc   Test startContinuousTask with MODE_NEARLINK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5100 begin---');
+        await Utils.msSleep(1500);
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_NEARLINK];
+              continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_NORMAL_NOTIFICATION];
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5100 startContinuousTask success, res: %{public}s', `${res}`);
+                expect(res).assertLarger(0);
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5100 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5100 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5100 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5100 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5100 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5200
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5200
+     * @tc.desc   Test startContinuousTask return continuousTaskId and stop with specific id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5200 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+              let subModeList: Array<backgroundTaskManager.BackgroundTaskSubmode> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+              let progress: backgroundTaskManager.ProgressInfo = {
+                title: 'StopWithId',
+                fileName: 'stopid.dat',
+                progressValue: 80,
+                isMute: false,
+              };
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = modeList;
+              continuousTaskRequest.backgroundTaskSubmodes = subModeList;
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              continuousTaskRequest.progressInfo = progress;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5200 startContinuousTask success, res: %{public}s', `${res}`);
+                expect(res).assertLarger(0);
+                backgroundTaskManager.stopBackgroundRunning(ability.context, res).then(() => {
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5200 stopBackgroundRunning with continuousTaskId success');
+                  done();
+                }).catch((error: Error) => {
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5200 stopBackgroundRunning with continuousTaskId error: %{public}s', JSON.stringify(error));
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                  expect(false).assertTrue();
+                  done();
+                });
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5200 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5200 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5200 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5200 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5200 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5300
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5300
+     * @tc.desc   Test startContinuousTask with combinedTaskNotification true to merge notification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5300 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let requestA = new backgroundTaskManager.ContinuousTaskRequest();
+              requestA.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_LOCATION];
+              requestA.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_NORMAL_NOTIFICATION];
+              requestA.wantAgent = want;
+              requestA.combinedTaskNotification = true;
+              backgroundTaskManager.startContinuousTask(ability.context, requestA).then((resA: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5300 taskA success, resA: %{public}s', `${resA}`);
+                expect(resA).assertLarger(0);
+                let requestB = new backgroundTaskManager.ContinuousTaskRequest();
+                requestB.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_LOCATION];
+                requestB.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_NORMAL_NOTIFICATION];
+                requestB.wantAgent = want;
+                requestB.combinedTaskNotification = true;
+                requestB.continuousTaskId = resA;
+                backgroundTaskManager.startContinuousTask(ability.context, requestB).then((resB: int) => {
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5300 taskB success, resB: %{public}s', `${resB}`);
+                  expect(resB).assertLarger(0);
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                  done();
+                }).catch((error: Error) => {
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5300 taskB error: %{public}s', JSON.stringify(error));
+                  backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                  expect(false).assertTrue();
+                  done();
+                });
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5300 taskA error: %{public}s', JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5300 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5300 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5300 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5300 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5400
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5400
+     * @tc.desc   Test startContinuousTask with empty backgroundTaskModes returns error 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5400 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = [];
+              continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+              continuousTaskRequest.wantAgent = want;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5400 startContinuousTask unexpected success');
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                expect(false).assertTrue();
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5400 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(error.code).assertEqual(9800005);
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5400 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5400 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5400 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5400 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5500
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5500
+     * @tc.desc   Test startContinuousTask with empty backgroundTaskSubmodes returns error 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5500 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+              continuousTaskRequest.backgroundTaskSubmodes = [];
+              continuousTaskRequest.wantAgent = want;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5500 startContinuousTask unexpected success');
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                expect(false).assertTrue();
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5500 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(error.code).assertEqual(9800005);
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5500 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5500 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5500 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5500 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5600
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5600
+     * @tc.desc   Test startContinuousTask with mode and submode mismatch returns error 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5600 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+              continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_NORMAL_NOTIFICATION];
+              continuousTaskRequest.wantAgent = want;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5600 startContinuousTask unexpected success');
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                expect(false).assertTrue();
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5600 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(error.code).assertEqual(9800005);
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5600 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5600 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5600 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5600 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5700
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5700
+     * @tc.desc   Test startContinuousTask with combinedTaskNotification true and continuousTaskId -1 returns error 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5700 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+              continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = true;
+              continuousTaskRequest.continuousTaskId = -1;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5700 startContinuousTask unexpected success');
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                expect(false).assertTrue();
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5700 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(error.code).assertEqual(9800005);
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5700 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5700 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5700 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5700 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5800
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5800
+     * @tc.desc   Test startContinuousTask with combinedTaskNotification true and non-existent continuousTaskId returns error 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5800 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+              continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = true;
+              continuousTaskRequest.continuousTaskId = 99999;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5800 startContinuousTask unexpected success');
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                expect(false).assertTrue();
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5800 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(error.code).assertEqual(9800005);
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5800 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5800 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5800 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5800 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5900
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5900
+     * @tc.desc   Test startContinuousTask with progressValue exceeding 100 returns error 9800006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5900 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+              continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              let progress: backgroundTaskManager.ProgressInfo = {
+                title: 'OverProgress',
+                fileName: 'over.pkg',
+                progressValue: 101,
+              };
+              continuousTaskRequest.progressInfo = progress;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5900 startContinuousTask unexpected success');
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                expect(false).assertTrue();
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5900 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(error.code).assertEqual(9800006);
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5900 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5900 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5900 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_5900 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6000
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6000
+     * @tc.desc   Test startContinuousTask with negative progressValue returns error 9800006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6000 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+              continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              let progress: backgroundTaskManager.ProgressInfo = {
+                title: 'NegProgress',
+                fileName: 'neg.dat',
+                progressValue: -1,
+              };
+              continuousTaskRequest.progressInfo = progress;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6000 startContinuousTask unexpected success');
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                expect(false).assertTrue();
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6000 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(error.code).assertEqual(9800006);
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6000 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6000 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6000 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6000 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6100
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6100
+     * @tc.desc   Test startContinuousTask with very large progressValue returns error 9800006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6100 begin---');
+        await Utils.msSleep(1500);
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+              continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              let progress: backgroundTaskManager.ProgressInfo = {
+                title: 'MaxProgress',
+                fileName: 'max.dat',
+                progressValue: 2147483647,
+              };
+              continuousTaskRequest.progressInfo = progress;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6100 startContinuousTask unexpected success');
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                expect(false).assertTrue();
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6100 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(error.code).assertEqual(9800006);
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6100 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6100 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6100 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6100 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6200
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6200
+     * @tc.desc   Test startContinuousTask exceeding 10 task limit with MODE_DATA_TRANSFER returns error 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6200 begin---');
+        try {
+          let want: _WantAgent = await wantAgent.getWantAgent(wantAgentInfo);
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          let ability: UIAbility = await delegator.getCurrentTopAbility();
+          let allStartSuccess: boolean = true;
+          for (let i: int = 0; i < 10; i++) {
+            let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+            continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+            continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+            continuousTaskRequest.wantAgent = want;
+            continuousTaskRequest.combinedTaskNotification = false;
+            let progress: backgroundTaskManager.ProgressInfo = {
+              title: 'Task' + `${i}`,
+              fileName: 'task' + `${i}` + '.dat',
+              progressValue: 10 * (i + 1),
+              isMute: false,
+            };
+            continuousTaskRequest.progressInfo = progress;
+            try {
+              let res: int = await backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest);
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6200 task %{public}s success, res: %{public}s', `${i}`, `${res}`);
+              if (res <= 0) {
+                allStartSuccess = false;
+              }
+            } catch (error) {
+              let e: BusinessError = error as BusinessError;
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6200 task %{public}s error: %{public}s', `${i}`, JSON.stringify(error));
+              allStartSuccess = false;
+              break;
+            }
+          }
+          if (!allStartSuccess) {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6200 setup failed');
+            backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+            expect(false).assertTrue();
+            done();
+          } else {
+            let request11 = new backgroundTaskManager.ContinuousTaskRequest();
+            request11.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+            request11.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+            request11.wantAgent = want;
+            request11.combinedTaskNotification = false;
+            request11.progressInfo = {
+              title: 'Task11',
+              fileName: 'task11.dat',
+              progressValue: 50,
+              isMute: false,
+            };
+            backgroundTaskManager.startContinuousTask(ability.context, request11).then((res: int) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6200 11th task unexpected success, res: %{public}s', `${res}`);
+              backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+              expect(false).assertTrue();
+              done();
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6200 11th task error: %{public}s', JSON.stringify(error));
+              expect(error.code).assertEqual(9800005);
+              backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+              done();
+            });
+          }
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6200 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6200 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6300
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6300
+     * @tc.desc   Test startContinuousTask with invalid backgroundTaskModes value returns error 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6300 begin---');
+        await Utils.msSleep(1500);
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              let invalidMode = 999 as backgroundTaskManager.BackgroundTaskMode;
+              continuousTaskRequest.backgroundTaskModes = [invalidMode];
+              continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+              continuousTaskRequest.wantAgent = want;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6300 startContinuousTask unexpected success');
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                done();
+                expect(false).assertTrue();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6300 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(error.code).assertEqual(9800005);
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6300 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              done();
+              expect(false).assertTrue();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6300 getWantAgent error: %{public}s', JSON.stringify(error));
+            done();
+            expect(false).assertTrue();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6300 error: %{public}s', JSON.stringify(error));
+          done();
+          expect(false).assertTrue();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6300 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6400
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6400
+     * @tc.desc   Test startContinuousTask with invalid backgroundTaskSubmodes value returns error 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6400 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+              let invalidSubmode = 999 as backgroundTaskManager.BackgroundTaskSubmode;
+              continuousTaskRequest.backgroundTaskSubmodes = [invalidSubmode];
+              continuousTaskRequest.wantAgent = want;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6400 startContinuousTask unexpected success');
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                done();
+                expect(false).assertTrue();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6400 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(error.code).assertEqual(9800005);
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6400 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              done();
+              expect(false).assertTrue();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6400 getWantAgent error: %{public}s', JSON.stringify(error));
+            done();
+            expect(false).assertTrue();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6400 error: %{public}s', JSON.stringify(error));
+          done();
+          expect(false).assertTrue();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6400 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6500
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6500
+     * @tc.desc   Test startContinuousTask with ProgressInfo title empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6500 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+              let subModeList: Array<backgroundTaskManager.BackgroundTaskSubmode> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+              let progress: backgroundTaskManager.ProgressInfo = {
+                title: '',
+                fileName: 'emptytitle.dat',
+                progressValue: 50,
+                isMute: false,
+              };
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = modeList;
+              continuousTaskRequest.backgroundTaskSubmodes = subModeList;
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              continuousTaskRequest.progressInfo = progress;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6500 startContinuousTask success, res: %{public}s', `${res}`);
+                expect(res).assertLarger(0);
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6500 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6500 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6500 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6500 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6500 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6600
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6600
+     * @tc.desc   Test startContinuousTask with ProgressInfo fileName empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6600 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let modeList: Array<backgroundTaskManager.BackgroundTaskMode> = [backgroundTaskManager.BackgroundTaskMode.MODE_DATA_TRANSFER];
+              let subModeList: Array<backgroundTaskManager.BackgroundTaskSubmode> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_LIVE_VIEW_NOTIFICATION];
+              let progress: backgroundTaskManager.ProgressInfo = {
+                title: 'EmptyFileName',
+                fileName: '',
+                progressValue: 50,
+                isMute: false,
+              };
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = modeList;
+              continuousTaskRequest.backgroundTaskSubmodes = subModeList;
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              continuousTaskRequest.progressInfo = progress;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6600 startContinuousTask success, res: %{public}s', `${res}`);
+                expect(res).assertLarger(0);
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6600 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6600 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6600 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6600 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6600 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6800
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6800
+     * @tc.desc   Test startContinuousTask with MODE_AV_PLAYBACK_AND_RECORD and SUBMODE_AVSESSION_AUDIO_PLAYBACK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6800 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_AV_PLAYBACK_AND_RECORD];
+              continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_AVSESSION_AUDIO_PLAYBACK];
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6800 startContinuousTask success, res: %{public}s', `${res}`);
+                expect(res).assertLarger(0);
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6800 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6800 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6800 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6800 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6800 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6900
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6900
+     * @tc.desc   Test startContinuousTask with MODE_AV_PLAYBACK_AND_RECORD and SUBMODE_AUDIO_RECORD_NORMAL_NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6900 begin---');
+        await Utils.msSleep(1500);
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_AV_PLAYBACK_AND_RECORD];
+              continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_AUDIO_RECORD_NORMAL_NOTIFICATION];
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6900 startContinuousTask success, res: %{public}s', `${res}`);
+                expect(res).assertLarger(0);
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6900 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6900 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6900 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6900 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_6900 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7000
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7000
+     * @tc.desc   Test startContinuousTask with MODE_AV_PLAYBACK_AND_RECORD and SUBMODE_SCREEN_RECORD_NORMAL_NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7000 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_AV_PLAYBACK_AND_RECORD];
+              continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_SCREEN_RECORD_NORMAL_NOTIFICATION];
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7000 startContinuousTask success, res: %{public}s', `${res}`);
+                expect(res).assertLarger(0);
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7000 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7000 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7000 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7000 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7000 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7100
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7100
+     * @tc.desc   Test startContinuousTask with MODE_AV_PLAYBACK_AND_RECORD and SUBMODE_VOICE_CHAT_NORMAL_NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7100 begin---');
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+              continuousTaskRequest.backgroundTaskModes = [backgroundTaskManager.BackgroundTaskMode.MODE_AV_PLAYBACK_AND_RECORD];
+              continuousTaskRequest.backgroundTaskSubmodes = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_VOICE_CHAT_NORMAL_NOTIFICATION];
+              continuousTaskRequest.wantAgent = want;
+              continuousTaskRequest.combinedTaskNotification = false;
+              backgroundTaskManager.startContinuousTask(ability.context, continuousTaskRequest).then((res: int) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7100 startContinuousTask success, res: %{public}s', `${res}`);
+                expect(res).assertLarger(0);
+                backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {}).catch(() => {});
+                done();
+              }).catch((error: Error) => {
+                hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7100 startContinuousTask error: %{public}s', JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+              })
+            }).catch((error: Error) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7100 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7100 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7100 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7100 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7200
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7200
+     * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskDetailedCancelReason of SYSTEM_CANCEL_USB_ALREADY_OCCUPIED value is 17
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7200 begin---');
+        try {
+          let type: int = backgroundTaskManager.ContinuousTaskDetailedCancelReason.SYSTEM_CANCEL_USB_ALREADY_OCCUPIED;
+          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7200 ContinuousTaskDetailedCancelReason: ' + type);
+          expect(type).assertEqual(17);
+          done();
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7200 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7200 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7300
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7300
+     * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_USB_ALREADY_OCCUPIED value is 21
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7300 begin---');
+        try {
+          let type: int = backgroundTaskManager.ContinuousTaskSuspendReason.SYSTEM_SUSPEND_USB_ALREADY_OCCUPIED;
+          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7300 ContinuousTaskSuspendReason: ' + type);
+          expect(type).assertEqual(21);
+          done();
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7300 error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_7300 end---');
+      })
+
   })
 }

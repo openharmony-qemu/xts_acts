@@ -30,7 +30,7 @@ struct ExceptionPromptV2Page {
     symbolStyle: new SymbolGlyphModifier($r('sys.symbol.wifi')),
     actionText: '网络',
     marginType: MarginTypeV2.DEFAULT_MARGIN,
-    marginTop: 490,
+    marginTop: 10,
     tip: '显示的提示',
     isShown: true
   }
@@ -56,7 +56,7 @@ struct ExceptionPromptV2Page {
         ExceptionPromptV2({
           options: new PromptOptionsV2({
             marginType: MarginTypeV2.DEFAULT_MARGIN,
-            marginTop: 70,
+            marginTop: 10,
             tip: '默认边距',
             isShown: true
           })
@@ -64,7 +64,7 @@ struct ExceptionPromptV2Page {
         ExceptionPromptV2({
           options: new PromptOptionsV2({
             marginType: MarginTypeV2.FIT_MARGIN,
-            marginTop: 130,
+            marginTop: 10,
             tip: '自适应边距',
             isShown: true
           })
@@ -74,7 +74,7 @@ struct ExceptionPromptV2Page {
         ExceptionPromptV2({
           options: new PromptOptionsV2({
             marginType: MarginTypeV2.DEFAULT_MARGIN,
-            marginTop: 190,
+            marginTop: 10,
             icon: $r('sys.media.ohos_ic_public_ok'),
             tip: '图标提示',
             isShown: true
@@ -83,7 +83,7 @@ struct ExceptionPromptV2Page {
         ExceptionPromptV2({
           options: new PromptOptionsV2({
             marginType: MarginTypeV2.DEFAULT_MARGIN,
-            marginTop: 250,
+            marginTop: 10,
             symbolStyle: new SymbolGlyphModifier($r('sys.symbol.wifi')),
             tip: 'Symbol图标提示',
             isShown: true
@@ -94,7 +94,7 @@ struct ExceptionPromptV2Page {
         ExceptionPromptV2({
           options: new PromptOptionsV2({
             marginType: MarginTypeV2.DEFAULT_MARGIN,
-            marginTop: 310,
+            marginTop: 10,
             tip: '网络连接不稳定',
             isShown: true
           })
@@ -102,7 +102,7 @@ struct ExceptionPromptV2Page {
         ExceptionPromptV2({
           options: new PromptOptionsV2({
             marginType: MarginTypeV2.DEFAULT_MARGIN,
-            marginTop: 370,
+            marginTop: 10,
             tip: '网络未连接',
             actionText: '重新连接',
             isShown: true
@@ -111,7 +111,7 @@ struct ExceptionPromptV2Page {
         ExceptionPromptV2({
           options: new PromptOptionsV2({
             marginType: MarginTypeV2.DEFAULT_MARGIN,
-            marginTop: 430,
+            marginTop: 10,
             tip: '服务器连接失败',
             actionText: this.actionText2,
             isShown: true
@@ -125,7 +125,7 @@ struct ExceptionPromptV2Page {
         ExceptionPromptV2({
           options: new PromptOptionsV2({
             marginType: MarginTypeV2.DEFAULT_MARGIN,
-            marginTop: 550,
+            marginTop: 10,
             tip: '隐藏的提示',
             isShown: false
           })
@@ -135,7 +135,7 @@ struct ExceptionPromptV2Page {
         ExceptionPromptV2({
           options: new PromptOptionsV2({
             marginType: MarginTypeV2.DEFAULT_MARGIN,
-            marginTop: 610,
+            marginTop: 10,
             tip: '点击提示文本',
             actionText: '点击操作',
             isShown: true
@@ -149,7 +149,7 @@ struct ExceptionPromptV2Page {
         });
 
         if (this.callbackResult !== '') {
-          Text(this.callbackResult).fontSize(16).fontWeight(FontWeight.Bold).fontColor('#FF0000').margin({ top: 670 });
+          Text(this.callbackResult).fontSize(16).fontWeight(FontWeight.Bold).fontColor('#FF0000').margin({ top: 10 });
         }
 
       }

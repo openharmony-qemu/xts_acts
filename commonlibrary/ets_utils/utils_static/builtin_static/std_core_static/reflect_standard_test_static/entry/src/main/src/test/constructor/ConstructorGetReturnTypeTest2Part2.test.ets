@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from "../../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 import Utils from "../Util.test";
 
 import {EmptyCls,TcTwoPubA,LongInheritBase,StringFieldWithMethod,IP2_110_PubDefBool,PubByteParam,PubShortParam,ExtCmpE,ThreeCtorCls2,ExtImplCls,ExtSimpleF,ExtParamH,ExtParamI,ExtNameG,ExtCmpI,Ext4_CharStringMix,ExtChainD,ExtChainE,SevenParams,EightParams,TenParams,ExtPcD,ExtPcE,ExtPcF,DelegateCtorCls,FuncParamCtorCls,GenExtGenCls,MultiArrCtorCls,SetMapMixedCtorCls,BoolIntArrCtorCls,AbsDblParamCtor,MultiImplParamCtor,LongInheritMid,NestedDeepGenericCtor,CollectionPairCtor,TripleGenCls,GenericIntfCls,GenericCharCtor,GenericByteArrCtor,ExtFinB,ExtFinC,ExtCmpH,ExtCmpB,ExtSimpleC,ExtSimpleD,ExtParamE,ExtLenC,ExtParamD,ExtParamF,ExtCmpG,ExtCmpC,ExtNameD,ExtArrB,ExtOwnJ,ExtCmpD,ExtChainF,ExtPcA,ExtPcB,ExtPcC,TryCatchCtorCls,SwitchCtorCls,WhileCtorCls,DoWhileCtorCls,TernaryCtorCls,NoExplicitCtorCls,MultiIfaceCtorCls,UnionCtorCls,ObjectParamCtorCls,ReadonlyFieldCls,StaticAccessCtorCls,HelperFnCtorCls,LongStrCtorCls,CharEscapeCtorCls,DefaultParamCtorCls,StaticRefOtherCtorCls,NestedInitCtorCls,} from "../Util.test";

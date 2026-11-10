@@ -83,7 +83,8 @@ import RdbStoreParamErrorTest from './RdbStoreParamError.test';
 import rdbStoreAttachErrorTest from './RdbStoreAttachError.test';
 
 import RdbStoreGetRdbStoreSyncEtsTest from './RdbStoreGetRdbStoreSyncEts.test';
-import RdbStoreGetRdbStoreSyncEtsAddTest from './RdbStoreGetRdbStoreSyncEtsAddTest.test'
+import RdbStoreGetRdbStoreSyncEtsAddTest from './RdbStoreGetRdbStoreSyncEtsAddTest.test';
+import dumpStackOnFileDeletionTest from './DumpStackOnFileDeletion.test';
 export default function testsuite() {
   relationalStoreEncryptTest()
   relationalStoreUpdateTest()
@@ -158,4 +159,5 @@ export default function testsuite() {
 
   RdbStoreGetRdbStoreSyncEtsTest();
   RdbStoreGetRdbStoreSyncEtsAddTest();
+  dumpStackOnFileDeletionTest();
 }

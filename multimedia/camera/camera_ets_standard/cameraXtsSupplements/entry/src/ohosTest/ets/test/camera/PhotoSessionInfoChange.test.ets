@@ -171,8 +171,11 @@ export default function PhotoSessIsoInfoChangeTest() {
         // 检测是否支持ISO控制
         const hasIso: number = mPhotoSession.getIso();
         console.info(TAG, `${testName} getIso: ${hasIso}`);
-        mPhotoSession.setIso(0);
-        console.info(TAG, `${testName} setIsoFir: ${hasIso}`);
+        let isoRange: Array<number> = mPhotoSession!.getSupportedIsoRange();
+        if (isoRange != undefined && isoRange != null && isoRange.length >= 1) {
+          mPhotoSession.setIso(0);
+          console.info(TAG, `${testName} setIsoFir: ${hasIso}`);
+        }
         // mPhotoSession.setIso(3.3);
         // console.info(TAG, `${testName} getIsoSec: ${hasIso}`);
         await sleep(1000);

@@ -25,7 +25,7 @@ import {
   beforeEach,
   afterEach,
   afterAll
-} from '../../../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../../../Util.test'
 
 // c_array_and_tuple_parameters_0: overload constructor { foo1, foo2, foo3, foo4 }

@@ -112,6 +112,24 @@ export const OH_ArkWebResponse_SetErrorInfo0200: () => number;
 export const OH_ArkWebResponse_GetErrorInfo0100: () => number;
 export const OH_ArkWebResourceHandler_DidFailWithErrorInfo0100: () => number;
 export const OH_ArkWebResourceHandler_DidFailWithErrorInfo0200: () => number;
+export const OH_ArkWebResponse_SetErrorInfo0400: () => number;
+export const OH_ArkWeb_CreateErrorInfo0200: () => number;
+export const OH_ArkWebErrorInfo_GetCustomErrorCode0200: () => number;
+export const OH_ArkWebErrorInfo_GetErrorCode0200: () => number;
+
+export const OH_ArkWeb_DestroyErrorInfo0200: () => number;
+export const OH_ArkWebErrorInfo_SetCompleteIfNoResponse0300: () => number;
+export const OH_ArkWebErrorInfo_GetCompleteIfNoResponse0200: () => number;
+export const OH_ArkWebErrorInfo_GetCompleteIfNoResponse0300: () => number;
+export const OH_ArkWebErrorInfo_SetCustomErrorCode0300: () => number;
+export const OH_ArkWebErrorInfo_SetCustomErrorCode0400: () => number;
+export const OH_ArkWebErrorInfo_GetCustomErrorCode0300: () => number;
+export const OH_ArkWebErrorInfo_SetErrorCode0300: () => number;
+export const OH_ArkWebErrorInfo_GetErrorCode0300: () => number;
+export const OH_ArkWebResponse_SetErrorInfo0300: () => number;
+export const OH_ArkWebResponse_GetErrorInfo0200: () => number;
+export const OH_ArkWebResponse_GetErrorInfo0300: () => number;
+
 export const webSchemeHandlerProcess: (funName: string, retVale: string) => number;
 export const setSchemeHandler:() => number;
 export const initResourceManager: (resmgr: resourceManager.ResourceManager) => void;

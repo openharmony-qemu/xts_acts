@@ -14,7 +14,7 @@
  */
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
-import { common } from '@kit.AbilityKit';
+import { common, UIAbility } from '@kit.AbilityKit';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { JSON } from '@kit.ArkTS';
 import { image } from '@kit.ImageKit';
@@ -38,6 +38,51 @@ let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
 
 const sleep = (mills: number) => {
   return new Promise<void>(resolve => setTimeout(resolve, mills));
+}
+
+function isPc2in1(): boolean {
+  return deviceInfo.deviceType === '2in1';
+}
+
+function getBizCode(err: BusinessError): number {
+  return err.code;
+}
+
+function createOnceDone(done: Function): (pass: boolean) => void {
+  let finished = false;
+  return (pass: boolean): void => {
+    if (finished) {
+      return;
+    }
+    finished = true;
+    if (!pass) {
+      expect().assertFail();
+    }
+    done();
+  };
+}
+
+async function expectThreeArgReject(
+  tag: string,
+  action: () => Promise<void>,
+  expectCode: number,
+  done: Function
+): Promise<void> {
+  if (!isPc2in1()) {
+    done();
+    return;
+  }
+  try {
+    await action();
+    hilog.info(DOMAIN, LOG_TAG, tag + ' unexpected success');
+    expect().assertFail();
+  } catch (err) {
+    hilog.info(DOMAIN, LOG_TAG, tag + ' err=' + JSON.stringify(err));
+    let bizErr: BusinessError = err as BusinessError;
+    expect(getBizCode(bizErr)).assertEqual(expectCode);
+    hilog.info(DOMAIN, LOG_TAG, tag + ' success');
+  }
+  done();
 }
 
 export default function abilityTest() {
@@ -85,13 +130,14 @@ export default function abilityTest() {
         if (data?.event === 'setAbilityInstanceInfo_success') {
           commonEventManager.unsubscribe(subscriber,()=>{
             hilog.info(DOMAIN, LOG_TAG, tag + " success");
+            expect(data.event).assertEqual('setAbilityInstanceInfo_success');
             done();
           });
         } else {
           commonEventManager.unsubscribe(subscriber,()=>{
             hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
             hilog.info(DOMAIN, LOG_TAG, tag + " fail");
-            try { expect().assertFail(); } catch (err) {}
+            expect().assertFail();
             done();
           });
         }
@@ -103,7 +149,7 @@ export default function abilityTest() {
         hilog.info(DOMAIN, LOG_TAG, tag + " startAbility success");
       }).catch(async(err:BusinessError)=>{
         hilog.info(DOMAIN, LOG_TAG, tag + " startAbility fail " + err?.code);
-        try { expect().assertFail(); } catch (err) {}
+        expect().assertFail();
         commonEventManager.unsubscribe(subscriber,()=>{
           done();
         });
@@ -134,14 +180,13 @@ export default function abilityTest() {
           hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
         }
       }
+      expect(successCount === 10).assertTrue();
       if (successCount === 10) {
         hilog.info(DOMAIN, LOG_TAG, tag + " success");
-        done();
       } else {
         hilog.info(DOMAIN, LOG_TAG, tag + " fail");
-        try { expect().assertFail(); } catch (err) {}
-        done();
       }
+      done();
     })
 
     /**
@@ -163,11 +208,13 @@ export default function abilityTest() {
       let subscriber = commonEventManager.createSubscriberSync({
         events: ['setAbilityInstanceInfo_success', 'setAbilityInstanceInfo_fail']
       });
+      const expectBothDone = 2;
       commonEventManager.subscribe(subscriber, (err, data) => {
         if (data?.event === 'setAbilityInstanceInfo_success') {
           count++;
-          if (count === 2) {
+          if (count === expectBothDone) {
             hilog.info(DOMAIN, LOG_TAG, tag + " success");
+            expect(count).assertEqual(expectBothDone);
             commonEventManager.unsubscribe(subscriber,()=>{
               done();
             });
@@ -176,7 +223,7 @@ export default function abilityTest() {
           commonEventManager.unsubscribe(subscriber,()=>{
             hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
             hilog.info(DOMAIN, LOG_TAG, tag + " fail");
-            try { expect().assertFail(); } catch (err) {}
+            expect().assertFail();
             done();
           });
         }
@@ -188,7 +235,7 @@ export default function abilityTest() {
         hilog.info(DOMAIN, LOG_TAG, tag + " startAbility success");
       }).catch(async(err:BusinessError)=>{
         hilog.info(DOMAIN, LOG_TAG, tag + " startAbility fail " + err?.code);
-        try { expect().assertFail(); } catch (err) {}
+        expect().assertFail();
         commonEventManager.unsubscribe(subscriber,()=>{
           done();
         });
@@ -196,8 +243,9 @@ export default function abilityTest() {
       try {
         await testContext.setAbilityInstanceInfo('111111', pixelMap);
         count++;
-        if (count === 2) {
+        if (count === expectBothDone) {
           hilog.info(DOMAIN, LOG_TAG, tag + " success");
+          expect(count).assertEqual(expectBothDone);
           done();
         }
       } catch (err) {
@@ -282,7 +330,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0800
      * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0800
-     * @tc.desc   Expect: success for 2in1 device, others failed with code 201
+     * @tc.desc   Expect: success for 2in1 device, others failed with code 801
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -310,6 +358,10 @@ export default function abilityTest() {
         } else if (err?.code === 801) {
           hilog.info(DOMAIN, LOG_TAG, tag + " success");
           done();
+        } else {
+          hilog.info(DOMAIN, LOG_TAG, tag + " unexpected code");
+          try { expect().assertFail(); } catch (err) {}
+          done();
         }
       }
     })
@@ -317,7 +369,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1000
      * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1000
-     * @tc.desc   Expect: call failed with code 201
+     * @tc.desc   Expect: permission denied without ohos.permission.SET_ABILITY_INSTANCE_INFO, code 201
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -901,6 +953,389 @@ export default function abilityTest() {
         hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
         try { expect(err?.code).assertEqual(401); } catch (err) {}
         hilog.info(DOMAIN, LOG_TAG, tag + " success");
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3000
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3000
+     * @tc.desc   Expect: invalid context failed with code 16000011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3000', Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3000';
+      hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
+      if (deviceInfo.deviceType !== '2in1') {
+        done();
+        return;
+      }
+      let delegator = abilityDelegatorRegistry.getAbilityDelegator();
+      let monitor: abilityDelegatorRegistry.AbilityMonitor = {
+        abilityName: "EntryAbility",
+        moduleName: 'entry'
+      };
+      let staleContext: common.UIAbilityContext | undefined = undefined;
+      try {
+        await delegator.startAbility({
+          bundleName: 'com.acts.ability.setabilityinstanceinfo',
+          abilityName: 'EntryAbility'
+        });
+        let ability: UIAbility = await delegator.waitAbilityMonitor(monitor, 40000);
+        staleContext = ability.context;
+        if (staleContext) {
+          hilog.info(DOMAIN, LOG_TAG, tag + " ability captured, name= " + staleContext.abilityInfo.name);
+          try {
+            await staleContext.terminateSelf();
+          } catch (err) {
+            hilog.info(DOMAIN, LOG_TAG, tag + " terminateSelf already done: " + JSON.stringify(err));
+          }
+        }
+        await sleep(2000);
+      } catch (err) {
+        hilog.info(DOMAIN, LOG_TAG, tag + " prepare stale context failed: " + JSON.stringify(err));
+      } finally {
+        try {
+          await delegator.removeAbilityMonitor(monitor);
+        } catch (err) {
+          hilog.info(DOMAIN, LOG_TAG, tag + " removeAbilityMonitor failed: " + JSON.stringify(err));
+        }
+      }
+
+      if (staleContext === undefined) {
+        hilog.info(DOMAIN, LOG_TAG, tag + " failed: stale context not obtained");
+        try { expect().assertFail(); } catch (err) {}
+        done();
+        return;
+      }
+      
+      let rejected: boolean = false;
+      let actualCode: number = 0;
+      try {
+        await staleContext.setAbilityInstanceInfo('label_ctx', pixelMap);
+      } catch (err) {
+        rejected = true;
+        actualCode = (err as BusinessError).code;
+        hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err));
+      }
+      try {
+        expect(rejected).assertTrue;
+        if (actualCode === 16000011){
+          hilog.info(DOMAIN, LOG_TAG, tag + " success, rejected with 16000011");
+        } else {
+          expect(actualCode).assertEqual(16000050);
+          hilog.info(DOMAIN, LOG_TAG, tag + " success, rejected with 16000050");
+        }
+      } catch (err) {
+        hilog.info(DOMAIN, LOG_TAG, "fail, rejected= " + rejected + " actualCode=" + actualCode);
+        try { expect().assertFail(); } catch (assertErr) {}
+      } finally {
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3100
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3100
+     * @tc.desc   Expect: label over 1024 bytes failed with code 401 (param spec)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3100', Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3100';
+      hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
+      if (deviceInfo.deviceType !== '2in1') {
+        done();
+        return;
+      }
+      let label = '';
+      for (let i = 0; i < 65; i++) {
+        label += '0123456789abcdef';
+      }
+      try {
+        await testContext.setAbilityInstanceInfo(label, pixelMap);
+        hilog.info(DOMAIN, LOG_TAG, tag + " fail");
+        try { expect().assertFail(); } catch (err) {}
+        done();
+      } catch (err) {
+        hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
+        try { expect(err?.code).assertEqual(401); } catch (err) {}
+        hilog.info(DOMAIN, LOG_TAG, tag + " success");
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3200
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3200
+     * @tc.desc   Expect: 3-arg permission denied without SET_ABILITY_INSTANCE_INFO, code 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3200', Level.LEVEL0, async (done: Function) => {
+      const tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3200';
+      hilog.info(DOMAIN, LOG_TAG, tag + ' it begin');
+      if (!isPc2in1()) {
+        done();
+        return;
+      }
+      const finish = createOnceDone(done);
+      const subscriber = commonEventManager.createSubscriberSync({
+        events: ['setAbilityInstanceInfo_success', 'setAbilityInstanceInfo_fail']
+      });
+      commonEventManager.subscribe(subscriber, (_err, data) => {
+        commonEventManager.unsubscribe(subscriber, () => {
+          hilog.info(DOMAIN, LOG_TAG, tag + ' event=' + data?.event + ' code=' + data?.code);
+          expect(data?.event).assertEqual('setAbilityInstanceInfo_fail');
+          expect(data?.code).assertEqual(201);
+          hilog.info(DOMAIN, LOG_TAG, tag + ' success');
+          finish(true);
+        });
+      });
+      try {
+        await testContext.startAbility({
+          bundleName: 'com.acts.ability.setabilityinstanceinfo.demo2',
+          abilityName: 'EntryAbility',
+          parameters: {
+            withGroupId: true
+          }
+        });
+        hilog.info(DOMAIN, LOG_TAG, tag + ' startAbility success');
+      } catch (err) {
+        hilog.info(DOMAIN, LOG_TAG, tag + ' startAbility fail ' + JSON.stringify(err));
+        commonEventManager.unsubscribe(subscriber, () => {
+          finish(false);
+        });
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3300
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3300
+     * @tc.desc   Expect: 3-arg empty label failed with code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3300', Level.LEVEL0, async (done: Function) => {
+      const tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3300';
+      hilog.info(DOMAIN, LOG_TAG, tag + ' it begin');
+      await expectThreeArgReject(tag, (): Promise<void> => {
+        return testContext.setAbilityInstanceInfo('', pixelMap, 'group_label');
+      }, 401, done);
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3400
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3400
+     * @tc.desc   Expect: 3-arg label null failed with code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3400', Level.LEVEL0, async (done: Function) => {
+      const tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3400';
+      hilog.info(DOMAIN, LOG_TAG, tag + ' it begin');
+      await expectThreeArgReject(tag, (): Promise<void> => {
+        return testContext.setAbilityInstanceInfo(null, pixelMap, 'group_label');
+      }, 401, done);
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3500
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3500
+     * @tc.desc   Expect: 3-arg label undefined failed with code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3500', Level.LEVEL0, async (done: Function) => {
+      const tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3500';
+      hilog.info(DOMAIN, LOG_TAG, tag + ' it begin');
+      await expectThreeArgReject(tag, (): Promise<void> => {
+        return testContext.setAbilityInstanceInfo(undefined, pixelMap, 'group_label');
+      }, 401, done);
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3600
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3600
+     * @tc.desc   Expect: 3-arg label over 1024 bytes failed with code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3600', Level.LEVEL0, async (done: Function) => {
+      const tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3600';
+      hilog.info(DOMAIN, LOG_TAG, tag + ' it begin');
+      let label = '';
+      for (let i = 0; i < 65; i++) {
+        label += '0123456789abcdef';
+      }
+      await expectThreeArgReject(tag, (): Promise<void> => {
+        return testContext.setAbilityInstanceInfo(label, pixelMap, 'group_label');
+      }, 401, done);
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3700
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3700
+     * @tc.desc   Expect: 3-arg icon null failed with code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3700', Level.LEVEL0, async (done: Function) => {
+      const tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3700';
+      hilog.info(DOMAIN, LOG_TAG, tag + ' it begin');
+      await expectThreeArgReject(tag, (): Promise<void> => {
+        return testContext.setAbilityInstanceInfo('label_icon', null, 'group_icon');
+      }, 401, done);
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3800
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3800
+     * @tc.desc   Expect: 3-arg icon undefined failed with code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3800', Level.LEVEL0, async (done: Function) => {
+      const tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3800';
+      hilog.info(DOMAIN, LOG_TAG, tag + ' it begin');
+      await expectThreeArgReject(tag, (): Promise<void> => {
+        return testContext.setAbilityInstanceInfo('label_icon', undefined, 'group_icon');
+      }, 401, done);
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3900
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3900
+     * @tc.desc   Expect: 3-arg empty PixelMap failed with code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3900', Level.LEVEL0, async (done: Function) => {
+      const tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3900';
+      hilog.info(DOMAIN, LOG_TAG, tag + ' it begin');
+      let emptyBuf: ArrayBuffer = new ArrayBuffer(0);
+      let emptyOpts: image.InitializationOptions = {
+        editable: true,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 0, width: 0 }
+      };
+      let emptyImg: image.PixelMap = image.createPixelMapSync(emptyBuf, emptyOpts);
+      await expectThreeArgReject(tag, (): Promise<void> => {
+        return testContext.setAbilityInstanceInfo('label_icon', emptyImg, 'group_icon');
+      }, 401, done);
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4100
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4100
+     * @tc.desc   setAbilityInstanceInfo icon isStrideAlignment=false true/false成对; real call;
+     *     2in1 may success; phone/default may 401/801/16000011/201 (API device limit)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4100', Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4100';
+      hilog.info(DOMAIN, LOG_TAG, tag + ' it begin deviceType=' + deviceInfo.deviceType);
+      let editOpts: image.InitializationOptions = {
+        editable: true,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 64, width: 64 }
+      };
+      let editMap: image.PixelMap = image.createPixelMapSync(color, editOpts);
+      expect(editMap.isEditable).assertEqual(true);
+      expect(editMap.isStrideAlignment).assertEqual(false);
+      try {
+        await testContext.setAbilityInstanceInfo('label_stride_false', editMap);
+        hilog.info(DOMAIN, LOG_TAG, tag + ' success isStrideAlignment=false');
+        done();
+      } catch (err) {
+        let bizErr: BusinessError = err as BusinessError;
+        let code: number = getBizCode(bizErr);
+        hilog.info(DOMAIN, LOG_TAG, tag + ' isStrideAlignment=false deviceType=' +
+          deviceInfo.deviceType + ' code=' + code);
+        expect(code === 401 || code === 801 || code === 16000011 || code === 201).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4200
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4200
+     * @tc.desc   setAbilityInstanceInfo icon isStrideAlignment=false true/false成对; real call;
+     *     2in1 may success; phone/default may 401/801/16000011/201 (API device limit)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4200', Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4200';
+      hilog.info(DOMAIN, LOG_TAG, tag + ' it begin deviceType=' + deviceInfo.deviceType);
+      let roOpts: image.InitializationOptions = {
+        editable: false,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 64, width: 64 }
+      };
+      let roMap: image.PixelMap = image.createPixelMapSync(color, roOpts);
+      expect(roMap.isEditable).assertEqual(false);
+      expect(roMap.isStrideAlignment).assertEqual(false);
+      try {
+        await testContext.setAbilityInstanceInfo('label_stride_false_ro', roMap);
+        hilog.info(DOMAIN, LOG_TAG, tag + ' success isStrideAlignment=false');
+        done();
+      } catch (err) {
+        let bizErr: BusinessError = err as BusinessError;
+        let code: number = getBizCode(bizErr);
+        hilog.info(DOMAIN, LOG_TAG, tag + ' isStrideAlignment=false deviceType=' +
+          deviceInfo.deviceType + ' code=' + code);
+        expect(code === 401 || code === 801 || code === 16000011 || code === 201).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4300
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4300
+     * @tc.desc   setAbilityInstanceInfo icon isStrideAlignment=true true/false成对; DMA real call;
+     *     2in1 may success; phone/default may 401/801/16000011/201 (API device limit)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4300', Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_4300';
+      hilog.info(DOMAIN, LOG_TAG, tag + ' it begin deviceType=' + deviceInfo.deviceType);
+      const smallColor: ArrayBuffer = new ArrayBuffer(96);
+      let dmaOpts: image.InitializationOptions = {
+        editable: true,
+        srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+        pixelFormat: image.PixelMapFormat.BGRA_8888,
+        size: { height: 4, width: 6 }
+      };
+      let dmaMap: image.PixelMap =
+        image.createPixelMapUsingAllocatorSync(smallColor, dmaOpts, image.AllocatorType.DMA);
+      expect(dmaMap.isStrideAlignment).assertEqual(true);
+      try {
+        await testContext.setAbilityInstanceInfo('label_stride_true', dmaMap);
+        hilog.info(DOMAIN, LOG_TAG, tag + ' success isStrideAlignment=true');
+        done();
+      } catch (err) {
+        let bizErr: BusinessError = err as BusinessError;
+        let code: number = getBizCode(bizErr);
+        hilog.info(DOMAIN, LOG_TAG, tag + ' isStrideAlignment=true deviceType=' +
+          deviceInfo.deviceType + ' code=' + code);
+        expect(code === 401 || code === 801 || code === 16000011 || code === 201).assertTrue();
         done();
       }
     })

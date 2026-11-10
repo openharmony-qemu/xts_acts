@@ -20,6 +20,7 @@ const TEST_SUCCESS = 0;
 
 export default function ActsWebErrorInfoTest() {
   describe('ActsWebErrorInfoTest', () => {
+
     /**
      * @tc.name   testArkWebCreateErrorInfo0100
      * @tc.number SUB_OH_ArkWeb_CreateErrorInfo_0100
@@ -254,6 +255,246 @@ export default function ActsWebErrorInfoTest() {
     it('testArkWebResourceHandlerDidFailWithErrorInfo0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         let result: number = webCode.OH_ArkWebResourceHandler_DidFailWithErrorInfo0200();
+        expect(result).assertEqual(TEST_SUCCESS);
+        done();
+      })
+
+    /**
+     * @tc.name   testArkWebCreateErrorInfo0200
+     * @tc.number SUB_OH_ArkWeb_CreateErrorInfo_0200
+     * @tc.desc   test OH_ArkWeb_CreateErrorInfo with nullptr param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArkWebCreateErrorInfo0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = webCode.OH_ArkWeb_CreateErrorInfo0200();
+        expect(result).assertEqual(TEST_SUCCESS);
+        done();
+      })
+
+    /**
+     * @tc.name   testArkWebErrorInfoGetCustomErrorCode0200
+     * @tc.number SUB_OH_ArkWebErrorInfo_GetCustomErrorCode_0200
+     * @tc.desc   test OH_ArkWebErrorInfo_GetCustomErrorCode with nullptr param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArkWebErrorInfoGetCustomErrorCode0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = webCode.OH_ArkWebErrorInfo_GetCustomErrorCode0200();
+        expect(result).assertEqual(TEST_SUCCESS);
+        done();
+      })
+
+    /**
+     * @tc.name   testArkWebErrorInfoGetErrorCode0200
+     * @tc.number SUB_OH_ArkWebErrorInfo_GetErrorCode_0200
+     * @tc.desc   test OH_ArkWebErrorInfo_GetErrorCode with nullptr param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArkWebErrorInfoGetErrorCode0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = webCode.OH_ArkWebErrorInfo_GetErrorCode0200();
+        expect(result).assertEqual(TEST_SUCCESS);
+        done();
+      })
+
+    /**
+     * @tc.name   testArkWebDestroyErrorInfo0200
+     * @tc.number SUB_OH_ArkWeb_DestroyErrorInfo_0200
+     * @tc.desc   test OH_ArkWeb_DestroyErrorInfo with nullptr param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArkWebDestroyErrorInfo0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = webCode.OH_ArkWeb_DestroyErrorInfo0200();
+        expect(result).assertEqual(TEST_SUCCESS);
+        done();
+      })
+
+    /**
+     * @tc.name   testArkWebErrorInfoSetCompleteIfNoResponse0300
+     * @tc.number SUB_OH_ArkWebErrorInfo_SetCompleteIfNoResponse_0300
+     * @tc.desc   test OH_ArkWebErrorInfo_SetCompleteIfNoResponse with false param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArkWebErrorInfoSetCompleteIfNoResponse0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = webCode.OH_ArkWebErrorInfo_SetCompleteIfNoResponse0300();
+        expect(result).assertEqual(TEST_SUCCESS);
+        done();
+      })
+
+    /**
+     * @tc.name   testArkWebErrorInfoGetCompleteIfNoResponse0200
+     * @tc.number SUB_OH_ArkWebErrorInfo_GetCompleteIfNoResponse_0200
+     * @tc.desc   test OH_ArkWebErrorInfo_GetCompleteIfNoResponse with nullptr param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArkWebErrorInfoGetCompleteIfNoResponse0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = webCode.OH_ArkWebErrorInfo_GetCompleteIfNoResponse0200();
+        expect(result).assertEqual(TEST_SUCCESS);
+        done();
+      })
+
+    /**
+     * @tc.name   testArkWebErrorInfoGetCompleteIfNoResponse0300
+     * @tc.number SUB_OH_ArkWebErrorInfo_GetCompleteIfNoResponse_0300
+     * @tc.desc   test OH_ArkWebErrorInfo_GetCompleteIfNoResponse after set false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArkWebErrorInfoGetCompleteIfNoResponse0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = webCode.OH_ArkWebErrorInfo_GetCompleteIfNoResponse0300();
+        expect(result).assertEqual(TEST_SUCCESS);
+        done();
+      })
+
+    /**
+     * @tc.name   testArkWebErrorInfoSetCustomErrorCode0300
+     * @tc.number SUB_OH_ArkWebErrorInfo_SetCustomErrorCode_0300
+     * @tc.desc   test OH_ArkWebErrorInfo_SetCustomErrorCode with boundary value 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArkWebErrorInfoSetCustomErrorCode0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = webCode.OH_ArkWebErrorInfo_SetCustomErrorCode0300();
+        expect(result).assertEqual(TEST_SUCCESS);
+        done();
+      })
+
+    /**
+     * @tc.name   testArkWebErrorInfoSetCustomErrorCode0400
+     * @tc.number SUB_OH_ArkWebErrorInfo_SetCustomErrorCode_0400
+     * @tc.desc   test OH_ArkWebErrorInfo_SetCustomErrorCode with negative value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArkWebErrorInfoSetCustomErrorCode0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = webCode.OH_ArkWebErrorInfo_SetCustomErrorCode0400();
+        expect(result).assertEqual(TEST_SUCCESS);
+        done();
+      })
+
+    /**
+     * @tc.name   testArkWebErrorInfoGetCustomErrorCode0300
+     * @tc.number SUB_OH_ArkWebErrorInfo_GetCustomErrorCode_0300
+     * @tc.desc   test OH_ArkWebErrorInfo_GetCustomErrorCode default value without set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArkWebErrorInfoGetCustomErrorCode0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = webCode.OH_ArkWebErrorInfo_GetCustomErrorCode0300();
+        expect(result).assertEqual(TEST_SUCCESS);
+        done();
+      })
+
+    /**
+     * @tc.name   testArkWebErrorInfoSetErrorCode0300
+     * @tc.number SUB_OH_ArkWebErrorInfo_SetErrorCode_0300
+     * @tc.desc   test OH_ArkWebErrorInfo_SetErrorCode with different ArkWeb_NetError value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArkWebErrorInfoSetErrorCode0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = webCode.OH_ArkWebErrorInfo_SetErrorCode0300();
+        expect(result).assertEqual(TEST_SUCCESS);
+        done();
+      })
+
+    /**
+     * @tc.name   testArkWebErrorInfoGetErrorCode0300
+     * @tc.number SUB_OH_ArkWebErrorInfo_GetErrorCode_0300
+     * @tc.desc   test OH_ArkWebErrorInfo_GetErrorCode default value without set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArkWebErrorInfoGetErrorCode0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = webCode.OH_ArkWebErrorInfo_GetErrorCode0300();
+        expect(result).assertEqual(TEST_SUCCESS);
+        done();
+      })
+
+    /**
+     * @tc.name   testArkWebResponseSetErrorInfo0300
+     * @tc.number SUB_OH_ArkWebResponse_SetErrorInfo_0300
+     * @tc.desc   test OH_ArkWebResponse_SetErrorInfo with valid response and nullptr errorInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArkWebResponseSetErrorInfo0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = webCode.OH_ArkWebResponse_SetErrorInfo0300();
+        expect(result).assertEqual(TEST_SUCCESS);
+        done();
+      })
+
+    /**
+     * @tc.name   testArkWebResponseGetErrorInfo0200
+     * @tc.number SUB_OH_ArkWebResponse_GetErrorInfo_0200
+     * @tc.desc   test OH_ArkWebResponse_GetErrorInfo with nullptr param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArkWebResponseGetErrorInfo0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = webCode.OH_ArkWebResponse_GetErrorInfo0200();
+        expect(result).assertEqual(TEST_SUCCESS);
+        done();
+      })
+
+    /**
+     * @tc.name   testArkWebResponseGetErrorInfo0300
+     * @tc.number SUB_OH_ArkWebResponse_GetErrorInfo_0300
+     * @tc.desc   test OH_ArkWebResponse_GetErrorInfo without set (should return nullptr)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArkWebResponseGetErrorInfo0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = webCode.OH_ArkWebResponse_GetErrorInfo0300();
+        expect(result).assertEqual(TEST_SUCCESS);
+        done();
+      })
+
+    /**
+     * @tc.name   testArkWebResponseSetErrorInfo0400
+     * @tc.number SUB_OH_ArkWebResponse_SetErrorInfo_0400
+     * @tc.desc   test OH_ArkWebResponse_SetErrorInfo with nullptr response and valid errorInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArkWebResponseSetErrorInfo0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = webCode.OH_ArkWebResponse_SetErrorInfo0400();
         expect(result).assertEqual(TEST_SUCCESS);
         done();
       })

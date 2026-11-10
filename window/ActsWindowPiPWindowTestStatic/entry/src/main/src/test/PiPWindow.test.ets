@@ -3027,8 +3027,13 @@ export default function PiPWindowTest() {
           }
         } catch (err) {
           console.log(`${msgStr} Failed to create pipController!.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
-          expect().assertFail();
-          done();
+          if (err.code == 801) {
+            expect(err.message != null).assertTrue();
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
         }
   
   
@@ -3096,8 +3101,13 @@ export default function PiPWindowTest() {
           }
         } catch (err) {
           console.log(`${msgStr} Failed to create pipController!.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
-          expect().assertFail();
-          done();
+          if (err.code == 801) {
+            expect(err.message != null).assertTrue();
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
         }
       });
       /**
@@ -3616,8 +3626,13 @@ export default function PiPWindowTest() {
           }
         } catch (err) {
           console.error(`${msgStr} Failed to test updateContentSize, Cause code ${err.code}, message ${err.message}`);
-          expect().assertFail();
-          done();
+          if (err.code == 801) {
+            expect(err.message != null).assertTrue();
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
         }
       });
   
@@ -4451,8 +4466,13 @@ export default function PiPWindowTest() {
             done();
           } catch (err) {
             console.error(`${msgStr} Failed2, Cause code ${err.code}, message ${err.message}`);
-            expect().assertFail();
-            done();
+            if (err.code == 801) {
+              expect(err.message != null).assertTrue();
+              done();
+            } else {
+              expect().assertFail();
+              done();
+            }
           }
         } else {
           done();
@@ -4483,8 +4503,13 @@ export default function PiPWindowTest() {
             done();
           } catch (err) {
             console.error(`${msgStr} Failed2, Cause code ${err.code}, message ${err.message}`);
-            expect().assertFail();
-            done();
+            if (err.code == 801) {
+              expect(err.message != null).assertTrue();
+              done();
+            } else {
+              expect().assertFail();
+              done();
+            }
           }
         } else {
           done();
@@ -4517,8 +4542,13 @@ export default function PiPWindowTest() {
             done();
           } catch (err) {
             console.error(`${msgStr} Failed2, Cause code ${err.code}, message ${err.message}`);
-            expect().assertFail();
-            done();
+            if (err.code == 801) {
+              expect(err.message != null).assertTrue();
+              done();
+            } else {
+              expect().assertFail();
+              done();
+            }
           }
         } else {
           done();

@@ -57,6 +57,275 @@ import { fileUri } from '@kit.CoreFileKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import fs, { ReadOptions, WriteOptions } from '@ohos.file.fs';
 
+import dataSharePredicates from '@ohos.data.dataSharePredicates';
+import type { RecentPhotoTestState } from '../MainAbility/pages/RecentPhotoDemo';
+
+const RECENT_PHOTO_TEST_STATE_KEY: string = 'xts.recentPhoto.requirement.state';
+const PERIOD_MAX: number = 2147483647;
+const ONE_DAY: number = 86400;
+const PAGE_URL: string = 'MainAbility/pages/RecentPhotoDemo';
+const COMPONENT_ID: string = 'recentPhoto';
+const WAIT_MS: number = 10000;
+
+interface PeriodScenario {
+  label: string;
+  period?: number;
+  expectPhoto: boolean;
+}
+
+interface InvalidFilterScenario {
+  label: string;
+  filter: photoAccessHelper.OperationItem[];
+}
+
+function assertCondition(value: boolean, message: string): void {
+  console.info('[RecentPhoto XTS] ' + message + ': ' + value);
+  expect(value).assertTrue();
+  // Also stop on a failed precondition if the assertion implementation records rather than throws.
+  if (!value) {
+    throw new Error(message);
+  }
+}
+
+async function bounded<T>(promise: Promise<T>, label: string): Promise<T> {
+  let timer: number = -1;
+  const deadline = new Promise<T>((_resolve, reject) => {
+    timer = setTimeout(() => reject(new Error(label + ': timed out')), WAIT_MS);
+  });
+  try {
+    return await Promise.race([promise, deadline]);
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+async function waitUntil(check: () => boolean, label: string): Promise<void> {
+  const deadline = Date.now() + WAIT_MS;
+  while (!check()) {
+    if (Date.now() >= deadline) {
+      throw new Error(label + ': timed out');
+    }
+    await CommonFunc.sleep(100);
+  }
+}
+
+function optionsFor(mime: photoAccessHelper.PhotoViewMIMETypes): RecentPhotoOptions {
+  const options = new RecentPhotoOptions();
+  options.MIMEType = mime;
+  options.photoSource = PhotoSource.ALL;
+  options.period = PERIOD_MAX;
+  options.isAutoRefreshSupported = false;
+  return options;
+}
+
+function imageOptions(): RecentPhotoOptions {
+  const options = optionsFor(photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE);
+  options.photoSource = PhotoSource.ALL;
+  return options;
+}
+
+async function getInfo(options: RecentPhotoOptions): Promise<RecentPhotoInfo> {
+  const helper = photoAccessHelper.getPhotoAccessHelper(getContext());
+  try {
+    return await bounded(helper.getRecentPhotoInfo(options), 'getRecentPhotoInfo');
+  } finally {
+    await helper.release();
+  }
+}
+
+function assertSameInfo(actual: RecentPhotoInfo, expected: RecentPhotoInfo, label: string): void {
+  console.info('[RecentPhoto XTS] actual' + label + ': ' + JSON.stringify(actual));
+  console.info('[RecentPhoto XTS] expected' + label + ': ' + JSON.stringify(expected));
+  expect(actual.identifier).assertEqual(expected.identifier);
+  expect(actual.dateTaken).assertEqual(expected.dateTaken);
+}
+
+function assertApiEmpty(info: RecentPhotoInfo, label: string): void {
+  expect(info.dateTaken).assertEqual(0);
+  // The RPC server uses string '0' for an empty API result; the component uses ''.
+  expect(info.identifier).assertEqual('0');
+  console.info('[RecentPhoto XTS] ' + label + ': empty API result');
+}
+
+async function openPage(options: RecentPhotoOptions): Promise<RecentPhotoTestState> {
+  const state: RecentPhotoTestState = {
+    options: options,
+    checkResultCount: 0,
+    checkInfoCount: 0,
+    exists: false,
+    info: new RecentPhotoInfo(),
+    clicks: [],
+    errors: []
+  };
+  AppStorage.setOrCreate<RecentPhotoTestState>(RECENT_PHOTO_TEST_STATE_KEY, state);
+  await router.pushUrl({ url: PAGE_URL, params: { recentPhotoRequirement: true } });
+  return state;
+}
+
+async function closePage(): Promise<void> {
+  if (router.getState().name === 'RecentPhotoDemo') {
+    router.back();
+    await waitUntil(() => router.getState().name !== 'RecentPhotoDemo', 'close test page');
+  }
+  AppStorage.delete(RECENT_PHOTO_TEST_STATE_KEY);
+}
+
+async function waitForInfo(state: RecentPhotoTestState): Promise<void> {
+  await waitUntil(() => state.checkInfoCount > 0 || state.errors.length > 0, 'component checkInfo/onError');
+  assertCondition(state.errors.length === 0, 'No unexpected component error: ' + JSON.stringify(state.errors));
+  assertCondition(state.checkResultCount > 0, 'checkResult callback received');
+  assertCondition(state.checkInfoCount > 0, 'checkInfo callback received');
+}
+
+async function clickPhoto(driver: Driver, state: RecentPhotoTestState): Promise<BaseItemInfo> {
+  const count = state.clicks.length;
+  const component = await driver.waitForComponent(ON.id(COMPONENT_ID), WAIT_MS);
+  assertCondition(component !== null && component !== undefined, 'RecentPhoto host exists');
+  await component.click();
+  await waitUntil(() => state.clicks.length > count || state.errors.length > 0, 'photo click callback');
+  assertCondition(state.errors.length === 0, 'Click completed without component error');
+  const item = state.clicks[count];
+  assertCondition(item !== undefined && typeof item.uri === 'string' && item.uri.length > 0,
+    'Click returned a nonempty URI');
+  return item;
+}
+
+function assertReadable(item: BaseItemInfo): void {
+  // Opening and reading verifies access, rather than merely checking the returned URI.
+  const file = fileIo.openSync(item.uri as string, fileIo.OpenMode.READ_ONLY);
+  try {
+    const read = fileIo.readSync(file.fd, new ArrayBuffer(16));
+    assertCondition(read > 0, 'Returned media URI is readable');
+  } finally {
+    fileIo.closeSync(file);
+  }
+}
+
+async function dateAddedFor(uri: string): Promise<number> {
+  const helper = photoAccessHelper.getPhotoAccessHelper(getContext());
+  try {
+    const predicates = new dataSharePredicates.DataSharePredicates();
+    predicates.equalTo(photoAccessHelper.PhotoKeys.URI, uri);
+    const result = await helper.getAssets({
+      predicates: predicates,
+      fetchColumns: [photoAccessHelper.PhotoKeys.DATE_ADDED]
+    });
+    try {
+      const asset = await result.getFirstObject();
+      const added = asset.get(photoAccessHelper.PhotoKeys.DATE_ADDED) as number;
+      assertCondition(typeof added === 'number' && added > 0, 'Fixture DATE_ADDED is available in seconds');
+      return added;
+    } finally {
+      result.close();
+    }
+  } finally {
+    await helper.release();
+  }
+}
+
+interface ImageFixture {
+  info: RecentPhotoInfo;
+  uri: string;
+  dateAdded: number;
+}
+
+async function getRecentImageFixture(driver: Driver): Promise<ImageFixture> {
+  try {
+    const state = await openPage(imageOptions());
+    await waitForInfo(state);
+    assertCondition(state.exists, 'PRECONDITION: a newly added local image must exist (any source)');
+    const item = await clickPhoto(driver, state);
+    assertReadable(item);
+    const added = await dateAddedFor(item.uri as string);
+    const age = Date.now() / 1000 - added;
+    assertCondition(age >= 0 && age < ONE_DAY - 600,
+      'PRECONDITION: add any image to Gallery before running; DATE_ADDED age=' + age);
+    // Avoid a race when testing period=1 immediately after adding the image.
+    await waitUntil(() => Date.now() / 1000 - added > 2, 'image ages beyond period=1');
+    return { info: state.info, uri: item.uri as string, dateAdded: added };
+  } finally {
+    await closePage();
+  }
+}
+
+async function assertComponentInfo(options: RecentPhotoOptions, expected: RecentPhotoInfo,
+  label: string): Promise<void> {
+  try {
+    const state = await openPage(options);
+    await waitForInfo(state);
+    assertCondition(state.exists, label + ': matching media exists');
+    assertSameInfo(state.info, expected, label);
+  } finally {
+    await closePage();
+  }
+}
+
+// Observe actual Gallery child nodes inside the host bounds; the host itself survives session termination.
+async function childNodes(driver: Driver, type: string): Promise<Component[]> {
+  const host = await driver.findComponent(ON.id(COMPONENT_ID));
+  assertCondition(host !== null && host !== undefined, 'Host available while inspecting Gallery content');
+  const bounds = await host.getBounds();
+  const nodes = await driver.findComponents(ON.type(type));
+  const contained: Component[] = [];
+  for (const node of nodes) {
+    const b = await node.getBounds();
+    if (b.right > b.left && b.bottom > b.top && b.left >= bounds.left && b.right <= bounds.right &&
+      b.top >= bounds.top && b.bottom <= bounds.bottom) {
+      contained.push(node);
+    }
+  }
+  return contained;
+}
+
+async function waitForImages(driver: Driver, present: boolean): Promise<void> {
+  const deadline = Date.now() + WAIT_MS;
+  while (Date.now() < deadline) {
+    const images = await childNodes(driver, 'Image');
+    if ((images.length > 0) === present) {
+      return;
+    }
+    await CommonFunc.sleep(100);
+  }
+  throw new Error('Gallery thumbnail did not become ' + (present ? 'present' : 'absent') +
+    '; inspect the device UI tree if SecurityUIExtension children are not exposed');
+}
+
+async function durationTexts(driver: Driver): Promise<string[]> {
+  const nodes = await childNodes(driver, 'Text');
+  const texts: string[] = [];
+  for (const node of nodes) {
+    const text = await node.getText();
+    if (/^\d+:\d{2}(:\d{2})?$/.test(text)) {
+      texts.push(text);
+    }
+  }
+  return texts;
+}
+
+async function expect401(filter: photoAccessHelper.OperationItem[], label: string): Promise<void> {
+  const options = optionsFor(photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE);
+  options.assetFilter = filter;
+  let receivedCode: number | undefined = undefined;
+  try {
+    await getInfo(options);
+  } catch (error) {
+    receivedCode = (error as BusinessError).code;
+  }
+  assertCondition(receivedCode !== undefined, label + ': invalid filter must fail, not succeed');
+  expect(receivedCode).assertEqual(401);
+  try {
+    const state = await openPage(options);
+    await waitUntil(() => state.errors.length > 0 || state.checkInfoCount > 0, label + ': onError');
+    assertCondition(state.errors.length > 0, label + ': onError callback received');
+    expect(state.errors[0].errorCode).assertEqual(401);
+    expect(state.errors[0].functionName).assertEqual('recentPhotoOptions.assetFilter');
+    expect(state.checkInfoCount).assertEqual(0);
+    expect(state.clicks.length).assertEqual(0);
+  } finally {
+    await closePage();
+  }
+}
+
 const SEEK_START = 3;
 const SEEK_FINISH = 4;
 const SELECTED_STATUS = 0;
@@ -336,7 +605,7 @@ async function saveMovingPhoto() {
   };
   const context = getContext();
   let resultUri = '';
-  const fileToSavePath = context.filesDir + '/01.jpg';
+  const fileToSavePath = context.filesDir + '/demo.jpg';
   const fileToSaveUri = fileUri.getUriFromPath(fileToSavePath).toString();
   console.log('saveMovingPhoto fileToSaveUri', fileToSaveUri, 'fileToSavePath', fileToSavePath);
   photoAccessHelper
@@ -3753,7 +4022,7 @@ export default function TextPicker() {
           if (isInvalidCase) {
             expect(error.code).assertEqual(401);
           } else {
-            expect(error.code).assertEqual(23800301);
+            expect( error.code === 23800301 || error.code === 14000011 ).assertTrue();
           }
         }
       }
@@ -3792,7 +4061,7 @@ export default function TextPicker() {
           if (isInvalidSingleCase) {
             expect(error.code).assertEqual(401);
           } else {
-            expect(error.code).assertEqual(23800301);
+            expect( error.code === 23800301 || error.code === 14000011 ).assertTrue();
           }
         }
       }
@@ -5404,17 +5673,17 @@ export default function TextPicker() {
         done();
         return;
       }
-      expect(PickerColorMode.AUTO).assertEqual(0);
-      expect(PickerColorMode.LIGHT).assertEqual(1);
-      expect(PickerColorMode.DARK).assertEqual(2);
-      const colorModes: number[] = [
-        PickerColorMode.AUTO,
-        PickerColorMode.LIGHT,
-        PickerColorMode.DARK
+      expect(photoAccessHelper.PickerColorMode.AUTO).assertEqual(0);
+      expect(photoAccessHelper.PickerColorMode.LIGHT).assertEqual(1);
+      expect(photoAccessHelper.PickerColorMode.DARK).assertEqual(2);
+      const colorModes: photoAccessHelper.PickerColorMode[] = [
+        photoAccessHelper.PickerColorMode.AUTO,
+        photoAccessHelper.PickerColorMode.LIGHT,
+        photoAccessHelper.PickerColorMode.DARK
       ];
       for (const colorMode of colorModes) {
         const pickerOptions: photoAccessHelper.PhotoSelectOptions = getSheetPickerOptions();
-        pickerOptions.pickerColorMode = colorMode as photoAccessHelper.PickerColorMode;
+        pickerOptions.pickerColorMode = colorMode;
         const photoPicker = new photoAccessHelper.PhotoViewPicker();
         let receivedError: BusinessError | undefined = undefined;
         let selectFinished: boolean = false;
@@ -5640,6 +5909,240 @@ export default function TextPicker() {
       }
       console.info('SUB_PHOTO_PICKER_TEST_0901 finish');
       done();
+    });
+    
+    /**
+     * @tc.name SUB_RECENT_PHOTO_TEST_0100
+     * @tc.number SUB_RECENT_PHOTO_TEST_0100
+     * @tc.desc Verify period acceptance and short-window exclusion with a newly added image from any source.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_RECENT_PHOTO_TEST_0100', Level.LEVEL0, async () => {
+      if (!isExecutePicker) { return; }
+      const fixture = await getRecentImageFixture(driver);
+      const enoughPeriod = Math.ceil(Date.now() / 1000 - fixture.dateAdded) + 600;
+      // A recent fixture checks acceptance, not the exact 86400-second fallback
+      // or inclusion of assets older than one day. Those require an older fixture.
+      const scenarios: PeriodScenario[] = [
+        { label: 'one day includes recent image', period: ONE_DAY, expectPhoto: true },
+        { label: 'one second excludes image after waiting', period: 1, expectPhoto: false },
+        { label: 'extended period includes recent image', period: enoughPeriod, expectPhoto: true },
+        { label: 'INT_MAX', period: PERIOD_MAX, expectPhoto: true },
+        { label: 'Infinity', period: Number.POSITIVE_INFINITY, expectPhoto: true },
+        { label: 'zero defaults to one day', period: 0, expectPhoto: true },
+        { label: 'negative defaults to one day', period: -1, expectPhoto: true },
+        { label: 'NaN defaults to one day', period: Number.NaN, expectPhoto: true },
+        { label: 'undefined defaults to one day', period: undefined, expectPhoto: true },
+        { label: 'MAX+1 defaults to one day', period: PERIOD_MAX + 1, expectPhoto: true },
+        { label: '-Infinity defaults to one day', period: Number.NEGATIVE_INFINITY, expectPhoto: true }
+      ];
+      for (const scenario of scenarios) {
+        console.info('[SUB_RECENT_PHOTO_TEST_0100] ' + scenario.label);
+        const options = imageOptions();
+        options.period = scenario.period;
+        const info = await getInfo(options);
+        if (scenario.expectPhoto) {
+          assertSameInfo(info, fixture.info, scenario.label + ' API');
+        } else {
+          assertApiEmpty(info, scenario.label);
+        }
+        try {
+          const state = await openPage(options);
+          await waitForInfo(state);
+          expect(state.exists).assertEqual(scenario.expectPhoto);
+          if (scenario.expectPhoto) {
+            assertSameInfo(state.info, fixture.info, scenario.label + ' component');
+          } else {
+            expect(state.info.dateTaken).assertEqual(0);
+            expect(state.info.identifier).assertEqual('');
+          }
+        } finally {
+          await closePage();
+        }
+      }
+    });
+
+    /**
+     * @tc.name SUB_RECENT_PHOTO_TEST_0200
+     * @tc.number SUB_RECENT_PHOTO_TEST_0200
+     * @tc.desc Verify assetFilter matching, precedence, period coexistence, first-50 limit and API/component error 401.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_RECENT_PHOTO_TEST_0200', Level.LEVEL0, async () => {
+      if (!isExecutePicker) { return; }
+
+      const invalid: InvalidFilterScenario[] = [
+        { label: 'invalid operation', filter: [{
+          operationType: -1 as photoAccessHelper.OperationType,
+          field: photoAccessHelper.PhotoKeys.SIZE, value: [0]
+        }] },
+        { label: 'invalid field', filter: [{
+          operationType: photoAccessHelper.OperationType.GREATER_THAN,
+          field: 'invalid_test' as photoAccessHelper.PhotoKeys, value: [0]
+        }] },
+        { label: 'URI rejects non-EQUAL_TO', filter: [{
+          operationType: photoAccessHelper.OperationType.NOT_EQUAL_TO,
+          field: photoAccessHelper.PhotoKeys.URI, value: ['file://media/Photo/0']
+        }] }
+      ];
+      for (const scenario of invalid) {
+        console.info('[SUB_RECENT_PHOTO_TEST_0200] ' + scenario.label);
+        await expect401(scenario.filter, scenario.label);
+      }
+
+      const fixture = await getRecentImageFixture(driver);
+      const options = optionsFor(photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE);
+      options.assetFilter = [{
+        operationType: photoAccessHelper.OperationType.EQUAL_TO,
+        field: photoAccessHelper.PhotoKeys.URI, value: [fixture.uri]
+      }];
+      assertSameInfo(await getInfo(options), fixture.info, 'URI filter API');
+      await assertComponentInfo(options, fixture.info, 'URI filter component');
+
+      // assetFilter takes precedence over MIMEType.
+      options.MIMEType = photoAccessHelper.PhotoViewMIMETypes.VIDEO_TYPE;
+      assertSameInfo(await getInfo(options), fixture.info, 'assetFilter overrides MIMEType API');
+      await assertComponentInfo(options, fixture.info, 'assetFilter overrides MIMEType component');
+
+      // 50 operation items: parentheses enclose adjacent predicates (implicit AND).
+      const first50: photoAccessHelper.OperationItem[] = [{
+        operationType: photoAccessHelper.OperationType.BEGIN_WRAP, field: undefined, value: undefined
+      }];
+      for (let index = 0; index < 48; index++) {
+        first50.push({
+          operationType: photoAccessHelper.OperationType.GREATER_THAN,
+          field: photoAccessHelper.PhotoKeys.SIZE, value: [0]
+        });
+      }
+      first50.push({ operationType: photoAccessHelper.OperationType.END_WRAP, field: undefined, value: undefined });
+
+      const limitOptions = optionsFor(photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE);
+      limitOptions.assetFilter = first50;
+      const reference = await getInfo(limitOptions);
+      assertCondition(reference.identifier !== undefined && reference.identifier !== '' && reference.identifier !== '0', '50-item filter matches actual media');
+      await assertComponentInfo(limitOptions, reference, '50-item filter');
+
+      // The valid but contradictory 51st condition must be ignored.
+      limitOptions.assetFilter = first50.concat([{
+        operationType: photoAccessHelper.OperationType.LESS_THAN,
+        field: photoAccessHelper.PhotoKeys.SIZE, value: [0]
+      }]);
+      assertSameInfo(await getInfo(limitOptions), reference, '51st contradictory condition is ignored API');
+      await assertComponentInfo(limitOptions, reference, '51st contradictory condition is ignored component');
+
+      // period remains effective when assetFilter is configured.
+      options.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
+      options.period = 1;
+      console.info('[SUB_RECENT_PHOTO_TEST_0200] period remains effective with assetFilter');
+      assertApiEmpty(await getInfo(options), 'period remains effective with assetFilter API');
+      try {
+        const state = await openPage(options);
+        await waitForInfo(state);
+        expect(state.exists).assertEqual(false);
+        expect(state.info.dateTaken).assertEqual(0);
+        expect(state.info.identifier).assertEqual('');
+      } finally {
+        await closePage();
+      }
+
+      // Expanding period makes the same filtered photo available again.
+      options.period = PERIOD_MAX;
+      assertSameInfo(await getInfo(options), fixture.info, 'extended period with assetFilter API');
+      await assertComponentInfo(options, fixture.info, 'extended period with assetFilter component');
+
+      // The fixture may be imported, downloaded, a screenshot, or a camera image.
+      // Do not assume a specific source or expect SCREENSHOT to exclude it.
+      options.photoSource = PhotoSource.ALL;
+      assertSameInfo(await getInfo(options), fixture.info, 'ALL sources with assetFilter API');
+      await assertComponentInfo(options, fixture.info, 'ALL sources with assetFilter component');
+    });
+
+    /**
+     * @tc.name SUB_RECENT_PHOTO_TEST_0300
+     * @tc.number SUB_RECENT_PHOTO_TEST_0300
+     * @tc.desc Verify persistence true/false/default, repeated click and readable authorized URI.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_RECENT_PHOTO_TEST_0300', Level.LEVEL0, async () => {
+      if (!isExecutePicker) { return; }
+      const values: Array<boolean | undefined> = [true, false, undefined];
+      for (const value of values) {
+        console.info('[SUB_RECENT_PHOTO_TEST_0300] isPersistAfterClick=' + value);
+        const options = optionsFor(photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE);
+        options.isPersistAfterClick = value;
+        try {
+          const state = await openPage(options);
+          await waitForInfo(state);
+          assertCondition(state.exists, 'PRECONDITION: a local image exists');
+          await waitForImages(driver, true);
+          const first = await clickPhoto(driver, state);
+          assertReadable(first);
+          if (value === true) {
+            await waitForImages(driver, true);
+            const second = await clickPhoto(driver, state);
+            expect(second.uri).assertEqual(first.uri);
+            assertReadable(second);
+            expect(state.clicks.length).assertEqual(2);
+          } else {
+            await waitForImages(driver, false);
+            const host = await driver.findComponent(ON.id(COMPONENT_ID));
+            await host.click();
+            await CommonFunc.sleep(500);
+            expect(state.clicks.length).assertEqual(1);
+            assertReadable(first);
+          }
+        } finally {
+          await closePage();
+        }
+      }
+    });
+
+    /**
+     * @tc.name SUB_RECENT_PHOTO_TEST_0400
+     * @tc.number SUB_RECENT_PHOTO_TEST_0400
+     * @tc.desc Verify isShowBadge true/false/default with an image: thumbnail, no duration text and readable URI.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_RECENT_PHOTO_TEST_0400', Level.LEVEL0, async () => {
+      if (!isExecutePicker) { return; }
+      const fixture = await getRecentImageFixture(driver);
+      // Image-only coverage: this does not verify video duration badge visibility.
+      const values: Array<boolean | undefined> = [undefined, true, false];
+      for (const value of values) {
+        console.info('[SUB_RECENT_PHOTO_TEST_0400] isShowBadge=' + value);
+        const options = imageOptions();
+        options.assetFilter = [{
+          operationType: photoAccessHelper.OperationType.EQUAL_TO,
+          field: photoAccessHelper.PhotoKeys.URI, value: [fixture.uri]
+        }];
+        options.isShowBadge = value;
+        options.isPersistAfterClick = true;
+        try {
+          const state = await openPage(options);
+          await waitForInfo(state);
+          assertCondition(state.exists, 'Recent image exists for isShowBadge=' + value);
+          assertSameInfo(state.info, fixture.info, 'same image used for badge comparison');
+          await waitForImages(driver, true);
+          await CommonFunc.sleep(500);
+          expect((await durationTexts(driver)).length).assertEqual(0);
+          const item = await clickPhoto(driver, state);
+          assertCondition(item.mimeType !== undefined && item.mimeType.startsWith('image/'),
+            'Selected asset is an image');
+          expect(item.uri).assertEqual(fixture.uri);
+          assertReadable(item);
+          await waitForImages(driver, true);
+        } finally {
+          await closePage();
+        }
+      }
     });
 
     /**

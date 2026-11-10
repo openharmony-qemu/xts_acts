@@ -26,6 +26,14 @@ public:
     static napi_value TextPickerCascadeTest_a(napi_env env, napi_callback_info info);
     static napi_value TextPickerCascadeTest_a1(napi_env env, napi_callback_info info);
     static napi_value TextPickerCascadeTest_a2(napi_env env, napi_callback_info info);
+    static napi_value TextPickerCascadeTest_a3(napi_env env, napi_callback_info info);
+    static napi_value TextPickerCascadeTest_a4(napi_env env, napi_callback_info info);
+    static napi_value TextPickerCascadeTest_a5(napi_env env, napi_callback_info info);
+    static napi_value TextPickerCascadeTest_a7(napi_env env, napi_callback_info info);
+    static napi_value TextPickerCascadeTest_a8(napi_env env, napi_callback_info info);
+    static napi_value TextPickerCascadeTest_a9(napi_env env, napi_callback_info info);
+    static napi_value TextPickerCascadeTest_a10(napi_env env, napi_callback_info info);
+    static napi_value TextPickerCascadeTest_a11(napi_env env, napi_callback_info info);
     static napi_value TextPickerCascadeTest_b(napi_env env, napi_callback_info info);
     static napi_value TextPickerCascadeTest_b1(napi_env env, napi_callback_info info);
     static napi_value TextPickerCascadeTest_b2(napi_env env, napi_callback_info info);

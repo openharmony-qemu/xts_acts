@@ -32,13 +32,18 @@ export default function abilityTest() {
     let bundleName4 = 'com.example.abilitymultiinstancetestd';
     let cmdBeforeEach = 'aa start -d 0 -a TestAbility' + ' -b ' + 'com.example.abilitymultiinstance';
     let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
-    if(user !== undefined){
-        cmdBeforeEach += ' -u ' + user;
-    }
     let cmdBeforeEach2 = 'aa force-stop com.example.abilitymultiinstancetesta';
     let cmdBeforeEach3 = 'aa force-stop com.example.abilitymultiinstancetestb';
     let cmdBeforeEach4 = 'aa force-stop com.example.abilitymultiinstancetestc';
     let cmdBeforeEach5 = 'aa force-stop com.example.abilitymultiinstancetestd';
+    if(user !== undefined){
+        cmdBeforeEach += ' -u ' + user;
+        cmdBeforeEach2 += ' -u ' + user;
+        cmdBeforeEach3 += ' -u ' + user;
+        cmdBeforeEach4 += ' -u ' + user;
+        cmdBeforeEach5 += ' -u ' + user;
+
+    }
     let delegator = abilityDelegatorRegistry.getAbilityDelegator();
     const TAG: string = 'AbilityMultiInstance';
     const TEST_SUITE_NAME: string = 'AbilityMultiInstanceTest';

@@ -87,7 +87,8 @@ export async function waitForExist<T> (
   testsuite: string,
   expectValue: string | number | null = null,
   interval=3000,
-  tryTime=20
+  tryTime=20,
+  expireMs: number=-1
 ):Promise<T>{
   let nums = 0;
   let isSuccess = false;

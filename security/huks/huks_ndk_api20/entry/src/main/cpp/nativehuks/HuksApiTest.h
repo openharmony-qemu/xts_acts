@@ -22,6 +22,8 @@
 
 
 namespace HuksApiTest {
+    OH_Huks_Result InitParamSet1(struct OH_Huks_ParamSet **paramSet,
+        const struct OH_Huks_Param *params, uint32_t paramCount);
     const uint32_t IV_SIZE = 16;
     const uint8_t IV[IV_SIZE] = "bababababababab";
     const uint32_t AAD_SIZE = 16;

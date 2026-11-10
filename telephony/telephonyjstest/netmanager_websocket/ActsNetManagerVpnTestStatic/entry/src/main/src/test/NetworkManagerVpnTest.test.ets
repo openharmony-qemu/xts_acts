@@ -116,6 +116,8 @@ export default function NetworkManagerVpnTest(): void {
         let vpnInstance = vpnExtension.createVpnConnection(context2!);
         hilog.info(domain, tag, '%{public}s', `${caseName} create success`);
         expect(vpnInstance !== undefined).assertTrue();
+        expect(vpnInstance !== null).assertTrue();
+        expect(typeof vpnInstance === 'object').assertTrue();
         done();
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', `${caseName} catch error, code: ${JSON.stringify(error?.code)}, message: ${JSON.stringify(error?.message)}`);
@@ -573,6 +575,8 @@ export default function NetworkManagerVpnTest(): void {
         let vpnObserver = vpnExtension.createVpnObserver();
         hilog.info(domain, tag, '%{public}s', `${caseName} createVpnObserver success`);
         expect(vpnObserver !== undefined).assertTrue();
+        expect(vpnObserver !== null).assertTrue();
+        expect(typeof vpnObserver === 'object').assertTrue();
         done();
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', `${caseName} createVpnObserver fail code: ${JSON.stringify(error?.code)}, message: ${JSON.stringify(error?.message)}`);

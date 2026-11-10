@@ -958,6 +958,7 @@ static void AddExFunction(std::vector<napi_property_descriptor> &descVector)
         descVector.push_back(desc);
     }
     AddErrorInfoFunctions(descVector);
+    AddErrorInfoFunctionsEx(descVector);
 }
 
 static napi_value Init(napi_env env, napi_value exports)

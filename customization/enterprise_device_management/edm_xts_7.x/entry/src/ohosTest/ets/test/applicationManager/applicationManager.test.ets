@@ -2782,6 +2782,148 @@ export default function applicationManagerTest() {
     });
 
     /**
+     * @tc.name   test_removeAllNotifications_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLNOTIFICATIONS_JS_0100
+     * @tc.desc   test removeAllNotifications without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it("test_removeAllNotifications_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.removeAllNotifications(DEFAULT_USER_ID);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.code).assertEqual(9200001);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_removeAllNotifications_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLNOTIFICATIONS_JS_0200
+     * @tc.desc   test removeAllNotifications with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it("test_removeAllNotifications_0200", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        applicationManager.removeAllNotifications(DEFAULT_USER_ID);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.code).assertEqual(9200002);
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_removeAllNotifications_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLNOTIFICATIONS_JS_0300
+     * @tc.desc   test removeAllNotifications with null accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it("test_removeAllNotifications_0300", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.removeAllNotifications(null);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.code).assertEqual(401);
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_removeAllNotifications_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLNOTIFICATIONS_JS_0400
+     * @tc.desc   test removeAllNotifications with undefined accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it("test_removeAllNotifications_0400", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.removeAllNotifications(undefined);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.code).assertEqual(401);
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_removeAllNotifications_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLNOTIFICATIONS_JS_0500
+     * @tc.desc   test removeAllNotifications with invalid accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it("test_removeAllNotifications_0500", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.removeAllNotifications(INVALID_USER_ID);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.code).assertEqual(9200012);
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_removeAllNotifications_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLNOTIFICATIONS_JS_0600
+     * @tc.desc   test removeAllNotifications success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it("test_removeAllNotifications_0600", Level.LEVEL0, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.removeAllNotifications(DEFAULT_USER_ID);
+      } catch (error) {
+        expect().assertFail();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_removeAllNotifications_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLNOTIFICATIONS_JS_0700
+     * @tc.desc   test removeAllNotifications success with minimum accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it("test_removeAllNotifications_0700", Level.LEVEL0, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.removeAllNotifications(0);
+      } catch (error) {
+        expect().assertFail();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
      * @tc.name   test_getAllMainWindowStates_0100
      * @tc.number SUB_CUSTOMIZATION_EDM_GETALLMAINWINDOWSTATES_JS_0100
      * @tc.desc   test getAllMainWindowStates without admin

@@ -32,13 +32,13 @@ import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function TextDeleteDirectionTest() {
   describe('TextDeleteDirectionTest', () :void=> {
     beforeAll(async (): Promise<void> => {
       console.info("TextDeleteDirectionTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api12.static", "EntryAbility")
-
     });
 
     beforeEach(async (): Promise<void> => {
@@ -58,9 +58,10 @@ export default function TextDeleteDirectionTest() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push TextDeleteDirectionTest page error:" + err);
+        console.log("push TextDeleteDirectionTest page error:" + err);
       }
       console.info("TextDeleteDirectionTest foreEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     afterEach(async () => {
       await CommonFunc.sleep(2000);
@@ -87,7 +88,11 @@ export default function TextDeleteDirectionTest() {
       await CommonFunc.sleep(500);
       await (caretPosition?.click() as Promise<void>)
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2071)
+      try {
+        await driver.triggerKey(2071, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(2000);
       console.log("=============================================== _0001" + ''+AppStorage.get<string>('deleteValue'))
       expect(''+AppStorage.get<string>('deleteValue')).assertEqual('这');
@@ -122,7 +127,11 @@ export default function TextDeleteDirectionTest() {
         await CommonFunc.sleep(500);
         await (allSelect?.click() as Promise<void>)
         await CommonFunc.sleep(500);
-        await driver.triggerKey(2071)
+        try {
+          await driver.triggerKey(2071, displayID);
+        } catch (err) {
+          console.log('driver.triggerKey error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(500);
         console.log("=============================================== " + ''+AppStorage.get<string>('deleteValue'))
         expect(''+AppStorage.get<string>('deleteValue')).assertEqual('这是测试删除回调文本');
@@ -158,7 +167,11 @@ export default function TextDeleteDirectionTest() {
         await CommonFunc.sleep(500);
         await (caretPosition?.click() as Promise<void>)
         await CommonFunc.sleep(500);
-        await driver.triggerKey(2055)
+        try {
+          await driver.triggerKey(2055, displayID);
+        } catch (err) {
+          console.log('driver.triggerKey error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(500);
         expect(''+AppStorage.get<string>('deleteValue')).assertEqual('除');
         expect(''+AppStorage.get<number>('deleteOffset')).assertEqual('5');
@@ -193,7 +206,11 @@ export default function TextDeleteDirectionTest() {
         await CommonFunc.sleep(500);
         await (allSelect?.click() as Promise<void>)
         await CommonFunc.sleep(500);
-        await driver.triggerKey(2055)
+        try {
+          await driver.triggerKey(2055, displayID);
+        } catch (err) {
+          console.log('driver.triggerKey error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(500);
         expect(''+AppStorage.get<string>('deleteValue')).assertEqual('这是测试删除回调文本');
         expect(''+AppStorage.get<number>('deleteOffset')).assertEqual('0');

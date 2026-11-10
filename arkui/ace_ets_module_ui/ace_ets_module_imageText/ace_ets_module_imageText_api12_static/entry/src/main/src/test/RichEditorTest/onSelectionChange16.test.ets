@@ -34,6 +34,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 export default function onSelectionChange16() {
   describe('onSelectionChange16', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,9 +58,10 @@ export default function onSelectionChange16() {
           console.info("push onSelectionChange16 page result");
         }
       } catch (err) {
-        console.error("push onSelectionChange16 page error:" + err);
+        console.log("push onSelectionChange16 page error:" + err);
       }
       console.info("onSelectionChange16 beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
@@ -87,9 +89,21 @@ export default function onSelectionChange16() {
       let Obj0 = JSON.parseJsonElement(text0);
       expect(Obj0.getElement('$attrs').getString('content')).assertEqual('1');
 
-      await driver.triggerKey(2055);
-      await driver.triggerKey(2055);
-      await driver.triggerKey(2055);
+      try {
+        await driver.triggerKey(2055, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
+      try {
+        await driver.triggerKey(2055, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
+      try {
+        await driver.triggerKey(2055, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let text1_1 = inspector.getInspectorByKey('onSelectionChange16' + '_text1');
       let Obj1_1 = JSON.parseJsonElement(text1_1);

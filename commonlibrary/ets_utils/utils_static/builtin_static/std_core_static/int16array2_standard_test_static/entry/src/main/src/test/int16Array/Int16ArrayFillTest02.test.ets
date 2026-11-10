@@ -22,7 +22,7 @@ import {
   Level,
   Size,
   TestType,
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 
 export default function int16ArrayFillTestTwoTest(): void {
   describe('Int16ArrayFillTestTwoTest', (): void => {

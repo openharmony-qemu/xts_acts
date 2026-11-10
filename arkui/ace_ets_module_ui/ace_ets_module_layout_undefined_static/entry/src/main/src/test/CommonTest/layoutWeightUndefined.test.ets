@@ -49,35 +49,41 @@ export default function layoutWeightUndefinedTest() {
     });
 
     /**
-     * @tc.number    layoutWeightUndefinedTest_0100
-     * @tc.name      layoutWeightUndefinedTest_0100
-     * @tc.desc      layoutWeightUndefinedTest_0100
+     * @tc.number    SUB_ARKUI_API_layoutWeightUndefinedTest_0100
+     * @tc.name      SUB_ARKUI_API_layoutWeightUndefinedTest_0100
+     * @tc.desc      SUB_ARKUI_API_layoutWeightUndefinedTest_0100
      * @tc.level     0
      */
-    it('layoutWeightUndefinedTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('layoutWeightUndefinedTest_0100 START');
-      await CommonFunc.sleep(500);
-      let strJson = inspector.getInspectorByKey('Common_layoutWeight');
-      let obj = JSON.parseJsonElement(strJson);
-      await CommonFunc.sleep(1000);
-      console.info('Test component obj is: ' + obj.getElement('$attrs'));
-      console.info('Test component obj.layoutWeight is: ' + obj.getElement('$attrs').getDouble('layoutWeight'));
-      expect(obj.getElement('$attrs').getDouble('layoutWeight')).assertEqual(1);
+    it('SUB_ARKUI_API_layoutWeightUndefinedTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        console.info('SUB_ARKUI_API_layoutWeightUndefinedTest_0100 START');
+        await CommonFunc.sleep(500);
+        let strJson = inspector.getInspectorByKey('Common_layoutWeight');
+        let obj = JSON.parseJsonElement(strJson);
+        await CommonFunc.sleep(1000);
+        console.info('Test component obj is: ' + obj.getElement('$attrs'));
+        console.info('Test component obj.layoutWeight is: ' + obj.getElement('$attrs').getDouble('layoutWeight'));
+        expect(obj.getElement('$attrs').getDouble('layoutWeight')).assertEqual(1);
 
-      let driver = Driver.create();
-      let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
-      await (btn_true?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        let driver = Driver.create();
+        let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+        await (btn_true?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      let strJson1 = inspector.getInspectorByKey('Common_layoutWeight');
-      let obj1 = JSON.parseJsonElement(strJson1);
-      await CommonFunc.sleep(1000);
-      console.info('Test component obj is: ' + obj1.getElement('$attrs'));
-      console.info('Test component obj.layoutWeight is: ' + obj1.getElement('$attrs').getDouble('layoutWeight'));
-      expect(obj1.getElement('$attrs').getDouble('layoutWeight')).assertEqual(0);
+        let strJson1 = inspector.getInspectorByKey('Common_layoutWeight');
+        let obj1 = JSON.parseJsonElement(strJson1);
+        await CommonFunc.sleep(1000);
+        console.info('Test component obj is: ' + obj1.getElement('$attrs'));
+        console.info('Test component obj.layoutWeight is: ' + obj1.getElement('$attrs').getDouble('layoutWeight'));
+        expect(obj1.getElement('$attrs').getDouble('layoutWeight')).assertEqual(0);
 
-      console.info('[layoutWeightUndefinedTest_0100] END');
-      done();
+        console.info('[SUB_ARKUI_API_layoutWeightUndefinedTest_0100] END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_layoutWeightUndefinedTest_0100] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

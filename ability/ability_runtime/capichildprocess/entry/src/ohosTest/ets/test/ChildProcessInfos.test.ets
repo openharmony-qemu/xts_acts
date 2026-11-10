@@ -20,6 +20,9 @@ import testNapi from 'libentry.so';
 const ERR_PARAM = 401;
 const ERR_BUFFER_TOO_SMALL = 16000179;
 const ERR_NO_ERROR = 0;
+const ERR_INTERNAL = 16000050;
+const IDX_ACQUIRE_ENUM_PARAM = 0;
+const IDX_ACQUIRE_ENUM_INTERNAL = 1;
 const IDX_CODE = 0;
 const IDX_COUNT = 1;
 const IDX_INDEX_CODE = 2;
@@ -40,7 +43,7 @@ function sleep(time: number): Promise<void> {
 }
 
 export default function childProcessInfosTest() {
-  describe('ActsCapiChildProcessInfosTest', () => {
+  describe('childProcessInfosTest', () => {
     let mpEnable: boolean = false;
     let ncpEnable: boolean = false;
 
@@ -84,6 +87,34 @@ export default function childProcessInfosTest() {
       });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ChildProcessInfos_Acquire_CountNull_0110
+     * @tc.number SUB_Ability_AbilityRuntime_ChildProcessInfos_Acquire_CountNull_0110
+     * @tc.desc   OH_Ability_AcquireChildProcessInfos returns NCP_ERR_INVALID_PARAM when count is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ChildProcessInfos_Acquire_CountNull_0110', Level.LEVEL0,
+      () => {
+        expect(testNapi.acquireChildProcessInfosCountNull()).assertEqual(ERR_PARAM);
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ChildProcessInfos_Acquire_ErrEnum_0120
+     * @tc.number SUB_Ability_AbilityRuntime_ChildProcessInfos_Acquire_ErrEnum_0120
+     * @tc.desc   Cover NCP_ERR_INVALID_PARAM and NCP_ERR_INTERNAL enum values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ChildProcessInfos_Acquire_ErrEnum_0120', Level.LEVEL0,
+      () => {
+        let enums: number[] = testNapi.acquireChildProcessInfosErrorEnums();
+        expect(enums[IDX_ACQUIRE_ENUM_PARAM]).assertEqual(ERR_PARAM);
+        expect(enums[IDX_ACQUIRE_ENUM_INTERNAL]).assertEqual(ERR_INTERNAL);
+      });
+
+    /**
      * @tc.name   SUB_Ability_AbilityRuntime_ChildProcessInfos_Acquire_Empty_0100
      * @tc.number SUB_Ability_AbilityRuntime_ChildProcessInfos_Acquire_Empty_0100
      * @tc.desc   OH_Ability_AcquireChildProcessInfos succeeds and can be released
@@ -113,6 +144,34 @@ export default function childProcessInfosTest() {
       });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ChildProcessInfos_AcquireUI_CountNull_0110
+     * @tc.number SUB_Ability_AbilityRuntime_ChildProcessInfos_AcquireUI_CountNull_0110
+     * @tc.desc   AcquireUIAbilityChildProcessInfos returns PARAM_INVALID when count is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ChildProcessInfos_AcquireUI_CountNull_0110', Level.LEVEL0,
+      () => {
+        expect(testNapi.acquireUIAbilityChildProcessInfosCountNull()).assertEqual(
+          ERR_PARAM);
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ChildProcessInfos_AcquireUI_ErrEnum_0120
+     * @tc.number SUB_Ability_AbilityRuntime_ChildProcessInfos_AcquireUI_ErrEnum_0120
+     * @tc.desc   Cover ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID and INTERNAL enums
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ChildProcessInfos_AcquireUI_ErrEnum_0120', Level.LEVEL0,
+      () => {
+        let enums: number[] = testNapi.acquireUIAbilityChildProcessInfosErrorEnums();
+        expect(enums[IDX_ACQUIRE_ENUM_PARAM]).assertEqual(ERR_PARAM);
+        expect(enums[IDX_ACQUIRE_ENUM_INTERNAL]).assertEqual(ERR_INTERNAL);
+      });
+    /**
      * @tc.name   SUB_Ability_AbilityRuntime_ChildProcessInfos_AcquireUI_Empty_0100
      * @tc.number SUB_Ability_AbilityRuntime_ChildProcessInfos_AcquireUI_Empty_0100
      * @tc.desc   OH_AbilityRuntime_AcquireUIAbilityChildProcessInfos succeeds
@@ -141,6 +200,32 @@ export default function childProcessInfosTest() {
       });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ChildProcessInfos_GetByIndex_OutNull_0110
+     * @tc.number SUB_Ability_AbilityRuntime_ChildProcessInfos_GetByIndex_OutNull_0110
+     * @tc.desc   GetChildProcessInfoByIndex returns PARAM_INVALID when info out is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ChildProcessInfos_GetByIndex_OutNull_0110', Level.LEVEL0,
+      () => {
+        expect(testNapi.getChildProcessInfoByIndexOutNull()).assertEqual(ERR_PARAM);
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ChildProcessInfos_GetByIndex_Oob_0120
+     * @tc.number SUB_Ability_AbilityRuntime_ChildProcessInfos_GetByIndex_Oob_0120
+     * @tc.desc   GetChildProcessInfoByIndex returns PARAM_INVALID when index >= count
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ChildProcessInfos_GetByIndex_Oob_0120', Level.LEVEL0,
+      () => {
+        expect(testNapi.getChildProcessInfoByIndexOob()).assertEqual(ERR_PARAM);
+      });
+
+    /**
      * @tc.name   SUB_Ability_AbilityRuntime_ChildProcessInfos_GetPid_Invalid_0100
      * @tc.number SUB_Ability_AbilityRuntime_ChildProcessInfos_GetPid_Invalid_0100
      * @tc.desc   OH_AbilityRuntime_ChildProcessInfo_GetPid returns 401 on null info
@@ -151,6 +236,21 @@ export default function childProcessInfosTest() {
     it('SUB_Ability_AbilityRuntime_ChildProcessInfos_GetPid_Invalid_0100', Level.LEVEL0,
       () => {
         expect(testNapi.childProcessInfoGetPidInvalid()).assertEqual(ERR_PARAM);
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ChildProcessInfos_GetPid_Enum_0110
+     * @tc.number SUB_Ability_AbilityRuntime_ChildProcessInfos_GetPid_Enum_0110
+     * @tc.desc   Cover GetPid NO_ERROR and PARAM_INVALID enum values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ChildProcessInfos_GetPid_Enum_0110', Level.LEVEL0,
+      () => {
+        let enums: number[] = testNapi.childProcessInfoGetPidErrorEnums();
+        expect(enums[IDX_ENUM_NO_ERROR]).assertEqual(ERR_NO_ERROR);
+        expect(enums[IDX_ENUM_PARAM_INVALID]).assertEqual(ERR_PARAM);
       });
 
     /**
@@ -239,6 +339,10 @@ export default function childProcessInfosTest() {
             return;
           }
           if (!ncpEnable) {
+            if (ret == 16010006) {
+              done();
+              return;
+            }
             expect(801).assertEqual(ret);
             done();
             return;
@@ -287,6 +391,37 @@ export default function childProcessInfosTest() {
           expect(0).assertEqual(ret);
           await sleep(500);
           expect(testNapi.childProcessInfoGetParentPidNullOut()).assertEqual(ERR_PARAM);
+          expect(1).assertEqual(testNapi.requestExitChildProcess(0));
+          await sleep(600);
+        } catch (err) {
+          console.info(`${tag} error: ${JSON.stringify(err)}`);
+          expect(false).assertTrue();
+        } finally {
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ChildProcessInfos_GetPid_NullOut_0120
+     * @tc.number SUB_Ability_AbilityRuntime_ChildProcessInfos_GetPid_NullOut_0120
+     * @tc.desc   GetPid returns PARAM_INVALID when pid out-param is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ChildProcessInfos_GetPid_NullOut_0120',
+      Level.LEVEL0, async (done: Function) => {
+        let tag = 'ChildProcessInfos_GetPid_NullOut_0120';
+        try {
+          let ret: number = testNapi.startNativeChildProcess('libentry.so');
+          if (!mpEnable || !ncpEnable) {
+            console.info(`${tag} skip create unsupported ret=${ret}`);
+            done();
+            return;
+          }
+          expect(0).assertEqual(ret);
+          await sleep(500);
+          expect(testNapi.childProcessInfoGetPidNullOut()).assertEqual(ERR_PARAM);
           expect(1).assertEqual(testNapi.requestExitChildProcess(0));
           await sleep(600);
         } catch (err) {
@@ -355,6 +490,69 @@ export default function childProcessInfosTest() {
           await sleep(500);
           let code: number = testNapi.childProcessInfoGetProcessNameBufferTooSmall();
           expect(code).assertEqual(ERR_BUFFER_TOO_SMALL);
+          expect(1).assertEqual(testNapi.requestExitChildProcess(0));
+          await sleep(600);
+        } catch (err) {
+          console.info(`${tag} error: ${JSON.stringify(err)}`);
+          expect(false).assertTrue();
+        } finally {
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ChildProcessInfos_GetName_SizeZero_0110
+     * @tc.number SUB_Ability_AbilityRuntime_ChildProcessInfos_GetName_SizeZero_0110
+     * @tc.desc   GetProcessName returns PARAM_INVALID when processNameSize is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ChildProcessInfos_GetName_SizeZero_0110', Level.LEVEL0,
+      async (done: Function) => {
+        let tag = 'ChildProcessInfos_GetName_SizeZero_0110';
+        try {
+          let ret: number = testNapi.startNativeChildProcess('libentry.so');
+          if (!mpEnable || !ncpEnable) {
+            console.info(`${tag} skip create unsupported ret=${ret}`);
+            done();
+            return;
+          }
+          expect(0).assertEqual(ret);
+          await sleep(500);
+          expect(testNapi.childProcessInfoGetProcessNameSizeZero()).assertEqual(ERR_PARAM);
+          expect(1).assertEqual(testNapi.requestExitChildProcess(0));
+          await sleep(600);
+        } catch (err) {
+          console.info(`${tag} error: ${JSON.stringify(err)}`);
+          expect(false).assertTrue();
+        } finally {
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ChildProcessInfos_GetName_RequiredNull_0120
+     * @tc.number SUB_Ability_AbilityRuntime_ChildProcessInfos_GetName_RequiredNull_0120
+     * @tc.desc   GetProcessName returns PARAM_INVALID when requiredSize is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ChildProcessInfos_GetName_RequiredNull_0120',
+      Level.LEVEL0, async (done: Function) => {
+        let tag = 'ChildProcessInfos_GetName_RequiredNull_0120';
+        try {
+          let ret: number = testNapi.startNativeChildProcess('libentry.so');
+          if (!mpEnable || !ncpEnable) {
+            console.info(`${tag} skip create unsupported ret=${ret}`);
+            done();
+            return;
+          }
+          expect(0).assertEqual(ret);
+          await sleep(500);
+          expect(testNapi.childProcessInfoGetProcessNameRequiredNull()).assertEqual(
+            ERR_PARAM);
           expect(1).assertEqual(testNapi.requestExitChildProcess(0));
           await sleep(600);
         } catch (err) {

@@ -35,6 +35,8 @@
     "MainAbility/pages/Scroll/scrollScrollBarHeight",
     "MainAbility/pages/Scroll/scrollGetScrollState",
     "MainAbility/pages/Scroll/scrollWithMouse",
+    "MainAbility/pages/Scroll/scrollKeyboard",
+    "MainAbility/pages/Scroll/scrollKeyboardModifier",
     "MainAbility/pages/LazyDynamicLayout/customListLayoutTest"
   ]
 }

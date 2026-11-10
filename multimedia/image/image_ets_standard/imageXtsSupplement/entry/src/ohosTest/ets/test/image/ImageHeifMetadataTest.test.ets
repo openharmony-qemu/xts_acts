@@ -484,5 +484,28 @@ export default function ImageHeifsTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   SUB_IMAGE_HEIFS_METADATA_SET_PROPERTIES_NULL_0100
+     * @tc.number SUB_IMAGE_HEIFS_METADATA_SET_PROPERTIES_NULL_0100
+     * @tc.desc   HeifsMetadata setProperties 第一个参数为 null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_HEIFS_METADATA_SET_PROPERTIES_NULL_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_HEIFS_METADATA_SET_PROPERTIES_NULL_0100';
+      try {
+        let heifsMetadata: image.HeifsMetadata = image.HeifsMetadata.createInstance();
+        await heifsMetadata.setProperties(null);
+        console.error(TAG, testName, ' setProperties null should throw 401 but succeeded');
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(TAG, testName, ' setProperties null error', error.message, error.code);
+        expect(error.code).assertEqual('401');
+        done();
+      }
+    });
   })
 }

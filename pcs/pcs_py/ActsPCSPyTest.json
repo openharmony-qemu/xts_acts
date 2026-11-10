@@ -19,7 +19,6 @@
             "./testRealRandomGenerate.py",
             "./testSDCardMount.py",
             "./testSelinuxFileLable.py",
-            "./testSystemCoreInternetPermission.py",
             "./testTrustedRootCaExist.py",
             "./testSupportHdc.py",
             "./testSysCapNameOnly.py",

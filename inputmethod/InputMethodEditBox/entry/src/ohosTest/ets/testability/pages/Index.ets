@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 import hilog from '@ohos.hilog';
+import { router } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function generatelargeData(sizeInBytes: number): string {
   let data = '';
@@ -32,6 +34,27 @@ struct Index {
 
   build() {
     Column() {
+      Row(){
+        Button() {
+          Text('富文本测试')
+            .fontSize(20)
+        }.id('Button1')
+          .type(ButtonType.Capsule)
+          .margin({
+            top: 20
+          })
+          .backgroundColor('#0D9FFB')
+          .width('50%')
+          .height('10%')
+          .onClick(() => {
+            console.info('====> succeed in click button');
+            router.pushUrl({ url: 'testability/pages/Third' }).then(() => {
+              console.info('====> succeed in jump to third page');
+            }).catch((err: BusinessError) => {
+              console.info(`====>pushUrl err.code: ${err.code},message: ${err.message}`);
+            })
+          })
+      }
       Row(){
         TextArea({
           text: '1'

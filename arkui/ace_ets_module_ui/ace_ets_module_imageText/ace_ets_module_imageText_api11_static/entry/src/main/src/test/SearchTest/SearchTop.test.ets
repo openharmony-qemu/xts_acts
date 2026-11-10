@@ -43,6 +43,8 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 let uiContext = AppStorage.get<UIContext>("uiContext");
 
+let displayID: Int = 0;
+
 export default function search_top() {
   describe('search_top', () => {
     beforeAll(async (): Promise<void> => {
@@ -50,7 +52,6 @@ export default function search_top() {
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
       uiContext = AppStorage.get<UIContext>("uiContext")
-
     });
 
     beforeEach(async (): Promise<void> => {
@@ -71,9 +72,10 @@ export default function search_top() {
           // console.info("push search_top page result: " + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push search_top page error: " + err);
+        console.log("push search_top page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     
@@ -103,7 +105,11 @@ export default function search_top() {
 
         let driver = Driver.create();
         await CommonFunc.sleep(500);
-        await (driver.click(Math.round(uiContext!.vp2px(200)).toInt(), Math.round(uiContext!.vp2px(20)).toInt()) as Promise<void>);
+        try {
+          await (driver.clickAt({ x: Math.round(uiContext!.vp2px(200)).toInt(), y: Math.round(uiContext!.vp2px(20)).toInt(), displayId: displayID }) as Promise<void>);
+        } catch (err) {
+          console.log('driver.clickAt error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
 
         expect(search_01.top).assertEqual(Column_1.top);

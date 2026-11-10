@@ -156,6 +156,15 @@ const expectTrue: (n: boolean, name: string) => void = (n: boolean, name: string
   }
 }
 
+const getErrCode: (err: Error) => number = (err: Error): number => {
+  try {
+    const e: BusinessError = err as BusinessError;
+    return e.code;
+  } catch (castErr) {
+    return -1;
+  }
+}
+
 function getRawFileContentWrapper(filePath: string): Promise<Uint8Array> {
   let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
   let context = abilityDelegator.getAppContext();
@@ -214,13 +223,11 @@ function pemToDer(pemCert: string): ArrayBuffer {
 
   // 替换回车换行 \r
 
-  base64Data = base64Data.replace(new RegExp('\\r\
-', 'g'), '');
+  base64Data = base64Data.replace(new RegExp('\\r\\n', 'g'), '');
 
   // 替换换行
 
-  base64Data = base64Data.replace(new RegExp('\
-', 'g'), '');
+  base64Data = base64Data.replace(new RegExp('\\n', 'g'), '');
 
   // 替换空格
   base64Data = base64Data.replace(new RegExp('\\s', 'g'), '');
@@ -1972,6 +1979,520 @@ export default function netWorkSecurityVerChainTest(): void {
               hilog.info(domain, tag, '%{public}s',
                 `${caseName} VerifyCertChain failed as expected: ${JSON.stringify(error)}`);
               expectTrue(error.code === 2305001, `${caseName} error code should be 2305001, actual: ${error.code}`);
+              done();
+            });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} err: ${err}`);
+          expectFalse(true, `${caseName} unexpected exception: ${err}`);
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+      });
+
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChain_static_3600
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_3600
+     * @tc.desc   Certs param is undefined, expect error code 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChain_static_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChain_static_3600';
+        hilog.info(domain, tag, '%{public}s', `${caseName} test start`);
+        try {
+          const certs: networkSecurity.CertBlob[] | undefined = undefined;
+          networkSecurity.verifyCertChain(certs!).then((result: networkSecurity.CertBlob[]) => {
+            console.error(`${caseName} should fail but succeeded with result length: ${result.length}`);
+            expectFalse(true, `${caseName} should fail with error code 401, but succeeded`);
+            done();
+          }).catch((error) => {
+            hilog.info(domain, tag, '%{public}s', `${caseName} failed as expected: ${JSON.stringify(error)}`);
+            expectTrue(error.code === 401, `${caseName} error code should be 401, actual: ${error.code}`);
+            done();
+          });
+        } catch (err) {
+          const errCode: number = getErrCode(err as Error);
+          hilog.info(domain, tag, '%{public}s',
+            `${caseName} catch errCode:${errCode}, err:${JSON.stringify(err)}`);
+          expectTrue(errCode === 401 || errCode === -1,
+            `${caseName} catch error code should be 401 or runtime NullPointerError, actual: ${errCode}`);
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+      });
+
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChain_static_3700
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_3700
+     * @tc.desc   Certs param is null, expect error code 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChain_static_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChain_static_3700';
+        hilog.info(domain, tag, '%{public}s', `${caseName} test start`);
+        try {
+          const certs: networkSecurity.CertBlob[] | null = null;
+          networkSecurity.verifyCertChain(certs!).then((result: networkSecurity.CertBlob[]) => {
+            console.error(`${caseName} should fail but succeeded with result length: ${result.length}`);
+            expectFalse(true, `${caseName} should fail with error code 401, but succeeded`);
+            done();
+          }).catch((error) => {
+            hilog.info(domain, tag, '%{public}s', `${caseName} failed as expected: ${JSON.stringify(error)}`);
+            expectTrue(error.code === 401, `${caseName} error code should be 401, actual: ${error.code}`);
+            done();
+          });
+        } catch (err) {
+          const errCode: number = getErrCode(err as Error);
+          hilog.info(domain, tag, '%{public}s',
+            `${caseName} catch errCode:${errCode}, err:${JSON.stringify(err)}`);
+          expectTrue(errCode === 401 || errCode === -1,
+            `${caseName} catch error code should be 401 or runtime NullPointerError, actual: ${errCode}`);
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+      });
+
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChain_static_3800
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_3800
+     * @tc.desc   CaCert param is null with a valid chain, expect error code 401 or cert verify failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChain_static_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChain_static_3800';
+        hilog.info(domain, tag, '%{public}s', `${caseName} test start`);
+        try {
+          const certs: networkSecurity.CertBlob[] = [
+            { type: networkSecurity.CertType.CERT_TYPE_PEM, data: LEAF_CERT },
+            { type: networkSecurity.CertType.CERT_TYPE_PEM, data: INTERMEDIATE_CA_CERT }
+          ];
+          const caCert: networkSecurity.CertBlob | null = null;
+          networkSecurity.verifyCertChain(certs, caCert!).then((result: networkSecurity.CertBlob[]) => {
+            hilog.info(domain, tag, '%{public}s', `${caseName} succeeded with result length: ${result.length}`);
+            expectTrue(result.length >= 1, `${caseName} result length should be at least 1, actual: ${result.length}`);
+            done();
+          }).catch((error) => {
+            hilog.info(domain, tag, '%{public}s', `${caseName} failed as expected: ${JSON.stringify(error)}`);
+            expectTrue(error.code === 401 || error.code === 2305001 || error.code === 2305018,
+              `${caseName} error code should be 401 or 2305001 or 2305018, actual: ${error.code}`);
+            done();
+          });
+        } catch (err) {
+          const errCode: number = getErrCode(err as Error);
+          hilog.info(domain, tag, '%{public}s',
+            `${caseName} catch errCode:${errCode}, err:${JSON.stringify(err)}`);
+          expectTrue(errCode === 401 || errCode === 2305001 || errCode === 2305018 || errCode === -1,
+            `${caseName} catch error code should be 401 or 2305001 or 2305018 or runtime error, actual: ${errCode}`);
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+      });
+
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChain_static_3900
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_3900
+     * @tc.desc   Hostname param is null with a valid chain, expect error code 401 or hostname verify failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChain_static_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChain_static_3900';
+        hilog.info(domain, tag, '%{public}s', `${caseName} test start`);
+        try {
+          const certs: networkSecurity.CertBlob[] = [
+            { type: networkSecurity.CertType.CERT_TYPE_PEM, data: LEAF_CERT },
+            { type: networkSecurity.CertType.CERT_TYPE_PEM, data: INTERMEDIATE_CA_CERT }
+          ];
+          const caCert: networkSecurity.CertBlob = {
+            type: networkSecurity.CertType.CERT_TYPE_PEM,
+            data: ROOT_CA_CERT
+          };
+          const hostname: string | null = null;
+          networkSecurity.verifyCertChain(certs, caCert, hostname!).then((result: networkSecurity.CertBlob[]) => {
+            hilog.info(domain, tag, '%{public}s', `${caseName} succeeded with result length: ${result.length}`);
+            expectTrue(result.length === 3, `${caseName} result length should be 3, actual: ${result.length}`);
+            done();
+          }).catch((error) => {
+            hilog.info(domain, tag, '%{public}s', `${caseName} failed as expected: ${JSON.stringify(error)}`);
+            expectTrue(error.code === 401 || error.code === 2305062,
+              `${caseName} error code should be 401 or 2305062, actual: ${error.code}`);
+            done();
+          });
+        } catch (err) {
+          const errCode: number = getErrCode(err as Error);
+          hilog.info(domain, tag, '%{public}s',
+            `${caseName} catch errCode:${errCode}, err:${JSON.stringify(err)}`);
+          expectTrue(errCode === 401 || errCode === 2305062 || errCode === -1,
+            `${caseName} catch error code should be 401 or 2305062 or runtime error, actual: ${errCode}`);
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+      });
+
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChain_static_4000
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_4000
+     * @tc.desc   Hostname param is undefined with a valid chain, expect success same as no hostname.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChain_static_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChain_static_4000';
+        hilog.info(domain, tag, '%{public}s', `${caseName} test start`);
+        try {
+          const certs: networkSecurity.CertBlob[] = [
+            { type: networkSecurity.CertType.CERT_TYPE_PEM, data: LEAF_CERT },
+            { type: networkSecurity.CertType.CERT_TYPE_PEM, data: INTERMEDIATE_CA_CERT }
+          ];
+          const caCert: networkSecurity.CertBlob = {
+            type: networkSecurity.CertType.CERT_TYPE_PEM,
+            data: ROOT_CA_CERT
+          };
+          const hostname: string | undefined = undefined;
+          networkSecurity.verifyCertChain(certs, caCert, hostname).then((result: networkSecurity.CertBlob[]) => {
+            hilog.info(domain, tag, '%{public}s', `${caseName} VerifyCertChain result length: ${result.length}`);
+            expectTrue(result.length === 3, `${caseName} result length should be 3, actual: ${result.length}`);
+            result.forEach((cert: networkSecurity.CertBlob, index: int) => {
+              expectTrue(cert.data !== undefined && cert.data !== null,
+                `${caseName} cert[${index}] data should not be null or undefined`);
+              if (typeof cert.data === 'string') {
+                let certData = cert.data as string;
+                expectTrue(certData.length > 0, `${caseName} cert[${index}] data string length should be greater than 0`);
+              } else if (cert.data instanceof ArrayBuffer) {
+                let certData = cert.data as ArrayBuffer;
+                expectTrue(certData.byteLength > 0,
+                  `${caseName} cert[${index}] data ArrayBuffer byteLength should be greater than 0`);
+              }
+            });
+            done();
+          }).catch((error) => {
+            console.error(`${caseName} VerifyCertChain failed: ${JSON.stringify(error)}`);
+            expectFalse(true, `${caseName} should succeed, but failed with error: ${error.code} - ${error.message}`);
+            done();
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', `${caseName} err: ${err}`);
+          expectFalse(true, `${caseName} unexpected exception: ${err}`);
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+      });
+
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChain_static_4100
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_4100
+     * @tc.desc   Hostname param is an empty string with a valid chain, expect error code 401 or 2305062.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChain_static_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChain_static_4100';
+        hilog.info(domain, tag, '%{public}s', `${caseName} test start`);
+        try {
+          const certs: networkSecurity.CertBlob[] = [
+            { type: networkSecurity.CertType.CERT_TYPE_PEM, data: LEAF_CERT },
+            { type: networkSecurity.CertType.CERT_TYPE_PEM, data: INTERMEDIATE_CA_CERT }
+          ];
+          const caCert: networkSecurity.CertBlob = {
+            type: networkSecurity.CertType.CERT_TYPE_PEM,
+            data: ROOT_CA_CERT
+          };
+          networkSecurity.verifyCertChain(certs, caCert, '').then((result: networkSecurity.CertBlob[]) => {
+            hilog.info(domain, tag, '%{public}s', `${caseName} succeeded with result length: ${result.length}`);
+            expectTrue(result.length === 3, `${caseName} result length should be 3, actual: ${result.length}`);
+            done();
+          }).catch((error) => {
+            hilog.info(domain, tag, '%{public}s', `${caseName} failed as expected: ${JSON.stringify(error)}`);
+            expectTrue(error.code === 401 || error.code === 2305062,
+              `${caseName} error code should be 401 or 2305062, actual: ${error.code}`);
+            done();
+          });
+        } catch (err) {
+          const errCode: number = getErrCode(err as Error);
+          hilog.info(domain, tag, '%{public}s',
+            `${caseName} catch errCode:${errCode}, err:${JSON.stringify(err)}`);
+          expectTrue(errCode === 401 || errCode === 2305062 || errCode === -1,
+            `${caseName} catch error code should be 401 or 2305062 or runtime error, actual: ${errCode}`);
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+      });
+
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChain_static_4200
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_4200
+     * @tc.desc   Certs cert type mismatches data format (DER type with PEM data), expect error code 401 or 2305001.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChain_static_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChain_static_4200';
+        hilog.info(domain, tag, '%{public}s', `${caseName} test start`);
+        try {
+          const mismatchType: networkSecurity.CertType = networkSecurity.CertType.CERT_TYPE_DER;
+          const certs: networkSecurity.CertBlob[] = [
+            { type: mismatchType, data: LEAF_CERT },
+            { type: networkSecurity.CertType.CERT_TYPE_PEM, data: INTERMEDIATE_CA_CERT }
+          ];
+          const caCert: networkSecurity.CertBlob = {
+            type: networkSecurity.CertType.CERT_TYPE_PEM,
+            data: ROOT_CA_CERT
+          };
+          networkSecurity.verifyCertChain(certs, caCert).then((result: networkSecurity.CertBlob[]) => {
+            console.error(`${caseName} should fail but succeeded with result length: ${result.length}`);
+            expectFalse(true, `${caseName} should fail with error code 401 or 2305001, but succeeded`);
+            done();
+          }).catch((error) => {
+            hilog.info(domain, tag, '%{public}s', `${caseName} failed as expected: ${JSON.stringify(error)}`);
+            expectTrue(error.code === 401 || error.code === 2305001,
+              `${caseName} error code should be 401 or 2305001, actual: ${error.code}`);
+            done();
+          });
+        } catch (err) {
+          const errCode: number = getErrCode(err as Error);
+          hilog.info(domain, tag, '%{public}s',
+            `${caseName} catch errCode:${errCode}, err:${JSON.stringify(err)}`);
+          expectTrue(errCode === 401 || errCode === 2305001 || errCode === -1,
+            `${caseName} catch error code should be 401 or 2305001 or runtime error, actual: ${errCode}`);
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+      });
+
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChain_static_4300
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_4300
+     * @tc.desc   Certs cert type mismatches data format (DER type with PEM data), expect error code 401 or 2305001.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChain_static_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChain_static_4300';
+        hilog.info(domain, tag, '%{public}s', `${caseName} test start`);
+        try {
+          const mismatchType: networkSecurity.CertType = networkSecurity.CertType.CERT_TYPE_DER;
+          const certs: networkSecurity.CertBlob[] = [
+            { type: mismatchType, data: LEAF_CERT },
+            { type: networkSecurity.CertType.CERT_TYPE_PEM, data: INTERMEDIATE_CA_CERT }
+          ];
+          const caCert: networkSecurity.CertBlob = {
+            type: networkSecurity.CertType.CERT_TYPE_PEM,
+            data: ROOT_CA_CERT
+          };
+          networkSecurity.verifyCertChain(certs, caCert).then((result: networkSecurity.CertBlob[]) => {
+            console.error(`${caseName} should fail but succeeded with result length: ${result.length}`);
+            expectFalse(true, `${caseName} should fail with error code 401 or 2305001, but succeeded`);
+            done();
+          }).catch((error) => {
+            hilog.info(domain, tag, '%{public}s', `${caseName} failed as expected: ${JSON.stringify(error)}`);
+            expectTrue(error.code === 401 || error.code === 2305001,
+              `${caseName} error code should be 401 or 2305001, actual: ${error.code}`);
+            done();
+          });
+        } catch (err) {
+          const errCode: number = getErrCode(err as Error);
+          hilog.info(domain, tag, '%{public}s',
+            `${caseName} catch errCode:${errCode}, err:${JSON.stringify(err)}`);
+          expectTrue(errCode === 401 || errCode === 2305001 || errCode === -1,
+            `${caseName} catch error code should be 401 or 2305001 or runtime error, actual: ${errCode}`);
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+      });
+
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChain_static_4400
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_4400
+     * @tc.desc   CaCert type mismatches data format (DER type with PEM data), expect error code 401 or 2305001.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChain_static_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChain_static_4400';
+        hilog.info(domain, tag, '%{public}s', `${caseName} test start`);
+        try {
+          const certs: networkSecurity.CertBlob[] = [
+            { type: networkSecurity.CertType.CERT_TYPE_PEM, data: LEAF_CERT },
+            { type: networkSecurity.CertType.CERT_TYPE_PEM, data: INTERMEDIATE_CA_CERT }
+          ];
+          const mismatchType: networkSecurity.CertType = networkSecurity.CertType.CERT_TYPE_DER;
+          const caCert: networkSecurity.CertBlob = {
+            type: mismatchType,
+            data: ROOT_CA_CERT
+          };
+          networkSecurity.verifyCertChain(certs, caCert).then((result: networkSecurity.CertBlob[]) => {
+            console.error(`${caseName} should fail but succeeded with result length: ${result.length}`);
+            expectFalse(true, `${caseName} should fail with error code 401 or 2305001, but succeeded`);
+            done();
+          }).catch((error) => {
+            hilog.info(domain, tag, '%{public}s', `${caseName} failed as expected: ${JSON.stringify(error)}`);
+            expectTrue(error.code === 401 || error.code === 2305001,
+              `${caseName} error code should be 401 or 2305001, actual: ${error.code}`);
+            done();
+          });
+        } catch (err) {
+          const errCode: number = getErrCode(err as Error);
+          hilog.info(domain, tag, '%{public}s',
+            `${caseName} catch errCode:${errCode}, err:${JSON.stringify(err)}`);
+          expectTrue(errCode === 401 || errCode === 2305001 || errCode === -1,
+            `${caseName} catch error code should be 401 or 2305001 or runtime error, actual: ${errCode}`);
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+      });
+
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChain_static_4500
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_4500
+     * @tc.desc   Certs data is an empty string for PEM, expect error code 401 or 2305001.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChain_static_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChain_static_4500';
+        hilog.info(domain, tag, '%{public}s', `${caseName} test start`);
+        try {
+          const certs: networkSecurity.CertBlob[] = [
+            { type: networkSecurity.CertType.CERT_TYPE_PEM, data: '' },
+            { type: networkSecurity.CertType.CERT_TYPE_PEM, data: INTERMEDIATE_CA_CERT }
+          ];
+          const caCert: networkSecurity.CertBlob = {
+            type: networkSecurity.CertType.CERT_TYPE_PEM,
+            data: ROOT_CA_CERT
+          };
+          networkSecurity.verifyCertChain(certs, caCert).then((result: networkSecurity.CertBlob[]) => {
+            console.error(`${caseName} should fail but succeeded with result length: ${result.length}`);
+            expectFalse(true, `${caseName} should fail with error code 401 or 2305001, but succeeded`);
+            done();
+          }).catch((error) => {
+            hilog.info(domain, tag, '%{public}s', `${caseName} failed as expected: ${JSON.stringify(error)}`);
+            expectTrue(error.code === 401 || error.code === 2305001,
+              `${caseName} error code should be 401 or 2305001, actual: ${error.code}`);
+            done();
+          });
+        } catch (err) {
+          const errCode: number = getErrCode(err as Error);
+          hilog.info(domain, tag, '%{public}s',
+            `${caseName} catch errCode:${errCode}, err:${JSON.stringify(err)}`);
+          expectTrue(errCode === 401 || errCode === 2305001 || errCode === -1,
+            `${caseName} catch error code should be 401 or 2305001 or runtime error, actual: ${errCode}`);
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+      });
+
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChain_static_4600
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_4600
+     * @tc.desc   Certs data is an empty ArrayBuffer for DER, expect error code 401 or 2305001.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChain_static_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChain_static_4600';
+        hilog.info(domain, tag, '%{public}s', `${caseName} test start`);
+        try {
+          const emptyDerData = new Uint8Array(0);
+          const certs: networkSecurity.CertBlob[] = [
+            { type: networkSecurity.CertType.CERT_TYPE_DER, data: emptyDerData.buffer },
+            { type: networkSecurity.CertType.CERT_TYPE_DER, data: pemToDer(INTERMEDIATE_CA_CERT) }
+          ];
+          const caCert: networkSecurity.CertBlob = {
+            type: networkSecurity.CertType.CERT_TYPE_DER,
+            data: pemToDer(ROOT_CA_CERT)
+          };
+          networkSecurity.verifyCertChain(certs, caCert).then((result: networkSecurity.CertBlob[]) => {
+            console.error(`${caseName} should fail but succeeded with result length: ${result.length}`);
+            expectFalse(true, `${caseName} should fail with error code 401 or 2305001, but succeeded`);
+            done();
+          }).catch((error) => {
+            hilog.info(domain, tag, '%{public}s', `${caseName} failed as expected: ${JSON.stringify(error)}`);
+            expectTrue(error.code === 401 || error.code === 2305001,
+              `${caseName} error code should be 401 or 2305001, actual: ${error.code}`);
+            done();
+          });
+        } catch (err) {
+          const errCode: number = getErrCode(err as Error);
+          hilog.info(domain, tag, '%{public}s',
+            `${caseName} catch errCode:${errCode}, err:${JSON.stringify(err)}`);
+          expectTrue(errCode === 401 || errCode === 2305001 || errCode === -1,
+            `${caseName} catch error code should be 401 or 2305001 or runtime error, actual: ${errCode}`);
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+      });
+
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChain_static_4700
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_4700
+     * @tc.desc   Return value coverage: verify CertBlob array structure, type and data of each element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrNetworkSecurityVerifyCertChain_static_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChain_static_4700';
+        hilog.info(domain, tag, '%{public}s', `${caseName} test start`);
+        try {
+          const certs: networkSecurity.CertBlob[] = [
+            { type: networkSecurity.CertType.CERT_TYPE_PEM, data: LEAF_CERT },
+            { type: networkSecurity.CertType.CERT_TYPE_PEM, data: INTERMEDIATE_CA_CERT }
+          ];
+          const caCert: networkSecurity.CertBlob = {
+            type: networkSecurity.CertType.CERT_TYPE_PEM,
+            data: ROOT_CA_CERT
+          };
+          networkSecurity.verifyCertChain(certs, caCert, 'chain.test.com')
+            .then((result: networkSecurity.CertBlob[]) => {
+              hilog.info(domain, tag, '%{public}s', `${caseName} VerifyCertChain result length: ${result.length}`);
+              expectTrue(result !== undefined && result !== null, `${caseName} result should not be null or undefined`);
+              expectTrue(result.length === 3, `${caseName} result length should be 3, actual: ${result.length}`);
+              result.forEach((cert: networkSecurity.CertBlob, index: int) => {
+                expectTrue(cert.type === networkSecurity.CertType.CERT_TYPE_PEM ||
+                  cert.type === networkSecurity.CertType.CERT_TYPE_DER,
+                  `${caseName} cert[${index}] type should be a valid CertType, actual: ${cert.type}`);
+                expectTrue(cert.data !== undefined && cert.data !== null,
+                  `${caseName} cert[${index}] data should not be null or undefined`);
+                if (typeof cert.data === 'string') {
+                  let certData = cert.data as string;
+                  expectTrue(certData.length > 0,
+                    `${caseName} cert[${index}] data string length should be greater than 0`);
+                } else if (cert.data instanceof ArrayBuffer) {
+                  let certData = cert.data as ArrayBuffer;
+                  expectTrue(certData.byteLength > 0,
+                    `${caseName} cert[${index}] data ArrayBuffer byteLength should be greater than 0`);
+                }
+              });
+              done();
+            })
+            .catch((error) => {
+              console.error(`${caseName} VerifyCertChain failed: ${JSON.stringify(error)}`);
+              expectFalse(true, `${caseName} should succeed, but failed with error: ${error.code} - ${error.message}`);
               done();
             });
         } catch (err) {

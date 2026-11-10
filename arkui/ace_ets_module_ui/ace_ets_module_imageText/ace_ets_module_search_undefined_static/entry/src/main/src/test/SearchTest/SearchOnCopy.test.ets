@@ -42,6 +42,9 @@ function doCopy(driver: Driver, componentId: string){
     let text = await driver.findComponent(ON.id(componentId)) as Component;
     await text.longClick();
     await CommonFunc.sleep(500);
+    let allSelect = await driver.findComponent(ON.text('全选')) as Component;
+    await allSelect?.click();
+    await CommonFunc.sleep(500);
     let selectionMenu = await driver.findComponent(ON.text('复制')) as Component;
     await selectionMenu.click();
     await CommonFunc.sleep(500);

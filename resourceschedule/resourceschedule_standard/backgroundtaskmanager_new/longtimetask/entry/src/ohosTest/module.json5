@@ -49,7 +49,10 @@
           "audioRecording",
           "dataTransfer",
           "specialScenarioProcessing",
-          "nearlink"
+          "nearlink",
+          "multiDeviceConnection",
+          "voip",
+          "avPlaybackAndRecord"
         ]
       }
     ],

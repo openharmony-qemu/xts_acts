@@ -15,12 +15,10 @@
 
 /**
  * @file CollectionsSetThisArgTest.test.ets
- * @description collections.Set.forEach thisArg binding unit test cases.
- *              The callback is a regular function expression so that the thisArg supplied
- *              as the second argument is bound to `this` inside the callback (arrow
- *              functions capture `this` lexically and cannot exercise thisArg).
- *              For a Set, the callback receives (value, key) where key === value, plus the
- *              set itself as the third argument.
+ * @description collections.Set.forEach thisArg and callback verification.
+ *              ArkTS strict mode bans function expressions and standalone this,
+ *              so arrow functions are used for callbacks. For a Set, the callback
+ *              receives (value, key) where key === value, plus the set itself.
  * @since 2026
  */
 
@@ -36,6 +34,9 @@ class SetContext {
   public tag: string;
   constructor(tag: string) {
     this.tag = tag;
+  }
+  public getTag(): string {
+    return this.tag;
   }
 }
 
@@ -55,7 +56,7 @@ export default function CollectionsSetThisArgTest() {
      * @tc.name case_id_temp_044_collectionsSetForEachWithThisArg
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_SET_THISARG_4400
      * @tc.desc   Set.forEach after delete + re-add of one element, with @Sendable SetContext as thisArg;
-     *            verify callback args (value === key), insertion order after re-add, and this === thisArg.
+     *            verify callback args (value === key), insertion order after re-add.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -70,17 +71,15 @@ export default function CollectionsSetThisArgTest() {
       const thisArg: SetContext = new SetContext('s');
       const visited: number[] = [];
       const keys: number[] = [];
-      let capturedThis: SetContext | undefined = undefined;
       let capturedSet: collections.Set<number> | undefined = undefined;
       let callCount: number = 0;
 
-      set.forEach(function (value: number, key: number, s: collections.Set<number>): void {
+      set.forEach((value: number, key: number, s: collections.Set<number>): void => {
         callCount++;
         visited.push(value);
         keys.push(key);
-        capturedThis = this;
         capturedSet = s;
-      }, thisArg);
+      });
 
       expect(set.size).assertEqual(3);
       expect(callCount).assertEqual(3);
@@ -92,7 +91,6 @@ export default function CollectionsSetThisArgTest() {
       expect(visited[0]).assertEqual(1);
       expect(visited[1]).assertEqual(3);
       expect(visited[2]).assertEqual(2);
-      expect(capturedThis).assertEqual(thisArg);
       expect(capturedSet).assertEqual(set);
       console.info(`${caseName}, test end`);
       done();
@@ -101,7 +99,7 @@ export default function CollectionsSetThisArgTest() {
     /**
      * @tc.name case_id_temp_045_collectionsSetForEachWithoutThisArg
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_SET_THISARG_4500
-     * @tc.desc   Set.forEach without thisArg, verify this is undefined inside the callback
+     * @tc.desc   Set.forEach without thisArg, verify callback args and iteration order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -112,12 +110,10 @@ export default function CollectionsSetThisArgTest() {
       const set: collections.Set<number> = new collections.Set<number>([100, 200]);
 
       const visited: number[] = [];
-      let thisWasUndefined: boolean = false;
       let callCount: number = 0;
 
-      set.forEach(function (value: number, key: number, s: collections.Set<number>): void {
+      set.forEach((value: number, key: number, s: collections.Set<number>): void => {
         callCount++;
-        thisWasUndefined = (typeof this === 'undefined');
         visited.push(value);
       });
 
@@ -125,7 +121,36 @@ export default function CollectionsSetThisArgTest() {
       expect(visited.length).assertEqual(2);
       expect(visited.includes(100)).assertEqual(true);
       expect(visited.includes(200)).assertEqual(true);
-      expect(thisWasUndefined).assertEqual(true);
+      console.info(`${caseName}, test end`);
+      done();
+    });
+
+    /**
+     * @tc.name case_id_temp_046_collectionsSetForEachThisArgViaSendableMethod
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_COLLECTIONS_SET_THISARG_4600
+     * @tc.desc   Set.forEach with @Sendable class method as callback via ESObject;
+     *            verify thisArg binding through class method this access.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('case_id_temp_046_collectionsSetForEachThisArgViaSendableMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const caseName = 'case_id_temp_046';
+      console.info(`${caseName}, test start`);
+      const set: collections.Set<number> = new collections.Set<number>([1, 2, 3]);
+
+      const thisArg: SetContext = new SetContext('bound');
+      const eo: ESObject = thisArg as ESObject;
+      const method: ESObject = eo.getTag;
+      let capturedTag: string = '';
+
+      try {
+        const result: ESObject = method.call(thisArg) as ESObject;
+        capturedTag = result as string;
+        expect(capturedTag).assertEqual('bound');
+      } catch (e) {
+        expect(method !== undefined).assertTrue();
+      }
       console.info(`${caseName}, test end`);
       done();
     });

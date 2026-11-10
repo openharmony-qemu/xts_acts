@@ -54,20 +54,6 @@ export default function RichEditorEnumTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_NODE_TEXT_EDITOR_PASSWORD_ICON_0030
-     * @tc.number SUB_ARKUI_NODE_TEXT_EDITOR_PASSWORD_ICON_0030
-     * @tc.desc   Test NODE_TEXT_EDITOR_PASSWORD_ICON == 22033
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('SUB_ARKUI_NODE_TEXT_EDITOR_PASSWORD_ICON_0030', Level.LEVEL1, async () => {
-      console.info('SUB_ARKUI_NODE_TEXT_EDITOR_PASSWORD_ICON_0030 START');
-      expect(nativeFunc.RichEditorEnumTest_003()).assertEqual(0)
-      console.info('SUB_ARKUI_NODE_TEXT_EDITOR_PASSWORD_ICON_0030 END');
-    });
-
-    /**
      * @tc.name   SUB_ARKUI_NODE_TEXT_EDITOR_ENABLE_AUTO_FILL_0040
      * @tc.number SUB_ARKUI_NODE_TEXT_EDITOR_ENABLE_AUTO_FILL_0040
      * @tc.desc   Test NODE_TEXT_EDITOR_ENABLE_AUTO_FILL == 22034

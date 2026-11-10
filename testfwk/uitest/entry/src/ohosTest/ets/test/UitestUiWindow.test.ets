@@ -64,6 +64,11 @@ async function setFloat(driver: Driver) {
 }
 
 async function setFull(driver: Driver) {
+  let btn1 = await driver.findComponent(ON.text('完成'))
+  if (btn1 != null) {
+    await btn1.click()
+    await driver.delayMs(waitUiReadyMs * 7)
+  }
   let disId = display.getDefaultDisplaySync().id;
   let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: disId })
   console.log(`${TestTag}, setFull findWindow, ${JSON.stringify(window)}`);

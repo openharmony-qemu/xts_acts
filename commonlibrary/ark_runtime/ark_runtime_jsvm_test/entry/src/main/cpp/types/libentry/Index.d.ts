@@ -58,6 +58,28 @@ export const wasmTest: () => number;
 export const arrayBufferBackingStoreTest: () => number;
 export const testSetDebugOption: () => number;
 export const testThreshold: () => number;
+export const sharedArrayBufferCreateTest: () => number;
+export const sharedArrayBufferViewsTest: () => number;
+export const sharedArrayBufferBackingStoreTest: () => number;
+export const sharedArrayBufferInvalidArgsTest: () => number;
+export const sharedArrayBufferCrossVMTest: () => number;
+export const sharedArrayBufferTypeChecksTest: () => number;
+export const sharedArrayBufferDetachUsabilityTest: () => number;
+export const sharedArrayBufferBoundarySizesTest: () => number;
+export const sharedArrayBufferInfoOptionsTest: () => number;
+export const sharedArrayBufferMultipleTest: () => number;
+export const sharedArrayBufferTypedArrayTypesTest: () => number;
+export const sharedArrayBufferNonBufferViewsTest: () => number;
+export const sharedArrayBufferDataViewEdgeTest: () => number;
+export const sharedArrayBufferRetainIndependenceTest: () => number;
+export const sharedArrayBufferRetainStressTest: () => number;
+export const sharedArrayBufferGcSurvivalTest: () => number;
+export const sharedArrayBufferSameVMMultiEnvTest: () => number;
+export const sharedArrayBufferMultiVMTest: () => number;
+export const sharedArrayBufferZeroLengthCrossVMTest: () => number;
+export const sharedArrayBufferVMTearDownLoopTest: () => number;
+export const sharedArrayBufferCrossEnvValueIsolationTest: () => number;
+export const sharedArrayBufferConcurrentMemoryTest: () => number;
 
 export const TypedArrayTypes: {
   INT8_ARRAY: number;

@@ -18,6 +18,7 @@ import webControllerHitTest from './WebControllerHitTest.test'
 import webViewMenuInputFieldType from './webViewMenuInputFieldType.test'
 import webInitTest from './WebInitTest.test'
 import WebEnableDataDetector from './WebEnableDataDetector.test'
+import WebCaretColorTest from './WebCaretColor.test'
 
 export default function testsuite() {
   webInitTest()
@@ -26,4 +27,5 @@ export default function testsuite() {
   webViewControllerHitTest()
   webControllerHitTest()
   WebEnableDataDetector()
+  WebCaretColorTest()
 }
