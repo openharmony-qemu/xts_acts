@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
 import cliManager from '@ohos.app.cli.cliManager';
 import hilog from '@ohos.hilog';
 
