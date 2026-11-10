@@ -124,7 +124,7 @@ export default function GridScrollSnapStrategyTest() {
     /**
      * @tc.name   GridScrollSnapStrategy_static_0500
      * @tc.number SUB_ARKUI_GRID_SCROLLSNAPSTRATEGY_STATIC_0500
-     * @tc.desc   Test Grid scrollSnapStrategy property with no set
+     * @tc.desc   Test Grid scrollSnapStrategy property with undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -132,7 +132,7 @@ export default function GridScrollSnapStrategyTest() {
     it('GridScrollSnapStrategy_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('grid_snapStrategy_default');
+      let strJson = inspector.getInspectorByKey('grid_snapStrategy_undefined');
       let obj = JSON.parseJsonElement(strJson);
       let content = obj.getElement('$attrs').getString('scrollSnapStrategy');
       console.log('[GridScrollSnapStrategy_static_0500] scrollSnapStrategy: ' + content);
@@ -143,7 +143,7 @@ export default function GridScrollSnapStrategyTest() {
     /**
      * @tc.name   GridScrollSnapStrategy_static_0600
      * @tc.number SUB_ARKUI_GRID_SCROLLSNAPSTRATEGY_STATIC_0600
-     * @tc.desc   Test Grid scrollSnapStrategy property with undefined
+     * @tc.desc   Test Grid scrollSnapStrategy property with ScrollSnapOffsetProvider object
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -151,29 +151,10 @@ export default function GridScrollSnapStrategyTest() {
     it('GridScrollSnapStrategy_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('grid_snapStrategy_undefined');
-      let obj = JSON.parseJsonElement(strJson);
-      let content = obj.getElement('$attrs').getString('scrollSnapStrategy');
-      console.log('[GridScrollSnapStrategy_static_0600] scrollSnapStrategy: ' + content);
-      expect(content).assertEqual('ScrollSnapAlign.NONE');
-      done();
-    });
-
-    /**
-     * @tc.name   GridScrollSnapStrategy_static_0800
-     * @tc.number SUB_ARKUI_GRID_SCROLLSNAPSTRATEGY_STATIC_0800
-     * @tc.desc   Test Grid scrollSnapStrategy property with ScrollSnapOffsetProvider object
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('GridScrollSnapStrategy_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let driver = Driver.create();
-      await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('grid_snapStrategy_provider');
       let obj = JSON.parseJsonElement(strJson);
       let content = obj.getElement('$attrs').getString('scrollSnapStrategy');
-      console.log('[GridScrollSnapStrategy_static_0800] scrollSnapStrategy: ' + content);
+      console.log('[GridScrollSnapStrategy_static_0600] scrollSnapStrategy: ' + content);
       expect(content !== 'ScrollSnapAlign.NONE').assertTrue();
       done();
     });

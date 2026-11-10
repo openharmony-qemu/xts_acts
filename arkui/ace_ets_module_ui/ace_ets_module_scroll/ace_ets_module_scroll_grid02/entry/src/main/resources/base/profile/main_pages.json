@@ -59,6 +59,7 @@
         "MainAbility/pages/gridOptions/gridKeyboardScrollVertical",
         "MainAbility/pages/gridOptions/gridKeyboardScrollHorizontal",
         "MainAbility/pages/gridOptions/GridScrollSnapStrategy",
+        "MainAbility/pages/gridOptions/GridScrollSnapStrategyProvider",
         "MainAbility/pages/gridOptions/GridSnapStrategyModifier"
     ]
 }

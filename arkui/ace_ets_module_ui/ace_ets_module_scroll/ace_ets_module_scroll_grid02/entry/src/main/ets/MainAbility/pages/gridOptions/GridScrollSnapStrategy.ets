@@ -12,25 +12,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-class GridSnapOffsetProvider implements ScrollSnapOffsetProvider {
-  calculateApproachOffset(velocity: number, decayOffset: number): number {
-    return decayOffset;
-  }
-
-  calculateSnapOffset(velocity: number): number {
-    return 0;
-  }
-}
 
 @Entry
 @Component
 struct GridScrollSnapStrategy {
   @State arr: string[] = [];
-  private snapProvider: GridSnapOffsetProvider = new GridSnapOffsetProvider();
 
   aboutToAppear() {
     let list: string[] = [];
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 50; i++) {
       list.push(i.toString());
     }
     this.arr = list;
@@ -38,180 +28,141 @@ struct GridScrollSnapStrategy {
 
   build() {
     Column({ space: 2 }) {
-      // 测试1: scrollSnapStrategy 设置为 ScrollSnapAlign.START
-      Grid() {
-        ForEach(this.arr, (item: string) => {
-          GridItem() {
-            Text(item)
-              .fontSize(20)
-              .backgroundColor(0xF9CF93)
-              .width('100%')
-              .height('20%')
-              .textAlign(TextAlign.Center)
-          }
-        }, (item: string) => item)
-      }
-      .columnsTemplate('1fr 1fr')
-      .columnsGap(10)
-      .rowsGap(20)
-      .width('90%')
-      .backgroundColor(0xFAEEE0)
-      .height('10%')
-      .scrollSnapStrategy(ScrollSnapAlign.START)
-      .id('grid_snapStrategy_start')
+      Row() {
+        // 测试1: scrollSnapStrategy 设置为 ScrollSnapAlign.START
+        Grid() {
+          ForEach(this.arr, (item: string) => {
+            GridItem() {
+              Text(item)
+                .fontSize(12)
+                .width('100%')
+                .height('20%')
+                .textAlign(TextAlign.Center)
+            }
+            .backgroundColor(0xF9CF93)
+          }, (item: string) => item)
+        }
+        .columnsTemplate('1fr 1fr')
+        .columnsGap(10)
+        .rowsGap(10)
+        .width('50%')
+        .backgroundColor(0xFAEEE0)
+        .scrollSnapStrategy(ScrollSnapAlign.START)
+        .id('grid_snapStrategy_start')
 
-      // 测试2: scrollSnapStrategy 设置为 ScrollSnapAlign.CENTER
-      Grid() {
-        ForEach(this.arr, (item: string) => {
-          GridItem() {
-            Text(item)
-              .fontSize(20)
-              .backgroundColor(0xF9CF93)
-              .width('100%')
-              .height('20%')
-              .textAlign(TextAlign.Center)
-          }
-        }, (item: string) => item)
+        // 测试2: scrollSnapStrategy 设置为 ScrollSnapAlign.CENTER
+        Grid() {
+          ForEach(this.arr, (item: string) => {
+            GridItem() {
+              Text(item)
+                .fontSize(12)
+                .width('100%')
+                .height('20%')
+                .textAlign(TextAlign.Center)
+            }
+            .backgroundColor(0xF9CF93)
+          }, (item: string) => item)
+        }
+        .columnsTemplate('1fr 1fr')
+        .columnsGap(10)
+        .rowsGap(10)
+        .width('50%')
+        .backgroundColor(0xFAEEE0)
+        .scrollSnapStrategy(ScrollSnapAlign.CENTER)
+        .id('grid_snapStrategy_center')
       }
-      .columnsTemplate('1fr 1fr')
-      .columnsGap(10)
-      .rowsGap(20)
-      .width('90%')
-      .backgroundColor(0xFAEEE0)
-      .height('10%')
-      .scrollSnapStrategy(ScrollSnapAlign.CENTER)
-      .id('grid_snapStrategy_center')
+      .height('25%')
 
-      // 测试3: scrollSnapStrategy 设置为 ScrollSnapAlign.END
-      Grid() {
-        ForEach(this.arr, (item: string) => {
-          GridItem() {
-            Text(item)
-              .fontSize(20)
-              .backgroundColor(0xF9CF93)
-              .width('100%')
-              .height('20%')
-              .textAlign(TextAlign.Center)
-          }
-        }, (item: string) => item)
-      }
-      .columnsTemplate('1fr 1fr')
-      .columnsGap(10)
-      .rowsGap(20)
-      .width('90%')
-      .backgroundColor(0xFAEEE0)
-      .height('10%')
-      .scrollSnapStrategy(ScrollSnapAlign.END)
-      .id('grid_snapStrategy_end')
+      Row() {
+        // 测试3: scrollSnapStrategy 设置为 ScrollSnapAlign.END
+        Grid() {
+          ForEach(this.arr, (item: string) => {
+            GridItem() {
+              Text(item)
+                .fontSize(12)
+                .width('100%')
+                .height('20%')
+                .textAlign(TextAlign.Center)
+            }
+            .backgroundColor(0xF9CF93)
+          }, (item: string) => item)
+        }
+        .columnsTemplate('1fr 1fr')
+        .columnsGap(10)
+        .rowsGap(10)
+        .width('50%')
+        .backgroundColor(0xFAEEE0)
+        .scrollSnapStrategy(ScrollSnapAlign.END)
+        .id('grid_snapStrategy_end')
 
-      // 测试4: scrollSnapStrategy 设置为 ScrollSnapAlign.NONE
-      Grid() {
-        ForEach(this.arr, (item: string) => {
-          GridItem() {
-            Text(item)
-              .fontSize(20)
-              .backgroundColor(0xF9CF93)
-              .width('100%')
-              .height('20%')
-              .textAlign(TextAlign.Center)
-          }
-        }, (item: string) => item)
+        // 测试4: scrollSnapStrategy 设置为 ScrollSnapAlign.NONE
+        Grid() {
+          ForEach(this.arr, (item: string) => {
+            GridItem() {
+              Text(item)
+                .fontSize(12)
+                .width('100%')
+                .height('20%')
+                .textAlign(TextAlign.Center)
+            }
+            .backgroundColor(0xF9CF93)
+          }, (item: string) => item)
+        }
+        .columnsTemplate('1fr 1fr')
+        .columnsGap(10)
+        .rowsGap(10)
+        .width('50%')
+        .backgroundColor(0xFAEEE0)
+        .scrollSnapStrategy(ScrollSnapAlign.NONE)
+        .id('grid_snapStrategy_none')
       }
-      .columnsTemplate('1fr 1fr')
-      .columnsGap(10)
-      .rowsGap(20)
-      .width('90%')
-      .backgroundColor(0xFAEEE0)
-      .height('10%')
-      .scrollSnapStrategy(ScrollSnapAlign.NONE)
-      .id('grid_snapStrategy_none')
+      .height('25%')
+      .margin(10)
 
-      // 测试5: scrollSnapStrategy 不设置
-      Grid() {
-        ForEach(this.arr, (item: string) => {
-          GridItem() {
-            Text(item)
-              .fontSize(20)
-              .backgroundColor(0xF9CF93)
-              .width('100%')
-              .height('20%')
-              .textAlign(TextAlign.Center)
-          }
-        }, (item: string) => item)
-      }
-      .columnsTemplate('1fr 1fr')
-      .columnsGap(10)
-      .rowsGap(20)
-      .width('90%')
-      .backgroundColor(0xFAEEE0)
-      .height('10%')
-      .id('grid_snapStrategy_default')
+      Row() {
+        // 测试6: scrollSnapStrategy 设置为 undefined
+        Grid() {
+          ForEach(this.arr, (item: string) => {
+            GridItem() {
+              Text(item)
+                .fontSize(12)
+                .width('100%')
+                .height('20%')
+                .textAlign(TextAlign.Center)
+            }
+            .backgroundColor(0xF9CF93)
+          }, (item: string) => item)
+        }
+        .columnsTemplate('1fr 1fr')
+        .columnsGap(10)
+        .rowsGap(10)
+        .width('50%')
+        .backgroundColor(0xFAEEE0)
+        .scrollSnapStrategy(undefined)
+        .id('grid_snapStrategy_undefined')
 
-      // 测试6: scrollSnapStrategy 设置为 undefined
-      Grid() {
-        ForEach(this.arr, (item: string) => {
-          GridItem() {
-            Text(item)
-              .fontSize(20)
-              .backgroundColor(0xF9CF93)
-              .width('100%')
-              .height('20%')
-              .textAlign(TextAlign.Center)
-          }
-        }, (item: string) => item)
+        // 测试7: scrollSnapStrategy 设置为 null
+        Grid() {
+          ForEach(this.arr, (item: string) => {
+            GridItem() {
+              Text(item)
+                .fontSize(12)
+                .width('100%')
+                .height('20%')
+                .textAlign(TextAlign.Center)
+            }
+            .backgroundColor(0xF9CF93)
+          }, (item: string) => item)
+        }
+        .columnsTemplate('1fr 1fr')
+        .columnsGap(10)
+        .rowsGap(10)
+        .width('50%')
+        .backgroundColor(0xFAEEE0)
+        .scrollSnapStrategy(null)
+        .id('grid_snapStrategy_null')
       }
-      .columnsTemplate('1fr 1fr')
-      .columnsGap(10)
-      .rowsGap(20)
-      .width('90%')
-      .backgroundColor(0xFAEEE0)
-      .height('10%')
-      .scrollSnapStrategy(undefined)
-      .id('grid_snapStrategy_undefined')
-
-      // 测试7: scrollSnapStrategy 设置为 null
-      Grid() {
-        ForEach(this.arr, (item: string) => {
-          GridItem() {
-            Text(item)
-              .fontSize(20)
-              .backgroundColor(0xF9CF93)
-              .width('100%')
-              .height('20%')
-              .textAlign(TextAlign.Center)
-          }
-        }, (item: string) => item)
-      }
-      .columnsTemplate('1fr 1fr')
-      .columnsGap(10)
-      .rowsGap(20)
-      .width('90%')
-      .backgroundColor(0xFAEEE0)
-      .height('10%')
-      .scrollSnapStrategy(null)
-      .id('grid_snapStrategy_null')
-
-      // 测试8: scrollSnapStrategy 设置为 ScrollSnapOffsetProvider 对象
-      Grid() {
-        ForEach(this.arr, (item: string) => {
-          GridItem() {
-            Text(item)
-              .fontSize(20)
-              .backgroundColor(0xF9CF93)
-              .width('100%')
-              .height('20%')
-              .textAlign(TextAlign.Center)
-          }
-        }, (item: string) => item)
-      }
-      .columnsTemplate('1fr 1fr')
-      .columnsGap(10)
-      .rowsGap(20)
-      .width('90%')
-      .backgroundColor(0xFAEEE0)
-      .height('10%')
-      .scrollSnapStrategy(this.snapProvider)
-      .id('grid_snapStrategy_provider')
+      .height('25%')
     }
     .width('100%')
     .height('100%')

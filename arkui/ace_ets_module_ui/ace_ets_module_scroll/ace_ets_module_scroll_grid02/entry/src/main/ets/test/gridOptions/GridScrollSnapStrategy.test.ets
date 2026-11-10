@@ -124,7 +124,7 @@ export default function gridScrollSnapStrategy() {
     /**
      * @tc.name   gridScrollSnapStrategy_0500
      * @tc.number SUB_ARKUI_GRID_SCROLLSNAPSTRATEGY_PARAM_0500
-     * @tc.desc   Test Grid scrollSnapStrategy property with no set
+     * @tc.desc   Test Grid scrollSnapStrategy property with undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -132,7 +132,7 @@ export default function gridScrollSnapStrategy() {
     it('gridScrollSnapStrategy_0500', Level.LEVEL0, async (done: Function) => {
       console.info('[gridScrollSnapStrategy_0500] START');
       await CommonFunc.sleep(500);
-      let strJson: string = getInspectorByKey('grid_snapStrategy_default');
+      let strJson: string = getInspectorByKey('grid_snapStrategy_undefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[gridScrollSnapStrategy_0500] scrollSnapStrategy: " +
         JSON.stringify(obj.$attrs.scrollSnapStrategy));
@@ -144,7 +144,7 @@ export default function gridScrollSnapStrategy() {
     /**
      * @tc.name   gridScrollSnapStrategy_0600
      * @tc.number SUB_ARKUI_GRID_SCROLLSNAPSTRATEGY_PARAM_0600
-     * @tc.desc   Test Grid scrollSnapStrategy property with undefined
+     * @tc.desc   Test Grid scrollSnapStrategy property with null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -152,52 +152,12 @@ export default function gridScrollSnapStrategy() {
     it('gridScrollSnapStrategy_0600', Level.LEVEL0, async (done: Function) => {
       console.info('[gridScrollSnapStrategy_0600] START');
       await CommonFunc.sleep(500);
-      let strJson: string = getInspectorByKey('grid_snapStrategy_undefined');
+      let strJson: string = getInspectorByKey('grid_snapStrategy_null');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[gridScrollSnapStrategy_0600] scrollSnapStrategy: " +
         JSON.stringify(obj.$attrs.scrollSnapStrategy));
       expect(obj.$attrs.scrollSnapStrategy).assertEqual('ScrollSnapAlign.NONE');
       console.info('[gridScrollSnapStrategy_0600] END');
-      done();
-    });
-
-    /**
-     * @tc.name   gridScrollSnapStrategy_0700
-     * @tc.number SUB_ARKUI_GRID_SCROLLSNAPSTRATEGY_PARAM_0700
-     * @tc.desc   Test Grid scrollSnapStrategy property with null
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('gridScrollSnapStrategy_0700', Level.LEVEL0, async (done: Function) => {
-      console.info('[gridScrollSnapStrategy_0700] START');
-      await CommonFunc.sleep(500);
-      let strJson: string = getInspectorByKey('grid_snapStrategy_null');
-      let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info("[gridScrollSnapStrategy_0700] scrollSnapStrategy: " +
-        JSON.stringify(obj.$attrs.scrollSnapStrategy));
-      expect(obj.$attrs.scrollSnapStrategy).assertEqual('ScrollSnapAlign.NONE');
-      console.info('[gridScrollSnapStrategy_0700] END');
-      done();
-    });
-
-    /**
-     * @tc.name   gridScrollSnapStrategy_0800
-     * @tc.number SUB_ARKUI_GRID_SCROLLSNAPSTRATEGY_PARAM_0800
-     * @tc.desc   Test Grid scrollSnapStrategy property with ScrollSnapOffsetProvider object
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('gridScrollSnapStrategy_0800', Level.LEVEL0, async (done: Function) => {
-      console.info('[gridScrollSnapStrategy_0800] START');
-      await CommonFunc.sleep(500);
-      let strJson: string = getInspectorByKey('grid_snapStrategy_provider');
-      let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info("[gridScrollSnapStrategy_0800] scrollSnapStrategy: " +
-        JSON.stringify(obj.$attrs.scrollSnapStrategy));
-      expect(obj.$attrs.scrollSnapStrategy !== 'ScrollSnapAlign.NONE').assertTrue();
-      console.info('[gridScrollSnapStrategy_0800] END');
       done();
     });
   })
