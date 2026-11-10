@@ -649,6 +649,7 @@ export default function formProviderTest() {
             expect(false).assertEqual(element.formVisibleNotify as boolean);
             expect(true).assertEqual(element.isDefault as boolean);
             expect(false).assertEqual(element.updateEnabled as boolean);
+            expect(false).assertEqual(element.isColorModeRefreshEnabled as boolean);
           }
           hilog.info(DOMAIN, TAG, `GetFormsInfoTest001 success`);
           expect(BOOL_TRUE).assertEqual(true);
@@ -1218,6 +1219,7 @@ export default function formProviderTest() {
           expect(data.formUsageState).assertEqual(formInfo.FormUsageState.USED);
           expect(data.formDescription.length > 0).assertTrue();
           expect(data.extraData).assertUndefined();
+          expect(!data.isColorModeRefreshEnabled).assertTrue();
           done();
         });
         hilog.info(DOMAIN, TAG, `${itName} getPublishedRunningFormInfoById end`);
