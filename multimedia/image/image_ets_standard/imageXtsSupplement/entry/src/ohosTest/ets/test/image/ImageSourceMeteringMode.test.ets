@@ -17,17 +17,11 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { image } from '@kit.ImageKit';
 import { fileIo as fs, ReadOptions } from '@kit.CoreFileKit';
 import common from '@ohos.app.ability.common';
-import { abilityDelegatorRegistry } from '@kit.TestKit';
-import { UIAbility } from '@kit.AbilityKit';
-
-const delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-
 
 const TAG = 'Xts.ImageSourceMeteringMode';
 let fdNumber: number;
 async function getFd(fileName: string) {
-  const ability: UIAbility = await delegator.getCurrentTopAbility();
-  let testContext: common.UIAbilityContext = ability.context;
+  let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   let filePath = `file://${testContext.filesDir}/${fileName}`;
   console.info(TAG, 'image case filePath is ' + filePath);
   const fileInfo = await fs.open(filePath);
