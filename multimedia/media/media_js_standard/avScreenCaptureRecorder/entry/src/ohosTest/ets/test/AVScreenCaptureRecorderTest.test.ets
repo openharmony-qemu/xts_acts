@@ -2340,7 +2340,6 @@ export default function AVScreenCaptureRecorderTest() {
       done();
     })
 
-
    /**
     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1200
     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1200
