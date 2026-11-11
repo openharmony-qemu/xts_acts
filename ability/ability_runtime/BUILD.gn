@@ -65,6 +65,7 @@ group("ability_runtime") {
       "actscapimodularobjecttest:ActsCapiModularObjectTest",
       "actschildprocessmanager:actschildprocessmanagertest",
       "actscleantemptest:cleantempfiles",
+      "actsclimgrnoperm:ActsCliManagerNoPermTest",
       "actscollaborateresulttest:actscollaborateresulttest",
       "actscollaborateresultteststatic:actscollaborateresultstatictest",
       "actscompletionhandlertest:actscompletionhandlertest",

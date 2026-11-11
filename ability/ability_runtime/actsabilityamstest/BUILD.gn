@@ -48,7 +48,6 @@ group("ActsAbilityAmsTest") {
       "terminateselfwithresulthelper:TerminateSelfWithResultHelper",
       "terminateselfwithresulttesthap:TerminateSelfWithResultTestHap",
       "terminateselfwithresulttesthap2:TerminateSelfWithResultTestHap2",
-      "../actsclimgrnoperm:ActsCliManagerNoPermTest",
     ]
   }
 }
