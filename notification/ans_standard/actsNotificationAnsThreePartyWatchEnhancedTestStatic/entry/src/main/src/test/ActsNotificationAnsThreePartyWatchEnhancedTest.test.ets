@@ -332,10 +332,10 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest(): void {
         }catch(err){
             console.error(TAG +
                 ` failed, code is ${err.code}, message is ${err.message}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done()
-            } else if (err.code == 201) {
+            } else if (err.code === 201) {
               expect(err.code).assertEqual(201);
               done()
             } else {
