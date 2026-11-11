@@ -52,9 +52,9 @@ export default class OpenHarmonyTestRunner implements TestRunner {
         {
             cmd += ' -D'
         }
-        var user = AbilityDelegatorRegistry.getArguments().parameters["-u"]; // 先取user
+        var user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
         if(user !== undefined){
-            cmd += ' -u ' + user; // 先拼进cmd
+            cmd += ' -u ' + user;
         }
         hilog.info(0x0000, 'testTag', 'cmd : %{public}s', cmd);
         abilityDelegator.executeShellCommand(cmd,
