@@ -59,8 +59,7 @@ export default function NoPermissionApi26Test() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_NoPerm_OffFocusedApplicationChanged_0200
      * @tc.number SUB_Ability_AbilityRuntime_NoPerm_OffFocusedApplicationChanged_0200
-     * @tc.desc   offFocusedApplicationChanged without RUNNING_STATE_OBSERVER; expect 201
-     *     (or 16300004 if observer existence checked first)
+     * @tc.desc   offFocusedApplicationChanged observerId=0 without prior register; expect 16300004
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -74,7 +73,7 @@ export default function NoPermissionApi26Test() {
         } catch (err) {
           let e = err as BusinessError;
           console.error(`${tag} err code=${e.code}`);
-          expect(e.code === ERR_PERMISSION || e.code === ERR_OBSERVER_NOT_EXIST).assertTrue();
+          expect(e.code).assertEqual(ERR_OBSERVER_NOT_EXIST);
         }
         done();
       });

@@ -204,7 +204,6 @@ export default function HyperSnapManagerTest() {
           let initializing: boolean = await hyperSnapManager.isHyperSnapInitializing();
           hilog.info(0x0000, 'testTag', `${tag} result=${initializing}`);
           expect(typeof initializing).assertEqual('boolean');
-          expect(initializing === true || initializing === false).assertTrue();
         } catch (e) {
           let err: BusinessError = e as BusinessError;
           hilog.info(0x0000, 'testTag', `${tag} catch code=${err.code}`);
