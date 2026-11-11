@@ -23,6 +23,7 @@
 #include "ValueArray.h"
 #include "Promise.h"
 #include "WeakGlobalReferences.h"
+#include "TupleOperations.h"
 
 namespace {
     std::array methods = {
@@ -586,6 +587,70 @@ namespace {
                             reinterpret_cast<void *>(test_Handling_Error_37)},
         ani_native_function{"test_Handling_Error_38", ":z",
                             reinterpret_cast<void *>(test_Handling_Error_38)},
+        ani_native_function{"test_Tuple_Norm_0001", ":z", reinterpret_cast<void *>(test_Tuple_Norm_0001)},
+        ani_native_function{"test_Tuple_Norm_0002", ":z", reinterpret_cast<void *>(test_Tuple_Norm_0002)},
+        ani_native_function{"test_Tuple_Norm_0003", ":z", reinterpret_cast<void *>(test_Tuple_Norm_0003)},
+        ani_native_function{"test_Tuple_Norm_0004", ":z", reinterpret_cast<void *>(test_Tuple_Norm_0004)},
+        ani_native_function{"test_Tuple_Norm_0005", ":z", reinterpret_cast<void *>(test_Tuple_Norm_0005)},
+        ani_native_function{"test_Tuple_Norm_0006", ":z", reinterpret_cast<void *>(test_Tuple_Norm_0006)},
+        ani_native_function{"test_Tuple_Norm_0007", ":z", reinterpret_cast<void *>(test_Tuple_Norm_0007)},
+        ani_native_function{"test_Tuple_Norm_0008", ":z", reinterpret_cast<void *>(test_Tuple_Norm_0008)},
+        ani_native_function{"test_Tuple_Norm_0009", ":z", reinterpret_cast<void *>(test_Tuple_Norm_0009)},
+        ani_native_function{"test_Tuple_Norm_0010", ":z", reinterpret_cast<void *>(test_Tuple_Norm_0010)},
+        ani_native_function{"test_Tuple_Norm_0011", ":z", reinterpret_cast<void *>(test_Tuple_Norm_0011)},
+        ani_native_function{"test_Tuple_Norm_0012", ":z", reinterpret_cast<void *>(test_Tuple_Norm_0012)},
+        ani_native_function{"test_Tuple_Norm_0013", ":z", reinterpret_cast<void *>(test_Tuple_Norm_0013)},
+        ani_native_function{"test_Tuple_Norm_0014", ":z", reinterpret_cast<void *>(test_Tuple_Norm_0014)},
+        ani_native_function{"test_Tuple_Norm_0015", ":z", reinterpret_cast<void *>(test_Tuple_Norm_0015)},
+        ani_native_function{"test_Tuple_Norm_0016", ":z", reinterpret_cast<void *>(test_Tuple_Norm_0016)},
+        ani_native_function{"test_Tuple_Norm_0017", ":z", reinterpret_cast<void *>(test_Tuple_Norm_0017)},
+        ani_native_function{"test_Tuple_Norm_0018", ":z", reinterpret_cast<void *>(test_Tuple_Norm_0018)},
+        ani_native_function{"test_Tuple_Norm_0019", ":z", reinterpret_cast<void *>(test_Tuple_Norm_0019)},
+        ani_native_function{"test_Tuple_Norm_0020", ":z", reinterpret_cast<void *>(test_Tuple_Norm_0020)},
+        ani_native_function{"test_Tuple_Norm_0021", ":z", reinterpret_cast<void *>(test_Tuple_Norm_0021)},
+        ani_native_function{"test_Tuple_Abnm_0001", ":z", reinterpret_cast<void *>(test_Tuple_Abnm_0001)},
+        ani_native_function{"test_Tuple_Abnm_0002", ":z", reinterpret_cast<void *>(test_Tuple_Abnm_0002)},
+        ani_native_function{"test_Tuple_Abnm_0003", ":z", reinterpret_cast<void *>(test_Tuple_Abnm_0003)},
+        ani_native_function{"test_Tuple_Abnm_0004", ":z", reinterpret_cast<void *>(test_Tuple_Abnm_0004)},
+        ani_native_function{"test_Tuple_Abnm_0005", ":z", reinterpret_cast<void *>(test_Tuple_Abnm_0005)},
+        ani_native_function{"test_Tuple_Abnm_0006", ":z", reinterpret_cast<void *>(test_Tuple_Abnm_0006)},
+        ani_native_function{"test_Tuple_Abnm_0007", ":z", reinterpret_cast<void *>(test_Tuple_Abnm_0007)},
+        ani_native_function{"test_Tuple_Abnm_0008", ":z", reinterpret_cast<void *>(test_Tuple_Abnm_0008)},
+        ani_native_function{"test_Tuple_Abnm_0009", ":z", reinterpret_cast<void *>(test_Tuple_Abnm_0009)},
+        ani_native_function{"test_Tuple_Abnm_0010", ":z", reinterpret_cast<void *>(test_Tuple_Abnm_0010)},
+        ani_native_function{"test_Tuple_Abnm_0011", ":z", reinterpret_cast<void *>(test_Tuple_Abnm_0011)},
+        ani_native_function{"test_Tuple_Abnm_0012", ":z", reinterpret_cast<void *>(test_Tuple_Abnm_0012)},
+        ani_native_function{"test_Tuple_Func_0001", ":z", reinterpret_cast<void *>(test_Tuple_Func_0001)},
+        ani_native_function{"test_Tuple_Func_0002", ":z", reinterpret_cast<void *>(test_Tuple_Func_0002)},
+        ani_native_function{"test_Tuple_Func_0003", ":z", reinterpret_cast<void *>(test_Tuple_Func_0003)},
+        ani_native_function{"test_Tuple_Func_0004", ":z", reinterpret_cast<void *>(test_Tuple_Func_0004)},
+        ani_native_function{"test_Tuple_Func_0005", ":z", reinterpret_cast<void *>(test_Tuple_Func_0005)},
+        ani_native_function{"test_Tuple_Func_0006", ":z", reinterpret_cast<void *>(test_Tuple_Func_0006)},
+        ani_native_function{"test_Tuple_Func_0007", ":z", reinterpret_cast<void *>(test_Tuple_Func_0007)},
+        ani_native_function{"test_Tuple_Func_0008", ":z", reinterpret_cast<void *>(test_Tuple_Func_0008)},
+        ani_native_function{"test_Tuple_Retv_0001", ":z", reinterpret_cast<void *>(test_Tuple_Retv_0001)},
+        ani_native_function{"test_Tuple_Retv_0002", ":z", reinterpret_cast<void *>(test_Tuple_Retv_0002)},
+        ani_native_function{"test_Tuple_Retv_0003", ":z", reinterpret_cast<void *>(test_Tuple_Retv_0003)},
+        ani_native_function{"test_Tuple_Retv_0004", ":z", reinterpret_cast<void *>(test_Tuple_Retv_0004)},
+        ani_native_function{"test_Tuple_Ercd_0001", ":z", reinterpret_cast<void *>(test_Tuple_Ercd_0001)},
+        ani_native_function{"test_Tuple_Ercd_0002", ":z", reinterpret_cast<void *>(test_Tuple_Ercd_0002)},
+        ani_native_function{"test_Tuple_Ercd_0003", ":z", reinterpret_cast<void *>(test_Tuple_Ercd_0003)},
+        ani_native_function{"test_Tuple_Ercd_0004", ":z", reinterpret_cast<void *>(test_Tuple_Ercd_0004)},
+        ani_native_function{"test_Tuple_Ercd_0005", ":z", reinterpret_cast<void *>(test_Tuple_Ercd_0005)},
+        ani_native_function{"test_Tuple_Comb_0001", ":z", reinterpret_cast<void *>(test_Tuple_Comb_0001)},
+        ani_native_function{"test_Tuple_Comb_0002", ":z", reinterpret_cast<void *>(test_Tuple_Comb_0002)},
+        ani_native_function{"test_Tuple_Comb_0003", ":z", reinterpret_cast<void *>(test_Tuple_Comb_0003)},
+        ani_native_function{"test_Tuple_Comb_0004", ":z", reinterpret_cast<void *>(test_Tuple_Comb_0004)},
+        ani_native_function{"test_Tuple_Comb_0005", ":z", reinterpret_cast<void *>(test_Tuple_Comb_0005)},
+        ani_native_function{"test_Tuple_Stab_0001", ":z", reinterpret_cast<void *>(test_Tuple_Stab_0001)},
+        ani_native_function{"test_Tuple_Stab_0002", ":z", reinterpret_cast<void *>(test_Tuple_Stab_0002)},
+        ani_native_function{"test_Tuple_Stab_0003", ":z", reinterpret_cast<void *>(test_Tuple_Stab_0003)},
+        ani_native_function{"test_Tuple_Thrd_0001", ":z", reinterpret_cast<void *>(test_Tuple_Thrd_0001)},
+        ani_native_function{"test_Tuple_Thrd_0002", ":z", reinterpret_cast<void *>(test_Tuple_Thrd_0002)},
+        ani_native_function{"test_Tuple_Thrd_0003", ":z", reinterpret_cast<void *>(test_Tuple_Thrd_0003)},
+        ani_native_function{"test_Tuple_Meml_0001", ":z", reinterpret_cast<void *>(test_Tuple_Meml_0001)},
+        ani_native_function{"test_Tuple_Meml_0002", ":z", reinterpret_cast<void *>(test_Tuple_Meml_0002)},
+        ani_native_function{"test_Tuple_Meml_0003", ":z", reinterpret_cast<void *>(test_Tuple_Meml_0003)},
     };
 }
 
@@ -613,6 +678,7 @@ static ani_status bindCase(ani_vm *vm, const char *clsName)
 ANI_EXPORT ani_status ANI_Constructor(ani_vm *vm, uint32_t *result)
 {
     std::cout << "testTag : entering libentry.so's ANI_Constructor" << std::endl;
+    g_tuple_vm = vm;
     bindCase(vm, "entry.src.main.src.ets.Index.Foo");
     *result = ANI_VERSION_1;
     return ANI_OK;

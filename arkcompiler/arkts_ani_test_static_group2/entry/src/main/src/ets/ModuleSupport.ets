@@ -63,11 +63,11 @@ final class Child extends Person {
     }
 };
 
-interface Foo {
+export interface Foo {
     foo(x: double): double;
 };
 
-interface Eat {
+export interface Eat {
     eat(x: int): int;
 };
 export class BB implements Foo, Eat {
@@ -294,11 +294,11 @@ namespace ops {
 }
 const moduleXB = 1;
 
-interface FoodAction {
+export interface FoodAction {
     foo(x: double): double;
 };
 
-interface EatingAction {
+export interface EatingAction {
     eat(x: int): int;
 };
 
