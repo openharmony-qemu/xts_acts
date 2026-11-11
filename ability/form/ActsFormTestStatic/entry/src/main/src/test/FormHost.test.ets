@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -20,6 +20,7 @@ import hilog from '@ohos.hilog';
 import emitter from '@ohos.events.emitter';
 import formInfo from '@ohos.app.form.formInfo';
 import formHost from '@ohos.app.form.formHost';
+import deviceInfo from '@ohos.deviceInfo';
 import { EventIdMap, FormHostTestController } from '../../ets/testform/controller/FormHostTestController';
 import Utils from './Util.test';
 
@@ -1223,7 +1224,10 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithPromiseStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.SetRouterProxyWithPromise), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'SetRouterProxyWithPromiseStaticTest001 listening for finished event');
-        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
+        // WATCH_API_DISABLE disables RegisterFormRouterProxy on wearables, so setRouterProxy
+        // returns success (isSuccess=true) on watch but fails with 202 on other devices.
+        const expected = deviceInfo.deviceType === 'wearable' ? EXPECTED_TRUE : EXPECTED_FALSE;
+        expect(expected).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithPromiseStaticTest001 emitting for finished event');
@@ -1263,7 +1267,10 @@ export default function formHostTest() {
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithCallbackStaticTest001 start');
       emitter.once(formHostTestController.getFinishEvent(EventIdMap.SetRouterProxyWithCallback), (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'SetRouterProxyWithCallbackStaticTest001 listening for finished event');
-        expect(EXPECTED_FALSE).assertEqual(JSON.stringify(eventData.data));
+        // WATCH_API_DISABLE disables RegisterFormRouterProxy on wearables, so setRouterProxy
+        // returns success (isSuccess=true) on watch but fails with 202 on other devices.
+        const expected = deviceInfo.deviceType === 'wearable' ? EXPECTED_TRUE : EXPECTED_FALSE;
+        expect(expected).assertEqual(JSON.stringify(eventData.data));
         done();
       })
       hilog.info(DOMAIN, TAG, 'SetRouterProxyWithCallbackStaticTest001 emitting for finished event');
