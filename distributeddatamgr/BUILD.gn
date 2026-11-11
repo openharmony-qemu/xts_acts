@@ -53,6 +53,7 @@ group("distributeddatamgr") {
       "relationalstoredatagroupidtest:ActsRelationalstoreDataGroupIdTest",
       "dataObjectEtsNoPermissions_static:ActsDataObjectNoPermissionsStaticTest",
       "RdbWithPermisionTestStatic:ActsRdbStorePermissionEtsStaticTest",
+      "dataObjectEts_static:ActsDataObjectStaticTest",
     ]
   } else {
     deps = [

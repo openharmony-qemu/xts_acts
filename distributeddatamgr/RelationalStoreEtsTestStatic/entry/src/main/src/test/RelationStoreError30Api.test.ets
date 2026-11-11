@@ -91,7 +91,6 @@ export default function RelationStoreError30Test() {
           rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s',
             '************* RelationStoreError00Test0001 err *************  ' + err.code);
           expect(err.code == 14800030).assertEqual(true);
@@ -120,7 +119,6 @@ export default function RelationStoreError30Test() {
           await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s',
             '************* deleteRdbStore err *************  ' + err.code);
           expect(err.code == 14800030).assertEqual(true);

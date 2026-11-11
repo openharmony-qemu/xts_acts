@@ -53,7 +53,7 @@ const STORE_CONFIG1: relationalStore.StoreConfig = {
 
 let context: common.UIAbilityContext | undefined;
 let rdbStore: relationalStore.RdbStore | undefined;
-let dataBaseDir: String = "";
+let dataBaseDir: String = '';
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 async function createTest(rdbStore: relationalStore.RdbStore) {

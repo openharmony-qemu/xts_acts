@@ -145,7 +145,6 @@ export default function RdbResultSetTest() {
       try {
         resultSet.getColumnIndex("data1")
       } catch(err) {
-        err = err as BusinessError;
         let e = err as BusinessError
         hilog.info(domain, tag, "business error code %{public}d", e.code)
         expect(true).assertEqual(e.code==14800021)
@@ -168,7 +167,6 @@ export default function RdbResultSetTest() {
       try {
         resultSet.getColumnIndex("dataX")
       } catch(err) {
-        err = err as BusinessError;
         let e = err as BusinessError;
         hilog.info(domain, tag, "business error code %{public}d", e.code)
         expect(true).assertEqual(e.code==14800000)
@@ -190,7 +188,6 @@ export default function RdbResultSetTest() {
       try {
         resultSet.getColumnIndex("")
       } catch(err) {
-        err = err as BusinessError;
         let e = err as BusinessError
         hilog.info(domain, tag, "business error code %{public}d", e.code)
         expect(true).assertEqual(e.code==14800000)
@@ -216,7 +213,6 @@ export default function RdbResultSetTest() {
         hilog.info(domain, tag, "id=%{public}d, data2=%{public}d", id, data2)
         expect(true).assertEqual(data2==10);
       } catch (e) {
-        e = e as BusinessError;
         expect(null).assertFail();
       }
       done();
@@ -286,7 +282,6 @@ export default function RdbResultSetTest() {
         num = await rdbStore1!.delete(predicates)
         expect(true).assertEqual(num==1)
       } catch (e) {
-        e = e as BusinessError;
         expect(null).assertFail()
         hilog.info(domain, tag, '%{public}s', "testRdbTransactionInsert0001 failed");
       }
@@ -340,7 +335,6 @@ export default function RdbResultSetTest() {
         let num1 = await rdbStore1!.delete(predicates)
         expect(true).assertEqual(num1==3)
       } catch (e) {
-        e = e as BusinessError;
         expect(null).assertFail()
         hilog.info(domain, tag, '%{public}s', "testRdbTransactionInsert0002 failed");
       }
@@ -374,7 +368,6 @@ export default function RdbResultSetTest() {
         let num = await rdbStore1!.delete(predicates)
         expect(true).assertEqual(num==0)
       } catch (e) {
-        e = e as BusinessError;
         expect(null).assertFail()
         hilog.info(domain, tag, '%{public}s', "testRdbTransactionRollBack0001 failed");
       }
@@ -402,7 +395,6 @@ export default function RdbResultSetTest() {
         hilog.info(domain, tag, '%{public}s', 'delete success,num:',number1);
         expect(number1).assertEqual(1);
       }catch(err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'delete failed',err.code);
         expect().assertFail();
       }
@@ -430,7 +422,6 @@ export default function RdbResultSetTest() {
         resultSet.getLong(9);
         expect().assertFail();
       }catch(err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, "business error code %{public}d", err.code)
         expect(true).assertEqual(err.code == 14800013)
       }
@@ -457,7 +448,6 @@ export default function RdbResultSetTest() {
         resultSet.getString(9);
         expect().assertFail();
       }catch(err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, "business error code %{public}d", err.code)
         expect(true).assertEqual(err.code == 14800013)
       }
@@ -485,7 +475,6 @@ export default function RdbResultSetTest() {
         resultSet.getAssets(9);
         expect().assertFail();
       }catch(err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, "business error code %{public}d", err.code)
         expect(true).assertEqual(err.code == 14800013)
       }
@@ -494,7 +483,6 @@ export default function RdbResultSetTest() {
         resultSet.getAsset(9);
         expect().assertFail();
       }catch(err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, "business error code %{public}d", err.code)
         expect(true).assertEqual(err.code == 14800013)
       }
@@ -522,7 +510,6 @@ export default function RdbResultSetTest() {
         resultSet.getBlob(9);
         expect().assertFail();
       }catch(err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, "business error code %{public}d", err.code)
         expect(true).assertEqual(err.code == 14800013)
       }
@@ -550,7 +537,6 @@ export default function RdbResultSetTest() {
         resultSet.getDouble(9);
         expect().assertFail();
       }catch(err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, "business error code %{public}d", err.code)
         expect(true).assertEqual(err.code == 14800013)
       }
@@ -578,7 +564,6 @@ export default function RdbResultSetTest() {
         resultSet.getValue(9);
         expect().assertFail();
       }catch(err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, "business error code %{public}d", err.code)
         expect(true).assertEqual(err.code == 14800013)
       }
@@ -606,7 +591,6 @@ export default function RdbResultSetTest() {
         resultSet.isColumnNull(9);
         expect().assertFail();
       }catch(err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, "business error code %{public}d", err.code)
         expect(true).assertEqual(err.code == 14800013)
       }
@@ -633,7 +617,6 @@ export default function RdbResultSetTest() {
         resultSet.isColumnNull(resultSet.getColumnIndex("data5"));
         expect().assertFail();
       }catch(err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, "business error code %{public}d", err.code)
         expect(true).assertEqual(err.code == 14800012)
       }
@@ -660,7 +643,6 @@ export default function RdbResultSetTest() {
         resultSet.getString(9);
         expect().assertFail();
       }catch(err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, "business error code %{public}d", err.code)
         expect(true).assertEqual(err.code == 14800012)
       }
@@ -686,7 +668,6 @@ export default function RdbResultSetTest() {
         resultSet.getLong(9);
         expect().assertFail();
       }catch(err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, "business error code %{public}d", err.code)
         expect(true).assertEqual(err.code == 14800012)
       }
@@ -718,7 +699,6 @@ export default function RdbResultSetTest() {
       try {
         store = await data_relationalStore.getRdbStore(context!, STORE_CONFIGS1)
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'Get RdbStore failed'+ err.code);
         expect(true).assertEqual(err.code == 14800017)
       }
@@ -742,7 +722,6 @@ export default function RdbResultSetTest() {
         await rdbStore!.delete(predicates);
         expect().assertFail();
       }catch(err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'delete failed'+err.code);
         expect(err.code == 14800021).assertTrue();
       }
@@ -750,7 +729,6 @@ export default function RdbResultSetTest() {
         rdbStore!.deleteSync(predicates);
         expect().assertFail();
       }catch(err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'delete failed'+err.code);
         expect(err.code == 14800021).assertTrue();
       }
@@ -776,7 +754,6 @@ export default function RdbResultSetTest() {
         expect().assertFail();
         done();
       }catch(err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'delete failed'+err.code);
         expect(err?.code == 14800021).assertTrue();
         done();
@@ -799,7 +776,6 @@ export default function RdbResultSetTest() {
         expect().assertFail();
         done();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'executeSql failed',err.code,err.message);
         expect(err?.code == 14800021).assertTrue();
         done();
@@ -821,7 +797,6 @@ export default function RdbResultSetTest() {
         expect().assertFail();
         done();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'executeSql failed'+ err.code);
         expect(err.code == 14800021).assertTrue();
         done();
@@ -844,7 +819,6 @@ export default function RdbResultSetTest() {
         hilog.info(domain, tag, '%{public}s', 'executeSql suceess');
         expect().assertFail();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'executeSql failed'+err.code);
         expect(err.code).assertEqual(14800032);
       }
@@ -868,7 +842,6 @@ export default function RdbResultSetTest() {
         hilog.info(domain, tag, '%{public}s', 'executeSql success');
         expect().assertFail();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'executeSql failed'+err.code);
         expect(err.code).assertEqual(14800033);
       }
@@ -894,7 +867,6 @@ export default function RdbResultSetTest() {
         hilog.info(domain, tag, '%{public}s', 'bool1:' + bool1);
         expect(bool1).assertEqual(false);
       }catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'executeSql failed'+ err.code);
         expect().assertFail();
       }
@@ -919,7 +891,6 @@ export default function RdbResultSetTest() {
         hilog.info(domain, tag, '%{public}s', 'bool1:' + bool1);
         expect(bool1).assertEqual(false);
       }catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'executeSql failed'+ err.code);
         expect().assertFail();
       }
@@ -944,7 +915,6 @@ export default function RdbResultSetTest() {
         hilog.info(domain, tag, '%{public}s', 'bool1:' + bool1);
         expect(bool1).assertEqual(false);
       }catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'executeSql failed'+ err.code);
         expect().assertFail();
       }
@@ -970,7 +940,6 @@ export default function RdbResultSetTest() {
         expect(bool1).assertEqual(true);
         done();
       }catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'executeSql failed'+ err.code);
         expect().assertFail();
         done();
@@ -995,7 +964,6 @@ export default function RdbResultSetTest() {
         expect(bool1).assertEqual(false);
         done();
       }catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'executeSql failed'+ err.code);
         expect().assertFail();
         done();

@@ -119,7 +119,7 @@ export default function DeviceKvStoreNullEtsTestStatic() {
         }, 2000);
       });
       
-      // await getDeviceId.then((deviceId: string): void => {
+      // await getDeviceId.then((deviceId: string): Promise<void> => {
       //   console.info(TAG + 'beforeAll getDeviceId=' + JSON.stringify(deviceId));
       //   localDeviceId = deviceId;
       // }).catch((error: Error) => {

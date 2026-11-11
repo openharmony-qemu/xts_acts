@@ -144,7 +144,6 @@ export default function relationalStoreCloudSyncEts() {
       try {
         resultSet.getColumnIndex("data1")
       } catch(err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, "business error code %{public}d", err.code)
         expect(true).assertEqual(err.code==14800021)
       }
@@ -256,7 +255,6 @@ export default function relationalStoreCloudSyncEts() {
       try {
         store = await data_relationalStore.getRdbStore(context!, STORE_CONFIGS1)
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'Get RdbStore failed'+ err.code);
         expect(true).assertEqual(err.code == 14800017)
       }
@@ -280,7 +278,6 @@ export default function relationalStoreCloudSyncEts() {
         expect().assertFail();
         done();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'executeSql failed',err.code,err.message);
         expect(err?.code == 14800021).assertTrue();
         done();
@@ -302,7 +299,6 @@ export default function relationalStoreCloudSyncEts() {
         expect().assertFail();
         done();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'executeSql failed'+ err.code);
         expect(err.code == 14800021).assertTrue();
         done();
@@ -325,7 +321,6 @@ export default function relationalStoreCloudSyncEts() {
         hilog.info(domain, tag, '%{public}s', 'executeSql suceess');
         expect().assertFail();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'executeSql failed'+err.code);
         expect(err.code).assertEqual(14800032);
       }
@@ -349,7 +344,6 @@ export default function relationalStoreCloudSyncEts() {
         hilog.info(domain, tag, '%{public}s', 'executeSql success');
         expect().assertFail();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'executeSql failed'+err.code);
         expect(err.code).assertEqual(14800033);
       }

@@ -2571,7 +2571,6 @@ export default function relationalStorePredicatesTest() {
         expect(result?.rowCount == -1).assertTrue();
         result.close();
       } catch (err) {
-        err = err as BusinessError;
         expect(err.code).assertEqual("401");
       }
       done();
@@ -2595,7 +2594,6 @@ export default function relationalStorePredicatesTest() {
         expect(result?.rowCount == -1).assertTrue();
         result.close();
       } catch (err) {
-        err = err as BusinessError;
         expect(err != undefined).assertFalse();
       }
       done();
@@ -2620,7 +2618,6 @@ export default function relationalStorePredicatesTest() {
         expect(3).assertEqual(result?.rowCount);
         result.close();
       } catch (err) {
-        err = err as BusinessError;
         console.info(tag + "err = " + err);
         expect(err != undefined).assertFalse();
       }
@@ -2646,7 +2643,6 @@ export default function relationalStorePredicatesTest() {
         expect(3).assertEqual(result?.rowCount);
         result.close();
       } catch (err) {
-        err = err as BusinessError;
         console.info(tag + "err = " + err);
         expect(err != undefined).assertFalse();
       }

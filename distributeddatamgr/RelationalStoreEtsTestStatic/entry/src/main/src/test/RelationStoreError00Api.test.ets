@@ -66,7 +66,6 @@ async function CreateCorruptDb() {
     fs.fsyncSync(file.fd)
     fs.closeSync(file)
   } catch (err) {
-    err = err as BusinessError;
     console.info(tag, `CreateCorruptDb err.code ${err.code}, err.message ${err.message}`)
   }
   console.info(tag, `quit create corrupt store`);
@@ -128,7 +127,6 @@ export default function RelationStoreError00Test() {
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0001 num *************  ' + num);
           expect(num == 1).assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s',
             '************* RelationStoreError00Test0001 err *************  ' + err.code);
           expect(err.code == 14800000).assertEqual(true);
@@ -154,7 +152,6 @@ export default function RelationStoreError00Test() {
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0002 num *************' + num);
           expect(num == 1).assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s',
             '************* RelationStoreError00Test0002 err *************  ' + err.code);
           expect(err.code == 14800000).assertEqual(true);
@@ -180,7 +177,6 @@ export default function RelationStoreError00Test() {
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0003 num *************' + num);
           expect(num == 1).assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s',
             '************* RelationStoreError00Test0003 err *************  ' + err.code);
           expect(err.code == 14800000).assertEqual(true);
@@ -206,7 +202,6 @@ export default function RelationStoreError00Test() {
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0004 num *************' + num);
           expect(num == 1).assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s',
             '************* RelationStoreError00Test0004 err *************  ' + err.code);
           expect(err.code == 14800000).assertEqual(true);
@@ -233,7 +228,6 @@ export default function RelationStoreError00Test() {
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0005 rows *************' + rows);
           expect(rows == 1).assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0005 err *************' + err);
           expect(err.code == 14800000).assertEqual(true);
         }
@@ -260,7 +254,6 @@ export default function RelationStoreError00Test() {
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0006 rows *************' + rows);
           expect(rows == 1).assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0006 err *************' + err);
           expect(err.code == 14800000).assertEqual(true);
         }
@@ -286,7 +279,6 @@ export default function RelationStoreError00Test() {
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0007 rows *************' + rows);
           expect(rows == 1).assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0007 err *************' + err);
           expect(err.code == 14800000).assertEqual(true);
         }
@@ -313,7 +305,6 @@ export default function RelationStoreError00Test() {
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0008 rows *************' + rows);
           expect(rows == 1).assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0008 err *************' + err);
           expect(err.code == 14800000).assertEqual(true);
         }
@@ -339,7 +330,6 @@ export default function RelationStoreError00Test() {
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0009 end *************' + rows);
           expect(rows == 1).assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0009 end *************' + err);
           expect(err.code == 14800000).assertEqual(true);
         }
@@ -365,7 +355,6 @@ export default function RelationStoreError00Test() {
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0010 end *************' + rows);
           expect(rows == 1).assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0010 end *************' + err);
           expect(err.code == 14800000).assertEqual(true);
         }
@@ -391,7 +380,6 @@ export default function RelationStoreError00Test() {
           expect(rows == 1).assertFail();
           await trans.rollback();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0011 end *************' + err);
           expect(err.code == 14800000).assertEqual(true);
           await trans.rollback();
@@ -418,7 +406,6 @@ export default function RelationStoreError00Test() {
           expect(rows == 1).assertFail();
           await trans.rollback();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0012 end *************' + err);
           expect(err.code == 14800000).assertEqual(true);
           await trans.rollback();
@@ -445,7 +432,6 @@ export default function RelationStoreError00Test() {
           expect(rows == 1).assertFail();
           await trans.rollback();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0013 end *************' + err);
           expect(err.code == 14800000).assertEqual(true);
           await trans.rollback();
@@ -472,7 +458,6 @@ export default function RelationStoreError00Test() {
           expect(rows == 1).assertFail();
           await trans.rollback();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0014 end *************' + err);
           expect(err.code == 14800000).assertEqual(true);
           await trans.rollback();
@@ -501,7 +486,6 @@ export default function RelationStoreError00Test() {
           expect(rows == 1).assertFail();
           await trans.rollback();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0015 err *************' + err);
           expect(err.code == 14800000).assertEqual(true);
           await trans.rollback();
@@ -531,7 +515,6 @@ export default function RelationStoreError00Test() {
           expect(rows == 1).assertFail();
           await trans.rollback();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0016 err *************' + err);
           expect(err.code == 14800000).assertEqual(true);
           await trans.rollback();
@@ -560,7 +543,6 @@ export default function RelationStoreError00Test() {
           expect(rows == 1).assertFail();
           await trans.rollback();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0017 err *************' + err);
           expect(err.code == 14800000).assertEqual(true);
           await trans.rollback();
@@ -590,7 +572,6 @@ export default function RelationStoreError00Test() {
           expect(rows == 1).assertFail();
           await trans.rollback();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0018 err *************' + err);
           expect(err.code == 14800000).assertEqual(true);
           await trans.rollback();
@@ -619,7 +600,6 @@ export default function RelationStoreError00Test() {
           expect(rows == 1).assertFail();
           await trans.rollback();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0019 end *************' + err);
           expect(err.code == 14800000).assertEqual(true);
           await trans.rollback();
@@ -648,7 +628,6 @@ export default function RelationStoreError00Test() {
           expect(rows == 1).assertFail();
           await trans.rollback();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0020 end *************' + err);
           expect(err.code == 14800000).assertEqual(true);
           await trans.rollback();
@@ -675,7 +654,6 @@ export default function RelationStoreError00Test() {
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0022 end *************' + res);
           expect(res).assertEqual("");
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s',
             '************* RelationStoreError00Test0022 end *************' + err.code + err.message);
           expect(true).assertFail();
@@ -702,7 +680,6 @@ export default function RelationStoreError00Test() {
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0023 res *************' + res);
           expect(res).assertEqual(false);
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s',
             '************* RelationStoreError00Test0023 err *************' + err.code + err.message);
           expect(true).assertFail();
@@ -729,7 +706,6 @@ export default function RelationStoreError00Test() {
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0024 res *************' + res);
           expect(res).assertEqual(false);
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s',
             '************* RelationStoreError00Test0024 err *************' + err.code + err.message);
           expect(true).assertFail();
@@ -757,7 +733,6 @@ export default function RelationStoreError00Test() {
             '************* RelationStoreError00Test0025 res *************' + resultSet.rowCount);
           expect(res).assertEqual(false);
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s',
             '************* RelationStoreError00Test0025 err *************' + err.code + err.message);
           expect(true).assertFail();
@@ -785,7 +760,6 @@ export default function RelationStoreError00Test() {
             '************* RelationStoreError00Test0026 resultSet *************' + resultSet.rowCount);
           expect(res).assertEqual(false);
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s',
             '************* RelationStoreError00Test0026 err *************' + err.code + err.message);
           expect(true).assertFail();
@@ -813,7 +787,6 @@ export default function RelationStoreError00Test() {
             '************* RelationStoreError00Test0027 resultSet *************' + resultSet.rowCount);
           expect(res).assertEqual(false);
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s',
             '************* RelationStoreError00Test0027 err *************' + err.code + err.message);
           expect(true).assertFail();
@@ -841,7 +814,6 @@ export default function RelationStoreError00Test() {
             '************* RelationStoreError00Test0028 resultSet *************' + resultSet.rowCount);
           expect(res).assertEqual(false);
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s',
             '************* RelationStoreError00Test0028 err *************' + err.code + err.message);
           expect(true).assertFail();
@@ -869,7 +841,6 @@ export default function RelationStoreError00Test() {
             '************* RelationStoreError00Test0029 end *************' + JSON.stringify(res));
           expect(true).assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s',
             '************* RelationStoreError00Test0029 end *************' + err.code + err.message);
           expect(err.code == 14800000).assertEqual(true);
@@ -896,7 +867,6 @@ export default function RelationStoreError00Test() {
           hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0030 end *************' + res);
           expect(res).assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s',
             '************* RelationStoreError00Test0030 end *************' + err.code + err.message);
           expect(err.code == 14800000).assertEqual(true);
@@ -923,7 +893,6 @@ export default function RelationStoreError00Test() {
           await rdbStore!.cleanDirtyData("test");
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `testCleanDirtyDataErrcode0100 + ${err.code} + ${err.message}`);
           expect(14800000).assertEqual(err.code);
           done();
@@ -956,7 +925,6 @@ export default function RelationStoreError00Test() {
           hilog.info(domain, tag, '%{public}s', 'testGetModifyTimeErrcode0100 end CreateCorruptDb');
           await rdbStore!.getModifyTime("test1", "NAME", PRIKey);
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `testGetModifyTimeErrcode0100 + ${err.code} + ${err.message}`);
           expect(14800000).assertEqual(err.code);
         }

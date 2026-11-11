@@ -102,8 +102,8 @@ function checkResultSetForNormalGet(resultSet : relationalStore.ResultSet){
 }
 
 export default function RelationalStoreArkPredicatesQueryByStepTest(): void {
-  describe('RelationalStoreArkPredicatesQueryByStepTest', (): void => {
-    beforeAll(async ():Promise<void> => {
+  describe('RelationalStoreArkPredicatesQueryByStepTest', () => {
+    beforeAll(async () => {
       console.info(TAG + 'beforeAll')
       try {
         let cmd = "aa start -a EntryAbility -b com.example.relationalstore";
@@ -138,13 +138,13 @@ export default function RelationalStoreArkPredicatesQueryByStepTest(): void {
         expect().assertFail();
       }
     })
-    beforeEach(async ():Promise<void> => {
+    beforeEach(async () => {
       console.info(TAG + 'beforeEach');
     })
-    afterEach(async ():Promise<void> => {
+    afterEach(async () => {
       console.info(TAG + 'afterEach');
     })
-    afterAll(async ():Promise<void> => {
+    afterAll(async () => {
       console.info(TAG + 'afterAll');
       try {
         await rdbStore?.close();
@@ -165,7 +165,7 @@ export default function RelationalStoreArkPredicatesQueryByStepTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('RdbArkTestQueryByStepPredicates0001',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  ():Promise<void> => {
+    it('RdbArkTestQueryByStepPredicates0001',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  () => {
       console.log(TAG + "************* RdbArkTestQueryByStepPredicates0001 start *************");
       let resultSet: relationalStore.ResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
@@ -193,7 +193,7 @@ export default function RelationalStoreArkPredicatesQueryByStepTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('RdbArkTestQueryByStepPredicates0002',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  ():Promise<void> => {
+    it('RdbArkTestQueryByStepPredicates0002',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  () => {
       console.log(TAG + "************* RdbArkTestQueryByStepPredicates0002 start *************");
       let resultSet: relationalStore.ResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
@@ -223,7 +223,7 @@ export default function RelationalStoreArkPredicatesQueryByStepTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('RdbArkTestQueryByStepPredicates0003',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  ():Promise<void> => {
+    it('RdbArkTestQueryByStepPredicates0003',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  () => {
       console.log(TAG + "************* RdbArkTestQueryByStepPredicates0003 start *************");
       let resultSet: relationalStore.ResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
@@ -254,7 +254,7 @@ export default function RelationalStoreArkPredicatesQueryByStepTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('RdbArkTestQueryByStepPredicates0004',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  ():Promise<void> => {
+    it('RdbArkTestQueryByStepPredicates0004',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  () => {
       console.log(TAG + "************* RdbArkTestQueryByStepPredicates0004 start *************");
       let resultSet: relationalStore.ResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
@@ -286,7 +286,7 @@ export default function RelationalStoreArkPredicatesQueryByStepTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('RdbArkTestQueryByStepPredicates0005',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  ():Promise<void> => {
+    it('RdbArkTestQueryByStepPredicates0005',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  () => {
       console.log(TAG + "************* RdbArkTestQueryByStepPredicates0005 start *************");
       let resultSet: relationalStore.ResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
@@ -318,7 +318,7 @@ export default function RelationalStoreArkPredicatesQueryByStepTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('RdbArkTestQueryByStepPredicates0006',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  ():Promise<void> => {
+    it('RdbArkTestQueryByStepPredicates0006',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  () => {
       console.log(TAG + "************* RdbArkTestQueryByStepPredicates0006 start *************");
       let resultSet: relationalStore.ResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
@@ -352,7 +352,7 @@ export default function RelationalStoreArkPredicatesQueryByStepTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('RdbArkTestQueryByStepPredicates0007',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  ():Promise<void> => {
+    it('RdbArkTestQueryByStepPredicates0007',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  () => {
       console.log(TAG + "************* RdbArkTestQueryByStepPredicates0007 start *************");
       let resultSet: relationalStore.ResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
@@ -382,7 +382,7 @@ export default function RelationalStoreArkPredicatesQueryByStepTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('RdbArkTestQueryByStepPredicates0008',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  ():Promise<void> => {
+    it('RdbArkTestQueryByStepPredicates0008',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  () => {
       console.log(TAG + "************* RdbArkTestQueryByStepPredicates0008 start *************");
       let resultSet: relationalStore.ResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
@@ -410,7 +410,7 @@ export default function RelationalStoreArkPredicatesQueryByStepTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('RdbArkTestQueryByStepPredicates0009',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  ():Promise<void> => {
+    it('RdbArkTestQueryByStepPredicates0009',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  () => {
       console.log(TAG + "************* RdbArkTestQueryByStepPredicates0009 start *************");
       let resultSet: relationalStore.ResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
@@ -442,7 +442,7 @@ export default function RelationalStoreArkPredicatesQueryByStepTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('RdbArkTestQueryByStepPredicates0010',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  ():Promise<void> => {
+    it('RdbArkTestQueryByStepPredicates0010',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  () => {
       console.log(TAG + "************* RdbArkTestQueryByStepPredicates0010 start *************");
       let resultSet : relationalStore.ResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
@@ -492,7 +492,7 @@ export default function RelationalStoreArkPredicatesQueryByStepTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('RdbArkTestQueryByStepPredicates0011',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  ():Promise<void> => {
+    it('RdbArkTestQueryByStepPredicates0011',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  () => {
       console.log(TAG + "************* RdbArkTestQueryByStepPredicates0011 start *************");
       let resultSet : relationalStore.ResultSet | undefined = undefined;
       try {
@@ -518,7 +518,7 @@ export default function RelationalStoreArkPredicatesQueryByStepTest(): void {
      * @tc.type   Function
      * @tc.level  LEVEL2
      */
-    it('RdbArkTestQueryByStepPredicates0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async  ():Promise<void> => {
+    it('RdbArkTestQueryByStepPredicates0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async  () => {
       console.info(TAG + '************* RdbArkTestQueryByStepPredicates0012 start *************');
       let predicates = new relationalStore.RdbPredicates('test');
       let rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
@@ -530,7 +530,7 @@ export default function RelationalStoreArkPredicatesQueryByStepTest(): void {
         console.info(TAG + " resultSet rowCount " + resultSet.rowCount);
         expect(resultSet.rowCount).assertEqual(3);
         console.info(TAG + " resultSet columnNames " + JSON.stringify(resultSet.columnNames));
-        expect(resultSet.columnNames[0] as string ).assertEqual("id");
+        expect(resultSet.columnNames[0]).assertEqual("id");
         console.info(TAG + " resultSet columnCount " + JSON.stringify(resultSet.columnCount));
         expect(resultSet.columnCount).assertEqual(5);
         console.info(TAG + " resultSet rowIndex " + resultSet.rowIndex);

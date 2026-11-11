@@ -67,7 +67,7 @@ export default function RdbStoreErrorCodeAddTest() {
   describe('RdbStoreErrorCodeAddTest', (): void => {
     beforeAll(async (): Promise<void>  => {
       await Utils.msSleep(2000)
-      let cmd = "aa start -a EntryAbility -b com.example.helloworld";
+      let cmd = "aa start -a EntryAbility -b com.example.relationalstore";
       let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
       if(user !== undefined){
           cmd += ' -u ' + user;
@@ -119,7 +119,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800001Test003 code %{public}d", err.code);
           expect(err.code === 14800001).assertTrue();
           done();
@@ -147,7 +146,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800001Test006 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800001).assertTrue();
@@ -173,7 +171,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "RdbStoreSetErrCode14800001Test008 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800001).assertTrue();
@@ -200,7 +197,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "RdbStoreSetErrCode14800001Test009 code %{public}d", err.code);
           rdbTrans.rollback();
           await rdbStore!.close();
@@ -228,7 +224,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800012Test001 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800012).assertTrue();
@@ -255,7 +250,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800012Test002 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800012).assertTrue();
@@ -282,7 +276,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800012Test003 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800012).assertTrue();
@@ -309,7 +302,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800012Test004 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800012).assertTrue();
@@ -336,7 +328,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800012Test005 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800012).assertTrue();
@@ -364,7 +355,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800012Test006 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800012).assertTrue();
@@ -392,7 +382,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800012Test008 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800012).assertTrue();
@@ -420,7 +409,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800012Test010 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800012).assertTrue();
@@ -447,7 +435,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800012Test0011 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800012).assertTrue();
@@ -475,7 +462,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800013Test001 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800013).assertTrue();
@@ -503,7 +489,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800013Test002 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800013).assertTrue();
@@ -531,7 +516,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800013Test003 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800013).assertTrue();
@@ -559,7 +543,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800013Test004 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800013).assertTrue();
@@ -587,7 +570,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800013Test005 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800013).assertTrue();
@@ -615,7 +597,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800013Test006 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800013).assertTrue();
@@ -643,7 +624,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800013Test007 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800013).assertTrue();
@@ -671,7 +651,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800013Test008 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800013).assertTrue();
@@ -699,7 +678,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800013Test009 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800013).assertTrue();
@@ -729,7 +707,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "RdbStoreSetErrCode14800014Test001 code %{public}d", err.code);
           expect(err.code === 14800014).assertTrue();
           done()
@@ -757,7 +734,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "RdbStoreSetErrCode14800014Test002 code %{public}d", err.code);
           expect(err.code === 14800014).assertTrue();
           done();
@@ -783,7 +759,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "RdbStoreSetErrCode14800014Test003 code %{public}d", err.code);
           expect(err.code === 14800014).assertTrue();
           done()
@@ -809,7 +784,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "RdbStoreSetErrCode14800014Test004 code %{public}d", err.code);
           expect(err.code === 14800014).assertTrue();
           done()
@@ -836,7 +810,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test001 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800014).assertTrue();
@@ -864,7 +837,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test002 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800014).assertTrue();
@@ -892,7 +864,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test005 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800014).assertTrue();
@@ -921,7 +892,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test006 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800014).assertTrue();
@@ -949,7 +919,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test007 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800014).assertTrue();
@@ -979,7 +948,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test008 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800014).assertTrue();
@@ -1008,7 +976,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test009 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800014).assertTrue();
@@ -1037,7 +1004,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test010 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800014).assertTrue();
@@ -1066,7 +1032,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test011 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800014).assertTrue();
@@ -1096,7 +1061,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test012 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800014).assertTrue();
@@ -1125,7 +1089,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test013 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800014).assertTrue();
@@ -1155,7 +1118,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test014 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800014).assertTrue();
@@ -1184,7 +1146,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test015 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800014).assertTrue();
@@ -1213,7 +1174,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test016 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800014).assertTrue();
@@ -1242,7 +1202,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test017 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800014).assertTrue();
@@ -1271,7 +1230,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800014Test018 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800014).assertTrue();
@@ -1297,7 +1255,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800019Test001 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800019).assertTrue();
@@ -1324,7 +1281,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800019Test002 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800019).assertTrue();
@@ -1351,7 +1307,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800019Test004 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800019).assertTrue();
@@ -1378,7 +1333,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800019Test005 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800019).assertTrue();
@@ -1405,7 +1359,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800019Test006 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800019).assertTrue();
@@ -1432,7 +1385,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800021Test0021111 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800021).assertTrue();
@@ -1460,7 +1412,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800021Test003 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800021).assertTrue();
@@ -1487,7 +1438,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800021Test004 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800021).assertTrue();
@@ -1514,7 +1464,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800021Test005 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800021).assertTrue();
@@ -1541,7 +1490,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800021Test006 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800021).assertTrue();
@@ -1569,7 +1517,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800041Test001 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800041).assertTrue();
@@ -1597,7 +1544,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800021Test0041111 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800041).assertTrue();
@@ -1625,7 +1571,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800041Test003 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800041).assertTrue();
@@ -1653,7 +1598,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800041Test004 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800041).assertTrue();
@@ -1681,7 +1625,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800041Test005 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800041).assertTrue();
@@ -1709,7 +1652,6 @@ export default function RdbStoreErrorCodeAddTest() {
           expect().assertFail();
           done();
         } catch(err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "LiteResultSetErrCode14800041Test006 code %{public}d", err.code);
           await rdbStore!.close();
           expect(err.code === 14800041).assertTrue();

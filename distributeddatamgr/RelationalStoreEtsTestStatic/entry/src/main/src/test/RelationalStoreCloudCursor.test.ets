@@ -158,7 +158,7 @@ export default function relationalStoreCloudCursor() {
             }
             let cursor = 3;
             try {
-              let promise = rdbStore!.cleanDirtyData("query_tb", cursor);
+              let promise = await rdbStore!.cleanDirtyData("query_tb", cursor);
               console.log(TAG + `testRdbCleanDirtyData0001 cleanDirtyData success`);
               done();
             } catch (err) {
@@ -185,7 +185,7 @@ export default function relationalStoreCloudCursor() {
                 return;
             }
             try {
-              let promise = rdbStore!.cleanDirtyData("query_tb");
+              let promise = await rdbStore!.cleanDirtyData("query_tb");
               console.log(TAG + `testRdbCleanDirtyData0002 cleanDirtyData success`);
               done();
             } catch (err) {

@@ -203,6 +203,7 @@ export default function RdbStoreArkGetRdbStoreSyncTest() {
       done();
       hilog.info(DOMAIN, TAG, "************* RelationalStore_Ark_getRdbStoreSyncTest001 end *************");
     })
+    
     /**
      * @tc.name RelationalStore_Ark_getRdbStoreSyncTest002
      * @tc.number SUB_DistributedData_RelationalStore_Ark_getRdbStoreSyncTest002

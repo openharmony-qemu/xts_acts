@@ -99,7 +99,7 @@ export default function RdbStoreDuplicateColumnsTest() {
     beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll');
       await Utils.msSleep(2000)
-      let cmd = "aa start -a EntryAbility -b com.example.helloworld";
+      let cmd = "aa start -a EntryAbility -b com.example.relationalstore";
       let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
       if(user !== undefined){
           cmd += ' -u ' + user;
@@ -208,7 +208,6 @@ export default function RdbStoreDuplicateColumnsTest() {
           }
         }
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryCurrentRowData_001 failed message:${e.message} code:${e.code}`);
         expect().assertFail();
       }
@@ -248,7 +247,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         expect(checkAssetEqual(rowsData[0][8] as relationalStore.Asset, asset1)).assertTrue();
         expect(checkAssetsEqual(rowsData[0][9] as relationalStore.Assets, assets2)).assertTrue();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetRowsData_001 failed message:${e.message} code:${e.code}`);
         expect().assertFail();
       }
@@ -284,7 +282,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         expect(columnNames[8] == "data3").assertTrue();
         expect(columnNames[9] == "data4").assertTrue();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetColumnNames_001 failed message:${e.message} code:${e.code}`);
         expect().assertFail();
       }
@@ -311,7 +308,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         const rowData = resultSet!.getCurrentRowData();
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryCurrentRowData_003 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800014).assertTrue();
       }
@@ -337,7 +333,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         resultSet!.getCurrentRowData();
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryCurrentRowData_004 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800021).assertTrue();
       }
@@ -364,7 +359,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         resultSet!.getCurrentRowData();
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryCurrentRowData_005 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800019).assertTrue();
       }
@@ -390,7 +384,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         resultSet!.getCurrentRowData();
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryCurrentRowData_006 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800001).assertTrue();
       }
@@ -416,7 +409,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         resultSet!.getCurrentRowData();
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryCurrentRowData_007 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800012).assertTrue();
       }
@@ -443,7 +435,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         await resultSet!.getRowsData(1);
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetRowsData_003 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800014).assertTrue();
       }
@@ -469,7 +460,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         await resultSet!.getRowsData(1);
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetRowsData_004 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800021).assertTrue();
       }
@@ -495,7 +485,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         await resultSet!.getRowsData(1);
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         console.error(`queryGetRowsData_005 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800019).assertTrue();
       }
@@ -521,7 +510,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         await resultSet!.getRowsData(1);
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetRowsData_006 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800001).assertTrue();
       }
@@ -547,7 +535,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         await resultSet!.getRowsData(1,1);
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         console.error(`queryGetRowsData_007 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800012).assertTrue();
       }
@@ -604,7 +591,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         expect(checkAssetEqual(rowsDataAll[1][8] as relationalStore.Asset, asset1)).assertTrue();
         expect(checkAssetsEqual(rowsDataAll[1][9] as  relationalStore.Assets, assets2)).assertTrue();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetRowsData_008 failed message:${e.message} code:${e.code}`);
         expect().assertFail();
       }
@@ -630,7 +616,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         await resultSet!.getRowsData(-1);
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetRowsData_009 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800001).assertTrue();
       }
@@ -656,7 +641,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         await resultSet!.getRowsData(-1, -1);
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetRowsData_011 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800001).assertTrue();
       }
@@ -682,7 +666,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         await resultSet!.getRowsData(-1, 0);
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetRowsData_012 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800001).assertTrue();
       }
@@ -724,7 +707,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         expect(checkAssetEqual(rowsData[0][8] as relationalStore.Asset, asset1)).assertTrue();
         expect(checkAssetsEqual(rowsData[0][9] as  relationalStore.Assets, assets2)).assertTrue();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetRowsData_013 failed message:${e.message} code:${e.code}`);
         expect().assertFail();
       }
@@ -750,7 +732,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         await resultSet!.getRowsData(0);
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetRowsData_014 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800001).assertTrue();
       }
@@ -777,7 +758,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         resultSet!.getColumnNames();
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetColumnNames_002 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800014).assertTrue();
       }
@@ -803,7 +783,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         resultSet!.getColumnNames();
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetColumnNames_003 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800021).assertTrue();
       }
@@ -829,7 +808,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         resultSet!.getColumnNames();
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetColumnNames_005 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800001).assertTrue();
       }
@@ -870,7 +848,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         expect(checkAssetEqual(liteRowData[8] as relationalStore.Asset, asset1)).assertTrue();
         expect(checkAssetsEqual(liteRowData[9] as  relationalStore.Assets, assets2)).assertTrue();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryCurrentRowData_001 failed message:${e.message} code:${e.code}`);
         expect().assertFail();
       }
@@ -895,7 +872,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         liteResultSet!.getCurrentRowData();
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryCurrentRowData_003 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800014).assertTrue();
       }
@@ -919,7 +895,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         liteResultSet!.getCurrentRowData();
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryCurrentRowData_004 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800021).assertTrue();
       }
@@ -943,7 +918,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         liteResultSet!.getCurrentRowData();
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryCurrentRowData_005 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800019).assertTrue();
       }
@@ -968,7 +942,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         expect().assertFail();
 
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryCurrentRowData_006 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800001).assertTrue();
       }
@@ -992,7 +965,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         liteResultSet!.getCurrentRowData();
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryCurrentRowData_007 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800012).assertTrue();
       }
@@ -1031,7 +1003,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         expect(checkAssetEqual(liteRowsData[0][8] as relationalStore.Asset, asset1)).assertTrue();
         expect(checkAssetsEqual(liteRowsData[0][9] as  relationalStore.Assets, assets2)).assertTrue();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetRowsData_001 failed message:${e.message} code:${e.code}`);
         liteResultSet!.close();
         expect().assertFail();
@@ -1057,7 +1028,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         await liteResultSet!.getRowsData(1);
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetRowsData_003 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800014).assertTrue();
       }
@@ -1081,7 +1051,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         await liteResultSet!.getRowsData(1);
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetRowsData_004 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800021).assertTrue();
       }
@@ -1105,7 +1074,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         await liteResultSet!.getRowsData(1);
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetRowsData_005 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800019).assertTrue();
       }
@@ -1129,7 +1097,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         await liteResultSet!.getRowsData(1);
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetRowsData_006 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800001).assertTrue();
       }
@@ -1154,7 +1121,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         await liteResultSet!.getRowsData(1,1);
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetRowsData_007 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800012).assertTrue();
       }
@@ -1207,7 +1173,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         expect(checkAssetEqual(liteRowsDataAll[1][8] as relationalStore.Asset, asset1)).assertTrue();
         expect(checkAssetsEqual(liteRowsDataAll[1][9] as  relationalStore.Assets, assets2)).assertTrue();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetRowsData_008 failed message:${e.message} code:${e.code}`);
         liteResultSet!.close();
         expect().assertFail();
@@ -1232,7 +1197,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         await liteResultSet!.getRowsData(-1);
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetRowsData_009 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800001).assertTrue();
       }
@@ -1258,7 +1222,6 @@ export default function RdbStoreDuplicateColumnsTest() {
           expect().assertFail();
         }
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetRowsData_011 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800001).assertTrue();
       }
@@ -1284,7 +1247,6 @@ export default function RdbStoreDuplicateColumnsTest() {
           expect().assertFail();
         }
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetRowsData_012 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800001).assertTrue();
       }
@@ -1326,7 +1288,6 @@ export default function RdbStoreDuplicateColumnsTest() {
           expect(checkAssetsEqual(rowsData[0][9] as  relationalStore.Assets, assets2)).assertTrue();
         }
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetRowsData_013 failed message:${e.message} code:${e.code}`);
         liteResultSet!.close();
         expect().assertFail();
@@ -1361,7 +1322,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         expect(columnNames[8] == "data3").assertTrue();
         expect(columnNames[9] == "data4").assertTrue();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetColumnNames_001 failed message:${e.message} code:${e.code}`);
         expect().assertFail();
       }
@@ -1387,7 +1347,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         hilog.error(domain, tag, '%{public}s',`lite_queryGetColumnNames_002 success`);
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetColumnNames_002 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800014).assertTrue();
       }
@@ -1411,7 +1370,6 @@ export default function RdbStoreDuplicateColumnsTest() {
         liteResultSet!.getColumnNames();
         expect().assertFail();
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetColumnNames_003 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800021).assertTrue();
       }
@@ -1438,7 +1396,6 @@ export default function RdbStoreDuplicateColumnsTest() {
           expect().assertFail();
         }
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetColumnNames_004 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800019).assertTrue();
       }
@@ -1464,7 +1421,6 @@ export default function RdbStoreDuplicateColumnsTest() {
           expect().assertFail();
         }
       } catch(e) {
-        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetColumnNames_005 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800001).assertTrue();
       }

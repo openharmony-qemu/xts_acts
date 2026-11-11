@@ -435,7 +435,6 @@ export default function relationalStoreDistributedTest() {
           await rdbStore!.sync(data_Rdb.SyncMode.SYNC_MODE_PULL, predicates);
           expect(true).assertFail();
         } catch(err) {
-          err = err as BusinessError;
           console.info(TAG + "testRdbStoreDistributed0011-2 err.code:" + err.code + " err.msg:" + err.message);
           expect(err.code).assertEqual(14800000);
         }

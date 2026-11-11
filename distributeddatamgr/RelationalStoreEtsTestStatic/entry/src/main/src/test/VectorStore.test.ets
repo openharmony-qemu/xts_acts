@@ -102,7 +102,6 @@ export default function VectorStoreTest() {
           expect().assertFail();
           done()
         } catch(err){
-          err = err as BusinessError;
           console.info(TAG + "VectorStoreTest0100 fail getRdbStore, code=" + err.code + err.message);
           expect(801).assertEqual(err.code);
           done()

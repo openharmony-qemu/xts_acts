@@ -118,7 +118,6 @@ export default function RdbPredicatesEtsTest() {
         resultSet.close();
         console.log(TAG + " testHaving001 having success");
       } catch (e) {
-        e = e as BusinessError;
         console.error(TAG + " testHaving001 having failed" + e);
         expect(true).assertFail();
       }
@@ -159,7 +158,6 @@ export default function RdbPredicatesEtsTest() {
         resultSet.close();
         console.log(TAG + " testHaving002 having success");
       } catch (e) {
-        e = e as BusinessError;
         console.error(TAG + " testHaving002 having failed" + e);
         expect(true).assertFail();
       }
@@ -200,7 +198,6 @@ export default function RdbPredicatesEtsTest() {
         resultSet.close();
         console.log(TAG + " testHaving003 having success");
       } catch (e) {
-        e = e as BusinessError;
         console.error(TAG + " testHaving003 having failed" + e);
         expect(true).assertFail();
       }
@@ -241,7 +238,6 @@ export default function RdbPredicatesEtsTest() {
         resultSet.close();
         console.log(TAG + " testHaving004 having success");
       } catch (e) {
-        e = e as BusinessError;
         console.error(TAG + " testHaving004 having failed" + e);
         expect(true).assertFail();
       }
@@ -268,7 +264,6 @@ export default function RdbPredicatesEtsTest() {
         console.log(TAG + " testHaving005 having success");
         expect(true).assertFail();
       } catch (e) {
-        e = e as BusinessError;
         console.error(TAG + " testHaving005 having failed" + e);
         expect(e.code == 14800001).assertTrue();
       }
@@ -298,7 +293,6 @@ export default function RdbPredicatesEtsTest() {
         resultSet.close();
         expect(true).assertFail();
       } catch (e) {
-        e = e as BusinessError;
         console.error(TAG + " testHaving006 having failed. " + e.message + e.code);
         expect(e.code == 14800021).assertTrue();
       }
@@ -327,7 +321,6 @@ export default function RdbPredicatesEtsTest() {
         resultSet.close();
         console.log(TAG + " testHaving007 having success");
       } catch (e) {
-        e = e as BusinessError;
         console.error(TAG + " testHaving007 having failed " + e);
         expect(true).assertFail();
       }
@@ -351,7 +344,6 @@ export default function RdbPredicatesEtsTest() {
         console.log(TAG + " testHaving008 having success");
         expect(true).assertFail();
       } catch (e) {
-        e = e as BusinessError;
         console.error(TAG + " testHaving008 having failed" + e);
         expect(e.code == 14800001).assertTrue();
       }
@@ -392,7 +384,6 @@ export default function RdbPredicatesEtsTest() {
         resultSet.close();
         console.log(TAG + " testHaving009 having success");
       } catch (e) {
-        e = e as BusinessError;
         console.error(TAG + " testHaving009 having failed" + e);
         expect(true).assertFail();
       }
@@ -434,7 +425,6 @@ export default function RdbPredicatesEtsTest() {
         }
         console.log(TAG + " testHaving010 having success");
       } catch (e) {
-        e = e as BusinessError;
         console.error(TAG + " testHaving010 having failed: " + e);
         expect().assertFail();
       }

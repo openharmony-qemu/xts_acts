@@ -538,7 +538,6 @@ export default function relationalStoreTest() {
           expect(null).assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           console.log(tag + "err" + err.code + err.message);
           expect(err.code == 14800012).assertTrue();
           done();
@@ -567,7 +566,6 @@ export default function relationalStoreTest() {
           expect(null).assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           console.log(tag + "err" + err.code + err.message);
           expect(err.code == 14800012).assertTrue();
           done();
@@ -596,7 +594,6 @@ export default function relationalStoreTest() {
           expect(null).assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           console.log(tag + "err" + err.code + err.message);
           expect(err.code == 14800012).assertTrue();
           done();
@@ -625,7 +622,6 @@ export default function relationalStoreTest() {
           expect(null).assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           console.log(tag + "err" + err.code + err.message);
           expect(err.code == 14800012).assertTrue();
           done();
