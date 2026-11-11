@@ -26,20 +26,19 @@ let subscriber: commonEventManager.CommonEventSubscriber;
 
 async function waitAppStorage(key: string, timeoutMs: number): Promise<string | undefined> {
   let waited: number = 0;
+  let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
   while (waited < timeoutMs) {
     let v: string | undefined = AppStorage.get<string>(key);
     if (v !== undefined) {
       return v;
     }
-    await new Promise<void>((resolve: () => void): void => {
-      setTimeout(resolve, 200);
-    });
+    await abilityDelegator.executeShellCommand('sleep 0.2');
     waited += 200;
   }
   return AppStorage.get<string>(key);
 }
 
-export default function abilityTest() {
+export default function abilityTest(): void {
 
   let TAG = "";
 
