@@ -43,6 +43,8 @@ import headerFooterStickyColumn from './LazyColumnLayout/headerFooterStickyColum
 import customListLayoutTest from './LazyDynamicLayout/customListLayoutTest.test';
 import waterFlowKeyboardScrollVertical from './WaterFlow/WaterFlowKeyboardScrollVertical.test';
 import waterFlowKeyboardScrollHorizontal from './WaterFlow/WaterFlowKeyboardScrollHorizontal.test';
+import waterFlowScrollSnapStrategy from './WaterFlow/WaterFlowScrollSnapStrategy.test';
+import waterFlowScrollSnapStrategyProvider from './WaterFlow/WaterFlowScrollSnapStrategyProvider.test';
 
 export default function testsuite() {
   WaterFlowScrollScrollBarWidthTest();
@@ -75,4 +77,6 @@ export default function testsuite() {
   customListLayoutTest();
   waterFlowKeyboardScrollVertical();
   waterFlowKeyboardScrollHorizontal();
+  waterFlowScrollSnapStrategy();
+  waterFlowScrollSnapStrategyProvider();
 }
