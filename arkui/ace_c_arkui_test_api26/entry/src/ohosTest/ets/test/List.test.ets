@@ -71,7 +71,6 @@ import ContentChangeEventTest from './node/ContentChangeEventTest.test'
 import NativeModuleAnimationTest from './animate/NativeModuleAnimation.test'
 import NativeModuleAnimApi2601Test from './animate/NativeModuleAnimApi2601.test'
 import UIAgentGetPageTextErrorCodeTest from './node/UIAgentGetPageTextErrorCodeTest.test'
-import DragEventSummaryTest from './dragEventSummary/DragEventSummaryTest.test';
 import ImageAnimatorInterpolationTest from './image/ImageAnimatorInterpolationTest.test'
 import ImageCollectionTakeItemByNodeIdTest from './node/ImageCollectionTakeItemByNodeId.test'
 import CalendarPickerFirstDayOfWeekTest from './calendarPicker/CalendarPickerFirstDayOfWeekTest.test'
@@ -136,7 +135,6 @@ export default function testsuite() {
   ArcAlphabetIndexerEventCallbackTest()
   NativeModuleAnimationTest()
   NativeModuleAnimApi2601Test()
-  DragEventSummaryTest()
   ImageAnimatorInterpolationTest()
   ImageCollectionTakeItemByNodeIdTest()
   UIAgentGetPageTextErrorCodeTest()

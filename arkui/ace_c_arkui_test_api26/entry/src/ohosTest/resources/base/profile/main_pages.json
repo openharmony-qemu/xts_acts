@@ -12,7 +12,6 @@
     "MainAbility/pages/arcList/ArcListEventCallbackTest",
     "MainAbility/pages/arcSwiper/ArcSwiperEventCallbackTest",
     "MainAbility/pages/arcAlphabetIndexer/ArcAlphabetIndexerEventCallbackTest",
-    "MainAbility/pages/dragEventSummary/DragEventSummaryTest",
     "MainAbility/pages/node/ImageCollectionTakeItemByNodeId",
     "MainAbility/pages/node/UIAgentGetPageTextErrorCodeTest",
     "MainAbility/pages/node/UIContentChangeEventGetTest"

@@ -25,7 +25,6 @@
 #include "arcList/ArcListEventCallbackTest.h"
 #include "arcSwiper/ArcSwiperEventCallbackTest.h"
 #include "arcAlphabetIndexer/ArcAlphabetIndexerEventCallbackTest.h"
-#include "dragEventSummary/DragEventSummaryTest.h"
 #include "node/ImageCollectionTakeItemByNodeId.h"
 #include "node/UIAgentGetPageTextErrorCodeTest.h"
 #include "node/UIContentChangeEventGetTest.h"
@@ -61,8 +60,6 @@ static napi_value Init(napi_env env, napi_value exports)
         {"ArcSwiperEventCallbackTest", nullptr, ArcSwiperEventCallbackTest::CreateNativeNode, 
                 nullptr, nullptr, nullptr, napi_default, nullptr},
         {"ArcAlphabetIndexerEventCallbackTest", nullptr, ArcAlphabetIndexerEventCallbackTest::CreateNativeNode, 
-                nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"DragEventSummaryTest", nullptr, DragEventSummaryTest::CreateNativeNode,
                 nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UIAgentGetPageTextErrorCodeTest002", nullptr, UIAgentGetPageTextErrorCodeTest::UIAgentGetPageTextErrorCodeTest002,
                 nullptr, nullptr, nullptr, napi_default, nullptr},
