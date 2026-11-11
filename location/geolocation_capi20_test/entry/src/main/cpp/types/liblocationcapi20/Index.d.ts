@@ -28,4 +28,8 @@ export const OH_LocationRequestConfig_SetUseScene0101: () => number;
 export const OH_LocationRequestConfig_SetUseScene0102: () => number;
 export const OH_LocationRequestConfig_SetPowerConsumptionScene0100: () => number;
 export const OH_LocationRequestConfig_SetPowerConsumptionScene0101: () => number;
+export const OH_LocationInfo_IsFromMock0100: () => number;
+export const OH_LocationInfo_IsFromMock0101: () => number;
+export const OH_LocationInfo_IsFromMock0102: () => number;
+export const OH_LocationInfo_IsFromMock0103: () => number;
 

@@ -22,8 +22,14 @@
 
 namespace {
 auto g_sleepTime = 3;
+auto g_callbackWaitTime = 5;
 static Location_RequestConfig *g_config;
 static const Location_RequestConfig *requestConfig = OH_Location_CreateRequestConfig();
+static bool g_isFromMockCallbackInvoked = false;
+static bool g_isFromMockLocationNull = true;
+static bool g_isFromMockFirstResult = true;
+static bool g_isFromMockSecondResult = true;
+static int g_userData = 0;
 } // namespace
 
 static napi_value OHLocationInfoGetAdditionalInfo(napi_env env, napi_callback_info info)
@@ -75,7 +81,7 @@ void LocationInfoCallback(Location_Info *location, void *userData)
 static napi_value OH_Location_StartLocating1(napi_env env, napi_callback_info info)
 {
     Location_RequestConfig *config = OH_Location_CreateRequestConfig();
-    OH_LocationRequestConfig_SetCallback(config, LocationInfoCallback, nullptr);
+    OH_LocationRequestConfig_SetCallback(config, LocationInfoCallback, &g_userData);
     OH_LocationRequestConfig_SetInterval(config, 1);
     Location_ResultCode startCode = OH_Location_StartLocating(config);
     sleep(g_sleepTime);
@@ -94,7 +100,7 @@ static napi_value OH_Location_StartLocating2(napi_env env, napi_callback_info in
 static napi_value OH_Location_StartLocating3(napi_env env, napi_callback_info info)
 {
     g_config = OH_Location_CreateRequestConfig();
-    OH_LocationRequestConfig_SetCallback(g_config, LocationInfoCallback, nullptr);
+    OH_LocationRequestConfig_SetCallback(g_config, LocationInfoCallback, &g_userData);
     OH_LocationRequestConfig_SetInterval(g_config, 1);
     Location_ResultCode startCode = OH_Location_StartLocating(g_config);
     napi_value result = nullptr;
@@ -104,7 +110,7 @@ static napi_value OH_Location_StartLocating3(napi_env env, napi_callback_info in
 static napi_value OH_Location_StartLocating4(napi_env env, napi_callback_info info)
 {
     Location_RequestConfig *config = OH_Location_CreateRequestConfig();
-    OH_LocationRequestConfig_SetCallback(config, LocationInfoCallback, nullptr);
+    OH_LocationRequestConfig_SetCallback(config, LocationInfoCallback, &g_userData);
     OH_LocationRequestConfig_SetInterval(config, 1);
     Location_ResultCode startCode = OH_Location_StartLocating(config);
     sleep(g_sleepTime);
@@ -230,6 +236,66 @@ static napi_value OH_LocationRequestConfig_SetPowerConsumptionScene0101(napi_env
     }
 }
 
+void LocationInfoIsFromMockCallback(Location_Info *location, void *userData)
+{
+    g_isFromMockCallbackInvoked = true;
+    g_isFromMockLocationNull = location == nullptr;
+    g_isFromMockFirstResult = OH_LocationInfo_IsFromMock(location);
+    g_isFromMockSecondResult = OH_LocationInfo_IsFromMock(location);
+}
+
+static napi_value OH_LocationInfo_IsFromMock0100(napi_env env, napi_callback_info info)
+{
+    bool isFromMock = OH_LocationInfo_IsFromMock(nullptr);
+    napi_value result = nullptr;
+    napi_create_int32(env, isFromMock == false ? 0 : -1, &result);
+    return result;
+}
+static napi_value OH_LocationInfo_IsFromMock0101(napi_env env, napi_callback_info info)
+{
+    g_isFromMockCallbackInvoked = false;
+    g_isFromMockFirstResult = true;
+    Location_RequestConfig *config = OH_Location_CreateRequestConfig();
+    OH_LocationRequestConfig_SetCallback(config, LocationInfoIsFromMockCallback, &g_userData);
+    OH_LocationRequestConfig_SetInterval(config, 1);
+    Location_ResultCode startCode = OH_Location_StartLocating(config);
+    sleep(g_callbackWaitTime);
+    OH_Location_StopLocating(config);
+    napi_value result = nullptr;
+    napi_create_int32(env,
+        (startCode == LOCATION_SUCCESS && g_isFromMockCallbackInvoked && !g_isFromMockFirstResult) ? 0 : -1, &result);
+    return result;
+}
+static napi_value OH_LocationInfo_IsFromMock0102(napi_env env, napi_callback_info info)
+{
+    g_isFromMockCallbackInvoked = false;
+    Location_RequestConfig *config = OH_Location_CreateRequestConfig();
+    OH_LocationRequestConfig_SetCallback(config, LocationInfoIsFromMockCallback, &g_userData);
+    OH_LocationRequestConfig_SetInterval(config, 1);
+    Location_ResultCode startCode = OH_Location_StartLocating(config);
+    sleep(g_callbackWaitTime);
+    OH_Location_StopLocating(config);
+    napi_value result = nullptr;
+    napi_create_int32(env, (startCode == LOCATION_SUCCESS && g_isFromMockCallbackInvoked) ? 0 : -1, &result);
+    return result;
+}
+static napi_value OH_LocationInfo_IsFromMock0103(napi_env env, napi_callback_info info)
+{
+    g_isFromMockCallbackInvoked = false;
+    g_isFromMockLocationNull = true;
+    Location_RequestConfig *config = OH_Location_CreateRequestConfig();
+    OH_LocationRequestConfig_SetCallback(config, LocationInfoIsFromMockCallback, &g_userData);
+    OH_LocationRequestConfig_SetInterval(config, 1);
+    Location_ResultCode startCode = OH_Location_StartLocating(config);
+    sleep(g_callbackWaitTime);
+    OH_Location_StopLocating(config);
+    napi_value result = nullptr;
+    napi_create_int32(env,
+        (startCode == LOCATION_SUCCESS && g_isFromMockCallbackInvoked && !g_isFromMockLocationNull &&
+        g_isFromMockFirstResult == g_isFromMockSecondResult) ? 0 : -1, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -266,6 +332,14 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr},
         {"OH_Location_StartLocating4", nullptr, OH_Location_StartLocating4, nullptr, nullptr, nullptr, napi_default,
          nullptr},
+        {"OH_LocationInfo_IsFromMock0100", nullptr, OH_LocationInfo_IsFromMock0100, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"OH_LocationInfo_IsFromMock0101", nullptr, OH_LocationInfo_IsFromMock0101, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"OH_LocationInfo_IsFromMock0102", nullptr, OH_LocationInfo_IsFromMock0102, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"OH_LocationInfo_IsFromMock0103", nullptr, OH_LocationInfo_IsFromMock0103, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
     };
 
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

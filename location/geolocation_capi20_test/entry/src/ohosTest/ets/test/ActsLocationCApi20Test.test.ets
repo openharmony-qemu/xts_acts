@@ -293,5 +293,28 @@ export default function ActsLocationCApi20Test() {
           done()
         }
       })
+
+    /**
+     * @tc.name   testLocationKitOH_LocationInfo_IsFromMockTest0100
+     * @tc.number SUB_LocationKit_OH_LocationInfo_IsFromMock_Test_0100
+     * @tc.desc   test OH_LocationInfo_IsFromMock with nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLocationKitOH_LocationInfo_IsFromMockTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_LocationKit_OH_LocationInfo_IsFromMock_Test_0100 start====");
+          let result = locationcapi20.OH_LocationInfo_IsFromMock0100();
+          console.info("====>SUB_LocationKit_OH_LocationInfo_IsFromMock_Test_0100 result: " + result);
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>SUB_LocationKit_OH_LocationInfo_IsFromMock_Test_0100 catch err: " + err);
+          expect(false).assertEqual(OS_LOCATION_ERR_OK);
+          done()
+        }
+      })
   })
 }
