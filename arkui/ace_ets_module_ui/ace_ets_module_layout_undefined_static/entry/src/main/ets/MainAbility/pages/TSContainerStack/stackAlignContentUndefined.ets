@@ -15,7 +15,7 @@
  */
 
 import {  Entry,  Column,  Component,  Text,  Color,  ItemAlign,  FlexAlign,  Scroll,  ColumnSplit,  FontWeight,
-  TextAlign,  Stack,  Alignment, Divider,  Button } from '@ohos.arkui.component'
+  TextAlign,  Stack,  Alignment, Divider,  Button, HorizontalAlign } from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 
@@ -27,15 +27,15 @@ struct StackExample {
     Column() {
       Stack() {
         Column() {
-          Text('video zone').height('100%').width('100%').textAlign(TextAlign.Center).fontSize(25)
-        }.backgroundColor(Color.Pink).width('60%').height('100%').id('upperItemsId3')
+          Text('video zone').height('80%').width('80%').textAlign(TextAlign.Center).fontSize(25)
+        }.backgroundColor(Color.Pink).width('60%').height('80%').id('upperItemsId3')
         Column() {
           Text('video title')
-            .width('100%')
+            .width('80%')
             .height(20)
             .textAlign(TextAlign.Center)
             .backgroundColor('rgb(213, 213, 213)')
-        }.width('100%').height('100%')
+        }.width('80%').height('80%')
       }
       .height('15%')
       .backgroundColor(Color.Yellow)
@@ -48,5 +48,6 @@ struct StackExample {
         }
         ).id('changeButton')
     }
+    .alignItems(HorizontalAlign.Center)
   }
 }

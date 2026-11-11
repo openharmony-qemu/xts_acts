@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { State } from '@ohos.arkui.stateManagement'
-import { Entry,Column,Text,Button,Divider,Component,SizeOptions} from '@ohos.arkui.component'
+import { Entry,Column,Text,Button,Divider,Component,SizeOptions, HorizontalAlign } from '@ohos.arkui.component'
 
 @Entry
 @Component
@@ -24,7 +24,7 @@ struct CommonExample {
 
   build() {
     Column() {
-      Text('size-动态切换').fontSize(20).margin(15).width('90%')
+      Text('size-动态切换').fontSize(20).width('80%')
       Button('Button')
         .fontSize(50)
         .size(this.isUndefined ? undefined:{ width: '100vp', height: '50vp' } as SizeOptions )
@@ -41,6 +41,7 @@ struct CommonExample {
           this.isUndefined == true ? this.isUndefined = false : this.isUndefined = true
           this.isUndefined == true ? this.buttonText = 'true' : this.buttonText = 'false'
         })
-    }.width('100%')
+    }.width('80%')
+    .alignItems(HorizontalAlign.Center)
   }
 }

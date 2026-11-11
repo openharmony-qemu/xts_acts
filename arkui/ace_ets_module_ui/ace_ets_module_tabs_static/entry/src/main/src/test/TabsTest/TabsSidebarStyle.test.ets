@@ -45,6 +45,18 @@ function isAttrMissing(v: string): boolean {
   return v.length === 0 || v === '{}' || v === 'null' || v === 'undefined';
 }
 
+function jsonToValueContent(key: string): string {
+  return tryGetStringAttr(inspector.getInspectorByKey(key), 'content');
+}
+
+function jsonToValueSidebarFooter(key: string): string {
+  return tryGetStringAttr(inspector.getInspectorByKey(key), 'sidebarFooter');
+}
+
+function jsonToValueSidebarBottomBar(key: string): string {
+  return tryGetStringAttr(inspector.getInspectorByKey(key), 'sidebarBottomBar');
+}
+
 
 export default function tabsSidebarStyle(): void {
   describe('tabsSidebarStyle', () => {
@@ -624,6 +636,64 @@ export default function tabsSidebarStyle(): void {
         return;
       }
       expect(a).assertEqual(b);
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARFOOTER_2900
+     * @tc.name SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARFOOTER_2900
+     * @tc.desc Cover Tabs sidebarFooter normal on static via jsonToValue
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARFOOTER_2900', Level.LEVEL0, async (): Promise<void> => {
+      await CommonFunc.sleep(600);
+      let content: string = jsonToValueContent('sidebar_footer_text');
+      expect(content).assertEqual('FooterContent');
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARFOOTER_3000
+     * @tc.name SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARFOOTER_3000
+     * @tc.desc Cover Tabs sidebarFooter undefined on static via jsonToValue
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARFOOTER_3000', Level.LEVEL0, async (): Promise<void> => {
+      await CommonFunc.sleep(600);
+      let valUndef: string = jsonToValueSidebarFooter('tabs_sidebarFooter_undefined');
+      let valBase: string = jsonToValueSidebarFooter('tabs_barStyle_normal');
+      expect(valUndef).assertEqual(valBase);
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARBOTTOMBAR_3200
+     * @tc.name SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARBOTTOMBAR_3200
+     * @tc.desc Cover Tabs sidebarBottomBar normal on static via jsonToValue
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARBOTTOMBAR_3200', Level.LEVEL0, async (): Promise<void> => {
+      await CommonFunc.sleep(600);
+      let content: string = jsonToValueContent('sidebar_bottombar_text');
+      expect(content).assertEqual('BottomBarContent');
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARBOTTOMBAR_3300
+     * @tc.name SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARBOTTOMBAR_3300
+     * @tc.desc Cover Tabs sidebarBottomBar undefined on static via jsonToValue
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARBOTTOMBAR_3300', Level.LEVEL0, async (): Promise<void> => {
+      await CommonFunc.sleep(600);
+      let valUndef: string = jsonToValueSidebarBottomBar('tabs_sidebarBottomBar_undefined');
+      let valBase: string = jsonToValueSidebarBottomBar('tabs_barStyle_normal');
+      expect(valUndef).assertEqual(valBase);
     });
 
   });

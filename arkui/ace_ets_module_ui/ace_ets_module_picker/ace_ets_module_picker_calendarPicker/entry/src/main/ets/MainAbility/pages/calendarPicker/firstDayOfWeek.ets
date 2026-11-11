@@ -19,8 +19,18 @@ struct CalendarPickerFirstDayOfWeekExample {
   private selectedDate: Date = new Date('2025-01-15');
 
   build() {
-    Column() {
-      Column() {
+    Scroll() {
+      Flex({
+        wrap: FlexWrap.Wrap,
+        justifyContent: FlexAlign.Center,
+        alignItems: ItemAlign.Center
+      }) {
+        Text('firstDayOfWeek test')
+          .fontSize(20)
+          .margin({ top: 20, bottom: 20 })
+          .width('100%')
+          .textAlign(TextAlign.Center)
+
         CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
           .firstDayOfWeek(CalendarFirstDayOfWeek.LOCAL)
           .textStyle({ color: '#ff182431', font: { size: 20, weight: FontWeight.Normal } })
@@ -92,7 +102,13 @@ struct CalendarPickerFirstDayOfWeekExample {
           .textStyle({ color: '#ff182431', font: { size: 20, weight: FontWeight.Normal } })
           .margin(10)
           .id('firstDayOfWeek012')
-      }.alignItems(HorizontalAlign.Center).width('100%')
-    }.width('100%').margin({ top: 100 })
+      }
+      .width('100%')
+      .padding({ top: 20, bottom: 20 })
+    }
+    .width('100%')
+    .height('100%')
+    .scrollBar(BarState.Auto)
+    .align(Alignment.Top)
   }
 }

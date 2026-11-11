@@ -20,6 +20,8 @@
         "MainAbility/pages/CommonMethod/backgroundImageSizeNullAndUndefined",
         "MainAbility/pages/ColorMetrics/backgroundColorCreateHDRColorTest",
         "MainAbility/pages/ColorMetrics/createHDRColorWithLogExposure",
-        "MainAbility/pages/ColorMetrics/createHDRColorWithLinearExposure"
+        "MainAbility/pages/ColorMetrics/createHDRColorWithLinearExposure",
+        "MainAbility/pages/tabStopApiTest/tabStopApiTest",
+        "MainAbility/pages/SourceType/SourceType"
     ]
 }

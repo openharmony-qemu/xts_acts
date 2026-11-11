@@ -144,6 +144,7 @@ import systemRouterJsunit from './Router2/SystemRouterJsunit.test';
 import ohosRouterJsunit from './Router2/OhosRouterJsnuit.test';
 import routerNullUndefined from './Router2/routerNullUndefined.test';
 import RouterTest from './router/RouterTest.test';
+import TransPageEnabledTest from './transPage/TransPageEnabled.test';
 
 export default function testsuite() {
   RouterTest();
@@ -276,4 +277,5 @@ export default function testsuite() {
   systemRouterJsunit();
   ohosRouterJsunit();
   routerNullUndefined();
+  TransPageEnabledTest();
 }

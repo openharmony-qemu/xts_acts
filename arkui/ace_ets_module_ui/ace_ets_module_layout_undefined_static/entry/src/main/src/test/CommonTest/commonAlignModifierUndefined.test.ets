@@ -46,35 +46,41 @@ export default function CommonAlignModifierUndefinedTest() {
     });
 
     /**
-     * @tc.number    CommonAlignModifierUndefinedTest_static_0100
-     * @tc.name      CommonAlignModifierUndefinedTest_static_0100
-     * @tc.desc      CommonAlignModifierUndefinedTest_static_0100
+     * @tc.number    SUB_ARKUI_API_CommonAlignModifierUndefinedTest_static_0100
+     * @tc.name      SUB_ARKUI_API_CommonAlignModifierUndefinedTest_static_0100
+     * @tc.desc      SUB_ARKUI_API_CommonAlignModifierUndefinedTest_static_0100
      * @tc.level     Level.LEVEL1
      */
-    it('CommonAlignModifierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('CommonAlignModifierUndefinedTest_static_0100 START');
-      await CommonFunc.sleep(500);
+    it('SUB_ARKUI_API_CommonAlignModifierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('SUB_ARKUI_API_CommonAlignModifierUndefinedTest_static_0100 START');
+        await CommonFunc.sleep(500);
 
-      let strJson = inspector.getInspectorByKey('common_align_undefined');
-      let obj = JSON.parseJsonElement(strJson);
-      await CommonFunc.sleep(1000);
-      console.info('Test component obj is: ' + obj.getElement('$attrs'));
-      console.info('Test component obj.align is: ' + obj.getElement('$attrs').getString('align'));
-      expect(obj.getElement('$attrs').getString('align')).assertEqual('Alignment.TopStart');
+        let strJson = inspector.getInspectorByKey('common_align_undefined');
+        let obj = JSON.parseJsonElement(strJson);
+        await CommonFunc.sleep(1000);
+        console.info('Test component obj is: ' + obj.getElement('$attrs'));
+        console.info('Test component obj.align is: ' + obj.getElement('$attrs').getString('align'));
+        expect(obj.getElement('$attrs').getString('align')).assertEqual('Alignment.TopStart');
 
-      let driver = Driver.create();
-      let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
-      await btn_true.click();
-      await CommonFunc.sleep(2000);
+        let driver = Driver.create();
+        let btn_true = await driver.findComponent(ON.id('changeButton')) as Component;
+        await btn_true.click();
+        await CommonFunc.sleep(2000);
 
-      let strJson1 = inspector.getInspectorByKey('common_align_undefined');
-      let obj1 = JSON.parseJsonElement(strJson1);
-      await CommonFunc.sleep(1000);
-      console.info('Test component obj is: ' + obj1.getElement('$attrs'));
-      console.info('Test component obj.align is: ' + obj1.getElement('$attrs').getString('align'));
-      expect(obj1.getElement('$attrs').getString('align')).assertEqual('Alignment.Center');
-      console.info('CommonAlignModifierUndefinedTest_static_0100 START');
-      done();
+        let strJson1 = inspector.getInspectorByKey('common_align_undefined');
+        let obj1 = JSON.parseJsonElement(strJson1);
+        await CommonFunc.sleep(1000);
+        console.info('Test component obj is: ' + obj1.getElement('$attrs'));
+        console.info('Test component obj.align is: ' + obj1.getElement('$attrs').getString('align'));
+        expect(obj1.getElement('$attrs').getString('align')).assertEqual('Alignment.Center');
+        console.info('SUB_ARKUI_API_CommonAlignModifierUndefinedTest_static_0100 START');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_CommonAlignModifierUndefinedTest_static_0100] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

@@ -1497,6 +1497,7 @@ export default function UIExtensionContentSessionTest() {
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionContentSession_errorCode_3400', Level.LEVEL0, (done: Function) => {
       let tag: string = `SUB_Ability_AbilityRuntime_UIExtensionContentSession_errorCode_3400`;
+      router.clear();
       commonEventManager.createSubscriber(ACTS_EVENT)
         .then(async (commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
           subscriber = commonEventSubscriber;

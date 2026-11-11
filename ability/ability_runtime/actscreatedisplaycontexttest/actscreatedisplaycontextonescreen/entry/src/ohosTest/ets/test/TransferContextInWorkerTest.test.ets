@@ -20,16 +20,18 @@ import { application, common, Context } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { JSON, worker, MessageEvents } from '@kit.ArkTS';
 import { Driver, ON } from '@ohos.UiTest';
+import display from '@ohos.display';
 
 let uiAbilityContext: common.UIAbilityContext | undefined;
+let currentDisplayId = display.getDefaultDisplaySync().id;
 
 export default function transfercontextinworkertest() {
 
   describe('ActsTransferTest', () => {
     beforeAll(async () => {
-      let driver = Driver.create();	
       try {
-        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        let driver = Driver.create();
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0').belongingDisplay(currentDisplayId));
         if (allowed) {
           await allowed.click();
         }

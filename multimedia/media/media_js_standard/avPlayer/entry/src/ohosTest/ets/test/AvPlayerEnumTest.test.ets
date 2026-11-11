@@ -353,6 +353,20 @@ export default function AvPlayerEnumTest() {
       expect(media.MediaDescriptionKey.MD_KEY_TRACK_PLAYABLE).assertEqual("is_playable");
       done();
     });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1800
+     * @tc.desc   AVPlayer Enumeration test - DestHDRMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1800', Level.LEVEL0, async (done: Function) => {
+      expect(media.DestHDRMode.SDR).assertEqual(0);
+      expect(media.DestHDRMode.AUTO_HDR_VIVID).assertEqual(1);
+      done();
+    });
   })
 }
 

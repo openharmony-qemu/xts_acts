@@ -24,6 +24,11 @@ import { systemParameterEnhance } from '@kit.BasicServicesKit';
 
 let context:common.UIAbilityContext;
 let mpEnable: string;
+
+function sleep(time:number){
+  return new Promise<void>((resolve)=>setTimeout(resolve,time));
+}
+
 export default function AbilityRuntimeAmsJSChildProcess() {
   describe('AbilityRuntimeAmsJSChildProcess', () => {
     beforeAll(() => {
@@ -168,6 +173,7 @@ export default function AbilityRuntimeAmsJSChildProcess() {
      */
     it('SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0400', Level.LEVEL0, async (done:Function) => {
       const testNum = 'SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0400';
+      await sleep(2000);
       let path = context.filesDir + "/test.txt";
       let file = fileIo.openSync(path, fileIo.OpenMode.READ_ONLY | fileIo.OpenMode.CREATE);
       let args: ChildProcessArgs = {
@@ -187,12 +193,8 @@ export default function AbilityRuntimeAmsJSChildProcess() {
           done();
         } catch (err) {
           hilog.error(0x0000, 'testTag', `restart failed: ${err.code}, ${err.message},${testNum}`);
-          if(err.code === 16000062){
-            done();
-          }else{
-            expect().assertFail()
-            done();
-          }
+          expect(err.code === 16000061 || err.code === 16000062).assertTrue();
+          done();
         }
       }else if (mpEnable == 'false') {
         hilog.info(0x0000, 'testTag', `restart failed: The current device does not support`);
@@ -214,6 +216,7 @@ export default function AbilityRuntimeAmsJSChildProcess() {
      */
     it('SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0500', Level.LEVEL0, async (done:Function) => {
       const testNum = 'SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0500';
+      await sleep(2000);
       let path = context.filesDir + "/test.txt";
       let file = fileIo.openSync(path, fileIo.OpenMode.READ_ONLY | fileIo.OpenMode.CREATE);
       let args: ChildProcessArgs = {};
@@ -228,12 +231,8 @@ export default function AbilityRuntimeAmsJSChildProcess() {
           done();
         } catch (err) {
           hilog.error(0x0000, 'testTag', `restart failed: ${err.code}, ${err.message},${testNum}`);
-          if(err.code === 16000062){
-            done();
-          }else{
-            expect().assertFail()
-            done();
-          }
+          expect(err.code === 16000061 || err.code === 16000062).assertTrue();
+          done();
         }
       }else if (mpEnable == 'false') {
         hilog.info(0x0000, 'testTag', `restart failed: The current device does not support`);

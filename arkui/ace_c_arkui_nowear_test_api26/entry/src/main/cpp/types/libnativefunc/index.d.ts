@@ -84,3 +84,7 @@ export const UIInfoCollectionRegisterObserverTest003: () => number;
 export const UIInfoCollectionRegisterObserverTest004: () => number;
 export const UIInfoCollectionRegisterObserverTest005: () => number;
 export const UIInfoCollectionUnregisterObserverTest001: () => number;
+
+export const UIEventInjectRelaxedInteractionTest001: () => number;
+export const UIEventInjectRelaxedInteractionTest002: () => number;
+export const UIEventInjectRelaxedInteractionTest003: () => number;

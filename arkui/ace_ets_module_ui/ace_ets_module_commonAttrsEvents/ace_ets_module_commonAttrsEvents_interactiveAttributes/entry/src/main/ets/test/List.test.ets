@@ -38,6 +38,10 @@ import commonMethodResponseRegionNullAndUndefinedTest
 import backgroundColorCreateHDRColorTest from './ColorMetrics/backgroundColorCreateHDRColorTest.test';
 import createHDRColorWithLogExposureTest from './ColorMetrics/createHDRColorWithLogExposure.test';
 import createHDRColorWithLinearExposureTest from './ColorMetrics/createHDRColorWithLinearExposure.test';
+import commonJsunit from './CommonJsunit/CommonJsunit.test';
+import tabStopApiTest from './TabStopApiTest/TabStopApiTest.test';
+import sourceTypeTest from './SourceType/SourceType.test';
+import enumTest from './Enum/Enum.test';
 
 export default function testsuite() {
     enableJsunit();
@@ -60,4 +64,8 @@ export default function testsuite() {
     backgroundColorCreateHDRColorTest();
     createHDRColorWithLogExposureTest();
     createHDRColorWithLinearExposureTest();
+    commonJsunit();
+    tabStopApiTest();
+    sourceTypeTest();
+    enumTest();
 }

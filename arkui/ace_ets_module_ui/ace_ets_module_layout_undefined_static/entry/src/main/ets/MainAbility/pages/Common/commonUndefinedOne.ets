@@ -17,7 +17,7 @@
 import {  Entry,  Text,  Column,  Component,  Button,  ClickEvent,  $r,  ImageRepeat,  BackgroundImageOptions,
   ColumnOptions,  BorderOptions,  ResizableOptions,  Color,  HoverEffect,  ImageSize,  HitTestMode,  Blank,
   List,  Position,  Row,  Divider,  TextAlign,  Alignment,  BorderStyle,  Padding,  PixelRoundPolicy,
-  PixelRoundCalcPolicy } from '@ohos.arkui.component'
+  PixelRoundCalcPolicy, HorizontalAlign } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
@@ -56,10 +56,9 @@ struct PositionExample2 {
         .height(20)
         .id('Common_PixelRound')
 
-
-      List() {
+      Column() {
          Text('offset-动态切换(undefined/offset(15,30))')
-          .fontSize(20).margin(15).width('90%')
+          .fontSize(20).width('80%')
         Row() {
           Text('1')
             .size({ width: '15%', height: 50 })
@@ -84,39 +83,36 @@ struct PositionExample2 {
             .fontSize(16)
             .textAlign(TextAlign.Center)
         }
-        .width('90%')
+        .width('80%')
         .height(100)
         .border({ width: 1, style: BorderStyle.Dashed })
 
       }
 
-      List() {
+      Column() {
         Text('padding-动态切换(undefined/padding(10))')
           .fontSize(20)
-          .margin(15)
-          .width('90%')
+          .width('80%')
         Row() {
           Row() {
             Row()
-              .size({ width: '100%', height: '100%' })
+              .size({ width: '80%', height: '80%' })
               .backgroundColor(Color.Yellow)
           }
           .width(80)
           .height(80)
           .id('MyRow1')
           .padding(this.isPaddingUndefined ? undefined : ({ top: 5, left: 10, bottom: 15, right: 20 } as Padding))
-          .margin(20)
           .backgroundColor(Color.White)
         }.backgroundColor(Color.Blue)
-        .width('90%')
+        .width('80%')
 
       }
 
-      List() {
+      Column() {
         Text('position-动态切换(undefined/position(30,10))')
           .fontSize(20)
-          .margin(15)
-          .width('90%')
+          .width('80%')
         Row() {
           Text('1').size({ width: '30%', height: '50' })
             .backgroundColor('#ffdeb887')
@@ -131,18 +127,17 @@ struct PositionExample2 {
             .align(Alignment.Start)
             .id('MyText2')
             .position(this.isPositionUndefined ? undefined : ({ x: 30, y: 10 } as Position))
-        }.width('90%').height(100).border({ width: 1, style: BorderStyle.Dashed })
+        }.width('80%').height(100).border({ width: 1, style: BorderStyle.Dashed })
       }
 
-      List() {
+      Column() {
         Text(`pixelRound-动态切换(undefined/NO_FORCE_ROUND) 宽度:${this.curWidth.toFixed(1)}px`)
           .fontSize(20)
-          .margin(15)
-          .width('90%')
+          .width('80%')
         Row() {
           Row()
-            .width('100%')
-            .height('100%')
+            .width('80%')
+            .height('80%')
             .backgroundColor('rgb(255, 255, 0)')
             .pixelRound(this.isPixelRoundUndefined ? undefined : ({
               start: PixelRoundCalcPolicy.FORCE_CEIL,
@@ -159,8 +154,7 @@ struct PositionExample2 {
         } as PixelRoundPolicy))
       }
     }
-    .width('100%')
-    .padding(10)
-    .margin(25)
+    .width('80%')
+    .alignItems(HorizontalAlign.Center)
   }
 }

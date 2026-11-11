@@ -16,7 +16,7 @@
 
 import {  Entry,  Text,  Column,  ColumnOptions,  Component,  Button,  ClickEvent,  Color,  Row,  $r,
   BorderOptions,  BorderStyle, TextAlign, GradientDirection, RepeatMode,
-  BorderImageOption } from '@ohos.arkui.component'
+  BorderImageOption, HorizontalAlign } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
@@ -55,17 +55,17 @@ struct Index {
         } as BorderImageOption)
 
       Row() {
-        Button('btn1 : ' + this.isUndefined1)
+        Button('b1').fontSize(10)
           .id('Border_btn1')
           .onClick((e: ClickEvent) => {
             this.isUndefined1 = !this.isUndefined1
           })
-        Button('btn2 : ' + this.isUndefined2)
+        Button('b2').fontSize(10)
           .id('Border_btn2')
           .onClick((e: ClickEvent) => {
             this.isUndefined2 = !this.isUndefined2
           })
-        Button('btn3 : ' + this.isUndefined3)
+        Button('b3').fontSize(10)
           .id('Border_btn3')
           .onClick((e: ClickEvent) => {
             this.isUndefined3 = !this.isUndefined3
@@ -73,23 +73,24 @@ struct Index {
       }
 
       Row() {
-        Button('btn4 : ' + this.isUndefined4)
+        Button('b4').fontSize(10)
           .id('Border_btn4')
           .onClick((e: ClickEvent) => {
             this.isUndefined4 = !this.isUndefined4
           })
-        Button('btn5 : ' + this.isUndefined5)
+        Button('b5').fontSize(10)
           .id('Border_btn5')
           .onClick((e: ClickEvent) => {
             this.isUndefined5 = !this.isUndefined5
           })
-        Button('btn6 : ' + this.isUndefined6)
+        Button('b6').fontSize(10)
           .id('Border_btn6')
           .onClick((e: ClickEvent) => {
             this.isUndefined6 = !this.isUndefined6
           })
       }
-    }
+    }.width('80%')
+    .alignItems(HorizontalAlign.Center)
 
   }
 }
