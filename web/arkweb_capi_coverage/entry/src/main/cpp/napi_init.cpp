@@ -787,7 +787,7 @@ static napi_value TestNativeArkWeb_RegisterAsyncThreadJavaScriptProxy(napi_env e
 
 static napi_value TestNativeArkWeb_SetDestroyCallback(napi_env env, napi_callback_info info)
 {
-    OH_NativeArkWeb_SetDestroyCallback("errorinfo_web", OnDestroyCallbackImpl);
+    OH_NativeArkWeb_SetDestroyCallback("test_tag", OnDestroyCallbackImpl);
     g_testResult = TEST_RESULT_SUCCESS;
 
     napi_value result;
@@ -797,7 +797,7 @@ static napi_value TestNativeArkWeb_SetDestroyCallback(napi_env env, napi_callbac
 
 static napi_value TestNativeArkWeb_GetDestroyCallback(napi_env env, napi_callback_info info)
 {
-    auto cb = OH_NativeArkWeb_GetDestroyCallback("errorinfo_web");
+    auto cb = OH_NativeArkWeb_GetDestroyCallback("test_tag");
     g_testResult = (cb == nullptr) ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE;
 
     napi_value result;
