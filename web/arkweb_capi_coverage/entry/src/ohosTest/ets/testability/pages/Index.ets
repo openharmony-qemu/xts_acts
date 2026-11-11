@@ -15,7 +15,6 @@
 
 import webview from '@ohos.web.webview';
 import nativeFunc from 'libentry.so';
-webTag: string = 'test_tag';
 
 @Entry
 @Component
