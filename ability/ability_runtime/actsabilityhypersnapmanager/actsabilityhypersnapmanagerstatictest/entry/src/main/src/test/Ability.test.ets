@@ -24,6 +24,21 @@ import commonEventManager from '@ohos.commonEventManager';
 
 let subscriber: commonEventManager.CommonEventSubscriber;
 
+async function waitAppStorage(key: string, timeoutMs: number): Promise<string | undefined> {
+  let waited: number = 0;
+  while (waited < timeoutMs) {
+    let v: string | undefined = AppStorage.get<string>(key);
+    if (v !== undefined) {
+      return v;
+    }
+    await new Promise<void>((resolve: () => void): void => {
+      setTimeout(resolve, 200);
+    });
+    waited += 200;
+  }
+  return AppStorage.get<string>(key);
+}
+
 export default function abilityTest() {
 
   let TAG = "";
@@ -42,6 +57,7 @@ export default function abilityTest() {
         hilog.info(0x0000, 'testTag', 'executeShellCommand : aa : %{public}s', result?.stdResult ?? '');
         hilog.info(0x0000, 'testTag', 'executeShellCommand : aa : %{public}s', result?.exitCode ?? '');
       })
+      await waitAppStorage('onCreate', 3000);
       done();
     })
 
@@ -55,8 +71,9 @@ export default function abilityTest() {
      */
     it('SUB_Ability_AbilityRuntime_HyperSnapManager_OnAboutToCreateAbility_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "SUB_Ability_AbilityRuntime_HyperSnapManager_OnAboutToCreateAbility_static_0100";
-      let onCreate:string | undefined = AppStorage.get<string>("onCreate")
-      let onAboutToCreateAbility:string | undefined = AppStorage.get<string>("onAboutToCreateAbility")
+      let onCreate: string | undefined = await waitAppStorage('onCreate', 3000);
+      let onAboutToCreateAbility: string | undefined =
+        await waitAppStorage('onAboutToCreateAbility', 3000);
       expect(onAboutToCreateAbility).assertEqual('onAboutToCreateAbility');
       expect(onCreate).assertEqual('onCreate');
       done();
@@ -72,8 +89,9 @@ export default function abilityTest() {
      */
     it('SUB_Ability_AbilityRuntime_HyperSnapManager_OnLaunchFromHyperSnap_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "SUB_Ability_AbilityRuntime_HyperSnapManager_OnLaunchFromHyperSnap_static_0100";
-      let onCreate:string | undefined = AppStorage.get<string>("onCreate")
-      let onLaunchFromHyperSnap:string | undefined = AppStorage.get<string>("onLaunchFromHyperSnap")
+      let onCreate: string | undefined = await waitAppStorage('onCreate', 3000);
+      let onLaunchFromHyperSnap: string | undefined =
+        AppStorage.get<string>('onLaunchFromHyperSnap');
       expect(onLaunchFromHyperSnap).assertEqual(undefined);
       expect(onCreate).assertEqual('onCreate');
       done();

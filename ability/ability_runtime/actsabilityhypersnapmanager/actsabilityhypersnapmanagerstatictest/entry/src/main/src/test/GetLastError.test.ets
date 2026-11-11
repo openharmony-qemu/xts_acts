@@ -15,6 +15,7 @@
  */
 import { describe, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import hyperSnapManager from '@ohos.app.ability.hyperSnapManager';
+import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 
 const TAG: string = 'HyperSnapGetLastErrorStatic';
@@ -31,8 +32,13 @@ function isValidErrorCode(code: hyperSnapManager.HyperSnapErrorCode): boolean {
 
 function assertErrorInfo(info: hyperSnapManager.HyperSnapErrorInfo): void {
   expect(isValidErrorCode(info.code)).assertTrue();
-  expect(info.msg.length >= 0).assertTrue();
+  expect(typeof info.msg).assertEqual('string');
   expect(info.occurTimeStamp >= 0).assertTrue();
+}
+
+function catchErrCode(e: Object): number {
+  let be: BusinessError = e as BusinessError;
+  return be.code;
 }
 
 export default function getLastErrorTest(): void {
@@ -89,7 +95,7 @@ export default function getLastErrorTest(): void {
           info = await hyperSnapManager.getLastError(
             hyperSnapManager.HyperSnapErrorType.CREATE_SNAPSHOT);
         } catch (e) {
-          errCode = e.code;
+          errCode = catchErrCode(e as Object);
         }
         if (errCode !== -1) {
           hilog.info(0x0000, TAG, 'Create_static catch=%{public}d', errCode);
@@ -119,7 +125,7 @@ export default function getLastErrorTest(): void {
           info = await hyperSnapManager.getLastError(
             hyperSnapManager.HyperSnapErrorType.FORK_FROM_SNAPSHOT);
         } catch (e) {
-          errCode = e.code;
+          errCode = catchErrCode(e as Object);
         }
         if (errCode !== -1) {
           hilog.info(0x0000, TAG, 'Fork_static catch=%{public}d', errCode);
@@ -151,13 +157,13 @@ export default function getLastErrorTest(): void {
           createInfo = await hyperSnapManager.getLastError(
             hyperSnapManager.HyperSnapErrorType.CREATE_SNAPSHOT);
         } catch (e) {
-          createErr = e.code;
+          createErr = catchErrCode(e as Object);
         }
         try {
           forkInfo = await hyperSnapManager.getLastError(
             hyperSnapManager.HyperSnapErrorType.FORK_FROM_SNAPSHOT);
         } catch (e) {
-          forkErr = e.code;
+          forkErr = catchErrCode(e as Object);
         }
         if (createErr !== -1 || forkErr !== -1) {
           let code: number = createErr !== -1 ? createErr : forkErr;

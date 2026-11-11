@@ -15,10 +15,16 @@
  */
 import { describe, expect, it, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import hyperSnapManager from '@ohos.app.ability.hyperSnapManager';
+import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 
 const TAG: string = 'IsHyperSnapInitializingStatic';
 const ERR_SERVICE: number = 16000050;
+
+function catchErrCode(e: Object): number {
+  let be: BusinessError = e as BusinessError;
+  return be.code;
+}
 
 export default function isHyperSnapInitializingTest(): void {
   describe('IsHyperSnapInitializingStaticTest', () => {
@@ -37,7 +43,7 @@ export default function isHyperSnapInitializingTest(): void {
         try {
           initializing = await hyperSnapManager.isHyperSnapInitializing();
         } catch (e) {
-          errCode = e.code;
+          errCode = catchErrCode(e as Object);
         }
         if (errCode !== -1) {
           hilog.info(0x0000, TAG, 'isHyperSnapInitializing catch=%{public}d', errCode);

@@ -32,6 +32,17 @@ function isFocusedOffErr(code: number): boolean {
   return code === ERR_PERMISSION || code === ERR_INTERNAL || code === ERR_OBSERVER_NOT_EXIST;
 }
 
+function businessErrCode(err: Object): number {
+  let be: BusinessError = err as BusinessError;
+  return be.code;
+}
+
+function assertFocusedInfo(info: appManager.FocusedApplicationInfo): void {
+  expect(typeof info.focusedBundleName).assertEqual('string');
+  // focusedUid is int in static SDK; typeof is not 'number'
+  expect(info.focusedUid >= 0).assertTrue();
+}
+
 export default function focusedApplicationChangedStaticTest(): void {
   describe('FocusedApplicationChangedStaticTest', () => {
     /**
@@ -46,23 +57,21 @@ export default function focusedApplicationChangedStaticTest(): void {
       (): void => {
         let observer: appManager.FocusedApplicationObserver = {
           onFocusedApplicationChanged(info: appManager.FocusedApplicationInfo): void {
-            expect(typeof info.focusedBundleName).assertEqual('string');
-            expect(typeof info.focusedUid).assertEqual('number');
+            assertFocusedInfo(info);
           }
         };
         try {
           let observerId: Int = appManager.onFocusedApplicationChanged(observer);
-          expect(typeof observerId).assertEqual('number');
+          expect(observerId !== undefined).assertTrue();
           try {
             appManager.offFocusedApplicationChanged(observerId);
           } catch (eOff) {
-            let e = eOff as BusinessError;
-            expect(isFocusedOffErr(e.code)).assertTrue();
+            expect(isFocusedOffErr(businessErrCode(eOff as Object))).assertTrue();
           }
         } catch (err) {
-          let e = err as BusinessError;
-          hilog.info(0x0000, TAG, 'on err=%{public}d', e.code);
-          expect(isFocusedOnErr(e.code)).assertTrue();
+          let code: number = businessErrCode(err as Object);
+          hilog.info(0x0000, TAG, 'on err=%{public}d', code);
+          expect(isFocusedOnErr(code)).assertTrue();
         }
       });
 
@@ -80,8 +89,7 @@ export default function focusedApplicationChangedStaticTest(): void {
           appManager.offFocusedApplicationChanged(-1 as Int);
           expect().assertFail();
         } catch (err) {
-          let e = err as BusinessError;
-          expect(isFocusedOffErr(e.code)).assertTrue();
+          expect(isFocusedOffErr(businessErrCode(err as Object))).assertTrue();
         }
       });
   });
