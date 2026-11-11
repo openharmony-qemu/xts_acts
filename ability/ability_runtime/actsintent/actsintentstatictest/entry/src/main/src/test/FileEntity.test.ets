@@ -24,7 +24,7 @@ import wantConstant from '@ohos.app.ability.wantConstant';
 class DemoFileEntity implements insightIntent.FileEntity {
   public entityId: 'OHOS_FILE_ENTITY' = 'OHOS_FILE_ENTITY';
   public uris: Array<string> = ['file://com.example.demo/data/test.txt'];
-  public flags?: Int = wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION as Int;
+  public flags?: Int = wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION.valueOf();
 }
 
 export default function fileEntityStaticTest(): void {
@@ -59,14 +59,15 @@ export default function fileEntityStaticTest(): void {
         let withFlag: insightIntent.FileEntity = {
           entityId: 'OHOS_FILE_ENTITY',
           uris: ['file://com.example.demo/data/a.txt'],
-          flags: wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION as Int
+          flags: wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION.valueOf()
         };
         let noFlag: insightIntent.FileEntity = {
           entityId: 'OHOS_FILE_ENTITY',
           uris: ['file://com.example.demo/data/b.txt']
         };
         expect(withFlag.entityId).assertEqual('OHOS_FILE_ENTITY');
-        expect(withFlag.flags).assertEqual(wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION);
+        expect(withFlag.flags).assertEqual(
+          wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION.valueOf());
         expect(noFlag.entityId).assertEqual('OHOS_FILE_ENTITY');
         expect(noFlag.flags === undefined).assertTrue();
       });
