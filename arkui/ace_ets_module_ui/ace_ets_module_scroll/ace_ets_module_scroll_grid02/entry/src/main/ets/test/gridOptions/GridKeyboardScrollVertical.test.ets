@@ -155,8 +155,8 @@ export default function gridKeyboardScrollVertical() {
     /**
      * @tc.name   gridKeyboardScrollVertical_0300
      * @tc.number SUB_ARKUI_GRID_ENABLESCROLLWITHKEYBOARD_PARAM_0300
-     * @tc.desc   Test vertical Grid scrolls with keyboard arrow keys
-     *            when enableScrollWithKeyboard is set to undefined
+     * @tc.desc   Test vertical Grid does not scroll with keyboard arrow keys
+     *            when enableScrollWithKeyboard is set to undefined (default value false)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -172,7 +172,7 @@ export default function gridKeyboardScrollVertical() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[gridKeyboardScrollVertical_0300] enableScrollWithKeyboard: " +
         JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
-      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual(true);
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual(false);
  
       let resetBtn: Component = await driver.findComponent(ON.id('VKB_GRID_RESET'));
       await resetBtn.click();
@@ -191,21 +191,21 @@ export default function gridKeyboardScrollVertical() {
       }
       let offsetDown: number = getVGridOffset();
       console.info('[gridKeyboardScrollVertical_0300] offset after DPAD_DOWN: ' + offsetDown);
-      expect(offsetDown > 0).assertTrue();
+      expect(offsetDown).assertEqual(0);
  
       await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
       await CommonFunc.sleep(500);
  
       let offsetUp: number = getVGridOffset();
       console.info('[gridKeyboardScrollVertical_0300] offset after DPAD_UP: ' + offsetUp);
-      expect(offsetUp < offsetDown).assertTrue();
+      expect(offsetUp).assertEqual(0);
       console.info('[gridKeyboardScrollVertical_0300] END');
     })
  
     /**
      * @tc.name   gridKeyboardScrollVertical_0400
      * @tc.number SUB_ARKUI_GRID_ENABLESCROLLWITHKEYBOARD_PARAM_0400
-     * @tc.desc   Test vertical Grid scrolls with keyboard arrow keys when enableScrollWithKeyboard is set to null
+     * @tc.desc   Test vertical Grid does not scroll with keyboard arrow keys when enableScrollWithKeyboard is set to null (default value false)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -221,7 +221,7 @@ export default function gridKeyboardScrollVertical() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[gridKeyboardScrollVertical_0400] enableScrollWithKeyboard: " +
         JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
-      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual(true);
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual(false);
  
       let resetBtn: Component = await driver.findComponent(ON.id('VKB_GRID_RESET'));
       await resetBtn.click();
@@ -240,14 +240,14 @@ export default function gridKeyboardScrollVertical() {
       }
       let offsetDown: number = getVGridOffset();
       console.info('[gridKeyboardScrollVertical_0400] offset after DPAD_DOWN: ' + offsetDown);
-      expect(offsetDown > 0).assertTrue();
+      expect(offsetDown).assertEqual(0);
  
       await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
       await CommonFunc.sleep(500);
  
       let offsetUp: number = getVGridOffset();
       console.info('[gridKeyboardScrollVertical_0400] offset after DPAD_UP: ' + offsetUp);
-      expect(offsetUp < offsetDown).assertTrue();
+      expect(offsetUp).assertEqual(0);
       console.info('[gridKeyboardScrollVertical_0400] END');
     })
   })
