@@ -16,6 +16,7 @@
 
 import ObserverManagerSimState1 from './ObserverManagerSimState1.test';
 import ObserverManagerTest from "./ObserverManager.test";
+import ObserverCallManagerTest from "./ObserverCallManager.test";
 import ObserverRadioManagerTest from "./ObserverRadioManager.test";
 import EmptyTest from './Empty.test';
 import sim from '@ohos.telephony.sim';
@@ -26,6 +27,7 @@ export default function testsuite() {
     if(sim.hasSimCardSync(0)){
       ObserverManagerSimState1();
       ObserverManagerTest();
+      ObserverCallManagerTest();
       ObserverRadioManagerTest();
     } else {
       EmptyTest();

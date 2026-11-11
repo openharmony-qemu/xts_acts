@@ -24,6 +24,7 @@
         './src/ohosTest/ets/testability/pages/workers/WorkerTaskGroup4.ets',
         './src/ohosTest/ets/testability/pages/workers/WorkerSequenceRunner.ets',
         './src/ohosTest/ets/testability/pages/workers/WorkerTaskRqRunnerTask.ets',
+        './src/ohosTest/ets/workers/WorkerSeqRunnerConcurrent.ets',
       ]
     }
   },

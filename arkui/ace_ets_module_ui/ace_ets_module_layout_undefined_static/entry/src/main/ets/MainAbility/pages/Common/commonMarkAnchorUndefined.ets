@@ -15,7 +15,7 @@
  */
 import { State, Observed } from '@ohos.arkui.stateManagement'
 import { Entry, Builder, Color, Text, TextAttribute, Column, Row, Component, Button, ButtonAttribute,
-  ClickEvent, Position, Divider } from '@ohos.arkui.component'
+  ClickEvent, Position, Divider, HorizontalAlign } from '@ohos.arkui.component'
 import hilog from '@ohos.hilog'
 
 @Entry
@@ -26,7 +26,7 @@ struct markAnchorTest {
 
   build() {
     Column() {
-      Text('markAnchor-动态切换').fontSize(20).margin(15).width('90%')
+      Text('markAnchor-动态切换').fontSize(20).width('80%')
       Button('Button'+this.buttonText)
         .fontSize(50)
         .markAnchor(this.flag ? undefined  : { x: -50, y: 0 } as Position  )
@@ -37,6 +37,7 @@ struct markAnchorTest {
           this.flag = !this.flag;
         })
 
-    }.width('100%')
+    }.width('80%')
+    .alignItems(HorizontalAlign.Center)
   }
 }

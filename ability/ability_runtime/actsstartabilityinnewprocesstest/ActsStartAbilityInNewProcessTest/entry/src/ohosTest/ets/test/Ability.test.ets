@@ -37,6 +37,7 @@ function sleep(time: number) {
 }
 
 let driver = Driver.create();
+let user: string = AbilityDelegatorRegistry.getArguments().parameters['-u'];
 
 export default function abilityTest() {
   describe('ActsAbilityTest', () => {
@@ -180,6 +181,9 @@ export default function abilityTest() {
           })
         }
         let forcestop = 'aa force-stop com.example.startabilityinnewprocessrely';
+        if(user !==undefined) {
+          forcestop += ' -u ' + user;
+        }
         await abilityDelegator.executeShellCommand(forcestop).catch((err:BusinessError) => {
           console.log(`${tag} executeShellCommand failed.`);
         })
@@ -486,6 +490,9 @@ export default function abilityTest() {
             setTimeout(async ()=>{
               console.log(`${tag} check pid`);
               let cmd = 'ps -ef | grep com.example.startabilityinnewprocessrely';
+              if(user !==undefined) {
+                cmd += ' -u ' + user;
+              }
               let data = await abilityDelegator.executeShellCommand(cmd).catch((err:BusinessError) => {
                 console.log(`${tag} executeShellCommand failed.`);
                 expect().assertFail();
@@ -549,6 +556,9 @@ export default function abilityTest() {
             setTimeout(async ()=>{
               console.log(`${tag} check pid`);
               let cmd = 'ps -ef | grep com.example.startabilityinnewprocessrely';
+              if(user !==undefined) {
+                cmd += ' -u ' + user;
+              }
               let data = await abilityDelegator.executeShellCommand(cmd).catch((err:BusinessError) => {
                 console.log(`${tag} executeShellCommand failed.`);
                 expect().assertFail();
@@ -614,6 +624,9 @@ export default function abilityTest() {
             setTimeout(async ()=>{
               console.log(`${tag} check pid`);
               let cmd = 'ps -ef | grep com.example.startabilityinnewprocessrely';
+              if(user !==undefined) {
+                cmd += ' -u ' + user;
+              }
               let data = await abilityDelegator.executeShellCommand(cmd).catch((err:BusinessError) => {
                 console.log(`${tag} executeShellCommand failed.`);
                 expect().assertFail();
@@ -676,6 +689,9 @@ export default function abilityTest() {
             setTimeout(async ()=>{
               console.log(`${tag} check pid`);
               let cmd = 'ps -ef | grep com.example.startabilityinnewprocessrely';
+              if(user !==undefined) {
+                cmd += ' -u ' + user;
+              }
               let data = await abilityDelegator.executeShellCommand(cmd).catch((err:BusinessError) => {
                 console.log(`${tag} executeShellCommand failed.`);
                 expect().assertFail();
@@ -722,6 +738,9 @@ export default function abilityTest() {
           let flag = onWindowStageFlag && !onForegroundFlag;
           expect(flag).assertEqual(true);
           let cmd = 'ps -ef | grep com.example.startabilityinnewprocessrely';
+          if(user !==undefined) {
+            cmd += ' -u ' + user;
+          }
           let data = await abilityDelegator.executeShellCommand(cmd).catch((err:BusinessError) => {
             console.log(`${tag} executeShellCommand failed.`);
             expect().assertFail();
@@ -868,6 +887,9 @@ export default function abilityTest() {
           let flag = onWindowStageFlag && !onForegroundFlag;
           expect(flag).assertEqual(true);
           let cmd = 'ps -ef | grep com.example.startabilityinnewprocessrely';
+          if(user !==undefined) {
+            cmd += ' -u ' + user;
+          }
           let data = await abilityDelegator.executeShellCommand(cmd).catch((err:BusinessError) => {
             console.log(`${tag} executeShellCommand failed.`);
             expect().assertFail();
@@ -888,6 +910,9 @@ export default function abilityTest() {
             let flag = onWindowStageFlag && !onForegroundFlag;
             expect(flag).assertEqual(true);
             let cmd = 'ps -ef | grep com.example.startabilityinnewprocessrely';
+            if(user !==undefined) {
+              cmd += ' -u ' + user;
+            }
             let data = await abilityDelegator.executeShellCommand(cmd).catch((err:BusinessError) => {
               console.log(`${tag} executeShellCommand failed.`);
               expect().assertFail();
@@ -933,6 +958,9 @@ export default function abilityTest() {
           let flag = onWindowStageFlag && !onForegroundFlag;
           expect(flag).assertEqual(true);
           let cmd = 'ps -ef | grep com.example.startabilityinnewprocessrely';
+          if(user !==undefined) {
+            cmd += ' -u ' + user;
+          }
           let data = await abilityDelegator.executeShellCommand(cmd).catch((err:BusinessError) => {
             console.log(`${tag} executeShellCommand failed.`);
             expect().assertFail();
@@ -1060,6 +1088,9 @@ export default function abilityTest() {
           let flag = onWindowStageFlag && onForegroundFlag;
           expect(flag).assertEqual(true);
           let cmd = 'ps -ef | grep com.example.startabilityinnewprocessrely';
+          if(user !==undefined) {
+            cmd += ' -u ' + user;
+          }
           let data = await abilityDelegator.executeShellCommand(cmd).catch((err:BusinessError) => {
             console.log(`${tag} executeShellCommand failed.`);
             expect().assertFail();
@@ -1080,6 +1111,9 @@ export default function abilityTest() {
             let flag = onWindowStageFlag && onForegroundFlag;
             expect(flag).assertEqual(true);
             let cmd = 'ps -ef | grep com.example.startabilityinnewprocessrely';
+            if(user !==undefined) {
+              cmd += ' -u ' + user;
+            }
             let data = await abilityDelegator.executeShellCommand(cmd).catch((err:BusinessError) => {
               console.log(`${tag} executeShellCommand failed.`);
               expect().assertFail();

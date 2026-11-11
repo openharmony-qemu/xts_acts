@@ -23,6 +23,7 @@ import ComponentContentApiTest from './ComponentContentApiTest/ComponentContentA
 import InspectorLabelTest from './InspectorLabelTest/InspectorLabel.test';
 import AccessibilityTest from './AccessibilityTest/Accessibility.test';
 import XComponentBufferQueueCountTest from './XComponentBufferQueueCountTest/XComponentBufferQueueCount.test';
+import UIContextIsWindowInfoInitializedTest from './UIContextIsWindowInfoInitializedTest/UIContextIsWindowInfoInitialized.test';
 
 export default function testsuite() {
   XComponentTest();
@@ -34,4 +35,5 @@ export default function testsuite() {
   InspectorLabelTest();
   AccessibilityTest();
   XComponentBufferQueueCountTest();
+  UIContextIsWindowInfoInitializedTest();
 }

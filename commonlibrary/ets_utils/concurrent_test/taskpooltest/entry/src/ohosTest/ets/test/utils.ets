@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 import hilog from '@ohos.hilog';
+import taskpool from '@ohos.taskpool';
 
 export function check<T>(testName: string, p: Promise<T>): Promise<string> {
   hilog.info(0x0000, testName, 'starting check for test');
@@ -59,6 +60,78 @@ export async function skipConditional(reasonToSkip: string, requiredToSkip: bool
     return "PASSED";
   }
   return runIfNotSkip();
+}
+
+// Keep migrated taskpool helpers in the original suite-wide utility module.
+// Reuse the existing Utils.sleep implementation rather than adding a second one.
+export function sleep(time: number): Promise<void> {
+  return Utils.sleep(time)
+}
+
+// Cancel leftover tasks from preceding suites before running priority/config tests.
+export async function drainTaskPool(): Promise<void> {
+  let drainedRounds: number = 0
+  while (drainedRounds < 10) {
+    let leftover: number = 0
+    const infos: taskpool.TaskInfo[] = taskpool.getTaskPoolInfo().taskInfos
+    for (let i = 0; i < infos.length; i++) {
+      leftover++
+      try {
+        taskpool.cancel(infos[i].taskId)
+      } catch (e) {
+        // Tasks can finish between collection and cancellation.
+      }
+    }
+    if (leftover === 0) {
+      break
+    }
+    await sleep(1000)
+    drainedRounds++
+  }
+}
+
+// Run the full GC in a worker to avoid blocking the host thread.
+declare class ArkTools {
+  static forceFullGC(): void;
+}
+
+@Concurrent
+function utilsForceFullGcInBackground(): void {
+  ArkTools.forceFullGC();
+}
+
+export async function cooperativeGc(): Promise<void> {
+  try {
+    const gcTask: taskpool.Task = new taskpool.Task(utilsForceFullGcInBackground)
+    await taskpool.execute(gcTask)
+  } catch (e) {
+    // A GC task failure must not prevent the next suite from running.
+  }
+}
+
+const FILL_CHUNK: number = 256 * 1024
+
+// Yield between chunks when building large arrays to avoid host-thread stalls.
+export async function fillBigArrayChunked(size: number, chunk?: number): Promise<number[]> {
+  let arr: number[] = new Array<number>(size)
+  let step: number = (chunk === undefined || chunk <= 0) ? FILL_CHUNK : chunk
+  let i: number = 0
+  while (i < size) {
+    let end: number = (i + step < size) ? (i + step) : size
+    for (; i < end; i++) {
+      arr[i] = i
+    }
+    if (i < size) {
+      await sleep(0)
+    }
+  }
+  return arr
+}
+
+// Imported @Concurrent helper used by nested-execute taskpool tests.
+@Concurrent
+export function nestedSubFunc(n: number): number {
+  return n * 2
 }
 
 export default class Utils {

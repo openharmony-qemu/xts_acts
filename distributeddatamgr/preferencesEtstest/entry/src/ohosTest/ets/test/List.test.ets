@@ -23,6 +23,7 @@ import preferencesV9PromiseTest from './PreferencesV9PromiseJsunit.test';
 import PreferencesInterfaceTest from './PreferencesInterfaceTest.test'
 import preferencesErrcodeTest from './PreferenceErrcodeTest.test';
 import preferencesCoverageAddTest from './PreferencesCoverageAdd.test';
+import PreferencesSharedMapSizeTest from './PreferencesSharedMapSizeTest.test';
 
 export default function testsuite() {
   preferencesCallBackTest()
@@ -35,5 +36,6 @@ export default function testsuite() {
   PreferencesInterfaceTest()
   preferencesErrcodeTest();
   preferencesCoverageAddTest();
+  PreferencesSharedMapSizeTest();
 }
 

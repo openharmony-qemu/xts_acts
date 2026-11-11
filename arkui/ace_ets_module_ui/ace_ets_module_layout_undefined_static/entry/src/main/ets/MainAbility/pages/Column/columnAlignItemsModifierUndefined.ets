@@ -57,17 +57,18 @@ struct Index {
         Column() {
           Column() {
             Text('1').width('200').height(50).backgroundColor(0xF5DEB3)
-            Text('2').width('300').height(50).backgroundColor(0xD2B48C)
+            Text('2').width('200').height(50).backgroundColor(0xD2B48C)
             Text('3').width('100').height(50).backgroundColor(0xF5DEB3)
             Text('4').width('100').height(50).backgroundColor(0xD2B48C)
-            Text('5').width('300').height(50).backgroundColor(0xF5DEB3)
+            Text('5').width('200').height(50).backgroundColor(0xF5DEB3)
           }
           .id('Column_AlignItems_Modifier')
           .attributeModifier(this.modifier)
           .borderWidth(1)
-          .width('90%').height('60%')
+          .width('80%').height('60%')
         }
       }
     }
+    .alignItems(HorizontalAlign.Center)
   }
 }

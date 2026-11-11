@@ -19,9 +19,13 @@ import taskPoolExecuteDelayedTimeConsumTest from './TaskPoolExecuteDelayedTimeCo
 import taskPoolTaskExecuteDelayedTest from './TaskPoolTaskExecuteDelayed.test';
 
 
+import ExecuteDelayedGenericsTaskTest from './taskpoolExecute/ExecuteDelayedGenericsTaskTest.test';
+import ExecuteDelayedTaskTest from './taskpoolExecute/ExecuteDelayedTaskTest.test';
 export default function testsuite() {
   taskPoolExecuteDelayedMultipleTest();
   taskPoolExecuteDelayedTimeConsumTest();
   taskPoolTaskExecuteDelayedTest();
   executeDelayedTaskErrorTest();
+  ExecuteDelayedGenericsTaskTest();
+  ExecuteDelayedTaskTest();
 }

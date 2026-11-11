@@ -79,6 +79,7 @@ import pageRouteTest from './pageRouteTest/pageRoute.test'
 import searchOnCutJsunit from './SearchTest/search.test'
 import navigationJsunittt from './Navigation/NavigationJsunittt.test';
 import navigatorCodeJsunit from './Navigation/NavigatorCodeJsunit.test';
+import TransPageEnabledTest from './transPage/TransPageEnabled.test';
 
 export default function testsuite() {
   NavigationApi();
@@ -149,7 +150,6 @@ export default function testsuite() {
   NavDestination_onBackPressed();
   navigationApi1();
   NavigationAttr();
-  
-
+  TransPageEnabledTest();
 
 }

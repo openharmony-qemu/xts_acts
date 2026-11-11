@@ -45,34 +45,40 @@ export default function ContainerGuideLineUndefinedTest() {
     });
 
     /**
-     * @tc.number    ContainerGuideLineUndefinedTest_static_0100
-     * @tc.name      ContainerGuideLineUndefinedTest_static_0100
-     * @tc.desc      ContainerGuideLineUndefinedTest_static_0100
+     * @tc.number    SUB_ARKUI_API_ContainerGuideLineUndefinedTest_static_0100
+     * @tc.name      SUB_ARKUI_API_ContainerGuideLineUndefinedTest_static_0100
+     * @tc.desc      SUB_ARKUI_API_ContainerGuideLineUndefinedTest_static_0100
      * @tc.level     Level.LEVEL1
      */
-    it('ContainerGuideLineUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('ContainerGuideLineUndefinedTest_static_0100 START');
-      await CommonFunc.sleep(500);
-      let driver: Driver = Driver.create();
-      let container = await driver.findComponent(ON.id('row4')) as Component;
-      let target = await container.getBounds();
-      let row = await driver.findComponent(ON.id('relativeContainer_guideLine')) as Component;
-      let bounds = await row.getBounds();
-      expect(Math.abs(Math.round(bounds.top - target.top) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) > 1)
-        .assertTrue();
+    it('SUB_ARKUI_API_ContainerGuideLineUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('SUB_ARKUI_API_ContainerGuideLineUndefinedTest_static_0100 START');
+        await CommonFunc.sleep(500);
+        let driver: Driver = Driver.create();
+        let container = await driver.findComponent(ON.id('row4')) as Component;
+        let target = await container.getBounds();
+        let row = await driver.findComponent(ON.id('relativeContainer_guideLine')) as Component;
+        let bounds = await row.getBounds();
+        expect(Math.abs(Math.round(bounds.top - target.top) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) > 1)
+          .assertTrue();
 
-      let changeBtn = await driver.findComponent(ON.id('changeButton'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+        let changeBtn = await driver.findComponent(ON.id('changeButton'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      container = await driver.findComponent(ON.id('row4')) as Component;
-      target = await container.getBounds();
-      row = await driver.findComponent(ON.id('relativeContainer_guideLine')) as Component;
-      bounds = await row.getBounds();
-      expect(Math.abs(Math.round(bounds.top - target.top) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) > 1)
-        .assertTrue();
-      console.info('ContainerGuideLineUndefinedTest_static_0100 END');
-      done();
+        container = await driver.findComponent(ON.id('row4')) as Component;
+        target = await container.getBounds();
+        row = await driver.findComponent(ON.id('relativeContainer_guideLine')) as Component;
+        bounds = await row.getBounds();
+        expect(Math.abs(Math.round(bounds.top - target.top) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) > 1)
+          .assertTrue();
+        console.info('SUB_ARKUI_API_ContainerGuideLineUndefinedTest_static_0100 END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_ContainerGuideLineUndefinedTest_static_0100] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

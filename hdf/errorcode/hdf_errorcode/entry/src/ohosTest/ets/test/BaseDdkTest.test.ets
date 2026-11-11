@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -443,6 +443,90 @@ export default function ActsBaseDDkTest() {
         done()
       } catch (err) {
         console.error("====>SUB_Driver_Ext_HidEmitEventInvalidParameter_2600 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Driver_Ext_HidEmitEventNullPtr_2700
+     * @tc.number SUB_Driver_Ext_HidEmitEventNullPtr_2700
+     * @tc.desc   Test HidEmitEventNullPtr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Driver_Ext_HidEmitEventNullPtr_2700', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>SUB_Driver_Ext_HidEmitEventNullPtr_2700 start====");
+        let result: number = baskddkerror.HidEmitEventNullPtr();
+        expect(result).assertEqual(Success);
+        console.info("====>SUB_Driver_Ext_HidEmitEventNullPtr_2700 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Driver_Ext_HidEmitEventNullPtr_2700 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Driver_Ext_HidDestroyDeviceNullPtr_2800
+     * @tc.number SUB_Driver_Ext_HidDestroyDeviceNullPtr_2800
+     * @tc.desc   Test HidDestroyDeviceNullPtr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Driver_Ext_HidDestroyDeviceNullPtr_2800', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>SUB_Driver_Ext_HidDestroyDeviceNullPtr_2800 start====");
+        let result: number = baskddkerror.HidDestroyDeviceNullPtr();
+        expect(result).assertEqual(Success);
+        console.info("====>SUB_Driver_Ext_HidDestroyDeviceNullPtr_2800 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Driver_Ext_HidDestroyDeviceNullPtr_2800 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Driver_Ext_HidDestroyDeviceInvalidOperation_2900
+     * @tc.number SUB_Driver_Ext_HidDestroyDeviceInvalidOperation_2900
+     * @tc.desc   Test HidDestroyDeviceInvalidOperation.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Driver_Ext_HidDestroyDeviceInvalidOperation_2900', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>SUB_Driver_Ext_HidDestroyDeviceInvalidOperation_2900 start====");
+        let result: number = baskddkerror.HidDestroyDeviceInvalidOperation();
+        expect(result).assertEqual(Success);
+        console.info("====>SUB_Driver_Ext_HidDestroyDeviceInvalidOperation_2900 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Driver_Ext_HidDestroyDeviceInvalidOperation_2900 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Driver_Ext_HidDdkErrCodeFailure_3000
+     * @tc.number SUB_Driver_Ext_HidDdkErrCodeFailure_3000
+     * @tc.desc   Test HidDdkErrCodeFailure.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Driver_Ext_HidDdkErrCodeFailure_3000', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>SUB_Driver_Ext_HidDdkErrCodeFailure_3000 start====");
+        let result: number = baskddkerror.HidDdkErrCodeFailure();
+        expect(result).assertEqual(Success);
+        console.info("====>SUB_Driver_Ext_HidDdkErrCodeFailure_3000 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Driver_Ext_HidDdkErrCodeFailure_3000 catch err: " + err);
         expect().assertFail();
       }
     })

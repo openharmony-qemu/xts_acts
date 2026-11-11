@@ -18,6 +18,8 @@
 #include "renderNode/NativeModuleCapiInitErrorCodeTest.cpp"
 #include "renderNode/NodeChildMountPolicyTest.cpp"
 #include "uiInfoCollection/UIInfoCollectionTest.cpp"
+#include "uiEventInjection/UIEventInjectRelaxedInteractionTest.cpp"
+#include "keyEvent/NativeKeyEventTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -137,6 +139,41 @@ static napi_value Init(napi_env env, napi_value exports)
          napi_default, nullptr},
         {"UIInfoCollectionUnregisterObserverTest001", nullptr,
          UIInfoCollectionUnregisterObserverTest001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+
+        {"UIEventInjectRelaxedInteractionTest001", nullptr,
+         UIEventInjectRelaxedInteractionTest001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"UIEventInjectRelaxedInteractionTest002", nullptr,
+         UIEventInjectRelaxedInteractionTest002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"UIEventInjectRelaxedInteractionTest003", nullptr,
+         UIEventInjectRelaxedInteractionTest003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+
+        {"KeyEventFunctionalTest001", nullptr,
+         KeyEventFunctionalTest001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"KeyEventCreateDestroyTest001", nullptr,
+         KeyEventCreateDestroyTest001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"KeyEventCreateDestroyTest002", nullptr,
+         KeyEventCreateDestroyTest002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"KeyEventCreateDestroyTest003", nullptr,
+         KeyEventCreateDestroyTest003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"KeyEventSetPropertiesTest001", nullptr,
+         KeyEventSetPropertiesTest001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"KeyEventSetPropertiesTest002", nullptr,
+         KeyEventSetPropertiesTest002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"KeyEventSetKeyTextTest001", nullptr,
+         KeyEventSetKeyTextTest001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"KeyEventSetPressedKeysTest001", nullptr,
+         KeyEventSetPressedKeysTest001, nullptr, nullptr, nullptr,
          napi_default, nullptr},
 
     };

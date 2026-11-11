@@ -33,7 +33,7 @@ import { State } from '@ohos.arkui.stateManagement'
 /**
  * Scroll组件enableScrollWithKeyboard从API 26.2.0开始新增，设置是否支持键盘方向键滚动：
  * 组件获焦且未激活焦点态时会响应键盘方向键滚动。
- * 属性值设置为undefined表示使用默认值，默认值：true。
+ * 属性值设置为undefined表示使用默认值，默认值：false。
  * 本页面为纵向Scroll响应键盘方向键(上/下)滚动的验证页面，
  * 通过按钮切换覆盖true、false、undefined全部参数类型。
  */
@@ -42,7 +42,7 @@ import { State } from '@ohos.arkui.stateManagement'
 struct ScrollKeyboard {
   private readonly ten: int[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   // enableScrollWithKeyboard属性值：undefined表示使用默认值
-  @State keyboardScroll: boolean | undefined = true;
+  @State keyboardScroll: boolean | undefined = false;
   @State vOff: string = '0';
   private vScroller: Scroller = new Scroller();
 

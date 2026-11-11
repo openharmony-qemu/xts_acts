@@ -84,3 +84,16 @@ export const UIInfoCollectionRegisterObserverTest003: () => number;
 export const UIInfoCollectionRegisterObserverTest004: () => number;
 export const UIInfoCollectionRegisterObserverTest005: () => number;
 export const UIInfoCollectionUnregisterObserverTest001: () => number;
+
+export const UIEventInjectRelaxedInteractionTest001: () => number;
+export const UIEventInjectRelaxedInteractionTest002: () => number;
+export const UIEventInjectRelaxedInteractionTest003: () => number;
+
+export const KeyEventFunctionalTest001: () => number;
+export const KeyEventCreateDestroyTest001: () => number;
+export const KeyEventCreateDestroyTest002: () => number;
+export const KeyEventCreateDestroyTest003: () => number;
+export const KeyEventSetPropertiesTest001: () => number;
+export const KeyEventSetPropertiesTest002: () => number;
+export const KeyEventSetKeyTextTest001: () => number;
+export const KeyEventSetPressedKeysTest001: () => number;

@@ -66,7 +66,7 @@ struct GridColExample {
           GridCol({
             offset: 0,
           }) {
-            Row(){Text('undefined')}.width('100%').height('20vp')
+            Row(){Text('undefined')}.width('80%').height('20vp')
           }.borderColor(this.bgColors[0]).borderWidth(2)
           .attributeModifier(this.myModifier1)
           .id('MyGridColModifier1')
@@ -74,37 +74,37 @@ struct GridColExample {
           GridCol({
             offset: 0,
           }) {
-            Row(){Text('no set')}.width('100%').height('20vp')
+            Row(){Text('no set')}.width('80%').height('20vp')
           }.borderColor(this.bgColors[0]).borderWidth(2)
 
           GridCol({
             offset: 0,
           }) {
-            Row(){Text('no set')}.width('100%').height('20vp')
+            Row(){Text('no set')}.width('80%').height('20vp')
           }.borderColor(this.bgColors[0]).borderWidth(2)
 
           GridCol({
             span: 2,
             offset: 0,
           }) {
-            Row().width('100%').height('20vp')
+            Row().width('80%').height('20vp')
           }.borderColor(this.bgColors[1]).borderWidth(2)
 
           GridCol({
             span: 3,
             offset: 0,
           }) {
-            Row().width('100%').height('20vp')
+            Row().width('80%').height('20vp')
           }.borderColor(this.bgColors[2]).borderWidth(2)
 
           GridCol({
             span: 4,
             offset: 0,
           }) {
-            Row().width('100%').height('20vp')
+            Row().width('80%').height('20vp')
           }.borderColor(this.bgColors[3]).borderWidth(2)
 
-        }.width('100%').height('100%')
+        }.width('80%').height('80%')
         .onBreakpointChange((breakpoint) => {
           this.currentBp = breakpoint
         })
@@ -133,7 +133,7 @@ struct GridColExample {
             span: { xs: 1, sm: 2, md: 3, lg: 4 },
             offset: 0,
           }) {
-            Row().width('100%').height('20vp')
+            Row().width('80%').height('20vp')
           }.borderColor(this.bgColors[0]).borderWidth(2)
           .attributeModifier(this.myModifier2)
           .id('MyGridColModifier2')
@@ -142,7 +142,7 @@ struct GridColExample {
             span: { xs: 1, sm: 2, md: 3, lg: 4 },
             offset: 0,
           }) {
-            Row(){Text('undefined')}.width('100%').height('20vp')
+            Row(){Text('undefined')}.width('80%').height('20vp')
           }.borderColor(this.bgColors[6]).borderWidth(2)
           .order(undefined)
 
@@ -150,7 +150,7 @@ struct GridColExample {
             span: { xs: 1, sm: 2, md: 3, lg: 4 },
             offset: 0,
           }) {
-            Row(){Text('no set')}.width('100%').height('20vp')
+            Row(){Text('no set')}.width('80%').height('20vp')
           }.borderColor(this.bgColors[5]).borderWidth(2)
 
           GridCol({
@@ -158,7 +158,7 @@ struct GridColExample {
             offset: 0,
             order: 3
           }) {
-            Row().width('100%').height('20vp')
+            Row().width('80%').height('20vp')
           }.borderColor(this.bgColors[2]).borderWidth(2)
 
           GridCol({
@@ -166,7 +166,7 @@ struct GridColExample {
             offset: 0,
             order: 5
           }) {
-            Row().width('100%').height('20vp')
+            Row().width('80%').height('20vp')
           }.borderColor(this.bgColors[2]).borderWidth(2)
 
           GridCol({
@@ -174,9 +174,9 @@ struct GridColExample {
             offset: 0,
             order: 7
           }) {
-            Row().width('100%').height('20vp')
+            Row().width('80%').height('20vp')
           }.borderColor(this.bgColors[2]).borderWidth(2)
-        }.width('100%').height('100%')
+        }.width('80%').height('80%')
         .onBreakpointChange((breakpoint) => {
           this.currentBp = breakpoint
         })
@@ -198,6 +198,7 @@ struct GridColExample {
           .height('3%')
           .id('GridCol_Offset')
       }
-    }.width('100%').height('100%')
+    }.width('80%').height('80%')
+    .alignItems(HorizontalAlign.Center)
   }
 }

@@ -13,6 +13,18 @@
  * limitations under the License.
  */
 
+import { ComponentContent } from '@kit.ArkUI'
+
+@Builder
+function footerBuilder() {
+  Text('FooterContent').id('sidebar_footer_text').fontSize(12)
+}
+
+@Builder
+function bottomBarBuilder() {
+  Text('BottomBarContent').id('sidebar_bottombar_text').fontSize(12)
+}
+
 @Entry
 @Component
 struct TabsSidebarStyle {

@@ -18,7 +18,7 @@ import {
   Entry, Text, Column, Component, Button, ClickEvent, Color, Slider, Grid, GridItem, SliderBlockType,
   TextAlign, List, ListItem, ListScroller, Builder, ForEach, Row, TransitionType, FlexAlign, ColumnOptions,
   SizeOptions,  SliderBlockStyle, Ellipse, SliderStyle, SlideRange, SliderInteraction, SliderChangeMode,
-  RowAttribute, AttributeModifier, Divider, VerticalAlign, $r } from '@ohos.arkui.component'
+  RowAttribute, AttributeModifier, Divider, VerticalAlign, $r, HorizontalAlign } from '@ohos.arkui.component'
 import { State ,Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
@@ -41,7 +41,7 @@ struct SelectExampleM {
         Row().width('30%').height(50).backgroundColor(0xAFEEEE).id('row1')
         Row().width('30%').height(50).backgroundColor(0x00FFFF).id('row2')
       }
-      .width('90%')
+      .width('80%')
       .height('15%')
       .border({ width: 1 })
       .attributeModifier(this.modifier1)
@@ -52,6 +52,7 @@ struct SelectExampleM {
           this.modifier1.isUndefined = !this.modifier1.isUndefined
         }
         ).id('changeButton')
-    }.width('100%')
+    }.width('80%')
+    .alignItems(HorizontalAlign.Center)
   }
 }

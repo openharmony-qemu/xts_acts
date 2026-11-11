@@ -45,6 +45,8 @@ export default function abilityTest2() {
     let user = abilityDelegatorRegistry.getArguments().parameters['-u'];
     if(user !== undefined){
         cmdBeforeEach += ' -u ' + user;
+        cmdBeforeEach2 += ' -u ' + user;
+        cmdBeforeEach3 += ' -u ' + user;
     }
     beforeAll(async (done: Function) => {
       await sleep(1000);

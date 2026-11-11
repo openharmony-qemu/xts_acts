@@ -15,7 +15,7 @@
  */
 
 import {  Entry,  Text,  Column,  ColumnOptions,  Component,  Button,  ClickEvent,  Color,  Row,  $r,
-  Direction,  RowOptions } from '@ohos.arkui.component'
+  Direction,  RowOptions, HorizontalAlign } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
@@ -37,7 +37,7 @@ struct Index {
           .flexGrow(1)
           .backgroundColor(Color.Red)
       }
-      .width('100%')
+      .width('80%')
       Row() {
         Button('btn1 : ' + this.isUndefined1)
           .id('FlexLayout_btn1')
@@ -50,6 +50,7 @@ struct Index {
             this.isUndefined2 = !this.isUndefined2
           })
       }
-    }.width('100%')
+    }.width('80%')
+    .alignItems(HorizontalAlign.Center)
   }
 }

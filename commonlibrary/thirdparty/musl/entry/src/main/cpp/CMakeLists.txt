@@ -1,4 +1,4 @@
-﻿# the minimum version of CMake.
+# the minimum version of CMake.
 cmake_minimum_required(VERSION 3.4.1)
 project(musl)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall  -g3 -Wunused-variable -Wunused-command-line-argument")

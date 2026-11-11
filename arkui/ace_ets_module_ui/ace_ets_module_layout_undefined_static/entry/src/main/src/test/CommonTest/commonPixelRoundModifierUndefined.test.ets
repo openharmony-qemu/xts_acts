@@ -49,42 +49,48 @@ export default function CommonPixelRoundModifierUndefinedTest() {
     });
 
     /**
-     * @tc.number   CommonPixelRoundModifierUndefinedTest_static_0100
-     * @tc.name     CommonPixelRoundModifierUndefinedTest_static_0100
-     * @tc.desc     CommonPixelRoundModifierUndefinedTest_static_0100
+     * @tc.number   SUB_ARKUI_API_CommonPixelRoundModifierUndefinedTest_static_0100
+     * @tc.name     SUB_ARKUI_API_CommonPixelRoundModifierUndefinedTest_static_0100
+     * @tc.desc     SUB_ARKUI_API_CommonPixelRoundModifierUndefinedTest_static_0100
      * @tc.level    Level.LEVEL1
      */
-    it('CommonPixelRoundModifierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[CommonPixelRoundModifierUndefinedTest_static_0100] START');
-      let driver: Driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('MyRow2');
-      await CommonFunc.sleep(1000);
+    it('SUB_ARKUI_API_CommonPixelRoundModifierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('[SUB_ARKUI_API_CommonPixelRoundModifierUndefinedTest_static_0100] START');
+        let driver: Driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('MyRow2');
+        await CommonFunc.sleep(1000);
 
-      console.info('[CommonPixelRoundModifierUndefinedTest_static_0100] $attrs: ' +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      console.info('[CommonPixelRoundModifierUndefinedTest_static_0100] pixelRound: ' +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('pixelRound')));
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getElement('pixelRound')))
-        .assertEqual('\"{\\"start\\":\\"PixelRoundCalcPolicy.FORCE_CEIL\\",\\"top\\":\\"PixelRoundCalcPolicy.NO_FORCE_ROUND\\",\\"end\\":\\"PixelRoundCalcPolicy.FORCE_CEIL\\",\\"bottom\\":\\"PixelRoundCalcPolicy.NO_FORCE_ROUND\\"}\"');
+        console.info('[SUB_ARKUI_API_CommonPixelRoundModifierUndefinedTest_static_0100] $attrs: ' +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
+        console.info('[SUB_ARKUI_API_CommonPixelRoundModifierUndefinedTest_static_0100] pixelRound: ' +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('pixelRound')));
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getElement('pixelRound')))
+          .assertEqual('\"{\\"start\\":\\"PixelRoundCalcPolicy.FORCE_CEIL\\",\\"top\\":\\"PixelRoundCalcPolicy.NO_FORCE_ROUND\\",\\"end\\":\\"PixelRoundCalcPolicy.FORCE_CEIL\\",\\"bottom\\":\\"PixelRoundCalcPolicy.NO_FORCE_ROUND\\"}\"');
 
-      let changeBtn = await driver.findComponent(ON.id('Common_PixelRound'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
-      console.info('[CommonPixelRoundModifierUndefinedTest_static_0100] click Common_PixelRound');
-      strJson = inspector.getInspectorByKey('MyRow2');
-      await CommonFunc.sleep(2000);
-      console.info('[CommonPixelRoundModifierUndefinedTest_static_0100] pixelRound: ' +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('pixelRound')));
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getElement('pixelRound')))
-        .assertEqual('\"{\\"start\\":\\"PixelRoundCalcPolicy.NO_FORCE_ROUND\\",\\"top\\":\\"PixelRoundCalcPolicy.NO_FORCE_ROUND\\",\\"end\\":\\"PixelRoundCalcPolicy.NO_FORCE_ROUND\\",\\"bottom\\":\\"PixelRoundCalcPolicy.NO_FORCE_ROUND\\"}\"');
-      await CommonFunc.sleep(1000);
-      console.info('[CommonPixelRoundModifierUndefinedTest_static_0100] END');
-      done();
+        let changeBtn = await driver.findComponent(ON.id('Common_PixelRound'));
+        await (changeBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(2000);
+        console.info('[SUB_ARKUI_API_CommonPixelRoundModifierUndefinedTest_static_0100] click Common_PixelRound');
+        strJson = inspector.getInspectorByKey('MyRow2');
+        await CommonFunc.sleep(2000);
+        console.info('[SUB_ARKUI_API_CommonPixelRoundModifierUndefinedTest_static_0100] pixelRound: ' +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('pixelRound')));
+        expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getElement('pixelRound')))
+          .assertEqual('\"{\\"start\\":\\"PixelRoundCalcPolicy.NO_FORCE_ROUND\\",\\"top\\":\\"PixelRoundCalcPolicy.NO_FORCE_ROUND\\",\\"end\\":\\"PixelRoundCalcPolicy.NO_FORCE_ROUND\\",\\"bottom\\":\\"PixelRoundCalcPolicy.NO_FORCE_ROUND\\"}\"');
+        await CommonFunc.sleep(1000);
+        console.info('[SUB_ARKUI_API_CommonPixelRoundModifierUndefinedTest_static_0100] END');
+        done();
+      } catch (err) {
+        console.error('[SUB_ARKUI_API_CommonPixelRoundModifierUndefinedTest_static_0100] ERR: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
   })

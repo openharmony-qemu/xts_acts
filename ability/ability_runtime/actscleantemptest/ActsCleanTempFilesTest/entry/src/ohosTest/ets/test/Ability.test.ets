@@ -24,6 +24,7 @@ function sleep(ms: number) {
 }
 
 let abilityDelegator = delegatorRegistry.getAbilityDelegator();
+let user = delegatorRegistry.getArguments().parameters['-u'];
 let actsRegister: commonEvent.CommonEventSubscribeInfo = {
   events: ['Acts_CleanTempFiles_0101', 'Acts_CleanTempFiles_0102', 'Acts_CleanTempFiles_0103',
     'Acts_CleanTempFiles_0104', 'Acts_CleanTempFiles_0201', 'Acts_CleanTempFiles_0202', 'Acts_CleanTempFiles_0203',
@@ -32,8 +33,12 @@ let actsRegister: commonEvent.CommonEventSubscribeInfo = {
 };
 
 async function stopRelyApp(): Promise<void> {
-  const cmd = 'aa force-stop com.acts.cleancachefilesreply';
+  let cmd = 'aa force-stop com.acts.cleancachefilesreply';
+  if(user !== undefined){
+    cmd += ' -u ' + user;
+  }
   try {
+    console.info('force-stop rely cmd: ' + cmd);
     await abilityDelegator.executeShellCommand(cmd);
   } catch (e) {
     console.warn('force-stop rely: ' + JSON.stringify(e));
@@ -175,6 +180,9 @@ export default function abilityTest() {
             expect(data.parameters!.message).assertEqual('Try to write feature str.');
             msg['ACTS_RegisterEvent_Third'] = true;
             let stop = 'aa force-stop com.acts.cleancachefilesreply';
+            if(user !== undefined){
+              stop += ' -u ' + user;
+            }
             abilityDelegator.executeShellCommand(stop, (err, res) => {
               console.log('Acts_CleanTempFiles_0200 pkill err: ' + JSON.stringify(err) + ' data: ' +
               JSON.stringify(res));

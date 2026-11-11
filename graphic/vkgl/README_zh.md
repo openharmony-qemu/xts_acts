@@ -122,7 +122,6 @@ vk-gl-cts --> spirv-tools
        ```bash
        ├── libdeqp_ohos_platform.z.so
        ├── libdeqp_SPIRV.z.so
-       ├── libdeqp_SPVRemapper.z.so
        ├── librosen_context.z.so
        └── vkgldata.tar.gz
        ```

@@ -2923,5 +2923,73 @@ export default function applicationManagerTest() {
       done();
     });
 
+    /**
+     * @tc.name   test_getAllMainWindowStates_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETALLMAINWINDOWSTATES_JS_0100
+     * @tc.desc   test getAllMainWindowStates without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getAllMainWindowStates_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.getAllMainWindowStates();
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 9200001).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_getAllMainWindowStates_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETALLMAINWINDOWSTATES_JS_0200
+     * @tc.desc   test getAllMainWindowStates with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getAllMainWindowStates_0200", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        applicationManager.getAllMainWindowStates();
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_getAllMainWindowStates_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETALLMAINWINDOWSTATES_JS_0300
+     * @tc.desc   test getAllMainWindowStates success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("test_getAllMainWindowStates_0300", Level.LEVEL0, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let result: Array<applicationManager.MainWindowStates> = applicationManager.getAllMainWindowStates();
+        expect(Array.isArray(result)).assertTrue();
+        expect(result.length > 0).assertTrue();
+        for (let i = 0; i < result.length; i++) {
+          let mainWindowState: applicationManager.MainWindowStates = result[i];
+          expect(mainWindowState.pid > 0).assertTrue();
+          expect(typeof (mainWindowState.bundleName)).assertEqual("string");
+          expect(mainWindowState.state >= applicationManager.WindowState.DISCONNECT).assertTrue();
+          expect(mainWindowState.state <= applicationManager.WindowState.BACKGROUND).assertTrue();
+        }
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
   });
 }

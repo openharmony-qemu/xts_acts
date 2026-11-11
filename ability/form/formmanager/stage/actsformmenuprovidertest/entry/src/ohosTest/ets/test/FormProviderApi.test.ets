@@ -609,6 +609,7 @@ export default function formProviderTest() {
               expect(data.formUsageState).assertEqual(formInfo.FormUsageState.USED);
               expect(data.formDescription.length > 0).assertTrue();
               expect(data.extraData).assertUndefined();
+              expect(!data.isColorModeRefreshEnabled).assertTrue();
               done();
             }).catch ((error: BusinessError) => {
               hilog.info(DOMAIN, COMMON_TAG, '%{public}s',

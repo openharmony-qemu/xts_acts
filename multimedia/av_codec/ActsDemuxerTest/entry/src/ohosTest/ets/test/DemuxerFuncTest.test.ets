@@ -66,8 +66,8 @@ export default function DemuxerFuncTestTest() {
         { raw: 'MP3_avcc_10sec.bin', target: mediaDir + '/MP3_avcc_10sec.bin' },
         { raw: 'test_video_avcc_10sec.bin', target: mediaDir + '/test_video_avcc_10sec.bin' },
         { raw: 'INVALID.mp4', target: mediaDir + '/INVALID.mp4' },
-        { raw: 'hevc_v_a.ts', target: mediaDir + '/hevc_v_a.ts' },
-        { raw: 'hevc_v.ts', target: mediaDir + '/hevc_v.ts' },
+        { raw: 'hevc_v_a.m2ts', target: mediaDir + '/hevc_v_a.m2ts' },
+        { raw: 'hevc_v.m2ts', target: mediaDir + '/hevc_v.m2ts' },
         { raw: 'M4A_48000_1.m4a', target: audioDir + '/M4A_48000_1.m4a' },
         { raw: 'AAC_48000_1.aac', target: audioDir + '/AAC_48000_1.aac' },
         { raw: 'MP3_48000_1.mp3', target: audioDir + '/MP3_48000_1.mp3' },
@@ -77,7 +77,7 @@ export default function DemuxerFuncTestTest() {
         { raw: 'amr_nb_8000_1.amr', target: audioDir + '/amr_nb_8000_1.amr' },
         { raw: 'amr_wb_16000_1.amr', target: audioDir + '/amr_wb_16000_1.amr' },
         { raw: 'mkv.mkv', target: mediaDir + '/mkv.mkv' },
-        { raw: 'ts_video.ts', target: mediaDir + '/ts_video.ts' },
+        { raw: 'ts_video.m2ts', target: mediaDir + '/ts_video.m2ts' },
         { raw: 'MP3_OGG_48000_1.bin', target: mediaDir + '/MP3_OGG_48000_1.bin' }
       ];
       

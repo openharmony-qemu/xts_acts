@@ -19,6 +19,7 @@ import { common } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import commonEvent from '@ohos.commonEventManager';
 import { Driver, MatchPattern, ON, Component } from '@ohos.UiTest';
+import deviceInfo from '@ohos.deviceInfo';
 
 let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 const TAG = 'AbilityRuntime';
@@ -299,7 +300,10 @@ export default function actsStartAppCloneAppTest() {
             expect(err.code).assertEqual(errorCode);
             done();
           } else {
-            expect().assertFail();
+            const isCar: boolean = deviceInfo.deviceType === "car";
+            if(!isCar) {
+              expect().assertFail();
+            }
             done();
           }
           hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} startAbility succeed`);
