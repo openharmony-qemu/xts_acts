@@ -5412,11 +5412,7 @@ function testSetPermissionManagedState() {
       let managedState: securityManager.PermissionManagedState = securityManager.getPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_MANUAL_SETTINGS_PERMISSIONS[0]);
       expect(false).assertTrue();
     } catch (error) {
-      if (error.code === '9200012') {
-        expect(error.code).assertEqual('9200012');
-      } else if (error.code === '9200007') {
-        expect(error.code).assertEqual('9200007');
-      }
+      expect(error.code).assertEqual('9200012');
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
