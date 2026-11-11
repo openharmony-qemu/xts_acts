@@ -29,6 +29,23 @@ void DisposeElem(void *elem);
 
 int32_t ExpectedSuccessCode();
 
+/*
+ * 无障碍hover事件处理回调（宿主节点相对坐标 + ArkUI 侧分配的 elementInfo 出参）。
+ * elementInfo 具体类型由 ArkUI 侧定义，桥接层以 void* 透传，ABI 与 SDK 声明一致。
+ */
+using A11yHoverEventCallback = void (*)(void *userData, int32_t x, int32_t y, int32_t requestId,
+    void *elementInfo);
+
+int32_t RegisterHoverHandler(void *node, void *userData, A11yHoverEventCallback handler);
+
+int32_t UnregisterHoverHandler(void *node);
+
+int32_t ExpectedHoverParamInvalidCode();
+
+int32_t ExpectedHoverParamErrorCode();
+
+int32_t ExpectedHoverTypeNotSupportedCode();
+
 } // namespace NativeElemTestBridge
 } // namespace ArkUICapiTest
 

@@ -29,6 +29,7 @@ import TextGetCharacterTest from './TextGetCharacter/TextGetCharacterTest.test'
 import CrossLanguageOptionsSupportFiveMethodsTest from './FrameNode/CrossLanguageOptionsSupportFiveMethodsTest.test'
 import NodeTransform3DTest from './NodeTransform3D/NodeTransform3DTest.test'
 import nodeAdoptChildWithPolicyTest from './nodeAdopt/NodeAdoptChildWithPolicyTest.test'
+import arkuiNativeCapiNativeInterfaceA11yHover from './arkui_native/A11yHoverEventHandlerTest.test'
 
 export default function testsuite() {
   nodeAdoptChildWithPolicyTest(); // 此条特殊用例请放在首行，勿动（含CAPI_INIT_ERROR用例）
@@ -40,6 +41,7 @@ export default function testsuite() {
   arkuiNativeCapiDragAndDrop();
   arkuiNativeCapiDrawableDescriptor();
   arkuiNativeCapiNativeInterfaceA11y();
+  arkuiNativeCapiNativeInterfaceA11yHover();
   arkuiNativeCapiNativeNode();
   arkuiNativeCapiNativeType();
   arkuiNativeCapiStyledString();

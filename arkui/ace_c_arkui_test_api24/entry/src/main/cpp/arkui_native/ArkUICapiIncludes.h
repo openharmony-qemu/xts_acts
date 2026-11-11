@@ -25,6 +25,7 @@
 #include "arkui_native/ArkUI_Full/drag_and_drop/DragAndDrop_ApiSuite1.cpp"
 #include "arkui_native/ArkUI_Full/drawable_descriptor/DrawableDescriptor_ApiSuite1.cpp"
 #include "arkui_native/ArkUI_Full/native_interface_a11y/NativeInterfaceA11y_ApiSuite1.cpp"
+#include "arkui_native/ArkUI_Full/native_interface_a11y/NativeInterfaceA11y_HoverApiSuite.cpp"
 #include "arkui_native/ArkUI_Full/native_node/NativeNode_ApiSuite1.cpp"
 #include "arkui_native/ArkUI_Full/native_type/NativeType_ApiSuite1.cpp"
 #include "arkui_native/ArkUI_Full/native_type/NativeType_ApiSuite2.cpp"
