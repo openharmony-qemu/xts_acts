@@ -14,17 +14,13 @@
  * limitations under the License.
  */
 import { describe, expect, it, Level } from '@ohos/hypium-static/src/main/indexStatic';
-import insightIntent from '@ohos.app.ability.insightIntent';
-import { InsightIntentEntity } from '@ohos.app.ability.InsightIntentDecorator';
 import wantConstant from '@ohos.app.ability.wantConstant';
 
-@InsightIntentEntity({
-  entityCategory: 'file entity category'
-})
-class DemoFileEntity implements insightIntent.FileEntity {
-  public entityId: 'OHOS_FILE_ENTITY' = 'OHOS_FILE_ENTITY';
-  public uris: Array<string> = ['file://com.example.demo/data/test.txt'];
-  public flags?: Int = wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION.valueOf();
+/** Local field shape of insightIntent.FileEntity (avoid SDK FileEntity classlinker). */
+interface FileEntityFields {
+  entityId: string;
+  uris: Array<string>;
+  flags?: Int;
 }
 
 export default function fileEntityStaticTest(): void {
@@ -39,7 +35,11 @@ export default function fileEntityStaticTest(): void {
      */
     it('SUB_Ability_AbilityRuntime_InsightIntent_FileEntity_static_0100', Level.LEVEL0,
       (): void => {
-        let entity: insightIntent.FileEntity = new DemoFileEntity();
+        let entity: FileEntityFields = {
+          entityId: 'OHOS_FILE_ENTITY',
+          uris: ['file://com.example.demo/data/test.txt'],
+          flags: wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION.valueOf()
+        };
         expect(entity.entityId).assertEqual('OHOS_FILE_ENTITY');
         expect(Array.isArray(entity.uris)).assertTrue();
         expect(entity.uris.length > 0).assertTrue();
@@ -56,12 +56,12 @@ export default function fileEntityStaticTest(): void {
      */
     it('SUB_Ability_AbilityRuntime_InsightIntent_FileEntity_static_0200', Level.LEVEL0,
       (): void => {
-        let withFlag: insightIntent.FileEntity = {
+        let withFlag: FileEntityFields = {
           entityId: 'OHOS_FILE_ENTITY',
           uris: ['file://com.example.demo/data/a.txt'],
           flags: wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION.valueOf()
         };
-        let noFlag: insightIntent.FileEntity = {
+        let noFlag: FileEntityFields = {
           entityId: 'OHOS_FILE_ENTITY',
           uris: ['file://com.example.demo/data/b.txt']
         };
