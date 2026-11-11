@@ -63,6 +63,7 @@
 #include "collection/CollectionEnumTest.cpp"
 #include "uiEventInjection/UIEventInjectionTest.cpp"
 #include "node/BufferQueueSizeTest.cpp"
+#include "node/RequestSetFilterOccludedTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -536,6 +537,19 @@ static napi_value Init(napi_env env, napi_value exports)
         {"BufferQueueSizeTest015", nullptr, BufferQueueSizeTest015, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"BufferQueueSizeTest016", nullptr, BufferQueueSizeTest016, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"BufferQueueSizeTest017", nullptr, BufferQueueSizeTest017, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"RequestSetFilterOccludedTest001", nullptr, RequestSetFilterOccludedTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RequestSetFilterOccludedTest002", nullptr, RequestSetFilterOccludedTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RequestSetFilterOccludedTest003", nullptr, RequestSetFilterOccludedTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RequestSetFilterOccludedTest004", nullptr, RequestSetFilterOccludedTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RequestSetFilterOccludedTest005", nullptr, RequestSetFilterOccludedTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"RequestSetOcclusionOpacityThresholdTest001", nullptr, RequestSetOcclusionOpacityThresholdTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RequestSetOcclusionOpacityThresholdTest002", nullptr, RequestSetOcclusionOpacityThresholdTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RequestSetOcclusionOpacityThresholdTest003", nullptr, RequestSetOcclusionOpacityThresholdTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RequestSetOcclusionOpacityThresholdTest004", nullptr, RequestSetOcclusionOpacityThresholdTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RequestSetOcclusionOpacityThresholdTest005", nullptr, RequestSetOcclusionOpacityThresholdTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RequestSetOcclusionOpacityThresholdTest006", nullptr, RequestSetOcclusionOpacityThresholdTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
         };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

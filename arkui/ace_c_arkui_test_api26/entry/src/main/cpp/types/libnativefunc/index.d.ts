@@ -443,3 +443,16 @@ export const BufferQueueSizeTest014: () => number;
 export const BufferQueueSizeTest015: () => number;
 export const BufferQueueSizeTest016: () => number;
 export const BufferQueueSizeTest017: () => number;
+
+export const RequestSetFilterOccludedTest001: () => number;
+export const RequestSetFilterOccludedTest002: () => number;
+export const RequestSetFilterOccludedTest003: () => number;
+export const RequestSetFilterOccludedTest004: () => number;
+export const RequestSetFilterOccludedTest005: () => number;
+
+export const RequestSetOcclusionOpacityThresholdTest001: () => number;
+export const RequestSetOcclusionOpacityThresholdTest002: () => number;
+export const RequestSetOcclusionOpacityThresholdTest003: () => number;
+export const RequestSetOcclusionOpacityThresholdTest004: () => number;
+export const RequestSetOcclusionOpacityThresholdTest005: () => number;
+export const RequestSetOcclusionOpacityThresholdTest006: () => number;
