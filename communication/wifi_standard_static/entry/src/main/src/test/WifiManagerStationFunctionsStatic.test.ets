@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterAll} from "@ohos/hypium-static/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll} from "@ohos/hypium-static/src/main/indexStatic";
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import CallbackMethods from './CallbackMethod.test';
@@ -23,7 +23,45 @@ import {abilityDelegatorRegistry} from '@kit.TestKit';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testWifiTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
-let networkId: int = -1;
+
+async function clearDeviceConfigs(): Promise<void> {
+  try {
+    let configs: Array<wifiManager.WifiDeviceConfig> = wifiManager.getDeviceConfigs();
+    for (let i = 0; i < configs.length; i++) {
+      let networkId: int | undefined = configs[i].netId;
+      if (networkId !== undefined) {
+        try {
+          await wifiManager.removeDevice(networkId);
+          hilog.info(domain, tag, 'removeDevice success, networkId:' + networkId);
+        } catch (err) {
+          hilog.info(domain, tag, 'removeDevice failed:' + JSON.stringify(err));
+        }
+      }
+    }
+  } catch (err) {
+    hilog.info(domain, tag, 'getDeviceConfigs failed:' + JSON.stringify(err));
+  }
+}
+
+async function clearCandidateConfigs(): Promise<void> {
+  try {
+    let configs: Array<wifiManager.WifiDeviceConfig> = wifiManager.getCandidateConfigs();
+    for (let i = 0; i < configs.length; i++) {
+      let networkId: int | undefined = configs[i].netId;
+      if (networkId !== undefined) {
+        try {
+          await wifiManager.removeCandidateConfig(networkId);
+          hilog.info(domain, tag, 'removeCandidateConfig success, networkId:' + networkId);
+        } catch (err) {
+          hilog.info(domain, tag, 'removeCandidateConfig failed:' + JSON.stringify(err));
+        }
+      }
+    }
+  } catch (err) {
+    hilog.info(domain, tag, 'getCandidateConfigs failed:' + JSON.stringify(err));
+  }
+}
+
 export default function actsWifiManagerFunctionsTest() {
   describe("actsWifiManagerFunctionsTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
@@ -42,20 +80,23 @@ export default function actsWifiManagerFunctionsTest() {
       done();
     });
     beforeEach(async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'afterAll start');
-      try{
-        if (networkId >= 0) {
-          await wifiManager.removeCandidateConfig(networkId);
-          hilog.info(domain, tag, `afterEach removeCandidateConfig promise success`);
-        }
-      }catch(err){
-        hilog.info(domain, tag, `afterEach not need removeCandidateConfig ` + err.code + err.message);
-      }
-      hilog.info(domain, tag, '%{public}s', 'afterAll end');
+      hilog.info(domain, tag, '%{public}s', 'beforeEach start');
+      await clearDeviceConfigs();
+      await clearCandidateConfigs();
+      hilog.info(domain, tag, '%{public}s', 'beforeEach end');
+      done();
+    });
+    afterEach(async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'afterEach start');
+      await clearDeviceConfigs();
+      await clearCandidateConfigs();
+      hilog.info(domain, tag, '%{public}s', 'afterEach end');
       done();
     });
     afterAll(async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'afterAll start');
+      await clearDeviceConfigs();
+      await clearCandidateConfigs();
       await Utils.closeWifi();
       await Utils.openWifi();
       hilog.info(domain, tag, '%{public}s', 'afterAll end');
@@ -1014,7 +1055,6 @@ export default function actsWifiManagerFunctionsTest() {
      * @tc.size MEDIUMTEST
      */
     it("SUB_Communication_WifiManager_CandidateConfig_Promise_0017", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      networkId = -1;
       try {
         let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
           "ssid": "TEST_OPEN",
@@ -1023,7 +1063,7 @@ export default function actsWifiManagerFunctionsTest() {
           "isHiddenSsid": false,
           "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_OPEN
         };
-        networkId = await wifiManager.addCandidateConfig(wifiDeviceConfig);
+        let networkId: int = await wifiManager.addCandidateConfig(wifiDeviceConfig);
         hilog.info(domain, tag, 'addCandidateConfig promise success result:' + JSON.stringify(networkId));
         expect(networkId != null).assertTrue();
         let config: Array<wifiManager.WifiDeviceConfig> = wifiManager.getCandidateConfigs();
@@ -1600,15 +1640,15 @@ export default function actsWifiManagerFunctionsTest() {
       try {
         let addr: string[] = wifiManager.getDeviceMacAddress();
         hilog.info(domain, tag, 'getDeviceMacAddress success result:' + JSON.stringify(addr));
-        expect(addr != null).assertTrue();
+        expect(Array.isArray(addr)).assertTrue();
         if (addr.length > 0) {
-          hilog.info(domain, tag, `${caseName} getDeviceMacAddress  非空数组`);
-          expect(addr.length > 0).assertTrue();
-          hilog.info(domain, tag, `${caseName} getDeviceMacAddress :` + addr[0]);
-          expect(typeof addr[0] === 'string').assertTrue();
+          hilog.info(domain, tag, `${caseName} getDeviceMacAddress 非空数组, length is ` + addr.length);
+          expect(addr.length >= 1).assertTrue();
+          expect(addr[0].length).assertEqual(17);
+          expect(typeof addr[0]).assertEqual('string');
         } else {
-          hilog.info(domain, tag, `${caseName} getDeviceMacAddress  空数组`);
-          expect(addr.length === 0).assertTrue();
+          hilog.info(domain, tag, `${caseName} getDeviceMacAddress 获取不到MAC地址`);
+          expect().assertFail();
         }
       } catch (err) {
         hilog.error(domain, tag, "get error:" + JSON.stringify(err));
@@ -2780,7 +2820,6 @@ export default function actsWifiManagerFunctionsTest() {
       async (done: () => void): Promise<void> => {
         let caseName = "LOG_SUB_Communication_WifiManager_AddCandidateConfig_BssidType_REAL_DEVICE_ADDRESS_0062";
         hilog.info(domain, tag, `${caseName} test start`);
-        networkId = -1;
         try {
           let config: wifiManager.WifiDeviceConfig = {
             "ssid": "test_candidate_real",
@@ -2788,7 +2827,7 @@ export default function actsWifiManagerFunctionsTest() {
             "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK,
             "bssidType": wifiManager.DeviceAddressType.REAL_DEVICE_ADDRESS
           };
-          networkId = await wifiManager.addCandidateConfig(config);
+          let networkId: int = await wifiManager.addCandidateConfig(config);
           hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
           expect(typeof networkId === 'int').assertTrue();
           expect(networkId >= 0).assertTrue();
@@ -2817,7 +2856,6 @@ export default function actsWifiManagerFunctionsTest() {
     it("SUB_Communication_WifiManager_AddCandidateConfig_IsHiddenSsid_True_0063", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName = "LOG_SUB_Communication_WifiManager_AddCandidateConfig_IsHiddenSsid_True_0063";
       hilog.info(domain, tag, `${caseName} test start`);
-      networkId = -1;
       try {
         let config: wifiManager.WifiDeviceConfig = {
           "ssid": "test_candidate_hidden",
@@ -2825,7 +2863,7 @@ export default function actsWifiManagerFunctionsTest() {
           "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK,
           "isHiddenSsid": true
         };
-        networkId = await wifiManager.addCandidateConfig(config);
+        let networkId: int = await wifiManager.addCandidateConfig(config);
         hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
         expect(typeof networkId === 'int').assertTrue();
         expect(networkId >= 0).assertTrue();
@@ -2855,14 +2893,13 @@ export default function actsWifiManagerFunctionsTest() {
       async (done: () => void): Promise<void> => {
         let caseName = "LOG_SUB_Communication_WifiManager_AddCandidateConfig_SecurityType_Wifi_SEC_TYPE_INVALID_0064";
         hilog.info(domain, tag, `${caseName} test start`);
-        networkId = -1;
         try {
           let config: wifiManager.WifiDeviceConfig = {
             "ssid": "test_candidate_invalid",
             "preSharedKey": "12345678",
             "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_INVALID
           };
-          networkId = await wifiManager.addCandidateConfig(config);
+          let networkId: int = await wifiManager.addCandidateConfig(config);
           hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
           expect().assertFail();
         } catch (err) {
@@ -2889,14 +2926,13 @@ export default function actsWifiManagerFunctionsTest() {
       async (done: () => void): Promise<void> => {
         let caseName = "LOG_SUB_Communication_WifiManager_AddCandidateConfig_SecurityType_Wifi_SEC_TYPE_INVALID_0065";
         hilog.info(domain, tag, `${caseName} test start`);
-        networkId = -1;
         try {
           let config: wifiManager.WifiDeviceConfig = {
             "ssid": "test_candidate_invalid",
             "preSharedKey": "",
             "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_INVALID
           };
-          networkId = await wifiManager.addCandidateConfig(config);
+          let networkId: int = await wifiManager.addCandidateConfig(config);
           hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
           expect(typeof networkId === 'int').assertTrue();
           expect(networkId >= 0).assertTrue();
@@ -2925,14 +2961,13 @@ export default function actsWifiManagerFunctionsTest() {
       async (done: () => void): Promise<void> => {
         let caseName = "LOG_SUB_Communication_WifiManager_AddCandidateConfig_SecurityType_Wifi_SEC_TYPE_WEP_0066";
         hilog.info(domain, tag, `${caseName} test start`);
-        networkId = -1;
         try {
           let config: wifiManager.WifiDeviceConfig = {
             "ssid": "test_candidate_wep",
             "preSharedKey": "12345678",
             "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_WEP
           };
-          networkId = await wifiManager.addCandidateConfig(config);
+          let networkId: int = await wifiManager.addCandidateConfig(config);
           hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
           expect().assertFail();
         } catch (err) {
@@ -2960,14 +2995,13 @@ export default function actsWifiManagerFunctionsTest() {
       async (done: () => void): Promise<void> => {
         let caseName = "LOG_SUB_Communication_WifiManager_AddCandidateConfig_SecurityType_Wifi_SEC_TYPE_PSK_0067";
         hilog.info(domain, tag, `${caseName} test start`);
-        networkId = -1;
         try {
           let config: wifiManager.WifiDeviceConfig = {
             "ssid": "test_candidate_psk",
             "preSharedKey": "12345678",
             "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK
           };
-          networkId = await wifiManager.addCandidateConfig(config);
+          let networkId: int = await wifiManager.addCandidateConfig(config);
           hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
           expect(typeof networkId === 'int').assertTrue();
           expect(networkId >= 0).assertTrue();
@@ -2997,14 +3031,13 @@ export default function actsWifiManagerFunctionsTest() {
       async (done: () => void): Promise<void> => {
         let caseName = "LOG_SUB_Communication_WifiManager_AddCandidateConfig_SecurityType_Wifi_SEC_TYPE_SAE_0068";
         hilog.info(domain, tag, `${caseName} test start`);
-        networkId = -1;
         try {
           let config: wifiManager.WifiDeviceConfig = {
             "ssid": "test_candidate_sae",
             "preSharedKey": "12345678",
             "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_SAE
           };
-          networkId = await wifiManager.addCandidateConfig(config);
+          let networkId: int = await wifiManager.addCandidateConfig(config);
           hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
           expect(typeof networkId === 'int').assertTrue();
           expect(networkId >= 0).assertTrue();
@@ -3142,13 +3175,13 @@ export default function actsWifiManagerFunctionsTest() {
         hilog.info(domain, tag, `${caseName} getDeviceMacAddress 返回值:` + JSON.stringify(result));
         expect(Array.isArray(result)).assertTrue();
         if (result.length > 0) {
-          hilog.info(domain, tag, `${caseName} getDeviceMacAddress 非空数组`);
-          expect(result.length > 0).assertTrue();
-          hilog.info(domain, tag, `${caseName} getDeviceMacAddress macAddress:` + result[0]);
-          expect(typeof result[0] === 'string').assertTrue();
+          hilog.info(domain, tag, `${caseName} getDeviceMacAddress 非空数组, length is ` + result.length);
+          expect(result.length >= 1).assertTrue();
+          expect(result[0].length).assertEqual(17);
+          expect(typeof result[0]).assertEqual('string');
         } else {
-          hilog.info(domain, tag, `${caseName} getDeviceMacAddress 空数组`);
-          expect(result.length === 0).assertTrue();
+          hilog.info(domain, tag, `${caseName} getDeviceMacAddress 获取不到MAC地址`);
+          expect().assertFail();
         }
       } catch (err) {
         hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
@@ -3178,15 +3211,7 @@ export default function actsWifiManagerFunctionsTest() {
         let result: Array<wifiManager.WifiDeviceConfig> = wifiManager.getDeviceConfigs();
         hilog.info(domain, tag, `${caseName} getDeviceConfigs 返回值:` + JSON.stringify(result));
         expect(Array.isArray(result)).assertTrue();
-        if (result.length > 0) {
-          hilog.info(domain, tag, `${caseName} getDeviceConfigs 非空数组`);
-          expect(result.length > 0).assertTrue();
-          hilog.info(domain, tag, `${caseName} getDeviceConfigs ssid:` + result[0].ssid);
-          expect(typeof result[0].ssid === 'string').assertTrue();
-        } else {
-          hilog.info(domain, tag, `${caseName} getDeviceConfigs 空数组`);
-          expect(result.length === 0).assertTrue();
-        }
+        expect(result.length === 0).assertTrue();
       } catch (err) {
         hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
         if (err.code === 801) {
@@ -3284,7 +3309,6 @@ export default function actsWifiManagerFunctionsTest() {
     it("SUB_Communication_WifiManager_ConnectToCandidateConfigWithUserAction_Promise_0076", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName = "LOG_SUB_Communication_WifiManager_ConnectToCandidateConfigWithUserAction_Promise_0076";
       hilog.info(domain, tag, `${caseName} test start`);
-      networkId = -1;
       try {
         await Utils.msSleep(3000);
         let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
@@ -3292,7 +3316,7 @@ export default function actsWifiManagerFunctionsTest() {
           "preSharedKey": "12345678",
           "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK
         };
-        networkId = await wifiManager.addCandidateConfig(wifiDeviceConfig);
+        let networkId: int = await wifiManager.addCandidateConfig(wifiDeviceConfig);
         hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
         expect(typeof networkId === 'int').assertTrue();
         expect(networkId >= 0).assertTrue();
@@ -3434,7 +3458,7 @@ export default function actsWifiManagerFunctionsTest() {
     it("SUB_Communication_WifiManager_connectToCandidateConfig_0081", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName = "LOG_SUB_Communication_WifiManager_connectToCandidateConfig_0081";
       hilog.info(domain, tag, `${caseName} test start`);
-      networkId = -1;
+      let networkId: int = -1;
       try {
         wifiManager.connectToCandidateConfig(networkId);
         hilog.error(domain, tag, `${caseName} connectToCandidateConfig success`);
@@ -3462,7 +3486,7 @@ export default function actsWifiManagerFunctionsTest() {
     it("SUB_Communication_WifiManager_connectToNetwork_0082", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName = "LOG_SUB_Communication_WifiManager_connectToNetwork_0082";
       hilog.info(domain, tag, `${caseName} test start`);
-      networkId = -1;
+      let networkId: int = -1;
       try {
         wifiManager.connectToNetwork(networkId);
         hilog.error(domain, tag, `${caseName} connectToCandidateConfig success`);
@@ -3520,7 +3544,6 @@ export default function actsWifiManagerFunctionsTest() {
     it("SUB_Communication_WifiManager_connectToCandidateConfig_settings_0084", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName = "LOG_SUB_Communication_WifiManager_connectToCandidateConfig_settings_0084";
       hilog.info(domain, tag, `${caseName} test start`);
-      networkId = -1;
       try {
         await Utils.msSleep(3000);
         let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
@@ -3529,7 +3552,7 @@ export default function actsWifiManagerFunctionsTest() {
           "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK,
           "showNoInternetDialog":true
         };
-        networkId = await wifiManager.addCandidateConfig(wifiDeviceConfig);
+        let networkId: int = await wifiManager.addCandidateConfig(wifiDeviceConfig);
         hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
         expect(typeof networkId === 'int').assertTrue();
         expect(networkId >= 0).assertTrue();
@@ -3568,7 +3591,6 @@ export default function actsWifiManagerFunctionsTest() {
     it("SUB_Communication_WifiManager_connectToCandidateConfig_settings_0085", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName = "LOG_SUB_Communication_WifiManager_connectToCandidateConfig_settings_0085";
       hilog.info(domain, tag, `${caseName} test start`);
-      networkId = -1;
       try {
         let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
           "ssid": "test_user_action",
@@ -3576,7 +3598,7 @@ export default function actsWifiManagerFunctionsTest() {
           "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK,
           "showNoInternetDialog":false
         };
-        networkId = await wifiManager.addCandidateConfig(wifiDeviceConfig);
+        let networkId: int = await wifiManager.addCandidateConfig(wifiDeviceConfig);
         hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
         expect(typeof networkId === 'int').assertTrue();
         expect(networkId >= 0).assertTrue();
@@ -3619,7 +3641,6 @@ export default function actsWifiManagerFunctionsTest() {
     it("SUB_Communication_WifiManager_connectToCandidateConfig_settings_0086", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName = "LOG_SUB_Communication_WifiManager_connectToCandidateConfig_settings_0086";
       hilog.info(domain, tag, `${caseName} test start`);
-      networkId = -1;
       try {
         await Utils.msSleep(3000);
         let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
@@ -3627,7 +3648,7 @@ export default function actsWifiManagerFunctionsTest() {
           "preSharedKey": "12345678",
           "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK,
         };
-        networkId = await wifiManager.addCandidateConfig(wifiDeviceConfig);
+        let networkId: int = await wifiManager.addCandidateConfig(wifiDeviceConfig);
         hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
         expect(typeof networkId === 'int').assertTrue();
         expect(networkId >= 0).assertTrue();
@@ -3666,14 +3687,13 @@ export default function actsWifiManagerFunctionsTest() {
     it("SUB_Communication_WifiManager_connectToCandidateConfig_settings_0087", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName = "LOG_SUB_Communication_WifiManager_connectToCandidateConfig_settings_0087";
       hilog.info(domain, tag, `${caseName} test start`);
-      networkId = -1;
       try {
         let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
           "ssid": "test_user_action",
           "preSharedKey": "12345678",
           "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK,
         };
-        networkId = await wifiManager.addCandidateConfig(wifiDeviceConfig);
+        let networkId: int = await wifiManager.addCandidateConfig(wifiDeviceConfig);
         hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
         expect(typeof networkId === 'int').assertTrue();
         expect(networkId >= 0).assertTrue();
@@ -3716,14 +3736,13 @@ export default function actsWifiManagerFunctionsTest() {
     it("SUB_Communication_WifiManager_connectToCandidateConfig_settings_0088", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName = "LOG_SUB_Communication_WifiManager_connectToCandidateConfig_settings_0088";
       hilog.info(domain, tag, `${caseName} test start`);
-      networkId = -1;
       try {
         let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
           "ssid": "test_user_action",
           "preSharedKey": "12345678",
           "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK,
         };
-        networkId = await wifiManager.addCandidateConfig(wifiDeviceConfig);
+        let networkId: int = await wifiManager.addCandidateConfig(wifiDeviceConfig);
         hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
         expect(typeof networkId === 'int').assertTrue();
         expect(networkId >= 0).assertTrue();
@@ -3766,7 +3785,6 @@ export default function actsWifiManagerFunctionsTest() {
     it("SUB_Communication_WifiManager_connectToCandidateConfig_settings_0089", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName = "LOG_SUB_Communication_WifiManager_connectToCandidateConfig_settings_0089";
       hilog.info(domain, tag, `${caseName} test start`);
-      networkId = -1;
       try {
         await Utils.msSleep(3000);
         let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
@@ -3775,7 +3793,7 @@ export default function actsWifiManagerFunctionsTest() {
           "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK,
           "showNoInternetDialog":true
         };
-        networkId = await wifiManager.addCandidateConfig(wifiDeviceConfig);
+        let networkId: int = await wifiManager.addCandidateConfig(wifiDeviceConfig);
         hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
         expect(typeof networkId === 'int').assertTrue();
         expect(networkId >= 0).assertTrue();
@@ -3811,7 +3829,6 @@ export default function actsWifiManagerFunctionsTest() {
     it("SUB_Communication_WifiManager_ConnectToCandidateConfigWithUserAction_Promise_0090", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName = "LOG_SUB_Communication_WifiManager_ConnectToCandidateConfigWithUserAction_Promise_0090";
       hilog.info(domain, tag, `${caseName} test start`);
-      networkId = -1;
       try {
         await Utils.msSleep(3000);
         let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
@@ -3819,7 +3836,7 @@ export default function actsWifiManagerFunctionsTest() {
           "preSharedKey": "12345678",
           "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK
         };
-        networkId = await wifiManager.addCandidateConfig(wifiDeviceConfig);
+        let networkId: int = await wifiManager.addCandidateConfig(wifiDeviceConfig);
         hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
         expect(typeof networkId === 'int').assertTrue();
         expect(networkId >= 0).assertTrue();
@@ -3852,14 +3869,13 @@ export default function actsWifiManagerFunctionsTest() {
     it("SUB_Communication_WifiManager_ConnectToCandidateConfigWithUserAction_Promise_0091", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName = "LOG_SUB_Communication_WifiManager_ConnectToCandidateConfigWithUserAction_Promise_0091";
       hilog.info(domain, tag, `${caseName} test start`);
-      networkId = -1;
       try {
         let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
           "ssid": "test_user_action",
           "preSharedKey": "12345678",
           "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK
         };
-        networkId = await wifiManager.addCandidateConfig(wifiDeviceConfig);
+        let networkId: int = await wifiManager.addCandidateConfig(wifiDeviceConfig);
         hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
         expect(typeof networkId === 'int').assertTrue();
         expect(networkId >= 0).assertTrue();
@@ -3919,7 +3935,6 @@ export default function actsWifiManagerFunctionsTest() {
     it("SUB_Communication_WifiManager_connectToCandidateConfig_settings_0093", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName = "LOG_SUB_Communication_WifiManager_connectToCandidateConfig_settings_0093";
       hilog.info(domain, tag, `${caseName} test start`);
-      networkId = -1;
       let startTime: long = 0;
       try {
         await Utils.msSleep(3000);
@@ -3929,7 +3944,7 @@ export default function actsWifiManagerFunctionsTest() {
           "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK,
           "showNoInternetDialog":true
         };
-        networkId = await wifiManager.addCandidateConfig(wifiDeviceConfig);
+        let networkId: int = await wifiManager.addCandidateConfig(wifiDeviceConfig);
         hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
         expect(typeof networkId === 'int').assertTrue();
         expect(networkId >= 0).assertTrue();
@@ -3969,7 +3984,6 @@ export default function actsWifiManagerFunctionsTest() {
     it("SUB_Communication_WifiManager_ConnectToCandidateConfigWithUserAction_Promise_0094", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName = "LOG_SUB_Communication_WifiManager_ConnectToCandidateConfigWithUserAction_Promise_0094";
       hilog.info(domain, tag, `${caseName} test start`);
-      networkId = -1;
       let startTime: long = 0;
       try {
         await Utils.msSleep(3000);
@@ -3978,7 +3992,7 @@ export default function actsWifiManagerFunctionsTest() {
           "preSharedKey": "12345678",
           "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK
         };
-        networkId = await wifiManager.addCandidateConfig(wifiDeviceConfig);
+        let networkId: int = await wifiManager.addCandidateConfig(wifiDeviceConfig);
         hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
         expect(typeof networkId === 'int').assertTrue();
         expect(networkId >= 0).assertTrue();
@@ -4014,7 +4028,6 @@ export default function actsWifiManagerFunctionsTest() {
     it("SUB_Communication_WifiManager_connectToCandidateConfig_settings_0095", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName = "LOG_SUB_Communication_WifiManager_connectToCandidateConfig_settings_0095";
       hilog.info(domain, tag, `${caseName} test start`);
-      networkId = -1;
       let startTime: long = 0;
       try {
         await Utils.msSleep(3000);
@@ -4024,7 +4037,7 @@ export default function actsWifiManagerFunctionsTest() {
           "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK,
           "showNoInternetDialog":true
         };
-        networkId = await wifiManager.addCandidateConfig(wifiDeviceConfig);
+        let networkId: int = await wifiManager.addCandidateConfig(wifiDeviceConfig);
         hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
         expect(typeof networkId === 'int').assertTrue();
         expect(networkId >= 0).assertTrue();
@@ -4066,7 +4079,6 @@ export default function actsWifiManagerFunctionsTest() {
     it("SUB_Communication_WifiManager_connectToCandidateConfig_settings_0096", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName = "LOG_SUB_Communication_WifiManager_connectToCandidateConfig_settings_0096";
       hilog.info(domain, tag, `${caseName} test start`);
-      networkId = -1;
       let startTime: long = 0;
       try {
         await Utils.msSleep(3000);
@@ -4076,7 +4088,7 @@ export default function actsWifiManagerFunctionsTest() {
           "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK,
           "showNoInternetDialog":true
         };
-        networkId = await wifiManager.addCandidateConfig(wifiDeviceConfig);
+        let networkId: int = await wifiManager.addCandidateConfig(wifiDeviceConfig);
         hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + networkId);
         expect(typeof networkId === 'int').assertTrue();
         expect(networkId >= 0).assertTrue();
@@ -4131,6 +4143,46 @@ export default function actsWifiManagerFunctionsTest() {
       } catch (err) {
         console.info(`${caseName} error code: ${err.code},error message: ${err.message}`);
         expect().assertFail();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+    /**
+     * @tc.number SUB_Communication_WifiManager_GetDeviceConfigs_0100
+     * @tc.name SUB_Communication_WifiManager_GetDeviceConfigs_0100
+     * @tc.desc Test getDeviceConfigs return empty array
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     */
+    it("SUB_Communication_WifiManager_GetDeviceConfigs_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = "LOG_SUB_Communication_WifiManager_GetDeviceConfigs_0100";
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
+          "ssid": "publicTest",
+          "bssid": "00:11:22:33:44:55",
+          "bssidType": wifiManager.DeviceAddressType.RANDOM_DEVICE_ADDRESS,
+          "preSharedKey": "",
+          "isHiddenSsid": false,
+          "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_OPEN
+        };
+        let netWorkId: int = await wifiManager.addDeviceConfig(wifiDeviceConfig);
+        hilog.info(domain, tag, 'addDeviceConfig promise success result:' + JSON.stringify(netWorkId));
+        let result: Array<wifiManager.WifiDeviceConfig> = wifiManager.getDeviceConfigs();
+        hilog.info(domain, tag, `${caseName} getDeviceConfigs 返回值:` + JSON.stringify(result));
+        expect(Array.isArray(result)).assertTrue();
+        expect(result.length === 1).assertTrue();
+        hilog.info(domain, tag, `${caseName} getDeviceConfigs ssid:` + result[0].ssid);
+        expect(result[0].ssid).assertEqual("publicTest");
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+        if (err.code === 801) {
+          hilog.info(domain, tag, `${caseName} api is not support`);
+          expect(err.code).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
       }
       hilog.info(domain, tag, `${caseName} test end`);
       done();
