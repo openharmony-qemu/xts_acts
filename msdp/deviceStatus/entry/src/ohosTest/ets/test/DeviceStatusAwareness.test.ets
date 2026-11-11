@@ -297,7 +297,7 @@ export default function KitDeviceStatusTest() {
         if(error.code == 801) {
           expect(error.message == "The device does not support this API.");
         } else {
-          expect().assertFail();
+          expect(error.code).assertEqual(ErrorCode.UNSUBSCRIPTION_FAILED);
         }
       }
     });
@@ -329,7 +329,7 @@ export default function KitDeviceStatusTest() {
         if(error.code == 801) {
           expect(error.message == "The device does not support this API.");
         } else {
-          expect().assertFail();
+          expect(error.code).assertEqual(ErrorCode.UNSUBSCRIPTION_FAILED);
         }
       }
     });
@@ -417,7 +417,7 @@ export default function KitDeviceStatusTest() {
         if(error.code == 801) {
           expect(error.message == "The device does not support this API.");
         } else {
-          expect().assertFail();
+          expect(error.code).assertEqual(ErrorCode.UNSUBSCRIPTION_FAILED);
         }
       }
     });
