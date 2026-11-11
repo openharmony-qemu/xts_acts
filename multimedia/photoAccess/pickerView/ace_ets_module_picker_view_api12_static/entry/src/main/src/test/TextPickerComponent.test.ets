@@ -1458,7 +1458,8 @@ export default function TextPicker(): void {
       await routeToUrl(options);
 
       console.info('SUB_PHOTO_PICKER_TEST_0018 create');
-      let btn: Component | null = await driver.findComponent(ON.type('GridItem'));
+      let disPlayId = display.getDefaultDisplaySync().id.toInt()
+      let btn: Component | null = await driver.findComponent(ON.belongingDisplay(disPlayId).type('GridItem').inWindow('com.example.myapplication.static'));
       if (btn === null) {
         console.info('SUB_PHOTO_PICKER_TEST_0018 no GridItem');
       } else {
