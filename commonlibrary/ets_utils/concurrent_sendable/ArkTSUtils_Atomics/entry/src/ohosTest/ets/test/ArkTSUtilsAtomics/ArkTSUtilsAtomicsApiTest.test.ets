@@ -170,7 +170,7 @@ export default function AtomicsAPITest() {
           ArkTSUtils.Atomics.add(typedArray, -1, 1);
           expect(false).assertTrue();
         } catch (error) {
-          expect(error instanceof RangeError).assertTrue();
+          expect((error as BusinessError).code).assertEqual(ATOMIC_INDEX_ERROR);
         }
         
         try {
@@ -315,7 +315,7 @@ export default function AtomicsAPITest() {
           ArkTSUtils.Atomics.and(typedArray, -1, 1);
           expect(false).assertTrue();
         } catch (error) {
-          expect(error instanceof RangeError).assertTrue();
+          expect((error as BusinessError).code).assertEqual(ATOMIC_INDEX_ERROR);
         }
         
         try {
@@ -465,7 +465,7 @@ export default function AtomicsAPITest() {
           ArkTSUtils.Atomics.compareExchange(typedArray, -1, 0, 0);
           expect(false).assertTrue();
         } catch (error) {
-          expect(error instanceof RangeError).assertTrue();
+          expect((error as BusinessError).code).assertEqual(ATOMIC_INDEX_ERROR);
         }
         
         try {
@@ -666,7 +666,7 @@ export default function AtomicsAPITest() {
           ArkTSUtils.Atomics.exchange(typedArray, -1, 0);
           expect(false).assertTrue();
         } catch (error) {
-          expect(error instanceof RangeError).assertTrue();
+          expect((error as BusinessError).code).assertEqual(ATOMIC_INDEX_ERROR);
         }
         
         try {
@@ -812,7 +812,7 @@ export default function AtomicsAPITest() {
           ArkTSUtils.Atomics.load(typedArray, -1);
           expect(false).assertTrue();
         } catch (error) {
-          expect(error instanceof RangeError).assertTrue();
+          expect((error as BusinessError).code).assertEqual(ATOMIC_INDEX_ERROR);
         }
         
         try {
@@ -997,7 +997,7 @@ export default function AtomicsAPITest() {
           ArkTSUtils.Atomics.or(typedArray, -1, 1);
           expect(false).assertTrue();
         } catch (error) {
-          expect(error instanceof RangeError).assertTrue();
+          expect((error as BusinessError).code).assertEqual(ATOMIC_INDEX_ERROR);
         }
         
         try {
@@ -1142,7 +1142,7 @@ export default function AtomicsAPITest() {
           ArkTSUtils.Atomics.store(typedArray, -1, 0);
           expect(false).assertTrue();
         } catch (error) {
-          expect(error instanceof RangeError).assertTrue();
+          expect((error as BusinessError).code).assertEqual(ATOMIC_INDEX_ERROR);
         }
         
         try {
@@ -1341,7 +1341,7 @@ export default function AtomicsAPITest() {
           ArkTSUtils.Atomics.sub(typedArray, -1, 1);
           expect(false).assertTrue();
         } catch (error) {
-          expect(error instanceof RangeError).assertTrue();
+          expect((error as BusinessError).code).assertEqual(ATOMIC_INDEX_ERROR);
         }
         
         try {
@@ -1486,7 +1486,7 @@ export default function AtomicsAPITest() {
           ArkTSUtils.Atomics.xor(typedArray, -1, 1);
           expect(false).assertTrue();
         } catch (error) {
-          expect(error instanceof RangeError).assertTrue();
+          expect((error as BusinessError).code).assertEqual(ATOMIC_INDEX_ERROR);
         }
         
         try {
@@ -1634,7 +1634,7 @@ export default function AtomicsAPITest() {
           ArkTSUtils.Atomics.wait(typedArray, -1, 0, 100);
           expect(false).assertTrue();
         } catch (error) {
-          expect(error instanceof RangeError).assertTrue();
+          expect((error as BusinessError).code).assertEqual(ATOMIC_INDEX_ERROR);
         }
         
         try {

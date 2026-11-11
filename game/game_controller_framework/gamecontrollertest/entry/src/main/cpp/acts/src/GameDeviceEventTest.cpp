@@ -263,7 +263,7 @@ int32_t ActsGameDeviceDeviceInfoGetDeviceType01()
     GameDevice_DeviceInfo *deviceInfoNew = CreateDeviceInfo(DeviceTypeEnum::UNKNOWN);
     GameDevice_DeviceType typeNew;
     code = OH_GameDevice_DeviceInfo_GetDeviceType(deviceInfoNew, &typeNew);
-    OH_GameDevice_DestroyDeviceInfo(&deviceInfo);
+    OH_GameDevice_DestroyDeviceInfo(&deviceInfoNew);
     if (typeNew != GameDevice_DeviceType::UNKNOWN) {
         code = GameController_ErrorCode::GAME_CONTROLLER_PARAM_ERROR;
     }

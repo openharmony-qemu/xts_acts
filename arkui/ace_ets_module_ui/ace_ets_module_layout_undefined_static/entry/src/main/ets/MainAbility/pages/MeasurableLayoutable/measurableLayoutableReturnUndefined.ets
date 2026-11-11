@@ -15,7 +15,7 @@
  */
 import { Text, Column, Component, Position, Entry, Builder, BuilderParam, ForEach,
   SizeResult, GeometryInfo, Layoutable, ConstraintSizeOptions,Measurable, MeasureResult, CustomLayout, Margin,
-  FlexAlign} from '@ohos.arkui.component';
+  FlexAlign, HorizontalAlign } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 
 @Entry
@@ -26,8 +26,9 @@ struct Index {
       Custom1({ builder: columnChildren })
     }
     .justifyContent(FlexAlign.Center)
-    .width('100%')
-    .height('100%')
+    .width('80%')
+    .height('80%')
+    .alignItems(HorizontalAlign.Center)
   }
 }
 
@@ -39,8 +40,6 @@ function columnChildren() {
       .width(60 + 10 * index)
       .height(100)
       .borderWidth(2)
-      .margin({ left:10 } as Margin)
-      .padding(10)
   })
 }
 @CustomLayout

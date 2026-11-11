@@ -17,7 +17,7 @@
 import { Entry, Text, Column, Component, Button, ClickEvent, Flex,
   FlexAlign,ItemAlign, Select, Color, Row, Font, SymbolEffectStrategy,
   SymbolGlyph, $r, Navigation, List, TextInput, AttributeModifier,
-  TextAttribute,  TextAlign, ConstraintSizeOptions} from '@ohos.arkui.component'
+  TextAttribute,  TextAlign, ConstraintSizeOptions, HorizontalAlign } from '@ohos.arkui.component'
 import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
@@ -61,5 +61,6 @@ struct Index {
           .id('common_constraintSize_modifier')
       }
     }
+    .alignItems(HorizontalAlign.Center)
   }
 }

@@ -156,8 +156,8 @@ export default function waterFlowKeyboardScrollHorizontal() {
     /**
      * @tc.name   waterFlowKeyboardScrollHorizontal_0700
      * @tc.number SUB_ARKUI_WATERFLOW_ENABLESCROLLWITHKEYBOARD_PARAM_0700
-     * @tc.desc   Test horizontal WaterFlow scrolls with keyboard arrow keys when
-     *            enableScrollWithKeyboard is set to undefined
+     * @tc.desc   Test horizontal WaterFlow does not scroll with keyboard arrow keys when
+     *            enableScrollWithKeyboard is set to undefined (default value false)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -173,7 +173,7 @@ export default function waterFlowKeyboardScrollHorizontal() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[waterFlowKeyboardScrollHorizontal_0700] enableScrollWithKeyboard: " +
         JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
-      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual(true);
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual(false);
  
       let resetBtn: Component = await driver.findComponent(ON.id('HKB_WF_RESET'));
       await resetBtn.click();
@@ -192,22 +192,22 @@ export default function waterFlowKeyboardScrollHorizontal() {
       }
       let offsetRight: number = getHWaterFlowOffset();
       console.info('[waterFlowKeyboardScrollHorizontal_0700] offset after DPAD_RIGHT: ' + offsetRight);
-      expect(offsetRight > 0).assertTrue();
+      expect(offsetRight).assertEqual(0);
  
       await driver.triggerKey(KEYCODE_DPAD_LEFT, displayId);
       await CommonFunc.sleep(500);
  
       let offsetLeft: number = getHWaterFlowOffset();
       console.info('[waterFlowKeyboardScrollHorizontal_0700] offset after DPAD_LEFT: ' + offsetLeft);
-      expect(offsetLeft < offsetRight).assertTrue();
+      expect(offsetLeft).assertEqual(0);
       console.info('[waterFlowKeyboardScrollHorizontal_0700] END');
     })
  
     /**
      * @tc.name   waterFlowKeyboardScrollHorizontal_0800
      * @tc.number SUB_ARKUI_WATERFLOW_ENABLESCROLLWITHKEYBOARD_PARAM_0800
-     * @tc.desc   Test horizontal WaterFlow scrolls with keyboard arrow keys when
-     *            enableScrollWithKeyboard is set to null
+     * @tc.desc   Test horizontal WaterFlow does not scroll with keyboard arrow keys when
+     *            enableScrollWithKeyboard is set to null (default value false)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -223,7 +223,7 @@ export default function waterFlowKeyboardScrollHorizontal() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[waterFlowKeyboardScrollHorizontal_0800] enableScrollWithKeyboard: " +
         JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
-      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual(true);
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual(false);
  
       let resetBtn: Component = await driver.findComponent(ON.id('HKB_WF_RESET'));
       await resetBtn.click();
@@ -242,14 +242,14 @@ export default function waterFlowKeyboardScrollHorizontal() {
       }
       let offsetRight: number = getHWaterFlowOffset();
       console.info('[waterFlowKeyboardScrollHorizontal_0800] offset after DPAD_RIGHT: ' + offsetRight);
-      expect(offsetRight > 0).assertTrue();
+      expect(offsetRight).assertEqual(0);
  
       await driver.triggerKey(KEYCODE_DPAD_LEFT, displayId);
       await CommonFunc.sleep(500);
  
       let offsetLeft: number = getHWaterFlowOffset();
       console.info('[waterFlowKeyboardScrollHorizontal_0800] offset after DPAD_LEFT: ' + offsetLeft);
-      expect(offsetLeft < offsetRight).assertTrue();
+      expect(offsetLeft).assertEqual(0);
       console.info('[waterFlowKeyboardScrollHorizontal_0800] END');
     })
   })

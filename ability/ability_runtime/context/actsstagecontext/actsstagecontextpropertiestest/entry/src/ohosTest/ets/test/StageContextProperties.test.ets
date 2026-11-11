@@ -266,7 +266,6 @@ export default function stageContextPropertiesTest(abilityContext: common.UIAbil
             checkContextDirEqualC(abilityContext, data.parameters?.abilityContextAssistTwo)
             commonEvent.unsubscribe(mSubscriber, () => {
               console.log(TAG + " UnSubscribe CallBack");
-              done();
             });
           }
         });
@@ -320,7 +319,6 @@ export default function stageContextPropertiesTest(abilityContext: common.UIAbil
             checkContextDirEqualC(abilityContext, data.parameters?.abilityStageContextAssistOne)
             commonEvent.unsubscribe(mSubscriber, () => {
               console.log(TAG + " UnSubscribe CallBack");
-              done();
             });
           }
         });
@@ -391,7 +389,6 @@ export default function stageContextPropertiesTest(abilityContext: common.UIAbil
               globalThis.abilityStageContext.getApplicationContext())
             commonEvent.unsubscribe(mSubscriber, () => {
               console.log(TAG + " UnSubscribe CallBack");
-              done();
             });
           }
         });

@@ -266,8 +266,13 @@ export default function abilityTest() {
     })
 
     beforeEach(async () => {
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
       let cmda = 'aa force-stop com.acts.systemappa';
       let cmdb = 'aa force-stop com.acts.systemappb';
+      if (user !== undefined) {
+        cmda += " -u " + user;
+        cmdb += " -u " + user;
+      }
       await abilityDelegator.executeShellCommand(cmda).catch((error: BusinessError) => {
         console.log("====> executeShellCommand error : " + JSON.stringify(error));
       });

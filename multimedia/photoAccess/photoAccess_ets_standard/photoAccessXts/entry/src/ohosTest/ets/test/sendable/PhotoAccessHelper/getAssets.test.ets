@@ -17,14 +17,45 @@ import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import sendablePhotoAccessHelper from '@ohos.file.sendablePhotoAccessHelper';
 import { describe, it, expect, beforeAll, Level, beforeEach, afterEach, afterAll } from '@ohos/hypium-dynamic';
 import { common } from '@kit.AbilityKit';
-import { driveFn, fetchOption, getPermission, LOG_TAG, photoKeys, checkResourceFile, createResource } from '../../common';
+import { driveFn, fetchOption, getPermission, LOG_TAG, photoKeys, checkResourceFile } from '../../common';
 import { dataSharePredicates } from '@kit.ArkData';
 import { ErrorCode } from '../../CommonErrorCode';
 
 const TAG = LOG_TAG + 'sendableGetAssetsTest';
-const imageDisplayName = 'testGetAsset.jpg';
-const videoDisplayName = 'testGetAsset.mp4';
+const TIMESTAMP = Date.now().toString();
+const imageDisplayName = `testGetAsset${TIMESTAMP}.jpg`;
+const videoDisplayName = `testGetAsset${TIMESTAMP}.mp4`;
 const abnormalDisplayName = 'text';
+
+async function createResource(
+  context: common.UIAbilityContext,
+  fileNameList: Array<string>,
+  displayNameList: Array<string>
+) {
+  try {
+    let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
+    for (let i = 0; i < fileNameList.length; i++) {
+      let sourceFileName = fileNameList[i];
+      let displayName = displayNameList[i].substring(0, displayNameList[i].lastIndexOf("."));
+      let fileUri = context.filesDir + '/' + sourceFileName;
+      let ext = sourceFileName.substring(sourceFileName.lastIndexOf(".") + 1);
+      let isVideo = ext === 'mp4';
+      let photoType = isVideo ? photoAccessHelper.PhotoType.VIDEO : photoAccessHelper.PhotoType.IMAGE;
+      let resourceType = isVideo
+        ? photoAccessHelper.ResourceType.VIDEO_RESOURCE
+        : photoAccessHelper.ResourceType.IMAGE_RESOURCE;
+      let options: photoAccessHelper.CreateOptions = { title: displayName };
+      let assetChangeRequest = photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(
+        context, photoType, ext, options
+      );
+      assetChangeRequest.addResource(resourceType, fileUri);
+      await phAccessHelper.applyChanges(assetChangeRequest);
+      console.log(`createResource :: applyChange source=${sourceFileName}, displayName=${displayName} success !`);
+    }
+  } catch (error) {
+    console.log(`createResource :: run failed, message is ${error},code is ${error.code}`);
+  }
+}
 
 async function getAssetsSendablePromiseTest(done: Function, fetchOps: photoAccessHelper.FetchOptions,
   expectCount: number) {
@@ -64,9 +95,10 @@ export default function sendablePhotoAccessHelperGetAssetsTest() {
       await getPermission();
       await driveFn();
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      let fileNameList: Array<string> = [ imageDisplayName, videoDisplayName ];
+      let fileNameList: Array<string> = [ "testGetAsset.jpg", "testGetAsset.mp4" ];
+      let displayNameList : Array<string> = [ imageDisplayName, videoDisplayName ];
       checkResourceFile(testContext);
-      await createResource(testContext, fileNameList);
+      await createResource(testContext, fileNameList, displayNameList);
     });
 
     beforeEach(() => {

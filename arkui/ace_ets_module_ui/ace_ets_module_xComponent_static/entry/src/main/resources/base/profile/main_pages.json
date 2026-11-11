@@ -9,6 +9,7 @@
     "MainAbility/pages/componentContentApi/componentContentApi",
     "MainAbility/pages/inspectorLabel/InspectorLabelTest",
     "MainAbility/pages/accessibility/AccessibilityTest",
-    "MainAbility/pages/xComponentBufferQueueCount/xComponentBufferQueueCount"
+    "MainAbility/pages/xComponentBufferQueueCount/xComponentBufferQueueCount",
+    "MainAbility/pages/uicontextIsWindowInfoInitialized/uicontextIsWindowInfoInitialized"
   ]
 }

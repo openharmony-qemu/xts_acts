@@ -66,7 +66,8 @@ let module1FormInfo: formInfo.FormInfo = {
     supportedShapes:[1],
     customizeData: {},
     isDynamic: true,
-    transparencyEnabled: false
+    transparencyEnabled: false,
+    isColorModeRefreshEnabled: false
 }
 
 let module2FormInfo: formInfo.FormInfo = {
@@ -92,7 +93,8 @@ let module2FormInfo: formInfo.FormInfo = {
     supportedShapes:[1],
     customizeData: {},
     isDynamic: false,
-    transparencyEnabled: false
+    transparencyEnabled: false,
+    isColorModeRefreshEnabled: false
 }
 
 let expectResult: formInfo.FormInfo[] = Array();
@@ -750,6 +752,7 @@ export default function abilityTest() {
         expect(expectInfo.isDynamic).assertEqual(result.isDynamic);
         expect(expectInfo.transparencyEnabled).assertEqual(result.transparencyEnabled);
         expect(expectInfo.updateEnabled).assertEqual(result.updateEnabled);
+        expect(expectInfo.isColorModeRefreshEnabled).assertEqual(result.isColorModeRefreshEnabled);
         hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::GetFormsInfoTest end`);
     }
 }

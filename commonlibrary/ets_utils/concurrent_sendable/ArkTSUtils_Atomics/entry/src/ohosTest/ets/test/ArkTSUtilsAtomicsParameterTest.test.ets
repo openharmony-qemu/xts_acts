@@ -17,7 +17,7 @@ import { ArkTSUtils, collections } from '@kit.ArkTS';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import {
-  ATOMIC_INDEX_ERROR, ATOMIC_PARAMETER_ERROR, expectAtomicBusinessError, expectAtomicIndexError
+  ATOMIC_INDEX_ERROR, ATOMIC_PARAMETER_ERROR, expectAtomicBusinessError
 } from './ArkTSUtilsAtomicsErrorAssert';
 
 type ParameterArray = collections.Int8Array | collections.Uint8Array | collections.Int16Array |
@@ -46,7 +46,7 @@ function verifyIndexParameters(operation: ParameterOperation, returned: number, 
   const invalid: number[] = [-1, -1.9, 2, 3, Infinity, -Infinity, 9007199254740992];
   for (let position: number = 0; position < invalid.length; position++) {
     array.fill(7);
-    expectAtomicIndexError((): void => { operation(array, invalid[position], 3); }, invalid[position]);
+    expectAtomicBusinessError((): void => { operation(array, invalid[position], 3); }, ATOMIC_INDEX_ERROR);
     expect(array[0]).assertEqual(7);
     expect(array[1]).assertEqual(7);
   }

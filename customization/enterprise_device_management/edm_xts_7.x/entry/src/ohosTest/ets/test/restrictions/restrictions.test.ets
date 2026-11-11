@@ -74,6 +74,7 @@ export default function restrictionsTest() {
   describe('restrictions_test', () => {
     testSetDisallowedPolicy();
     testGetDisallowedPolicy();
+    testSetDisallowedPolicyForAccount();
   })
 }
 
@@ -1260,6 +1261,33 @@ function testGetDisallowedPolicy() {
       } else {
         expect(error.code).assertEqual(9200001);
       }
+    }
+    done();
+  });
+}
+
+function testSetDisallowedPolicyForAccount() {
+  /**
+   * @tc.name   test_set_disallowed_policy_for_account_free_window_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYFORACCOUNTFREE_WINDOW_0100
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount with FREE_WINDOW feature super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_set_disallowed_policy_for_account_free_window_0100", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.FREE_WINDOW, true, DEFAULT_USER_ID);
+      let ret = restrictions.getDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.FREE_WINDOW, DEFAULT_USER_ID);
+      expect(ret).assertTrue();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.FREE_WINDOW, false, DEFAULT_USER_ID);
+      ret = restrictions.getDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.FREE_WINDOW, DEFAULT_USER_ID);
+      expect(ret).assertFalse();
+    } catch (error) {
+      expect(error.code === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
   });

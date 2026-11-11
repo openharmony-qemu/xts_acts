@@ -221,7 +221,7 @@
         "name": "ohos.permission.ENTERPRISE_READ_MESSAGES"
       },
       {
-        "name": "ohos.permission.ENTERPRISE_RECEIVE_MESSAGES"
+        "name": "ohos.permission.ENTERPRISE_RECEIVE_SMS"
       },
       {
         "name": "ohos.permission.ENTERPRISE_MANAGE_NOTIFICATION"

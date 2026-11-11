@@ -30,23 +30,3 @@ export function expectAtomicBusinessError(operation: () => void, expectedCode: n
   }
   expect(didThrow).assertTrue();
 }
-
-function expectAtomicRangeError(operation: () => void): void {
-  let didThrow: boolean = false;
-  try {
-    operation();
-  } catch (error) {
-    didThrow = true;
-    expect(error instanceof RangeError).assertTrue();
-  }
-  expect(didThrow).assertTrue();
-}
-
-export function expectAtomicIndexError(operation: () => void, index: number): void {
-  const integerIndex: number = Number.isNaN(index) ? 0 : Math.trunc(index);
-  if (!Number.isFinite(integerIndex) || integerIndex < 0 || integerIndex > Number.MAX_SAFE_INTEGER) {
-    expectAtomicRangeError(operation);
-  } else {
-    expectAtomicBusinessError(operation, ATOMIC_INDEX_ERROR);
-  }
-}

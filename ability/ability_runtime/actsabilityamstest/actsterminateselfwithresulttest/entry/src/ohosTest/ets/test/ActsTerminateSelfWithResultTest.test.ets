@@ -26,6 +26,7 @@ const TEST_SUITE_NAME: string = 'AbilityContext';
 let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 let testAbilityContext: common.UIAbilityContext;
 let deviceType:string;
+let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
 
 function sleep(time: number) {
   return new Promise<void>((resolve) => setTimeout(resolve, time));
@@ -167,10 +168,14 @@ export default function actsterminateselfwithresulttest() {
       startTime = 0;
       endTime = 0;
       let cmda = 'aa force-stop com.acts.terminateselfwithresulthelper';
+      let cmda1 = 'aa force-stop com.acts.terminalselfdelayhelper';
+      if(user !== undefined){
+        cmda += ' -u ' + user;
+        cmda1 += ' -u ' + user;
+      }
       await abilityDelegator.executeShellCommand(cmda).catch((error: BusinessError) => {
         console.log("====> executeShellCommand error : " + JSON.stringify(error));
       });
-      let cmda1 = 'aa force-stop com.acts.terminalselfdelayhelper';
       await abilityDelegator.executeShellCommand(cmda1).catch((error: BusinessError) => {
         console.log("====> executeShellCommand error : " + JSON.stringify(error));
       });

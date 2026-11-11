@@ -376,7 +376,7 @@ struct Second {
         
 
       }
-      .width('100%')
+      .width('100%').padding({ top: 300 })
 
     }
     .height('100%')

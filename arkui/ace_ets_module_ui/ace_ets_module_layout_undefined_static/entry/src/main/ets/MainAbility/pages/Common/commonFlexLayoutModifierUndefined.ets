@@ -15,7 +15,7 @@
  */
 
 import {  Entry,  Text,  Column,  ColumnOptions,  Component,  Button,  ClickEvent,  Color,  Row,  $r,
-  Direction,  RowOptions,  TextAttribute,  AttributeModifier } from '@ohos.arkui.component'
+  Direction,  RowOptions,  TextAttribute,  AttributeModifier, HorizontalAlign } from '@ohos.arkui.component'
 import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
@@ -47,7 +47,7 @@ struct Index {
           .flexGrow(1)
           .backgroundColor(Color.Red)
       }
-      .width('100%')
+      .width('80%')
 
       Row() {
         Button('btn1 : ' + this.myModifier.isUndefined1)
@@ -61,6 +61,7 @@ struct Index {
             this.myModifier.isUndefined2 = !this.myModifier.isUndefined2
           })
       }
-    }.width('100%')
+    }.width('80%')
+    .alignItems(HorizontalAlign.Center)
   }
 }

@@ -16,7 +16,7 @@
 /**
  * Scroll组件enableScrollWithKeyboard从API 26.2.0开始新增，设置是否支持键盘方向键滚动：
  * 组件获焦且未激活焦点态时会响应键盘方向键滚动。
- * 属性值设置为undefined表示使用默认值；设置为null同样恢复默认值。默认值：true。
+ * 属性值设置为undefined表示使用默认值；设置为null同样恢复默认值。默认值：false。
  * 本页面为横向Scroll响应方向键(左/右)滚动的验证页面。
  */
 @Entry
@@ -25,7 +25,7 @@ struct ScrollKeyboardHorizontal {
   private readonly ten: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   // enableScrollWithKeyboard属性值：0-true 1-false 2-undefined 3-null
   @State keyboardScroll: (boolean | undefined | null)[] = [true, false, undefined, null];
-  @State changeIndex: number = 0;
+  @State changeIndex: number = 1;
   @State hOff: string = '0';
   private hScroller: Scroller = new Scroller();
 

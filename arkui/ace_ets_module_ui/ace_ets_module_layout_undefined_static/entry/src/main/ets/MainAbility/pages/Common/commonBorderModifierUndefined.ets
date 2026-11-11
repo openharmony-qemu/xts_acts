@@ -16,7 +16,7 @@
 
 import {  Entry,  Text,  Column,  ColumnOptions,  Component,  Button,  ClickEvent,  Color,  Row,  $r,
   BorderOptions,  BorderStyle,  AttributeModifier,  ButtonAttribute, TextAlign, GradientDirection, RepeatMode,
-  BorderImageOption, TextAttribute } from '@ohos.arkui.component'
+  BorderImageOption, TextAttribute, HorizontalAlign } from '@ohos.arkui.component'
 import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
@@ -77,17 +77,17 @@ struct Index {
         .attributeModifier(this.myModifier3)
 
       Row() {
-        Button('btn1 : ' + this.myModifier1.isUndefined1)
+        Button('b1').fontSize(10)
           .id('BorderM_btn1')
           .onClick((e: ClickEvent) => {
             this.myModifier1.isUndefined1 = !this.myModifier1.isUndefined1
           })
-        Button('btn2 : ' + this.myModifier2.isUndefined2)
+        Button('b2').fontSize(10)
           .id('BorderM_btn2')
           .onClick((e: ClickEvent) => {
             this.myModifier2.isUndefined2 = !this.myModifier2.isUndefined2
           })
-        Button('btn3 : ' + this.myModifier2.isUndefined3)
+        Button('b3').fontSize(10)
           .id('BorderM_btn3')
           .onClick((e: ClickEvent) => {
             this.myModifier2.isUndefined3 = !this.myModifier2.isUndefined3
@@ -95,22 +95,23 @@ struct Index {
       }
 
       Row() {
-        Button('btn4 : ' + this.myModifier2.isUndefined4)
+        Button('b4').fontSize(10)
           .id('BorderM_btn4')
           .onClick((e: ClickEvent) => {
             this.myModifier2.isUndefined4 = !this.myModifier2.isUndefined4
           })
-        Button('btn5 : ' + this.myModifier2.isUndefined5)
+        Button('b5').fontSize(10)
           .id('BorderM_btn5')
           .onClick((e: ClickEvent) => {
             this.myModifier2.isUndefined5 = !this.myModifier2.isUndefined5
           })
-        Button('btn6 : ' + this.myModifier3.isUndefined6)
+        Button('b6').fontSize(10)
           .id('BorderM_btn6')
           .onClick((e: ClickEvent) => {
             this.myModifier3.isUndefined6 = !this.myModifier3.isUndefined6
           })
       }
-    }
+    }.width('80%')
+    .alignItems(HorizontalAlign.Center)
   }
 }

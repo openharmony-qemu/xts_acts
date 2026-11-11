@@ -37,6 +37,7 @@ import pluginComponentManagerParamTest from './nullandundefinedcoverage/pluginCo
 import XComponentAttributeTest from './nullandundefinedcoverage/xcomponent/XComponentAttributeTest.test';
 import xComponentInterfaceConstructorNullUndefinedTest from './nullandundefinedcoverage/xcomponent/XComponentInterfaceConstructorNullUndefined.test';
 import getFilteredInspectorTreeByIdDepthBoundaryTest from './UIContext/GetFilteredInspectorTreeByIdDepthBoundaryTest.test';
+import isWindowInfoInitializedTest from './UIContext/IsWindowInfoInitializedTest.test';
 import inspectorLabelTest from './inspectorLabel/inspectorLabelTest.test';
 import BufferQueueCountTest from './nullandundefinedcoverage/xcomponent/BufferQueueCountTest.test';
 
@@ -66,6 +67,7 @@ export default function testsuite() {
   xComponentInterfaceConstructorNullUndefinedTest();
   LayoutChildrenTest();
   getFilteredInspectorTreeByIdDepthBoundaryTest();
+  isWindowInfoInitializedTest();
   inspectorLabelTest();
   BufferQueueCountTest();
 }

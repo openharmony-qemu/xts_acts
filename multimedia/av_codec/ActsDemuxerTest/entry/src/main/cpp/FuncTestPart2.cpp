@@ -465,7 +465,7 @@ int SubMediaDemuxerFunction1200()
         return 0;
     }
     
-    const char *file = "/data/storage/el2/base/files/media/hevc_v_a.ts";
+    const char *file = "/data/storage/el2/base/files/media/hevc_v_a.m2ts";
     int fd = open(file, O_RDONLY);
     int64_t size = GET_FILE_SIZE(file);
     cout << file << "----------------------" << fd << "---------" << size << endl;
@@ -540,7 +540,7 @@ int SubMediaDemuxerFunction1300()
     OH_AVCodecBufferAttr attr;
     bool videoIsEnd = false;
     int videoFrame = 0;
-    const char *file = "/data/storage/el2/base/files/media/hevc_v.ts";
+    const char *file = "/data/storage/el2/base/files/media/hevc_v.m2ts";
     int fd = open(file, O_RDONLY);
     int64_t size = GET_FILE_SIZE(file);
     cout << file << "----------------------" << fd << "---------" << size << endl;

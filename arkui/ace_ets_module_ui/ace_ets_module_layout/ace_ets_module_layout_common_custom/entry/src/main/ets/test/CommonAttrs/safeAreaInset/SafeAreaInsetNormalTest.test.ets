@@ -574,9 +574,12 @@ export default function SafeAreaInsetNormalTest() {
       console.info('SUB_ACE_SAFEAREAINSET_Normal_2000 START');
       await goToPage('MainAbility/pages/CommonAttrs/safeAreaInset/SafeAreaInsetNormal_4', 'SafeAreaInsetNormal_4');
       let hostRect = getRectInfo('SafeAreaInsetNormal_n7Host');
+      let edgeRect = getRectInfo('SafeAreaInsetNormal_n7Bottom');
       let heightVp = px2vp(hostRect.bottom - hostRect.top);
       console.info('[SUB_ACE_SAFEAREAINSET_Normal_2000] n7 host height: ' + heightVp);
+      console.info('[SUB_ACE_SAFEAREAINSET_Normal_2000] host.bottom - edge.bottom: ' + px2vp(hostRect.bottom - edgeRect.bottom));
       expect(Math.floor(Math.abs(heightVp - 59)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(px2vp(hostRect.bottom - edgeRect.bottom) - 7)) <= 1).assertTrue();
       console.info('SUB_ACE_SAFEAREAINSET_Normal_2000 END');
       done();
     });

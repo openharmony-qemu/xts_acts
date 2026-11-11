@@ -3055,10 +3055,15 @@ export default function TCPSocketConnectionTest() {
         console.info(`${caseName} test start`);
         let tcp: connection.TCPSocket = socket.constructTCPSocketInstance();
         expectTrue(tcp !== undefined && tcp !== null, `${caseName} connection.TCPSocket instance should not be null`);
+        expect(tcp !== undefined && tcp !== null).assertTrue();
         expectTrue(typeof tcp.bind === 'function', `${caseName} connection.TCPSocket.bind should be function`);
+        expect(typeof tcp.bind === 'function').assertTrue();
         expectTrue(typeof tcp.connect === 'function', `${caseName} connection.TCPSocket.connect should be function`);
+        expect(typeof tcp.connect === 'function').assertTrue();
         expectTrue(typeof tcp.send === 'function', `${caseName} connection.TCPSocket.send should be function`);
+        expect(typeof tcp.send === 'function').assertTrue();
         expectTrue(typeof tcp.close === 'function', `${caseName} connection.TCPSocket.close should be function`);
+        expect(typeof tcp.close === 'function').assertTrue();
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
           port: 0,
@@ -3074,8 +3079,11 @@ export default function TCPSocketConnectionTest() {
         await tcp.getState().then((state: socket.SocketStateBase) => {
           console.info(`${caseName} getState: ${JSON.stringify(state)}`);
           expectEqual(state.isBound, true, `${caseName} isBound should be true after bind`);
+          expect(state.isBound).assertEqual(true);
           expectEqual(state.isConnected, false, `${caseName} isConnected should be false before connect`);
+          expect(state.isConnected).assertEqual(false);
           expectEqual(state.isClose, false, `${caseName} isClose should be false before close`);
+          expect(state.isClose).assertEqual(false);
         }).catch((err: BusinessError) => {
           console.info(`${caseName} getState fail err:${JSON.stringify(err)}`);
           expectFail();

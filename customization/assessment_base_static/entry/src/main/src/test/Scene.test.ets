@@ -34,6 +34,11 @@ const DOMAIN: int = 0x0000;
 let context: common.UIAbilityContext
 let bundle: string = 'com.example.assessment.static'
 
+interface MalformedAssessmentConfig {
+  duration: int;
+  allowedApps: string;
+}
+
 export default function AutomaticSceneConStaticTest(): void {
   let TEST_SUITE_NAME: string = 'AutomaticSceneConStaticTest ===>'
   describe('AutomaticSceneConStaticTest', () => {
@@ -95,7 +100,7 @@ export default function AutomaticSceneConStaticTest(): void {
 
         let driver: Driver = Driver.create();
         await driver.delayMs(1000);
-        let button: Component | null = await driver.findComponent(ON.text('允许'));
+        let button: Component | null = await driver.findComponent(ON.text('开启'));
         if (button !== null) {
           await button.click();
         }
@@ -210,7 +215,7 @@ export default function AutomaticSceneConStaticTest(): void {
         assessment.begin(context, config, assessmentCallback);
         let driver: Driver = Driver.create();
         await driver.delayMs(1000);
-        let button: Component | null = await driver.findComponent(ON.text('允许'));
+        let button: Component | null = await driver.findComponent(ON.text('开启'));
         if (button !== null) {
           await button.click();
         }
@@ -372,7 +377,7 @@ export default function AutomaticSceneConStaticTest(): void {
         assessment.begin(context, config, assessmentCallback);
         let driver: Driver = Driver.create();
         await driver.delayMs(1000);
-        let button: Component | null = await driver.findComponent(ON.text('允许'));
+        let button: Component | null = await driver.findComponent(ON.text('开启'));
         if (button !== null) {
           await button.click();
         }
@@ -429,7 +434,7 @@ export default function AutomaticSceneConStaticTest(): void {
         assessment.begin(context, config, assessmentCallback);
         let driver: Driver = Driver.create();
         await driver.delayMs(1000);
-        let button: Component | null = await driver.findComponent(ON.text('允许'));
+        let button: Component | null = await driver.findComponent(ON.text('开启'));
         if (button !== null) {
           await button.click();
         }
@@ -484,7 +489,7 @@ export default function AutomaticSceneConStaticTest(): void {
         assessment.begin(context, config, assessmentCallback);
         let driver: Driver = Driver.create();
         await driver.delayMs(1000);
-        let button: Component | null = await driver.findComponent(ON.text('允许'));
+        let button: Component | null = await driver.findComponent(ON.text('开启'));
         if (button !== null) {
           await button.click();
         }
@@ -574,7 +579,7 @@ export default function AutomaticSceneConStaticTest(): void {
         assessment.begin(context, config, assessmentCallback);
         let driver: Driver = Driver.create();
         await driver.delayMs(1000);
-        let button: Component | null = await driver.findComponent(ON.text('允许'));
+        let button: Component | null = await driver.findComponent(ON.text('开启'));
         if (button !== null) {
           await button.click();
         }
@@ -660,13 +665,14 @@ export default function AutomaticSceneConStaticTest(): void {
         assessment.begin(context, config, assessmentCallback);
         let driver: Driver = Driver.create();
         await driver.delayMs(1000);
-        let button: Component | null = await driver.findComponent(ON.text('允许'));
+        let button: Component | null = await driver.findComponent(ON.text('开启'));
         if (button !== null) {
           await button.click();
         }
         await driver.delayMs(1000);
         const getconfig: assessment.AssessmentConfig = assessment.getConfiguration();
         expect(getconfig.duration).assertEqual(3600000);
+        expect(typeof getconfig.duration).assertEqual('int');
       } catch (err) {
         if (err.code === 801) {
           expect(err.code).assertEqual(801);
@@ -772,7 +778,7 @@ export default function AutomaticSceneConStaticTest(): void {
         assessment.begin(context, config, assessmentCallback);
         let driver: Driver = Driver.create();
         await driver.delayMs(1000);
-        let button: Component | null = await driver.findComponent(ON.text('允许'));
+        let button: Component | null = await driver.findComponent(ON.text('开启'));
         if (button !== null) {
           await button.click();
         }
@@ -828,7 +834,7 @@ export default function AutomaticSceneConStaticTest(): void {
         assessment.begin(context, config, assessmentCallback);
         let driver: Driver = Driver.create();
         await driver.delayMs(1000);
-        let button: Component | null = await driver.findComponent(ON.text('允许'));
+        let button: Component | null = await driver.findComponent(ON.text('开启'));
         if (button !== null) {
           await button.click();
         }
@@ -1421,7 +1427,7 @@ export default function AutomaticSceneConStaticTest(): void {
         assessment.begin(context, config, assessmentCallback);
         let driver: Driver = Driver.create();
         await driver.delayMs(1000);
-        let button: Component | null = await driver.findComponent(ON.text('允许'));
+        let button: Component | null = await driver.findComponent(ON.text('开启'));
         if (button !== null) {
           await button.click();
         }
@@ -1548,7 +1554,7 @@ export default function AutomaticSceneConStaticTest(): void {
       const testNum = 'SUB_Customization_Assessment_begin_paramError_3400';
       let context: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
       try {
-        let config = null as ESObject as assessment.AssessmentConfig;
+        let config: assessment.AssessmentConfig | null = null;
         let assessmentCallback: assessment.IAssessmentCallback = {
           onBegin: (error: assessment.AssessmentError) => {
             hilog.info(DOMAIN, TAG, `onBegin, code: ${error.code}, message: ${error.message}`);
@@ -1560,7 +1566,7 @@ export default function AutomaticSceneConStaticTest(): void {
             hilog.info(DOMAIN, TAG, 'Assessment ended.');
           }
         };
-        assessment.begin(context, config, assessmentCallback);
+        assessment.begin(context, config as ESObject as assessment.AssessmentConfig, assessmentCallback);
         let driver: Driver = Driver.create();
         await driver.delayMs(1000);
         let button: Component | null = await driver.findComponent(ON.text('取消'));
@@ -1594,7 +1600,7 @@ export default function AutomaticSceneConStaticTest(): void {
       const testNum = 'SUB_Customization_Assessment_begin_paramError_3500';
       let context: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
       try {
-        let config = undefined as ESObject as assessment.AssessmentConfig;
+        let config: assessment.AssessmentConfig | undefined = undefined;
         let assessmentCallback: assessment.IAssessmentCallback = {
           onBegin: (error: assessment.AssessmentError) => {
             hilog.info(DOMAIN, TAG, `onBegin, code: ${error.code}, message: ${error.message}`);
@@ -1606,7 +1612,7 @@ export default function AutomaticSceneConStaticTest(): void {
             hilog.info(DOMAIN, TAG, 'Assessment ended.');
           }
         };
-        assessment.begin(context, config, assessmentCallback);
+        assessment.begin(context, config as ESObject as assessment.AssessmentConfig, assessmentCallback);
         let driver: Driver = Driver.create();
         await driver.delayMs(1000);
         let button: Component | null = await driver.findComponent(ON.text('取消'));
@@ -1640,10 +1646,9 @@ export default function AutomaticSceneConStaticTest(): void {
       const testNum = 'SUB_Customization_Assessment_begin_paramError_3600';
       let context: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
       try {
-        let invalidAllowedApps: string = '';
-        let config: assessment.AssessmentConfig = {
+        let config: MalformedAssessmentConfig = {
           duration: 3600000,
-          allowedApps: invalidAllowedApps as ESObject as string[]
+          allowedApps: ""
         };
         let assessmentCallback: assessment.IAssessmentCallback = {
           onBegin: (error: assessment.AssessmentError) => {
@@ -1656,7 +1661,7 @@ export default function AutomaticSceneConStaticTest(): void {
             hilog.info(DOMAIN, TAG, 'Assessment ended.');
           }
         };
-        assessment.begin(context, config, assessmentCallback);
+        assessment.begin(context, config as ESObject as assessment.AssessmentConfig, assessmentCallback);
         let driver: Driver = Driver.create();
         await driver.delayMs(1000);
         let button: Component | null = await driver.findComponent(ON.text('取消'));
@@ -1866,8 +1871,8 @@ export default function AutomaticSceneConStaticTest(): void {
             hilog.info(DOMAIN, TAG, 'Assessment ended.');
           }
         };
-        let onBegin_null = null as ESObject as assessment.AssessmentError;
-        assessmentCallback.onBegin(onBegin_null);
+        let onBegin_null: assessment.AssessmentError | null = null;
+        assessmentCallback.onBegin(onBegin_null as ESObject as assessment.AssessmentError);
         expect(false).assertTrue();
       } catch (err) {
         hilog.info(DOMAIN, TAG, `${testNum} caught expected error, code: ${err.code}, message: ${err.message}`);
@@ -1908,8 +1913,8 @@ export default function AutomaticSceneConStaticTest(): void {
             hilog.info(DOMAIN, TAG, 'Assessment ended.');
           }
         };
-        let onBegin_undefined = undefined as ESObject as assessment.AssessmentError;
-        assessmentCallback.onBegin(onBegin_undefined);
+        let onBegin_undefined: assessment.AssessmentError | undefined = undefined;
+        assessmentCallback.onBegin(onBegin_undefined as ESObject as assessment.AssessmentError);
         expect(false).assertTrue();
       } catch (err) {
         hilog.info(DOMAIN, TAG, `${testNum} caught expected error, code: ${err.code}, message: ${err.message}`);
@@ -1950,8 +1955,8 @@ export default function AutomaticSceneConStaticTest(): void {
             hilog.info(DOMAIN, TAG, 'Assessment ended.');
           }
         };
-        let onInterrupted_null = null as ESObject as assessment.AssessmentInterruptInfo;
-        assessmentCallback.onInterrupted(onInterrupted_null);
+        let onInterrupted_null: assessment.AssessmentInterruptInfo | null = null;
+        assessmentCallback.onInterrupted(onInterrupted_null as ESObject as assessment.AssessmentInterruptInfo);
         expect(false).assertTrue();
       } catch (err) {
         hilog.info(DOMAIN, TAG, `${testNum} caught expected error, code: ${err.code}, message: ${err.message}`);
@@ -1992,8 +1997,8 @@ export default function AutomaticSceneConStaticTest(): void {
             hilog.info(DOMAIN, TAG, 'Assessment ended.');
           }
         };
-        let onInterrupted_undefined = undefined as ESObject as assessment.AssessmentInterruptInfo;
-        assessmentCallback.onInterrupted(onInterrupted_undefined);
+        let onInterrupted_undefined = undefined;
+        assessmentCallback.onInterrupted(onInterrupted_undefined as ESObject as assessment.AssessmentInterruptInfo);
         expect(false).assertTrue();
       } catch (err) {
         hilog.info(DOMAIN, TAG, `${testNum} caught expected error, code: ${err.code}, message: ${err.message}`);

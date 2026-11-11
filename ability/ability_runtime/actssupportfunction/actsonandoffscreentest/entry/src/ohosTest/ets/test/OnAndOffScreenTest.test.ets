@@ -26,6 +26,7 @@ import fs from '@ohos.file.fs';
 
 let driver = Driver.create();
 let deviceSupport = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
+let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
 
 function sleep(ms: number) {
   return new Promise<void>(resolve => setTimeout(resolve, ms));
@@ -81,8 +82,14 @@ export default function OnAndOffScreenTest() {
       let cmd = '';
       if (deviceSupport === 'false') {
         cmd = 'uinput -T -d 1070 1070 -u 1070 1070';
+        if(user !== undefined){
+          cmd += ' -u ' + user;
+        }
       } else {
         cmd = 'uinput -T -m 300 1279 280 200';
+        if(user !== undefined){
+          cmd += ' -u ' + user;
+        }
       }
       await executeShellCommand(cmd, TAG);
       await sleep(500)
@@ -102,6 +109,9 @@ export default function OnAndOffScreenTest() {
       if (!status) {
         await sleep(500)
         let cmd = "uinput -K -d 18 -u 18";
+        if(user !== undefined){
+          cmd += ' -u ' + user;
+        }
         await executeShellCommand(cmd, TAG1);
         await slideScreen(TAG1);
       }
@@ -115,8 +125,12 @@ export default function OnAndOffScreenTest() {
     afterEach(async (done: Function) => {
       console.log(TAG1 + "afterEach called");
       let cmd1 = "aa force-stop ohos.acts.aafwk.test.faonandoffscreen";
-      await executeShellCommand(cmd1, TAG1);
       let cmd2 = "aa force-stop ohos.acts.aafwk.test.stageonandoffscreen";
+      if(user !== undefined){
+          cmd1 += ' -u ' + user;
+          cmd2 += ' -u ' + user;
+        }
+      await executeShellCommand(cmd1, TAG1);
       await executeShellCommand(cmd2, TAG1);
 
       setTimeout(() => {
@@ -168,6 +182,9 @@ export default function OnAndOffScreenTest() {
                 }, 2500);
               } else {
                 let cmd = "uinput -K -d 18 -u 18";
+                if(user !== undefined){
+                  cmd += ' -u ' + user;
+                }
                 await executeShellCommand(cmd, TAG);
               }
             }
@@ -266,6 +283,9 @@ export default function OnAndOffScreenTest() {
                 }, 2500);
               } else {
                 let cmd = "uinput -K -d 18 -u 18";
+                if(user !== undefined){
+                  cmd += ' -u ' + user;
+                }
                 await executeShellCommand(cmd, TAG);
               }
             }
@@ -365,6 +385,9 @@ export default function OnAndOffScreenTest() {
                 }, 2500);
               } else {
                 let cmd = "uinput -K -d 18 -u 18";
+                if(user !== undefined){
+                  cmd += ' -u ' + user;
+                }
                 await executeShellCommand(cmd, TAG);
                 flag = true;
               }
@@ -384,6 +407,9 @@ export default function OnAndOffScreenTest() {
             if (data.event == onBackground) {
               await sleep(500);
               let cmd = "uinput -K -d 18 -u 18";
+              if(user !== undefined){
+                cmd += ' -u ' + user;
+              }
               await executeShellCommand(cmd, TAG);
               await slideScreen(TAG);
             }
@@ -481,6 +507,9 @@ export default function OnAndOffScreenTest() {
             } else {
               await sleep(500)
               let cmd = "uinput -K -d 18 -u 18";
+              if(user !== undefined){
+                cmd += ' -u ' + user;
+              }
               await executeShellCommand(cmd, TAG);
             }
           }
@@ -610,6 +639,9 @@ export default function OnAndOffScreenTest() {
               } else {
                 await sleep(500)
                 let cmd = "uinput -K -d 18 -u 18";
+                if(user !== undefined){
+                  cmd += ' -u ' + user;
+                }
                 await executeShellCommand(cmd, TAG);
                 flag = true;
               }
@@ -629,6 +661,9 @@ export default function OnAndOffScreenTest() {
             if (data.event == onBackground2) {
               await sleep(500)
               let cmd = "uinput -K -d 18 -u 18";
+              if(user !== undefined){
+                cmd += ' -u ' + user;
+              }
               await executeShellCommand(cmd, TAG);
               await slideScreen(TAG);
             }

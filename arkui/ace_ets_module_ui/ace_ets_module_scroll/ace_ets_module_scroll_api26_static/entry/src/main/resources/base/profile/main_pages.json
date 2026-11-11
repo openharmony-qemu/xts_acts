@@ -21,6 +21,8 @@
     "MainAbility/pages/Grid/gridEnableEditMode",
     "MainAbility/pages/Grid/gridEditModeChange",
     "MainAbility/pages/Grid/gridEditModeOptions",
+    "MainAbility/pages/Grid/GridScrollSnapStrategy",
+    "MainAbility/pages/WaterFlow/WaterFlowScrollSnapStrategy",
     "MainAbility/pages/List/listEnableEditMode",
     "MainAbility/pages/List/listEditModeChange",
     "MainAbility/pages/LazyColumnLayout/LazyColumnLayoutProperties",

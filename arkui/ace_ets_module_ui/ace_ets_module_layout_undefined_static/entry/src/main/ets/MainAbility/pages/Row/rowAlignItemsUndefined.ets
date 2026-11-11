@@ -19,7 +19,7 @@ import {
   TextAlign, List, ListItem, ListScroller, Builder, ForEach, Row, TransitionType, FlexAlign, ColumnOptions, SizeOptions,
   SliderBlockStyle, Ellipse, SliderStyle, SlideRange, SliderInteraction, SliderChangeMode, SliderAttribute,
   AttributeModifier, Divider, VerticalAlign } from '@ohos.arkui.component'
-import { $r } from '@ohos.arkui.component'
+import { $r, HorizontalAlign } from '@ohos.arkui.component'
 import { State ,Observed} from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
@@ -33,7 +33,7 @@ struct RowExample {
         Row().width('30%').height(50).backgroundColor(0xAFEEEE)
         Row().width('30%').height(50).backgroundColor(0x00FFFF)
       }
-      .width('90%')
+      .width('80%')
       .height('15%')
       .border({ width: 1 })
       .alignItems(this.isUndefined ? undefined : VerticalAlign.Bottom)
@@ -44,6 +44,7 @@ struct RowExample {
           this.isUndefined = !this.isUndefined
         }
         ).id('changeButton')
-    }.width('100%')
+    }.width('80%')
+    .alignItems(HorizontalAlign.Center)
   }
 }

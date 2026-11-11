@@ -27,6 +27,19 @@ let ACTS_CallFunction: commonEvent.CommonEventSubscribeInfo = {
     '1400', '1500', '1600', '1700', '1800', '1900', '2000', 'kill', 'killui']
 };
 
+let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+let cmd1 = 'aa force-stop com.example.uiextensionforresultascallersyspicker';
+let cmd2 = 'aa force-stop com.example.uiextensionforresultascallerother';
+let cmd3 = 'aa force-stop com.example.uiextensionforresultascallerbackground';
+let cmd4 = 'aa dump -a'
+
+if(user !== undefined){
+  cmd1 += ' -u ' + user;
+  cmd2 += ' -u ' + user;
+  cmd3 += ' -u ' + user;
+  cmd4 += ' -u ' + user;
+}
+
 function sleep(time: number): Promise<number> {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
@@ -190,7 +203,7 @@ export default function abilityTest() {
       let unSubscribeCallback = async () => {
         console.info(`====>[UIExtensionForResultAsCallerTest] 0400 unSubscribeCallback`);
         clearTimeout(clear);
-        await abilityDelegator.executeShellCommand('aa force-stop com.example.uiextensionforresultascallersyspicker')
+        await abilityDelegator.executeShellCommand(cmd1)
         .then((result: AbilityDelegatorRegistry.ShellCmdResult) => {
           console.info('====>[UIExtensionForResultAsCallerUIAbility] 0400 ok' + JSON.stringify(result));
         }).catch((err: BusinessError) => {
@@ -242,7 +255,7 @@ export default function abilityTest() {
       let unSubscribeCallback = async () => {
         console.info(`====>[UIExtensionForResultAsCallerTest] 0500 unSubscribeCallback 'ACTS_CALL_EVENT'`);
         clearTimeout(clear);
-        await abilityDelegator.executeShellCommand('aa force-stop com.example.uiextensionforresultascallerother')
+        await abilityDelegator.executeShellCommand(cmd2)
         .then((result: AbilityDelegatorRegistry.ShellCmdResult) => {
           console.info('====>[UIExtensionForResultAsCallerUIAbility] 0500 ok' + JSON.stringify(result));
         }).catch((err: BusinessError) => {
@@ -454,7 +467,7 @@ export default function abilityTest() {
       let unSubscribeCallback = async () => {
         console.info(`====>[UIExtensionForResultAsCallerTest] 1200 unSubscribeCallback 'ACTS_CALL_EVENT'`);
         clearTimeout(clear);
-        await abilityDelegator.executeShellCommand('aa force-stop com.example.uiextensionforresultascallerbackground')
+        await abilityDelegator.executeShellCommand(cmd3)
         .then((result: AbilityDelegatorRegistry.ShellCmdResult) => {
           console.info('====>[UIExtensionForResultAsCallerUIAbility] 1200 ok' + JSON.stringify(result));
         }).catch((err: BusinessError) => {
@@ -506,7 +519,7 @@ export default function abilityTest() {
       let unSubscribeCallback = async () => {
         console.info(`====>[UIExtensionForResultAsCallerTest] 1300 unSubscribeCallback`);
         clearTimeout(clear);
-        await abilityDelegator.executeShellCommand('aa force-stop com.example.uiextensionforresultascallerbackground')
+        await abilityDelegator.executeShellCommand(cmd3)
         .then((result: AbilityDelegatorRegistry.ShellCmdResult) => {
           console.info('====>[UIExtensionForResultAsCallerUIAbility] 1300 ok' + JSON.stringify(result));
         }).catch((err: BusinessError) => {
@@ -558,7 +571,7 @@ export default function abilityTest() {
       let unSubscribeCallback = async () => {
         console.info(`====>[UIExtensionForResultAsCallerTest] StartAbilityForResultAsCaller_1400 unSubscribeCallback`);
         clearTimeout(clear);
-        await abilityDelegator.executeShellCommand('aa force-stop com.example.uiextensionforresultascallersyspicker')
+        await abilityDelegator.executeShellCommand(cmd1)
         .then((result: AbilityDelegatorRegistry.ShellCmdResult) => {
           console.info('====>[UIExtensionForResultAsCallerUIAbility] 1400 ok' + JSON.stringify(result));
         }).catch((err: BusinessError) => {
@@ -610,7 +623,7 @@ export default function abilityTest() {
       let unSubscribeCallback = async () => {
         console.info(`====>[UIExtensionForResultAsCallerTest] StartAbilityForResultAsCaller_1500 unSubscribeCallback`);
         clearTimeout(clear);
-        await abilityDelegator.executeShellCommand('aa force-stop com.example.uiextensionforresultascallersyspicker')
+        await abilityDelegator.executeShellCommand(cmd1)
         .then((result: AbilityDelegatorRegistry.ShellCmdResult) => {
           console.info('====>[UIExtensionForResultAsCallerUIAbility] 1500 ok' + JSON.stringify(result));
         }).catch((err: BusinessError) => {
@@ -662,7 +675,7 @@ export default function abilityTest() {
       let unSubscribeCallback = async () => {
         console.info(`====>[UIExtensionForResultAsCallerTest] 1600 unSubscribeCallback`);
         clearTimeout(clear);
-        await abilityDelegator.executeShellCommand('aa force-stop com.example.uiextensionforresultascallersyspicker')
+        await abilityDelegator.executeShellCommand(cmd1)
         .then((result: AbilityDelegatorRegistry.ShellCmdResult) => {
           console.info('====>[UIExtensionForResultAsCallerUIAbility] 1600 ok' + JSON.stringify(result));
         }).catch((err: BusinessError) => {
@@ -714,7 +727,7 @@ export default function abilityTest() {
       let unSubscribeCallback = async () => {
         console.info(`====>[UIExtensionForResultAsCallerTest] 1700 unSubscribeCallback`);
         clearTimeout(clear);
-        await abilityDelegator.executeShellCommand('aa force-stop com.example.uiextensionforresultascallersyspicker')
+        await abilityDelegator.executeShellCommand(cmd1)
         .then((result: AbilityDelegatorRegistry.ShellCmdResult) => {
           console.info('====>[UIExtensionForResultAsCallerUIAbility] 1700 ok' + JSON.stringify(result));
         }).catch((err: BusinessError) => {
@@ -766,7 +779,7 @@ export default function abilityTest() {
       let unSubscribeCallback = async () => {
         console.info(`====>[UIExtensionForResultAsCallerTest] 1800 unSubscribeCallback`);
         clearTimeout(clear);
-        await abilityDelegator.executeShellCommand('aa force-stop com.example.uiextensionforresultascallersyspicker')
+        await abilityDelegator.executeShellCommand(cmd1)
         .then((result: AbilityDelegatorRegistry.ShellCmdResult) => {
           console.info('====>[UIExtensionForResultAsCallerUIAbility] 1800 ok' + JSON.stringify(result));
         }).catch((err: BusinessError) => {
@@ -860,7 +873,7 @@ export default function abilityTest() {
           commonEvent.unsubscribe(subscriber, unSubscribeCallback);
         } else if (data.event == 'kill') {
           console.info(`====>[UIExtensionForResultAsCallerTest] 2000 subscribeCallBack kill ${data}`)
-          await abilityDelegator.executeShellCommand('aa force-stop com.example.uiextensionforresultascallerbackground')
+          await abilityDelegator.executeShellCommand(cmd3)
             .then((result: AbilityDelegatorRegistry.ShellCmdResult) => {
               console.info('====>[UIExtensionForResultAsCallerUIAbility] 2000 ok' + JSON.stringify(result));
             }).catch((err: BusinessError) => {
@@ -911,7 +924,7 @@ export default function abilityTest() {
         console.info(`====>[UIExtensionForResultAsCallerTest] 2100 subscribeCallBack ACTS_CallFunction  ${data}`);
         if (data.event == 'killui') {
           console.info(`====>[UIExtensionForResultAsCallerTest] 2100 subscribeCallBack killui ${data}`)
-          await abilityDelegator.executeShellCommand('aa force-stop com.example.uiextensionforresultascallerbackground')
+          await abilityDelegator.executeShellCommand(cmd3)
             .then((result: AbilityDelegatorRegistry.ShellCmdResult) => {
               console.info('====>[UIExtensionForResultAsCallerUIAbility] 2100 killui ok' + JSON.stringify(result));
             }).catch((err: BusinessError) => {
@@ -919,7 +932,7 @@ export default function abilityTest() {
               expect().assertFail();
             });
 
-          await abilityDelegator.executeShellCommand('aa force-stop com.example.uiextensionforresultascallersyspicker')
+          await abilityDelegator.executeShellCommand(cmd1)
             .then((result: AbilityDelegatorRegistry.ShellCmdResult) => {
               console.info('====>[UIExtensionForResultAsCallerUIAbility] 2100 killui2 ok' + JSON.stringify(result));
             }).catch((err: BusinessError) => {
@@ -927,7 +940,7 @@ export default function abilityTest() {
               expect().assertFail();
             });
           await sleep(300);
-          await abilityDelegator.executeShellCommand('aa dump -a')
+          await abilityDelegator.executeShellCommand(cmd4)
             .then((result: AbilityDelegatorRegistry.ShellCmdResult) => {
               console.info('====>[UIExtensionForResultAsCallerUIAbility] 2100 aa dump  ok' + JSON.stringify(result));
               let judgement = JSON.stringify(result).split('com.example.uiextensionforresultascallerbackground');

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { Text, Column, Component, Position, Entry, Builder, BuilderParam, ForEach, SizeResult, GeometryInfo,
-  Layoutable, ConstraintSizeOptions, Measurable, MeasureResult, CustomLayout} from '@ohos.arkui.component';
+  Layoutable, ConstraintSizeOptions, Measurable, MeasureResult, CustomLayout, HorizontalAlign } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
@@ -28,6 +28,7 @@ struct MyStateSample {
         .id('Text_MeasurableLayoutable')
       Custom1({ builder: columnChildren })
     }
+    .alignItems(HorizontalAlign.Center)
   }
 }
 

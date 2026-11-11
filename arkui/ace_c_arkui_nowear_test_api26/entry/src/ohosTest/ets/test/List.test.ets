@@ -17,6 +17,8 @@ import RenderNodeBlurStyleOptionTest from "./renderNode/RenderNodeBlurStyleOptio
 import NativeModuleCapiInitErrorCodeTest from "./renderNode/NativeModuleCapiInitErrorCodeTest.test"
 import NodeChildMountPolicyTest from "./renderNode/NodeChildMountPolicyTest.test"
 import UIInfoCollectionTest from "./uiInfoCollection/UIInfoCollectionTest.test"
+import UIEventInjectRelaxedInteractionTest from "./uiEventInjection/UIEventInjectRelaxedInteractionTest.test"
+import NativeKeyEventTest from "./keyEvent/NativeKeyEventTest.test"
 
 export default function testsuite() {
   NativeModuleCapiInitErrorCodeTest(); // 此条特殊用例请放在首行，勿动
@@ -24,4 +26,6 @@ export default function testsuite() {
   RenderNodeUtilsSetRectShapeOptionValueTest();
   NodeChildMountPolicyTest();
   UIInfoCollectionTest();
+  UIEventInjectRelaxedInteractionTest();
+  NativeKeyEventTest();
 }

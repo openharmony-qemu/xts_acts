@@ -53,8 +53,9 @@ struct Index {
           .id('row4')
           .chainMode(Axis.Horizontal, this.flag ? undefined : ChainStyle.SPREAD_INSIDE as ChainStyle)
         }
-        .width(300).height(300)
+        .width(200).height(200)
         .border({ width: 2, color: '#6699FF' })
       }
+      .alignItems(HorizontalAlign.Center)
     }
 }

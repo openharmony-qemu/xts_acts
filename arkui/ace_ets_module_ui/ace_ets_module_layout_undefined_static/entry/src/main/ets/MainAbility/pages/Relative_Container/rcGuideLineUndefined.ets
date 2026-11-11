@@ -57,6 +57,7 @@ struct Example {
           this.isUndefined = !this.isUndefined
           }
         ).id('changeButton')
-    }.width('100%')
+    }.width('80%')
+    .alignItems(HorizontalAlign.Center)
   }
 }

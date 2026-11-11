@@ -52,7 +52,6 @@
           "nearlink",
           "multiDeviceConnection",
           "voip",
-          "taskKeeping",
           "avPlaybackAndRecord"
         ]
       }

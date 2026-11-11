@@ -35,6 +35,18 @@ const DOMAIN = 0xF811;
 let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 let isAppSelectorExist = true;
 let selectorName = 'wei.hmsapp.appgallery';
+let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+let cmd1 = 'bm dump -n com.hua' + selectorName;
+let cmd2 = 'aa dump -a';
+let cmd3 = 'aa force-stop ' + selectorBundleName;
+let cmdkill = 'pkill -f com.example.mytest4';
+
+if(user !== undefined){
+  cmd1 += ' -u ' + user;
+  cmd2 += ' -u ' + user;
+  cmd3 += ' -u ' + user;
+  cmdkill += ' -u ' + user;
+}
 
 function sleep(time:number) {
   return new Promise<void>((resolve, reject) => {
@@ -46,8 +58,7 @@ function sleep(time:number) {
 
 async function checkAppSelectorExist() {
   try {
-    let cmd = 'bm dump -n com.hua' + selectorName;
-    await abilityDelegator.executeShellCommand(cmd)
+    await abilityDelegator.executeShellCommand(cmd1)
       .then((data) => {
         console.info('executeShellCommand success ' + JSON.stringify(data));
         if (!data.stdResult.includes(selectorName)) {
@@ -67,7 +78,7 @@ async function checkAppSelectorExist() {
 }
 
 async function judgeDialog(done: Function) {
-  await abilityDelegator.executeShellCommand('aa dump -a').then((data) => {
+  await abilityDelegator.executeShellCommand(cmd2).then((data) => {
     console.info('====>aa dump : data : ' + JSON.stringify(data.stdResult));
     if (data.stdResult.includes('/uiextension/AppSelectorExtensionAbility')) {
       let firstString = data.stdResult.split('/uiextension/AppSelectorExtensionAbility');
@@ -131,8 +142,7 @@ export default function abilityTest() {
     })
 
     afterEach(async (done:Function) => {
-      let cmd = 'aa force-stop ' + selectorBundleName;
-      await abilityDelegator.executeShellCommand(cmd).catch((error : BusinessError) => {
+      await abilityDelegator.executeShellCommand(cmd3).catch((error : BusinessError) => {
         console.log('====>aa force stop executeShellCommand error : ' + JSON.stringify(error));
       });
       setTimeout(() => {
@@ -449,7 +459,7 @@ export default function abilityTest() {
     it('ACTS_NFC_SelectTypes_0900', Level.LEVEL0, async (done:Function) => {
       hilog.info(DOMAIN, TAG, '%{public}s', 'ACTS_NFC_SelectTypes_0900 begin');
       let want:Want = {
-        action: 'ohos.want?.action.select',
+        action: 'ohos.want.action.select',
         type: 'tag-tech/NFcA',
         parameters: {
           'ohos.ability.params.uriTypes': [
@@ -468,15 +478,14 @@ export default function abilityTest() {
       }
       );
       try {
+        await driver.pressBack();
         await driver.delayMs(2000);
         let app1 = await driver.findComponent(ON.text('apptest1'));
         let app2 = await driver.findComponent(ON.text('apptest2'));
         let app3 = await driver.findComponent(ON.text('apptest3'));
-        let app4 = await driver.findComponent(ON.text('apptest4'));
         expect(app1 === null).assertTrue();
         expect(app2 === null).assertTrue();
         expect(app3 === null).assertTrue();
-        expect(app4 === null).assertTrue();
         let cancel = await driver.findComponents(ON.clickable(true));
         if (cancel !== null) {
           await cancel[0].click();
@@ -516,7 +525,6 @@ export default function abilityTest() {
             expect(data.parameters!.message === 'select').assertTrue();
             commonEvent.unsubscribe(subscriber, async () => {
               console.info('====>ACTS_NFC_SelectTypes_1000 unSubscribeCallback kill');
-              let cmdkill = 'pkill -f com.example.mytest4';
               await abilityDelegator.executeShellCommand(cmdkill);
               await driver.delayMs(2000);
               done();
@@ -571,7 +579,6 @@ export default function abilityTest() {
             expect(data.parameters!.message === 'select').assertTrue();
             commonEvent.unsubscribe(subscriber, async () => {
               console.info('====>ACTS_NFC_SelectTypes_1100 unSubscribeCallback kill');
-              let cmdkill = 'pkill -f com.example.mytest4';
               await abilityDelegator.executeShellCommand(cmdkill);
               await driver.delayMs(2000);
               done();

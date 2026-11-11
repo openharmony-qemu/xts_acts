@@ -17,7 +17,7 @@
 import {  Entry,  Text,  Column,  Component,  Button,
   ClickEvent,  $r,  Row,  Divider,  ColumnOptions,
   BorderOptions,  Color,  Toggle,  Blank,  Margin,
-  List,  Padding,  AttributeModifier,  BlankAttribute } from '@ohos.arkui.component'
+  List,  Padding,  AttributeModifier,  BlankAttribute, HorizontalAlign } from '@ohos.arkui.component'
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
@@ -42,15 +42,13 @@ struct BlankExample {
                                               : this.myModifier.isUndefined = true;
         })
         .id('BlankAttrsModifier_color')
-        .margin({ top: 10, bottom: 15 } as Margin)
         .height(60)
         .width(200)
 
       Text('Blank-color-动态切换(undefined/Color.Yellow)')
         .fontSize(20)
-        .margin(15)
-        .width('90%')
-      List() {
+        .width('80%')
+      Column() {
         Row() {
           Text('Bluetooth').fontSize(18)
           Blank('160')
@@ -58,14 +56,13 @@ struct BlankExample {
             .attributeModifier(this.myModifier)
         }
         .borderRadius(15)
-        .padding({ left: 12 } as Padding)
-        .width('90%')
+        .width('80%')
       }
-      Divider().margin(10)
+      Divider()
     }
     .backgroundColor('#EFEFEF')
-    .padding(10)
-    .width('100%')
-    .height('100%')
+    .width('80%')
+    .height('80%')
+    .alignItems(HorizontalAlign.Center)
   }
 }

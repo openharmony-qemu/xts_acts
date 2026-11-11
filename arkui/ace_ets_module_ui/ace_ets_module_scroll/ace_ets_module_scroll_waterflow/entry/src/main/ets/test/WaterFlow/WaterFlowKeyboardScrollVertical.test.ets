@@ -156,8 +156,8 @@ export default function waterFlowKeyboardScrollVertical() {
     /**
      * @tc.name   waterFlowKeyboardScrollVertical_0300
      * @tc.number SUB_ARKUI_WATERFLOW_ENABLESCROLLWITHKEYBOARD_PARAM_0300
-     * @tc.desc   Test vertical WaterFlow scrolls with keyboard arrow keys when
-     *            enableScrollWithKeyboard is set to undefined
+     * @tc.desc   Test vertical WaterFlow does not scroll with keyboard arrow keys when
+     *            enableScrollWithKeyboard is set to undefined (default value false)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -173,7 +173,7 @@ export default function waterFlowKeyboardScrollVertical() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[waterFlowKeyboardScrollVertical_0300] enableScrollWithKeyboard: " +
         JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
-      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual(true);
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual(false);
  
       let resetBtn: Component = await driver.findComponent(ON.id('V_WF_RESET'));
       await resetBtn.click();
@@ -192,22 +192,22 @@ export default function waterFlowKeyboardScrollVertical() {
       }
       let offsetDown: number = getVWaterFlowOffset();
       console.info('[waterFlowKeyboardScrollVertical_0300] offset after DPAD_DOWN: ' + offsetDown);
-      expect(offsetDown > 0).assertTrue();
+      expect(offsetDown).assertEqual(0);
  
       await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
       await CommonFunc.sleep(500);
  
       let offsetUp: number = getVWaterFlowOffset();
       console.info('[waterFlowKeyboardScrollVertical_0300] offset after DPAD_UP: ' + offsetUp);
-      expect(offsetUp < offsetDown).assertTrue();
+      expect(offsetUp).assertEqual(0);
       console.info('[waterFlowKeyboardScrollVertical_0300] END');
     })
  
     /**
      * @tc.name   waterFlowKeyboardScrollVertical_0400
      * @tc.number SUB_ARKUI_WATERFLOW_ENABLESCROLLWITHKEYBOARD_PARAM_0400
-     * @tc.desc   Test vertical WaterFlow scrolls with keyboard arrow keys when
-     *            enableScrollWithKeyboard is set to null
+     * @tc.desc   Test vertical WaterFlow does not scroll with keyboard arrow keys when
+     *            enableScrollWithKeyboard is set to null (default value false)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -223,7 +223,7 @@ export default function waterFlowKeyboardScrollVertical() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[waterFlowKeyboardScrollVertical_0400] enableScrollWithKeyboard: " +
         JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
-      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual(true);
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual(false);
  
       let resetBtn: Component = await driver.findComponent(ON.id('V_WF_RESET'));
       await resetBtn.click();
@@ -242,14 +242,14 @@ export default function waterFlowKeyboardScrollVertical() {
       }
       let offsetDown: number = getVWaterFlowOffset();
       console.info('[waterFlowKeyboardScrollVertical_0400] offset after DPAD_DOWN: ' + offsetDown);
-      expect(offsetDown > 0).assertTrue();
+      expect(offsetDown).assertEqual(0);
  
       await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
       await CommonFunc.sleep(500);
  
       let offsetUp: number = getVWaterFlowOffset();
       console.info('[waterFlowKeyboardScrollVertical_0400] offset after DPAD_UP: ' + offsetUp);
-      expect(offsetUp < offsetDown).assertTrue();
+      expect(offsetUp).assertEqual(0);
       console.info('[waterFlowKeyboardScrollVertical_0400] END');
     })
   })

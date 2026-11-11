@@ -47,6 +47,9 @@
     "requestPermissions": [
       {
         "name": "ohos.permission.ACCESS_USER_AUTH_INTERNAL"
+      },
+      {
+        "name": "ohos.permission.USE_USER_ACCESS_MANAGER"
       }
     ]
   }

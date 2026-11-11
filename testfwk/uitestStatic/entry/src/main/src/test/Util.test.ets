@@ -17,10 +17,12 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import  hilog  from '@ohos.hilog'
 import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation,
   ComponentEventType, WindowChangeType, UiWindow, ResizeDirection, Point } from '@kit.TestKit'
+import display from '@ohos.display';
 
 const abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
+const defaultUserId: string = '100';
 
 class Utils{
 
@@ -53,7 +55,12 @@ async function startAbility(bundleName: string, abilityName: string): Promise<bo
 
 async function stopApplication(bundleName: string): Promise<boolean>{
   try {
-    await abilityDelegator.executeShellCommand(`aa force-stop ${bundleName} `);
+    let cmd = `aa force-stop ${bundleName}`;
+    let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+      cmd += ' -u ' + user;
+    }
+    await abilityDelegator.executeShellCommand(cmd);
     console.info(`UiTestCase, stop application finished`);
     return true;
   } catch(error) {
@@ -96,6 +103,16 @@ async function getInputMethodPermission(driver: Driver) {
     await permissionBtn3.click();
     await driver.delayMs(1000);
   }
+  let keyboardMenuBtnAreaBtn = await driver.findComponent(ON.id('keyboardMenuBtnArea'));
+  if (keyboardMenuBtnAreaBtn != null) {
+    await keyboardMenuBtnAreaBtn.click();
+    await driver.delayMs(1000);
+    let menuItemList = await driver.findComponents(ON.id('menuItem'));
+    if (menuItemList != null && menuItemList.length > 4) {
+      await menuItemList[3].click();
+      await driver.delayMs(1000);
+    }
+  }
 }
 
 async function maxUiWindow(driver: Driver, window: UiWindow | null): Promise<boolean> {
@@ -119,9 +136,38 @@ async function maxUiWindow(driver: Driver, window: UiWindow | null): Promise<boo
   }
 }
 
+async function exitInputMethod() {
+  let driver = Driver.create()
+  let displayId = display.getDefaultDisplaySync().id.toInt();
+  let primaryId = display.getPrimaryDisplaySync().id.toInt();
+  let user:String|undefined = abilityDelegatorRegistry.getArguments().parameters["-u"];;
+  let softKeyBoard = await driver.findComponent(ON.type('Canvas'))
+  if (softKeyBoard != null) {
+    let hideKey = await driver.findComponent(ON.id('KeyHideKbd'))
+    console.log(`${tag}, hideKey,${JSON.stringify(hideKey)}`);
+    if (hideKey != null) {
+      if (user == undefined || user == defaultUserId) {
+        await driver.pressBack()
+      } else {
+        await driver.pressBack(displayId)
+      }
+    }
+  }
+  await driver.delayMs(2000)
+  let keyCanvasKeyboard = await driver.findComponent(ON.id('KeyCanvasKeyboard'))
+  if (keyCanvasKeyboard != null) {
+    if (user == undefined || user == defaultUserId) {
+      await driver.pressBack()
+    } else {
+      await driver.pressBack(displayId)
+    }
+  }
+}
+
 export {
   Utils,
   startAbility,
   stopApplication,
-  getInputMethodPermission
+  getInputMethodPermission,
+  exitInputMethod
 }
