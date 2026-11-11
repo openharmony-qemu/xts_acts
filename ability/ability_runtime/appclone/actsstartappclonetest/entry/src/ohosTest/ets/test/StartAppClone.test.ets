@@ -19,12 +19,17 @@ import CommonEventManager from '@ohos.commonEventManager';
 import installer from '@ohos.bundle.installer';
 import Want from '@ohos.app.ability.Want';
 import wantConstant from '@ohos.app.ability.wantConstant';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 let appCloneBundleName: string = 'com.ohos.appclonehap1';
 let appCloneSupport: boolean = false;
+let userId:number = Number(abilityDelegatorRegistry.getArguments().parameters["-u"]);
+if(userId === undefined || userId === null ){
+  userId = 100;
+}
   let appCloneIndex = 1;
   let paramForCreatingAppClone: installer.CreateAppCloneParam = {
-    userId: 100,
+    userId: userId,
     appIndex: appCloneIndex,
   };
 export default function startAppCloneTest() {
@@ -617,7 +622,7 @@ export default function startAppCloneTest() {
         }
       }
       try {
-        AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbilityByCallWithAccount(want, 100).then((caller) => {
+        AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbilityByCallWithAccount(want, userId).then((caller) => {
           console.info(`${tag} startAbilityByCallWithAccount succeed`);
         }).catch((err: BusinessError) => {
           console.error(`${tag} startAbilityByCallWithAccount failed, cause: ${JSON.stringify(err)}`);
@@ -656,7 +661,7 @@ export default function startAppCloneTest() {
         }
       }
       try {
-        AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbilityByCallWithAccount(want, 100).then(() => {
+        AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbilityByCallWithAccount(want, userId).then(() => {
           console.info(tag + 'startAbilityByCallWithAccount succeed');
           expect().assertFail();
           done();
@@ -723,7 +728,7 @@ export default function startAppCloneTest() {
         }
       }
       try {
-        AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbilityWithAccount(want, 100).then((caller) => {
+        AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbilityWithAccount(want, userId).then((caller) => {
           console.info(tag + 'startAbilityWithAccount succeed');
         }).catch((err: BusinessError) => {
           console.error(`${tag},startAbilityWithAccount failed, cause: ${JSON.stringify(err)}`);
@@ -764,7 +769,7 @@ export default function startAppCloneTest() {
         }
       }
       try {
-        AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbilityWithAccount(want, 100).then(() => {
+        AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbilityWithAccount(want, userId).then(() => {
           console.info(tag + 'startAbilityWithAccount succeed');
           expect().assertFail();
           done();
@@ -939,7 +944,7 @@ export default function startAppCloneTest() {
         }
       }
       try {
-        AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbilityForResultWithAccount(want, 100).then((data) => {
+        AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbilityForResultWithAccount(want, userId).then((data) => {
           console.info(tag + 'startAbilityForResultWithAccount succeed');
         }).catch((err: BusinessError) => {
           console.error(`${tag},startAbilityForResultWithAccount failed, cause: ${JSON.stringify(err)}`);
@@ -980,7 +985,7 @@ export default function startAppCloneTest() {
         }
       }
       try {
-        AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbilityForResultWithAccount(want, 100).then(() => {
+        AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbilityForResultWithAccount(want, userId).then(() => {
           console.info(tag + 'startAbilityForResultWithAccount succeed');
           expect().assertFail();
           done();
@@ -1181,7 +1186,7 @@ function createAppClone() {
 
 function uninstallAppClone() {
   installer.getBundleInstaller().then((bundleInstaller) => {
-    bundleInstaller.destroyAppClone(appCloneBundleName, appCloneIndex, 100).then(() => {
+    bundleInstaller.destroyAppClone(appCloneBundleName, appCloneIndex, userId).then(() => {
       console.info(`destroyAppClone success`);
     }).catch((err: BusinessError) => {
       console.error(`destroyAppClone failed, cause: ${JSON.stringify(err)}`);
