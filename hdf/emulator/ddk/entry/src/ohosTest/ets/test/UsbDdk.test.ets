@@ -31,6 +31,7 @@ export default function usbDdkTest() {
 
     /**
      * @tc.name   testUsbInit001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbDdk_0100
      * @tc.desc   verify OH_Usb_Init returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -41,6 +42,7 @@ export default function usbDdkTest() {
 
     /**
      * @tc.name   testUsbRelease001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbDdk_0200
      * @tc.desc   verify OH_Usb_Release does not crash on emulator
      * @tc.type   FUNCTION
      */
@@ -51,6 +53,7 @@ export default function usbDdkTest() {
 
     /**
      * @tc.name   testUsbReleaseResource001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbDdk_0300
      * @tc.desc   verify OH_Usb_ReleaseResource returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -61,6 +64,7 @@ export default function usbDdkTest() {
 
     /**
      * @tc.name   testUsbGetDeviceDescriptor001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbDdk_0400
      * @tc.desc   verify OH_Usb_GetDeviceDescriptor returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -71,6 +75,7 @@ export default function usbDdkTest() {
 
     /**
      * @tc.name   testUsbGetConfigDescriptor001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbDdk_0500
      * @tc.desc   verify OH_Usb_GetConfigDescriptor returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -81,6 +86,7 @@ export default function usbDdkTest() {
 
     /**
      * @tc.name   testUsbFreeConfigDescriptor001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbDdk_0600
      * @tc.desc   verify OH_Usb_FreeConfigDescriptor does not crash on emulator
      * @tc.type   FUNCTION
      */
@@ -91,6 +97,7 @@ export default function usbDdkTest() {
 
     /**
      * @tc.name   testUsbClaimInterface001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbDdk_0700
      * @tc.desc   verify OH_Usb_ClaimInterface returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -101,6 +108,7 @@ export default function usbDdkTest() {
 
     /**
      * @tc.name   testUsbReleaseInterface001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbDdk_0800
      * @tc.desc   verify OH_Usb_ReleaseInterface returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -111,6 +119,7 @@ export default function usbDdkTest() {
 
     /**
      * @tc.name   testUsbSelectInterfaceSetting001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbDdk_0900
      * @tc.desc   verify OH_Usb_SelectInterfaceSetting returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -121,6 +130,7 @@ export default function usbDdkTest() {
 
     /**
      * @tc.name   testUsbGetCurrentInterfaceSetting001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbDdk_1000
      * @tc.desc   verify OH_Usb_GetCurrentInterfaceSetting returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -131,6 +141,7 @@ export default function usbDdkTest() {
 
     /**
      * @tc.name   testUsbSendControlReadRequest001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbDdk_1100
      * @tc.desc   verify OH_Usb_SendControlReadRequest returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -141,6 +152,7 @@ export default function usbDdkTest() {
 
     /**
      * @tc.name   testUsbSendControlWriteRequest001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbDdk_1200
      * @tc.desc   verify OH_Usb_SendControlWriteRequest returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -151,6 +163,7 @@ export default function usbDdkTest() {
 
     /**
      * @tc.name   testUsbSendPipeRequest001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbDdk_1300
      * @tc.desc   verify OH_Usb_SendPipeRequest returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -161,6 +174,7 @@ export default function usbDdkTest() {
 
     /**
      * @tc.name   testUsbSendPipeRequestWithAshmem001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbDdk_1400
      * @tc.desc   verify OH_Usb_SendPipeRequestWithAshmem returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -171,6 +185,7 @@ export default function usbDdkTest() {
 
     /**
      * @tc.name   testUsbCreateDeviceMemMap001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbDdk_1500
      * @tc.desc   verify OH_Usb_CreateDeviceMemMap returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -181,6 +196,7 @@ export default function usbDdkTest() {
 
     /**
      * @tc.name   testUsbDestroyDeviceMemMap001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbDdk_1600
      * @tc.desc   verify OH_Usb_DestroyDeviceMemMap does not crash on emulator
      * @tc.type   FUNCTION
      */
@@ -191,6 +207,7 @@ export default function usbDdkTest() {
 
     /**
      * @tc.name   testUsbGetDevices001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbDdk_1700
      * @tc.desc   verify OH_Usb_GetDevices returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -201,6 +218,7 @@ export default function usbDdkTest() {
 
     /**
      * @tc.name   testUsbControlTransfer001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbDdk_1800
      * @tc.desc   verify OH_Usb_ControlTransfer returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -211,6 +229,7 @@ export default function usbDdkTest() {
 
     /**
      * @tc.name   testUsbGetNonRootHubs001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbDdk_1900
      * @tc.desc   verify OH_Usb_GetNonRootHubs returns 804 on emulator
      * @tc.type   FUNCTION
      */

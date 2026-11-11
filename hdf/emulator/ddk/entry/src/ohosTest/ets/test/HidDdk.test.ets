@@ -31,6 +31,7 @@ export default function hidDdkTest() {
 
     /**
      * @tc.name   testHidCreateDevice001
+     * @tc.number SUB_Driver_Ext_Emulator_HidDdk_0100
      * @tc.desc   verify OH_Hid_CreateDevice returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -41,6 +42,7 @@ export default function hidDdkTest() {
 
     /**
      * @tc.name   testHidEmitEvent001
+     * @tc.number SUB_Driver_Ext_Emulator_HidDdk_0200
      * @tc.desc   verify OH_Hid_EmitEvent returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -51,6 +53,7 @@ export default function hidDdkTest() {
 
     /**
      * @tc.name   testHidDestroyDevice001
+     * @tc.number SUB_Driver_Ext_Emulator_HidDdk_0300
      * @tc.desc   verify OH_Hid_DestroyDevice returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -61,6 +64,7 @@ export default function hidDdkTest() {
 
     /**
      * @tc.name   testHidInit001
+     * @tc.number SUB_Driver_Ext_Emulator_HidDdk_0400
      * @tc.desc   verify OH_Hid_Init returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -71,6 +75,7 @@ export default function hidDdkTest() {
 
     /**
      * @tc.name   testHidRelease001
+     * @tc.number SUB_Driver_Ext_Emulator_HidDdk_0500
      * @tc.desc   verify OH_Hid_Release returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -81,6 +86,7 @@ export default function hidDdkTest() {
 
     /**
      * @tc.name   testHidOpen001
+     * @tc.number SUB_Driver_Ext_Emulator_HidDdk_0600
      * @tc.desc   verify OH_Hid_Open returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -91,6 +97,7 @@ export default function hidDdkTest() {
 
     /**
      * @tc.name   testHidClose001
+     * @tc.number SUB_Driver_Ext_Emulator_HidDdk_0700
      * @tc.desc   verify OH_Hid_Close returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -101,6 +108,7 @@ export default function hidDdkTest() {
 
     /**
      * @tc.name   testHidWrite001
+     * @tc.number SUB_Driver_Ext_Emulator_HidDdk_0800
      * @tc.desc   verify OH_Hid_Write returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -111,6 +119,7 @@ export default function hidDdkTest() {
 
     /**
      * @tc.name   testHidReadTimeout001
+     * @tc.number SUB_Driver_Ext_Emulator_HidDdk_0900
      * @tc.desc   verify OH_Hid_ReadTimeout returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -121,6 +130,7 @@ export default function hidDdkTest() {
 
     /**
      * @tc.name   testHidRead001
+     * @tc.number SUB_Driver_Ext_Emulator_HidDdk_1000
      * @tc.desc   verify OH_Hid_Read returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -131,6 +141,7 @@ export default function hidDdkTest() {
 
     /**
      * @tc.name   testHidSetNonBlocking001
+     * @tc.number SUB_Driver_Ext_Emulator_HidDdk_1100
      * @tc.desc   verify OH_Hid_SetNonBlocking returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -141,6 +152,7 @@ export default function hidDdkTest() {
 
     /**
      * @tc.name   testHidGetRawInfo001
+     * @tc.number SUB_Driver_Ext_Emulator_HidDdk_1200
      * @tc.desc   verify OH_Hid_GetRawInfo returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -151,6 +163,7 @@ export default function hidDdkTest() {
 
     /**
      * @tc.name   testHidGetRawName001
+     * @tc.number SUB_Driver_Ext_Emulator_HidDdk_1300
      * @tc.desc   verify OH_Hid_GetRawName returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -161,6 +174,7 @@ export default function hidDdkTest() {
 
     /**
      * @tc.name   testHidGetPhysicalAddress001
+     * @tc.number SUB_Driver_Ext_Emulator_HidDdk_1400
      * @tc.desc   verify OH_Hid_GetPhysicalAddress returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -171,6 +185,7 @@ export default function hidDdkTest() {
 
     /**
      * @tc.name   testHidGetRawUniqueId001
+     * @tc.number SUB_Driver_Ext_Emulator_HidDdk_1500
      * @tc.desc   verify OH_Hid_GetRawUniqueId returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -181,6 +196,7 @@ export default function hidDdkTest() {
 
     /**
      * @tc.name   testHidSendReport001
+     * @tc.number SUB_Driver_Ext_Emulator_HidDdk_1600
      * @tc.desc   verify OH_Hid_SendReport returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -191,6 +207,7 @@ export default function hidDdkTest() {
 
     /**
      * @tc.name   testHidGetReport001
+     * @tc.number SUB_Driver_Ext_Emulator_HidDdk_1700
      * @tc.desc   verify OH_Hid_GetReport returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -201,6 +218,7 @@ export default function hidDdkTest() {
 
     /**
      * @tc.name   testHidGetReportDescriptor001
+     * @tc.number SUB_Driver_Ext_Emulator_HidDdk_1800
      * @tc.desc   verify OH_Hid_GetReportDescriptor returns 804 on emulator
      * @tc.type   FUNCTION
      */

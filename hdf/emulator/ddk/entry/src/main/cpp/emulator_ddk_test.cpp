@@ -371,9 +371,7 @@ static napi_value UsbSerialFlushOutput(napi_env env, napi_callback_info info)
 }
 
 EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports)
-{
-    napi_property_descriptor desc[] = {
+static napi_property_descriptor g_desc[] = {
         {"ddkCreateAshmem", nullptr, DdkCreateAshmem, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"ddkMapAshmem", nullptr, DdkMapAshmem, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"ddkUnmapAshmem", nullptr, DdkUnmapAshmem, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -419,7 +417,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"usbFreeConfigDescriptor", nullptr, UsbFreeConfigDescriptor, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"usbClaimInterface", nullptr, UsbClaimInterface, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"usbReleaseInterface", nullptr, UsbReleaseInterface, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"usbSelectInterfaceSetting", nullptr, UsbSelectInterfaceSetting, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbSelectInterfaceSetting", nullptr, UsbSelectInterfaceSetting, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
         {"usbGetCurrentInterfaceSetting", nullptr, UsbGetCurrentInterfaceSetting, nullptr, nullptr, nullptr,
             napi_default, nullptr},
         {"usbSendControlReadRequest", nullptr, UsbSendControlReadRequest, nullptr, nullptr, nullptr, napi_default,
@@ -449,7 +448,9 @@ static napi_value Init(napi_env env, napi_value exports)
         {"usbSerialFlushOutput", nullptr, UsbSerialFlushOutput, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
 
-    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+static napi_value Init(napi_env env, napi_value exports)
+{
+    napi_define_properties(env, exports, sizeof(g_desc) / sizeof(g_desc[0]), g_desc);
     return exports;
 }
 EXTERN_C_END

@@ -31,6 +31,7 @@ export default function baseDdkTest() {
 
     /**
      * @tc.name   testDdkCreateAshmem001
+     * @tc.number SUB_Driver_Ext_Emulator_BaseDdk_0100
      * @tc.desc   verify OH_DDK_CreateAshmem returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -41,6 +42,7 @@ export default function baseDdkTest() {
 
     /**
      * @tc.name   testDdkMapAshmem001
+     * @tc.number SUB_Driver_Ext_Emulator_BaseDdk_0200
      * @tc.desc   verify OH_DDK_MapAshmem returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -51,6 +53,7 @@ export default function baseDdkTest() {
 
     /**
      * @tc.name   testDdkUnmapAshmem001
+     * @tc.number SUB_Driver_Ext_Emulator_BaseDdk_0300
      * @tc.desc   verify OH_DDK_UnmapAshmem returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -61,6 +64,7 @@ export default function baseDdkTest() {
 
     /**
      * @tc.name   testDdkDestroyAshmem001
+     * @tc.number SUB_Driver_Ext_Emulator_BaseDdk_0400
      * @tc.desc   verify OH_DDK_DestroyAshmem returns 804 on emulator
      * @tc.type   FUNCTION
      */

@@ -31,6 +31,7 @@ export default function usbSerialDdkTest() {
 
     /**
      * @tc.name   testUsbSerialInit001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbSerialDdk_0100
      * @tc.desc   verify OH_UsbSerial_Init returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -41,6 +42,7 @@ export default function usbSerialDdkTest() {
 
     /**
      * @tc.name   testUsbSerialRelease001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbSerialDdk_0200
      * @tc.desc   verify OH_UsbSerial_Release returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -51,6 +53,7 @@ export default function usbSerialDdkTest() {
 
     /**
      * @tc.name   testUsbSerialOpen001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbSerialDdk_0300
      * @tc.desc   verify OH_UsbSerial_Open returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -61,6 +64,7 @@ export default function usbSerialDdkTest() {
 
     /**
      * @tc.name   testUsbSerialClose001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbSerialDdk_0400
      * @tc.desc   verify OH_UsbSerial_Close returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -71,6 +75,7 @@ export default function usbSerialDdkTest() {
 
     /**
      * @tc.name   testUsbSerialRead001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbSerialDdk_0500
      * @tc.desc   verify OH_UsbSerial_Read returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -81,6 +86,7 @@ export default function usbSerialDdkTest() {
 
     /**
      * @tc.name   testUsbSerialWrite001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbSerialDdk_0600
      * @tc.desc   verify OH_UsbSerial_Write returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -91,6 +97,7 @@ export default function usbSerialDdkTest() {
 
     /**
      * @tc.name   testUsbSerialSetBaudRate001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbSerialDdk_0700
      * @tc.desc   verify OH_UsbSerial_SetBaudRate returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -101,6 +108,7 @@ export default function usbSerialDdkTest() {
 
     /**
      * @tc.name   testUsbSerialSetParams001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbSerialDdk_0800
      * @tc.desc   verify OH_UsbSerial_SetParams returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -111,6 +119,7 @@ export default function usbSerialDdkTest() {
 
     /**
      * @tc.name   testUsbSerialSetTimeout001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbSerialDdk_0900
      * @tc.desc   verify OH_UsbSerial_SetTimeout returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -121,6 +130,7 @@ export default function usbSerialDdkTest() {
 
     /**
      * @tc.name   testUsbSerialSetFlowControl001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbSerialDdk_1000
      * @tc.desc   verify OH_UsbSerial_SetFlowControl returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -131,6 +141,7 @@ export default function usbSerialDdkTest() {
 
     /**
      * @tc.name   testUsbSerialFlush001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbSerialDdk_1100
      * @tc.desc   verify OH_UsbSerial_Flush returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -141,6 +152,7 @@ export default function usbSerialDdkTest() {
 
     /**
      * @tc.name   testUsbSerialFlushInput001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbSerialDdk_1200
      * @tc.desc   verify OH_UsbSerial_FlushInput returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -151,6 +163,7 @@ export default function usbSerialDdkTest() {
 
     /**
      * @tc.name   testUsbSerialFlushOutput001
+     * @tc.number SUB_Driver_Ext_Emulator_UsbSerialDdk_1300
      * @tc.desc   verify OH_UsbSerial_FlushOutput returns 804 on emulator
      * @tc.type   FUNCTION
      */

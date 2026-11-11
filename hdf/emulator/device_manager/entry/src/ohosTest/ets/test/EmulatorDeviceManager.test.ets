@@ -36,6 +36,7 @@ export default function emulatorDeviceManagerTest() {
 
     /**
      * @tc.name   testQueryDevices001
+     * @tc.number SUB_Driver_Ext_Emulator_DeviceManager_0100
      * @tc.desc   verify queryDevices throws 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -54,6 +55,7 @@ export default function emulatorDeviceManagerTest() {
 
     /**
      * @tc.name   testBindDevice001
+     * @tc.number SUB_Driver_Ext_Emulator_DeviceManager_0200
      * @tc.desc   verify bindDevice throws 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -72,6 +74,7 @@ export default function emulatorDeviceManagerTest() {
 
     /**
      * @tc.name   testBindDeviceDriver001
+     * @tc.number SUB_Driver_Ext_Emulator_DeviceManager_0300
      * @tc.desc   verify bindDeviceDriver throws 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -90,6 +93,7 @@ export default function emulatorDeviceManagerTest() {
 
     /**
      * @tc.name   testUnbindDevice001
+     * @tc.number SUB_Driver_Ext_Emulator_DeviceManager_0400
      * @tc.desc   verify unbindDevice throws 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -108,6 +112,7 @@ export default function emulatorDeviceManagerTest() {
 
     /**
      * @tc.name   testBindDriverWithDeviceId001
+     * @tc.number SUB_Driver_Ext_Emulator_DeviceManager_0500
      * @tc.desc   verify bindDriverWithDeviceId throws 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -126,6 +131,7 @@ export default function emulatorDeviceManagerTest() {
 
     /**
      * @tc.name   testUnbindDriverWithDeviceId001
+     * @tc.number SUB_Driver_Ext_Emulator_DeviceManager_0600
      * @tc.desc   verify unbindDriverWithDeviceId throws 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -144,6 +150,7 @@ export default function emulatorDeviceManagerTest() {
 
     /**
      * @tc.name   testQueryDeviceInfo001
+     * @tc.number SUB_Driver_Ext_Emulator_DeviceManager_0700
      * @tc.desc   verify queryDeviceInfo throws 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -162,6 +169,7 @@ export default function emulatorDeviceManagerTest() {
 
     /**
      * @tc.name   testQueryDriverInfo001
+     * @tc.number SUB_Driver_Ext_Emulator_DeviceManager_0800
      * @tc.desc   verify queryDriverInfo throws 804 on emulator
      * @tc.type   FUNCTION
      */

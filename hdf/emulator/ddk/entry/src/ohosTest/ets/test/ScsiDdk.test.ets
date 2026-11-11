@@ -31,6 +31,7 @@ export default function scsiDdkTest() {
 
     /**
      * @tc.name   testScsiInit001
+     * @tc.number SUB_Driver_Ext_Emulator_ScsiDdk_0100
      * @tc.desc   verify OH_ScsiPeripheral_Init returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -41,6 +42,7 @@ export default function scsiDdkTest() {
 
     /**
      * @tc.name   testScsiRelease001
+     * @tc.number SUB_Driver_Ext_Emulator_ScsiDdk_0200
      * @tc.desc   verify OH_ScsiPeripheral_Release returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -51,6 +53,7 @@ export default function scsiDdkTest() {
 
     /**
      * @tc.name   testScsiOpen001
+     * @tc.number SUB_Driver_Ext_Emulator_ScsiDdk_0300
      * @tc.desc   verify OH_ScsiPeripheral_Open returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -61,6 +64,7 @@ export default function scsiDdkTest() {
 
     /**
      * @tc.name   testScsiClose001
+     * @tc.number SUB_Driver_Ext_Emulator_ScsiDdk_0400
      * @tc.desc   verify OH_ScsiPeripheral_Close returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -71,6 +75,7 @@ export default function scsiDdkTest() {
 
     /**
      * @tc.name   testScsiTestUnitReady001
+     * @tc.number SUB_Driver_Ext_Emulator_ScsiDdk_0500
      * @tc.desc   verify OH_ScsiPeripheral_TestUnitReady returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -81,6 +86,7 @@ export default function scsiDdkTest() {
 
     /**
      * @tc.name   testScsiInquiry001
+     * @tc.number SUB_Driver_Ext_Emulator_ScsiDdk_0600
      * @tc.desc   verify OH_ScsiPeripheral_Inquiry returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -91,6 +97,7 @@ export default function scsiDdkTest() {
 
     /**
      * @tc.name   testScsiReadCapacity10001
+     * @tc.number SUB_Driver_Ext_Emulator_ScsiDdk_0700
      * @tc.desc   verify OH_ScsiPeripheral_ReadCapacity10 returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -101,6 +108,7 @@ export default function scsiDdkTest() {
 
     /**
      * @tc.name   testScsiRequestSense001
+     * @tc.number SUB_Driver_Ext_Emulator_ScsiDdk_0800
      * @tc.desc   verify OH_ScsiPeripheral_RequestSense returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -111,6 +119,7 @@ export default function scsiDdkTest() {
 
     /**
      * @tc.name   testScsiRead10001
+     * @tc.number SUB_Driver_Ext_Emulator_ScsiDdk_0900
      * @tc.desc   verify OH_ScsiPeripheral_Read10 returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -121,6 +130,7 @@ export default function scsiDdkTest() {
 
     /**
      * @tc.name   testScsiWrite10001
+     * @tc.number SUB_Driver_Ext_Emulator_ScsiDdk_1000
      * @tc.desc   verify OH_ScsiPeripheral_Write10 returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -131,6 +141,7 @@ export default function scsiDdkTest() {
 
     /**
      * @tc.name   testScsiVerify10001
+     * @tc.number SUB_Driver_Ext_Emulator_ScsiDdk_1100
      * @tc.desc   verify OH_ScsiPeripheral_Verify10 returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -141,6 +152,7 @@ export default function scsiDdkTest() {
 
     /**
      * @tc.name   testScsiSendRequestByCdb001
+     * @tc.number SUB_Driver_Ext_Emulator_ScsiDdk_1200
      * @tc.desc   verify OH_ScsiPeripheral_SendRequestByCdb returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -151,6 +163,7 @@ export default function scsiDdkTest() {
 
     /**
      * @tc.name   testScsiCreateDeviceMemMap001
+     * @tc.number SUB_Driver_Ext_Emulator_ScsiDdk_1300
      * @tc.desc   verify OH_ScsiPeripheral_CreateDeviceMemMap returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -161,6 +174,7 @@ export default function scsiDdkTest() {
 
     /**
      * @tc.name   testScsiDestroyDeviceMemMap001
+     * @tc.number SUB_Driver_Ext_Emulator_ScsiDdk_1400
      * @tc.desc   verify OH_ScsiPeripheral_DestroyDeviceMemMap returns 804 on emulator
      * @tc.type   FUNCTION
      */
@@ -171,6 +185,7 @@ export default function scsiDdkTest() {
 
     /**
      * @tc.name   testScsiParseBasicSenseInfo001
+     * @tc.number SUB_Driver_Ext_Emulator_ScsiDdk_1500
      * @tc.desc   verify OH_ScsiPeripheral_ParseBasicSenseInfo returns 804 on emulator
      * @tc.type   FUNCTION
      */
