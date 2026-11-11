@@ -3416,7 +3416,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
       let caseName = 'testOnBrightnessInfoChange_0200';
       try {
         let windowClass = await windowStage.getMainWindow();
-        if(displayClass === 6){
+        if(displayClass.id === 6){
           done();
         }
         await windowClass.setWindowBrightness(0.7);
