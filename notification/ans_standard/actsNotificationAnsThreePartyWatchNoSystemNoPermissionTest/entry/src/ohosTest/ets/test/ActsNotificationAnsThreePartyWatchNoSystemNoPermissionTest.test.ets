@@ -70,7 +70,7 @@ export default function ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTe
       } catch (error) {
         let err:BusinessError=error as BusinessError
         hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message}`);
-        if (err?.code == 801) {
+        if (err?.code === 801) {
           expect(err.code).assertEqual(801);
           done();
         } else {
@@ -99,10 +99,10 @@ export default function ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTe
         }).catch((err: BusinessError) => {
           console.error(TAG +
             `getUserGrantedBundleIcon failed, code is ${err.code}, message is ${err.message}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done()
-          } else if (err.code == 201) {
+          } else if (err.code === 201) {
             expect(err.code).assertEqual(201);
             done()
           } else {
@@ -113,10 +113,10 @@ export default function ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTe
       }catch(err){
         console.error(TAG +
             ` failed, code is ${err.code}, message is ${err.message}`);
-        if (err.code == 801) {
+        if (err.code === 801) {
           expect(err.code).assertEqual(801)
           done()
-        } else if (err.code == 201) {
+        } else if (err.code === 201) {
           expect(err.code).assertEqual(201);
           done()
         } else {
@@ -150,10 +150,10 @@ export default function ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTe
         }).catch((err: BusinessError) => {
           console.error(TAG +
             `disableUserGrantedByBundle failed, code is ${err.code}, message is ${err.message}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done()
-          } else if (err.code == 201) {
+          } else if (err.code === 201) {
             expect(err.code).assertEqual(201);
             done()
           } else {
