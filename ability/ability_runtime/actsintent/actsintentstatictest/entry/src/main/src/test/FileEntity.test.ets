@@ -24,7 +24,7 @@ import wantConstant from '@ohos.app.ability.wantConstant';
 class DemoFileEntity implements insightIntent.FileEntity {
   public entityId: 'OHOS_FILE_ENTITY' = 'OHOS_FILE_ENTITY';
   public uris: Array<string> = ['file://com.example.demo/data/test.txt'];
-  public flags?: number = wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION;
+  public flags?: Int = wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION as Int;
 }
 
 export default function fileEntityStaticTest(): void {
@@ -59,7 +59,7 @@ export default function fileEntityStaticTest(): void {
         let withFlag: insightIntent.FileEntity = {
           entityId: 'OHOS_FILE_ENTITY',
           uris: ['file://com.example.demo/data/a.txt'],
-          flags: wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION
+          flags: wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION as Int
         };
         let noFlag: insightIntent.FileEntity = {
           entityId: 'OHOS_FILE_ENTITY',
