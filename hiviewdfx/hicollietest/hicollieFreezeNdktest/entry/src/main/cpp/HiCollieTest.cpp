@@ -71,9 +71,9 @@ napi_value TestHiCollieAssociateProcessReport(napi_env env, napi_callback_info i
     // 上报6秒事件
     HiCollie_ErrorCode code = OH_HiCollie_AssociateProcessReport(true);
     if(code == HICOLLIE_SUCCESS){
-    code = HICOLLIE_SUCCESS;
+        code = HICOLLIE_SUCCESS;
     } else if (code == OH_HICOLLIE_REACH_REPORT_LIMIT) {
-    code = OH_HICOLLIE_REACH_REPORT_LIMIT;
+        code = OH_HICOLLIE_REACH_REPORT_LIMIT;
     };
     napi_value result;
     napi_create_int32(env, code, &result);
@@ -93,7 +93,6 @@ napi_value TestHiCollieAssociateProcessReport1(napi_env env, napi_callback_info 
 }
 
 napi_value TestHiCollieSetFreezeCallback1(napi_env env, napi_callback_info info)
-
 {
     OH_HiCollie_SetFreezeCallback(nullptr);
     napi_value result;
