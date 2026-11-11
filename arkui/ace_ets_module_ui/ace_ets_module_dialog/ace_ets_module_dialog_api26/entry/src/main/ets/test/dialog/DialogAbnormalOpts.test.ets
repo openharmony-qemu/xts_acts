@@ -17,20 +17,25 @@ import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium
 import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+import DialogApi26TestHelper from '../common/DialogApi26TestHelper';
 
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function DialogAbnormalOpts() {
   describe('DialogAbnormalOpts', () => {
     beforeEach(async (done: Function) => {
       console.info('[ARKUI_DYN] DialogAbnormalOpts beforeEach');
-      let options: router.RouterOptions = { url: 'MainAbility/pages/dialog/DialogAbnormalOpts' };
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/dialog/DialogAbnormalOpts'
+      };
       try {
-        router.clear();
         let pages = router.getState();
         if (pages.name !== 'DialogAbnormalOpts') {
-          await router.pushUrl(options);
+          router.clear();
+          await CommonFunc.sleep(500);
+          await router.replaceUrl(options);
           await CommonFunc.sleep(2000);
+          let driverNav = await Driver.create();
+          await DialogApi26TestHelper.drainCustomDialogs(driverNav);
         }
       } catch (err) {
         console.error('[ARKUI_DYN] push DialogAbnormalOpts error: ' + err);
@@ -39,13 +44,10 @@ export default function DialogAbnormalOpts() {
       done();
     });
     afterEach(async () => {
+      let driver = await Driver.create();
+      await DialogApi26TestHelper.drainCustomDialogs(driver);
+      await DialogApi26TestHelper.dismissOverlayIfAny(driver);
       await CommonFunc.sleep(700);
-      try {
-        let driver = await Driver.create();
-        await driver.pressBack(displayID);
-      } catch (e) {
-        console.info('[ARKUI_DYN] pressBack skip');
-      }
     });
     /**
      * @tc.number SUB_ArkUI_DialogApi26_DialogAbnormalOpts_0100

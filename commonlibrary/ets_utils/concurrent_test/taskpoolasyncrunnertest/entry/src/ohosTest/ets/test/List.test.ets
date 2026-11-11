@@ -25,6 +25,9 @@ import taskPoolAsyncRunnerMultipleUITest from "./TaskPoolAsyncRunnerMultipleUITe
 import taskPoolAsyncRunnerMultipleGCTest from "./TaskPoolAsyncRunnerMultipleGCTest.test";
 import asyncRunnerTest from "./AsyncRunner.test";
 
+import AsyncRunnerConstructorNamedTest from './asyncRunner/AsyncRunnerConstructorNamedTest.test';
+import AsyncRunnerConstructorTest from './asyncRunner/AsyncRunnerConstructorTest.test';
+import AsyncRunnerExecuteTest from './asyncRunner/AsyncRunnerExecuteTest.test';
 export default function testsuite() {
   taskPoolAsyncRunnerExecute();
   taskPoolAsyncRunnerTask();
@@ -38,4 +41,7 @@ export default function testsuite() {
   taskPoolAsyncRunnerMultipleUITest();
   taskPoolAsyncRunnerMultipleGCTest();
   asyncRunnerTest();
+  AsyncRunnerConstructorNamedTest();
+  AsyncRunnerConstructorTest();
+  AsyncRunnerExecuteTest();
 }

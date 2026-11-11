@@ -50,6 +50,9 @@ let fdNumber: number;
 let fdPath: string;
 let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
 
+// 幂等保护：防止 imageArrival 回调并发触发多次 releasePhotoSession 导致相机服务 fatal error
+let isPhotoSessionReleased: boolean = false;
+
 
 
 let CameraVideoProfile: media.AVRecorderProfile = {
@@ -237,10 +240,27 @@ async function getCreateVideoSession(testName: string, previewOutput: camera.Pre
 }
 
 async function releasePhotoSession() {
+  if (isPhotoSessionReleased) {
+    console.info(TAG, 'releasePhotoSession already released, skip.');
+    return;
+  }
+  isPhotoSessionReleased = true;
   console.info(TAG, 'releasePhotoSession.');
-  await mPreviewOutput?.release();
-  await mPhotoOutput?.release();
-  await mPhotoSession?.release();
+  try {
+    await mPreviewOutput?.release();
+  } catch (e) {
+    console.error(TAG, 'releasePreviewOutput failed:', (e as BusinessError).code, (e as BusinessError).message);
+  }
+  try {
+    await mPhotoOutput?.release();
+  } catch (e) {
+    console.error(TAG, 'releasePhotoOutput failed:', (e as BusinessError).code, (e as BusinessError).message);
+  }
+  try {
+    await mPhotoSession?.release();
+  } catch (e) {
+    console.error(TAG, 'releasePhotoSession failed:', (e as BusinessError).code, (e as BusinessError).message);
+  }
 }
 
 async function releaseVideoSession() {
@@ -310,6 +330,8 @@ export default function ImageGetComponentFirSupp() {
     });
     afterEach(async () => {
       console.info('afterEach case');
+      await releasePhotoSession();
+      isPhotoSessionReleased = false;
       await sleep(500)
     });
     afterAll(async () => {
@@ -328,8 +350,11 @@ export default function ImageGetComponentFirSupp() {
      */
     it('image_getComponent_AsyncCallback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_getComponent_AsyncCallback_001';
+      let isFirstFrame = true;
       ImageGetComponent(done,testName, async (receiver) => {
         receiver.on('imageArrival', async () => {
+          if (!isFirstFrame) return;
+          isFirstFrame = false;
           console.info(TAG, testName, ' receiver.on begin');
           let img = await receiver.readNextImage();
           console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
@@ -337,6 +362,8 @@ export default function ImageGetComponentFirSupp() {
             if (err) {
               console.error(TAG, testName,`Failed to get the component.code ${err.code},message is ${err.message}`);
               expect().assertFail();
+              await releasePhotoSession();
+              done();
             } else {
               console.info(TAG, testName,'Succeeded in getting component.',component.componentType);
               expect(Number(component.componentType)).assertEqual(4);
@@ -362,8 +389,11 @@ export default function ImageGetComponentFirSupp() {
      */
     it('image_getComponent_AsyncCallback_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_getComponent_AsyncCallback_002';
+      let isFirstFrame = true;
       ImageGetComponent(done,testName, async (receiver) => {
         receiver.on('imageArrival', async () => {
+          if (!isFirstFrame) return;
+          isFirstFrame = false;
           console.info(TAG, testName, ' receiver.on begin');
           let img = await receiver.readNextImage();
           console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
@@ -371,6 +401,8 @@ export default function ImageGetComponentFirSupp() {
             if (err) {
               console.error(TAG, testName,`Failed to get the component.code ${err.code},message is ${err.message}`);
               expect().assertFail();
+              await releasePhotoSession();
+              done();
             } else {
               console.info(TAG, testName,'Succeeded in getting component.',component.rowStride);
               expect(Number(component.rowStride)).assertLarger(0);
@@ -396,8 +428,11 @@ export default function ImageGetComponentFirSupp() {
      */
     it('image_getComponent_AsyncCallback_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_getComponent_AsyncCallback_003';
+      let isFirstFrame = true;
       ImageGetComponent(done,testName, async (receiver) => {
         receiver.on('imageArrival', async () => {
+          if (!isFirstFrame) return;
+          isFirstFrame = false;
           console.info(TAG, testName, ' receiver.on begin');
           let img = await receiver.readNextImage();
           console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
@@ -405,6 +440,8 @@ export default function ImageGetComponentFirSupp() {
             if (err) {
               console.error(TAG, testName,`Failed to get the component.code ${err.code},message is ${err.message}`);
               expect().assertFail();
+              await releasePhotoSession();
+              done();
             } else {
               console.info(TAG, testName,'Succeeded in getting component.',component.pixelStride);
               expect(Number(component.pixelStride)).assertEqual(1);
@@ -430,8 +467,11 @@ export default function ImageGetComponentFirSupp() {
      */
     it('CAMERA_multimedia_image_getComponent_Promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'CAMERA_multimedia_image_getComponent_Promise_001';
+      let isFirstFrame = true;
       ImageGetComponent(done,testName, async (receiver) => {
         receiver.on('imageArrival', async () => {
+          if (!isFirstFrame) return;
+          isFirstFrame = false;
           console.info(TAG, testName, ' receiver.on begin');
           let img = await receiver.readNextImage();
           console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
@@ -441,9 +481,11 @@ export default function ImageGetComponentFirSupp() {
             await releasePhotoSession();
             console.info(TAG,testName,"releasePhotoSession success");
             done();
-          }).catch((error: BusinessError) => {
+          }).catch(async (error: BusinessError) => {
             console.error(TAG,testName,`Failed to get the component.code ${error.code},message is ${error.message}`);
             expect().assertFalse();
+            await releasePhotoSession();
+            done();
           })
         });
         createPhotoOutput();
@@ -462,8 +504,11 @@ export default function ImageGetComponentFirSupp() {
      */
     it('CAMERA_multimedia_image_getComponent_Promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'CAMERA_multimedia_image_getComponent_Promise_002';
+      let isFirstFrame = true;
       ImageGetComponent(done,testName, async (receiver) => {
         receiver.on('imageArrival', async () => {
+          if (!isFirstFrame) return;
+          isFirstFrame = false;
           console.info(TAG, testName, ' receiver.on begin');
           let img = await receiver.readNextImage();
           console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
@@ -473,9 +518,11 @@ export default function ImageGetComponentFirSupp() {
             await releasePhotoSession();
             console.info(TAG,testName,"releasePhotoSession success");
             done();
-          }).catch((error: BusinessError) => {
+          }).catch(async (error: BusinessError) => {
             console.error(TAG,testName,`Failed to get the component.code ${error.code},message is ${error.message}`);
             expect().assertFalse();
+            await releasePhotoSession();
+            done();
           })
         });
         createPhotoOutput();
@@ -494,8 +541,11 @@ export default function ImageGetComponentFirSupp() {
      */
     it('CAMERA_multimedia_image_getComponent_Promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'CAMERA_multimedia_image_getComponent_Promise_003';
+      let isFirstFrame = true;
       ImageGetComponent(done,testName, async (receiver) => {
         receiver.on('imageArrival', async () => {
+          if (!isFirstFrame) return;
+          isFirstFrame = false;
           console.info(TAG, testName, ' receiver.on begin');
           let img = await receiver.readNextImage();
           console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
@@ -505,9 +555,11 @@ export default function ImageGetComponentFirSupp() {
             await releasePhotoSession();
             console.info(TAG,testName,"releasePhotoSession success");
             done();
-          }).catch((error: BusinessError) => {
+          }).catch(async (error: BusinessError) => {
             console.error(TAG,testName,`Failed to get the component.code ${error.code},message is ${error.message}`);
             expect().assertFalse();
+            await releasePhotoSession();
+            done();
           })
         });
         createPhotoOutput();
@@ -527,8 +579,11 @@ export default function ImageGetComponentFirSupp() {
      */
     it('image_sendableImage_getComponent_Promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_sendableImage_getComponent_Promise_001';
+      let isFirstFrame = true;
       ImageGetComponent(done,testName, async (receiver) => {
         receiver.on('imageArrival', async () => {
+          if (!isFirstFrame) return;
+          isFirstFrame = false;
           console.info(TAG, testName, ' receiver.on begin');
           let img = await receiver.readNextImage();
           console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
@@ -538,9 +593,11 @@ export default function ImageGetComponentFirSupp() {
             await releasePhotoSession();
             console.info(TAG,testName,"releasePhotoSession success");
             done();
-          }).catch((error: BusinessError) => {
+          }).catch(async (error: BusinessError) => {
             console.error(TAG,testName,`Failed to get the component.code ${error.code},message is ${error.message}`);
             expect().assertFalse();
+            await releasePhotoSession();
+            done();
           })
         });
         createPhotoOutput();
@@ -559,8 +616,11 @@ export default function ImageGetComponentFirSupp() {
      */
     it('image_sendableImage_getComponent_Promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_sendableImage_getComponent_Promise_002';
+      let isFirstFrame = true;
       sendableGetComponent(done,testName, async (receiver) => {
           receiver.on('imageArrival', async () => {
+            if (!isFirstFrame) return;
+            isFirstFrame = false;
             console.info(TAG, testName, ' receiver.on begin');
             let img = await receiver.readNextImage();
             console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
@@ -570,9 +630,11 @@ export default function ImageGetComponentFirSupp() {
               await releasePhotoSession();
               console.info(TAG,testName,"releasePhotoSession success");
               done();
-            }).catch((error: BusinessError) => {
+            }).catch(async (error: BusinessError) => {
               console.error(TAG,testName,`Failed to get the component.code ${error.code},message is ${error.message}`);
               expect().assertFalse();
+              await releasePhotoSession();
+              done();
             })
           });
         createPhotoOutput();
@@ -590,8 +652,11 @@ export default function ImageGetComponentFirSupp() {
      */
     it('image_sendableImage_getComponent_Promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_sendableImage_getComponent_Promise_003';
+      let isFirstFrame = true;
       sendableGetComponent(done,testName, async (receiver) => {
         receiver.on('imageArrival', async () => {
+          if (!isFirstFrame) return;
+          isFirstFrame = false;
           console.info(TAG, testName, ' receiver.on begin');
           let img = await receiver.readNextImage();
           console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
@@ -601,9 +666,11 @@ export default function ImageGetComponentFirSupp() {
             await releasePhotoSession();
             console.info(TAG,testName,"releasePhotoSession success");
             done();
-          }).catch((error: BusinessError) => {
+          }).catch(async (error: BusinessError) => {
             console.error(TAG,testName,`Failed to get the component.code ${error.code},message is ${error.message}`);
             expect().assertFalse();
+            await releasePhotoSession();
+            done();
           })
         });
         createPhotoOutput();

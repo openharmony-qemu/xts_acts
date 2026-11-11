@@ -148,7 +148,6 @@ export default function HidebuggwpasanTest() {
                 expect().assertFail()
                 done();
             } catch (err) {
-                err = err as BusinessError;
                 console.info(`testHidebuggwpasan_0500 > error code: ${err.code}, error msg: ${err.message}`);
                 if (err.code === 11400114) {
                     console.info(`testHidebuggwpasan_0500 > 11400114 (app num limit), skip.`);
@@ -247,7 +246,6 @@ export default function HidebuggwpasanTest() {
                 expect().assertFalse()
                 done();
             } catch (err) {
-                err = err as BusinessError;
                 console.info(`testHidebuggwpasan_0800 > error code: ${err.code}, error msg: ${err.message}`);
                 if (err.code === 11400114) {
                     console.info(`testHidebuggwpasan_0800 > 11400114 (app num limit), skip.`);
@@ -281,7 +279,6 @@ export default function HidebuggwpasanTest() {
                 expect().assertFalse()
                 done();
             } catch (err) {
-                err = err as BusinessError;
                 console.info(`testHidebuggwpasan_0900 > error code: ${err.code}, error msg: ${err.message}`);
                 if (err.code === 11400114) {
                     console.info(`testHidebuggwpasan_0900 > 11400114 (app num limit), skip.`);
@@ -312,7 +309,6 @@ export default function HidebuggwpasanTest() {
                 expect().assertFalse()
                 done();
             } catch (err) {
-                err = err as BusinessError;
                 console.info(`testHidebuggwpasan_1000 > error code: ${err.code}, error msg: ${err.message}`);
                 if (err.code === 11400114) {
                     console.info(`testHidebuggwpasan_1000 > 11400114 (app num limit), skip.`);

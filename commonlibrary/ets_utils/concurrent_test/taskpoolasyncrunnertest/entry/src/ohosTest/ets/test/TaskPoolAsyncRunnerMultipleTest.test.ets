@@ -29,6 +29,11 @@ declare class ArkTools {
   static forceFullGC(): void;
 }
 
+@Concurrent
+function forceFullGCInBackground(): void {
+  ArkTools.forceFullGC();
+}
+
 export default function taskPoolAsyncRunnerMultipleTest() {
   describe('TaskPoolAsyncRunnerMultipleTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -65,6 +70,7 @@ export default function taskPoolAsyncRunnerMultipleTest() {
       console.info(`${caseName} test start`)
       let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
       let count: number = 0;
+      let gcRequested: boolean = false;
       const taskCount = 10;
       const tasks: taskpool.Task[] = [];
       for (let i = 0; i < taskCount; i++) {
@@ -75,9 +81,7 @@ export default function taskPoolAsyncRunnerMultipleTest() {
           console.info('=======', count);
           count++;
           if (i === 2 || i === 4 || i === 9) {
-            setTimeout(() => {
-              ArkTools.forceFullGC();
-            }, 10);
+            gcRequested = true;
           }
         }).catch((e: BusinessError) => {
           console.info('=======error', JSON.stringify(e));
@@ -87,6 +91,10 @@ export default function taskPoolAsyncRunnerMultipleTest() {
 
       while (count < taskCount) {
         await sleep(100);
+      }
+      if (gcRequested) {
+        let gcTask: taskpool.Task = new taskpool.Task(forceFullGCInBackground);
+        await taskpool.execute(gcTask);
       }
       await sleep(1000);
       expect(taskCount).assertEqual(count);
@@ -108,6 +116,7 @@ export default function taskPoolAsyncRunnerMultipleTest() {
         console.info(`${caseName} test start`)
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         let count: number = 0;
+        let gcRequested: boolean = false;
         const taskCount = 10;
         const tasks: taskpool.Task[] = [];
         for (let i = 0; i < taskCount; i++) {
@@ -118,9 +127,7 @@ export default function taskPoolAsyncRunnerMultipleTest() {
             console.info('=======', count);
             count++;
             if (i === 2 || i === 4 || i === 9) {
-              setTimeout(() => {
-                ArkTools.forceFullGC();
-              }, 10);
+              gcRequested = true;
             }
           }).catch((e: BusinessError) => {
             console.info('=======error', JSON.stringify(e));
@@ -130,6 +137,10 @@ export default function taskPoolAsyncRunnerMultipleTest() {
 
         while (count < taskCount) {
           await sleep(100);
+        }
+        if (gcRequested) {
+          let gcTask: taskpool.Task = new taskpool.Task(forceFullGCInBackground);
+          await taskpool.execute(gcTask);
         }
         await sleep(1000);
         expect(taskCount).assertEqual(count);
@@ -150,6 +161,7 @@ export default function taskPoolAsyncRunnerMultipleTest() {
         console.info(`${caseName} test start`)
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         let count: number = 0;
+        let gcRequested: boolean = false;
         const taskCount = 10;
         const tasks: taskpool.Task[] = [];
         for (let i = 0; i < taskCount; i++) {
@@ -160,9 +172,7 @@ export default function taskPoolAsyncRunnerMultipleTest() {
             console.info('=======', count);
             count++;
             if (i === 2 || i === 4 || i === 9) {
-              setTimeout(() => {
-                ArkTools.forceFullGC();
-              }, 10);
+              gcRequested = true;
             }
           }).catch((e: BusinessError) => {
             console.info('=======error', JSON.stringify(e));
@@ -172,6 +182,10 @@ export default function taskPoolAsyncRunnerMultipleTest() {
 
         while (count < taskCount) {
           await sleep(100);
+        }
+        if (gcRequested) {
+          let gcTask: taskpool.Task = new taskpool.Task(forceFullGCInBackground);
+          await taskpool.execute(gcTask);
         }
         await sleep(1000);
         expect(taskCount).assertEqual(count);
@@ -191,6 +205,7 @@ export default function taskPoolAsyncRunnerMultipleTest() {
       console.info(`${caseName} test start`)
       let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
       let count: number = 0;
+      let gcRequested: boolean = false;
       const taskCount = 10;
       const tasks: taskpool.Task[] = [];
       for (let i = 0; i < taskCount; i++) {
@@ -201,9 +216,7 @@ export default function taskPoolAsyncRunnerMultipleTest() {
           console.info('=======', count);
           count++;
           if (i === 2 || i === 4 || i === 9) {
-            setTimeout(() => {
-              ArkTools.forceFullGC();
-            }, 10);
+            gcRequested = true;
           }
         }).catch((e: BusinessError) => {
           console.info('=======error', JSON.stringify(e));
@@ -212,6 +225,10 @@ export default function taskPoolAsyncRunnerMultipleTest() {
       }
       while (count < taskCount) {
         await sleep(100);
+      }
+      if (gcRequested) {
+        let gcTask: taskpool.Task = new taskpool.Task(forceFullGCInBackground);
+        await taskpool.execute(gcTask);
       }
       await sleep(1000);
       expect(taskCount).assertEqual(count);
@@ -232,6 +249,7 @@ export default function taskPoolAsyncRunnerMultipleTest() {
       console.info(`${caseName} test start`)
       let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
       let count: number = 0;
+      let gcRequested: boolean = false;
       const taskCount = 10;
       const tasks: taskpool.Task[] = [];
       for (let i = 0; i < taskCount; i++) {
@@ -242,9 +260,7 @@ export default function taskPoolAsyncRunnerMultipleTest() {
           console.info('=======', count);
           count++;
           if (i === 3 || i === 6 || i === 10) {
-            setTimeout(() => {
-              ArkTools.forceFullGC();
-            }, 10);
+            gcRequested = true;
           }
         }).catch((e: BusinessError) => {
           console.info('=======error', JSON.stringify(e));
@@ -253,6 +269,10 @@ export default function taskPoolAsyncRunnerMultipleTest() {
 
       while (count < taskCount) {
         await sleep(100);
+      }
+      if (gcRequested) {
+        let gcTask: taskpool.Task = new taskpool.Task(forceFullGCInBackground);
+        await taskpool.execute(gcTask);
       }
       await sleep(1000);
       expect(taskCount).assertEqual(count);

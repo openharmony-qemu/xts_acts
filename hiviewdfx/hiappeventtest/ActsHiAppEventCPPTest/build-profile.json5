@@ -6,7 +6,7 @@
         "name": "default",
         "signingConfig": "default",
         "compileSdkVersion": "26.1.0",
-        "compatibleSdkVersion": "23",
+        "compatibleSdkVersion": 23,
         "runtimeOS": "OpenHarmony",
         "buildOption": {
           "nativeCompiler": "BiSheng",

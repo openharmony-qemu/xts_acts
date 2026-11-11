@@ -67,7 +67,6 @@ struct Index {
           .id('MyRow2')
         }
         .width(200).height(100)
-        .margin(50)
         .border({ width: 2, color: '#6699FF' })
 
       Column() {

@@ -126,7 +126,6 @@ export default function SetGetUserIdTest() {
         done()
       }
       catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserId04 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();
@@ -153,7 +152,6 @@ export default function SetGetUserIdTest() {
         done()
       }
       catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserId05 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();
@@ -177,7 +175,6 @@ export default function SetGetUserIdTest() {
         done()
       }
       catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserId06 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();
@@ -204,7 +201,6 @@ export default function SetGetUserIdTest() {
         done()
       }
       catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserId07 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();
@@ -227,7 +223,6 @@ export default function SetGetUserIdTest() {
         done()
       }
       catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserId08 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();
@@ -254,7 +249,6 @@ export default function SetGetUserIdTest() {
         done()
       }
       catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserId09 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();
@@ -278,7 +272,6 @@ export default function SetGetUserIdTest() {
         done()
       }
       catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserId10 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();

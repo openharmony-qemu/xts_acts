@@ -13,13 +13,72 @@
 * limitations under the License.
 */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium';
-import { taskpool } from '@kit.ArkTS';
+import { ErrorEvent, MessageEvents, taskpool, worker } from '@kit.ArkTS';
 import { printArgs1, } from '../testability/pages/TaskMethodTest';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { sleep } from '../testability/pages/Utils';
 
-declare class ArkTools {
-  static forceFullGC(): void;
+// Full GC must never run on the application main thread or on shared
+// TaskPool threads:
+// - main-thread ForceFullGC froze the main event loop for more than 6s
+//   (THREAD_BLOCK_6S, native faultlogger evidence of the AsyncRunner
+//   strict round 43);
+// - a TaskPool-hosted ForceFullGC can deadlock with concurrent TaskPool
+//   scheduling (ExecuteDelayed strict round 5: every later case hung
+//   waiting for TaskPool results that never arrived).
+// A dedicated ThreadWorker keeps GC off both execution paths, requests are
+// serialized on one worker, and the bounded observation below keeps a rare
+// worker-side stall from hanging the test case.
+const FORCE_GC_WORKER_PATH: string = '../workers/ForceFullGCWorker.ets';
+const FORCE_GC_OBSERVE_TIMEOUT_MS: number = 15000;
+
+let forceGCWorker: worker.ThreadWorker | undefined = undefined;
+let forceGCChain: Promise<void> = Promise.resolve();
+
+function runForceGCOnce(gcWorker: worker.ThreadWorker): Promise<void> {
+  return new Promise<void>((resolve) => {
+    const finish = (): void => {
+      resolve();
+    };
+    gcWorker.onmessage = (e: MessageEvents) => {
+      finish();
+    };
+    gcWorker.onerror = (err: ErrorEvent) => {
+      console.error(`forceFullGC worker error: ${JSON.stringify(err)}`);
+      finish();
+    };
+    gcWorker.postMessage('forceFullGC');
+  });
+}
+
+function scheduleBackgroundFullGC(): Promise<void> {
+  return new Promise<void>((resolve) => {
+    setTimeout(() => {
+      try {
+        let gcWorker: worker.ThreadWorker;
+        if (forceGCWorker === undefined) {
+          gcWorker = new worker.ThreadWorker(FORCE_GC_WORKER_PATH);
+          forceGCWorker = gcWorker;
+        } else {
+          gcWorker = forceGCWorker;
+        }
+        const run: Promise<void> = forceGCChain.then(() => runForceGCOnce(gcWorker));
+        forceGCChain = run.catch(() => {
+        });
+        resolve(run);
+      } catch (error) {
+        console.error(`forceFullGC worker unavailable: ${JSON.stringify(error)}`);
+        resolve();
+      }
+    }, 10);
+  });
+}
+
+// Observes GC completion with a bounded wait: a full GC normally finishes
+// in well under a second, and a rare worker-side stall must not hang the
+// test case or distort the assertions on the tasks under test.
+async function awaitBackgroundFullGC(gcPromise: Promise<void>): Promise<void> {
+  await Promise.race([gcPromise, sleep(FORCE_GC_OBSERVE_TIMEOUT_MS)]);
 }
 
 export default function taskPoolAsyncRunnerMultipleGCTest() {
@@ -58,6 +117,7 @@ export default function taskPoolAsyncRunnerMultipleGCTest() {
       console.info(`${caseName} test start`);
       let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 1000);
       let count: number = 0;
+      const gcRequests: Array<Promise<void>> = [];
       for (let j = 0; j < 10; j++) {
         await sleep(10);
         for (let i = 0; i < 10; i++) {
@@ -71,15 +131,14 @@ export default function taskPoolAsyncRunnerMultipleGCTest() {
           })
         }
         if (j == (2 || 4 || 7)) {
-          setTimeout(() => {
-            ArkTools.forceFullGC();
-          }, 10)
+          gcRequests.push(scheduleBackgroundFullGC());
         }
       }
 
       while (count < 100) {
         await sleep(100);
       }
+      await awaitBackgroundFullGC(Promise.all(gcRequests).then(() => {}));
       expect(100).assertEqual(count);
       console.info(`${caseName} test end`);
       Done();

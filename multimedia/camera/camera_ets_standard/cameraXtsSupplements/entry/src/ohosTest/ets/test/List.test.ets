@@ -46,6 +46,8 @@ import CameraInputOnerrorTest from './camera/CameraInputOnerrorTest.test';
 import createCameraInput from './camera/CameraManagerCreateCameraInputTest.test';
 import CameraSessionSetWhiteBalanceModeTest from './camera/CameraSessionSetWhiteBalanceModeTest.test';
 import CameraGetActiveProfileTest from './camera/CameraGetActiveProfileTest.test';
+import AutoExposureMeteringModeTest from './camera/AutoExposureMeteringMode.test';
+import CameraInputOpenTest from './camera/CameraInput.test';
 import CameraSessionBandSuppTest from './camera/CameraSessionBandSupp.test';
 import CameraCaptureSessionTest from './camera/CameraCaptureSessionTest.test';
 import CameraPhotoSessionTest from './camera/CameraPhotoSessionTest.test';
@@ -59,6 +61,7 @@ import ManualFocusQueryTest from './camera/ManualFocusQuery.test';
 import CameraOISQueryTest from './camera/CameraOISQuery.test';
 import CameraManualExposureTest from './camera/CameraManualExposureTest.test';
 import CameraPhotoOutputSuppTest from './camera/CameraPhotoOutputSuppTest.test';
+import CameraSessionAutoExtendedTest from './camera/CameraisAutoExtendedGainmapDeliverySupported.test';
 
 let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
 const cameraManager = camera.getCameraManager(testContext);
@@ -123,6 +126,8 @@ export default function testsuite() {
     createCameraInput();
     CameraSessionSetWhiteBalanceModeTest();
     CameraGetActiveProfileTest();
+    AutoExposureMeteringModeTest();
+    CameraInputOpenTest();
     CameraSessionBandSuppTest();
     CameraPhotoSessionTest();
     CameraCaptureSessionTest();
@@ -137,5 +142,6 @@ export default function testsuite() {
     CameraOISQueryTest();
     CameraManualExposureTest();
     CameraPhotoOutputSuppTest();
+    CameraSessionAutoExtendedTest();
   }
 }

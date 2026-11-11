@@ -30,6 +30,8 @@
         "MainAbility/pages/LazyColumnLayout/headerFooterStickyColumn",
         "MainAbility/pages/LazyDynamicLayout/customListLayoutTest",
         "MainAbility/pages/WaterFlow/waterFlowKeyboardScrollVertical",
-        "MainAbility/pages/WaterFlow/waterFlowKeyboardScrollHorizontal"
+        "MainAbility/pages/WaterFlow/waterFlowKeyboardScrollHorizontal",
+        "MainAbility/pages/WaterFlow/WaterFlowScrollSnapStrategy",
+        "MainAbility/pages/WaterFlow/WaterFlowScrollSnapStrategyProvider"
     ]
 }

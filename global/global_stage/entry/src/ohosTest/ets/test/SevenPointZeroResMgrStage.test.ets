@@ -27,7 +27,6 @@ import { BusinessError } from '@ohos.base';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import hilog from '@ohos.hilog'
 import { GlobalContext } from '../test/global';
-import fontManager from '@ohos.fontManager';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -53,12 +52,6 @@ export default function SevenPointZeroResMgrStageTest() {
     afterAll(() => {
       console.info("afterAll case");
     });
-
-    const validObserver: fontManager.FontClientObserver = {
-      onServiceDied: () => {
-        console.info('onServiceDied called');
-      }
-    };
 
     /**
      * @tc.number  SUB_GLOBAL_ResourceManager_GetResourceName_0100
@@ -380,94 +373,6 @@ export default function SevenPointZeroResMgrStageTest() {
       } catch (error) {
         hilog.info(domain, tag, 'getResourceName_test_2100 error code: ' + error.code);
         expect().assertFail();
-      }
-    })
-
-    /**
-     * @tc.number  SUB_Global_FontManager_OnFontObserver_JS_0100
-     * @tc.name    test_onFontObserver_noPermission_0100
-     * @tc.desc    no permission
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
-     */
-    it("test_onFontObserver_noPermission_0100", Level.LEVEL2, () => {
-      try {
-        fontManager.onFontObserver(validObserver);
-      } catch (error) {
-        hilog.info(domain, tag, 'test_onFontObserver_noPermission_0100 error code: ' + error.code);
-        expect((error as BusinessError).code).assertEqual(201);
-      }
-    })
-
-    /**
-     * @tc.number  SUB_Global_FontManager_InstallScopeFont_JS_0100
-     * @tc.name    test_installScopeFont_noPermission_0100
-     * @tc.desc    no permission
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
-     */
-    it("test_installScopeFont_noPermission_0100", Level.LEVEL2, async (done: Function) => {
-      try {
-        await fontManager.installScopeFont(resContext.resourceDir + '/' + 'TestFont_Sans.ttf', 1);
-      } catch (error) {
-        hilog.info(domain, tag, 'test_installScopeFont_noPermission_0100 error code: ' + error.code);
-        expect((error as BusinessError).code).assertEqual(201);
-      }
-      done()
-    })
-
-    /**
-     * @tc.number  SUB_Global_FontManager_UninstallScopeFont_JS_0100
-     * @tc.name    test_uninstallScopeFont_noPermission_0100
-     * @tc.desc    no permission
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
-     */
-    it("test_uninstallScopeFont_noPermission_0100", Level.LEVEL2, async (done: Function) => {
-      try {
-        await fontManager.uninstallScopeFont(resContext.resourceDir + '/' + 'TestFont_Sans.ttf');
-      } catch (error) {
-        hilog.info(domain, tag, 'test_uninstallScopeFont_noPermission_0100 error code: ' + error.code);
-        expect((error as BusinessError).code).assertEqual(201);
-      }
-      done()
-    })
-
-    /**
-     * @tc.number  SUB_Global_FontManager_GetFontScope_JS_0100
-     * @tc.name    test_getFontScope_noPermission_0100
-     * @tc.desc    no permission
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
-     */
-    it("test_getFontScope_noPermission_0100", Level.LEVEL2, async (done: Function) => {
-      try {
-        await fontManager.getFontScope(resContext.resourceDir + '/' + 'TestFont_Sans.ttf');
-      } catch (error) {
-        hilog.info(domain, tag, 'test_getFontScope_noPermission_0100 error code: ' + error.code);
-        expect((error as BusinessError).code).assertEqual(201);
-      }
-      done()
-    })
-
-    /**
-     * @tc.number  SUB_Global_FontManager_OffFontObserver_JS_0100
-     * @tc.name    test_offFontObserver_noPermission_0100
-     * @tc.desc    no permission
-     * @tc.size    MEDIUM
-     * @tc.type    Function
-     * @tc.level   Level 2
-     */
-    it("test_offFontObserver_noPermission_0100", Level.LEVEL2, () => {
-      try {
-        fontManager.offFontObserver();
-      } catch (error) {
-        hilog.info(domain, tag, 'test_offFontObserver_noPermission_0100 error code: ' + error.code);
-        expect((error as BusinessError).code).assertEqual(201);
       }
     })
 

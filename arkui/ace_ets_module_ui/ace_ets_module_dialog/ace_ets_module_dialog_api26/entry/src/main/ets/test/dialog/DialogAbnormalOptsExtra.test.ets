@@ -18,18 +18,20 @@ import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function DialogAbnormalOptsExtra() {
   describe('DialogAbnormalOptsExtra', () => {
     beforeEach(async (done: Function) => {
       console.info('[ARKUI_DYN] DialogAbnormalOptsExtra beforeEach');
-      let options: router.RouterOptions = { url: 'MainAbility/pages/dialog/DialogAbnormalOptsExtra' };
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/dialog/DialogAbnormalOptsExtra'
+      };
       try {
-        router.clear();
         let pages = router.getState();
         if (pages.name !== 'DialogAbnormalOptsExtra') {
-          await router.pushUrl(options);
+          router.clear();
+          await CommonFunc.sleep(500);
+          await router.replaceUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -40,12 +42,6 @@ export default function DialogAbnormalOptsExtra() {
     });
     afterEach(async () => {
       await CommonFunc.sleep(700);
-      try {
-        let driver = await Driver.create();
-        await driver.pressBack(displayID);
-      } catch (e) {
-        console.info('[ARKUI_DYN] pressBack skip');
-      }
     });
     /**
      * @tc.number SUB_ArkUI_DialogApi26_DialogAbnormalOptsExtra_0100

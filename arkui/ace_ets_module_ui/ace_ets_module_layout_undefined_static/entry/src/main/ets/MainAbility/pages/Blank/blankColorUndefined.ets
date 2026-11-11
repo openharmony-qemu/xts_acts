@@ -31,14 +31,12 @@ struct BlankExample {
           this.isUndefined == true ? this.isUndefined = false : this.isUndefined = true;
         })
         .id('Blank_color')
-        .margin({ top: 10, bottom: 15 } as Margin)
         .height(60)
         .width(200)
 
       Column() {
         Text('Blank-color-动态切换(undefined/Color.Yellow)')
           .fontSize(20)
-          .margin(15)
           .width('80%')
         Row() {
           Text('Bluetooth').fontSize(18)
@@ -47,13 +45,11 @@ struct BlankExample {
             .id('MyBlank')
         }
         .borderRadius(15)
-        .padding({ left: 12 } as Padding)
         .width('80%')
-        Divider().margin(10)
+        Divider()
       }
     }
     .backgroundColor('#EFEFEF')
-    .padding(10)
     .width('80%')
     .height('80%')
     .alignItems(HorizontalAlign.Center)

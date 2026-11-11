@@ -30,8 +30,7 @@ struct WebViewControllerDownloadTest {
     'PC107f1b3947c942ffaa14334a879065d8.2107261020.exe'
   @State downloadUrlImg: string = 'https://consumer.huawei.com/content/dam/huawei-cbg-site/cn/mkt/pdp/tablets/' +
     'matepad-pro-11-2024/assets/imgs/pc/huawei-matepad-11-inch-Huawei-sound.png';
-  @State downloadUrlVideo: string = 'https://www-file.huawei.com/-/media/corp2020/' +
-    'videos/tech4all/stories/2/shansha-green-turtle.mp4';
+  @State downloadUrlVideo: string = 'https://e-file.huawei.com/marketingcloud/pep/asset/20000001/VideoNumber/9e18655abcd24b9eb32531f278b805e2/M3T1A669N1151540914820370598/%E6%B5%8B%E8%AF%95--%E8%A7%86%E9%A2%91.mp4';
   @State javaScriptAccess: boolean = true;
   @State fileAccess: boolean = true;
   @State domStorageAccess: boolean = false;

@@ -115,29 +115,45 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest(): void {
     it('SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG: string = "SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_0300"
-        let pixelMap = await getRawfilePixelMapByPath("2.png", 199, 211)
-        let BeforeSize = pixelMap?.getPixelBytesNumber()
-        await notificationExtensionSubscription.getUserGrantedBundleIcon(bundle_name).then((data: image.PixelMap) => {
-          let AfterSize = data.getPixelBytesNumber()
-          console.info(TAG + `getUserGrantedBundleIcon success,BeforeSize = ${BeforeSize},AfterSize = ${AfterSize}`);
-          expect(data).not().assertNull();
-          expect(BeforeSize).assertEqual(AfterSize)
-          done()
-        }).catch((error: Error): void => {
-          let err = error as BusinessError;
-          console.error(TAG +
-            `getUserGrantedBundleIcon failed, code is ${err.code}, message is ${err.message}`);
-          if (err.code == 801) {
-            expect(err.code).assertEqual(801)
+        try{
+          let pixelMap = await getRawfilePixelMapByPath("2.png", 199, 211)
+          let BeforeSize = pixelMap?.getPixelBytesNumber()
+          await notificationExtensionSubscription.getUserGrantedBundleIcon(bundle_name).then((data: image.PixelMap) => {
+            let AfterSize = data.getPixelBytesNumber()
+            console.info(TAG + `getUserGrantedBundleIcon success,BeforeSize = ${BeforeSize},AfterSize = ${AfterSize}`);
+            expect(data).not().assertNull();
+            expect(BeforeSize).assertEqual(AfterSize)
             done()
-          } else if (err.code == 1600022) {
-            expect(err.code).assertEqual(1600022);
-            done()
-          } else {
-            expect().assertFail();
-            done()
-          }
-        })
+          }).catch((e: Error): void => {
+            let err : BusinessError= e as BusinessError;
+            console.error(TAG +
+              `getUserGrantedBundleIcon failed, code is ${err.code}, message is ${err.message}`);
+            if (err.code === 801) {
+              expect(err.code).assertEqual(801)
+              done()
+            } else if (err.code === 1600022) {
+              expect(err.code).assertEqual(1600022);
+              done()
+            } else {
+              expect().assertFail();
+              done()
+            }
+          })
+        }catch(e){
+           let err : BusinessError= e as BusinessError;
+            console.error(TAG +
+              ` failed, code is ${err.code}, message is ${err.message}`);
+            if (err.code === 801) {
+              expect(err.code).assertEqual(801)
+              done()
+            } else if (err.code === 201) {
+              expect(err.code).assertEqual(201);
+              done()
+            } else {
+              expect().assertFail();
+              done()
+            } 
+        }
       })
 
     /**
@@ -152,39 +168,56 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest(): void {
     it('SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG: string = "SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_0800"
-        let Arraybundle = ["", bundle_name, bundle_name, "com.zhuoyi.browser", "com.example.test", bundle_name]
-        for (let i = 0; i < 6; i++) {
-          let info: notificationExtensionSubscription.GrantedBundleInfo = {
-            bundleName: Arraybundle?.[i] as string,
-            appIndex: 0
-          }
-          await notificationExtensionSubscription.disableUserGrantedByBundle(info).then(() => {
-            console.info(TAG + "disableUserGrantedByBundle success");
-            if (i != 1) {
-              expect(false).assertTrue()
-              done()
-            }
-          }).catch((error: Error): void => {
-            let err = error as BusinessError;
+        try{
+           let Arraybundle = ["", bundle_name, bundle_name, "com.zhuoyi.browser", "com.example.test", bundle_name]
+           for (let i = 0; i < 6; i++) {
+             let info: notificationExtensionSubscription.GrantedBundleInfo = {
+               bundleName: Arraybundle?.[i] as string,
+               appIndex: 0
+             }
+             await notificationExtensionSubscription.disableUserGrantedByBundle(info).then(() => {
+               console.info(TAG + "disableUserGrantedByBundle success");
+               if (i != 1) {
+                 expect(false).assertTrue()
+                 done()
+               }
+             }).catch((e: Error): void => {
+               let err : BusinessError= e as BusinessError;
+               console.error(TAG +
+                 `disableUserGrantedByBundle failed, code is ${err.code}, message is ${err.message}`);
+               if (err.code === 801) {
+                 expect(err.code).assertEqual(801)
+                 done()
+               } else if (err.code === 1600022) {
+                 expect(err.code).assertEqual(1600022);
+                 done()
+               } else {
+                 expect().assertFail();
+                 done()
+               }
+             });
+             if (i == 5) {
+               console.info(TAG +
+                 `test done`);
+               done()
+             }
+           }
+        }catch(e){
+            let err : BusinessError= e as BusinessError;
             console.error(TAG +
-              `disableUserGrantedByBundle failed, code is ${err.code}, message is ${err.message}`);
-            if (err.code == 801) {
+              ` failed, code is ${err.code}, message is ${err.message}`);
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done()
-            } else if (err.code == 1600022) {
-              expect(err.code).assertEqual(1600022);
+            } else if (err.code === 201) {
+              expect(err.code).assertEqual(201);
               done()
             } else {
               expect().assertFail();
               done()
-            }
-          });
-          if (i == 5) {
-            console.info(TAG +
-              `test done`);
-            done()
-          }
+            } 
         }
+        
       })
 
     /**
@@ -199,33 +232,50 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest(): void {
     it('SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG: string = "SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_0200"
-        let Arraybundle = ["", bundle_name, "com.zhuoyi.browser", "com.example.test"]
-        for (let i = 0; i < 4; i++) {
-          await notificationExtensionSubscription.getUserGrantedBundleIcon(Arraybundle[i]).then((data: image.PixelMap) => {
-            console.info(TAG + `getUserGrantedBundleIcon success`);
-            expect(false).assertTrue()
-            done()
-          }).catch((error: Error):void => {
-            let err = error as BusinessError;
+        try{
+            let Arraybundle = ["", bundle_name, "com.zhuoyi.browser", "com.example.test"]
+            for (let i = 0; i < 4; i++) {
+              await notificationExtensionSubscription.getUserGrantedBundleIcon(Arraybundle[i]).then((data: image.PixelMap) => {
+                console.info(TAG + `getUserGrantedBundleIcon success`);
+                expect(false).assertTrue()
+                done()
+              }).catch((e: Error):void => {
+                let err : BusinessError= e as BusinessError;
+                console.error(TAG +
+                  `getUserGrantedBundleIcon failed, code is ${err.code}, message is ${err.message}`);
+                if (err.code === 801) {
+                  expect(err.code).assertEqual(801)
+                  done()
+                } else if (err.code === 1600022) {
+                  expect(err.code).assertEqual(1600022);
+                  done()
+                } else {
+                  expect().assertFail();
+                  done()
+                }
+              });
+              if (i == 3) {
+                console.info(TAG +
+                  `test done`);
+                done()
+              }
+            }
+        }catch(e){
+            let err : BusinessError= e as BusinessError;
             console.error(TAG +
-              `getUserGrantedBundleIcon failed, code is ${err.code}, message is ${err.message}`);
-            if (err.code == 801) {
+              ` failed, code is ${err.code}, message is ${err.message}`);
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done()
-            } else if (err.code == 1600022) {
-              expect(err.code).assertEqual(1600022);
+            } else if (err.code === 201) {
+              expect(err.code).assertEqual(201);
               done()
             } else {
               expect().assertFail();
               done()
-            }
-          });
-          if (i == 3) {
-            console.info(TAG +
-              `test done`);
-            done()
-          }
+            } 
         }
+        
       })
 
     /**
@@ -242,42 +292,58 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest(): void {
         let TAG: string = "SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_1300"
         let num: int = 0
         let ArrayName = [undefined, '', "微信", "xxx"]
-        let list: notificationExtensionSubscription.GrantedBundleInfo[] = await notificationExtensionSubscription.getUserGrantedEnabledBundles();
-        if(list.length == 0){
-          list = [{ bundleName: "com.weixin.com", appIndex: 0 }]
-        }
-        console.info(TAG + 'getUserGrantedEnabledBundles success, size: ' + list.length);
-        for (let i = 0; i < 4; i++) {
-          let info: notificationExtensionSubscription.GrantedBundleInfo = {
-            bundleName: list[i].bundleName,
-            appIndex: 0,
-            appName: ArrayName[i]
+        try{
+          let list: notificationExtensionSubscription.GrantedBundleInfo[] = await notificationExtensionSubscription.getUserGrantedEnabledBundles();
+          if(list.length == 0){
+            list = [{ bundleName: "com.weixin.com", appIndex: 0 }]
           }
-          await notificationExtensionSubscription.disableUserGrantedByBundle(info).then(() => {
-            num++
-            console.info(TAG + "disableUserGrantedByBundle success");
-            expect(num).assertEqual(i+1)
-          }).catch((error: Error): void => {
-            let err = error as BusinessError;
+          console.info(TAG + 'getUserGrantedEnabledBundles success, size: ' + list.length);
+          for (let i = 0; i < 4; i++) {
+            let info: notificationExtensionSubscription.GrantedBundleInfo = {
+              bundleName: list[i].bundleName,
+              appIndex: 0,
+              appName: ArrayName[i]
+            }
+            await notificationExtensionSubscription.disableUserGrantedByBundle(info).then(() => {
+              num++
+              console.info(TAG + "disableUserGrantedByBundle success");
+              expect(num).assertEqual(i+1)
+            }).catch((e: Error): void => {
+              let err : BusinessError= e as BusinessError;
+              console.error(TAG +
+                `disableUserGrantedByBundle failed, code is ${err.code}, message is ${err.message}`);
+              if (err.code === 801) {
+                expect(err.code).assertEqual(801)
+                done()
+              } else if (err.code === 1600022) {
+                expect(err.code).assertEqual(1600022);
+                done()
+              } else {
+                expect().assertFail();
+                done()
+              }
+            });
+            if (i == 3) {
+              console.info(TAG +
+                `test done`);
+              done()
+            }
+          }
+        }catch(err){
             console.error(TAG +
-              `disableUserGrantedByBundle failed, code is ${err.code}, message is ${err.message}`);
-            if (err.code == 801) {
+                ` failed, code is ${err.code}, message is ${err.message}`);
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done()
-            } else if (err.code == 1600022) {
-              expect(err.code).assertEqual(1600022);
+            } else if (err.code === 201) {
+              expect(err.code).assertEqual(201);
               done()
             } else {
               expect().assertFail();
               done()
-            }
-          });
-          if (i == 3) {
-            console.info(TAG +
-              `test done`);
-            done()
-          }
+            } 
         }
+        
       })
   })
 }

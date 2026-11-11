@@ -18,227 +18,101 @@
 struct CalendarPickerDialogFirstDayOfWeekPage {
   private selectedDate: Date = new Date('2025-01-15');
 
+  showDialog(firstDayOfWeek: CalendarFirstDayOfWeek) {
+    CalendarPickerDialog.show({
+      selected: this.selectedDate,
+      firstDayOfWeek: firstDayOfWeek,
+      onAccept: (value) => {
+        console.info('calendar onAccept:' + JSON.stringify(value));
+      },
+      onCancel: () => {
+        console.info('calendar onCancel');
+      },
+      onChange: (value) => {
+        console.info('calendar onChange:' + JSON.stringify(value));
+      }
+    });
+  }
+
   build() {
-    Column() {
+    Flex({ wrap: FlexWrap.Wrap }) {
       Text('firstDayOfWeek test')
         .fontSize(20)
         .margin({ top: 20, bottom: 20 })
+        .width('100%')
+        .textAlign(TextAlign.Center)
 
       Button('LOCAL')
         .margin(10)
         .onClick(() => {
-          CalendarPickerDialog.show({
-            selected: this.selectedDate,
-            firstDayOfWeek: CalendarFirstDayOfWeek.LOCAL,
-            onAccept: (value) => {
-              console.info('calendar onAccept:' + JSON.stringify(value));
-            },
-            onCancel: () => {
-              console.info('calendar onCancel');
-            },
-            onChange: (value) => {
-              console.info('calendar onChange:' + JSON.stringify(value));
-            }
-          });
+          this.showDialog(CalendarFirstDayOfWeek.LOCAL);
         }).id('firstDayOfWeek001')
 
       Button('MON')
         .margin(10)
         .onClick(() => {
-          CalendarPickerDialog.show({
-            selected: this.selectedDate,
-            firstDayOfWeek: CalendarFirstDayOfWeek.MON,
-            onAccept: (value) => {
-              console.info('calendar onAccept:' + JSON.stringify(value));
-            },
-            onCancel: () => {
-              console.info('calendar onCancel');
-            },
-            onChange: (value) => {
-              console.info('calendar onChange:' + JSON.stringify(value));
-            }
-          });
+          this.showDialog(CalendarFirstDayOfWeek.MON);
         }).id('firstDayOfWeek002')
 
       Button('TUE')
         .margin(10)
         .onClick(() => {
-          CalendarPickerDialog.show({
-            selected: this.selectedDate,
-            firstDayOfWeek: CalendarFirstDayOfWeek.TUE,
-            onAccept: (value) => {
-              console.info('calendar onAccept:' + JSON.stringify(value));
-            },
-            onCancel: () => {
-              console.info('calendar onCancel');
-            },
-            onChange: (value) => {
-              console.info('calendar onChange:' + JSON.stringify(value));
-            }
-          });
+          this.showDialog(CalendarFirstDayOfWeek.TUE);
         }).id('firstDayOfWeek003')
 
       Button('WED')
         .margin(10)
         .onClick(() => {
-          CalendarPickerDialog.show({
-            selected: this.selectedDate,
-            firstDayOfWeek: CalendarFirstDayOfWeek.WED,
-            onAccept: (value) => {
-              console.info('calendar onAccept:' + JSON.stringify(value));
-            },
-            onCancel: () => {
-              console.info('calendar onCancel');
-            },
-            onChange: (value) => {
-              console.info('calendar onChange:' + JSON.stringify(value));
-            }
-          });
+          this.showDialog(CalendarFirstDayOfWeek.WED);
         }).id('firstDayOfWeek004')
 
       Button('THU')
         .margin(10)
         .onClick(() => {
-          CalendarPickerDialog.show({
-            selected: this.selectedDate,
-            firstDayOfWeek: CalendarFirstDayOfWeek.THU,
-            onAccept: (value) => {
-              console.info('calendar onAccept:' + JSON.stringify(value));
-            },
-            onCancel: () => {
-              console.info('calendar onCancel');
-            },
-            onChange: (value) => {
-              console.info('calendar onChange:' + JSON.stringify(value));
-            }
-          });
+          this.showDialog(CalendarFirstDayOfWeek.THU);
         }).id('firstDayOfWeek005')
 
       Button('FRI')
         .margin(10)
         .onClick(() => {
-          CalendarPickerDialog.show({
-            selected: this.selectedDate,
-            firstDayOfWeek: CalendarFirstDayOfWeek.FRI,
-            onAccept: (value) => {
-              console.info('calendar onAccept:' + JSON.stringify(value));
-            },
-            onCancel: () => {
-              console.info('calendar onCancel');
-            },
-            onChange: (value) => {
-              console.info('calendar onChange:' + JSON.stringify(value));
-            }
-          });
+          this.showDialog(CalendarFirstDayOfWeek.FRI);
         }).id('firstDayOfWeek006')
 
       Button('SAT')
         .margin(10)
         .onClick(() => {
-          CalendarPickerDialog.show({
-            selected: this.selectedDate,
-            firstDayOfWeek: CalendarFirstDayOfWeek.SAT,
-            onAccept: (value) => {
-              console.info('calendar onAccept:' + JSON.stringify(value));
-            },
-            onCancel: () => {
-              console.info('calendar onCancel');
-            },
-            onChange: (value) => {
-              console.info('calendar onChange:' + JSON.stringify(value));
-            }
-          });
+          this.showDialog(CalendarFirstDayOfWeek.SAT);
         }).id('firstDayOfWeek007')
 
       Button('SUN')
         .margin(10)
         .onClick(() => {
-          CalendarPickerDialog.show({
-            selected: this.selectedDate,
-            firstDayOfWeek: CalendarFirstDayOfWeek.SUN,
-            onAccept: (value) => {
-              console.info('calendar onAccept:' + JSON.stringify(value));
-            },
-            onCancel: () => {
-              console.info('calendar onCancel');
-            },
-            onChange: (value) => {
-              console.info('calendar onChange:' + JSON.stringify(value));
-            }
-          });
+          this.showDialog(CalendarFirstDayOfWeek.SUN);
         }).id('firstDayOfWeek008')
 
       Button('INVALID_-1')
         .margin(10)
         .onClick(() => {
-          CalendarPickerDialog.show({
-            selected: this.selectedDate,
-            firstDayOfWeek: (-1) as ESObject as CalendarFirstDayOfWeek,
-            onAccept: (value) => {
-              console.info('calendar onAccept:' + JSON.stringify(value));
-            },
-            onCancel: () => {
-              console.info('calendar onCancel');
-            },
-            onChange: (value) => {
-              console.info('calendar onChange:' + JSON.stringify(value));
-            }
-          });
+          this.showDialog((-1) as ESObject as CalendarFirstDayOfWeek);
         }).id('firstDayOfWeek009')
 
       Button('INVALID_8')
         .margin(10)
         .onClick(() => {
-          CalendarPickerDialog.show({
-            selected: this.selectedDate,
-            firstDayOfWeek: 8 as ESObject as CalendarFirstDayOfWeek,
-            onAccept: (value) => {
-              console.info('calendar onAccept:' + JSON.stringify(value));
-            },
-            onCancel: () => {
-              console.info('calendar onCancel');
-            },
-            onChange: (value) => {
-              console.info('calendar onChange:' + JSON.stringify(value));
-            }
-          });
+          this.showDialog(8 as ESObject as CalendarFirstDayOfWeek);
         }).id('firstDayOfWeek010')
 
       Button('UNDEFINED')
         .margin(10)
         .onClick(() => {
-          CalendarPickerDialog.show({
-            selected: this.selectedDate,
-            firstDayOfWeek: undefined as ESObject as CalendarFirstDayOfWeek,
-            onAccept: (value) => {
-              console.info('calendar onAccept:' + JSON.stringify(value));
-            },
-            onCancel: () => {
-              console.info('calendar onCancel');
-            },
-            onChange: (value) => {
-              console.info('calendar onChange:' + JSON.stringify(value));
-            }
-          });
+          this.showDialog(undefined as ESObject as CalendarFirstDayOfWeek);
         }).id('firstDayOfWeek011')
 
       Button('NULL')
         .margin(10)
         .onClick(() => {
-          CalendarPickerDialog.show({
-            selected: this.selectedDate,
-            firstDayOfWeek: null as ESObject as CalendarFirstDayOfWeek,
-            onAccept: (value) => {
-              console.info('calendar onAccept:' + JSON.stringify(value));
-            },
-            onCancel: () => {
-              console.info('calendar onCancel');
-            },
-            onChange: (value) => {
-              console.info('calendar onChange:' + JSON.stringify(value));
-            }
-          });
+          this.showDialog(null as ESObject as CalendarFirstDayOfWeek);
         }).id('firstDayOfWeek012')
-    }.width('100%').margin({ top: 50 })
+    }.width('100%')
   }
 }

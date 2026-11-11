@@ -29,10 +29,11 @@ export default function PopupOptionsLevelMode() {
         url: 'MainAbility/pages/popup/PopupOptionsLevelMode'
       };
       try {
-        router.clear();
         let pages = router.getState();
         if (pages.name !== 'PopupOptionsLevelMode') {
-          await router.pushUrl(options);
+          router.clear();
+          await CommonFunc.sleep(500);
+          await router.replaceUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {

@@ -1236,6 +1236,8 @@ export default function WorkSchedulerMgrNewTest() {
                 bundleName: "ohos.acts.resourceschedule.workscheduler.js.function",
                 abilityName: "com.mytest.abilityName",
                 networkType: workScheduler.NetworkType.NETWORK_TYPE_ANY,
+                isCharging: true,
+                isDeepIdle: true,
                 isPerformanceSensitive: false
             }
             try{
@@ -1303,6 +1305,8 @@ export default function WorkSchedulerMgrNewTest() {
                 bundleName: "ohos.acts.resourceschedule.workscheduler.js.function",
                 abilityName: "com.mytest.abilityName",
                 networkType: workScheduler.NetworkType.NETWORK_TYPE_ANY,
+                isCharging: true,
+                isDeepIdle: true,
                 isPerformanceSensitive: false
             }
             try{
@@ -1318,6 +1322,142 @@ export default function WorkSchedulerMgrNewTest() {
             }catch(error){
                 console.info("testStopWorkNEW038 stopWork ----------------error: " + error.code);
                 expect(false).assertTrue();
+                done();
+            }
+        })
+        /**
+         * @tc.name   testStartWorkNEW039
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_NEW_XTS_3900
+         * @tc.desc   startWork with isPerformanceSensitive true but isCharging false
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("testStartWorkNEW039", Level.LEVEL0, async function (done) {
+            console.info('----------------------testStartWorkNEW039---------------------------');
+            workScheduler.stopAndClearWorks();
+            let workInfo = {
+                workId: 5,
+                bundleName: "ohos.acts.resourceschedule.workscheduler.js.function",
+                abilityName: "com.mytest.abilityName",
+                networkType: workScheduler.NetworkType.NETWORK_TYPE_ANY,
+                isCharging: false,
+                isDeepIdle: true,
+                isPerformanceSensitive: true,
+                isRepeat: true,
+                repeatCycleTime: 86400000,
+                repeatCount: 100
+            }
+            try{
+                workScheduler.startWork(workInfo);
+                console.info("testStartWorkNEW039 startWork unexpected success");
+                expect(false).assertTrue();
+                done();
+            }catch(error){
+                console.info("testStartWorkNEW039 ----------------error: " + error.code + " message: " + error.message);
+                expect(error.code).assertEqual("9700004");
+                done();
+            }
+        })
+        /**
+         * @tc.name   testStartWorkNEW040
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_NEW_XTS_4000
+         * @tc.desc   startWork with isPerformanceSensitive true but isDeepIdle false
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("testStartWorkNEW040", Level.LEVEL0, async function (done) {
+            console.info('----------------------testStartWorkNEW040---------------------------');
+            workScheduler.stopAndClearWorks();
+            let workInfo = {
+                workId: 6,
+                bundleName: "ohos.acts.resourceschedule.workscheduler.js.function",
+                abilityName: "com.mytest.abilityName",
+                networkType: workScheduler.NetworkType.NETWORK_TYPE_ANY,
+                isCharging: true,
+                isDeepIdle: false,
+                isPerformanceSensitive: true,
+                isRepeat: true,
+                repeatCycleTime: 86400000,
+                repeatCount: 100
+            }
+            try{
+                workScheduler.startWork(workInfo);
+                console.info("testStartWorkNEW040 startWork unexpected success");
+                expect(false).assertTrue();
+                done();
+            }catch(error){
+                console.info("testStartWorkNEW040 ----------------error: " + error.code + " message: " + error.message);
+                expect(error.code).assertEqual("9700004");
+                done();
+            }
+        })
+        /**
+         * @tc.name   testStartWorkNEW041
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_NEW_XTS_4100
+         * @tc.desc   startWork with isPerformanceSensitive true but both isCharging and isDeepIdle false
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("testStartWorkNEW041", Level.LEVEL0, async function (done) {
+            console.info('----------------------testStartWorkNEW041---------------------------');
+            workScheduler.stopAndClearWorks();
+            let workInfo = {
+                workId: 7,
+                bundleName: "ohos.acts.resourceschedule.workscheduler.js.function",
+                abilityName: "com.mytest.abilityName",
+                networkType: workScheduler.NetworkType.NETWORK_TYPE_ANY,
+                isCharging: false,
+                isDeepIdle: false,
+                isPerformanceSensitive: true,
+                isRepeat: true,
+                repeatCycleTime: 86400000,
+                repeatCount: 100
+            }
+            try{
+                workScheduler.startWork(workInfo);
+                console.info("testStartWorkNEW041 startWork unexpected success");
+                expect(false).assertTrue();
+                done();
+            }catch(error){
+                console.info("testStartWorkNEW041 ----------------error: " + error.code + " message: " + error.message);
+                expect(error.code).assertEqual("9700004");
+                done();
+            }
+        })
+        /**
+         * @tc.name   testStartWorkNEW042
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_NEW_XTS_4200
+         * @tc.desc   startWork with isPerformanceSensitive true but repeatCycleTime less than 24h
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("testStartWorkNEW042", Level.LEVEL0, async function (done) {
+            console.info('----------------------testStartWorkNEW042---------------------------');
+            workScheduler.stopAndClearWorks();
+            let workInfo = {
+                workId: 8,
+                bundleName: "ohos.acts.resourceschedule.workscheduler.js.function",
+                abilityName: "com.mytest.abilityName",
+                networkType: workScheduler.NetworkType.NETWORK_TYPE_ANY,
+                isCharging: true,
+                isDeepIdle: true,
+                isPerformanceSensitive: true,
+                isRepeat: true,
+                repeatCycleTime: 3600000,
+                repeatCount: 100
+            }
+            try{
+                workScheduler.startWork(workInfo);
+                console.info("testStartWorkNEW042 startWork unexpected success");
+                expect(false).assertTrue();
+                done();
+            }catch(error){
+                console.info("testStartWorkNEW042 ----------------error: " + error.code + " message: " + error.message);
+                expect(error.code).assertEqual("9700004");
                 done();
             }
         })

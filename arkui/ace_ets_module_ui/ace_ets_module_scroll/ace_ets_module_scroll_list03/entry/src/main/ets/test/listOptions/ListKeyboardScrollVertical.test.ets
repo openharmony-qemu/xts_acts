@@ -155,7 +155,7 @@ export default function listKeyboardScrollVertical() {
     /**
      * @tc.name   listKeyboardScrollVertical_0300
      * @tc.number SUB_ARKUI_LIST_ENABLESCROLLWITHKEYBOARD_PARAM_0300
-     * @tc.desc   Test vertical List scrolls with keyboard arrow keys when enableScrollWithKeyboard is set to undefined
+     * @tc.desc   Test vertical List does not scroll with keyboard arrow keys when enableScrollWithKeyboard is set to undefined (default value false)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -171,7 +171,7 @@ export default function listKeyboardScrollVertical() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[listKeyboardScrollVertical_0300] enableScrollWithKeyboard: " +
         JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
-      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual(true);
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual(false);
  
       let resetBtn: Component = await driver.findComponent(ON.id('V_LIST_RESET'));
       await resetBtn.click();
@@ -190,21 +190,21 @@ export default function listKeyboardScrollVertical() {
       }
       let offsetDown: number = getVListOffset();
       console.info('[listKeyboardScrollVertical_0300] offset after DPAD_DOWN: ' + offsetDown);
-      expect(offsetDown > 0).assertTrue();
+      expect(offsetDown).assertEqual(0);
  
       await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
       await CommonFunc.sleep(500);
  
       let offsetUp: number = getVListOffset();
       console.info('[listKeyboardScrollVertical_0300] offset after DPAD_UP: ' + offsetUp);
-      expect(offsetUp < offsetDown).assertTrue();
+      expect(offsetUp).assertEqual(0);
       console.info('[listKeyboardScrollVertical_0300] END');
     })
  
     /**
      * @tc.name   listKeyboardScrollVertical_0400
      * @tc.number SUB_ARKUI_LIST_ENABLESCROLLWITHKEYBOARD_PARAM_0400
-     * @tc.desc   Test vertical List scrolls with keyboard arrow keys when enableScrollWithKeyboard is set to null
+     * @tc.desc   Test vertical List does not scroll with keyboard arrow keys when enableScrollWithKeyboard is set to null (default value false)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -220,7 +220,7 @@ export default function listKeyboardScrollVertical() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[listKeyboardScrollVertical_0400] enableScrollWithKeyboard: " +
         JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
-      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual(true);
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual(false);
  
       let resetBtn: Component = await driver.findComponent(ON.id('V_LIST_RESET'));
       await resetBtn.click();
@@ -239,14 +239,14 @@ export default function listKeyboardScrollVertical() {
       }
       let offsetDown: number = getVListOffset();
       console.info('[listKeyboardScrollVertical_0400] offset after DPAD_DOWN: ' + offsetDown);
-      expect(offsetDown > 0).assertTrue();
+      expect(offsetDown).assertEqual(0);
  
       await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
       await CommonFunc.sleep(500);
  
       let offsetUp: number = getVListOffset();
       console.info('[listKeyboardScrollVertical_0400] offset after DPAD_UP: ' + offsetUp);
-      expect(offsetUp < offsetDown).assertTrue();
+      expect(offsetUp).assertEqual(0);
       console.info('[listKeyboardScrollVertical_0400] END');
     })
   })

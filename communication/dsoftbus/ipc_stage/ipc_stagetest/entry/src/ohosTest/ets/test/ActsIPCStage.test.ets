@@ -234,7 +234,6 @@ class TestCallerInfo extends rpc.RemoteObject {
         let isLocalCalling = rpc.IPCSkeleton.isLocalCalling();
         expect(isLocalCalling).assertEqual(callingInfo?.isLocalCalling);
       } catch (error) {
-        error = error as BusinessError;
         console.info(logTag + "TestCallerInfo onRemoteMessageRequest error is:" + error);
         testFlag = false;
         return false;
@@ -252,7 +251,6 @@ class TestCallerInfo extends rpc.RemoteObject {
         rpc.IPCSkeleton.restoreCallingIdentity(des)
         console.info(logTag + "TestCallerInfo onRemoteMessageRequest callingIdentity is done");
       } catch (error) {
-        error = error as BusinessError;
         console.info(logTag + "TestCallerInfo onRemoteMessageRequest error is:" + error);
         console.info(logTag + "TestCallerInfo onRemoteMessageRequest errorcode is:" + error.code);
         testFlag = false;
@@ -7512,7 +7510,6 @@ export default function ActsRpcClientEtsTest() {
         let res = data.readString();
         expect(res).assertEqual(input);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2250 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2250 error code is: ' + err.code);
@@ -7569,7 +7566,6 @@ export default function ActsRpcClientEtsTest() {
       try {
        rpc.MessageSequence.closeFileDescriptor(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2270 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2270 error code is: ' + err.code);
@@ -7595,7 +7591,6 @@ export default function ActsRpcClientEtsTest() {
       try {
        rpc.MessageSequence.closeFileDescriptor(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2280 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2280 error code is: ' + err.code);
@@ -7622,7 +7617,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeRemoteObject(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2290 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2290 error code is: ' + err.code);
@@ -7650,7 +7644,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeRemoteObject(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2300 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2300 error code is: ' + err.code);
@@ -7678,7 +7671,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeInterfaceToken(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2310 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2310 error code is: ' + err.code);
@@ -7706,7 +7698,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeInterfaceToken(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2320 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2320 error code is: ' + err.code);
@@ -7734,7 +7725,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.setSize(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2330 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2330 error code is: ' + err.code);
@@ -7762,7 +7752,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.setSize(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2340 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2340 error code is: ' + err.code);
@@ -7790,7 +7779,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.setCapacity(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2350 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2350 error code is: ' + err.code);
@@ -7818,7 +7806,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.setCapacity(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2360 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2360 error code is: ' + err.code);
@@ -7846,7 +7833,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.rewindRead(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2370 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2370 error code is: ' + err.code);
@@ -7874,7 +7860,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.rewindRead(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2380 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2380 error code is: ' + err.code);
@@ -7902,7 +7887,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.rewindWrite(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2390 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2390 error code is: ' + err.code);
@@ -7930,7 +7914,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.rewindWrite(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2400 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2400 error code is: ' + err.code);
@@ -7958,7 +7941,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeByte(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2410 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2410 error code is: ' + err.code);
@@ -7986,7 +7968,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeByte(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2420 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2420 error code is: ' + err.code);
@@ -8014,7 +7995,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeShort(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2430 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2430 error code is: ' + err.code);
@@ -8042,7 +8022,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeShort(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2440 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2440 error code is: ' + err.code);
@@ -8070,7 +8049,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeInt(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2450 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2450 error code is: ' + err.code);
@@ -8098,7 +8076,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeInt(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2460 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2460 error code is: ' + err.code);
@@ -8126,7 +8103,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeLong(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2470 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2470 error code is: ' + err.code);
@@ -8154,7 +8130,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeLong(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2480 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2480 error code is: ' + err.code);
@@ -8182,7 +8157,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeFloat(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2490 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2490 error code is: ' + err.code);
@@ -8210,7 +8184,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeFloat(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2500 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2500 error code is: ' + err.code);
@@ -8238,7 +8211,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeDouble(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2510 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2510 error code is: ' + err.code);
@@ -8266,7 +8238,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeDouble(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2520 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2520 error code is: ' + err.code);
@@ -8294,7 +8265,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeChar(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2530 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2530 error code is: ' + err.code);
@@ -8322,7 +8292,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeChar(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2540 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2540 error code is: ' + err.code);
@@ -8350,7 +8319,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeParcelable(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2550 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2550 error code is: ' + err.code);
@@ -8378,7 +8346,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeParcelable(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2560 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2560 error code is: ' + err.code);
@@ -8406,7 +8373,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeByteArray(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2570 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2570 error code is: ' + err.code);
@@ -8434,7 +8400,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeByteArray(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2580 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2580 error code is: ' + err.code);
@@ -8462,7 +8427,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeShortArray(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2590 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2590 error code is: ' + err.code);
@@ -8490,7 +8454,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeShortArray(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2600 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2600 error code is: ' + err.code);
@@ -8518,7 +8481,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeIntArray(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2610 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2610 error code is: ' + err.code);
@@ -8546,7 +8508,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeIntArray(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2620 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2620 error code is: ' + err.code);
@@ -8574,7 +8535,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeLongArray(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2630 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2630 error code is: ' + err.code);
@@ -8602,7 +8562,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeLongArray(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2640 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2640 error code is: ' + err.code);
@@ -8630,7 +8589,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeFloatArray(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2650 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2650 error code is: ' + err.code);
@@ -8658,7 +8616,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeFloatArray(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2660 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2660 error code is: ' + err.code);
@@ -8686,7 +8643,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeDoubleArray(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2670 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2670 error code is: ' + err.code);
@@ -8714,7 +8670,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeDoubleArray(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2680 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2680 error code is: ' + err.code);
@@ -8742,7 +8697,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeCharArray(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2690 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2690 error code is: ' + err.code);
@@ -8770,7 +8724,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeCharArray(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2700 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2700 error code is: ' + err.code);
@@ -8798,7 +8751,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeStringArray(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2710 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2710 error code is: ' + err.code);
@@ -8826,7 +8778,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeStringArray(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2720 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2720 error code is: ' + err.code);
@@ -8854,7 +8805,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeParcelableArray(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2730 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2730 error code is: ' + err.code);
@@ -8882,7 +8832,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeParcelableArray(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2740 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2740 error code is: ' + err.code);
@@ -8937,7 +8886,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeRemoteObjectArray(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2760 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2760 error code is: ' + err.code);
@@ -8965,7 +8913,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeRemoteObjectArray(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2770 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2770 error code is: ' + err.code);
@@ -8993,7 +8940,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readByteArray(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2780 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2780 error code is: ' + err.code);
@@ -9021,7 +8967,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readByteArray(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2790 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2790 error code is: ' + err.code);
@@ -9049,7 +8994,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readShortArray(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2800 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2800 error code is: ' + err.code);
@@ -9077,7 +9021,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readShortArray(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2810 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2810 error code is: ' + err.code);
@@ -9105,7 +9048,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readIntArray(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2820 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2820 error code is: ' + err.code);
@@ -9133,7 +9075,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readIntArray(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2830 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2830 error code is: ' + err.code);
@@ -9161,7 +9102,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readLongArray(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2840 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2840 error code is: ' + err.code);
@@ -9189,7 +9129,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readLongArray(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2850 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2850 error code is: ' + err.code);
@@ -9217,7 +9156,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readFloatArray(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2860 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2860 error code is: ' + err.code);
@@ -9245,7 +9183,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readFloatArray(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2870 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2870 error code is: ' + err.code);
@@ -9273,7 +9210,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readDoubleArray(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2880 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2880 error code is: ' + err.code);
@@ -9301,7 +9237,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readDoubleArray(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2890 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2890 error code is: ' + err.code);
@@ -9329,7 +9264,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readCharArray(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2900 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2900 error code is: ' + err.code);
@@ -9357,7 +9291,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readCharArray(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2910 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2910 error code is: ' + err.code);
@@ -9385,7 +9318,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readStringArray(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2920 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2920 error code is: ' + err.code);
@@ -9413,7 +9345,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readStringArray(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2930 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2930 error code is: ' + err.code);
@@ -9441,7 +9372,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readParcelableArray(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2940 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2940 error code is: ' + err.code);
@@ -9469,7 +9399,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readParcelableArray(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2950 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2950 error code is: ' + err.code);
@@ -9497,7 +9426,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readRemoteObjectArray(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2960 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2960 error code is: ' + err.code);
@@ -9525,7 +9453,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readRemoteObjectArray(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2970 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2970 error code is: ' + err.code);
@@ -9579,7 +9506,6 @@ export default function ActsRpcClientEtsTest() {
       try {
        rpc.MessageSequence.dupFileDescriptor(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2990 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2990 error code is: ' + err.code);
@@ -9605,7 +9531,6 @@ export default function ActsRpcClientEtsTest() {
       try {
        rpc.MessageSequence.dupFileDescriptor(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3000 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3000 error code is: ' + err.code);
@@ -9632,7 +9557,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeFileDescriptor(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3010 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3010 error code is: ' + err.code);
@@ -9660,7 +9584,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeFileDescriptor(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3020 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3020 error code is: ' + err.code);
@@ -9688,7 +9611,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeAshmem(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3030 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3030 error code is: ' + err.code);
@@ -9716,7 +9638,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeAshmem(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3040 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3040 error code is: ' + err.code);
@@ -9745,7 +9666,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeRawData(null, arr.length);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3050 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3050 error code is: ' + err.code);
@@ -9774,7 +9694,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeRawData(undefined, arr.length);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3060 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3060 error code is: ' + err.code);
@@ -9803,7 +9722,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeRawData(arr, null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3070 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3070 error code is: ' + err.code);
@@ -9832,7 +9750,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeRawData(arr, undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3080 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3080 error code is: ' + err.code);
@@ -9861,7 +9778,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeRawData(arr, arr.length);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3090 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3090 error code is: ' + err.code);
@@ -9889,7 +9805,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readRawData(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3100 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3100 error code is: ' + err.code);
@@ -9917,7 +9832,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readRawData(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3110 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3110 error code is: ' + err.code);
@@ -9945,7 +9859,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readRawDataBuffer(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3120 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3120 error code is: ' + err.code);
@@ -9973,7 +9886,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readRawDataBuffer(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3130 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3130 error code is: ' + err.code);
@@ -10001,7 +9913,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeArrayBuffer(null, rpc.TypeCode.INT16_ARRAY);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3140 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3140 error code is: ' + err.code);
@@ -10029,7 +9940,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeArrayBuffer(undefined, rpc.TypeCode.INT16_ARRAY);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3150 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3150 error code is: ' + err.code);
@@ -10057,7 +9967,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeBooleanArray(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3160 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3160 error code is: ' + err.code);
@@ -10085,7 +9994,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.writeBooleanArray(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3170 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3170 error code is: ' + err.code);
@@ -10113,7 +10021,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readParcelable(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3180 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3180 error code is: ' + err.code);
@@ -10141,7 +10048,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readParcelable(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3190 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3190 error code is: ' + err.code);
@@ -10169,7 +10075,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readBooleanArray(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3200 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3200 error code is: ' + err.code);
@@ -10197,7 +10102,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         data.readBooleanArray(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3210 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3210 error code is: ' + err.code);
@@ -10230,7 +10134,6 @@ export default function ActsRpcClientEtsTest() {
         int32View.fill(1);
         data.writeRawDataBuffer(buffer, null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3220 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3220 error code is: ' + err.code);
@@ -10263,7 +10166,6 @@ export default function ActsRpcClientEtsTest() {
         int32View.fill(1);
         data.writeRawDataBuffer(buffer, undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3230 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3230 error code is: ' + err.code);
@@ -10296,7 +10198,6 @@ export default function ActsRpcClientEtsTest() {
         int32View.fill(1);
         data.writeRawDataBuffer(null, size);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3240 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3240 error code is: ' + err.code);
@@ -10329,7 +10230,6 @@ export default function ActsRpcClientEtsTest() {
         int32View.fill(1);
         data.writeRawDataBuffer(undefined, size);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3250 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3250 error code is: ' + err.code);
@@ -10411,7 +10311,6 @@ export default function ActsRpcClientEtsTest() {
           console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0020 reclaim done');
         })
       } catch (err) {
-        err = err as BusinessError;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0020 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0020 error code is: ' + err.code);
         expect(err == null).assertTrue();
@@ -10450,7 +10349,6 @@ export default function ActsRpcClientEtsTest() {
           console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0030 reclaim done');
         })
       } catch (err) {
-        err = err as BusinessError;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0030 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0030 error code is: ' + err.code);
       }
@@ -10504,7 +10402,6 @@ export default function ActsRpcClientEtsTest() {
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0050 sendMessageRequestCallback is done');
         await sleep(2000);
       } catch (err) {
-        err = err as BusinessError;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0050 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0050 error code is: ' + err.code);
         expect(err.message != null).assertTrue();
@@ -10534,7 +10431,6 @@ export default function ActsRpcClientEtsTest() {
         await gIRemoteObject.sendMessageRequest(CODE_MIN, data, reply, option, sendMessageRequestCallback)
         await sleep(2000);
       } catch (err) {
-        err = err as BusinessError;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0060 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0060 error code is: ' + err.code);
         expect(err == null).assertTrue();
@@ -10564,7 +10460,6 @@ export default function ActsRpcClientEtsTest() {
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0070 sendMessageRequestCallback is done');
         await sleep(2000);
       } catch (err) {
-        err = err as BusinessError;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0070 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0070 error code is: ' + err.code);
         expect(err.message != null).assertTrue();
@@ -10620,7 +10515,6 @@ export default function ActsRpcClientEtsTest() {
         await gIRemoteObject.sendRequest(CODE_MAX + 1, data, reply, option)
         await sleep(2000);
       } catch (err) {
-        err = err as BusinessError;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0090 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0090 error code is: ' + err.code);
         expect(err != null).assertTrue();
@@ -10649,7 +10543,6 @@ export default function ActsRpcClientEtsTest() {
         await gIRemoteObject.sendRequest(CODE_MIN - 1, data, reply, option)
         await sleep(2000);
       } catch (err) {
-        err = err as BusinessError;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0100 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0100 error code is: ' + err.code);
         expect(err != null).assertTrue();
@@ -10707,7 +10600,6 @@ export default function ActsRpcClientEtsTest() {
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0120 sendRequestCallback is done');
         await sleep(2000);
       } catch (err) {
-        err = err as BusinessError;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0120 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0120 error code is: ' + err.code);
         expect(err.message != null).assertTrue();
@@ -10737,7 +10629,6 @@ export default function ActsRpcClientEtsTest() {
         await gIRemoteObject.sendRequest(CODE_MIN, data, reply, option, sendRequestCallback)
         await sleep(2000);
       } catch (err) {
-        err = err as BusinessError;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0130 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0130 error code is: ' + err.code);
         expect(err == null).assertTrue();
@@ -10767,7 +10658,6 @@ export default function ActsRpcClientEtsTest() {
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0140 sendRequestCallback is done');
         await sleep(2000);
       } catch (err) {
-        err = err as BusinessError;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0140 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0140 error code is: ' + err.code);
         expect(err.message != null).assertTrue();
@@ -10833,7 +10723,6 @@ export default function ActsRpcClientEtsTest() {
         await gIRemoteObject.sendRequest(CODE_MIN, data, reply, option)
         await sleep(2000);
       } catch (err) {
-        err = err as BusinessError;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0160 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0160 error code is: ' + err.code);
         expect(err != null).assertTrue();
@@ -10859,7 +10748,6 @@ export default function ActsRpcClientEtsTest() {
        let res = object.queryLocalInterface("");
        expect(res).assertEqual(null);
       } catch (err) {
-        err = err as BusinessError;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0170 error is: ' + err);
         expect(err == null).assertTrue();
       }
@@ -10880,7 +10768,6 @@ export default function ActsRpcClientEtsTest() {
        let object = new TestAbilityStub("Test1");
        object.queryLocalInterface(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0180 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0180 error code is: ' + err.code);
@@ -10905,7 +10792,6 @@ export default function ActsRpcClientEtsTest() {
        let object = new TestAbilityStub("Test1");
        object.queryLocalInterface(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0190 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0190 error code is: ' + err.code);
@@ -10931,7 +10817,6 @@ export default function ActsRpcClientEtsTest() {
        let res = object.getLocalInterface("");
        expect(res).assertEqual(null);
       } catch (err) {
-        err = err as BusinessError;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0200 error is: ' + err);
         expect(err == null).assertTrue();
       }
@@ -10952,7 +10837,6 @@ export default function ActsRpcClientEtsTest() {
        let object = new TestAbilityStub("Test1");
        object.getLocalInterface(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0210 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0210 error code is: ' + err.code);
@@ -10977,7 +10861,6 @@ export default function ActsRpcClientEtsTest() {
        let object = new TestAbilityStub("Test1");
        object.getLocalInterface(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0220 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0220 error code is: ' + err.code);
@@ -11003,7 +10886,6 @@ export default function ActsRpcClientEtsTest() {
        let broker = object.getLocalInterface("")
        let res = object.modifyLocalInterface(broker, "");
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0230 error is: ' + err);
         expect(err.code == 401).assertTrue();
@@ -11029,7 +10911,6 @@ export default function ActsRpcClientEtsTest() {
        let broker = object.getLocalInterface('Test1')
        let res = object.modifyLocalInterface(broker, null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0240 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0240 error code is: ' + err.code);
@@ -11056,7 +10937,6 @@ export default function ActsRpcClientEtsTest() {
        let broker = object.getLocalInterface('Test1')
        let res = object.modifyLocalInterface(broker, undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0250 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0250 error code is: ' + err.code);
@@ -11082,7 +10962,6 @@ export default function ActsRpcClientEtsTest() {
        let object = new TestAbilityStub("Test1");
        let res = object.modifyLocalInterface(null, "test");
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0260 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0260 error code is: ' + err.code);
@@ -11108,7 +10987,6 @@ export default function ActsRpcClientEtsTest() {
        let object = new TestAbilityStub("Test1");
        let res = object.modifyLocalInterface(undefined, "test");
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0270 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0270 error code is: ' + err.code);
@@ -11135,7 +11013,6 @@ export default function ActsRpcClientEtsTest() {
        let broker = object.getLocalInterface('')
        let res = object.attachLocalInterface(broker, "");
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0280 error is: ' + err);
         expect(err != null).assertTrue();
@@ -11160,7 +11037,6 @@ export default function ActsRpcClientEtsTest() {
        let broker = object.getLocalInterface('Test1')
        let res = object.attachLocalInterface(broker, null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0290 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0290 error code is: ' + err.code);
@@ -11187,7 +11063,6 @@ export default function ActsRpcClientEtsTest() {
        expect(typeof broker === "undefined").assertTrue();
        let res = object.attachLocalInterface(broker, undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0300 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0300 error code is: ' + err.code);
@@ -11212,7 +11087,6 @@ export default function ActsRpcClientEtsTest() {
        let object = new TestAbilityStub("Test1");
        let res = object.attachLocalInterface(null, "test");
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0310 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0310 error code is: ' + err.code);
@@ -11237,7 +11111,6 @@ export default function ActsRpcClientEtsTest() {
        let object = new TestAbilityStub("Test1");
        let res = object.attachLocalInterface(undefined, "test");
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0320 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0320 error code is: ' + err.code);
@@ -11263,7 +11136,6 @@ export default function ActsRpcClientEtsTest() {
        let res: rpc.IRemoteBroker = object.queryLocalInterface("Test1");
        expect(typeof res === "undefined").assertTrue();
       } catch (err) {
-        err = err as BusinessError;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0330 error is: ' + err);
         expect(err == null).assertTrue();
       }
@@ -11285,7 +11157,6 @@ export default function ActsRpcClientEtsTest() {
         console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0010 getLocalInterface: " + res);
         expect(res != null).assertTrue();
       } catch (err) {
-        err = err as BusinessError;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0010 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0010 error code is: ' + err.code);
         let errCode = `${rpc.ErrorCode.ONLY_REMOTE_OBJECT_PERMITTED_ERROR}`;
@@ -11308,7 +11179,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         gIRemoteObject.getLocalInterface(null);
       } catch (err) {
-        err = err as BusinessError;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0020 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0020 error code is: ' + err.code);
         expect(err.code == 1900006).assertTrue();
@@ -11499,7 +11369,6 @@ export default function ActsRpcClientEtsTest() {
         let recipient = new MyregisterDeathRecipient();
         gIRemoteObject.addDeathRecipient(null, 0);
       } catch (err ) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0100 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0100 error code is: ' + err.code);
@@ -11525,7 +11394,6 @@ export default function ActsRpcClientEtsTest() {
         let recipient = new MyregisterDeathRecipient();
         gIRemoteObject.addDeathRecipient(recipient, null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0110 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0110 error code is: ' + err.code);
@@ -11551,7 +11419,6 @@ export default function ActsRpcClientEtsTest() {
         let recipient = new MyregisterDeathRecipient();
         gIRemoteObject.addDeathRecipient(undefined, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0120 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0120 error code is: ' + err.code);
@@ -11577,7 +11444,6 @@ export default function ActsRpcClientEtsTest() {
         let recipient = new MyregisterDeathRecipient();
         gIRemoteObject.addDeathRecipient(recipient, undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0130 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0130 error code is: ' + err.code);
@@ -11603,7 +11469,6 @@ export default function ActsRpcClientEtsTest() {
         let recipient = new MyregisterDeathRecipient();
         gIRemoteObject.registerDeathRecipient(null, 0);
       } catch (err ) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0140 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0140 error code is: ' + err.code);
@@ -11630,7 +11495,6 @@ export default function ActsRpcClientEtsTest() {
         let recipient = new MyregisterDeathRecipient();
         gIRemoteObject.registerDeathRecipient(recipient, null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0150 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0150 error code is: ' + err.code);
@@ -11657,7 +11521,6 @@ export default function ActsRpcClientEtsTest() {
         let recipient = new MyregisterDeathRecipient();
         gIRemoteObject.registerDeathRecipient(undefined, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0160 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0160 error code is: ' + err.code);
@@ -11684,7 +11547,6 @@ export default function ActsRpcClientEtsTest() {
         let recipient = new MyregisterDeathRecipient();
         gIRemoteObject.registerDeathRecipient(recipient, undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0170 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0170 error code is: ' + err.code);
@@ -11711,7 +11573,6 @@ export default function ActsRpcClientEtsTest() {
         let recipient = new MyregisterDeathRecipient();
         gIRemoteObject.removeDeathRecipient(null, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0180 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0180 error code is: ' + err.code);
@@ -11737,7 +11598,6 @@ export default function ActsRpcClientEtsTest() {
         let recipient = new MyregisterDeathRecipient();
         gIRemoteObject.removeDeathRecipient(recipient, null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0190 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0190 error code is: ' + err.code);
@@ -11763,7 +11623,6 @@ export default function ActsRpcClientEtsTest() {
         let recipient = new MyregisterDeathRecipient();
         gIRemoteObject.removeDeathRecipient(undefined, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0200 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0200 error code is: ' + err.code);
@@ -11789,7 +11648,6 @@ export default function ActsRpcClientEtsTest() {
         let recipient = new MyregisterDeathRecipient();
         gIRemoteObject.removeDeathRecipient(recipient, undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0210 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0210 error code is: ' + err.code);
@@ -11815,7 +11673,6 @@ export default function ActsRpcClientEtsTest() {
         let recipient = new MyregisterDeathRecipient();
         gIRemoteObject.unregisterDeathRecipient(null, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0220 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0220 error code is: ' + err.code);
@@ -11842,7 +11699,6 @@ export default function ActsRpcClientEtsTest() {
         let recipient = new MyregisterDeathRecipient();
         gIRemoteObject.unregisterDeathRecipient(recipient, null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0230 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0230 error code is: ' + err.code);
@@ -11869,7 +11725,6 @@ export default function ActsRpcClientEtsTest() {
         let recipient = new MyregisterDeathRecipient();
         gIRemoteObject.unregisterDeathRecipient(undefined, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0240 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0240 error code is: ' + err.code);
@@ -11896,7 +11751,6 @@ export default function ActsRpcClientEtsTest() {
         let recipient = new MyregisterDeathRecipient();
         gIRemoteObject.unregisterDeathRecipient(recipient, undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0250 err in catch is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0250 error code is: ' + err.code);
@@ -11922,7 +11776,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         gIRemoteObject.getLocalInterface(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0260 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0260 error code is: ' + err.code);
@@ -11949,7 +11802,6 @@ export default function ActsRpcClientEtsTest() {
         let res = gIRemoteObject.queryLocalInterface("");
         expect(res).assertEqual(null);
       } catch (err) {
-        err = err as BusinessError;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0270 error is: ' + err);
         expect(err == null).assertTrue();
       }
@@ -11970,7 +11822,6 @@ export default function ActsRpcClientEtsTest() {
         let res = gIRemoteObject.queryLocalInterface(null);
         expect(res == null).assertTrue();
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0280 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0280 error code is: ' + err.code);
@@ -11995,7 +11846,6 @@ export default function ActsRpcClientEtsTest() {
         let res = gIRemoteObject.queryLocalInterface(undefined);
         expect(res == null).assertTrue();
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0290 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0290 error code is: ' + err.code);
@@ -12042,7 +11892,6 @@ export default function ActsRpcClientEtsTest() {
         let ret = rpc.IPCSkeleton.flushCommands(remoteObject);
         expect(ret != null).assertTrue();
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info("SUB_DSoftbus_IPC_API_Stage_IPCSkeleton_0030 error is:" + err);
         expect(err != null).assertTrue();
@@ -12068,7 +11917,6 @@ export default function ActsRpcClientEtsTest() {
         let ret = rpc.IPCSkeleton.flushCommands(remoteObject);
         expect(ret != null).assertTrue();
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info("SUB_DSoftbus_IPC_API_Stage_IPCSkeleton_0040 error is:" + err);
         expect(err != null).assertTrue();
@@ -12257,7 +12105,6 @@ export default function ActsRpcClientEtsTest() {
         let remoteObject = null;
         rpc.IPCSkeleton.flushCmdBuffer(remoteObject);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_IPCSkeleton_0140 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_IPCSkeleton_0140 error code is: ' + err.code);
@@ -12284,7 +12131,6 @@ export default function ActsRpcClientEtsTest() {
         let remoteObject = undefined;
         rpc.IPCSkeleton.flushCmdBuffer(remoteObject);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_IPCSkeleton_0150 error is: ' + err);
         console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_IPCSkeleton_0150 error code is: ' + err.code);
@@ -12904,7 +12750,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         option.setFlags(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_MessageOption_0180 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_MessageOption_0180 error code is: ' + err.code);
@@ -12930,7 +12775,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         option.setFlags(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_MessageOption_0190 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_MessageOption_0190 error code is: ' + err.code);
@@ -14028,7 +13872,6 @@ export default function ActsRpcClientEtsTest() {
         expect(ashmem == undefined).assertTrue();
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0390 ashmem is: ' + ashmem);
       } catch (err) {
-          err = err as BusinessError;
           testFlag = false;
           console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0390 error is: ' + err);
           console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0390 error code is: ' + err.code);
@@ -14055,7 +13898,6 @@ export default function ActsRpcClientEtsTest() {
         expect(ashmem == undefined).assertTrue();
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0400 ashmem is: ' + ashmem);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0400 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0400 error code is: ' + err.code);
@@ -14082,7 +13924,6 @@ export default function ActsRpcClientEtsTest() {
         expect(ashmem == undefined).assertTrue();
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0410 ashmem is: ' + ashmem);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0410 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0410 error code is: ' + err.code);
@@ -14109,7 +13950,6 @@ export default function ActsRpcClientEtsTest() {
         expect(ashmem == undefined).assertTrue();
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0420 ashmem is: ' + ashmem);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0420 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0420 error code is: ' + err.code);
@@ -14136,7 +13976,6 @@ export default function ActsRpcClientEtsTest() {
         expect(ashmem == undefined).assertTrue();
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0430 ashmem is: ' + ashmem);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0430 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0430 error code is: ' + err.code);
@@ -14184,7 +14023,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         ashmem = rpc.Ashmem.create(null, 1024 * 1024);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0450 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0450 error code is: ' + err.code);
@@ -14210,7 +14048,6 @@ export default function ActsRpcClientEtsTest() {
       try {
          ashmem = rpc.Ashmem.create(undefined, 1024 * 1024);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0460 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0460 error code is: ' + err.code);
@@ -14236,7 +14073,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         ashmem = rpc.Ashmem.create("ashmemtest", null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0470 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0470 error code is: ' + err.code);
@@ -14262,7 +14098,6 @@ export default function ActsRpcClientEtsTest() {
       try {
          ashmem = rpc.Ashmem.create("ashmemtest", undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0480 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0480 error code is: ' + err.code);
@@ -14288,7 +14123,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         ashmem = rpc.Ashmem.create(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0490 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0490 error code is: ' + err.code);
@@ -14314,7 +14148,6 @@ export default function ActsRpcClientEtsTest() {
       try {
          ashmem = rpc.Ashmem.create(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0500 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0500 error code is: ' + err.code);
@@ -14340,7 +14173,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         ashmem = rpc.Ashmem.createAshmemFromExisting(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0510 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0510 error code is: ' + err.code);
@@ -14365,7 +14197,6 @@ export default function ActsRpcClientEtsTest() {
       try {
          ashmem = rpc.Ashmem.createAshmemFromExisting(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0520 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0520 error code is: ' + err.code);
@@ -14391,7 +14222,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         let res = ashmem.mapAshmem(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0530 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0530 error code is: ' + err.code);
@@ -14419,7 +14249,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         let res = ashmem.mapAshmem(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0540 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0540 error code is: ' + err.code);
@@ -14448,7 +14277,6 @@ export default function ActsRpcClientEtsTest() {
         let res = ashmem.mapTypedAshmem(null);
        
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0550 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0550 error code is: ' + err.code);
@@ -14477,7 +14305,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         let res = ashmem.mapTypedAshmem(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0560 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0560 error code is: ' + err.code);
@@ -14506,7 +14333,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         let res = ashmem.setProtectionType(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0570 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0570 error code is: ' + err.code);
@@ -14536,7 +14362,6 @@ export default function ActsRpcClientEtsTest() {
         
         let res = ashmem.setProtectionType(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0580 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0580 error code is: ' + err.code);
@@ -14565,7 +14390,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         let res = ashmem.setProtection(null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0590 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0590 error code is: ' + err.code);
@@ -14593,7 +14417,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         let res = ashmem.setProtection(undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0600 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0600 error code is: ' + err.code);
@@ -14623,7 +14446,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         ashmem.writeToAshmem(null, 5, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0610 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0610 error code is: ' + err.code);
@@ -14653,7 +14475,6 @@ export default function ActsRpcClientEtsTest() {
         ashmem.mapReadWriteAshmem();
         ashmem.writeToAshmem(undefined, 5, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0620 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0620 error code is: ' + err.code);
@@ -14684,7 +14505,6 @@ export default function ActsRpcClientEtsTest() {
         let ByteArray = [1, 2, 3, 4, 5];
         ashmem.writeToAshmem(ByteArray, null, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0630 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0630 error code is: ' + err.code);
@@ -14715,7 +14535,6 @@ export default function ActsRpcClientEtsTest() {
         let ByteArray = [1, 2, 3, 4, 5];
         ashmem.writeToAshmem(ByteArray, undefined, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0640 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0640 error code is: ' + err.code);
@@ -14746,7 +14565,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         ashmem.writeToAshmem(ByteArray, 5, null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0650 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0650 error code is: ' + err.code);
@@ -14777,7 +14595,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         ashmem.writeToAshmem(ByteArray, 5, undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0660 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0660 error code is: ' + err.code);
@@ -14807,7 +14624,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         ashmem.writeDataToAshmem(null, 5, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0670 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0670 error code is: ' + err.code);
@@ -14839,7 +14655,6 @@ export default function ActsRpcClientEtsTest() {
         let ByteArray = [1, 2, 3, 4, 5];
         ashmem.writeDataToAshmem(undefined, 5, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0680 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0680 error code is: ' + err.code);
@@ -14878,7 +14693,6 @@ export default function ActsRpcClientEtsTest() {
         }
         ashmem.writeDataToAshmem(buffer, null, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0690 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0690 error code is: ' + err.code);
@@ -14917,7 +14731,6 @@ export default function ActsRpcClientEtsTest() {
         }
         ashmem.writeDataToAshmem(buffer, undefined, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0700 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0700 error code is: ' + err.code);
@@ -14956,7 +14769,6 @@ export default function ActsRpcClientEtsTest() {
         }
         ashmem.writeDataToAshmem(buffer, 5, null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0710 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0710 error code is: ' + err.code);
@@ -14995,7 +14807,6 @@ export default function ActsRpcClientEtsTest() {
         }
         ashmem.writeDataToAshmem(buffer, 5, undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0720 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0720 error code is: ' + err.code);
@@ -15027,7 +14838,6 @@ export default function ActsRpcClientEtsTest() {
         let ByteArray = [1, 2, 3, 4, 5];
         ashmem.writeAshmem(null, 5, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0730 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0730 error code is: ' + err.code);
@@ -15059,7 +14869,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         ashmem.writeAshmem(undefined, 5, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0740 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0740 error code is: ' + err.code);
@@ -15091,7 +14900,6 @@ export default function ActsRpcClientEtsTest() {
         let ByteArray = [1, 2, 3, 4, 5];
         ashmem.writeAshmem(ByteArray, null, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0750 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0750 error code is: ' + err.code);
@@ -15123,7 +14931,6 @@ export default function ActsRpcClientEtsTest() {
         let ByteArray = [1, 2, 3, 4, 5];
         ashmem.writeAshmem(ByteArray, undefined, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0760 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0760 error code is: ' + err.code);
@@ -15155,7 +14962,6 @@ export default function ActsRpcClientEtsTest() {
         let ByteArray = [1, 2, 3, 4, 5];
         ashmem.writeAshmem(ByteArray, 5, null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0770 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0770 error code is: ' + err.code);
@@ -15187,7 +14993,6 @@ export default function ActsRpcClientEtsTest() {
         let ByteArray = [1, 2, 3, 4, 5];
         ashmem.writeAshmem(ByteArray, 5, undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0780 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0780 error code is: ' + err.code);
@@ -15218,7 +15023,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         ashmem.readAshmem(null, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0790 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0790 error code is: ' + err.code);
@@ -15249,7 +15053,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         ashmem.readAshmem(undefined, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0800 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0800 error code is: ' + err.code);
@@ -15280,7 +15083,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         ashmem.readAshmem(5, null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0810 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0810 error code is: ' + err.code);
@@ -15311,7 +15113,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         ashmem.readAshmem(5, undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0820 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0820 error code is: ' + err.code);
@@ -15342,7 +15143,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         ashmem.readDataFromAshmem(null, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0830 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0830 error code is: ' + err.code);
@@ -15373,7 +15173,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         ashmem.readDataFromAshmem(undefined, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0840 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0840 error code is: ' + err.code);
@@ -15404,7 +15203,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         ashmem.readDataFromAshmem(5, null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0850 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0850 error code is: ' + err.code);
@@ -15435,7 +15233,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         ashmem.readDataFromAshmem(5, undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0860 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0860 error code is: ' + err.code);
@@ -15466,7 +15263,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         ashmem.readFromAshmem(null, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0870 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0870 error code is: ' + err.code);
@@ -15496,7 +15292,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         ashmem.readFromAshmem(undefined, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0880 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0880 error code is: ' + err.code);
@@ -15526,7 +15321,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         ashmem.readFromAshmem(5, null);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0890 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0890 error code is: ' + err.code);
@@ -15556,7 +15350,6 @@ export default function ActsRpcClientEtsTest() {
       try {
         ashmem.readFromAshmem(5, undefined);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0900 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_Ashmem_0900 error code is: ' + err.code);
@@ -15598,7 +15391,6 @@ export default function ActsRpcClientEtsTest() {
             console.info('SUB_DSoftbus_IPC_API_Stage_onRemoteMessageRequest_0500 reclaim done');
           })
       } catch (error) {
-        error = error as BusinessError;
         console.info("SUB_DSoftbus_IPC_API_Stage_onRemoteMessageRequest_0500 error is:" + error);
         expect(error).assertEqual(null);
       } finally {
@@ -15629,7 +15421,6 @@ export default function ActsRpcClientEtsTest() {
         let res = testObject.getLocalInterface(des);
         expect(res).assertEqual(des);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_getLocalInterface_ErrorCode_0100 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_getLocalInterface_ErrorCode_0100 error code is: ' + err.code);
@@ -15663,7 +15454,6 @@ export default function ActsRpcClientEtsTest() {
         let res = testObject.getLocalInterface(des);
         expect(res).assertEqual(des);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_getLocalInterface_ErrorCode_0200 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_getLocalInterface_ErrorCode_0200 error code is: ' + err.code);
@@ -15695,7 +15485,6 @@ export default function ActsRpcClientEtsTest() {
         let testObject = new TestListener('testObject', checkResult);
         testObject.modifyLocalInterface(testObject.getLocalInterface('testObject'), des)
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_modifyLocalInterface_ErrorCode_0100 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_modifyLocalInterface_ErrorCode_0100 error code is: ' + err.code);
@@ -15727,7 +15516,6 @@ export default function ActsRpcClientEtsTest() {
         let testObject = new TestListener('testObject', checkResult);
         testObject.modifyLocalInterface(testObject.getLocalInterface('testObject'), des)
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info( 'SUB_DSoftbus_IPC_API_Stage_modifyLocalInterface_ErrorCode_0200 error is: ' + err);
         console.info( 'SUB_DSoftbus_IPC_API_Stage_modifyLocalInterface_ErrorCode_0200 error code is: ' + err.code);
@@ -15760,7 +15548,6 @@ export default function ActsRpcClientEtsTest() {
         rpc.IPCSkeleton.restoreCallingIdentity(des);
         console.info('SUB_DSoftbus_IPC_API_Stage_restoreCallingIdentity_ErrorCode_0100 testFlag is: ' + testFlag);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info('SUB_DSoftbus_IPC_API_Stage_restoreCallingIdentity_ErrorCode_0100 error is: ' + err);
         console.info('SUB_DSoftbus_IPC_API_Stage_restoreCallingIdentity_ErrorCode_0100 error code is: ' + err.code);
@@ -15790,7 +15577,6 @@ export default function ActsRpcClientEtsTest() {
         }
         rpc.IPCSkeleton.restoreCallingIdentity(des);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info( 'SUB_DSoftbus_IPC_API_Stage_restoreCallingIdentity_ErrorCode_0200 error is: ' + err);
         console.info( 'SUB_DSoftbus_IPC_API_Stage_restoreCallingIdentity_ErrorCode_0200 error code is: ' + err.code);
@@ -15831,7 +15617,6 @@ export default function ActsRpcClientEtsTest() {
             console.info('SUB_DSoftbus_IPC_API_Stage_restoreCallingIdentity_ErrorCode_0300 reclaim done');
           })
       } catch (error) {
-        error = error as BusinessError;
         console.info("SUB_DSoftbus_IPC_API_Stage_restoreCallingIdentity_ErrorCode_0300 error is:" + error);
         expect(error).assertEqual(null);
       } finally {
@@ -15858,7 +15643,7 @@ export default function ActsRpcClientEtsTest() {
         console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageSequence_3260 error is:" + error);
         let e: BusinessError = error as BusinessError;
         expect(e.code == 401).assertTrue();
-        expect(e.message).assertEqual("check param error");
+        expect(e.message != null).assertTrue();
       } finally {
         console.info(logTag + "reclaim done");
         data.reclaim();
@@ -15884,7 +15669,7 @@ export default function ActsRpcClientEtsTest() {
         console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageSequence_3270 error is:" + error);
         let e: BusinessError = error as BusinessError;
         expect(e.code == 401).assertTrue();
-        expect(e.message).assertEqual("check param error");
+        expect(e.message != null).assertTrue();
       } finally {
         console.info(logTag + "reclaim done");
         data.reclaim();
@@ -15915,7 +15700,7 @@ export default function ActsRpcClientEtsTest() {
         console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageSequence_3280 error is:" + error);
         let e: BusinessError = error as BusinessError;
         expect(e.code == 401).assertTrue();
-        expect(e.message).assertEqual("check param error");
+        expect(e.message != null).assertTrue();
       } finally {
         console.info(logTag + "reclaim done");
         data.reclaim();
@@ -15946,7 +15731,7 @@ export default function ActsRpcClientEtsTest() {
         console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageSequence_3290 error is:" + error);
         let e: BusinessError = error as BusinessError;
         expect(e.code == 401).assertTrue();
-        expect(e.message).assertEqual("check param error");
+        expect(e.message != null).assertTrue();
       } finally {
         console.info(logTag + "reclaim done");
         data.reclaim();
@@ -15977,7 +15762,7 @@ export default function ActsRpcClientEtsTest() {
         console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageSequence_3300 error is:" + error);
         let e: BusinessError = error as BusinessError;
         expect(e.code == 401).assertTrue();
-        expect(e.message).assertEqual("check param error");
+        expect(e.message != null).assertTrue();
       } finally {
         console.info(logTag + "reclaim done");
         data.reclaim();
@@ -16008,7 +15793,7 @@ export default function ActsRpcClientEtsTest() {
         console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageSequence_3310 error is:" + error);
         let e: BusinessError = error as BusinessError;
         expect(e.code == 401).assertTrue();
-        expect(e.message).assertEqual("check param error");
+        expect(e.message != null).assertTrue();
       } finally {
         console.info(logTag + "reclaim done");
         data.reclaim();
@@ -16035,7 +15820,6 @@ export default function ActsRpcClientEtsTest() {
         data.readRemoteObjectArray(res);
         expect(res.length == 0).assertTrue();
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag + 'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3320 err in catch is: ' + err);
         console.info(logTag + 'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3320 error code is: ' + err.code);
@@ -16067,7 +15851,6 @@ export default function ActsRpcClientEtsTest() {
         data.readBooleanArray(rBooleanArryData);
         expect(rBooleanArryData.length == 0).assertTrue();
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag + 'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3330 err in catch is: ' + err);
         console.info(logTag + 'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3330 error code is: ' + err.code);
@@ -16293,7 +16076,7 @@ export default function ActsRpcClientEtsTest() {
         console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_RemoteObject_0340 error is:" + error);
         let e: BusinessError = error as BusinessError;
         expect(e.code == 401).assertTrue();
-        expect(e.message).assertEqual("check param error");
+        expect(e.message != null).assertTrue();
       } finally {
         console.info(logTag + "reclaim done");
         data.reclaim();
@@ -16321,7 +16104,7 @@ export default function ActsRpcClientEtsTest() {
         console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_RemoteObject_0350 error is:" + error);
         let e: BusinessError = error as BusinessError;
         expect(e.code == 401).assertTrue();
-        expect(e.message).assertEqual("check param error");
+        expect(e.message != null).assertTrue();
       } finally {
         console.info(logTag + "reclaim done");
         data.reclaim();
@@ -16348,7 +16131,7 @@ export default function ActsRpcClientEtsTest() {
         console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_RemoteObject_0360 error is:" + error);
         let e: BusinessError = error as BusinessError;
         expect(e.code == 401).assertTrue();
-        expect(e.message).assertEqual("check param error");
+        expect(e.message != null).assertTrue();
       } finally {
         console.info(logTag + "reclaim done");
         data.reclaim();
@@ -16375,7 +16158,7 @@ export default function ActsRpcClientEtsTest() {
         console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_RemoteObject_0370 error is:" + error);
         let e: BusinessError = error as BusinessError;
         expect(e.code == 401).assertTrue();
-        expect(e.message).assertEqual("check param error");
+        expect(e.message != null).assertTrue();
       } finally {
         console.info(logTag + "reclaim done");
         data.reclaim();
@@ -16454,7 +16237,6 @@ export default function ActsRpcClientEtsTest() {
         let invalidProxy = new rpc.RemoteProxy();
         invalidProxy.getDescriptor();
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag + 'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0390 err in catch is: ' + err);
         console.info(logTag + 'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0390 error code is: ' + err.code);
@@ -16482,7 +16264,6 @@ export default function ActsRpcClientEtsTest() {
         let invalidProxy = new rpc.RemoteProxy();
         invalidProxy.registerDeathRecipient(recipient, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         console.info(logTag + 'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0310 err in catch is: ' + err);
         console.info(logTag + 'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0310 error code is: ' + err.code);

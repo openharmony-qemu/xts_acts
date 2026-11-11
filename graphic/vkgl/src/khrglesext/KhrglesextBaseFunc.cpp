@@ -46,7 +46,6 @@ static tcu::TestPackage* createKhrglesextPackage(tcu::TestContext& testCtx)
 {
     return new esextcts::ESEXTTestPackage(testCtx, "KHR-GLESEXT");
 }
-
 void RegistPackage(void)
 {
     tcu::TestPackageRegistry *registry = tcu::TestPackageRegistry::getSingleton();

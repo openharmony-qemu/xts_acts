@@ -39,7 +39,6 @@ struct Align {
         Column() {
           Text('position-动态切换(undefined/position(30,10))')
             .fontSize(20)
-            .margin(15)
             .width('80%')
           Row() {
             Text('1').size({ width: '30%', height: '50' })

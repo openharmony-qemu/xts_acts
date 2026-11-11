@@ -18,6 +18,7 @@
 import { describe, it, expect, TestType, Size, Level  } from '@ohos/hypium-static/src/main/indexStatic'
 import { BusinessError } from '@ohos.base';
 import connection from '@ohos.net.connection';
+import sharing from '@ohos.net.sharing';
 import hilog from '@ohos.hilog';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'connectionHandleTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -207,6 +208,39 @@ export default function ConnectionHandleTest(): void {
         }
       } catch (err) {
         hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSharingNetHandle_static_0100
+     * @tc.number SUB_NetworkMgr_Sharing_NetHandle_0100
+     * @tc.desc   Use getDefaultNet to get the network and assign it to sharing.NetHandle, then check the netId is greater than 100.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrSharingNetHandle_static_0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done:() => void): Promise<void> => {
+      const caseName: string = 'testNetworkMgrSharingNetHandle_static_0100';
+      hilog.info(domain, tag, `${caseName}---Start`);
+      try {
+        try {
+          let netHandle = await connection.getDefaultNet();
+          let sharingNetHandle: sharing.NetHandle = netHandle;
+          hilog.info(domain, tag, `${caseName} sharingNetHandle netId: ${sharingNetHandle.netId}`);
+          ExpectTrue(sharingNetHandle.netId > 100);
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, `${caseName} Failed to get getDefaultNet. error : ${JSON.stringify(error?.code)}`, JSON.stringify(error?.message));
+          ExpectFail();
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        }
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} test failed err: ${JSON.stringify(err?.code)}`, JSON.stringify(err?.message));
         ExpectFail();
         hilog.info(domain, tag, `${caseName}---End`);
         done();

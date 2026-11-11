@@ -514,3 +514,15 @@ export async function atomicsIsLockFreeTest099(): Promise<type51[]> {
   }
   return filteredResults;
 }
+
+export interface typeSupplementWait {
+  ta: collections.Int32Array;
+  index: number;
+  value: number;
+}
+
+export interface typeSupplementNotify {
+  ta: collections.Int32Array;
+  index: number;
+  count: number;
+}

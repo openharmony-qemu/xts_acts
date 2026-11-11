@@ -6957,7 +6957,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
           });
         } catch (error) {
           console.log(msgStr + ' Failed2 to start pip. Cause:' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
-          expect(error.code).assertFail(401);
+          expect(error.code).assertEqual(401);
           done();
         }
       }

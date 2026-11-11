@@ -34,6 +34,8 @@ import arcSwiperEffectMode from './ArcSwiperTest/arcSwiperEffectMode.test'
 import gridEnableEditMode from './Grid/gridEnableEditMode.test'
 import gridEditModeChange from './Grid/gridEditModeChange.test'
 import gridEditModeOptions from './Grid/gridEditModeOptions.test'
+import GridScrollSnapStrategyTest from './Grid/GridScrollSnapStrategy.test'
+import WaterFlowScrollSnapStrategyTest from './WaterFlow/WaterFlowScrollSnapStrategy.test'
 import listEnableEditMode from './List/listEnableEditMode.test'
 import listEditModeChange from './List/listEditModeChange.test'
 import LazyColumnLayoutProperties from './LazyColumnLayout/LazyColumnLayoutProperties.test'
@@ -73,6 +75,7 @@ export default function testsuite() {
   gridEnableEditMode();
   gridEditModeChange();
   gridEditModeOptions();
+  GridScrollSnapStrategyTest();
   listEnableEditMode();
   listEditModeChange();
   headerFooterStickyGrid();

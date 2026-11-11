@@ -52,6 +52,7 @@
 #include "node/SetUiDvsyncSwitchTest.cpp"
 #include "nativeModule/RuntimeCheckModeTest.cpp"
 #include "node/UIAgentGetPageTextTest.cpp"
+#include "node/UIAgentGetTreeJsonTest.cpp"
 #include "node/UIAgentTreeRequestCreateTest.cpp"
 #include "node/UIAgentTreeRequestSetFilterTest.cpp"
 #include "node/GetImagesByNodeIdAsyncTest.cpp"
@@ -63,6 +64,8 @@
 #include "uiEventInjection/UIEventInjectionTest.cpp"
 #include "node/BufferQueueSizeTest.cpp"
 #include "nativeModule/InspectorTreeGetterTest.cpp"
+#include "node/RequestSetFilterOccludedTest.cpp"
+
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -331,6 +334,24 @@ static napi_value Init(napi_env env, napi_value exports)
         {"UIAgentGetPageTextTest004", nullptr, UIAgentGetPageTextTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UIAgentGetPageTextTest005", nullptr, UIAgentGetPageTextTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
 
+        {"UIAgentGetTreeJsonAsyncTest001", nullptr, UIAgentGetTreeJsonAsyncTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonAsyncTest002", nullptr, UIAgentGetTreeJsonAsyncTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonAsyncTest003", nullptr, UIAgentGetTreeJsonAsyncTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonAsyncTest004", nullptr, UIAgentGetTreeJsonAsyncTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonAsyncTest005", nullptr, UIAgentGetTreeJsonAsyncTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonAsyncTest006", nullptr, UIAgentGetTreeJsonAsyncTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonAsyncTest007", nullptr, UIAgentGetTreeJsonAsyncTest007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonAsyncTest008", nullptr, UIAgentGetTreeJsonAsyncTest008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonAsyncCallbackResult", nullptr, UIAgentGetTreeJsonAsyncCallbackResult, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"UIAgentGetTreeJsonTest001", nullptr, UIAgentGetTreeJsonTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonTest002", nullptr, UIAgentGetTreeJsonTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonTest003", nullptr, UIAgentGetTreeJsonTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonTest004", nullptr, UIAgentGetTreeJsonTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonTest005", nullptr, UIAgentGetTreeJsonTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonTest006", nullptr, UIAgentGetTreeJsonTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetTreeJsonTest007", nullptr, UIAgentGetTreeJsonTest007, nullptr, nullptr, nullptr, napi_default, nullptr},
+
         {"UIAgentTreeRequestCreateTest001", nullptr, UIAgentTreeRequestCreateTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UIAgentTreeRequestCreateTest002", nullptr, UIAgentTreeRequestCreateTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UIAgentTreeRequestCreateTest003", nullptr, UIAgentTreeRequestCreateTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -540,6 +561,19 @@ static napi_value Init(napi_env env, napi_value exports)
         {"UnregisterInspectorTreeGetterTest008", nullptr, UnregisterInspectorTreeGetterTest008, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UnregisterInspectorTreeGetterTest009", nullptr, UnregisterInspectorTreeGetterTest009, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UnregisterInspectorTreeGetterTest010", nullptr, UnregisterInspectorTreeGetterTest010, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"RequestSetFilterOccludedTest001", nullptr, RequestSetFilterOccludedTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RequestSetFilterOccludedTest002", nullptr, RequestSetFilterOccludedTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RequestSetFilterOccludedTest003", nullptr, RequestSetFilterOccludedTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RequestSetFilterOccludedTest004", nullptr, RequestSetFilterOccludedTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RequestSetFilterOccludedTest005", nullptr, RequestSetFilterOccludedTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"RequestSetOcclusionOpacityThresholdTest001", nullptr, RequestSetOcclusionOpacityThresholdTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RequestSetOcclusionOpacityThresholdTest002", nullptr, RequestSetOcclusionOpacityThresholdTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RequestSetOcclusionOpacityThresholdTest003", nullptr, RequestSetOcclusionOpacityThresholdTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RequestSetOcclusionOpacityThresholdTest004", nullptr, RequestSetOcclusionOpacityThresholdTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RequestSetOcclusionOpacityThresholdTest005", nullptr, RequestSetOcclusionOpacityThresholdTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RequestSetOcclusionOpacityThresholdTest006", nullptr, RequestSetOcclusionOpacityThresholdTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
         };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

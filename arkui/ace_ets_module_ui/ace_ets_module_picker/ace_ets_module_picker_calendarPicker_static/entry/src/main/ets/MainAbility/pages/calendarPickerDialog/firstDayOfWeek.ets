@@ -16,11 +16,12 @@
 
 import {
   Entry,
-  Column,
   Component,
   CalendarPickerDialog,
   Flex,
   FlexWrap,
+  FlexAlign,
+  ItemAlign,
   Button,
   ClickEvent,
   Margin,
@@ -34,7 +35,11 @@ struct CalendarPickerDialogFirstDayOfWeekExample {
   private selectedDate: Date = new Date('2025-01-15');
 
   build() {
-    Column() {
+    Flex({
+      wrap: FlexWrap.Wrap,
+      justifyContent: FlexAlign.Center,
+      alignItems: ItemAlign.Center
+    }) {
       Button('LOCAL')
         .margin(10)
         .onClick((e: ClickEvent) => {
@@ -205,6 +210,6 @@ struct CalendarPickerDialogFirstDayOfWeekExample {
             }
           });
         }).id('firstDayOfWeek011')
-    }.width('100%').margin({ top: 50 } as Margin)
+    }.width('100%').padding({ top: 20, bottom: 20 })
   }
 }

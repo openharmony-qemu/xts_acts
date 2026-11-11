@@ -18,6 +18,7 @@ import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium
 import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+import DialogApi26TestHelper from '../common/DialogApi26TestHelper';
 
 let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
@@ -29,11 +30,14 @@ export default function DialogBaseControllerLife() {
         url: 'MainAbility/pages/dialog/DialogBaseControllerLife'
       };
       try {
-        router.clear();
         let pages = router.getState();
         if (pages.name !== 'DialogBaseControllerLife') {
-          await router.pushUrl(options);
+          router.clear();
+          await CommonFunc.sleep(500);
+          await router.replaceUrl(options);
           await CommonFunc.sleep(2000);
+          let driverNav = await Driver.create();
+          await DialogApi26TestHelper.drainCustomDialogs(driverNav);
         }
       } catch (err) {
         console.error('[ARKUI_DYN] push DialogBaseControllerLife error: ' + err);
@@ -43,14 +47,10 @@ export default function DialogBaseControllerLife() {
     });
 
     afterEach(async () => {
+      let driver = await Driver.create();
+      await DialogApi26TestHelper.drainCustomDialogs(driver);
+      await DialogApi26TestHelper.dismissOverlayIfAny(driver);
       await CommonFunc.sleep(500);
-      try {
-        let driver = await Driver.create();
-        await driver.pressBack(displayID);
-        await CommonFunc.sleep(300);
-      } catch (e) {
-        console.info('[ARKUI_DYN] pressBack skip');
-      }
     });
 
     /**
@@ -138,15 +138,17 @@ export default function DialogBaseControllerLife() {
     it('SUB_ArkUI_DialogApi26_DialogBaseControllerLife_0400', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseControllerLife_0400 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(800);
-      let btn = await driver.findComponent(ON.id('btn_ctrl_will_dismiss'));
+      await DialogApi26TestHelper.drainCustomDialogs(driver);
+      await CommonFunc.sleep(500);
+      let btn = await driver.waitForComponent(ON.id('btn_ctrl_will_dismiss'), 5000);
+      expect(btn !== null).assertTrue();
       await btn.click();
-      await CommonFunc.sleep(1200);
-      let title = await driver.findComponent(ON.text('WillDismissTitle'));
+      let title = await driver.waitForComponent(ON.text('WillDismissTitle'), 5000);
       expect(title !== null).assertTrue();
       await driver.pressBack(displayID);
       await CommonFunc.sleep(1000);
-      let label = await driver.findComponent(ON.id('ctrl_action'));
+      let label = await driver.waitForComponent(ON.id('ctrl_action'), 3000);
+      expect(label !== null).assertTrue();
       let txt = await label.getText();
       expect(txt.indexOf('willDismiss') >= 0 || txt.indexOf('WillDismissOK') >= 0).assertTrue();
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseControllerLife_0400 END');

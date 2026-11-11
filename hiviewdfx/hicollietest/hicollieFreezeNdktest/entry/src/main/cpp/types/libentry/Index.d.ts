@@ -16,3 +16,4 @@
 export const TestHiCollieSetFreezeCallback: () => number;
 export const TestHiCollieAssociateProcessReport: () => number;
 export const TestHiCollieAssociateProcessReport1: () => number;
+export const TestHiCollieSetFreezeCallback1: () => number;

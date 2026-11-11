@@ -9,7 +9,7 @@
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
-# limitations under the License.
+# limitations under the License
 
 import("//build/ohos_var.gni")
 
@@ -31,7 +31,9 @@ group("xts_global_acts") {
       "resmgr_standard/resmgrjsStatic:resmgrjs_test_static",
       "global_napi_c_test:ActsGlobalNapiCTest",
       "fontmanager_stage:fontmanager_stage_hap",
+      "fontmanager_stage_nopermission:fontmanager_stage_nopermission_hap",
       "fontmanager_stage_static:fontmanager_stage_static_hap",
+      "fontmanager_stage_nopermission_static:fontmanager_stage_nopermission_static_hap",
     ]
   } else {
     deps = [

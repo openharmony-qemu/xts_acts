@@ -56,7 +56,6 @@ export default function LinkEnhanceNoPermissionAPI() {
         let connection: linkEnhance.Connection = linkEnhance.createConnection("00:11:22:33:44:55","demo");
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_No_Permission_0100 is" + connection);
       }catch (error) {
-        error = error as BusinessError;
         flag = true;
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_No_Permission_0100 error.code is " + error.code);
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_No_Permission_0100 error.message is " + error.message);
@@ -87,7 +86,6 @@ export default function LinkEnhanceNoPermissionAPI() {
         let connection: linkEnhance.Server = linkEnhance.createServer("demo");
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_No_Permission_0200 is" + connection);
       }catch (error) {
-        error = error as BusinessError;
         flag = true;
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_No_Permission_0200 error.code is " + error.code);
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_No_Permission_0200 error.message is " + error.message);
