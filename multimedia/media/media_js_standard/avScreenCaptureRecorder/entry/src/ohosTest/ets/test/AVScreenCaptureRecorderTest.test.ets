@@ -2339,5 +2339,138 @@ export default function AVScreenCaptureRecorderTest() {
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1100 end');
       done();
     })
+
+
+   /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1200
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1200
+    * @tc.desc   setCaptureArea with null displayId - 5400108
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1200', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1200 start');
+      let captureRecorder: media.AVScreenCaptureRecorder | undefined;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if (captureRecorder == null) {
+        expect().assertFail();
+      }
+      try {
+        let area: media.RectangleRegion = {
+          left: 0,
+          top: 0,
+          width: 320,
+          height: 240
+        };
+        await captureRecorder!.setCaptureArea(null, area);
+        console.error('setCaptureArea should fail for non-existent displayId');
+        expect().assertFail();
+      } catch (err) {
+        console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code +
+          ', message: ' + (err as BusinessError).message);
+        expect((err as BusinessError).code).assertEqual(5400108);
+      }
+      await captureRecorder!.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1200 end');
+      done();
+    })
+
+   /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1300
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1300
+    * @tc.desc   setCaptureArea with undefined displayId - 5400108
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1300', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1300 start');
+      let captureRecorder: media.AVScreenCaptureRecorder | undefined;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if (captureRecorder == null) {
+        expect().assertFail();
+      }
+      try {
+        let area: media.RectangleRegion = {
+          left: 0,
+          top: 0,
+          width: 320,
+          height: 240
+        };
+        await captureRecorder!.setCaptureArea(undefined, area);
+        console.error('setCaptureArea should fail for non-existent displayId');
+        expect().assertFail();
+      } catch (err) {
+        console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code +
+          ', message: ' + (err as BusinessError).message);
+        expect((err as BusinessError).code).assertEqual(5400108);
+      }
+      await captureRecorder!.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1300 end');
+      done();
+    })
+
+   /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1400
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1400
+    * @tc.desc   setCaptureArea with null area - 5400108
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1400', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1400 start');
+      let captureRecorder: media.AVScreenCaptureRecorder | undefined;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if (captureRecorder == null) {
+        expect().assertFail();
+      }
+      try {
+        await captureRecorder!.setCaptureArea(0, null);
+        console.error('setCaptureArea should fail for non-existent displayId');
+        expect().assertFail();
+      } catch (err) {
+        console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code +
+          ', message: ' + (err as BusinessError).message);
+        expect((err as BusinessError).code).assertEqual(5400108);
+      }
+      await captureRecorder!.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1400 end');
+      done();
+    })
+
+   /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1500
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1500
+    * @tc.desc   setCaptureArea with undefined area - 5400108
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1500', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1500 start');
+      let captureRecorder: media.AVScreenCaptureRecorder | undefined;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if (captureRecorder == null) {
+        expect().assertFail();
+      }
+      try {
+        await captureRecorder!.setCaptureArea(0, undefined);
+        console.error('setCaptureArea should fail for non-existent displayId');
+        expect().assertFail();
+      } catch (err) {
+        console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code +
+          ', message: ' + (err as BusinessError).message);
+        expect((err as BusinessError).code).assertEqual(5400108);
+      }
+      await captureRecorder!.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1500 end');
+      done();
+    })
   })
 }
