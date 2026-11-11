@@ -167,7 +167,7 @@ export default function ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTe
         if (err.code == 801) {
           expect(err.code).assertEqual(801)
           done()
-        } else if (err.code == 201) {
+        } else if (err.code === 201) {
           expect(err.code).assertEqual(201);
           done()
         } else {
