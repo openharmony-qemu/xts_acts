@@ -22,9 +22,6 @@ import { createCertChain, createX509Cert,
   caTrustCert, caChain2, caChainWithOcsp,
   caTrustCertWithOcsp,
   caChainRevokedEntry,
-  caChainRevokedEntry2,
-  caTrustCert2,
-  caChainRevokedEntry3,
   caChainWithOcsp2,
   caTrustCertWithOcsp2,
   caChainWithOcsp3,
@@ -415,8 +412,8 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_1000",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
-          let x509CertChain: cert.X509CertChain = await createCertChain(caChainRevokedEntry2);
-          let x509Cert: cert.X509Cert = await createX509Cert(caTrustCert2);
+          let x509CertChain: cert.X509CertChain = await createCertChain(caChainRevokedEntry);
+          let x509Cert: cert.X509Cert = await createX509Cert(caTrustCert);
           const param: cert.CertChainValidationParameters = {
             trustAnchors: [{
               CACert: x509Cert
@@ -448,8 +445,8 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_1100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
-          let x509CertChain: cert.X509CertChain = await createCertChain(caChainRevokedEntry3);
-          let x509Cert: cert.X509Cert = await createX509Cert(caTrustCert2);
+          let x509CertChain: cert.X509CertChain = await createCertChain(caChainRevokedEntry);
+          let x509Cert: cert.X509Cert = await createX509Cert(caTrustCert);
           const param: cert.CertChainValidationParameters = {
             trustAnchors: [{
               CACert: x509Cert
