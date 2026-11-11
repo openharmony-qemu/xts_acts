@@ -81,6 +81,12 @@ export default function geolocationTest_GeoErr() {
         console.log('#start AccessTokenTests#');
         beforeAll(async function (done) {
             console.info('beforeAll case');
+            try {
+                geolocationm.setLocationPrivacyConfirmStatus(geolocationm.LocationPrivacyType.STARTUP, true);
+                console.info('[lbs_js] setLocationPrivacyConfirmStatus(LocationPrivacyType.STARTUP, true) success');
+            } catch (err) {
+                console.error("errCode:" + err.code + ", message:" + err.message);
+            }
             await applyPermission();
             await changedLocationMode();
             done();

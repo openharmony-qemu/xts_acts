@@ -24,6 +24,12 @@ export default function ActsLocationSwitchTest() {
   describe('ActsLocationSwitchTest', () => {
     beforeAll(async (done: Function) => {
       console.info('beforeAll case');
+      try {
+        geoLocationManager.setLocationPrivacyConfirmStatus(geoLocationManager.LocationPrivacyType.STARTUP, true);
+        console.info('[lbs_js] setLocationPrivacyConfirmStatus(LocationPrivacyType.STARTUP, true) success');
+      } catch (err) {
+        console.error("errCode:" + err.code + ", message:" + err.message);
+      }
       await changedLocationMode();
       done();
     })

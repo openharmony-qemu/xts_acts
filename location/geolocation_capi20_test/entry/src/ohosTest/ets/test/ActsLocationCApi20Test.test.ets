@@ -23,6 +23,12 @@ const OS_LOCATION_ERR_OK = 0;
 export default function ActsLocationCApi20Test() {
   describe('ActsLocationCApi20Test', () => {
     beforeAll(async (done: Function) => {
+      try {
+        geoLocationManager.setLocationPrivacyConfirmStatus(geoLocationManager.LocationPrivacyType.STARTUP, true);
+        console.info('[lbs_js] setLocationPrivacyConfirmStatus(LocationPrivacyType.STARTUP, true) success');
+      } catch (err) {
+        console.error("errCode:" + err.code + ", message:" + err.message);
+      }
       geoLocationManager.disableLocation()
       done();
     });
