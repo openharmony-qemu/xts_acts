@@ -14,6 +14,7 @@
  */
 import hilog from '@ohos.hilog';
 import { AVCastPicker, AVCastPickerState, AVCastPickerStyle, AVCastPickerColorMode } from '@kit.AVSessionKit';
+import { LengthMetrics } from '@kit.ArkUI';
 
 @Entry
 @Component
@@ -25,6 +26,8 @@ struct Index {
   @State colorMode: AVCastPickerColorMode = AVCastPickerColorMode.AUTO
   
   @State sessionType: string = 'audio'
+
+  @State isIndependent: boolean = true
 
   aboutToAppear() {
     hilog.info(0x0000, 'CastDemo', 'Cast page initialized');
@@ -62,6 +65,7 @@ struct Index {
         pickerStyle: AVCastPickerStyle.STYLE_PANEL,  
         colorMode: this.colorMode,       
         sessionType: this.sessionType,   
+        isIndependent: this.isIndependent,
         customPicker: () => this.CustomDevicePicker(), 
         onStateChange: this.handleStateChange 
       })
@@ -70,7 +74,7 @@ struct Index {
       .borderRadius(20)
       .backgroundColor(Color.White)
 
-      Row({ space: 15 }) {
+      Flex({ wrap: FlexWrap.Wrap, space: { main: LengthMetrics.vp(15), cross: LengthMetrics.vp(15) } }) {
         Button('Toggle Color Mode')
           .onClick(() => {
             this.colorMode = this.colorMode === AVCastPickerColorMode.AUTO ? 
@@ -81,6 +85,11 @@ struct Index {
         Button('Toggle Session Type')
           .onClick(() => {
             this.sessionType = this.sessionType === 'audio' ? 'video' : 'audio';
+          })
+
+        Button('Toggle Independent')
+          .onClick(() => {
+            this.isIndependent = !this.isIndependent;
           })
       }
       .margin({ top: 30 })
