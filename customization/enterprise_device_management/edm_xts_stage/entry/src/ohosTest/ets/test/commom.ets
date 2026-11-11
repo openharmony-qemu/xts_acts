@@ -226,8 +226,8 @@ async function initAppIds11WithRealApps(): Promise<void> {
     // Fallback to known test values if query fails
     console.error('Failed to query installed bundles, using known test appIdentifiers');
     APP_IDS_11 = [
-      TEST_REAL_APP_ID_1 || 'test_app_id_1',
-      TEST_REAL_APP_ID_2 || 'test_app_id_2',
+      TEST_REAL_APP_ID_1,
+      TEST_REAL_APP_ID_2,
       'fallback_app_id_2',
       'fallback_app_id_3',
       'fallback_app_id_4',
