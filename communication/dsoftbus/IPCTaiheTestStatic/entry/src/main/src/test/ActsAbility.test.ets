@@ -145,7 +145,6 @@ class TestCallerInfo extends rpc.RemoteObject {
         let isLocalCalling: boolean = rpc.IPCSkeleton.isLocalCalling();
         expect(isLocalCalling).assertEqual(callingInfo?.isLocalCalling);
       } catch (error) {
-        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', "TestCallerInfo onRemoteMessageRequest error is:" + error);
         testFlag = false;
         return false;
@@ -177,7 +176,6 @@ class TestRemoteStub extends rpc.RemoteObject {
       this.modifyLocalInterface(broker, descriptor);
       hilog.info(domain, tag, '%{public}s', ' modifyLocalInterface done');
     } catch(err) {
-      err = err as BusinessError;
       hilog.info(domain, tag, '%{public}s', 'TestRemoteStub error is: ' + err);
       hilog.info(domain, tag, '%{public}s', 'TestRemoteStub error code is: ' + err.code);
       expect(err.code).assertEqual(0);
@@ -2043,7 +2041,6 @@ export default function abilityTest() {
         let res: int = data.readFileDescriptor();
         expect(res >= file.fd).assertTrue();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readFileDescriptor_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readFileDescriptor_0100 error is: ' + err.code);
         expect(err == null).assertTrue();
@@ -2908,7 +2905,6 @@ export default function abilityTest() {
         let res4 = parcelable_false.unmarshalling(data);
         expect(res4).assertFalse();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Parcelable_Marshalling_Unmarshalling_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Parcelable_Marshalling_Unmarshalling_0100 error is: ' + err.code);
         expect(err == null).assertTrue();
@@ -2979,7 +2975,6 @@ export default function abilityTest() {
             hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_0500 reclaim done');
           })
       } catch (error) {
-        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', "SUB_IPC_onRemoteMessageRequest_0500 error is:" + error);
         expect(error).assertEqual(null);
       } finally {
@@ -3032,7 +3027,6 @@ export default function abilityTest() {
             hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncCallingInfo_0100 reclaim done');
           });
       } catch (error) {
-        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncCallingInfo_0100 error: ' + error);
         expect(error == null).assertTrue();
       }
@@ -3084,7 +3078,6 @@ export default function abilityTest() {
             hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncPromise_0200 reclaim done');
           });
       } catch (error) {
-        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncPromise_0200 error: ' + error);
         expect(error == null).assertTrue();
       }
@@ -3140,7 +3133,6 @@ export default function abilityTest() {
             hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncPromise_0300 reclaim done');
           });
       } catch (error) {
-        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncPromise_0300 error: ' + error);
         expect(error == null).assertTrue();
       }
@@ -3177,7 +3169,6 @@ export default function abilityTest() {
         reply.reclaim();
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncCallback_0100 reclaim done');
       } catch (error) {
-        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncCallback_0100 error: ' + error);
         expect(error == null).assertTrue();
       }
@@ -3229,7 +3220,6 @@ export default function abilityTest() {
             hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncLongDelay_0100 reclaim done');
           });
       } catch (error) {
-        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncLongDelay_0100 error: ' + error);
         expect(error == null).assertTrue();
       }
@@ -3255,7 +3245,6 @@ export default function abilityTest() {
         data.reclaim();
         data.writeRemoteObject(testRemoteObject);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -3285,7 +3274,6 @@ export default function abilityTest() {
         data.reclaim();
         data.readRemoteObject();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readRemoteObject_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readRemoteObject_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -3313,7 +3301,6 @@ export default function abilityTest() {
         data.reclaim();
         data.writeInterfaceToken("ipctest");
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -3341,7 +3328,6 @@ export default function abilityTest() {
         data.reclaim();
         data.writeInterfaceToken("");
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0200 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0200 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -3370,7 +3356,6 @@ export default function abilityTest() {
         data.reclaim();
         data.readInterfaceToken();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readInterfaceToken_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readInterfaceToken_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -3398,7 +3383,6 @@ export default function abilityTest() {
         data.reclaim();
         data.setCapacity(64);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_setCapacity_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_setCapacity_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -3426,7 +3410,6 @@ export default function abilityTest() {
         data.reclaim();
         data.writeNoException();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeNoException_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeNoException_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -3454,7 +3437,6 @@ export default function abilityTest() {
         data.reclaim();
         data.readException();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readException_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readException_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -3482,7 +3464,6 @@ export default function abilityTest() {
         data.reclaim();
         data.writeInt(0);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeInt_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeInt_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -3511,7 +3492,6 @@ export default function abilityTest() {
         data.reclaim();
         data.readInt();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readInt_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readInt_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -3539,7 +3519,6 @@ export default function abilityTest() {
         data.reclaim();
         data.writeLong(0);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeLong_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeLong_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -3568,7 +3547,6 @@ export default function abilityTest() {
         data.reclaim();
         data.readLong();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readLong_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readLong_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -3596,7 +3574,6 @@ export default function abilityTest() {
         data.reclaim();
         data.writeBoolean(true);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBoolean_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBoolean_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -3625,7 +3602,6 @@ export default function abilityTest() {
         data.reclaim();
         data.readBoolean();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readBoolean_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readBoolean_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -3653,7 +3629,6 @@ export default function abilityTest() {
         data.reclaim();
         data.writeString("test");
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeString_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeString_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -3682,7 +3657,6 @@ export default function abilityTest() {
         data.reclaim();
         data.readString();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readString_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readString_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -3711,7 +3685,6 @@ export default function abilityTest() {
         data.reclaim();
         data.writeParcelable(parcelable);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeParcelable_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeParcelable_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -3743,7 +3716,6 @@ export default function abilityTest() {
         let res: MyParcelable = new MyParcelable(0, "");
         data.readParcelable(res);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readParcelable_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readParcelable_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -3772,7 +3744,6 @@ export default function abilityTest() {
         data.reclaim();
         data.writeIntArray(input);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeIntArray_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeIntArray_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -3803,7 +3774,6 @@ export default function abilityTest() {
         data.reclaim();
         data.readIntArray(res);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readIntArray_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readIntArray_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -3833,7 +3803,6 @@ export default function abilityTest() {
         data.reclaim();
         let res = data.readIntArray();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readIntArray_ErrorCode_0200 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readIntArray_ErrorCode_0200 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -3863,7 +3832,6 @@ export default function abilityTest() {
         data.reclaim();
         data.writeDoubleArray(input);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeDoubleArray_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeDoubleArray_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -3894,7 +3862,6 @@ export default function abilityTest() {
         data.reclaim();
         data.readDoubleArray(res);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -3924,7 +3891,6 @@ export default function abilityTest() {
         data.reclaim();
         let res = data.readDoubleArray();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0200 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0200 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -3954,7 +3920,6 @@ export default function abilityTest() {
         data.reclaim();
         data.writeBooleanArray(input);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBooleanArray_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBooleanArray_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -3985,7 +3950,6 @@ export default function abilityTest() {
         data.reclaim();
         data.readBooleanArray(res);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -4015,7 +3979,6 @@ export default function abilityTest() {
         data.reclaim();
         let res = data.readBooleanArray();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0200 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0200 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -4045,7 +4008,6 @@ export default function abilityTest() {
         data.reclaim();
         data.writeStringArray(input);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeStringArray_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeStringArray_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -4076,7 +4038,6 @@ export default function abilityTest() {
         data.reclaim();
         data.readStringArray(res);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readStringArray_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readStringArray_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -4106,7 +4067,6 @@ export default function abilityTest() {
         data.reclaim();
         let res = data.readStringArray();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readStringArray_ErrorCode_0200 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readStringArray_ErrorCode_0200 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -4139,7 +4099,6 @@ export default function abilityTest() {
         data.reclaim();
         data.writeParcelableArray(input);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeParcelableArray_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeParcelableArray_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -4174,7 +4133,6 @@ export default function abilityTest() {
 
         data.readParcelableArray(res);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readParcelableArray_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readParcelableArray_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -4203,7 +4161,6 @@ export default function abilityTest() {
         data.reclaim();
         data.writeByteArray(input);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeByteArray_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeByteArray_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -4233,7 +4190,6 @@ export default function abilityTest() {
         data.reclaim();
         data.writeAshmem(ashmem);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeAshmem_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeAshmem_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -4264,7 +4220,6 @@ export default function abilityTest() {
         data.reclaim();
         let res = data.readAshmem();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readAshmem_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readAshmem_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -4296,7 +4251,6 @@ export default function abilityTest() {
         int32View.fill(1);
         data.writeRawDataBuffer(buffer, size);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -4329,7 +4283,6 @@ export default function abilityTest() {
         data.writeRawDataBuffer(buffer, size);
         let readBuffer = data.readRawDataBuffer(TEST_LEN_128M + 1)
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readRawDataBuffer_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readRawDataBuffer_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -4363,7 +4316,6 @@ export default function abilityTest() {
         let res = data.readFileDescriptor();
 
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readFileDescriptor_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readFileDescriptor_ErrorCode_0100 error is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -4397,7 +4349,6 @@ export default function abilityTest() {
         data.writeFileDescriptor(file.fd);
 
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0100 error is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -4430,7 +4381,6 @@ export default function abilityTest() {
         rpc.MessageSequence.closeFileDescriptor(file.fd);
         data.writeFileDescriptor(file.fd);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0200 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0200 error is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -4458,7 +4408,6 @@ export default function abilityTest() {
       try {
         data.writeFileDescriptor(-1);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300 error is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -4486,7 +4435,6 @@ export default function abilityTest() {
       try {
         rpc.MessageSequence.closeFileDescriptor(-1);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100 error is: ' + err.code);
         expect(err.code == 401).assertTrue();
@@ -4515,7 +4463,6 @@ export default function abilityTest() {
         let deathRecipient = new MyDeathRecipient();
         testboject.registerDeathRecipient(deathRecipient, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_registerDeathRecipient_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_registerDeathRecipient_ErrorCode_0100 error is: ' + err.code);
@@ -4545,7 +4492,6 @@ export default function abilityTest() {
         let deathRecipient = new MyDeathRecipient();
         testboject.unregisterDeathRecipient(deathRecipient, 0);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_unregisterDeathRecipient_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_unregisterDeathRecipient_ErrorCode_0100 errorcode is: ' + err.code);
@@ -5164,7 +5110,6 @@ export default function abilityTest() {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_RewindWriteAndRead_0200 res1 is: ' + res1);
         expect(res1 == 5).assertTrue();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_RewindWriteAndRead_0200 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_RewindWriteAndRead_0200 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -6528,7 +6473,6 @@ export default function abilityTest() {
         res = data.readCharArray();
         expect(res).assertDeepEquals(input);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readCharArray_0200 error is: ' + err);
         expect(err == null).assertTrue();
       } finally {
@@ -6745,7 +6689,6 @@ export default function abilityTest() {
         }
         rpc.IPCSkeleton.restoreCallingIdentity(des);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         hilog.info(domain, tag, '%{public}s',  'SUB_IPC_Skeleton_restoreCallingIdentity_0200 error is: ' + err);
         expect(err.message == null).assertTrue();
@@ -6932,7 +6875,6 @@ export default function abilityTest() {
         hilog.info(domain, tag, '%{public}s', `readDataFromAshmem success`);
         expect(result.byteLength > 0).assertTrue();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_SetProtectionType_0100 error is: ' + err);
         expect(err == null).assertTrue();
       } finally {
@@ -6975,7 +6917,6 @@ export default function abilityTest() {
         hilog.info(domain, tag, '%{public}s', `WriteDataToAshMem finshed`);
         let result = ashmem1.readDataFromAshmem(length, offset);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_SetProtectionType_0200 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_SetProtectionType_0200 error code is: ' + err.code);
         expect(err.code == 1900003).assertTrue();
@@ -7019,7 +6960,6 @@ export default function abilityTest() {
         let offset: int = 0;
         ashmem2.writeDataToAshmem(buffer, length, offset);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_SetProtectionType_0300 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_SetProtectionType_0300 error code is: ' + err.code);
         expect(err.code == 1900003).assertTrue();
@@ -7063,7 +7003,6 @@ export default function abilityTest() {
         let offset: int = 0;
         ashmem.writeDataToAshmem(buffer, length, offset);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_SetProtectionType_0400 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_SetProtectionType_0400 error code is: ' + err.code);
         expect(err.code == 1900003).assertTrue();
@@ -7108,7 +7047,6 @@ export default function abilityTest() {
         let offset: int = 0;
         ashmem.writeDataToAshmem(buffer, length, offset);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_SetProtectionType_0500 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_SetProtectionType_0500 error code is: ' + err.code);
         expect(err.code == 1900003).assertTrue();
@@ -7140,7 +7078,6 @@ export default function abilityTest() {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getLocalInterface_0100 res is:' + res);
         expect(res != null).assertTrue();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getLocalInterface_0100 error is:' + err);
         expect(err == null).assertTrue();
       } finally {
@@ -7171,7 +7108,6 @@ export default function abilityTest() {
         testRemoteObject.modifyLocalInterface(testRemoteObject.getLocalInterface('testObject'), 'testObject')
         let res = testRemoteObject.getLocalInterface(des);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getLocalInterface_0200 error is: ' + err);
         expect(err.message == null).assertTrue();
@@ -7200,7 +7136,6 @@ export default function abilityTest() {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getLocalInterface_0300 res is:' + res);
         expect(res != null).assertTrue();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getLocalInterface_0300 error is:' + err);
         expect(err == null).assertTrue();
       } finally {
@@ -7226,7 +7161,6 @@ export default function abilityTest() {
         let broker = testObject.getLocalInterface('testObject')
         testObject.modifyLocalInterface(broker,"testObject1")
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_modifyLocalInterface_0100 error is: ' + err);
         expect(err == null).assertTrue();
       } finally {
@@ -7250,7 +7184,6 @@ export default function abilityTest() {
       try {
         let testObject = new TestRemoteStub('testObject');
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_modifyLocalInterface_0200 error is: ' + err);
         expect(err == null).assertTrue();
       } finally {
@@ -7280,7 +7213,6 @@ export default function abilityTest() {
         let testRemoteObject = new TestRemoteObject('testObject');
         testRemoteObject.modifyLocalInterface(testRemoteObject.getLocalInterface('testObject'), des)
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         hilog.info(domain, tag, '%{public}s',  'SUB_IPC_RemoteObject_modifyLocalInterface_0300 error is: ' + err);
         expect(err.message == null).assertTrue();
@@ -7308,7 +7240,6 @@ export default function abilityTest() {
         data.reclaim();
         data.setSize(0);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_setSize_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_setSize_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -7334,7 +7265,6 @@ export default function abilityTest() {
         data.reclaim();
         data.rewindRead(0);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_rewindRead_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_rewindRead_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -7360,7 +7290,6 @@ export default function abilityTest() {
         data.reclaim();
         data.rewindWrite(0);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_rewindWrite_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_rewindWrite_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -7386,7 +7315,6 @@ export default function abilityTest() {
         data.reclaim();
         data.writeByte(1);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeByte_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeByte_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -7412,7 +7340,6 @@ export default function abilityTest() {
         data.reclaim();
         data.readByte();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readByte_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readByte_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -7438,7 +7365,6 @@ export default function abilityTest() {
         data.reclaim();
         data.writeShort(1);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeShort_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeShort_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -7464,7 +7390,6 @@ export default function abilityTest() {
         data.reclaim();
         data.readShort();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readShort_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readShort_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -7490,7 +7415,6 @@ export default function abilityTest() {
         data.reclaim();
         data.writeFloat(1.1);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeFloat_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeFloat_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -7516,7 +7440,6 @@ export default function abilityTest() {
         data.reclaim();
         data.readFloat();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readFloat_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readFloat_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -7542,7 +7465,6 @@ export default function abilityTest() {
         data.reclaim();
         data.writeDouble(1.12);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeDouble_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeDouble_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -7568,7 +7490,6 @@ export default function abilityTest() {
         data.reclaim();
         data.readDouble();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readDouble_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readDouble_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -7594,7 +7515,6 @@ export default function abilityTest() {
         data.reclaim();
         data.writeChar(1);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeChar_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeChar_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -7620,7 +7540,6 @@ export default function abilityTest() {
         data.reclaim();
         data.readChar();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readChar_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readChar_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -7649,7 +7568,6 @@ export default function abilityTest() {
         data.reclaim();
         data.readByteArray(res);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readByteArray_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readByteArray_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -7679,7 +7597,6 @@ export default function abilityTest() {
         data.reclaim();
         let res = data.readByteArray();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readByteArray_ErrorCode_0200 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readByteArray_ErrorCode_0200 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -7708,7 +7625,6 @@ export default function abilityTest() {
         data.reclaim();
         data.writeShortArray(input);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeShortArray_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeShortArray_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -7739,7 +7655,6 @@ export default function abilityTest() {
         data.reclaim();
         data.readShortArray(res);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readShortArray_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readShortArray_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -7769,7 +7684,6 @@ export default function abilityTest() {
         data.reclaim();
         let res = data.readShortArray();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readShortArray_ErrorCode_0200 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readShortArray_ErrorCode_0200 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -7799,7 +7713,6 @@ export default function abilityTest() {
         data.reclaim();
         data.writeLongArray(input);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeLongArray_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeLongArray_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -7830,7 +7743,6 @@ export default function abilityTest() {
         data.reclaim();
         data.readLongArray(res);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readLongArray_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readLongArray_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -7860,7 +7772,6 @@ export default function abilityTest() {
         let res: Array<long> = [];
         res = data.readLongArray();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readLongArray_ErrorCode_0200 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readLongArray_ErrorCode_0200 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -7890,7 +7801,6 @@ export default function abilityTest() {
         data.reclaim();
         data.writeFloatArray(input);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeFloatArray_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeFloatArray_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -7921,7 +7831,6 @@ export default function abilityTest() {
         data.reclaim();
         data.readFloatArray(res);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readFloatArray_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readFloatArray_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -7951,7 +7860,6 @@ export default function abilityTest() {
         data.reclaim();
         let res = data.readFloatArray();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readFloatArray_ErrorCode_0200 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readFloatArray_ErrorCode_0200 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -7981,7 +7889,6 @@ export default function abilityTest() {
         data.reclaim();
         data.writeCharArray(input);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeCharArray_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeCharArray_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -8012,7 +7919,6 @@ export default function abilityTest() {
         data.reclaim();
         data.readCharArray(res);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readCharArray_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readCharArray_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -8042,7 +7948,6 @@ export default function abilityTest() {
         data.reclaim();
         let res = data.readCharArray();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readCharArray_ErrorCode_0200 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readCharArray_ErrorCode_0200 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -8074,7 +7979,6 @@ export default function abilityTest() {
         data.reclaim();
         data.writeRemoteObjectArray(a);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRemoteObjectArray_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRemoteObjectArray_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -8107,7 +8011,6 @@ export default function abilityTest() {
         data.reclaim();
         data.readRemoteObjectArray(res);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readRemoteObjectArray_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readRemoteObjectArray_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -8139,7 +8042,6 @@ export default function abilityTest() {
         data.reclaim();
         let res = data.readRemoteObjectArray();
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readRemoteObjectArray_ErrorCode_0200 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readRemoteObjectArray_ErrorCode_0200 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -8166,7 +8068,6 @@ export default function abilityTest() {
       try {
         let res = rpc.MessageSequence.dupFileDescriptor(-1);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_dupFileDescriptor_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_dupFileDescriptor_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 401).assertTrue();
@@ -8199,7 +8100,6 @@ export default function abilityTest() {
         rpc.MessageSequence.closeFileDescriptor(file.fd);
         let res = rpc.MessageSequence.dupFileDescriptor(file.fd);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_dupFileDescriptor_ErrorCode_0200 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_dupFileDescriptor_ErrorCode_0200 error code is: ' + err.code);
         expect(err.code == 1900013).assertTrue();
@@ -8234,7 +8134,6 @@ export default function abilityTest() {
         data.writeArrayBuffer(buffer, rpc.TypeCode.BIGUINT64_ARRAY);
 
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_WriteArrayBuffer_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_WriteArrayBuffer_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900009).assertTrue();
@@ -8268,7 +8167,6 @@ export default function abilityTest() {
         data.reclaim();
         let result = data.readArrayBuffer(rpc.TypeCode.BIGUINT64_ARRAY);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readArrayBuffer_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readArrayBuffer_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900010).assertTrue();
@@ -8301,7 +8199,6 @@ export default function abilityTest() {
         testRemoteObject.modifyLocalInterface(testRemoteObject.getLocalInterface('testObject'), 'testObject')
         let res = testRemoteObject.getLocalInterface(des);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getLocalInterface_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getLocalInterface_ErrorCode_0100 error code is: ' + err.code);
@@ -8329,7 +8226,6 @@ export default function abilityTest() {
       try {
         let res = gIRemoteObject?.getLocalInterface('rpcTestAbility');
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RmoteProxy_getLocalInterface_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RmoteProxy_getLocalInterface_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900006).assertTrue();
@@ -8363,7 +8259,6 @@ export default function abilityTest() {
         let res = testRemoteObject.getLocalInterface(des);
         expect(res).assertEqual(des);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RmoteProxy_getLocalInterface_ErrorCode_0200 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RmoteProxy_getLocalInterface_ErrorCode_0200 error code is: ' + err.code);
@@ -8397,7 +8292,6 @@ export default function abilityTest() {
         let testRemoteObject = new TestRemoteObject('testObject');
         testRemoteObject.modifyLocalInterface(testRemoteObject.getLocalInterface('testObject'), des)
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_modifyLocalInterface_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_modifyLocalInterface_ErrorCode_0100 error code is: ' + err.code);
@@ -8431,7 +8325,6 @@ export default function abilityTest() {
         let testRemoteObject = new TestRemoteObject('testObject');
         testRemoteObject.modifyLocalInterface(testRemoteObject.getLocalInterface('testObject'), des)
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         hilog.info(domain, tag, '%{public}s',  'SUB_IPC_RemoteObject_modifyLocalInterface_ErrorCode_0200 error is: ' + err);
         hilog.info(domain, tag, '%{public}s',  'SUB_IPC_RemoteObject_modifyLocalInterface_ErrorCode_0200 error code is: ' + err.code);
@@ -8464,7 +8357,6 @@ export default function abilityTest() {
         }
         rpc.IPCSkeleton.restoreCallingIdentity(des);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0100 error code is: ' + err.code);
@@ -8497,7 +8389,6 @@ export default function abilityTest() {
         }
         rpc.IPCSkeleton.restoreCallingIdentity(des);
       } catch (err) {
-        err = err as BusinessError;
         testFlag = false;
         hilog.info(domain, tag, '%{public}s',  'SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0200 error is: ' + err);
         hilog.info(domain, tag, '%{public}s',  'SUB_IPC_Skeleton_restoreCallingIdentity_ErrorCode_0200 error code is: ' + err.code);
@@ -8526,7 +8417,6 @@ export default function abilityTest() {
       try {
         ashmem1.mapTypedAshmem(999);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_MapTypedAshmem_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_MapTypedAshmem_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 401).assertTrue();
@@ -8574,7 +8464,6 @@ export default function abilityTest() {
         ashmem.closeAshmem();
         let result = ashmem.readDataFromAshmem(length, offset);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_ReadDataFromAshmem_ErrorCode_0100 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_ReadDataFromAshmem_ErrorCode_0100 error code is: ' + err.code);
         expect(err.code == 1900004).assertTrue();
@@ -8620,7 +8509,6 @@ export default function abilityTest() {
         hilog.info(domain, tag, '%{public}s', `WriteDataToAshMem finshed`);
         let result = ashmem.readDataFromAshmem(length, -1);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_readDataFromAshmem_ErrorCode_0200 error is: ' + err);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmen_readDataFromAshmem_ErrorCode_0200 error code is: ' + err.code);
         expect(err.code == 1900004).assertTrue();
@@ -8688,7 +8576,6 @@ export default function abilityTest() {
         expect(rpc.Ashmem.PROT_READ).assertEqual(1);
         expect(rpc.Ashmem.PROT_WRITE).assertEqual(2);
       } catch (err) {
-        //err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_ErrorCode_0100 error is: ' + err);
         expect(err.message == null).assertTrue();
       }
