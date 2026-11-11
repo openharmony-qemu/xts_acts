@@ -23,7 +23,8 @@ import CommonFunc from '../../MainAbility/common/Common';
  * prefer waitForComponent over long fixed sleeps.
  */
 export default class DialogApi26TestHelper {
-  static readonly PAGE_READY_MS: number = 800;
+  static readonly PAGE_READY_MS: number = 1200;
+  static readonly CLEAR_MS: number = 500;
   static readonly SETTLE_MS: number = 300;
   static readonly DIALOG_MS: number = 400;
 
@@ -33,9 +34,23 @@ export default class DialogApi26TestHelper {
       if (pages.name === pageName) {
         return;
       }
+      try {
+        router.clear();
+      } catch (eClear) {
+      }
+      await CommonFunc.sleep(DialogApi26TestHelper.CLEAR_MS);
       let options: router.RouterOptions = { url: url };
-      await router.pushUrl(options);
+      try {
+        await router.replaceUrl(options);
+      } catch (eReplace) {
+        await router.pushUrl(options);
+      }
       await CommonFunc.sleep(DialogApi26TestHelper.PAGE_READY_MS);
+      try {
+        let driver = await Driver.create();
+        await DialogApi26TestHelper.drainCustomDialogs(driver);
+      } catch (eDrain) {
+      }
     } catch (err) {
       console.error('[ARKUI_DYN] openPageIfNeeded ' + pageName + ' error: ' + err);
       expect().assertFail();
@@ -135,7 +150,10 @@ export default class DialogApi26TestHelper {
   static async drainCustomDialogs(driver: Driver): Promise<void> {
     let markers: string[] = [
       'CustomStyleContent', 'ComponentContentDialog', 'PresentUpdateContent',
-      'CustomSizeContent', 'CustomBorderContent', 'CustomFlagsContent', 'CustomClose'
+      'CustomSizeContent', 'CustomBorderContent', 'CustomFlagsContent', 'CustomClose',
+      'WidthPctTitle', 'WidthNumTitle', 'HeightTitle', 'WillAppearTitle', 'DidAppearTitle',
+      'WillDisappearTitle', 'DidDisappearTitle', 'FullLifeTitle', 'DismissLifeTitle',
+      'MaskRectTitle', 'AlignOK', 'HandTitle', 'HandAlert', 'HandSheet'
     ];
     for (let round = 0; round < 6; round++) {
       let still = false;
@@ -160,11 +178,21 @@ export default class DialogApi26TestHelper {
     }
   }
 
+  /** Blind pressBack sweeps for unknown overlays between suites. */
+  static async drainByPressBack(driver: Driver, rounds: number = 3): Promise<void> {
+    for (let i = 0; i < rounds; i++) {
+      try {
+        await driver.pressBack();
+      } catch (e) {
+      }
+      await CommonFunc.sleep(DialogApi26TestHelper.SETTLE_MS);
+    }
+  }
+
   static async leavePage(): Promise<void> {
     try {
-      let driver = await Driver.create();
-      await driver.pressBack();
-      await CommonFunc.sleep(200);
+      router.clear();
+      await CommonFunc.sleep(DialogApi26TestHelper.CLEAR_MS);
     } catch (e) {
       console.info('[ARKUI_DYN] leavePage skip');
     }

@@ -18,6 +18,7 @@ import CustomDialogSystemMaterialTest from './systemMaterial/CustomDialogSystemM
 import CustomDialogDisplayModeTest from './systemMaterial/CustomDialogDisplayModeTest.test';
 import CustomDialogOpenCallbackTest from './systemMaterial/CustomDialogOpenCallbackTest.test';
 import LinearGradientBlurOptionsTest from './systemMaterial/LinearGradientBlurOptionsTest.test';
+import CustomDialogHandednessTest from './systemMaterial/CustomDialogHandednessTest.test';
 
 export default function testsuite() {
   ImmersiveMaterialTest();
@@ -26,4 +27,5 @@ export default function testsuite() {
   CustomDialogDisplayModeTest();
   CustomDialogOpenCallbackTest();
   LinearGradientBlurOptionsTest();
+  CustomDialogHandednessTest();
 }

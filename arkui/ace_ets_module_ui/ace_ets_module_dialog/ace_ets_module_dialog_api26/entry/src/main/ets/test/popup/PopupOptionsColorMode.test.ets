@@ -29,10 +29,11 @@ export default function PopupOptionsColorMode() {
         url: 'MainAbility/pages/popup/PopupOptionsColorMode'
       };
       try {
-        router.clear();
         let pages = router.getState();
         if (pages.name !== 'PopupOptionsColorMode') {
-          await router.pushUrl(options);
+          router.clear();
+          await CommonFunc.sleep(500);
+          await router.replaceUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {

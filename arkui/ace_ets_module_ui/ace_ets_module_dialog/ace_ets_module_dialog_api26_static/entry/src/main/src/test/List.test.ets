@@ -23,6 +23,7 @@ import CustomPopupOptionsBackgroundBlurStyleOptionsTest from
   './popupBackground/CustomPopupOptionsBackgroundBlurStyleOptionsTest.test';
 import CustomDialogDisplayModeInSubWindowTest from './CustomDialogTest/CustomDialogDisplayModeInSubWindow.test';
 import CustomDialogSystemMaterialTest from './CustomDialogTest/CustomDialogSystemMaterial.test';
+import CustomDialogHandednessTest from './CustomDialogTest/CustomDialogHandedness.test';
 import SubMenuBuilderTest from './MenuTest/SubMenuBuilderTest.test';
 import MenuSystemMaterialTest from './MenuSystemMaterialTest/MenuSystemMaterial.test';
 
@@ -34,6 +35,7 @@ export default function testsuite(): void {
   CustomPopupOptionsBackgroundBlurStyleOptionsTest();
   CustomDialogDisplayModeInSubWindowTest();
   CustomDialogSystemMaterialTest();
+  CustomDialogHandednessTest();
   SubMenuBuilderTest();
   MenuSystemMaterialTest();
 }
