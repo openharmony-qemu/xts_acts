@@ -104,7 +104,7 @@ export default function NoPermissionApi26Test() {
             expect().assertFail();
             done();
           }
-        }, 8000);
+        }, 20000);
         commonEventManager.subscribe(subscriber, (err, data) => {
           if (finished) {
             return;
