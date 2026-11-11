@@ -13,3 +13,4 @@
  * limitations under the License.
  */
 export const nativeDragDropTest: (a: string) => void;
+export const DragEventSummaryTest: (a: string) => void;

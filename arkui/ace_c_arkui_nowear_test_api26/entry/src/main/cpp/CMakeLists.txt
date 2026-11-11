@@ -12,6 +12,8 @@ include_directories(
 
 add_library(nativerender SHARED
     manager/PluginManagerTest.cpp
+    NapiRenderInitTest.cpp
+    dragEventSummary/DragEventSummaryTest.cpp
     NapiFuncInitTest.cpp
 )
 
