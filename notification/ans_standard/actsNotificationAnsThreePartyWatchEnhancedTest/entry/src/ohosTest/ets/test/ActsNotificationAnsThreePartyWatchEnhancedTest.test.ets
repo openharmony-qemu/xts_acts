@@ -100,10 +100,10 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest() {
         });
       }catch (err) {
         console.error(TAG + ` fail: ${JSON.stringify(err)},${err.message}`);
-        if (err.code == 801) {
+        if (err.code === 801) {
           expect(err.code).assertEqual(801)
           done()
-        } else if (err.code == 201) {
+        } else if (err.code === 201) {
           expect(err.code).assertEqual(201);
           done()
         } else {
@@ -134,17 +134,17 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest() {
           }
           await notificationExtensionSubscription.disableUserGrantedByBundle(info).then(() => {
             console.info(TAG + "disableUserGrantedByBundle success");
-            if (i != 1) {
+            if (i !== 1) {
               expect(false).assertTrue()
               done()
             }
           }).catch((err: BusinessError) => {
             console.error(TAG +
               `disableUserGrantedByBundle failed, code is ${err.code}, message is ${err.message}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done()
-            } else if (err.code == 1600022) {
+            } else if (err.code === 1600022) {
               expect(err.code).assertEqual(1600022);
               done()
             } else {
@@ -152,7 +152,7 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest() {
               done()
             }
           });
-          if (i == 5) {
+          if (i === 5) {
             console.info(TAG +
               `test done`);
             done()
@@ -160,10 +160,10 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest() {
         }
       }catch (err) {
         console.error(TAG + ` fail: ${JSON.stringify(err)},${err.message}`);
-        if (err.code == 801) {
+        if (err.code === 801) {
           expect(err.code).assertEqual(801)
           done()
-        } else if (err.code == 201) {
+        } else if (err.code === 201) {
           expect(err.code).assertEqual(201);
           done()
         } else {
@@ -196,10 +196,10 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest() {
           }).catch((err: BusinessError) => {
             console.error(TAG +
               `getUserGrantedBundleIcon failed, code is ${err.code}, message is ${err.message}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done()
-            } else if (err.code == 1600022) {
+            } else if (err.code === 1600022) {
               expect(err.code).assertEqual(1600022);
               done()
             } else {
@@ -207,7 +207,7 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest() {
               done()
             }
           });
-          if (i == 3) {
+          if (i === 3) {
             console.info(TAG +
               `test done`);
             done()
@@ -215,10 +215,10 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest() {
         }
       }catch (err) {
         console.error(TAG + ` fail: ${JSON.stringify(err)},${err.message}`);
-        if (err.code == 801) {
+        if (err.code === 801) {
           expect(err.code).assertEqual(801)
           done()
-        } else if (err.code == 201) {
+        } else if (err.code === 201) {
           expect(err.code).assertEqual(201);
           done()
         } else {
@@ -260,10 +260,10 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest() {
           }).catch((err: BusinessError) => {
             console.error(TAG +
               `disableUserGrantedByBundle failed, code is ${err.code}, message is ${err.message}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done()
-            } else if (err.code == 1600022) {
+            } else if (err.code === 1600022) {
               expect(err.code).assertEqual(1600022);
               done()
             } else {
@@ -271,7 +271,7 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest() {
               done()
             }
           });
-          if (i == 3) {
+          if (i === 3) {
             console.info(TAG +
               `test done`);
             done()
@@ -279,10 +279,10 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest() {
         }
       } catch (err) {
         console.error(TAG + ` fail: ${JSON.stringify(err)},${err.message}`);
-        if (err.code == 801) {
+        if (err.code === 801) {
           expect(err.code).assertEqual(801)
           done()
-        } else if (err.code == 201) {
+        } else if (err.code === 201) {
           expect(err.code).assertEqual(201);
           done()
         } else {
