@@ -126,7 +126,6 @@ export default function SetGetUserPropertyTest() {
         done()
       }
       catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserProperty04 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();
@@ -153,7 +152,6 @@ export default function SetGetUserPropertyTest() {
         done()
       }
       catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserProperty05 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();
@@ -177,7 +175,6 @@ export default function SetGetUserPropertyTest() {
         done()
       }
       catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserProperty06 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();
@@ -203,7 +200,6 @@ export default function SetGetUserPropertyTest() {
         done()
       }
       catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserProperty07 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();
@@ -226,7 +222,6 @@ export default function SetGetUserPropertyTest() {
         done()
       }
       catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserProperty08 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();
@@ -253,7 +248,6 @@ export default function SetGetUserPropertyTest() {
         done()
       }
       catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserProperty09 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();
@@ -277,7 +271,6 @@ export default function SetGetUserPropertyTest() {
         done()
       }
       catch (err) {
-        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserProperty10 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();

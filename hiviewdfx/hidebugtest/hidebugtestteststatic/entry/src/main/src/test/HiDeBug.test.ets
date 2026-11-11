@@ -419,7 +419,6 @@ export default function HidebugJsTest() {
                 expect().assertFail();
                 done();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.error(0x0000, 'HIDEBUGTEST', "%{public}s",
                     `SUB_DFX_DFT_Trace_Collect_Js_0300 > error code: ${err.code}, error msg: ${err.message}`);
                 expect(err.code == 401).assertTrue();
@@ -445,7 +444,6 @@ export default function HidebugJsTest() {
                 expect().assertFail();
                 done();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.error(0x0000, 'HIDEBUGTEST', "%{public}s",
                     `SUB_DFX_DFT_Trace_Collect_Js_0400 > error code: ${err.code}, error msg: ${err.message}`);
                 expect(err.code == 401).assertTrue();
@@ -474,7 +472,6 @@ export default function HidebugJsTest() {
                 expect().assertFail();
                 done();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.error(0x0000, 'HIDEBUGTEST', "%{public}s",
                     `SUB_DFX_DFT_Trace_Collect_Js_0900 > error code: ${err.code}, error msg: ${err.message}`);
                 hidebug.stopAppTraceCapture();
@@ -498,7 +495,6 @@ export default function HidebugJsTest() {
                 expect().assertFail();
                 done();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.error(0x0000, 'HIDEBUGTEST', "%{public}s",
                     `SUB_DFX_DFT_Trace_Collect_Js_1000 > error code: ${err.code}, error msg: ${err.message}`);
                 expect(err.code == 11400105).assertTrue();
