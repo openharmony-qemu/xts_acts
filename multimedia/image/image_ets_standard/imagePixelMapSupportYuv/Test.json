@@ -11,7 +11,7 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsimagepixelMapSupportYuvTest.hap"
+                "ActsImagepixelMapSupportYuvTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
