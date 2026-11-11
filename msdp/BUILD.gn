@@ -21,6 +21,7 @@ group("msdp") {
     "motion_withpermission_static:ActsMsdpMotionWithPermissionStaticTest",
     "deviceStatus_nopermissiontest_static:ActsMsdpMotionNoPermissionStaticTest",
     "device_status_carawareness_permission_test:ActsMsdpDeviceStatusCarawarenessPermissionTest",
-    "device_status_carawareness_no_permission_test:ActsMsdpDeviceStatusCarawarenessNoPermissionTest"
+    "device_status_carawareness_no_permission_test:ActsMsdpDeviceStatusCarawarenessNoPermissionTest",
+    "deviceStatus:ActsMsdpAwarenessDeviceStatusTest"
   ]
 }
