@@ -945,6 +945,8 @@ static napi_value TestNativeArkWeb_SetBlanklessLoadingCacheCapacity(napi_env env
     return result;
 }
 
+
+
 static napi_value TestNativeArkWeb_ClearBlanklessLoadingCacheNull(napi_env env, napi_callback_info info)
 {
     OH_NativeArkWeb_ClearBlanklessLoadingCache(nullptr, NULL_KEY_COUNT);
