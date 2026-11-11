@@ -1825,6 +1825,29 @@ export default function SendableImagePixelMapTest() {
       }
     });
     /**
+     * @tc.number    SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_1700
+     * @tc.name      SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_1700
+     * @tc.desc      getHdrComposedPixelmapWithOptions options not passed, expect 7600201
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_1700', Level.LEVEL1, async (done: Function) => {
+      const testName = "SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_1700";
+      console.info(TAG, `start：${testName}`);
+      let picture = await createPictureSUPP(context);
+      try {
+        let res: image.PixelMap | undefined = await picture.getHdrComposedPixelmapWithOptions();
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect(error.code).assertEqual('7600201');
+        await picture?.release();
+        done();
+      }
+    });
+    /**
      * @tc.number    SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_0100
      * @tc.name      SUB_IMAGE_PICTURE_GET_HDR_COMPOSED_PIXEL_MAP_WITH_OPTIONS_0100
      * @tc.desc      getHdrComposedPixelmapWithOptions options cover Y8 (API 26.0.0), unsupported format expect 7600201
