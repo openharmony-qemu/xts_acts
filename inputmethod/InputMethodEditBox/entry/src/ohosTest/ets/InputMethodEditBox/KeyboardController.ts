@@ -2620,9 +2620,10 @@ export class KeyboardController {
       EVENT = 'SUB_InputMethodEngine_GetRightRichTextSync_RETURN_0300';
     };
     try {
-      let richText = this.InputClient.getRightRichTextSync(length);
+      let richText: inputMethodEngine.InputMethodRichText = this.InputClient.getRightRichTextSync(length);
       console.info(`${EVENT} success richText: ${JSON.stringify(richText)}`);
-      let spans = richText.getSpans();
+      let stringRes = richText.getString();
+      let spans: Array<inputMethodEngine.RichTextSpan> = richText.getSpans();
       if (spans.length === 0 && length === 0) {
         this.publishResult(EVENT, 'SUCCESS');
         return;

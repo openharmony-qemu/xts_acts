@@ -583,6 +583,7 @@ export default function InputMethodRichText() {
      * @tc.level  LEVEL1
      */
     it('SUB_InputMethodEngine_GetRightRichTextSync_RETURN_1000', Level.LEVEL1, async (done: Function) => {
+      await inputMethod.getController().detach();
       testTemplate('SUB_InputMethodEngine_GetRightRichTextSync_RETURN_1000', 236, done);
     });
 
@@ -595,6 +596,7 @@ export default function InputMethodRichText() {
      * @tc.level  LEVEL1
      */
     it('SUB_InputMethodEngine_GetRightRichText_RETURN_1000', Level.LEVEL1, async (done: Function) => {
+      await inputMethod.getController().detach();
       testTemplate('SUB_InputMethodEngine_GetRightRichText_RETURN_1000', 237, done);
     });
 
@@ -607,6 +609,7 @@ export default function InputMethodRichText() {
      * @tc.level  LEVEL1
      */
     it('SUB_InputMethodEngine_GetLeftRichTextSync_RETURN_1000', Level.LEVEL1, async (done: Function) => {
+      await inputMethod.getController().detach();
       testTemplate('SUB_InputMethodEngine_GetLeftRichTextSync_RETURN_1000', 238, done);
     });
 
@@ -619,6 +622,7 @@ export default function InputMethodRichText() {
      * @tc.level  LEVEL1
      */
     it('SUB_InputMethodEngine_GetLeftRichText_RETURN_1000', Level.LEVEL1, async (done: Function) => {
+      await inputMethod.getController().detach();
       testTemplate('SUB_InputMethodEngine_GetLeftRichText_RETURN_1000', 239, done);
     });
 

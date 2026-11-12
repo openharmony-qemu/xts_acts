@@ -663,6 +663,7 @@ export default function inAppProxyEditing(): void {
         throw new Error('Proxy keyboard controller unavailable');
       }
       EditorFixture.blur();
+      await EditorFixture.delay(500);
       await inputMethodEngine.unregisterInAppProxyIme();
       await expectError(() => controller.hideSelf(), 12800003);
     });
