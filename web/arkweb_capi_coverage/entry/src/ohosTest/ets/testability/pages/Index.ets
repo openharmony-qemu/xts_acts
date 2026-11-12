@@ -20,10 +20,10 @@ import nativeFunc from 'libentry.so';
 @Component
 struct Index {
   @State webTag: string = 'errorinfo_web';
-  @State webTag1: string = 'test_tag';
+  // @State webTag1: string = 'test_tag';
   @State pageReady: number = 0;
   controller: webview.WebviewController = new webview.WebviewController(this.webTag);
-  controller1: webview.WebviewController = new webview.WebviewController(this.webTag1);
+  // controller1: webview.WebviewController = new webview.WebviewController(this.webTag1);
   aboutToAppear(): void {
     webview.WebviewController.initializeWebEngine();
     nativeFunc.SetupErrorInfoSchemeHandler();
@@ -54,9 +54,9 @@ struct Index {
         .onPageEnd(() => {
           this.pageReady = 1;
         })
-        Web({ src: $rawfile('test.html'), controller: this.controller1 })
-        .javaScriptAccess(true)
-        .fileAccess(true)
+        // Web({ src: $rawfile('test.html'), controller: this.controller1 })
+        // .javaScriptAccess(true)
+        // .fileAccess(true)
     }
     .width('100%')
     .height('100%')
