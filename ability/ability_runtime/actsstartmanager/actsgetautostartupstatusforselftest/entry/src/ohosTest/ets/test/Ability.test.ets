@@ -158,7 +158,11 @@ export default function abilityTest() {
       }
       if (autoStartupEnabled === 'false') {
         try {
-          autoStartupEnabled = systemParameterEnhance.getSync('persist.edm.edm_enable');
+          let edmEnable: string = systemParameterEnhance.getSync('persist.edm.edm_enable');
+          let developerMode: string = systemParameterEnhance.getSync('const.security.developermode.state');
+          if (edmEnable === 'true' && developerMode === 'true') {
+            autoStartupEnabled = 'true';
+          }
         } catch {
         }
       }
