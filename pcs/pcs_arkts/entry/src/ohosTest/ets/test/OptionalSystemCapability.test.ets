@@ -415,7 +415,8 @@ export default function optionalSystemCapability() {
         console.log(`${TAG}, testSetTime successed to set time. message`);
         expect().assertFail();
       } catch (e) {
-        console.log(`${TAG}, testSetTime Failed to set time. message: ${JSON.stringify(e)}`);
+        let error = e as BusinessError;
+        console.log(`${TAG}, testSetTime Failed to set time. message: ${error.message}, code: ${error.code}`);
       }
       console.log(`${TAG}, testSetTime end`);
     })
@@ -439,7 +440,8 @@ export default function optionalSystemCapability() {
         console.log(`${TAG}, testSetTimeOut createTimer id is: ${id}`);
         expect().assertFail();
       } catch (e) {
-        console.log(`${TAG}, testSetTimeOut createTimer error is: ${JSON.stringify(e)}`);
+        let error = e as BusinessError;
+        console.log(`${TAG}, testSetTimeOut createTimer error is: ${JSON.stringify(error)}`);
       }
       console.log(`${TAG}, testSetTime end`);
     })
