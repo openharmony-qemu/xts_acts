@@ -74,7 +74,7 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest() {
         } catch (err) {
           console.error(TAG + " getUserGrantedEnabledBundles catch err:" + JSON.stringify(err));
         }
-        await sleep(300);
+        await sleep(50);
       }
       console.info(TAG + ` wait for grant result: ${granted}`);
     })
