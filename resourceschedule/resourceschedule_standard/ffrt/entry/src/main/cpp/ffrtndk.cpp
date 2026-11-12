@@ -3910,17 +3910,17 @@ static napi_value ffrt_loop_normal_0003(napi_env env, napi_callback_info info)
     usleep(sleepNumber);
     ffrt_loop_epoll_ctl(loop, 1, testFd, 0, nullptr, nullptr);
     int ret = ffrt_loop_epoll_ctl(loop, EPOLL_CTL_ADD - 1, testFd, 0, nullptr, nullptr);
-	if (ret != -1) {
-		result += 1;
-	}
+    if (ret != -1) {
+        result += 1;
+    }
     ret = ffrt_loop_epoll_ctl(loop, EPOLL_CTL_DEL, 0, 0, nullptr, nullptr);
-	if (ret != -1) {
-		result += 1;
-	}
+    if (ret != -1) {
+        result += 1;
+    }
     ret = ffrt_loop_epoll_ctl(loop, EPOLL_CTL_DEL + 1, -1, 0, nullptr, nullptr);
-	if (ret != -1) {
-		result += 1;
-	}
+    if (ret != -1) {
+        result += 1;
+    }
     int testNumber4 = 2;
     int result2 = 0;
     std::function<void()>&& basicFunc2 = [&result2]() {
