@@ -92,6 +92,7 @@ export default function setAbilityInstanceInfoXlsxStatic(): void {
       async (): Promise<void> => {
         await context!.setAbilityInstanceInfo('xlsx_call_label', pixelMap);
         hilog.info(DOMAIN, TAG, 'Call success');
+        expect(pixelMap !== undefined).assertTrue();
       });
 
     /**
