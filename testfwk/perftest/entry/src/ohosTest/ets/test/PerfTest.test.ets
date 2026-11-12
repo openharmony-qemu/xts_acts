@@ -166,7 +166,7 @@ export default function PerfTestTest() {
       await button.click()
       await driver.delayMs(1000)
       let disPlay = display.getDefaultDisplaySync();
-      hilog.info(domain, tag, `testPerfTestListSwipe is: ${JSON.stringify(disPlay)}`);
+      console.info(`testPerfTestListSwipe disPlay = ${JSON.stringify(disPlay)}`)
       let metrics: Array<PerfMetric> = [PerfMetric.LIST_SWIPE_FPS]
       let actionCode = async (finish: Callback<boolean>) => {
         let scroll = await driver.findComponent(ON.type('Scroll'))
