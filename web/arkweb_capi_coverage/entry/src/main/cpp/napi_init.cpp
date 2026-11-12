@@ -798,7 +798,7 @@ static napi_value TestNativeArkWeb_SetDestroyCallback(napi_env env, napi_callbac
 static napi_value TestNativeArkWeb_GetDestroyCallback(napi_env env, napi_callback_info info)
 {
     auto cb = OH_NativeArkWeb_GetDestroyCallback("errorinfo_web");
-    g_testResult = (cb == nullptr) ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE;
+    g_testResult = (cb == nullptr) ?  TEST_RESULT_FAILURE : TEST_RESULT_SUCCESS;
 
     napi_value result;
     napi_create_int32(env, g_testResult, &result);
