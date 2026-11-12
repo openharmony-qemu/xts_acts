@@ -26,6 +26,7 @@ napi_value PixelmapNativeSetMemoryNameTest(napi_env env, napi_callback_info info
 napi_value ImageSourceNativeCreatePictureTest(napi_env env, napi_callback_info info);
 napi_value ImageSourceNativeCreatePictureAtIndexTest(napi_env env, napi_callback_info info);
 napi_value DecodingOptionsGetDesiredColorSpaceTest(napi_env env, napi_callback_info info);
+napi_value ImageReceiverNativeSetMemoryNameTest(napi_env env, napi_callback_info info);
 #ifdef __cplusplus
 }
 #endif

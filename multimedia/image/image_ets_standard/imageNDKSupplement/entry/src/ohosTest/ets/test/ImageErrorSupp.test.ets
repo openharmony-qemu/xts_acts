@@ -34,6 +34,8 @@ const CASE_INDEX_15 = 15;
 const CASE_INDEX_16 = 16;
 const CASE_INDEX_17 = 17;
 const CASE_INDEX_18 = 18;
+const CASE_INDEX_19 = 19;
+const CASE_INDEX_20 = 20;
 const TAG = 'imageErrorSuppXts';
 
 export default function ImageErrorSuppTest() {
@@ -450,6 +452,36 @@ export default function ImageErrorSuppTest() {
       let result: number = testNapi.OHImageErrorCodeSupp(CASE_INDEX_18);
       console.info(TAG,'Success',JSON.stringify(result));
       expect(result).assertEqual(7800301);
+    });
+
+    /**
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0019
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0019
+     * @tc.desc     OH_IMAGE_ERROR_NOT_SYSTEM_APPLICATION
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0019', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: number = testNapi.OHImageErrorCodeSupp(CASE_INDEX_19);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(202);
+    });
+
+    /**
+     * @tc.number   SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0020
+     * @tc.name     SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0020
+     * @tc.desc     OH_IMAGE_ERROR_DECOMPOSE_FAILED
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('SUB_IMAGE_EFFECT_OH_IMAGE_ERROR_CODE_SUPP_0020', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: number = testNapi.OHImageErrorCodeSupp(CASE_INDEX_20);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(7600208);
     });
 
     /**

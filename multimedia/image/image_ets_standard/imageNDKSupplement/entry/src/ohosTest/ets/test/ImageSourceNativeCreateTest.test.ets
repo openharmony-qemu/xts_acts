@@ -98,5 +98,21 @@ export default function imageFrameworkImageSourceNativeCreateSuppTest() {
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(IMAGE_BAD_PARAMETER);
     })
+
+    /**
+     * @tc.number  SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_FD_SUPP_003
+     * @tc.name    SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_FD_SUPP_003
+     * @tc.desc    OHSourceNativeCreateFromFdSupp-res传入nullptr触发IMAGE_BAD_PARAMETER
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_FD_SUPP_003', Level.LEVEL1, () => {
+      const testName ='SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_FD_SUPP_003'
+      console.info(TAG,'Start',);
+      let result: number = testNapi.OHImageSourceNativeCreateFromFdSupp(CASE_INDEX_3)
+      console.info(TAG,testName,'Success',JSON.stringify(result));
+      expect(result).assertEqual(IMAGE_BAD_PARAMETER);
+    })
   });
 }

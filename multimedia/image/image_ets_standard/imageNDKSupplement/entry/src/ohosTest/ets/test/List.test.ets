@@ -62,6 +62,7 @@ import ImagePictureNativeTest from './ImagePictureNativeTest.test';
 import OHImageSourceNativeSupplementTest from './OHImageSourceNativeSupplement.test';
 import ImageOHImageSourceInfoCreate from './ImageOHImageSourceInfoCreate.test';
 import ImageReceiverSuppTest from './ImageReceiverSupp.test';
+import OHAuxiliaryPictureNativeCreateTest from './OHAuxiliaryPictureNativeCreateTest.test';
 
 let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
 const cameraManager = camera.getCameraManager(testContext);
@@ -113,6 +114,7 @@ export default function testsuite() {
     ImagePictureNativeTest();
     OHImageSourceNativeSupplementTest()
     ImageReceiverSuppTest();
+    OHAuxiliaryPictureNativeCreateTest();
   } else {
     ImageEffectSuppTest();
     OHEffectBufferInfoSetTimestampTest();
@@ -159,5 +161,6 @@ export default function testsuite() {
     OHImageSourceNativeSupplementTest()
     ImageOHImageSourceInfoCreate();
     ImageReceiverSuppTest();
+    OHAuxiliaryPictureNativeCreateTest();
   }
 }

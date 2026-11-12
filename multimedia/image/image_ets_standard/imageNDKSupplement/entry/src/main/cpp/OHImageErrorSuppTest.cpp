@@ -52,6 +52,8 @@
 #define CASE_INDEX_16 16
 #define CASE_INDEX_17 17
 #define CASE_INDEX_18 18
+#define CASE_INDEX_19 19
+#define CASE_INDEX_20 20
 #define IMAGE_EFFECT_2 2
 #define IMAGE_EFFECT_100 100
 #define IMAGE_EFFECT_100F 100.f
@@ -174,6 +176,12 @@ napi_value OHImageErrorCodeSupp(napi_env env, napi_callback_info info)
         break;
     case CASE_INDEX_18:
         number = IMAGE_ENCODE_FAILED;
+        break;
+    case CASE_INDEX_19:
+        number = OH_IMAGE_ERROR_NOT_SYSTEM_APPLICATION;
+        break;
+    case CASE_INDEX_20:
+        number = OH_IMAGE_ERROR_DECOMPOSE_FAILED;
         break;
     default:
         break;

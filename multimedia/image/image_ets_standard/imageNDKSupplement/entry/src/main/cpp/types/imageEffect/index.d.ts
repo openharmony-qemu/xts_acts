@@ -121,6 +121,7 @@ export const PixelmapNativeSetMemoryNameTest:(a: number) => number;
 export const ImageSourceNativeCreatePictureTest:(a: number,b:number) => number;
 export const ImageSourceNativeCreatePictureAtIndexTest:(a: number,b:number) => number;
 export const DecodingOptionsGetDesiredColorSpaceTest:(a: number) => number;
+export const ImageReceiverNativeSetMemoryNameTest:(a: number) => number;
 export const ClonePixelmapTest:(a: number) => number;
 export const CreateCroppedAndScaledPixelMapTest:(a: number) => number;
 export const CreatePixelmapFromSurfaceTest:(a: number, b:string) => number;
@@ -215,6 +216,7 @@ export const ImageModifyImagePropertyShortSupp:(a: number,b:number,c:string,d:nu
 export const OHImageNativeGetColorSpaceSupp:(a: number,b:Callback<image.ImageReceiver>) => number;
 export const OHImageSourceNativeGetImagePropertyBlobSupp:(a: number,b:number,c:string,d:ArrayBufferLike) => number;
 export const OHImageSourceNativeGetImagePropertyStringSupp:(a: number,b:number,c:string,d:number) => number;
+
 export const SetDesiredPixelFormatTest:(a: number) => number;
 export const GetDesiredPixelFormatTest:(a: number) => number;
 export const ComposeOptionsReleaseTest:(a: number) => number;
@@ -239,3 +241,4 @@ export const ImageReceiverNativeGetCapacitySuppTest:(a: number) => number;
 export const ComposeOptionsReleaseSuppTest:() => number;
 export const OHImageNativeGetComponentTypesSupp:() => number;
 export const OHPackingOptionsForSequenceGetFrameCountSupp:(a: number) => number;
+export const AuxiliaryPictureNativeCreateTest:(a: number) => number;
