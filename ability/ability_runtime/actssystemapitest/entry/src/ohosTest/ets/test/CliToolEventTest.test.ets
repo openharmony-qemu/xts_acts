@@ -145,6 +145,39 @@ function isExitCodeString(data: string): boolean {
   return true;
 }
 
+function parseExitCode(data: string): number {
+  if (data === undefined || data === null) {
+    return -1;
+  }
+  let trimmed = data.trim();
+  if (trimmed.length === 0) {
+    return -1;
+  }
+  try {
+    let obj: Record<string, Object> = JSON.parse(trimmed);
+    if (obj !== null && obj !== undefined) {
+      let code: Object = obj['exitCode'];
+      if (code !== undefined && code !== null) {
+        if (typeof code === 'number') {
+          return code as number;
+        }
+        if (typeof code === 'string') {
+          let codeStr: string = code as string;
+          if (isExitCodeString(codeStr)) {
+            return Number(codeStr);
+          }
+        }
+      }
+    }
+  } catch (parseErr) {
+    hilog.info(0x0000, TAG, 'parseExitCode JSON.parse fallback err=%{public}s', safeErrorText(parseErr));
+  }
+  if (isExitCodeString(trimmed)) {
+    return Number(trimmed);
+  }
+  return -1;
+}
+
 async function runCmdCollect(
   cmd: string,
   bucket: EventBucket
@@ -269,7 +302,9 @@ export default function cliToolEventTest() {
         try {
           await runCmdCollect('echo ' + MARKER_STDOUT, bucket);
           if (bucket.exitData.length > 0) {
-            expect(isExitCodeString(bucket.exitData)).assertTrue();
+            let exitCode = parseExitCode(bucket.exitData);
+            hilog.info(0x0000, TAG, 'Data_Exit exitData=%{public}s exitCode=%{public}d', bucket.exitData, exitCode);
+            expect(exitCode >= 0).assertTrue();
           } else if (bucket.count === 0) {
             hilog.info(0x0000, TAG, 'Data_Exit no callback events on this device');
             expect(bucket.count === 0).assertTrue();
@@ -330,7 +365,9 @@ export default function cliToolEventTest() {
             expect(bucket.errorData.length > 0).assertTrue();
           } else if (bucket.exitData.length > 0) {
             // failure may surface as EXIT with non-zero code instead of ERROR
-            expect(isExitCodeString(bucket.exitData)).assertTrue();
+            let exitCode = parseExitCode(bucket.exitData);
+            hilog.info(0x0000, TAG, 'Data_Error exitData=%{public}s exitCode=%{public}d', bucket.exitData, exitCode);
+            expect(exitCode >= 0).assertTrue();
           } else if (bucket.count === 0) {
             hilog.info(0x0000, TAG, 'Data_Error no events; env may block exec');
             expect(bucket.count === 0).assertTrue();
