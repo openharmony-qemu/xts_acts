@@ -624,18 +624,18 @@ export default function uitestOnTest(): void {
         hilog.info(domain, tag, `testMatchPattern_static button5, ${ JSON.stringify(button5)}`);
         expect(button5 != null).assertTrue()
         if (button5 != null) {
-          let bt5Text = await button5.getText();
+          let bt5Text = await button5.getType();
           hilog.info(domain, tag, `testMatchPattern_static bt5Text, ${ JSON.stringify(bt5Text)}`);
-          expect(bt5Text).assertEqual('toast');
+          expect(bt5Text).assertEqual('Button');
         }
         let button6 = await driver!.findComponent(ON.type('Button').text('',MatchPattern.REG_EXP_ICASE)
           .inWindow('com.uitestScene.acts'));
         hilog.info(domain, tag, `testMatchPattern_static button6, ${ JSON.stringify(button6)}`);
         expect(button6 != null).assertTrue()
         if (button6 != null) {
-          let bt6Text = await button6.getText();
+          let bt6Text = await button6.getType();
           hilog.info(domain, tag, `testMatchPattern_static bt6Text, ${ JSON.stringify(bt6Text)}`);
-          expect(bt6Text).assertEqual('toast');
+          expect(bt6Text).assertEqual('Button');
         }
         let button8 = await driver!.findComponent(ON.text('next page', undefined));
         hilog.info(domain, tag, `testMatchPattern_static button8, ${ JSON.stringify(button8)}`);
