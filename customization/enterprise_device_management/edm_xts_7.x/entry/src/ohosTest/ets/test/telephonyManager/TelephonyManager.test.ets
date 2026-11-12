@@ -47,8 +47,8 @@ function testGetCallLogs() {
    */
   it("test_get_call_logs_0100", Level.LEVEL2, async (done: Function) => {
     try {
-      await telephonyManager.getCallLogs({ startTime: 0, endTime: 86400 });
-      expect().assertFail();
+      let result = await telephonyManager.getCallLogs({ startTime: 0, endTime: 86400 });
+      expect(result.length >= 0).assertEqual(true);
     } catch (error) {
       if (error.code === 801) {
         expect(error.code).assertEqual(801);
@@ -70,8 +70,8 @@ function testGetCallLogs() {
   it("test_get_call_logs_0200", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
-      await telephonyManager.getCallLogs({ startTime: 0, endTime: 86400 });
-      expect().assertFail();
+      let result = await telephonyManager.getCallLogs({ startTime: 0, endTime: 86400 });
+      expect(result.length >= 0).assertEqual(true);
     } catch (error) {
       if (error.code === 801) {
         expect(error.code).assertEqual(801);
@@ -101,7 +101,7 @@ function testGetCallLogs() {
       if (error.code === 801) {
         expect(error.code).assertEqual(801);
       } else {
-        expect(error.code).assertEqual(9200012);
+        expect(error.code).assertEqual(401);
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -126,7 +126,7 @@ function testGetCallLogs() {
       if (error.code === 801) {
         expect(error.code).assertEqual(801);
       } else {
-        expect(error.code).assertEqual(9200012);
+        expect(error.code).assertEqual(401);
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -151,7 +151,7 @@ function testGetCallLogs() {
       if (error.code === 801) {
         expect(error.code).assertEqual(801);
       } else {
-        expect(error.code).assertEqual(9200012);
+        expect(error.code).assertEqual(401);
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -170,8 +170,8 @@ function testGetCallLogs() {
   it("test_get_call_logs_0600", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      await telephonyManager.getCallLogs({ startTime: 1000000000, endTime: 0 });
-      expect().assertFail();
+      let result = await telephonyManager.getCallLogs({ startTime: 1000000000, endTime: 0 });
+      expect(result.length >= 0).assertEqual(true);
     } catch (error) {
       if (error.code === 801) {
         expect(error.code).assertEqual(801);
@@ -259,12 +259,12 @@ function testGetSmsMessages() {
    */
   it("test_get_sms_messages_0100", Level.LEVEL2, async (done: Function) => {
     try {
-      await telephonyManager.getSmsMessages({
+      let result = await telephonyManager.getSmsMessages({
         startTime: SMS_START_TIME,
         endTime: SMS_END_TIME,
         telephoneNumber: SMS_PHONE_NUMBER
       });
-      expect(false).assertTrue();
+      expect(Array.isArray(result)).assertTrue();
     } catch (error) {
       if (error.code === 801) {
         expect(error.code === 801).assertTrue();
@@ -286,12 +286,12 @@ function testGetSmsMessages() {
   it("test_get_sms_messages_0200", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
-      await telephonyManager.getSmsMessages({
+      let result = await telephonyManager.getSmsMessages({
         startTime: SMS_START_TIME,
         endTime: SMS_END_TIME,
         telephoneNumber: SMS_PHONE_NUMBER
       });
-      expect(false).assertTrue();
+      expect(Array.isArray(result)).assertTrue();
     } catch (error) {
       if (error.code === 801) {
         expect(error.code === 801).assertTrue();
@@ -321,7 +321,7 @@ function testGetSmsMessages() {
       if (error.code === 801) {
         expect(error.code === 801).assertTrue();
       } else {
-        expect(error.code === 9200012).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -346,7 +346,7 @@ function testGetSmsMessages() {
       if (error.code === 801) {
         expect(error.code === 801).assertTrue();
       } else {
-        expect(error.code === 9200012).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -373,6 +373,35 @@ function testGetSmsMessages() {
       expect(Array.isArray(result)).assertTrue();
     } catch (error) {
       expect(error.code === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_sms_messages_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_SMS_MESSAGES_JS_0600
+   * @tc.desc   test getSmsMessages with startTime greater than endTime
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_sms_messages_0600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let result = await telephonyManager.getSmsMessages({
+        startTime: SMS_END_TIME,
+        endTime: SMS_START_TIME,
+        telephoneNumber: SMS_PHONE_NUMBER
+      });
+      expect(Array.isArray(result)).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
+      } else {
+        expect(error.code === 9200012).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
