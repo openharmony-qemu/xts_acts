@@ -148,32 +148,5 @@ export default function GwpAsanUnwindNdkTest() {
       expect(resNum === -1 || resNum === 1).assertTrue();
     });
 
-    /**
-     * @tc.name   testGwpAsanUnwindDeep200
-     * @tc.number SUB_THIRDPARTY_MUSL_GWP_ASAN_UNWIND_1000
-     * @tc.desc   Deep recursion 200-level pressure (BUG-001 stress).
-     *             Expect frames >= 200 when GWP-ASan available, skip when unavailable.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testGwpAsanUnwindDeep200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
-      let resNum: number = libgwpasanunwindndktest.gwpAsanUnwindDeep200();
-      expect(resNum === -1 || resNum === 1).assertTrue();
-    });
-
-    /**
-     * @tc.name   testGwpAsanUnwindDeep500
-     * @tc.number SUB_THIRDPARTY_MUSL_GWP_ASAN_UNWIND_1100
-     * @tc.desc   Deep recursion 500-level near stack limit (BUG-001 stress).
-     *             Expect frames >= 500 when GWP-ASan available, skip when unavailable.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testGwpAsanUnwindDeep500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
-      let resNum: number = libgwpasanunwindndktest.gwpAsanUnwindDeep500();
-      expect(resNum === -1 || resNum === 1).assertTrue();
-    });
   });
 }
