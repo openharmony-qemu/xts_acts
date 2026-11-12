@@ -319,5 +319,215 @@ export default function UsbClaimInterfaceExclusiveTest(): void {
       expect(conflictInfo.devAddr).assertEqual(5);
       expect(conflictInfo.interfaceId).assertEqual(1);
     })
+
+    /**
+     * @tc.name   testClaimInterfaceExclusiveIfaceNameEmpty
+     * @tc.number SUB_USB_HostManager_ClaimExclusive_0600
+     * @tc.desc   claimInterfaceExclusive with iface.name set to empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testClaimInterfaceExclusiveIfaceNameEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.info(`${TAG} testClaimInterfaceExclusiveIfaceNameEmpty start`);
+        if (!preconditionReady('testClaimInterfaceExclusiveIfaceNameEmpty')) {
+          done();
+          return Promise.resolve();
+        }
+        await ensurePermission(testDevice!.name);
+        let localPipe: UsbMgr.USBDevicePipe | null = null;
+        try {
+          localPipe = UsbMgr.connectDevice(testDevice!);
+          expect(localPipe !== null).assertTrue();
+          let original: UsbMgr.USBInterface = deviceList[0].configs[0]!.interfaces[0];
+          let iface: UsbMgr.USBInterface = {
+            id: original.id, protocol: original.protocol, clazz: original.clazz,
+            subClass: original.subClass, alternateSetting: original.alternateSetting,
+            name: '', endpoints: original.endpoints
+          };
+          UsbMgr.claimInterfaceExclusive(localPipe!, iface);
+          let releaseRet = UsbMgr.releaseInterface(localPipe!, iface);
+          console.info(`${TAG} iface name empty, release result: ${releaseRet}`);
+          expect(releaseRet).assertEqual(0);
+        } catch (error) {
+          console.error(`${TAG} testClaimInterfaceExclusiveIfaceNameEmpty catch err: ${JSON.stringify(error)}`);
+          expect().assertFail();
+        } finally {
+          teardownPipe(localPipe);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testClaimInterfaceExclusiveIfaceEndpointsEmpty
+     * @tc.number SUB_USB_HostManager_ClaimExclusive_0700
+     * @tc.desc   claimInterfaceExclusive with iface.endpoints set to empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testClaimInterfaceExclusiveIfaceEndpointsEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.info(`${TAG} testClaimInterfaceExclusiveIfaceEndpointsEmpty start`);
+        if (!preconditionReady('testClaimInterfaceExclusiveIfaceEndpointsEmpty')) {
+          done();
+          return Promise.resolve();
+        }
+        await ensurePermission(testDevice!.name);
+        let localPipe: UsbMgr.USBDevicePipe | null = null;
+        try {
+          localPipe = UsbMgr.connectDevice(testDevice!);
+          expect(localPipe !== null).assertTrue();
+          let original: UsbMgr.USBInterface = deviceList[0].configs[0]!.interfaces[0];
+          let iface: UsbMgr.USBInterface = {
+            id: original.id, protocol: original.protocol, clazz: original.clazz,
+            subClass: original.subClass, alternateSetting: original.alternateSetting,
+            name: original.name, endpoints: []
+          };
+          UsbMgr.claimInterfaceExclusive(localPipe!, iface);
+          let releaseRet = UsbMgr.releaseInterface(localPipe!, iface);
+          console.info(`${TAG} iface endpoints empty, release result: ${releaseRet}`);
+          expect(releaseRet).assertEqual(0);
+        } catch (error) {
+          console.error(`${TAG} testClaimInterfaceExclusiveIfaceEndpointsEmpty catch err: ${JSON.stringify(error)}`);
+          expect().assertFail();
+        } finally {
+          teardownPipe(localPipe);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testClaimInterfaceExclusiveIfaceEndpointsNonEmpty
+     * @tc.number SUB_USB_HostManager_ClaimExclusive_0900
+     * @tc.desc   claimInterfaceExclusive with iface.endpoints set to non-empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testClaimInterfaceExclusiveIfaceEndpointsNonEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.info(`${TAG} testClaimInterfaceExclusiveIfaceEndpointsNonEmpty start`);
+        if (!preconditionReady('testClaimInterfaceExclusiveIfaceEndpointsNonEmpty')) {
+          done();
+          return Promise.resolve();
+        }
+        await ensurePermission(testDevice!.name);
+        let localPipe: UsbMgr.USBDevicePipe | null = null;
+        try {
+          localPipe = UsbMgr.connectDevice(testDevice!);
+          expect(localPipe !== null).assertTrue();
+          let original: UsbMgr.USBInterface = deviceList[0].configs[0]!.interfaces[0];
+          let endpoint: UsbMgr.USBEndpoint = {
+            address: 129, attributes: 3, interval: 12, maxPacketSize: 4,
+            direction: UsbMgr.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE,
+            endpointAddr: 1, type: 3, interfaceId: original.id
+          };
+          let iface: UsbMgr.USBInterface = {
+            id: original.id, protocol: original.protocol, clazz: original.clazz,
+            subClass: original.subClass, alternateSetting: original.alternateSetting,
+            name: original.name, endpoints: [endpoint]
+          };
+          UsbMgr.claimInterfaceExclusive(localPipe!, iface);
+          let releaseRet = UsbMgr.releaseInterface(localPipe!, iface);
+          console.info(`${TAG} iface endpoints non-empty, release result: ${releaseRet}`);
+          expect(releaseRet).assertEqual(0);
+        } catch (error) {
+          console.error(`${TAG} testClaimInterfaceExclusiveIfaceEndpointsNonEmpty catch err: ${JSON.stringify(error)}`);
+          expect().assertFail();
+        } finally {
+          teardownPipe(localPipe);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testClaimInterfaceExclusiveIfaceEndpointsDirToDevice
+     * @tc.number SUB_USB_HostManager_ClaimExclusive_1000
+     * @tc.desc   claimInterfaceExclusive with endpoints direction USB_REQUEST_DIR_TO_DEVICE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testClaimInterfaceExclusiveIfaceEndpointsDirToDevice', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.info(`${TAG} testClaimInterfaceExclusiveIfaceEndpointsDirToDevice start`);
+        if (!preconditionReady('testClaimInterfaceExclusiveIfaceEndpointsDirToDevice')) {
+          done();
+          return Promise.resolve();
+        }
+        await ensurePermission(testDevice!.name);
+        let localPipe: UsbMgr.USBDevicePipe | null = null;
+        try {
+          localPipe = UsbMgr.connectDevice(testDevice!);
+          expect(localPipe !== null).assertTrue();
+          let original: UsbMgr.USBInterface = deviceList[0].configs[0]!.interfaces[0];
+          let endpoint: UsbMgr.USBEndpoint = {
+            address: 1, attributes: 2, interval: 0, maxPacketSize: 64,
+            direction: UsbMgr.USBRequestDirection.USB_REQUEST_DIR_TO_DEVICE,
+            endpointAddr: 0, type: 2, interfaceId: original.id
+          };
+          let iface: UsbMgr.USBInterface = {
+            id: original.id, protocol: original.protocol, clazz: original.clazz,
+            subClass: original.subClass, alternateSetting: original.alternateSetting,
+            name: original.name, endpoints: [endpoint]
+          };
+          UsbMgr.claimInterfaceExclusive(localPipe!, iface);
+          let releaseRet = UsbMgr.releaseInterface(localPipe!, iface);
+          console.info(`${TAG} iface endpoints dir to device, release result: ${releaseRet}`);
+          expect(releaseRet).assertEqual(0);
+        } catch (error) {
+          console.error(`${TAG} testClaimInterfaceExclusiveIfaceEndpointsDirToDevice catch err: ${JSON.stringify(error)}`);
+          expect().assertFail();
+        } finally {
+          teardownPipe(localPipe);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testClaimInterfaceExclusiveIfaceEndpointsDirFromDevice
+     * @tc.number SUB_USB_HostManager_ClaimExclusive_1100
+     * @tc.desc   claimInterfaceExclusive with endpoints direction USB_REQUEST_DIR_FROM_DEVICE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testClaimInterfaceExclusiveIfaceEndpointsDirFromDevice', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.info(`${TAG} testClaimInterfaceExclusiveIfaceEndpointsDirFromDevice start`);
+        if (!preconditionReady('testClaimInterfaceExclusiveIfaceEndpointsDirFromDevice')) {
+          done();
+          return Promise.resolve();
+        }
+        await ensurePermission(testDevice!.name);
+        let localPipe: UsbMgr.USBDevicePipe | null = null;
+        try {
+          localPipe = UsbMgr.connectDevice(testDevice!);
+          expect(localPipe !== null).assertTrue();
+          let original: UsbMgr.USBInterface = deviceList[0].configs[0]!.interfaces[0];
+          let endpoint: UsbMgr.USBEndpoint = {
+            address: 129, attributes: 2, interval: 0, maxPacketSize: 64,
+            direction: UsbMgr.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE,
+            endpointAddr: 1, type: 2, interfaceId: original.id
+          };
+          let iface: UsbMgr.USBInterface = {
+            id: original.id, protocol: original.protocol, clazz: original.clazz,
+            subClass: original.subClass, alternateSetting: original.alternateSetting,
+            name: original.name, endpoints: [endpoint]
+          };
+          UsbMgr.claimInterfaceExclusive(localPipe!, iface);
+          let releaseRet = UsbMgr.releaseInterface(localPipe!, iface);
+          console.info(`${TAG} iface endpoints dir from device, release result: ${releaseRet}`);
+          expect(releaseRet).assertEqual(0);
+        } catch (error) {
+          console.error(`${TAG} testClaimInterfaceExclusiveIfaceEndpointsDirFromDevice catch err: ${JSON.stringify(error)}`);
+          expect().assertFail();
+        } finally {
+          teardownPipe(localPipe);
+          done();
+        }
+      })
   })
 }
