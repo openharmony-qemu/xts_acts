@@ -65,8 +65,15 @@ async function ensureContext(): Promise<void> {
     cmd += ' -u ' + user;
   }
   await abilityDelegator.executeShellCommand(cmd);
-  await Utils.msSleep(2000);
-  context = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
+  for (let i: int = 0; i < 20; i++) {
+    let ctx = AppStorage.get<common.UIAbilityContext>('UIAbilityContext');
+    if (ctx !== undefined) {
+      context = ctx as common.UIAbilityContext;
+      return;
+    }
+    await Utils.msSleep(500);
+  }
+  hilog.error(DOMAIN, TAG, 'UIAbilityContext not ready after aa start');
 }
 
 function errCodeOf(err: Object): number {
@@ -74,21 +81,20 @@ function errCodeOf(err: Object): number {
 }
 
 function assertPermOrCapability(code: number): void {
-  let perm = AbilityRuntimeErrorCode.PERMISSION_DENIED.valueOf();
-  let unsupported = AbilityRuntimeErrorCode.NOT_SUPPORTED.valueOf();
   hilog.info(DOMAIN, TAG, 'setAbilityInstanceInfo noperm code=%{public}d', code);
-  if (code === perm) {
-    expect(code).assertEqual(AbilityRuntimeErrorCode.PERMISSION_DENIED.valueOf());
+  if (Number(code) === AbilityRuntimeErrorCode.PERMISSION_DENIED) {
+    expect(Number(code)).assertEqual(AbilityRuntimeErrorCode.PERMISSION_DENIED);
     return;
   }
-  expect(code).assertEqual(AbilityRuntimeErrorCode.NOT_SUPPORTED.valueOf());
-  hilog.info(DOMAIN, TAG, 'got NOT_SUPPORTED=%{public}d (201 masked)', unsupported);
+  expect(Number(code)).assertEqual(AbilityRuntimeErrorCode.NOT_SUPPORTED);
+  hilog.info(DOMAIN, TAG, 'got NOT_SUPPORTED (201 may be masked)');
 }
 
 export default function setAbilityInstanceInfoNoPermStatic(): void {
   describe('SetAbilityInstanceInfoNoPermStatic', () => {
     beforeAll(async (): Promise<void> => {
       await ensureContext();
+      expect(context !== undefined).assertTrue();
       hilog.info(DOMAIN, TAG, 'beforeAll context ready');
     });
 
