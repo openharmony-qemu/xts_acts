@@ -129,10 +129,6 @@ it('testListInitialIndexToTwoWithOneLane_static', Level.LEVEL0, async (done: () 
 
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let scrollColumn = await driver!.findComponent(ON.type('List'));
-      let button = await scrollColumn!.scrollSearch(ON.id('List_ListInitialIndex1_1'));
-      await CommonFunc.sleep(1000);
-
       let swipeComp = await driver.findComponent(ON.id('List_ListInitialIndex1_Container01'));
       let swipeRect = await swipeComp!.getBounds();
       let displayId = await swipeComp!.getDisplayId();
@@ -142,6 +138,10 @@ it('testListInitialIndexToTwoWithOneLane_static', Level.LEVEL0, async (done: () 
         { x: (Math.round(swipeRect.left + (swipeRect.right - swipeRect.left) / 2)).toInt(),
           y: (Math.round(swipeRect.top + (swipeRect.bottom - swipeRect.top) * 0.75)).toInt(), displayId: displayId });
       await CommonFunc.sleep(2000);
+
+      let scrollColumn = await driver!.findComponent(ON.type('List'));
+      let button = await scrollColumn!.scrollSearch(ON.id('List_ListInitialIndex1_1'));
+      await CommonFunc.sleep(1000);
       firstListItem = CommonFunc.getComponentRect('List_ListInitialIndex1_1');
       secondListItem = CommonFunc.getComponentRect('List_ListInitialIndex1_2');
       listContainer = CommonFunc.getComponentRect('List_ListInitialIndex1_Container01');
