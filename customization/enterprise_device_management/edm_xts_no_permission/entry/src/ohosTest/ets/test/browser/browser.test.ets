@@ -73,6 +73,48 @@ function testSetManagedBrowserPolicy() {
     }
     done();
   })
+
+  /**
+   * @tc.name   test_setManagedBrowserPolicy_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETMANAGEDBROWSERPOLICY_0200
+   * @tc.desc   test setManagedBrowserPolicy without admin parameter method without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setManagedBrowserPolicy_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      browser.setManagedBrowserPolicy(SELFHAPNAME, TEST_POLICY_NAME, TEST_POLICY_VALUE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code).assertEqual(201);
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  })
+
+  /**
+   * @tc.name   test_setManagedBrowserPolicy_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETMANAGEDBROWSERPOLICY_0300
+   * @tc.desc   test setManagedBrowserPolicy without admin parameter method with forceOverride without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setManagedBrowserPolicy_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      browser.setManagedBrowserPolicy(SELFHAPNAME, TEST_POLICY_NAME, TEST_POLICY_VALUE, true);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code).assertEqual(201);
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  })
 }
 
 function testGetManagedBrowserPolicy() {
