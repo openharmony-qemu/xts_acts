@@ -18,17 +18,8 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { AppProcessStateObserver, application, appManager, common } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-const ERR_INTERNAL = 16000050;
-const ERR_OBSERVER_LIMIT = 16000165;
+const ERR_PARAM = 401;
 const ERR_OBSERVER_NOT_EXIST = 16300004;
-
-function isOnErr(code: number): boolean {
-  return code === ERR_INTERNAL || code === ERR_OBSERVER_LIMIT;
-}
-
-function isOffErr(code: number): boolean {
-  return code === ERR_INTERNAL || code === ERR_OBSERVER_NOT_EXIST;
-}
 
 function makeObserver(): AppProcessStateObserver {
   return {
@@ -39,12 +30,18 @@ function makeObserver(): AppProcessStateObserver {
   };
 }
 
+function assertCaughtCode(tag: string, err: Object, want: number): void {
+  let e = err as BusinessError;
+  console.error(`${tag} err code=${e.code} msg=${e.message}`);
+  expect(e.code).assertEqual(want);
+}
+
 export default function AppProcessStateChangeTest() {
   describe('AppProcessStateChangeTest', () => {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppProcessStateChange_On_0100
      * @tc.number SUB_Ability_AbilityRuntime_AppProcessStateChange_On_0100
-     * @tc.desc   onAppProcessStateChange: valid observer; success or 16000050/16000165
+     * @tc.desc   onAppProcessStateChange: valid observer; register then off succeeds
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -55,17 +52,12 @@ export default function AppProcessStateChangeTest() {
       let observer = makeObserver();
       try {
         appCtx.onAppProcessStateChange(observer);
-        try {
-          appCtx.offAppProcessStateChange(observer);
-        } catch (offErr) {
-          let e = offErr as BusinessError;
-          expect(isOffErr(e.code)).assertTrue();
-        }
+        appCtx.offAppProcessStateChange(observer);
         console.info(`${tag} on/off ok`);
       } catch (err) {
         let e = err as BusinessError;
-        console.error(`${tag} on err code=${e.code} msg=${e.message}`);
-        expect(isOnErr(e.code)).assertTrue();
+        console.error(`${tag} on/off err code=${e.code} msg=${e.message}`);
+        expect().assertFail();
       }
       done();
     });
@@ -73,7 +65,7 @@ export default function AppProcessStateChangeTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppProcessStateChange_Off_0200
      * @tc.number SUB_Ability_AbilityRuntime_AppProcessStateChange_Off_0200
-     * @tc.desc   offAppProcessStateChange: unregistered observer; 16300004 or 16000050
+     * @tc.desc   offAppProcessStateChange: unregistered observer; expect 16300004
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -84,11 +76,9 @@ export default function AppProcessStateChangeTest() {
       let observer = makeObserver();
       try {
         appCtx.offAppProcessStateChange(observer);
-        console.info(`${tag} off returned without throw`);
+        expect().assertFail();
       } catch (err) {
-        let e = err as BusinessError;
-        console.error(`${tag} off err code=${e.code} msg=${e.message}`);
-        expect(isOffErr(e.code)).assertTrue();
+        assertCaughtCode(tag, err as Object, ERR_OBSERVER_NOT_EXIST);
       }
       done();
     });
@@ -96,7 +86,7 @@ export default function AppProcessStateChangeTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppProcessStateChange_On_0300
      * @tc.number SUB_Ability_AbilityRuntime_AppProcessStateChange_On_0300
-     * @tc.desc   onAppProcessStateChange: observer=null; expect 401 or 16000050/16000165
+     * @tc.desc   onAppProcessStateChange: observer=null; expect 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -108,9 +98,7 @@ export default function AppProcessStateChangeTest() {
         appCtx.onAppProcessStateChange(null);
         expect().assertFail();
       } catch (err) {
-        let e = err as BusinessError;
-        console.error(`${tag} err code=${e.code} msg=${e.message}`);
-        expect(e.code === 401 || isOnErr(e.code)).assertTrue();
+        assertCaughtCode(tag, err as Object, ERR_PARAM);
       }
       done();
     });
@@ -118,7 +106,7 @@ export default function AppProcessStateChangeTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppProcessStateChange_On_0310
      * @tc.number SUB_Ability_AbilityRuntime_AppProcessStateChange_On_0310
-     * @tc.desc   onAppProcessStateChange: observer=undefined; expect 401 or 16000050/16000165
+     * @tc.desc   onAppProcessStateChange: observer=undefined; expect 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -130,9 +118,7 @@ export default function AppProcessStateChangeTest() {
         appCtx.onAppProcessStateChange(undefined);
         expect().assertFail();
       } catch (err) {
-        let e = err as BusinessError;
-        console.error(`${tag} err code=${e.code} msg=${e.message}`);
-        expect(e.code === 401 || isOnErr(e.code)).assertTrue();
+        assertCaughtCode(tag, err as Object, ERR_PARAM);
       }
       done();
     });
@@ -140,7 +126,7 @@ export default function AppProcessStateChangeTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppProcessStateChange_Off_0400
      * @tc.number SUB_Ability_AbilityRuntime_AppProcessStateChange_Off_0400
-     * @tc.desc   offAppProcessStateChange: on then off; second off expects 16300004 or 16000050
+     * @tc.desc   offAppProcessStateChange: second off after on/off; expect 16300004
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -152,17 +138,18 @@ export default function AppProcessStateChangeTest() {
       try {
         appCtx.onAppProcessStateChange(observer);
         appCtx.offAppProcessStateChange(observer);
-        try {
-          appCtx.offAppProcessStateChange(observer);
-          console.info(`${tag} second off returned`);
-        } catch (err2) {
-          let e2 = err2 as BusinessError;
-          expect(isOffErr(e2.code)).assertTrue();
-        }
       } catch (err) {
         let e = err as BusinessError;
-        console.error(`${tag} err code=${e.code}`);
-        expect(isOnErr(e.code) || isOffErr(e.code)).assertTrue();
+        console.error(`${tag} on/off err code=${e.code} msg=${e.message}`);
+        expect().assertFail();
+        done();
+        return;
+      }
+      try {
+        appCtx.offAppProcessStateChange(observer);
+        expect().assertFail();
+      } catch (err2) {
+        assertCaughtCode(tag, err2 as Object, ERR_OBSERVER_NOT_EXIST);
       }
       done();
     });
@@ -170,7 +157,7 @@ export default function AppProcessStateChangeTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppProcessStateChange_Off_0500
      * @tc.number SUB_Ability_AbilityRuntime_AppProcessStateChange_Off_0500
-     * @tc.desc   offAppProcessStateChange: no arg clears all listeners; success or 16000050
+     * @tc.desc   offAppProcessStateChange: no arg clears all listeners; expect success
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -185,7 +172,7 @@ export default function AppProcessStateChangeTest() {
       } catch (err) {
         let e = err as BusinessError;
         console.error(`${tag} err code=${e.code} msg=${e.message}`);
-        expect(e.code === ERR_INTERNAL).assertTrue();
+        expect().assertFail();
       }
       done();
     });

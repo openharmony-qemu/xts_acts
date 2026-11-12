@@ -61,6 +61,7 @@ export default class EntryAbility extends UIAbility {
       };
       this.context.startAbility(want).catch((err: BusinessError) => {
         hilog.error(0x0000, TAG, `start DummyAbility fail ${err.code}`);
+        this.pendingBack201 = false;
         this.publishCode(err.code);
       });
     }

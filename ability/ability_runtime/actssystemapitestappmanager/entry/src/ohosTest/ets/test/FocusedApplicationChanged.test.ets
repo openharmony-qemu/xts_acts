@@ -16,17 +16,13 @@ import { describe, it, expect, Level } from '@ohos/hypium-dynamic';
 import appManager from '@ohos.app.ability.appManager';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-const ERR_PERMISSION = 201;
-const ERR_INTERNAL = 16000050;
-const ERR_OBSERVER_LIMIT = 16000165;
+const ERR_PARAM = 401;
 const ERR_OBSERVER_NOT_EXIST = 16300004;
 
-function isFocusedOnErr(code: number): boolean {
-  return code === ERR_PERMISSION || code === ERR_INTERNAL || code === ERR_OBSERVER_LIMIT;
-}
-
-function isFocusedOffErr(code: number): boolean {
-  return code === ERR_PERMISSION || code === ERR_INTERNAL || code === ERR_OBSERVER_NOT_EXIST;
+function assertCaughtCode(tag: string, err: Object, want: number): void {
+  let e = err as BusinessError;
+  console.error(`${tag} err code=${e.code} msg=${e.message}`);
+  expect(e.code).assertEqual(want);
 }
 
 export default function focusedApplicationChangedTest() {
@@ -34,8 +30,7 @@ export default function focusedApplicationChangedTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_OnFocusedApplicationChanged_0100
      * @tc.number SUB_Ability_AbilityRuntime_AppManager_OnFocusedApplicationChanged_0100
-     * @tc.desc   onFocusedApplicationChanged: valid observer; returns observerId or
-     *     BusinessError 201(ohos.permission.RUNNING_STATE_OBSERVER)/16000050/16000165
+     * @tc.desc   onFocusedApplicationChanged: valid observer; returns observerId then off
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -54,17 +49,12 @@ export default function focusedApplicationChangedTest() {
         try {
           let observerId = appManager.onFocusedApplicationChanged(observer);
           expect(typeof observerId).assertEqual('number');
-          try {
-            appManager.offFocusedApplicationChanged(observerId);
-          } catch (offErr) {
-            let e = offErr as BusinessError;
-            expect(isFocusedOffErr(e.code)).assertTrue();
-          }
+          appManager.offFocusedApplicationChanged(observerId);
           console.info(`${tag} register ok id=${observerId} callbackHit=${callbackHit}`);
         } catch (err) {
           let e = err as BusinessError;
-          console.error(`${tag} on err code=${e.code} msg=${e.message}`);
-          expect(isFocusedOnErr(e.code)).assertTrue();
+          console.error(`${tag} on/off err code=${e.code} msg=${e.message}`);
+          expect().assertFail();
         }
         done();
       });
@@ -72,8 +62,7 @@ export default function focusedApplicationChangedTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_OffFocusedApplicationChanged_0200
      * @tc.number SUB_Ability_AbilityRuntime_AppManager_OffFocusedApplicationChanged_0200
-     * @tc.desc   offFocusedApplicationChanged: observerId=-1 not existing; expect 16300004 or
-     *     201/16000050
+     * @tc.desc   offFocusedApplicationChanged: observerId=-1 not existing; expect 16300004
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -83,11 +72,9 @@ export default function focusedApplicationChangedTest() {
         let tag = 'SUB_Ability_AbilityRuntime_AppManager_OffFocusedApplicationChanged_0200';
         try {
           appManager.offFocusedApplicationChanged(-1);
-          console.info(`${tag} off(-1) returned without throw`);
+          expect().assertFail();
         } catch (err) {
-          let e = err as BusinessError;
-          console.error(`${tag} off err code=${e.code} msg=${e.message}`);
-          expect(isFocusedOffErr(e.code)).assertTrue();
+          assertCaughtCode(tag, err as Object, ERR_OBSERVER_NOT_EXIST);
         }
         done();
       });
@@ -95,8 +82,7 @@ export default function focusedApplicationChangedTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_OnFocusedApplicationChanged_0300
      * @tc.number SUB_Ability_AbilityRuntime_AppManager_OnFocusedApplicationChanged_0300
-     * @tc.desc   onFocusedApplicationChanged: observer=null; 有效范围 out of valid observer;
-     *     expect throw 401 or 201/16000050/16000165
+     * @tc.desc   onFocusedApplicationChanged: observer=null; expect 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -108,9 +94,7 @@ export default function focusedApplicationChangedTest() {
           appManager.onFocusedApplicationChanged(null);
           expect().assertFail();
         } catch (err) {
-          let e = err as BusinessError;
-          console.error(`${tag} err code=${e.code} msg=${e.message}`);
-          expect(e.code === 401 || isFocusedOnErr(e.code)).assertTrue();
+          assertCaughtCode(tag, err as Object, ERR_PARAM);
         }
         done();
       });
@@ -118,8 +102,7 @@ export default function focusedApplicationChangedTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_OnFocusedApplicationChanged_0310
      * @tc.number SUB_Ability_AbilityRuntime_AppManager_OnFocusedApplicationChanged_0310
-     * @tc.desc   onFocusedApplicationChanged: observer=undefined; 有效范围 out of valid observer;
-     *     expect throw 401 or 201/16000050/16000165
+     * @tc.desc   onFocusedApplicationChanged: observer=undefined; expect 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -131,9 +114,7 @@ export default function focusedApplicationChangedTest() {
           appManager.onFocusedApplicationChanged(undefined);
           expect().assertFail();
         } catch (err) {
-          let e = err as BusinessError;
-          console.error(`${tag} err code=${e.code} msg=${e.message}`);
-          expect(e.code === 401 || isFocusedOnErr(e.code)).assertTrue();
+          assertCaughtCode(tag, err as Object, ERR_PARAM);
         }
         done();
       });
@@ -141,8 +122,7 @@ export default function focusedApplicationChangedTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_OffFocusedApplicationChanged_0400
      * @tc.number SUB_Ability_AbilityRuntime_AppManager_OffFocusedApplicationChanged_0400
-     * @tc.desc   offFocusedApplicationChanged: on then off pair; second off expects 16300004 or
-     *     201/16000050
+     * @tc.desc   offFocusedApplicationChanged: second off after on/off; expect 16300004
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -159,17 +139,18 @@ export default function focusedApplicationChangedTest() {
           observerId = appManager.onFocusedApplicationChanged(observer);
           expect(typeof observerId).assertEqual('number');
           appManager.offFocusedApplicationChanged(observerId);
-          try {
-            appManager.offFocusedApplicationChanged(observerId);
-            console.info(`${tag} second off returned`);
-          } catch (err2) {
-            let e2 = err2 as BusinessError;
-            expect(isFocusedOffErr(e2.code)).assertTrue();
-          }
         } catch (err) {
           let e = err as BusinessError;
-          console.error(`${tag} err code=${e.code}`);
-          expect(isFocusedOnErr(e.code) || isFocusedOffErr(e.code)).assertTrue();
+          console.error(`${tag} on/off err code=${e.code} msg=${e.message}`);
+          expect().assertFail();
+          done();
+          return;
+        }
+        try {
+          appManager.offFocusedApplicationChanged(observerId);
+          expect().assertFail();
+        } catch (err2) {
+          assertCaughtCode(tag, err2 as Object, ERR_OBSERVER_NOT_EXIST);
         }
         done();
       });
@@ -177,8 +158,7 @@ export default function focusedApplicationChangedTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_OffFocusedApplicationChanged_0410
      * @tc.number SUB_Ability_AbilityRuntime_AppManager_OffFocusedApplicationChanged_0410
-     * @tc.desc   offFocusedApplicationChanged: observerId=null; 有效范围 out of valid int;
-     *     expect throw 401 or 201/16000050/16300004
+     * @tc.desc   offFocusedApplicationChanged: observerId=null; expect 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -190,9 +170,7 @@ export default function focusedApplicationChangedTest() {
           appManager.offFocusedApplicationChanged(null);
           expect().assertFail();
         } catch (err) {
-          let e = err as BusinessError;
-          console.error(`${tag} err code=${e.code} msg=${e.message}`);
-          expect(e.code === 401 || isFocusedOffErr(e.code)).assertTrue();
+          assertCaughtCode(tag, err as Object, ERR_PARAM);
         }
         done();
       });
@@ -200,8 +178,7 @@ export default function focusedApplicationChangedTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_OffFocusedApplicationChanged_0420
      * @tc.number SUB_Ability_AbilityRuntime_AppManager_OffFocusedApplicationChanged_0420
-     * @tc.desc   offFocusedApplicationChanged: observerId=undefined; 有效范围 out of valid int;
-     *     expect throw 401 or 201/16000050/16300004
+     * @tc.desc   offFocusedApplicationChanged: observerId=undefined; expect 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -213,9 +190,7 @@ export default function focusedApplicationChangedTest() {
           appManager.offFocusedApplicationChanged(undefined);
           expect().assertFail();
         } catch (err) {
-          let e = err as BusinessError;
-          console.error(`${tag} err code=${e.code} msg=${e.message}`);
-          expect(e.code === 401 || isFocusedOffErr(e.code)).assertTrue();
+          assertCaughtCode(tag, err as Object, ERR_PARAM);
         }
         done();
       });
