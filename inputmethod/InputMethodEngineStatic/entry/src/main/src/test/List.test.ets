@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 import inputMethodEngineStatic from "./Ability.test";
+import InputMethodRichTextStatic from './InputMethodRichTextStatic.test';
 export default function testsuite() {
     inputMethodEngineStatic();
+    InputMethodRichTextStatic();
 }
