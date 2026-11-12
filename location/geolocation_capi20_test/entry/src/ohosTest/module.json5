@@ -56,6 +56,9 @@
         "name": "ohos.permission.LOCATION_IN_BACKGROUND"
       },
       {
+        "name": "ohos.permission.MOCK_LOCATION"
+      },
+      {
         "name": "ohos.permission.CONTROL_LOCATION_SWITCH"
       },
       {

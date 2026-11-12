@@ -186,5 +186,77 @@ export default function ActsLocation20Test() {
           done()
         }
       })
+
+    /**
+     * @tc.name   testLocationKitOH_LocationInfo_IsFromMockTest0101
+     * @tc.number SUB_LocationKit_OH_LocationInfo_IsFromMock_Test_0101
+     * @tc.desc   test OH_LocationInfo_IsFromMock with Location_Info pointer in callback and check bool result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLocationKitOH_LocationInfo_IsFromMockTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_LocationKit_OH_LocationInfo_IsFromMock_Test_0101 start====");
+          await changedLocationMode();
+          let result = locationcapi20.OH_LocationInfo_IsFromMock0101();
+          console.info("====>SUB_LocationKit_OH_LocationInfo_IsFromMock_Test_0101 result: " + result);
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>SUB_LocationKit_OH_LocationInfo_IsFromMock_Test_0101 catch err: " + err);
+          expect(false).assertEqual(OS_LOCATION_ERR_OK);
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   testLocationKitOH_LocationInfo_IsFromMockTest0102
+     * @tc.number SUB_LocationKit_OH_LocationInfo_IsFromMock_Test_0102
+     * @tc.desc   test OH_LocationInfo_IsFromMock with location permission granted.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLocationKitOH_LocationInfo_IsFromMockTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_LocationKit_OH_LocationInfo_IsFromMock_Test_0102 start====");
+          await changedLocationMode();
+          let result = locationcapi20.OH_LocationInfo_IsFromMock0102();
+          console.info("====>SUB_LocationKit_OH_LocationInfo_IsFromMock_Test_0102 result: " + result);
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>SUB_LocationKit_OH_LocationInfo_IsFromMock_Test_0102 catch err: " + err);
+          expect(false).assertEqual(OS_LOCATION_ERR_OK);
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   testLocationKitOH_LocationInfo_IsFromMockTest0103
+     * @tc.number SUB_LocationKit_OH_LocationInfo_IsFromMock_Test_0103
+     * @tc.desc   test OH_LocationInfo_IsFromMock with non-null Location_Info pointer from callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLocationKitOH_LocationInfo_IsFromMockTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_LocationKit_OH_LocationInfo_IsFromMock_Test_0103 start====");
+          await changedLocationMode();
+          let result = locationcapi20.OH_LocationInfo_IsFromMock0103();
+          console.info("====>SUB_LocationKit_OH_LocationInfo_IsFromMock_Test_0103 result: " + result);
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>SUB_LocationKit_OH_LocationInfo_IsFromMock_Test_0103 catch err: " + err);
+          expect(false).assertEqual(OS_LOCATION_ERR_OK);
+          done()
+        }
+      })
   })
 }
