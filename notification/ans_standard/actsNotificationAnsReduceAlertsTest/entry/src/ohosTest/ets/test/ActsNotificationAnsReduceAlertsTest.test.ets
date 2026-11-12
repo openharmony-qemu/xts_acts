@@ -1302,8 +1302,8 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         cmd += ' -u ' + user;
       }
       abilityDelegator.executeShellCommand(cmd)
-      let context: common.UIAbilityContext = getContext(la) as common.UIAbilityContext;
       await sleep(3000)
+      let context: common.UIAbilityContext = getContext(la) as common.UIAbilityContext;
       await notificationManager.openNotificationSettings(context).then(async () => {
         console.info(TEST_SUITE_NAME + TAG + `openNotificationSettings succeeded`);
         let driver: Driver = Driver.create();
@@ -1466,8 +1466,8 @@ export default function ActsNotificationAnsReduceAlertsTest() {
     it('SUB_Notification_Ans_Reduce_alerts_1700', Level.LEVEL3, async (done: Function) => {
       let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_1700'
       await notificationManager.cancelAll()
-      let context: common.UIAbilityContext = getContext(la) as common.UIAbilityContext;
       await sleep(1000)
+      let context: common.UIAbilityContext = getContext(la) as common.UIAbilityContext;
       await notificationManager.openNotificationSettings(context).then(async () => {
         console.info(TEST_SUITE_NAME + TAG + `openNotificationSettings succeeded`);
         let driver: Driver = Driver.create();
