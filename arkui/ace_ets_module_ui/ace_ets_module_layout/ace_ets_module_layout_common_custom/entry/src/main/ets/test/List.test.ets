@@ -50,9 +50,19 @@ import LayoutlableMeasureUndefinedTest from './CommonCustom/LayoutlableMeasureUn
 import LayoutGravityNullUndefinedTest from './CommonAttrs/LayoutGravityNullUndefined.test';
 import IgnoreLayoutSafeAreaNullUndefinedTest from './CommonAttrs/IgnoreLayoutSafeAreaNullUndefined.test';
 import ExpandSafeAreaNullUndefinedTest from './CommonAttrs/ExpandSafeAreaNullUndefined.test';
-import SafeAreaInsetNormalTest from './CommonAttrs/safeAreaInset/SafeAreaInsetNormalTest.test';
-import SafeAreaInsetAbnormalTest from './CommonAttrs/safeAreaInset/SafeAreaInsetAbnormalTest.test';
-import SafeAreaInsetNullUndefinedTest from './CommonAttrs/safeAreaInset/SafeAreaInsetNullUndefinedTest.test';
+import SafeAreaInsetNormalTest1 from './CommonAttrs/safeAreaInset/SafeAreaInsetNormalTest1.test';
+import SafeAreaInsetNormalTest2 from './CommonAttrs/safeAreaInset/SafeAreaInsetNormalTest2.test';
+import SafeAreaInsetNormalTest3 from './CommonAttrs/safeAreaInset/SafeAreaInsetNormalTest3.test';
+import SafeAreaInsetNormalTest4 from './CommonAttrs/safeAreaInset/SafeAreaInsetNormalTest4.test';
+import SafeAreaInsetNormalTest5 from './CommonAttrs/safeAreaInset/SafeAreaInsetNormalTest5.test';
+import SafeAreaInsetAbnormalTest1 from './CommonAttrs/safeAreaInset/SafeAreaInsetAbnormalTest1.test';
+import SafeAreaInsetAbnormalTest2 from './CommonAttrs/safeAreaInset/SafeAreaInsetAbnormalTest2.test';
+import SafeAreaInsetAbnormalTest3 from './CommonAttrs/safeAreaInset/SafeAreaInsetAbnormalTest3.test';
+import SafeAreaInsetAbnormalTest4 from './CommonAttrs/safeAreaInset/SafeAreaInsetAbnormalTest4.test';
+import SafeAreaInsetNullUndefinedTest1 from './CommonAttrs/safeAreaInset/SafeAreaInsetNullUndefinedTest1.test';
+import SafeAreaInsetNullUndefinedTest2 from './CommonAttrs/safeAreaInset/SafeAreaInsetNullUndefinedTest2.test';
+import SafeAreaInsetNullUndefinedTest3 from './CommonAttrs/safeAreaInset/SafeAreaInsetNullUndefinedTest3.test';
+import SafeAreaInsetNullUndefinedTest4 from './CommonAttrs/safeAreaInset/SafeAreaInsetNullUndefinedTest4.test';
 
 import MediaQueryMatchMediaNullUndefinedTest from './CommonCustom/MediaQueryMatchMediaNullUndefinedTest.test';
 import MediaQueryMatchMediaSyncNullUndefinedTest from './CommonCustom/MediaQueryMatchMediaSyncNullUndefinedTest.test';
@@ -112,9 +122,19 @@ export default function testsuite() {
   LayoutGravityNullUndefinedTest();
   IgnoreLayoutSafeAreaNullUndefinedTest();
   ExpandSafeAreaNullUndefinedTest();
-  SafeAreaInsetNormalTest();
-  SafeAreaInsetAbnormalTest();
-  SafeAreaInsetNullUndefinedTest();
+  SafeAreaInsetNormalTest1();
+  SafeAreaInsetNormalTest2();
+  SafeAreaInsetNormalTest3();
+  SafeAreaInsetNormalTest4();
+  SafeAreaInsetNormalTest5();
+  SafeAreaInsetAbnormalTest1();
+  SafeAreaInsetAbnormalTest2();
+  SafeAreaInsetAbnormalTest3();
+  SafeAreaInsetAbnormalTest4();
+  SafeAreaInsetNullUndefinedTest1();
+  SafeAreaInsetNullUndefinedTest2();
+  SafeAreaInsetNullUndefinedTest3();
+  SafeAreaInsetNullUndefinedTest4();
 
   MediaQueryMatchMediaNullUndefinedTest();
   MediaQueryMatchMediaSyncNullUndefinedTest();

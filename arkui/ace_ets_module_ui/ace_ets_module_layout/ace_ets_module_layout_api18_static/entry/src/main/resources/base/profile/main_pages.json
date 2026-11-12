@@ -32,13 +32,13 @@
     "MainAbility/pages/CustomLayout/UIContextApplyDefaultImmersiveStrategyTwoParam",
     "MainAbility/pages/CustomLayout/UIContextApplyDefaultImmersiveStrategyEmptyArray",
     "MainAbility/pages/CustomLayout/UIContextApplyDefaultImmersiveStrategyNonEmptyArray",
-    "MainAbility/pages/safeAreaInset/SafeAreaInsetStatic_1",
-    "MainAbility/pages/safeAreaInset/SafeAreaInsetStatic_2",
-    "MainAbility/pages/safeAreaInset/SafeAreaInsetStatic_3",
-    "MainAbility/pages/safeAreaInset/SafeAreaInsetStatic_4",
-    "MainAbility/pages/safeAreaInset/SafeAreaInsetStatic_5",
-    "MainAbility/pages/safeAreaInset/SafeAreaInsetStatic_6",
-    "MainAbility/pages/safeAreaInset/SafeAreaInsetStatic_7",
-    "MainAbility/pages/safeAreaInset/SafeAreaInsetStatic_8"
+    "MainAbility/pages/safeAreaInset/SafeAreaInsetStatic1",
+    "MainAbility/pages/safeAreaInset/SafeAreaInsetStatic2",
+    "MainAbility/pages/safeAreaInset/SafeAreaInsetStatic3",
+    "MainAbility/pages/safeAreaInset/SafeAreaInsetStatic4",
+    "MainAbility/pages/safeAreaInset/SafeAreaInsetStatic5",
+    "MainAbility/pages/safeAreaInset/SafeAreaInsetStatic6",
+    "MainAbility/pages/safeAreaInset/SafeAreaInsetStatic7",
+    "MainAbility/pages/safeAreaInset/SafeAreaInsetStatic8"
   ]
 }
