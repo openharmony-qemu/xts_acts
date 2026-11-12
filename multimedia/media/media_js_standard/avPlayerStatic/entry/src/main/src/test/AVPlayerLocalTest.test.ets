@@ -805,7 +805,7 @@ function getPlaybackPosition(avPlayer: media.AVPlayer | null, done: () => void) 
             releasingPlayer.offStateChange(stateChangeCallback);
             releasingPlayer.release().then(() => {
               finishOnce();
-            }).catch((err: ERROR) => {
+            }).catch((err: Error) => {
               mediaTestBase.catchCallback(err);
               finishOnce();
             });
