@@ -428,7 +428,7 @@ export default function ScrollUndefinedTest() {
       await CommonFunc.sleep(500);
 
       let driver1 = Driver.create();
-      let toBottom = await driver1.findComponent(ON.id('toBottom')) as Component;
+      let toBottom = await driver1.findComponent(ON.id('scrollUndefined_scrollEdgeBottom')) as Component;
       await toBottom.click();
       await CommonFunc.sleep(2000);
 
