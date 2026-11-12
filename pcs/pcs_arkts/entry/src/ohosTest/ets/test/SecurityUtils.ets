@@ -47,7 +47,7 @@ export default class SecurityUtils {
       iv: ivBlob,
       aad: aadBlob,
       authTag: tagBlob,
-      algName: 'GcmParamsSpec'
+      algName: "GcmParamsSpec"
     };
     return gcmParamsSpec;
   }
@@ -59,7 +59,7 @@ export default class SecurityUtils {
       data: dataIv
     }
     let ivParamsSpec: cryptoFramework.IvParamsSpec = {
-      algName: 'IvParamsSpec',
+      algName: "IvParamsSpec",
       iv: ivBlob
     };
     return ivParamsSpec;
@@ -85,7 +85,7 @@ export default class SecurityUtils {
       iv: ivBlob,
       aad: aadBlob,
       authTag: tagBlob,
-      algName: 'CcmParamsSpec'
+      algName: "CcmParamsSpec"
     };
     return ccmParamsSpec;
   }

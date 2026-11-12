@@ -90,8 +90,8 @@ export default function performanceTest() {
         expect(await AbilityUtils.startAbility('com.acts.pcs.arktstest', 'TestAbility', abilityContext)).assertTrue()
         await driver.delayMs(2000)
         let testAssistWantInfo: Want = {
-          uri: ('http://' + 'assist.arkts.pcs.acts.com' + ''),
-          type: 'pcs/test'
+          uri: 'http://assist.arkts.pcs.acts.com',
+          type: "pcs/test"
         }
         expect(await AbilityUtils.startAbilityImplicitly(testAssistWantInfo, abilityContext)).assertTrue()
         await driver.delayMs(2000)

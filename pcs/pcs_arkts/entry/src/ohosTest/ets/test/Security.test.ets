@@ -76,7 +76,7 @@ export default function securityTest() {
      * @tc.level  LEVEL0
      */
     it('testPermissionUserGrant0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      if(!canIUse('SystemCapability.Multimedia.Camera.Core')) {
+      if(!canIUse("SystemCapability.Multimedia.Camera.Core")) {
         done()
         return
       }
@@ -103,7 +103,7 @@ export default function securityTest() {
      * @tc.level  LEVEL0
      */
     it('testBackgroundCameraBanned0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      if(!canIUse('SystemCapability.Multimedia.Camera.Core')) {
+      if(!canIUse("SystemCapability.Multimedia.Camera.Core")) {
         done()
         return
       }
@@ -120,8 +120,8 @@ export default function securityTest() {
       await PermissionUtils.grantPermission()
       await driver.delayMs(1000)
       let testAssistWantInfo: Want = {
-        uri: ('http://' + 'assist.arkts.pcs.acts.com' + ''),
-        type: 'pcs/test'
+        uri: 'http://assist.arkts.pcs.acts.com',
+        type: "pcs/test"
       }
       expect(await AbilityUtils.startAbilityImplicitly(testAssistWantInfo, abilityContext)).assertTrue()
       await driver.delayMs(2000)
@@ -170,7 +170,7 @@ export default function securityTest() {
       } catch (error) {
         let err = error as BusinessError;
         console.info(`Failed to use camera api background. error: ${JSON.stringify(err)}`)
-        expect(err.code).assertEqual('7400201')
+        expect(err.code).assertEqual("7400201")
       }
       done()
     })
@@ -186,7 +186,7 @@ export default function securityTest() {
     it('testAuthenticationCall0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(`testAuthenticationCall0100 start`)
       expect(await AbilityUtils.startAbility('com.acts.pcs.arktstest', 'TestAbility', abilityContext)).assertTrue()
-      let contacts = canIUse('SystemCapability.Applications.Contacts');
+      let contacts = canIUse("SystemCapability.Applications.Contacts");
       console.info(`testAuthenticationCall0100 contacts,${ contacts }`);
       const isInstall = await isInstalled();
       console.info(`testAuthenticationCall0100 isInstall,${ isInstall }`);
@@ -244,7 +244,7 @@ export default function securityTest() {
         let keyData = new Uint8Array(buffer.from('12345678abcdefgh12345678abcdefgh', 'utf8').buffer)
         let symKey = await SecurityUtils.genSymKeyByData(keyData, 'AES256')
 
-        let message = 'This is a AES-GCM-256 test'
+        let message = "This is a AES-GCM-256 test"
         let plainText: cryptoFramework.DataBlob = {
           data: new Uint8Array(buffer.from(message, 'utf-8').buffer)
         }
@@ -318,12 +318,12 @@ export default function securityTest() {
      */
     it('testSupportRSA2048Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
-        let keyGenAlg = 'RSA2048'
+        let keyGenAlg = "RSA2048"
         let generator = cryptoFramework.createAsyKeyGenerator(keyGenAlg)
         let keyPair = await generator.generateKeyPair()
-        let signAlg = 'RSA2048|PKCS1|SHA256'
+        let signAlg = "RSA2048|PKCS1|SHA256"
         let input: cryptoFramework.DataBlob = {
-          data: new Uint8Array(buffer.from('This is a RSA2048 test', 'utf8').buffer)
+          data: new Uint8Array(buffer.from("This is a RSA2048 test", 'utf8').buffer)
         };
         let signData = await SecurityUtils.signMessagePromise(signAlg, input, keyPair.priKey)
         let verifyResult = await SecurityUtils.verifyMessagePromise(signAlg, input, signData, keyPair.pubKey)
@@ -346,12 +346,12 @@ export default function securityTest() {
      */
     it('testSupportECCAlg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
-        let keyGenAlg = 'ECC256'
+        let keyGenAlg = "ECC256"
         let generator = cryptoFramework.createAsyKeyGenerator(keyGenAlg)
         let keyPair = await generator.generateKeyPair()
-        let signAlg = 'ECC256|SHA256'
+        let signAlg = "ECC256|SHA256"
         let input: cryptoFramework.DataBlob = {
-          data: new Uint8Array(buffer.from('This is a ECC256 test', 'utf8').buffer)
+          data: new Uint8Array(buffer.from("This is a ECC256 test", 'utf8').buffer)
         };
         let signData = await SecurityUtils.signMessagePromise(signAlg, input, keyPair.priKey)
         let verifyResult = await SecurityUtils.verifyMessagePromise(signAlg, input, signData, keyPair.pubKey)
@@ -429,7 +429,7 @@ export default function securityTest() {
     it('testSupportHKDFAlg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let keyAlias = 'hkdf_key'
       let huksKeyDeriveKeySize = 32
-      let deriveHkdfInData = 'deriveHkdfTestIndata'
+      let deriveHkdfInData = "deriveHkdfTestIndata"
       // generate key item
       try {
         let generateRes: [boolean, huks.HuksOptions] = await SecurityUtils.generateKeyItem(keyAlias,
@@ -470,7 +470,7 @@ export default function securityTest() {
       try {
         let keyData1 = new Uint8Array(buffer.from('12345678abcdefgh', 'utf8').buffer)
         let symKey1 = await SecurityUtils.genSymKeyByData(keyData1, 'AES128')
-        let message1 = 'This is a AES-CBC-128 test'
+        let message1 = "This is a AES-CBC-128 test"
         let plainText1: cryptoFramework.DataBlob = {
           data: new Uint8Array(buffer.from(message1, 'utf-8').buffer)
         }
@@ -500,7 +500,7 @@ export default function securityTest() {
       try {
         let keyData2 = new Uint8Array(buffer.from('12345678abcdefgh12345678', 'utf8').buffer)
         let symKey2 = await SecurityUtils.genSymKeyByData(keyData2, 'AES192')
-        let message2 = 'This is a AES-CBC-192 test'
+        let message2 = "This is a AES-CBC-192 test"
         let plainText2: cryptoFramework.DataBlob = {
           data: new Uint8Array(buffer.from(message2, 'utf-8').buffer)
         }
@@ -530,7 +530,7 @@ export default function securityTest() {
       try {
         let keyData3 = new Uint8Array(buffer.from('12345678abcdefgh12345678abcdefgh', 'utf8').buffer)
         let symKey3 = await SecurityUtils.genSymKeyByData(keyData3, 'AES256')
-        let message3 = 'This is a AES-CBC-256 test'
+        let message3 = "This is a AES-CBC-256 test"
         let plainText3: cryptoFramework.DataBlob = {
           data: new Uint8Array(buffer.from(message3, 'utf-8').buffer)
         }
@@ -560,7 +560,7 @@ export default function securityTest() {
       try {
         let keyData1 = new Uint8Array(buffer.from('12345678abcdefgh', 'utf8').buffer)
         let symKey1 = await SecurityUtils.genSymKeyByData(keyData1, 'AES128')
-        let message1 = 'This is a AES-GCM-128 test'
+        let message1 = "This is a AES-GCM-128 test"
         let plainText1: cryptoFramework.DataBlob = {
           data: new Uint8Array(buffer.from(message1, 'utf-8').buffer)
         }
@@ -590,7 +590,7 @@ export default function securityTest() {
       try {
         let keyData2 = new Uint8Array(buffer.from('12345678abcdefgh12345678', 'utf8').buffer)
         let symKey2 = await SecurityUtils.genSymKeyByData(keyData2, 'AES192')
-        let message2 = 'This is a AES-GCM-192 test'
+        let message2 = "This is a AES-GCM-192 test"
         let plainText2: cryptoFramework.DataBlob = {
           data: new Uint8Array(buffer.from(message2, 'utf-8').buffer)
         }
@@ -620,7 +620,7 @@ export default function securityTest() {
       try {
         let keyData3 = new Uint8Array(buffer.from('12345678abcdefgh12345678abcdefgh', 'utf8').buffer)
         let symKey3 = await SecurityUtils.genSymKeyByData(keyData3, 'AES256')
-        let message3 = 'This is a AES-GCM-256 test'
+        let message3 = "This is a AES-GCM-256 test"
         let plainText3: cryptoFramework.DataBlob = {
           data: new Uint8Array(buffer.from(message3, 'utf-8').buffer)
         }
@@ -650,7 +650,7 @@ export default function securityTest() {
       try {
         let keyData1 = new Uint8Array(buffer.from('12345678abcdefgh', 'utf8').buffer)
         let symKey1 = await SecurityUtils.genSymKeyByData(keyData1, 'AES128')
-        let message1 = 'This is a AES-ECB-128 test'
+        let message1 = "This is a AES-ECB-128 test"
         let plainText1: cryptoFramework.DataBlob = {
           data: new Uint8Array(buffer.from(message1, 'utf-8').buffer)
         }
@@ -679,7 +679,7 @@ export default function securityTest() {
       try {
         let keyData2 = new Uint8Array(buffer.from('12345678abcdefgh12345678', 'utf8').buffer)
         let symKey2 = await SecurityUtils.genSymKeyByData(keyData2, 'AES192')
-        let message2 = 'This is a AES-ECB-192 test'
+        let message2 = "This is a AES-ECB-192 test"
         let plainText2: cryptoFramework.DataBlob = {
           data: new Uint8Array(buffer.from(message2, 'utf-8').buffer)
         }
@@ -708,7 +708,7 @@ export default function securityTest() {
       try {
         let keyData3 = new Uint8Array(buffer.from('12345678abcdefgh12345678abcdefgh', 'utf8').buffer)
         let symKey3 = await SecurityUtils.genSymKeyByData(keyData3, 'AES256')
-        let message3 = 'This is a AES-ECB-256 test'
+        let message3 = "This is a AES-ECB-256 test"
         let plainText3: cryptoFramework.DataBlob = {
           data: new Uint8Array(buffer.from(message3, 'utf-8').buffer)
         }
@@ -737,7 +737,7 @@ export default function securityTest() {
       try {
         let keyData1 = new Uint8Array(buffer.from('12345678abcdefgh', 'utf8').buffer)
         let symKey1 = await SecurityUtils.genSymKeyByData(keyData1, 'AES128')
-        let message1 = 'This is a AES-OFB-128 test'
+        let message1 = "This is a AES-OFB-128 test"
         let plainText1: cryptoFramework.DataBlob = {
           data: new Uint8Array(buffer.from(message1, 'utf-8').buffer)
         }
@@ -767,7 +767,7 @@ export default function securityTest() {
       try {
         let keyData2 = new Uint8Array(buffer.from('12345678abcdefgh12345678', 'utf8').buffer)
         let symKey2 = await SecurityUtils.genSymKeyByData(keyData2, 'AES192')
-        let message2 = 'This is a AES-OFB-192 test'
+        let message2 = "This is a AES-OFB-192 test"
         let plainText2: cryptoFramework.DataBlob = {
           data: new Uint8Array(buffer.from(message2, 'utf-8').buffer)
         }
@@ -797,7 +797,7 @@ export default function securityTest() {
       try {
         let keyData3 = new Uint8Array(buffer.from('12345678abcdefgh12345678abcdefgh', 'utf8').buffer)
         let symKey3 = await SecurityUtils.genSymKeyByData(keyData3, 'AES256')
-        let message3 = 'This is a AES-OFB-256 test'
+        let message3 = "This is a AES-OFB-256 test"
         let plainText3: cryptoFramework.DataBlob = {
           data: new Uint8Array(buffer.from(message3, 'utf-8').buffer)
         }
@@ -827,7 +827,7 @@ export default function securityTest() {
       try {
         let keyData1 = new Uint8Array(buffer.from('12345678abcdefgh', 'utf8').buffer)
         let symKey1 = await SecurityUtils.genSymKeyByData(keyData1, 'AES128')
-        let message1 = 'This is a AES-CFB-128 test'
+        let message1 = "This is a AES-CFB-128 test"
         let plainText1: cryptoFramework.DataBlob = {
           data: new Uint8Array(buffer.from(message1, 'utf-8').buffer)
         }
@@ -857,7 +857,7 @@ export default function securityTest() {
       try {
         let keyData2 = new Uint8Array(buffer.from('12345678abcdefgh12345678', 'utf8').buffer)
         let symKey2 = await SecurityUtils.genSymKeyByData(keyData2, 'AES192')
-        let message2 = 'This is a AES-CFB-192 test'
+        let message2 = "This is a AES-CFB-192 test"
         let plainText2: cryptoFramework.DataBlob = {
           data: new Uint8Array(buffer.from(message2, 'utf-8').buffer)
         }
@@ -887,7 +887,7 @@ export default function securityTest() {
       try {
         let keyData3 = new Uint8Array(buffer.from('12345678abcdefgh12345678abcdefgh', 'utf8').buffer)
         let symKey3 = await SecurityUtils.genSymKeyByData(keyData3, 'AES256')
-        let message3 = 'This is a AES-CFB-256 test'
+        let message3 = "This is a AES-CFB-256 test"
         let plainText3: cryptoFramework.DataBlob = {
           data: new Uint8Array(buffer.from(message3, 'utf-8').buffer)
         }
@@ -917,7 +917,7 @@ export default function securityTest() {
       try {
         let keyData1 = new Uint8Array(buffer.from('12345678abcdefgh', 'utf8').buffer)
         let symKey1 = await SecurityUtils.genSymKeyByData(keyData1, 'AES128')
-        let message1 = 'This is a AES-CTR-128 test'
+        let message1 = "This is a AES-CTR-128 test"
         let plainText1: cryptoFramework.DataBlob = {
           data: new Uint8Array(buffer.from(message1, 'utf-8').buffer)
         }
@@ -947,7 +947,7 @@ export default function securityTest() {
       try {
         let keyData2 = new Uint8Array(buffer.from('12345678abcdefgh12345678', 'utf8').buffer)
         let symKey2 = await SecurityUtils.genSymKeyByData(keyData2, 'AES192')
-        let message2 = 'This is a AES-CTR-192 test'
+        let message2 = "This is a AES-CTR-192 test"
         let plainText2: cryptoFramework.DataBlob = {
           data: new Uint8Array(buffer.from(message2, 'utf-8').buffer)
         }
@@ -978,7 +978,7 @@ export default function securityTest() {
       try {
         let keyData3 = new Uint8Array(buffer.from('12345678abcdefgh12345678abcdefgh', 'utf8').buffer)
         let symKey3 = await SecurityUtils.genSymKeyByData(keyData3, 'AES256')
-        let message3 = 'This is a AES-CTR-256 test'
+        let message3 = "This is a AES-CTR-256 test"
         let plainText3: cryptoFramework.DataBlob = {
           data: new Uint8Array(buffer.from(message3, 'utf-8').buffer)
         }
@@ -1008,7 +1008,7 @@ export default function securityTest() {
       try {
         let keyData1 = new Uint8Array(buffer.from('12345678abcdefgh', 'utf8').buffer)
         let symKey1 = await SecurityUtils.genSymKeyByData(keyData1, 'AES128')
-        let message1 = 'This is a AES-CCM-128 test'
+        let message1 = "This is a AES-CCM-128 test"
         let plainText1: cryptoFramework.DataBlob = {
           data: new Uint8Array(buffer.from(message1, 'utf-8').buffer)
         }
@@ -1038,7 +1038,7 @@ export default function securityTest() {
       try {
         let keyData2 = new Uint8Array(buffer.from('12345678abcdefgh12345678', 'utf8').buffer)
         let symKey2 = await SecurityUtils.genSymKeyByData(keyData2, 'AES192')
-        let message2 = 'This is a AES-CCM-192 test'
+        let message2 = "This is a AES-CCM-192 test"
         let plainText2: cryptoFramework.DataBlob = {
           data: new Uint8Array(buffer.from(message2, 'utf-8').buffer)
         }
@@ -1068,7 +1068,7 @@ export default function securityTest() {
       try {
         let keyData3 = new Uint8Array(buffer.from('12345678abcdefgh12345678abcdefgh', 'utf8').buffer)
         let symKey3 = await SecurityUtils.genSymKeyByData(keyData3, 'AES256')
-        let message3 = 'This is a AES-CCM-256 test'
+        let message3 = "This is a AES-CCM-256 test"
         let plainText3: cryptoFramework.DataBlob = {
           data: new Uint8Array(buffer.from(message3, 'utf-8').buffer)
         }
@@ -1096,12 +1096,12 @@ export default function securityTest() {
      */
     it('testSupportRSA3072Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
-        let keyGenAlg = 'RSA3072'
+        let keyGenAlg = "RSA3072"
         let generator = cryptoFramework.createAsyKeyGenerator(keyGenAlg)
         let keyPair = await generator.generateKeyPair()
-        let signAlg = 'RSA3072|PKCS1|SHA256'
+        let signAlg = "RSA3072|PKCS1|SHA256"
         let input: cryptoFramework.DataBlob = {
-          data: new Uint8Array(buffer.from('This is a RSA3072 test', 'utf8').buffer)
+          data: new Uint8Array(buffer.from("This is a RSA3072 test", 'utf8').buffer)
         };
         let signData = await SecurityUtils.signMessagePromise(signAlg, input, keyPair.priKey)
         let verifyResult = await SecurityUtils.verifyMessagePromise(signAlg, input, signData, keyPair.pubKey)
@@ -1124,12 +1124,12 @@ export default function securityTest() {
      */
     it('testSupportRSA4096Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
-        let keyGenAlg = 'RSA4096'
+        let keyGenAlg = "RSA4096"
         let generator = cryptoFramework.createAsyKeyGenerator(keyGenAlg)
         let keyPair = await generator.generateKeyPair()
-        let signAlg = 'RSA4096|PKCS1|SHA256'
+        let signAlg = "RSA4096|PKCS1|SHA256"
         let input: cryptoFramework.DataBlob = {
-          data: new Uint8Array(buffer.from('This is a RSA4096 test', 'utf8').buffer)
+          data: new Uint8Array(buffer.from("This is a RSA4096 test", 'utf8').buffer)
         };
         let signData = await SecurityUtils.signMessagePromise(signAlg, input, keyPair.priKey)
         let verifyResult = await SecurityUtils.verifyMessagePromise(signAlg, input, signData, keyPair.pubKey)
@@ -1152,12 +1152,12 @@ export default function securityTest() {
      */
     it('testSupportSignatureVerifyAlg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
-        let keyGenAlg = 'ECC256'
+        let keyGenAlg = "ECC256"
         let generator = cryptoFramework.createAsyKeyGenerator(keyGenAlg)
         let keyPair = await generator.generateKeyPair()
-        let signAlg = 'ECC256|SHA256'
+        let signAlg = "ECC256|SHA256"
         let input: cryptoFramework.DataBlob = {
-          data: new Uint8Array(buffer.from('This is a ECDSA test', 'utf8').buffer)
+          data: new Uint8Array(buffer.from("This is a ECDSA test", 'utf8').buffer)
         };
         let signData = await SecurityUtils.signMessagePromise(signAlg, input, keyPair.priKey)
         let verifyResult = await SecurityUtils.verifyMessagePromise(signAlg, input, signData, keyPair.pubKey)
@@ -1168,12 +1168,12 @@ export default function securityTest() {
         expect(false).assertEqual(true)
       }
       try {
-        let keyGenAlg = 'Ed25519'
+        let keyGenAlg = "Ed25519"
         let generator = cryptoFramework.createAsyKeyGenerator(keyGenAlg)
         let keyPair = await generator.generateKeyPair()
-        let signAlg = 'Ed25519'
+        let signAlg = "Ed25519"
         let input: cryptoFramework.DataBlob = {
-          data: new Uint8Array(buffer.from('This is a ED25519 test', 'utf8').buffer)
+          data: new Uint8Array(buffer.from("This is a ED25519 test", 'utf8').buffer)
         };
         let signData = await SecurityUtils.signMessagePromise(signAlg, input, keyPair.priKey)
         let verifyResult = await SecurityUtils.verifyMessagePromise(signAlg, input, signData, keyPair.pubKey)
@@ -1301,8 +1301,8 @@ export default function securityTest() {
       let driver = Driver.create()
       await driver.delayMs(1000)
       let testAssistWantInfo: Want = {
-        uri: ('http://' + 'assist.arkts.pcs.acts.com' + ''),
-        type: 'pcs/test'
+        uri: 'http://assist.arkts.pcs.acts.com',
+        type: "pcs/test"
       }
       expect(await AbilityUtils.startAbilityImplicitly(testAssistWantInfo, abilityContext)).assertTrue()
       await driver.delayMs(5000)

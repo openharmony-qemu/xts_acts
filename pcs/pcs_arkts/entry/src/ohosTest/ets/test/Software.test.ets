@@ -45,7 +45,7 @@ async function getSystemSupportEvent() {
           let lastIndex = item.lastIndexOf('\"');
           let result = item.substring(index + 1, lastIndex);
           if (result) {
-            if(result.startsWith('usual.event') || result.startsWith('common.event.')) {
+            if(result.startsWith("usual.event") || result.startsWith('common.event.')) {
               console.log(`testCommonEventNotChanged0100 item 000000 , ${ result } `);
               eventList.push(result);
             }
@@ -150,7 +150,7 @@ export default function softwareTest() {
       expect(image != undefined).assertTrue()
       let imageLoadSuccess = await scroll.scrollSearch(ON.id('imageLoadSuccess').inWindow('com.acts.pcs.arktstest'))
       expect(imageLoadSuccess != undefined).assertTrue()
-      expect(await imageLoadSuccess.getText()).assertEqual('LoadSuccess')
+      expect(await imageLoadSuccess.getText()).assertEqual("LoadSuccess")
       done()
     })
 
@@ -165,8 +165,8 @@ export default function softwareTest() {
     it('testCoreApplicationWants0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let driver = Driver.create()
       let filepickerWantInfo1: Want = {
-        uri: ('http://' + 'assist.arkts.pcs.acts.com' + ''),
-        type: 'pcs/test'
+        uri: 'http://assist.arkts.pcs.acts.com',
+        type: "pcs/test"
       }
       expect(await AbilityUtils.startAbilityImplicitly(filepickerWantInfo1, abilityContext)).assertTrue()
       await driver.delayMs(2000)

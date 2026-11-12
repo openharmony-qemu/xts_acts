@@ -30,7 +30,7 @@ let mXComponentController: XComponentController = new XComponentController()
 @Component
 struct Index {
   @State message: string = 'Next Page'
-  @State imageLoadSuccess: string = 'LoadFalse'
+  @State imageLoadSuccess: string = "LoadFalse"
   abilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('EntryAbilityContext') as common.UIAbilityContext
   audioRenderer: audio.AudioRenderer = {} as audio.AudioRenderer
   @State audioStateText: string = 'Error'
@@ -51,7 +51,7 @@ struct Index {
                 .fontSize(50)
                 .fontWeight(FontWeight.Bold)
                 .onClick(() => {
-                  router.pushUrl({ url: 'pages/SecondPage' })
+                  router.pushUrl({ url: "pages/SecondPage" })
                 })
               Text($r('app.string.Multilingual_Text'))
                 .id('multilingualText')
@@ -61,7 +61,7 @@ struct Index {
                 .id('image')
                 .height('20%')
                 .onComplete((event) => {
-                  this.imageLoadSuccess = 'LoadSuccess'
+                  this.imageLoadSuccess = "LoadSuccess"
                 })
               Text(this.imageLoadSuccess.toString())
                 .id('imageLoadSuccess')
@@ -79,7 +79,7 @@ struct Index {
                 .height('30%')
 
               Text(mXComponentController.getXComponentSurfaceId())
-                .id('surfaceId')
+                .id("surfaceId")
 
               Button('StartAudio')
                 .id('StartAudio')

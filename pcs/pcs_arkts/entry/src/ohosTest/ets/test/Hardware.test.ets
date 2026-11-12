@@ -27,8 +27,6 @@ import PermissionUtils from './PermissionUtils';
 import { Permissions } from '@ohos.abilityAccessCtrl';
 import AbilityUtils from './AbilityUtils';
 
-const SYSCAP_USB: string = 'SystemCapability.USB.USB' + 'Manager'
-
 export default function hardwareTest() {
   describe('HardwareTest', () => {
     let abilityContext: common.UIAbilityContext
@@ -57,14 +55,14 @@ export default function hardwareTest() {
       let driver = Driver.create();
       await driver.delayMs(3000)
 
-      isWlanSupported = canIUse('SystemCapability.Communication.WiFi.Core')
-      isBluetoothSupported = canIUse('SystemCapability.Communication.Bluetooth.Core')
-      isCameraSupported = canIUse('SystemCapability.Multimedia.Camera.Core')
-      isMicrophoneSupported = canIUse('SystemCapability.Multimedia.Audio.Capturer')
-      isAoutSupported = canIUse('SystemCapability.Multimedia.Audio.Renderer')
-      isUsbSupported = canIUse(SYSCAP_USB)
-      isEthernetSupported = canIUse('SystemCapability.Communication.NetManager.Ethernet')
-      isCellularSupported = canIUse('SystemCapability.Telephony.CellularData')
+      isWlanSupported = canIUse("SystemCapability.Communication.WiFi.Core")
+      isBluetoothSupported = canIUse("SystemCapability.Communication.Bluetooth.Core")
+      isCameraSupported = canIUse("SystemCapability.Multimedia.Camera.Core")
+      isMicrophoneSupported = canIUse("SystemCapability.Multimedia.Audio.Capturer")
+      isAoutSupported = canIUse("SystemCapability.Multimedia.Audio.Renderer")
+      isUsbSupported = canIUse("SystemCapability.USB.USBManager")
+      isEthernetSupported = canIUse("SystemCapability.Communication.NetManager.Ethernet")
+      isCellularSupported = canIUse("SystemCapability.Telephony.CellularData")
       done()
     })
 
@@ -105,9 +103,9 @@ export default function hardwareTest() {
         networkSupportedCount++
       }
       if (networkSupportedCount >= 2) {
-        let netStackSupported = canIUse('SystemCapability.Communication.NetStack')
+        let netStackSupported = canIUse("SystemCapability.Communication.NetStack")
         expect(netStackSupported).assertTrue()
-        let netManagerCore = canIUse('SystemCapability.Communication.NetManager.Core')
+        let netManagerCore = canIUse("SystemCapability.Communication.NetManager.Core")
         expect(netManagerCore).assertTrue()
       }
       done()
@@ -153,8 +151,8 @@ export default function hardwareTest() {
      */
     it('testWlanSupportSTAAndAP0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isWlanSupported) {
-        let isSTASupported = canIUse('SystemCapability.Communication.WiFi.STA')
-        let isAPSupported = canIUse('SystemCapability.Communication.WiFi.AP.Core')
+        let isSTASupported = canIUse("SystemCapability.Communication.WiFi.STA")
+        let isAPSupported = canIUse("SystemCapability.Communication.WiFi.AP.Core")
         expect(isSTASupported && isAPSupported).assertTrue()
       }
       done()
@@ -170,7 +168,7 @@ export default function hardwareTest() {
      */
     it('testWlanSupportP2P0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isWlanSupported) {
-        let isP2PSupported = canIUse('SystemCapability.Communication.WiFi.P2P')
+        let isP2PSupported = canIUse("SystemCapability.Communication.WiFi.P2P")
         expect(isP2PSupported).assertTrue()
       }
       done()
@@ -380,6 +378,7 @@ export default function hardwareTest() {
         }
         let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(audioCapturerOptions)
         expect(audioCapturer != undefined).assertTrue()
+        await audioCapturer.start()
         let currentInputDevices = audioCapturer.getCurrentInputDevices()
         expect(currentInputDevices.length).assertLarger(0)
         let supportedDeviceList = new List<audio.DeviceType>()
@@ -393,6 +392,8 @@ export default function hardwareTest() {
           }
         }
         expect(hasMicDevice).assertTrue()
+        await audioCapturer.stop()
+        await audioCapturer.release()
       }
       done()
     })

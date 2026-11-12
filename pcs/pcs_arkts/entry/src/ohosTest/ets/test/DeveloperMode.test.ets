@@ -39,9 +39,9 @@ function hidebugTest(): boolean {
     let sharedDirty: bigint = hidebug.getSharedDirty();
     let privateDirty: bigint = hidebug.getPrivateDirty();
     let cpuUsage: number = hidebug.getCpuUsage();
-    hidebug.startJsCpuProfiling('cpu_profiling');
+    hidebug.startJsCpuProfiling("cpu_profiling");
     hidebug.stopJsCpuProfiling();
-    hidebug.dumpJsHeapData('heapData');
+    hidebug.dumpJsHeapData("heapData");
     return true
   } catch (error) {
     let err: BusinessError = error as BusinessError
@@ -75,27 +75,27 @@ export default function developerModeTest() {
     it('testSupportDebuggingConsole0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         const number = 0;
-        console.debug('number: %d', number)
-        console.log('number: %d', number)
-        console.info('number: %d', number)
-        console.warn('number: %d', number)
-        console.error('number: %d', number)
-        console.assert(true, 'print nothing')
-        console.assert(false, 'print assert failed')
+        console.debug("number: %d", number)
+        console.log("number: %d", number)
+        console.info("number: %d", number)
+        console.warn("number: %d", number)
+        console.error("number: %d", number)
+        console.assert(true, "print nothing")
+        console.assert(false, "print assert failed")
         console.count('test')
         console.countReset('test')
         let testObject: TestClass = {
           number: 1
         }
         console.dir(testObject)
-        console.dirxml('number: %d', number)
+        console.dirxml("number: %d", number)
         console.group()
         console.groupCollapsed()
         console.groupEnd()
         console.table([1, 2, 3])
-        console.time('test')
-        console.timeLog('test')
-        console.timeEnd('test')
+        console.time("test")
+        console.timeLog("test")
+        console.timeEnd("test")
         console.trace()
       } catch (error) {
         let err: BusinessError = error as BusinessError
@@ -129,10 +129,10 @@ export default function developerModeTest() {
      */
     it('testSupportDebuggingPermission0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let filesDir: string = applicationContext!.filesDir;
-      let path: string = filesDir + '/serviceInfo.txt';
+      let path: string = filesDir + "/serviceInfo.txt";
       let file = fs.openSync(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
       let serviceId: number = 10;
-      let args: string[] = new Array('allInfo');
+      let args: string[] = new Array("allInfo");
       try {
         hidebug.getServiceDump(serviceId, file.fd, args);
       } catch (error) {
@@ -153,15 +153,15 @@ export default function developerModeTest() {
      * @tc.level  LEVEL0
      */
     it('testDebuggingNodesIntegrity0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let hilogSupported = canIUse('SystemCapability.HiviewDFX.HiLog')
+      let hilogSupported = canIUse("SystemCapability.HiviewDFX.HiLog")
       expect(hilogSupported).assertTrue()
-      let hitraceSupported = canIUse('SystemCapability.HiviewDFX.HiTrace')
+      let hitraceSupported = canIUse("SystemCapability.HiviewDFX.HiTrace")
       expect(hitraceSupported).assertTrue()
-      let appEventSupported = canIUse('SystemCapability.HiviewDFX.HiAppEvent')
+      let appEventSupported = canIUse("SystemCapability.HiviewDFX.HiAppEvent")
       expect(appEventSupported).assertTrue()
-      let sysEventSupported = canIUse('SystemCapability.HiviewDFX.HiSysEvent')
+      let sysEventSupported = canIUse("SystemCapability.HiviewDFX.HiSysEvent")
       expect(sysEventSupported).assertTrue()
-      let faultLoggerSupported = canIUse('SystemCapability.HiviewDFX.Hiview.FaultLogger')
+      let faultLoggerSupported = canIUse("SystemCapability.HiviewDFX.Hiview.FaultLogger")
       expect(faultLoggerSupported).assertTrue()
       done()
     })
@@ -176,20 +176,20 @@ export default function developerModeTest() {
      */
     it('testLogInputOutputRequirements0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
-        if (hilog.isLoggable(0x0001, 'testTag', hilog.LogLevel.DEBUG)) {
-          hilog.debug(0x0001, 'testTag', '%{public}s %{private}d', 'hello World', 3);
+        if (hilog.isLoggable(0x0001, "testTag", hilog.LogLevel.DEBUG)) {
+          hilog.debug(0x0001, "testTag", "%{public}s %{private}d", "hello World", 3);
         }
-        if (hilog.isLoggable(0x0001, 'testTag', hilog.LogLevel.INFO)) {
-          hilog.info(0x0001, 'testTag', '%{public}s %{private}d', 'hello World', 3);
+        if (hilog.isLoggable(0x0001, "testTag", hilog.LogLevel.INFO)) {
+          hilog.info(0x0001, "testTag", "%{public}s %{private}d", "hello World", 3);
         }
-        if (hilog.isLoggable(0x0001, 'testTag', hilog.LogLevel.WARN)) {
-          hilog.warn(0x0001, 'testTag', '%{public}s %{private}d', 'hello World', 3);
+        if (hilog.isLoggable(0x0001, "testTag", hilog.LogLevel.WARN)) {
+          hilog.warn(0x0001, "testTag", "%{public}s %{private}d", "hello World", 3);
         }
-        if (hilog.isLoggable(0x0001, 'testTag', hilog.LogLevel.ERROR)) {
-          hilog.error(0x0001, 'testTag', '%{public}s %{private}d', 'hello World', 3);
+        if (hilog.isLoggable(0x0001, "testTag", hilog.LogLevel.ERROR)) {
+          hilog.error(0x0001, "testTag", "%{public}s %{private}d", "hello World", 3);
         }
-        if (hilog.isLoggable(0x0001, 'testTag', hilog.LogLevel.FATAL)) {
-          hilog.fatal(0x0001, 'testTag', '%{public}s %{private}d', 'hello World', 3);
+        if (hilog.isLoggable(0x0001, "testTag", hilog.LogLevel.FATAL)) {
+          hilog.fatal(0x0001, "testTag", "%{public}s %{private}d", "hello World", 3);
         }
       } catch (error) {
         let err: BusinessError = error as BusinessError
@@ -234,15 +234,15 @@ export default function developerModeTest() {
      * @tc.level  LEVEL0
      */
     it('testToolChainsNotChange0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let hilogSupported = canIUse('SystemCapability.HiviewDFX.HiLog')
+      let hilogSupported = canIUse("SystemCapability.HiviewDFX.HiLog")
       expect(hilogSupported).assertTrue()
-      let hitraceSupported = canIUse('SystemCapability.HiviewDFX.HiTrace')
+      let hitraceSupported = canIUse("SystemCapability.HiviewDFX.HiTrace")
       expect(hitraceSupported).assertTrue()
-      let appEventSupported = canIUse('SystemCapability.HiviewDFX.HiAppEvent')
+      let appEventSupported = canIUse("SystemCapability.HiviewDFX.HiAppEvent")
       expect(appEventSupported).assertTrue()
-      let sysEventSupported = canIUse('SystemCapability.HiviewDFX.HiSysEvent')
+      let sysEventSupported = canIUse("SystemCapability.HiviewDFX.HiSysEvent")
       expect(sysEventSupported).assertTrue()
-      let faultLoggerSupported = canIUse('SystemCapability.HiviewDFX.Hiview.FaultLogger')
+      let faultLoggerSupported = canIUse("SystemCapability.HiviewDFX.Hiview.FaultLogger")
       expect(faultLoggerSupported).assertTrue()
       done()
     })
@@ -256,9 +256,9 @@ export default function developerModeTest() {
      * @tc.level  LEVEL0
      */
     it('testCommandAa0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      if(canIUse('SystemCapability.Ability.AbilityRuntime.Core')) {
+      if(canIUse("SystemCapability.Ability.AbilityRuntime.Core")) {
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-        let result = await abilityDelegator.executeShellCommand('aa help', 1000)
+        let result = await abilityDelegator.executeShellCommand("aa help", 1000)
         expect(result != undefined)
         expect(result.exitCode).assertEqual(0)
         expect(result.stdResult != '').assertTrue()
@@ -275,9 +275,9 @@ export default function developerModeTest() {
      * @tc.level  LEVEL0
      */
     it('testCommandBm0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      if(canIUse('SystemCapability.BundleManager.BundleFramework.Core')) {
+      if(canIUse("SystemCapability.BundleManager.BundleFramework.Core")) {
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-        let result = await abilityDelegator.executeShellCommand('bm help', 1000)
+        let result = await abilityDelegator.executeShellCommand("bm help", 1000)
         expect(result != undefined)
         expect(result.exitCode).assertEqual(0)
         expect(result.stdResult != '').assertTrue()

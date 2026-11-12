@@ -1,13 +1,13 @@
-import { describe, it, expect, TestType, Level, Size} from '@ohos/hypium-dynamic'
-import { batteryInfo, BusinessError, systemDateTime } from '@kit.BasicServicesKit'
+import { describe, it, expect, TestType, Level, Size} from "@ohos/hypium-dynamic"
+import { batteryInfo, BusinessError, systemDateTime } from "@kit.BasicServicesKit"
 import { systemTimer } from '@kit.BasicServicesKit';
 import { inputMethod } from '@kit.IMEKit';
-import { common, Want } from '@kit.AbilityKit';
-import AbilityUtils from './AbilityUtils';
-import { image } from '@kit.ImageKit';
-import { abilityDelegatorRegistry, Driver, On, ON } from '@kit.TestKit';
+import { common, Want } from "@kit.AbilityKit";
+import AbilityUtils from "./AbilityUtils";
+import { image } from "@kit.ImageKit";
+import { abilityDelegatorRegistry, Driver, On, ON } from "@kit.TestKit";
 import  application from '@ohos.app.ability.application'
-import { display } from '@kit.ArkUI';
+import { display } from "@kit.ArkUI";
 import  audio  from '@ohos.multimedia.audio';
 const delegator : abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 const TAG  ='optionalSystemCapability';
@@ -16,24 +16,24 @@ const DELAY = 1000;
 async function stopApplication(bundleName: string) {
   await delegator.executeShellCommand(`aa force-stop ${bundleName} `).then(result => {
     console.info(`UiTestCase, stop application finished: ${result}`)
-  }).catch((err: Object) => {
-    console.info(`UiTestCase,stop application failed: ${JSON.stringify(err)}`)
+  }).catch((err: BusinessError) => {
+    console.error(`UiTestCase,stop application failed: ${err}`)
   })
 }
 
 export default function optionalSystemCapability() {
   describe('optionalSystemCapability', () => {
     /**
-     * @tc.name   SUB_PCS_ARKTS_OPTIONAL_POWERMANAGERQUERY_0300
-     * @tc.number SUB_PCS_ARKTS_OPTIONAL_POWERMANAGERQUERY_0300
-     * @tc.desc   【C-STD-SOFTWARE-00300】如果设备支持电池，则必须提供电池电量信息和充放电状态的查询能力和接口。
+     * @tc.name   testPowerManagerQuery
+     * @tc.number C-STD-SOFTWARE-0300
+     * @tc.desc   【C-STD-SOFTWARE-0300】如果设备支持电池，则必须提供电池电量信息和充放电状态的查询能力和接口。
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_PCS_ARKTS_OPTIONAL_POWERMANAGERQUERY_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('testPowerManagerQuery', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.log(`${TAG}, testPowerManagerQuery start`);
-      let powerManagerSupported = canIUse('SystemCapability.PowerManager.BatteryManager.Core');
+      let powerManagerSupported = canIUse("SystemCapability.PowerManager.BatteryManager.Core");
       if (powerManagerSupported) {
         try {
           let batterySOCInfo: number = batteryInfo.batterySOC;
@@ -42,7 +42,7 @@ export default function optionalSystemCapability() {
           let chargingStatusInfo = batteryInfo.chargingStatus;
           console.log(`${TAG},The chargingStatusInfo is: ${chargingStatusInfo}`);
           expect(chargingStatusInfo >= 0).assertTrue();
-        }catch (e) {
+        } catch (e) {
           console.log(`${TAG},The testPowerManagerQuery error is: ${JSON.stringify(e)}`);
           expect().assertFail();
         }
@@ -51,16 +51,16 @@ export default function optionalSystemCapability() {
     })
 
     /**
-     * @tc.name   SUB_PCS_ARKTS_OPTIONAL_CUSTOMINPUTMETHOD_1300
-     * @tc.number SUB_PCS_ARKTS_OPTIONAL_CUSTOMINPUTMETHOD_1300
-     * @tc.desc   【C-STD-SOFTWARE-1302】必须支持第三方输入法应用。
+     * @tc.name   testCustomInputMethod
+     * @tc.number C-STD-SOFTWARE-1300
+     * @tc.desc   【C-STD-SOFTWARE-1300】必须支持第三方输入法应用。
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_PCS_ARKTS_OPTIONAL_CUSTOMINPUTMETHOD_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('testCustomInputMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.log(`${TAG}, testCustomInputMethod start`);
-      let isInputMethod = canIUse('SystemCapability.MiscServices.InputMethodFramework');
+      let isInputMethod = canIUse("SystemCapability.MiscServices.InputMethodFramework");
       console.log(`${TAG},The  inputMethod is : ${ isInputMethod }`);
       if (isInputMethod) {
         try {
@@ -68,8 +68,7 @@ export default function optionalSystemCapability() {
           // 获取设备全量输入法hap。
           let allInputs = inputMethodSetting.getAllInputMethodsSync();
           // 获取自定义的输入法。
-          let assistPkg = 'com.acts.pcs.arkts.assist'
-          let customInput = allInputs.find((item: inputMethod.InputMethodProperty) => item.name == assistPkg);
+          let customInput = allInputs.find((item: inputMethod.InputMethodProperty) => item.name === 'com.acts.pcs.arkts.assist');
           console.log(`${TAG}, customInput is : ${JSON.stringify(customInput)}`);
           // 自定义输入法packageName
           expect(customInput).not().assertNull();
@@ -82,32 +81,32 @@ export default function optionalSystemCapability() {
     })
 
     /**
-     * @tc.name   SUB_PCS_ARKTS_OPTIONAL_INPUTMETHODENGINE_1301
-     * @tc.number SUB_PCS_ARKTS_OPTIONAL_INPUTMETHODENGINE_1301
-     * @tc.desc   【C-STD-SOFTWARE-1100】必须完整实现输入法管理框架。
+     * @tc.name   testInputMethodEngine
+     * @tc.number C-STD-SOFTWARE-1301
+     * @tc.desc   【C-STD-SOFTWARE-1301】必须完整实现输入法管理框架。
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_PCS_ARKTS_OPTIONAL_INPUTMETHODENGINE_1301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('testInputMethodEngine', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.log(`${TAG}, testInputMethodEngine start`);
-      let inputMethod = canIUse('SystemCapability.MiscServices.InputMethodFramework');
+      let inputMethod = canIUse("SystemCapability.MiscServices.InputMethodFramework");
       console.log(`${TAG},The  inputMethod is : ${ inputMethod }`);
       expect(inputMethod).assertTrue();
       console.log(`${TAG}, testInputMethodEngine end`);
     })
 
     /**
-     * @tc.name   SUB_PCS_ARKTS_OPTIONAL_DEFAULTINPUTMETHOD_1302
-     * @tc.number SUB_PCS_ARKTS_OPTIONAL_DEFAULTINPUTMETHOD_1302
+     * @tc.name   testDefaultInputMethod
+     * @tc.number C-STD-SOFTWARE-1302
      * @tc.desc   【C-STD-SOFTWARE-1302】必须预安装英文输入法应用。
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_PCS_ARKTS_OPTIONAL_DEFAULTINPUTMETHOD_1302', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('testDefaultInputMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.log(`${TAG}, testDefaultInputMethod start`);
-      let isInputMethod = canIUse('SystemCapability.MiscServices.InputMethodFramework');
+      let isInputMethod = canIUse("SystemCapability.MiscServices.InputMethodFramework");
       console.log(`${TAG},The  inputMethod is : ${ isInputMethod }`);
       if (isInputMethod) {
         try {
@@ -116,7 +115,7 @@ export default function optionalSystemCapability() {
           // 设备默认安装非0
           expect(defaultInput).not().assertNull();
         } catch (err) {
-          console.info(`Failed to getAllInputMethods: ${JSON.stringify(err)}`);
+          console.error(`Failed to getAllInputMethods: ${JSON.stringify(err)}`);
           expect().assertFail();
         }
       }
@@ -124,14 +123,14 @@ export default function optionalSystemCapability() {
     })
 
     /**
-     * @tc.name   SUB_PCS_ARKTS_OPTIONAL_JPEGDECODING_1003
-     * @tc.number SUB_PCS_ARKTS_OPTIONAL_JPEGDECODING_1003
-     * @tc.desc   【C-S-SOFTWARE-1006】必须支持JPEG格式解码，支持基础和渐进式解码，支持JPEG(.jpg)容器格式。
+     * @tc.name   testJPEGDecoding
+     * @tc.number C-S-SOFTWARE-1003
+     * @tc.desc   【C-S-SOFTWARE-1003】必须支持JPEG格式解码，支持基础和渐进式解码，支持JPEG(.jpg)容器格式。
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_PCS_ARKTS_OPTIONAL_JPEGDECODING_1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testJPEGDecoding', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testJPEGDecoding start`);
       let abilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext
       const entryContext = await application.createModuleContext(abilityContext, 'entry');
@@ -158,14 +157,14 @@ export default function optionalSystemCapability() {
     })
 
     /**
-     * @tc.name   SUB_PCS_ARKTS_OPTIONAL_GIFDECODING_1004
-     * @tc.number SUB_PCS_ARKTS_OPTIONAL_GIFDECODING_1004
-     * @tc.desc   【C-S-SOFTWARE-1006】必须支持GIF格式解码，支持GIF(.gif)容器格式。
+     * @tc.name   testGIFDecoding
+     * @tc.number C-S-SOFTWARE-1004
+     * @tc.desc   【C-S-SOFTWARE-1004】必须支持GIF格式解码，支持GIF(.gif)容器格式。
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_PCS_ARKTS_OPTIONAL_GIFDECODING_1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testGIFDecoding', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testGIFDecoding start`);
       let abilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext
       const entryContext = await application.createModuleContext(abilityContext, 'entry');
@@ -192,14 +191,14 @@ export default function optionalSystemCapability() {
     })
 
     /**
-     * @tc.name   SUB_PCS_ARKTS_OPTIONAL_PNGDECODING_1005
-     * @tc.number SUB_PCS_ARKTS_OPTIONAL_PNGDECODING_1005
+     * @tc.name   testPNGDecoding
+     * @tc.number C-S-SOFTWARE-1005
      * @tc.desc   【C-S-SOFTWARE-1005】必须支持PNG格式解码，支持PNG(.png)容器格式。
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_PCS_ARKTS_OPTIONAL_PNGDECODING_1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testPNGDecoding', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testPNGDecoding start`);
       let abilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext
       const entryContext = await application.createModuleContext(abilityContext, 'entry');
@@ -225,14 +224,14 @@ export default function optionalSystemCapability() {
     })
 
     /**
-     * @tc.name   SUB_PCS_ARKTS_OPTIONAL_BMPDECODING_1006
-     * @tc.number SUB_PCS_ARKTS_OPTIONAL_BMPDECODING_1006
+     * @tc.name   testBMPDecoding
+     * @tc.number C-S-SOFTWARE-1006
      * @tc.desc   【C-S-SOFTWARE-1006】必须支持BMP格式解码，支持BMP(.bmp)容器格式。
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_PCS_ARKTS_OPTIONAL_BMPDECODING_1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testBMPDecoding', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testBMPDecoding start`);
       let abilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext
       const entryContext = await application.createModuleContext(abilityContext, 'entry');
@@ -259,14 +258,14 @@ export default function optionalSystemCapability() {
     })
 
     /**
-     * @tc.name   SUB_PCS_ARKTS_OPTIONAL_WEBPDECODING_1007
-     * @tc.number SUB_PCS_ARKTS_OPTIONAL_WEBPDECODING_1007
+     * @tc.name   testWEBPDecoding
+     * @tc.number C-S-SOFTWARE-1007
      * @tc.desc   【C-S-SOFTWARE-1007】必须支持WebP格式解码，支持WebP(.webp)容器格式。
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_PCS_ARKTS_OPTIONAL_WEBPDECODING_1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testWEBPDecoding', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testWEBPDecoding start`);
       let abilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext
       const entryContext = await application.createModuleContext(abilityContext, 'entry');
@@ -294,14 +293,14 @@ export default function optionalSystemCapability() {
 
 
     /**
-     * @tc.name   SUB_PCS_ARKTS_OPTIONAL_JPEGPACKER_1000
-     * @tc.number SUB_PCS_ARKTS_OPTIONAL_JPEGPACKER_1000
+     * @tc.name   testJPEGPacker
+     * @tc.number C-STD-SOFTWARE-1000
      * @tc.desc   【C-STD-SOFTWARE-1000】必须支持JPEG格式编码。
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_PCS_ARKTS_OPTIONAL_JPEGPACKER_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testJPEGPacker', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testPNGPacker start`);
       try {
         let context = await AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
@@ -318,9 +317,9 @@ export default function optionalSystemCapability() {
         console.log(`${TAG} testPNGPacker Succeeded in creating PixelMap info is: ${JSON.stringify(info)}`);
         // 编码
         const imagePackerApi = image.createImagePacker();
-        let packOpts : image.PackingOption = { format:'image/jpeg', quality:98 };
+        let packOpts : image.PackingOption = { format:"image/jpeg", quality:98 };
         await imagePackerApi.packToData(pixelMap, packOpts);
-      }catch (error) {
+      } catch (error) {
         console.log(`${TAG} testPNGPacker error is: ${JSON.stringify(error)}`);
         expect().assertFail();
       }
@@ -329,14 +328,14 @@ export default function optionalSystemCapability() {
 
 
     /**
-     * @tc.name   SUB_PCS_ARKTS_OPTIONAL_PNGPACKER_1001
-     * @tc.number SUB_PCS_ARKTS_OPTIONAL_PNGPACKER_1001
+     * @tc.name   testPNGPacker
+     * @tc.number C-S-SOFTWARE-1001
      * @tc.desc   【C-S-SOFTWARE-1001】必须支持PNG格式编码。
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_PCS_ARKTS_OPTIONAL_PNGPACKER_1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testPNGPacker', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testPNGPacker start`);
       try {
         let context = await AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
@@ -351,13 +350,13 @@ export default function optionalSystemCapability() {
         let pixelMap = await imageSource.createPixelMap(decodingOptions);
         // 判断pixelmap是否为hdr内容
         let info = pixelMap.getImageInfoSync();
-        console.log('pixelmap isHdr:' + info.isHdr);
+        console.log("pixelmap isHdr:" + info.isHdr);
         console.log(`${TAG} testPNGPacker Succeeded in creating PixelMap info is: ${JSON.stringify(info)}`);
         // 编码
         const imagePackerApi = image.createImagePacker();
-        let packOpts : image.PackingOption = { format:'image/png', quality:98 };
+        let packOpts : image.PackingOption = { format:"image/png", quality:98 };
         await imagePackerApi.packToData(pixelMap, packOpts);
-      }catch (error) {
+      } catch (error) {
         console.log(`${TAG} testPNGPacker error is: ${JSON.stringify(error)}`);
         expect().assertFail();
       }
@@ -365,14 +364,14 @@ export default function optionalSystemCapability() {
     })
 
     /**
-     * @tc.name   SUB_PCS_ARKTS_OPTIONAL_WEBPPACKER_1010
-     * @tc.number SUB_PCS_ARKTS_OPTIONAL_WEBPPACKER_1010
-     * @tc.desc   【C-S-SOFTWARE-1003】必须支持WebP格式编码。
+     * @tc.name   testWEBPPacker
+     * @tc.number C-S-SOFTWARE-1002
+     * @tc.desc   【C-S-SOFTWARE-1002】必须支持WebP格式编码。
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_PCS_ARKTS_OPTIONAL_WEBPPACKER_1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testWEBPPacker', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testPNGPacker start`);
       try {
         let context = await AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
@@ -387,13 +386,13 @@ export default function optionalSystemCapability() {
         let pixelMap = await imageSource.createPixelMap(decodingOptions);
         // 判断pixelmap是否为hdr内容
         let info = pixelMap.getImageInfoSync();
-        console.log('pixelmap isHdr:' + info.isHdr);
+        console.log("pixelmap isHdr:" + info.isHdr);
         console.log(`${TAG} testPNGPacker Succeeded in creating PixelMap info is: ${JSON.stringify(info)}`);
         // 编码
         const imagePackerApi = image.createImagePacker();
-        let packOpts : image.PackingOption = { format:'image/webp', quality:98 };
+        let packOpts : image.PackingOption = { format:"image/webp", quality:98 };
         await imagePackerApi.packToData(pixelMap, packOpts);
-      }catch (error) {
+      } catch (error) {
         console.log(`${TAG} testPNGPacker error is: ${JSON.stringify(error)}`);
         expect().assertFail();
       }
@@ -401,35 +400,35 @@ export default function optionalSystemCapability() {
     })
 
     /**
-     * @tc.name   SUB_PCS_ARKTS_OPTIONAL_TESTSETTIME_1401
-     * @tc.number SUB_PCS_ARKTS_OPTIONAL_TESTSETTIME_1401
+     * @tc.name   testSetTime
+     * @tc.number C-STD-SOFTWARE-1401
      * @tc.desc   【C-STD-SOFTWARE-1401】必须通过权限机制管控修改系统时间时区的行为。
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_PCS_ARKTS_OPTIONAL_TESTSETTIME_1401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSetTime', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testSetTime start`);
       let time = 1611081385000;
       try {
         await systemDateTime.setTime(time);
         console.log(`${TAG}, testSetTime successed to set time. message`);
         expect().assertFail();
-      } catch(e) {
+      } catch (e) {
         console.log(`${TAG}, testSetTime Failed to set time. message: ${JSON.stringify(e)}`);
       }
       console.log(`${TAG}, testSetTime end`);
     })
 
     /**
-     * @tc.name   SUB_PCS_ARKTS_OPTIONAL_TESTSETTIMEOUT_1400
-     * @tc.number SUB_PCS_ARKTS_OPTIONAL_TESTSETTIMEOUT_1400
-     * @tc.desc   【 C-STD-SOFTWARE-1400】必须通过限制定时器拉起已经退出的进程的行为。
+     * @tc.name   testSetTimeOut
+     * @tc.number C-STD-SOFTWARE-1400
+     * @tc.desc   【C-STD-SOFTWARE-1400】必须通过限制定时器拉起已经退出的进程的行为。
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_PCS_ARKTS_OPTIONAL_TESTSETTIMEOUT_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSetTimeOut', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testSetTimeOut start`);
       let options: systemTimer.TimerOptions = {
         type: systemTimer.TIMER_TYPE_REALTIME,
@@ -439,21 +438,21 @@ export default function optionalSystemCapability() {
         const id = await systemTimer.createTimer(options);
         console.log(`${TAG}, testSetTimeOut createTimer id is: ${id}`);
         expect().assertFail();
-      } catch(e) {
+      } catch (e) {
         console.log(`${TAG}, testSetTimeOut createTimer error is: ${JSON.stringify(e)}`);
       }
       console.log(`${TAG}, testSetTime end`);
     })
 
     /**
-     * @tc.name   SUB_PCS_ARKTS_OPTIONAL_TESTHOMEEVENT_1800
-     * @tc.number SUB_PCS_ARKTS_OPTIONAL_TESTHOMEEVENT_1800
+     * @tc.name   testHomeEvent
+     * @tc.number C-STD-SOFTWARE-1800
      * @tc.desc   【C-STD-SOFTWARE-1800】电源键, Home键, 静音键必须系统处理, 禁止发送给应用, 返回键必须发送到应用处理。
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_PCS_ARKTS_OPTIONAL_TESTHOMEEVENT_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testHomeEvent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testHomeEvent start`);
       let driver = Driver.create();
       let abilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
