@@ -1780,20 +1780,9 @@ export default function btBleManagerTest(): void {
     it('SUB_COMMUNICATION_BLUETOOTHBLE_GETRSSIVALUE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         try {
-          gattC!.getRssiValue().then((data) => {
-            hilog.info(domain, tag, '[bluetooth_js] BLE read rssi: ' + JSON.stringify(data));
-            expect(true).assertEqual(data != null);
-            done();
-          }).catch((error) => {
-            let err = error as BusinessError;
-            hilog.info(domain, tag, 'bluetooth getRssiValue has error: ' + JSON.stringify(err));
-            let b = false;
-            if (err.code === 2901003 || err.code === -1) {
-              b = true
-            }
-            expect(true).assertEqual(b);
-            done();
-          });
+          let data = await gattC!.getRssiValue()
+          hilog.info(domain, tag, '[bluetooth_js] BLE read rssi: ' + JSON.stringify(data));
+          expect(true).assertEqual(data != null);
         } catch (error) {
           hilog.error(domain, tag,
             `[bluetooth_js]GetRssiValue error, code is ${error.code},message is ${error.message}`);
@@ -1818,16 +1807,8 @@ export default function btBleManagerTest(): void {
     it('SUB_COMMUNICATION_BLUETOOTHBLE_GETRSSIVALUE_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         try {
-          getRssi().then((data) => {
-            hilog.info(domain, tag, "[bluetooth_js]02 getRssiValue done");
-            done();
-          })
-            .catch((error) => {
-              let e = error as BusinessError;
-              hilog.info(domain, tag, "[bluetooth_js]02 getRssiValue failed" + e);
-              expect(2901003).assertEqual(Number(e.code));
-              done();
-            })
+          let data = await getRssi()
+          hilog.info(domain, tag, "[bluetooth_js]02 getRssiValue done");
         } catch (error) {
           hilog.error(domain, tag,
             `[bluetooth_js]GetRssiValue error, code is ${error.code},message is ${error.message}`);
