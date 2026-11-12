@@ -245,30 +245,22 @@ export default function UIAbilityContextStatic() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1100
      * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1100
-     * @tc.desc   API test for context.SetAbilityInstanceInfo errcode 801, 201
+     * @tc.desc   setAbilityInstanceInfo permission cover: no SET_ABILITY_INSTANCE_INFO expect 201
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag , "it begin");
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1100', Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, 'it begin');
       try {
-        await context!.setAbilityInstanceInfo('instance label', pixelMap)
-          .catch((err: Error): void => {
-            hilog.info(domain, tag , "setAbilityInstanceInfo failed: " + JSON.stringify(err))
-            let code = err?.code;
-            if (code === 801) {
-              hilog.info(domain, tag , "device not support multi instance");
-              done();
-            } else {
-              hilog.info(domain, tag , "setAbilityInstanceInfo err: " + code)
-              try { expect(code).assertEqual(201); } catch (err) {}
-              done();
-            }
-          });
+        await context!.setAbilityInstanceInfo('instance label', pixelMap);
+        hilog.info(domain, tag, 'unexpected success without permission');
+        expect().assertFail();
+        done();
       } catch (err) {
-        hilog.info(domain, tag , "setAbilityInstanceInfo error: " + JSON.stringify(err))
-        try { expect().assertFail(); } catch (err) {}
+        hilog.info(domain, tag, 'setAbilityInstanceInfo error: ' + JSON.stringify(err));
+        expect((err as BusinessError).code).assertEqual(201);
         done();
       }
     })

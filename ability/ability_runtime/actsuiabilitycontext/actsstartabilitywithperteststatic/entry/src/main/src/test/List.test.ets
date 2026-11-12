@@ -15,7 +15,9 @@
  */
 
 import UIAbilityContextStatic from "./UIAbilityContextStatic.test";
+import setAbilityInstanceInfoXlsxStatic from "./SetAbilityInstanceInfoXlsxStatic.test";
 
 export default function testsuite() {
     UIAbilityContextStatic();
+    setAbilityInstanceInfoXlsxStatic();
 }
