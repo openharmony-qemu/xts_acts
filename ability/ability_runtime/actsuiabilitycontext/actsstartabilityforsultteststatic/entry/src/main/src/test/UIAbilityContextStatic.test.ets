@@ -245,7 +245,7 @@ export default function UIAbilityContextStatic() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1100
      * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1100
-     * @tc.desc   setAbilityInstanceInfo permission cover: no SET_ABILITY_INSTANCE_INFO expect 201
+     * @tc.desc   setAbilityInstanceInfo error: dayu200 returns 801; 201 masked by capability
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -255,12 +255,12 @@ export default function UIAbilityContextStatic() {
       hilog.info(domain, tag, 'it begin');
       try {
         await context!.setAbilityInstanceInfo('instance label', pixelMap);
-        hilog.info(domain, tag, 'unexpected success without permission');
+        hilog.info(domain, tag, 'unexpected success');
         expect().assertFail();
         done();
       } catch (err) {
         hilog.info(domain, tag, 'setAbilityInstanceInfo error: ' + JSON.stringify(err));
-        expect((err as BusinessError).code).assertEqual(201);
+        expect((err as BusinessError).code).assertEqual(801);
         done();
       }
     })

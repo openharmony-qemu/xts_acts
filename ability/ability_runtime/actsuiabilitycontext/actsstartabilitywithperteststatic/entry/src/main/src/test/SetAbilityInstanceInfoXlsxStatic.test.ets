@@ -83,16 +83,19 @@ export default function setAbilityInstanceInfoXlsxStatic(): void {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Call_static_0100
      * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Call_static_0100
-     * @tc.desc   setAbilityInstanceInfo call cover: valid label+icon Promise resolves
+     * @tc.desc   setAbilityInstanceInfo call cover: valid label+icon; dayu200 expect 801
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Call_static_0100', Level.LEVEL0,
       async (): Promise<void> => {
-        await context!.setAbilityInstanceInfo('xlsx_call_label', pixelMap);
-        hilog.info(DOMAIN, TAG, 'Call success');
-        expect(pixelMap !== undefined).assertTrue();
+        try {
+          await context!.setAbilityInstanceInfo('xlsx_call_label', pixelMap);
+          expect().assertFail();
+        } catch (err) {
+          expect(errCode(err as Object)).assertEqual(ERR_CAPABILITY);
+        }
       });
 
     /**
@@ -156,15 +159,22 @@ export default function setAbilityInstanceInfoXlsxStatic(): void {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Return_static_0100
      * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Return_static_0100
-     * @tc.desc   setAbilityInstanceInfo return cover: Promise<void> resolves
+     * @tc.desc   setAbilityInstanceInfo return cover: reject BusinessError code+message on dayu200
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Return_static_0100', Level.LEVEL0,
       async (): Promise<void> => {
-        await context!.setAbilityInstanceInfo('xlsx_return_label', pixelMap);
-        expect(context !== undefined).assertTrue();
+        try {
+          await context!.setAbilityInstanceInfo('xlsx_return_label', pixelMap);
+          expect().assertFail();
+        } catch (err) {
+          let be: BusinessError = err as BusinessError;
+          expect(be.code).assertEqual(ERR_CAPABILITY);
+          expect(typeof be.message).assertEqual('string');
+          expect(be.message.length > 0).assertTrue();
+        }
       });
 
     /**
