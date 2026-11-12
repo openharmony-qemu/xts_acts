@@ -134,10 +134,6 @@ export default function list_ListInitialIndex1Test() {
 
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let scrollColumn = await driver.findComponent(ON.type('List'));
-      let button = await scrollColumn.scrollSearch(ON.id('List_ListInitialIndex1_1'));
-      await CommonFunc.sleep(1000);
-
       let swipeComponent = await driver.findComponent(ON.id('List_ListInitialIndex1_Container01'));
       let sizeList = await swipeComponent.getBounds();
       let displayId = await swipeComponent.getDisplayId();
@@ -147,6 +143,10 @@ export default function list_ListInitialIndex1Test() {
         { x: Math.round(sizeList.left + (sizeList.right - sizeList.left) / 2),
           y: Math.round(sizeList.bottom - ((sizeList.bottom - sizeList.top) / 10)), displayId: displayId });
       await CommonFunc.sleep(2000);
+
+      let scrollColumn: Component = await driver.findComponent(ON.type('List'));
+      let button = await scrollColumn.scrollSearch(ON.id('List_ListInitialIndex1_1'));
+      await CommonFunc.sleep(1000);
       firstListItem = CommonFunc.getComponentRect('List_ListInitialIndex1_1');
       secondListItem = CommonFunc.getComponentRect('List_ListInitialIndex1_2');
       listContainer = CommonFunc.getComponentRect('List_ListInitialIndex1_Container01');

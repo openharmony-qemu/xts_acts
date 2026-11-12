@@ -125,6 +125,15 @@ struct Scroll1 {
       }.height('10%')
 
       Row() {
+        Button('scrollEdgeTop').onClick((event: ClickEvent) => {
+          this.scroller.scrollEdge(Edge.Top);
+        }).id('scrollUndefined_scrollEdgeTop').width('40%')
+        Button('scrollEdgeBottom').onClick((event: ClickEvent) => {
+          this.scroller.scrollEdge(Edge.Bottom);
+        }).id('scrollUndefined_scrollEdgeBottom').width('40%')
+      }.height('10%')
+
+      Row() {
         Button('0' + this.isEdgeEffect).onClick((event: ClickEvent) => {
           this.isEdgeEffect = !this.isEdgeEffect;
         }).id('edgeEffect_action').width('25%')
