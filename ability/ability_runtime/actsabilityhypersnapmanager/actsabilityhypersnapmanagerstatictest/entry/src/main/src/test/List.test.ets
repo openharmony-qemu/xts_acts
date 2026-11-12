@@ -15,8 +15,10 @@
  */
 import abilityTest from './Ability.test'
 import getLastErrorTest from './GetLastError.test'
+import isHyperSnapInitializingTest from './IsHyperSnapInitializing.test'
 
-export default function testsuite() {
+export default function testsuite(): void {
   abilityTest()
   getLastErrorTest()
+  isHyperSnapInitializingTest()
 }

@@ -15,7 +15,15 @@
  */
 import abilityTest from "./ActsAbility.test";
 import delayedProcessExitTest from "./DelayedProcessExit.test";
-export default function testsuite() {
+import configurationHasBrandColorStaticTest from "./ConfigurationHasBrandColor.test";
+import appProcessStateChangeStaticTest from "./AppProcessStateChange.test";
+import backToCallerAppWithResultStaticTest from "./BackToCallerAppWithResult.test";
+import focusedApplicationChangedStaticTest from "./FocusedApplicationChanged.test";
+export default function testsuite(): void {
     abilityTest();
     delayedProcessExitTest();
+    configurationHasBrandColorStaticTest();
+    appProcessStateChangeStaticTest();
+    backToCallerAppWithResultStaticTest();
+    focusedApplicationChangedStaticTest();
 }

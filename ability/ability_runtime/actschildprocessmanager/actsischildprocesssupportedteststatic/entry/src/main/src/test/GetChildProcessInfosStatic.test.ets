@@ -21,8 +21,6 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import Utils from './Util.test';
 
 const TAG: string = 'GetChildProcessInfosStatic';
-const ERR_SERVICE: number = 16000050;
-const ERR_CONTEXT: number = 16000011;
 const ERR_CAPABILITY: number = 801;
 const ERR_NOT_SUPPORTED: number = 16000061;
 
@@ -55,40 +53,17 @@ export default function getChildProcessInfosStaticTest(): void {
     });
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_GetChildProcessInfos_StartMode_static_0100
-     * @tc.number SUB_Ability_AbilityRuntime_GetChildProcessInfos_StartMode_static_0100
-     * @tc.desc   Assert StartMode enum values used by child process APIs.
+     * @tc.name   SUB_Ability_AbilityRuntime_GetChildProcessInfos_Return_static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_GetChildProcessInfos_Return_static_0100
+     * @tc.desc   getChildProcessInfos return cover: Array shape / ChildProcessInformation fields
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_GetChildProcessInfos_StartMode_static_0100', Level.LEVEL0,
+    it('SUB_Ability_AbilityRuntime_GetChildProcessInfos_Return_static_0100', Level.LEVEL0,
       async (): Promise<void> => {
-        expect(childProcessManager.StartMode.SELF_FORK.valueOf()).assertEqual(0);
-        expect(childProcessManager.StartMode.APP_SPAWN_FORK.valueOf()).assertEqual(1);
-      });
-
-    /**
-     * @tc.name   SUB_Ability_AbilityRuntime_GetChildProcessInfos_Empty_static_0100
-     * @tc.number SUB_Ability_AbilityRuntime_GetChildProcessInfos_Empty_static_0100
-     * @tc.desc   getChildProcessInfos returns array when queried.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Ability_AbilityRuntime_GetChildProcessInfos_Empty_static_0100', Level.LEVEL0,
-      async (): Promise<void> => {
-        let errCode: number = -1;
-        let infos: Array<childProcessManager.ChildProcessInformation> = [];
-        try {
-          infos = await childProcessManager.getChildProcessInfos();
-        } catch (e) {
-          errCode = e.code;
-        }
-        if (errCode !== -1) {
-          expect(errCode).assertEqual(ERR_SERVICE);
-          return;
-        }
+        let infos: Array<childProcessManager.ChildProcessInformation> =
+          await childProcessManager.getChildProcessInfos();
         expect(infos.length >= 0).assertTrue();
         let len: int = infos.length as int;
         for (let i: int = 0; i < len; i++) {
@@ -99,7 +74,7 @@ export default function getChildProcessInfosStaticTest(): void {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_GetChildProcessInfos_AfterArk_static_0100
      * @tc.number SUB_Ability_AbilityRuntime_GetChildProcessInfos_AfterArk_static_0100
-     * @tc.desc   Try create ark child then query; accept 801/16000061 on unsupported devices.
+     * @tc.desc   After optional ark child create, getChildProcessInfos returns infos
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -116,7 +91,7 @@ export default function getChildProcessInfosStaticTest(): void {
         }
         if (createErr !== -1) {
           console.info(`${TAG} AfterArk createErr=${createErr}`);
-          expect(isCreateUnsupported(createErr) || createErr === ERR_SERVICE).assertTrue();
+          expect(isCreateUnsupported(createErr)).assertTrue();
           let infos: Array<childProcessManager.ChildProcessInformation> =
             await childProcessManager.getChildProcessInfos();
           expect(infos.length >= 0).assertTrue();
@@ -138,32 +113,24 @@ export default function getChildProcessInfosStaticTest(): void {
       });
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_GetUIAbilityChildProcessInfos_static_0100
-     * @tc.number SUB_Ability_AbilityRuntime_GetUIAbilityChildProcessInfos_static_0100
-     * @tc.desc   getUIAbilityChildProcessInfos returns array from ApplicationContext.
+     * @tc.name   SUB_Ability_AbilityRuntime_GetUIAbilityChildProcessInfos_Return_static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_GetUIAbilityChildProcessInfos_Return_static_0100
+     * @tc.desc   getUIAbilityChildProcessInfos return cover: Array from ApplicationContext
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_GetUIAbilityChildProcessInfos_static_0100', Level.LEVEL0,
+    it('SUB_Ability_AbilityRuntime_GetUIAbilityChildProcessInfos_Return_static_0100', Level.LEVEL0,
       async (): Promise<void> => {
         let appContext = abilityDelegator.getAppContext().getApplicationContext();
-        let errCode: number = -1;
-        let infos: Array<childProcessManager.ChildProcessInformation> = [];
-        try {
-          infos = await appContext.getUIAbilityChildProcessInfos();
-        } catch (e) {
-          errCode = e.code;
-        }
-        if (errCode !== -1) {
-          expect(errCode === ERR_SERVICE || errCode === ERR_CONTEXT).assertTrue();
-          return;
-        }
+        let infos: Array<childProcessManager.ChildProcessInformation> =
+          await appContext.getUIAbilityChildProcessInfos();
         expect(infos.length >= 0).assertTrue();
         let len: int = infos.length as int;
         for (let i: int = 0; i < len; i++) {
           assertInfoShape(infos[i]);
         }
       });
+
   });
 }

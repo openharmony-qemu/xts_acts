@@ -17,17 +17,17 @@ import AbilityStage from '@ohos.app.ability.AbilityStage'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
 export default class MyAbilityStage extends AbilityStage {
-  onCreate() {
+  onCreate(): void {
     console.log('[Demo] MyAbilityStage onCreate')
     AppStorage.setOrCreate<string>('onCreate', 'onCreate');
   }
 
-  onAboutToCreateAbility() {
+  onAboutToCreateAbility(): void {
     console.info('MyAbilityStage onAboutToCreateAbility');
     AppStorage.setOrCreate<string>('onAboutToCreateAbility', 'onAboutToCreateAbility');
   }
-  
-  onLaunchFromHyperSnap() {
+
+  onLaunchFromHyperSnap(): void {
     console.info('MyAbilityStage onLaunchFromHyperSnap');
     AppStorage.setOrCreate<string>('onLaunchFromHyperSnap', 'onLaunchFromHyperSnap');
   }
