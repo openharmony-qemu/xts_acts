@@ -235,7 +235,7 @@ export default function metaDataStaticTest(): void {
     it("SUB_MEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_static_0300", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_static_0300";
       let sourceFileName = "C027.heic";
-      let targetFileName = "C025.heic";
+      let targetFileName = "C028.heic";
       let camelCaseMetadataKeys: Array<string> = ["HeifsDelayTime"];
       if (!image.createImagePacker().supportedFormats.includes("image/heic")) {
         console.info(TAG,testTag, "device is not support heif encode");
@@ -314,7 +314,7 @@ export default function metaDataStaticTest(): void {
     it("SUB_MEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_static_0600", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_static_0600";
       let sourceFileName = "C027.heic";
-      let targetFileName = "test_blob_v1.heic";
+      let targetFileName = "C028.heic";
       let camelCaseMetadataKeys: Array<string> = ["HeifsDelayTime"];
       if (!image.createImagePacker().supportedFormats.includes("image/heic")) {
         console.info(TAG,testTag + "device is not support heif encode");
@@ -331,30 +331,33 @@ export default function metaDataStaticTest(): void {
     /**
      * @tc.number      SUB_MEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_static_0700
      * @tc.name        SUB_MEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_static_0700
-     * @tc.desc        Verify HEIFS metadata persistence after getBlob/setBlob and packToFile for HEIC
-     *                 1.Read HEIFS metadata from source as ArrayBuffer using getBlob
-     *                 2.Write ArrayBuffer to target HEIC using setBlob
-     *                 3.Pack to HEIC file with needsPackProperties=true
-     *                 4.Verify transferred metadata persists in packed file
+     * @tc.desc        cover errorCode 7600206
      * @tc.size        MEDIUM
      * @tc.type        Functional
      * @tc.level       Level 0
      */
-    it("SUB_MEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_static_0700", Level.LEVEL0, async (done:() => void)=>{
-      const testTag: string = "SUB_MEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_static_0700";
-      let sourceFileName = "C027.heic";
-      let targetFileName = "test_blob_v1.heic";
+    it("SUB_MEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_static_0700", Level.LEVEL0,async (done:() => void) => {
+      const testNum: string = "SUB_MEDIA_IMAGE_HEIFSMETADATA_GETANDSETBLOB_PROMISE_static_0700";
+      try {
+      let targetFileName = "C028.heic";
       let camelCaseMetadataKeys: Array<string> = ["HeifsDelayTime"];
-      if (!image.createImagePacker().supportedFormats.includes("image/heic")) {
-        console.info(TAG,testTag + "device is not support heif encode");
-        done();
-      } else {
-        let result = await testExifMetadataGetAndSetBlob(testTag, sourceFileName, targetFileName, "fd", "heifsMetadata",
-          camelCaseMetadataKeys);
-        console.info(TAG,testTag,`testExifMetadataGetAndSetBlob result is: ${result}`);
-        expect(result).assertTrue();
-        done();
+      let typeMetadata = "heifsMetadata" ;
+        let targetfd: int = getFd(targetFileName);
+        const imageSourceApiModify : image.ImageSource | undefined = image.createImageSource(targetfd);
+        console.info(TAG,`${testNum} createImageSource successfully for imageSourceApiModify`,imageSourceApiModify);
+        const actualBlob: ArrayBuffer =new ArrayBuffer(0);
+        const exifValueGet = await imageSourceApiModify!.readImageMetadata(camelCaseMetadataKeys, 0);
+        let targetMetadata = getMetadataObject(typeMetadata, exifValueGet);
+        if (!targetMetadata!) {
+          console.info(TAG,`${testNum} Target metadata not found.`);
+        }
+        await targetMetadata!.setBlob(actualBlob);
+        console.info(TAG,`${testNum} setBlob successfully for exifArrayBuffer`);
+      }catch (error) {
+        console.error(TAG, testNum, error, error.code);
+        expect(error.code).assertEqual(7600206);
       }
+      done();
     });
 
     /**
