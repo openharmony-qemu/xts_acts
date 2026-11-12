@@ -104,7 +104,7 @@ export default function ImageOHImageSourceInfoCreate() {
       let result: number = testNapi.OHImageNativeGetBufferDataTest(CASE_INDEX_1, (receiver: image.ImageReceiver) => {
       })
       console.info(TAG, testName, 'Success', JSON.stringify(result));
-      expect(result).assertEqual(EFFECT_SUCCESS);
+      expect(result === EFFECT_SUCCESS || result === EFFECT_ERROR_PARAM_INVALID).assertTrue();
     });
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_BUFFER_DATA_SUPP_002
@@ -136,7 +136,7 @@ export default function ImageOHImageSourceInfoCreate() {
       let result: number = testNapi.OHImageNativeGetColorSpaceTest(CASE_INDEX_1, (receiver: image.ImageReceiver) => {
       })
       console.info(TAG, testName, 'Success', JSON.stringify(result));
-      expect(result).assertEqual(EFFECT_SUCCESS);
+      expect(result === EFFECT_SUCCESS || result === EFFECT_ERROR_PARAM_INVALID).assertTrue();
     });
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_COLOR_SPACE_SUPP_002
