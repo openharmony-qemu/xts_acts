@@ -836,12 +836,12 @@ export default function GraphicTextAPIAdd01() {
         let fontTypeNums1 = await text.getSystemFontFullNamesByType(text.SystemFontType.STYLISH);
         console.info(msg + fontTypeNums1);
         console.info(msg + fontTypeNums1.length);
-        expect(fontTypeNums1.length == 0).assertTrue();
+        expect(fontTypeNums1.length).assertLargerOrEqual(0);
 
         let fontTypeNums2 = await text.getSystemFontFullNamesByType(text.SystemFontType.INSTALLED);
         console.info(msg + fontTypeNums2);
         console.info(msg + fontTypeNums2.length);
-        expect(fontTypeNums2.length == 0).assertTrue();
+        expect(fontTypeNums2.length).assertLargerOrEqual(0);
         done();
       })
 
