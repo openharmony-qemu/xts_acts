@@ -204,7 +204,7 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest() {
           } catch (err) {
             console.error(TAG +
               `getUserGrantedBundleIcon failed, code is ${err.code}, message is ${err.message}`);
-            if (err.code != 1600022 && err.code != 801) {
+            if (err.code !== 1600022 && err.code !== 801) {
               failCount++
             }
           }
