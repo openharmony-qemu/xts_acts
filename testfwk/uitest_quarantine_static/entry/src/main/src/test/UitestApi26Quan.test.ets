@@ -379,29 +379,27 @@ export default function UiTest(): void {
     it('testDriverMouseDragDefault_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, testDriverMouseDragDefault_static start`);
       let carSupported = canIUse("SystemCapability.Sensors.MiscDevice")
-      console.info(`${TestTag}, testDriverMouseDragDefault_static carSupported, ${ JSON.stringify(carSupported) }`);
-      if (carSupported) { // 此用例不支持在多屏上执行
-        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-        await driver!.delayMs(waitUiReadyMs);
-        let button = (await driver!.findComponent(ON.id('jump'))) as Component;
-        let center: Point = await button.getBoundsCenter();
-        await driver!.longClickAt(center);
-        console.log(`${TestTag}, mouseLongClick successful`);
-        await driver!.delayMs(waitUiReadyMs);
-        let text1 = (await driver!.findComponent(ON.text('one'))) as Component;
-        let text2 = (await driver!.findComponent(ON.text('two'))) as Component;
-        let point1 = await text1.getBoundsCenter();
-        let point2 = await text2.getBoundsCenter();
-        if (carSupported) {
-          await driver!.mouseDragWithOptions(point1, point2);
-        } else {
-          const touchOptions: TouchOptions = { speed: 2000 };
-          await driver!.mouseDragWithOptions(point1, point2, touchOptions);
-        }
-        await driver!.delayMs(2000);
-        let text: Component | null = await driver!.findComponent(ON.text('one').isBefore(ON.text('two')));
-        expect(text).assertNull();
+      hilog.info(domain, tag, `testDriverMouseDragDefault_static carSupported, ${ JSON.stringify(carSupported) }`);
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver!.delayMs(waitUiReadyMs);
+      let button = (await driver!.findComponent(ON.id('jump'))) as Component;
+      let center: Point = await button.getBoundsCenter();
+      await driver!.longClickAt(center);
+      console.log(`${TestTag}, mouseLongClick successful`);
+      await driver!.delayMs(waitUiReadyMs);
+      let text1 = (await driver!.findComponent(ON.text('one'))) as Component;
+      let text2 = (await driver!.findComponent(ON.text('two'))) as Component;
+      let point1 = await text1.getBoundsCenter();
+      let point2 = await text2.getBoundsCenter();
+      if (condition) {
+        await driver!.mouseDragWithOptions(point1, point2);
+      } else {
+        const touchOptions: TouchOptions = { speed: 2000 };
+        await driver!.mouseDragWithOptions(point1, point2, touchOptions);
       }
+      await driver!.delayMs(2000);
+      let text: Component | null = await driver!.findComponent(ON.text('one').isBefore(ON.text('two')));
+      expect(text).assertNull();
       console.log(`${TestTag}, testDriverMouseDragDefault_static end`);
     });
 
