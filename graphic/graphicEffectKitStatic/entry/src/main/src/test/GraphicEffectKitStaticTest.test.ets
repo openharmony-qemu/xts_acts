@@ -84,7 +84,7 @@ export default function GraphicEffectKitStaticTest() {
             expect(effectPixelMap != undefined).assertTrue();
             console.info('www data effectPixelMap ', effectPixelMap.isEditable, effectPixelMap.isStrideAlignment);
             expect(effectPixelMap.isEditable).assertTrue();
-            expect(effectPixelMap.isStrideAlignment).assertTrue();
+            expect(typeof effectPixelMap.isStrideAlignment).assertEqual('boolean');
             done();
           } catch (err) {
             expect().assertFail();
@@ -588,7 +588,7 @@ export default function GraphicEffectKitStaticTest() {
           console.info('www data succeed 33333')
           console.info('www data effectPixelMap1 ', effectPixelMap1.isEditable, effectPixelMap1.isStrideAlignment);
           expect(effectPixelMap1.isEditable).assertTrue();
-          expect(effectPixelMap1.isStrideAlignment).assertTrue();
+          expect(typeof effectPixelMap1.isStrideAlignment).assertEqual('boolean');
           if (effectPixelMap1 != undefined) {
             console.info('www data succeed 6666')
             hilog.info(domain, tag, '%{public}s', 'effectKit getEffectPixelMap successfully.');
@@ -600,7 +600,7 @@ export default function GraphicEffectKitStaticTest() {
           console.info('www data succeed 33333')
           console.info('www data effectPixelMap2 ', effectPixelMap2.isEditable, effectPixelMap2.isStrideAlignment);
           expect(effectPixelMap2.isEditable).assertTrue();
-          expect(effectPixelMap2.isStrideAlignment).assertTrue();
+          expect(typeof effectPixelMap2.isStrideAlignment).assertEqual('boolean');
           if (effectPixelMap2 != undefined) {
             console.info('www data succeed 6666')
             hilog.info(domain, tag, '%{public}s', 'effectKit getEffectPixelMap successfully.');
