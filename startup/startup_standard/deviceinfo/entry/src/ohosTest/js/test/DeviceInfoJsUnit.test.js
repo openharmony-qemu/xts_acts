@@ -2262,6 +2262,32 @@ export default function DeviceInfoTest() {
         })
 
         /**
+         * @tc.name   testGetSerial9400
+         * @tc.number SUB_STARTUP_JS_DEVCEINFO_9400
+         * @tc.desc   Get a string representing the device serial number which has a maximum of 64 characters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testGetSerial9400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+            console.info('testGetSerial9400 start');
+            let serialInfo = deviceinfo.serial;
+            console.info('testGetSerial9400 the value of the deviceinfo serial is :' + serialInfo);
+
+            let len = serialInfo.length;
+            console.info('testGetSerial9400 the value of the device serial number characters is :' + len);
+            expect(len).assertLess(MAX_CHARACTERS_NUM_TWO);
+
+            let str = /[\w-\.\(\)]/g;
+            let arr = serialInfo.match(str);
+            let bufferstr = arr.join('');
+            console.info('testGetSerial9400 the value of the bufferstr is :' + bufferstr);
+            expect(serialInfo).assertEqual(bufferstr);
+
+            console.info('testGetSerial9400 ：end');
+        })
+
+        /**
          * @tc.name   testGetUdid001
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_085
          * @tc.desc   Get udid
