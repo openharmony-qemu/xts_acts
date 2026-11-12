@@ -153,6 +153,43 @@ export default function getBundleInfo() {
           })
       })
 
+     /**
+     * @tc.name   getBundleInfoPromiseDefaultUserID
+     * @tc.number SUB_Bms_Framework_Query_AppInfo_static_1600
+     * @tc.desc   Test getBundleInfo with default flag and userID(by promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('getBundleInfoPromiseDefaultUserID', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        await bundle.getBundleInfo(BUNDLE_NAME, bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT, 100)
+          .then((data: BundleInfo) => {
+            hilog.info(domain, tag, 'getBundleInfoPromiseDefault  ====> start');
+            expect(data.name).assertEqual(BUNDLE_NAME);
+            expect(data.vendor).assertEqual(VENDOR);
+            expect(data.versionCode + '').assertEqual('1000000');
+            expect(data.versionName).assertEqual("1.0.0");
+            expect(data.buildVersion).assertEqual("1.0.0");
+            expect(data.minCompatibleVersionCode + '').assertEqual('1000000');
+            expect(data.targetVersion).assertLarger(22);
+            expect(data.installTime ).assertLarger(0.0);
+            expect(data.updateTime ).assertLarger(0.0);
+            expect(data.firstInstallTime ).assertLarger(0.0);
+            expect(data.appInfo).assertEqual(null);
+            expect(data.hapModulesInfo.length + '').assertEqual('0');
+            expect(data.reqPermissionDetails.length + '').assertEqual('0');
+            expect(data.permissionGrantStates.length + '').assertEqual('0');
+            hilog.info(domain, tag, 'getBundleInfoPromiseDefault  ====> end');
+            done();
+          })
+          .catch(err => {
+            hilog.info(domain, tag, 'getBundleInfoPromiseDefault  ====> err');
+            expect(err).assertFail();
+            done();
+          })
+      })  
+
     /**
      * @tc.name   getBundleInfoSyncDefault
      * @tc.number Sub_Bms_Framework_Query_AppInfo_static_1400
