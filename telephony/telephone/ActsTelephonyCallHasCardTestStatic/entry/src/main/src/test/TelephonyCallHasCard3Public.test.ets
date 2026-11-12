@@ -18,12 +18,16 @@ import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll } from
 import call from '@ohos.telephony.call';
 import { BusinessError } from '@ohos.base';
 import sim from '@ohos.telephony.sim';
-import { Driver, ON, MatchPattern, Component } from '@ohos.UiTest';
+import abilityAccessCtrl, { Permissions, PermissionRequestResult } from '@ohos.abilityAccessCtrl';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import common from '@ohos.app.ability.common';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'ObserverTestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
+let g_context: common.UIAbilityContext;
 
 const ExpectFail = () => {
   try {
@@ -50,24 +54,34 @@ const telphoneErr: string = '+861xxxxxxxxxxx';
 const CALL_NUMBER = '10086';
 
 async function getPermissions(): Promise<void> {
-  hilog.info(domain, tag, '%{public}s', 'click allow start');
-  let driver: Driver = Driver.create();
-  for (let index = 0; index < 10; index++) {
-    await driver.delayMs(1000);
-    try {
-      let allowButton: Component | null = await driver.findComponent(ON.text('允许', MatchPattern.EQUALS));
-      if (allowButton !== null) {
-        await allowButton.click();
-        await driver.delayMs(1000);
-        hilog.info(domain, tag, `click allow button success, round ${index}`);
-        break;
-      }
-      hilog.info(domain, tag, `allow button not found, round ${index}`);
-    } catch (error) {
-      hilog.info(domain, tag, `click allow button round ${index} failed, error: ${JSON.stringify(error)}`);
-    }
+  hilog.info(domain, tag, '%{public}s', 'getPermission start');
+  let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+  let cmd: string = "aa start -a EntryAbility -b com.example.callhascardtest.static";
+  let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+  hilog.info(domain, tag, 'user:' + JSON.stringify(user));
+  if (user !== undefined) {
+    cmd += ' -u ' + user;
   }
-  hilog.info(domain, tag, '%{public}s', 'click allow end');
+  abilityDelegator.executeShellCommand(cmd)
+  await Utils.msSleep(4000);
+  g_context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+  hilog.info(domain, tag, 'get UIAbilityContext end');
+  try {
+    await Utils.msSleep(2000);
+    let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+    let arr: Permissions[] = ['ohos.permission.DIRECT_CALL'];
+    atManager.requestPermissionsFromUser(g_context, arr,
+      (err: BusinessError<void> | null, data: PermissionRequestResult | undefined) => {
+        hilog.info(domain, tag, 'requestPermissionsFromUser end');
+        hilog.info(domain, tag, 'request success permissions' + JSON.stringify(data));
+        hilog.info(domain, tag, 'getPermissionRequestResult err' + JSON.stringify(err));
+      });
+  } catch (err) {
+    hilog.error(domain, tag, '%{public}s', 'get failed, err: ' + JSON.stringify(err));
+  }
+  await Utils.msSleep(2000);
+  await Utils.clickRequestPermission('允许');
+  hilog.info(domain, tag, '%{public}s', 'getPermission end');
 }
 
 export default function HasCard2PublicNeedCardTest() {
@@ -79,23 +93,9 @@ export default function HasCard2PublicNeedCardTest() {
     });
 
     afterAll(async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'click cancel start');
-      let driver: Driver = Driver.create();
-      for (let index = 0; index < 5; index++) {
-        await driver.delayMs(1000);
-        try {
-          let cancelButton: Component | null = await driver.findComponent(ON.text('取消', MatchPattern.EQUALS));
-          if (cancelButton !== null) {
-            await cancelButton.click();
-            await driver.delayMs(1000);
-            hilog.info(domain, tag, `click cancel button success, round ${index}`);
-            break;
-          }
-        } catch (error) {
-          hilog.info(domain, tag, `click cancel button round ${index} failed, error: ${JSON.stringify(error)}`);
-        }
-      }
-      hilog.info(domain, tag, '%{public}s', 'click cancel end');
+      hilog.info(domain, tag, '%{public}s', 'afterAll start');
+      await Utils.clickRequestPermission('取消');
+      hilog.info(domain, tag, '%{public}s', 'afterAll end');
       done();
     });
 

@@ -20,13 +20,11 @@ import Want from '@ohos.app.ability.Want';
 import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
-import abilityAccessCtrl, { Permissions, PermissionRequestResult } from '@ohos.abilityAccessCtrl';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import common from '@ohos.app.ability.common';
 
 
 class EntryAbility extends UIAbility {
-  private isWindowReady: boolean = false;
-  private hasRequestedPermission: boolean = false;
-
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onCreate');
   }
@@ -40,24 +38,7 @@ class EntryAbility extends UIAbility {
           return;
         }
         hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok');
-        this.isWindowReady = true;
-        this.requestDirectCallPermission();
       });
-  }
-
-  private requestDirectCallPermission(): void {
-    if (this.hasRequestedPermission || !this.isWindowReady) {
-      return;
-    }
-    this.hasRequestedPermission = true;
-    hilog.info(0x0000, 'testTag EntryAbility', 'requestDirectCallPermission start');
-    let permissionList: Permissions[] = ['ohos.permission.DIRECT_CALL'];
-    let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
-    atManager.requestPermissionsFromUser(this.context, permissionList).then((data: PermissionRequestResult) => {
-      hilog.info(0x0000, 'testTag EntryAbility', `requestPermissionsFromUser result ${JSON.stringify(data)}`);
-    }).catch((error: Error) => {
-      hilog.info(0x0000, 'testTag EntryAbility', `requestPermissionsFromUser err ${JSON.stringify(error)}`);
-    });
   }
 
   onDestroy(): Promise<void> | undefined {
@@ -71,7 +52,7 @@ class EntryAbility extends UIAbility {
 
   onForeground() {
     hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', 'TestAbility onForeground');
-    this.requestDirectCallPermission();
+    AppStorage.setOrCreate<common.UIAbilityContext>("UIAbilityContext", this.context);
   }
 
   onBackground() {
