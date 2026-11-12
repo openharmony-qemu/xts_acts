@@ -21,6 +21,8 @@ import {
   SELFHAPNAME,
   APP_IDS_200,
   APP_IDS_201,
+  APP_IDS_11,
+  initAppIds11WithRealApps,
   APP_IDS_AND_IDENTIFIER_1,
   DEFAULT_APP_INDEX,
   INVALID_APP_INDEX,
@@ -32,7 +34,9 @@ import {
   bundleNamesInit,
   BUNDLE_NAME_200,
   BUNDLE_NAME_201,
-  INVALID_WANT
+  INVALID_WANT,
+  TEST_REAL_APP_ID_1,
+  TEST_REAL_APP_ID_2
 } from '../commom.ets';
 
 import adminManager from '@ohos.enterprise.adminManager';
@@ -52,8 +56,9 @@ const LABEL_NOTIFICATION = "notification";
 
 export default function applicationManagerTest() {
   describe('applicationManager_test', () => {
-    beforeAll((done: Function) => {
+    beforeAll(async (done: Function) => {
       bundleNamesInit();
+      await initAppIds11WithRealApps();
       done();
     })
 
@@ -11025,7 +11030,7 @@ export default function applicationManagerTest() {
     /**
      * @tc.name   test_addOptimizationBatteryExclusionApps_0400
      * @tc.number SUB_CUSTOMIZATION_EDM_ADDOPTIMIZATIONBATTERYEXCLUSIONAPPS_0400
-     * @tc.desc   test addOptimizationBatteryExclusionApps with appIdentifiers exceed limit(201 elements)
+     * @tc.desc   test addOptimizationBatteryExclusionApps with appIdentifiers exceed limit(11 elements, limit is 10)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -11033,7 +11038,7 @@ export default function applicationManagerTest() {
     it("test_addOptimizationBatteryExclusionApps_0400", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        applicationManager.addOptimizationBatteryExclusionApps(APP_IDS_201, DEFAULT_USER_ID);
+        applicationManager.addOptimizationBatteryExclusionApps(APP_IDS_11, DEFAULT_USER_ID);
         expect().assertFail();
       } catch (error) {
         expect(error.code).assertEqual(9200019);
@@ -11054,7 +11059,7 @@ export default function applicationManagerTest() {
     it("test_addOptimizationBatteryExclusionApps_0500", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        applicationManager.addOptimizationBatteryExclusionApps([TEST_BUNDLENAME], null);
+        applicationManager.addOptimizationBatteryExclusionApps([TEST_REAL_APP_ID_1], null);
         expect().assertFail();
       } catch (error) {
         expect(error.code).assertEqual(401);
@@ -11075,7 +11080,7 @@ export default function applicationManagerTest() {
     it("test_addOptimizationBatteryExclusionApps_0600", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        applicationManager.addOptimizationBatteryExclusionApps([TEST_BUNDLENAME], undefined);
+        applicationManager.addOptimizationBatteryExclusionApps([TEST_REAL_APP_ID_1], undefined);
         expect().assertFail();
       } catch (error) {
         expect(error.code).assertEqual(401);
@@ -11096,7 +11101,7 @@ export default function applicationManagerTest() {
     it("test_addOptimizationBatteryExclusionApps_0700", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        applicationManager.addOptimizationBatteryExclusionApps(["com.edm.acts.normal"], -1);
+        applicationManager.addOptimizationBatteryExclusionApps([TEST_REAL_APP_ID_1], -1);
         expect().assertFail();
       } catch (error) {
         expect(error.code).assertEqual(9200006);
@@ -11117,7 +11122,7 @@ export default function applicationManagerTest() {
     it("test_addOptimizationBatteryExclusionApps_0800", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        applicationManager.addOptimizationBatteryExclusionApps(["com.edm.acts.normal"], INVALID_USER_ID);
+        applicationManager.addOptimizationBatteryExclusionApps([TEST_REAL_APP_ID_1], INVALID_USER_ID);
         expect().assertFail();
       } catch (error) {
         expect(error.code).assertEqual(9200006);
@@ -11130,25 +11135,21 @@ export default function applicationManagerTest() {
     /**
      * @tc.name   test_addOptimizationBatteryExclusionApps_0900
      * @tc.number SUB_CUSTOMIZATION_EDM_ADDOPTIMIZATIONBATTERYEXCLUSIONAPPS_0900
-     * @tc.desc   test addOptimizationBatteryExclusionApps success with 200 elements
+     * @tc.desc   test addOptimizationBatteryExclusionApps with 11 elements (exceeds limit of 10)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
     it("test_addOptimizationBatteryExclusionApps_0900", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        let apps: Array<string> = [];
-        for (let i = 0; i < 200; i++) {
-          apps.push("com.edm.acts.normal");
-        }
-        applicationManager.addOptimizationBatteryExclusionApps(apps, DEFAULT_USER_ID);
+        applicationManager.addOptimizationBatteryExclusionApps(APP_IDS_11, DEFAULT_USER_ID);
         expect().assertFail();
       } catch (error) {
-        expect(error.code).assertEqual(9201015);
+        expect(error.code).assertEqual(9200019);
       } finally {
         try {
-          applicationManager.removeOptimizationBatteryExclusionApps(["com.edm.acts.normal"], DEFAULT_USER_ID);
+          applicationManager.removeOptimizationBatteryExclusionApps(APP_IDS_11, DEFAULT_USER_ID);
         } catch (e) {
         }
         await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -11167,7 +11168,7 @@ export default function applicationManagerTest() {
     it("test_addOptimizationBatteryExclusionApps_1000", Level.LEVEL0, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        applicationManager.addOptimizationBatteryExclusionApps([TEST_BUNDLENAME], DEFAULT_USER_ID);
+        applicationManager.addOptimizationBatteryExclusionApps([TEST_REAL_APP_ID_1], DEFAULT_USER_ID);
       } catch (error) {
         if (error.code === 9201015) {
           expect(error.code).assertEqual(9201015);
@@ -11176,10 +11177,29 @@ export default function applicationManagerTest() {
         }
       } finally {
         try {
-          applicationManager.removeOptimizationBatteryExclusionApps([TEST_BUNDLENAME], DEFAULT_USER_ID);
+          applicationManager.removeOptimizationBatteryExclusionApps([TEST_REAL_APP_ID_1], DEFAULT_USER_ID);
         } catch (e) {
         }
         await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addOptimizationBatteryExclusionApps_1100
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDOPTIMIZATIONBATTERYEXCLUSIONAPPS_1100
+     * @tc.desc   test addOptimizationBatteryExclusionApps without enabling admin (should fail with 9200001)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addOptimizationBatteryExclusionApps_1100", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.addOptimizationBatteryExclusionApps([TEST_REAL_APP_ID_1], DEFAULT_USER_ID);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.code).assertEqual(9200001);
+      } finally {
       }
       done();
     })
@@ -11249,7 +11269,7 @@ export default function applicationManagerTest() {
     /**
      * @tc.name   test_removeOptimizationBatteryExclusionApps_0400
      * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEOPTIMIZATIONBATTERYEXCLUSIONAPPS_0400
-     * @tc.desc   test removeOptimizationBatteryExclusionApps with appIdentifiers exceed limit(201 elements)
+     * @tc.desc   test removeOptimizationBatteryExclusionApps with appIdentifiers exceed limit(11 elements, limit is 10)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -11257,7 +11277,7 @@ export default function applicationManagerTest() {
     it("test_removeOptimizationBatteryExclusionApps_0400", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        applicationManager.removeOptimizationBatteryExclusionApps(APP_IDS_201, DEFAULT_USER_ID);
+        applicationManager.removeOptimizationBatteryExclusionApps(APP_IDS_11, DEFAULT_USER_ID);
         expect().assertFail();
       } catch (error) {
         expect(error.code).assertEqual(9200019);
@@ -11278,7 +11298,7 @@ export default function applicationManagerTest() {
     it("test_removeOptimizationBatteryExclusionApps_0500", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        applicationManager.removeOptimizationBatteryExclusionApps([TEST_BUNDLENAME], null);
+        applicationManager.removeOptimizationBatteryExclusionApps([TEST_REAL_APP_ID_1], null);
         expect().assertFail();
       } catch (error) {
         expect(error.code).assertEqual(401);
@@ -11299,7 +11319,7 @@ export default function applicationManagerTest() {
     it("test_removeOptimizationBatteryExclusionApps_0600", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        applicationManager.removeOptimizationBatteryExclusionApps([TEST_BUNDLENAME], undefined);
+        applicationManager.removeOptimizationBatteryExclusionApps([TEST_REAL_APP_ID_1], undefined);
         expect().assertFail();
       } catch (error) {
         expect(error.code).assertEqual(401);
@@ -11320,7 +11340,7 @@ export default function applicationManagerTest() {
     it("test_removeOptimizationBatteryExclusionApps_0700", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        applicationManager.removeOptimizationBatteryExclusionApps(["com.edm.acts.normal"], -1);
+        applicationManager.removeOptimizationBatteryExclusionApps([TEST_REAL_APP_ID_1], -1);
         expect().assertFail();
       } catch (error) {
         expect(error.code).assertEqual(9200006);
@@ -11341,12 +11361,31 @@ export default function applicationManagerTest() {
     it("test_removeOptimizationBatteryExclusionApps_0800", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        applicationManager.removeOptimizationBatteryExclusionApps(["com.edm.acts.normal"], INVALID_USER_ID);
+        applicationManager.removeOptimizationBatteryExclusionApps([TEST_REAL_APP_ID_1], INVALID_USER_ID);
         expect().assertFail();
       } catch (error) {
         expect(error.code).assertEqual(9200006);
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeOptimizationBatteryExclusionApps_0900
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEOPTIMIZATIONBATTERYEXCLUSIONAPPS_0900
+     * @tc.desc   test removeOptimizationBatteryExclusionApps without enabling admin (should fail with 9200001)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeOptimizationBatteryExclusionApps_0900", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.removeOptimizationBatteryExclusionApps([TEST_REAL_APP_ID_1], DEFAULT_USER_ID);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.code).assertEqual(9200001);
+      } finally {
       }
       done();
     })
@@ -11449,7 +11488,7 @@ export default function applicationManagerTest() {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         try {
-          applicationManager.addOptimizationBatteryExclusionApps(["com.edm.acts.normal"], DEFAULT_USER_ID);
+          applicationManager.addOptimizationBatteryExclusionApps([TEST_REAL_APP_ID_1], DEFAULT_USER_ID);
           let result = applicationManager.getOptimizationBatteryExclusionApps(DEFAULT_USER_ID, null);
           expect(result.length > 0).assertTrue();
         } catch (addError) {
@@ -11460,7 +11499,7 @@ export default function applicationManagerTest() {
         expect().assertFail();
       } finally {
         try {
-          applicationManager.removeOptimizationBatteryExclusionApps(["com.edm.acts.normal"], DEFAULT_USER_ID);
+          applicationManager.removeOptimizationBatteryExclusionApps([TEST_REAL_APP_ID_1], DEFAULT_USER_ID);
         } catch (e) {
         }
         await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -11480,7 +11519,7 @@ export default function applicationManagerTest() {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         try {
-          applicationManager.addOptimizationBatteryExclusionApps(["com.edm.acts.normal"], DEFAULT_USER_ID);
+          applicationManager.addOptimizationBatteryExclusionApps([TEST_REAL_APP_ID_1], DEFAULT_USER_ID);
           let result = applicationManager.getOptimizationBatteryExclusionApps(DEFAULT_USER_ID, undefined);
           expect(result.length > 0).assertTrue();
         } catch (addError) {
@@ -11491,7 +11530,7 @@ export default function applicationManagerTest() {
         expect().assertFail();
       } finally {
         try {
-          applicationManager.removeOptimizationBatteryExclusionApps(["com.edm.acts.normal"], DEFAULT_USER_ID);
+          applicationManager.removeOptimizationBatteryExclusionApps([TEST_REAL_APP_ID_1], DEFAULT_USER_ID);
         } catch (e) {
         }
         await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -11511,7 +11550,7 @@ export default function applicationManagerTest() {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         try {
-          applicationManager.addOptimizationBatteryExclusionApps(["com.edm.acts.normal"], DEFAULT_USER_ID);
+          applicationManager.addOptimizationBatteryExclusionApps([TEST_REAL_APP_ID_1], DEFAULT_USER_ID);
           let result = applicationManager.getOptimizationBatteryExclusionApps(DEFAULT_USER_ID, common.QueryPolicy.SELF);
           expect(result.length > 0).assertTrue();
         } catch (addError) {
@@ -11522,7 +11561,7 @@ export default function applicationManagerTest() {
         expect().assertFail();
       } finally {
         try {
-          applicationManager.removeOptimizationBatteryExclusionApps(["com.edm.acts.normal"], DEFAULT_USER_ID);
+          applicationManager.removeOptimizationBatteryExclusionApps([TEST_REAL_APP_ID_1], DEFAULT_USER_ID);
         } catch (e) {
         }
         await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -11542,7 +11581,7 @@ export default function applicationManagerTest() {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         try {
-          applicationManager.addOptimizationBatteryExclusionApps(["com.edm.acts.normal"], DEFAULT_USER_ID);
+          applicationManager.addOptimizationBatteryExclusionApps([TEST_REAL_APP_ID_1], DEFAULT_USER_ID);
           let result = applicationManager.getOptimizationBatteryExclusionApps(DEFAULT_USER_ID, common.QueryPolicy.ALL);
           expect(result.length > 0).assertTrue();
         } catch (addError) {
@@ -11553,7 +11592,7 @@ export default function applicationManagerTest() {
         expect().assertFail();
       } finally {
         try {
-          applicationManager.removeOptimizationBatteryExclusionApps(["com.edm.acts.normal"], DEFAULT_USER_ID);
+          applicationManager.removeOptimizationBatteryExclusionApps([TEST_REAL_APP_ID_1], DEFAULT_USER_ID);
         } catch (e) {
         }
         await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -11573,7 +11612,7 @@ export default function applicationManagerTest() {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         try {
-          applicationManager.addOptimizationBatteryExclusionApps(["com.edm.acts.normal"], DEFAULT_USER_ID);
+          applicationManager.addOptimizationBatteryExclusionApps([TEST_REAL_APP_ID_1], DEFAULT_USER_ID);
           let result = applicationManager.getOptimizationBatteryExclusionApps(DEFAULT_USER_ID, 999);
           expect(result.length > 0).assertTrue();
         } catch (addError) {
@@ -11584,7 +11623,7 @@ export default function applicationManagerTest() {
         expect().assertFail();
       } finally {
         try {
-          applicationManager.removeOptimizationBatteryExclusionApps(["com.edm.acts.normal"], DEFAULT_USER_ID);
+          applicationManager.removeOptimizationBatteryExclusionApps([TEST_REAL_APP_ID_1], DEFAULT_USER_ID);
         } catch (e) {
         }
         await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -11669,7 +11708,7 @@ export default function applicationManagerTest() {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         try {
-          applicationManager.addOptimizationBatteryExclusionApps(["com.edm.acts.normal"], DEFAULT_USER_ID);
+          applicationManager.addOptimizationBatteryExclusionApps([TEST_REAL_APP_ID_1], DEFAULT_USER_ID);
           let result = applicationManager.getOptimizationBatteryExclusionApps(DEFAULT_USER_ID);
           expect(result.length > 0).assertTrue();
         } catch (addError) {
@@ -11680,10 +11719,29 @@ export default function applicationManagerTest() {
         expect().assertFail();
       } finally {
         try {
-          applicationManager.removeOptimizationBatteryExclusionApps(["com.edm.acts.normal"], DEFAULT_USER_ID);
+          applicationManager.removeOptimizationBatteryExclusionApps([TEST_REAL_APP_ID_1], DEFAULT_USER_ID);
         } catch (e) {
         }
         await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_getOptimizationBatteryExclusionApps_1400
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETOPTIMIZATIONBATTERYEXCLUSIONAPPS_1400
+     * @tc.desc   test getOptimizationBatteryExclusionApps without enabling admin (should fail with 9200001)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getOptimizationBatteryExclusionApps_1400", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.getOptimizationBatteryExclusionApps(DEFAULT_USER_ID);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.code).assertEqual(9200001);
+      } finally {
       }
       done();
     })
