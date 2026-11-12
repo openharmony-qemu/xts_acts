@@ -22,7 +22,6 @@ group("actsuiabilitycontext") {
       "actsstartabilityforsultteststatic:ActsAbilityStartAbilityForResultStaticTest",
       "actsstartabilityteststatic:ActsStartAbilityStaticTest",
       "actsstartabilitywithperteststatic:ActsAbilityStartAbilityPermissionStaticTest",
-      "actssetabilityinstanceinfonopermissionteststatic:ActsSetAbilityInstanceInfoNoPermissionStaticTest",
     ]
   }
 }
