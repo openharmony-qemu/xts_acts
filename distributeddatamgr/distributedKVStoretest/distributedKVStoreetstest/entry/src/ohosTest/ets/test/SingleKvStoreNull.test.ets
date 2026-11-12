@@ -4080,6 +4080,6 @@ export default function SingleKvStoreNull(){
       }
     })
 
-    console.info(TAG + '-------------------describe SingleKvStoreReturnValue  end-------------------');
+    console.info(TAG + '-------------------describe SingleKvStoreNull  end-------------------');
   })
 }

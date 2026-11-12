@@ -104,7 +104,6 @@ export default function AsyncCallback() {
             done();
           })
         } catch (e) {
-          e = e as BusinessError;
           console.error(TAG + "relationalStoreTest_Async14800032_016 fail code is " + e.code + " message is " +
           e.message);
           expect(e.code).assertEqual(14800032);
@@ -131,7 +130,6 @@ export default function AsyncCallback() {
               console.info(TAG + 'clean dirty data succeeded');
             })
           } catch (err) {
-            err = err as BusinessError;
             console.error(TAG + 'Failed to cleanDirtyData.Code: ' + err.code + ',message:' + err.message);
             expect(err.code).assertEqual('801');
           }
@@ -169,7 +167,6 @@ export default function AsyncCallback() {
             console.info('Backup success.');
           })
         } catch (err) {
-          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
 
@@ -241,7 +238,6 @@ export default function AsyncCallback() {
             done();
           })
         } catch (e) {
-          e = e as BusinessError;
           console.error(TAG + "relationalStoreTest_Async14800033_016 fail code is " + e.code + " message is " +
           e.message);
           expect(e.code).assertEqual(14800033);
@@ -346,7 +342,6 @@ export default function AsyncCallback() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           console.log(TAG + `get modify time, err code is ${err.code}, message is ${err.message}.`);
           expect(err.code).assertEqual('801');
           done();
@@ -371,7 +366,6 @@ export default function AsyncCallback() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           console.log(TAG +
             `relationalStoreTest_Async14800032_014 get modify time fail, err code is ${err.code}, message is ${err.message}.`);
           expect(err.code).assertEqual(14800032);
@@ -398,7 +392,6 @@ export default function AsyncCallback() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           console.log(TAG +
             `relationalStoreTest_Async14800033_014 get modify time fail, err code is ${err.code}, message is ${err.message}.`);
           expect(err.code).assertEqual(14800033);
@@ -424,7 +417,6 @@ export default function AsyncCallback() {
             done();
           })
         } catch (e) {
-          e = e as BusinessError;
           console.error(TAG + "relationalStoreTest_Async14800032_018 fail code is " + e.code + " message is " +
           e.message);
           expect(e.code).assertEqual(14800000);
@@ -450,7 +442,6 @@ export default function AsyncCallback() {
             done();
           })
         } catch (e) {
-          e = e as BusinessError;
           console.error(TAG + "relationalStoreTest_Async14800033_018 fail code is " + e.code + " message is " +
           e.message);
           expect(e.code).assertEqual(14800033);
@@ -476,7 +467,6 @@ export default function AsyncCallback() {
               console.info(TAG + 'clean dirty data succeeded');
             })
           } catch (err) {
-            err = err as BusinessError;
             console.error(TAG + 'Failed to cleanDirtyData.Code: ' + err.code + ',message:' + err.message);
             expect(err.code).assertEqual('801');
           }
@@ -592,7 +582,6 @@ export default function AsyncCallback() {
           }).catch(() => {
           })
         } catch (err) {
-          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
 
@@ -604,7 +593,6 @@ export default function AsyncCallback() {
             console.info('Restore success.');
           })
         } catch (err) {
-          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
 

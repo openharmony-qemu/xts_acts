@@ -491,7 +491,7 @@ export default function preferenceTest() {
      */
     it('testPreferencesHasKey0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       await mPreferences!.put(KEY_TEST_STRING_ELEMENT, "test");
-      await mPreferences!.has(KEY_TEST_STRING_ELEMENT).then((ret : Object): void => {
+      await mPreferences!.has(KEY_TEST_STRING_ELEMENT).then((ret : Object): Promise<void> => {
         expect(true).assertEqual(ret);
         done();
       }).catch((err : Error) => {
@@ -1334,13 +1334,13 @@ export default function preferenceTest() {
       await mPreferences!.clear();
       await mPreferences!.flush();
       let val: long = 1;
-      await mPreferences!.put(KEY_TEST_LONG_ELEMENT, val).then((): void => {
+      await mPreferences!.put(KEY_TEST_LONG_ELEMENT, val).then(async (): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', TAG + "put succeed");
       }).catch((err : Error) => {
         hilog.info(domain, tag, '%{public}s', TAG + "put failed error message = " + err);
       })
 
-      await mPreferences!.get(KEY_TEST_LONG_ELEMENT, val).then((res1 : dataPreferences.ValueType): void => {
+      await mPreferences!.get(KEY_TEST_LONG_ELEMENT, val).then((res1 : dataPreferences.ValueType): Promise<void> => {
         expect(val).assertEqual(res1 as Long);
         hilog.info(domain, tag, '%{public}s', TAG + "res1 = " + res1 + "get res1 succeed");
       }).catch((err : Error) => {
@@ -1353,7 +1353,7 @@ export default function preferenceTest() {
         hilog.info(domain, tag, '%{public}s', TAG + "flush failed error message = " + err);
       })
 
-      await dataPreferences.removePreferencesFromCache(context!, NAME).then((): void => {
+      await dataPreferences.removePreferencesFromCache(context!, NAME).then((): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', TAG + "remove succeed");
       }).catch((err : Error) => {
         hilog.info(domain, tag, '%{public}s', TAG + "remove failed error message = " + err);
@@ -1361,7 +1361,7 @@ export default function preferenceTest() {
 
       mPreferences = await dataPreferences.getPreferences(context!, NAME);
 
-      await mPreferences!.get(KEY_TEST_LONG_ELEMENT, val).then((res2 : dataPreferences.ValueType): void => {
+      await mPreferences!.get(KEY_TEST_LONG_ELEMENT, val).then((res2 : dataPreferences.ValueType): Promise<void> => {
         expect(val).assertEqual(res2 as Long);
         hilog.info(domain, tag, '%{public}s', TAG + "res2 = " + res2 + "get res2 succeed. test0300end");
         done();
@@ -1391,7 +1391,7 @@ export default function preferenceTest() {
         hilog.info(domain, tag, '%{public}s', TAG + "put failed error message = " + err);
       })
 
-      await mPreferences!.get(KEY_TEST_FLOAT_ELEMENT, val).then((res1 : dataPreferences.ValueType): void => {
+      await mPreferences!.get(KEY_TEST_FLOAT_ELEMENT, val).then((res1 : dataPreferences.ValueType): Promise<void> => {
         expect(val).assertEqual(res1 as Double);
         hilog.info(domain, tag, '%{public}s', TAG + "res1 = " + res1 + "get res1 succeed");
       }).catch((err : Error) => {
@@ -1404,7 +1404,7 @@ export default function preferenceTest() {
         hilog.info(domain, tag, '%{public}s', TAG + "flush failed error message = " + err);
       })
 
-      await dataPreferences.removePreferencesFromCache(context!, NAME).then((): void => {
+      await dataPreferences.removePreferencesFromCache(context!, NAME).then((): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', TAG + "remove succeed");
       }).catch((err : Error) => {
         hilog.info(domain, tag, '%{public}s', TAG + "remove failed error message = " + err);
@@ -1412,7 +1412,7 @@ export default function preferenceTest() {
 
       mPreferences = await dataPreferences.getPreferences(context!, NAME);
 
-      await mPreferences!.get(KEY_TEST_FLOAT_ELEMENT, val).then((res2 : dataPreferences.ValueType): void => {
+      await mPreferences!.get(KEY_TEST_FLOAT_ELEMENT, val).then((res2 : dataPreferences.ValueType): Promise<void> => {
         expect(val).assertEqual(res2 as Double);
         hilog.info(domain, tag, '%{public}s', TAG + "res2 = " + res2 + "get res2 succeed. test0300end");
         done();
@@ -1440,7 +1440,7 @@ export default function preferenceTest() {
         hilog.info(domain, tag, '%{public}s', TAG + "put failed error message = " + err);
       })
 
-      await mPreferences!.get(KEY_TEST_BOOLEAN_ELEMENT, val).then((res1 : dataPreferences.ValueType): void => {
+      await mPreferences!.get(KEY_TEST_BOOLEAN_ELEMENT, val).then((res1 : dataPreferences.ValueType): Promise<void> => {
         expect(val).assertEqual(res1);
         hilog.info(domain, tag, '%{public}s', TAG + "res1 = " + res1 + "get res1 succeed");
       }).catch((err : Error) => {
@@ -1453,7 +1453,7 @@ export default function preferenceTest() {
         hilog.info(domain, tag, '%{public}s', TAG + "flush failed error message = " + err);
       })
 
-      await dataPreferences.removePreferencesFromCache(context!, NAME).then((): void => {
+      await dataPreferences.removePreferencesFromCache(context!, NAME).then((): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', TAG + "remove succeed");
       }).catch((err : Error) => {
         hilog.info(domain, tag, '%{public}s', TAG + "remove failed error message = " + err);
@@ -1461,7 +1461,7 @@ export default function preferenceTest() {
 
       mPreferences = await dataPreferences.getPreferences(context!, NAME);
 
-      await mPreferences!.get(KEY_TEST_BOOLEAN_ELEMENT, val).then((res2 : dataPreferences.ValueType): void => {
+      await mPreferences!.get(KEY_TEST_BOOLEAN_ELEMENT, val).then((res2 : dataPreferences.ValueType): Promise<void> => {
         expect(val).assertEqual(res2);
         hilog.info(domain, tag, '%{public}s', TAG + "res2 = " + res2 + "get res2 succeed. test0300end");
         done();
@@ -1488,7 +1488,7 @@ export default function preferenceTest() {
         hilog.info(domain, tag, '%{public}s', TAG + "put failed error message = " + err);
       })
 
-      await mPreferences!.get(KEY_TEST_STRING_ELEMENT, val).then((res1 : dataPreferences.ValueType): void => {
+      await mPreferences!.get(KEY_TEST_STRING_ELEMENT, val).then((res1 : dataPreferences.ValueType): Promise<void> => {
         expect(val).assertEqual(res1);
         hilog.info(domain, tag, '%{public}s', TAG + "res1 = " + res1 + "get res1 succeed");
       }).catch((err : Error) => {
@@ -1501,7 +1501,7 @@ export default function preferenceTest() {
         hilog.info(domain, tag, '%{public}s', TAG + "flush failed error message = " + err);
       })
 
-      await dataPreferences.removePreferencesFromCache(context!, NAME).then((): void => {
+      await dataPreferences.removePreferencesFromCache(context!, NAME).then((): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', TAG + "remove succeed");
       }).catch((err : Error) => {
         hilog.info(domain, tag, '%{public}s', TAG + "remove failed error message = " + err);
@@ -1509,7 +1509,7 @@ export default function preferenceTest() {
 
       mPreferences = await dataPreferences.getPreferences(context!, NAME);
 
-      await mPreferences!.get(KEY_TEST_STRING_ELEMENT, val).then((res2 : dataPreferences.ValueType): void => {
+      await mPreferences!.get(KEY_TEST_STRING_ELEMENT, val).then((res2 : dataPreferences.ValueType): Promise<void> => {
         expect(val).assertEqual(res2);
         hilog.info(domain, tag, '%{public}s', TAG + "res2 = " + res2 + "get res2 succeed. test0300end");
         done();
@@ -1572,7 +1572,6 @@ export default function preferenceTest() {
         await mPreferences!.flush();
         await Utils.msSleep(100);
       } catch (err) {
-        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', "clear err =" + err + ", code =" + err.code + ", message =" + err.message);
         expect('401').assertEqual(err.code);
       } finally {
@@ -1631,7 +1630,7 @@ export default function preferenceTest() {
       let perf: dataPreferences.Preferences | null = await dataPreferences.getPreferences(context!, NAME);
       perf = null;
       const promise = dataPreferences.removePreferencesFromCache(context!, NAME);
-      await promise.then((): void => {
+      await promise.then((): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', `removePreferencesFromCache successfully.`);
       }).catch((err : Error) => {
         hilog.info(domain, tag, '%{public}s', "removePreferencesFromCache err =" + err);
@@ -1651,7 +1650,7 @@ export default function preferenceTest() {
       let perf: dataPreferences.Preferences | null = await dataPreferences.getPreferences(context!, NAME);
       perf = null;
       const promise = dataPreferences.deletePreferences(context!, NAME);
-      await promise.then((): void => {
+      await promise.then((): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', `deletePreferences successfully.`);
       }).catch((err : Error) => {
         hilog.info(domain, tag, '%{public}s', "deletePreferences err " + err);
@@ -1775,7 +1774,7 @@ export default function preferenceTest() {
         await mPreferences!.flush();
         const stringArr = new Array<string>('1', '2', '3');
         await mPreferences!.put(KEY_TEST_STRING_ARRAY_ELEMENT, stringArr);
-        await mPreferences!.get(KEY_TEST_STRING_ARRAY_ELEMENT, ['123', '321'] as Array<string>).then((pre : dataPreferences.ValueType): void => {
+        await mPreferences!.get(KEY_TEST_STRING_ARRAY_ELEMENT, ['123', '321'] as Array<string>).then((pre : dataPreferences.ValueType): Promise<void> => {
           let preTemp = pre as Array<string>;
           for (let i = 0; i < stringArr.length; i++) {
             expect(stringArr[i]).assertEqual(preTemp[i]);

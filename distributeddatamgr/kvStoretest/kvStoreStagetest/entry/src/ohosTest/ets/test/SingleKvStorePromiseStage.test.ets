@@ -2961,7 +2961,7 @@ export default function singleKvStorePromiseStageTest(){
       });
       await getInsertEntries.then(function(insertEntries){
         console.info('testSingleKvStoreChangeNotification101 getInsertEntries' + JSON.stringify(insertEntries));
-        expect(insertEntries).not().assertNull();;
+        expect(insertEntries).assertNotNull();
         done();
       }).catch((error) => {
         console.info('testSingleKvStoreChangeNotification101 can NOT getInsertEntries, fail:' + error);

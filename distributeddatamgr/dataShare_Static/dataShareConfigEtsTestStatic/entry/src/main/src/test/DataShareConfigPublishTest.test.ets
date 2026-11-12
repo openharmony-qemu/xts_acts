@@ -92,7 +92,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] publishProxyDataTest001 failed,code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -132,7 +131,6 @@ export default function dataShareConfigPublishTest() {
         })
         await g_handle!.delete(uris, g_config);
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest002 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -169,7 +167,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest003 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -203,7 +200,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest004 failed.code =" + err.code + ",message=" + err.message);
         expect(err.code).assertEqual(15700014);
       }
@@ -239,7 +235,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest005 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -275,7 +270,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest006 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -311,7 +305,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest007 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -347,7 +340,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest008 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -383,7 +375,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest009 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -419,7 +410,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest010 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -455,7 +445,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest014 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -491,7 +480,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest015 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -522,7 +510,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest016 failed.code =" + err.code + ",message=" + err.message);
         expect(err.code).assertEqual(15700014);
       }
@@ -558,7 +545,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest017 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -594,7 +580,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest018 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -630,7 +615,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest019 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -671,7 +655,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest020 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -710,7 +693,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest021 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -746,7 +728,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest022 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -782,7 +763,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest023 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -818,7 +798,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest024 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -843,7 +822,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest027 failed.code =" + err.code + ",message=" + err.message);
         expect(err.code).assertEqual(15700014);
       }
@@ -881,7 +859,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest028 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -915,7 +892,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest029 failed.code =" + err.code + ",message=" + err.message);
         expect(err.code).assertEqual(15700014);
       }
@@ -953,7 +929,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest030 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -977,7 +952,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest030 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -1021,7 +995,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest031 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -1070,7 +1043,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest032 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -1117,7 +1089,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest033 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -1157,7 +1128,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest034 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -1192,7 +1162,6 @@ export default function dataShareConfigPublishTest() {
           expect().assertFail();
         })
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest035 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -1268,7 +1237,6 @@ export default function dataShareConfigPublishTest() {
         })
 
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest036 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -1346,7 +1314,6 @@ export default function dataShareConfigPublishTest() {
         })
         await g_handle!.delete(uris, g_config);
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest037 failed,code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -1386,7 +1353,6 @@ export default function dataShareConfigPublishTest() {
         })
         await g_handle!.delete(uris, config_test);
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigPublishTest038 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }

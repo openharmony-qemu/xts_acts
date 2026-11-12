@@ -1315,7 +1315,7 @@ export default function DataObjectErrTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('DataObjectErrTest70', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void) => {
+    it('DataObjectErrTest70', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       console.info(TAG + '************ DataObjectErrTest70 start ************')
       let source: SourceObject = new SourceObject('jack', 18, false);
       let g_object: distributedDataObject.DataObject = distributedDataObject.create(context!, source);
@@ -1339,7 +1339,7 @@ export default function DataObjectErrTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('DataObjectErrTest71', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void) => {
+    it('DataObjectErrTest71', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       console.info(TAG + '************ DataObjectErrTest71 start ************')
       let source: SourceObject = new SourceObject('jack', 18, false);
       let g_object: distributedDataObject.DataObject = distributedDataObject.create(context!, source);

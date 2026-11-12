@@ -1156,7 +1156,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
             await kvStore!.getResultSet(query).then((result) => {
             console.info(TAG + ' getResultSet success, i=' + i);
             resultSets!.push(result);
-          }).catch((err:Error) => {
+          }).catch(async(err:Error) => {
             waitForCompletion(async () => {
               console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
               expect(15100001).assertEqual(err.code);

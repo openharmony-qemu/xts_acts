@@ -1,8 +1,8 @@
 'use static';
 import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium-static/src/main/indexStatic';
 import hilog from '@ohos.hilog';
-import dataRdb from '@ohos.data.relationalStore';
 import relationalStore from '@ohos.data.relationalStore';
+import dataRdb from '@ohos.data.relationalStore';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import dsPredicates from '@ohos.data.dataSharePredicates';
 import { BusinessError } from '@ohos.base';

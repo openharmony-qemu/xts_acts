@@ -232,7 +232,6 @@ export default function relationalStoreBackupRestorePromiseTest() {
           await RdbStore!.restore(dbName);
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           console.log(tag + "err:" + err.code + err.message);
           expect("14800010").assertEqual(String(err.code))
         }

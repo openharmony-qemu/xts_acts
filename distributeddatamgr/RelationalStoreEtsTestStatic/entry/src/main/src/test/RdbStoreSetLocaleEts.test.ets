@@ -118,7 +118,6 @@ export default function RdbStoreSetLocaleTest() {
                 await rdbStore!.setLocale("zh");
                 done();
             } catch (e) {
-                e = e as BusinessError;
                 console.error(`message is ${e.message}  code  ${e.code}`);
                 expect(e.code).assertEqual(14800014);
                 done();
@@ -140,7 +139,6 @@ export default function RdbStoreSetLocaleTest() {
                 await rdbStore!.setLocale("111");
                 done();
             } catch (e) {
-                e = e as BusinessError;
                 console.error(`message is ${e.message}  code  ${e.code}`);
                 expect(e.code).assertEqual(14800001);
                 done();
@@ -225,7 +223,6 @@ export default function RdbStoreSetLocaleTest() {
                 await rdbStore!.setLocale("");
                 done();
             } catch (e) {
-                e = e as BusinessError;
                 console.error(`message is ${e.message}  code  ${e.code}`);
                 expect(e.code).assertEqual(14800001);
                 done();

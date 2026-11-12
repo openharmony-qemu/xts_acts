@@ -105,7 +105,6 @@ export default function RDBErrorCode14800018() {
         rdbStore!.unlockRow(predicates);
         expect(resultSet.rowCount == 1).assertTrue()
       } catch (err) {
-        err = err as BusinessError;
         console.log(TAG + "err.code" + err.code + "err.message" + err.message)
         expect(err.code).assertEqual(14800018)
       }
