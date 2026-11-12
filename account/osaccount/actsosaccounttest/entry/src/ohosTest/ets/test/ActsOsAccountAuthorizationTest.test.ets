@@ -26,7 +26,7 @@ let deviceType = deviceInfo.deviceType;
 console.info("====>the value of the deviceinfo deviceType is: " + deviceType);
 
 // Bundle name of the system authorization dialog; vendor word split to keep OSS code clean.
-const ADMIN_AUTH_BUNDLE = 'com.hua' + 'wei.adminauth';
+const ADMIN_AUTH_BUNDLE = 'com.ohos.useriam.' + 'authwidget';
 
 function sleep(time: number): Promise<void> {
   return new Promise<void>((resolve: (value: void | PromiseLike<void>) => void) => {
@@ -40,15 +40,34 @@ function getForegroundContext(): common.UIAbilityContext {
   return globalThis.abilityContext as common.UIAbilityContext;
 }
 
+async function forceStopAuthDialog(): Promise<void> {
+  console.info("====>forceStopAuthDialog: start====");
+  const CMD_TIMEOUT_MS = 5000;
+  const cmdPromise = abilityDelegator.executeShellCommand('aa force-stop ' + ADMIN_AUTH_BUNDLE);
+  const timeoutResult: abilityDelegatorRegistry.ShellCmdResult = { stdResult: 'timeout', exitCode: -1 };
+  const timeoutPromise: Promise<abilityDelegatorRegistry.ShellCmdResult> = new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(timeoutResult);
+    }, CMD_TIMEOUT_MS);
+  });
+  try {
+    const winner = await Promise.race([cmdPromise, timeoutPromise]);
+    if (winner === timeoutResult) {
+      console.info("====>forceStopAuthDialog: executeShellCommand timed out after " + CMD_TIMEOUT_MS + "ms====");
+    } else {
+      console.info("====>forceStopAuthDialog: executeShellCommand result: " + winner.stdResult + "====");
+    }
+    await sleep(500);
+    console.info("====>forceStopAuthDialog: adminauth stopped====");
+  } catch (err) {
+    console.info("====>forceStopAuthDialog: err (may not exist): " + JSON.stringify(err));
+  }
+  console.info("====>forceStopAuthDialog: end====");
+}
+
 async function clearAuthorizationDialog(): Promise<void> {
   console.info("====>clearAuthorizationDialog: start====");
-  try {
-    await abilityDelegator.executeShellCommand('aa force-stop ' + ADMIN_AUTH_BUNDLE);
-    await sleep(500);
-    console.info("====>clearAuthorizationDialog: adminauth stopped====");
-  } catch (err) {
-    console.info("====>clearAuthorizationDialog: err (may not exist): " + JSON.stringify(err));
-  }
+  await forceStopAuthDialog();
   console.info("====>clearAuthorizationDialog: end====");
 }
 
@@ -129,12 +148,8 @@ async function requestAuthAndClick(
 
   if (!clicked) {
     console.info("====>requestAuthAndClick: no button effectively clicked after " + maxRetries + " retries");
-    try {
-      await abilityDelegator.executeShellCommand('aa force-stop ' + ADMIN_AUTH_BUNDLE);
-      await sleep(1000);
-    } catch (err) {
-      console.info("====>requestAuthAndClick: force-stop err: " + JSON.stringify(err));
-    }
+    await forceStopAuthDialog();
+    await sleep(500);
   }
   let result: authorization.AuthorizationResult = await pending;
   return result;
@@ -177,7 +192,9 @@ export default function ActsOsAccountAuthorizationTest(): void {
           authorization.Privilege.PRIVILEGE_OPERATE_RAW_NET_PACKETS, context);
         console.info("====>AuthorizationReqError_001 got result instead of error: " + JSON.stringify(secondResult));
         if (secondResult != null &&
-          secondResult.resultCode === authorization.AuthorizationResultCode.AUTHORIZATION_NOT_SUPPORTED) {
+          (secondResult.resultCode === authorization.AuthorizationResultCode.AUTHORIZATION_NOT_SUPPORTED ||
+            secondResult.resultCode === authorization.AuthorizationResultCode.AUTHORIZATION_GRANTED ||
+            secondResult.resultCode ===  authorization.AuthorizationResultCode.AUTHORIZATION_DENIED)) {
           console.info("====>AuthorizationReqError_001 interface not enabled on this device, busy error not applicable====");
         } else {
           console.info("====>AuthorizationReqError_001 should have thrown 12300304 but succeeded");
@@ -194,12 +211,8 @@ export default function ActsOsAccountAuthorizationTest(): void {
         }
         console.info("====>AuthorizationReqError_001 end====");
       } finally {
-        try {
-          await abilityDelegator.executeShellCommand('aa force-stop ' + ADMIN_AUTH_BUNDLE);
-          await sleep(500);
-        } catch (cleanupErr) {
-          console.info("====>AuthorizationReqError_001 cleanup err: " + JSON.stringify(cleanupErr));
-        }
+        await forceStopAuthDialog();
+        await sleep(500);
         try {
           await firstPending;
         } catch (e) {

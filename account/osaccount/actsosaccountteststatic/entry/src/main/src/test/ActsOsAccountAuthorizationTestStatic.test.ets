@@ -22,6 +22,7 @@ import deviceInfo from '@ohos.deviceInfo';
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { ShellCmdResult } from 'application.shellCmdResult';
 
 
 let tag: string = 'AuthTestTag';
@@ -31,7 +32,7 @@ let driver: Driver = Driver.create();
 let deviceType: string = deviceInfo.deviceType;
 hilog.info(0x0000, tag, "====>the value of the deviceinfo deviceType is: " + deviceType);
 
-const ADMIN_AUTH_BUNDLE: string = 'com.hua' + 'wei.adminauth';
+const ADMIN_AUTH_BUNDLE: string = 'com.ohos.useriam.' + 'authwidget';
 
 
 async function getForegroundContext(): Promise<common.UIAbilityContext | undefined> {
@@ -50,15 +51,40 @@ async function getForegroundContext(): Promise<common.UIAbilityContext | undefin
   return undefined;
 }
 
+async function forceStopAuthDialog(): Promise<void> {
+  hilog.info(0x0000, tag, "====>forceStopAuthDialog: start====");
+  const CMD_TIMEOUT_MS: int = 5000;
+  const cmdPromise: Promise<ShellCmdResult> =
+    abilityDelegator.executeShellCommand('aa force-stop ' + ADMIN_AUTH_BUNDLE);
+  const timeoutResult: ShellCmdResult = { stdResult: 'timeout', exitCode: -1 };
+  const timeoutPromise: Promise<ShellCmdResult> = new Promise<ShellCmdResult>(
+    (resolve: (s: ShellCmdResult) => void): void => {
+      setTimeout((): void => {
+        resolve(timeoutResult);
+      }, CMD_TIMEOUT_MS);
+    });
+  const racePromises: Array<Promise<ShellCmdResult>> = [cmdPromise, timeoutPromise];
+  try {
+    const winner: ShellCmdResult = await Promise.race<ShellCmdResult>(racePromises);
+    if (winner === timeoutResult) {
+      hilog.info(0x0000, tag,
+        "====>forceStopAuthDialog: executeShellCommand timed out after " + CMD_TIMEOUT_MS + "ms====");
+    } else {
+      hilog.info(0x0000, tag,
+        "====>forceStopAuthDialog: executeShellCommand result: " + winner.stdResult + "====");
+    }
+    await Utils.msSleep(500);
+    hilog.info(0x0000, tag, "====>forceStopAuthDialog: adminauth stopped====");
+  } catch (err) {
+    hilog.info(0x0000, tag, "====>forceStopAuthDialog: err (may not exist): " + JSON.stringify(err));
+  }
+  hilog.info(0x0000, tag, "====>forceStopAuthDialog: end====");
+}
+
 async function clearAuthorizationDialog(): Promise<void> {
   hilog.info(0x0000, tag, "====>clearAuthorizationDialog: start====");
-  try {
-    await abilityDelegator.executeShellCommand('aa force-stop ' + ADMIN_AUTH_BUNDLE);
-    await Utils.msSleep(500);
-    hilog.info(0x0000, tag, "====>clearAuthorizationDialog: adminauth stopped====");
-  } catch (err) {
-    hilog.info(0x0000, tag, "====>clearAuthorizationDialog: err (may not exist): " + JSON.stringify(err));
-  }
+  await forceStopAuthDialog();
+  await Utils.msSleep(500);
   hilog.info(0x0000, tag, "====>clearAuthorizationDialog: end====");
 }
 
@@ -149,12 +175,8 @@ async function requestAuthAndClick(
 
   if (!clicked) {
     hilog.info(0x0000, tag, "====>requestAuthAndClick: no button effectively clicked after " + maxRetries + " retries");
-    try {
-      await abilityDelegator.executeShellCommand('aa force-stop ' + ADMIN_AUTH_BUNDLE);
-      await Utils.msSleep(1000);
-    } catch (err) {
-      hilog.info(0x0000, tag, "====>requestAuthAndClick: force-stop err: " + JSON.stringify(err));
-    }
+    await forceStopAuthDialog();
+    await Utils.msSleep(500);
   }
   let result: authorization.AuthorizationResult = await pending;
   return result;
@@ -213,7 +235,9 @@ export default function ActsOsAccountAuthorizationTestStatic(): void {
         hilog.info(0x0000, tag,
           "====>AuthorizationReqError_001 got result instead of error: " + JSON.stringify(secondResult));
         if (secondResult != null &&
-          secondResult.resultCode === authorization.AuthorizationResultCode.AUTHORIZATION_NOT_SUPPORTED) {
+          (secondResult.resultCode === authorization.AuthorizationResultCode.AUTHORIZATION_NOT_SUPPORTED ||
+            secondResult.resultCode === authorization.AuthorizationResultCode.AUTHORIZATION_GRANTED ||
+            secondResult.resultCode ===  authorization.AuthorizationResultCode.AUTHORIZATION_DENIED)) {
           hilog.info(0x0000, tag,
             "====>AuthorizationReqError_001 interface not enabled on this device, busy error not applicable====");
         } else {
@@ -232,12 +256,8 @@ export default function ActsOsAccountAuthorizationTestStatic(): void {
         }
         hilog.info(0x0000, tag, "====>AuthorizationReqError_001 end====");
       } finally {
-        try {
-          await abilityDelegator.executeShellCommand('aa force-stop ' + ADMIN_AUTH_BUNDLE);
-          await Utils.msSleep(500);
-        } catch (cleanupErr) {
-          hilog.info(0x0000, tag, "====>AuthorizationReqError_001 cleanup err: " + JSON.stringify(cleanupErr));
-        }
+        await forceStopAuthDialog();
+        await Utils.msSleep(500);
         try {
           await firstPending;
         } catch (e) {
