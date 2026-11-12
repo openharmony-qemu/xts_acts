@@ -359,18 +359,20 @@ export default function objectStoreTestV9() {
         await sleep(2000);
         expect("mySession1" == g_object["__sessionId"]).assertEqual(true);
         g_object.save("local").then((ret: distributedObject.SaveSuccessResponse) => {
-          expect(ret.sessionId == "mySession1").assertEqual(true);
-          expect(ret.version == g_object["__version"]).assertEqual(true);
-          expect(ret.deviceId == "local").assertEqual(true);
-          await g_object.setSessionId("");
-          g_object["name"] = "Tom";
-          g_object["age"] = 17.0;
-          g_object["isVis"] = true;
-          await g_object.setSessionId("mySession1");
-          expect(g_object["name"] == "Tom").assertEqual(true);
-          expect(g_object["age"] == 17.0).assertEqual(true);
-          expect(g_object["isVis"] == true).assertEqual(true);
-          done();
+          waitForCompletion(async () => {
+            expect(ret.sessionId == "mySession1").assertEqual(true);
+            expect(ret.version == g_object["__version"]).assertEqual(true);
+            expect(ret.deviceId == "local").assertEqual(true);
+            await g_object.setSessionId("");
+            g_object["name"] = "Tom";
+            g_object["age"] = 17.0;
+            g_object["isVis"] = true;
+            await g_object.setSessionId("mySession1");
+            expect(g_object["name"] == "Tom").assertEqual(true);
+            expect(g_object["age"] == 17.0).assertEqual(true);
+            expect(g_object["isVis"] == true).assertEqual(true);
+            done();
+          });
         }).catch((err: Error) => {
           console.info('testV9Save001 err ' + `, error code is ${err.code}, message is ${err.message}`);
           expect().assertFail();
