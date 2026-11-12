@@ -5,7 +5,8 @@
         "test-timeout": "180000",
         "shell-timeout": "600000",
         "bundle-name": "com.acts.setabilityinstanceinfonopermission.static",
-        "module-name": "entry"
+        "module-name": "entry",
+        "testcase-timeout": 30000
     },
     "kits": [
         {
