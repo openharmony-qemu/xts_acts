@@ -48,6 +48,42 @@
     "requestPermissions": [
       {
         "name": "ohos.permission.CLEAN_BACKGROUND_PROCESSES"
+      },
+      {
+        "name": "ohos.permission.GET_CALL_TRANSFER_INFO",
+        "reason": "$string:get_call_transfer_info_permission_reason",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "inuse"
+        }
+      },
+      {
+        "name": "ohos.permission.ANSWER_CALL",
+        "reason": "$string:answer_call_permission_reason",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "inuse"
+        }
+      },
+      {
+        "name": "ohos.permission.MANAGE_CALL_FOR_DEVICES"
+      },
+      {
+        "name": "ohos.permission.SET_TELEPHONY_STATE"
+      },
+      {
+        "name": "ohos.permission.DIRECT_CALL",
+        "reason": "$string:direct_call_permission_reason",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "inuse"
+        }
       }
     ]
   }

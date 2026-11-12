@@ -36,6 +36,8 @@ group("telephone") {
     "ActsTelephonySmsWithCardTestStatic:ActsTelephonySmsWithCardStaticTest",
     "ActsTelephonyVCardNoPermissionTestStatic:ActsTelephonyVCardNoPermissionStaticTest",
     "ActsTelephonyCallHasCardTestStatic:ActsTelephonyCallHasCardStaticTest",
+    "ActsTelephonyCallNoCardTestStatic:ActsTelephonyCallNoCardStaticTest",
+    "ActsTelephonyCallNoPermissionTestStatic:ActsTelephonyCallNoPermissionStaticTest",
     "ActsTelephonyEsimTestStatic:ActsTelephonyEsimStaticTest",
     "ActsTelephonyEsimTestWithoutPermissionStatic:ActsTelephonyEsimWithoutPermissionStaticTest",
     "ActsRadioWithoutPermissionTestStatic:ActsRadioWithoutPermissionStaticTest",

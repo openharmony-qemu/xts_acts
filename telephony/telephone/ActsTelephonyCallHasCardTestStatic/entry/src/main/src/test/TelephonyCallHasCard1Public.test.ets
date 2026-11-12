@@ -61,7 +61,7 @@ const CALL_NUMBER = '10086';
 
 async function getPermissions() {
   console.info('getPermission start');
-  let list: Array<string> = ['ohos.permission.ANSWER_CALL', 'ohos.permission.WRITE_CALL_LOG', 'ohos.permission.READ_CALL_LOG'];
+  let list: string[] = ['ohos.permission.ANSWER_CALL', 'ohos.permission.WRITE_CALL_LOG', 'ohos.permission.READ_CALL_LOG'];
   try {
     let userId: int = await account.getAccountManager().getOsAccountLocalId();
     let applicationFlags: int = bundleManager.ApplicationFlag.GET_APPLICATION_INFO_DEFAULT;

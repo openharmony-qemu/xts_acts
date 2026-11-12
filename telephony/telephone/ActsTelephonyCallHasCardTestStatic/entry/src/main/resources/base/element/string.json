@@ -11,6 +11,18 @@
     {
       "name": "EntryAbility_label",
       "value": "label"
+    },
+    {
+      "name": "direct_call_permission_reason",
+      "value": "direct call permission for test"
+    },
+    {
+      "name": "get_call_transfer_info_permission_reason",
+      "value": "get call transfer info permission for test"
+    },
+    {
+      "name": "answer_call_permission_reason",
+      "value": "answer call permission for test"
     }
   ]
 }
