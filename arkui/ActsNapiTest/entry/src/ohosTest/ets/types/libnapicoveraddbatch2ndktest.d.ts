@@ -72,8 +72,8 @@ declare module 'libnapicoveraddbatch2ndktest.so' {
     getValueExternalAfterFinalizeReturnsError: () => number;
     // ===== napi_get_value_external finalize场景 =====
     createExternalForFinalizeTest: () => object;
-    getExternalDataAfterFinalize: (extObj: object) => number;
-    cleanupExternalForFinalizeTest: (extObj: object) => number;
+    getExternalDataAfterFinalize: () => number;
+    cleanupExternalForFinalizeTest: () => number;
     // ===== napi_get_value_external 第三轮补充 =====
     getValueExternalBooleanReturnsError: () => number;
     getValueExternalNullTypeReturnsError: () => number;
