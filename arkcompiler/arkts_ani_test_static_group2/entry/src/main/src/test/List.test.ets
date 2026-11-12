@@ -23,6 +23,7 @@ import fixedArrayTest from "./ActsFixedArray.test"
 import valueArrayTest from "./ActsValueArray.test"
 import promiseTest from "./ActsPromise.test"
 import weakGlobalReferencesTest from "./ActsWeakGlobalReferences.test"
+import tupleOperationsTest from "./ActsTupleOperations.test"
 
 export default function testsuite(): void {
     moduleSupportTest();
@@ -34,4 +35,5 @@ export default function testsuite(): void {
     promiseTest();
     exceptionTest();
     weakGlobalReferencesTest();
+    tupleOperationsTest();
 }
