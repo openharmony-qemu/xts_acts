@@ -81,6 +81,7 @@ async function getPermissions(): Promise<void> {
   }
   await Utils.msSleep(2000);
   await Utils.clickRequestPermission('允许');
+  await Utils.msSleep(3000);
   hilog.info(domain, tag, '%{public}s', 'getPermission end');
 }
 

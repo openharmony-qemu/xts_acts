@@ -75,6 +75,7 @@ async function getPermissions(): Promise<void> {
   }
   await Utils.msSleep(2000);
   await Utils.clickRequestPermission('允许');
+  await Utils.msSleep(3000);
   hilog.info(domain, tag, '%{public}s', 'getPermission end');
 }
 
@@ -89,6 +90,7 @@ export default function TelephonyCallNoCardTest() {
     afterAll(async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'afterAll start');
       await Utils.clickRequestPermission('取消');
+      await Utils.clickRequestPermission('知道了');
       hilog.info(domain, tag, '%{public}s', 'afterAll end');
       done();
     });
