@@ -308,7 +308,11 @@ static napi_value OhCheckAvTransCoderComplete(napi_env env, napi_callback_info i
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     void *ptr = nullptr;
-    napi_get_value_external(env, args[0], &ptr);
+    napi_status status = napi_get_value_external(env, args[0], &ptr);
+    if (status != napi_ok || ptr == nullptr) {
+        LOGE("OhCheckAvTransCoderComplete, userData is nullptr, Prepare may have failed synchronously");
+        napi_create_int32(env, backParam, &result);
+    }
     NdkAVTransCoderUser *transcoderUser = reinterpret_cast<NdkAVTransCoderUser *>(ptr);
     if (AVTRANSCODER_COMPLETED == transcoderUser->transCoderState) {
         LOGE("OhCheckAvTransCoderComplete transCoderState is AVTRANSCODER_COMPLETED");
@@ -1053,7 +1057,11 @@ static napi_value OhCheckAvTransCoderCallBackError(napi_env env, napi_callback_i
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     void *ptr = nullptr;
-    napi_get_value_external(env, args[0], &ptr);
+    napi_status status = napi_get_value_external(env, args[0], &ptr);
+    if (status != napi_ok || ptr == nullptr) {
+        LOGE("OhCheckAvTransCoderComplete, userData is nullptr, Prepare may have failed synchronously");
+        napi_create_int32(env, backParam, &result);
+    }
     NdkAVTransCoderUser *transcoderUser = reinterpret_cast<NdkAVTransCoderUser *>(ptr);
     if (transcoderUser->callbackError != AV_ERR_UNKNOWN && transcoderUser->callbackError != AV_ERR_OK) {
         LOGE("OhCheckAvTransCoderCallBackError, error code: %{public}d", transcoderUser->callbackError);
