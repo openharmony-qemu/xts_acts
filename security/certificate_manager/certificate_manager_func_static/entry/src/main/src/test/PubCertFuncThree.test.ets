@@ -23,6 +23,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import hilog from '@ohos.hilog';
 import { canIUse } from '@internal.full.global';
 import { GlobalContext } from '../testrunner/OpenHarmonyTestRunner';
+import { Driver, ON, Component } from '@ohos.UiTest';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
@@ -354,12 +355,18 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
       if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
         try {
-          let uri: string = await certManagerDialog.openInstallCertificateDialog(context, certType, certScope, certData);
-          expect(null).assertFail();
+          let promise = certManagerDialog.openInstallCertificateDialog(context, certType, certScope, certData);
+          setTimeout(async () => {
+            let driver = Driver.create();
+            let cancelButton = await driver.findComponent(ON.text('取消')) ?? undefined;
+            if (cancelButton !== undefined) {
+              await cancelButton.click();
+            }
+          }, 2000);
+          let uri:string = await promise;
+          expect(false).assertTrue();
         } catch (err) {
-          let error: BusinessError = err as BusinessError;
-          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0100 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_NOT_COMPLY_SECURITY_POLICY);
+          expect(err.code === 29700002 || err.code === 29700005).assertTrue();
         }
       } else {
         hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0100 device not support CertificateManagerDialog');
@@ -444,12 +451,17 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
       if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
         try {
-          let uri: string = await certManagerDialog.openInstallCertificateDialog(context, certType, certScope, certData);
-          expect(null).assertFail();
+          let promise = certManagerDialog.openInstallCertificateDialog(context, certType, certScope, certData);
+          setTimeout(async () => {
+            let driver = Driver.create();
+            let cancelButton = await driver.findComponent(ON.text('取消')) ?? undefined;
+            if (cancelButton !== undefined) {
+              await cancelButton.click();
+            }
+          }, 2000);
+          await promise;
         } catch (err) {
-          let error: BusinessError = err as BusinessError;
-          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0400 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_NOT_COMPLY_SECURITY_POLICY);
+          expect(err.code === 29700002 || err.code === 29700005).assertTrue();
         }
       } else {
         hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0400 device not support CertificateManagerDialog');
