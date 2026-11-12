@@ -15,10 +15,28 @@
 
  import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from "@ohos/hypium-dynamic";
  import { media } from "@kit.MediaKit";
+ import { common } from '@kit.AbilityKit';
+ import fileio from '@ohos.fileio';
  import { LOG_TAG } from '../common';
- import { sleep, getFd, closeFd } from '../common';
+ import { sleep } from '../common';
 
  const TAG = LOG_TAG + 'MediaVideoPlayerAPITest';
+
+ async function getFdRead(pathName: string): Promise<number> {
+    let fdReturn: number = 0;
+    let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+    const path = testContext.filesDir + "/" + pathName;
+    console.log(TAG, "pathName is " + path);
+    await fileio.open(path).then((fdNumber) => {
+        fdReturn = fdNumber;
+        console.info(TAG, 'case open fd success, fd is ' + fdReturn);
+    });
+    return fdReturn;
+ }
+
+ async function closeFdNumber(fdNumber: number) {
+    await fileio.close(fdNumber);
+ }
 
  const VIDEO_SOURCE = 'H264_AAC.mp4';
  const SURFACE_ID = 'test_surface_id';
@@ -35,7 +53,7 @@
 
         beforeAll(async () => {
             console.info(TAG, 'beforeAll case');
-            fdNumber = await getFd(VIDEO_SOURCE);
+            fdNumber = await getFdRead(VIDEO_SOURCE);
             if (fdNumber) {
                 fileDescriptor = {
                     fd: fdNumber,
@@ -64,7 +82,7 @@
         afterAll(async () => {
             console.info(TAG, 'afterAll case');
             if(fdNumber){
-                await closeFd(fdNumber);
+                await closeFdNumber(fdNumber);
             }
         });
 
