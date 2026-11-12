@@ -17,6 +17,7 @@ import { describe, beforeAll, it, expect, TestType, Level, Size } from '@ohos/hy
 import Want from '@ohos.app.ability.Want';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Driver, ON, UiDirection } from '@ohos.UiTest'
+import display from '@ohos.display';
 import { PerfMetric, PerfTest, PerfTestStrategy, PerfMeasureResult } from '@ohos.test.PerfTest';
 import { BusinessError, Callback } from '@kit.BasicServicesKit';
 import { PerfUtils } from '../../../main/ets/utils/PerfUtils';
