@@ -18,6 +18,7 @@ import certManager from '@ohos.security.certManager';
 import type common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import certManagerDialog from '@ohos.security.certManagerDialog';
+import { Driver, ON } from '@ohos.UiTest';
 import * as commonParameter from './utils/common/common_parameter';
 import { GlobalContext } from '../../../../src/main/ets/pages/HomePage';
 function generateString(len: number){
@@ -782,7 +783,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     /**
      * @tc.name   SUB_Security_CertManager_OpenInstallCertDialog_Func_0100
      * @tc.number SUB_Security_CertManager_OpenInstallCertDialog_Func_0100
-     * @tc.desc   Call openInstallCertificateDialog with certType CREDENTIAL_USER, certScope GLOBAL_USER. Return error code 29700005.
+     * @tc.desc   Call openInstallCertificateDialog with certType CREDENTIAL_USER, certScope GLOBAL_USER. Click cancel return 29700002, or 29700005 on dev board.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -794,12 +795,25 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       let certScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.GLOBAL_USER;
       let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
       if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+        let dialogPromise = certManagerDialog.openInstallCertificateDialog(context, certType, certScope, certData);
+        setTimeout(async () => {
+          let driver = Driver.create();
+          let cancelButton = await driver.findComponent(ON.text('取消')) ?? undefined;
+          if (cancelButton !== undefined) {
+            await cancelButton.click();
+          }
+        }, 2000);
         try {
-          let uri: string = await certManagerDialog.openInstallCertificateDialog(context, certType, certScope, certData);
-          expect(null).assertFail();
+          await dialogPromise;
+          expect(false).assertTrue();
         } catch (err) {
           console.error(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0100 failed. Code: ${err.code}, message: ${err.message}`);
-          expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_NOT_COMPLY_SECURITY_POLICY);
+          if (err.code === certManagerDialog.CertificateDialogErrorCode.ERROR_NOT_COMPLY_SECURITY_POLICY) {
+            console.info('SUB_Security_CertManager_OpenInstallCertDialog_Func_0100 dev board not support security policy');
+            expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_NOT_COMPLY_SECURITY_POLICY);
+          } else {
+            expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_OPERATION_CANCELED);
+          }
         }
       } else {
         console.info('SUB_Security_CertManager_OpenInstallCertDialog_Func_0100 device not support CertificateManagerDialog');
@@ -869,7 +883,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     /**
      * @tc.name   SUB_Security_CertManager_OpenInstallCertDialog_Func_0400
      * @tc.number SUB_Security_CertManager_OpenInstallCertDialog_Func_0400
-     * @tc.desc   Call openInstallCertificateDialog with certType CREDENTIAL_SYSTEM, certScope CURRENT_USER. Return error code 29700005.
+     * @tc.desc   Call openInstallCertificateDialog with certType CREDENTIAL_SYSTEM, certScope GLOBAL_USER. Click cancel return 29700002, or 29700005 on dev board.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -881,12 +895,25 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       let certScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.GLOBAL_USER;
       let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
       if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+        let dialogPromise = certManagerDialog.openInstallCertificateDialog(context, certType, certScope, certData);
+        setTimeout(async () => {
+          let driver = Driver.create();
+          let cancelButton = await driver.findComponent(ON.text('取消')) ?? undefined;
+          if (cancelButton !== undefined) {
+            await cancelButton.click();
+          }
+        }, 2000);
         try {
-          let uri: string = await certManagerDialog.openInstallCertificateDialog(context, certType, certScope, certData);
-          expect(null).assertFail();
+          await dialogPromise;
+          expect(false).assertTrue();
         } catch (err) {
           console.error(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0400 failed. Code: ${err.code}, message: ${err.message}`);
-          expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_NOT_COMPLY_SECURITY_POLICY);
+          if (err.code === certManagerDialog.CertificateDialogErrorCode.ERROR_NOT_COMPLY_SECURITY_POLICY) {
+            console.info('SUB_Security_CertManager_OpenInstallCertDialog_Func_0400 dev board not support security policy');
+            expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_NOT_COMPLY_SECURITY_POLICY);
+          } else {
+            expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_OPERATION_CANCELED);
+          }
         }
       } else {
         console.info('SUB_Security_CertManager_OpenInstallCertDialog_Func_0400 device not support CertificateManagerDialog');

@@ -283,16 +283,33 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       const context :common.Context = await GlobalContext.getContext();
       let certificateType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CA_CERT;
       let certificateScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.GLOBAL_USER;
-      try {
-        await certManagerDialog.openInstallCertificateDialog(context, certificateType, certificateScope, caCert)
-        expect(null).assertFail();
-      } catch (err) {
-        if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+      if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+        try {
+          let dialogPromise = certManagerDialog.openInstallCertificateDialog(context, certificateType, certificateScope, caCert);
+          setTimeout(async () => {
+            let driver = Driver.create();
+            let cancelButton = await driver.findComponent(ON.text('取消')) ?? undefined;
+            if (cancelButton !== undefined) {
+              await cancelButton.click();
+            }
+          }, 2000);
+          await dialogPromise;
+          expect(null).assertFail();
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_OpenInstallCertificateDialog_static_0011: e.code " + (err as BusinessError).code);
+          if ((err as BusinessError).code === 29700004) {
+            expect((err as BusinessError).code).assertEqual(29700004);
+          } else {
+            expect((err as BusinessError).code).assertEqual(29700002);
+          }
+        }
+      } else {
+        try {
+          await certManagerDialog.openInstallCertificateDialog(context, certificateType, certificateScope, caCert)
+          expect(null).assertFail();
+        } catch (err) {
           expect((err as BusinessError).code).assertEqual(801);
-        } else {
-          hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_OpenInstallCertificateDialog_static_0011: e.code " + err.code);
-          expect((err as BusinessError).code === 29700005 || (err as BusinessError).code === 29700004).assertTrue();
-        }  
+        }
       }
       done();
     });

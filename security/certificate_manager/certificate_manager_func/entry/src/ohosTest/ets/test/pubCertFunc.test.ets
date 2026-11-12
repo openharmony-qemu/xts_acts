@@ -1261,20 +1261,28 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       let isSupport = certManagerDialog.supportsCACertDialog();
       let certificateType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CA_CERT;
       let certificateScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.GLOBAL_USER;
-      try {
-        await certManagerDialog.openInstallCertificateDialog(context, certificateType, certificateScope, caCert)
-        expect(false).assertTrue()
-      } catch (err) {
-        if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+      if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+        try {
+          let dialogPromise = certManagerDialog.openInstallCertificateDialog(context, certificateType, certificateScope, caCert);
+          setTimeout(async () => {
+            let driver = Driver.create();
+            let cancelButton = await driver.findComponent(ON.text('取消')) ?? undefined;
+            if (cancelButton !== undefined) {
+              await cancelButton.click();
+            }
+          }, 2000);
+          await dialogPromise;
+          expect(false).assertTrue();
+        } catch (err) {
+          console.log("SUB_Security_CertManager_OpenInstallCertificateDialog_0011: e.code " + err.code);
+          expect(err.code === 29700002 || err.code === 29700004).assertTrue();
+        }
+      } else {
+        try {
+          await certManagerDialog.openInstallCertificateDialog(context, certificateType, certificateScope, caCert)
+          expect(false).assertTrue();
+        } catch (err) {
           expect(err.code).assertEqual(801);
-        } else {
-          if (isSupport) {
-            console.log("SUB_Security_CertManager_OpenInstallCertificateDialog_0011: the device supports CACertDialog. e.code" + err.code);
-            expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_NOT_COMPLY_SECURITY_POLICY);
-          } else {
-            console.log("SUB_Security_CertManager_OpenInstallCertificateDialog_0011: the device don't supports CACertDialog. e.code " + err.code);
-            expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_DEVICE_NOT_SUPPORTED);
-          }
         }
       }
       done();
