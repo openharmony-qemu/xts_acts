@@ -694,15 +694,23 @@ export default function NapiCoverAddBatch2LifecycleTest() {
      * @tc.level  LEVEL3
      */
     it('testGetValueExternalAfterFinalizeReturnsError0051',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const caseName = 'testGetValueExternalAfterFinalizeReturnsError0051';
       console.info(caseName + ' start');
       let extObj: object | null = napicoveraddbatch2ndktest.createExternalForFinalizeTest() as object | null;
       expect(extObj !== null && extObj !== undefined).assertTrue();
-      forceFullGC();
-      let result: number = napicoveraddbatch2ndktest.getExternalDataAfterFinalize(extObj) as number;
+      extObj = null;
+      let result: number = 0;
+      for (let i = 0; i < 30; i++) {
+        forceFullGC();
+        await Utils.sleep(100);
+        result = napicoveraddbatch2ndktest.getExternalDataAfterFinalize() as number;
+        if (result === 1) {
+          break;
+        }
+      }
       expect(result).assertEqual(1);
-      napicoveraddbatch2ndktest.cleanupExternalForFinalizeTest(extObj);
+      napicoveraddbatch2ndktest.cleanupExternalForFinalizeTest();
       console.info(caseName + ' end');
     });
 

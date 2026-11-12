@@ -249,7 +249,6 @@ __attribute__((optnone)) static napi_value WildFree(napi_env env, napi_callback_
 {
     char *x = (char*)malloc(NUMTEN * sizeof(char));
     memset_s(x, NUMTEN * sizeof(char), 0, NUMTEN * sizeof(char));
-    int res = x[NUMTEN];
     free(x + NUMFIVE);
     std::string bufferLog = GetBuffer(getpid());
     bool findAsanLog = CheckAsanLog("AddressSanitizer: attempting free on address which was not malloc()", bufferLog) &&
