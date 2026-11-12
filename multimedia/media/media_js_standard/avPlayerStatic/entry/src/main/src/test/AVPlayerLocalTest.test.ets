@@ -754,45 +754,79 @@ async function testSetMediaMuted(src: media.AVFileDescriptor, avPlayer: media.AV
 
 function getPlaybackPosition(avPlayer: media.AVPlayer | null, done: () => void) {
   let playbackPosition: number = -1;
-  const stateChangeCallback = (state: media.AVPlayerState) => {
+  let pauseTimer: int = -1;
+  let finished: boolean = false;
+  let doneCalled: boolean = false;
+
+  const finishOnce = () => {
+    if(doneCalled){
+      return;
+    }
+    doneCalled = true;
+    done();
+  }
+
+  let stateChangeCallback: (state: media.AVPlayerState) => void;
+  stateChangeCallback = (state: media.AVPlayerState) => {
     switch (state) {
       case INITIALIZED:
         if (!avPlayer) {
           console.info(`avPlayer is null`);
           break;
         }
-        avPlayer!!.prepare()
+        avPlayer!!.prepare().catch(mediaTestBase.catchCallback);
         break;
       case PREPARED:
-        avPlayer?.play()
+        avPlayer?.play().catch(mediaTestBase.catchCallback);
         break;
       case PLAYING:
-        setTimeout(() => {
-          avPlayer?.pause()
+        if (finished) { break; }
+        pauseTimer = setTimeout(() => {
+          pauseTimer = -1;
+          if(!finished && avPlayer?.state ===PLAYING){
+            avPlayer!!.pause().catch(mediaTestBase.catchCallback);
+          }  
         }, 500)
         break;
       case PAUSED:
-        if (!avPlayer) {
-          console.info(`avPlayer is null`);
-          break;
-        }
-        avPlayer?.play()
+        if (!avPlayer) { console.info(`avPlayer is null`); break; }
+        avPlayer!!.play().catch(mediaTestBase.catchCallback);
         playbackPosition = avPlayer!!.getPlaybackPosition().toDouble();
         console.info(`AVPlayer getPlaybackPosition == ${playbackPosition} ms`);
         expect(playbackPosition).assertLargerOrEqual(0 as number);
         break;
       case COMPLETED:
-        avPlayer?.release()
+        finished = true;
+        if (pauseTimer !== -1) { clearTimeout(pauseTimer); pauseTimer = -1; }
+        const releasingPlayer = avPlayer;
+        avPlayer = null;
+        setTimeout(() => {
+          if(releasingPlayer){
+            releasingPlayer.offStateChange(stateChangeCallback);
+            releasingPlayer.release().then(() => {
+              finishOnce();
+            }).catch((err: ERROR) => {
+              mediaTestBase.catchCallback(err);
+              finishOnce();
+            });
+          } else {
+            finishOnce();
+          }
+        }, 0);
         break;
       case RELEASED:
+        finished = true;
         avPlayer = null;
+        finishOnce();
         done();
         break;
       case ERROR:
+        finished = true;
+        if (pauseTimer !== -1) { clearTimeout(pauseTimer); pauseTimer = -1; }
         expect().assertFail();
-        avPlayer?.release().then(() => {
-        }).catch(mediaTestBase.catchCallback);
+        avPlayer?.release().catch(mediaTestBase.catchCallback);
         avPlayer = null;
+        finishOnce();
         break;
       default:
         break;
