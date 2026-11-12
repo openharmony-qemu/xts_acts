@@ -376,8 +376,9 @@ export default function ActsNotificationAnsReduceAlertsTest() {
      */
     it('SUB_Notification_Ans_Reduce_alerts_0200', Level.LEVEL2, async (done: Function) => {
       let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_0200'
+      let context: common.UIAbilityContext = getContext(la) as common.UIAbilityContext;
       try {
-        await notificationManager.openNotificationSettings(la).then(async () => {
+        await notificationManager.openNotificationSettings(context).then(async () => {
           console.info(TEST_SUITE_NAME + TAG + `openNotificationSettings succeeded`);
           // 打开设置页成功才执行 UI 流程与发布验证；失败(801)时直接走 .catch 结束用例，
           // 避免 done() 后僵尸代码污染下一个用例(currentRunningSpec)。
@@ -1301,8 +1302,9 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         cmd += ' -u ' + user;
       }
       abilityDelegator.executeShellCommand(cmd)
+      let context: common.UIAbilityContext = getContext(la) as common.UIAbilityContext;
       await sleep(3000)
-      await notificationManager.openNotificationSettings(la).then(async () => {
+      await notificationManager.openNotificationSettings(context).then(async () => {
         console.info(TEST_SUITE_NAME + TAG + `openNotificationSettings succeeded`);
         let driver: Driver = Driver.create();
         await sleep(1500)
@@ -1464,8 +1466,9 @@ export default function ActsNotificationAnsReduceAlertsTest() {
     it('SUB_Notification_Ans_Reduce_alerts_1700', Level.LEVEL3, async (done: Function) => {
       let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_1700'
       await notificationManager.cancelAll()
+      let context: common.UIAbilityContext = getContext(la) as common.UIAbilityContext;
       await sleep(1000)
-      await notificationManager.openNotificationSettings(la).then(async () => {
+      await notificationManager.openNotificationSettings(context).then(async () => {
         console.info(TEST_SUITE_NAME + TAG + `openNotificationSettings succeeded`);
         let driver: Driver = Driver.create();
         await sleep(1500)
