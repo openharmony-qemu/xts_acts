@@ -33,8 +33,7 @@ struct ActionSheet1Example {
         .onClick((e:ClickEvent) => {
           this.uiContext.showActionSheet({
             title: 'ActionSheet title',
-            subtitle: 'ActionSheet subtitle',
-            message: 'message',
+            message: '',
             autoCancel: true,
             showInSubWindow: true,
             confirm: {
@@ -58,7 +57,7 @@ struct ActionSheet1Example {
               }
             },
             alignment: DialogAlignment.Center,
-            offset: { dx: 0, dy: -10 },
+            offset: { dx: 0, dy: -20 },
             sheets: [
               {
                 title: 'apples',
@@ -70,12 +69,6 @@ struct ActionSheet1Example {
                 title: 'bananas',
                 action: () => {
                   console.log('bananas')
-                }
-              },
-              {
-                title: 'pears',
-                action: () => {
-                  console.log('pears')
                 }
               }
             ] as Array<SheetInfo>
