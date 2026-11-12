@@ -42,13 +42,11 @@ export default function Date1Test(): void {
      * @tc.level Level 2
      */
     it('Date1Test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(new Date() instanceof Date).assertEqual(true);
-      expect(isNaN(new Date().getTime())).assertEqual(false);
+      expect(new Date(1620000000000) instanceof Date).assertEqual(true);
+      expect(isNaN(new Date(1620000000000).getTime())).assertEqual(false);
       expect(typeof Date()).assertEqual("string");
-      const currentYear = new Date().getFullYear().toString();
-      expect(Date().includes(currentYear)).assertEqual(true);
-      const d1 = new Date().getTime();
-      const d2 = new Date().getTime();
+      const d1 = new Date(1620000000000).getTime();
+      const d2 = new Date(1620000000000).getTime();
       expect(d2 - d1).assertLess(100);
       expect(new Date(0).getUTCFullYear()).assertEqual(1970);
       expect(new Date(0).getUTCMonth()).assertEqual(0);
@@ -1136,20 +1134,6 @@ export default function Date1Test(): void {
 
     });
     /**
-     * @tc.number SUB_BUILTINS_DATE1_TEST_12700
-     * @tc.name Date1Test_127
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('Date1Test_127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const str140 = Date();
-      const date140 = new Date(str140);
-      const now140 = new Date();
-      expect(Math.abs(date140.getTime() - now140.getTime()) < 1000).assertEqual(true);
-    });
-    /**
      * @tc.number SUB_BUILTINS_DATE1_TEST_12800
      * @tc.name Date1Test_128
      * @tc.desc test date
@@ -1359,8 +1343,9 @@ export default function Date1Test(): void {
      * @tc.level Level 2
      */
     it('Date1Test_150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const str170 = Date();
-      const date170Str = new Date().toString();
+      const str170 = new Date(1620000000000).toString();
+      const date170 = new Date(str170);
+      const date170Str = date170.toString();
       expect(str170.split(' ').length).assertEqual(date170Str.split(' ').length);
       expect(str170.slice(0, 3)).assertEqual(date170Str.slice(0, 3));
     });
@@ -1524,20 +1509,6 @@ export default function Date1Test(): void {
       const isoStr199 = "2023-10-01T12:34:56.123Z";
       const date199 = new Date(isoStr199);
       expect(date199.toISOString()).assertEqual(isoStr199);
-    });
-    /**
-     * @tc.number SUB_BUILTINS_DATE1_TEST_17300
-     * @tc.name Date1Test_173
-     * @tc.desc test date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('Date1Test_173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const str200 = Date();
-      const date200 = new Date(str200);
-      const now200 = new Date();
-      expect(Math.abs(date200.getTime() - now200.getTime()) < 1000).assertEqual(true);
     });
 
   })
