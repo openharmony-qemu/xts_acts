@@ -29,6 +29,7 @@
 #include <string>
 #include <unistd.h>
 #include <pthread.h>
+#include <sys/epoll.h>
 #include <sys/eventfd.h>
 #define FAIL (-1)
 #define SUCCESS 0
@@ -63,6 +64,7 @@ const uint64_t COST_TIME_300 = 300;
 const uint64_t COST_TIME_500 = 500;
 const uint64_t COST_TIME_600 = 600;
 const int TASK_STORAGE_SIZE = 128;
+const int FUNCTION_STORAGE_SIZE = 96;
 const int STORAGE_SIZE = 64;
 const int TEST_VALUE_1 = 100;
 const int TEST_VALUE_2 = 5;
@@ -73,7 +75,6 @@ const int FIBER_STORAGE_SIZE = 64;
 #elif defined(__x86_64__)
 const int FIBER_STORAGE_SIZE = 8;
 #endif
-const int FUNCTION_STORAGE_SIZE = 96;
 const int ONE_SECOND_TO_MICRO = 1000 * 1000;
 const int NS_PER_SEC = 1000000000;
 const int NS_PER_MS = 1000000;
@@ -3908,6 +3909,18 @@ static napi_value ffrt_loop_normal_0003(napi_env env, napi_callback_info info)
     int sleepNumber = 25000;
     usleep(sleepNumber);
     ffrt_loop_epoll_ctl(loop, 1, testFd, 0, nullptr, nullptr);
+    int ret = ffrt_loop_epoll_ctl(loop, EPOLL_CTL_ADD - 1, testFd, 0, nullptr, nullptr);
+	if (ret != -1) {
+		result += 1;
+	}
+    ret = ffrt_loop_epoll_ctl(loop, EPOLL_CTL_DEL, 0, 0, nullptr, nullptr);
+	if (ret != -1) {
+		result += 1;
+	}
+    ret = ffrt_loop_epoll_ctl(loop, EPOLL_CTL_DEL + 1, -1, 0, nullptr, nullptr);
+	if (ret != -1) {
+		result += 1;
+	}
     int testNumber4 = 2;
     int result2 = 0;
     std::function<void()>&& basicFunc2 = [&result2]() {
