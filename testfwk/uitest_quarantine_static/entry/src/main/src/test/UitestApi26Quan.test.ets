@@ -15,6 +15,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from "@ohos/hypium-static/src/main/indexStatic"
 import { Component, Driver, KeyOptions, ON, Point, TouchOptions} from '@kit.TestKit'
+import { canIUse } from '@internal.full.global';
 
 import { startAbility, stopApplication } from './Util.test';
 
@@ -377,6 +378,8 @@ export default function UiTest(): void {
      */
     it('testDriverMouseDragDefault_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, testDriverMouseDragDefault_static start`);
+      let carSupported = canIUse("SystemCapability.Sensors.MiscDevice")
+      console.log(`${TestTag}, testDriverMouseDragDefault_static carSupported,${ JSON.stringify(carSupported) }`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       await driver!.delayMs(waitUiReadyMs);
       let button = (await driver!.findComponent(ON.id('jump'))) as Component;
@@ -388,7 +391,12 @@ export default function UiTest(): void {
       let text2 = (await driver!.findComponent(ON.text('two'))) as Component;
       let point1 = await text1.getBoundsCenter();
       let point2 = await text2.getBoundsCenter();
-      await driver!.mouseDragWithOptions(point1, point2);
+      if (carSupported) {
+        await driver!.mouseDragWithOptions(point1, point2);
+      } else {
+        const touchOptions: TouchOptions = { speed: 2000 };
+        await driver!.mouseDragWithOptions(point1, point2, touchOptions);
+      }
       await driver!.delayMs(2000);
       let text: Component | null = await driver!.findComponent(ON.text('one').isBefore(ON.text('two')));
       expect(text).assertNull();

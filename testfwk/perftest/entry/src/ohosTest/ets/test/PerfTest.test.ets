@@ -17,6 +17,7 @@ import { describe, beforeAll, it, expect, TestType, Level, Size } from '@ohos/hy
 import Want from '@ohos.app.ability.Want';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Driver, ON, UiDirection } from '@ohos.UiTest'
+import display from '@ohos.display';
 import { PerfMetric, PerfTest, PerfTestStrategy, PerfMeasureResult } from '@ohos.test.PerfTest';
 import { BusinessError, Callback } from '@kit.BasicServicesKit';
 import { PerfUtils } from '../../../main/ets/utils/PerfUtils';
@@ -36,7 +37,12 @@ async function startAbility(bundleName: string, abilityName: string) {
   })
 }
 async function stopApplication(bundleName: string) {
-  await delegator.executeShellCommand(`aa force-stop ${bundleName} `).then(result => {
+  let cmd = `aa force-stop ${bundleName}`;
+  let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+  if(user !== undefined){
+      cmd += ' -u ' + user;
+  }
+  await delegator.executeShellCommand(cmd).then(result => {
     console.info(`PerfTestCase, stop application finished: ${result}`)
   }).catch((err : BusinessError) => {
     console.error(`PerfTestCase,stop application failed: ${err}`)
@@ -159,13 +165,15 @@ export default function PerfTestTest() {
       await driver.delayMs(1000)
       await button.click()
       await driver.delayMs(1000)
+      let disPlay = display.getDefaultDisplaySync();
+      console.info(`testPerfTestListSwipe disPlay = ${JSON.stringify(disPlay)}`)
       let metrics: Array<PerfMetric> = [PerfMetric.LIST_SWIPE_FPS]
       let actionCode = async (finish: Callback<boolean>) => {
         let scroll = await driver.findComponent(ON.type('Scroll'))
         await driver.delayMs(1000)
         let center = await scroll.getBoundsCenter()
         await driver.delayMs(1000)
-        await driver.fling({x: center.x, y: Math.floor(center.y * 3 / 2)}, {x: center.x, y: Math.floor(center.y / 2)}, 50, 20000)
+        await driver.fling({x: center.x, y: Math.floor(center.y * 3 / 2), displayId: disPlay.id}, {x: center.x, y: Math.floor(center.y / 2), displayId: disPlay.id}, 50, 20000)
         await driver.delayMs(3000)
         finish(true)
       }

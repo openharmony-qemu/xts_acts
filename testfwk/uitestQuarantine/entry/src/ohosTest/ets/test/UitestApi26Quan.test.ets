@@ -404,6 +404,8 @@ export default function UiTest() {
     it('testDriverMouseDragDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, testDriverMouseDragDefault start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      let carSupported = canIUse("SystemCapability.Sensors.MiscDevice")
+      console.log(`${TestTag}, testDriverMouseDragDefault carSupported is: ${JSON.stringify(carSupported)}`);
       await driver.delayMs(waitUiReadyMs);
       let button = await driver.findComponent(ON.id('jump'));
       let center = await button.getBoundsCenter();
@@ -414,7 +416,12 @@ export default function UiTest() {
       let text2 = await driver.findComponent(ON.text('two'));
       let point1 = await text1.getBoundsCenter();
       let point2 = await text2.getBoundsCenter();
-      await driver.mouseDragWithOptions(point1, point2);
+      if (carSupported) {
+        await driver.mouseDragWithOptions(point1, point2);
+      } else {
+        const touchOptions: TouchOptions = { speed: 2000 };
+        await driver.mouseDragWithOptions(point1, point2, touchOptions);
+      }
       await driver.delayMs(2000);
       let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')));
       expect(text).assertNull();

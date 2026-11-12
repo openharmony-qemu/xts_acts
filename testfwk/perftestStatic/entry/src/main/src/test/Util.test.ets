@@ -51,7 +51,12 @@ async function startAbility(bundleName: string, abilityName: string): Promise<bo
 
 async function stopApplication(bundleName: string): Promise<boolean>{
   try {
-    await abilityDelegator.executeShellCommand(`aa force-stop ${bundleName} `);
+    let cmd = `aa force-stop ${bundleName} `;
+    let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
+    await abilityDelegator.executeShellCommand(cmd);
     console.info(`UiTestCase, stop application finished`);
     return true;
   } catch(error) {
