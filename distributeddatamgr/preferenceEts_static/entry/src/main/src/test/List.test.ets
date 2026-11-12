@@ -16,7 +16,9 @@
 
 import preferenceTest from "./Preferences.test";
 import PreferencesInterfaceTest from "./PreferencesInterfaceTest.test";
+import PreferencesSharedMapSizeStaticTest from "./PreferencesSharedMapSizeStaticTest.test";
 export default function testsuite() {
     preferenceTest();
     PreferencesInterfaceTest();
+    PreferencesSharedMapSizeStaticTest();
 }
