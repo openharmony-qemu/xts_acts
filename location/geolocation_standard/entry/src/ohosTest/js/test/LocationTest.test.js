@@ -14,6 +14,7 @@
  */
 
 import geolocation from '@ohos.geolocation';
+import geolocationm from '@ohos.geoLocationManager';
 import { LocationEventListener } from '@ohos.geolocation';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl'
 import bundle from '@ohos.bundle'
@@ -117,6 +118,12 @@ export default function geolocationTest_geo3() {
     describe('geolocationTest_geo3', function () {
         beforeAll(async function (done) {
             console.info('beforeAll case');
+            try {
+                geolocationm.setLocationPrivacyConfirmStatus(geolocationm.LocationPrivacyType.STARTUP, true);
+                console.info('[lbs_js] setLocationPrivacyConfirmStatus(LocationPrivacyType.STARTUP, true) success');
+            } catch (err) {
+                console.error("errCode:" + err.code + ", message:" + err.message);
+            }
             await applyPermission();
             done();
         })

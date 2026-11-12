@@ -79,6 +79,12 @@ export default function geolocationCApiTest() {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async (done: Function) => {
       console.info('beforeAll case');
+      try {
+        geolocationm.setLocationPrivacyConfirmStatus(geolocationm.LocationPrivacyType.STARTUP, true);
+        console.info('[lbs_js] setLocationPrivacyConfirmStatus(LocationPrivacyType.STARTUP, true) success');
+      } catch (err) {
+        console.error("errCode:" + err.code + ", message:" + err.message);
+      }
       await applyPermission();
       done();
     })

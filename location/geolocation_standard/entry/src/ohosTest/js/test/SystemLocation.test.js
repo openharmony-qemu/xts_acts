@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 import geolocation from '@ohos.geolocation';
+import geolocationm from '@ohos.geoLocationManager';
 import geolocations from '@system.geolocation';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl'
 import bundle from '@ohos.bundle'
@@ -72,6 +73,12 @@ export default function geolocationTest_geo2() {
     describe('geolocationTest_geo2', function () {
         beforeAll(async function (done) {
             console.info('beforeAll case');
+            try {
+                geolocationm.setLocationPrivacyConfirmStatus(geolocationm.LocationPrivacyType.STARTUP, true);
+                console.info('[lbs_js] setLocationPrivacyConfirmStatus(LocationPrivacyType.STARTUP, true) success');
+            } catch (err) {
+                console.error("errCode:" + err.code + ", message:" + err.message);
+            }
             await applyPermission();
             done();
         })

@@ -86,7 +86,10 @@
       },
       {
         "name": "ohos.permission.INTERNET"
-        }
+        },
+      {
+        "name": "ohos.permission.MANAGE_SECURE_SETTINGS"
+      }
 
 
     ]

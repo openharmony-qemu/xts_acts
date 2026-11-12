@@ -55,6 +55,12 @@ export default function actslocationTest() {
   describe("actslocationTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
     beforeAll(async () => {
+      try {
+        geoLocationManager.setLocationPrivacyConfirmStatus(geoLocationManager.LocationPrivacyType.STARTUP, true);
+        hilog.info(domain, tag, '%{public}s', 'setLocationPrivacyConfirmStatus(LocationPrivacyType.STARTUP, true) success');
+      } catch (err) {
+        hilog.error(domain, tag, '%{public}s', "errCode:" + err.code + ", message:" + err.message);
+      }
       await changedLocationMode()
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();

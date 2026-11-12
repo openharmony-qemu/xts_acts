@@ -82,6 +82,12 @@ export default function geolocationTest_4() {
     describe('geolocationTest_4', function () {
         beforeAll(async function (done) {
             console.info('beforeAll case');
+            try {
+                geolocationm.setLocationPrivacyConfirmStatus(geolocationm.LocationPrivacyType.STARTUP, true);
+                console.info('[lbs_js] setLocationPrivacyConfirmStatus(LocationPrivacyType.STARTUP, true) success');
+            } catch (err) {
+                console.error("errCode:" + err.code + ", message:" + err.message);
+            }
             await applyPermission();
             done();
         })
