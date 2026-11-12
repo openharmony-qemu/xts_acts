@@ -22,7 +22,7 @@ struct Index {
   @State webTag: string = 'errorinfo_web';
   @State pageReady: number = 0;
   controller: webview.WebviewController = new webview.WebviewController(this.webTag);
-
+  
   aboutToAppear(): void {
     webview.WebviewController.initializeWebEngine();
     nativeFunc.SetupErrorInfoSchemeHandler();

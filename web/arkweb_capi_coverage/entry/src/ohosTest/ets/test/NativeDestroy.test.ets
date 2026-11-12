@@ -35,7 +35,7 @@ export default function native_destroyTest() {
      */
     it('TestNativeArkWeb_GetDestroyCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        expect(nativeFunc.TestNativeArkWeb_GetDestroyCallback()).assertEqual(-1);
+        expect(nativeFunc.TestNativeArkWeb_GetDestroyCallback()).assertEqual(0);
         done();
       });
 
