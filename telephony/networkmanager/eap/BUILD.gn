@@ -17,6 +17,10 @@ group("eap") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "ActsNetworkMgrEapApiTestStatic:ActsNetworkMgrEapApiStaticTest",
+      "ActsNetworkMgrEapErrorCodeTestStatic:ActsNetworkMgrEapErrorCodeStaticTest",
+      "ActsNetworkMgrEapNopTestStatic:ActsNetworkMgrEapNopStaticTest",
+      "ActsWifiEapTestStatic:ActsWifiEapStaticTest",
       "eapErrorCodeTest:ActsNetworkMgrEapErrorCodeTest",
       "eapNoPTest:ActsNetworkMgrEapNopTest",
       "eapTest:ActsNetworkMgrEapTest"

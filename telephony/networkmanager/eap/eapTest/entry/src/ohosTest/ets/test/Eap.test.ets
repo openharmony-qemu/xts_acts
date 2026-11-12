@@ -93,7 +93,16 @@ export default function eapTest() {
         console.info(`${caseName} ACTION_CONNECT = ${eap.EthEapConnectAction.ACTION_CONNECT}`);
         eap.connect(eap.EthEapConnectAction.ACTION_CONNECT).then(() => {
           console.info(`${caseName} connect(ACTION_CONNECT) success`);
-          ExpectTrue(true);
+          try {
+            let stateInfo: eap.EthEapStateInfo = eap.getEthEapStateInfo();
+            console.info(`${caseName} getEthEapStateInfo after connect: ${JSON.stringify(stateInfo)}`);
+            ExpectTrue(stateInfo !== undefined && stateInfo !== null);
+            ExpectTrue(typeof stateInfo.state === 'number');
+            ExpectTrue(IsValidEthEapState(stateInfo.state));
+          } catch (stateError) {
+            console.error(`${caseName} getEthEapStateInfo failed: ${JSON.stringify(stateError)}`);
+            ExpectTrue(IsEnvError(stateError as BusinessError));
+          }
           console.info(`${caseName}---End`);
           done();
         }).catch((error: BusinessError) => {
@@ -127,7 +136,16 @@ export default function eapTest() {
         console.info(`${caseName} ACTION_DISCONNECT = ${eap.EthEapConnectAction.ACTION_DISCONNECT}`);
         eap.connect(eap.EthEapConnectAction.ACTION_DISCONNECT).then(() => {
           console.info(`${caseName} connect(ACTION_DISCONNECT) success`);
-          ExpectTrue(true);
+          try {
+            let stateInfo: eap.EthEapStateInfo = eap.getEthEapStateInfo();
+            console.info(`${caseName} getEthEapStateInfo after disconnect: ${JSON.stringify(stateInfo)}`);
+            ExpectTrue(stateInfo !== undefined && stateInfo !== null);
+            ExpectTrue(typeof stateInfo.state === 'number');
+            ExpectTrue(IsValidEthEapState(stateInfo.state));
+          } catch (stateError) {
+            console.error(`${caseName} getEthEapStateInfo failed: ${JSON.stringify(stateError)}`);
+            ExpectTrue(IsEnvError(stateError as BusinessError));
+          }
           console.info(`${caseName}---End`);
           done();
         }).catch((error: BusinessError) => {
@@ -307,11 +325,6 @@ export default function eapTest() {
           autoAuth: false,
           locked: false
         };
-        ExpectTrue(config !== undefined && config !== null);
-        ExpectTrue(config.profile === profile);
-        ExpectTrue(config.enabled === true);
-        ExpectTrue(config.autoAuth === false);
-        ExpectTrue(config.locked === false);
         eap.setEthEapConfig(config);
         console.info(`${caseName} setEthEapConfig success`);
         eap.getEthEapConfig().then((result: eap.EthEapConfig) => {
@@ -322,6 +335,8 @@ export default function eapTest() {
           ExpectTrue(typeof result.autoAuth === 'boolean');
           ExpectTrue(typeof result.locked === 'boolean');
           ExpectTrue(result.profile !== undefined && result.profile !== null);
+          ExpectTrue(result.profile.identity === "identity");
+          ExpectTrue(result.enabled === true);
           console.info(`${caseName}---End`);
           done();
         }).catch((error: BusinessError) => {
@@ -356,26 +371,25 @@ export default function eapTest() {
           autoAuth: false,
           locked: false
         };
-        ExpectTrue(config.profile !== undefined && config.profile !== null);
-        ExpectTrue(config.profile.eapMethod === eap.EapMethod.EAP_TTLS);
-        ExpectTrue(config.profile.phase2Method === eap.Phase2Method.PHASE2_AKA_PRIME);
-        ExpectTrue(config.profile.identity === "identity");
-        ExpectTrue(config.profile.anonymousIdentity === "anonymousIdentity");
-        ExpectTrue(config.profile.password === "password");
-        ExpectTrue(config.profile.caCertAliases === "caCertAliases");
-        ExpectTrue(config.profile.caPath === "caPath");
-        ExpectTrue(config.profile.clientCertAliases === "clientCertAliases");
-        ExpectTrue(config.profile.certPassword === "certPassword");
-        ExpectTrue(config.profile.altSubjectMatch === "altSubjectMatch");
-        ExpectTrue(config.profile.domainSuffixMatch === "domainSuffixMatch");
-        ExpectTrue(config.profile.realm === "realm");
-        ExpectTrue(config.profile.plmn === "plmn");
-        ExpectTrue(config.profile.eapSubId === 1);
         eap.setEthEapConfig(config);
         console.info(`${caseName} setEthEapConfig with profile success`);
-        ExpectTrue(true);
-        console.info(`${caseName}---End`);
-        done();
+        eap.getEthEapConfig().then((result: eap.EthEapConfig) => {
+          console.info(`${caseName} getEthEapConfig success: identity=${result.profile.identity}` +
+            `, eapMethod=${result.profile.eapMethod}, enabled=${result.enabled}`);
+          ExpectTrue(result !== undefined && result !== null);
+          ExpectTrue(result.profile !== undefined && result.profile !== null);
+          ExpectTrue(result.profile.identity === "identity");
+          ExpectTrue(result.profile.eapMethod === eap.EapMethod.EAP_TTLS);
+          ExpectTrue(result.profile.phase2Method === eap.Phase2Method.PHASE2_AKA_PRIME);
+          ExpectTrue(result.enabled === true);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((getError: BusinessError) => {
+          console.error(`${caseName} getEthEapConfig failed, code:${getError.code}, message:${getError.message}`);
+          ExpectTrue(IsEnvError(getError));
+          console.info(`${caseName}---End`);
+          done();
+        });
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
         ExpectTrue(IsEnvError(error as BusinessError));
@@ -402,23 +416,35 @@ export default function eapTest() {
           autoAuth: false,
           locked: false
         };
-        ExpectTrue(configEnabled.enabled === true);
-        ExpectTrue(typeof configEnabled.enabled === 'boolean');
         eap.setEthEapConfig(configEnabled);
         console.info(`${caseName} setEthEapConfig enabled=true success`);
-        let configDisabled: eap.EthEapConfig = {
-          profile: profile,
-          enabled: false,
-          autoAuth: false,
-          locked: false
-        };
-        ExpectTrue(configDisabled.enabled === false);
-        ExpectTrue(typeof configDisabled.enabled === 'boolean');
-        eap.setEthEapConfig(configDisabled);
-        console.info(`${caseName} setEthEapConfig enabled=false success`);
-        ExpectTrue(true);
-        console.info(`${caseName}---End`);
-        done();
+        eap.getEthEapConfig().then((enabledResult: eap.EthEapConfig) => {
+          console.info(`${caseName} getEthEapConfig after enabled=true: enabled=${enabledResult.enabled}`);
+          ExpectTrue(enabledResult !== undefined && enabledResult !== null);
+          ExpectTrue(typeof enabledResult.enabled === 'boolean');
+          ExpectTrue(enabledResult.enabled === true);
+          let configDisabled: eap.EthEapConfig = {
+            profile: profile,
+            enabled: false,
+            autoAuth: false,
+            locked: false
+          };
+          eap.setEthEapConfig(configDisabled);
+          console.info(`${caseName} setEthEapConfig enabled=false success`);
+          return eap.getEthEapConfig();
+        }).then((result: eap.EthEapConfig) => {
+          console.info(`${caseName} getEthEapConfig after enabled=false: enabled=${result.enabled}`);
+          ExpectTrue(result !== undefined && result !== null);
+          ExpectTrue(typeof result.enabled === 'boolean');
+          ExpectTrue(result.enabled === false);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((getError: BusinessError) => {
+          console.error(`${caseName} getEthEapConfig failed, code:${getError.code}, message:${getError.message}`);
+          ExpectTrue(IsEnvError(getError));
+          console.info(`${caseName}---End`);
+          done();
+        });
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
         ExpectTrue(IsEnvError(error as BusinessError));
@@ -445,23 +471,35 @@ export default function eapTest() {
           autoAuth: true,
           locked: false
         };
-        ExpectTrue(configAuto.autoAuth === true);
-        ExpectTrue(typeof configAuto.autoAuth === 'boolean');
         eap.setEthEapConfig(configAuto);
         console.info(`${caseName} setEthEapConfig autoAuth=true success`);
-        let configManual: eap.EthEapConfig = {
-          profile: profile,
-          enabled: true,
-          autoAuth: false,
-          locked: false
-        };
-        ExpectTrue(configManual.autoAuth === false);
-        ExpectTrue(typeof configManual.autoAuth === 'boolean');
-        eap.setEthEapConfig(configManual);
-        console.info(`${caseName} setEthEapConfig autoAuth=false success`);
-        ExpectTrue(true);
-        console.info(`${caseName}---End`);
-        done();
+        eap.getEthEapConfig().then((autoResult: eap.EthEapConfig) => {
+          console.info(`${caseName} getEthEapConfig after autoAuth=true: autoAuth=${autoResult.autoAuth}`);
+          ExpectTrue(autoResult !== undefined && autoResult !== null);
+          ExpectTrue(typeof autoResult.autoAuth === 'boolean');
+          ExpectTrue(autoResult.autoAuth === true);
+          let configManual: eap.EthEapConfig = {
+            profile: profile,
+            enabled: true,
+            autoAuth: false,
+            locked: false
+          };
+          eap.setEthEapConfig(configManual);
+          console.info(`${caseName} setEthEapConfig autoAuth=false success`);
+          return eap.getEthEapConfig();
+        }).then((result: eap.EthEapConfig) => {
+          console.info(`${caseName} getEthEapConfig after autoAuth=false: autoAuth=${result.autoAuth}`);
+          ExpectTrue(result !== undefined && result !== null);
+          ExpectTrue(typeof result.autoAuth === 'boolean');
+          ExpectTrue(result.autoAuth === false);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((getError: BusinessError) => {
+          console.error(`${caseName} getEthEapConfig failed, code:${getError.code}, message:${getError.message}`);
+          ExpectTrue(IsEnvError(getError));
+          console.info(`${caseName}---End`);
+          done();
+        });
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
         ExpectTrue(IsEnvError(error as BusinessError));
@@ -488,8 +526,6 @@ export default function eapTest() {
           autoAuth: false,
           locked: false
         };
-        ExpectTrue(configUnlocked.locked === false);
-        ExpectTrue(typeof configUnlocked.locked === 'boolean');
         eap.setEthEapConfig(configUnlocked);
         console.info(`${caseName} setEthEapConfig locked=false success`);
         let configLocked: eap.EthEapConfig = {
@@ -498,25 +534,44 @@ export default function eapTest() {
           autoAuth: false,
           locked: true
         };
-        ExpectTrue(configLocked.locked === true);
-        ExpectTrue(typeof configLocked.locked === 'boolean');
-        try {
-          eap.setEthEapConfig(configLocked);
-          console.info(`${caseName} setEthEapConfig locked=true success`);
-        } catch (lockError) {
-          console.error(`${caseName} setEthEapConfig locked=true failed: ${JSON.stringify(lockError)}`);
-          ExpectTrue(IsEnvError(lockError as BusinessError));
-        }
-        // unlock to keep stored config editable by following cases
-        try {
-          eap.setEthEapConfig(configUnlocked);
-          console.info(`${caseName} setEthEapConfig unlock cleanup success`);
-        } catch (cleanupError) {
-          console.error(`${caseName} unlock cleanup failed: ${JSON.stringify(cleanupError)}`);
-        }
-        ExpectTrue(true);
-        console.info(`${caseName}---End`);
-        done();
+        let unlockSuccess: boolean = false;
+        eap.getEthEapConfig().then((unlockedResult: eap.EthEapConfig) => {
+          console.info(`${caseName} getEthEapConfig after locked=false: locked=${unlockedResult.locked}`);
+          ExpectTrue(unlockedResult !== undefined && unlockedResult !== null);
+          ExpectTrue(typeof unlockedResult.locked === 'boolean');
+          ExpectTrue(unlockedResult.locked === false);
+          try {
+            eap.setEthEapConfig(configLocked);
+            console.info(`${caseName} setEthEapConfig locked=true success`);
+          } catch (lockError) {
+            console.error(`${caseName} setEthEapConfig locked=true failed: ${JSON.stringify(lockError)}`);
+            ExpectTrue(IsEnvError(lockError as BusinessError));
+          }
+          // unlock to keep stored config editable by following cases
+          try {
+            eap.setEthEapConfig(configUnlocked);
+            unlockSuccess = true;
+            console.info(`${caseName} setEthEapConfig unlock cleanup success`);
+          } catch (cleanupError) {
+            console.error(`${caseName} unlock cleanup failed: ${JSON.stringify(cleanupError)}`);
+            ExpectTrue(IsEnvError(cleanupError as BusinessError));
+          }
+          return eap.getEthEapConfig();
+        }).then((result: eap.EthEapConfig) => {
+          console.info(`${caseName} getEthEapConfig after unlock: locked=${result.locked}`);
+          ExpectTrue(result !== undefined && result !== null);
+          ExpectTrue(typeof result.locked === 'boolean');
+          if (unlockSuccess) {
+            ExpectTrue(result.locked === false);
+          }
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((getError: BusinessError) => {
+          console.error(`${caseName} getEthEapConfig failed, code:${getError.code}, message:${getError.message}`);
+          ExpectTrue(IsEnvError(getError));
+          console.info(`${caseName}---End`);
+          done();
+        });
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
         ExpectTrue(IsEnvError(error as BusinessError));
@@ -611,18 +666,12 @@ export default function eapTest() {
           plmn: "plmn",
           eapSubId: 1
         };
-        ExpectTrue(peapProfile.identity === "peapuser");
-        ExpectTrue(typeof peapProfile.identity === 'string');
-        ExpectTrue(peapProfile.password === "peappass123");
-        ExpectTrue(typeof peapProfile.password === 'string');
         let peapConfig: eap.EthEapConfig = {
           profile: peapProfile,
           enabled: true,
           autoAuth: false,
           locked: false
         };
-        ExpectTrue(peapConfig.profile.identity === "peapuser");
-        ExpectTrue(peapConfig.profile.password === "peappass123");
         eap.setEthEapConfig(peapConfig);
         console.info(`${caseName} setEthEapConfig with PEAP profile success`);
         eap.onStateChange(stateChangeCallback);
@@ -631,6 +680,8 @@ export default function eapTest() {
           console.info(`${caseName} getEthEapConfig success: identity=${result.profile.identity}`);
           ExpectTrue(result !== undefined && result !== null);
           ExpectTrue(result.profile !== undefined && result.profile !== null);
+          ExpectTrue(result.profile.eapMethod === eap.EapMethod.EAP_PEAP);
+          ExpectTrue(result.profile.phase2Method === eap.Phase2Method.PHASE2_MSCHAPV2);
           ExpectTrue(result.profile.identity === "peapuser");
           ExpectTrue(result.profile.password === "peappass123");
           connectAndObserve();
@@ -662,13 +713,11 @@ export default function eapTest() {
           state: eap.EthEapState.STATE_AUTHENTICATING,
           retryCount: 1
         };
-        ExpectTrue(stateInfo !== undefined && stateInfo !== null);
-        ExpectTrue(stateInfo.state === eap.EthEapState.STATE_AUTHENTICATING);
-        ExpectTrue(typeof stateInfo.state === 'number');
-        ExpectTrue(stateInfo.retryCount === 1);
-        ExpectTrue(typeof stateInfo.retryCount === 'number');
+        console.info(`${caseName} local EthEapStateInfo: ${JSON.stringify(stateInfo)}`);
         let stateChangeCallback = (info: eap.EthEapStateInfo): void => {
           console.info(`${caseName} onStateChange callback: state=${info.state}, retryCount=${info.retryCount}`);
+          ExpectTrue(IsValidEthEapState(info.state));
+          ExpectTrue(typeof info.retryCount === 'number' && info.retryCount >= 0);
         }
         eap.onStateChange(stateChangeCallback);
         console.info(`${caseName} onStateChange success`);
@@ -712,13 +761,12 @@ export default function eapTest() {
           retryCount: 3,
           message: "Authentication failed after retries"
         };
-        ExpectTrue(infoWithMessage.message === "Authentication failed after retries");
-        ExpectTrue(typeof infoWithMessage.message === 'string');
+        console.info(`${caseName} EthEapStateInfo with message: ${JSON.stringify(infoWithMessage)}`);
         let infoWithoutMessage: eap.EthEapStateInfo = {
           state: eap.EthEapState.STATE_IDLE,
           retryCount: 0
         };
-        ExpectTrue(infoWithoutMessage.message === undefined);
+        console.info(`${caseName} EthEapStateInfo without message: ${JSON.stringify(infoWithoutMessage)}`);
         let stateChangeCallback = (info: eap.EthEapStateInfo): void => {
           console.info(`${caseName} onStateChange callback: state=${info.state}, retryCount=${info.retryCount}` +
             `, message=${info.message}`);
@@ -729,6 +777,9 @@ export default function eapTest() {
         let realInfo: eap.EthEapStateInfo = eap.getEthEapStateInfo();
         console.info(`${caseName} getEthEapStateInfo: ${JSON.stringify(realInfo)}`);
         ExpectTrue(realInfo !== undefined && realInfo !== null);
+        ExpectTrue(typeof realInfo.state === 'number');
+        ExpectTrue(IsValidEthEapState(realInfo.state));
+        ExpectTrue(typeof realInfo.retryCount === 'number' && realInfo.retryCount >= 0);
         ExpectTrue(realInfo.message === undefined || typeof realInfo.message === 'string');
         try {
           eap.offStateChange(stateChangeCallback);
@@ -766,9 +817,23 @@ export default function eapTest() {
         };
         eap.setEthEapConfig(config);
         console.info(`${caseName} setEthEapConfig success`);
-        ExpectTrue(true);
-        console.info(`${caseName}---End`);
-        done();
+        eap.getEthEapConfig().then((result: eap.EthEapConfig) => {
+          console.info(`${caseName} getEthEapConfig success: identity=${result.profile.identity}` +
+            `, eapMethod=${result.profile.eapMethod}, enabled=${result.enabled}`);
+          ExpectTrue(result !== undefined && result !== null);
+          ExpectTrue(result.profile !== undefined && result.profile !== null);
+          ExpectTrue(result.profile.identity === "identity");
+          ExpectTrue(result.profile.eapMethod === eap.EapMethod.EAP_TTLS);
+          ExpectTrue(result.profile.phase2Method === eap.Phase2Method.PHASE2_AKA_PRIME);
+          ExpectTrue(result.enabled === true);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((getError: BusinessError) => {
+          console.error(`${caseName} getEthEapConfig failed, code:${getError.code}, message:${getError.message}`);
+          ExpectTrue(IsEnvError(getError));
+          console.info(`${caseName}---End`);
+          done();
+        });
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
         ExpectTrue(IsEnvError(error as BusinessError));
@@ -797,12 +862,48 @@ export default function eapTest() {
         };
         eap.setEthEapConfig(config);
         console.info(`${caseName} setEthEapConfig success`);
-        ExpectTrue(true);
+        eap.getEthEapConfig().then((result: eap.EthEapConfig) => {
+          console.info(`${caseName} getEthEapConfig success: enabled=${result.enabled}`);
+          ExpectTrue(result !== undefined && result !== null);
+          ExpectTrue(typeof result.enabled === 'boolean');
+          ExpectTrue(result.enabled === false);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((getError: BusinessError) => {
+          console.error(`${caseName} getEthEapConfig failed, code:${getError.code}, message:${getError.message}`);
+          ExpectTrue(IsEnvError(getError));
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(IsEnvError(error as BusinessError));
+        console.info(`${caseName}---End`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCommunicationEapSetEthEapConfig0300
+     * @tc.number SUB_Communication_Eap_SetEthEapConfig_0300
+     * @tc.desc   Test setEthEapConfig without the required config parameter, expect throw 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testCommunicationEapSetEthEapConfig0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      let caseName: string = "testCommunicationEapSetEthEapConfig0300";
+      console.info(`${caseName}---start`);
+      try {
+        let setNoParam: Function = eap.setEthEapConfig;
+        setNoParam();
+        console.info(`${caseName} setEthEapConfig without param unexpected success`);
+        ExpectFail();
         console.info(`${caseName}---End`);
         done();
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
-        ExpectTrue(IsEnvError(error as BusinessError));
+        ExpectTrue((error as BusinessError).code === 401);
         console.info(`${caseName}---End`);
         done();
       }
@@ -846,6 +947,108 @@ export default function eapTest() {
     })
 
     /**
+     * @tc.name   testCommunicationEapGetEthEapConfig0200
+     * @tc.number SUB_Communication_Eap_GetEthEapConfig_0200
+     * @tc.desc   Test getEthEapConfig with an extra parameter which has no definition, extra param should be ignored.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testCommunicationEapGetEthEapConfig0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      let caseName: string = "testCommunicationEapGetEthEapConfig0200";
+      console.info(`${caseName}---start`);
+      try {
+        let getWithParam: (param: string) => Promise<eap.EthEapConfig> = eap.getEthEapConfig;
+        getWithParam("extraParam").then((config: eap.EthEapConfig) => {
+          console.info(`${caseName} getEthEapConfig with extra param success: enabled=${config.enabled}`);
+          ExpectTrue(config !== undefined && config !== null);
+          ExpectTrue(typeof config.enabled === 'boolean');
+          ExpectTrue(typeof config.autoAuth === 'boolean');
+          ExpectTrue(typeof config.locked === 'boolean');
+          ExpectTrue(config.profile !== undefined && config.profile !== null);
+          ExpectTrue(typeof config.profile.identity === 'string');
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(`${caseName} getEthEapConfig failed, code:${error.code}, message:${error.message}`);
+          ExpectTrue(error.code === 401 || IsEnvError(error));
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue((error as BusinessError).code === 401 || IsEnvError(error as BusinessError));
+        console.info(`${caseName}---End`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCommunicationEapGetEthEapConfig0300
+     * @tc.number SUB_Communication_Eap_GetEthEapConfig_0300
+     * @tc.desc   Test getEthEapConfig return value coverage: verify all EthEapConfig and EthEapProfile fields by set-get round-trip.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testCommunicationEapGetEthEapConfig0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      let caseName: string = "testCommunicationEapGetEthEapConfig0300";
+      console.info(`${caseName}---start`);
+      try {
+        let config: eap.EthEapConfig = {
+          profile: profile,
+          enabled: true,
+          autoAuth: false,
+          locked: false
+        };
+        eap.setEthEapConfig(config);
+        console.info(`${caseName} setEthEapConfig success`);
+        eap.getEthEapConfig().then((result: eap.EthEapConfig) => {
+          console.info(`${caseName} getEthEapConfig return value: ${JSON.stringify(result)}`);
+          ExpectTrue(result !== undefined && result !== null);
+          ExpectTrue(typeof result.enabled === 'boolean' && result.enabled === true);
+          ExpectTrue(typeof result.autoAuth === 'boolean' && result.autoAuth === false);
+          ExpectTrue(typeof result.locked === 'boolean' && result.locked === false);
+          ExpectTrue(result.profile !== undefined && result.profile !== null);
+          ExpectTrue(result.profile.eapMethod === eap.EapMethod.EAP_TTLS);
+          ExpectTrue(result.profile.phase2Method === eap.Phase2Method.PHASE2_AKA_PRIME);
+          ExpectTrue(result.profile.identity === "identity");
+          ExpectTrue(result.profile.anonymousIdentity === "anonymousIdentity");
+          ExpectTrue(result.profile.password === "password");
+          ExpectTrue(result.profile.caCertAliases === "caCertAliases");
+          ExpectTrue(result.profile.caPath === "caPath");
+          ExpectTrue(result.profile.clientCertAliases === "clientCertAliases");
+          ExpectTrue(result.profile.certPassword === "certPassword");
+          ExpectTrue(result.profile.altSubjectMatch === "altSubjectMatch");
+          ExpectTrue(result.profile.domainSuffixMatch === "domainSuffixMatch");
+          ExpectTrue(result.profile.realm === "realm");
+          ExpectTrue(result.profile.plmn === "plmn");
+          ExpectTrue(result.profile.eapSubId === 1);
+          let certEntry: Uint8Array | undefined = result.profile.certEntry;
+          console.info(`${caseName} certEntry in return value: ${JSON.stringify(certEntry)}`);
+          if (certEntry !== undefined && certEntry !== null) {
+            ExpectTrue(certEntry.length === profile.certEntry.length);
+            for (let i = 0; i < profile.certEntry.length; i++) {
+              ExpectTrue(certEntry[i] === profile.certEntry[i]);
+            }
+          }
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((getError: BusinessError) => {
+          console.error(`${caseName} getEthEapConfig failed, code:${getError.code}, message:${getError.message}`);
+          ExpectTrue(IsEnvError(getError));
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(IsEnvError(error as BusinessError));
+        console.info(`${caseName}---End`);
+        done();
+      }
+    })
+
+    /**
      * @tc.name   testCommunicationEapGetEthEapStateInfo0100
      * @tc.number SUB_Communication_Eap_GetEthEapStateInfo_0100
      * @tc.desc   Test getEthEapStateInfo with no parameter and check the returned EthEapStateInfo.
@@ -876,6 +1079,36 @@ export default function eapTest() {
     })
 
     /**
+     * @tc.name   testCommunicationEapGetEthEapStateInfo0200
+     * @tc.number SUB_Communication_Eap_GetEthEapStateInfo_0200
+     * @tc.desc   Test getEthEapStateInfo with an extra parameter which has no definition, extra param should be ignored.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testCommunicationEapGetEthEapStateInfo0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      let caseName: string = "testCommunicationEapGetEthEapStateInfo0200";
+      console.info(`${caseName}---start`);
+      try {
+        let getWithParam: (param: string) => eap.EthEapStateInfo = eap.getEthEapStateInfo;
+        let stateInfo: eap.EthEapStateInfo = getWithParam("extraParam");
+        console.info(`${caseName} getEthEapStateInfo with extra param success: ${JSON.stringify(stateInfo)}`);
+        ExpectTrue(stateInfo !== undefined && stateInfo !== null);
+        ExpectTrue(typeof stateInfo.state === 'number');
+        ExpectTrue(IsValidEthEapState(stateInfo.state));
+        ExpectTrue(typeof stateInfo.retryCount === 'number');
+        ExpectTrue(stateInfo.retryCount >= 0);
+        console.info(`${caseName}---End`);
+        done();
+      } catch (error) {
+        console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue((error as BusinessError).code === 401 || IsEnvError(error as BusinessError));
+        console.info(`${caseName}---End`);
+        done();
+      }
+    })
+
+    /**
      * @tc.name   testCommunicationEapOnStateChange0100
      * @tc.number SUB_Communication_Eap_OnStateChange_0100
      * @tc.desc   Test onStateChange with a Callback<EthEapStateInfo> parameter.
@@ -893,7 +1126,11 @@ export default function eapTest() {
         }
         eap.onStateChange(stateChangeCallback);
         console.info(`${caseName} onStateChange success`);
-        ExpectTrue(true);
+        let subscribedStateInfo: eap.EthEapStateInfo = eap.getEthEapStateInfo();
+        console.info(`${caseName} getEthEapStateInfo after onStateChange: ${JSON.stringify(subscribedStateInfo)}`);
+        ExpectTrue(subscribedStateInfo !== undefined && subscribedStateInfo !== null);
+        ExpectTrue(typeof subscribedStateInfo.state === 'number');
+        ExpectTrue(IsValidEthEapState(subscribedStateInfo.state));
         try {
           eap.offStateChange(stateChangeCallback);
           console.info(`${caseName} offStateChange cleanup success`);
@@ -905,6 +1142,32 @@ export default function eapTest() {
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
         ExpectTrue(IsEnvError(error as BusinessError));
+        console.info(`${caseName}---End`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCommunicationEapOnStateChange0200
+     * @tc.number SUB_Communication_Eap_OnStateChange_0200
+     * @tc.desc   Test onStateChange without the required callback parameter, expect throw 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testCommunicationEapOnStateChange0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      let caseName: string = "testCommunicationEapOnStateChange0200";
+      console.info(`${caseName}---start`);
+      try {
+        let onNoParam: Function = eap.onStateChange;
+        onNoParam();
+        console.info(`${caseName} onStateChange without callback unexpected success`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (error) {
+        console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue((error as BusinessError).code === 401);
         console.info(`${caseName}---End`);
         done();
       }
@@ -929,7 +1192,11 @@ export default function eapTest() {
         console.info(`${caseName} onStateChange success`);
         eap.offStateChange(stateChangeCallback);
         console.info(`${caseName} offStateChange with callback success`);
-        ExpectTrue(true);
+        let offStateInfo: eap.EthEapStateInfo = eap.getEthEapStateInfo();
+        console.info(`${caseName} getEthEapStateInfo after offStateChange: ${JSON.stringify(offStateInfo)}`);
+        ExpectTrue(offStateInfo !== undefined && offStateInfo !== null);
+        ExpectTrue(typeof offStateInfo.state === 'number');
+        ExpectTrue(IsValidEthEapState(offStateInfo.state));
         console.info(`${caseName}---End`);
         done();
       } catch (error) {
@@ -954,7 +1221,11 @@ export default function eapTest() {
       try {
         eap.offStateChange();
         console.info(`${caseName} offStateChange without callback success`);
-        ExpectTrue(true);
+        let offAllStateInfo: eap.EthEapStateInfo = eap.getEthEapStateInfo();
+        console.info(`${caseName} getEthEapStateInfo after offStateChange: ${JSON.stringify(offAllStateInfo)}`);
+        ExpectTrue(offAllStateInfo !== undefined && offAllStateInfo !== null);
+        ExpectTrue(typeof offAllStateInfo.state === 'number');
+        ExpectTrue(IsValidEthEapState(offAllStateInfo.state));
         console.info(`${caseName}---End`);
         done();
       } catch (error) {
@@ -979,7 +1250,16 @@ export default function eapTest() {
       try {
         eap.connect(eap.EthEapConnectAction.ACTION_CONNECT).then(() => {
           console.info(`${caseName} connect ACTION_CONNECT success`);
-          ExpectTrue(true);
+          try {
+            let stateInfo: eap.EthEapStateInfo = eap.getEthEapStateInfo();
+            console.info(`${caseName} getEthEapStateInfo after connect: ${JSON.stringify(stateInfo)}`);
+            ExpectTrue(stateInfo !== undefined && stateInfo !== null);
+            ExpectTrue(typeof stateInfo.state === 'number');
+            ExpectTrue(IsValidEthEapState(stateInfo.state));
+          } catch (stateError) {
+            console.error(`${caseName} getEthEapStateInfo failed: ${JSON.stringify(stateError)}`);
+            ExpectTrue(IsEnvError(stateError as BusinessError));
+          }
           console.info(`${caseName}---End`);
           done();
         }).catch((error: BusinessError) => {
@@ -1010,7 +1290,16 @@ export default function eapTest() {
       try {
         eap.connect(eap.EthEapConnectAction.ACTION_DISCONNECT).then(() => {
           console.info(`${caseName} connect ACTION_DISCONNECT success`);
-          ExpectTrue(true);
+          try {
+            let stateInfo: eap.EthEapStateInfo = eap.getEthEapStateInfo();
+            console.info(`${caseName} getEthEapStateInfo after disconnect: ${JSON.stringify(stateInfo)}`);
+            ExpectTrue(stateInfo !== undefined && stateInfo !== null);
+            ExpectTrue(typeof stateInfo.state === 'number');
+            ExpectTrue(IsValidEthEapState(stateInfo.state));
+          } catch (stateError) {
+            console.error(`${caseName} getEthEapStateInfo failed: ${JSON.stringify(stateError)}`);
+            ExpectTrue(IsEnvError(stateError as BusinessError));
+          }
           console.info(`${caseName}---End`);
           done();
         }).catch((error: BusinessError) => {
@@ -1048,7 +1337,16 @@ export default function eapTest() {
           return eap.connect(actionDisconnect);
         }).then(() => {
           console.info(`${caseName} connect(1) success`);
-          ExpectTrue(true);
+          try {
+            let stateInfo: eap.EthEapStateInfo = eap.getEthEapStateInfo();
+            console.info(`${caseName} getEthEapStateInfo after connect: ${JSON.stringify(stateInfo)}`);
+            ExpectTrue(stateInfo !== undefined && stateInfo !== null);
+            ExpectTrue(typeof stateInfo.state === 'number');
+            ExpectTrue(IsValidEthEapState(stateInfo.state));
+          } catch (stateError) {
+            console.error(`${caseName} getEthEapStateInfo failed: ${JSON.stringify(stateError)}`);
+            ExpectTrue(IsEnvError(stateError as BusinessError));
+          }
           console.info(`${caseName}---End`);
           done();
         }).catch((error: BusinessError) => {
@@ -1060,6 +1358,39 @@ export default function eapTest() {
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
         ExpectTrue(IsEnvError(error as BusinessError));
+        console.info(`${caseName}---End`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCommunicationEapConnect0400
+     * @tc.number SUB_Communication_Eap_Connect_0400
+     * @tc.desc   Test connect without the required action parameter, expect throw 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testCommunicationEapConnect0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      let caseName: string = "testCommunicationEapConnect0400";
+      console.info(`${caseName}---start`);
+      try {
+        let connectNoParam: Function = eap.connect;
+        let connectResult: Promise<void> = connectNoParam();
+        connectResult.then(() => {
+          console.info(`${caseName} connect without action unexpected success`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(`${caseName} connect failed, code:${error.code}, message:${error.message}`);
+          ExpectTrue(error.code === 401);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue((error as BusinessError).code === 401);
         console.info(`${caseName}---End`);
         done();
       }
@@ -1079,9 +1410,19 @@ export default function eapTest() {
       try {
         eap.deleteEthEapConfig().then(() => {
           console.info(`${caseName} deleteEthEapConfig success`);
-          ExpectTrue(true);
-          console.info(`${caseName}---End`);
-          done();
+          eap.getEthEapConfig().then((result: eap.EthEapConfig) => {
+            console.info(`${caseName} getEthEapConfig after delete: ${JSON.stringify(result)}`);
+            ExpectTrue(result !== undefined && result !== null);
+            ExpectTrue(result.profile === undefined || result.profile === null || result.enabled === false);
+            console.info(`${caseName}---End`);
+            done();
+          }).catch((getError: BusinessError) => {
+            console.error(`${caseName} getEthEapConfig after delete failed, code:${getError.code}` +
+              `, message:${getError.message}`);
+            ExpectTrue(IsEnvError(getError));
+            console.info(`${caseName}---End`);
+            done();
+          });
         }).catch((error: BusinessError) => {
           console.error(`${caseName} deleteEthEapConfig failed, code:${error.code}, message:${error.message}`);
           ExpectTrue(IsEnvError(error));
@@ -1091,6 +1432,48 @@ export default function eapTest() {
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
         ExpectTrue(IsEnvError(error as BusinessError));
+        console.info(`${caseName}---End`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCommunicationEapDeleteEthEapConfig0200
+     * @tc.number SUB_Communication_Eap_DeleteEthEapConfig_0200
+     * @tc.desc   Test deleteEthEapConfig with an extra parameter which has no definition, extra param should be ignored.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testCommunicationEapDeleteEthEapConfig0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      let caseName: string = "testCommunicationEapDeleteEthEapConfig0200";
+      console.info(`${caseName}---start`);
+      try {
+        let deleteWithParam: (param: string) => Promise<void> = eap.deleteEthEapConfig;
+        deleteWithParam("extraParam").then(() => {
+          console.info(`${caseName} deleteEthEapConfig with extra param success`);
+          eap.getEthEapConfig().then((result: eap.EthEapConfig) => {
+            console.info(`${caseName} getEthEapConfig after delete: ${JSON.stringify(result)}`);
+            ExpectTrue(result !== undefined && result !== null);
+            ExpectTrue(result.profile === undefined || result.profile === null || result.enabled === false);
+            console.info(`${caseName}---End`);
+            done();
+          }).catch((getError: BusinessError) => {
+            console.error(`${caseName} getEthEapConfig after delete failed, code:${getError.code}` +
+              `, message:${getError.message}`);
+            ExpectTrue(IsEnvError(getError));
+            console.info(`${caseName}---End`);
+            done();
+          });
+        }).catch((error: BusinessError) => {
+          console.error(`${caseName} deleteEthEapConfig failed, code:${error.code}, message:${error.message}`);
+          ExpectTrue(error.code === 401 || IsEnvError(error));
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue((error as BusinessError).code === 401 || IsEnvError(error as BusinessError));
         console.info(`${caseName}---End`);
         done();
       }
