@@ -281,5 +281,423 @@ export default function eapNoPTest(): void {
       }
     })
 
+    /**
+     * @tc.name   testCommunicationEapSetEthEapConfigErrCode_static_0100
+     * @tc.number SUB_Communication_Eap_SetEthEapConfigErrCode_0100
+     * @tc.desc   verification error code 201 of setEthEapConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testCommunicationEapSetEthEapConfigErrCode_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = "testCommunicationEapSetEthEapConfigErrCode_static_0100";
+      hilog.info(domain, tag, `${caseName}---start`);
+      try {
+        let config: eap.EthEapConfig = {
+          profile: profile,
+          enabled: true,
+          autoAuth: false,
+          locked: false
+        };
+        eap.setEthEapConfig(config);
+        hilog.info(domain, tag, `${caseName} setEthEapConfig success`);
+        ExpectFail();
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      } catch (error) {
+        hilog.info(domain, tag, `${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(error.code === 201);
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCommunicationEapSetEthEapConfigPermission_static_0100
+     * @tc.number SUB_Communication_Eap_SetEthEapConfigPermission_0100
+     * @tc.desc   test whether the setEthEapConfig interface permission takes effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testCommunicationEapSetEthEapConfigPermission_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = "testCommunicationEapSetEthEapConfigPermission_static_0100";
+      hilog.info(domain, tag, `${caseName}---start`);
+      try {
+        let config: eap.EthEapConfig = {
+          profile: profile,
+          enabled: true,
+          autoAuth: false,
+          locked: false
+        };
+        eap.setEthEapConfig(config);
+        hilog.info(domain, tag, `${caseName} setEthEapConfig success`);
+        ExpectFail();
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      } catch (error) {
+        hilog.info(domain, tag, `${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(error.code === 201);
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCommunicationEapGetEthEapConfigErrCode_static_0100
+     * @tc.number SUB_Communication_Eap_GetEthEapConfigErrCode_0100
+     * @tc.desc   verification error code 201 of getEthEapConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testCommunicationEapGetEthEapConfigErrCode_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = "testCommunicationEapGetEthEapConfigErrCode_static_0100";
+      hilog.info(domain, tag, `${caseName}---start`);
+      try {
+        eap.getEthEapConfig().then((config: eap.EthEapConfig): void => {
+          hilog.info(domain, tag, `${caseName} getEthEapConfig success: enabled=${config.enabled}`);
+          ExpectFail();
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        }).catch((err: Error) => {
+          let error: BusinessError = err as BusinessError;
+          hilog.info(domain, tag, `${caseName} getEthEapConfig failed, code:${error.code}, message:${error.message}`);
+          ExpectTrue(error.code === 201);
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        hilog.info(domain, tag, `${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(error.code === 201);
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCommunicationEapGetEthEapConfigPermission_static_0100
+     * @tc.number SUB_Communication_Eap_GetEthEapConfigPermission_0100
+     * @tc.desc   test whether the getEthEapConfig interface permission takes effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testCommunicationEapGetEthEapConfigPermission_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = "testCommunicationEapGetEthEapConfigPermission_static_0100";
+      hilog.info(domain, tag, `${caseName}---start`);
+      try {
+        eap.getEthEapConfig().then((config: eap.EthEapConfig): void => {
+          hilog.info(domain, tag, `${caseName} getEthEapConfig success: enabled=${config.enabled}`);
+          ExpectFail();
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        }).catch((err: Error) => {
+          let error: BusinessError = err as BusinessError;
+          hilog.info(domain, tag, `${caseName} getEthEapConfig failed, code:${error.code}, message:${error.message}`);
+          ExpectTrue(error.code === 201);
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        hilog.info(domain, tag, `${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(error.code === 201);
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCommunicationEapDeleteEthEapConfigErrCode_static_0100
+     * @tc.number SUB_Communication_Eap_DeleteEthEapConfigErrCode_0100
+     * @tc.desc   verification error code 201 of deleteEthEapConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testCommunicationEapDeleteEthEapConfigErrCode_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = "testCommunicationEapDeleteEthEapConfigErrCode_static_0100";
+      hilog.info(domain, tag, `${caseName}---start`);
+      try {
+        eap.deleteEthEapConfig().then((): void => {
+          hilog.info(domain, tag, `${caseName} deleteEthEapConfig success`);
+          ExpectFail();
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        }).catch((err: Error) => {
+          let error: BusinessError = err as BusinessError;
+          hilog.info(domain, tag, `${caseName} deleteEthEapConfig failed, code:${error.code}, message:${error.message}`);
+          ExpectTrue(error.code === 201);
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        hilog.info(domain, tag, `${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(error.code === 201);
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCommunicationEapDeleteEthEapConfigPermission_static_0100
+     * @tc.number SUB_Communication_Eap_DeleteEthEapConfigPermission_0100
+     * @tc.desc   test whether the deleteEthEapConfig interface permission takes effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testCommunicationEapDeleteEthEapConfigPermission_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = "testCommunicationEapDeleteEthEapConfigPermission_static_0100";
+      hilog.info(domain, tag, `${caseName}---start`);
+      try {
+        eap.deleteEthEapConfig().then((): void => {
+          hilog.info(domain, tag, `${caseName} deleteEthEapConfig success`);
+          ExpectFail();
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        }).catch((err: Error) => {
+          let error: BusinessError = err as BusinessError;
+          hilog.info(domain, tag, `${caseName} deleteEthEapConfig failed, code:${error.code}, message:${error.message}`);
+          ExpectTrue(error.code === 201);
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        hilog.info(domain, tag, `${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(error.code === 201);
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCommunicationEapGetEthEapStateInfoErrCode_static_0100
+     * @tc.number SUB_Communication_Eap_GetEthEapStateInfoErrCode_0100
+     * @tc.desc   verification error code 201 of getEthEapStateInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testCommunicationEapGetEthEapStateInfoErrCode_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = "testCommunicationEapGetEthEapStateInfoErrCode_static_0100";
+      hilog.info(domain, tag, `${caseName}---start`);
+      try {
+        let stateInfo: eap.EthEapStateInfo = eap.getEthEapStateInfo();
+        hilog.info(domain, tag, `${caseName} getEthEapStateInfo success: ${JSON.stringify(stateInfo)}`);
+        ExpectFail();
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      } catch (error) {
+        hilog.info(domain, tag, `${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(error.code === 201);
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCommunicationEapGetEthEapStateInfoPermission_static_0100
+     * @tc.number SUB_Communication_Eap_GetEthEapStateInfoPermission_0100
+     * @tc.desc   test whether the getEthEapStateInfo interface permission takes effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testCommunicationEapGetEthEapStateInfoPermission_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = "testCommunicationEapGetEthEapStateInfoPermission_static_0100";
+      hilog.info(domain, tag, `${caseName}---start`);
+      try {
+        let stateInfo: eap.EthEapStateInfo = eap.getEthEapStateInfo();
+        hilog.info(domain, tag, `${caseName} getEthEapStateInfo success: ${JSON.stringify(stateInfo)}`);
+        ExpectFail();
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      } catch (error) {
+        hilog.info(domain, tag, `${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(error.code === 201);
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCommunicationEapOnStateChangeErrCode_static_0100
+     * @tc.number SUB_Communication_Eap_OnStateChangeErrCode_0100
+     * @tc.desc   verification error code 201 of onStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testCommunicationEapOnStateChangeErrCode_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = "testCommunicationEapOnStateChangeErrCode_static_0100";
+      hilog.info(domain, tag, `${caseName}---start`);
+      try {
+        let stateChangeCallback = (info: eap.EthEapStateInfo): void => {
+          hilog.info(domain, tag, `${caseName} onStateChange callback: ${JSON.stringify(info)}`);
+        }
+        eap.onStateChange(stateChangeCallback);
+        hilog.info(domain, tag, `${caseName} onStateChange success`);
+        ExpectFail();
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      } catch (error) {
+        hilog.info(domain, tag, `${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(error.code === 201);
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCommunicationEapOnStateChangePermission_static_0100
+     * @tc.number SUB_Communication_Eap_OnStateChangePermission_0100
+     * @tc.desc   test whether the onStateChange interface permission takes effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testCommunicationEapOnStateChangePermission_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = "testCommunicationEapOnStateChangePermission_static_0100";
+      hilog.info(domain, tag, `${caseName}---start`);
+      try {
+        let stateChangeCallback = (info: eap.EthEapStateInfo): void => {
+          hilog.info(domain, tag, `${caseName} onStateChange callback: ${JSON.stringify(info)}`);
+        }
+        eap.onStateChange(stateChangeCallback);
+        hilog.info(domain, tag, `${caseName} onStateChange success`);
+        ExpectFail();
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      } catch (error) {
+        hilog.info(domain, tag, `${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(error.code === 201);
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCommunicationEapOffStateChangeErrCode_static_0100
+     * @tc.number SUB_Communication_Eap_OffStateChangeErrCode_0100
+     * @tc.desc   verification error code 201 of offStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testCommunicationEapOffStateChangeErrCode_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = "testCommunicationEapOffStateChangeErrCode_static_0100";
+      hilog.info(domain, tag, `${caseName}---start`);
+      try {
+        let stateChangeCallback = (info: eap.EthEapStateInfo): void => {
+          hilog.info(domain, tag, `${caseName} onStateChange callback: ${JSON.stringify(info)}`);
+        }
+        eap.onStateChange(stateChangeCallback);
+        eap.offStateChange(stateChangeCallback);
+        hilog.info(domain, tag, `${caseName} offStateChange success`);
+        ExpectFail();
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      } catch (error) {
+        hilog.info(domain, tag, `${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(error.code === 201);
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCommunicationEapOffStateChangePermission_static_0100
+     * @tc.number SUB_Communication_Eap_OffStateChangePermission_0100
+     * @tc.desc   test whether the offStateChange interface permission takes effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testCommunicationEapOffStateChangePermission_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = "testCommunicationEapOffStateChangePermission_static_0100";
+      hilog.info(domain, tag, `${caseName}---start`);
+      try {
+        let stateChangeCallback = (info: eap.EthEapStateInfo): void => {
+          hilog.info(domain, tag, `${caseName} onStateChange callback: ${JSON.stringify(info)}`);
+        }
+        eap.onStateChange(stateChangeCallback);
+        eap.offStateChange(stateChangeCallback);
+        hilog.info(domain, tag, `${caseName} offStateChange success`);
+        ExpectFail();
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      } catch (error) {
+        hilog.info(domain, tag, `${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(error.code === 201);
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCommunicationEapConnectErrCode_static_0100
+     * @tc.number SUB_Communication_Eap_ConnectErrCode_0100
+     * @tc.desc   verification error code 201 of connect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testCommunicationEapConnectErrCode_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = "testCommunicationEapConnectErrCode_static_0100";
+      hilog.info(domain, tag, `${caseName}---start`);
+      try {
+        eap.connect(eap.EthEapConnectAction.ACTION_CONNECT).then((): void => {
+          hilog.info(domain, tag, `${caseName} connect success`);
+          ExpectFail();
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        }).catch((err: Error) => {
+          let error: BusinessError = err as BusinessError;
+          hilog.info(domain, tag, `${caseName} connect failed, code:${error.code}, message:${error.message}`);
+          ExpectTrue(error.code === 201);
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        hilog.info(domain, tag, `${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(error.code === 201);
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCommunicationEapConnectPermission_static_0100
+     * @tc.number SUB_Communication_Eap_ConnectPermission_0100
+     * @tc.desc   test whether the connect interface permission takes effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testCommunicationEapConnectPermission_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = "testCommunicationEapConnectPermission_static_0100";
+      hilog.info(domain, tag, `${caseName}---start`);
+      try {
+        eap.connect(eap.EthEapConnectAction.ACTION_CONNECT).then((): void => {
+          hilog.info(domain, tag, `${caseName} connect success`);
+          ExpectFail();
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        }).catch((err: Error) => {
+          let error: BusinessError = err as BusinessError;
+          hilog.info(domain, tag, `${caseName} connect failed, code:${error.code}, message:${error.message}`);
+          ExpectTrue(error.code === 201);
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        hilog.info(domain, tag, `${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(error.code === 201);
+        hilog.info(domain, tag, `${caseName}---End`);
+        done();
+      }
+    })
+
   })
 }

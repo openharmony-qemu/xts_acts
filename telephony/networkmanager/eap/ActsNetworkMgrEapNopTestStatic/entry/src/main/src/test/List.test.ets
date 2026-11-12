@@ -14,7 +14,13 @@
  * limitations under the License.
  */
 import eapNoPTest from './EapNoP.test';
+import EmptyTest from './Empty.test';
+import sim from '@ohos.telephony.sim';
 
 export default function testsuite(): void {
-    eapNoPTest();
+    if (sim.getMaxSimCount() < 1) {
+        eapNoPTest();
+    } else {
+        EmptyTest();
+    }
 }
