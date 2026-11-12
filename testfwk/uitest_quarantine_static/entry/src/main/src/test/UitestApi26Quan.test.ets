@@ -379,7 +379,7 @@ export default function UiTest(): void {
     it('testDriverMouseDragDefault_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, testDriverMouseDragDefault_static start`);
       let carSupported = canIUse("SystemCapability.Sensors.MiscDevice")
-      hilog.info(domain, tag, `testDriverMouseDragDefault_static carSupported, ${ JSON.stringify(carSupported) }`);
+      console.log(`${TestTag}, testDriverMouseDragDefault_static carSupported,${ JSON.stringify(carSupported) }`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       await driver!.delayMs(waitUiReadyMs);
       let button = (await driver!.findComponent(ON.id('jump'))) as Component;
@@ -391,7 +391,7 @@ export default function UiTest(): void {
       let text2 = (await driver!.findComponent(ON.text('two'))) as Component;
       let point1 = await text1.getBoundsCenter();
       let point2 = await text2.getBoundsCenter();
-      if (condition) {
+      if (carSupported) {
         await driver!.mouseDragWithOptions(point1, point2);
       } else {
         const touchOptions: TouchOptions = { speed: 2000 };
