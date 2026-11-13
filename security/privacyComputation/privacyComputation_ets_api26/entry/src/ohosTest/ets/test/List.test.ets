@@ -17,15 +17,8 @@ import SecurityPrivacyComputationApiCoverEnumTest from './SecurityPrivacyComputa
 import SecurityPrivacyComputationApiCoverParamTest from './SecurityPrivacyComputationApiCoverParam.test';
 import SecurityPrivacyComputationApiCoverParamSpecTest from './SecurityPrivacyComputationApiCoverParamSpec.test';
 import SecurityPrivacyComputationFuncTest from './SecurityPrivacyComputationFunc.test';
-import SecurityPrivacyComputationSoftwareTest from './SecurityPrivacyComputationSoftware.test';
 
 export default function testsuite(): void {
-  // Only devices with the HUKS crypto extension provide the vendor privacyComputation implementation.
-  const useSoftware: boolean = !canIUse("SystemCapability.Security.Huks.CryptoExtension");
-  if (useSoftware) {
-    SecurityPrivacyComputationSoftwareTest();
-    return;
-  }
   SecurityPrivacyComputationApiCoverEnumTest();
   SecurityPrivacyComputationApiCoverParamTest();
   SecurityPrivacyComputationApiCoverParamSpecTest();
