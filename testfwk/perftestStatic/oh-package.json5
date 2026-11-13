@@ -18,7 +18,5 @@
   "dependencies": {
     "@ohos/hypium-static": "file:../../../tools/hypium_prepare/hypium-static.har"
   },
-  "devDependencies": {
-    //    "@ohos/hamock": "1.0.0"
-  }
+  "devDependencies": {}
 }

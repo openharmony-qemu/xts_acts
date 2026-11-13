@@ -1974,32 +1974,34 @@ export default function uitestDriverTest(): void {
      * @tc.level  LEVEL3
      */
     it('testSwipe_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      hilog.info(domain, tag, `testSwipe_static start`);
-      try {
-        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-        await driver!.delayMs(waitUiReadyMs);
-        await driver!.delayMs(1000);
-        let window = await driver!.findWindow({bundleName: 'com.uitestScene.acts'})
-        await driver!.delayMs(waitUiReadyMs);
-        await maxUiWindow(driver!, window);
-        let scroll = await driver!.findComponent(ON.type('Scroll'));
-        hilog.info(domain, tag, `testSwipe scroll success, ${JSON.stringify(scroll)}`);
-        expect(scroll != null).assertTrue();
-        if (scroll != null ) {
-          let rect = await scroll.getBounds();
-          let center = await scroll.getBoundsCenter();
-          await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt(), displayId: displayId},
-            {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: displayId})
+      if (user == undefined || user == defaultUserId) { // 此用例不支持车机副屏执行
+        hilog.info(domain, tag, `testSwipe_static start`);
+        try {
+          await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+          await driver!.delayMs(waitUiReadyMs);
           await driver!.delayMs(1000);
-          let text = await driver!.findComponent(ON.text('toast'));
-          expect(text == null).assertTrue();
+          let window = await driver!.findWindow({bundleName: 'com.uitestScene.acts'})
+          await driver!.delayMs(waitUiReadyMs);
+          await maxUiWindow(driver!, window);
+          let scroll = await driver!.findComponent(ON.type('Scroll'));
+          hilog.info(domain, tag, `testSwipe scroll success, ${JSON.stringify(scroll)}`);
+          expect(scroll != null).assertTrue();
+          if (scroll != null ) {
+            let rect = await scroll.getBounds();
+            let center = await scroll.getBoundsCenter();
+            await driver!.swipe(center.x, Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt(),
+              center.x, Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt())
+            await driver!.delayMs(1000);
+            let text = await driver!.findComponent(ON.text('toast'));
+            expect(text == null).assertTrue();
+          }
+        } catch(error) {
+          hilog.info(domain, tag, `testSwipe error, ${ JSON.stringify(error) }`);
+          expect().assertFail();
         }
-      } catch(error) {
-        hilog.info(domain, tag, `testSwipe error, ${ JSON.stringify(error) }`);
-        expect().assertFail();
+        hilog.info(domain, tag, `testSwipe end !!!`);
+        await stopApplication('com.uitestScene.acts');
       }
-      hilog.info(domain, tag, `testSwipe end !!!`);
-      await stopApplication('com.uitestScene.acts');
     })
 
     /**
@@ -2011,32 +2013,35 @@ export default function uitestDriverTest(): void {
      * @tc.level  LEVEL3
      */
     it('testSwipe_speed_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      hilog.info(domain, tag, `testSwipe_speed_static start`);
-      try {
-        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-        await driver!.delayMs(waitUiReadyMs);
-        await driver!.delayMs(1000);
-        let window = await driver!.findWindow({bundleName: 'com.uitestScene.acts'})
-        await driver!.delayMs(waitUiReadyMs);
-        await maxUiWindow(driver!, window);
-        let scroll = await driver!.findComponent(ON.type('Scroll'));
-        hilog.info(domain, tag, `testSwipe_speed_static scroll success, ${JSON.stringify(scroll)}`);
-        expect(scroll != null).assertTrue();
-        if (scroll != null ) {
-          let rect = await scroll.getBounds();
-          let center = await scroll.getBoundsCenter();
-          await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt(), displayId: displayId},
-            {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: displayId}, 3000)
+      if (user == undefined || user == defaultUserId) { // 此用例不支持车机副屏执行
+        hilog.info(domain, tag, `testSwipe_speed_static start`);
+        try {
+          await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+          await driver!.delayMs(waitUiReadyMs);
           await driver!.delayMs(1000);
-          let text = await driver!.findComponent(ON.text('toast'));
-          expect(text == null).assertTrue();
+          let window = await driver!.findWindow({bundleName: 'com.uitestScene.acts'})
+          await driver!.delayMs(waitUiReadyMs);
+          await maxUiWindow(driver!, window);
+          let scroll = await driver!.findComponent(ON.type('Scroll'));
+          hilog.info(domain, tag, `testSwipe_speed_static scroll success, ${JSON.stringify(scroll)}`);
+          expect(scroll != null).assertTrue();
+          if (scroll != null ) {
+            let rect = await scroll.getBounds();
+            let center = await scroll.getBoundsCenter();
+            await driver!.swipe(center.x, Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt(),
+              center.x, Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), 3000)
+            await driver!.delayMs(1000);
+            let text = await driver!.findComponent(ON.text('toast'));
+            expect(text == null).assertTrue();
+          }
+        } catch(error) {
+          hilog.info(domain, tag, `testSwipe_speed_static error, ${ JSON.stringify(error) }`);
+          expect().assertFail();
         }
-      } catch(error) {
-        hilog.info(domain, tag, `testSwipe_speed_static error, ${ JSON.stringify(error) }`);
-        expect().assertFail();
+        hilog.info(domain, tag, `testSwipe_speed_static end !!!`);
+        await stopApplication('com.uitestScene.acts');
       }
-      hilog.info(domain, tag, `testSwipe_speed_static end !!!`);
-      await stopApplication('com.uitestScene.acts');
+
     })
 
     /**
