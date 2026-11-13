@@ -14,6 +14,7 @@
  */
 #include "napi/native_api.h"
 #include "bundle/native_interface_bundle.h"
+#include "bundle/ability_resource_info.h"
 
 #include <cstdio>
 #include <cstdlib>
@@ -122,6 +123,25 @@ static napi_value GetCurrentApplicationInfo(napi_env env, napi_callback_info inf
     return result;
 }
 
+static napi_value GetAbilityResourceErrorTest(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    char fileType[256] = {0};
+    size_t strLen;
+    napi_get_value_string_utf8(env, args[0], fileType, sizeof(fileType) - 1, &strLen);
+
+    OH_NativeBundle_AbilityResourceInfo *modules = nullptr;
+    size_t moduleCount = 0;
+    BundleManager_ErrorCode ret = OH_NativeBundle_GetAbilityResourceInfo(fileType, &modules, &moduleCount);
+
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -130,6 +150,8 @@ static napi_value Init(napi_env env, napi_value exports)
         { "IsDebugMode", nullptr, IsDebugMode, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "GetModuleMetadata", nullptr, GetModuleMetadata, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "getCurrentApplicationInfo", nullptr, GetCurrentApplicationInfo,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "getAbilityResourceErrorTest", nullptr, GetAbilityResourceErrorTest,
             nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

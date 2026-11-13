@@ -141,5 +141,27 @@ export default function nativeTest() {
         expect(true).assertFalse();
       }
     })
+
+    /**
+     * @tc.name   BundleNdkTest006
+     * @tc.number SUB_BMS_BASIC_ETS_NATIVE_0600
+     * @tc.desc   test getAbilityResourceErrorTest without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('BundleNdkTest006', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, (done: Function) => {
+      try {
+        let data = entry_add.getAbilityResourceErrorTest('.pdf');
+        hilog.info(0x0000, 'AbilityResource_test', 'getAbilityResourceErrorTest %{public}d ', data);
+        expect(data).assertEqual(201);
+        done();
+      } catch (err) {
+        let message = (err as BusinessError).message;
+        hilog.error(0x0000, 'AbilityResource_test', 'getAbilityResourceErrorTest failed: %{public}s', message);
+        expect(true).assertFalse();
+        done();
+      }
+    })
   })
 }
