@@ -2198,9 +2198,9 @@ export default function nativeWindowTest() {
      * @tc.desc   testNativeWindowHandleOptSetAndGetScreenInfoNormal01
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testNativeWindowHandleOptSetAndGetScreenInfoNormal01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testNativeWindowHandleOptSetAndGetScreenInfoNormal01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let result: number = nativeWindow.testNativeWindowHandleOptSetAndGetScreenInfoNormal01();
         expect(result).assertEqual(0);
@@ -2213,9 +2213,9 @@ export default function nativeWindowTest() {
      * @tc.desc   testNativeWindowHandleOptSetAndGetScreenInfoNormal02
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL1
      */
-    it('testNativeWindowHandleOptSetAndGetScreenInfoNormal02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testNativeWindowHandleOptSetAndGetScreenInfoNormal02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         let result: number = nativeWindow.testNativeWindowHandleOptSetAndGetScreenInfoNormal02();
         expect(result).assertEqual(0);
@@ -2228,9 +2228,9 @@ export default function nativeWindowTest() {
      * @tc.desc   testNativeWindowHandleOptSetAndGetScreenInfoNormal03
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL2
      */
-    it('testNativeWindowHandleOptSetAndGetScreenInfoNormal03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testNativeWindowHandleOptSetAndGetScreenInfoNormal03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
         let result: number = nativeWindow.testNativeWindowHandleOptSetAndGetScreenInfoNormal03();
         expect(result).assertEqual(0);
@@ -2243,9 +2243,9 @@ export default function nativeWindowTest() {
      * @tc.desc   testNativeWindowHandleOptSetAndGetScreenInfoNormal04
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL2
      */
-    it('testNativeWindowHandleOptSetAndGetScreenInfoNormal04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testNativeWindowHandleOptSetAndGetScreenInfoNormal04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
         let result: number = nativeWindow.testNativeWindowHandleOptSetAndGetScreenInfoNormal04();
         expect(result).assertEqual(0);
@@ -2258,9 +2258,9 @@ export default function nativeWindowTest() {
      * @tc.desc   testNativeWindowHandleOptSetAndGetScreenInfoNormal05
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL2
      */
-    it('testNativeWindowHandleOptSetAndGetScreenInfoNormal05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testNativeWindowHandleOptSetAndGetScreenInfoNormal05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
         let result: number = nativeWindow.testNativeWindowHandleOptSetAndGetScreenInfoNormal05();
         expect(result).assertEqual(0);
@@ -2273,9 +2273,9 @@ export default function nativeWindowTest() {
      * @tc.desc   testNativeWindowHandleOptSetAndGetScreenInfoNormal06
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL2
      */
-    it('testNativeWindowHandleOptSetAndGetScreenInfoNormal06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testNativeWindowHandleOptSetAndGetScreenInfoNormal06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
         let result: number = nativeWindow.testNativeWindowHandleOptSetAndGetScreenInfoNormal06();
         expect(result).assertEqual(0);

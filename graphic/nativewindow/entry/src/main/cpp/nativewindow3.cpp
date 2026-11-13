@@ -1766,13 +1766,13 @@ napi_value testNativeWindowHandleOptSetAndGetScreenInfoNormal02(napi_env env, na
     OHNativeWindow *nativeWindow = nullptr;
     nativeWindow = initNative->returnNativeWindow();
     NAPI_ASSERT(env, nativeWindow != nullptr, "nativeWindow == nullptr");
-    // 第一次设置
+    // First-time set
     OH_NativeWindow_ScreenInfoRect currentFrameRectSrc1 = {.x = 10, .y = 10, .w = 100, .h = 100};
     OH_NativeWindow_ScreenInfoRect originalRectSrc1 = {.x = 20, .y = 20, .w = 200, .h = 200};
     float angleSrc1 = 90.0f;
     int32_t ret = OH_NativeWindow_NativeWindowHandleOpt(
         nativeWindow, OH_NATIVEWINDOW_SET_SCREEN_INFO, &currentFrameRectSrc1, &originalRectSrc1, angleSrc1);
-    // 第一次获取并校验
+    // First get and verification
     OH_NativeWindow_ScreenInfoRect currentFrameRectDst1 = { 0 };
     OH_NativeWindow_ScreenInfoRect originalRectDst1 = { 0 };
     float angleDst1 = 0;
@@ -1787,13 +1787,13 @@ napi_value testNativeWindowHandleOptSetAndGetScreenInfoNormal02(napi_env env, na
     NAPI_ASSERT(env, originalRectSrc1.w == originalRectDst1.w, "originalRectSrc1.w != originalRectDst1.w");
     NAPI_ASSERT(env, originalRectSrc1.h == originalRectDst1.h, "originalRectSrc1.h != originalRectDst1.h");
     NAPI_ASSERT(env, angleSrc1 == angleDst1, "angleSrc1 != angleDst1");
-    // 第二次设置不同的数据
+    // Second-time set different data
     OH_NativeWindow_ScreenInfoRect currentFrameRectSrc2 = {.x = 50, .y = 50, .w = 500, .h = 500};
     OH_NativeWindow_ScreenInfoRect originalRectSrc2 = {.x = 60, .y = 60, .w = 600, .h = 600};
     float angleSrc2 = 180.0f;
     ret = OH_NativeWindow_NativeWindowHandleOpt(
         nativeWindow, OH_NATIVEWINDOW_SET_SCREEN_INFO, &currentFrameRectSrc2, &originalRectSrc2, angleSrc2);
-    // 第二次获取并校验
+    // Second get and verification
     OH_NativeWindow_ScreenInfoRect currentFrameRectDst2 = { 0 };
     OH_NativeWindow_ScreenInfoRect originalRectDst2 = { 0 };
     float angleDst2 = 0;

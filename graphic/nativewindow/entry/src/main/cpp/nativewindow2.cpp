@@ -126,12 +126,6 @@ uint64_t usageType[] = {
     | NATIVEBUFFER_USAGE_ALIGNMENT_512 | NATIVEBUFFER_USAGE_MEM_MMZ_CACHE,
 };
 
-static void DestroyNativeWindowImage(OH_NativeImage *image, OHNativeWindow *window)
-{
-    OH_NativeWindow_DestroyNativeWindow(window);
-    OH_NativeImage_Destroy(&image);
-}
-
 napi_value testNativeWindowNativeWindowHandleOptSetGetFormatNormal(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
