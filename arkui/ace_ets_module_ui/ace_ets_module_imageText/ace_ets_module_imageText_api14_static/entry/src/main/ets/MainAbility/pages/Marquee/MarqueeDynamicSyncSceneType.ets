@@ -78,6 +78,7 @@ struct MarqueeDynamicSyncSceneTypeExample {
         .height('5%')
         .fontSize(16)
         .fontWeight(500)
+        .id('MarqueeDynamicSyncSceneStartBtn')
 
       TextClock({ timeZoneOffset: -8, controller: this.controller } )
         .format('hms')

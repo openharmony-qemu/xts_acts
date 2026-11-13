@@ -17,8 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import inspector from '@ohos.arkui.inspector';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Point } from '@ohos.UiTest';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import hilog from '@ohos.hilog';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
@@ -114,12 +113,7 @@ export default function onSelectionChange19() {
         await CommonFunc.sleep(2500);
 
         let richEditor2 = await driver.findComponent(ON.id('onSelectionChange19_RichEditor'));
-        // doubleClick
-        let centerPoint = await (richEditor2?.getBoundsCenter() as Promise<Point>);
-        let point = `${centerPoint.x} ${centerPoint.y}`;
-        let cmd = `uinput -T -d ${point} -u ${point} -i 50 -d ${point} -u ${point}`;
-        let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-        abilityDelegator.executeShellCommand(cmd);
+        await (richEditor2?.doubleClick() as Promise<void>);
         await CommonFunc.sleep(2000);
 
         let paste = await driver.findComponent(ON.text('粘贴'))

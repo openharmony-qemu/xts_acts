@@ -26,6 +26,7 @@ struct TextClockDateTimeOptions {
           TextClock().format(undefined).id('TextClockFormat1')
           // TextClock().format(null).id('TextClockFormat2')
           TextClock().format('yyyy年M月d日').id('TextClockFormat3')
+          TextClock().id('TextClockFormat4')
     }
     .alignItems(HorizontalAlign.Start)
   }
