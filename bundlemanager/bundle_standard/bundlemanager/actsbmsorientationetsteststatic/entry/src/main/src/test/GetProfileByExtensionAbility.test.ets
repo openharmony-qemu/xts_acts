@@ -30,7 +30,7 @@ const METADATA_NAME2: string = "ohos.extension.form2";
 const METADATA_NAME3: string = "ohos.extension.form3";
 const METADATA_NAME4: string = "ohos.extension.form4";
 const METADATA_NAME_TEST: string = "ohos.test.form";
-const PROFILE_JSON_STRING: string = "{\"forms\":[{\"codeLanguage\":\"1.2\",\"colorMode\":\"auto\"," +
+const PROFILE_JSON_STRING: string = "{\"forms\":[{\"arkTSMode\":\"static\",\"colorMode\":\"auto\"," +
   "\"defaultDimension\":\"2*2\",\"description\":\"$string:16777226\",\"displayName\":\"$string:16777227\"," +
   "\"isDefault\":true,\"isDynamic\":false,\"name\":\"widget\",\"scheduledUpdateTime\":\"10:30\"," +
   "\"src\":\"./ets/pages/Index.ets\",\"supportDimensions\":[\"2*2\"],\"uiSyntax\":\"arkts\",\"updateDuration\":1," +
