@@ -58,6 +58,7 @@ export default function ObserverCallNopTest() {
           done();
         };
         observer.onVoIPStateChange(callback);
+        observer.offVoIPStateChange(callback);
       } catch (error) {
         console.info(`${caseName} catchError ` + error?.code);
         ExpectTrue(error?.code === 201);
