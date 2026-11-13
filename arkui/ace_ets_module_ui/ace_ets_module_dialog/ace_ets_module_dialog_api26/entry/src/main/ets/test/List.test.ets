@@ -65,11 +65,11 @@ export default function testsuite() {
   DialogBaseSizeBorder();
   DialogEnumsAssertExtra();
   
-  DialogAlignWordBreakExtra();
   DialogAbnormalOpts();
   DialogAbnormalOptsExtra();
 
   DialogBaseOptionsLayout();
   DialogAlignWordBreak();
   DialogHandedness();
+  DialogAlignWordBreakExtra();
 }

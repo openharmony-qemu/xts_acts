@@ -119,7 +119,7 @@ struct DialogStyleAlert {
                 ]
               });
             })
-        }
+        }.height('12%').width('90%')
         Row() {
           Button('auto orientation')
             .id('btn_style_alert_auto')
@@ -163,7 +163,7 @@ struct DialogStyleAlert {
                 ]
               });
             })
-        }
+        }.height('12%').width('90%')
         Row() {
           Button('wordBreak NORMAL')
             .id('btn_style_alert_wordbreak')
@@ -203,7 +203,7 @@ struct DialogStyleAlert {
                 ]
               });
             })
-        }
+        }.height('12%').width('90%')
         Row() {
           Button('subtitle field')
             .id('btn_style_alert_subtitle')
@@ -240,10 +240,11 @@ struct DialogStyleAlert {
               this.lastDialogId = result.dialogId;
               this.lastAction = 'dialogId=' + result.dialogId;
             })
-        }
+        }.height('12%').width('90%')
       }
       .width('100%')
-      .padding(16)
+      .padding('1%')
+      .height('90%')
     }
     .width('100%')
     .height('100%')

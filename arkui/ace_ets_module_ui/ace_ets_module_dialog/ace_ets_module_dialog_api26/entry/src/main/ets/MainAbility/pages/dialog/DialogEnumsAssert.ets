@@ -47,7 +47,7 @@ struct DialogEnumsAssert {
             DialogBaseAlignment.BOTTOM_START === 8 && DialogBaseAlignment.BOTTOM_END === 9;
           this.setResult(ok, 'DialogBaseAlignment');
         })
-      }
+      }.height('9%').width('90%')
 
       Row(){
         Button('DialogButtonOrientation values').id('btn_enum_btn_orient').onClick(() => {
@@ -61,7 +61,7 @@ struct DialogEnumsAssert {
             DialogButtonOrientation.HORIZONTAL === 1;
           this.setResult(ok, 'AllEnums');
         })
-      }
+      }.height('9%').width('90%')
       Row(){
         Button('state UNINITIALIZED').id('btn_enum_state_0').onClick(() => {
           this.setResult(DialogState.UNINITIALIZED === 0, 'UNINITIALIZED');
@@ -69,7 +69,7 @@ struct DialogEnumsAssert {
         Button('state INITIALIZED').id('btn_enum_state_1').onClick(() => {
           this.setResult(DialogState.INITIALIZED === 1, 'INITIALIZED');
         })
-      }
+      }.height('9%').width('90%')
 
       Row(){
         Button('state APPEARING').id('btn_enum_state_2').onClick(() => {
@@ -78,7 +78,7 @@ struct DialogEnumsAssert {
         Button('state APPEARED').id('btn_enum_state_3').onClick(() => {
           this.setResult(DialogState.APPEARED === 3, 'APPEARED');
         })
-      }
+      }.height('9%').width('90%')
       Row(){
         Button('state DISAPPEARING').id('btn_enum_state_4').onClick(() => {
           this.setResult(DialogState.DISAPPEARING === 4, 'DISAPPEARING');
@@ -86,7 +86,7 @@ struct DialogEnumsAssert {
         Button('state DISAPPEARED').id('btn_enum_state_5').onClick(() => {
           this.setResult(DialogState.DISAPPEARED === 5, 'DISAPPEARED');
         })
-      }
+      }.height('9%').width('90%')
       Row(){
         Button('align TOP').id('btn_enum_align_0').onClick(() => {
           this.setResult(DialogBaseAlignment.TOP === 0, 'TOP');
@@ -94,7 +94,7 @@ struct DialogEnumsAssert {
         Button('align CENTER').id('btn_enum_align_1').onClick(() => {
           this.setResult(DialogBaseAlignment.CENTER === 1, 'CENTER');
         })
-      }
+      }.height('9%').width('90%')
       Row(){
         Button('align BOTTOM').id('btn_enum_align_2').onClick(() => {
           this.setResult(DialogBaseAlignment.BOTTOM === 2, 'BOTTOM');
@@ -102,14 +102,14 @@ struct DialogEnumsAssert {
         Button('align DEFAULT').id('btn_enum_align_3').onClick(() => {
           this.setResult(DialogBaseAlignment.DEFAULT === 3, 'DEFAULT');
         })
-      }
+      }.height('9%').width('90%')
 
-      Button('align TOP_START').id('btn_enum_align_4').onClick(() => {
+      Button('align TOP_START').id('btn_enum_align_4').height('9%').width('90%').onClick(() => {
         this.setResult(DialogBaseAlignment.TOP_START === 4, 'TOP_START');
       })
     }
     .width('100%')
     .height('100%')
-    .padding(12)
+    .padding('1%')
   }
 }

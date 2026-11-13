@@ -55,7 +55,7 @@ struct DialogButtonMatrix {
               }]
             });
           })
-        }
+        }.height('12%').width('90%')
         Row() {
           Button('backgroundColor')
           .id('btn_matrix_bg')
@@ -83,7 +83,7 @@ struct DialogButtonMatrix {
               }]
             });
           })
-        }
+        }.height('12%').width('90%')
         Row() {
           Button('primary true')
           .id('btn_matrix_primary')
@@ -111,7 +111,7 @@ struct DialogButtonMatrix {
               }]
             });
           })
-        }
+        }.height('12%').width('90%')
         Row() {
           Button('style HIGHLIGHT')
           .id('btn_matrix_style_hi')
@@ -153,10 +153,10 @@ struct DialogButtonMatrix {
               ]
             });
           })
-        }
+        }.height('12%').width('90%')
 
         Button('action callback')
-          .id('btn_matrix_action_cb')
+          .id('btn_matrix_action_cb').height('12%').width('90%')
           .onClick(async () => {
             await this.presenter().present({
               title: 'ActionTitle',
@@ -169,7 +169,8 @@ struct DialogButtonMatrix {
           })
       }
       .width('100%')
-      .padding(16)
+      .padding('1%')
+      .height('90%')
     }
     .width('100%')
     .height('100%')

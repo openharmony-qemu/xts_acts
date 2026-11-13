@@ -29,11 +29,10 @@ export default function PopupOptionsLevelMode() {
         url: 'MainAbility/pages/popup/PopupOptionsLevelMode'
       };
       try {
+        router.clear();
         let pages = router.getState();
         if (pages.name !== 'PopupOptionsLevelMode') {
-          router.clear();
-          await CommonFunc.sleep(500);
-          await router.replaceUrl(options);
+          await router.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -138,8 +137,6 @@ export default function PopupOptionsLevelMode() {
       await CommonFunc.sleep(1000);
       let node = await driver.findComponent(ON.text('PopupOptions EMBEDDED before nav'));
       expect(node !== null).assertTrue();
-      let go = await driver.findComponent(ON.id('btn_popup_level_go_index'));
-      await go.click();
       await CommonFunc.sleep(1000);
       await driver.pressBack(displayID);
       await CommonFunc.sleep(800);

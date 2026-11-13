@@ -55,7 +55,7 @@ struct DialogBaseOptionsLayout {
   build() {
     Scroll() {
       Column() {
-        Text('DialogBaseOptions layout').fontSize(18).fontWeight(FontWeight.Bold)
+        Text('DialogBaseOptions layout').fontWeight(FontWeight.Bold)
         Text('align=' + this.lastAlign).id('base_layout_align')
         Text('action=' + this.lastAction).id('base_layout_action')
         Row() {
@@ -65,7 +65,7 @@ struct DialogBaseOptionsLayout {
           Button('CENTER').id('btn_align_CENTER').onClick(() => {
             this.openAlign('CENTER', DialogBaseAlignment.CENTER);
           })
-        }
+        }.height('11%').width('90%').margin({top:'1%'})
         Row() {
           Button('BOTTOM').id('btn_align_BOTTOM').onClick(() => {
             this.openAlign('BOTTOM', DialogBaseAlignment.BOTTOM);
@@ -73,7 +73,7 @@ struct DialogBaseOptionsLayout {
           Button('DEFAULT').id('btn_align_DEFAULT').onClick(() => {
             this.openAlign('DEFAULT', DialogBaseAlignment.DEFAULT);
           })
-        }
+        }.height('11%').width('90%').margin({top:'1%'})
         Row() {
           Button('TOP_START').id('btn_align_TOP_START').onClick(() => {
             this.openAlign('TOP_START', DialogBaseAlignment.TOP_START);
@@ -81,7 +81,7 @@ struct DialogBaseOptionsLayout {
           Button('TOP_END').id('btn_align_TOP_END').onClick(() => {
             this.openAlign('TOP_END', DialogBaseAlignment.TOP_END);
           })
-        }
+        }.height('11%').width('90%').margin({top:'1%'})
         Row() {
           Button('CENTER_START').id('btn_align_CENTER_START').onClick(() => {
             this.openAlign('CENTER_START', DialogBaseAlignment.CENTER_START);
@@ -89,7 +89,7 @@ struct DialogBaseOptionsLayout {
           Button('CENTER_END').id('btn_align_CENTER_END').onClick(() => {
             this.openAlign('CENTER_END', DialogBaseAlignment.CENTER_END);
           })
-        }
+        }.height('11%').width('90%').margin({top:'1%'})
         Row() {
           Button('BOTTOM_START').id('btn_align_BOTTOM_START').onClick(() => {
             this.openAlign('BOTTOM_START', DialogBaseAlignment.BOTTOM_START);
@@ -97,10 +97,10 @@ struct DialogBaseOptionsLayout {
           Button('BOTTOM_END').id('btn_align_BOTTOM_END').onClick(() => {
             this.openAlign('BOTTOM_END', DialogBaseAlignment.BOTTOM_END);
           })
-        }
+        }.height('11%').width('90%').margin({top:'1%'})
 
         Button('maskRect offset')
-          .id('btn_layout_mask')
+          .id('btn_layout_mask').height('11%').width('90%').margin({top:'1%'})
           .onClick(async () => {
             await this.presenter().present({
               title: 'MaskRectTitle',
@@ -121,7 +121,8 @@ struct DialogBaseOptionsLayout {
           })
       }
       .width('100%')
-      .padding(16)
+      .padding('1%')
+      .height('90%')
     }
     .width('100%')
     .height('100%')

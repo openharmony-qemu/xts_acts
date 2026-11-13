@@ -48,10 +48,10 @@ struct ContextMenuGridStyle {
   build() {
     Scroll() {
       Column() {
-        Text('ContextMenuOptions.gridStyle').fontSize(18).fontWeight(FontWeight.Bold)
+        Text('ContextMenuOptions.gridStyle').fontWeight(FontWeight.Bold)
         Text('last=' + this.lastAction).id('grid_last_action')
         Button('grid TOP')
-          .id('btn_grid_top')
+          .id('btn_grid_top').height('9%').width('90%').margin({top:'1%'})
           .onClick(() => {
             this.showTop = true;
           })
@@ -66,7 +66,7 @@ struct ContextMenuGridStyle {
             }
           })
         Button('grid BOTTOM')
-          .id('btn_grid_bottom')
+          .id('btn_grid_bottom').height('9%').width('90%').margin({top:'1%'})
           .onClick(() => {
             this.showBottom = true;
           })
@@ -81,7 +81,7 @@ struct ContextMenuGridStyle {
             }
           })
         Button('grid count=2')
-          .id('btn_grid_count2')
+          .id('btn_grid_count2').height('9%').width('90%').margin({top:'1%'})
           .onClick(() => {
             this.showCount2 = true;
           })
@@ -95,7 +95,7 @@ struct ContextMenuGridStyle {
             }
           })
         Button('grid count=4')
-          .id('btn_grid_count4')
+          .id('btn_grid_count4').height('9%').width('90%').margin({top:'1%'})
           .onClick(() => {
             this.showCount4 = true;
           })
@@ -109,7 +109,7 @@ struct ContextMenuGridStyle {
             }
           })
         Button('grid horizontalSize=2')
-          .id('btn_grid_hsize')
+          .id('btn_grid_hsize').height('9%').width('90%').margin({top:'1%'})
           .onClick(() => {
             this.showHSize = true;
           })
@@ -124,7 +124,7 @@ struct ContextMenuGridStyle {
             }
           })
         Button('grid combined')
-          .id('btn_grid_combined')
+          .id('btn_grid_combined').height('9%').width('90%').margin({top:'1%'})
           .onClick(() => {
             this.showCombined = true;
           })
@@ -141,7 +141,8 @@ struct ContextMenuGridStyle {
           })
       }
       .width('100%')
-      .padding(16)
+      .padding('1%')
+      .height('90%')
     }
     .width('100%')
     .height('100%')

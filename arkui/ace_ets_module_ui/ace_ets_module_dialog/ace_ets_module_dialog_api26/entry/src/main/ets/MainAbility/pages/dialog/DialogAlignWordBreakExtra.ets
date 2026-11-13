@@ -27,11 +27,11 @@ struct DialogAlignWordBreakExtra {
   build() {
     Scroll() {
       Column() {
-        Text('Align x wordBreak part2').fontSize(16).fontWeight(FontWeight.Bold)
+        Text('Align x wordBreak part2').fontWeight(FontWeight.Bold)
         Text('action=' + this.lastAction).id('align_wb_action')
         Row() {
           Button('DEFAULT x NORMAL')
-          .id('btn_aw_default_normal')
+          .id('btn_aw_default_normal').height('90%')
           .onClick(async () => {
             await this.presenter().present({
               title: 'AWDEFAULT_NORMAL',
@@ -48,7 +48,7 @@ struct DialogAlignWordBreakExtra {
             });
           })
         Button('DEFAULT x BREAK_ALL')
-          .id('btn_aw_default_break_all')
+          .id('btn_aw_default_break_all').height('90%')
           .onClick(async () => {
             await this.presenter().present({
               title: 'AWDEFAULT_BREAK_ALL',
@@ -64,10 +64,10 @@ struct DialogAlignWordBreakExtra {
               }]
             });
           })
-        }
+        }.height('12%').width('90%').margin({top:'1%'})
         Row() {
           Button('DEFAULT x BREAK_WORD')
-          .id('btn_aw_default_break_word')
+          .id('btn_aw_default_break_word').height('90%')
           .onClick(async () => {
             await this.presenter().present({
               title: 'AWDEFAULT_BREAK_WORD',
@@ -84,7 +84,7 @@ struct DialogAlignWordBreakExtra {
             });
           })
         Button('TOP_START x NORMAL')
-          .id('btn_aw_top_start_normal')
+          .id('btn_aw_top_start_normal').height('90%')
           .onClick(async () => {
             await this.presenter().present({
               title: 'AWTOP_START_NORMAL',
@@ -100,10 +100,10 @@ struct DialogAlignWordBreakExtra {
               }]
             });
           })
-        }
+        }.height('12%').width('90%').margin({top:'1%'})
         Row() {
           Button('TOP_START x BREAK_ALL')
-          .id('btn_aw_top_start_break_all')
+          .id('btn_aw_top_start_break_all').height('90%')
           .onClick(async () => {
             await this.presenter().present({
               title: 'AWTOP_START_BREAK_ALL',
@@ -120,7 +120,7 @@ struct DialogAlignWordBreakExtra {
             });
           })
         Button('TOP_START x BREAK_WORD')
-          .id('btn_aw_top_start_break_word')
+          .id('btn_aw_top_start_break_word').height('90%')
           .onClick(async () => {
             await this.presenter().present({
               title: 'AWTOP_START_BREAK_WORD',
@@ -136,10 +136,10 @@ struct DialogAlignWordBreakExtra {
               }]
             });
           })
-        }
+        }.height('12%').width('90%').margin({top:'1%'})
         Row() {
           Button('TOP_END x NORMAL')
-          .id('btn_aw_top_end_normal')
+          .id('btn_aw_top_end_normal').height('90%')
           .onClick(async () => {
             await this.presenter().present({
               title: 'AWTOP_END_NORMAL',
@@ -156,7 +156,7 @@ struct DialogAlignWordBreakExtra {
             });
           })
         Button('TOP_END x BREAK_ALL')
-          .id('btn_aw_top_end_break_all')
+          .id('btn_aw_top_end_break_all').height('90%')
           .onClick(async () => {
             await this.presenter().present({
               title: 'AWTOP_END_BREAK_ALL',
@@ -172,9 +172,9 @@ struct DialogAlignWordBreakExtra {
               }]
             });
           })
-        }
+        }.height('12%').width('90%').margin({top:'1%'})
         Button('TOP_END x BREAK_WORD')
-          .id('btn_aw_top_end_break_word')
+          .id('btn_aw_top_end_break_word').height('12%').width('90%').margin({top:'1%'})
           .onClick(async () => {
             await this.presenter().present({
               title: 'AWTOP_END_BREAK_WORD',
@@ -192,7 +192,8 @@ struct DialogAlignWordBreakExtra {
           })
       }
       .width('100%')
-      .padding(12)
+      .padding('1%')
+      .height('90%')
     }
     .width('100%')
     .height('100%')

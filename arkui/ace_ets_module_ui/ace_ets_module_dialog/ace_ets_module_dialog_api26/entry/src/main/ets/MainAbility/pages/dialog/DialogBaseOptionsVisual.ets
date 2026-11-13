@@ -83,7 +83,7 @@ struct DialogBaseOptionsVisual {
               ]
             });
           })
-        }
+        }.height('12%').width('90%')
         Row() {
           Button('levelMode OVERLAY')
           .id('btn_visual_level_overlay')
@@ -122,7 +122,7 @@ struct DialogBaseOptionsVisual {
               ]
             });
           })
-        }
+        }.height('12%').width('90%')
         Row() {
           Button('isModal false')
           .id('btn_visual_not_modal')
@@ -161,7 +161,7 @@ struct DialogBaseOptionsVisual {
               ]
             });
           })
-        }
+        }.height('12%').width('90%')
         Row() {
           Button('transition keyboard')
           .id('btn_visual_transition')
@@ -202,10 +202,10 @@ struct DialogBaseOptionsVisual {
               ]
             });
           })
-        }
+        }.height('12%').width('90%')
 
         Button('systemMaterial')
-          .id('btn_visual_material')
+          .id('btn_visual_material').height('12%').width('90%')
           .onClick(async () => {
             await this.presenter().present({
               title: 'MaterialTitle',
@@ -223,7 +223,8 @@ struct DialogBaseOptionsVisual {
           })
       }
       .width('100%')
-      .padding(16)
+      .padding('1%')
+      .height('90%')
     }
     .width('100%')
     .height('100%')
