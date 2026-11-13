@@ -48,7 +48,7 @@ export default function hardwareTest() {
       applicationContext = abilityContext.getApplicationContext()
       expect(await AbilityUtils.startAbility('com.acts.pcs.arktstest', 'TestAbility', abilityContext)).assertTrue()
 
-      let permissions: Permissions[] = ['ohos.permission.CAMERA',
+      let permissions: Array<Permissions> = ['ohos.permission.CAMERA',
         'ohos.permission.MICROPHONE'];
       await PermissionUtils.getPermission(abilityContext, permissions)
       await PermissionUtils.grantPermission()

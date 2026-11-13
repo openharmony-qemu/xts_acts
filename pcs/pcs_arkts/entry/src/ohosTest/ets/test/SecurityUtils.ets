@@ -174,7 +174,7 @@ export default class SecurityUtils {
   }
 
   static StringToUint8Array(str: string) {
-    let arr: number[] = [];
+    let arr: number[] = new Array();
     for (let i = 0, j = str.length; i < j; ++i) {
       arr.push(str.charCodeAt(i));
     }
@@ -182,7 +182,7 @@ export default class SecurityUtils {
   }
 
   static async generateKeyItem(keyAlias: string, huksKeyStorageType: huks.HuksKeyStorageType) {
-    let properties: huks.HuksParam[] = [];
+    let properties: Array<huks.HuksParam> = new Array();
     properties[0] = {
       tag: huks.HuksTag.HUKS_TAG_ALGORITHM, value: huks.HuksKeyAlg.HUKS_ALG_AES,
     }
@@ -223,7 +223,7 @@ export default class SecurityUtils {
   }
 
   static async createSession(keyAlias: string, HuksKeyDeriveKeySize: number, deriveHkdfInData: string) {
-    let initProperties: huks.HuksParam[] = [];
+    let initProperties: Array<huks.HuksParam> = new Array();
     initProperties[0] = {
       tag: huks.HuksTag.HUKS_TAG_ALGORITHM, value: huks.HuksKeyAlg.HUKS_ALG_HKDF,
     }
@@ -263,7 +263,7 @@ export default class SecurityUtils {
   }
 
   static async finishSession(keyAlias: string, handle: number) {
-    let finishProperties: huks.HuksParam[] = [];
+    let finishProperties: Array<huks.HuksParam> = new Array();
     finishProperties[0] = {
       tag: huks.HuksTag.HUKS_TAG_DERIVED_AGREED_KEY_STORAGE_FLAG,
       value: huks.HuksKeyStorageType.HUKS_STORAGE_KEY_EXPORT_ALLOWED,

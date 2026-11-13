@@ -241,9 +241,9 @@ export default function softwareTest() {
       console.log(`testCommonEventNotChanged0100 start`)
       let eventList = await getSystemSupportEvent();
       console.log(`testCommonEventNotChanged0100 eventList, ${JSON.stringify(eventList)}`)
-      let commonEventValues: CommonEventManager.Support[] = Object.values(CommonEventManager.Support)
+      let commonEventValues: Array<CommonEventManager.Support> = Object.values(CommonEventManager.Support)
       console.log(`testCommonEventNotChanged0100 commonEventValues, ${JSON.stringify(commonEventValues)}`);
-      let errorEventList: CommonEventManager.Support[] = [];
+      let errorEventList: Array<CommonEventManager.Support> = [];
       for(let commonEventValue of commonEventValues) {
         let index = eventList.indexOf(commonEventValue);
         if (index < 0) {

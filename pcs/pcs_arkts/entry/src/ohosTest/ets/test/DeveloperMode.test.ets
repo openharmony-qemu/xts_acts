@@ -132,7 +132,7 @@ export default function developerModeTest() {
       let path: string = filesDir + "/serviceInfo.txt";
       let file = fs.openSync(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
       let serviceId: number = 10;
-      let args: string[] = new Array("allInfo");
+      let args: Array<string> = new Array("allInfo");
       try {
         hidebug.getServiceDump(serviceId, file.fd, args);
       } catch (error) {

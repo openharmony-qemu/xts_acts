@@ -80,7 +80,7 @@ export default function securityTest() {
         done()
         return
       }
-      let permissions: Permissions[] = ['ohos.permission.CAMERA']
+      let permissions: Array<Permissions> = ['ohos.permission.CAMERA']
       await PermissionUtils.getPermission(abilityContext, permissions)
       await PermissionUtils.grantPermission()
       let driver = Driver.create();
@@ -115,7 +115,7 @@ export default function securityTest() {
       }
       let driver = Driver.create()
       await driver.delayMs(1000)
-      let permissions: Permissions[] = ['ohos.permission.CAMERA']
+      let permissions: Array<Permissions> = ['ohos.permission.CAMERA']
       await PermissionUtils.getPermission(abilityContext, permissions)
       await PermissionUtils.grantPermission()
       await driver.delayMs(1000)
@@ -210,7 +210,7 @@ export default function securityTest() {
           console.info(`Failed to add contact. error: ${JSON.stringify(err)}`)
           expect(err.code == 201).assertTrue()
         }
-        let permissions: Permissions[] = ['ohos.permission.WRITE_CONTACTS']
+        let permissions: Array<Permissions> = ['ohos.permission.WRITE_CONTACTS']
         await PermissionUtils.getPermission(abilityContext, permissions)
         await PermissionUtils.grantPermission()
         let driver = Driver.create();
@@ -1379,7 +1379,7 @@ export default function securityTest() {
         let pathDir = abilityContext.filesDir
         let filePath = pathDir + '/SecurityTest.txt'
         let file = fs.openSync(filePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE)
-        let securityLevels: securityLabel.DataLevel[] = ['s0', 's1', 's2', 's3', 's4']
+        let securityLevels: Array<securityLabel.DataLevel> = ['s0', 's1', 's2', 's3', 's4']
         for (let securityLevel of securityLevels) {
           await securityLabel.setSecurityLabel(filePath, securityLevel)
           expect(await securityLabel.getSecurityLabel(filePath)).assertEqual(securityLevel)
@@ -1407,7 +1407,7 @@ export default function securityTest() {
           bundleName: 'com.acts.pcs.arktstest'
         }
         let kvManager = distributedKVStore.createKVManager(kvManagerConfig)
-        let securityLevels: distributedKVStore.SecurityLevel[] = [
+        let securityLevels: Array<distributedKVStore.SecurityLevel> = [
           distributedKVStore.SecurityLevel.S1,
           distributedKVStore.SecurityLevel.S2,
           distributedKVStore.SecurityLevel.S3,
