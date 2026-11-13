@@ -61,7 +61,7 @@ export default function testsuite() {
   TextDeleteDirectionTest();
   onDidIMEInputTest();
   onSelectionChange1();
-  // RichEditor3();
+  RichEditor3();
   onSelectionChange4();
   onSelectionChange5();
   onSelectionChange6();

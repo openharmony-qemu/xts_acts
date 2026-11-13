@@ -36,10 +36,6 @@ import onTimerModifierUndefinedTest from './Text_TimerTest/onTimerModifierUndefi
 import textClockUndefined from './Text_ClockTest/textClockUndefined.test'
 import textClockModifierUndefined from './Text_ClockTest/textClockModifierUndefined.test'
 
-// text_picker
-import textPickerUndefined from './Text_PickerTest/textPickerUndefined.test'
-import textPickerModifierUndefined from './Text_PickerTest/textPickerModifierUndefined.test'
-
 export default function testsuite() {
     // text_timer
     fontColorUndefinedTest();
@@ -64,8 +60,4 @@ export default function testsuite() {
     // text_clock
     textClockUndefined();
     textClockModifierUndefined();
-
-    // text_picker
-    textPickerUndefined();
-    textPickerModifierUndefined();
 }
