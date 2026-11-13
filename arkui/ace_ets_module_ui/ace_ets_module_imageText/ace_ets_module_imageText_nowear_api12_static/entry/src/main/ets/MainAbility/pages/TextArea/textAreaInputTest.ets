@@ -21,7 +21,8 @@ import {
   CopyOptions,
   DragEvent,
   Text,
-  TextArea
+  TextArea,
+  TextAlign
 } from '@ohos.arkui.component'
 
 import {
@@ -48,6 +49,7 @@ struct TextAreaInputTestExample {
           .onDragEnd((event: DragEvent, extraParams?: string):void=>{
             this.text = 'Text--onDragEnd'
           })
+          .textAlign(TextAlign.Center)
 
         TextArea({ placeholder: this.text })
           .id('textArea2')

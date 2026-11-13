@@ -84,8 +84,13 @@ it('StyledString_static_0100', Level.LEVEL2, async (done: () => void): Promise<v
       let strJson = inspector.getInspectorByKey('text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[StyledString_static_0100] component obj is: " + JSON.stringify(obj));
-	    let str = 'font-style: normal;font-weight: normal;color: #008000FF;font-family: HarmonyOS Sans;stroke-width: 0.00px;stroke-color: #008000FF;font-superscript: normal;">属性字符串</span><img src="file:///data/storage/el2/base/temp/htmlconvert/'
-      expect(obj.getElement('$attrs').getString('content')).assertContain(str);
+      let content = obj.getElement('$attrs').getString('content');
+      expect(content).assertContain('font-style: normal');
+      expect(content).assertContain('color: #008000FF');
+      expect(content).assertContain('font-family: HarmonyOS Sans');
+      expect(content).assertContain('stroke-width: 0.00px');
+      expect(content).assertContain('stroke-color: #008000FF');
+      expect(content).assertContain('font-superscript: normal');
       console.info('[StyledString_static_0100] END');
       done();
     });

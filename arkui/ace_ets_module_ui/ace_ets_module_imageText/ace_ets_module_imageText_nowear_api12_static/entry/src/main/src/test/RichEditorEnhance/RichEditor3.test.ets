@@ -15,8 +15,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Point } from '@ohos.UiTest';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import hilog from '@ohos.hilog';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
@@ -177,15 +176,8 @@ export default function RichEditor3() {
       await CommonFunc.sleep(500);
       await (setContent?.click() as Promise<void>)
       await CommonFunc.sleep(500);
-      // doubleClick
       let richEditor = await driver.findComponent(ON.id('RichEditorGetAttribute'));
-      await CommonFunc.sleep(500);
-      let centerPoint = await (richEditor?.getBoundsCenter() as Promise<Point>);
-      await CommonFunc.sleep(500);
-      let point = `${centerPoint.x} ${centerPoint.y}`;
-      let cmd = `uinput -T -d ${point} -u ${point} -i 50 -d ${point} -u ${point}`;
-      let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-      abilityDelegator.executeShellCommand(cmd);
+      await (richEditor?.doubleClick() as Promise<void>);
       await CommonFunc.sleep(500)
       console.log("=============================================== findComponent(ON.text(\"全选\"))" );
       let quanxuan = await driver.findComponent(ON.text("全选"));
@@ -242,13 +234,7 @@ export default function RichEditor3() {
       await (setContent?.click()  as Promise<void>)
       await CommonFunc.sleep(500);
       let richEditor = await driver.findComponent(ON.id('RichEditorGetAttribute'));
-      await CommonFunc.sleep(500);
-      let centerPoint = await (richEditor?.getBoundsCenter() as Promise<Point>);
-      await CommonFunc.sleep(500);
-      let point = `${centerPoint.x} ${centerPoint.y}`;
-      let cmd = `uinput -T -d ${point} -u ${point} -i 50 -d ${point} -u ${point}`;
-      let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-      abilityDelegator.executeShellCommand(cmd);
+      await (richEditor?.doubleClick() as Promise<void>);
       await CommonFunc.sleep(500)
       console.log("=============================================== findComponent(ON.text(\"全选\"))" );
       let quanxuan = await driver.findComponent(ON.text("全选"));

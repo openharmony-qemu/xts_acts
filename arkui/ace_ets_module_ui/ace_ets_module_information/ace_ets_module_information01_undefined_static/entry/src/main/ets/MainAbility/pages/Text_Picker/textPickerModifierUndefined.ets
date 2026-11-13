@@ -24,7 +24,8 @@ import {
   FontStyle,
   TextPicker,
   TextPickerAttribute,
-  DividerOptions
+  DividerOptions,
+  Margin
 } from '@ohos.arkui.component'
 import { State, Observed } from '@ohos.arkui.stateManagement'
 import inspector from '@ohos.arkui.inspector'
@@ -81,72 +82,94 @@ struct Index {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       TextPicker({ range: this.multi })
         .id('textPicker_M_1')
+        .width('100%')
+        .height('18%')
         .attributeModifier(this.textPickerModifier1)
 
       Text('textPickerMChangeText is ' + this.textPickerModifier1.textPickerMOnChangeStr)
         .id('textPicker_onChange_M_Text')
-        .fontSize(20)
+        .width('100%')
+        .height('4%')
 
-      Column({ space: 5 } as ColumnOptions) {
-        Button('reset_Text')
-          .id('textPickerChange_M_resetBtn')
-          .onClick((e: ClickEvent) => {
-            this.textPickerModifier1.textPickerMOnChangeStr = '-1';
-          })
-        Button('切换 textPicker_enableHapticFeedback_M → ' +
-          (this.textPickerModifier1.enableHapticFeedbackMFlag ? 'undefined' : 'false'))
-          .id('textPicker_enableHapticFeedback_M_Btn')
-          .onClick((e: ClickEvent) => {
-            this.textPickerModifier1.enableHapticFeedbackMFlag = !this.textPickerModifier1.enableHapticFeedbackMFlag
-          })
-        Button('切换 textPicker_onChange_M → ' +
-          (this.textPickerModifier1.textPickerMOnChangeFlag ? 'undefined' : 'true'))
-          .id('textPicker_onChange_M_Btn')
-          .onClick((e: ClickEvent) => {
-            this.textPickerModifier1.textPickerMOnChangeFlag = !this.textPickerModifier1.textPickerMOnChangeFlag
-          })
-        Button('切换 textPicker_gradientHeight_M → ' +
-          (this.textPickerModifier1.gradientHeightMFlag ? 'undefined' : '15.0'))
-          .id('textPicker_gradientHeight_M_Btn')
-          .onClick((e: ClickEvent) => {
-            this.textPickerModifier1.gradientHeightMFlag = !this.textPickerModifier1.gradientHeightMFlag
-          })
-        Button('切换 textPicker_digitalCrownSensitivity_M → ' +
-          (this.textPickerModifier1.digitalCrownSensitivityMFlag ? 'undefined' : 'CrownSensitivity.HIGH'))
-          .id('textPicker_digitalCrownSensitivity_M_Btn')
-          .onClick((e: ClickEvent) => {
-            this.textPickerModifier1.digitalCrownSensitivityMFlag =
-              !this.textPickerModifier1.digitalCrownSensitivityMFlag
-          })
-        Button('切换 textPicker_dividerFlag_M → ' +
-          (this.textPickerModifier1.dividerFlagMFlag ? 'undefined' : 'dividerChange'))
-          .id('textPicker_dividerFlag_M_Btn')
-          .onClick((e: ClickEvent) => {
-            this.textPickerModifier1.dividerFlagMFlag =
-              !this.textPickerModifier1.dividerFlagMFlag
-          })
-        Button('切换 textPicker_selectedIndexFlag_M → ' +
-          (this.textPickerModifier1.selectedIndexMFlag ? 'undefined' : '[2, 1, 0]'))
-          .id('textPicker_selectedIndexFlag_M_Btn')
-          .onClick((e: ClickEvent) => {
-            this.textPickerModifier1.selectedIndexMFlag =
-              !this.textPickerModifier1.selectedIndexMFlag
-          })
-        Button('切换 textPicker_onEnterSelectedAreaMFlag_M → ' +
-          (this.textPickerModifier1.onEnterSelectedAreaMFlag ? 'undefined' : 'onEnterSelectedAreaChange'))
-          .id('textPicker_onEnterSelectedAreaMFlag_M_Btn')
-          .onClick((e: ClickEvent) => {
-            this.textPickerModifier1.onEnterSelectedAreaMFlag =
-              !this.textPickerModifier1.onEnterSelectedAreaMFlag
-          })
-        Button('切换 textPicker_onScrollStopFlagMFlag_M → ' +
-          (this.textPickerModifier1.onScrollStopFlagMFlag ? 'undefined' : 'onScrollStopChange'))
-          .id('textPicker_onScrollStopFlagMFlag_Btn')
-          .onClick((e: ClickEvent) => {
-            this.textPickerModifier1.onScrollStopFlagMFlag =
-              !this.textPickerModifier1.onScrollStopFlagMFlag
-          })
-      }
+      Button('reset_Text')
+        .id('textPickerChange_M_resetBtn')
+        .width('100%')
+        .height('6%')
+        .onClick((e: ClickEvent) => {
+          this.textPickerModifier1.textPickerMOnChangeStr = '-1';
+        })
+      Button('切换 textPicker_enableHapticFeedback_M → ' +
+        (this.textPickerModifier1.enableHapticFeedbackMFlag ? 'undefined' : 'false'))
+        .id('textPicker_enableHapticFeedback_M_Btn')
+        .width('100%')
+        .height('6%')
+        .onClick((e: ClickEvent) => {
+          this.textPickerModifier1.enableHapticFeedbackMFlag = !this.textPickerModifier1.enableHapticFeedbackMFlag
+        }).margin({ top: '1%' } as Margin)
+      Button('切换 textPicker_onChange_M → ' +
+        (this.textPickerModifier1.textPickerMOnChangeFlag ? 'undefined' : 'true'))
+        .id('textPicker_onChange_M_Btn')
+        .width('100%')
+        .height('6%')
+        .onClick((e: ClickEvent) => {
+          this.textPickerModifier1.textPickerMOnChangeFlag = !this.textPickerModifier1.textPickerMOnChangeFlag
+        }).margin({ top: '1%' } as Margin)
+      Button('切换 textPicker_gradientHeight_M → ' +
+        (this.textPickerModifier1.gradientHeightMFlag ? 'undefined' : '15.0'))
+        .id('textPicker_gradientHeight_M_Btn')
+        .width('100%')
+        .height('6%')
+        .onClick((e: ClickEvent) => {
+          this.textPickerModifier1.gradientHeightMFlag = !this.textPickerModifier1.gradientHeightMFlag
+        }).margin({ top: '1%' } as Margin)
+      Button('切换 textPicker_digitalCrownSensitivity_M → ' +
+        (this.textPickerModifier1.digitalCrownSensitivityMFlag ? 'undefined' : 'CrownSensitivity.HIGH'))
+        .id('textPicker_digitalCrownSensitivity_M_Btn')
+        .width('100%')
+        .height('6%')
+        .onClick((e: ClickEvent) => {
+          this.textPickerModifier1.digitalCrownSensitivityMFlag =
+            !this.textPickerModifier1.digitalCrownSensitivityMFlag
+        }).margin({ top: '1%' } as Margin)
+      Button('切换 textPicker_dividerFlag_M → ' +
+        (this.textPickerModifier1.dividerFlagMFlag ? 'undefined' : 'dividerChange'))
+        .id('textPicker_dividerFlag_M_Btn')
+        .width('100%')
+        .height('6%')
+        .onClick((e: ClickEvent) => {
+          this.textPickerModifier1.dividerFlagMFlag =
+            !this.textPickerModifier1.dividerFlagMFlag
+        }).margin({ top: '1%' } as Margin)
+      Button('切换 textPicker_selectedIndexFlag_M → ' +
+        (this.textPickerModifier1.selectedIndexMFlag ? 'undefined' : '[2, 1, 0]'))
+        .id('textPicker_selectedIndexFlag_M_Btn')
+        .width('100%')
+        .height('6%')
+        .onClick((e: ClickEvent) => {
+          this.textPickerModifier1.selectedIndexMFlag =
+            !this.textPickerModifier1.selectedIndexMFlag
+        }).margin({ top: '1%' } as Margin)
+      Button('切换 textPicker_onEnterSelectedAreaMFlag_M → ' +
+        (this.textPickerModifier1.onEnterSelectedAreaMFlag ? 'undefined' : 'onEnterSelectedAreaChange'))
+        .id('textPicker_onEnterSelectedAreaMFlag_M_Btn')
+        .width('100%')
+        .height('6%')
+        .onClick((e: ClickEvent) => {
+          this.textPickerModifier1.onEnterSelectedAreaMFlag =
+            !this.textPickerModifier1.onEnterSelectedAreaMFlag
+        }).margin({ top: '1%' } as Margin)
+      Button('切换 textPicker_onScrollStopFlagMFlag_M → ' +
+        (this.textPickerModifier1.onScrollStopFlagMFlag ? 'undefined' : 'onScrollStopChange'))
+        .id('textPicker_onScrollStopFlagMFlag_M_Btn')
+        .width('100%')
+        .height('6%')
+        .onClick((e: ClickEvent) => {
+          this.textPickerModifier1.onScrollStopFlagMFlag =
+            !this.textPickerModifier1.onScrollStopFlagMFlag
+        }).margin({ top: '1%' } as Margin)
     }
+    .width('100%')
+    .height('90%')
+    .padding('1%')
   }
 }

@@ -51,13 +51,13 @@ struct RichEditorApiPage {
   build() {
     Column({ space: 6 } as ColumnOptions) {
       Text('richEditor.d.ets API（UndoStyle / ParagraphStyle / Controller / Attribute）')
-        .fontSize(12)
         .width('100%')
+        .height('6%')
 
       Button('枚举 UndoStyle.CLEAR_STYLE')
         .id(`${PFX}_btn_UndoStyle_CLEAR_STYLE`)
         .width('100%')
-        .fontSize(11)
+        .height('7%')
         .onClick((): void => {
           AppStorage.setOrCreate<string>(
             `${PFX}_enum_UndoStyle_CLEAR_STYLE`,
@@ -68,7 +68,7 @@ struct RichEditorApiPage {
       Button('枚举 UndoStyle.KEEP_STYLE')
         .id(`${PFX}_btn_UndoStyle_KEEP_STYLE`)
         .width('100%')
-        .fontSize(11)
+        .height('7%')
         .onClick((): void => {
           AppStorage.setOrCreate<string>(
             `${PFX}_enum_UndoStyle_KEEP_STYLE`,
@@ -79,7 +79,7 @@ struct RichEditorApiPage {
       Button('RichEditorParagraphStyle.textVerticalAlign')
         .id(`${PFX}_btn_paragraphStyle_textVerticalAlign`)
         .width('100%')
-        .fontSize(11)
+        .height('7%')
         .onClick((): void => {
           const ps: RichEditorParagraphStyle = {
             textVerticalAlign: TextVerticalAlign.TOP
@@ -93,7 +93,7 @@ struct RichEditorApiPage {
       Button('RichEditorBaseController.setTypingParagraphStyle')
         .id(`${PFX}_btn_setTypingParagraphStyle`)
         .width('100%')
-        .fontSize(11)
+        .height('7%')
         .onClick((): void => {
           const style: RichEditorParagraphStyle = {
             textVerticalAlign: TextVerticalAlign.CENTER,
@@ -106,7 +106,7 @@ struct RichEditorApiPage {
       Button('RichEditorBaseController.setStyledPlaceholder')
         .id(`${PFX}_btn_setStyledPlaceholder`)
         .width('100%')
-        .fontSize(11)
+        .height('7%')
         .onClick((): void => {
           const ph = new StyledString('placeholder');
           this.richCtl.setStyledPlaceholder(ph);
@@ -116,7 +116,7 @@ struct RichEditorApiPage {
       RichEditor({ controller: this.richCtl })
         .id(`${PFX}_rich_main`)
         .width('100%')
-        .height(100)
+        .height('30%')
         .dataDetectorConfig(this.detCfg)
         .enableSelectedDataDetector(true)
         .enableAutoSpacing(true)
@@ -128,7 +128,7 @@ struct RichEditorApiPage {
         })
     }
     .width('100%')
-    .height('100%')
-    .justifyContent(FlexAlign.Start)
+    .height('90%')
+    .padding('1%')
   }
 }

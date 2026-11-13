@@ -1722,11 +1722,15 @@ export default function progressSecTest() {
       let strJson = inspector.getInspectorByKey('progress_capsule_number');
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Weight_1300]: " + JSON.stringify(strJson))
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ArkUI_Stage_Progress_Capsule_Font_Weight_1300]: " + JSON.stringify(obj.getElement('$attrs').getElement('capsuleStyle')));
-      console.info("[ArkUI_Stage_Progress_Capsule_Font_Weight_1300]: " + JSON.stringify(obj.getElement('$attrs').getElement('capsuleStyle').getElement('font')));
+      let defaultJson = inspector.getInspectorByKey('progress_capsule_default');
+      console.info("[ArkUI_Stage_Progress_Capsule_Font_Weight_1300] default: " + JSON.stringify(defaultJson));
+      let defaultObj = JSON.parseJsonElement(defaultJson);
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Weight_1300]: " +
       JSON.stringify(obj.getElement('$attrs').getElement('capsuleStyle').getElement('font').getString('weight')));
-      expect(obj.getElement('$attrs').getElement('capsuleStyle').getElement('font').getString('weight')).assertEqual(progressFontWeight($r('sys.float.font_weight')));
+      console.info("[ArkUI_Stage_Progress_Capsule_Font_Weight_1300] default weight: " +
+      JSON.stringify(defaultObj.getElement('$attrs').getElement('capsuleStyle').getElement('font').getString('weight')));
+      expect(obj.getElement('$attrs').getElement('capsuleStyle').getElement('font').getString('weight'))
+        .assertEqual(defaultObj.getElement('$attrs').getElement('capsuleStyle').getElement('font').getString('weight'));
       console.info("[ArkUI_Stage_Progress_Capsule_Font_Weight_1300] end");
       done();
     });

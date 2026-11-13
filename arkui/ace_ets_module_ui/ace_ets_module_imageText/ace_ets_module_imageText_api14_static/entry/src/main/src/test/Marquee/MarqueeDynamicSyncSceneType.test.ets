@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { describe, beforeEach, it, expect, Level, beforeAll } from "@ohos/hypium-static/src/main/indexStatic"
-import { Driver, ON } from '@ohos.UiTest';
+import { Driver, ON, Component } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {
   State,
@@ -31,6 +31,7 @@ import { UtilsTest,  startAbility} from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = 0;
 
 export default function MarqueeDynamicSyncSceneTest() {
   describe('MarqueeDynamicSyncSceneTest', ():void => {
@@ -60,11 +61,8 @@ export default function MarqueeDynamicSyncSceneTest() {
         console.error("push MarqueeDynamicSyncSceneTest page error:" + err);
       }
       console.info("MarqueeDynamicSyncSceneTest beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
-
-    
-    
-
     /**
      * @tc.number   MarqueeDynamicSyncSceneTest_static_0010
      * @tc.name     MarqueeDynamicSyncSceneTest_static_0010
@@ -74,11 +72,38 @@ export default function MarqueeDynamicSyncSceneTest() {
 it('MarqueeDynamicSyncSceneTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('MarqueeDynamicSyncSceneTest_0010 START');
       let driver = Driver.create();
-      await CommonFunc.sleep(500);
-      let Button = await driver.findComponent(ON.type('Button'));
-      if (Button != null) {
-        await (Button?.click() as Promise<void>);
-        await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(3000);
+      let button: Component | null = null;
+      const maxRetry: number = 3;
+      for (let i = 0; i < maxRetry; i++) {
+        try {
+          button = await driver.findComponent(ON.id('MarqueeDynamicSyncSceneStartBtn'));
+        } catch (err) {
+          console.log('[MarqueeDynamicSyncSceneTest_0010] findComponent retry ' + (i + 1) + ' error: ' + JSON.stringify(err));
+        }
+        if (button !== null) {
+          break;
+        }
+        console.log('[MarqueeDynamicSyncSceneTest_0010] findComponent returned null, retry ' + (i + 1) + '/' + maxRetry);
+        await CommonFunc.sleep(3000);
+      }
+      if (button != null) {
+        let clicked: boolean = false;
+        for (let i = 0; i < maxRetry; i++) {
+          try {
+            await (button?.click() as Promise<void>);
+          } catch (err) {
+            console.log('[MarqueeDynamicSyncSceneTest_0010] click retry ' + (i + 1) + ' error: ' + JSON.stringify(err));
+          }
+          await CommonFunc.sleep(1000);
+          let sceneType: string | undefined = AppStorage.get<string>('MarqueeDynamicSyncSceneType');
+          if (sceneType === 'ANIMATION') {
+            clicked = true;
+            break;
+          }
+          console.log('[MarqueeDynamicSyncSceneTest_0010] click not triggered, retry ' + (i + 1) + '/' + maxRetry);
+          await CommonFunc.sleep(1000);
+        }
         console.info("[MarqueeDynamicSyncSceneTest_0010] MarqueeDynamicSyncSceneType:"
           + String(AppStorage.get<string>('MarqueeDynamicSyncSceneType')));
         expect(AppStorage.get<string>('MarqueeDynamicSyncSceneType')).assertEqual('ANIMATION');
