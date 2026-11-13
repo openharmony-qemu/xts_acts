@@ -40,6 +40,7 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest() {
       } catch (err) {
         console.error(TAG + " openSubscriptionSettings catch err:" + JSON.stringify(err))
       }
+      await sleep(3000);
       let driver = Driver.create();
       let button = await driver.findComponent(ON.type("Toggle"));
       if (button !== null) {
