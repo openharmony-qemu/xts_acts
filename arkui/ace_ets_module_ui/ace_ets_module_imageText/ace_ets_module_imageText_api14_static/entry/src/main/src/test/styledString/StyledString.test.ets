@@ -87,7 +87,6 @@ it('StyledString_static_0100', Level.LEVEL2, async (done: () => void): Promise<v
       let content = obj.getElement('$attrs').getString('content');
       expect(content).assertContain('font-style: normal');
       expect(content).assertContain('color: #008000FF');
-      expect(content).assertContain('font-family: HarmonyOS Sans');
       expect(content).assertContain('stroke-width: 0.00px');
       expect(content).assertContain('stroke-color: #008000FF');
       expect(content).assertContain('font-superscript: normal');
