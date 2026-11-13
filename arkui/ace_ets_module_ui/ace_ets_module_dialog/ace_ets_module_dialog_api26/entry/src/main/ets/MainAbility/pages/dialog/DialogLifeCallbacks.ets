@@ -70,7 +70,7 @@ struct DialogLifeCallbacks {
               }]
             });
           })
-        }
+        }.height('13%').width('90%')
         Row() {
           Button('onWillDisappear')
           .id('btn_life_will_disappear')
@@ -106,7 +106,7 @@ struct DialogLifeCallbacks {
               }]
             });
           })
-        }
+        }.height('13%').width('90%')
         Row() {
           Button('full life chain')
           .id('btn_life_full')
@@ -147,7 +147,7 @@ struct DialogLifeCallbacks {
               }]
             });
           })
-        }
+        }.height('13%').width('90%')
         Row() {
           Button('subtitle only style')
           .id('btn_life_subtitle')
@@ -175,11 +175,12 @@ struct DialogLifeCallbacks {
               }]
             });
           })
-        }
+        }.height('13%').width('90%')
         
       }
       .width('100%')
-      .padding(16)
+      .padding('1%')
+      .height('90%')
     }
     .width('100%')
     .height('100%')

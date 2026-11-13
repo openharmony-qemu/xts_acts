@@ -56,29 +56,29 @@ struct DialogAbnormalOptsExtra {
 
   build() {
     Column() {
-      Text('DialogAbnormalOptsExtra').fontSize(16).fontWeight(FontWeight.Bold)
+      Text('DialogAbnormalOptsExtra').fontWeight(FontWeight.Bold)
       Text('action=' + this.lastAction).id('abn_action')
       Text('error=' + this.lastError).id('abn_error')
       Text('cover=' + this.coverFlag).id('abn_cover')
       Row() {
         Button('undefined autoCancel')
-          .id('btn_abn_autoCancel')
+          .id('btn_abn_autoCancel').height('90%')
           .onClick(async () => {
             let opts = this.baseOpts('AbnACTitle', 'AbnMsg_autoCancel', 'AbnOK_autoCancel', 'autoCancel_undefined');
             opts.autoCancel = undefined;
             await this.runProbe('autoCancel', opts);
           })
         Button('undefined isModal')
-          .id('btn_abn_isModal')
+          .id('btn_abn_isModal').height('90%')
           .onClick(async () => {
             let opts = this.baseOpts('AbnModalTitle', 'AbnMsg_isModal', 'AbnOK_isModal', 'isModal_undefined');
             opts.isModal = undefined;
             await this.runProbe('isModal', opts);
           })
-      }
+      }.height('9%').width('90%').margin({top:'1%'})
       Row() {
         Button('undefined backgroundColor')
-          .id('btn_abn_backgroundColor')
+          .id('btn_abn_backgroundColor').height('90%')
           .onClick(async () => {
             let opts = this.baseOpts(
               'AbnBgTitle', 'AbnMsg_backgroundColor', 'AbnOK_backgroundColor',
@@ -87,7 +87,7 @@ struct DialogAbnormalOptsExtra {
             await this.runProbe('backgroundColor', opts);
           })
         Button('undefined buttonDirection')
-          .id('btn_abn_buttonDirection')
+          .id('btn_abn_buttonDirection').height('90%')
           .onClick(async () => {
             let opts = this.baseOpts(
               'AbnDirTitle', 'AbnMsg_buttonDirection', 'AbnOK_buttonDirection',
@@ -95,10 +95,10 @@ struct DialogAbnormalOptsExtra {
             opts.buttonDirection = undefined;
             await this.runProbe('buttonDirection', opts);
           })
-      }
+      }.height('9%').width('90%').margin({top:'1%'})
       Row() {
         Button('undefined wordBreak')
-          .id('btn_abn_wordBreak')
+          .id('btn_abn_wordBreak').height('90%')
           .onClick(async () => {
             let msg: dialog.DialogMessage = {
               content: 'AbnWordBreakMsg',
@@ -115,30 +115,30 @@ struct DialogAbnormalOptsExtra {
             await this.runProbe('wordBreak', opts);
           })
         Button('undefined levelMode')
-          .id('btn_abn_levelMode')
+          .id('btn_abn_levelMode').height('90%')
           .onClick(async () => {
             let opts = this.baseOpts('AbnLevelTitle', 'AbnMsg_levelMode', 'AbnOK_levelMode', 'levelMode_undefined');
             opts.levelMode = undefined;
             await this.runProbe('levelMode', opts);
           })
-      }
+      }.height('9%').width('90%').margin({top:'1%'})
       Row() {
         Button('undefined focusable')
-          .id('btn_abn_focusable')
+          .id('btn_abn_focusable').height('90%')
           .onClick(async () => {
             let opts = this.baseOpts('AbnFocusTitle', 'AbnMsg_focusable', 'AbnOK_focusable', 'focusable_undefined');
             opts.focusable = undefined;
             await this.runProbe('focusable', opts);
           })
         Button('omit optional all')
-          .id('btn_abn_omit')
+          .id('btn_abn_omit').height('90%')
           .onClick(async () => {
             await this.runProbe('omit', this.baseOpts('AbnOmitTitle', 'AbnOmitMsg', 'AbnOmitOK',
               'omit_ok'));
           })
-      }
+      }.height('9%').width('90%').margin({top:'1%'})
       Button('null probe cover note')
-        .id('btn_abn_null_note')
+        .id('btn_abn_null_note').height('9%').width('90%').margin({top:'1%'})
         .onClick(() => {
           this.coverFlag = 'null_compile_skip';
           this.lastAction = 'null_noted';
@@ -146,6 +146,6 @@ struct DialogAbnormalOptsExtra {
     }
     .width('100%')
     .height('100%')
-    .padding(12)
+    .padding('1%')
   }
 }

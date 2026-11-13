@@ -111,7 +111,7 @@ struct DialogCustomPresent {
               this.lastAction = 'error';
             }
           })
-      }
+      }.height('12%').width('90%')
       Row() {
         Button('dismiss by id')
           .id('btn_custom_dismiss')
@@ -142,7 +142,7 @@ struct DialogCustomPresent {
               this.lastError = String(err);
             }
           })
-      }
+      }.height('12%').width('90%')
       Row() {
         Button('present then update')
           .id('btn_custom_present_update')
@@ -196,7 +196,7 @@ struct DialogCustomPresent {
               this.lastError = String(err);
             }
           })
-      }
+      }.height('12%').width('90%')
       
       Row() {
         Button('custom border radius color')
@@ -244,11 +244,11 @@ struct DialogCustomPresent {
               this.lastError = String(err);
             }
           })
-      }
+      }.height('12%').width('90%')
     }
     .width('100%')
     .height('100%')
-    .padding(16)
+    .padding('1%')
     .justifyContent(FlexAlign.Center)
   }
 }

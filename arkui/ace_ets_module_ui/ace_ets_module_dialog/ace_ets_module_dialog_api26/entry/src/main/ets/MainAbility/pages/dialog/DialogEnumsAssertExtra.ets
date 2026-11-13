@@ -39,7 +39,7 @@ struct DialogEnumsAssertExtra {
         Button('align CENTER_START').id('btn_enum_align_6').onClick(() => {
           this.setResult(DialogBaseAlignment.CENTER_START === 6, 'CENTER_START');
         })
-      }
+      }.height('11%').width('90%')
       Row() {
         Button('align CENTER_END').id('btn_enum_align_7').onClick(() => {
           this.setResult(DialogBaseAlignment.CENTER_END === 7, 'CENTER_END');
@@ -47,7 +47,7 @@ struct DialogEnumsAssertExtra {
         Button('align BOTTOM_START').id('btn_enum_align_8').onClick(() => {
           this.setResult(DialogBaseAlignment.BOTTOM_START === 8, 'BOTTOM_START');
         })
-      }
+      }.height('11%').width('90%')
       Row() {
         Button('align BOTTOM_END').id('btn_enum_align_9').onClick(() => {
           this.setResult(DialogBaseAlignment.BOTTOM_END === 9, 'BOTTOM_END');
@@ -55,7 +55,7 @@ struct DialogEnumsAssertExtra {
         Button('orient AUTO').id('btn_enum_orient_0').onClick(() => {
           this.setResult(DialogButtonOrientation.AUTO === 0, 'AUTO');
         })
-      }
+      }.height('11%').width('90%')
       Row() {
         Button('orient HORIZONTAL').id('btn_enum_orient_1').onClick(() => {
           this.setResult(DialogButtonOrientation.HORIZONTAL === 1, 'HORIZONTAL');
@@ -63,8 +63,8 @@ struct DialogEnumsAssertExtra {
         Button('orient VERTICAL').id('btn_enum_orient_2').onClick(() => {
           this.setResult(DialogButtonOrientation.VERTICAL === 2, 'VERTICAL');
         })
-      }
-      Button('DialogTextStyleOptions cover').id('btn_enum_text_style').onClick(() => {
+      }.height('11%').width('90%')
+      Button('DialogTextStyleOptions cover').id('btn_enum_text_style').height('11%').width('90%').onClick(() => {
         let msg: dialog.DialogMessage = {
           content: 'TextStyleCover',
           wordBreak: WordBreak.BREAK_ALL
@@ -74,6 +74,6 @@ struct DialogEnumsAssertExtra {
     }
     .width('100%')
     .height('100%')
-    .padding(12)
+    .padding('1%')
   }
 }

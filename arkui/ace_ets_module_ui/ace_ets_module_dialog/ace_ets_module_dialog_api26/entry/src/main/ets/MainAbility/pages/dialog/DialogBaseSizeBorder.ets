@@ -50,7 +50,7 @@ struct DialogBaseSizeBorder {
                 buttons: [{ value: 'WidthNumOK', action: () => { this.lastAction = 'WidthNumOK'; } }]
               });
             })
-        }
+        }.height('10%').width('90%')
         Row() {
           Button('height number')
             .id('btn_size_height')
@@ -73,7 +73,7 @@ struct DialogBaseSizeBorder {
                 buttons: [{ value: 'BWOK', action: () => { this.lastAction = 'BWOK'; } }]
               });
             })
-        }
+        }.height('10%').width('90%')
         Row() {
           Button('borderRadius')
             .id('btn_size_br')
@@ -97,7 +97,7 @@ struct DialogBaseSizeBorder {
                 buttons: [{ value: 'BSOK', action: () => { this.lastAction = 'BSOK'; } }]
               });
             })
-        }
+        }.height('10%').width('90%')
         Row() {
           Button('offset dx dy')
             .id('btn_size_offset')
@@ -119,7 +119,7 @@ struct DialogBaseSizeBorder {
                 buttons: [{ value: 'MaskColorOK', action: () => { this.lastAction = 'MaskColorOK'; } }]
               });
             })
-        }
+        }.height('10%').width('90%')
         Row() {
           Button('autoCancel false')
             .id('btn_size_ac')
@@ -141,7 +141,7 @@ struct DialogBaseSizeBorder {
                 buttons: [{ value: 'FocusableOK', action: () => { this.lastAction = 'FocusableOK'; } }]
               });
             })
-        }
+        }.height('10%').width('90%')
         Row() {
           Button('keyboardAvoidMode')
             .id('btn_size_kbd')
@@ -164,11 +164,12 @@ struct DialogBaseSizeBorder {
                 buttons: [{ value: 'ShadowOK', action: () => { this.lastAction = 'ShadowOK'; } }]
               });
             })
-        }
+        }.height('10%').width('90%')
         
       }
       .width('100%')
-      .padding(16)
+      .padding('1%')
+      .height('90%')
     }
     .width('100%')
     .height('100%')

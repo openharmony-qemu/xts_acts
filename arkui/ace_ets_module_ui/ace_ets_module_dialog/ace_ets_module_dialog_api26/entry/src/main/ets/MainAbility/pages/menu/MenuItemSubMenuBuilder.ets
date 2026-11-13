@@ -65,11 +65,10 @@ struct MenuItemSubMenuBuilder {
 
   build() {
     Column() {
-      Text('MenuItem.subMenuBuilder').fontSize(18).fontWeight(FontWeight.Bold)
+      Text('MenuItem.subMenuBuilder').fontWeight(FontWeight.Bold)
       Text('last=' + this.lastAction).id('submenu_last_action')
       Button('open menu with submenu')
-        .id('btn_submenu_open')
-        .width('80%')
+        .id('btn_submenu_open').height('9%').width('90%').margin({top:'1%'})
         .onClick(() => {
           this.isShow = true;
         })
@@ -79,14 +78,14 @@ struct MenuItemSubMenuBuilder {
           }
         })
       Button('close menu')
-        .id('btn_submenu_close')
+        .id('btn_submenu_close').height('9%').width('90%').margin({top:'1%'})
         .onClick(() => {
           this.isShow = false;
         })
     }
     .width('100%')
     .height('100%')
-    .padding(16)
+    .padding('1%')
     .justifyContent(FlexAlign.Center)
   }
 }

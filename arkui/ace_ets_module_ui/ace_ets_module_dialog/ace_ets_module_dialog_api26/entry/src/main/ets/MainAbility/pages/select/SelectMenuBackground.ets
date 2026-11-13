@@ -74,55 +74,56 @@ struct SelectMenuBackground {
   build() {
     Scroll() {
       Column() {
-        Text('Select menuBackground*').fontSize(18).fontWeight(FontWeight.Bold)
+        Text('Select menuBackground*').fontWeight(FontWeight.Bold)
         Text('blur=' + this.blurMode + ' effect=' + this.effectMode)
           .id('select_bg_mode_label')
         Select(this.options)
-          .id('select_menu_blur')
+          .id('select_menu_blur').height('9%').width('90%').margin({top:'1%'})
           .value('SelectBlur')
           .menuBackgroundBlurStyleOptions(this.blurOptions())
         Select(this.options)
-          .id('select_menu_effect')
+          .id('select_menu_effect').height('9%').width('90%').margin({top:'1%'})
           .value('SelectEffect')
           .menuBackgroundEffect(this.effectOptions())
         Select(this.options)
-          .id('select_menu_both')
+          .id('select_menu_both').height('9%').width('90%').margin({top:'1%'})
           .value('SelectBoth')
           .menuBackgroundBlurStyleOptions(this.blurOptions())
           .menuBackgroundEffect(this.effectOptions())
         Row({ space: 8 }) {
-          Button('blur default').id('btn_blur_default').onClick(() => {
+          Button('blur default').id('btn_blur_default').height('90%').onClick(() => {
             this.blurMode = 'default';
           })
-          Button('blur blue').id('btn_blur_blue').onClick(() => {
+          Button('blur blue').id('btn_blur_blue').height('90%').onClick(() => {
             this.blurMode = 'blue';
           })
-          Button('blur empty').id('btn_blur_empty').onClick(() => {
+          Button('blur empty').id('btn_blur_empty').height('90%').onClick(() => {
             this.blurMode = 'empty';
           })
-        }
+        }.height('9%').width('90%').margin({top:'1%'})
         Row({ space: 8 }) {
-          Button('blur inactive').id('btn_blur_inactive').onClick(() => {
+          Button('blur inactive').id('btn_blur_inactive').height('90%').onClick(() => {
             this.blurMode = 'policy_inactive';
           })
-          Button('effect purple').id('btn_effect_purple').onClick(() => {
+          Button('effect purple').id('btn_effect_purple').height('90%').onClick(() => {
             this.effectMode = 'purple';
           })
-          Button('effect green').id('btn_effect_green').onClick(() => {
+          Button('effect green').id('btn_effect_green').height('90%').onClick(() => {
             this.effectMode = 'green';
           })
-        }
+        }.height('9%').width('90%').margin({top:'1%'})
         Row({ space: 8 }) {
-          Button('effect default').id('btn_effect_default').onClick(() => {
+          Button('effect default').id('btn_effect_default').height('90%').onClick(() => {
             this.effectMode = 'default';
           })
-          Button('effect empty').id('btn_effect_empty').onClick(() => {
+          Button('effect empty').id('btn_effect_empty').height('90%').onClick(() => {
             this.effectMode = 'empty';
           })
-        }
+        }.height('9%').width('90%').margin({top:'1%'})
       }
       .width('100%')
-      .padding(16)
+      .padding('1%')
+      .height('90%')
     }
     .width('100%')
     .height('100%')

@@ -59,13 +59,13 @@ struct DialogAbnormalOpts {
   build() {
     Scroll() {
       Column() {
-        Text('Dialog optional undefined probe').fontSize(16).fontWeight(FontWeight.Bold)
+        Text('Dialog optional undefined probe').fontWeight(FontWeight.Bold)
         Text('action=' + this.lastAction).id('abn_action')
         Text('error=' + this.lastError).id('abn_error')
         Text('cover=' + this.coverFlag).id('abn_cover')
         Row() {
           Button('undefined subtitle')
-            .id('btn_abn_subtitle')
+            .id('btn_abn_subtitle').height('90%')
             .onClick(async () => {
               let opts = this.baseOpts('AbnSubTitle', 'AbnMsg_subtitle', 'AbnOK_subtitle',
                 'subtitle_undefined');
@@ -73,16 +73,16 @@ struct DialogAbnormalOpts {
               await this.runProbe('subtitle', opts);
             })
           Button('undefined width')
-            .id('btn_abn_width')
+            .id('btn_abn_width').height('90%')
             .onClick(async () => {
               let opts = this.baseOpts('AbnWidthTitle', 'AbnMsg_width', 'AbnOK_width', 'width_undefined');
               opts.width = undefined;
               await this.runProbe('width', opts);
             })
-        }
+        }.height('9%').width('90%').margin({top:'1%'})
         Row() {
           Button('undefined height')
-            .id('btn_abn_height')
+            .id('btn_abn_height').height('90%')
             .onClick(async () => {
               let opts = this.baseOpts('AbnHeightTitle', 'AbnMsg_height', 'AbnOK_height',
                 'height_undefined');
@@ -90,17 +90,17 @@ struct DialogAbnormalOpts {
               await this.runProbe('height', opts);
             })
           Button('undefined maskColor')
-            .id('btn_abn_maskColor')
+            .id('btn_abn_maskColor').height('90%')
             .onClick(async () => {
               let opts = this.baseOpts('AbnMaskTitle', 'AbnMsg_maskColor', 'AbnOK_maskColor',
                 'maskColor_undefined');
               opts.maskColor = undefined;
               await this.runProbe('maskColor', opts);
             })
-        }
+        }.height('9%').width('90%').margin({top:'1%'})
         Row() {
           Button('undefined offset')
-            .id('btn_abn_offset')
+            .id('btn_abn_offset').height('90%')
             .onClick(async () => {
               let opts = this.baseOpts('AbnOffsetTitle', 'AbnMsg_offset', 'AbnOK_offset',
                 'offset_undefined');
@@ -108,17 +108,17 @@ struct DialogAbnormalOpts {
               await this.runProbe('offset', opts);
             })
           Button('undefined borderWidth')
-            .id('btn_abn_borderWidth')
+            .id('btn_abn_borderWidth').height('90%')
             .onClick(async () => {
               let opts = this.baseOpts(
                 'AbnBWTitle', 'AbnMsg_borderWidth', 'AbnOK_borderWidth', 'borderWidth_undefined');
               opts.borderWidth = undefined;
               await this.runProbe('borderWidth', opts);
             })
-        }
+        }.height('9%').width('90%').margin({top:'1%'})
         Row() {
           Button('undefined borderRadius')
-            .id('btn_abn_borderRadius')
+            .id('btn_abn_borderRadius').height('90%')
             .onClick(async () => {
               let opts = this.baseOpts(
                 'AbnBRTitle', 'AbnMsg_borderRadius', 'AbnOK_borderRadius',
@@ -127,17 +127,17 @@ struct DialogAbnormalOpts {
               await this.runProbe('borderRadius', opts);
             })
           Button('undefined shadow')
-            .id('btn_abn_shadow')
+            .id('btn_abn_shadow').height('90%')
             .onClick(async () => {
               let opts = this.baseOpts('AbnShadowTitle', 'AbnMsg_shadow', 'AbnOK_shadow',
                 'shadow_undefined');
               opts.shadow = undefined;
               await this.runProbe('shadow', opts);
             })
-        }
+        }.height('9%').width('90%').margin({top:'1%'})
         Row() {
           Button('undefined autoCancel')
-            .id('btn_abn_autoCancel')
+            .id('btn_abn_autoCancel').height('90%')
             .onClick(async () => {
               let opts = this.baseOpts('AbnACTitle', 'AbnMsg_autoCancel', 'AbnOK_autoCancel',
                 'autoCancel_undefined');
@@ -145,17 +145,17 @@ struct DialogAbnormalOpts {
               await this.runProbe('autoCancel', opts);
             })
           Button('undefined isModal')
-            .id('btn_abn_isModal')
+            .id('btn_abn_isModal').height('90%')
             .onClick(async () => {
               let opts = this.baseOpts('AbnModalTitle', 'AbnMsg_isModal', 'AbnOK_isModal',
                 'isModal_undefined');
               opts.isModal = undefined;
               await this.runProbe('isModal', opts);
             })
-        }
+        }.height('9%').width('90%').margin({top:'1%'})
         Row() {
           Button('undefined backgroundColor')
-            .id('btn_abn_backgroundColor')
+            .id('btn_abn_backgroundColor').height('90%')
             .onClick(async () => {
               let opts = this.baseOpts('AbnBgTitle', 'AbnMsg_backgroundColor', 'AbnOK_backgroundColor',
                 'backgroundColor_undefined');
@@ -163,17 +163,17 @@ struct DialogAbnormalOpts {
               await this.runProbe('backgroundColor', opts);
             })
           Button('undefined buttonDirection')
-            .id('btn_abn_buttonDirection')
+            .id('btn_abn_buttonDirection').height('90%')
             .onClick(async () => {
               let opts = this.baseOpts('AbnDirTitle', 'AbnMsg_buttonDirection', 'AbnOK_buttonDirection',
                 'buttonDirection_undefined');
               opts.buttonDirection = undefined;
               await this.runProbe('buttonDirection', opts);
             })
-        }
+        }.height('9%').width('90%').margin({top:'1%'})
         Row() {
           Button('undefined wordBreak')
-            .id('btn_abn_wordBreak')
+            .id('btn_abn_wordBreak').height('90%')
             .onClick(async () => {
               let msg: dialog.DialogMessage = {
                 content: 'AbnWordBreakMsg',
@@ -192,17 +192,17 @@ struct DialogAbnormalOpts {
               await this.runProbe('wordBreak', opts);
             })
           Button('undefined levelMode')
-            .id('btn_abn_levelMode')
+            .id('btn_abn_levelMode').height('90%')
             .onClick(async () => {
               let opts = this.baseOpts('AbnLevelTitle', 'AbnMsg_levelMode', 'AbnOK_levelMode',
                 'levelMode_undefined');
               opts.levelMode = undefined;
               await this.runProbe('levelMode', opts);
             })
-        }
+        }.height('9%').width('90%').margin({top:'1%'})
         Row() {
           Button('undefined focusable')
-            .id('btn_abn_focusable')
+            .id('btn_abn_focusable').height('90%')
             .onClick(async () => {
               let opts = this.baseOpts('AbnFocusTitle', 'AbnMsg_focusable', 'AbnOK_focusable',
                 'focusable_undefined');
@@ -210,21 +210,22 @@ struct DialogAbnormalOpts {
               await this.runProbe('focusable', opts);
             })
           Button('omit optional all')
-            .id('btn_abn_omit')
+            .id('btn_abn_omit').height('90%')
             .onClick(async () => {
               await this.runProbe('omit', this.baseOpts('AbnOmitTitle', 'AbnOmitMsg', 'AbnOmitOK',
                 'omit_ok'));
             })
-        }
+        }.height('9%').width('90%').margin({top:'1%'})
         Button('null probe cover note')
-          .id('btn_abn_null_note')
+          .id('btn_abn_null_note').height('9%').width('90%').margin({top:'1%'})
           .onClick(() => {
             this.coverFlag = 'null_compile_skip';
             this.lastAction = 'null_noted';
           })
       }
       .width('100%')
-      .padding(12)
+      .padding('1%')
+      .height('90%')
     }
     .width('100%')
     .height('100%')
