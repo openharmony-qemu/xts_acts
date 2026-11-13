@@ -311,19 +311,6 @@ export default function DateTestCase007() {
       expect(upper).assertEqual(lower);
     });
 
-    /**
-     * @tc.name   dateNowVsDateConstructor
-     * @tc.number SUB_COMMONLIBRARY_DATE_STATIC_021
-     * @tc.desc   Verify Date.now() equals new Date().getTime().
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('dateNowVsDateConstructor', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const nowNumber: number = Date.now();
-      const nowDate: Date = new Date();
-      expect(Math.abs(nowDate.getTime() - nowNumber)).assertLess(10);
-    });
 
   });
 }

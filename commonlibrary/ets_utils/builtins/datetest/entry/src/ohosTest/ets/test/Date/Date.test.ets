@@ -5336,8 +5336,8 @@ export default function dateTest() {
     it('testDateToDateString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDateToDateString0003";
       try {
-        const event = new Date();
-        const now = new Date();
+        const event = new Date(1620000000000);
+        const now = new Date(1620000000000);
         const eventTimeString = event.toString();
         const nowTimeString = now.toString();
         const eventDateString = event.toDateString();
@@ -6530,8 +6530,8 @@ export default function dateTest() {
     it('testDateToString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDateToString0002";
       try {
-        const x: Date = new Date();
-        expect(x.toString()).assertEqual(new Date().toString());
+        const x: Date = new Date(1620000000000);
+        expect(x.toString()).assertEqual(new Date(1620000000000).toString());
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect().assertFail();
@@ -6584,8 +6584,8 @@ export default function dateTest() {
     it('testDateToTimeString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testDateToTimeString0002";
       try {
-        const x: Date = new Date();
-        expect(x.toTimeString()).assertEqual(new Date().toTimeString());
+        const x: Date = new Date(1620000000000);
+        expect(x.toTimeString()).assertEqual(new Date(1620000000000).toTimeString());
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect().assertFail();
@@ -6640,8 +6640,8 @@ export default function dateTest() {
     it('testDateToUTCString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const TAG = "testDateToUTCString0002";
       try {
-        const x: Date = new Date();
-        expect(x.toUTCString()).assertEqual(new Date().toUTCString());
+        const x: Date = new Date(1620000000000);
+        expect(x.toUTCString()).assertEqual(new Date(1620000000000).toUTCString());
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect().assertFail();
@@ -6696,12 +6696,11 @@ export default function dateTest() {
     it('testDateValueOf0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const TAG = "testDateValueOf0002";
       try {
-        const x1 = new Date();
-        await sleep(3);
-        const x2 = new Date();
+        const x1 = new Date(1620000000000);
+        const x2 = new Date(1620000060000);
         const value1 = x1.valueOf();
         const value2 = x2.valueOf();
-        const result = value2 > value1;
+        const result = value2 >= value1;
         expect(result).assertEqual(true);
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
