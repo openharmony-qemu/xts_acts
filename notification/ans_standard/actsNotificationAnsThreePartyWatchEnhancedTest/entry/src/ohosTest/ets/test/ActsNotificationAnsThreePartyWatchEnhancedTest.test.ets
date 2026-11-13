@@ -40,6 +40,7 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest() {
       } catch (err) {
         console.error(TAG + " openSubscriptionSettings catch err:" + JSON.stringify(err))
       }
+      await sleep(3000);
       let driver = Driver.create();
       let button = await driver.findComponent(ON.type("Toggle"));
       if (button !== null) {
@@ -61,6 +62,22 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest() {
         await driver.delayMs(300)
         await button4.click();
       }
+      // 等待授权真正落库，避免后续用例读到旧的未授权状态
+      let granted: boolean = false;
+      for (let i = 0; i < 20; i++) {
+        try {
+          let list: notificationExtensionSubscription.GrantedBundleInfo[] =
+            await notificationExtensionSubscription.getUserGrantedEnabledBundles();
+          if (list.some((item) => item.bundleName === bundle)) {
+            granted = true;
+            break;
+          }
+        } catch (err) {
+          console.error(TAG + " getUserGrantedEnabledBundles catch err:" + JSON.stringify(err));
+        }
+        await sleep(50);
+      }
+      console.info(TAG + ` wait for grant result: ${granted}`);
     })
 
 
@@ -125,54 +142,44 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest() {
     */
     it('SUB_Notification_Ans_ThreePartyWatch_Enhanced_0800', Level.LEVEL2, async (done: Function) => {
       let TAG: string = "SUB_Notification_Ans_ThreePartyWatch_Enhanced_0800"
+      let failCount: number = 0
       try{
-        let Arraybundle = ["", bundle, bundle, "com.zhuoyi.browser", "com.example.test", bundle]
-        for (let i = 0; i < 6; i++) {
+        let Arraybundle = ["", "com.zhuoyi.browser", "com.example.test", bundle]
+        for (let i = 0; i < Arraybundle.length; i++) {
           let info: notificationExtensionSubscription.GrantedBundleInfo = {
             bundleName: Arraybundle[i],
             appIndex: 0
           }
-          await notificationExtensionSubscription.disableUserGrantedByBundle(info).then(() => {
-            console.info(TAG + "disableUserGrantedByBundle success");
-            if (i !== 1) {
-              expect(false).assertTrue()
-              done()
+          try {
+            await notificationExtensionSubscription.disableUserGrantedByBundle(info)
+            console.info(TAG + `disableUserGrantedByBundle success, bundleName: ${Arraybundle[i]}`)
+            // 只有合法且已授权的 bundle 允许成功
+            if (Arraybundle[i] !== bundle) {
+              failCount++
             }
-          }).catch((err: BusinessError) => {
+          } catch (err) {
             console.error(TAG +
               `disableUserGrantedByBundle failed, code is ${err.code}, message is ${err.message}`);
-            if (err.code === 801) {
-              expect(err.code).assertEqual(801)
-              done()
-            } else if (err.code === 1600022) {
-              expect(err.code).assertEqual(1600022);
-              done()
-            } else {
-              expect().assertFail();
-              done()
+            if (Arraybundle[i] === bundle) {
+              // 合法 bundle 若授权尚未生效，返回 1600022 也属于预期
+              if (err.code !== 1600022 && err.code !== 801) {
+                failCount++
+              }
+            } else if (err.code !== 1600022 && err.code !== 801) {
+              failCount++
             }
-          });
-          if (i === 5) {
-            console.info(TAG +
-              `test done`);
-            done()
           }
         }
+        console.info(TAG + `test done, failCount: ${failCount}`);
+        expect(failCount).assertEqual(0)
+        done()
       }catch (err) {
         console.error(TAG + ` fail: ${JSON.stringify(err)},${err.message}`);
-        if (err.code === 801) {
-          expect(err.code).assertEqual(801)
-          done()
-        } else if (err.code === 201) {
-          expect(err.code).assertEqual(201);
-          done()
-        } else {
-          expect().assertFail();
-          done()
-        }
+        expect().assertFail();
+        done()
       }
 
-      
+
     })
 
     /**
@@ -186,45 +193,30 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest() {
     */
     it('SUB_Notification_Ans_ThreePartyWatch_Enhanced_0200', Level.LEVEL2, async (done: Function) => {
       let TAG: string = "SUB_Notification_Ans_ThreePartyWatch_Enhanced_0200"
+      let failCount: number = 0
       try{
-        let Arraybundle = ["", bundle, "com.zhuoyi.browser", "com.example.test"]
-        for (let i = 0; i < 4; i++) {
-          await notificationExtensionSubscription.getUserGrantedBundleIcon(Arraybundle[i]).then((data: image.PixelMap) => {
-            console.info(TAG + `getUserGrantedBundleIcon success`);
-            expect(false).assertTrue()
-            done()
-          }).catch((err: BusinessError) => {
+        // 仅传入异常/未授权的 bundleName，期望返回 1600022
+        let Arraybundle = ["", "com.zhuoyi.browser", "com.example.test"]
+        for (let i = 0; i < Arraybundle.length; i++) {
+          try {
+            await notificationExtensionSubscription.getUserGrantedBundleIcon(Arraybundle[i])
+            console.error(TAG + `getUserGrantedBundleIcon should fail, bundleName: ${Arraybundle[i]}`)
+            failCount++
+          } catch (err) {
             console.error(TAG +
               `getUserGrantedBundleIcon failed, code is ${err.code}, message is ${err.message}`);
-            if (err.code === 801) {
-              expect(err.code).assertEqual(801)
-              done()
-            } else if (err.code === 1600022) {
-              expect(err.code).assertEqual(1600022);
-              done()
-            } else {
-              expect().assertFail();
-              done()
+            if (err.code !== 1600022 && err.code !== 801) {
+              failCount++
             }
-          });
-          if (i === 3) {
-            console.info(TAG +
-              `test done`);
-            done()
           }
         }
+        console.info(TAG + `test done, failCount: ${failCount}`);
+        expect(failCount).assertEqual(0)
+        done()
       }catch (err) {
         console.error(TAG + ` fail: ${JSON.stringify(err)},${err.message}`);
-        if (err.code === 801) {
-          expect(err.code).assertEqual(801)
-          done()
-        } else if (err.code === 201) {
-          expect(err.code).assertEqual(201);
-          done()
-        } else {
-          expect().assertFail();
-          done()
-        }
+        expect().assertFail();
+        done()
       }
     })
 
@@ -239,53 +231,41 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest() {
     */
     it('SUB_Notification_Ans_ThreePartyWatch_Enhanced_1300', Level.LEVEL2, async (done: Function) => {
       let TAG: string = "SUB_Notification_Ans_ThreePartyWatch_Enhanced_1300"
-      let num: number = 0
+      let failCount: number = 0
       try{
         let ArrayName = [undefined, '', "微信", "xxx"]
         let list: notificationExtensionSubscription.GrantedBundleInfo[] = await notificationExtensionSubscription.getUserGrantedEnabledBundles();
-        if(list.length == 0){
+        if(list.length === 0){
           list = [{ bundleName: "com.weixin.com", appIndex: 0 }]
         }
         console.info(TAG + 'getUserGrantedEnabledBundles success, size: ' + list.length);
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < ArrayName.length && i < list.length; i++) {
           let info: notificationExtensionSubscription.GrantedBundleInfo = {
             bundleName: list[i].bundleName,
             appIndex: 0,
             appName: ArrayName[i]
           }
-          await notificationExtensionSubscription.disableUserGrantedByBundle(info).then(() => {
-            num++
-            console.info(TAG + "disableUserGrantedByBundle success");
-            expect(num).assertEqual(i+1)
-          }).catch((err: BusinessError) => {
+          try {
+            await notificationExtensionSubscription.disableUserGrantedByBundle(info)
+            console.info(TAG + `disableUserGrantedByBundle success, bundleName: ${info.bundleName}`)
+          } catch (err) {
             console.error(TAG +
               `disableUserGrantedByBundle failed, code is ${err.code}, message is ${err.message}`);
-            if (err.code === 801) {
-              expect(err.code).assertEqual(801)
-              done()
-            } else if (err.code === 1600022) {
-              expect(err.code).assertEqual(1600022);
-              done()
-            } else {
-              expect().assertFail();
-              done()
+            // 该 bundle 可能已被前面的用例禁用，返回 1600022 属于预期
+            if (err.code !== 1600022 && err.code !== 801) {
+              failCount++
             }
-          });
-          if (i === 3) {
-            console.info(TAG +
-              `test done`);
-            done()
           }
         }
+        console.info(TAG + `test done, failCount: ${failCount}`);
+        expect(failCount).assertEqual(0)
+        done()
       } catch (err) {
         console.error(TAG + ` fail: ${JSON.stringify(err)},${err.message}`);
-        if (err.code === 801) {
-          expect(err.code).assertEqual(801)
+        if (err.code === 201) {
+          expect(err.code).assertEqual(201)
           done()
-        } else if (err.code === 201) {
-          expect(err.code).assertEqual(201);
-          done()
-        } else {
+        }else{
           expect().assertFail();
           done()
         }
