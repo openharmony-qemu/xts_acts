@@ -63,7 +63,9 @@
 #include "collection/CollectionEnumTest.cpp"
 #include "uiEventInjection/UIEventInjectionTest.cpp"
 #include "node/BufferQueueSizeTest.cpp"
+#include "nativeModule/InspectorTreeGetterTest.cpp"
 #include "node/RequestSetFilterOccludedTest.cpp"
+
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -537,6 +539,28 @@ static napi_value Init(napi_env env, napi_value exports)
         {"BufferQueueSizeTest015", nullptr, BufferQueueSizeTest015, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"BufferQueueSizeTest016", nullptr, BufferQueueSizeTest016, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"BufferQueueSizeTest017", nullptr, BufferQueueSizeTest017, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"RegisterInspectorTreeGetterTest001", nullptr, RegisterInspectorTreeGetterTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RegisterInspectorTreeGetterTest002", nullptr, RegisterInspectorTreeGetterTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RegisterInspectorTreeGetterTest003", nullptr, RegisterInspectorTreeGetterTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RegisterInspectorTreeGetterTest004", nullptr, RegisterInspectorTreeGetterTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RegisterInspectorTreeGetterTest005", nullptr, RegisterInspectorTreeGetterTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RegisterInspectorTreeGetterTest006", nullptr, RegisterInspectorTreeGetterTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RegisterInspectorTreeGetterTest007", nullptr, RegisterInspectorTreeGetterTest007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RegisterInspectorTreeGetterTest008", nullptr, RegisterInspectorTreeGetterTest008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RegisterInspectorTreeGetterTest009", nullptr, RegisterInspectorTreeGetterTest009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RegisterInspectorTreeGetterTest010", nullptr, RegisterInspectorTreeGetterTest010, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"UnregisterInspectorTreeGetterTest001", nullptr, UnregisterInspectorTreeGetterTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnregisterInspectorTreeGetterTest002", nullptr, UnregisterInspectorTreeGetterTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnregisterInspectorTreeGetterTest003", nullptr, UnregisterInspectorTreeGetterTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnregisterInspectorTreeGetterTest004", nullptr, UnregisterInspectorTreeGetterTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnregisterInspectorTreeGetterTest005", nullptr, UnregisterInspectorTreeGetterTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnregisterInspectorTreeGetterTest006", nullptr, UnregisterInspectorTreeGetterTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnregisterInspectorTreeGetterTest007", nullptr, UnregisterInspectorTreeGetterTest007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnregisterInspectorTreeGetterTest008", nullptr, UnregisterInspectorTreeGetterTest008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnregisterInspectorTreeGetterTest009", nullptr, UnregisterInspectorTreeGetterTest009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnregisterInspectorTreeGetterTest010", nullptr, UnregisterInspectorTreeGetterTest010, nullptr, nullptr, nullptr, napi_default, nullptr},
 
         {"RequestSetFilterOccludedTest001", nullptr, RequestSetFilterOccludedTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"RequestSetFilterOccludedTest002", nullptr, RequestSetFilterOccludedTest002, nullptr, nullptr, nullptr, napi_default, nullptr},

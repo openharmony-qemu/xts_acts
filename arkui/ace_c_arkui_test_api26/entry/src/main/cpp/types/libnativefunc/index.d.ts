@@ -444,6 +444,28 @@ export const BufferQueueSizeTest015: () => number;
 export const BufferQueueSizeTest016: () => number;
 export const BufferQueueSizeTest017: () => number;
 
+export const RegisterInspectorTreeGetterTest001: () => number;
+export const RegisterInspectorTreeGetterTest002: () => number;
+export const RegisterInspectorTreeGetterTest003: () => number;
+export const RegisterInspectorTreeGetterTest004: () => number;
+export const RegisterInspectorTreeGetterTest005: () => number;
+export const RegisterInspectorTreeGetterTest006: () => number;
+export const RegisterInspectorTreeGetterTest007: () => number;
+export const RegisterInspectorTreeGetterTest008: () => number;
+export const RegisterInspectorTreeGetterTest009: () => number;
+export const RegisterInspectorTreeGetterTest010: () => number;
+
+export const UnregisterInspectorTreeGetterTest001: () => number;
+export const UnregisterInspectorTreeGetterTest002: () => number;
+export const UnregisterInspectorTreeGetterTest003: () => number;
+export const UnregisterInspectorTreeGetterTest004: () => number;
+export const UnregisterInspectorTreeGetterTest005: () => number;
+export const UnregisterInspectorTreeGetterTest006: () => number;
+export const UnregisterInspectorTreeGetterTest007: () => number;
+export const UnregisterInspectorTreeGetterTest008: () => number;
+export const UnregisterInspectorTreeGetterTest009: () => number;
+export const UnregisterInspectorTreeGetterTest010: () => number;
+
 export const RequestSetFilterOccludedTest001: () => number;
 export const RequestSetFilterOccludedTest002: () => number;
 export const RequestSetFilterOccludedTest003: () => number;
@@ -456,3 +478,4 @@ export const RequestSetOcclusionOpacityThresholdTest003: () => number;
 export const RequestSetOcclusionOpacityThresholdTest004: () => number;
 export const RequestSetOcclusionOpacityThresholdTest005: () => number;
 export const RequestSetOcclusionOpacityThresholdTest006: () => number;
+

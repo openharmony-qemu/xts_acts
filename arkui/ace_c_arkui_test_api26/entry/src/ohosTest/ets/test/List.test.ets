@@ -79,6 +79,7 @@ import AccessibilityBindExportTreeTest from './accessibilityBindExportTree/Acces
 import CollectionEnumTest from "./collection/CollectionEnum.test"
 import UIEventInjectionTest from './uiEventInjection/UIEventInjectionTest.test'
 import BufferQueueSizeTest from './node/BufferQueueSizeTest.test'
+import InspectorTreeGetterTest from './nativeModule/InspectorTreeGetterTest.test'
 import RequestSetFilterOccludedTest from './node/RequestSetFilterOccludedTest.test'
 
 export default function testsuite() {
@@ -147,5 +148,6 @@ export default function testsuite() {
   CollectionEnumTest()
   UIEventInjectionTest()
   BufferQueueSizeTest()
+  InspectorTreeGetterTest()
   RequestSetFilterOccludedTest()
 }
