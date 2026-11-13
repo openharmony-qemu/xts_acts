@@ -17,7 +17,7 @@ import {
   Entry, Component,
   Column, ColumnOptions, Color,
   Text, Button, ClickEvent, Margin, DismissReason, DialogAlignment,
-  Flex, FlexDirection, ItemAlign, FlexAlign, DismissDialogAction,
+  Flex, FlexDirection, ItemAlign, FlexAlign, DismissDialogAction, SheetInfo
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
@@ -42,8 +42,7 @@ struct ActionSheet2Example {
         .onClick((e:ClickEvent) => {
           this.getUIContext().showActionSheet({
             title: 'ActionSheet title',
-            subtitle: 'ActionSheet subtitle',
-            message: 'message',
+            message: '',
             autoCancel: true,
             showInSubWindow: true,
             confirm: {
@@ -68,7 +67,7 @@ struct ActionSheet2Example {
               }
             },
             alignment: DialogAlignment.Center,
-            offset: { dx: 0, dy: -10 },
+            offset: { dx: 0, dy: -20 },
             sheets: [
               {
                 title: 'apples',
@@ -81,14 +80,8 @@ struct ActionSheet2Example {
                 action: () => {
                   console.log('bananas')
                 }
-              },
-              {
-                title: 'pears',
-                action: () => {
-                  console.log('pears')
-                }
               }
-            ]
+            ] as Array<SheetInfo>
           })
         })
     }.width('100%')
