@@ -1719,6 +1719,437 @@ napi_value testNativeWindowHandleOptSetDmaBufferNameMultipleCalls(napi_env env, 
     return result;
 }
 
+napi_value testNativeWindowHandleOptSetAndGetScreenInfoNormal01(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    InitNativeWindow* initNative = new InitNativeWindow();
+    OHNativeWindow *nativeWindow = nullptr;
+    nativeWindow = initNative->returnNativeWindow();
+    if (nativeWindow == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    OH_NativeWindow_ScreenInfoRect currentFrameRectSrc = {.x = 10, .y = 10, .w = 100, .h = 100};
+    OH_NativeWindow_ScreenInfoRect originalRectSrc = {.x = 20, .y = 20, .w = 200, .h = 200};
+    float angleSrc = 90.0f;
+    int32_t ret = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow, OH_NATIVEWINDOW_SET_SCREEN_INFO, &currentFrameRectSrc, &originalRectSrc, angleSrc);
+    NAPI_ASSERT(env, ret == NATIVE_ERROR_OK, "ret != NATIVE_ERROR_OK");
+    OH_NativeWindow_ScreenInfoRect currentFrameRectDst = { 0 };
+    OH_NativeWindow_ScreenInfoRect originalRectDst = { 0 };
+    float angleDst = 0;
+    ret = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow, OH_NATIVEWINDOW_GET_SCREEN_INFO, &currentFrameRectDst, &originalRectDst, &angleDst);
+    NAPI_ASSERT(env, ret == NATIVE_ERROR_OK, "ret != NATIVE_ERROR_OK");
+    NAPI_ASSERT(env, currentFrameRectSrc.x == currentFrameRectDst.x, "currentFrameRectSrc.x != currentFrameRectDst.x");
+    NAPI_ASSERT(env, currentFrameRectSrc.y == currentFrameRectDst.y, "currentFrameRectSrc.y != currentFrameRectDst.y");
+    NAPI_ASSERT(env, currentFrameRectSrc.w == currentFrameRectDst.w, "currentFrameRectSrc.w != currentFrameRectDst.w");
+    NAPI_ASSERT(env, currentFrameRectSrc.h == currentFrameRectDst.h, "currentFrameRectSrc.h != currentFrameRectDst.h");
+    NAPI_ASSERT(env, originalRectSrc.x == originalRectDst.x, "originalRectSrc.x != originalRectDst.x");
+    NAPI_ASSERT(env, originalRectSrc.y == originalRectDst.y, "originalRectSrc.y != originalRectDst.y");
+    NAPI_ASSERT(env, originalRectSrc.w == originalRectDst.w, "originalRectSrc.w != originalRectDst.w");
+    NAPI_ASSERT(env, originalRectSrc.h == originalRectDst.h, "originalRectSrc.h != originalRectDst.h");
+    NAPI_ASSERT(env, angleSrc == angleDst, "angleSrc != angleDst");
+    
+    delete initNative;
+    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value testNativeWindowHandleOptSetAndGetScreenInfoNormal02(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    InitNativeWindow* initNative = new InitNativeWindow();
+    OHNativeWindow *nativeWindow = nullptr;
+    nativeWindow = initNative->returnNativeWindow();
+    NAPI_ASSERT(env, nativeWindow != nullptr, "nativeWindow == nullptr");
+    // 第一次设置
+    OH_NativeWindow_ScreenInfoRect currentFrameRectSrc1 = {.x = 10, .y = 10, .w = 100, .h = 100};
+    OH_NativeWindow_ScreenInfoRect originalRectSrc1 = {.x = 20, .y = 20, .w = 200, .h = 200};
+    float angleSrc1 = 90.0f;
+    int32_t ret = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow, OH_NATIVEWINDOW_SET_SCREEN_INFO, &currentFrameRectSrc1, &originalRectSrc1, angleSrc1);
+    // 第一次获取并校验
+    OH_NativeWindow_ScreenInfoRect currentFrameRectDst1 = { 0 };
+    OH_NativeWindow_ScreenInfoRect originalRectDst1 = { 0 };
+    float angleDst1 = 0;
+    ret = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow, OH_NATIVEWINDOW_GET_SCREEN_INFO, &currentFrameRectDst1, &originalRectDst1, &angleDst1);
+    NAPI_ASSERT(env, currentFrameRectSrc1.x == currentFrameRectDst1.x, "curFrameRectSrc1.x != curFrameRectDst1.x");
+    NAPI_ASSERT(env, currentFrameRectSrc1.y == currentFrameRectDst1.y, "curFrameRectSrc1.y != curFrameRectDst1.y");
+    NAPI_ASSERT(env, currentFrameRectSrc1.w == currentFrameRectDst1.w, "curFrameRectSrc1.w != curFrameRectDst1.w");
+    NAPI_ASSERT(env, currentFrameRectSrc1.h == currentFrameRectDst1.h, "curFrameRectSrc1.h != curFrameRectDst1.h");
+    NAPI_ASSERT(env, originalRectSrc1.x == originalRectDst1.x, "originalRectSrc1.x != originalRectDst1.x");
+    NAPI_ASSERT(env, originalRectSrc1.y == originalRectDst1.y, "originalRectSrc1.y != originalRectDst1.y");
+    NAPI_ASSERT(env, originalRectSrc1.w == originalRectDst1.w, "originalRectSrc1.w != originalRectDst1.w");
+    NAPI_ASSERT(env, originalRectSrc1.h == originalRectDst1.h, "originalRectSrc1.h != originalRectDst1.h");
+    NAPI_ASSERT(env, angleSrc1 == angleDst1, "angleSrc1 != angleDst1");
+    // 第二次设置不同的数据
+    OH_NativeWindow_ScreenInfoRect currentFrameRectSrc2 = {.x = 50, .y = 50, .w = 500, .h = 500};
+    OH_NativeWindow_ScreenInfoRect originalRectSrc2 = {.x = 60, .y = 60, .w = 600, .h = 600};
+    float angleSrc2 = 180.0f;
+    ret = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow, OH_NATIVEWINDOW_SET_SCREEN_INFO, &currentFrameRectSrc2, &originalRectSrc2, angleSrc2);
+    // 第二次获取并校验
+    OH_NativeWindow_ScreenInfoRect currentFrameRectDst2 = { 0 };
+    OH_NativeWindow_ScreenInfoRect originalRectDst2 = { 0 };
+    float angleDst2 = 0;
+    ret = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow, OH_NATIVEWINDOW_GET_SCREEN_INFO, &currentFrameRectDst2, &originalRectDst2, &angleDst2);
+    NAPI_ASSERT(env, currentFrameRectSrc2.x == currentFrameRectDst2.x, "curFrameRectSrc2.x != curFrameRectDst2.x");
+    NAPI_ASSERT(env, currentFrameRectSrc2.y == currentFrameRectDst2.y, "curFrameRectSrc2.y != curFrameRectDst2.y");
+    NAPI_ASSERT(env, currentFrameRectSrc2.w == currentFrameRectDst2.w, "curFrameRectSrc2.w != curFrameRectDst2.w");
+    NAPI_ASSERT(env, currentFrameRectSrc2.h == currentFrameRectDst2.h, "curFrameRectSrc2.h != curFrameRectDst2.h");
+    NAPI_ASSERT(env, originalRectSrc2.x == originalRectDst2.x, "originalRectSrc2.x != originalRectDst2.x");
+    NAPI_ASSERT(env, originalRectSrc2.y == originalRectDst2.y, "originalRectSrc2.y != originalRectDst2.y");
+    NAPI_ASSERT(env, originalRectSrc2.w == originalRectDst2.w, "originalRectSrc2.w != originalRectDst2.w");
+    NAPI_ASSERT(env, originalRectSrc2.h == originalRectDst2.h, "originalRectSrc2.h != originalRectDst2.h");
+    NAPI_ASSERT(env, angleSrc2 == angleDst2, "angleSrc2 != angleDst2");
+
+    delete initNative;
+    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value testNativeWindowHandleOptSetAndGetScreenInfoNormal03(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    InitNativeWindow* initNative = new InitNativeWindow();
+    OHNativeWindow *nativeWindow = nullptr;
+    nativeWindow = initNative->returnNativeWindow();
+    if (nativeWindow == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    OH_NativeWindow_ScreenInfoRect currentFrameRectDst = { 0 };
+    OH_NativeWindow_ScreenInfoRect originalRectDst = { 0 };
+    float angleDst = 0;
+    int32_t ret = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow, OH_NATIVEWINDOW_GET_SCREEN_INFO, &currentFrameRectDst, &originalRectDst, &angleDst);
+    NAPI_ASSERT(env, ret == NATIVE_ERROR_OK, "ret != NATIVE_ERROR_OK");
+    NAPI_ASSERT(env, currentFrameRectDst.x == 0, "currentFrameRectDst.x != 0");
+    NAPI_ASSERT(env, currentFrameRectDst.y == 0, "currentFrameRectDst.y != 0");
+    NAPI_ASSERT(env, currentFrameRectDst.w == 0, "currentFrameRectDst.w != 0");
+    NAPI_ASSERT(env, currentFrameRectDst.h == 0, "currentFrameRectDst.h != 0");
+    NAPI_ASSERT(env, originalRectDst.x == 0, "originalRectDst.x != 0");
+    NAPI_ASSERT(env, originalRectDst.y == 0, "originalRectDst.y != 0");
+    NAPI_ASSERT(env, originalRectDst.w == 0, "originalRectDst.w != 0");
+    NAPI_ASSERT(env, originalRectDst.h == 0, "originalRectDst.h != 0");
+    NAPI_ASSERT(env, angleDst == 0, "angleDst != 0");
+    
+    delete initNative;
+    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value testNativeWindowHandleOptSetAndGetScreenInfoNormal04(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    InitNativeWindow* initNative = new InitNativeWindow();
+    OHNativeWindow *nativeWindow = nullptr;
+    nativeWindow = initNative->returnNativeWindow();
+    if (nativeWindow == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    OH_NativeWindow_ScreenInfoRect currentFrameRectSrc = {.x = 10, .y = 10, .w = 100, .h = 100};
+    OH_NativeWindow_ScreenInfoRect originalRectSrc = {.x = 20, .y = 20, .w = 200, .h = 200};
+    float angleSrcArr[] = {0, 0.1f, 45.0f, 135.0f, 180.0f, 270.0f, 359.999f, 360.0f};
+    for (size_t i = 0; i < sizeof(angleSrcArr) / sizeof(angleSrcArr[0]); i++) {
+        float angleSrc = angleSrcArr[i];
+        int32_t ret = OH_NativeWindow_NativeWindowHandleOpt(
+            nativeWindow, OH_NATIVEWINDOW_SET_SCREEN_INFO, &currentFrameRectSrc, &originalRectSrc, angleSrc);
+        NAPI_ASSERT(env, ret == NATIVE_ERROR_OK, "ret != NATIVE_ERROR_OK");
+        OH_NativeWindow_ScreenInfoRect currentFrameRectDst = { 0 };
+        OH_NativeWindow_ScreenInfoRect originalRectDst = { 0 };
+        float angleDst = 0;
+        ret = OH_NativeWindow_NativeWindowHandleOpt(
+            nativeWindow, OH_NATIVEWINDOW_GET_SCREEN_INFO, &currentFrameRectDst, &originalRectDst, &angleDst);
+        NAPI_ASSERT(env, ret == NATIVE_ERROR_OK, "ret != NATIVE_ERROR_OK");
+        NAPI_ASSERT(env, angleSrc == angleDst, "angleSrc != angleDst");
+    }
+    
+    delete initNative;
+    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+// 多surface屏幕信息隔离验证
+napi_value testNativeWindowHandleOptSetAndGetScreenInfoNormal05(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    
+    OH_NativeImage *nativeImage1 = OH_ConsumerSurface_Create();
+    InitNativeWindow *initNative1 = new InitNativeWindow(nativeImage1);
+    OHNativeWindow *nativeWindow1 = nullptr;
+    nativeWindow1 = initNative1->returnNativeWindow();
+    
+    OH_NativeImage *nativeImage2 = OH_ConsumerSurface_Create();
+    InitNativeWindow *initNative2 = new InitNativeWindow(nativeImage2);
+    OHNativeWindow *nativeWindow2 = nullptr;
+    nativeWindow2 = initNative2->returnNativeWindow();
+    
+    OH_NativeWindow_ScreenInfoRect currentFrameRectSrc1 = {.x = 10, .y = 10, .w = 100, .h = 100};
+    OH_NativeWindow_ScreenInfoRect originalRectSrc1 = {.x = 20, .y = 20, .w = 200, .h = 200};
+    float angleSrc1 = 60.0f;
+    OH_NativeWindow_ScreenInfoRect currentFrameRectSrc2 = {.x = 100, .y = 100, .w = 500, .h = 500};
+    OH_NativeWindow_ScreenInfoRect originalRectSrc2 = {.x = 200, .y = 200, .w = 600, .h = 600};
+    float angleSrc2 = 120.0f;
+    
+    OH_NativeWindow_ScreenInfoRect currentFrameRectDst1 = { 0 };
+    OH_NativeWindow_ScreenInfoRect originalRectDst1 = { 0 };
+    float angleDst1 = 0;
+    OH_NativeWindow_ScreenInfoRect currentFrameRectDst2 = { 0 };
+    OH_NativeWindow_ScreenInfoRect originalRectDst2 = { 0 };
+    float angleDst2 = 0;
+    
+    int32_t ret = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow1, OH_NATIVEWINDOW_SET_SCREEN_INFO, &currentFrameRectSrc1, &originalRectSrc1, angleSrc1);
+    ret = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow1, OH_NATIVEWINDOW_GET_SCREEN_INFO, &currentFrameRectDst1, &originalRectDst1, &angleDst1);
+    ret = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow2, OH_NATIVEWINDOW_SET_SCREEN_INFO, &currentFrameRectSrc2, &originalRectSrc2, angleSrc2);
+    ret = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow2, OH_NATIVEWINDOW_GET_SCREEN_INFO, &currentFrameRectDst2, &originalRectDst2, &angleDst2);
+    NAPI_ASSERT(env, currentFrameRectSrc1.x == currentFrameRectDst1.x, "curFrameRectSrc1.x != curFrameRectDst1.x");
+    NAPI_ASSERT(env, currentFrameRectSrc2.y == currentFrameRectDst2.y, "curFrameRectSrc2.y != curFrameRectDst2.y");
+    NAPI_ASSERT(env, originalRectSrc1.w == originalRectSrc1.w, "originalRectSrc1.w != originalRectSrc1.w");
+    NAPI_ASSERT(env, originalRectSrc2.h == originalRectSrc2.h, "originalRectSrc2.h != originalRectSrc2.h");
+    // 对1覆盖写入新值后再次读取2
+    originalRectSrc1 = {.x = 200, .y = 200, .w = 2000, .h = 2000};
+    ret = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow1, OH_NATIVEWINDOW_SET_SCREEN_INFO, &currentFrameRectSrc1, &originalRectSrc1, angleSrc1);
+    ret = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow2, OH_NATIVEWINDOW_GET_SCREEN_INFO, &currentFrameRectDst2, &originalRectDst2, &angleDst2);
+    NAPI_ASSERT(env, currentFrameRectSrc2.w == currentFrameRectSrc2.w, "curFrameRectSrc2.w != curFrameRectSrc2.w");
+    NAPI_ASSERT(env, originalRectSrc2.h == originalRectDst2.h, "originalRectSrc2.h != originalRectDst2.h");
+    NAPI_ASSERT(env, angleSrc2 == angleDst2, "angleSrc2 != angleDst2");
+    
+    delete initNative1;
+    delete initNative2;
+    OH_NativeImage_Destroy(&nativeImage1);
+    OH_NativeImage_Destroy(&nativeImage2);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+// surface销毁后重建屏幕信息不继承
+napi_value testNativeWindowHandleOptSetAndGetScreenInfoNormal06(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    
+    OH_NativeImage *nativeImage = OH_ConsumerSurface_Create();
+    InitNativeWindow *initNative = new InitNativeWindow(nativeImage);
+    OHNativeWindow *nativeWindow = nullptr;
+    nativeWindow = initNative->returnNativeWindow();
+    
+    OH_NativeWindow_ScreenInfoRect currentFrameRectSrc = {.x = 10, .y = 10, .w = 100, .h = 100};
+    OH_NativeWindow_ScreenInfoRect originalRectSrc = {.x = 20, .y = 20, .w = 200, .h = 200};
+    float angleSrc = 60.0f;
+    OH_NativeWindow_ScreenInfoRect currentFrameRectDst = { 0 };
+    OH_NativeWindow_ScreenInfoRect originalRectDst = { 0 };
+    float angleDst = 0;
+    
+    int32_t ret = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow, OH_NATIVEWINDOW_SET_SCREEN_INFO, &currentFrameRectSrc, &originalRectSrc, angleSrc);
+    ret = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow, OH_NATIVEWINDOW_GET_SCREEN_INFO, &currentFrameRectDst, &originalRectDst, &angleDst);
+    NAPI_ASSERT(env, currentFrameRectSrc.x == currentFrameRectDst.x, "currentFrameRectSrc.x != currentFrameRectDst.x");
+    NAPI_ASSERT(env, currentFrameRectSrc.y == currentFrameRectDst.y, "currentFrameRectSrc.y != currentFrameRectDst.y");
+    NAPI_ASSERT(env, currentFrameRectSrc.w == currentFrameRectDst.w, "currentFrameRectSrc.w != currentFrameRectDst.w");
+    NAPI_ASSERT(env, currentFrameRectSrc.h == currentFrameRectDst.h, "currentFrameRectSrc.h != currentFrameRectDst.h");
+    NAPI_ASSERT(env, originalRectSrc.x == originalRectDst.x, "originalRectSrc.x != originalRectDst.x");
+    NAPI_ASSERT(env, originalRectSrc.y == originalRectDst.y, "originalRectSrc.y != originalRectDst.y");
+    NAPI_ASSERT(env, originalRectSrc.w == originalRectDst.w, "originalRectSrc.w != originalRectDst.w");
+    NAPI_ASSERT(env, originalRectSrc.h == originalRectDst.h, "originalRectSrc.h != originalRectDst.h");
+    NAPI_ASSERT(env, angleSrc == angleDst, "angleSrc != angleDst");
+
+    OH_NativeImage_Destroy(&nativeImage);
+    nativeImage = OH_ConsumerSurface_Create();
+    initNative = new InitNativeWindow(nativeImage);
+    nativeWindow = initNative->returnNativeWindow();
+    ret = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow, OH_NATIVEWINDOW_GET_SCREEN_INFO, &currentFrameRectDst, &originalRectDst, &angleDst);
+    NAPI_ASSERT(env, currentFrameRectDst.x == 0, "currentFrameRectDst.x != 0");
+    NAPI_ASSERT(env, currentFrameRectDst.y == 0, "currentFrameRectDst.y != 0");
+    NAPI_ASSERT(env, currentFrameRectDst.w == 0, "currentFrameRectDst.w != 0");
+    NAPI_ASSERT(env, currentFrameRectDst.h == 0, "currentFrameRectDst.h != 0");
+    NAPI_ASSERT(env, originalRectDst.x == 0, "originalRectDst.x != 0");
+    NAPI_ASSERT(env, originalRectDst.y == 0, "originalRectDst.y != 0");
+    NAPI_ASSERT(env, originalRectDst.w == 0, "originalRectDst.w != 0");
+    NAPI_ASSERT(env, originalRectDst.h == 0, "originalRectDst.h != 0");
+    NAPI_ASSERT(env, angleDst == 0, "angleDst != 0");
+    
+    delete initNative;
+    OH_NativeImage_Destroy(&nativeImage);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value testNativeWindowHandleOptSetAndGetScreenInfoAbnormal01(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    InitNativeWindow* initNative = new InitNativeWindow();
+    OHNativeWindow *nativeWindow = nullptr;
+    nativeWindow = initNative->returnNativeWindow();
+    if (nativeWindow == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    OH_NativeWindow_ScreenInfoRect originalRectSrc = {.x = 20, .y = 20, .w = 200, .h = 200};
+    float angleSrc = 90.0f;
+
+    // 1. currentFrameRectSrc = (0, 0, 0, 0)
+    OH_NativeWindow_ScreenInfoRect currentFrameRectSrc1 = {.x = 0, .y = 0, .w = 0, .h = 0};
+    int32_t ret1 = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow, OH_NATIVEWINDOW_SET_SCREEN_INFO, &currentFrameRectSrc1, &originalRectSrc, angleSrc);
+    NAPI_ASSERT(env, ret1 == NATIVE_ERROR_OK, "ret1 != NATIVE_ERROR_OK");
+
+    // 2. currentFrameRectSrc = (-10, -10, 100, 100)
+    OH_NativeWindow_ScreenInfoRect currentFrameRectSrc2 = {.x = -10, .y = -10, .w = 100, .h = 100};
+    int32_t ret2 = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow, OH_NATIVEWINDOW_SET_SCREEN_INFO, &currentFrameRectSrc2, &originalRectSrc, angleSrc);
+    NAPI_ASSERT(env, ret2 == NATIVE_ERROR_OK, "ret2 != NATIVE_ERROR_OK");
+
+    // 3. currentFrameRectSrc = (0, 0, -100, 100)
+    OH_NativeWindow_ScreenInfoRect currentFrameRectSrc3 = {.x = 0, .y = 0, .w = -100, .h = 100};
+    int32_t ret3 = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow, OH_NATIVEWINDOW_SET_SCREEN_INFO, &currentFrameRectSrc3, &originalRectSrc, angleSrc);
+    NAPI_ASSERT(env, ret3 == NATIVE_ERROR_OK, "ret3 != NATIVE_ERROR_OK");
+    
+    // 4. currentFrameRectSrc = (0, 0, 100, -100)
+    OH_NativeWindow_ScreenInfoRect currentFrameRectSrc4 = {.x = 0, .y = 0, .w = 100, .h = -100};
+    int32_t ret4 = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow, OH_NATIVEWINDOW_SET_SCREEN_INFO, &currentFrameRectSrc4, &originalRectSrc, angleSrc);
+    NAPI_ASSERT(env, ret4 == NATIVE_ERROR_OK, "ret4 != NATIVE_ERROR_OK");
+
+    // 5. currentFrameRectSrc = (INT32_MAX, INT32_MAX, INT32_MAX, INT32_MAX)
+    OH_NativeWindow_ScreenInfoRect currentFrameRectSrc5 = {
+        .x = INT32_MAX, .y = INT32_MAX, .w = INT32_MAX, .h = INT32_MAX};
+    int32_t ret5 = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow, OH_NATIVEWINDOW_SET_SCREEN_INFO, &currentFrameRectSrc5, &originalRectSrc, angleSrc);
+    NAPI_ASSERT(env, ret5 == NATIVE_ERROR_OK, "ret5 != NATIVE_ERROR_OK");
+
+    delete initNative;
+    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value testNativeWindowHandleOptSetAndGetScreenInfoAbnormal02(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    InitNativeWindow* initNative = new InitNativeWindow();
+    OHNativeWindow *nativeWindow = nullptr;
+    nativeWindow = initNative->returnNativeWindow();
+    if (nativeWindow == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    OH_NativeWindow_ScreenInfoRect currentFrameRectSrc = {.x = 10, .y = 10, .w = 100, .h = 100};
+    float angleSrc = 90.0f;
+
+    // 1. originalRectSrc = (0, 0, 0, 0)
+    OH_NativeWindow_ScreenInfoRect originalRectSrc1 = {.x = 0, .y = 0, .w = 0, .h = 0};
+    int32_t ret1 = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow, OH_NATIVEWINDOW_SET_SCREEN_INFO, &currentFrameRectSrc, &originalRectSrc1, angleSrc);
+    NAPI_ASSERT(env, ret1 == NATIVE_ERROR_OK, "ret1 != NATIVE_ERROR_OK");
+
+    // 2. originalRectSrc = (-10, -10, 100, 100)
+    OH_NativeWindow_ScreenInfoRect originalRectSrc2 = {.x = -10, .y = -10, .w = 100, .h = 100};
+    int32_t ret2 = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow, OH_NATIVEWINDOW_SET_SCREEN_INFO, &currentFrameRectSrc, &originalRectSrc2, angleSrc);
+    NAPI_ASSERT(env, ret2 == NATIVE_ERROR_OK, "ret2 != NATIVE_ERROR_OK");
+
+    // 3. originalRectSrc = (0, 0, -100, 100)
+    OH_NativeWindow_ScreenInfoRect originalRectSrc3 = {.x = 0, .y = 0, .w = -100, .h = 100};
+    int32_t ret3 = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow, OH_NATIVEWINDOW_SET_SCREEN_INFO, &currentFrameRectSrc, &originalRectSrc3, angleSrc);
+    NAPI_ASSERT(env, ret3 == NATIVE_ERROR_OK, "ret3 != NATIVE_ERROR_OK");
+
+    // 4. originalRectSrc = (0, 0, 100, -100)
+    OH_NativeWindow_ScreenInfoRect originalRectSrc4 = {.x = 0, .y = 0, .w = 100, .h = -100};
+    int32_t ret4 = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow, OH_NATIVEWINDOW_SET_SCREEN_INFO, &currentFrameRectSrc, &originalRectSrc4, angleSrc);
+    NAPI_ASSERT(env, ret4 == NATIVE_ERROR_OK, "ret4 != NATIVE_ERROR_OK");
+
+    // 5. originalRectSrc = (INT32_MAX, INT32_MAX, INT32_MAX, INT32_MAX)
+    OH_NativeWindow_ScreenInfoRect originalRectSrc5 = {
+        .x = INT32_MAX, .y = INT32_MAX, .w = INT32_MAX, .h = INT32_MAX};
+    int32_t ret5 = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow, OH_NATIVEWINDOW_SET_SCREEN_INFO, &currentFrameRectSrc, &originalRectSrc5, angleSrc);
+    NAPI_ASSERT(env, ret5 == NATIVE_ERROR_OK, "ret5 != NATIVE_ERROR_OK");
+
+    delete initNative;
+    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value testNativeWindowHandleOptSetAndGetScreenInfoNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    InitNativeWindow* initNative = new InitNativeWindow();
+    OHNativeWindow *nativeWindow = nullptr;
+    nativeWindow = initNative->returnNativeWindow();
+    if (nativeWindow == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    OH_NativeWindow_ScreenInfoRect currentFrameRectSrc = {.x = 10, .y = 10, .w = 100, .h = 100};
+    OH_NativeWindow_ScreenInfoRect originalRectSrc = {.x = 20, .y = 20, .w = 200, .h = 200};
+    float angleSrc = 90.0f;
+    OH_NativeWindow_ScreenInfoRect currentFrameRectDst = { 0 };
+    OH_NativeWindow_ScreenInfoRect originalRectDst = { 0 };
+    float angleDst = 0;
+
+    // 1. SET_SCREEN_INFO: nativeWindow is nullptr
+    int32_t ret1 = OH_NativeWindow_NativeWindowHandleOpt(
+        nullptr, OH_NATIVEWINDOW_SET_SCREEN_INFO, &currentFrameRectSrc, &originalRectSrc, angleSrc);
+    NAPI_ASSERT(env, ret1 == NATIVE_ERROR_INVALID_ARGUMENTS, "ret1 != NATIVE_ERROR_INVALID_ARGUMENTS");
+    // 2. SET_SCREEN_INFO: currentFrameRect is nullptr
+    int32_t ret2 = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow, OH_NATIVEWINDOW_SET_SCREEN_INFO, nullptr, &originalRectSrc, angleSrc);
+    NAPI_ASSERT(env, ret2 == NATIVE_ERROR_OK, "ret2 != NATIVE_ERROR_OK");
+    // 3. SET_SCREEN_INFO: originalRect is nullptr
+    int32_t ret3 = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow, OH_NATIVEWINDOW_SET_SCREEN_INFO, &currentFrameRectSrc, nullptr, angleSrc);
+    NAPI_ASSERT(env, ret3 == NATIVE_ERROR_OK, "ret3 != NATIVE_ERROR_OK");
+
+    // 4. GET_SCREEN_INFO: nativeWindow is nullptr
+    int32_t ret4 = OH_NativeWindow_NativeWindowHandleOpt(
+        nullptr, OH_NATIVEWINDOW_GET_SCREEN_INFO, &currentFrameRectDst, &originalRectDst, &angleDst);
+    NAPI_ASSERT(env, ret4 == NATIVE_ERROR_INVALID_ARGUMENTS, "ret4 != NATIVE_ERROR_INVALID_ARGUMENTS");
+    // 5. GET_SCREEN_INFO: currentFrameRect is nullptr
+    int32_t ret5 = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow, OH_NATIVEWINDOW_GET_SCREEN_INFO, nullptr, &originalRectDst, &angleDst);
+    NAPI_ASSERT(env, ret5 == NATIVE_ERROR_OK, "ret5 != NATIVE_ERROR_OK");
+    // 6. GET_SCREEN_INFO: originalRect is nullptr
+    int32_t ret6 = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow, OH_NATIVEWINDOW_GET_SCREEN_INFO, &currentFrameRectDst, nullptr, &angleDst);
+    NAPI_ASSERT(env, ret6 == NATIVE_ERROR_OK, "ret6 != NATIVE_ERROR_OK");
+    // 7. GET_SCREEN_INFO: angle is nullptr
+    int32_t ret7 = OH_NativeWindow_NativeWindowHandleOpt(
+        nativeWindow, OH_NATIVEWINDOW_GET_SCREEN_INFO, &currentFrameRectDst, &originalRectDst, nullptr);
+    NAPI_ASSERT(env, ret7 == NATIVE_ERROR_OK, "ret7 != NATIVE_ERROR_OK");
+
+    delete initNative;
+    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
 napi_value OHNativeErrorCodeCover(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;

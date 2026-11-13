@@ -2191,5 +2191,140 @@ export default function nativeWindowTest() {
         expect(result).assertEqual(0);
         done();
       });
+
+    /**
+     * @tc.name   testNativeWindowHandleOptSetAndGetScreenInfoNormal01
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_WINDOW_HandleOptSetAndGetScreenInfo_0100
+     * @tc.desc   testNativeWindowHandleOptSetAndGetScreenInfoNormal01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNativeWindowHandleOptSetAndGetScreenInfoNormal01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowHandleOptSetAndGetScreenInfoNormal01();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testNativeWindowHandleOptSetAndGetScreenInfoNormal02
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_WINDOW_HandleOptSetAndGetScreenInfo_0200
+     * @tc.desc   testNativeWindowHandleOptSetAndGetScreenInfoNormal02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNativeWindowHandleOptSetAndGetScreenInfoNormal02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowHandleOptSetAndGetScreenInfoNormal02();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testNativeWindowHandleOptSetAndGetScreenInfoNormal03
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_WINDOW_HandleOptSetAndGetScreenInfo_0300
+     * @tc.desc   testNativeWindowHandleOptSetAndGetScreenInfoNormal03
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNativeWindowHandleOptSetAndGetScreenInfoNormal03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowHandleOptSetAndGetScreenInfoNormal03();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testNativeWindowHandleOptSetAndGetScreenInfoNormal04
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_WINDOW_HandleOptSetAndGetScreenInfo_0400
+     * @tc.desc   testNativeWindowHandleOptSetAndGetScreenInfoNormal04
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNativeWindowHandleOptSetAndGetScreenInfoNormal04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowHandleOptSetAndGetScreenInfoNormal04();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testNativeWindowHandleOptSetAndGetScreenInfoNormal05
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_WINDOW_HandleOptSetAndGetScreenInfo_0500
+     * @tc.desc   testNativeWindowHandleOptSetAndGetScreenInfoNormal05
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNativeWindowHandleOptSetAndGetScreenInfoNormal05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowHandleOptSetAndGetScreenInfoNormal05();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testNativeWindowHandleOptSetAndGetScreenInfoNormal06
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_WINDOW_HandleOptSetAndGetScreenInfo_0600
+     * @tc.desc   testNativeWindowHandleOptSetAndGetScreenInfoNormal06
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNativeWindowHandleOptSetAndGetScreenInfoNormal06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowHandleOptSetAndGetScreenInfoNormal06();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testNativeWindowHandleOptSetAndGetScreenInfoAbnormal01
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_WINDOW_HandleOptSetAndGetScreenInfo_0700
+     * @tc.desc   testNativeWindowHandleOptSetAndGetScreenInfoAbnormal01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNativeWindowHandleOptSetAndGetScreenInfoAbnormal01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowHandleOptSetAndGetScreenInfoAbnormal01();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testNativeWindowHandleOptSetAndGetScreenInfoAbnormal02
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_WINDOW_HandleOptSetAndGetScreenInfo_0800
+     * @tc.desc   testNativeWindowHandleOptSetAndGetScreenInfoAbnormal02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNativeWindowHandleOptSetAndGetScreenInfoAbnormal02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowHandleOptSetAndGetScreenInfoAbnormal02();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testNativeWindowHandleOptSetAndGetScreenInfoNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_WINDOW_HandleOptSetAndGetScreenInfo_0900
+     * @tc.desc   testNativeWindowHandleOptSetAndGetScreenInfoNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNativeWindowHandleOptSetAndGetScreenInfoNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowHandleOptSetAndGetScreenInfoNull();
+        expect(result).assertEqual(0);
+        done();
+      });
   })
 }
