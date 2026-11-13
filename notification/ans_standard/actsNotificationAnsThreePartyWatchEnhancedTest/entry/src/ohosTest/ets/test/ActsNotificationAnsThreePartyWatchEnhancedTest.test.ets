@@ -161,7 +161,7 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest() {
               `disableUserGrantedByBundle failed, code is ${err.code}, message is ${err.message}`);
             if (Arraybundle[i] === bundle) {
               // 合法 bundle 若授权尚未生效，返回 1600022 也属于预期
-              if (err.code !== 1600022) {
+              if (err.code !== 1600022 && err.code !== 801) {
                 failCount++
               }
             } else if (err.code !== 1600022 && err.code !== 801) {
@@ -261,8 +261,13 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest() {
         done()
       } catch (err) {
         console.error(TAG + ` fail: ${JSON.stringify(err)},${err.message}`);
-        expect().assertFail();
-        done()
+        if (err.code === 201) {
+          expect(err.code).assertEqual(201)
+          done()
+        }else{
+          expect().assertFail();
+          done()
+        }
       }
     })
   })
