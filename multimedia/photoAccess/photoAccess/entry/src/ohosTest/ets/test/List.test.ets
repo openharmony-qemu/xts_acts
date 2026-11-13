@@ -35,6 +35,8 @@ import createVideoAssetRequestTest from './MediaAssetChangeRequest/createVideoAs
 import deleteAssetsChangeRequestTest from './MediaAssetChangeRequest/deleteAssets.test';
 import getAssetChangeRequestTest from './MediaAssetChangeRequest/getAsset.test';
 import setTitleChangeRequestTest from './MediaAssetChangeRequest/setTitle.test';
+import setFavoriteChangeRequestTest from './MediaAssetChangeRequest/setFavorite.test';
+import batchSetFavoriteChangeRequestTest from './MediaAssetsChangeRequest/setFavorite.test';
 import addResourceChangeRequestTest from './MediaAssetChangeRequest/addResource.test';
 import getWriteCacheHandlerTest from './MediaAssetChangeRequest/getWriteCacheHandler.test';
 import handleCameraPhotoTest from './MediaAssetChangeRequest/handleCameraPhoto.test';
@@ -114,6 +116,8 @@ export default function testsuite() {
   deleteAssetsChangeRequestTest();
   getAssetChangeRequestTest();
   setTitleChangeRequestTest();
+  setFavoriteChangeRequestTest();
+  batchSetFavoriteChangeRequestTest();
   addResourceChangeRequestTest();
   getWriteCacheHandlerTest();
   handleCameraPhotoTest();
