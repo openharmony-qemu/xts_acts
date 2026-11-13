@@ -155,7 +155,7 @@ export default function perfTestTest() {
          */
         it('testPerfTestListSwipe_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
             hilog.info(domain, tag, `testPerfTestListSwipe_static start`);
-            await startAbility('com.perftest.acts.static', 'EntryAbility');
+            await startAbility('com.perftestScene.acts', 'EntryAbility');
             await driver!.delayMs(3000)
             let disPlay = display.getDefaultDisplaySync();
             hilog.info(domain, tag, `testPerfTestPageSwitch_static is: ${JSON.stringify(disPlay)}`);

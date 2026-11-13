@@ -15,9 +15,6 @@
  */
 import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
-import router from '@ohos.router';
-import { Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 import hilog from '@ohos.hilog'
 
 @Entry
@@ -38,14 +35,6 @@ struct MyStateSample {
         })
       Text(this.stateVar).fontSize(20)
       Child({stateVar: this.stateVar} as __Options_Child)
-      Button('ListPage')
-        .onClick((e: ClickEvent) => {
-          let router: Router = this.getUIContext().getRouter()
-          let options: router.RouterOptions = {
-            url: `pages/ListPage`,
-          }
-          router.pushUrl(options)
-        })
     }
   }
 }
