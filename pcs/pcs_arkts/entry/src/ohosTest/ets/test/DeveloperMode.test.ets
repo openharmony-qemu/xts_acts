@@ -24,7 +24,7 @@ import AbilityUtils from './AbilityUtils';
 import { Driver } from '@ohos.UiTest';
 import { taskpool } from '@kit.ArkTS';
 
-class testClass {
+class TestClass {
   number: Number = 0
 }
 
@@ -84,7 +84,7 @@ export default function developerModeTest() {
         console.assert(false, "print assert failed")
         console.count('test')
         console.countReset('test')
-        let testObject: testClass = {
+        let testObject: TestClass = {
           number: 1
         }
         console.dir(testObject)

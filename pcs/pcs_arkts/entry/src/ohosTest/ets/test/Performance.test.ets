@@ -19,8 +19,9 @@ import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
 import PermissionUtils from './PermissionUtils';
-import { Component, Driver, ON } from '@ohos.UiTest';
+import { Driver, ON } from '@ohos.UiTest';
 import { Permissions } from '@ohos.abilityAccessCtrl';
+import audio from '@ohos.multimedia.audio';
 import wantAgent from '@ohos.app.ability.wantAgent';
 import fs from '@ohos.file.fs';
 import AVSessionManager from '@ohos.multimedia.avsession';
@@ -74,34 +75,17 @@ export default function performanceTest() {
      * @tc.level  LEVEL0
      */
     it('testLongtermTask0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      expect(await AbilityUtils.startAbility('com.acts.pcs.arktstest', 'EntryAbility', abilityContext)).assertTrue()
       try {
         let driver = Driver.create()
-        let scrollOrNull = await AbilityUtils.startEntryAndFindScroll(abilityContext, driver)
-        expect(scrollOrNull != null).assertTrue()
-        if (scrollOrNull == null) {
-          done()
-          return
-        }
-        let scroll: Component = scrollOrNull
+        await driver.delayMs(2000)
+        let scroll = await driver.findComponent(ON.id('scroll').inWindow('com.acts.pcs.arktstest'))
         await driver.delayMs(1000)
-        let startAudio = await scroll.scrollSearch(ON.id('StartAudio'))
-        if (startAudio == undefined || startAudio == null) {
-          startAudio = await driver.findComponent(ON.id('StartAudio'))
-        }
-        expect(startAudio != undefined && startAudio != null).assertTrue()
+        let startAudio = await scroll.scrollSearch(ON.id('StartAudio').inWindow('com.acts.pcs.arktstest'))
         await startAudio.click()
-        await driver.delayMs(3000)
-        let longTaskMediaStateText = await scroll.scrollSearch(ON.id('LongTaskMediaStateText'))
-        if (longTaskMediaStateText == undefined || longTaskMediaStateText == null) {
-          longTaskMediaStateText = await driver.findComponent(ON.id('LongTaskMediaStateText'))
-        }
-        expect(longTaskMediaStateText != undefined && longTaskMediaStateText != null).assertTrue()
-        // 使用数值常量，避免 WordsTool.22 对媒体状态标识符误报
-        const audioRunningState: number = 2
-        let runningText = audioRunningState.toString()
-        let stateText = await longTaskMediaStateText.getText()
-        console.info(`testLongtermTask0100 audio state: ${stateText}`)
-        expect(stateText).assertEqual(runningText)
+        await driver.delayMs(2000)
+        let audioStateText = await scroll.scrollSearch(ON.id('AudioStateText').inWindow('com.acts.pcs.arktstest'))
+        expect(await audioStateText.getText()).assertEqual(audio.AudioState.STATE_RUNNING.toString())
         await driver.delayMs(2000)
         expect(await AbilityUtils.startAbility('com.acts.pcs.arktstest', 'TestAbility', abilityContext)).assertTrue()
         await driver.delayMs(2000)
@@ -137,24 +121,12 @@ export default function performanceTest() {
           await openButton4.click()
           await driver.delayMs(2000)
         }
-        scrollOrNull = await AbilityUtils.startEntryAndFindScroll(abilityContext, driver)
-        expect(scrollOrNull != null).assertTrue()
-        if (scrollOrNull == null) {
-          done()
-          return
-        }
-        scroll = scrollOrNull
-        longTaskMediaStateText = await scroll.scrollSearch(ON.id('LongTaskMediaStateText'))
-        if (longTaskMediaStateText == undefined || longTaskMediaStateText == null) {
-          longTaskMediaStateText = await driver.findComponent(ON.id('LongTaskMediaStateText'))
-        }
-        expect(await longTaskMediaStateText.getText()).assertEqual(runningText)
+        expect(await AbilityUtils.startAbility('com.acts.pcs.arktstest', 'EntryAbility', abilityContext)).assertTrue()
         await driver.delayMs(2000)
-        let stopAudio = await scroll.scrollSearch(ON.id('StopAudio'))
-        if (stopAudio == undefined || stopAudio == null) {
-          stopAudio = await driver.findComponent(ON.id('StopAudio'))
-        }
-        expect(stopAudio != undefined && stopAudio != null).assertTrue()
+        audioStateText = await scroll.scrollSearch(ON.id('AudioStateText').inWindow('com.acts.pcs.arktstest'))
+        expect(await audioStateText.getText()).assertEqual(audio.AudioState.STATE_RUNNING.toString())
+        await driver.delayMs(2000)
+        let stopAudio = await scroll.scrollSearch(ON.id('StopAudio').inWindow('com.acts.pcs.arktstest'))
         await stopAudio.click()
         await driver.delayMs(2000)
       } catch (error) {

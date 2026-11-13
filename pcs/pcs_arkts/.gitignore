@@ -10,3 +10,4 @@
 /.clang-format
 /.clang-tidy
 **/.test
+/common_event.txt

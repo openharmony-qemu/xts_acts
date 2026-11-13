@@ -173,7 +173,7 @@ export default class SecurityUtils {
     return res;
   }
 
-  static StringToUint8Array(str: String) {
+  static StringToUint8Array(str: string) {
     let arr: number[] = new Array();
     for (let i = 0, j = str.length; i < j; ++i) {
       arr.push(str.charCodeAt(i));

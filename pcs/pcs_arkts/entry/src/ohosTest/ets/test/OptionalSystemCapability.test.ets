@@ -16,7 +16,7 @@ const DELAY = 1000;
 async function stopApplication(bundleName: string) {
   await delegator.executeShellCommand(`aa force-stop ${bundleName} `).then(result => {
     console.info(`UiTestCase, stop application finished: ${result}`)
-  }).catch((err : BusinessError) => {
+  }).catch((err: BusinessError) => {
     console.error(`UiTestCase,stop application failed: ${err}`)
   })
 }
@@ -25,8 +25,8 @@ export default function optionalSystemCapability() {
   describe('optionalSystemCapability', () => {
     /**
      * @tc.name   testPowerManagerQuery
-     * @tc.number C-STD-SOFTWARE-00300
-     * @tc.desc   【C-STD-SOFTWARE-00300】如果设备支持电池，则必须提供电池电量信息和充放电状态的查询能力和接口。
+     * @tc.number C-STD-SOFTWARE-0300
+     * @tc.desc   【C-STD-SOFTWARE-0300】如果设备支持电池，则必须提供电池电量信息和充放电状态的查询能力和接口。
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -42,7 +42,7 @@ export default function optionalSystemCapability() {
           let chargingStatusInfo = batteryInfo.chargingStatus;
           console.log(`${TAG},The chargingStatusInfo is: ${chargingStatusInfo}`);
           expect(chargingStatusInfo >= 0).assertTrue();
-        }catch (e) {
+        } catch (e) {
           console.log(`${TAG},The testPowerManagerQuery error is: ${JSON.stringify(e)}`);
           expect().assertFail();
         }
@@ -53,7 +53,7 @@ export default function optionalSystemCapability() {
     /**
      * @tc.name   testCustomInputMethod
      * @tc.number C-STD-SOFTWARE-1300
-     * @tc.desc   【C-STD-SOFTWARE-1302】必须支持第三方输入法应用。
+     * @tc.desc   【C-STD-SOFTWARE-1300】必须支持第三方输入法应用。
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -68,7 +68,7 @@ export default function optionalSystemCapability() {
           // 获取设备全量输入法hap。
           let allInputs = inputMethodSetting.getAllInputMethodsSync();
           // 获取自定义的输入法。
-          let customInput = allInputs.find((item: inputMethod.InputMethodProperty) => item.name == 'com.acts.pcs.arkts.assist');
+          let customInput = allInputs.find((item: inputMethod.InputMethodProperty) => item.name === 'com.acts.pcs.arkts.assist');
           console.log(`${TAG}, customInput is : ${JSON.stringify(customInput)}`);
           // 自定义输入法packageName
           expect(customInput).not().assertNull();
@@ -83,7 +83,7 @@ export default function optionalSystemCapability() {
     /**
      * @tc.name   testInputMethodEngine
      * @tc.number C-STD-SOFTWARE-1301
-     * @tc.desc   【C-STD-SOFTWARE-1100】必须完整实现输入法管理框架。
+     * @tc.desc   【C-STD-SOFTWARE-1301】必须完整实现输入法管理框架。
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -125,7 +125,7 @@ export default function optionalSystemCapability() {
     /**
      * @tc.name   testJPEGDecoding
      * @tc.number C-S-SOFTWARE-1003
-     * @tc.desc   【C-S-SOFTWARE-1006】必须支持JPEG格式解码，支持基础和渐进式解码，支持JPEG(.jpg)容器格式。
+     * @tc.desc   【C-S-SOFTWARE-1003】必须支持JPEG格式解码，支持基础和渐进式解码，支持JPEG(.jpg)容器格式。
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -159,7 +159,7 @@ export default function optionalSystemCapability() {
     /**
      * @tc.name   testGIFDecoding
      * @tc.number C-S-SOFTWARE-1004
-     * @tc.desc   【C-S-SOFTWARE-1006】必须支持GIF格式解码，支持GIF(.gif)容器格式。
+     * @tc.desc   【C-S-SOFTWARE-1004】必须支持GIF格式解码，支持GIF(.gif)容器格式。
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -319,7 +319,7 @@ export default function optionalSystemCapability() {
         const imagePackerApi = image.createImagePacker();
         let packOpts : image.PackingOption = { format:"image/jpeg", quality:98 };
         await imagePackerApi.packToData(pixelMap, packOpts);
-      }catch (error) {
+      } catch (error) {
         console.log(`${TAG} testPNGPacker error is: ${JSON.stringify(error)}`);
         expect().assertFail();
       }
@@ -329,7 +329,7 @@ export default function optionalSystemCapability() {
 
     /**
      * @tc.name   testPNGPacker
-     * @tc.number C-STD-SOFTWARE-1001
+     * @tc.number C-S-SOFTWARE-1001
      * @tc.desc   【C-S-SOFTWARE-1001】必须支持PNG格式编码。
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -356,7 +356,7 @@ export default function optionalSystemCapability() {
         const imagePackerApi = image.createImagePacker();
         let packOpts : image.PackingOption = { format:"image/png", quality:98 };
         await imagePackerApi.packToData(pixelMap, packOpts);
-      }catch (error) {
+      } catch (error) {
         console.log(`${TAG} testPNGPacker error is: ${JSON.stringify(error)}`);
         expect().assertFail();
       }
@@ -365,8 +365,8 @@ export default function optionalSystemCapability() {
 
     /**
      * @tc.name   testWEBPPacker
-     * @tc.number C-STD-SOFTWARE-1003
-     * @tc.desc   【C-S-SOFTWARE-1003】必须支持WebP格式编码。
+     * @tc.number C-S-SOFTWARE-1002
+     * @tc.desc   【C-S-SOFTWARE-1002】必须支持WebP格式编码。
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -392,7 +392,7 @@ export default function optionalSystemCapability() {
         const imagePackerApi = image.createImagePacker();
         let packOpts : image.PackingOption = { format:"image/webp", quality:98 };
         await imagePackerApi.packToData(pixelMap, packOpts);
-      }catch (error) {
+      } catch (error) {
         console.log(`${TAG} testPNGPacker error is: ${JSON.stringify(error)}`);
         expect().assertFail();
       }
@@ -407,14 +407,14 @@ export default function optionalSystemCapability() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("testSetTime", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSetTime', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testSetTime start`);
       let time = 1611081385000;
       try {
         await systemDateTime.setTime(time);
         console.log(`${TAG}, testSetTime successed to set time. message`);
         expect().assertFail();
-      } catch(e) {
+      } catch (e) {
         let error = e as BusinessError;
         console.log(`${TAG}, testSetTime Failed to set time. message: ${error.message}, code: ${error.code}`);
       }
@@ -424,26 +424,24 @@ export default function optionalSystemCapability() {
     /**
      * @tc.name   testSetTimeOut
      * @tc.number C-STD-SOFTWARE-1400
-     * @tc.desc   【 C-STD-SOFTWARE-1400】必须通过限制定时器拉起已经退出的进程的行为。
+     * @tc.desc   【C-STD-SOFTWARE-1400】必须通过限制定时器拉起已经退出的进程的行为。
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("testSetTimeOut", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSetTimeOut', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testSetTimeOut start`);
       let options: systemTimer.TimerOptions = {
-        type: systemTimer.TIMER_TYPE_WAKEUP | systemTimer.TIMER_TYPE_EXACT,
+        type: systemTimer.TIMER_TYPE_REALTIME,
         repeat:false
       };
       try {
         const id = await systemTimer.createTimer(options);
-        // 本地 ACL/系统应用签名下 createTimer 可能被允许；能力存在即通过
         console.log(`${TAG}, testSetTimeOut createTimer id is: ${id}`);
-        expect(id != undefined).assertTrue();
-      } catch(e) {
+        expect().assertFail();
+      } catch (e) {
         let error = e as BusinessError;
         console.log(`${TAG}, testSetTimeOut createTimer error is: ${JSON.stringify(error)}`);
-        expect(error != null).assertTrue();
       }
       console.log(`${TAG}, testSetTime end`);
     })
@@ -456,7 +454,7 @@ export default function optionalSystemCapability() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("testHomeEvent", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testHomeEvent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testHomeEvent start`);
       let driver = Driver.create();
       let abilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;

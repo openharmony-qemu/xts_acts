@@ -201,23 +201,22 @@ export default function securityTest() {
         }
         let grantStatus = atManager.verifyAccessTokenSync(tokenId, 'ohos.permission.WRITE_CONTACTS')
         console.info(`testAuthenticationCall0100 grantStatus,${ grantStatus }`);
-        if (grantStatus == abilityAccessCtrl.GrantStatus.PERMISSION_DENIED) {
-          try {
-            let id = await contact.addContact(abilityContext, contactInfo)
-            expect(false).assertTrue()
-          } catch (error) {
-            let err = error as BusinessError;
-            console.info(`Failed to add contact. error: ${JSON.stringify(err)}`)
-            expect(err.code == 201).assertTrue()
-          }
-          let permissions: Array<Permissions> = ['ohos.permission.WRITE_CONTACTS']
-          await PermissionUtils.getPermission(abilityContext, permissions)
-          await PermissionUtils.grantPermission()
-          let driver = Driver.create();
-          await driver.delayMs(1000)
-          grantStatus = atManager.verifyAccessTokenSync(tokenId, 'ohos.permission.WRITE_CONTACTS')
-          console.info(`testAuthenticationCall0100 grantStatus again,${ grantStatus }`);
+        expect(grantStatus).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED)
+        try {
+          let id = await contact.addContact(abilityContext, contactInfo)
+          expect(false).assertTrue()
+        } catch (error) {
+          let err = error as BusinessError;
+          console.info(`Failed to add contact. error: ${JSON.stringify(err)}`)
+          expect(err.code == 201).assertTrue()
         }
+        let permissions: Array<Permissions> = ['ohos.permission.WRITE_CONTACTS']
+        await PermissionUtils.getPermission(abilityContext, permissions)
+        await PermissionUtils.grantPermission()
+        let driver = Driver.create();
+        await driver.delayMs(1000)
+        grantStatus = atManager.verifyAccessTokenSync(tokenId, 'ohos.permission.WRITE_CONTACTS')
+        console.info(`testAuthenticationCall0100 grantStatus again,${ grantStatus }`);
         expect(grantStatus).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED)
         try {
           let id = await contact.addContact(abilityContext, contactInfo)
@@ -429,7 +428,7 @@ export default function securityTest() {
      */
     it('testSupportHKDFAlg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let keyAlias = 'hkdf_key'
-      let HuksKeyDeriveKeySize = 32
+      let huksKeyDeriveKeySize = 32
       let deriveHkdfInData = "deriveHkdfTestIndata"
       // generate key item
       try {
@@ -441,7 +440,7 @@ export default function securityTest() {
         expect(await huks.isKeyItemExist(keyAlias, huksOptions)).assertTrue()
         // init session
         let initRes: [number, huks.HuksOptions] =
-          await SecurityUtils.createSession(keyAlias, HuksKeyDeriveKeySize, deriveHkdfInData)
+          await SecurityUtils.createSession(keyAlias, huksKeyDeriveKeySize, deriveHkdfInData)
         let handle = initRes[0]
         let initOptions = initRes[1]
         expect(handle != -1).assertTrue()
@@ -1335,16 +1334,10 @@ export default function securityTest() {
       }
       let button = await driver.findComponent(ON.id('generateKey').inWindow('com.acts.pcs.arkts.assist'))
       await driver.delayMs(1000)
-      if (button != null) {
-        await button.click()
-        await driver.delayMs(2000)
-        let text = await driver.findComponent(ON.id('isKeyStoraged').inWindow('com.acts.pcs.arkts.assist'))
-        if (text != null) {
-          expect(await text.getText()).assertEqual('TRUE')
-        }
-      } else {
-        console.info('testKeyIdentityAssociation0100: assist generateKey UI not found, skip UI assert')
-      }
+      await button.click()
+      await driver.delayMs(2000)
+      let text = await driver.findComponent(ON.id('isKeyStoraged').inWindow('com.acts.pcs.arkts.assist'))
+      expect(await text.getText()).assertEqual('TRUE')
       let keyAlias = 'assist_key'
       try {
         let emptyOptions: huks.HuksOptions = {
