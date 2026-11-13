@@ -50,7 +50,7 @@ export default function writeTest() {
         hilog.info(domain, tag, 'success to write event');
         done();
       } catch (error) {
-        error = error as BusinessError;
+        
         hilog.error(domain, tag, "failed to write event because: " + error.code);
         expect(0).assertEqual(error.code);
         done();

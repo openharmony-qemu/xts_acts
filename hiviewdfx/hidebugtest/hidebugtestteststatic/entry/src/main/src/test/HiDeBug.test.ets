@@ -564,7 +564,7 @@ export default function HidebugJsTest() {
                 hidebug.getServiceDump(serviceId, file.fd, args)
                 expect().assertFail();
             } catch (error) {
-                error = error as BusinessError;
+                
                 console.info(error.code)
                 console.info(error.message)
                 expect(error.code == 11400101).assertTrue();

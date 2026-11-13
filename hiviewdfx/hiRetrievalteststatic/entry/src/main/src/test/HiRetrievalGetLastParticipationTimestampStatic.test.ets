@@ -20,7 +20,7 @@ import { BusinessError } from '@ohos.base';
 import { hiAppEvent,hiRetrieval } from "@kit.PerformanceAnalysisKit";
 
 export default function abilityTest() {
-    describe("HiRetrievalGetLastParticipationTimestampTest", (): void => {
+    describe("HiRetrievalGetLastParticipationTimestampStaticTest", (): void => {
         /**
          * @tc.name   testHiRetrievalGetLastParticipationTimestamp_0100
          * @tc.number SUB_DFX_DFT_HiRetrieval_GetLastParticipationTimestamp_0100

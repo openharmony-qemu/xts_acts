@@ -20,7 +20,7 @@ import { BusinessError } from '@ohos.base';
 import { hiAppEvent,hiRetrieval } from "@kit.PerformanceAnalysisKit";
 
 export default function abilityTest() {
-    describe("HiRetrievalInitTest", (): void => {
+    describe("HiRetrievalInitStaticTest", (): void => {
         /**
          * @tc.name   testHiRetrievalInit_0100
          * @tc.number SUB_DFX_DFT_HiRetrieval_Init_0100
