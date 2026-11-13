@@ -1334,7 +1334,7 @@ export default function uitestDriverTest(): void {
         hilog.info(domain, tag, `testGetDisplaySize test, ${JSON.stringify(test)}`);
         expect(test.x != 0).assertTrue();
         expect(test.y != 0).assertTrue();
-        expect(test.displayId != null).assertTrue();
+        expect(test.displayId != null).assertTrue(); 
       } catch (error) {
         hilog.info(domain, tag, `testGetDisplaySize error, ${JSON.stringify(error)}`);
         expect().assertFail();
