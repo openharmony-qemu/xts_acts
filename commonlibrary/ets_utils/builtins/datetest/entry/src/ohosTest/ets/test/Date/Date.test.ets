@@ -14,6 +14,12 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 
+function sleep(ms: number): Promise<void> {
+  return new Promise<void>((resolve: () => void) => {
+    setTimeout(resolve, ms);
+  });
+}
+
 export default function dateTest() {
   describe('DateTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
