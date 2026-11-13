@@ -1286,7 +1286,7 @@ export default function ErrorsAggregateErrorPropertyTest(): void {
      */
     it('testErrorsAggregateErrorProperty0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const agg = new AggregateError([new Error("a")], "msg");
-      expect((agg.stack as string).split('\n')[0].split('(')[1]).assertEqual("Errors.ats:710:0)");
+      expect((agg.stack as string).split('\n')[0].split('(')[1]).assertEqual("Errors.ets:710:0)");
     });
 
     /**
