@@ -365,7 +365,8 @@ export default function TextPicker(): void {
 
     let closePickerModel = async (driver: Driver, time?: int): Promise<void> => {
       await Utils.msSleep(time ?? 500);
-      const closeBtn: Component | null = await driver.findComponent(ON.id('Third_Select_PickerClose'));
+      let disPlayId = display.getDefaultDisplaySync().id.toInt()
+      const closeBtn: Component | null = await driver.findComponent(ON.belongingDisplay(disPlayId).type('Third_Select_PickerClose').inWindow('com.example.myapplication.static'));
       if (closeBtn !== null) {
         await closeBtn.click();
         await Utils.msSleep(time ?? 500);
