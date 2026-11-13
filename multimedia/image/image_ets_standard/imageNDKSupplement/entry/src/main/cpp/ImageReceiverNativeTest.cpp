@@ -396,3 +396,73 @@ napi_value DecodingOptionsGetDesiredColorSpaceTest(napi_env env, napi_callback_i
     napi_create_int32(env, errCode, &result);
     return result;
 }
+
+napi_value ImageReceiverNativeSetMemoryNameTest(napi_env env, napi_callback_info info)
+{
+    LOGI("OH_ImageReceiverNative_SetMemoryName start");
+    napi_value thisVar = nullptr;
+    napi_value argValue[1] = {0};
+    size_t argCount = 1;
+    if (napi_get_cb_info(env, info, &argCount, argValue, &thisVar, nullptr) != napi_ok || argCount < 1 ||
+        argValue[0] == nullptr) {
+        LOGI("OH_ImageReceiverNative_SetMemoryName error1");
+        return nullptr;
+    }
+    int32_t index;
+    napi_get_value_int32(env, argValue[0], &index);
+    LOGI("get argValue %{public}d", index);
+
+    OH_ImageReceiverOptions *options = nullptr;
+    Image_ErrorCode errCode = OH_ImageReceiverOptions_Create(&options);
+    LOGI("OH_ImageReceiverOptions_Create %{public}d", errCode);
+    OH_ImageReceiverNative *receiver = nullptr;
+    errCode = OH_ImageReceiverNative_Create(options, &receiver);
+    LOGI("OH_ImageReceiverNative_Create %{public}d", errCode);
+
+    Image_ErrorCode resultValue = IMAGE_RECEIVER_INVALID_PARAMETER;
+    const char *normalName = "testReceiver";
+    uint32_t normalSize = static_cast<uint32_t>(strlen(normalName)) + 1;
+    switch (index) {
+    case CASE_INDEX_1:
+        resultValue = OH_ImageReceiverNative_SetMemoryName(nullptr, normalName, normalSize);
+        LOGI("OH_ImageReceiverNative_SetMemoryName receiver nullptr %{public}d", resultValue);
+        break;
+    case CASE_INDEX_2:
+        resultValue = OH_ImageReceiverNative_SetMemoryName(receiver, nullptr, normalSize);
+        LOGI("OH_ImageReceiverNative_SetMemoryName name nullptr %{public}d", resultValue);
+        break;
+    case CASE_INDEX_3:
+        resultValue = OH_ImageReceiverNative_SetMemoryName(receiver, normalName, 0);
+        LOGI("OH_ImageReceiverNative_SetMemoryName size zero %{public}d", resultValue);
+        break;
+    case CASE_INDEX_4: {
+        const char *allSpaceName = "     ";
+        uint32_t allSpaceSize = static_cast<uint32_t>(strlen(allSpaceName)) + 1;
+        resultValue = OH_ImageReceiverNative_SetMemoryName(receiver, allSpaceName, allSpaceSize);
+        LOGI("OH_ImageReceiverNative_SetMemoryName no visible char %{public}d", resultValue);
+        break;
+    }
+    case CASE_INDEX_5: {
+        char longName[300];
+        memset(longName, 'a', sizeof(longName) - 1);
+        longName[sizeof(longName) - 1] = '\0';
+        uint32_t longSize = static_cast<uint32_t>(strlen(longName)) + 1;
+        resultValue = OH_ImageReceiverNative_SetMemoryName(receiver, longName, longSize);
+        LOGI("OH_ImageReceiverNative_SetMemoryName exceed 256 %{public}d", resultValue);
+        break;
+    }
+    default:
+        break;
+    }
+
+    if (receiver != nullptr) {
+        OH_ImageReceiverNative_Release(receiver);
+    }
+    if (options != nullptr) {
+        OH_ImageReceiverOptions_Release(options);
+    }
+
+    napi_value result = nullptr;
+    napi_create_int32(env, resultValue, &result);
+    return result;
+}

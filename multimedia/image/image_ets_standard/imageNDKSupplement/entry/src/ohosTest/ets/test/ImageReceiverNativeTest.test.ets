@@ -62,112 +62,112 @@ export default function ImageReceiverNativeTest() {
       console.info(TAG, 'afterAll case.');
     });
     /**
-     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_001
-     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_001
+     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_0100
+     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_0100
      * @tc.desc      OH_Image_Receiver_InitImageReceiverNative-nullptr
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_001", Level.LEVEL0, () => {
+    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_0100", Level.LEVEL0, () => {
       console.info(TAG, 'Start');
       let result: number = testNapi.InitImageReceiverNativeTest(CASE_INDEX_1);
       console.info(TAG, 'Succeed', JSON.stringify(result));
       expect(result).assertEqual(401);
     })
     /**
-     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_002
-     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_002
+     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_0200
+     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_0200
      * @tc.desc      OH_Image_Receiver_InitImageReceiverNative-nullptr
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_002", Level.LEVEL0, () => {
+    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_0200", Level.LEVEL0, () => {
       console.info(TAG, 'Start');
       let result: number = testNapi.InitImageReceiverNativeTest(CASE_INDEX_2);
       console.info(TAG, 'Succeed', JSON.stringify(result));
       expect(result).assertEqual(401);
     })
     /**
-     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_003
-     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_003
+     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_0300
+     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_0300
      * @tc.desc      OH_Image_ClipRect-IMAGE_RESULT_BAD_PARAMETER
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_003", Level.LEVEL0, () => {
+    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_0300", Level.LEVEL0, () => {
       console.info(TAG, 'Start');
       let result: number = testNapi.OHImageClipRectTest(CASE_INDEX_1);
       console.info(TAG, 'Succeed', JSON.stringify(result));
       expect(result).assertEqual(-1);
     })
     /**
-     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_004
-     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_004
+     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_0400
+     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_0400
      * @tc.desc      OH_Image_ClipRect-IMAGE_RESULT_BAD_PARAMETER
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_004", Level.LEVEL0, () => {
+    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_0400", Level.LEVEL0, () => {
       console.info(TAG, 'Start');
       let result: number = testNapi.OHImageClipRectTest(CASE_INDEX_2);
       console.info(TAG, 'Succeed', JSON.stringify(result));
       expect(result).assertEqual(-1);
     })
     /**
-     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_005
-     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_005
+     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_0500
+     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_0500
      * @tc.desc      OH_ImageReceiverNative_ReadLatestImage-IMAGE_BAD_PARAMETER
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_005", Level.LEVEL0, () => {
+    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_0500", Level.LEVEL0, () => {
       console.info(TAG, 'Start');
       let result: number = testNapi.ImageReceiverNativeReadLatestImageTest(CASE_INDEX_1);
       console.info(TAG, 'Succeed', JSON.stringify(result));
       expect(result).assertEqual(401);
     })
     /**
-     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_006
-     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_006
+     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_0600
+     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_0600
      * @tc.desc      OH_ImageReceiverNative_ReadLatestImage-IMAGE_UNKNOWN_ERROR
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_006", Level.LEVEL0, () => {
+    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_0600", Level.LEVEL0, () => {
       console.info(TAG, 'Start');
       let result: number = testNapi.ImageReceiverNativeReadLatestImageTest(CASE_INDEX_2);
       console.info(TAG, 'Succeed', JSON.stringify(result));
       expect(result).assertEqual(7600901);
     })
     /**
-     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_007
-     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_007
+     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_0700
+     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_0700
      * @tc.desc      OH_ImageReceiverNative_ReadLatestImage-IMAGE_BAD_PARAMETER
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_007", Level.LEVEL0, () => {
+    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_0700", Level.LEVEL0, () => {
       console.info(TAG, 'Start');
       let result: number = testNapi.ImageReceiverNativeReadLatestImageTest(CASE_INDEX_3);
       console.info(TAG, 'Succeed', JSON.stringify(result));
       expect(result).assertEqual(401);
     })
     /**
-     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_008
-     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_008
+     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_0800
+     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_0800
      * @tc.desc      OH_ImageSourceNative_CreatePixelmapUsingAllocator-IMAGE_BAD_PARAMETER
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_008", Level.LEVEL0, async () => {
+    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_0800", Level.LEVEL0, async () => {
       console.info(TAG, 'Start');
       await getFd('test_exif_v2.jpg');
       let result: number = testNapi.CreatePixelmapUsingAllocatorTest(CASE_INDEX_1,fdNumber);
@@ -175,14 +175,14 @@ export default function ImageReceiverNativeTest() {
       expect(result).assertEqual(401);
     })
     /**
-     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_009
-     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_009
+     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_0900
+     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_0900
      * @tc.desc      OH_ImageSourceNative_CreatePixelmapUsingAllocator-IMAGE_BAD_PARAMETER
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_009", Level.LEVEL0, async () => {
+    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_0900", Level.LEVEL0, async () => {
       console.info(TAG, 'Start');
       await getFd('test_exif_v2.jpg');
       let result: number = testNapi.CreatePixelmapUsingAllocatorTest(CASE_INDEX_2,fdNumber);
@@ -190,14 +190,14 @@ export default function ImageReceiverNativeTest() {
       expect(result).assertEqual(401);
     })
     /**
-     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_010
-     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_010
+     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_1000
+     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_1000
      * @tc.desc      OH_PixelmapNative_SetMemoryName-IMAGE_BAD_SOURCE
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_010", Level.LEVEL0, async () => {
+    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_1000", Level.LEVEL0, async () => {
       console.info(TAG, 'Start');
       await getFd('test_exif_v2.jpg');
       let result: number = testNapi.CreatePixelmapUsingAllocatorTest(CASE_INDEX_3,fdNumber);
@@ -205,14 +205,14 @@ export default function ImageReceiverNativeTest() {
       expect(result).assertEqual(0);
     })
     /**
-     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_011
-     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_011
+     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_1100
+     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_1100
      * @tc.desc      OH_PixelmapNative_SetMemoryName-IMAGE_DECODE_FAILED
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_011", Level.LEVEL0, async () => {
+    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_1100", Level.LEVEL0, async () => {
       if (!isSupportAVIF) {
         console.info("device does not support avif");
         return;
@@ -224,14 +224,14 @@ export default function ImageReceiverNativeTest() {
       expect(result).assertEqual(0);
     })
     /**
-     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_012
-     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_012
+     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_1200
+     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_1200
      * @tc.desc      OH_ImageSourceNative_CreatePicture-IMAGE_DECODE_FAILED
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_012", Level.LEVEL0, async () => {
+    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_1200", Level.LEVEL0, async () => {
       if (!isSupportAVIF) {
         console.info("device does not support avif");
         return;
@@ -243,14 +243,14 @@ export default function ImageReceiverNativeTest() {
       expect(result).assertEqual(0);
     })
     /**
-     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_013
-     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_013
+     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_1300
+     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_1300
      * @tc.desc      OH_ImageSourceNative_CreatePictureAtIndex-IMAGE_SOURCE_UNSUPPORTED_MIME_TYPE
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_013", Level.LEVEL0, async () => {
+    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_1300", Level.LEVEL0, async () => {
       console.info(TAG, 'Start');
       await getFd('4K-2160x3840.avif');
       let result: number = testNapi.ImageSourceNativeCreatePictureAtIndexTest(CASE_INDEX_1,fdNumber);
@@ -258,32 +258,102 @@ export default function ImageReceiverNativeTest() {
       expect(result).assertEqual(7700102);
     })
     /**
-     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_014
-     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_014
+     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_1400
+     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_1400
      * @tc.desc      OH_PixelmapNative_SetMemoryName-IMAGE_SUCCESS
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_014", Level.LEVEL0, async () => {
+    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_1400", Level.LEVEL0, async () => {
       console.info(TAG, 'Start');
       let result: number = testNapi.PixelmapNativeSetMemoryNameTest(CASE_INDEX_1);
       console.info(TAG, 'Succeed', JSON.stringify(result));
       expect(result).assertEqual(0);
     })
     /**
-     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_015
-     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_015
+     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_1500
+     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_1500
      * @tc.desc      OH_DecodingOptions_GetDesiredColorSpace-IMAGE_SOURCE_INVALID_PARAMETER
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_015", Level.LEVEL0, async () => {
+    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_1500", Level.LEVEL0, async () => {
       console.info(TAG, 'Start');
       let result: number = testNapi.DecodingOptionsGetDesiredColorSpaceTest(CASE_INDEX_1);
       console.info(TAG, 'Succeed', JSON.stringify(result));
       expect(result).assertEqual(7700204);
+    })
+    /**
+     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_1600
+     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_1600
+     * @tc.desc      OH_ImageReceiverNative_SetMemoryName-receiver为nullptr时返回IMAGE_RECEIVER_INVALID_PARAMETER(7900201)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level      Level 0
+     */
+    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_1600", Level.LEVEL0, async () => {
+      console.info(TAG, 'Start');
+      let result: number = testNapi.ImageReceiverNativeSetMemoryNameTest(CASE_INDEX_1);
+      console.info(TAG, 'Succeed', JSON.stringify(result));
+      expect(result).assertEqual(7900201);
+    })
+    /**
+     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_1700
+     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_1700
+     * @tc.desc      OH_ImageReceiverNative_SetMemoryName-name为nullptr时返回IMAGE_RECEIVER_INVALID_PARAMETER(7900201)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level      Level 0
+     */
+    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_1700", Level.LEVEL0, async () => {
+      console.info(TAG, 'Start');
+      let result: number = testNapi.ImageReceiverNativeSetMemoryNameTest(CASE_INDEX_2);
+      console.info(TAG, 'Succeed', JSON.stringify(result));
+      expect(result).assertEqual(7900201);
+    })
+    /**
+     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_1800
+     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_1800
+     * @tc.desc      OH_ImageReceiverNative_SetMemoryName-size为0时返回IMAGE_RECEIVER_INVALID_PARAMETER(7900201)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level      Level 0
+     */
+    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_1800", Level.LEVEL0, async () => {
+      console.info(TAG, 'Start');
+      let result: number = testNapi.ImageReceiverNativeSetMemoryNameTest(CASE_INDEX_3);
+      console.info(TAG, 'Succeed', JSON.stringify(result));
+      expect(result).assertEqual(7900201);
+    })
+    /**
+     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_1900
+     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_1900
+     * @tc.desc      OH_ImageReceiverNative_SetMemoryName-name过滤后无可视字符时返回IMAGE_RECEIVER_INVALID_PARAMETER(7900201)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level      Level 0
+     */
+    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_1900", Level.LEVEL0, async () => {
+      console.info(TAG, 'Start');
+      let result: number = testNapi.ImageReceiverNativeSetMemoryNameTest(CASE_INDEX_4);
+      console.info(TAG, 'Succeed', JSON.stringify(result));
+      expect(result).assertEqual(7900201);
+    })
+    /**
+     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_2000
+     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_2000
+     * @tc.desc      OH_ImageReceiverNative_SetMemoryName-name过滤后长度超过256字节时返回IMAGE_RECEIVER_INVALID_PARAMETER(7900201)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level      Level 0
+     */
+    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_2000", Level.LEVEL0, async () => {
+      console.info(TAG, 'Start');
+      let result: number = testNapi.ImageReceiverNativeSetMemoryNameTest(CASE_INDEX_5);
+      console.info(TAG, 'Succeed', JSON.stringify(result));
+      expect(result).assertEqual(7900201);
     })
   })
 }

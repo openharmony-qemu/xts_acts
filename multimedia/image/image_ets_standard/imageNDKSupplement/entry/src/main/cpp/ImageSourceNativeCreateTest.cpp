@@ -134,6 +134,9 @@ napi_value OHImageSourceNativeCreateFromFdSupp(napi_env env, napi_callback_info 
     case CASE_INDEX_2:
         errCode = OH_ImageSourceNative_CreateFromFd(OH_CREATEFROMFD_NUMBER_3, &imageSource);
         break;
+    case CASE_INDEX_3:
+        errCode = OH_ImageSourceNative_CreateFromFd(OH_CREATEFROMFD_NUMBER_1, nullptr);
+        break;
     default:
         break;
     }

@@ -89,7 +89,6 @@ static constexpr uint32_t NUM_1 = 1;
 static constexpr uint32_t NUM_2 = 2;
 static constexpr uint32_t NUM_3 = 3;
 static constexpr uint32_t NUM_4 = 4;
-static constexpr uint32_t NUM_16 = 16;
 static constexpr int32_t NUM_1000 = 1000;
 static constexpr int32_t NUM_2000 = 2000;
 static constexpr int32_t NUM_3000 = 3000;
@@ -252,7 +251,7 @@ napi_value OHPixelmapNativeSetMetadataSupp(napi_env env, napi_callback_info info
     pvalue->type = HDR_METADATA_TYPE_BASE;
     OH_Pixelmap_HdrMetadataValue *dValue = new OH_Pixelmap_HdrMetadataValue;
     dValue->dynamicMetadata.data = nullptr;
-    dValue->dynamicMetadata.length = NUM_16;
+    dValue->dynamicMetadata.length = 16;
     Image_ErrorCode returnValue;
     switch (index) {
     case CASE_INDEX_1:
@@ -266,7 +265,7 @@ napi_value OHPixelmapNativeSetMetadataSupp(napi_env env, napi_callback_info info
         returnValue = OH_PixelmapNative_SetMetadata(pixelMap, HDR_METADATA_TYPE, pvalue);
         break;
     case CASE_INDEX_5:
-          returnValue =
+        returnValue =
             OH_PixelmapNative_SetMetadata(pixelMap, HDR_DYNAMIC_METADATA, dValue);
         LOGI("OH_PixelmapNative_SetMetadata,%{public}d", returnValue);
         break;

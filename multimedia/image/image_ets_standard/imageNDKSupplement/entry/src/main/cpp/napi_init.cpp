@@ -63,6 +63,7 @@
 #include "ImageSourceNativeModifySuppTest.h"
 #include "ImageOHImageSourceInfoCreateTest.h"
 #include "ImageReceiverTest.h"
+#include "OHAuxiliaryPictureNativeCreateTest.h"
 
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
@@ -203,6 +204,7 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("ImageSourceNativeCreatePictureTest", ImageSourceNativeCreatePictureTest),
     DESCRIPTOR("ImageSourceNativeCreatePictureAtIndexTest", ImageSourceNativeCreatePictureAtIndexTest),
     DESCRIPTOR("DecodingOptionsGetDesiredColorSpaceTest", DecodingOptionsGetDesiredColorSpaceTest),
+    DESCRIPTOR("ImageReceiverNativeSetMemoryNameTest", ImageReceiverNativeSetMemoryNameTest),
     DESCRIPTOR("ClonePixelmapTest", ClonePixelmapTest),
     DESCRIPTOR("CreateCroppedAndScaledPixelMapTest", CreateCroppedAndScaledPixelMapTest),
     DESCRIPTOR("CreatePixelmapFromSurfaceTest", CreatePixelmapFromSurfaceTest),
@@ -268,7 +270,7 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("ComposeOptionsReleaseSuppTest", ComposeOptionsReleaseSuppTest),
     DESCRIPTOR("OHImageNativeGetComponentTypesSupp", OHImageNativeGetComponentTypesSupp),
     DESCRIPTOR("OHPackingOptionsForSequenceGetFrameCountSupp", OHPackingOptionsForSequenceGetFrameCountSupp),
-
+    DESCRIPTOR("AuxiliaryPictureNativeCreateTest", AuxiliaryPictureNativeCreateTest),
 };
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {

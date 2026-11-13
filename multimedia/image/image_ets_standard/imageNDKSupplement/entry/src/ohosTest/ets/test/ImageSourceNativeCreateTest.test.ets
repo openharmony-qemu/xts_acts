@@ -36,15 +36,15 @@ export default function imageFrameworkImageSourceNativeCreateSuppTest() {
     });
 
     /**
-     * @tc.number  SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_URI_SUPP_001
-     * @tc.name    SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_URI_SUPP_001
+     * @tc.number  SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_URI_SUPP_0100
+     * @tc.name    SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_URI_SUPP_0100
      * @tc.desc    OHSourceNativeCreateFromUriSupp-IMAGE_BAD_PARAMETER
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_URI_SUPP_001', Level.LEVEL1, () => {
-      const testName ='SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_URI_SUPP_001'
+    it('SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_URI_SUPP_0100', Level.LEVEL1, () => {
+      const testName ='SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_URI_SUPP_0100'
       console.info(TAG,'Start',);
       let result: number = testNapi.OHImageSourceNativeCreateFromUriSupp(CASE_INDEX_2)
       console.info(TAG,testName,'Success',JSON.stringify(result));
@@ -52,15 +52,15 @@ export default function imageFrameworkImageSourceNativeCreateSuppTest() {
     })
 
     /**
-     * @tc.number  SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_URI_SUPP_002
-     * @tc.name    SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_URI_SUPP_002
+     * @tc.number  SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_URI_SUPP_0200
+     * @tc.name    SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_URI_SUPP_0200
      * @tc.desc    OHSourceNativeCreateFromUriSupp-空字符串IMAGE_BAD_PARAMETER
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_URI_SUPP_002', Level.LEVEL1, () => {
-      const testName ='SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_URI_SUPP_002'
+    it('SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_URI_SUPP_0200', Level.LEVEL1, () => {
+      const testName ='SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_URI_SUPP_0200'
       console.info(TAG,'Start',);
       let result: number = testNapi.OHImageSourceNativeCreateFromUriSupp(CASE_INDEX_3)
       console.info(TAG,testName,'Success',JSON.stringify(result));
@@ -68,15 +68,15 @@ export default function imageFrameworkImageSourceNativeCreateSuppTest() {
     })
 
     /**
-     * @tc.number  SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_FD_SUPP_001
-     * @tc.name    SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_FD_SUPP_001
+     * @tc.number  SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_FD_SUPP_0100
+     * @tc.name    SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_FD_SUPP_0100
      * @tc.desc    OHSourceNativeCreateFromFdSupp-IMAGE_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_FD_SUPP_001', Level.LEVEL1, () => {
-      const testName ='SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_FD_SUPP_001'
+    it('SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_FD_SUPP_0100', Level.LEVEL1, () => {
+      const testName ='SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_FD_SUPP_0100'
       console.info(TAG,'Start',);
       let result: number = testNapi.OHImageSourceNativeCreateFromFdSupp(CASE_INDEX_1)
       console.info(TAG,testName,'Success',JSON.stringify(result));
@@ -84,17 +84,33 @@ export default function imageFrameworkImageSourceNativeCreateSuppTest() {
     })
 
     /**
-     * @tc.number  SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_FD_SUPP_002
-     * @tc.name    SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_FD_SUPP_002
+     * @tc.number  SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_FD_SUPP_0200
+     * @tc.name    SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_FD_SUPP_0200
      * @tc.desc    OHSourceNativeCreateFromFdSupp-IMAGE_BAD_PARAMETER
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_FD_SUPP_002', Level.LEVEL1, () => {
-      const testName ='SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_FD_SUPP_002'
+    it('SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_FD_SUPP_0200', Level.LEVEL1, () => {
+      const testName ='SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_FD_SUPP_0200'
       console.info(TAG,'Start',);
       let result: number = testNapi.OHImageSourceNativeCreateFromFdSupp(CASE_INDEX_2)
+      console.info(TAG,testName,'Success',JSON.stringify(result));
+      expect(result).assertEqual(IMAGE_BAD_PARAMETER);
+    })
+
+    /**
+     * @tc.number  SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_FD_SUPP_0300
+     * @tc.name    SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_FD_SUPP_0300
+     * @tc.desc    OHSourceNativeCreateFromFdSupp-res传入nullptr触发IMAGE_BAD_PARAMETER
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_FD_SUPP_0300', Level.LEVEL1, () => {
+      const testName ='SUB_IMAGE_SOURCE_NATIVE_CREATE_FROM_FD_SUPP_0300'
+      console.info(TAG,'Start',);
+      let result: number = testNapi.OHImageSourceNativeCreateFromFdSupp(CASE_INDEX_3)
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(IMAGE_BAD_PARAMETER);
     })
