@@ -86,6 +86,8 @@ export default function securityManagerTest() {
     testIsWeakPinEnabled();
     testGetPasswordLastChangedTime();
     testSetPermissionManagedState();
+    testGetEnterpriseResetPolicy();
+    testSetEnterpriseResetPolicy();
   })
 }
 
@@ -5413,6 +5415,292 @@ function testSetPermissionManagedState() {
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code).assertEqual('9200012');
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testGetEnterpriseResetPolicy() {
+  /**
+   * @tc.name   test_get_enterprise_reset_policy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_ENTERPRISE_RESET_POLICY_JS_0100
+   * @tc.desc   test getEnterpriseResetPolicy without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_enterprise_reset_policy_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      securityManager.getEnterpriseResetPolicy();
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code).assertEqual(9200001);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_enterprise_reset_policy_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_ENTERPRISE_RESET_POLICY_JS_0200
+   * @tc.desc   test getEnterpriseResetPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_enterprise_reset_policy_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      securityManager.getEnterpriseResetPolicy();
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code).assertEqual(9200002);
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_enterprise_reset_policy_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_ENTERPRISE_RESET_POLICY_JS_0300
+   * @tc.desc   test getEnterpriseResetPolicy success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_get_enterprise_reset_policy_0300", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let policy: securityManager.EnterpriseResetPolicy = securityManager.getEnterpriseResetPolicy();
+      expect(policy === securityManager.EnterpriseResetPolicy.DEFAULT ||
+        policy === securityManager.EnterpriseResetPolicy.ENTERPRISE_ACCOUNT_AUTH_ON ||
+        policy === securityManager.EnterpriseResetPolicy.ENTERPRISE_ACCOUNT_AUTH_OFF).assertTrue();
+    } catch (error) {
+      if (error.code === 9200016) {
+        expect(error.code).assertEqual(9200016);
+      } else {
+        expect(false).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testSetEnterpriseResetPolicy() {
+  /**
+   * @tc.name   test_set_enterprise_reset_policy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_ENTERPRISE_RESET_POLICY_JS_0100
+   * @tc.desc   test setEnterpriseResetPolicy without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_enterprise_reset_policy_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      securityManager.setEnterpriseResetPolicy(securityManager.EnterpriseResetPolicy.ENTERPRISE_ACCOUNT_AUTH_ON);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200001);
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_enterprise_reset_policy_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_ENTERPRISE_RESET_POLICY_JS_0200
+   * @tc.desc   test setEnterpriseResetPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_enterprise_reset_policy_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      securityManager.setEnterpriseResetPolicy(securityManager.EnterpriseResetPolicy.ENTERPRISE_ACCOUNT_AUTH_ON);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200002);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_enterprise_reset_policy_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_ENTERPRISE_RESET_POLICY_JS_0300
+   * @tc.desc   test setEnterpriseResetPolicy with null policy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_enterprise_reset_policy_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setEnterpriseResetPolicy(null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(401);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_enterprise_reset_policy_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_ENTERPRISE_RESET_POLICY_JS_0400
+   * @tc.desc   test setEnterpriseResetPolicy with undefined policy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_enterprise_reset_policy_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setEnterpriseResetPolicy(undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(401);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_enterprise_reset_policy_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_ENTERPRISE_RESET_POLICY_JS_0500
+   * @tc.desc   test setEnterpriseResetPolicy with invalid policy enum value
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_enterprise_reset_policy_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setEnterpriseResetPolicy(3 as securityManager.EnterpriseResetPolicy);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200012);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_enterprise_reset_policy_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_ENTERPRISE_RESET_POLICY_JS_0600
+   * @tc.desc   test setEnterpriseResetPolicy with ENTERPRISE_ACCOUNT_AUTH_ON policy success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_set_enterprise_reset_policy_0600", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setEnterpriseResetPolicy(securityManager.EnterpriseResetPolicy.ENTERPRISE_ACCOUNT_AUTH_ON);
+      let result: securityManager.EnterpriseResetPolicy = securityManager.getEnterpriseResetPolicy();
+      expect(result === securityManager.EnterpriseResetPolicy.ENTERPRISE_ACCOUNT_AUTH_ON).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else if (error.code === 9200016) {
+        expect(error.code).assertEqual(9200016);
+      } else {
+        expect(false).assertTrue();
+      }
+    } finally {
+      try {
+        securityManager.setEnterpriseResetPolicy(securityManager.EnterpriseResetPolicy.DEFAULT);
+      } catch (err) {
+        console.error('EDM_TEST_LOG: Failed to restore enterprise reset policy.');
+      }
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_enterprise_reset_policy_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_ENTERPRISE_RESET_POLICY_JS_0700
+   * @tc.desc   test setEnterpriseResetPolicy with ENTERPRISE_ACCOUNT_AUTH_OFF policy success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_set_enterprise_reset_policy_0700", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setEnterpriseResetPolicy(securityManager.EnterpriseResetPolicy.ENTERPRISE_ACCOUNT_AUTH_OFF);
+      let result: securityManager.EnterpriseResetPolicy = securityManager.getEnterpriseResetPolicy();
+      expect(result === securityManager.EnterpriseResetPolicy.ENTERPRISE_ACCOUNT_AUTH_OFF).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else if (error.code === 9200016) {
+        expect(error.code).assertEqual(9200016);
+      } else {
+        expect(false).assertTrue();
+      }
+    } finally {
+      try {
+        securityManager.setEnterpriseResetPolicy(securityManager.EnterpriseResetPolicy.DEFAULT);
+      } catch (err) {
+        console.error('EDM_TEST_LOG: Failed to restore enterprise reset policy.');
+      }
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_enterprise_reset_policy_0800
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_ENTERPRISE_RESET_POLICY_JS_0800
+   * @tc.desc   test setEnterpriseResetPolicy with DEFAULT policy success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_enterprise_reset_policy_0800", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setEnterpriseResetPolicy(securityManager.EnterpriseResetPolicy.DEFAULT);
+      let result: securityManager.EnterpriseResetPolicy = securityManager.getEnterpriseResetPolicy();
+      expect(result === securityManager.EnterpriseResetPolicy.DEFAULT).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else if (error.code === 9200016) {
+        expect(error.code).assertEqual(9200016);
+      } else {
+        expect(false).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }

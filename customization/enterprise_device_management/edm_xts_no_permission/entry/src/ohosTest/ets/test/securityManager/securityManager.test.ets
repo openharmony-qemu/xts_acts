@@ -378,6 +378,8 @@ export default function securityManagerTest() {
     testSetUnlockPolicy();
     testGetUnlockPolicy();
     testGetPasswordLastChangedTime();
+    testGetEnterpriseResetPolicy();
+    testSetEnterpriseResetPolicy();
   })
 }
 
@@ -1507,6 +1509,58 @@ function testGetPasswordLastChangedTime() {
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code).assertEqual(201);
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetEnterpriseResetPolicy() {
+  /**
+   * @tc.name   test_get_enterprise_reset_policy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_ENTERPRISE_RESET_POLICY_NO_PERMISSION_JS_0100
+   * @tc.desc   test securityManager getEnterpriseResetPolicy with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_enterprise_reset_policy_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      securityManager.getEnterpriseResetPolicy();
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_get_enterprise_reset_policy_0100 error.code = ' + error.code);
+      expect(error.code).assertEqual(201);
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testSetEnterpriseResetPolicy() {
+  /**
+   * @tc.name   test_set_enterprise_reset_policy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_ENTERPRISE_RESET_POLICY_NO_PERMISSION_JS_0100
+   * @tc.desc   test securityManager setEnterpriseResetPolicy with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_enterprise_reset_policy_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      securityManager.setEnterpriseResetPolicy(securityManager.EnterpriseResetPolicy.ENTERPRISE_ACCOUNT_AUTH_ON);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_set_enterprise_reset_policy_0100 error.code = ' + error.code);
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(201);
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
