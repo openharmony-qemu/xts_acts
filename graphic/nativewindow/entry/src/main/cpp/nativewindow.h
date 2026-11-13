@@ -13,12 +13,6 @@
  * limitations under the License.
  */
 
-//
-// Created on 2024/8/6.
-//
-// Node APIs are not fully supported. To solve the compilation error of the interface cannot be found,
-// please include "napi/native_api.h".
-
 #ifndef NATIVEWINDOW_USELESS_H
 #define NATIVEWINDOW_USELESS_H
 
@@ -36,13 +30,6 @@
 
 #define NUMBER_1 1
 #define NUMBER_3 3
-#define NUMBER_4 4
-#define NUMBER_5 5
-#define NUMBER_11 11
-#define NUMBER_12 12
-#define NUMBER_13 13
-#define NUMBER_14 14
-#define NUMBER_21 21
 #define ERRORCODE_0 0
 #define ERRORCODE_30001000 30001000
 #define ERRORCODE_40001000 40001000
@@ -375,4 +362,14 @@ napi_value testNativeWindowHandleOptSetDmaBufferNameNormal(napi_env env, napi_ca
 napi_value testNativeWindowHandleOptSetDmaBufferNameNull(napi_env env, napi_callback_info info);
 napi_value testNativeWindowHandleOptSetDmaBufferNameAbnormal(napi_env env, napi_callback_info info);
 napi_value testNativeWindowHandleOptSetDmaBufferNameMultipleCalls(napi_env env, napi_callback_info info);
+
+napi_value testNativeWindowHandleOptSetAndGetScreenInfoNormal01(napi_env env, napi_callback_info info);
+napi_value testNativeWindowHandleOptSetAndGetScreenInfoNormal02(napi_env env, napi_callback_info info);
+napi_value testNativeWindowHandleOptSetAndGetScreenInfoNormal03(napi_env env, napi_callback_info info);
+napi_value testNativeWindowHandleOptSetAndGetScreenInfoNormal04(napi_env env, napi_callback_info info);
+napi_value testNativeWindowHandleOptSetAndGetScreenInfoNormal05(napi_env env, napi_callback_info info);
+napi_value testNativeWindowHandleOptSetAndGetScreenInfoNormal06(napi_env env, napi_callback_info info);
+napi_value testNativeWindowHandleOptSetAndGetScreenInfoAbnormal01(napi_env env, napi_callback_info info);
+napi_value testNativeWindowHandleOptSetAndGetScreenInfoAbnormal02(napi_env env, napi_callback_info info);
+napi_value testNativeWindowHandleOptSetAndGetScreenInfoNull(napi_env env, napi_callback_info info);
 #endif // NATIVEWINDOW_USELESS_H

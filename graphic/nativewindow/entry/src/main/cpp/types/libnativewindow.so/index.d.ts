@@ -155,6 +155,15 @@ export const testNativeWindowHandleOptSetDmaBufferNameNormal: () => number;
 export const testNativeWindowHandleOptSetDmaBufferNameNull: () => number;
 export const testNativeWindowHandleOptSetDmaBufferNameAbnormal: () => number;
 export const testNativeWindowHandleOptSetDmaBufferNameMultipleCalls: () => number;
+export const testNativeWindowHandleOptSetAndGetScreenInfoNormal01: () => number;
+export const testNativeWindowHandleOptSetAndGetScreenInfoNormal02: () => number;
+export const testNativeWindowHandleOptSetAndGetScreenInfoNormal03: () => number;
+export const testNativeWindowHandleOptSetAndGetScreenInfoNormal04: () => number;
+export const testNativeWindowHandleOptSetAndGetScreenInfoNormal05: () => number;
+export const testNativeWindowHandleOptSetAndGetScreenInfoNormal06: () => number;
+export const testNativeWindowHandleOptSetAndGetScreenInfoAbnormal01: () => number;
+export const testNativeWindowHandleOptSetAndGetScreenInfoAbnormal02: () => number;
+export const testNativeWindowHandleOptSetAndGetScreenInfoNull: () => number;
 
 
 
