@@ -218,5 +218,29 @@ export default function HasCard2PublicNeedCardTest() {
       }
     });
 
+    /**
+     * @tc.name   testTelephonyCallManagerMakeDirectCall_static_0200
+     * @tc.number SUB_Telephony_CallManager_MakeDirectCall_0200
+     * @tc.desc   Application makes calls with one tap with an empty phone number by promise, expect error code 8300001.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerMakeDirectCall_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyCallManagerMakeDirectCall_static_0200';
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      try {
+        await call.makeDirectCall('');
+        hilog.info(domain, tag, '%{public}s', caseName+ ' makeDirectCall success, unexpect');
+        ExpectFail();
+        done();
+      } catch (error) {
+        hilog.info(domain, tag, `${caseName} makeDirectCall fail ->error.code: ${JSON.stringify(error.code)}, error?.message: ${JSON.stringify(error?.message)}`);
+        ExpectTrue(error?.code === 8300001);
+        done();
+      }
+      hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+    });
+
   });
 }
